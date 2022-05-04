@@ -1,0 +1,21 @@
+#!/bin/bash
+
+if [ $# -eq 0 ]; then
+	PORT=8000
+else
+	PORT=$1
+fi
+
+if [ -d docs/_build ]; then
+	echo "Starting server on TCP/$PORT..."
+	echo "Enter <Ctrl+c> to stop the server..."
+	cd docs/_build
+	for i in `cat ../../scripts/server-dependencies`
+	  do
+		  ../../containthedocs-wget $i;
+  	done
+	python3 -m http.server $PORT
+else
+	echo "The docs/_build directory doesn't exist... try building the doc first, './containthedocs-build.sh'"
+	exit 1
+fi
