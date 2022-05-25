@@ -1,7 +1,7 @@
-Module 1: The Basic's
-=====================
+Module 1: Creating a Site (Simulator)
+=====================================
 
-Here we'll start with the basics of platform setup, editing, and building.
+The first part of the Lab will make use of F5 Distributed Cloud Simulators to emulate the process of setting up two different sites (one in AWS, one on premises)
 
 .. toctree::
    :maxdepth: 1

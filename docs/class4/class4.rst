@@ -1,14 +1,13 @@
-Class 1: Getting Started
-========================
+Class 4 – Intro to Multi-Cloud Networking
+=========================================
 
-This class has one module and two labs. We're simply doing this to show the
-standard structure of a class/module/lab.
+This Lab environment highlights some of the basic concepts of F5 Distributed Cloud (XC) Mesh.
 
-.. note:: It could be simplier to throw all the content in one file but that
-   would miss the point of showing how we curently use RST.
+During the lab you will be emulating a customer that needs to extend an existing on-prem internal application to a Public Cloud environment.  The goal is to securely extend the application into the cloud environment and have it highly availabe in both on-prem/cloud simultaneously.
 
 .. toctree::
    :maxdepth: 1
    :glob:
 
+   intro
    module*/module*
