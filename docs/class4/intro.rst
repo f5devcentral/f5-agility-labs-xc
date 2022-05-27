@@ -1,7 +1,7 @@
 Introduction to the Lab
 =======================
 
-This Lab environment highlights some of the basic concepts of F5 XC Mesh.
+This Lab environment highlights some of the basic concepts of F5 Distributed Cloud (XC) Mesh.
 
 During the lab you will be emulating a customer that needs to extend an
 existing on-prem internal application to a Public Cloud environment.
@@ -19,13 +19,13 @@ The "frontend" application has a requirement that it must be able to
 communicate with the "backend".  The "backend" could be a database, legacy system, etc.
 
 The goal is to extend the environment into AWS and still allow the "frontend" to
-connect to the backend.  The following topology is deployed where VoltMesh is deployed
+connect to the backend.  The following topology is deployed where Distributed Cloud Mesh is deployed
 in both the on-prem and AWS environment.
 
 .. image:: ./images/lab-topology.png
 
-Once you have deployed the AWS environment and deployed two VoltMesh sites you will utilize
-a Volterra TCP Load Balancer to privately connect from AWS to on-prem and a HTTP Load Balancer 
+Once you have deployed the AWS environment and deployed two Distributed Cloud Mesh sites you will utilize
+a F5 Distributed Cloud TCP Load Balancer to privately connect from AWS to on-prem and a HTTP Load Balancer 
 to connect publicly from a Regional Edge (AnyCast IP) to the frontend in AWS.
 
 .. image:: ./images/lab-flow.png
