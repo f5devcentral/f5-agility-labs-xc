@@ -1,236 +1,118 @@
-Lab 1.1 - Setup
-===============
+Lab 1- Explore F5 Distributed Cloud Console
+--------------------------------------------
 
-Minimun Requirements
---------------------
+Welcome to F5 Distributed Cloud Application 301.
 
-No matter what you're daily driver is you'll need `Docker` and `Git`.
+In this lab, we will learn the following:
 
-.. note:: We recommend some sort of Linux distro. All of this can be done with
-   Windows but you'll need to overcome several hurdles.
+•	Log on into the F5 Distributed CLoud Console. 
 
-.. attention:: The examples below assume Linux as the build machine.
+•   Review account profile
 
-- For Linux use apt (or whatever package tool) to download and install:
+•   Identify your namespace and your delegated domain name 
 
-  Git
+.. NOTE::
+   - The delegated Domain Name should be captured/written down as it will be used later in the lab
+   - Basic Kubernetes knowledge is recommended
 
-  .. code-block:: bash
+**Core concepts**
 
-     sudo apt update
-     sudo apt install git
+   *Tenant*
+      `Tenant is an entity that is the owner of a given set of configuration and infrastructure. Tenant is the owner of all 
+      configuration objects that a user with given tenant-id has created. Tenant is the fundamental concept of isolation, and a 
+      tenant cannot access any objects or infrastructure of other tenants.`
 
-  Docker
+   *Namespaces*
+      `Tenant’s configuration objects are grouped under namespaces. Namespaces can be thought of as administrative domains. 
+      All the objects of the same kind need to have unique names in a given namespace. Namespace themselves must be unique 
+      within a tenant. In this document namespace will be referred as <tenant>/<namespace>, which will be globally unique.`
 
-  .. code-block:: bash
+   For more core concepts, please review `F5 Distributed Cloud documentation <https://docs.cloud.f5.com/docs/ves-concepts>`_
 
-     sudo apt install apt-transport-https ca-certificates curl gnupg-agent software-properties-common
-     curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key add -
-     sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/debian $(lsb_release -cs) stable"
-     sudo apt update
-     sudo apt install docker-ce docker-ce-cli containerd.io
+**Exercise 1 - Log into F5 Distributed Cloud Console**
 
-- For Windows download the following and install:
+.. NOTE::
+      Once you join the UDF session, your UDF deployment will start and create an ephemeral account on the F5 Distributed Cloud console (this can take for 5 to 10 min)
 
-  - `Git for Windows <https://git-scm.com/download/win>`_
-  - `Docker Desktop for Windows <https://hub.docker.com/editions/community/docker-ce-desktop-windows/>`_
 
-Configure Git
--------------
+#. Once your ephemeral account is created, you will receive an email to update your password. 
 
-Now that Git's installed we need to configure it for basic use. From your
-terminal of choice run the following git commands:
+   .. image:: ../images/xclogonoemailupdatepass.png
+      :width: 250pt
 
-.. code-block:: bash
+#. Upon the first login, you will be prompted to change your password.
 
-   git config --global user.name "vtog"
-   git config --global user.email "v.tognaci@f5.com"
-   git config --global core.editor vim
+   .. image:: ../images/xclogonopass.png
+      :width: 250pt
 
-.. attention:: Be sure to use your user name, email, and editor of choice.
+#. After setting your login credentials, click login.
 
-It's recommended to setup ssh auth with you're github account. For details on
-how to configure this see the following,
-`Connecting to GitHub with SSH <https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh>`_
+   .. image:: ../images/xclogon.png
 
-#. From linux this can easily be accomlished with the following:
+#. Upon password update completion, you will be redirected to the F5 Distributed Cloud Console login. You will need to enter the lab tenant name "F5-xc-lab-app" and then click Next. Then enter your email and password and click Sign in
 
-   .. code-block:: bash
+.. NOTE::
+      A tenant in the F5 Distributed Cloud console is a similar construct as an account in AWS or GCP terms.
 
-      ssh-keygen
+   .. image:: ../images/xclogontenantname.png
+      :width: 250pt
 
-#. If you used the default `ssh-keygen` variables, simply copy the contents of
-   "id_rsa.pub". You can view the file with the following:
+   .. image:: ../images/xclogonlogin.png
+      :width: 250pt
 
-   .. code-block:: bash
+#. You must click accept and agree to the terms.
 
-      cat ~/.ssh/id_rsa.pub
+   .. image:: ../images/xclogonacceptterms.png
+      :width: 250pt
 
-#. On github go to your account settings, click "SSH and GPG keys", and click
-   "New SSH key".
+#. Now, you will need to set the persona and the skill level to access the console.
 
-   - Give the new key a "Title"
-   - Copy the contents of id_rsa.pub in the "Key" field
+   .. image:: ../images/xclogonsetlevel.png
+      :width: 400pt
 
-Clone Your Repo
----------------
+   .. image:: ../images/xclogonsetpersona.png
+      :width: 400pt
 
-Now that Git's installed and configured we need to clone the repo from GitHub
+#. Finally, navigate through the initial prompts. 
 
-.. attention:: We recommend cloning opposed to forking.
+   .. image:: ../images/xcconsolepromt.png
+      :width: 400pt
 
-.. important:: We're using the "template" repo in all our examples. Be sure to
-   use the proper repo for the class you're working on. If you don't know which
-   one that is reach out to the `*AgilityLabsRTD` doc team.
 
-#. Open a terminal
-#. Clone the repo you plan to contribute to.
 
-   .. code-block:: bash
+**Exercise 2 - Explore F5 Distributed Cloud Console**
 
-      git clone git@github.com:f5devcentral/f5-agility-labs-template.git
+In this exercise, we will explore the F5 Distributed Cloud Console to identify your namespace and your delegated domain name 
 
-#. When using the git clone as shown above it will clone the repo's default
-   branch. If a specific branch is required you have two options depending on
-   where you are in the process.
+#. Click the User Icon (top-right) and then click Account Settings.
 
-   - Before cloning: use the "-b" switch and specify the branch of choice
+   .. image:: ../images/xcconsoleaccountprofile.png
+      :width: 400pt
 
-     .. code-block:: bash
+#. Select "My Namespaces" under the Personal Management section
 
-        git clone -b develop git@github.com:f5devcentral/f5-agility-labs-template.git
+   .. image:: ../images/xcconsolenamespace.png
+      :width: 400pt
 
-   - After cloning: use `fetch` and `checkout` the branch of choice
+#. Each Lab attendee will need to note their own namespace nam
 
-     .. code-block:: bash
+   .. image:: ../images/xcconsolenamespace2.png
+      :width: 400pt
 
-         git fetch
-         git checkout develop
+   .. NOTE::
+      - Your namespace name should captured/written down as it will be referenced later in the labs
+      - A namespace is a kubernetes construct. For more Kubernetes concepts, please review `Kubernetes Documentation <https://kubernetes.io/docs/concepts/>`_
 
-Fork Your Repo (NOT Recommended)
---------------------------------
+#. Click on the Select Service navigation, then click the DNS Management tile.
 
-.. important:: We recommend the cloning process outlined in the previous
-   section. This section is to document how to fork/clone. But more importantly
-   keep your fork/clone in sync.
+   .. image:: ../images/xcconsoleclickdns.png
+      :width: 400pt
 
-#. From GitHub Fork the Agility repo you plan to contribute to.
-#. Clone the repo to your build PC.
+#. Please note the delegated domain name 
 
-   .. code-block:: bash
+   .. image:: ../images/xcconsoleclickdomain.png
+      :width: 400pt
 
-      git clone git@github.com:f5devcentral/f5-agility-labs-template.git
+   .. NOTE::
+      The delegated Domain Name should be captured/written down as it will be leveraged later in the lab
 
-#. See previous section on "branch" selection/changing.
-
-.. important:: You need to know how to keep your fork in sync with the upstream
-   Agility project.
-
-#. Stay in sync with the upstream repo.
-
-   .. code-block:: bash
-
-      git remote add upstream <agility repo clone link>
-
-#. Rebase your branch
-
-   .. code-block:: bash
-
-      git pull --rebase upstream <branch>
-
-#. Update your Local Fork
-
-   .. code-block:: bash
-
-      git push --force
-
-Build The Doc
--------------
-
-The repo should have several scripts to build the doc. The most important of
-which is `containthedocs-build.sh`
-
-#. From the currenlty open terminal move into the cloned repo directory
-
-   .. code-block:: bash
-
-      cd f5-agility-labs-template
-
-#. Build your html from rst
-
-   .. code-block:: bash
-
-      ./containthedocs-build.sh
-
-#. You now should have a new directory with your lab html files
-
-   .. code-block:: bash
-
-      ls -la docs/_build
-
-   You should see the following output
-
-   .. code-block:: bash
-
-      ❯ ls -la docs/_build
-      total 16
-      drwxr-xr-x 4 root  root  4096 Feb 22 13:14 .
-      drwxr-xr-x 6 vince vince 4096 Feb 22 13:14 ..
-      drwxr-xr-x 3 root  root  4096 Feb 22 13:14 doctrees
-      drwxr-xr-x 6 root  root  4096 Feb 22 13:14 html
-
-View your doc locally with Python
----------------------------------
-
-For your convenience a script to invoke a simple python web server is provided.
-
-.. attention:: Assuming Python3 is installed.
-
-#. From the repo directory run the `server` script in the "scripts" directory.
-   This will start the http server on the local IP and port 8000
-
-   .. code-block:: bash
-
-      ./scripts/server
-
-#. With your local browser type in the following URL
-
-   .. code-block:: bash
-
-      http://<IP_ADDR>:8000/html/
-
-#. When finished hit CTRL-C
-
-View your doc locally with Nginx
---------------------------------
-
-#. Install nginx
-
-   .. code-block:: bash
-
-      sudo apt install nginx
-
-#. Create a softlink to the rst repo documents.
-
-   .. code-block:: bash
-
-      cd /var/www/html
-      sudo ln -s ~/f5-agility-labs-template/docs/_build/html/ template
-
-   .. note:: In my example the cloned repo is in the home directory.
-
-#. With your local browser type in the following URL
-
-   .. code-block:: bash
-
-      http://<IP_ADDR>/template/
-
-Recap
------
-You now have the following:
-
-- A working build environment
-- A cloned repo
-- A place to view changes
-
-Next we'll explore basic RST examples.
