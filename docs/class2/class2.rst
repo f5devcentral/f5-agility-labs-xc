@@ -21,7 +21,7 @@ Lab Requirements:
 
 -  All Lab requirements will be noted in the tasks that follow
 
--  Estimated completion time: 20 minutes
+-  Estimated completion time: 3 Labs approximately 15-20 minutes each
 
 
 .. toctree::
