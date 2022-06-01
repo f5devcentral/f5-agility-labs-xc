@@ -1,14 +1,36 @@
-Class 1: Getting Started
-========================
+F5 Distributed Cloud Lab 102 - WAF/WAAP Deeper Dive
+===================================================
 
-This class has one module and two labs. We're simply doing this to show the
-standard structure of a class/module/lab.
+Welcome
+-------
 
-.. note:: It could be simplier to throw all the content in one file but that
-   would miss the point of showing how we curently use RST.
+In this lab, attendees will take a deeper dive into F5 Web Application and API Protection (WAAP).
+Attendees will review WAAP Policy Frameworks, exercise configuration options, review security events
+and perform exclusion handling. Attendees will also explore Service Policy configuration and AI-driven 
+BotDefense deployment configurations.  
+
+Objective:
+----------
+
+-  Gain a deeper understanding of key F5 Distributed Cloud security functions and controls
+
+-  Gain an understanding WAAP Policies, Service Policies and BotDefense configuration.
+
+Lab Requirements:
+-----------------
+
+-  All Lab requirements will be noted in the tasks that follow
+
+-  Estimated completion time: 20 minutes
+
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
+   :numbered:
+   :caption: Contents:
    :glob:
-
-   module*/module*
+   
+   intro*
+   lab*
+   close*
+   
