@@ -1,5 +1,5 @@
-Class 1: Getting Started
-========================
+Class 5: F5 Distributed Cloud Security - Intro to Managed Kubernetes
+====================================================================
 
 This class has one module and two labs. We're simply doing this to show the
 standard structure of a class/module/lab.
