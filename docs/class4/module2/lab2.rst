@@ -195,9 +195,9 @@ Exercise 5: Edit HTTP Load Balancer Configuration
 
 #. Click on "Apply"
 #. Click on "Save and Exit"
-#. Refresh your browser window for "studentxx.sales-public.f5demos.com" and you should now have access to a diagnostic tool that will let you explore the environment.
+#. Refresh your browser window for "poetic-quail.lab-mcn.f5demos.com" and you should now have access to a diagnostic tool that will let you explore the environment.
 
-   .. image:: ../images/f5-demo-container.png
+   .. image:: ../images/m-container-tool.png
 
 Exercise 6: Review General Monitoring Stats
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
