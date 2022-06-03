@@ -1,13 +1,13 @@
-Lab 1: Logging into VoltConsole
+Lab 1: Logging into F5 Distributed Cloud Console
 ================================
 
-During this lab you will be introduced to VoltConsole
+During this lab you will be introduced to the F5 Distributed Cloud Console
 
 .. toctree::
    :maxdepth: 1
    :caption: Contents:
 
-   voltConsole
+   F5 Distributed Cloud Console
    labEnvironment
 
 
