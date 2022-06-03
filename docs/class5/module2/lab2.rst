@@ -29,7 +29,7 @@ In this lab, we will learn the following:
 #. Select **Deployments**, then select the menu under **Actions** for your deployment, then **Edit**
 
    .. image:: ../images/14edit_deployment.png
-      :width: 450pt
+      :width: 600pt
 
 #. Ensure **Edit** mode is enabled, expand the **spec** section, and modify **replicas** from *1* to *3* and select **Save**
 
@@ -43,3 +43,4 @@ In this lab, we will learn the following:
    .. image:: ../images/16review_scaled_deployment.png
       :width: 600pt
 
+This concludes Module 2: Deploy and Scale Virtual K8s Workload. Thank you for taking the time to complete these exercises! Please continue on to module 3 for a look at how to publish your application for users to consume.
