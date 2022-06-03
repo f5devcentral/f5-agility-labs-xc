@@ -24,22 +24,22 @@ In this lab, we will learn the following:
 #. Select **Applications -> Virtual K8s -> Dashboard**. You should see one pod per site.
 
    .. image:: ../images/13validate_vK8s_dashboard.png
-      :width: 400pt
+      :width: 600pt
 
 #. Select **Deployments**, then select the menu under **Actions** for your deployment, then **Edit**
 
    .. image:: ../images/14edit_deployment.png
-      :width: 250pt
+      :width: 450pt
 
 #. Ensure **Edit** mode is enabled, expand the **spec** section, and modify **replicas** from *1* to *3* and select **Save**
 
    .. image:: ../images/15modify_deployment_spec.png
-      :width: 400pt
+      :width: 600pt
 
 **Exercise 2 - Review Scaled vK8s Deployment**
 
 #. It may take a few moments, but on the vK8s cluster dashboard, number of **Running Pods** should increase to 9. Upon refreshing the list, you may notice the number of **Sites with Error** gradually decrease as **Running Pods** increases.
 
    .. image:: ../images/16review_scaled_deployment.png
-      :width: 400pt
+      :width: 600pt
 
