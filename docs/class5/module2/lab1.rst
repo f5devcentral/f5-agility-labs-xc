@@ -67,7 +67,7 @@ In this lab, we will learn the following:
 
 #. Complete the **Container Configuration** section by providing a **Name** and details for which **Image to Use**
 
-    - **Image Name**: coleman.azurecr.io/volterrademoapp
+    - **Image Name**: coleman.azurecr.io/f5xcdemoapp
     - **Container Registry**: Private Registry
     - **Private Registry**: shared/azure-registry
 
