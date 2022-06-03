@@ -11,18 +11,13 @@ In this lab, we will learn the following:
 
 **Core concepts**
 
-   *Virtual K8s (vK8s)*
-      `A vk8s stand for virtual Kubernetes cluster. F5 Distributed Cloud Services support a Kubernetes compatible API for centralized orchestration of applications across a fleet of sites 
-      (customer sites or F5 Distributed Cloud Regional Edge). This API is “Kubernetes compatible” because not all Kubernetes APIs or resources 
-      are supported. However, for the API(s) that are supported, it is hundred percent compatible. We have implemented a distributed control 
-      plane within our global infrastructure to manage scheduling and scaling of applications across multiple (tens to hundreds of thousands of) 
-      sites, where each site in itself is also a managed physical K8s cluster.`
+   *Pods in vK8s*
+      `The core concept in application management on Kubernetes is a Pod. Pod is the basic and smallest execution unit that can be created, deployed, and managed in Kubernetes. A Pod consumes compute, memory, and storage resources and needs a network identity. A Pod contains single or multiple containers but it is a single instance of an application in Kubernetes.`
 
-   *Virtual Sites*
-      `vK8s object has a reference to the virtual-site which selects the sites on which the application can be deployed, secured, and operated. 
-      The virtual-site reference of vK8s is used as the default virtual-site for the given vK8s.`
+   *Service*
+      `A service with one or more containers with configurable number of replicas that can be deployed on a selection of Regional Edge sites or customer sites and advertised within the cluster where is it deployed, on the Internet, or on other sites using TCP or HTTP or HTTPS load balancer.`
 
-   For more core concepts, please review `F5 Distributed Cloud documentation <https://docs.cloud.f5.com/docs/ves-concepts>`_
+   For more core concepts, please review `F5 Distributed Cloud documentation <https://docs.cloud.f5.com/docs/ves-concepts/dist-app-mgmt>`_
 
 **Exercise 1 - Access Virtual K8s Cluster Dashboard and Edit Deployment**
 
