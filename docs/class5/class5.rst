@@ -1,3 +1,4 @@
+
 Class 5: Introduction to Managed Kubernetes
 ============================================
 
