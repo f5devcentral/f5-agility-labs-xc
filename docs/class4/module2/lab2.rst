@@ -84,7 +84,7 @@ We will first create an Origin Pool that refers to the frontend application serv
 
 #. Click the *configure* button under "HTTP Health Check"
 
-#. Click *Apply* to exit the "Health Check HTTP Parameters" dialogue.
+#. Leave the default values and click *Apply* to exit the "Health Check HTTP Parameters" dialogue.
 #. Click *Continue* to return to the "Origin Pool" configuration.
 #. Click the *Save and Exit* button to create the Origin Pool.
 
@@ -95,13 +95,13 @@ Exercise 2: HTTP Load Balancer Configuration
 
     |http_lb_menu| |http_lb_add|
 
-#. Enter the following variables:
+#. Enter the following variables *Note: the adjective-animal variable will be the namespace in your Account Settings*:
 
     ================================= =====
     Variable                          Value
     ================================= =====
     Name                              frontend
-    Domains                           studentXX.sales-public.f5demos.com
+    Domains                           adjective-animal.lab-mcn.f5demos.com
     Select type of Load Balancer      HTTP
     Automatically Manage DNS Records  Yes/Check 
     ================================= =====
@@ -125,23 +125,22 @@ We'll next configure the "Default Origin Servers".
 #. Click "*Save and Exit* to create the HTTP Load Balancer.
 
 Once the HTTP Load Balancer has been deployed, you should now be able to go to the DNS name that you entered 
-previously in a web browser.  The FQDN we used in our example is http://studentXX.sales-public.f5demos.com.  
+previously in a web browser.  The FQDN we used in our example is http://adjective-animal.lab-mcn.f5demos.com.  
 Your FQDN should follow the format of [unique name].[supplied domain name for your tenant].
 
 The public demo app should look like the following:
 
 .. image:: ../images/frontend-public-vip.png
 
-In this topology we are sending traffic to an AnyCast IP that is hosted in Volterra's Regional Edge.
+In this topology we are sending traffic to an AnyCast IP that is hosted in the F5 Distributed Cloud Regional Edge.
 
 We then connect to the AWS resource via it's Public IP address.  Next we will demonstrate how we 
-can securely connect to your private AWS resources via a VoltMesh node.
+can securely connect to your private AWS resources via a Distributed Cloud Mesh node.
 
 Exercise 4: Private Origin Pool
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In this exercise we will create a new origin pool that connects to our AWS site via Volterra's 
-Global Network.  
+In this exercise we will create a new origin pool that connects to our AWS site via the F5 Distributed Clouds Global Network.  
 
 #. Navigate the menu to go to "Manage"->"Load Balancers"->"Origin Pools". Click on *Add Origin Pool*.
  
@@ -196,9 +195,9 @@ Exercise 5: Edit HTTP Load Balancer Configuration
 
 #. Click on "Apply"
 #. Click on "Save and Exit"
-#. Refresh your browser window for "studentxx.sales-public.f5demos.com" and you should now have access to a diagnostic tool that will let you explore the environment.
+#. Refresh your browser window for "poetic-quail.lab-mcn.f5demos.com" and you should now have access to a diagnostic tool that will let you explore the environment.
 
-   .. image:: ../images/f5-demo-container.png
+   .. image:: ../images/m-container-tool.png
 
 Exercise 6: Review General Monitoring Stats
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

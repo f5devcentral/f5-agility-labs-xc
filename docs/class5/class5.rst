@@ -1,11 +1,15 @@
-Class 5: F5 Distributed Cloud Security - Intro to Managed Kubernetes
-====================================================================
 
-This class has one module and two labs. We're simply doing this to show the
-standard structure of a class/module/lab.
+Class 5: Introduction to Managed Kubernetes
+============================================
 
-.. note:: It could be simplier to throw all the content in one file but that
-   would miss the point of showing how we curently use RST.
+This Lab environment highlights some of the basic concepts of F5 Distributed Cloud (XC) Mesh.
+
+During the lab you will be emulating a customer that needs to deploy applications closer to the user. The goal is to blah blah blah.
+
+This class has one module and two labs. We're simply doing this to show the standard structure of a class/module/lab.
+
+.. note:: It could be simpler to throw all the content in one file but that
+   would miss the point of showing how we currently use RST.
 
 .. toctree::
    :maxdepth: 1
