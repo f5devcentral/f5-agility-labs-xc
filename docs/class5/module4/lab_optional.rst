@@ -41,4 +41,21 @@ In this lab, we will learn perform the following:
 
    *View all resources in your namespace*
       `kubectl get all`
+   
+   *View output of the pod in yaml format*
+      `kubectl get pods <podname> -o yaml`
  
+   *View output of the deployment in yaml format*
+      `kubectl get deployment agility -o yaml`
+
+   *View output of the service in yaml format*
+      `kubectl get svc agility -o yaml`
+   
+   *Save the output of the deployment in yaml format*
+      `kubectl get deployment -o yaml > agility.yaml`
+
+   *View the saved yaml deployment*
+      `ls -larth`
+   **
+      `cat agility.yaml`
+      
