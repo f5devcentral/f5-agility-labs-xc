@@ -33,6 +33,7 @@ In this lab, we will learn perform the following:
    
    *View deployment service*
       `kubectl get get deployment agility`
+   **
       `kubectl get svc agility`
 
    *View all resources in your namespace*
