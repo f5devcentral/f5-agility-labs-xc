@@ -56,6 +56,5 @@ In this lab, we will learn perform the following:
 
    *View the saved yaml deployment*
       `ls -larth`
-   **
+   
       `cat agility.yaml`
-      
