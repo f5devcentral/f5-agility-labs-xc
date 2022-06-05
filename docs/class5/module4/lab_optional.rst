@@ -24,15 +24,18 @@ In this lab, we will learn perform the following:
 
    *View Nodes*
       `kubectl get nodes`
+   **
       `kubectl get nodes -o wide`
    
    *View pods*
       `kubectl get pods`
+   **
       `kubectl get pods -o wide`
+   **
       `kubectl describe pod <podname>`
    
-   *View deployment service*
-      `kubectl get get deployment agility`
+   *View deployment and service*
+      `kubectl get deployment agility`
    
       `kubectl get svc agility`
 
