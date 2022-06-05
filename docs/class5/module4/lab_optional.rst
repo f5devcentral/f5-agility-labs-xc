@@ -55,6 +55,7 @@ In this lab, we will learn perform the following:
       `kubectl get deployment -o yaml > agility.yaml`
 
    *View the saved yaml deployment*
-      `ls -larth`
+      `find the file in the current directory:
+      ls -larth`
    
       `cat agility.yaml`
