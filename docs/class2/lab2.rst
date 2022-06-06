@@ -221,57 +221,57 @@ implementation.
 | |labend|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
-.. |lab001| image:: media/lab2-001.png
+.. |lab001| image:: _static/lab2-001.png
    :width: 800px
-.. |lab002| image:: media/lab2-002.png
+.. |lab002| image:: _static/lab2-002.png
    :width: 800px
-.. |lab003| image:: media/lab2-003.png
+.. |lab003| image:: _static/lab2-003.png
    :width: 800px
-.. |lab004| image:: media/lab2-004.png
+.. |lab004| image:: _static/lab2-004.png
    :width: 800px
-.. |lab005| image:: media/lab2-005.png
+.. |lab005| image:: _static/lab2-005.png
    :width: 800px
-.. |lab006| image:: media/lab2-006.png
+.. |lab006| image:: _static/lab2-006.png
    :width: 800px
-.. |lab007| image:: media/lab2-007.png
+.. |lab007| image:: _static/lab2-007.png
    :width: 800px
-.. |lab008| image:: media/lab2-008.png
+.. |lab008| image:: _static/lab2-008.png
    :width: 800px
-.. |lab009| image:: media/lab2-009.png
+.. |lab009| image:: _static/lab2-009.png
    :width: 800px
-.. |lab010| image:: media/lab2-010.png
+.. |lab010| image:: _static/lab2-010.png
    :width: 800px
-.. |lab011| image:: media/lab2-011.png
+.. |lab011| image:: _static/lab2-011.png
    :width: 800px
-.. |lab012| image:: media/lab2-012.png
+.. |lab012| image:: _static/lab2-012.png
    :width: 800px
-.. |lab013| image:: media/lab2-013.png
+.. |lab013| image:: _static/lab2-013.png
    :width: 800px
-.. |lab014| image:: media/lab2-014.png
+.. |lab014| image:: _static/lab2-014.png
    :width: 800px
-.. |lab015| image:: media/lab2-015.png
+.. |lab015| image:: _static/lab2-015.png
    :width: 800px
-.. |lab016| image:: media/lab2-016.png
+.. |lab016| image:: _static/lab2-016.png
    :width: 800px
-.. |lab017| image:: media/lab2-017.png
+.. |lab017| image:: _static/lab2-017.png
    :width: 800px
-.. |lab018| image:: media/lab2-018.png
+.. |lab018| image:: _static/lab2-018.png
    :width: 800px
-.. |lab019| image:: media/lab2-019.png
+.. |lab019| image:: _static/lab2-019.png
    :width: 800px
-.. |lab020| image:: media/lab2-020.png
+.. |lab020| image:: _static/lab2-020.png
    :width: 800px
-.. |lab021| image:: media/lab2-021.png
+.. |lab021| image:: _static/lab2-021.png
    :width: 800px
-.. |lab022| image:: media/lab2-022.png
+.. |lab022| image:: _static/lab2-022.png
    :width: 800px
-.. |lab023| image:: media/lab2-023.png
+.. |lab023| image:: _static/lab2-023.png
    :width: 800px
-.. |lab024| image:: media/lab2-024.png
+.. |lab024| image:: _static/lab2-024.png
    :width: 800px
-.. |lab025| image:: media/lab2-025.png
+.. |lab025| image:: _static/lab2-025.png
    :width: 800px
-.. |lab026| image:: media/lab2-026.png
+.. |lab026| image:: _static/lab2-026.png
    :width: 800px
-.. |labend| image:: media/labend.png
+.. |labend| image:: _static/labend.png
    :width: 800px

@@ -113,25 +113,25 @@ After following the invitation email's to **Update Password**, proceed to the fi
 | |labbgn|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
-.. |intro001| image:: media/intro-001.png
+.. |intro001| image:: _static/intro-001.png
    :width: 800px
-.. |intro002| image:: media/intro-002.png
+.. |intro002| image:: _static/intro-002.png
    :width: 800px
-.. |intro003| image:: media/intro-003.png
+.. |intro003| image:: _static/intro-003.png
    :width: 800px
-.. |intro004| image:: media/intro-004.png
+.. |intro004| image:: _static/intro-004.png
    :width: 800px
-.. |intro005| image:: media/intro-005.png
+.. |intro005| image:: _static/intro-005.png
    :width: 800px
-.. |intro006| image:: media/intro-006.png
+.. |intro006| image:: _static/intro-006.png
    :width: 800px
-.. |intro007| image:: media/intro-007.png
+.. |intro007| image:: _static/intro-007.png
    :width: 800px
-.. |intro008| image:: media/intro-008.png
+.. |intro008| image:: _static/intro-008.png
    :width: 800px
-.. |intro009| image:: media/intro-009.png
+.. |intro009| image:: _static/intro-009.png
    :width: 800px
-.. |intro010| image:: media/intro-010.png
+.. |intro010| image:: _static/intro-010.png
    :width: 800px
-.. |labbgn| image:: media/labbgn.png
+.. |labbgn| image:: _static/labbgn.png
    :width: 800px

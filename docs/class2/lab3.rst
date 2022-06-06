@@ -324,87 +324,87 @@ It will also help you understand additional approaches for Service Policies.
 | |labend|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
-.. |lab001| image:: media/lab3-001.png
+.. |lab001| image:: _static/lab3-001.png
    :width: 800px
-.. |lab002| image:: media/lab3-002.png
+.. |lab002| image:: _static/lab3-002.png
    :width: 800px
-.. |lab003| image:: media/lab3-003.png
+.. |lab003| image:: _static/lab3-003.png
    :width: 800px
-.. |lab004| image:: media/lab3-004.png
+.. |lab004| image:: _static/lab3-004.png
    :width: 800px
-.. |lab005| image:: media/lab3-005.png
+.. |lab005| image:: _static/lab3-005.png
    :width: 800px
-.. |lab006| image:: media/lab3-006.png
+.. |lab006| image:: _static/lab3-006.png
    :width: 800px
-.. |lab007| image:: media/lab3-007.png
+.. |lab007| image:: _static/lab3-007.png
    :width: 800px
-.. |lab008| image:: media/lab3-008.png
+.. |lab008| image:: _static/lab3-008.png
    :width: 800px
-.. |lab009| image:: media/lab3-009.png
+.. |lab009| image:: _static/lab3-009.png
    :width: 800px
-.. |lab010| image:: media/lab3-010.png
+.. |lab010| image:: _static/lab3-010.png
    :width: 800px
-.. |lab011| image:: media/lab3-011.png
+.. |lab011| image:: _static/lab3-011.png
    :width: 800px
-.. |lab012| image:: media/lab3-012.png
+.. |lab012| image:: _static/lab3-012.png
    :width: 800px
-.. |lab013| image:: media/lab3-013.png
+.. |lab013| image:: _static/lab3-013.png
    :width: 800px
-.. |lab014| image:: media/lab3-014.png
+.. |lab014| image:: _static/lab3-014.png
    :width: 800px
-.. |lab015| image:: media/lab3-015.png
+.. |lab015| image:: _static/lab3-015.png
    :width: 800px
-.. |lab016| image:: media/lab3-016.png
+.. |lab016| image:: _static/lab3-016.png
    :width: 800px
-.. |lab017| image:: media/lab3-017.png
+.. |lab017| image:: _static/lab3-017.png
    :width: 800px
-.. |lab018| image:: media/lab3-018.png
+.. |lab018| image:: _static/lab3-018.png
    :width: 800px
-.. |lab019| image:: media/lab3-019.png
+.. |lab019| image:: _static/lab3-019.png
    :width: 800px
-.. |lab020| image:: media/lab3-020.png
+.. |lab020| image:: _static/lab3-020.png
    :width: 800px
-.. |lab021| image:: media/lab3-021.png
+.. |lab021| image:: _static/lab3-021.png
    :width: 800px
-.. |lab022| image:: media/lab3-022.png
+.. |lab022| image:: _static/lab3-022.png
    :width: 800px
-.. |lab023| image:: media/lab3-023.png
+.. |lab023| image:: _static/lab3-023.png
    :width: 800px
-.. |lab024| image:: media/lab3-024.png
+.. |lab024| image:: _static/lab3-024.png
    :width: 800px
-.. |lab025| image:: media/lab3-025.png
+.. |lab025| image:: _static/lab3-025.png
    :width: 800px
-.. |lab026| image:: media/lab3-026.png
+.. |lab026| image:: _static/lab3-026.png
    :width: 800px
-.. |lab027| image:: media/lab3-027.png
+.. |lab027| image:: _static/lab3-027.png
    :width: 800px
-.. |lab028| image:: media/lab3-028.png
+.. |lab028| image:: _static/lab3-028.png
    :width: 800px
-.. |lab029| image:: media/lab3-029.png
+.. |lab029| image:: _static/lab3-029.png
    :width: 800px
-.. |lab030| image:: media/lab3-030.png
+.. |lab030| image:: _static/lab3-030.png
    :width: 800px
-.. |lab031| image:: media/lab3-031.png
+.. |lab031| image:: _static/lab3-031.png
    :width: 800px
-.. |lab032| image:: media/lab3-032.png
+.. |lab032| image:: _static/lab3-032.png
    :width: 800px
-.. |lab033| image:: media/lab3-033.png
+.. |lab033| image:: _static/lab3-033.png
    :width: 800px
-.. |lab034| image:: media/lab3-034.png
+.. |lab034| image:: _static/lab3-034.png
    :width: 800px
-.. |lab035| image:: media/lab3-035.png
+.. |lab035| image:: _static/lab3-035.png
    :width: 800px
-.. |lab036| image:: media/lab3-036.png
+.. |lab036| image:: _static/lab3-036.png
    :width: 800px
-.. |lab037| image:: media/lab3-037.png
+.. |lab037| image:: _static/lab3-037.png
    :width: 800px
-.. |lab038| image:: media/lab3-038.png
+.. |lab038| image:: _static/lab3-038.png
    :width: 800px
-.. |lab039| image:: media/lab3-039.png
+.. |lab039| image:: _static/lab3-039.png
    :width: 800px
-.. |lab040| image:: media/lab3-040.png
+.. |lab040| image:: _static/lab3-040.png
    :width: 800px
-.. |lab041| image:: media/lab3-041.png
+.. |lab041| image:: _static/lab3-041.png
    :width: 800px
-.. |labend| image:: media/labend.png
+.. |labend| image:: _static/labend.png
    :width: 800px
