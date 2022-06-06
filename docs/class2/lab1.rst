@@ -6,10 +6,9 @@ Distributed Cloud Platform and Services. This lab will be deployed in a SaaS onl
 with no on-premises (public or private cloud) elements.  All configurations will be made via 
 the F5 Distributed Cloud Console and within the F5 Distributed Cloud Global Network services architecture.
 
-For the tasks that follow, you should have already noted your individual **namespace**. If you 
-failed to note it, return to the **Introduction** section of this lab, follow the instructions
-provided and note your **namespace** accordingly. The **Delegated Domain** and the F5 Distributed Cloud 
-**Tenant** are listed below for your convenience as they will be the same for all lab attendees.
+For the tasks that follow, you will be defaulted into your individual **namespace**. For some of the 
+configurations that follow - you will be using a **Delegated Domain** and a F5 Distributed Cloud 
+**Tenant**. Both are listed below for your convenience as they will be the same for all lab attendees.
 
 * **Delegated Domain:** *.lab-sec.f5demos.com* 
 * **F5 Distributed Cloud Tenant:** *https://f5-xc-lab-sec.console.ves.volterra.io* 
@@ -44,7 +43,7 @@ steps will define an application, register its DNS and assign a target as an ori
 +----------------------------------------------------------------------------------------------+
 | 3. Using the left-hand navigation and in the sections as shown, enter the following          |
 |                                                                                              |
-|    data. Values where **<namespace>** is required, use the name of your given namespace.     |
+|    data.  Values where **<namespace>** is required, use the name of your given namespace.    |
 |                                                                                              |
 |    * **Metadata:Name ID:**  *<namespace>-lb*                                                 |
 |    * **Basic Configuration: List of Domains:** *<namespace>.lab-sec.f5demos.com*             |
@@ -84,7 +83,7 @@ steps will define an application, register its DNS and assign a target as an ori
 |                                                                                              |
 | 8. For **DNS Name** enter the following hostname:                                            |
 |                                                                                              |
-|    **demo-app.amer.myedgedemo.com** and then click **Add Item**                               |
+|    **demo-app.amer.myedgedemo.com** and then click **Add Item**                              |
 +----------------------------------------------------------------------------------------------+
 | |lab007|                                                                                     |
 +----------------------------------------------------------------------------------------------+
@@ -115,7 +114,7 @@ steps will define an application, register its DNS and assign a target as an ori
 |                                                                                              |
 |    *Internet" setting means that this application will be advertised globally using the F5*  |
 |                                                                                              |
-|    *Distributed Cloud Global Network utilizing Anycast.*                                      |
+|    *Distributed Cloud Global Network utilizing Anycast.*                                     |
 +----------------------------------------------------------------------------------------------+
 | |lab011|                                                                                     |
 +----------------------------------------------------------------------------------------------+
