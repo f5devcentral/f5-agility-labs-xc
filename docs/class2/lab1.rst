@@ -519,7 +519,7 @@ Sample Blocking Response Page to be copied::
 +----------------------------------------------------------------------------------------------+
 | **End of Lab 1:**  This concludes Lab 1, feel free to review and test the configuration.     |
 |                                                                                              |
-| A bried presentation will be shared prior to the beginning of Lab 2.                         |
+| A brief presentation will be shared prior to the beginning of Lab 2.                         |
 +----------------------------------------------------------------------------------------------+
 | |labend|                                                                                     |
 +----------------------------------------------------------------------------------------------+

@@ -1,4 +1,4 @@
-F5 Volterra WAF 101
+F5 Distributed Cloud WAF 101
 ===================
 
 `Last updated: 2022-01-19 2:00 AM ET`
@@ -30,11 +30,11 @@ During the lab exercises we will explore different methods of protecting and exp
 that are included in the lab
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
+   :numbered:
    :caption: Contents:
-
-   lab1/index
-   lab2/index
-   lab3/index
-   lab4/index
-   lab5/index
+   :glob:
+   
+   intro*
+   lab*
+   close*
