@@ -158,61 +158,61 @@ steps will define an application, register its DNS and assign a target as an ori
  
  |labend|
 
-.. |lab001| image:: media/lab1-001.png
+.. |lab001| image:: _static/lab1-001.png
    :width: 800px
-.. |lab002| image:: media/lab1-002.png
+.. |lab002| image:: _static/lab1-002.png
    :width: 800px
-.. |lab003| image:: media/lab1-003.png
+.. |lab003| image:: _static/lab1-003.png
    :width: 800px
-.. |lab004| image:: media/lab1-004.png
+.. |lab004| image:: _static/lab1-004.png
    :width: 800px
-.. |lab005| image:: media/lab1-005.png
+.. |lab005| image:: _static/lab1-005.png
    :width: 800px
-.. |lab006| image:: media/lab1-006.png
+.. |lab006| image:: _static/lab1-006.png
    :width: 800px
-.. |lab007| image:: media/lab1-007.png
+.. |lab007| image:: _static/lab1-007.png
    :width: 800px
-.. |lab008| image:: media/lab1-008.png
+.. |lab008| image:: _static/lab1-008.png
    :width: 800px
-.. |lab009| image:: media/lab1-009.png
+.. |lab009| image:: _static/lab1-009.png
    :width: 800px
-.. |lab010| image:: media/lab1-010.png
+.. |lab010| image:: _static/lab1-010.png
    :width: 800px
-.. |lab011| image:: media/lab1-011.png
+.. |lab011| image:: _static/lab1-011.png
    :width: 800px
-.. |lab012| image:: media/lab1-012.png
+.. |lab012| image:: _static/lab1-012.png
    :width: 800px
-.. |lab013| image:: media/lab1-013.png
+.. |lab013| image:: _static/lab1-013.png
    :width: 800px
-.. |lab014| image:: media/lab1-014.png
+.. |lab014| image:: _static/lab1-014.png
    :width: 800px
-.. |lab015| image:: media/lab1-015.png
+.. |lab015| image:: _static/lab1-015.png
    :width: 800px
-.. |lab016| image:: media/lab1-016.png
+.. |lab016| image:: _static/lab1-016.png
    :width: 800px
-.. |lab017| image:: media/lab1-017.png
+.. |lab017| image:: _static/lab1-017.png
    :width: 800px
-.. |lab018| image:: media/lab1-018.png
+.. |lab018| image:: _static/lab1-018.png
    :width: 800px
-.. |lab019| image:: media/lab1-019.png
+.. |lab019| image:: _static/lab1-019.png
    :width: 800px
-.. |lab020| image:: media/lab1-020.png
+.. |lab020| image:: _static/lab1-020.png
    :width: 800px
-.. |lab021| image:: media/lab1-021.png
+.. |lab021| image:: _static/lab1-021.png
    :width: 800px
-.. |lab022| image:: media/lab1-022.png
+.. |lab022| image:: _static/lab1-022.png
    :width: 800px
-.. |lab023| image:: media/lab1-023.png
+.. |lab023| image:: _static/lab1-023.png
    :width: 800px
-.. |lab024| image:: media/lab1-024.png
+.. |lab024| image:: _static/lab1-024.png
    :width: 800px
-.. |lab025| image:: media/lab1-025.png
+.. |lab025| image:: _static/lab1-025.png
    :width: 800px
-.. |lab026| image:: media/lab1-026.png
+.. |lab026| image:: _static/lab1-026.png
    :width: 800px
-.. |lab027| image:: media/lab1-027.png
+.. |lab027| image:: _static/lab1-027.png
    :width: 800px
-.. |lab028| image:: media/lab1-028.png
+.. |lab028| image:: _static/lab1-028.png
    :width: 800px
-.. |labend| image:: media/labend.png
+.. |labend| image:: _static/labend.png
    :width: 800px

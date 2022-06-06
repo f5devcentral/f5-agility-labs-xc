@@ -5,10 +5,10 @@ On of the requirements from the "Narrative" is to enable the frontend applicatio
 in AWS to communicate with the backend application that is on-prem.
 
 The frontend application makes use of DNS to determine the IP address of the backend
-application.  In the on-prem environment the name "studentXX.example.internal" resolves to
+application.  In the on-prem environment the name "adjective-animal.example.internal" resolves to
 the backend IP of 10.1.20.5.
 
-In the AWS environment we want to resolve the name "studentXX.example.internal" to resolve to
+In the AWS environment we want to resolve the name "adjective-animal.example.internal" to resolve to
 the IP address of the Volterra Gateway (VG).  The VG will host a Virtual IP (VIP) that will
 host a TCP Load Balancer that will proxy traffic back to the original backend application.
 
@@ -33,12 +33,12 @@ You'll see that the private IP of the jumphost is returned.  The Distributed Clo
 internal DNS of your AWS site to resolve the IP of the private jumphost and made use of the 
 secure tunnel to the Distributed Cloud Regional Edge to expose the service.
 
-Next we will verify that we do not have a DNS record for studentXX.example.internal
+Next we will verify that we do not have a DNS record for adjective-animal.example.internal
 
 #. Refresh your browser window
 #. Click on DNS Lookup
 #. Verify that you see "10.0.5.xxx" after the "@"
-#. Enter "studentXX.example.internal" (replace studentXX with your student ID i.e. student01)
+#. Enter "adjective-animal.example.internal" (replace studentXX with your student ID i.e. poetic-quail)
 #. Click on Lookup
 
 You should receive an error.  You should look for "SERVFAIL" that indicates the name does not exist.
@@ -180,6 +180,8 @@ Using the "In Container Diagnostic Services"
 
 You should no longer get an error.
 
+    |dns_check|
+
 Exercise 5: Connect to the backend
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -189,14 +191,18 @@ resides in another remote network via the Distributed Cloud Global Network.
 Using the "In Container Diagnostic Services"
 
 #. Click on "Run Command"
-#. Enter "curl -sk https://studentXX.example.internal" (replace studentXX with your student ID i.e. student01)
+#. Enter "curl -sk https://adjective-animal.example.internal" (replace adjective-animal with your namespace i.e. poetic-quail)
 #. Click on Run Command
+
+    |check_host|
 
 You should see an output.  Now try repeating the same but using the IP address that you retrieved in Exercise 4.
 
 #. Click on "Run Command"
 #. Enter "curl -sk https://10.0.5.XX" (replace XX with the value your retrieved in Exercise 4)
 #. Click on Run Command
+
+    |check_ip|
 
 You should see an error.  This is because Distributed Cloud is expecting an SNI value.  This allows you to re-use
 the same IP address for multiple different services.
@@ -213,8 +219,11 @@ Thank you for completing the lab!
 
 .. |app-context| image:: ../images/app-context.png
 .. |tcp_lb_menu| image:: ../images/tcp_lb_menu.png
-.. |tcp_lb_config| image:: ../images/tcp_lb_config.png
+.. |tcp_lb_config| image:: ../images/m-basic-info-tcp.png
 .. |tcp_lb_advertise| image:: ../images/tcp_lb_advertise.png
 .. |origin_pools_menu| image:: ../images/origin_pools_menu.png
 .. |origin_pools_add| image:: ../images/origin_pools_add.png
 .. |origin_pools_config_mongodb| image:: ../images/origin_pools_config_mongodb.png
+.. |dns_check| image:: ../images/m-dns-check.png
+.. |check_host| image:: ../images/m-check-host.png
+.. |check_ip| image:: ../images/m-check-ip.png        
