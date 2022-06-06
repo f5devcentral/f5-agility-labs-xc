@@ -1,11 +1,11 @@
-Logging into VoltConsole
+Logging into the F5 Distributed Cloud Console
 ========================
 
-You should have received an email with an invitation to access VoltConsole.
+You should have received an email with an invitation to access the F5 Distributed Cloud Console.
 
-The name of the tenant that we will be using is ``f5-sales-public``
+The name of the tenant that we will be using is ``F5-xc-lab-sec`` at https://f5-xc-lab-sec.console.ves.volterra.io/
 
-Exercise #1: Login to VoltConsole
+Exercise #1: Login to the F5 Distributed Cloud Console
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 You will need to create a password that will be associated with your email address.
@@ -20,13 +20,13 @@ The following is a video that covers the steps involved.
   <iframe width="560" height="315" src="https://www.youtube.com/embed/AGV6z1-7NdU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
-**VoltConsole**
+**the F5 Distributed Cloud Console**
 
-VoltConsole is a SaaS control-plane for Volterra services that provides a UI and API for managing network, security, and compute services.
+the F5 Distributed Cloud Console (aka F5 xC) is a SaaS control-plane for xC services that provides a UI and API for managing network, security, and compute services.
 
-VoltConsole can manage "sites" in existing on-prem data centers and sites in AWS, Azure, and GCP cloud environments.
+the F5 Distributed Cloud Console can manage "sites" in existing on-prem data centers and sites in AWS, Azure, and GCP cloud environments.
 
-Using VoltConsole, an end-user can centrally manage a distributed application environment.
+Using the F5 Distributed Cloud Console, an end-user can centrally manage a distributed application environment.
 
 Terminology
 ~~~~~~~~~~~~~
@@ -37,20 +37,20 @@ Namespace
 Exercise 2: Select your Persona
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-#. Please log into your assigned Volterra tenant. https://f5-sales-public.console.ves.volterra.io/
+#. Please log into your assigned Distributed Cloud tenant. https://f5-sales-public.console.ves.volterra.io/
 
-    .. note:: The VoltConsole GUI has a relatively short timeout. This is not configurable. We have an enhancement request to allow this to be configured.
+    .. note:: The the F5 Distributed Cloud Console GUI has a relatively short timeout. This is not configurable. We have an enhancement request to allow this to be configured.
 
 #. When you first login you will need to select your "persona"
 
    Enter your persona as "SecOps" and level as "Intermediate".  You can change these settings after logging in as well.
 
-   Your persona will highlight workflows within Volterra.  You will be able to access all services, but making use of
+   Your persona will highlight workflows within Distributed Cloud.  You will be able to access all services, but making use of
    personas can focus your view on particular tasks that are relevant to your role.
 
 #. Several tooltips will appear.  You can close these out.
 
-Exercise 3: Identity your Namespace
+Exercise 3: Identify your Namespace
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 #. Click on "Account Settings" by expanding the "Account" icon in the top right of the screen and 
