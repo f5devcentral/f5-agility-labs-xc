@@ -1,0 +1,97 @@
+apiVersion: v1
+items:
+- apiVersion: apps/v1
+  kind: Deployment
+  metadata:
+    annotations:
+      ves.io/virtual-sites: shared/agility-k8s-vsite
+      ves.io/workload-flavor-agility: tiny
+    creationTimestamp: "2022-06-05T11:14:09Z"
+    generation: 2
+    name: agility
+    namespace: s-iannetta
+    resourceVersion: "1960719568"
+    uid: 24acfaf2-5b37-462b-aaad-aeaa4e22cace
+  spec:
+    progressDeadlineSeconds: 600
+    replicas: 3
+    revisionHistoryLimit: 10
+    selector:
+      matchLabels:
+        ves.io/workload: agility
+    strategy:
+      rollingUpdate:
+        maxSurge: 25%
+        maxUnavailable: 25%
+      type: RollingUpdate
+    template:
+      metadata:
+        creationTimestamp: null
+        labels:
+          ves.io/workload: agility
+      spec:
+        containers:
+        - image: coleman.azurecr.io/f5xcdemoapp
+          imagePullPolicy: Always
+          name: agility
+          resources: {}
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+        dnsPolicy: ClusterFirst
+        imagePullSecrets:
+        - name: agility-azure-registry
+        restartPolicy: Always
+        schedulerName: default-scheduler
+        securityContext: {}
+        terminationGracePeriodSeconds: 30
+  status:
+    availableReplicas: 9
+    collisionCount: 0
+    conditions:
+    - lastTransitionTime: "2022-06-05T11:14:09Z"
+      lastUpdateTime: "2022-06-05T11:14:14Z"
+      message: agility-vpc-site-three:ReplicaSet "agility-848cf4cc7c" has successfully
+        progressed.
+      reason: NewReplicaSetAvailable
+      status: "True"
+      type: Progressing
+    - lastTransitionTime: "2022-06-05T11:40:16Z"
+      lastUpdateTime: "2022-06-05T11:40:16Z"
+      message: agility-vpc-site-three:Deployment has minimum availability.
+      reason: MinimumReplicasAvailable
+      status: "True"
+      type: Available
+    - lastTransitionTime: "2022-06-05T11:14:09Z"
+      lastUpdateTime: "2022-06-05T11:14:14Z"
+      message: agility-vpc-site-two:ReplicaSet "agility-596bbc49d" has successfully
+        progressed.
+      reason: NewReplicaSetAvailable
+      status: "True"
+      type: Progressing
+    - lastTransitionTime: "2022-06-05T11:40:15Z"
+      lastUpdateTime: "2022-06-05T11:40:15Z"
+      message: agility-vpc-site-two:Deployment has minimum availability.
+      reason: MinimumReplicasAvailable
+      status: "True"
+      type: Available
+    - lastTransitionTime: "2022-06-05T11:14:09Z"
+      lastUpdateTime: "2022-06-05T11:14:13Z"
+      message: agility-vpc-site-one:ReplicaSet "agility-5b8d58d6b6" has successfully
+        progressed.
+      reason: NewReplicaSetAvailable
+      status: "True"
+      type: Progressing
+    - lastTransitionTime: "2022-06-05T11:40:14Z"
+      lastUpdateTime: "2022-06-05T11:40:14Z"
+      message: agility-vpc-site-one:Deployment has minimum availability.
+      reason: MinimumReplicasAvailable
+      status: "True"
+      type: Available
+    observedGeneration: 2
+    readyReplicas: 9
+    replicas: 9
+    updatedReplicas: 9
+kind: List
+metadata:
+  resourceVersion: ""
+  selfLink: ""
