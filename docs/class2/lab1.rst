@@ -84,7 +84,7 @@ steps will define an application, register its DNS and assign a target as an ori
 |                                                                                              |
 | 8. For **DNS Name** enter the following hostname:                                            |
 |                                                                                              |
-|    **demo-app.cloud.myf5demo.com** and then click **Add Item**                               |
+|    **demo-app.amer.myedgedemo.com** and then click **Add Item**                               |
 +----------------------------------------------------------------------------------------------+
 | |lab007|                                                                                     |
 +----------------------------------------------------------------------------------------------+
