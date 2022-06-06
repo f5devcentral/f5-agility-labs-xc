@@ -94,20 +94,6 @@ After following the invitation email's to **Update Password**, proceed to the fi
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 8. Using the **Select Service** menu top left select **DNS Management**.                     |
-|                                                                                              |
-|    clicking on the **Account** icon in the top right of the screen and then clicking on      |
-|                                                                                              |
-| 9. Note the **Delegated Domain** for this lab environment. It has been also listed above in  |
-|                                                                                              |
-|    the Introduction summary for your convenience.                                            |
-+----------------------------------------------------------------------------------------------+
-| |intro009|                                                                                   |
-|                                                                                              |
-| |intro010|                                                                                   |
-+----------------------------------------------------------------------------------------------+
-
-+----------------------------------------------------------------------------------------------+
 | **Beginning of Lab:**  You are now ready to begin the lab, Enjoy! Ask questions as needed.   |
 +----------------------------------------------------------------------------------------------+
 | |labbgn|                                                                                     |
