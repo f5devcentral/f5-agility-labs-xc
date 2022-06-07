@@ -1,7 +1,7 @@
 F5 Distributed Cloud WAF 101
-===================
+============================
 
-`Last updated: 2022-06-06 6:30 PM ET
+`Last updated: 2022-06-06 10:40 PM ET
 
 F5 Distributed Cloud's SaaS Web Application Firewall (WAF) can help you mitigate application threats 
 with an updated WAF engine that inherits the shared  capabilities of F5 BIG-IP Advanced WAF, 
@@ -17,14 +17,11 @@ and NGINX App Protect. During this hands-on lab you will learn about the fol
 Lab Requirements
 ~~~~~~~~~~~~~~~
 
-During this lab you will be using the F5 Distributed Cloud `f5-sales-public` tenant (the first lab exercise will 
-cover how to access this environment).
-
-The lab will also be using a shared AWS account where we have deployed the following resources.
+The next page (Introduction) will cover the lab environment, access, and lab variables. The lab will be using a shared AWS account where we have deployed the following resources:
 
 - NGINX webserver that is exposed to the Public internet ("Public Endpoint")
 - F5 AppMesh node that can be used to connect to AWS VPC (network)
-- NGINX webserver that only has a private IP address 
+- NGINX webserver that only has a private IP address with no external access
 
 During the lab exercises we will explore different methods of protecting and exposing applications/webserver
 that are included in the lab

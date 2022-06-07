@@ -5,8 +5,8 @@ During this lab you will be introduced to creating a WAF policy in F5 Distribute
 and using that policy to protect your lab resource that is a "Public Endpoint"
 in AWS (webserver with an EIP).
 
-Activity 1. Create WAF Policy
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Task 1. Create WAF Policy
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 F5 Distributed Cloud WAF shares the same WAF engine that is used by F5 BIG-IP WAF and F5 NGINX App Protect.
 
@@ -17,7 +17,7 @@ false positives by excluding individual rules, IP addresses, or web application 
 In the next exercise you will configure a basic WAF policy 
 
 Exercise 1: Create WAF Policy
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 We will create a blocking WAF policy.
 
@@ -61,8 +61,8 @@ The entire video is 10 minutes total from start to finish.
 .. |app-context| image:: ../_static/app-context.png
     :width: 75%
 
-Activity 2. Create Origin Pools
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Task 2. Create Origin Pools
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Before we create an HTTP load balancer to expose our services on the internet, 
 we'll define "Origin Pools" for our application's services.
@@ -73,10 +73,10 @@ the Public Internet to route traffic to our services.  In later examples we will
 look at routing traffic via AppMesh to our services.
 
 Exercise 1: Create Public Origin Pool
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 We will first create an Origin Pool that refers to the "Public Endpoint" site in our lab environment.
 
-#. Start in F5 Distributed Cloud Console and switch to the "Web App & API Protection" context. [You should already be here from previous activity]
+#. Start in F5 Distributed Cloud Console and switch to the "Web App & API Protection" context. [You should already be here from previous task]
 
 #. Navigate the menu to go to "Manage"->"Load Balancers"->"Origin Pools". Click on *Add Origin Pool*.
 
@@ -136,24 +136,7 @@ We will first create an Origin Pool that refers to the "Public Endpoint" site in
 #. Click *Continue* to return to the "Origin Pool" configuration.
 #. Click the *Save and Exit* button to create the Origin Pool.
 
-.. |app-context| image:: ../_static/app-context.png
-.. |origin_pools_menu| image:: ../_static/origin_pools_menu.png
-.. |origin_pools_add| image:: ../_static/origin_pools_add.png
-.. |origin_pools_config| image:: ../_static/origin_pools_config.png
-.. |origin_pools_config_api| image:: ../_static/origin_pools_config_api.png
-.. |origin_pools_config_mongodb| image:: ../_static/origin_pools_config_mongodb.png
-.. |origin_pools_show_child_objects| image:: ../_static/origin_pools_show_child_objects.png
-.. |origin_pools_show_child_objects_status| image:: ../_static/origin_pools_show_child_objects_status.png
-.. |http_lb_origin_pool_health_check| image:: ../_static/http_lb_origin_pool_health_check.png
-.. |http_lb_origin_pool_health_check2| image:: ../_static/http_lb_origin_pool_health_check2.png
-
-.. |op-add-pool| image:: ../_static/op-add-pool.png
-.. |op-api-pool| image:: ../_static/op-api-pool.png
-.. |op-pool-basic| image:: ../_static/op-pool-basic.png
-.. |op-spa-check| image:: ../_static/op-spa-check.png
-.. |op-tshoot| image:: ../_static/op-tshoot.png
-
-Activity 3. Creating HTTP Load Balancer on F5 Distributed Cloud Regional Edge
+Task 3. Creating HTTP Load Balancer on F5 Distributed Cloud Regional Edge
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In this exercise we will be creating a "Global VIP" that will exist on the F5 Distributed Cloud Global Network.
@@ -165,7 +148,7 @@ It will protect a public resource that exists in the lab's AWS Lab Environment.
 Exercise 1: HTTP Load Balancer Configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-#. Start in F5 Distributed Cloud Console and switch to the "Web App & API Protection" context. [You should already be here from previous activity]
+#. Start in F5 Distributed Cloud Console and switch to the "Web App & API Protection" context. [You should already be here from previous task]
 
 #. Navigate the menu to go to "Manage"->"Load Balancers" -> "HTTP Load Balancers" and click on "Add HTTP Load Balancer".
 
@@ -283,7 +266,20 @@ Optional Video you can watch if you get stuck
    
    <iframe width="560" height="315" src="https://www.youtube.com/embed/s-BHH0Qayfc?start=108" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-.. |app-context| image:: ../_static/app-context.png
 .. |lb-basic| image:: ../_static/lb-basic.png
+.. |app-context| image:: ../_static/app-context.png
+.. |origin_pools_menu| image:: ../_static/origin_pools_menu.png
+.. |origin_pools_add| image:: ../_static/origin_pools_add.png
+.. |origin_pools_config| image:: ../_static/origin_pools_config.png
+.. |origin_pools_config_api| image:: ../_static/origin_pools_config_api.png
+.. |origin_pools_config_mongodb| image:: ../_static/origin_pools_config_mongodb.png
+.. |origin_pools_show_child_objects| image:: ../_static/origin_pools_show_child_objects.png
+.. |origin_pools_show_child_objects_status| image:: ../_static/origin_pools_show_child_objects_status.png
+.. |http_lb_origin_pool_health_check| image:: ../_static/http_lb_origin_pool_health_check.png
+.. |http_lb_origin_pool_health_check2| image:: ../_static/http_lb_origin_pool_health_check2.png
 
-
+.. |op-add-pool| image:: ../_static/op-add-pool.png
+.. |op-api-pool| image:: ../_static/op-api-pool.png
+.. |op-pool-basic| image:: ../_static/op-pool-basic.png
+.. |op-spa-check| image:: ../_static/op-spa-check.png
+.. |op-tshoot| image:: ../_static/op-tshoot.png

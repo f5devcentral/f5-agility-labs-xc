@@ -6,7 +6,7 @@ In the previous lab you learned how an AppMesh node can be deployed
 In this next lab we will look at two additional topologies of how you can use an "AppMesh" node
 to secure traffic that is going to an endpoint that is not directly exposed to the Internet.
 
-Activity 1. Create Origin Pools
+Task 1. Create Origin Pools
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Previously we created an origin pool that was accessible via the Public Internet.
@@ -77,7 +77,7 @@ We will first create an Origin Pool that refers to the "Private Endpoint" site i
 .. |op-spa-check| image:: ../_static/op-spa-check.png
 .. |op-tshoot| image:: ../_static/op-tshoot.png
 
-Activity 2. Update HTTP Load Balancer on F5 Distributed Cloud Regional Edge
+Task 2. Update HTTP Load Balancer on F5 Distributed Cloud Regional Edge
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 We will now update the HTTP load balancer that we previously created to connect to
@@ -131,7 +131,7 @@ on the AppMesh node (in the Customer Edge).
    <iframe width="560" height="315" src="https://www.youtube.com/embed/s-BHH0Qayfc?start=366" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
-Activity 3. Creating HTTP Load Balancer on F5 Distributed Cloud Customer Edge
+Task 3. Creating HTTP Load Balancer on F5 Distributed Cloud Customer Edge
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In the previous lab exercises we were connecting to a F5 Distributed Cloud Load Balancer that was deployed in a Regional Edge.

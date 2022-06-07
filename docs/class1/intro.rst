@@ -13,7 +13,7 @@ Distributed Cloud Console can manage "sites" in existing on-premises data center
 AWS, Azure, and GCP cloud environments.
 
 Task 1: Lab Environment
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
 
 +----------------------------------------------------------------------------------------------+
 | The image below represents an overview of the lab environment. F5 Distributed Cloud Services |
