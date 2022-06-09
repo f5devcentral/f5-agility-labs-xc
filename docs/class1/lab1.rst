@@ -158,7 +158,7 @@ Exercise 1: HTTP Load Balancer Configuration
     Variable                          Value
     ================================= =====
     Name                              global
-    Domains                           [STUDENTNAME].sales-public.f5demos.com
+    Dermains                           [NAMESPACE].lab-sec.f5demos.com
     Select type of Load Balancer      HTTP
     Automatically Manage DNS Records  Yes/Check 
     ================================= =====
@@ -177,7 +177,7 @@ We'll next configure the "Default Origin Servers".
  
 #. Click the *Add Item* button to exit the "Origin Pools" dialogue.
 
-#. Notice that in the "VIP Configuration" section *Advertise On Internet* has been selected by default.
+#. Notice that in the "Advanced Configuration" section *Advertise On Internet* has been selected by default.
 
 Exercise 3: Configure WAF Policy
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

@@ -98,7 +98,7 @@ Exercise 1: HTTP Load Balancer Configuration
 #. Click on "Edit Configuration" in the upper right of the screen (after your *global* Load Balancer is loaded).
    
    .. image:: ../_static/screenshot-global-vip-edit-config.png
-#. Under "Default Origin Servers" find you previous "public" Origin pool and click on the three dots "..." to the right under "Actions"
+#. Under "Default Origin Servers" find your previous "public" Origin pool and click on the three dots "..." to the right under "Actions" and select "Edit"
    
    .. image:: ../_static/screenshot-global-vip-edit-config-pools.png
 #. Change the selection of "Origin Pool" to "private" from "public" and click "Apply"

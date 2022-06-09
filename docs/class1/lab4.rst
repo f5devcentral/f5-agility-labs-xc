@@ -1,6 +1,8 @@
-Lab 4: Fine Tuning a WAF Policy
+(Optional) Lab 4: Fine Tuning a WAF Policy
 ===============================
 
+This lab is also covered in the xC WAF 102 course.
+ 
 In this next lab we will learn how to customize a WAF policy.
 
 We will go through the actions of disabling specific WAF rules that 
