@@ -13,10 +13,10 @@ import f5_sphinx_theme
 # ------------
 #
 # REQUIRED: Your class/lab name
-classname = "F5 Agility Template"
+classname = "F5 Distributed Cloud"
 
 # OPTIONAL: The URL to the GitHub Repository for this class
-github_repo = "https://github.com/f5devcentral/f5-agility-labs-template"
+github_repo = "https://github.com/f5devcentral/f5-agility-labs-xc"
 
 #
 # END CONFIG
@@ -124,20 +124,24 @@ if found:
     spelling_ignore_importable_modules = True
     spelling_filters = []
 
+source_parsers = {
+    ".md": "recommonmark.parser.CommonMarkParser",
+}
+
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ["_templates"]
 
 # The suffix(es) of source filenames.
 # You can specify multiple suffix as a list of string:
 #
-source_suffix = [".rst"]
+source_suffix = [".rst", ".md"]
 
 # The master toctree document.
 master_doc = "index"
 
 # General information about the project.
 project = classname
-copyright = "2019, F5 Networks, Inc."
+copyright = "2022, F5 Networks, Inc."
 author = "F5 Networks, Inc."
 
 # The version info for the project you're documenting, acts as replacement for
@@ -179,14 +183,11 @@ html_theme_path = f5_sphinx_theme.get_html_theme_path()
 html_sidebars = {"**": ["searchbox.html", "localtoc.html", "globaltoc.html"]}
 html_theme_options = {
     "site_name": "Community Training Classes & Labs",
-    "next_prev_link": True,
-    "version_selector": True,
+    "next_prev_link": True
 }
 
-html_context = {
-    "version_meta_path": "/training/community/template/versions.json",
-    "project_safe": re.sub("[^A-Za-z0-9]+", "", project),
-}
+html_context = {"github_url": github_repo}
+
 html_last_updated_fmt = "%Y-%m-%d %H:%M:%S"
 
 extlinks = {"issues": (("%s/issues/%%s" % github_repo), "issue ")}
