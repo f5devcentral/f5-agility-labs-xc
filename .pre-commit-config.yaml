@@ -2,7 +2,7 @@
 # See https://pre-commit.com/hooks.html for more hooks
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.2.0
+    rev: v4.3.0
     hooks:
       - id: check-yaml
         args: [--allow-multiple-documents]
@@ -24,9 +24,9 @@ repos:
         description: enforcing style consistency across Python projects
         entry: flake8 --max-line-length 128 --max-doc-length 256 --ignore E501
   - repo: https://github.com/pycqa/doc8
-    rev: 0.11.1
+    rev: 0.11.2
     hooks:
       - id: doc8
         description: linting for rst files
-        entry: doc8 --ignore-path docs/_build/ -e rst docs/
+        entry: doc8 --ignore D001,D004 --ignore-path docs/_build/ -e rst docs/
         require_serial: true
