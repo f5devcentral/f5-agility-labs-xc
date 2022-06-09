@@ -98,9 +98,9 @@ In this task you will add geo-filter and allowed-ip based service policies.
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 13. Enter your IP address captured in Step 9 above with mask notation as shown then click    |
+| 13. Enter your IP address captured in Step 9 above with mask notation (//32)as shown then    |
 |                                                                                              |
-|     the **Apply** button.                                                                    |
+|     click the **Apply** button.                                                              |
 +----------------------------------------------------------------------------------------------+
 | |lab012|                                                                                     |
 +----------------------------------------------------------------------------------------------+
@@ -156,17 +156,17 @@ It will also help you understand additional approaches for Service Policies.
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 6. In the resulting window, use the **List of Policies** dropdown to select your             |
+| 6. In the resulting **Policies** window, use the **List of Policies** dropdown to select     |
 |                                                                                              |
-|    **<namespace>/geo-filter** Service Policy.                                                |
+|    your **<namespace>/geo-filter** Service Policy. Then click **Apply**.                     |
 +----------------------------------------------------------------------------------------------+
 | |lab022|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 7. In the resulting window, back at the Load Balancer, you will note the changes shown in    |
+| 7. Returning to the Load Balancer window, you will note the changes shown in your            |
 |                                                                                              |
-|    your **Service Policies** section.                                                        |
+|    **Service Policies** section.                                                             |
 |                                                                                              |
 | 8. As we are already in this section, we will go ahead and add IP reputation filtering. This |
 |                                                                                              |
@@ -265,7 +265,7 @@ It will also help you understand additional approaches for Service Policies.
 |                                                                                              |
 |     **http://<namespace>.lab-sec.f5demos.com**. You should now be able to successfully       |
 |                                                                                              |
-|     navigate the application.                                                                |
+|     access the application.                                                                  |
 +----------------------------------------------------------------------------------------------+
 | |lab035|                                                                                     |
 +----------------------------------------------------------------------------------------------+
@@ -319,7 +319,7 @@ It will also help you understand additional approaches for Service Policies.
 +----------------------------------------------------------------------------------------------+
 | **End of Lab 3:**  This concludes Lab 3, feel free to review and test the configuration.     |
 |                                                                                              |
-| A Q&A session will begin shorlty to conclude the overall lab.                                |
+| A Q&A session will begin shortly to conclude the overall lab.                                |
 +----------------------------------------------------------------------------------------------+
 | |labend|                                                                                     |
 +----------------------------------------------------------------------------------------------+

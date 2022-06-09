@@ -1,5 +1,5 @@
-F5 Distributed Cloud Lab 102 - WAF/WAAP Deeper Dive
-===================================================
+F5 Distributed Cloud Lab 103 - Advanced BoT Strategies
+======================================================
 
 Welcome
 -------
@@ -20,7 +20,7 @@ Lab Requirements:
 
 -  All Lab requirements will be noted in the tasks that follow
 
--  Estimated completion time: 2 Labs approximately 20-30 minutes each
+-  Estimated completion time: 3 Labs of varying lengths
 
 
 .. toctree::
