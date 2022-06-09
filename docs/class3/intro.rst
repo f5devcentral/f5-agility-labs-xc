@@ -3,24 +3,25 @@ Introduction: Accessing F5 Distributed Cloud Console
 
 Welcome to this F5 Distributed Cloud Lab. The following tasks will guide you through the initial 
 access requirements for this multi-part lab.  Lab attendees should have received an invitation 
-email to the lab environment based on the submitted registration email.  Please check email and
-spam folders if it has not been received.  If you have not received an email, please contact a 
-member of the lab team.
+(which requests you update your password for access) email to the lab environment. Please check 
+the email address used for course registration and its associated spam folders to see if the
+invitation email has been received.  If you have not received an email, please contact a member
+of the lab team.
  
-F5 Distributed Cloud Console where this lab will be conducted, is a SaaS control-plane for 
-services that provides a UI and API for managing network, security, and compute services. The F5
-Distributed Cloud Console can manage "sites" in existing on-premises data centers and sites in
-AWS, Azure, and GCP cloud environments.
+The F5 Distributed Cloud Console, where a majority of all lab tasks will be conducted, is a SaaS
+based control-plane for services which provides a GUI and API for managing network, security, and
+compute services. The F5 Distributed Cloud Console can manage "sites" in existing on-premises,
+private data centers and sites within AWS, Azure, and GCP public cloud environments.
 
 Task 1: Lab Environment
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
 
 +----------------------------------------------------------------------------------------------+
 | The image below represents an overview of the lab environment. F5 Distributed Cloud Services |
 |                                                                                              |
 | will be configured as a SaaS Edge delivery and security service tier to a publicly hosted web|
 |                                                                                              |
-| application. Key elements lab attendees will interact with are as follows:                   |
+| application. The key elements lab attendees will interact with are as follows:               |
 |                                                                                              |
 | * **F5 Distributed Cloud Console**                                                           |
 | * **F5 Distributed Cloud Global Network / Application Delivery Network (ADN)**               |
@@ -32,37 +33,38 @@ Task 1: Lab Environment
 Task 2: F5 Distributed Cloud Console Login
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The following will guide you through the initial Lab environment access within the 
-F5 Distributed Cloud Console.  You should have received an email with an invitation to 
-access a F5 Distributed Cloud Tenant. The email will come from **no-reply@volterramails.io**.
+The following will guide you through the initial Lab environment access within the F5 Distributed
+Cloud Console.  You should have received an email with an invitation to access a F5 Distributed
+Cloud Tenant. The email will come from **no-reply@volterramails.io**.
 
-The name of the F5 Distributed Cloud tenant that we will be using is **f5-xc-lab-sec**
-Additionally, the following are important elements of this lab and will be used throughout the 
-lab tasks that follow.
+The name of the F5 Distributed Cloud tenant that we will be using for this lab is **f5-xc-lab-sec**
+Additionally, the following are key configuration elements for this lab and will be used
+throughout the lab tasks that follow.
 
-* F5 Distributed Cloud Console: **https://f5-xc-lab-sec.console.ves.volterra.io/**
+* F5 Distributed Cloud Console: https://f5-xc-lab-sec.console.ves.volterra.io/
 * Delegated Domain: **lab-sec.f5demos.com**
 
-After following the invitation email's to **Update Password**, proceed to the first step below. 
+After following the invitation email's instructions to **Update Password**, proceed to the first
+step below to access the F5 Distributed Cloud Lab Tenant. 
 
 +----------------------------------------------------------------------------------------------+
-| 1. Please log into F5 Distributed Cloud Lab Tenant with your user ID (email) and password.   |
+| 1. Please log into the F5 Distributed Cloud Lab Tenant with your user ID (email) & password. |
 |                                                                                              |
-|    **https://f5-xc-lab-sec.console.ves.volterra.io/**                                        |
+|    https://f5-xc-lab-sec.console.ves.volterra.io/                                            |
 |                                                                                              |
-| 2. When you first login, accept the Lab tenant EULA. Click the check box and the click       |
+| 2. When you first login, accept the Lab tenant EULA. Click the check box and then click      |
 |                                                                                              |
 |    **Accept and Agree**.                                                                     |
 |                                                                                              |
-| 3. Select all persona roles and click **Next** to see all the various configuration options. |
+| 3. Select all work domain roles and click **Next** to see various configuration options.     |
 |                                                                                              |
-|    Personas can be changed anytime if desired.                                               |
+|    Roles can be changed any time later if desired.                                           |
 |                                                                                              |
-| 4. Click **Advanced** to expose more menu options and the **Get Started** to begin. You can  |
+| 4. Click the **Advanced** skill level to expose more menu options and then click **Get**     |
 |                                                                                              |
-|    change this setting after logging in as well.                                             |
+|    **Started** to begin. You can change this setting after logging in as well.               |
 |                                                                                              |
-| 5. Several **Guidance ToolTips** will appear, you can safely close these out.                |
+| 5. Several **Guidance ToolTips** will appear, you can safely close these as they appear.     |
 +----------------------------------------------------------------------------------------------+
 | |intro002|                                                                                   |
 |                                                                                              |
@@ -74,37 +76,57 @@ After following the invitation email's to **Update Password**, proceed to the fi
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 6. You can identify your namespace (an environment for isolating configured applications) by |
+| 6. You can adjust your work domains and skill level (not required) by clicking on the        |
 |                                                                                              |
-|    clicking on the **Account** icon in the top right of the screen and then clicking on      |
+|    **Account** icon in the top right of the screen and then clicking on **Account Settings**.|
 |                                                                                              |
-|    **Account Settings**.                                                                     |
+| 7. In the resulting window you can observe the **Work domains and skill level** section and  |
 |                                                                                              |
-| 7. Next click on **My Namespaces** in the left-hand navigation and take note of the          |
+|    other administrative functions.                                                           |
 |                                                                                              |
-|    **<adjective-animal>** namespace that you have been assigned. Each lab attendee will have |
+| .. note::                                                                                    |
+|    *For the purposes of this lab, permissions have been restricted to lab operations.  As a* |
 |                                                                                              |
-|    a unique namespace.                                                                       |
+|    *some menus will be locked and not visible.*                                              |
 +----------------------------------------------------------------------------------------------+
 | |intro006|                                                                                   |
 |                                                                                              |
 | |intro007|                                                                                   |
-|                                                                                              |
-| |intro008|                                                                                   |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 8. Using the **Select Service** menu top left select **DNS Management**.                     |
+| 8. Namespaces, which provide an environment for isolating configured applications or         |
 |                                                                                              |
-|    clicking on the **Account** icon in the top right of the screen and then clicking on      |
+|    enforcing role-based access controls, are leveraged within the F5 Distributed Cloud       |
 |                                                                                              |
-| 9. Note the **Delegated Domain** for this lab environment. It has been also listed above in  |
+|    Console.  For the purposes of this lab, each lab attendee has been provided a unique      |
 |                                                                                              |
-|    the Introduction summary for your convenience.                                            |
+|    **namespace** which you will defaulted to (in terms of GUI navigation) for all tasks      |
+|                                                                                              |
+|    performed through the course of this lab.                                                 |
+|                                                                                              |
+| 9. Click on the **Select Service** in the left-hand navigation. In the resulting fly out     |
+|                                                                                              |
+|    navigation, click **Load Balancers**.                                                     |
+|                                                                                              |
+| 10. In the **Load Balancers** configuration screen observe the URL. In the URI path, locate  |
+|                                                                                              |
+|    the **<adjective-animal>** namespace that you have been assigned. It will be located in   |
+|                                                                                              |
+|    the portion of the URI path between */namespaces/* and */sites/* as shown in this         |
+|                                                                                              |
+|    example **…/namespaces/<namespace>/sites/…**. Note the namespace as it will be used       |
+|                                                                                              |
+|    throughout the lab tasks that follow.                                                     |
+|                                                                                              |
+| .. note::                                                                                    |
+|    *Administratively, there are other ways to find namespaces. Due to access and permission* |
+|                                                                                              |
+|    *restrictions for this particular lab, those menus are not available.*                    |
 +----------------------------------------------------------------------------------------------+
-| |intro009|                                                                                   |
+| |intro008|                                                                                   |
 |                                                                                              |
-| |intro010|                                                                                   |
+| |intro009|                                                                                   |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
@@ -130,8 +152,6 @@ After following the invitation email's to **Update Password**, proceed to the fi
 .. |intro008| image:: _static/intro-008.png
    :width: 800px
 .. |intro009| image:: _static/intro-009.png
-   :width: 800px
-.. |intro010| image:: _static/intro-010.png
    :width: 800px
 .. |labbgn| image:: _static/labbgn.png
    :width: 800px

@@ -6,29 +6,38 @@ Distributed Cloud Platform and Services. This lab will be deployed in a SaaS onl
 with no on-premises (public or private cloud) elements.  All configurations will be made via 
 the F5 Distributed Cloud Console and within the F5 Distributed Cloud Global Network services architecture.
 
-For the tasks that follow, you will be defaulted into your individual **namespace**. For some of the 
-configurations that follow - you will be using a **Delegated Domain** and a F5 Distributed Cloud 
-**Tenant**. Both are listed below for your convenience as they will be the same for all lab attendees.
+For the tasks that follow, you should have already noted your individual **namespace**. If you 
+failed to note it, return to the **Introduction** section of this lab, follow the instructions
+provided and note your **namespace** accordingly. The **Delegated Domain** and the F5 Distributed Cloud 
+**Tenant** are listed below for your convenience as they will be the same for all lab attendees.
 
 * **Delegated Domain:** *.lab-sec.f5demos.com* 
-* **F5 Distributed Cloud Tenant:** *https://f5-xc-lab-sec.console.ves.volterra.io* 
+* **F5 Distributed Cloud Tenant:** https://f5-xc-lab-sec.console.ves.volterra.io 
 
 Following the tasks in the prior **Introduction** Section, you should now be able to access the
-F5 Distributed Cloud Console, having set your Persona and View levels. If you have not done so 
-already, please login to your tenant for this lab and proceed to Task 1.
+F5 Distributed Cloud Console, having set your Work Domain Roles and Skill levels. If you have not
+done so already, please login to your tenant for this lab and proceed to Task 1.
 
-Task 1: Configure Load Balancer, Origin Pool and Advertisement
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Task 1: Configure Load Balancer and Origin Pool
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The following steps will allow you to deploy and advertise a globally available application.  These
 steps will define an application, register its DNS and assign a target as an origin.
 
 +----------------------------------------------------------------------------------------------+
-| 1. In the left-hand navigation expand **Manage** and click **Load Balancers > HTTP Load**    |
+| 1. Following the **Introduction** section  instructions, you should now be in the **Load**   |
+|                                                                                              |
+|    **Balancers** configuration window. If for some reason you are not in the **Load**        |
+|                                                                                              |
+|    **Balancers** window, use the **Select Service** in the left-hand navigation, and click   |
+|                                                                                              |
+|    **Load Balancers** as shown in the *Introduction section, Task 2, Step 9*.                |
+|                                                                                              |
+| 2. In the left-hand navigation expand **Manage** and click **Load Balancers > HTTP Load**    |
 |                                                                                              |
 |    **Balancers**                                                                             |
 |                                                                                              |
-| 2. In the resulting screen click the **Add HTTP Load Balancer** in the graphic as shown.     |
+| 3. In the resulting screen click the **Add HTTP Load Balancer** in the graphic as shown.     |
 |                                                                                              |
 | .. note::                                                                                    |
 |    *You have defaulted to your specific namespace as that is the only namespace to which you*|
@@ -41,9 +50,9 @@ steps will define an application, register its DNS and assign a target as an ori
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 3. Using the left-hand navigation and in the sections as shown, enter the following          |
+| 4. Using the left-hand navigation and in the sections as shown, enter the following          |
 |                                                                                              |
-|    data.  Values where **<namespace>** is required, use the name of your given namespace.    |
+|    data. Values where **<namespace>** is required, use the name of your given namespace.     |
 |                                                                                              |
 |    * **Metadata:Name ID:**  *<namespace>-lb*                                                 |
 |    * **Basic Configuration: List of Domains:** *<namespace>.lab-sec.f5demos.com*             |
@@ -55,7 +64,7 @@ steps will define an application, register its DNS and assign a target as an ori
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 4. In the current window's left-hand navigation, click **Default Origin Servers**. Next,     |
+| 5. In the current window's left-hand navigation, click **Default Origin Servers**. Next,     |
 |                                                                                              |
 |    click **Add Item** within the **Origin Pools** section of **Default Origin Servers**.     |
 +----------------------------------------------------------------------------------------------+
@@ -63,13 +72,13 @@ steps will define an application, register its DNS and assign a target as an ori
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 5. In the resulting window, use the drop down as shown and click **Create new Origin Pool**. |
+| 6. In the resulting window, use the drop down as shown and click **Create new Origin Pool**. |
 +----------------------------------------------------------------------------------------------+
 | |lab005|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 6. In the resulting window, enter **<namespace>-pool** in the **Name** field and click       |
+| 7. In the resulting window, enter **<namespace>-pool** in the **Name** field and click       |
 |                                                                                              |
 |    **Add Item** under **Basic Configuration: Origin Servers**                                |
 +----------------------------------------------------------------------------------------------+
@@ -77,11 +86,11 @@ steps will define an application, register its DNS and assign a target as an ori
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 7. In the resulting window, **Public DNS Name of Origin Server** should be selected for      |
+| 8. In the resulting window, **Public DNS Name of Origin Server** should be selected for      |
 |                                                                                              |
 |    **Select Type of Origin Server**.                                                         |
 |                                                                                              |
-| 8. For **DNS Name** enter the following hostname:                                            |
+| 9. For **DNS Name** enter the following hostname:                                            |
 |                                                                                              |
 |    **demo-app.amer.myedgedemo.com** and then click **Add Item**                              |
 +----------------------------------------------------------------------------------------------+
@@ -89,34 +98,19 @@ steps will define an application, register its DNS and assign a target as an ori
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 9. After returning to the prior window, make sure **Port:** under **Basic Configuration**    |
+| 10. After returning to the prior window, make sure **Port:** under **Basic Configuration**   |
 |                                                                                              |
 |    is configured for **80**.                                                                 |
 |                                                                                              |
-| 10. Leave all other values as shown while scrolling to the bottom and click, **Continue**.   |
+| 11. Leave all other values as shown while scrolling to the bottom and click, **Continue**.   |
 |                                                                                              |
-| 11. After returning to the next window and confirming the content, click **Add Item**.       |
+| 12. After returning to the next window and confirming the content, click **Add Item**.       |
 +----------------------------------------------------------------------------------------------+
 | |lab008|                                                                                     |
 |                                                                                              |
 | |lab009|                                                                                     |
 |                                                                                              |
 | |lab010|                                                                                     |
-+----------------------------------------------------------------------------------------------+
-
-+----------------------------------------------------------------------------------------------+
-| 12. In the left-hand navigation of the main window, click **VIP Configuration** and note the |
-|                                                                                              |
-|     the **Where to Advertise the VIP** setting.                                              |
-|                                                                                              |
-| .. note::                                                                                    |
-|    *The above selection controls how/where the application is advertised. The "Advertise On* |
-|                                                                                              |
-|    *Internet" setting means that this application will be advertised globally using the F5*  |
-|                                                                                              |
-|    *Distributed Cloud Global Network utilizing Anycast.*                                     |
-+----------------------------------------------------------------------------------------------+
-| |lab011|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 Task 2: Configure WAF Policy on the Load Balancer
@@ -175,9 +169,18 @@ These steps will demonstrate various aspects of the configuration.
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 9. In the resulting **HTTP Load Balancer** window, scroll to the bottom of the configuration |
+| 9. In the resulting **HTTP Load Balancer** window, scroll to the **Advanced Configuration**  |
 |                                                                                              |
-|    and click **Save and Exit**.                                                              |
+|    section and note the **Where to Advertise the VIP** setting.                              |
+|                                                                                              |
+| .. note::                                                                                    |
+|    *The above selection controls how/where the application is advertised. The "Advertise On* |
+|                                                                                              |
+|    *Internet" setting means that this application will be advertised globally using the F5*  |
+|                                                                                              |
+|    *Distributed Cloud Global Network utilizing Anycast.*                                     |
+|                                                                                              |
+| 10. Click **Save and Exit** at the bottom of the **HTTP Load Balancer** configuration screen.|
 +----------------------------------------------------------------------------------------------+
 | |lab019|                                                                                     |
 +----------------------------------------------------------------------------------------------+
@@ -272,7 +275,9 @@ review the generated event data to make additional configuration changes.
 |    link provided for your respective load balancer.                                          |
 |                                                                                              |
 | .. note::                                                                                    |
-|    *As you have not run, many request summary analytics may not be available yet.*           |
+|    *As you have not run many requests, summary analytics may not be available in the*        |
+|                                                                                              |
+|    *dashboard view yet.*                                                                     |
 +----------------------------------------------------------------------------------------------+
 | |lab027|                                                                                     |
 +----------------------------------------------------------------------------------------------+
@@ -283,6 +288,11 @@ review the generated event data to make additional configuration changes.
 | 6. Change the viewable time period from 5 minutes (default) to **1 hour** by selecting the   |
 |                                                                                              |
 |    dropdown shown, click **Last 1 hour** then clicking **Apply**.                            |
+|                                                                                              |
+| .. note::                                                                                    |
+|    *Security Event data may take 15-20 seconds to populate in the Console. Please force a*   |
+|                                                                                              |
+|    *refresh using the Refresh icon next to the Time Period selection in step 6.*             |
 +----------------------------------------------------------------------------------------------+
 | |lab028|                                                                                     |
 +----------------------------------------------------------------------------------------------+
@@ -344,7 +354,7 @@ review the generated event data to make additional configuration changes.
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 15. Type **req** in the open dialogue window and select **req_id* from the dropdown.         |
+| 15. Type **req** in the open dialogue window and select **req_id** from the dropdown.        |
 |                                                                                              |
 | 16. Next, select **In** from the **Select Operator** dropdown.                               |
 |                                                                                              |
@@ -366,7 +376,7 @@ review the generated event data to make additional configuration changes.
 |                                                                                              |
 |     filter. You can expand and review the request as desired using the **arrow** icon.       |
 |                                                                                              |
-| 19. Under the **Actions** column, click on the three Action dots.                            |
+| 19. Under the **Actions** column, click on the three Action dots (Scroll to right).          |
 +----------------------------------------------------------------------------------------------+
 | |lab039|                                                                                     |
 +----------------------------------------------------------------------------------------------+
@@ -439,7 +449,7 @@ customize the WAF policy just built.
 |    Load Balancer configuration and not the WAF Policy.                                       |
 |                                                                                              |
 | .. note::                                                                                    |
-|    *This allows for policy reuse and reduces the need for specific app WAF Policies*.        |
+|    *This allows for policy reuse and reduces the need for specific application WAF Policies*.|
 |                                                                                              |
 | 3. Click on the **Cancel and Exit** to return to the prior window.                           |
 +----------------------------------------------------------------------------------------------+
@@ -523,115 +533,113 @@ Sample Blocking Response Page to be copied::
 | |labend|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
-.. |lab001| image:: _static/lab1-001.png
+.. |lab001| image:: _static//lab1-001.png
    :width: 800px
-.. |lab002| image:: _static/lab1-002.png
+.. |lab002| image:: _static//lab1-002.png
    :width: 800px
-.. |lab003| image:: _static/lab1-003.png
+.. |lab003| image:: _static//lab1-003.png
    :width: 800px
-.. |lab004| image:: _static/lab1-004.png
+.. |lab004| image:: _static//lab1-004.png
    :width: 800px
-.. |lab005| image:: _static/lab1-005.png
+.. |lab005| image:: _static//lab1-005.png
    :width: 800px
-.. |lab006| image:: _static/lab1-006.png
+.. |lab006| image:: _static//lab1-006.png
    :width: 800px
-.. |lab007| image:: _static/lab1-007.png
+.. |lab007| image:: _static//lab1-007.png
    :width: 800px
-.. |lab008| image:: _static/lab1-008.png
+.. |lab008| image:: _static//lab1-008.png
    :width: 800px
-.. |lab009| image:: _static/lab1-009.png
+.. |lab009| image:: _static//lab1-009.png
    :width: 800px
-.. |lab010| image:: _static/lab1-010.png
+.. |lab010| image:: _static//lab1-010.png
    :width: 800px
-.. |lab011| image:: _static/lab1-011.png
+.. |lab012| image:: _static//lab1-012.png
    :width: 800px
-.. |lab012| image:: _static/lab1-012.png
+.. |lab013| image:: _static//lab1-013.png
    :width: 800px
-.. |lab013| image:: _static/lab1-013.png
+.. |lab014| image:: _static//lab1-014.png
    :width: 800px
-.. |lab014| image:: _static/lab1-014.png
+.. |lab015| image:: _static//lab1-015.png
    :width: 800px
-.. |lab015| image:: _static/lab1-015.png
+.. |lab016| image:: _static//lab1-016.png
    :width: 800px
-.. |lab016| image:: _static/lab1-016.png
+.. |lab017| image:: _static//lab1-017.png
    :width: 800px
-.. |lab017| image:: _static/lab1-017.png
+.. |lab018| image:: _static//lab1-018.png
    :width: 800px
-.. |lab018| image:: _static/lab1-018.png
+.. |lab019| image:: _static//lab1-019.png
    :width: 800px
-.. |lab019| image:: _static/lab1-019.png
+.. |lab020| image:: _static//lab1-020.png
    :width: 800px
-.. |lab020| image:: _static/lab1-020.png
+.. |lab021| image:: _static//lab1-021.png
    :width: 800px
-.. |lab021| image:: _static/lab1-021.png
+.. |lab022| image:: _static//lab1-022.png
    :width: 800px
-.. |lab022| image:: _static/lab1-022.png
+.. |lab023| image:: _static//lab1-023.png
    :width: 800px
-.. |lab023| image:: _static/lab1-023.png
+.. |lab024| image:: _static//lab1-024.png
    :width: 800px
-.. |lab024| image:: _static/lab1-024.png
+.. |lab025| image:: _static//lab1-025.png
    :width: 800px
-.. |lab025| image:: _static/lab1-025.png
+.. |lab026| image:: _static//lab1-026.png
    :width: 800px
-.. |lab026| image:: _static/lab1-026.png
+.. |lab027| image:: _static//lab1-027.png
    :width: 800px
-.. |lab027| image:: _static/lab1-027.png
+.. |lab028| image:: _static//lab1-028.png
    :width: 800px
-.. |lab028| image:: _static/lab1-028.png
+.. |lab029| image:: _static//lab1-029.png
    :width: 800px
-.. |lab029| image:: _static/lab1-029.png
+.. |lab030| image:: _static//lab1-030.png
    :width: 800px
-.. |lab030| image:: _static/lab1-030.png
+.. |lab031| image:: _static//lab1-031.png
    :width: 800px
-.. |lab031| image:: _static/lab1-031.png
+.. |lab032| image:: _static//lab1-032.png
    :width: 800px
-.. |lab032| image:: _static/lab1-032.png
+.. |lab033| image:: _static//lab1-033.png
    :width: 800px
-.. |lab033| image:: _static/lab1-033.png
+.. |lab034| image:: _static//lab1-034.png
    :width: 800px
-.. |lab034| image:: _static/lab1-034.png
+.. |lab035| image:: _static//lab1-035.png
    :width: 800px
-.. |lab035| image:: _static/lab1-035.png
+.. |lab036| image:: _static//lab1-036.png
    :width: 800px
-.. |lab036| image:: _static/lab1-036.png
+.. |lab037| image:: _static//lab1-037.png
    :width: 800px
-.. |lab037| image:: _static/lab1-037.png
+.. |lab038| image:: _static//lab1-038.png
    :width: 800px
-.. |lab038| image:: _static/lab1-038.png
+.. |lab039| image:: _static//lab1-039.png
    :width: 800px
-.. |lab039| image:: _static/lab1-039.png
+.. |lab040| image:: _static//lab1-040.png
    :width: 800px
-.. |lab040| image:: _static/lab1-040.png
+.. |lab041| image:: _static//lab1-041.png
    :width: 800px
-.. |lab041| image:: _static/lab1-041.png
+.. |lab042| image:: _static//lab1-042.png
    :width: 800px
-.. |lab042| image:: _static/lab1-042.png
+.. |lab043| image:: _static//lab1-043.png
    :width: 800px
-.. |lab043| image:: _static/lab1-043.png
+.. |lab044| image:: _static//lab1-044.png
    :width: 800px
-.. |lab044| image:: _static/lab1-044.png
+.. |lab045| image:: _static//lab1-045.png
    :width: 800px
-.. |lab045| image:: _static/lab1-045.png
+.. |lab046| image:: _static//lab1-046.png
    :width: 800px
-.. |lab046| image:: _static/lab1-046.png
+.. |lab047| image:: _static//lab1-047.png
    :width: 800px
-.. |lab047| image:: _static/lab1-047.png
+.. |lab048| image:: _static//lab1-048.png
    :width: 800px
-.. |lab048| image:: _static/lab1-048.png
+.. |lab049| image:: _static//lab1-049.png
    :width: 800px
-.. |lab049| image:: _static/lab1-049.png
+.. |lab050| image:: _static//lab1-050.png
    :width: 800px
-.. |lab050| image:: _static/lab1-050.png
+.. |lab051| image:: _static//lab1-051.png
    :width: 800px
-.. |lab051| image:: _static/lab1-051.png
+.. |lab052| image:: _static//lab1-052.png
    :width: 800px
-.. |lab052| image:: _static/lab1-052.png
+.. |lab053| image:: _static//lab1-053.png
    :width: 800px
-.. |lab053| image:: _static/lab1-053.png
+.. |lab054| image:: _static//lab1-054.png
    :width: 800px
-.. |lab054| image:: _static/lab1-054.png
+.. |lab055| image:: _static//lab1-055.png
    :width: 800px
-.. |lab055| image:: _static/lab1-055.png
-   :width: 800px
-.. |labend| image:: _static/labend.png
+.. |labend| image:: _static//labend.png
    :width: 800px

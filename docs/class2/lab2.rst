@@ -54,7 +54,7 @@ This lab will begin back in the F5 Distributed Cloud Console.
 +----------------------------------------------------------------------------------------------+
 | 8. Open a terminal window or DOS prompt on your respective client and issue the following    |
 |                                                                                              |
-|    **curl** command: *curl -v http://<namespace>/lab-sec.f5demos.com*.                       |
+|    **curl** command: *curl -v http://<namespace>lab-sec.f5demos.com*.                        |
 |                                                                                              |
 | 9. Observe the **User Agent** and response content.                                          |
 |                                                                                              |
@@ -116,9 +116,9 @@ implementation.
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 5. In the Developer window, find the **POST** to **auth.php**. *You can also use the filter  |
+| 5. In the Developer window, find the **POST** to **auth.php**. *You can also use the filter* |
 |                                                                                              |
-|    to find auth.php*. Select the respective line as shown.                                   |
+|    *to find auth.php*. Select the respective line as shown.                                  |
 |                                                                                              |
 | 6. Select the **Request** tab in the payload window that appears and observe that you only   |
 |                                                                                              |
@@ -170,10 +170,10 @@ implementation.
 +----------------------------------------------------------------------------------------------+
 | 15. In the **Application Endpoint** scroll through the section use the following values:     |
 |                                                                                              |
-|     * **Metadata\Name:** *auth-bot*                                                          |
+|     * **Metadata\\Name:** *auth-bot*                                                         |
 |     * **HTTP Methods:** *POST*                                                               |
 |     * **Protocol:** *BOTH*                                                                   |
-|     * **Path\Path Match:** *Prefix*                                                          |
+|     * **Path\\Path Match:** *Prefix*                                                         |
 |     * **Prefix:** */auth.php*                                                                |
 |     * **Bot Traffic Mitigation\Select Bot Mitigation Action:** *Block*                       |
 |                                                                                              |
@@ -216,7 +216,7 @@ implementation.
 +----------------------------------------------------------------------------------------------+
 | **End of Lab 2:**  This concludes Lab 2, feel free to review and test the configuration.     |
 |                                                                                              |
-| A bried presentation will be shared prior to the beginning of Lab 3.                         |
+| A brief presentation will be shared prior to the beginning of Lab 3.                         |
 +----------------------------------------------------------------------------------------------+
 | |labend|                                                                                     |
 +----------------------------------------------------------------------------------------------+
@@ -272,6 +272,8 @@ implementation.
 .. |lab025| image:: _static/lab2-025.png
    :width: 800px
 .. |lab026| image:: _static/lab2-026.png
+   :width: 800px
+.. |lab027| image:: _static/lab2-027.png
    :width: 800px
 .. |labend| image:: _static/labend.png
    :width: 800px
