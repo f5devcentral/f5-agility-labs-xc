@@ -14,8 +14,8 @@ and NGINX App Protect. During this hands-on lab you will learn about the fol
 - Deploying F5 Distributed Cloud WAF into a cloud provider network (AWS) to protect internal Private IP resources
 
 
-Lab Requirements
-~~~~~~~~~~~~~~~
+Lab & Tasks:
+~~~~~~~~~~~~
 
 The next page (Introduction) will cover the lab environment, access, and lab variables. The lab will be using a shared AWS account where we have deployed the following resources:
 
@@ -29,7 +29,7 @@ that are included in the lab
 .. toctree::
    :maxdepth: 2
    :numbered:
-   :caption: Contents:
+   :caption: Labs:
    :glob:
    
    intro*

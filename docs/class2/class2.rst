@@ -16,8 +16,8 @@ Objective:
 
 -  Gain an understanding WAAP Policies, Service Policies and BotDefense configuration.
 
-Lab Requirements:
------------------
+Lab & Tasks:
+------------
 
 -  All Lab requirements will be noted in the tasks that follow
 
@@ -27,7 +27,7 @@ Lab Requirements:
 .. toctree::
    :maxdepth: 2
    :numbered:
-   :caption: Contents:
+   :caption: Labs:
    :glob:
    
    intro*

@@ -15,8 +15,8 @@ Objective:
 
 -  Gain an understanding of BotDefense, Client-Side Defense and Application Traffic Insight.
 
-Lab Requirements:
------------------
+Lab & Tasks:
+------------
 
 -  All Lab requirements will be noted in the tasks that follow
 
@@ -26,7 +26,7 @@ Lab Requirements:
 .. toctree::
    :maxdepth: 2
    :numbered:
-   :caption: Contents:
+   :caption: Labs:
    :glob:
    
    intro*
