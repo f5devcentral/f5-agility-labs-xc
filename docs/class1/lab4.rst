@@ -1,6 +1,8 @@
-Lab 4: Fine Tuning a WAF Policy
+(Optional) Lab 4: Fine Tuning a WAF Policy
 ===============================
 
+This lab is also covered in the xC WAF 102 course.
+ 
 In this next lab we will learn how to customize a WAF policy.
 
 We will go through the actions of disabling specific WAF rules that 
@@ -25,12 +27,16 @@ We can use the reported support ID to disable specific signatures.  Copy the val
 Exercise 1: Generate Cross Site Scripting (XSS)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-#. Send the following request to your `studentxxx.sales-public.f5demos.com` site
+#. Send the following request to your `[NAMESPACE].lab-sec.f5demos.com` site
 
    ``/headers/?username=<script>window.open(%27hello%20world%27);</script>``
 
 #. Retrieve the "support ID" that is displayed.
-#. From the F5 Distributed Cloud Console go back to "Security Events" (from Lab 2 / Exercise 6)
+
+#. From the F5 Distributed Cloud Console navigate to Web App & API Protection > Apps & APIs > Security events .
+
+#. select the "global" Load Balancer at the bottom of the screen, and select the "Security Events" tab.
+
 #. Click on "Refresh" (on the page) until you see a request that matches the time of your most recent request.
 
    .. image:: ../_static/screenshot-global-vip-public-security-events-refresh.png   

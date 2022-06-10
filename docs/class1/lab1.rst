@@ -23,10 +23,14 @@ We will create a blocking WAF policy.
 
 #. Start in F5 Distributed Cloud Console and switch to the "Web App & API Protection" context. 
 
-   It can be access either from the main Home page or via the "Select Service" menu on a Page 
-
+   It can be access either from the main Home page... 
     |app-context|
+   ...or via the "Select Service" menu on the top left corner of any other page:
 
+    |select-service|
+#. Ensure you are in the proper namespace (an adjective-animal combination) and not the default namespace
+
+    |namespace-selection|
 #. Navigate the menu to go to "Manage"->"App Firewall". Click on *Add App Firewall*.
 
 
@@ -158,7 +162,7 @@ Exercise 1: HTTP Load Balancer Configuration
     Variable                          Value
     ================================= =====
     Name                              global
-    Domains                           [STUDENTNAME].sales-public.f5demos.com
+    Domains                           [YOUR-NAMESPACE].lab-sec.f5demos.com
     Select type of Load Balancer      HTTP
     Automatically Manage DNS Records  Yes/Check 
     ================================= =====
@@ -177,26 +181,26 @@ We'll next configure the "Default Origin Servers".
  
 #. Click the *Add Item* button to exit the "Origin Pools" dialogue.
 
-#. Notice that in the "VIP Configuration" section *Advertise On Internet* has been selected by default.
+#. Notice that in the "Advanced Configuration" section *Advertise On Internet* has been selected by default.
 
 Exercise 3: Configure WAF Policy
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 #. Under the *Security Configuration* section 
 
-#. Enter the following variables:
+#. Choose the following options:
 
     ============================================= =====================
     Variable                                      Value
     ============================================= =====================
     Select Web Application Firewall (WAF) Config  App Firewall
-    App Firewall                                  blocking-app-firewall
+    App Firewall                                  [NAMESPACE]/blocking-app-firewall
     ============================================= =====================
 
 #. Click "*Save and Exit* to create the HTTP Load Balancer.
 
 Once the HTTP Load Balancer has been deployed, you should now be able to go to the DNS name that you entered 
-previously in a web browser.  The FQDN we used in our example is http://studentXX.sales-public.f5demos.com.  
+previously in a web browser.  The FQDN we used in our example is http://stable-sheep.lab-sec.f5demos.com.  
 Your FQDN should follow the format of [unique name].[supplied domain name for your tenant].
 
 .. note:: If you are having challenges connecting to the "f5demos.com" name you can also try connecting to the "ves.io" name.
@@ -267,6 +271,8 @@ Optional Video you can watch if you get stuck
    <iframe width="560" height="315" src="https://www.youtube.com/embed/s-BHH0Qayfc?start=108" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 .. |lb-basic| image:: ../_static/lb-basic.png
+.. |select-service| image:: ../_static/select-service.png
+.. |namespace-selection| image:: ../_static/namespace-selection.png
 .. |app-context| image:: ../_static/app-context.png
 .. |origin_pools_menu| image:: ../_static/origin_pools_menu.png
 .. |origin_pools_add| image:: ../_static/origin_pools_add.png

@@ -10,8 +10,7 @@ Task 1. Create Origin Pools
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Previously we created an origin pool that was accessible via the Public Internet.
-The next lab exercise will create an origin pool that will access resources via
-the AppMesh node that is deployed in our lab AWS environment.
+The next lab exercise will create an origin pool that will provide internal resources discovered with local DNS by the AppMesh node that is deployed in our lab AWS environment. 
 
 Exercise 1: Create Private Origin Pool
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -98,7 +97,7 @@ Exercise 1: HTTP Load Balancer Configuration
 #. Click on "Edit Configuration" in the upper right of the screen (after your *global* Load Balancer is loaded).
    
    .. image:: ../_static/screenshot-global-vip-edit-config.png
-#. Under "Default Origin Servers" find you previous "public" Origin pool and click on the three dots "..." to the right under "Actions"
+#. Under "Default Origin Servers" find your previous "public" Origin pool and click on the three dots "..." to the right under "Actions" and select "Edit"
    
    .. image:: ../_static/screenshot-global-vip-edit-config-pools.png
 #. Change the selection of "Origin Pool" to "private" from "public" and click "Apply"
@@ -107,7 +106,7 @@ Exercise 1: HTTP Load Balancer Configuration
 #. Click "*Save and Exit* to update the HTTP Load Balancer.
 
 You should now be able to go to the DNS name that you entered 
-previously in a web browser.  The FQDN we used in our example is http://studentXX.sales-public.f5demos.com.  
+previously in a web browser.  The FQDN we used in our example is http://stable-sheep.lab-sec.f5demos.com/.  
 
 Exercise 5: Verify Configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -153,7 +152,7 @@ Exercise 1: HTTP Load Balancer Configuration
     Variable                          Value
     ================================= =====
     Name                              local
-    Domains                           [STUDENT ID].aws.lab.f5demos.com
+    Domains                           [NAMESPACE].aws.lab.f5demos.com
     Select type of Load Balancer      HTTP
     Automatically Manage DNS Records  No/Unchecked 
     ================================= =====
@@ -177,8 +176,7 @@ node that is deployed in AWS.  This will allow us to access the VIP via the Publ
 that is attached to that interface.  If we wished to only have the service available within the AWS VPC
 we could opt to use the "Inside" interface that does not have an AWS EIP attached.
 
-#. Under "VIP Configuration" click on "Show Advanced Fields".
-#. From "Where to Advertise the VIP" select "Advertise Custom"
+#. Under "Advanced Configuration" set "Where to Advertise the VIP" to "Advertise Custom"
    
    .. image:: ../_static/screenshot-local-vip-advertise-custom.png
 #. Click on "Configure" under "Advertise Custom"
@@ -210,7 +208,7 @@ Exercise 4: Configure WAF Policy
 #. Click "*Save and Exit* to create the HTTP Load Balancer.
 
 Once the HTTP Load Balancer has been deployed, you should now be able to go to the DNS name that you entered 
-previously in a web browser.  The FQDN we used in our example is http://studentXX.aws.lab.f5demos.com.  
+previously in a web browser.  The FQDN we used in our example is http://stable-sheep.aws.lab.f5demos.com.  
 This is a wildcard DNS entry that points to the Public IP (AWS Elastic IP) that is attached to the AppMesh node.
 
 Exercise 5: Verify Configuration
