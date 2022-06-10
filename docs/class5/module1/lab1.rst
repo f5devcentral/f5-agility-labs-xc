@@ -1,4 +1,4 @@
-Lab 1- Explore F5 Distributed Cloud Console
+Lab 1 - Explore F5 Distributed Cloud Console
 --------------------------------------------
 
 Welcome to F5 Distributed Cloud Application 301.
