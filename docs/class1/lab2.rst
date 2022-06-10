@@ -14,17 +14,16 @@ you can also deploy a "AppMesh" node that enables you to access networks that
 are not directly connected to the Internet and/or enforce WAF policies locally 
 within the local network.
 
-When we deploy AppMesh outside of a Regional Edge we refer to these locations as
-"Customer Edge".  In the following exercise we will review what the process is to
+When we deploy AppMesh outside of a Regional Edge we refer to these locations as a
+"Customer Edge".  In the following exercise we will review the process to
 deploy a Customer Edge.  In our existing lab environment we have already deployed 
 a shared F5 Distributed Cloud AWS VPC Site.
 
-Once an AppMesh node has been deployed into a Customer Edge it helps provide two
+Once an AppMesh node has been deployed as a Customer Edge it helps provide two
 additional topologies for F5 Distributed Cloud WAF protection.
 
-#. Enabling F5 Distributed Cloud to protect a resource from the Regional Edge (additional DDoS protection)
-   that is not directly attached to the internet.
-#. Allow F5 Distributed Cloud to provide WAF protection for "internal" and/or "local"
+#. Enabling F5 Distributed Cloud to proxy and protext internal services from our Regional Edge (additional DDoS protection, and AnyCast availability) even though it is not directly exposed to the internet.
+#. Allow F5 Distributed Cloud to provide WAF protection for "internal" and/or "local" systems
 
 Exercise 1: Introduction to F5 Distributed Cloud AWS VPC Site
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -32,8 +31,7 @@ Exercise 1: Introduction to F5 Distributed Cloud AWS VPC Site
 #. Start in F5 Distributed Cloud Console and find the "AWS VPC Sites" menu item. 
 
    From the top left "Select service" and look under "All Services"->"Cloud and Edge Sites"
-
-   Click on "AWS VPC Sites"
+#. Go to Manage > Site Management > AWS VPC Sites
 
    .. image:: ../_static/menu-cloud-edge-sites.png
 
@@ -44,10 +42,13 @@ Exercise 1: Introduction to F5 Distributed Cloud AWS VPC Site
 
    You will be able to observe several metrics about the health of the site.
 
+   .. image:: ../_static/student-awsnet-site-metrics.png
+
+   
+#. Browse back to "AWS VPC Sites" 
+   
    In this deployment an AppMesh node has been deployed into an existing VPC in our
    shared AWS lab environment.
-
-#. Browse back to "AWS VPC Sites" 
 
    AppMesh nodes can also be deployed into VMWare and KVM environments as well through
    a site registration process. 
