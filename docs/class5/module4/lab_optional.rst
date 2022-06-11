@@ -1,5 +1,5 @@
 Lab Optional - Use kubectl to view vk8s Output
------------------------------
+==============================================
 
 F5 Distributed Cloud App Stack provides the ability to manage your vk8s namespace via command line with kubectl 
 

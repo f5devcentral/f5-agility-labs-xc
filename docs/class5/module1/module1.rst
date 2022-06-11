@@ -1,5 +1,5 @@
-Module 1: The Basic's
-=====================
+Module 1: The Basics
+====================
 
 Here we'll start with the basics of platform setup, editing, and building.
 
