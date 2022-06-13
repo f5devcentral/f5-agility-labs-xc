@@ -94,7 +94,7 @@ the requests log.
 #. Try visiting your site with the a different URL to your `[NAMESPACE].lab-sec.f5demos.com` site
 =======
 	  
-#. Try visiting your site with the a different URL to your `studentxxx.sales-public.f5demos.com` site
+#. Try visiting your site with the a different URL to your `[NAMESPACE].lab-sec.f5demos.com` site
 >>>>>>> 033317308f2ccd15c985c7aa0ba276bc22065401
    ``/txt/?username=<script>window.open(%27hello%20world%27);</script>``
 #. Observe that this request is blocked.  F5 Distributed Cloud WAF can exclude signatures by both signature ID and path; and these exclusions are tied to a specific HTTP Load Balancer
