@@ -29,9 +29,9 @@ During this hands-on lab you will learn about the following:
 Lab Environment
 ---------------
 
-During this lab you can use your own F5 Distributed Cloud account and your own application (origin server) that you are going to protect with CSD. Alternatively you can also use the F5 sales-demo application https://shop.sales-demo.f5demos.com where I've already added the required JavaScript tag for CSD. 
+During this lab, you will use the application published in the Class Blueprint, hosted behind an F5 BIG-IP LTM server.  Alternativeley, you can use a site that you are hosting but the documentation is solely focused on using the UDF BP. 
 
-Please contact your F5 Sales Engineer/Account Manager if you need more information and please send any feedback for this lab to a.vistola@f5.com
+Please contact your F5 Sales Engineer/Account Manager if you need more information and please send any feedback for this lab to scheff@f5.com
 
 F5 Distributed Cloud Client Side Defense: Prevent Skimming and Formjacking
 --------------------------------------------------------------------------
@@ -45,7 +45,7 @@ Distributed Cloud Client-Side Defense has two core components that establish its
 
 JavaScript that captures signals and a machine learning analysis service that processes those signals.
 
-.. image:: ../images/csd-diagram.png
+.. image:: images/csd-diagram.png
 
 Next: |signup|
 
