@@ -1,5 +1,5 @@
-F5 Distributed Cloud Lab 103 - Advanced BoT Strategies
-======================================================
+F5 Distributed Cloud 103 - Advanced BoT Strategies
+==================================================
 
 Welcome
 -------

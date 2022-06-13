@@ -1,5 +1,5 @@
-Class 4 – Intro to Multi-Cloud Networking
-=========================================
+F5 Distributed Cloud 201 - Intro to Multi-Cloud Networking
+==========================================================
 
 This Lab environment highlights some of the basic concepts of F5 Distributed Cloud (XC) Mesh.
 
