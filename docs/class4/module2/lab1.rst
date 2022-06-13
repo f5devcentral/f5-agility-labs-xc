@@ -41,8 +41,7 @@ Start by logging into Distributed Cloud Console.  You should have previously rec
    **…/namespaces/<namespace>/sites/…**. Note the namespace as it will be used throughout the lab tasks that follow.
 
    .. note::                                                                               
-      *Administratively, there are other ways to find namespaces. Due to access and permissionrestrictions for this particular lab, 
-	  those menus are not available.*
+      *Administratively, there are other ways to find namespaces. Due to access and permissionrestrictions for this particular lab, those menus are not available.*
 
 |intro008|                                                                                   |
 |intro009|                                                                                   |

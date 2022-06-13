@@ -18,7 +18,7 @@ private data centers and sites within AWS, Azure, and GCP public cloud environme
 
 In this lab, we will learn the following:
 
-•	Log into the F5 Distributed CLoud Console. 
+•  Log into the F5 Distributed CLoud Console. 
 
 •  Review account profile
 
@@ -46,7 +46,7 @@ In this lab, we will learn the following:
 **Exercise 1 - Log into F5 Distributed Cloud Console**
 
 .. NOTE::
-      Once you join the UDF session, your UDF deployment will start and create an ephemeral account on the F5 Distributed Cloud console (this may take 5-10min)
+   Once you join the UDF session, your UDF deployment will start and create an ephemeral account on the F5 Distributed Cloud console (this may take 5-10min)
 
 
 #. Once your ephemeral account is created, you will receive an email to update your password. 
@@ -66,7 +66,7 @@ In this lab, we will learn the following:
 #. Upon password update completion, you will be redirected to the F5 Distributed Cloud Console login. You will need to enter the lab tenant name *f5-xc-lab-app* and then click **Next**. Then enter your email and password and click **Log in**
 
 .. NOTE::
-      A tenant in the F5 Distributed Cloud console is a similar construct as an account in AWS or GCP terms.
+   A tenant in the F5 Distributed Cloud console is a similar construct as an account in AWS or GCP terms.
 
    .. image:: ../images/xclogontenantname.png
       :width: 250pt
