@@ -6,7 +6,7 @@ and using that policy to protect your lab resource that is a "Public Endpoint"
 in AWS (webserver with an EIP).
 
 Task 1. Create WAF Policy
-~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------
 
 F5 Distributed Cloud WAF shares the same WAF engine that is used by F5 BIG-IP WAF and F5 NGINX App Protect.
 
@@ -17,7 +17,7 @@ false positives by excluding individual rules, IP addresses, or web application 
 In the next exercise you will configure a basic WAF policy 
 
 Exercise 1: Create WAF Policy
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 We will create a blocking WAF policy.
 
@@ -54,7 +54,7 @@ We will create a blocking WAF policy.
 #. Click the *Save and Exit* button to create the policy
 
 Video Walkthrough 
-~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^
 Optional Video you can watch if you get stuck
 
 Note that each of the videos will start at a specific timestamp.  
@@ -66,7 +66,7 @@ The entire video is 10 minutes total from start to finish.
    <iframe width="560" height="315" src="https://www.youtube.com/embed/s-BHH0Qayfc?start=41" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 Task 2. Create Origin Pools
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+---------------------------
 
 Before we create an HTTP load balancer to expose our services on the internet, 
 we'll define "Origin Pools" for our application's services.
@@ -77,7 +77,7 @@ the Public Internet to route traffic to our services.  In later examples we will
 look at routing traffic via AppMesh to our services.
 
 Exercise 1: Create Public Origin Pool
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 We will first create an Origin Pool that refers to the "Public Endpoint" site in our lab environment.
 
 #. Start in F5 Distributed Cloud Console and switch to the "Web App & API Protection" context. [You should already be here from previous task]
@@ -141,7 +141,7 @@ We will first create an Origin Pool that refers to the "Public Endpoint" site in
 #. Click the *Save and Exit* button to create the Origin Pool.
 
 Task 3. Creating HTTP Load Balancer on F5 Distributed Cloud Regional Edge
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------------------------------------------------------
 
 In this exercise we will be creating a "Global VIP" that will exist on the F5 Distributed Cloud Global Network.
 
@@ -150,7 +150,7 @@ It will protect a public resource that exists in the lab's AWS Lab Environment.
 .. image:: _static/testdrive-volterra-waf-global-vip.png
 
 Exercise 1: HTTP Load Balancer Configuration
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 #. Start in F5 Distributed Cloud Console and switch to the "Web App & API Protection" context. [You should already be here from previous task]
 
@@ -170,7 +170,7 @@ Exercise 1: HTTP Load Balancer Configuration
    |lb-basic|
 
 Exercise 2: Configure Default Origin Server
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 We'll next configure the "Default Origin Servers". 
     
 #. Click on the *Add Items* link under the *Default Origin Servers* section.
@@ -184,7 +184,7 @@ We'll next configure the "Default Origin Servers".
 #. Notice that in the "Advanced Configuration" section *Advertise On Internet* has been selected by default.
 
 Exercise 3: Configure WAF Policy
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 #. Under the *Security Configuration* section 
 
@@ -206,7 +206,7 @@ Your FQDN should follow the format of [unique name].[supplied domain name for yo
 .. note:: If you are having challenges connecting to the "f5demos.com" name you can also try connecting to the "ves.io" name.
 
 Exercise 4: Verify Configuration
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The public demo app should look like the following:
 
@@ -224,7 +224,7 @@ You should see a block page.
 .. image:: _static/screenshot-global-vip-public-cat-etc-passwd.png
 
 Exercise 5: Performance and Security 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 #. Start in F5 Distributed Cloud Console and switch to the "Web App & API Protection" context. [You should already be here from previous lab]
 
@@ -258,12 +258,10 @@ Exercise 5: Performance and Security
    .. image:: _static/screenshot-global-vip-public-security-events-details.png
       :width: 50%
 
-
-Next we will demonstrate how we 
-can securely connect to your private AWS resources via a AppMesh node.
+Next we will demonstrate how we can securely connect to your private AWS resources via a AppMesh node.
 
 Video Walkthrough 
-~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^
 Optional Video you can watch if you get stuck
 
 .. raw:: html
