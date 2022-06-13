@@ -8,8 +8,8 @@ In this next lab we will learn how to customize a WAF policy.
 We will go through the actions of disabling specific WAF rules that 
 are associated with a specific Load Balancer and application path.
 
-Support ID
-~~~~~~~~~~
+Leveraging Support ID/Request ID
+--------------------------------
 
 In the previous lab exercises you may have noticed that a "support ID" appears 
 when you trigger a WAF block.
@@ -25,7 +25,7 @@ when you trigger a WAF block.
 We can use the reported support ID to disable specific signatures.  Copy the value into your clipboard (i.e. highlight support ID in Chrome and select "Copy" / Ctrl-C)
 
 Exercise 1: Generate Cross Site Scripting (XSS)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 #. Send the following request to your `[NAMESPACE].lab-sec.f5demos.com` site
 
@@ -63,7 +63,7 @@ Exercise 1: Generate Cross Site Scripting (XSS)
       :width: 75%
 
 Exercise 2: Creating WAF Exclusion Rule
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 #. Take note of the list of security IDs that are listed.
 
@@ -79,7 +79,7 @@ Exercise 2: Creating WAF Exclusion Rule
    ``/headers/?username=<script>window.open(%27hello%20world%27);</script>``
 
 Excercise 3: View Requests Log
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 We can also view requests that have been excluded from a WAF policy by viewing 
 the requests log.
@@ -96,6 +96,10 @@ the requests log.
 #. Observe that this request is blocked.  F5 Distributed Cloud WAF can exclude signatures by both signature ID and path; and these exclusions are tied to a specific HTTP Load Balancer
 
 Congratulations you have completed the lab!
+
+Video Walkthrough 
+^^^^^^^^^^^^^^^^^
+Optional Video you can watch if you get stuck
 
 .. raw:: html
    <iframe width="560" height="315" src="https://www.youtube.com/embed/s-BHH0Qayfc?start=523" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
