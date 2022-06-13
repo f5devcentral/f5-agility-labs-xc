@@ -1,5 +1,5 @@
-Introduction: Accessing F5 Distributed Cloud Console
-====================================================
+Introduction: Accessing Lab Resources
+=====================================
 
 Welcome to this F5 Distributed Cloud Lab. The following tasks will guide you through the initial 
 access requirements for this multi-part lab.  Lab attendees should have received an invitation 
@@ -127,6 +127,69 @@ step below to access the F5 Distributed Cloud Lab Tenant.
 | |intro008|                                                                                   |
 |                                                                                              |
 | |intro009|                                                                                   |
++----------------------------------------------------------------------------------------------+
+
+Task 3: Accessing your Lab Jumphost
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The following will guide you through accessing your Lab Jumphost.  Subsequent tasks will require
+you to use the Jumphost for access to the OpenBullet tool and other associated resources available
+only on the Jumphost. 
+
++----------------------------------------------------------------------------------------------+
+| 1. Returning to the UDF Course screen in your browser, click on the **Deployment** tab and   |
+|                                                                                              |
+|    then observer the **JumpHost** and its two options; **Access** and **Details**. You will  |
+|                                                                                              |
+|    first click on the **Details** link.                                                      |
++----------------------------------------------------------------------------------------------+
+| |intro010|                                                                                   |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 2. In the resulting window note the **Administrator** password which you will use shortly    |
+|                                                                                              |
+|    and then click **Done** in the bottom right-hand corner of the window.                    |
+|                                                                                              |
+|    .. warning::                                                                              |
+|                                                                                              |
+|       **DO NOT CLICK STOP**. If you do so you will have to wait till it stops then restart   |
+|                                                                                              |
+|       your JumpHost for this lab.                                                            |
++----------------------------------------------------------------------------------------------+
+| |intro011|                                                                                   |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 3. Returning to the UDF Course screen in your browser and the **Deployment** tab and click   |
+|                                                                                              |
+|    on the **Access** link. From the resulting dropdown, click on the resolution you prefer.  |
++----------------------------------------------------------------------------------------------+
+| |intro012|                                                                                   |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 4. A RDP file will download which you will need to open.  Note different browsers will render|
+|                                                                                              |
+|    the download differently.  Your OS platform must have an application which supports       |
+|                                                                                              |
+|    opening RDP files in order to access the JumpHost.                                        |
++----------------------------------------------------------------------------------------------+
+| |intro013|                                                                                   |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 5. You will then be prompted to log in as Administrator to the JumpHost.  Note the prompt    |
+|                                                                                              |
+|    may render differently for other RDP clients. If you expereince an abnormally long delay  |
+|                                                                                              |
+|    in accessing the JumpHost, changing the **If server authentication fails** setting to     |
+|                                                                                              |
+|    **Connect and dont warn me**.  If you cannot connect, please alert a lab team member.     |
+|                                                                                              |
+|    Anti-virus configurations, VPN or conflicting applications can also complicate access.    |
++----------------------------------------------------------------------------------------------+
+| |intro014|                                                                                   |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
