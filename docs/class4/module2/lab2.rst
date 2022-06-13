@@ -41,30 +41,30 @@ We will first create an Origin Pool that refers to the frontend application serv
 
 #. Navigate the menu to go to "Manage"->"Load Balancers"->"Origin Pools". Click on *Add Origin Pool*.
 
-  .. image:: ../images/menu-manage-load-balancers-origin.png
+   .. image:: ../images/menu-manage-load-balancers-origin.png
       :width: 50%
 
 
 #. Enter the following variables:
 
-    ================================= =====
-    Variable                          Value
-    ================================= =====
-    Name                              frontend-public
-    ================================= =====
+   ================================= =====
+   Variable                          Value
+   ================================= =====
+   Name                              frontend-public
+   ================================= =====
 
 #. Click on "Add Item" under Origin Servers
 
 #. Enter the following information 
 
-    ================================= =====
-    Variable                          Value
-    ================================= =====   
-    Select Type of Origin Server      Public DNS Name of Origin Server (default)
-    DNS Name                          public.lab.f5demos.com
-    ================================= =====
+   ================================= =====
+   Variable                          Value
+   ================================= =====   
+   Select Type of Origin Server      Public DNS Name of Origin Server (default)
+   DNS Name                          public.lab.f5demos.com
+   ================================= =====
 
-    |op-pool-basic|
+   |op-pool-basic|
 
 #. Click on "Add Item" to return to the previous screen
 
@@ -76,11 +76,11 @@ We will first create an Origin Pool that refers to the frontend application serv
 
 #. Enter the following variables:
 
-    ========= =====
-    Variable  Value
-    ========= =====
-    name      http
-    ========= =====
+   ========= =====
+   Variable  Value
+   ========= =====
+   name      http
+   ========= =====
 
 #. Click the *configure* button under "HTTP Health Check"
 
@@ -93,20 +93,20 @@ Exercise 2: HTTP Load Balancer Configuration
 
 #. Navigate the menu to go to "Manage"->"HTTP Load Balancers" and click on "Add HTTP Load Balancers".
 
-    |http_lb_menu| |http_lb_add|
+   |http_lb_menu| |http_lb_add|
 
 #. Enter the following variables *Note: the adjective-animal variable will be the namespace in your Account Settings*:
 
-    ================================= =====
-    Variable                          Value
-    ================================= =====
-    Name                              frontend
-    Domains                           adjective-animal.lab-mcn.f5demos.com
-    Select type of Load Balancer      HTTP
-    Automatically Manage DNS Records  Yes/Check 
-    ================================= =====
+   ================================= =====
+   Variable                          Value
+   ================================= =====
+   Name                              frontend
+   Domains                           adjective-animal.lab-mcn.f5demos.com
+   Select type of Load Balancer      HTTP
+   Automatically Manage DNS Records  Yes/Check 
+   ================================= =====
 
-    |lb-basic|
+   |lb-basic|
 
 Exercise 3: Configure Default Origin Server
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -120,7 +120,7 @@ We'll next configure the "Default Origin Servers".
 
 #. Notice that in the "VIP Creation" section *Advertise On Internet* has been selected by default.
 
-    |lb-vip|
+   |lb-vip|
 
 #. Click "*Save and Exit* to create the HTTP Load Balancer.
 
@@ -144,41 +144,40 @@ In this exercise we will create a new origin pool that connects to our AWS site 
 
 #. Navigate the menu to go to "Manage"->"Load Balancers"->"Origin Pools". Click on *Add Origin Pool*.
  
-    |op-add-pool|
+   |op-add-pool|
 
 #. Enter the following variables:
 
-    ================================= =====
-    Variable                          Value
-    ================================= =====
-    Name                              frontend-private
-    ================================= =====
+   ================================= =====
+   Variable                          Value
+   ================================= =====
+   Name                              frontend-private
+   ================================= =====
 
 #. Click on "Add Item" under Origin Servers
 
-    ================================= =====
-    Variable                          Value
-    ================================= =====
-    Select Type of Origin Server      DNS Name of Origin Server on given Sites
-    DNS Name                          jumphost.lab.f5demos.internal
-    Site                              student-awsnet
-    Select Network on the site        Inside Network
-    ================================= =====
+   ================================= =====
+   Variable                          Value
+   ================================= =====
+   Select Type of Origin Server      DNS Name of Origin Server on given Sites
+   DNS Name                          jumphost.lab.f5demos.internal
+   Site                              student-awsnet
+   Select Network on the site        Inside Network
+   ================================= =====
 
-    .. image:: ../images/op-pool-basic-private.png
+   .. image:: ../images/op-pool-basic-private.png
 
-    Click on "Add Item" to return to the previous screen
+   Click on "Add Item" to return to the previous screen
 
 #. Enter "8080" for the Port
 #. Select the http health check that you previously created
 
-    .. image:: ../images/existing-health-check.png 
+   .. image:: ../images/existing-health-check.png 
 
 #. Click the *Save and Exit* button to create the Origin Pool.
 
 Exercise 5: Edit HTTP Load Balancer Configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 
 #. Navigate the menu to go to "Manage"->"HTTP Load Balancers" and click on "..." next to the HTTP LB 
    that you previously created.
@@ -206,7 +205,7 @@ We can also view analytics of our HTTP Load Balancer.
 
 #. Navigate the menu to go to "Virtual Hosts"->"HTTP Load Balancers" and click on "Performance Monitoring" after hovering your mouse over "frontend"
 
-  .. image:: ../images/http_lb_stats.png
+   .. image:: ../images/http_lb_stats.png
 
 
 .. |app-context| image:: ../images/app-context.png

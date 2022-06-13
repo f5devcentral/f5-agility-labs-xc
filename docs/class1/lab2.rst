@@ -33,7 +33,8 @@ Exercise 1: Introduction to F5 Distributed Cloud AWS VPC Site
    From the top left "Select service" and look under "All Services"->"Cloud and Edge Sites"
 #. Go to Manage > Site Management > AWS VPC Sites
 
-   .. image:: ../_static/menu-cloud-edge-sites.png
+   .. image:: _static/menu-cloud-edge-sites.png
+      :width: 75% 
 
 #. Find the "student-awsnet" site
 
@@ -42,7 +43,7 @@ Exercise 1: Introduction to F5 Distributed Cloud AWS VPC Site
 
    You will be able to observe several metrics about the health of the site.
 
-   .. image:: ../_static/student-awsnet-site-metrics.png
+   .. image:: _static/student-awsnet-site-metrics.png
 
    
 #. Browse back to "AWS VPC Sites" 
@@ -60,14 +61,14 @@ During this lab we will not deploy a new AWS VPC Site.  If you would like to lea
 more about deploying an AWS VPC Site via F5 Distributed Cloud you may want to try using the 
 following F5 F5 Distributed Cloud Simulator:
 
--https://simulator.f5.com/s/cloud2cloud_via_sites_brownfield
+- https://simulator.f5.com/s/cloud2cloud_via_sites_brownfield
 
 You can emulate the steps that were used to create the F5 Distributed Cloud VPC Site in the lab environment by starting
 with the "3. Connect AWS VPC Site" https://simulator.f5.com/s/cloud2cloud_via_sites_brownfield/nav/aws/005/0
 
 Clicking on the "Next" button in the top right will allow you to see similar steps that were used to create the site.
 
-.. image:: ../_static/F5 Distributed Cloud-simulator-vpc-site.png
+.. image:: _static/f5xc-simulator-vpc-site.png
    :width: 50%
 
 Video Walkthrough 
@@ -75,5 +76,4 @@ Video Walkthrough
 Optional Video you can watch if you get stuck
 
 .. raw:: html
-   
    <iframe width="560" height="315" src="https://www.youtube.com/embed/s-BHH0Qayfc?start=244" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

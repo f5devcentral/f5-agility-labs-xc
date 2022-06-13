@@ -87,7 +87,7 @@ In this task you will add geo-filter and allowed-ip based service policies.
 +----------------------------------------------------------------------------------------------+
 | 12. Select **Allowed Sources** from the dropdown for **Select Policy Rules**, then locate the|
 |                                                                                              |
-|    **IPv4 Prefix List** configuration section and click **Configure**.                       |
+|     **IPv4 Prefix List** configuration section and click **Configure**.                      |
 |                                                                                              |
 | .. note::                                                                                    |
 |    *The section just below "List of IP Prefix Set" allows you to build a collection of*      |
@@ -125,6 +125,7 @@ Task 2: Attaching Service Policies and configuring IP Reputation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The following steps will enable you to attach Service Policies to your configured Load Balancer.
+
 It will also help you understand additional approaches for Service Policies.
 
 +----------------------------------------------------------------------------------------------+
