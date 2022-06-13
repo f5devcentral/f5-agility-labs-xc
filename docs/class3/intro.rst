@@ -111,13 +111,13 @@ step below to access the F5 Distributed Cloud Lab Tenant.
 |                                                                                              |
 | 10. In the **Load Balancers** configuration screen observe the URL. In the URI path, locate  |
 |                                                                                              |
-|    the **<adjective-animal>** namespace that you have been assigned. It will be located in   |
+|     the **<adjective-animal>** namespace that you have been assigned. It will be located in  |
 |                                                                                              |
-|    the portion of the URI path between */namespaces/* and */sites/* as shown in this         |
+|     the portion of the URI path between */namespaces/* and */sites/* as shown in this        |
 |                                                                                              |
-|    example **…/namespaces/<namespace>/sites/…**. Note the namespace as it will be used       |
+|     example **…/namespaces/<namespace>/sites/…**. Note the namespace as it will be used      |
 |                                                                                              |
-|    throughout the lab tasks that follow.                                                     |
+|     throughout the lab tasks that follow.                                                    |
 |                                                                                              |
 | .. note::                                                                                    |
 |    *Administratively, there are other ways to find namespaces. Due to access and permission* |
