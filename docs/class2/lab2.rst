@@ -67,7 +67,7 @@ This lab will begin back in the F5 Distributed Cloud Console.
 +----------------------------------------------------------------------------------------------+
 | 10. Return to the F5 Distributed Cloud Console, in the left-hand navigation menu, expand the |
 |                                                                                              |
-|    **Virtual Hosts** section and click the **HTTP Load Balancers** link.                     |
+|     **Virtual Hosts** section and click the **HTTP Load Balancers** link.                    |
 |                                                                                              |
 | 11. On your named Load Balancer, select the **Security Monitoring**, link as shown.          |
 +----------------------------------------------------------------------------------------------+

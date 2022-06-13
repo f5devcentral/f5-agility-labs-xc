@@ -7,13 +7,14 @@ In this next lab we will look at two additional topologies of how you can use an
 to secure traffic that is going to an endpoint that is not directly exposed to the Internet.
 
 Task 1. Create Origin Pools
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+---------------------------
 
 Previously we created an origin pool that was accessible via the Public Internet.
 The next lab exercise will create an origin pool that will provide internal resources discovered with local DNS by the AppMesh node that is deployed in our lab AWS environment. 
 
 Exercise 1: Create Private Origin Pool
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 We will first create an Origin Pool that refers to the "Private Endpoint" site in our lab environment.
 
 #. Start in F5 Distributed Cloud Console and switch back to the "Web App & API Protection" context.
@@ -22,35 +23,35 @@ We will first create an Origin Pool that refers to the "Private Endpoint" site i
 
 #. Enter the following variables:
 
-    ================================= =====
-    Variable                          Value
-    ================================= =====
-    Name                              private
-    ================================= =====
+   ================================= =====
+   Variable                          Value
+   ================================= =====
+   Name                              private
+   ================================= =====
 
 #. Click on "Add Item" under the section "Origin Servers"
 
    Enter the following variables: 
 
-    ================================= =====
-    Variable                          Value
-    ================================= =====
-    Select Type of Origin Server      DNS Name of Origin Server on given Sites
-    DNS Name                          private.lab.f5demos.internal
-    Site                              student-awsnet
-    ================================= =====
+   ================================= =====
+   Variable                          Value
+   ================================= =====
+   Select Type of Origin Server      DNS Name of Origin Server on given Sites
+   DNS Name                          private.lab.f5demos.internal
+   Site                              student-awsnet
+   ================================= =====
     
-    |op-pool-basic|
+   |op-pool-basic|
 
-    Click on "Add Item" to return to the previous screen.
+   Click on "Add Item" to return to the previous screen.
 
 #. Below the "Origin Servers" section fill in the Port information
 
-    ================================= =====
-    Variable                          Value
-    ================================= =====
-    Port                              8080
-    ================================= =====
+   ================================= =====
+   Variable                          Value
+   ================================= =====
+   Port                              8080
+   ================================= =====
 
 
 #. Under the *List of Health Check(s)* section, click the *Add item* button.
@@ -59,33 +60,33 @@ We will first create an Origin Pool that refers to the "Private Endpoint" site i
 
 #. Click the *Save and Exit* button to create the Origin Pool.
 
-.. |app-context| image:: ../_static/app-context.png
-.. |origin_pools_menu| image:: ../_static/origin_pools_menu.png
-.. |origin_pools_add| image:: ../_static/origin_pools_add.png
-.. |origin_pools_config| image:: ../_static/origin_pools_config.png
-.. |origin_pools_config_api| image:: ../_static/origin_pools_config_api.png
-.. |origin_pools_config_mongodb| image:: ../_static/origin_pools_config_mongodb.png
-.. |origin_pools_show_child_objects| image:: ../_static/origin_pools_show_child_objects.png
-.. |origin_pools_show_child_objects_status| image:: ../_static/origin_pools_show_child_objects_status.png
-.. |http_lb_origin_pool_health_check| image:: ../_static/http_lb_origin_pool_health_check.png
-.. |http_lb_origin_pool_health_check2| image:: ../_static/http_lb_origin_pool_health_check2.png
+.. |app-context| image:: _static/app-context.png
+.. |origin_pools_menu| image:: _static/origin_pools_menu.png
+.. |origin_pools_add| image:: _static/origin_pools_add.png
+.. |origin_pools_config| image:: _static/origin_pools_config.png
+.. |origin_pools_config_api| image:: _static/origin_pools_config_api.png
+.. |origin_pools_config_mongodb| image:: _static/origin_pools_config_mongodb.png
+.. |origin_pools_show_child_objects| image:: _static/origin_pools_show_child_objects.png
+.. |origin_pools_show_child_objects_status| image:: _static/origin_pools_show_child_objects_status.png
+.. |http_lb_origin_pool_health_check| image:: _static/http_lb_origin_pool_health_check.png
+.. |http_lb_origin_pool_health_check2| image:: _static/http_lb_origin_pool_health_check2.png
 
-.. |op-add-pool| image:: ../_static/op-add-pool.png
-.. |op-api-pool| image:: ../_static/op-api-pool.png
-.. |op-pool-basic| image:: ../_static/op-pool-basic-private.png
-.. |op-spa-check| image:: ../_static/op-spa-check.png
-.. |op-tshoot| image:: ../_static/op-tshoot.png
+.. |op-add-pool| image:: _static/op-add-pool.png
+.. |op-api-pool| image:: _static/op-api-pool.png
+.. |op-pool-basic| image:: _static/op-pool-basic-private.png
+.. |op-spa-check| image:: _static/op-spa-check.png
+.. |op-tshoot| image:: _static/op-tshoot.png
 
 Task 2. Update HTTP Load Balancer on F5 Distributed Cloud Regional Edge
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-----------------------------------------------------------------------
 
 We will now update the HTTP load balancer that we previously created to connect to
 the "Private Endpoint" via the AppMesh node that is deployed in the AWS lab environment.
 
-.. image:: ../_static/testdrive-volterra-waf-hybrid-vip.png
+.. image:: _static/testdrive-volterra-waf-hybrid-vip.png
 
 Exercise 1: HTTP Load Balancer Configuration
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 #. Start in F5 Distributed Cloud Console and switch to the "Web App & API Protection" context. [You should already be here from previous lab]
 
@@ -93,28 +94,28 @@ Exercise 1: HTTP Load Balancer Configuration
 
 #. Click on the three dots "..." to the right of the name of your *global* Load Balancer and select the "Manage Configuration" option.
    
-   .. image:: ../_static/screenshot-global-vip-actions-manage.png
+   .. image:: _static/screenshot-global-vip-actions-manage.png
 #. Click on "Edit Configuration" in the upper right of the screen (after your *global* Load Balancer is loaded).
    
-   .. image:: ../_static/screenshot-global-vip-edit-config.png
+   .. image:: _static/screenshot-global-vip-edit-config.png
 #. Under "Default Origin Servers" find your previous "public" Origin pool and click on the three dots "..." to the right under "Actions" and select "Edit"
    
-   .. image:: ../_static/screenshot-global-vip-edit-config-pools.png
+   .. image:: _static/screenshot-global-vip-edit-config-pools.png
 #. Change the selection of "Origin Pool" to "private" from "public" and click "Apply"
    
-   .. image:: ../_static/screenshot-global-vip-edit-config-pools-select.png
+   .. image:: _static/screenshot-global-vip-edit-config-pools-select.png
 #. Click "*Save and Exit* to update the HTTP Load Balancer.
 
 You should now be able to go to the DNS name that you entered 
 previously in a web browser.  The FQDN we used in our example is http://stable-sheep.lab-sec.f5demos.com/.  
 
-Exercise 5: Verify Configuration
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Exercise 2: Verify Configuration
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The private demo app should look like the following:
 
-.. image:: ../_static/screenshot-global-vip-private.png
-    :width: 50%
+.. image:: _static/screenshot-global-vip-private.png
+   :width: 50%
 
 In this topology we are sending traffic to an AnyCast IP that is hosted in F5 Distributed Cloud's Regional Edge.
 
@@ -126,21 +127,20 @@ In the next exercise we will look at a third topology of deploying a WAF policy 
 on the AppMesh node (in the Customer Edge).
 
 .. raw:: html
-   
    <iframe width="560" height="315" src="https://www.youtube.com/embed/s-BHH0Qayfc?start=366" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
 Task 3. Creating HTTP Load Balancer on F5 Distributed Cloud Customer Edge
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------------------------------------------------------
 
 In the previous lab exercises we were connecting to a F5 Distributed Cloud Load Balancer that was deployed in a Regional Edge.
 
 In the next lab exercise we will deploy a Load Balancer on the AppMesh node that was deployed in the AWS VPC (Customer Edge location).
 
-.. image:: ../_static/testdrive-volterra-waf-local-vip.png
+.. image:: _static/testdrive-volterra-waf-local-vip.png
 
 Exercise 1: HTTP Load Balancer Configuration
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 #. Start in F5 Distributed Cloud Console and switch to the "Web App & API Protection" context. [You should already be here from previous lab]
 
@@ -148,17 +148,18 @@ Exercise 1: HTTP Load Balancer Configuration
 
 #. Enter the following variables:
 
-    ================================= =====
-    Variable                          Value
-    ================================= =====
-    Name                              local
-    Domains                           [NAMESPACE].aws.lab.f5demos.com
-    Select type of Load Balancer      HTTP
-    Automatically Manage DNS Records  No/Unchecked 
-    ================================= =====
+   ================================= =====
+   Variable                          Value
+   ================================= =====
+   Name                              local
+   Domains                           [NAMESPACE].aws.lab.f5demos.com
+   Select type of Load Balancer      HTTP
+   Automatically Manage DNS Records  No/Unchecked 
+   ================================= =====
 
 Exercise 2: Configure Default Origin Server
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 We'll next configure the "Default Origin Servers".   
     
 #. Click on the *Add Items* link under the *Default Origin Servers* section.
@@ -168,7 +169,7 @@ We'll next configure the "Default Origin Servers".
 #. Click the *Add Item* button to exit the "Origin Pools" dialogue.
 
 Exercise 3: Configure Local VIP
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Previously we configured a VIP that was advertised on F5's Regional Edge (PoP) locations.
 We will modify this configuration to expose the service on the "Outside" interface of the AppMesh
@@ -178,32 +179,34 @@ we could opt to use the "Inside" interface that does not have an AWS EIP attache
 
 #. Under "Advanced Configuration" set "Where to Advertise the VIP" to "Advertise Custom"
    
-   .. image:: ../_static/screenshot-local-vip-advertise-custom.png
+   .. image:: _static/screenshot-local-vip-advertise-custom.png
+   
 #. Click on "Configure" under "Advertise Custom"
 #. Next to "Custom Advertise VIP Configuration" click on "Show Advanced Fields"
 #. Click on "Add Item"
 #. For "Site Network" click on "Outside Network" 
 #. For "Site Reference" select `student-awsnet`
 
-   .. image:: ../_static/lb-local-vip-advertise.png
+   .. image:: _static/lb-local-vip-advertise.png
       :width: 75%
+	  
 #. Click on "Add Item" 
 #. Click on "Apply" to return to previous screen
 
 
 Exercise 4: Configure WAF Policy
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 #. Under the *Security Configuration* section 
 
 #. Enter the following variables:
 
-    ============================================= =====================
-    Variable                                      Value
-    ============================================= =====================
-    Select Web Application Firewall (WAF) Config  App Firewall
-    App Firewall                                  blocking-app-firewall
-    ============================================= =====================
+   ============================================= =====================
+   Variable                                      Value
+   ============================================= =====================
+   Select Web Application Firewall (WAF) Config  App Firewall
+   App Firewall                                  blocking-app-firewall
+   ============================================= =====================
 
 #. Click "*Save and Exit* to create the HTTP Load Balancer.
 
@@ -212,16 +215,16 @@ previously in a web browser.  The FQDN we used in our example is http://stable-s
 This is a wildcard DNS entry that points to the Public IP (AWS Elastic IP) that is attached to the AppMesh node.
 
 Exercise 5: Verify Configuration
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The private demo app should look like the following:
 
-.. image:: ../_static/screenshot-local-vip-private.png
-    :width: 50%
+.. image:: _static/screenshot-local-vip-private.png
+   :width: 50%
 
 
 Exercise 6: Verify DNS
-~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^
 
 You can verify that you are connecting directly to AWS by comparing the DNS of the two hosts.
 
@@ -244,7 +247,11 @@ that is deployed in the AWS Lab Environment and not in the F5 Distributed Cloud 
 
 In the next lab we will look at how to customize our WAF policy.
 
+Video Walkthrough 
+^^^^^^^^^^^^^^^^^
+
+Optional Video you can watch if you get stuck
+
 .. raw:: html
-   
    <iframe width="560" height="315" src="https://www.youtube.com/embed/s-BHH0Qayfc?start=400" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 

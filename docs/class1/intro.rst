@@ -74,37 +74,57 @@ After following the invitation email's to **Update Password**, proceed to the fi
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 6. You can identify your namespace (an environment for isolating configured applications) by |
+| 6. You can adjust your work domains and skill level (not required) by clicking on the        |
 |                                                                                              |
-|    clicking on the **Account** icon in the top right of the screen and then clicking on      |
+|    **Account** icon in the top right of the screen and then clicking on **Account Settings**.|
 |                                                                                              |
-|    **Account Settings**.                                                                     |
+| 7. In the resulting window you can observe the **Work domains and skill level** section and  |
 |                                                                                              |
-| 7. Next click on **My Namespaces** in the left-hand navigation and take note of the          |
+|    other administrative functions.                                                           |
 |                                                                                              |
-|    **<adjective-animal>** namespace that you have been assigned. Each lab attendee will have |
+| .. note::                                                                                    |
+|    *For the purposes of this lab, permissions have been restricted to lab operations.  As a* |
 |                                                                                              |
-|    a unique namespace.                                                                       |
+|    *some menus will be locked and not visible.*                                              |
 +----------------------------------------------------------------------------------------------+
 | |intro006|                                                                                   |
 |                                                                                              |
 | |intro007|                                                                                   |
-|                                                                                              |
-| |intro008|                                                                                   |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 8. Using the **Select Service** menu top left select **DNS Management**.                     |
+| 8. Namespaces, which provide an environment for isolating configured applications or         |
 |                                                                                              |
-|    clicking on the **Account** icon in the top right of the screen and then clicking on      |
+|    enforcing role-based access controls, are leveraged within the F5 Distributed Cloud       |
 |                                                                                              |
-| 9. Note the **Delegated Domain** for this lab environment. It has been also listed above in  |
+|    Console.  For the purposes of this lab, each lab attendee has been provided a unique      |
 |                                                                                              |
-|    the Introduction summary for your convenience.                                            |
+|    **namespace** which you will defaulted to (in terms of GUI navigation) for all tasks      |
+|                                                                                              |
+|    performed through the course of this lab.                                                 |
+|                                                                                              |
+| 9. Click on the **Select Service** in the left-hand navigation. In the resulting fly out     |
+|                                                                                              |
+|    navigation, click **Load Balancers**.                                                     |
+|                                                                                              |
+| 10. In the **Load Balancers** configuration screen observe the URL. In the URI path, locate  |
+|                                                                                              |
+|     the **<adjective-animal>** namespace that you have been assigned. It will be located in  |
+|                                                                                              |
+|     the portion of the URI path between */namespaces/* and */sites/* as shown in this        |
+|                                                                                              |
+|     example **…/namespaces/<namespace>/sites/…**. Note the namespace as it will be used      |
+|                                                                                              |
+|     throughout the lab tasks that follow.                                                    |
+|                                                                                              |
+| .. note::                                                                                    |
+|    *Administratively, there are other ways to find namespaces. Due to access and permission* |
+|                                                                                              |
+|    *restrictions for this particular lab, those menus are not available.*                    |
 +----------------------------------------------------------------------------------------------+
-| |intro009|                                                                                   |
+| |intro008|                                                                                   |
 |                                                                                              |
-| |intro010|                                                                                   |
+| |intro009|                                                                                   |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
@@ -130,8 +150,6 @@ After following the invitation email's to **Update Password**, proceed to the fi
 .. |intro008| image:: _static/intro-008.png
    :width: 800px
 .. |intro009| image:: _static/intro-009.png
-   :width: 800px
-.. |intro010| image:: _static/intro-010.png
    :width: 800px
 .. |labbgn| image:: _static/labbgn.png
    :width: 800px
