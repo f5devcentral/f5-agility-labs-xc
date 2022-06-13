@@ -7,7 +7,7 @@ In this next lab we will look at two additional topologies of how you can use a 
 to secure traffic that is going to an endpoint that is not directly exposed to the Internet.
 
 F5 Distributed Cloud AWS VPC Site
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+---------------------------------
 
 In additional to using the F5 Distributed Cloud WAF from an F5 Regional Edge / PoP location
 you can also deploy a "AppMesh" node that enables you to access networks that
@@ -23,10 +23,11 @@ Once an AppMesh node has been deployed as a Customer Edge it helps provide two
 additional topologies for F5 Distributed Cloud WAF protection.
 
 #. Enabling F5 Distributed Cloud to proxy and protext internal services from our Regional Edge (additional DDoS protection, and AnyCast availability) even though it is not directly exposed to the internet.
+
 #. Allow F5 Distributed Cloud to provide WAF protection for "internal" and/or "local" systems
 
 Exercise 1: Introduction to F5 Distributed Cloud AWS VPC Site
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 #. Start in F5 Distributed Cloud Console and find the "AWS VPC Sites" menu item. 
 
@@ -55,7 +56,7 @@ Exercise 1: Introduction to F5 Distributed Cloud AWS VPC Site
    a site registration process. 
 
 Exercise 2 (Optional): F5 F5 Distributed Cloud Simulator
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 During this lab we will not deploy a new AWS VPC Site.  If you would like to learn 
 more about deploying an AWS VPC Site via F5 Distributed Cloud you may want to try using the 
@@ -72,7 +73,7 @@ Clicking on the "Next" button in the top right will allow you to see similar ste
    :width: 50%
 
 Video Walkthrough 
-~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^
 Optional Video you can watch if you get stuck
 
 .. raw:: html
