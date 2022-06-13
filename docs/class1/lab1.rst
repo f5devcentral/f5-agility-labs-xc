@@ -102,7 +102,7 @@ We will first create an Origin Pool that refers to the "Public Endpoint" site in
     
    |op-pool-basic|
 
-  Click on "Add Item" to return to the previous screen.
+   Click on "Add Item" to return to the previous screen.
 
 #. Below the "Origin Servers" section fill in the Port information
 

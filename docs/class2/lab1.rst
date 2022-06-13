@@ -100,7 +100,7 @@ steps will define an application, register its DNS and assign a target as an ori
 +----------------------------------------------------------------------------------------------+
 | 10. After returning to the prior window, make sure **Port:** under **Basic Configuration**   |
 |                                                                                              |
-|    is configured for **80**.                                                                 |
+|     is configured for **80**.                                                                |
 |                                                                                              |
 | 11. Leave all other values as shown while scrolling to the bottom and click, **Continue**.   |
 |                                                                                              |
@@ -117,6 +117,7 @@ Task 2: Configure WAF Policy on the Load Balancer
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The following steps will guide you through adding a Web Application Firewall (WAF) Policy.
+
 These steps will demonstrate various aspects of the configuration.
 
 +----------------------------------------------------------------------------------------------+
