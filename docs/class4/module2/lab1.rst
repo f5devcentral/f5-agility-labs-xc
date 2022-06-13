@@ -27,6 +27,7 @@ Start by logging into Distributed Cloud Console.  You should have previously rec
    *For the purposes of this lab, permissions have been restricted to lab operations.  As some menus will be locked and not visible.*
 
 |intro006|
+
 |intro007|
 
 
@@ -43,7 +44,8 @@ Start by logging into Distributed Cloud Console.  You should have previously rec
    .. note::                                                                               
       *Administratively, there are other ways to find namespaces. Due to access and permissionrestrictions for this particular lab, those menus are not available.*
 
-|intro008|                                                                                   |
+|intro008|
+                                                                                   |
 |intro009|                                                                                   |
 
 .. |intro006| image:: ../images/intro-006.png

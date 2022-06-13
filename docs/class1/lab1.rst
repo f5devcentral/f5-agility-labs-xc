@@ -24,10 +24,13 @@ We will create a blocking WAF policy.
 #. Start in F5 Distributed Cloud Console and switch to the "Web App & API Protection" context. 
 
    It can be access either from the main Home page... 
+   
    |app-context|
+  
    ...or via the "Select Service" menu on the top left corner of any other page:
 
    |select-service|
+   
 #. Ensure you are in the proper namespace (an adjective-animal combination) and not the default namespace. It is ok if you do not see your namespace as you will be defaulted to it as seen in your URI path as in the Introduction section.
 
    |namespace-selection|

@@ -1,5 +1,5 @@
-F5 Distributed Cloud WAF 101
-============================
+F5 Distributed Cloud 101 - WAF/WAAP Deployment Models 
+=====================================================
 
 `Last updated: 2022-06-09 5:00 PM ET
 

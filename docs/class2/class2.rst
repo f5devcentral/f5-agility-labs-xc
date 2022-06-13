@@ -1,5 +1,5 @@
-F5 Distributed Cloud Lab 102 - WAF/WAAP Deeper Dive
-===================================================
+F5 Distributed Cloud  102 - WAF/WAAP Deeper Dive
+================================================
 
 Welcome
 -------
