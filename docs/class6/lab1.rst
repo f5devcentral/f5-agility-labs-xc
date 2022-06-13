@@ -10,7 +10,7 @@ Lab 1: Configure CSD and add the JavaScript tag to the web page
 
  .. note:: You can sign up for a free account for the F5 Distributed Cloud in case you don't have an account yet by following the `sign up description <https://github.com/f5devcentral/f5-waap/blob/main/step-1-signup-deploy/voltConsole.rst>`_ or just go directly to the sign up page https://console.ves.volterra.io/signup/usage_plan.
 
- .. image:: ../images/csd-login.png
+ .. image:: images/csd-login.png
 
 |
 
@@ -18,13 +18,13 @@ Lab 1: Configure CSD and add the JavaScript tag to the web page
 
  Once you logged in, click on "Client-Side Defense"
 
- .. image:: ../images/csd-all-services.png
+ .. image:: images/csd-all-services.png
 
 |
 
  And enable Client-Side Defense for your tenant. No worries if another user of the same tenant enabled it already.
 
- .. image:: ../images/csd-enable.png
+ .. image:: images/csd-enable.png
 
 |
 
@@ -32,16 +32,16 @@ Lab 1: Configure CSD and add the JavaScript tag to the web page
 
 Click on "Configuration" and +Add domain to protect
 
- .. image:: ../images/csd-addDomainProtect.png
+ .. image:: images/csd-addDomainProtect.png
 
 Configure the domain as **f5.com** then **Save & Exit**
 
- .. image:: ../images/csd-addDomainSaveNExit.png
+ .. image:: images/csd-addDomainSaveNExit.png
 |
 
  Click on "Configuration" - "How to Inject JS" and follow step *1 - 3* on the right for adding the JavaScript tag to **your** webpage between the <head> and </head> tags. Step 5 - 6 is explained below.
 
- .. image:: ../images/csd-script.png
+ .. image:: images/csd-script.png
 
  .. note:: The CSD JavaScript should always be the first JavaScript to load on the web page to ensure that the CSD JavaScript can detect any malicious scripts running on the web page.
      
@@ -51,27 +51,27 @@ Configure the domain as **f5.com** then **Save & Exit**
 
 To access the BIG-IP, on the Class UDF screen, click the link for TMUI under the BIG-IP.  The username and password is **admin / f5DEMOS4u!**.
 
-.. image:: ../images/agility-udf-ui_1.png
+.. image:: images/agility-udf-ui_1.png
 
 
 In your BIG-IP TMUI, go to **Local Traffic->iRules->Data Group Lists** and select the Data Group client_side_defense_js
 
-.. image:: ../images/datagrouplist.png
+.. image:: images/datagrouplist.png
 
 In the edit screen, first select the row for "access.udf.f5.com" and then click "Edit"
 
-.. image:: ../images/select_dg_item.png
+.. image:: images/select_dg_item.png
 
 Replace the Value "<REPLACEME>" with the JS you copied from the XC CSD configuration in step 3.  It should be one long line of JS, exactly as copied.
 
 Click the "Add" button and then click "Update" at the bottom of the form to save the changes to the Data Group.
 
-.. image:: ../images/update_dg_item.png
+.. image:: images/update_dg_item.png
 
 
  After you have added the JavaScript tag to your web page, continue with step 4 from the screenshot above by adding the domain to protect. For this lab use **f5.com**.
 
- .. image:: ../images/csd-domain-protect.png
+ .. image:: images/csd-domain-protect.png
 
  Finally proceed with step 5 from the screenshot above to test if the JavaScript tag was added successfully to your web page.
  
@@ -79,16 +79,16 @@ Click the "Add" button and then click "Update" at the bottom of the form to save
  
  In our example you can copy and paste the JuiceShop link out of your UDF class. On the UDF main page, under BIG-IP open the JuiceShop link. Copy the link from the top of your browser and paste it in to URL field.
 
- .. image:: ../images/csd-js-test1.png 
+ .. image:: images/csd-js-test1.png 
 
 .. note:: The UDF can mess with this test.  In all likelihood you will get a failure but with a "true" site you are working with, it should report back with Success.
 
-.. image:: ../images/agility-test-JS-failure.png
+.. image:: images/agility-test-JS-failure.png
 
 |
  Now you can test the site.  On the UDF main page, under the BIG-IP, open the JuiceShop link
 
- .. image:: ../images/agility-udf-ui_2.png
+ .. image:: images/agility-udf-ui_2.png
 
 |
 
@@ -98,11 +98,11 @@ Click the "Add" button and then click "Update" at the bottom of the form to save
 
 This shows the JS has been inserted into the page
 
- .. image:: ../images/js_injection.png
+ .. image:: images/js_injection.png
 
 and this shows that the JS has executed and called back to the F5 Cloud with the required telemetry.
 
-.. image:: ../images/js_download.png
+.. image:: images/js_download.png
 
 |
 
