@@ -65,14 +65,13 @@ You should receive an error.  You should look for "SERVFAIL" that indicates the 
 Exercise 2: Origin Pool
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-
 #. Navigate the menu to go to *Manage* -> *Load Balancer*, then click *Origin Pools*.
 
-    |origin_pools_menu|
+   |origin_pools_menu|
 
 #. Click the *Add Origin Pool* button.
 
-    |origin_pools_add|
+   |origin_pools_add|
     
 #. Enter the following variables:
 
@@ -120,49 +119,49 @@ Exercise 3: Create Backend TCP Load Balancer
 
 #. Navigate the menu to go to *Manage* -> *Load Balancer*, then click *TCP Load Balancers*.
 
-    |tcp_lb_menu|
+   |tcp_lb_menu|
 
 #. Click the *Add TCP Load Balancer* button.
 
 #. Enter the following variables:
 
-    ==============================  =====
-    Variable                        Value
-    ==============================  =====
-    Name                            backend
-    Domain                          studentXX.example.internal
-    Listen Port                     443
-    With SNI                        Checked
-    Where to Advertise the VIP      Advertise Custom
-    ==============================  =====
+   ==============================  =====
+   Variable                        Value
+   ==============================  =====
+   Name                            backend
+   Domain                          studentXX.example.internal
+   Listen Port                     443
+   With SNI                        Checked
+   Where to Advertise the VIP      Advertise Custom
+   ==============================  =====
 
 #. Configure Origin Pools
 
-    #. Under the *Origin Pools* section, click the *Add Item* link.
-    #. Select the *backend* pool.
-    #. Click the *Add Item* button to close the *Origin Pools* dialogue.
+   #. Under the *Origin Pools* section, click the *Add Item* link.
+   #. Select the *backend* pool.
+   #. Click the *Add Item* button to close the *Origin Pools* dialogue.
 
 #. Configure Advertisement 
 
-    #. Under *Advertise Custom* click the *Configure* link.
-    #. Click on "Add Item"
-    #. You will need to add a site:
+   #. Under *Advertise Custom* click the *Configure* link.
+   #. Click on "Add Item"
+   #. You will need to add a site:
             
-            =========================== =====
-            Variable                    Value
-            =========================== =====
-            Select Where to Advertise   Site
-            Site Network                Inside Network
-            Site Reference              student-awsnet
-            =========================== =====
+      =========================== =====
+      Variable                    Value
+      =========================== =====
+      Select Where to Advertise   Site
+      Site Network                Inside Network
+      Site Reference              student-awsnet
+      =========================== =====
 
 
-        |tcp_lb_advertise|
+      |tcp_lb_advertise|
 
-    #. Click the *Add Item* button to exit the *Advertise Custom* dialogue.
-    #. Click on "Apply"
+   #. Click the *Add Item* button to exit the *Advertise Custom* dialogue.
+   #. Click on "Apply"
 
-    |tcp_lb_config|
+   |tcp_lb_config|
 
 #. CLick the *Save and Exit* button to exit the *TCP Load Balancer* dialogue.
 
@@ -180,7 +179,7 @@ Using the "In Container Diagnostic Services"
 
 You should no longer get an error.
 
-    |dns_check|
+|dns_check|
 
 Exercise 5: Connect to the backend
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -194,7 +193,7 @@ Using the "In Container Diagnostic Services"
 #. Enter "curl -sk https://adjective-animal.example.internal" (replace adjective-animal with your namespace i.e. poetic-quail)
 #. Click on Run Command
 
-    |check_host|
+|check_host|
 
 You should see an output.  Now try repeating the same but using the IP address that you retrieved in Exercise 4.
 
@@ -202,7 +201,7 @@ You should see an output.  Now try repeating the same but using the IP address t
 #. Enter "curl -sk https://10.0.5.XX" (replace XX with the value your retrieved in Exercise 4)
 #. Click on Run Command
 
-    |check_ip|
+|check_ip|
 
 You should see an error.  This is because Distributed Cloud is expecting an SNI value.  This allows you to re-use
 the same IP address for multiple different services.
@@ -214,8 +213,6 @@ We can also make use of Distributed Cloud "Global Networks" to provide routed co
 If you are interested in learning more about Global Networks you can use the following Distributed Cloud simulator: https://simulator.f5.com/s/cloud2cloud_via_sites
 
 Thank you for completing the lab!
-
-
 
 .. |app-context| image:: ../images/app-context.png
 .. |tcp_lb_menu| image:: ../images/tcp_lb_menu.png

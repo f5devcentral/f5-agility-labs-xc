@@ -85,7 +85,7 @@ step below to access the F5 Distributed Cloud Lab Tenant.
 |    other administrative functions.                                                           |
 |                                                                                              |
 | .. note::                                                                                    |
-|    *For the purposes of this lab, permissions have been restricted to lab operations.  As a* |
+|    *For the purposes of this lab, permissions have been restricted to lab operations.  As*   |
 |                                                                                              |
 |    *some menus will be locked and not visible.*                                              |
 +----------------------------------------------------------------------------------------------+
@@ -101,7 +101,7 @@ step below to access the F5 Distributed Cloud Lab Tenant.
 |                                                                                              |
 |    Console.  For the purposes of this lab, each lab attendee has been provided a unique      |
 |                                                                                              |
-|    **namespace** which you will defaulted to (in terms of GUI navigation) for all tasks      |
+|    **namespace** which you will be defaulted to (in terms of GUI navigation) for all tasks   |
 |                                                                                              |
 |    performed through the course of this lab.                                                 |
 |                                                                                              |

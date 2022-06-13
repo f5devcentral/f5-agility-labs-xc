@@ -8,7 +8,7 @@ Start by logging into Distributed Cloud Console.  You should have previously rec
 
 #. Please log into your assigned Distributed Cloud tenant. https://f5-xc-lab-mcn.console.ves.volterra.io 
 
-    .. note:: The Distributed Cloud GUI has a relatively short timeout. This is not configurable. We have an enhancement request to allow this to be configured.
+   .. note:: The Distributed Cloud GUI has a relatively short timeout. This is not configurable. We have an enhancement request to allow this to be configured.
 
 #. When you first login you will need to select your "persona"
 
@@ -20,11 +20,38 @@ Start by logging into Distributed Cloud Console.  You should have previously rec
 #. Several tooltips will appear.  You can close these out.
 
 #. Click on "Account Settings" by expanding the "Account" icon in the top right of the screen and 
-   clicking on "Account Settings"
+   clicking on "Account Settings".  In the resulting window you can observe the **Work domains and skill level** section and 
+   other administrative functions.
+   
+.. note::
+   *For the purposes of this lab, permissions have been restricted to lab operations.  As some menus will be locked and not visible.*
 
-   .. image:: ../images/screenshot-account-settings.png
-#. Next click on "My Namespaces" and take note of the `adjective-animal` namespace that you have been assigned. This done using a dictionary index reference to dynamically create namespaces <adjective-animal>. Each student will have a unique namespace.
+|intro006|
+|intro007|
 
-   .. image:: ../images/screenshot-mynamespaces.png 
 
-Please note this namespace as this will be required for future reference in the lab.  For example in this image "select-weasel" is the value that you should be used when prompted to create alert-krill.lab-mcn.f5demos.com.
+#. Namespaces, which provide an environment for isolating configured applications or enforcing role-based access controls, are leveraged
+   within the F5 Distributed Cloud Console.  For the purposes of this lab, each lab attendee has been provided a unique **namespace** which
+   you will be defaulted to (in terms of GUI navigation) for all tasks performed through the course of this lab.
+
+#. Click on the **Select Service** in the left-hand navigation. In the resulting fly out navigation, click **Load Balancers**.
+
+#. In the **Load Balancers** configuration screen observe the URL. In the URI path, locate the **<adjective-animal>** namespace that you have
+   been assigned. It will be located in the portion of the URI path between */namespaces/* and */sites/* as shown in this example 
+   **…/namespaces/<namespace>/sites/…**. Note the namespace as it will be used throughout the lab tasks that follow.
+
+   .. note::                                                                               
+      *Administratively, there are other ways to find namespaces. Due to access and permissionrestrictions for this particular lab, 
+	  those menus are not available.*
+
+|intro008|                                                                                   |
+|intro009|                                                                                   |
+
+.. |intro006| image:: ../images/intro-006.png
+   :width: 800px
+.. |intro007| image:: ../images/intro-007.png
+   :width: 800px
+.. |intro008| image:: ../images/intro-008.png
+   :width: 800px
+.. |intro009| image:: ../images/intro-009.png
+   :width: 800px
