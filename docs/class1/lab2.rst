@@ -34,6 +34,7 @@ Exercise 1: Introduction to F5 Distributed Cloud AWS VPC Site
 #. Go to Manage > Site Management > AWS VPC Sites
 
    .. image:: _static/menu-cloud-edge-sites.png
+      :width: 75% 
 
 #. Find the "student-awsnet" site
 

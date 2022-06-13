@@ -42,7 +42,7 @@ We will first create an Origin Pool that refers to the "Private Endpoint" site i
     
    |op-pool-basic|
 
-    Click on "Add Item" to return to the previous screen.
+   Click on "Add Item" to return to the previous screen.
 
 #. Below the "Origin Servers" section fill in the Port information
 
@@ -136,7 +136,7 @@ In the previous lab exercises we were connecting to a F5 Distributed Cloud Load 
 
 In the next lab exercise we will deploy a Load Balancer on the AppMesh node that was deployed in the AWS VPC (Customer Edge location).
 
-.. image:: ../_static/testdrive-volterra-waf-local-vip.png
+.. image:: _static/testdrive-volterra-waf-local-vip.png
 
 Exercise 1: HTTP Load Balancer Configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
