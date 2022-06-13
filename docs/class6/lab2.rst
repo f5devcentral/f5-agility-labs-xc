@@ -18,13 +18,13 @@ Login to F5 Distributed Cloud using your own account and go to the Client-Side D
 
 Once you logged in, click on *Client-Side Defense*.
 
- .. image:: ../images/csd-dashboard.png
+ .. image:: images/csd-dashboard.png
 
 |
 
 The CSD Dashboard displays the following tabs that you use for displaying data, and for deciding whether to mitigate or allow a suspicious domain.
 
- .. image:: ../images/csd-tabs.png
+ .. image:: images/csd-tabs.png
 
 *Suspicious Domains:* When a web page with CSD protection is loaded on the end-user’s browser, scripts running on that web page interact with other domains. The Suspicious Domains list displays a list of the domains that those scripts interact with and which CSD detected to be potentially malicious.
 
@@ -40,7 +40,7 @@ The CSD Dashboard displays the following tabs that you use for displaying data, 
  
  Click on suspicious domains to display the list of the potentially malicious domains. "Select Page" on the right allows to filter.
 
- .. image:: ../images/agility-suspicious-domains.png
+ .. image:: images/agility-suspicious-domains.png
 
  .. note:: If you do not see any domains, you may need to wait a few minutes.  Also, refreshing your JuiceShop site page can also help.  The requests are polled and sometimes not all of the requests are reviewed - it is roughly 1 in 5 or 10 requests.  
 |
@@ -50,19 +50,19 @@ The CSD Dashboard displays the following tabs that you use for displaying data, 
  Go to the row of the relevant domain and select the appropriate action on the right by clicking on the *three dots*. Our example shows how to add the domain jqwereid.online to the Mitigate List. It goes first in the state Added to Mitigated List (green) and change after some time to status Mitigated (blue). 
  Alternatively, you can add domains manually to the Mitigate List or Allow List by going to the Mitigate List or Allow List at the top and, click on *Add domain* and enter the domain name.
 
- .. image:: ../images/csd-mitigate.png
+ .. image:: images/csd-mitigate.png
 
 |
 
  Status - Added to Mitigated List
 
- .. image:: ../images/csd-mitigate-added.png
+ .. image:: images/csd-mitigate-added.png
 
 |
 
  Status - Mitigated
 
- .. image:: ../images/csd-mitigated.png
+ .. image:: images/csd-mitigated.png
 
 |
 
@@ -72,7 +72,7 @@ The CSD Dashboard displays the following tabs that you use for displaying data, 
 
  Have the network tab and console tab open as shown below
  
- .. image:: ../images/agility-demonstrating-csd_7.png
+ .. image:: images/agility-demonstrating-csd_7.png
 
   Click the Clear button so that there are no files listed in the upper window.  
   If you need to open the Console, click on the 'Console' along the bottom of the Browser window.
@@ -85,13 +85,13 @@ The CSD Dashboard displays the following tabs that you use for displaying data, 
 
  Press enter and you should see a message like in the screenshot below and no request in the network tab.
 
- .. image:: ../images/agility-demonstrating-csd_3.png
+ .. image:: images/agility-demonstrating-csd_3.png
 
 Hitting Enter will execute the Pasted commands.
 
 You can also clear the Console and Network screens if you like with the highlighted buttons.
 
- .. image:: ../images/agility-demonstrating-csd_4.png
+ .. image:: images/agility-demonstrating-csd_4.png
 
 This shows that the Domain has been Mitigated.
 
@@ -107,7 +107,7 @@ This shows that the Domain has been Mitigated.
 
  Press enter and you should see that the request is successful and shows up in the network tab with the *status 200*
 
- .. image:: ../images/agility-demonstrating-csd_1.png
+ .. image:: images/agility-demonstrating-csd_1.png
 
 
 |1. Configure Logging
@@ -116,30 +116,30 @@ This shows that the Domain has been Mitigated.
  When you enable CSD, CSD automatically creates an Alert Receiver using the email address you entered for your account on Distributed Cloud Console. CSD also automatically creates an Alert Policy and adds a CSD alerts group to this policy. To ensure that you receive alerts when CSD detects suspicious activity, you need to verify your email on the Alert Receiver.
  Just modify the alert receiver email address accordingly if needed or use a different alert mechanism.
 
- .. image:: ../images/csd-alert-receiver.png
+ .. image:: images/csd-alert-receiver.png
 
 |
 
 To verify, click the menu on the right and click "Verify Email"
 |
 
- .. image:: ../images/agility-email-verification_2.png
+ .. image:: images/agility-email-verification_2.png
 
 and then enter the code you recieve in the "Enter Verification code" form
 
- .. image:: ../images/agility-email-verification_1.png
+ .. image:: images/agility-email-verification_1.png
 
 You can configure other alert systems as well
 
- .. image:: ../images/csd-alert-receiver-details.png
+ .. image:: images/csd-alert-receiver-details.png
 
  Example for an alert email "Verify Email" 
 
- .. image:: ../images/alert-email.png
+ .. image:: images/alert-email.png
 
 You can also see alerts interactively:
 
-.. image:: ../images/agility-alert-dashboard.png
+.. image:: images/agility-alert-dashboard.png
 |
 
 
@@ -167,7 +167,7 @@ Appendix A - Artificially generate suspicious domains
 
  Example what you should see when you view the source code of the page.
 
- .. image:: ../images/csd-view-source-color.png
+ .. image:: images/csd-view-source-color.png
 
 |
 
@@ -185,7 +185,7 @@ Set up local Overrides in Chrome DevTools
 #. Click on the *Overrides* tab.
 #. Click on *Select folder for overrides*.
 
- .. image:: ../images/csd-select-folder-overrides.png
+ .. image:: images/csd-select-folder-overrides.png
 
 |
 
@@ -193,7 +193,7 @@ Set up local Overrides in Chrome DevTools
 #. At the top of your window, click **Allow** to give DevTools read and write access to this directory.
 #. Make sure *"Enable Local Overrides"* is checked.
 
- .. image:: ../images/csd-select-folder-overrides-selected.png
+ .. image:: images/csd-select-folder-overrides-selected.png
 
 |
 
@@ -201,19 +201,19 @@ Set up local Overrides in Chrome DevTools
 #. Open the page, in this example https://arcadia.emea.f5se.com/
 #. Select the page or a file like index.html that you want to override. In our example "arcadia.emea.f5se.com". Just refresh if you don’t see it in the network tab.
 
- .. image:: ../images/csd-select-page.png
+ .. image:: images/csd-select-page.png
 
 |
 
 11. Right click on the code on the right side and select "Save for overrides".
 
- .. image:: ../images/csd-save-for-overrides.png
+ .. image:: images/csd-save-for-overrides.png
 
 |
 
 12. Make your code changes on the right side.
  
- .. image:: ../images/csd-add-injection-code.png
+ .. image:: images/csd-add-injection-code.png
 
  **And make sure you save your changes afterwards e.g. with Ctrl+S or Command+S!**
 
