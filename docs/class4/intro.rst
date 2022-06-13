@@ -13,7 +13,7 @@ Narrative
 
 In this example we are starting with an "on-prem" Data Center.
 
-.. image:: ./images/on-prem.png
+.. image:: ./images/intro1.png
 
 The "frontend" application has a requirement that it must be able to 
 communicate with the "backend".  The "backend" could be a database, legacy system, etc.
@@ -22,13 +22,13 @@ The goal is to extend the environment into AWS and still allow the "frontend" to
 connect to the backend.  The following topology is deployed where VoltMesh is deployed
 in both the on-prem and AWS environment.
 
-.. image:: ./images/lab-topology.png
+.. image:: ./images/intro2.png
 
 Once you have deployed the AWS environment and deployed two VoltMesh sites you will utilize
 a Volterra TCP Load Balancer to privately connect from AWS to on-prem and a HTTP Load Balancer 
 to connect publicly from a Regional Edge (AnyCast IP) to the frontend in AWS.
 
-.. image:: ./images/lab-flow.png
+.. image:: ./images/intro3.png
 
 Lab Environment
 ---------------
