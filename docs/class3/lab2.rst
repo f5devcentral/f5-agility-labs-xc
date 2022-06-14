@@ -1,5 +1,8 @@
 Lab 2: Basic Attack Automation 
 ==============================
+
+**Run this lab from the JUMPHOST**
+
 In this lab we will be utilizing the automation toolkit known as OpenBullet and taking on the 
 role of a credential stuffing attacker.  This is a flexible application that allows you to easily
 create credential stuffing and scraping attacks. This will assist you in further understanding the tools
@@ -18,7 +21,7 @@ it  makes curl like requests.
 
 |lab002|
 
-4. Add a new **REQUEST** block. Configure URL as **http://<namespace url from the bot defense setup>** ensure Method is **GET**.  While not strictly necessary this will be used to show how to capture and reuse information.
+4. Add a new **REQUEST** block. Configure URL as **http://namespace.lab-sec.f5demos.com/user/vipsignin** ensure Method is **GET**.  While not strictly necessary this will be used to show how to capture and reuse information.
 
 |lab003|
 
@@ -26,17 +29,20 @@ it  makes curl like requests.
 
 |lab004|
 
-6. Add a new **PARSE** block.  Configure **Var/Cap Name** as "*CSRF*" and then for the **Left String** we use **<input id="csrf_token" name="csrf_token" type="hidden" value="** and Right String we use **">**   Check **ENC. OUTPUT**.  This will capture the token between the left and right strings and store it in a variable named CSRF for future use.
+6. Add a new **PARSE** block. Configure **Var/Cap Name** as "*CSRF*".  
+**!!! For this step an issue has been identified copy & pasting these values from the lab document via RDP. They seem to lose escape characters. Ensure you find and copy them from the LOG window as seen in the previous step!!! **
+then for the **Left String** we use **<input id="csrf_token" name="csrf_token" type="hidden" value="** and Right String we use **">** Check **ENC. OUTPUT**. This will capture the token between the left and right strings and store it in a variable named CSRF for future use.
+
 
 |lab005|
 
-7. Add a new **REQUEST** block. Configure URL as **http://<namespace url from the bot defense setup>** ensure **Method** is **POST**.  In the POST DATA Field use the follow exactly: **email=<USERNAME>&password=<PASSWORD>&csrf_token=<CSRF>**  The information within <> brackets are variables and will be filled in at runtime.  Now fill in the credentials **john.smith@nobody.com:test123** in the **DATA** field and ensure **Credentials** is the method selected.  Now hit **Start**, switch to **HTML View** and we should see the bot was successfully able to log into the account.
+7. Add a new **REQUEST** block. Configure URL as **http://namespace.lab-sec.f5demos.com/user/vipsignin** ensure **Method** is **POST**.  In the POST DATA Field use the follow exactly: **email=<USERNAME>&password=<PASSWORD>&csrf_token=<CSRF>**  The information within <> brackets are variables and will be filled in at runtime.  Now fill in the credentials **john.smith@nobody.com:test123** in the **DATA** field and ensure **Credentials** is the method selected.  Now hit **Start**, switch to **HTML View** and we should see the bot was successfully able to log into the account.
 
 |lab006|
 
 8. Next we want to ensure we identify when the login was successful and to capture the secret word.
 
-9. Add a new **KEY CHECK** block. Click the Keychain + button twice.  Now in the first entry this will be to determine success we will look in the page source for the follow string.  Enter "Login Successful" in the indicated field.  For the second block we will use this for failure.  Change the type to FAILURE and enter "Incorrect Details" into the indicated field.
+9. Add a new **KEY CHECK** block. Click the **Keychain +** button twice.  Now in the first entry this will be to determine success we will look in the page source for the follow string.  Enter "Login Successful" in the indicated field.  For the second block we will use this for failure.  Change the type to FAILURE and enter "Incorrect Details" into the indicated field.
 
 |lab007|
 
@@ -58,7 +64,7 @@ it  makes curl like requests.
 
 |lab011|
 
-15. Additionally we can go to the distributed cloud dashboard.  Clickon *HTTP Load Balancers* then *Security Monitoring* and explore using the *Bot Defense* tabs.  One thing to note that this attack is seeing as Token Missing, essentially this means that the unique token embedded in the Javascript file was not provided. This is typically of attacks that don't use a browser to render the page.
+15. Additionally we can go to the distributed cloud dashboard outside of the RDP Jumphost.  Clickon *HTTP Load Balancers* then *Security Monitoring* and explore using the *Bot Defense* tabs.  One thing to note that this attack is seeing as Token Missing, essentially this means that the unique token embedded in the Javascript file was not provided. This is typically of attacks that don't use a browser to render the page.
 
 |lab012|
 
