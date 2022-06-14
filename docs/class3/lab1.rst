@@ -163,6 +163,8 @@ steps will define an application, register its DNS and assign a target as an ori
 Task 2: Curl - Direct (10min)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+**Run this lab from the JUMPHOST**
+
 1. Launch the Chrome Browser and navigate to https://airline-backend.f5se.com/user/vipsignin
 
 2. Once loaded right click on the page and choose **Inspect** then navigate to the **Network** tab on the new right hand side window.  This will allow you to monitor what content is loaded and submitted during interactions with the site.
@@ -190,7 +192,9 @@ Task 2: Curl - Direct (10min)
 Task 3: Compare Via Bot Defense (5min)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1. Launch the Chrome Browser and navigate to **http://<namespace url from the bot defense setup>** (note: HTTP not HTTPS)
+**Run this lab from the JUMPHOST**
+
+1. Launch the Chrome Browser and navigate to **http://namespace.lab-sec.f5demos.com/user/vipsignin** (note: HTTP not HTTPS)
 
 2. Once loaded right click on the page and choose **Inspect** then navigate to the **Network** tab on the new right hand side window.  This will allow you to monitor what content is loaded and submitted during interactions with the site.
 

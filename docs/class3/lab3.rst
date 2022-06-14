@@ -1,6 +1,8 @@
 Lab 3: Human Like Automation 
 ==============================
 
+**Run this lab from the JUMPHOST**
+
 In this test we will replicate a more "human like" automation that fully renders the page by remotely controlling the Chrome browser.   
 
 1. Launch OpenBullet from the desktop.
@@ -13,7 +15,7 @@ In this test we will replicate a more "human like" automation that fully renders
 
 |lab002|
 
-4. Add a new **NAVIGATE** block. Configure URL as **http://<namespace url from the bot defense setup>**
+4. Add a new **NAVIGATE** block. Configure URL as **http://namespace.lab-sec.f5demos.com/user/vipsignin**
 
 |lab003|
 
@@ -61,7 +63,7 @@ In this test we will replicate a more "human like" automation that fully renders
 
 |lab012|
 
-16. Additionally we can go to the distributed cloud dashboard.  Clickon *HTTP Load Balancers* then *Security Monitoring* and explore using the *Bot Defense* tabs.  One thing to note that this attack is seeing as Threat Intelligence, essentially this means that the telemetry information was able to determine if this was a bot based on how it acted and the signals received.
+16. Additionally we can go to the distributed cloud dashboard  outside of the RDP Jumphost.  Clickon *HTTP Load Balancers* then *Security Monitoring* and explore using the *Bot Defense* tabs.  One thing to note that this attack is seeing as Threat Intelligence, essentially this means that the telemetry information was able to determine if this was a bot based on how it acted and the signals received.
 
 |lab013|
 
