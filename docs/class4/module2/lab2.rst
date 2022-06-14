@@ -194,7 +194,7 @@ Exercise 5: Edit HTTP Load Balancer Configuration
 
 #. Click on "Apply"
 #. Click on "Save and Exit"
-#. Refresh your browser window for "poetic-quail.lab-mcn.f5demos.com" and you should now have access to a diagnostic tool that will let you explore the environment.
+#. Refresh your browser window for "http://adjective-animal.lab-mcn.f5demos.com" (example: poetic-quail.lab-mcn.f5demos.com) and you should now have access to a diagnostic tool that will let you explore the environment.
 
    .. image:: ../images/m-container-tool.png
 
