@@ -9,7 +9,7 @@ application.  In the on-prem environment the name "adjective-animal.example.inte
 the backend IP of 10.1.20.5.
 
 In the AWS environment we want to resolve the name "adjective-animal.example.internal" to resolve to
-the IP address of the Volterra Gateway (VG).  The VG will host a Virtual IP (VIP) that will
+the IP address of the Distributed Cloud Mesh.  The Cloud Mesh will host a Virtual IP (VIP) that will
 host a TCP Load Balancer that will proxy traffic back to the original backend application.
 
 .. image:: ../images/tcplb-lab.png
@@ -38,14 +38,14 @@ Next we will verify that we do not have a DNS record for adjective-animal.exampl
 #. Refresh your browser window
 #. Click on DNS Lookup
 #. Verify that you see "10.0.5.xxx" after the "@"
-#. Enter "adjective-animal.example.internal" (replace studentXX with your student ID i.e. poetic-quail)
+#. Enter "adjective-animal.example.internal" (replace adjective-animal with your namespace ID i.e. poetic-quail)
 #. Click on Lookup
 
 You should receive an error.  You should look for "SERVFAIL" that indicates the name does not exist.
 
 .. code-block::
         
-    ; <<>> DiG 9.16.1-Ubuntu <<>> @10.0.5.220 student002.example.internal A
+    ; <<>> DiG 9.16.1-Ubuntu <<>> @10.0.5.220 poetic-quail.example.internal A
     ; (1 server found)
     ;; global options: +cmd
     ;; Got answer:
@@ -87,7 +87,7 @@ Origin Pool Name                backend
 =============================== ===============
 Select Type of Origin Server    IP address of Origin Server on given Sites
 IP address                      10.1.20.5
-Site                            Your UDF site
+Site                            student-onprem
 Select Network on the site      Inside Network
 =============================== ===============
 
@@ -129,7 +129,7 @@ Exercise 3: Create Backend TCP Load Balancer
    Variable                        Value
    ==============================  =====
    Name                            backend
-   Domain                          studentXX.example.internal
+   Domain                          adjective-animal.example.internal
    Listen Port                     443
    With SNI                        Checked
    Where to Advertise the VIP      Advertise Custom
@@ -174,7 +174,7 @@ directly at the gateway or forward DNS queries that you would like Volterra to p
 Using the "In Container Diagnostic Services"
 
 #. Click on DNS Lookup
-#. Enter "studentXX.example.internal" (replace studentXX with your student ID i.e. student01)
+#. Enter "adjective-animal.example.internal" (replace adjective-animal with your namespace ID i.e. poetic-quail)
 #. Click on Lookup
 
 You should no longer get an error.
@@ -190,7 +190,7 @@ resides in another remote network via the Distributed Cloud Global Network.
 Using the "In Container Diagnostic Services"
 
 #. Click on "Run Command"
-#. Enter "curl -sk https://adjective-animal.example.internal" (replace adjective-animal with your namespace i.e. poetic-quail)
+#. Enter "curl -sk https://adjective-animal.example.internal" (replace adjective-animal with your namespace ID i.e. poetic-quail)
 #. Click on Run Command
 
 |check_host|
