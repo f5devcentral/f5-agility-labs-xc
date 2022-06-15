@@ -24,6 +24,14 @@ Navigate to https://www.f5.com/cloud, select login at the top right and finally 
 
  Enable Application Traffic Insight (if it is not already enabled in the tenant).
 
+ .. image:: _static/ati-enable-service.png
+
+|
+
+ Select the region closest to your protected application.
+
+ .. image:: _static/ati-select-region.png
+
 |
 
 3. Download the BIGIP iApp from F5XC
@@ -37,7 +45,7 @@ In the "Manage" section of the left-hand menu, click on "App Configuration" - "A
 From the "App Application" slideout select "BIGIP iApp" and click **Next**.
 
  .. figure:: _static/ati-addapp-bigip.png
-     
+
      Notice that there are other methods for injecting the ATI JS. These are out of scope for this lab.
 
 From step 2 click the **Download Template** button. This will download F5_APG.zip; take note of where you download this file and open it.  This should extract **f5.apg.analytics.tmpl**.

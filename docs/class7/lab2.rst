@@ -82,11 +82,15 @@ Be sure to replace ``<<your juice shop domain>>`` and ``<<your udf.sid cookie va
 
  ``curl 'https://<<your juice shop domain>>/' -H 'Cookie: udf.sid=<<your udf.sid cookie value>>'``
 
-This will only send one request.  You could just sedn this command over and over but, we need lots of requests.  Also, this will send the request with the default curl User-Agent string making it very obvious that this is an automated request.
+This will only send one request.  You could just send this command over and over but, we need lots of requests.  Also, this will send the request with the default curl User-Agent string making it very obvious that this is an automated request.
 
 If you are on a Linux or Mac computer you can use the following script from the command line to send 300 requests:
 
  ``for i in `seq 300`; do curl '<<your juice shop domain>>/' -H 'Cookie: udf.sid=<<paste cookie value here>>' -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.75 Safari/537.36'; done``
+
+If you are on a Windows computer you can use the following script from the command line to send 300 requests:
+ 
+ ``FOR /L %I IN (1,1,300) DO curl '<<your juice shop domain>>/' -H 'Cookie: udf.sid=<<paste cookie value here>>' -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.75 Safari/537.36'``
 
 Repeat this a few times to send more than 1000 requests.
 
@@ -155,4 +159,3 @@ From the left-hand menu select the "Bot Assessment".
 The Bot Assessment Dashboard provides a high-level overview of suspected automation to your web applications including the top ASNs that are the source of this traffic, and the top URLs that are targets of the automation.
 
  .. image:: _static/ati-dashboard-bot.png
-|
