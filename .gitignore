@@ -9,3 +9,4 @@ terraform.tfstate*
 *.rpm
 *.swp
 .virtualenv
+docs/class6/temp
