@@ -32,11 +32,11 @@ Lab 1: Configure CSD and add the JavaScript tag to the web page
 
 Click on "Configuration" and +Add domain to protect
 
- .. image:: images/csd-addDomainProtect.png
+ .. image:: images/agility-addDomainProtect.png
 
 Configure the domain as **f5.com** then **Save & Exit**
 
- .. image:: images/csd-addDomainSaveNExit.png
+ .. image:: images/agility-addDomainSaveNExit.png
 |
 
  Click on "Configuration" - "How to Inject JS" and follow step *1 - 3* on the right for adding the JavaScript tag to **your** webpage between the <head> and </head> tags. Step 5 - 6 is explained below.
