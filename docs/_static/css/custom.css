@@ -1,0 +1,18 @@
+ol > li {
+    margin-bottom: 30px;
+}
+img {
+    border:1px solid #555;
+}
+
+code {
+padding: 2px 4px;
+font-size: 90%;
+color: #0D1345;
+background-color: #E2E7FF;
+border-radius: 0;
+}
+
+ul.simple {
+padding-bottom: 20px;
+}
