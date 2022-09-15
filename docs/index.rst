@@ -6,6 +6,7 @@ F5 Distributed Cloud
    :maxdepth: 1
    :glob:
 
+   intro/index.rst
    class*/class*
 
 **Resources**

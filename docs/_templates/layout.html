@@ -47,16 +47,16 @@
       </div>
       {%- endif %}
       <nav class="nav-sidebartoc">
-
+<!--
         {% if release %}
         <h5>{{ project }} {{ release }} </h5>
         {% else %}
          <h5>{{ project }} {{ version }} </h5>
         {% endif %}
-
+-->
         <hr>
         <span class="nav-sidebartoc">
-            {{ toctree(includehidden=True, collapse=True) }}
+            {{ toctree(includehidden=True, collapse=True, maxdepth=3) }}
         </span>
       {%- include "extralinks.html" %}
       </nav>
@@ -64,11 +64,14 @@
 
 
     <div id="right-sidebar">
+      {%- if github_url is defined %}
+         <nav class="github-link"><a href="{{ github_url }}" class="btn btn-primary left" >Edit on <i class="fa fa-github" aria-hidden="true"></i></a></nav>
+      {%- endif %}
       <h7 style="font-weight:normal">On this page:</h7>
       <nav class="nav-sidebartoc">
         <span class="nav-sidebartoc">
-            {{ toc }}
-         </span>
+          {{ toc }}
+        </span>
       </nav>
     </div>
 

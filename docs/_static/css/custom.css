@@ -16,3 +16,24 @@ border-radius: 0;
 ul.simple {
 padding-bottom: 20px;
 }
+
+#right-sidebar, .github-link {
+width: 280px;
+display: block;
+margin-right: 20px;
+position: fixed;
+top: 150px;
+max-height: 80vh;
+transition: all 0.3s;
+float: left;
+/* margin-top: 22px; */
+margin-left: 0px;
+overflow-x: auto;
+overflow-y: auto;
+padding: 10px 10px 16px 16px;
+margin-top: 10px;
+}
+
+#right-sidebar, .section-nav {
+top: 210px;
+}
