@@ -93,7 +93,7 @@ Select Network on the site      Inside Network
 
 Click on "Apply" to return to the previous screen
 
-#. Enter "8443" for the Port
+#. Enter "8443" for the Port.
 
 #. Under the *Health Check* section, click the *Add item* button.
 
@@ -108,8 +108,8 @@ Name                            tcp
 Health Check                    TCP HealthCheck
 =============================== ===============
 
-#. Click on the "Configure" button to open the dialog to adjust timeout settings then click "Apply"
-#. Click the *Continue* button to close the *Health Check Parameters* dialogue. 
+#. Click on the "Configure" button to open the dialog to add "abcd1234" as *Send Payload* then click "Apply".
+#. Click the *Save and Exit* button to close the *Health Check Parameters* dialogue. 
 
 #. Click the *Save and Exit* button to close the *Origin Pool* dialogue.
 
