@@ -91,13 +91,13 @@ Site                            student-onprem
 Select Network on the site      Inside Network
 =============================== ===============
 
-Click on "Add Item" to return to the previous screen
+Click on "Apply" to return to the previous screen
 
-#. Enter "8443" for the Port
+#. Enter "8443" for the Port.
 
-#. Under the *List of Health Check(s)* section, click the *Select healthcheck* dropdown.
+#. Under the *Health Check* section, click the *Add item* button.
 
-#. Click the *Create new Healthcheck* button.
+#. Click the *Health Check object* dropdown list. Click the *Add item* button.
 
 #. Enter the following variables:
 
@@ -108,8 +108,8 @@ Name                            tcp
 Health Check                    TCP HealthCheck
 =============================== ===============
 
-#. Click on the "Configure" button to open the dialog to adjust timeout settings then click "Apply"
-#. Click the *Continue* button to close the *Health Check Parameters* dialogue. 
+#. Click on the "Configure" button to open the dialog to add "abcd1234" as *Send Payload* then click "Apply".
+#. Click the *Save and Exit* button to close the *Health Check Parameters* dialogue. 
 
 #. Click the *Save and Exit* button to close the *Origin Pool* dialogue.
 
@@ -139,7 +139,7 @@ Exercise 3: Create Backend TCP Load Balancer
 
    #. Under the *Origin Pools* section, click the *Add Item* link.
    #. Select the *backend* pool.
-   #. Click the *Add Item* button to close the *Origin Pools* dialogue.
+   #. Click the *Apply* button to close the *Origin Pools* dialogue.
 
 #. Configure Advertisement 
 
@@ -158,8 +158,8 @@ Exercise 3: Create Backend TCP Load Balancer
 
       |tcp_lb_advertise|
 
-   #. Click the *Add Item* button to exit the *Advertise Custom* dialogue.
-   #. Click on "Apply"
+   #. Click the *Apply* button to exit the *Advertise Custom* dialogue.
+   #. Click on "Apply" to return to TCP Load Balancer configuration page.
 
    |tcp_lb_config|
 
