@@ -70,9 +70,9 @@ We will first create an Origin Pool that refers to the frontend application serv
 
 #. Enter "80" for the "Port"
 
-#. Under the *List of Health Check(s)* section, click the *Add item* button.
+#. Under the *Health Check* section, click the *Add item* button.
 
-#. Click the *Health Check object* dropdown list. Click the *Create new healthcheck* button.
+#. Click the *Health Check object* dropdown list. Click the *Add item* button.
 
 #. Enter the following variables:
 
@@ -82,7 +82,7 @@ We will first create an Origin Pool that refers to the frontend application serv
    name      http
    ========= =====
 
-#. Click the *configure* button under "HTTP Health Check"
+#. Click the *view configuration* button under "HTTP HealthCheck"
 
 #. Leave the default values and click *Apply* to exit the "Health Check HTTP Parameters" dialogue.
 #. Click *Continue* to return to the "Origin Pool" configuration.
@@ -112,17 +112,17 @@ Exercise 3: Configure Default Origin Server
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 We'll next configure the "Default Origin Servers". 
     
-#. Click on the *Add Item* link under the *Default Origin Servers* section.
+#. Click on the *Add Item* in the *Origin Pools* section.
 
 #. The "Select Origin Pool Method" will be set to "Origin Pool". Under the "Origin Pool" dropdown menu select the "fronted-public" you created earlier.
  
-#. Click the *Add Item* button to exit the "Origin Pools" dialogue.
+#. Click *Apply* to exit the "Origin Pools" dialogue.
 
-#. Notice that in the "VIP Creation" section *Advertise On Internet* has been selected by default.
+#. Notice that in the "Other Settings" section *Internet* has been selected by default as "VIP Advertisement".
 
    |lb-vip|
 
-#. Click "*Save and Exit* to create the HTTP Load Balancer.
+#. Click *Save and Exit* to create the HTTP Load Balancer.
 
 Once the HTTP Load Balancer has been deployed, you should now be able to go to the DNS name that you entered 
 previously in a web browser.  The FQDN we used in our example is http://adjective-animal.lab-mcn.f5demos.com.  
@@ -188,9 +188,9 @@ Exercise 5: Edit HTTP Load Balancer Configuration
 
 #. In the upper right click on "Edit Configuration"
 
-#. Under "Default Origin Servers" click on "..." under the Actions column for your original Origin Pool (frontend-public) and select "Edit"
+#. Under "Origins" click on *the pencil icon* under the Actions column for your original Origin Pool (frontend-public) to edit
    
-#. Select your "frontend-private" pool.
+#. Select your "frontend-private" pool to replace the "frontend-public" pool
 
 #. Click on "Apply"
 #. Click on "Save and Exit"
