@@ -1,37 +1,27 @@
-F5 Distributed Cloud 101 - WAF/WAAP Deployment Models 
-=====================================================
+F5 Distributed Cloud 101 - WAF/WAAP Configuration
+=================================================
 
-`Last updated: 2022-06-09 5:00 PM ET
+F5 Distributed Cloud Web Application and API Protection delivers comprehensive application security anywhere with flexibility in architecture, routing, and policy enforcement across public/private clouds, on-premises data centers, and edge sites, with centralized visibility and management via a SaaS-based console.
 
-F5 Distributed Cloud's SaaS Web Application Firewall (WAF) can help you mitigate application threats 
-with an updated WAF engine that inherits the shared  capabilities of F5 BIG-IP Advanced WAF, 
-and NGINX App Protect. During this hands-on lab you will learn about the following: 
+**Objective**
 
-- F5 Distributed Cloud Platform for providing edge WAF and DDoS protection  
-- Updates to F5 Distributed Cloud WAF engine that is powered by F5’s WAF engine  
-- Hands-on lab deploying F5 Distributed Cloud WAF   
-- Protecting existing Public IP resource via F5’s Distributed Cloud WAF    
-- Deploying F5 Distributed Cloud WAF into a cloud provider network (AWS) to protect internal Private IP resources
+This document provides instructions on how to create an Application Firewall, also known as a Web Application Firewall (WAF), and deploy it on a load balancer. The WAF consists of technology that will allow/block and requests/responses. To learn more about a WAF, see `App Firewall <https://docs.cloud.f5.com/docs/ves-concepts/security#application-firewall>`_
 
-
-Lab & Tasks:
-~~~~~~~~~~~~
-
-The next page (Introduction) will cover the lab environment, access, and lab variables. The lab will be using a shared AWS account where we have deployed the following resources:
-
-- NGINX webserver that is exposed to the Public internet ("Public Endpoint")
-- F5 AppMesh node that can be used to connect to AWS VPC (network)
-- NGINX webserver that only has a private IP address with no external access
-
-During the lab exercises we will explore different methods of protecting and exposing applications/webserver
-that are included in the lab
+Using the instructions provided in these labs, create a WAF policy with default or custom attack types, enable threat campaigns, define bot protection settings, and attach that WAF to an HTTP load balancer to protect the app that load balancer serves. These instructions also include information on how to control responses from origin servers.
 
 .. toctree::
-   :maxdepth: 2
-   :numbered:
-   :caption: Labs:
    :glob:
-   
-   intro*
+
    lab*
-   close*
+
+**Resources**
+
+* Intro: https://www.f5.com/cloud/products/distributed-cloud-waf
+* How to: https://docs.cloud.f5.com/docs/how-to/app-security/web-app-firewall
+* Reference Architecture: https://clouddocs.f5.com/f5xc-reference-architectures/SaaS-WAF/
+* Simulator: https://simulator.f5.com/s/waap
+* Signature ID Lookup: https://clouddocs.f5.com/cloud-services/latest/f5-cloud-services-Essential.App.Protect-Details.html 
+
+..  youtube:: NgkDAmq_rak
+    :width: 800
+    :height: 440
