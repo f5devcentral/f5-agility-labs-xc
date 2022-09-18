@@ -34,7 +34,7 @@ In this lab, we will learn the following:
 #. In XC Console Click on the Managed K8s Site you are working in, and view the following in the UI Dashboard, Nodes, Namespaces, Deployments, Services, and Pods
 
    .. image:: ../images/dasboard.png
-      :width: 400pt
+      :width: 600pt
 
    .. image:: ../images/nodes.png
       :width: 400pt
