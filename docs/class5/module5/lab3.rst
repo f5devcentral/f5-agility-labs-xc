@@ -20,17 +20,17 @@ Lab 1 - Create Origin Pool
 	#. Select **Add Item** under **Origin Servers**
 
    .. image:: ../images/m-origin-pool-name.png
-      :width: 400pt
+      :width: 600pt
 
 #. Complete the **Origin Server** section by make the following changes:
 
     - **Select Type of Origin Server**: K8s Service Name of Origin Server on given Sites
     - **Service Name**: workloadname.namespace (make a note to remember this in creation stage)
-    - **Site or Virtual Site**: Site select system/agility-vpc-site-one
+    - **Site or Virtual Site**: Site select system/agility-vpc-site-one, two, or three depending on which site you selected for managedk8s
     - **Select Network on the site**: Outside Network
 
    .. image:: ../images/origin-pool.png
-      :width: 400pt
+      :width: 600pt
  
 #. Click on **Add Item** to return to the previous screen
 
