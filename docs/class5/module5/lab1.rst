@@ -37,16 +37,16 @@ In this lab, we will learn the following:
       :width: 600pt
 
    .. image:: ../images/nodes.png
-      :width: 400pt
+      :width: 600pt
 
    .. image:: ../images/namespaces.png
-      :width: 400pt
+      :width: 600pt
 
    .. image:: ../images/deployments.png
-      :width: 400pt
+      :width: 600pt
 
    .. image:: ../images/services.png
-      :width: 400pt
+      :width: 600pt
    
    .. image:: ../images/pods.png
-      :width: 400pt
+      :width: 600pt
