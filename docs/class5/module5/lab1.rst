@@ -66,10 +66,10 @@ In this lab, we will learn the following:
    
       `kubectl get pods -o wide`
    
-      `kubectl describe pod <podname>`
+      `kubectl describe pod <podname> -n (namespace)`
    
    *View all deployment and service*
-      `kubectl get deployment agility -A`
+      `kubectl get deployment -A`
    
       `kubectl get svc -A`
 
