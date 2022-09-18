@@ -9,7 +9,7 @@ In this lab, we will learn the following:
 
 •  Deploy to the Managed K8s site
 
-**Exercise 1 - Review Virtual K8s Site**
+**Exercise 1 - Deploy Web Server on Managed K8s Site**
 
 #. Goto the following repo and either clone or copy and paste the deployment manifest from the below link into a directory on your local machine. 
 
