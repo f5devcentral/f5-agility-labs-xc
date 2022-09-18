@@ -13,8 +13,8 @@ Lab 1 - Create Origin Pool
 
 #. On the New Origin Pool form:
 
-	#. Enter a **Name** for your pool
-	#. Replace the **Port** value of *443* with *3000*
+	#. Enter a **Name** for your pool (use the namespace you created i.e. s-iannetta)
+	#. Replace the **Port** value of *443* with *80*
 	#. Select **Add Item** under **Origin Servers**
 
    |origin_pool_name|
@@ -23,8 +23,8 @@ Lab 1 - Create Origin Pool
 
     - **Select Type of Origin Server**: K8s Service Name of Origin Server on given Sites
     - **Service Name**: workloadname.namespace (make a note to remember this in creation stage)
-    - **Site or Virtual Site**: Virtual Site select shared/agility-k82-site
-    - **Select Network on the site**: vK8s Networks on Site
+    - **Site or Virtual Site**: Site select system/agility-vpc-site-one
+    - **Select Network on the site**: Outside Network
 
    |origin_pools_menu|
  
