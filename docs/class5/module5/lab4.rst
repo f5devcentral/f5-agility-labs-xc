@@ -7,7 +7,7 @@ Lab 2 - Publish to the Internet
 
     |add_HTTP|
    
-#. Enter a name for your HTTP Load Balancer in the **Metadata** section.
+#. Enter a name for your HTTP Load Balancer in the **Metadata**.
 
     |http_name|
 
@@ -46,7 +46,8 @@ In the example below it is *flying-ox.lab-app.f5demos.com*
 
 Success will render a page like the following:
 
-    |http_page|
+   .. image:: ../images/websrv_output.png
+      :width: 600pt
 
 Please note the country name. 
 
