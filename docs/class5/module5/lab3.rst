@@ -37,4 +37,4 @@ Lab 1 - Create Origin Pool
 .. |origin_pools_menu| image:: ../images/m3-add-origin-server.png
 .. |origin_pool| image:: ../images/m-origin-pool.png
 .. |origin_pool_name| image:: ../images/m-origin-pool-name.png
-.. |origin_pool_add| image:: ../images/m3-add-origin-pools.png
+.. |origin_pool_add| image:: ../images/origin-pool.png
