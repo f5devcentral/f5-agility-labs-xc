@@ -23,7 +23,7 @@ In this lab, we will learn the following:
    
 #. Validate all resources were deployed
 
-   *From UI same as Lab1 Excercise 2 just look for your resources*
+   *From UI follow the same steps Lab1 Excercise 2 just look append commands with your resources*
 
    *From CLI*
    *Namespace*
