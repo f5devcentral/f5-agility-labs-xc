@@ -18,14 +18,20 @@ In this lab, we will learn the following:
 #. Utlizing the Global kubeconfig deploy the manifest.
 
    *Apply*
-      `kubectl apply -f "manifest.yaml"
+      `kubectl apply -f "filename.yaml"
    
-   *Validate all resources were deployed*
+#. Validate all resources were deployed
 
    *From UI same as Lab1 Excercise 2 just look for your resources*
 
    *From CLI*
+   *Namespace*
+      `kubectl get namespace`
+   *Deployment*
       `kubectl get deployment -n "namespace"`
+   *Pods*
       `kubectl get pods -n "namespace"`
+   *Service*
       `kubectl get svc -n "namespace"`
+   *Get All resources for the Namespace you created*
       `kubectl get all -n "namespace"`
