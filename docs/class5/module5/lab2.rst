@@ -13,7 +13,7 @@ In this lab, we will learn the following:
 
 #. Goto the following repo and either clone or copy and paste the deployment manifest from the below link. 
 
-    `Organizing Cluster Access Using kubeconfig Files <https://github.com/Nettas/Web-Server-for-XC-Managed-K8s-Training/blob/main/AppStack-GCP/server-deployment/deployment.yaml/>`_
+    `Web-Server-for-XC-Managed-K8s-Training <https://github.com/Nettas/Web-Server-for-XC-Managed-K8s-Training/blob/main/AppStack-GCP/server-deployment/deployment.yaml/>`_
 
 #. Utlizing the Global kubeconfig deploy the manifest.
 
