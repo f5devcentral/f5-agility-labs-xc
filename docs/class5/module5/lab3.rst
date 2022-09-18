@@ -6,11 +6,12 @@ Lab 1 - Create Origin Pool
 #. Navigate the left-side menu to **Manage -> Load Balancers**, then click **Origin Pools**.
 
    .. image:: ../images/m-origin-pool.png
-      :width: 600pt
+      :width: 400pt
    
 #. Click the **Add Origin Pool** button.
 
-   |origin_pool_add|
+   .. image:: ../images/m3-add-origin-pools.png
+      :width: 400pt
 
 #. On the New Origin Pool form:
 
