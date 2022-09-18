@@ -50,3 +50,29 @@ In this lab, we will learn the following:
    
    .. image:: ../images/pods.png
       :width: 600pt
+
+**CLI Commands to view Managed K8s Outputs**
+
+   *Commands*
+      `Run the following commands and view the outputs.`
+
+   *View Nodes*
+      `kubectl get nodes`
+   
+      `kubectl get nodes -o wide`
+   
+   *View pods*
+      `kubectl get pods -A`
+   
+      `kubectl get pods -o wide`
+   
+      `kubectl describe pod <podname>`
+   
+   *View all deployment and service*
+      `kubectl get deployment agility -A`
+   
+      `kubectl get svc -A`
+
+   *View all resources *
+      `kubectl get all -A`
+   
