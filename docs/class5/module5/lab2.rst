@@ -26,13 +26,14 @@ In this lab, we will learn the following:
    *From UI follow the same steps from Lab1 Excercise 2.  Just search for resources in your created namespace*
 
    *From CLI just append with your created namespace*
-   *Namespace*
-      `kubectl get namespace`
-   *Deployment*
-      `kubectl get deployment -n "namespace"`
-   *Pods*
-      `kubectl get pods -n "namespace"`
-   *Service*
-      `kubectl get svc -n "namespace"`
-   *Get All resources for the Namespace you created*
-      `kubectl get all -n "namespace"`
+
+      *Namespace*
+         `kubectl get namespace`
+      *Deployment*
+         `kubectl get deployment -n "namespace"`
+      *Pods*
+         `kubectl get pods -n "namespace"`
+      *Service*
+         `kubectl get svc -n "namespace"`
+      *Get All resources for the Namespace you created*
+         `kubectl get all -n "namespace"`
