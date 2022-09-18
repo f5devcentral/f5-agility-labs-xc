@@ -23,7 +23,7 @@ In this lab, we will learn the following:
    
 #. Validate all resources were deployed
 
-   *From UI follow the same steps from Lab1 Excercise 2.  Just search or look for your created namespace*
+   *From UI follow the same steps from Lab1 Excercise 2.  Just search for resources in your created namespace*
 
    *From CLI just append with your created namespace*
    *Namespace*
