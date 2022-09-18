@@ -19,7 +19,8 @@ Lab 1 - Create Origin Pool
 	#. Replace the **Port** value of *443* with *80*
 	#. Select **Add Item** under **Origin Servers**
 
-   |origin_pool_name|
+   .. image:: ../images/m-origin-pool-name.png
+      :width: 400pt
 
 #. Complete the **Origin Server** section by make the following changes:
 
@@ -28,7 +29,8 @@ Lab 1 - Create Origin Pool
     - **Site or Virtual Site**: Site select system/agility-vpc-site-one
     - **Select Network on the site**: Outside Network
 
-   |origin_pools_menu|
+   .. image:: ../images/origin-pool.png
+      :width: 400pt
  
 #. Click on **Add Item** to return to the previous screen
 
