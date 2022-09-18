@@ -49,12 +49,6 @@ Success will render a page like the following:
    .. image:: ../images/websrv_output.png
       :width: 600pt
 
-Please note the country name. 
-
-Refresh your browser a few times and notice what happens to the country name. 
-
-Why?
-
 This ends the lab.
 
 
