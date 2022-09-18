@@ -11,13 +11,14 @@ In this lab, we will learn the following:
 
 **Exercise 1 - Review Virtual K8s Site**
 
-#. Goto the following repo and either clone or copy and paste the deployment manifest from the below link. 
+#. Goto the following repo and either clone or copy and paste the deployment manifest from the below link into a directory on your local machine. 
 
     `Web-Server-for-XC-Managed-K8s-Training <https://github.com/Nettas/Web-Server-for-XC-Managed-K8s-Training/blob/main/AppStack-GCP/server-deployment/deployment.yaml/>`_
 
+
 #. Utlizing the Global kubeconfig deploy the manifest.
 
-   *Apply*
+   *Change to the directory where you saved the Deployment File and Apply it*
       `kubectl apply -f "filename.yaml"
    
 #. Validate all resources were deployed
