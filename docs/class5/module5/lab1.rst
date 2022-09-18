@@ -23,8 +23,30 @@ In this lab, we will learn the following:
    .. image:: ../images/globalkubeconfig.png
       :width: 400pt
 
-#. Click the config kubeconfig is downloaded, and follow the Kubernetes documentation to configure your local kubctl tool. 
+#. Locate your downloaded kubeconfig file, and follow the Kubernetes documentation to configure your local kubectl tool. 
 
     `Organizing Cluster Access Using kubeconfig Files <https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/>`_
 
-#. Once you have configured your local kubctl tool, you should be able to manage your managed k8s using kubectl commands.
+#. Once you have configured your local kubectl tool, you should be able to manage for your managed k8s site using kubectl commands.
+
+**Exercise 2 - Viewing the K8s Cluster in UI and CLI**
+
+#. In XC Console Click on the Managed K8s Site you are working in, and view the following in the UI Dashboard, Nodes, Namespaces, Deployments, Services, and Pods
+
+   .. image:: ../images/dasboard.png
+      :width: 400pt
+
+   .. image:: ../images/nodes.png
+      :width: 400pt
+
+   .. image:: ../images/namespaces.png
+      :width: 400pt
+
+   .. image:: ../images/deployments.png
+      :width: 400pt
+
+   .. image:: ../images/services.png
+      :width: 400pt
+   
+   .. image:: ../images/pods.png
+      :width: 400pt
