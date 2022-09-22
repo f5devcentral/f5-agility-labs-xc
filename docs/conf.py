@@ -18,11 +18,6 @@ classname = "F5 Distributed Cloud"
 # OPTIONAL: The URL to the GitHub Repository for this class
 github_repo = "https://github.com/f5devcentral/f5-agility-labs-xc"
 
-show_source = False
-html_show_sourcelink = False
-html_copy_source = False
-html_permalinks = False
-
 #
 # END CONFIG
 # ----------
@@ -92,8 +87,7 @@ extensions = [
     "sphinx.ext.graphviz",
     "sphinxcontrib.nwdiag",
     "sphinx_copybutton",
-    "sphinxcontrib.blockdiag",
-    "sphinxcontrib.youtube"
+    "sphinxcontrib.blockdiag"
     # "sphinx.ext.autosectionlabel"
 ]
 
@@ -164,7 +158,7 @@ release = ""
 #
 # This is also used if you do content translation via gettext catalogs.
 # Usually you set "language" from the command line for these cases.
-language = "en"
+language = None
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
@@ -196,7 +190,7 @@ html_context = {"github_url": github_repo}
 
 html_last_updated_fmt = "%Y-%m-%d %H:%M:%S"
 
-extlinks = {'issue': ('https://github.com/f5devcentral/f5-agility-labs-xc/issues/%s','issue %s')}
+extlinks = {"issues": (("%s/issues/%%s" % github_repo), "issue ")}
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
@@ -208,10 +202,6 @@ extlinks = {'issue': ('https://github.com/f5devcentral/f5-agility-labs-xc/issues
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ["_static"]
 
-# or fully qualified paths (eg. https://...)
-html_css_files = [
-    'css/custom.css',
-]
 
 # -- Options for HTMLHelp output ------------------------------------------
 
