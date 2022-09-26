@@ -24,8 +24,6 @@ We will create a blocking WAF policy.
 #. Start in F5 Distributed Cloud Console and switch to the "Web App & API Protection" context. 
 
    It can be access either from the main Home page... 
-   
-   |app-context|
   
    ...or via the "Select Service" menu on the top left corner of any other page:
 
@@ -116,7 +114,7 @@ We will first create an Origin Pool that refers to the "Public Endpoint" site in
    ================================= =====
 
 
-#. Under the *List of Health Check(s)* section, click the *Add item* button.
+#. In *Health Check(s)* section, click the *Add item* button.
 
 #. Click the *Health Check object* dropdown list. Click the *Create new healthcheck* button.
 
@@ -269,7 +267,7 @@ Optional Video you can watch if you get stuck
 
 .. |app-context| image:: _static/app-context.png
    :width: 75%
-.. |select-service| image:: _static/select-service.png
+.. |select-service| image:: _static/select-service.jpg
    :width: 75%
 .. |namespace-selection| image:: _static/namespace-selection.png
    :width: 75%

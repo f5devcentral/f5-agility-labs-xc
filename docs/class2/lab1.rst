@@ -1,6 +1,10 @@
 Lab 1: Deploying and Managing F5 Distributed Cloud Web Application Firewall Configuration
 =========================================================================================
 
+.. warning :: If you ran the **F5 Distributed Cloud 101** lab previously, please delete the LB from the
+   previous lab. We will create a new LB in this lab with the same name. What's more, please jump to 
+   Task 1 directly.
+
 Lab 1 will focus on the deployment and security of an existing hosted application using F5 
 Distributed Cloud Platform and Services. This lab will be deployed in a SaaS only configuration 
 with no on-premises (public or private cloud) elements.  All configurations will be made via 
@@ -17,6 +21,7 @@ provided and note your **namespace** accordingly. The **Delegated Domain** and t
 Following the tasks in the prior **Introduction** Section, you should now be able to access the
 F5 Distributed Cloud Console, having set your Work Domain Roles and Skill levels. If you have not
 done so already, please login to your tenant for this lab and proceed to Task 1.
+
 
 Task 1: Configure Load Balancer and Origin Pool
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -121,9 +126,9 @@ The following steps will guide you through adding a Web Application Firewall (WA
 These steps will demonstrate various aspects of the configuration.
 
 +----------------------------------------------------------------------------------------------+
-| 1. Continuing in the **Security Configuration** section, click on the **Select Web**         |
+| 1. Continuing in the **Security Configuration** section, click on the                        |
 |                                                                                              |
-|    **Application Firewall (WAF Config)** and select **App Firewall**.                        |
+|    **Web Application Firewall (WAF)** and select **Enable**.                                 |
 +----------------------------------------------------------------------------------------------+
 | |lab012|                                                                                     |
 |                                                                                              |
@@ -131,7 +136,7 @@ These steps will demonstrate various aspects of the configuration.
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 2. In the resulting **App Firewall** drop down select **Create new App Firewall**.           |
+| 2. In the resulting **App Firewall** drop down select **Add Item**.                          |
 |                                                                                              |
 | .. note::                                                                                    |
 |    *The "shared/base-appfw" policy is in the "shared namespace" which can be applied to*     |
@@ -252,7 +257,6 @@ review the generated event data to make additional configuration changes.
 |    to generate security event data.                                                          |
 |                                                                                              |
 |    * /?cmd=cat%20/etc/passwd                                                                 |
-|    * /product?code=echo%20shell_exec(%27/sbin/ifconfig%20eth0%27);                           |
 |    * /product?id=4%20OR%201=1                                                                |
 |    * /../../../../etc/shadow                                                                 |
 |    * /cart?search=aaa'><script>prompt('Please+enter+your+password');</script>                |
@@ -269,11 +273,11 @@ review the generated event data to make additional configuration changes.
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 4. Returning to the F5 Distributed Cloud Console, use the left-hand navigation to expand     |
+| 4. Returning to the F5 Distributed Cloud Console, use the left-hand navigation to navigate   |
 |                                                                                              |
-|    **Virtual Hosts** > **HTTP Load Balancers** and then click on **Performance Monitoring**  |
+|    to Load Balancer setion and expand **Virtual Hosts** > **HTTP Load Balancers** and then   |
 |                                                                                              |
-|    link provided for your respective load balancer.                                          |
+|    click on **Performance Monitoring** link provided for your respective load balancer.      |
 |                                                                                              |
 | .. note::                                                                                    |
 |    *As you have not run many requests, summary analytics may not be available in the*        |
@@ -398,7 +402,7 @@ review the generated event data to make additional configuration changes.
 |                                                                                              |
 |     the exclusion should expire. (helpful when testing/validating). the format should be as  |
 |                                                                                              |
-|     shown *YYYY-MM-DD HH:MM:SS (2022-05-30 01:21:00)*.                                       |
+|     shown *YYYY-MM-DD HH:MM:SS+00:00 (2022-05-30T01:21:00+00:00)*.                           |
 |                                                                                              |
 | 21. Click **Apply** when complete.                                                           |
 +----------------------------------------------------------------------------------------------+
