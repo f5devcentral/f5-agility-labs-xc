@@ -229,10 +229,10 @@ You can verify that you are connecting directly to AWS by comparing the DNS of t
 
 .. code-block:: 
 
-    dig +short student001.aws.lab.f5demos.com
-    52.4.72.136
-    $ dig -x 52.4.72.136 +short
-    ec2-52-4-72-136.compute-1.amazonaws.com.
+   dig +short student001.aws.lab.f5demos.com
+   52.4.72.136
+   $ dig -x 52.4.72.136 +short
+   ec2-52-4-72-136.compute-1.amazonaws.com.
 
 .. code-block:: 
 

@@ -202,9 +202,7 @@ implementation.
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 20. Repeat Task 2 Steps 1-6.  Note you many need to close your browser or logout of the      |
-|                                                                                              |
-|     application.                                                                             |
+| 20. Repeat Task 2 Steps 1-6.  Note you many need to close your browser and clean cookies     |
 |                                                                                              |
 | 21. Observe now that there is additional telemetry being passed in the POST request.  This   |
 |                                                                                              |
