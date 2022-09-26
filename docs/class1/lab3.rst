@@ -54,7 +54,7 @@ We will first create an Origin Pool that refers to the "Private Endpoint" site i
    ================================= =====
 
 
-#. Under the *List of Health Check(s)* section, click the *Add item* button.
+#. In *Health Check(s)* section, click the *Add item* button.
 
 #. Click the *Health Check object* dropdown list. Select the *http* monitor that you previously created.
 
@@ -177,15 +177,14 @@ node that is deployed in AWS.  This will allow us to access the VIP via the Publ
 that is attached to that interface.  If we wished to only have the service available within the AWS VPC
 we could opt to use the "Inside" interface that does not have an AWS EIP attached.
 
-#. Under "Advanced Configuration" set "Where to Advertise the VIP" to "Advertise Custom"
+#. Under "Advanced Configuration" set "Where to Advertise the VIP" to "Custom"
    
    .. image:: _static/screenshot-local-vip-advertise-custom.png
    
-#. Click on "Configure" under "Advertise Custom"
-#. Next to "Custom Advertise VIP Configuration" click on "Show Advanced Fields"
-#. Click on "Add Item"
+#. Click on "Configure" under "Custom"
+#. In "List of Sites to Adverstise", click on "Add Item"
 #. For "Site Network" click on "Outside Network" 
-#. For "Site Reference" select `student-awsnet`
+#. For "Site Reference" select system/student-awsnet`
 
    .. image:: _static/lb-local-vip-advertise.png
       :width: 75%
@@ -230,10 +229,22 @@ You can verify that you are connecting directly to AWS by comparing the DNS of t
 
 .. code-block:: 
 
-    dig +short student001.aws.lab.f5demos.com
-    192.0.2.10
-    $ dig -x 192.0.2.10 +short
-    ec2-192-0-2-10.compute-1.amazonaws.com.
+   dig +short student001.aws.lab.f5demos.com
+   52.4.72.136
+   $ dig -x 52.4.72.136 +short
+   ec2-52-4-72-136.compute-1.amazonaws.com.
+
+.. code-block:: 
+
+   nslookup student001.aws.lab.f5demos.com
+   
+   Server:		2a01:cb04:765:e00:a6ce:daff:fe11:96ea
+   Address:	2a01:cb04:765:e00:a6ce:daff:fe11:96ea#53
+
+   Non-authoritative answer:
+   Name:	student001.aws.lab.f5demos.com
+   Address: 52.4.72.136
+
 
 In this topology we are sending traffic to the AWS EIP that attached to the AppMesh node in the AWS VPC.
 
