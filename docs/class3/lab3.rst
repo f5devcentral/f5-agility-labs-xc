@@ -15,7 +15,7 @@ In this test we will replicate a more "human like" automation that fully renders
 
 |lab002|
 
-4. Add a new **NAVIGATE** block. Configure URL as **http://namespace.lab-sec.f5demos.com/user/vipsignin**
+4. Add a new **NAVIGATE** block. Configure URL as **http://namespace-c.lab-sec.f5demos.com/user/vipsignin**
 
 |lab003|
 

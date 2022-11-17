@@ -16,7 +16,7 @@ failed to note it, return to the **Introduction** section of this lab, follow th
 provided and note your **namespace** accordingly. The **Delegated Domain** and the F5 Distributed Cloud 
 **Tenant** are listed below for your convenience as they will be the same for all lab attendees.
 
-* **Delegated Domain:** *.lab-sec.f5demos.com* 
+* **Delegated Domain:** *-c.lab-sec.f5demos.com* 
 * **F5 Distributed Cloud Tenant:** https://f5-xc-lab-sec.console.ves.volterra.io 
 
 Following the tasks in the prior **Introduction** Section, you should now be able to access the
@@ -44,7 +44,7 @@ steps will define an application, register its DNS and assign a target as an ori
 3. Using the left-hand navigation and in the sections as shown, enter the following data. Values where **<namespace>** is required, use the name of your given namespace.
 
    * **Metadata:Name ID:**  *<namespace>-lb*
-   * **Basic Configuration: List of Domains:** *<namespace>.lab-sec.f5demos.com*
+   * **Basic Configuration: List of Domains:** *<namespace>-c.lab-sec.f5demos.com*
    * **Basic Configuration: Select Type of Load Balancer:** *HTTP*
    * **Basic Configuration: Automatically Manage DNS Records:** *(Check the checkbox)*
    * **Basic Configuration: HTTP Port:** *80*
@@ -58,7 +58,7 @@ steps will define an application, register its DNS and assign a target as an ori
 
 |lab005|
 
-6. In the resulting window, enter **<namespace>-pool** in the **Name** field and click **Add Item** under **Basic Configuration: Origin Servers**.
+6. In the resulting window, enter **<namespace>-pool-c** in the **Name** field and click **Add Item** under **Basic Configuration: Origin Servers**.
 
 |lab006|
 
@@ -90,7 +90,7 @@ steps will define an application, register its DNS and assign a target as an ori
 
 |lab014|
 
-14. In the resulting window's **Metadata** section enter **<namespace>-appfw** for the **Name**.
+14. In the resulting window's **Metadata** section enter **<namespace>-appfw-c** for the **Name**.
 
 15. Leaving all other values as default, scroll to the bottom and click **Continue**.
 
@@ -173,13 +173,13 @@ Task 2: Curl - Direct (10min)
 
 3. On the login prompt enter the following testing username: **john.smith@nobody.com** password: **test123** and then click **Confirm**
 
-4. This should log you into the account but more important look on the right side panel finding the **vipsignin** POST request.  Clicking on this entry and you will see the POST request that was created for your login.
+4. This should log you into the account but more important look on the right side panel finding the **signin** POST request.  Clicking on this entry and you will see the POST request that was created for your login.
 
 5. Switch to the **payload** tab and we can see the exact data that was submitted.  The Username and Password are expected but we also see a tracking token (though not used here)
 
 |lab030|
 
-6. Right click on the **vipsignin** entry choose **Copy** and **Copy as cURL (BASH)** open **Notepad** from the windows start menu and paste the contents in.  This will allow you to inspect the query in greater detail.
+6. Right click on the **signin** entry choose **Copy** and **Copy as cURL (BASH)** open **Notepad** from the windows start menu and paste the contents in.  This will allow you to inspect the query in greater detail.
 
 |lab031|
 
@@ -194,7 +194,7 @@ Task 3: Compare Via Bot Defense (5min)
 
 **Run this lab from the JUMPHOST**
 
-1. Launch the Chrome Browser and navigate to **http://namespace.lab-sec.f5demos.com/user/vipsignin** (note: HTTP not HTTPS)
+1. Launch the Chrome Browser and navigate to **http://namespace-c.lab-sec.f5demos.com/user/vipsignin** (note: HTTP not HTTPS)
 
 2. Once loaded right click on the page and choose **Inspect** then navigate to the **Network** tab on the new right hand side window.  This will allow you to monitor what content is loaded and submitted during interactions with the site.
 
