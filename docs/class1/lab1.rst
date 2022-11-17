@@ -29,9 +29,8 @@ We will create a blocking WAF policy.
 
    |select-service|
    
-#. Ensure you are in the proper namespace (an adjective-animal combination) and not the default namespace. It is ok if you do not see your namespace as you will be defaulted to it as seen in your URI path as in the Introduction section.
+#. Ensure you are in the proper namespace (an adjective-animal combination) and not the default namespace. You can notice that in path at the top. It is ok if you can't change see your current namespace as you will be defaulted to it as seen in your URI path as in the Introduction section.
 
-   |namespace-selection|
 #. Navigate the menu to go to "Manage"->"App Firewall". Click on *Add App Firewall*.
 
 
