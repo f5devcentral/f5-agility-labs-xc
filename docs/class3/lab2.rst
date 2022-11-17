@@ -21,7 +21,7 @@ it  makes curl like requests.
 
 |lab002|
 
-4. Add a new **REQUEST** block. Configure URL as **http://namespace.lab-sec.f5demos.com/user/vipsignin** ensure Method is **GET**.  While not strictly necessary this will be used to show how to capture and reuse information.
+4. Add a new **REQUEST** block. Configure URL as **http://namespace-c.lab-sec.f5demos.com/user/vipsignin** ensure Method is **GET**.  While not strictly necessary this will be used to show how to capture and reuse information.
 
 |lab003|
 
@@ -36,7 +36,7 @@ then for the **Left String** we use **<input id="csrf_token" name="csrf_token" t
 
 |lab005|
 
-7. Add a new **REQUEST** block. Configure URL as **http://namespace.lab-sec.f5demos.com/user/vipsignin** ensure **Method** is **POST**.  In the POST DATA Field use the follow exactly: **email=<USERNAME>&password=<PASSWORD>&csrf_token=<CSRF>**  The information within <> brackets are variables and will be filled in at runtime.  Now fill in the credentials **john.smith@nobody.com:test123** in the **DATA** field and ensure **Credentials** is the method selected.  Now hit **Start**, switch to **HTML View** and we should see the bot was successfully able to log into the account.
+7. Add a new **REQUEST** block. Configure URL as **http://namespace-c.lab-sec.f5demos.com/user/vipsignin** ensure **Method** is **POST**.  In the POST DATA Field use the follow exactly: **email=<USERNAME>&password=<PASSWORD>&csrf_token=<CSRF>**  The information within <> brackets are variables and will be filled in at runtime.  Now fill in the credentials **john.smith@nobody.com:test123** in the **DATA** field and ensure **Credentials** is the method selected.  Now hit **Start**, switch to **HTML View** and we should see the bot was successfully able to log into the account.
 
 |lab006|
 
