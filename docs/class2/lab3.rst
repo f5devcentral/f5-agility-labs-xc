@@ -203,7 +203,7 @@ It will also help you understand additional approaches for Service Policies.
 +----------------------------------------------------------------------------------------------+
 | 12. In your browser (Chrome shown), navigate to your application/Load Balancer configuration:|
 |                                                                                              |
-|     **http://<namespace>.lab-sec.f5demos.com**.                                              |
+|     **http://<namespace>-b.lab-sec.f5demos.com**.                                              |
 |                                                                                              |
 | 13. You should receive a 403 Forbidden error.  This is due to a Service Policy configuration |
 |                                                                                              |
@@ -264,7 +264,7 @@ It will also help you understand additional approaches for Service Policies.
 +----------------------------------------------------------------------------------------------+
 | 22. In your browser (Chrome shown), navigate to your application/Load Balancer configuration:|
 |                                                                                              |
-|     **http://<namespace>.lab-sec.f5demos.com**. You should now be able to successfully       |
+|     **http://<namespace>-b.lab-sec.f5demos.com**. You should now be able to successfully       |
 |                                                                                              |
 |     access the application.                                                                  |
 +----------------------------------------------------------------------------------------------+

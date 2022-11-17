@@ -188,7 +188,8 @@ Exercise 3: Configure WAF Policy
    ============================================= =====================
    Variable                                      Value
    ============================================= =====================
-   Web Application Firewall (WAF)                [NAMESPACE]/blocking-app-firewall
+   Web Application Firewall (WAF)                Enable
+   Enable                                        [NAMESPACE]/blocking-app-firewall
    ============================================= =====================
 
 #. Click "*Save and Exit* to create the HTTP Load Balancer.

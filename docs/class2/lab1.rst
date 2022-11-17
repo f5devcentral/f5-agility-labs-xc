@@ -60,7 +60,7 @@ steps will define an application, register its DNS and assign a target as an ori
 |    data. Values where **<namespace>** is required, use the name of your given namespace.     |
 |                                                                                              |
 |    * **Metadata:Name ID:**  *<namespace>-lb*                                                 |
-|    * **Basic Configuration: List of Domains:** *<namespace>.lab-sec.f5demos.com*             |
+|    * **Basic Configuration: List of Domains:** *<namespace>-b.lab-sec.f5demos.com*             |
 |    * **Basic Configuration: Select Type of Load Balancer:** *HTTP*                           |
 |    * **Basic Configuration: Automatically Manage DNS Records:** *(Check the checkbox)*       |
 |    * **Basic Configuration: HTTP Port:** *80*                                                |
@@ -69,7 +69,7 @@ steps will define an application, register its DNS and assign a target as an ori
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 5. In the current window's left-hand navigation, click **Default Origin Servers**. Next,     |
+| 5. In the current window's left-hand navigation, click **Origins**. Next,     |
 |                                                                                              |
 |    click **Add Item** within the **Origin Pools** section of **Default Origin Servers**.     |
 +----------------------------------------------------------------------------------------------+
@@ -77,7 +77,7 @@ steps will define an application, register its DNS and assign a target as an ori
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 6. In the resulting window, use the drop down as shown and click **Create new Origin Pool**. |
+| 6. In the resulting window, use the drop down as shown and click **Add Item**. |
 +----------------------------------------------------------------------------------------------+
 | |lab005|                                                                                     |
 +----------------------------------------------------------------------------------------------+
@@ -126,7 +126,7 @@ The following steps will guide you through adding a Web Application Firewall (WA
 These steps will demonstrate various aspects of the configuration.
 
 +----------------------------------------------------------------------------------------------+
-| 1. Continuing in the **Security Configuration** section, click on the                        |
+| 1. Continuing in the **Web Application Firewall** section, click on the                        |
 |                                                                                              |
 |    **Web Application Firewall (WAF)** and select **Enable**.                                 |
 +----------------------------------------------------------------------------------------------+
@@ -248,7 +248,7 @@ review the generated event data to make additional configuration changes.
 +----------------------------------------------------------------------------------------------+
 | 1. Open another tab in your browser (Chrome shown), navigate to the newly configured Load    |
 |                                                                                              |
-|    Balancer configuration: **http://<namespace>.lab-sec.f5demos.com**, to confirm it is      |
+|    Balancer configuration: **http://<namespace>-b.lab-sec.f5demos.com**, to confirm it is      |
 |                                                                                              |
 |    functional.                                                                               |
 |                                                                                              |

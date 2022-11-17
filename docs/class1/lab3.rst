@@ -160,7 +160,7 @@ Exercise 1: HTTP Load Balancer Configuration
 Exercise 2: Configure Default Origin Server
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-We'll next configure the "Default Origin Servers".   
+We'll next configure the "Origins".   
     
 #. Click on the *Add Items* link under the *Default Origin Servers* section.
 
@@ -177,7 +177,7 @@ node that is deployed in AWS.  This will allow us to access the VIP via the Publ
 that is attached to that interface.  If we wished to only have the service available within the AWS VPC
 we could opt to use the "Inside" interface that does not have an AWS EIP attached.
 
-#. Under "Advanced Configuration" set "Where to Advertise the VIP" to "Custom"
+#. Under "Other Settings" set "VIP Advertisment" to "Custom"
    
    .. image:: _static/screenshot-local-vip-advertise-custom.png
    
@@ -189,22 +189,22 @@ we could opt to use the "Inside" interface that does not have an AWS EIP attache
    .. image:: _static/lb-local-vip-advertise.png
       :width: 75%
 	  
-#. Click on "Add Item" 
+#. Click on "Apply" 
 #. Click on "Apply" to return to previous screen
 
 
 Exercise 4: Configure WAF Policy
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-#. Under the *Security Configuration* section 
+#. Under the *Web Application Firewall* section 
 
 #. Enter the following variables:
 
    ============================================= =====================
    Variable                                      Value
    ============================================= =====================
-   Select Web Application Firewall (WAF) Config  App Firewall
-   App Firewall                                  blocking-app-firewall
+   Web Application Firewall (WAF)                Enable
+   Enable                                        [NAMESPACE]/blocking-app-firewall
    ============================================= =====================
 
 #. Click "*Save and Exit* to create the HTTP Load Balancer.
