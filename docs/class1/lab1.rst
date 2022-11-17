@@ -125,7 +125,7 @@ We will first create an Origin Pool that refers to the "Public Endpoint" site in
    name      http
    ========= =====
 
-#. Click the *Configure* button under "HTTP Health Check" and enter the following variables ("/" is the default):
+#. Click the *Edit Configuration* button under "HTTP Health Check" and enter the following variables ("/" is the default):
 
    ========= =====
    Variable  Value
@@ -170,7 +170,7 @@ Exercise 2: Configure Default Origin Server
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 We'll next configure the "Default Origin Servers". 
     
-#. Click on the *Add Items* link under the *Default Origin Servers* section.
+#. Click on the *Add Items* link under the *Origins* section.
 
 #. The "Select Origin Pool Method" will be set to "Origin Pool". Under the "Origin Pool" dropdown menu select the "public" pool you created earlier.
 
@@ -178,20 +178,17 @@ We'll next configure the "Default Origin Servers".
  
 #. Click the *Add Item* button to exit the "Origin Pools" dialogue.
 
-#. Notice that in the "Advanced Configuration" section *Advertise On Internet* has been selected by default.
-
 Exercise 3: Configure WAF Policy
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-#. Under the *Security Configuration* section 
+#. Under the *Web Application Firewall* section 
 
 #. Choose the following options:
 
    ============================================= =====================
    Variable                                      Value
    ============================================= =====================
-   Select Web Application Firewall (WAF) Config  App Firewall
-   App Firewall                                  [NAMESPACE]/blocking-app-firewall
+   Web Application Firewall (WAF)                [NAMESPACE]/blocking-app-firewall
    ============================================= =====================
 
 #. Click "*Save and Exit* to create the HTTP Load Balancer.
