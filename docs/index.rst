@@ -1,18 +1,11 @@
 F5 Agility Labs Getting Started Doc
 ===================================
 
-Welcome to the |classbold| for F5 Agility |year|
-
-.. attention::
-   The Agility team is using this repo to document our "read-the-docs" process.
+Welcome to the |classbold|
 
 |repoinfo|
 
-.. note::
-   Each Agility lab is typically broken down by "Class" --> "Module" --> "Lab".
-   Each section uses "toctree" to create the index and reference the content.
-   Using this template should give the contributer several getting-started
-   RST examples.
+Please proceed to labs according to instructiong from class master.
 
 .. toctree::
    :maxdepth: 3
