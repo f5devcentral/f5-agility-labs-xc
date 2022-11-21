@@ -13,10 +13,10 @@ import f5_sphinx_theme
 # ------------
 #
 # REQUIRED: Your class/lab name
-classname = "F5 Distributed Cloud"
+classname = "F5 Distributed Cloud Bootcamp"
 
 # OPTIONAL: The URL to the GitHub Repository for this class
-github_repo = "https://github.com/f5devcentral/f5-agility-labs-xc"
+github_repo = "https://github.com/sokkolchen/f5-agility-labs-xc"
 
 #
 # END CONFIG
