@@ -103,7 +103,7 @@ We will first create an Origin Pool that refers to the "Public Endpoint" site in
     
    |op-pool-basic|
 
-   Click on "Add Item" to return to the previous screen.
+   Click on "Apply" to return to the previous screen.
 
 #. Below the "Origin Servers" section fill in the Port information
 
@@ -116,17 +116,17 @@ We will first create an Origin Pool that refers to the "Public Endpoint" site in
 
 #. In *Health Check(s)* section, click the *Add item* button.
 
-#. Click the *Health Check object* dropdown list. Click the *Create new healthcheck* button.
+#. Click the *Health Check object* dropdown list. Click the *Add item* button.
 
-#. Enter the following variables:
+#. In the *Metadata* section, enter the following variables:
 
    ========= =====
    Variable  Value
    ========= =====
-   name      http
+   Name      http
    ========= =====
 
-#. Click the *Configure* button under "HTTP Health Check" and enter the following variables ("/" is the default):
+#. Click the *View Configuration* link under "HTTP Health Check" and enter the following variables ("/" is the default):
 
    ========= =====
    Variable  Value
@@ -134,7 +134,7 @@ We will first create an Origin Pool that refers to the "Public Endpoint" site in
    path      /
    ========= =====
 
-#. Click *Apply* to exit the "Health Check HTTP Parameters" dialogue.
+#. Click *Apply* to exit the "Health Check HTTP Request Parameters" dialogue.
 #. Click *Continue* to return to the "Origin Pool" configuration.
 #. Click the *Save and Exit* button to create the Origin Pool.
 
@@ -171,29 +171,29 @@ Exercise 2: Configure Default Origin Server
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 We'll next configure the "Default Origin Servers". 
     
-#. Click on the *Add Items* link under the *Default Origin Servers* section.
+#. Click on the *Add Item* link in the *Origin Pools* section.
 
 #. The "Select Origin Pool Method" will be set to "Origin Pool". Under the "Origin Pool" dropdown menu select the "public" pool you created earlier.
 
    .. image:: _static/lb-pool-public.png
  
-#. Click the *Add Item* button to exit the "Origin Pools" dialogue.
+#. Click the *Apply* button to exit the "Origin Pool with Weight and Priority" dialogue.
 
-#. Notice that in the "Advanced Configuration" section *Advertise On Internet* has been selected by default.
+#. Notice that in the "Other Settings" section, *Internet* has been selected by default for "VIP Advertisement".
 
 Exercise 3: Configure WAF Policy
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-#. Under the *Security Configuration* section 
+#. Under the *Web Application Firewall* section 
 
 #. Choose the following options:
 
-   ============================================= =====================
-   Variable                                      Value
-   ============================================= =====================
-   Select Web Application Firewall (WAF) Config  App Firewall
-   App Firewall                                  [NAMESPACE]/blocking-app-firewall
-   ============================================= =====================
+   =============================== =================================
+   Variable                        Value
+   =============================== =================================
+   Web Application Firewall (WAF)  Enable
+   Select App Firewall             [NAMESPACE]/blocking-app-firewall
+   =============================== =================================
 
 #. Click "*Save and Exit* to create the HTTP Load Balancer.
 

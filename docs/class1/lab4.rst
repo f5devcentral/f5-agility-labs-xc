@@ -1,5 +1,5 @@
 (Optional) Lab 4: Fine Tuning a WAF Policy
-===============================
+==========================================
 
 This lab is also covered in the xC WAF 102 course.
  
@@ -22,7 +22,7 @@ when you trigger a WAF block.
    
    [Go Back]
    
-We can use the reported support ID to disable specific signatures.  Copy the value into your clipboard (i.e. highlight support ID in Chrome and select "Copy" / Ctrl-C)
+We can use the reported support ID to disable specific signatures.
 
 Exercise 1: Generate Cross Site Scripting (XSS)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -31,11 +31,11 @@ Exercise 1: Generate Cross Site Scripting (XSS)
 
    ``/headers/?username=<script>window.open(%27hello%20world%27);</script>``
 
-#. Retrieve the "support ID" that is displayed.
+#. Retrieve the "support ID" that is displayed. Copy the value into your clipboard (i.e. highlight support ID in Chrome and select "Copy" / Ctrl-C).
 
-#. From the F5 Distributed Cloud Console navigate to Web App & API Protection > Apps & APIs > Security events .
+#. From the F5 Distributed Cloud Console navigate to Web App & API Protection > Apps & APIs > Security.
 
-#. select the "global" Load Balancer at the bottom of the screen, and select the "Security Events" tab.
+#. Select the "global" Load Balancer at the bottom of the screen, and select the "Security Events" tab.
 
 #. Click on "Refresh" (on the page) until you see a request that matches the time of your most recent request.
 
@@ -52,7 +52,7 @@ Exercise 1: Generate Cross Site Scripting (XSS)
    
    .. image:: _static/screenshot-global-vip-public-security-events-paste-req-id.png
    
-#. Click on "Assign..."
+#. Click the "Assign a custom value(s)... link"
    
    .. image:: _static/screenshot-global-vip-public-security-events-paste-req-id-assign.png
    
@@ -65,21 +65,22 @@ Exercise 1: Generate Cross Site Scripting (XSS)
 Exercise 2: Creating WAF Exclusion Rule
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-#. Take note of the list of security IDs that are listed.
+#. Take note of the list of Signature IDs that are listed.
 
    .. image:: _static/waf-exclusion-rules-ids.png
       :width: 75%
 	  
 #. Search for one of the IDs at: https://clouddocs.f5.com/cloud-services/latest/f5-cloud-services-Essential.App.Protect-Details.html
-   For example searching for "200000091" should return a "XSS script tag end (Headers)" signature.
-#. Click on "Apply" you will now be taken into the HTTP Load Balancer configuration and you should see under "WAF Exclusion Rules" it should show as "Configured"
+   For example searching for "200000098" should return a "XSS script tag (Parameter)" signature.
+#. Click on "Apply". You will now be taken to the "WAF Exclusion Rules" dialogue.
+#. Click on "Apply". You will now be taken into the HTTP Load Balancer configuration and you should see under "WAF Exclusion Rules" it should show as "Configured".
 #. Scroll to the bottom of the page and click on "Save and Exit"
 #. Retry visiting your site with the same URL to your `[NAMESPACE].lab-sec.f5demos.com` site
 
    ``/headers/?username=<script>window.open(%27hello%20world%27);</script>``
 
-Excercise 3: View Requests Log
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Exercise 3: View Requests Log
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 We can also view requests that have been excluded from a WAF policy by viewing 
 the requests log.
@@ -90,14 +91,11 @@ the requests log.
    
    .. image:: _static/requests-policy-exclusion.png
       :width: 50%
-<<<<<<< HEAD
-#. Try visiting your site with the a different URL to your `[NAMESPACE].lab-sec.f5demos.com` site
-=======
-	  
-#. Try visiting your site with the a different URL to your `[NAMESPACE].lab-sec.f5demos.com` site
->>>>>>> 033317308f2ccd15c985c7aa0ba276bc22065401
+
+#. Try visiting your site with the a different URL to your `[NAMESPACE].lab-sec.f5demos.com` site:
    ``/txt/?username=<script>window.open(%27hello%20world%27);</script>``
-#. Observe that this request is blocked.  F5 Distributed Cloud WAF can exclude signatures by both signature ID and path; and these exclusions are tied to a specific HTTP Load Balancer
+
+#. Observe that this request is blocked. F5 Distributed Cloud WAF can exclude signatures by both Signature ID and path; and these exclusions are tied to a specific HTTP Load Balancer.
 
 Congratulations you have completed the lab!
 

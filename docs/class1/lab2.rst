@@ -22,7 +22,7 @@ a shared F5 Distributed Cloud AWS VPC Site.
 Once an AppMesh node has been deployed as a Customer Edge it helps provide two
 additional topologies for F5 Distributed Cloud WAF protection.
 
-#. Enabling F5 Distributed Cloud to proxy and protext internal services from our Regional Edge (additional DDoS protection, and AnyCast availability) even though it is not directly exposed to the internet.
+#. Enabling F5 Distributed Cloud to proxy and protect internal services from our Regional Edge (additional DDoS protection, and AnyCast availability) even though it is not directly exposed to the internet.
 
 #. Allow F5 Distributed Cloud to provide WAF protection for "internal" and/or "local" systems
 
