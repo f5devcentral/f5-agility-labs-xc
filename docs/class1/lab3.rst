@@ -127,6 +127,7 @@ In the next exercise we will look at a third topology of deploying a WAF policy 
 on the AppMesh node (in the Customer Edge).
 
 .. raw:: html
+
    <iframe width="560" height="315" src="https://www.youtube.com/embed/s-BHH0Qayfc?start=366" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
@@ -265,5 +266,6 @@ Video Walkthrough
 Optional Video you can watch if you get stuck
 
 .. raw:: html
+
    <iframe width="560" height="315" src="https://www.youtube.com/embed/s-BHH0Qayfc?start=400" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
