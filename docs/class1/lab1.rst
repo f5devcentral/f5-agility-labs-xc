@@ -114,9 +114,9 @@ We will first create an Origin Pool that refers to the "Public Endpoint" site in
    ================================= =====
 
 
-#. In *Health Check(s)* section, click the *Add item* button.
+#. In *Health Check(s)* section, click the *Add Item* button.
 
-#. Click the *Health Check object* dropdown list. Click the *Add item* button.
+#. Click the *Health Check object* dropdown list. Click the *Add Item* button.
 
 #. In the *Metadata* section, enter the following variables:
 

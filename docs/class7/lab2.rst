@@ -11,12 +11,12 @@ In your browser switch to the JuiceShop tab.  Open the browser's "Developer Tool
     In most browsers the quickest way to do this is to right-click anywhere on the webpage and select "Inspect" (or "Inspect Element") from the pop-up menu.
 
  .. figure:: _static/ati-devtools-dock.png
-     
+
      It is easiest to view the request log in the network tab if the developer tools window is at the bottom of the browser window rather than on the side.
- 
-        
+
+
 In the developer tools window, switch to the "Network" tab.
- 
+
  .. image:: _static/ati-devtools-network.png
 
 |

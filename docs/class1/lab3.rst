@@ -54,7 +54,7 @@ We will first create an Origin Pool that refers to the "Private Endpoint" site i
    ================================= =====
 
 
-#. In *Health Check(s)* section, click the *Add item* button.
+#. In *Health Check(s)* section, click the *Add Item* button.
 
 #. Click the *Health Check object* dropdown list. Select the *http* monitor that you previously created.
 
