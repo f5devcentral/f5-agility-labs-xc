@@ -12,7 +12,7 @@ In this lab, we will learn the following:
 **Core concepts**
 
    *Virtual K8s (vK8s)*
-      `vk8s refers to a virtual Kubernetes cluster. F5 Distributed Cloud Services support a Kubernetes compatible API for centralized orchestration of applications across a fleet of sites 
+      `vK8s refers to a virtual Kubernetes cluster. F5 Distributed Cloud Services support a Kubernetes compatible API for centralized orchestration of applications across a fleet of sites 
       (customer sites or F5 Distributed Cloud Regional Edge). This API is considered “Kubernetes compatible”, because not all Kubernetes APIs or resources 
       are supported. However, for the API(s) that are supported, it is 100% compatible. We have implemented a distributed control 
       plane within our global infrastructure to manage scheduling and scaling of applications across multiple (tens to hundreds of thousands of) 
@@ -54,13 +54,13 @@ In this lab, we will learn the following:
 
 #. You can see a summary of stats and configurations for site *agility-vpc-site-one*. Notice the labels used to deploy the site. Can you guess where 
    this customer edge site is deployed? We can see by the labels that this site is deployed on the Google Cloud Platform (GCP). You can deploy a 
-   customer edge site on ANY major cloud provider and also on-prem. Click on **Explore Site** to see more details about *agility-vpc-site-one*
+   customer edge site on ANY major cloud provider and also on-prem. Click on the **agility-vpc-site-one** link to see more details about the site
 
    .. image:: ../images/distributedappclickvpcsiteoneexploresite.png
       :width: 400pt
 
 #. You can get a lot of helpful information for site *agility-vpc-site-one* and its workloads, including application metrics, number of Pods, 
-   deployment status, etc. Spend some time exploring the different taps. Of course, there is no information because we have not deployed any workload on this site.
+   deployment status, etc. Spend some time exploring the different tabs. Of course, there is no information because we have not deployed any workload on this site.
 
    .. image:: ../images/distributedappclickvpcsiteoneexploresite2.png
       :width: 400pt
@@ -72,22 +72,30 @@ In this lab, we will learn the following:
    .. image:: ../images/distributedappclickvirtualk8s.png
       :width: 250pt
 
-#. There are currently no Virtual K8s, so let's create one!. Click **Add Virtual K8s**
+#. There are currently no Virtual K8s, so let's create one! Click **Add Virtual K8s**
 
    .. image:: ../images/distributedappclickaddvirtualk8s.png
       :width: 250pt
 
-#. Enter the site **Name** using your Firstname initial and Lastname altogether and append "-vk8" at the end. Ex: For Andrew Smith, the site name will be *asmith-vk8* (Without the quotes!)
+#. Enter the site **Name** using your Firstname initial and Lastname altogether and append "-vk8" at the end. Ex: For Andrew Smith, the site name will be *"asmith-vk8"* (without the quotes!)
 
    .. image:: ../images/distributedappclickvirtualk8ssettings.png
-      :width: 400pt
+      :width: 600pt
+
+#. Click the **Add Item** button in the *Virtual Sites* section
 
    .. image:: ../images/distributedappclickvirtualk8ssettings2.png
-      :width: 250pt
+      :width: 450pt
 
+#. Select the `shared/agility-k8s-vsite` site from the dropdown.
+
+   .. image:: ../images/distributedappclickvirtualk8ssettings3.png
+      :width: 450pt
+
+#. Click the **Save and Exit** button at the bottom of the page.
 
 #. Wait for your virtual K8s current state to show as *Ready* (this can take 5 minutes or more). This is your virtual Kubernetes cluster assigned to the virtual site *agility-k8s-vsite*. 
    As you already know, virtual site *agility-k8s-vsite* has three sites (*agility-vpc-site-one*, *agility-vpc-site-two*, *agility-vpc-site-three*)  
 
    .. image:: ../images/distributedappclickvirtualk8sstatus.png
-      :width: 400pt
+      :width: 600pt

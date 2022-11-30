@@ -16,7 +16,7 @@ In this lab, we will learn the following:
 **Core concepts**
 
    *Workload*
-      `Workload is used to configure and deploy a workload in Virtual Kubernetes. A workload may be part of an application. Workload encapsulates all the operational characteristics of Kubernetes workload, storage, and network objects (deployments, statefulsets, jobs, persistent volume claims, configmaps, secrets, and services) configuration, as well as configuration related to where the workload is deployed and how it is advertised using L7 or L4 load balancers. A workload can be one of simple service, service, stateful service or job. Services are long running workloads like web servers, databases, etc. and jobs are run to completion workloads. Services and jobs can be deployed on regional edges or customer sites. Services can be exposed in-cluster or on Internet by L7 or L4 load balancer or on sites using an advertise policy.`
+      `Workload is used to configure and deploy a workload in Virtual Kubernetes. A workload may be part of an application. Workload encapsulates all the operational characteristics of Kubernetes workload, storage, and network objects (deployments, statefulsets, jobs, persistent volume claims, configmaps, secrets, and services) configuration, as well as configuration related to where the workload is deployed and how it is advertised using L7 or L4 load balancers. A workload can be one of simple service, service, stateful service or job. Services are long running workloads like web servers, databases, etc. Jobs are "run to completion" workloads. Services and jobs can be deployed on Regional Edges or customer sites. Services can be exposed in-cluster, on the Internet by L7 or L4 load balancer, or on sites using an advertise policy.`
 
    *Service*
       `A service with one or more containers with configurable number of replicas that can be deployed on a selection of Regional Edge sites or customer sites and advertised within the cluster where is it deployed, on the Internet, or on other sites using TCP or HTTP or HTTPS load balancer.`
@@ -38,7 +38,7 @@ In this lab, we will learn the following:
    .. image:: ../images/2access_applications_vk8s.png
       :width: 600pt
 
-#. Review **Sites** on the vK8s dashboard -- there should be three, each with one pod
+#. Review **Sites** on the vK8s dashboard - there should be 3
 
    .. image:: ../images/3review_vk8s_dashboard_sites.png
       :width: 600pt
@@ -50,10 +50,12 @@ In this lab, we will learn the following:
    .. image:: ../images/4add_vk8s_workload.png
       :width: 600pt
 
-#. Complete the **Metadata** section by providing a **Name** and **Description**, then select **Service** from the **Type of Workload** list. Next, select **Configure** within the **Service** sub-section.
+#. Complete the **Metadata** section by providing the value *agility* for **Name** and **Description**, then select **Service** from the **Select Type of Workload** list.
 
    .. image:: ../images/5workload_metadata_and_service.png
       :width: 500pt
+
+#. Next, click the **Configure** link within the **Service** sub-section.
 
 #. Select **Add Item** within the **Containers** section
 
@@ -69,21 +71,23 @@ In this lab, we will learn the following:
    .. image:: ../images/7container_config.png
       :width: 600pt
 
+#. Click **Apply**
+
 **Exercise 3 - Configure vK8s Workload Deployment Options**
 
-#. Within the **Deploy Options** section, set **Where to Deploy the Workload** to *Customer Virtual Sites*, then **Configure** within the **Customer Virtual Sites** section
+#. Within the **Deploy Options** section, set **Where to Deploy the Workload** to *Customer Virtual Sites*, then click the **Configure** link within the **Customer Virtual Sites** section
 
    .. image:: ../images/8deploy_options.png
       :width: 600pt
 
-#. Select your vK8s site name from **List of Virtual Sites to Deploy**, then **Apply**
+#. Select your vK8s site name from **List of Customer Virtual Sites to Deploy**, then **Apply**
 
    .. image:: ../images/9select_customer_site.png
       :width: 600pt
 
 **Exercise 4 - Configure vK8s Workload Advertisement Options**
 
-#. Within the **Advertise Options** section, set **Options to Advertise the Workload** to *Advertise in Cluster*, then select **Configure** within the **Advertise in Cluster** section
+#. Within the **Advertise Options** section, set **Options to Advertise the Workload** to *Advertise In Cluster*, then click the **Configure** link within the **Advertise in Cluster** section
 
    .. image:: ../images/10select_advertise_options.png
       :width: 600pt
@@ -96,9 +100,9 @@ In this lab, we will learn the following:
    .. image:: ../images/11set_advertise_port.png
       :width: 600pt
 
-#. Select **Apply**, then **Apply** again, then **Save and Exit** from the vK8s Workload configuration page
+#. Click **Apply**, then **Apply** again, then **Save and Exit** from the vK8s Workload configuration page
 
-#. You should now see the workload added with 3 total sites and 3 total pods
+#. In less than a minute, you should see the workload added with 3 total sites and 3 total pods (you may need to click the "Refresh" button)
 
    .. image:: ../images/12verify_3_workload_sites_pods.png
       :width: 600pt
