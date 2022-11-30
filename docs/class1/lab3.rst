@@ -74,6 +74,7 @@ We will first create an Origin Pool that refers to the "Private Endpoint" site i
 .. |op-add-pool| image:: _static/op-add-pool.png
 .. |op-api-pool| image:: _static/op-api-pool.png
 .. |op-pool-basic| image:: _static/op-pool-basic-private.png
+  :width: 75% 
 .. |op-spa-check| image:: _static/op-spa-check.png
 .. |op-tshoot| image:: _static/op-tshoot.png
 
@@ -93,17 +94,21 @@ Exercise 1: HTTP Load Balancer Configuration
 #. Navigate the menu to go to "Manage"->"HTTP Load Balancers" and look for the Load Balancer named *global* that you previously created.
 
 #. Click on the three dots "..." to the right of the name of your *global* Load Balancer and select the "Manage Configuration" option.
-   
+
    .. image:: _static/screenshot-global-vip-actions-manage.png
+
 #. Click on "Edit Configuration" in the upper right of the screen (after your *global* Load Balancer is loaded).
-   
+
    .. image:: _static/screenshot-global-vip-edit-config.png
+
 #. Under "Default Origin Servers" find your previous "public" Origin pool and click on the three dots "..." to the right under "Actions" and select "Edit"
-   
+
    .. image:: _static/screenshot-global-vip-edit-config-pools.png
+
 #. Change the selection of "Origin Pool" to "private" from "public" and click "Apply"
-   
+
    .. image:: _static/screenshot-global-vip-edit-config-pools-select.png
+
 #. Click "*Save and Exit* to update the HTTP Load Balancer.
 
 You should now be able to go to the DNS name that you entered 
@@ -179,17 +184,18 @@ that is attached to that interface.  If we wished to only have the service avail
 we could opt to use the "Inside" interface that does not have an AWS EIP attached.
 
 #. Under "Other Settings" set "VIP Advertisement" to "Custom"
-   
+
    .. image:: _static/screenshot-local-vip-advertise-custom.png
-   
+      :width: 50%
+
 #. Click on "Configure" under "Custom"
 #. In "List of Sites to Advertise", click on "Add Item"
 #. For "Site Network" click on "Outside Network" 
 #. For "Site Reference" select `system/student-awsnet`
 
    .. image:: _static/lb-local-vip-advertise.png
-      :width: 75%
-	  
+      :width: 60%
+
 #. Click on "Apply" 
 #. Click on "Apply" to return to previous screen
 
@@ -239,7 +245,7 @@ You can verify that you are connecting directly to AWS by comparing the DNS of t
 .. code-block:: 
 
    $ nslookup student001.aws.lab.f5demos.com
-   
+
    Server:		2a01:cb04:765:e00:a6ce:daff:fe11:96ea
    Address:	2a01:cb04:765:e00:a6ce:daff:fe11:96ea#53
 
