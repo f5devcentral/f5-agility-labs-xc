@@ -38,12 +38,12 @@ We will first create an Origin Pool that refers to the "Private Endpoint" site i
    ================================= =====
    Select Type of Origin Server      DNS Name of Origin Server on given Sites
    DNS Name                          private.lab.f5demos.internal
-   Site                              student-awsnet
+   Site                              system/student-awsnet
    ================================= =====
     
    |op-pool-basic|
 
-   Click on "Add Item" to return to the previous screen.
+   Click on "Apply" to return to the previous screen.
 
 #. Below the "Origin Servers" section fill in the Port information
 
@@ -54,7 +54,7 @@ We will first create an Origin Pool that refers to the "Private Endpoint" site i
    ================================= =====
 
 
-#. In *Health Check(s)* section, click the *Add item* button.
+#. In *Health Check(s)* section, click the *Add Item* button.
 
 #. Click the *Health Check object* dropdown list. Select the *http* monitor that you previously created.
 
@@ -74,6 +74,7 @@ We will first create an Origin Pool that refers to the "Private Endpoint" site i
 .. |op-add-pool| image:: _static/op-add-pool.png
 .. |op-api-pool| image:: _static/op-api-pool.png
 .. |op-pool-basic| image:: _static/op-pool-basic-private.png
+  :width: 75% 
 .. |op-spa-check| image:: _static/op-spa-check.png
 .. |op-tshoot| image:: _static/op-tshoot.png
 
@@ -93,17 +94,21 @@ Exercise 1: HTTP Load Balancer Configuration
 #. Navigate the menu to go to "Manage"->"HTTP Load Balancers" and look for the Load Balancer named *global* that you previously created.
 
 #. Click on the three dots "..." to the right of the name of your *global* Load Balancer and select the "Manage Configuration" option.
-   
+
    .. image:: _static/screenshot-global-vip-actions-manage.png
+
 #. Click on "Edit Configuration" in the upper right of the screen (after your *global* Load Balancer is loaded).
-   
+
    .. image:: _static/screenshot-global-vip-edit-config.png
+
 #. Under "Default Origin Servers" find your previous "public" Origin pool and click on the three dots "..." to the right under "Actions" and select "Edit"
-   
+
    .. image:: _static/screenshot-global-vip-edit-config-pools.png
+
 #. Change the selection of "Origin Pool" to "private" from "public" and click "Apply"
-   
+
    .. image:: _static/screenshot-global-vip-edit-config-pools-select.png
+
 #. Click "*Save and Exit* to update the HTTP Load Balancer.
 
 You should now be able to go to the DNS name that you entered 
@@ -127,6 +132,7 @@ In the next exercise we will look at a third topology of deploying a WAF policy 
 on the AppMesh node (in the Customer Edge).
 
 .. raw:: html
+
    <iframe width="560" height="315" src="https://www.youtube.com/embed/s-BHH0Qayfc?start=366" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
@@ -144,7 +150,7 @@ Exercise 1: HTTP Load Balancer Configuration
 
 #. Start in F5 Distributed Cloud Console and switch to the "Web App & API Protection" context. [You should already be here from previous lab]
 
-#. Navigate the menu to go to "Manage"->"HTTP Load Balancers" and click on "Add HTTP Load Balancers".
+#. Navigate the menu to go to "Manage"->"HTTP Load Balancers" and click on "Add HTTP Load Balancer".
 
 #. Enter the following variables:
 
@@ -160,13 +166,13 @@ Exercise 1: HTTP Load Balancer Configuration
 Exercise 2: Configure Default Origin Server
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-We'll next configure the "Default Origin Servers".   
+We'll next configure the "Origin Servers".   
     
-#. Click on the *Add Items* link under the *Default Origin Servers* section.
+#. Click on the *Add Item* button in the the *Origin Pools* section.
 
 #. The "Select Origin Pool Method" will be set to "Origin Pool". Under the "Origin Pool" dropdown menu select the "private" pool you created earlier.
  
-#. Click the *Add Item* button to exit the "Origin Pools" dialogue.
+#. Click the *Apply* button to exit the "Origin Pool with Weight and Priority" dialogue.
 
 Exercise 3: Configure Local VIP
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -177,37 +183,38 @@ node that is deployed in AWS.  This will allow us to access the VIP via the Publ
 that is attached to that interface.  If we wished to only have the service available within the AWS VPC
 we could opt to use the "Inside" interface that does not have an AWS EIP attached.
 
-#. Under "Advanced Configuration" set "Where to Advertise the VIP" to "Custom"
-   
+#. Under "Other Settings" set "VIP Advertisement" to "Custom"
+
    .. image:: _static/screenshot-local-vip-advertise-custom.png
-   
+      :width: 50%
+
 #. Click on "Configure" under "Custom"
-#. In "List of Sites to Adverstise", click on "Add Item"
+#. In "List of Sites to Advertise", click on "Add Item"
 #. For "Site Network" click on "Outside Network" 
-#. For "Site Reference" select system/student-awsnet`
+#. For "Site Reference" select `system/student-awsnet`
 
    .. image:: _static/lb-local-vip-advertise.png
-      :width: 75%
-	  
-#. Click on "Add Item" 
+      :width: 60%
+
+#. Click on "Apply" 
 #. Click on "Apply" to return to previous screen
 
 
 Exercise 4: Configure WAF Policy
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-#. Under the *Security Configuration* section 
+#. Under the *Web Application Firewall* section 
 
-#. Enter the following variables:
+#. Choose the following options:
 
-   ============================================= =====================
-   Variable                                      Value
-   ============================================= =====================
-   Select Web Application Firewall (WAF) Config  App Firewall
-   App Firewall                                  blocking-app-firewall
-   ============================================= =====================
+   =============================== =================================
+   Variable                        Value
+   =============================== =================================
+   Web Application Firewall (WAF)  Enable
+   Select App Firewall             [NAMESPACE]/blocking-app-firewall
+   =============================== =================================
 
-#. Click "*Save and Exit* to create the HTTP Load Balancer.
+#. Click "Save and Exit" to create the HTTP Load Balancer.
 
 Once the HTTP Load Balancer has been deployed, you should now be able to go to the DNS name that you entered 
 previously in a web browser.  The FQDN we used in our example is http://stable-sheep.aws.lab.f5demos.com.  
@@ -229,15 +236,16 @@ You can verify that you are connecting directly to AWS by comparing the DNS of t
 
 .. code-block:: 
 
-   dig +short student001.aws.lab.f5demos.com
+   $ dig +short student001.aws.lab.f5demos.com
    52.4.72.136
+
    $ dig -x 52.4.72.136 +short
    ec2-52-4-72-136.compute-1.amazonaws.com.
 
 .. code-block:: 
 
-   nslookup student001.aws.lab.f5demos.com
-   
+   $ nslookup student001.aws.lab.f5demos.com
+
    Server:		2a01:cb04:765:e00:a6ce:daff:fe11:96ea
    Address:	2a01:cb04:765:e00:a6ce:daff:fe11:96ea#53
 
@@ -264,5 +272,6 @@ Video Walkthrough
 Optional Video you can watch if you get stuck
 
 .. raw:: html
+
    <iframe width="560" height="315" src="https://www.youtube.com/embed/s-BHH0Qayfc?start=400" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 

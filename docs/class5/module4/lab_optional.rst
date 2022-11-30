@@ -1,16 +1,16 @@
-Lab Optional - Use kubectl to view vk8s Output
+Lab Optional - Use kubectl to view vK8s Output
 ==============================================
 
-F5 Distributed Cloud App Stack provides the ability to manage your vk8s namespace via command line with kubectl 
+F5 Distributed Cloud App Stack provides the ability to manage your vK8s namespace via command line with kubectl 
 
 In this lab, we will learn perform the following:
 
 •  Review kubectl commands and see the output
 
-**Core concepts**
+**Core Concepts**
 
-   *Virtual kubernetes vK8s*
-      `F5 Distributed Cloud Services support a Kubernetes compatible API for centralized orchestration of applications across a fleet of sites (customer sites or F5 Distributed Cloud Regional Edge). This API is “Kubernetes compatible” because not all Kubernetes APIs or resources are supported. However, for the API(s) that are supported, it is hundred percent compatible. We have implemented a distributed control plane within our global infrastructure to manage scheduling and scaling of applications across multiple (tens to hundreds of thousands of) sites, where each site in itself is also a managed physical K8s cluster.`
+   *Virtual Kubernetes vK8s*
+      `F5 Distributed Cloud Services support a Kubernetes compatible API for centralized orchestration of applications across a fleet of sites (customer sites or F5 Distributed Cloud Regional Edge). This API is "Kubernetes compatible" because not all Kubernetes APIs or resources are supported. However, for the API(s) that are supported, it is hundred percent compatible. We have implemented a distributed control plane within our global infrastructure to manage scheduling and scaling of applications across multiple (tens to hundreds of thousands of) sites, where each site in itself is also a managed physical K8s cluster.`
 
    *kubectl*
       `Standard upstream kubectl CLI tool can be used on the vK8s API URL or the downloaded kubeconfig file can be used to access the vK8s APIs.`

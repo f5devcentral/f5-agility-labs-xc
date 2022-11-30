@@ -13,21 +13,21 @@ Lab 2 - Publish to the Internet
 
 #. In the **Basic Configuration** Section make the following changes:
 
-    - **List of Domains**: Use your {namespace}.lab-app.f5demos.com
+    - **List of Domains**: Use <your namespace>.lab-app.f5demos.com
     - **Select Type of Load Balancer**: HTTPS with Automatic Certificate
-    - **Select Type of Load Balancer**: Make sure this is checked
+    - **HTTP Redirect to HTTPS**: Make sure this is checked
 
     |http_basic|
 
-#. In the **Default Origin Servers** Section click **Add item**.
+#. In the **Origin Pools** section click **Add Item**.
 
     |add_origin_server|
 
-#. Select your **Origin Pool**, which was created earlier in this lab, and Click **Add Item**
+#. Select your **Origin Pool**, which was created earlier in this lab, and Click **Apply**
 
     |select_origin_pool|
 
-#. In the Security Configuration section change the **Security Policies** to *Do Not Apply Service Policies* then click **Save and Exit**.
+#. In the Common Security Controls section change the **Service Policies** to *Do Not Apply Service Policies* then click **Save and Exit** at the bottom of the page.
 
     |security_configuration|
    
@@ -36,7 +36,7 @@ Lab 2 - Publish to the Internet
     |http_status|
 
 .. NOTE::
-  - Please wait for the VIRTUAL_HOST_READY and Valid certificate status before proceeding
+  - Please wait for the **VIRTUAL_HOST_READY** and **Valid** certificate status before proceeding
 
 Now we are ready to test!
 
