@@ -4,10 +4,10 @@ Lab 1 - Explore F5 Distributed Cloud Console
 Welcome to F5 Distributed Cloud Application 301.
 
 The following Exercises will guide you through the initial 
-access requirements for this multi-part lab.  Lab attendees should have received an invitation 
+access requirements for this multi-part lab. Lab attendees should have received an invitation 
 (which requests you update your password for access) email to the lab environment. Please check 
 the email address used for course registration and its associated spam folders to see if the
-invitation email has been received.  If you have not received an email, please contact a member
+invitation email has been received. If you have not received an email, please contact a member
 of the lab team.
  
 The F5 Distributed Cloud Console, where a majority of all lab tasks will be conducted, is a SaaS
@@ -18,7 +18,7 @@ private data centers and sites within AWS, Azure, and GCP public cloud environme
 
 In this lab, we will learn the following:
 
-•  Log into the F5 Distributed CLoud Console. 
+•  Log into the F5 Distributed Cloud Console.
 
 •  Review account profile
 
@@ -37,7 +37,7 @@ In this lab, we will learn the following:
       tenant cannot access any objects or infrastructure of other tenants.`
 
    *Namespaces*
-      `Tenant’s configuration objects are grouped under namespaces. Namespaces can be thought of as administrative domains. 
+      `Tenant's configuration objects are grouped under namespaces. Namespaces can be thought of as administrative domains. 
       All the objects of the same kind need to have unique names in a given namespace. Namespace themselves must be unique 
       within a tenant. In this document namespace will be referred as <tenant>/<namespace>, which will be globally unique.`
 
@@ -46,7 +46,7 @@ In this lab, we will learn the following:
 **Exercise 1 - Log into F5 Distributed Cloud Console**
 
 .. NOTE::
-   Once you join the UDF session, your UDF deployment will start and create an ephemeral account on the F5 Distributed Cloud console (this may take 5-10min)
+   Once you join the UDF session, your UDF deployment will start and create an ephemeral account on the F5 Distributed Cloud console (this may take 5-10 min)
 
 
 #. Once your ephemeral account is created, you will receive an email to update your password. 
@@ -81,10 +81,10 @@ In this lab, we will learn the following:
 
 #. Now, you will need to set the persona and the skill level to access the console.
 
-   .. image:: ../images/xclogonsetlevel.png
+   .. image:: ../images/xclogonsetpersona.png
       :width: 400pt
 
-   .. image:: ../images/xclogonsetpersona.png
+   .. image:: ../images/xclogonsetlevel.png
       :width: 400pt
 
 #. Finally, navigate through the initial prompts. 

@@ -66,32 +66,32 @@ We will first create an Origin Pool that refers to the frontend application serv
 
    |op-pool-basic|
 
-#. Click on "Add Item" to return to the previous screen
+#. Click on "Apply" to return to the previous screen
 
 #. Enter "80" for the "Port"
 
-#. Under the *Health Check* section, click the *Add item* button.
+#. Under the *Health Checks* section, click the *Add Item* button.
 
-#. Click the *Health Check object* dropdown list. Click the *Add item* button.
+#. Click the *Health Check object* dropdown list. Click the *Add Item* button.
 
-#. Enter the following variables:
+#. Enter the following variables in the "Metadata" section:
 
    ========= =====
    Variable  Value
    ========= =====
-   name      http
+   Name      http
    ========= =====
 
-#. Click the *view configuration* button under "HTTP HealthCheck"
+#. Click the *View Configuration* button under "HTTP HealthCheck"
 
-#. Leave the default values and click *Apply* to exit the "Health Check HTTP Parameters" dialogue.
+#. Leave the default values and click *Apply* to exit the "Health Check HTTP Request Parameters" dialogue.
 #. Click *Continue* to return to the "Origin Pool" configuration.
 #. Click the *Save and Exit* button to create the Origin Pool.
 
 Exercise 2: HTTP Load Balancer Configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-#. Navigate the menu to go to "Manage"->"HTTP Load Balancers" and click on "Add HTTP Load Balancers".
+#. Navigate the menu to go to "Manage"->"Load Balancers"->"HTTP Load Balancers" and click on "Add HTTP Load Balancer".
 
    |http_lb_menu| |http_lb_add|
 
@@ -116,9 +116,9 @@ We'll next configure the "Default Origin Servers".
 
 #. The "Select Origin Pool Method" will be set to "Origin Pool". Under the "Origin Pool" dropdown menu select the "fronted-public" you created earlier.
  
-#. Click *Apply* to exit the "Origin Pools" dialogue.
+#. Click *Apply* to exit the "Origin Pool with Weight and Priority" dialogue.
 
-#. Notice that in the "Other Settings" section *Internet* has been selected by default as "VIP Advertisement".
+#. Notice that in the "Other Settings" section, *Internet* has been selected by default as "VIP Advertisement".
 
    |lb-vip|
 
@@ -146,7 +146,7 @@ In this exercise we will create a new origin pool that connects to our AWS site 
  
    |op-add-pool|
 
-#. Enter the following variables:
+#. Enter the following variables in the "Metadata" section:
 
    ================================= =====
    Variable                          Value
@@ -161,13 +161,13 @@ In this exercise we will create a new origin pool that connects to our AWS site 
    ================================= =====
    Select Type of Origin Server      DNS Name of Origin Server on given Sites
    DNS Name                          jumphost.lab.f5demos.internal
-   Site                              student-awsnet
+   Site                              system/student-awsnet
    Select Network on the site        Inside Network
    ================================= =====
 
    .. image:: ../images/op-pool-basic-private.png
 
-   Click on "Add Item" to return to the previous screen
+   Click on "Apply" to return to the previous screen
 
 #. Enter "8080" for the Port
 #. Select the http health check that you previously created
@@ -177,14 +177,14 @@ In this exercise we will create a new origin pool that connects to our AWS site 
 #. Click the *Save and Exit* button to create the Origin Pool.
 
 Exercise 5: Edit HTTP Load Balancer Configuration
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-#. Navigate the menu to go to "Manage"->"HTTP Load Balancers" and click on "..." next to the HTTP LB 
+#. Navigate the menu to go to "Manage"->"Load Balancers"->"HTTP Load Balancers" and click on "..." next to the HTTP LB 
    that you previously created.
 
    .. image:: ../images/edit-http-lb.png
 
-   then click on "Manage Configuration"
+   Then click on "Manage Configuration"
 
 #. In the upper right click on "Edit Configuration"
 
@@ -203,7 +203,7 @@ Exercise 6: Review General Monitoring Stats
 
 We can also view analytics of our HTTP Load Balancer.
 
-#. Navigate the menu to go to "Virtual Hosts"->"HTTP Load Balancers" and click on "Performance Monitoring" after hovering your mouse over "frontend"
+#. Navigate the menu to go to "Virtual Hosts"->"HTTP Load Balancers" and click on "Performance Monitoring" under "frontend"
 
    .. image:: ../images/http_lb_stats.png
 

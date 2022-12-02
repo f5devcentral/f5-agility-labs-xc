@@ -14,8 +14,8 @@ host a TCP Load Balancer that will proxy traffic back to the original backend ap
 
 .. image:: ../images/tcplb-lab.png
 
-Exercise 1: Verify DNS 
-~~~~~~~~~~~~~~~~~~~~~~~
+Exercise 1: Verify DNS
+~~~~~~~~~~~~~~~~~~~~~~
 
 In the previous lab exercise we made a "In Container Diagnostic Services" service available.
 
@@ -23,9 +23,9 @@ This is small application that allows you to run tools to verify DNS and run com
 to simulate HTTP/HTTPS connections from inside the AWS environment.
 
 #. Click on DNS Lookup
+#. Enter "jumphost.lab.f5demos.internal" in the *target* field.
 #. After the "@" replace the 10.0.5.xxx value with "10.0.0.2"
-#. Enter "jumphost.lab.f5demos.internal"
-#. Click on Lookup
+#. Click on **Lookup**
 
    .. image:: ../images/dns-lookup-jumphost.png
 
@@ -73,7 +73,7 @@ Exercise 2: Origin Pool
 
    |origin_pools_add|
     
-#. Enter the following variables:
+#. Enter the following variables in the "Metadata" section:
 
 =============================== ===============
 Variable                        Value
@@ -87,7 +87,7 @@ Origin Pool Name                backend
 =============================== ===============
 Select Type of Origin Server    IP address of Origin Server on given Sites
 IP address                      10.1.20.5
-Site                            student-onprem
+Site                            system/student-onprem
 Select Network on the site      Inside Network
 =============================== ===============
 
@@ -95,11 +95,11 @@ Click on "Apply" to return to the previous screen
 
 #. Enter "8443" for the Port.
 
-#. Under the *Health Check* section, click the *Add item* button.
+#. Under the *Health Checks* section, click the *Add Item* button.
 
-#. Click the *Health Check object* dropdown list. Click the *Add item* button.
+#. Click the *Health Check object* dropdown list. Click the *Add Item* button.
 
-#. Enter the following variables:
+#. In the *Metadata* section, enter the following variables:
 
 =============================== ===============
 Variable                        Value
@@ -108,8 +108,7 @@ Name                            tcp
 Health Check                    TCP HealthCheck
 =============================== ===============
 
-#. Click on the "Configure" button to open the dialog to add "abcd1234" as *Send Payload* then click "Apply".
-#. Click the *Save and Exit* button to close the *Health Check Parameters* dialogue. 
+#. Add `abcd1234` as the *Send Payload* then click "Continue".
 
 #. Click the *Save and Exit* button to close the *Origin Pool* dialogue.
 
@@ -117,13 +116,15 @@ Exercise 3: Create Backend TCP Load Balancer
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-#. Navigate the menu to go to *Manage* -> *Load Balancer*, then click *TCP Load Balancers*.
+#. Navigate the menu to go to *Manage* -> *Load Balancers*, then click *TCP Load Balancers*.
 
    |tcp_lb_menu|
 
 #. Click the *Add TCP Load Balancer* button.
 
-#. Enter the following variables:
+#. Click the *Add Item* button in the "Basic Configuration" section.
+
+#. Enter the following variables into the form:
 
    ==============================  =====
    Variable                        Value
@@ -131,9 +132,12 @@ Exercise 3: Create Backend TCP Load Balancer
    Name                            backend
    Domain                          adjective-animal.example.internal
    Listen Port                     443
-   With SNI                        Checked
+   SNI and Default LB choice       SNI
    Where to Advertise the VIP      Advertise Custom
    ==============================  =====
+
+   .. note::
+      *In the table above, replace adjective-animal with your namespace ID i.e. poetic-quail.*
 
 #. Configure Origin Pools
 
@@ -159,17 +163,17 @@ Exercise 3: Create Backend TCP Load Balancer
       |tcp_lb_advertise|
 
    #. Click the *Apply* button to exit the *Advertise Custom* dialogue.
-   #. Click on "Apply" to return to TCP Load Balancer configuration page.
+   #. Click the *Apply* button again to return to TCP Load Balancer configuration page.
 
    |tcp_lb_config|
 
-#. CLick the *Save and Exit* button to exit the *TCP Load Balancer* dialogue.
+#. Click the *Save and Exit* button to exit the *TCP Load Balancer* dialogue.
 
 Exercise 4: Verify DNS Again
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Volterra Gateway provides a recursive DNS resolver.  You can either point a client
-directly at the gateway or forward DNS queries that you would like Volterra to process.
+F5 XC Gateway provides a recursive DNS resolver. You can either point a client
+directly at the gateway or forward DNS queries that you would like F5 XC to process.
 
 Using the "In Container Diagnostic Services"
 
@@ -206,7 +210,7 @@ You should see an output.  Now try repeating the same but using the IP address t
 You should see an error.  This is because Distributed Cloud is expecting an SNI value.  This allows you to re-use
 the same IP address for multiple different services.
 
-This concludes showing how we can solve Multi Cloud Networking with the use of Volterra Load Balancer resources.
+This concludes showing how we can solve Multi Cloud Networking with the use of F5 XC Load Balancer resources.
 
 We can also make use of Distributed Cloud "Global Networks" to provide routed connectivity between networks (requires non-overlapping IP space).
 

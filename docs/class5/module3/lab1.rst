@@ -13,7 +13,7 @@ Lab 1 - Create Origin Pool
 
 #. On the New Origin Pool form:
 
-	#. Enter a **Name** for your pool
+	#. Enter a **Name** for your pool (ex: pool)
 	#. Replace the **Port** value of *443* with *3000*
 	#. Select **Add Item** under **Origin Servers**
 
@@ -22,13 +22,13 @@ Lab 1 - Create Origin Pool
 #. Complete the **Origin Server** section by make the following changes:
 
     - **Select Type of Origin Server**: K8s Service Name of Origin Server on given Sites
-    - **Service Name**: workloadname.namespace (make a note to remember this in creation stage)
+    - **Service Name**: agility.<your namespace> (eg: agility.loved-newt) - make a note to remember this in creation stage
     - **Site or Virtual Site**: Virtual Site select shared/agility-k82-site
     - **Select Network on the site**: vK8s Networks on Site
 
    |origin_pools_menu|
  
-#. Click on **Add Item** to return to the previous screen
+#. Click on **Apply** to return to the previous screen
 
 #. Click the **Save and Exit** button to close the **Origin Pool** dialogue.
 

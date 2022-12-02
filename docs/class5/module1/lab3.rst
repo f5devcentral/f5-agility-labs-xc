@@ -1,4 +1,4 @@
-Lab 3- Configure your local kubectl to access your virtual K8s (Optional)
+Lab 3 - Configure your local kubectl to access your virtual K8s (Optional)
 -------------------------------------------------------------------------
 
 In this lab, we will learn the following:
@@ -16,15 +16,19 @@ In this lab, we will learn the following:
 #. Click virtual K8s under the applications section.
 
    .. image:: ../images/distributedappclickvirtualk8s.png
-      :width: 250pt
+      :width: 180pt
 
-#. Click the three dots under the "Action" column and then click Kubeconfig.
+#. Click the three dots under the "Action" column and then click **Kubeconfig**.
 
    .. image:: ../images/distributedappclickvirtualk8kubeconfig.png
-      :width: 400pt
+      :width: 650pt
+
+#. When prompted to select an expiration date, pick a future date that will give you adequate time to complete the lab.
+
+#. If your browser prompts you for a location to download the file, select a directory you prefer and click **Save**.
 
 #. Click the config kubeconfig is downloaded, and follow the Kubernetes documentation to configure your local kubctl tool. 
 
     `Organizing Cluster Access Using kubeconfig Files <https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/>`_
 
-#. Once you have configured your local kubctl tool, you should be able to manage your virtual k8s using kubectl commands.
+#. Once you have configured your local kubectl tool, you will be able to manage your virtual k8s using kubectl commands.
