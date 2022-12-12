@@ -14,8 +14,8 @@ Lab 2 - Publish to the Internet
 #. In the **Basic Configuration** Section make the following changes:
 
     - **List of Domains**: Use <your namespace>.lab-app.f5demos.com
-    - **Select Type of Load Balancer**: HTTPS with Automatic Certificate
-    - **HTTP Redirect to HTTPS**: Make sure this is checked
+    - **Select Type of Load Balancer**: HTTP
+    - **Automatically Manage DNS Records**: Make sure this is checked
 
     |http_basic|
 
@@ -36,7 +36,7 @@ Lab 2 - Publish to the Internet
     |http_status|
 
 .. NOTE::
-  - Please wait for the **VIRTUAL_HOST_READY** and **Valid** certificate status before proceeding
+  - Please wait for the **VIRTUAL_HOST_READY**
 
 Now we are ready to test!
 
