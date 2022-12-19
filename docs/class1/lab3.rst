@@ -101,7 +101,7 @@ Exercise 1: HTTP Load Balancer Configuration
 
    .. image:: _static/screenshot-global-vip-edit-config.png
 
-#. Under "Default Origin Servers" find your previous "public" Origin pool and click on the three dots "..." to the right under "Actions" and select "Edit"
+#. Under "Origins" find your previous "public" Origin pool and click on the three dots "..." to the right under "Actions" and select "Edit"
 
    .. image:: _static/screenshot-global-vip-edit-config-pools.png
 
