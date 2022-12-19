@@ -44,7 +44,7 @@ We will create a blocking WAF policy.
    Enforcement Mode                  Blocking
    ================================= ============================================
 
-   In this mode we have change the policy to block attacks that are included in 
+   In this mode we change the policy to block attacks that are included in 
    the default policy.  Later we will look at how we can customize these settings.
 
    .. image:: _static/blocking-app-firewall-policy.png
@@ -226,14 +226,14 @@ Exercise 5: Performance and Security
 
 #. Start in F5 Distributed Cloud Console and switch to the "Web App & API Protection" context. [You should already be here from previous lab]
 
-   We can view details of successful requests and blocks by navigating to "Apps & APIs"
+   We can view details of successful requests and blocks by navigating to "Virtual Hosts"
 
-#. Click on "Apps & APIs"->"Performance" and click on your "global" Load Balancer (bottom right)
+#. Click on "Select service" and select "Load Balancers". Click "Virtual Hosts"->"HTTP Load Balancers" and click on your "global" Load Balancer
 
    .. image:: _static/performance-overview.png
       :width: 50%
 
-   You will see a  health score of your application as well as end to end latency of the connection.
+   You will see a health score of your application as well as end to end latency of the connection.
 
    .. image:: _static/screenshot-global-vip-performance-dashboard.png
       :width: 50%
@@ -245,7 +245,7 @@ Exercise 5: Performance and Security
    .. image:: _static/screenshot-global-vip-public-requests.png
       :width: 50%
 
-#. Click on "Apps & APIs"->"Security" and click on your "global" Load Balancer (bottom right)
+#. Click on the "Performance Monitoring" dropdown and select "Security Monitoring".
 #. Click on "Security Events"
    You will be able to see details of the security events.
 
