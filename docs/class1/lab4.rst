@@ -33,9 +33,9 @@ Exercise 1: Generate Cross Site Scripting (XSS)
 
 #. Retrieve the "support ID" that is displayed. Copy the value into your clipboard (i.e. highlight support ID in Chrome and select "Copy" / Ctrl-C).
 
-#. From the F5 Distributed Cloud Console navigate to Web App & API Protection > Apps & APIs > Security.
+#. Click on "Select service" and select "Load Balancers". Click "Virtual Hosts"->"HTTP Load Balancers" and click on your "global" Load Balancer
 
-#. Select the "global" Load Balancer at the bottom of the screen, and select the "Security Events" tab.
+#. Select the "global" Load Balancer. Click on the "Performance Monitoring" dropdown and select "Security Monitoring". Select the "Security Events" tab.
 
 #. Click on "Refresh" (on the page) until you see a request that matches the time of your most recent request.
 
