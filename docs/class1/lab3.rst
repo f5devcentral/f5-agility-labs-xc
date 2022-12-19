@@ -254,7 +254,7 @@ You can verify that you are connecting directly to AWS by comparing the DNS of t
    Address: 52.4.72.136
 
 
-In this topology we are sending traffic to the AWS EIP that attached to the AppMesh node in the AWS VPC.
+In this topology we are sending traffic to the AWS EIP that's attached to the AppMesh node in the AWS VPC.
 
 We then connect to the AWS resource via it's Private IP address.  
 
