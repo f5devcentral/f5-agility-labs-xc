@@ -125,11 +125,11 @@ The script will start and a log will appear tracking the progress of the script.
 
 During this time you can use your local terminal to send more cURL requests or manually browse Juiceshop with your browser.
 
-4. Reviewing Data in the Application Threat Insights Dashboard
+4. Reviewing Data in the Application Traffic Insights Dashboard
 ----------------------------------------------------------------
 
 .. warning::
-    Because the Application Threat Insights dashboard is intended only to provide a high-level analysis of web application traffic the dashboard does not provide real-time updates of requests.  Traffic analyzed by ATI can take over an hour to reflect in the dashboard graphs.
+    Because the Application Traffic Insights dashboard is intended only to provide a high-level analysis of web application traffic the dashboard does not provide real-time updates of requests.  Traffic analyzed by ATI can take over an hour to reflect in the dashboard graphs.
 
     Please be patient and know that your data will eventully show up in the dashboard.
     
