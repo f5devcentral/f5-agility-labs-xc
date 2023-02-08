@@ -28,7 +28,7 @@ During this hands-on lab you will learn about the following:
 Lab Environment
 ---------------
 
-During this lab you can use your own F5 Distributed Cloud account and the associated F5 UDF blueprint to demo F5XC Application Threat Insights.
+During this lab you can use your own F5 Distributed Cloud account and the associated F5 UDF blueprint to demo F5XC Application Traffic Insights.
 
 Alternatively, you may also you your own BIGIP and your own website but, some of the instructions will have to be adapted accordingly.
 
@@ -38,11 +38,11 @@ Please contact your F5 Sales Engineer/Account Manager if you need more informati
 Feedback for this lab can be sent directly to j.martin@f5.com.
 
 
-F5 Distributed Cloud Application Threat Insight:
+F5 Distributed Cloud Application Traffic Insight:
 --------------------------------------------------------------------------
 Account Takeover, Online Fraud, and Webscraping are a problem for many organizations.  Identifying unique devices accessing your web applications and understanding the relationship between those devices and users, accounts, and where those devices are accessing your site from can help identify suspicious activity.  Additionally, gaining visibility into what traffic is automated can quickly and drastically reduce unwanted and/or malicious activity.  
 
-F5 Distributed Cloud (F5XC) Application Threat Insight provides a high-level overview of application traffic in two primary sections:
+F5 Distributed Cloud (F5XC) Application Traffice Insight provides a high-level overview of application traffic in two primary sections:
   
 **Device Dashboard** - provides a high-level overview of devices accessing your web applications, including:
  - Count unique devices over time
@@ -63,5 +63,5 @@ Next: |signup|
 
 .. |signup| raw:: html
 
-            <a href="./lab1.rst" target="_blank">Lab 1: Configuring and Deploying F5XC Application Threat Insight</a>
+            <a href="./lab1.rst" target="_blank">Lab 1: Configuring and Deploying F5XC Application Traffic Insight</a>
 
