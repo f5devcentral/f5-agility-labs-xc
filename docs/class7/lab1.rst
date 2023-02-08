@@ -1,4 +1,4 @@
-Lab 1: Configuring and Deploying F5XC Application Threat Insight
+Lab 1: Configuring and Deploying F5XC Application Traffic Insight
 ==================================================================
 
 1. Login
