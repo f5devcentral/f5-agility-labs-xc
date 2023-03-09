@@ -64,9 +64,9 @@ In this lab, we will learn the following:
 
 #. Complete the **Container Configuration** section by providing a **Name** and details for which **Image to Use**
 
-    - **Image Name**: colemaneast.azurecr.io/f5xcdemoapp
-    - **Container Registry**: Private Registry
-    - **Private Registry**: shared/azure-registry
+    - **Image Name**: colemaneast.azurecr.io/f5xcdemoapp 
+    - **Container Registry**: Private Registry 
+    - **Private Registry**: shared/azure-registry 
 
    .. image:: ../images/7container_config.png
       :width: 600pt
