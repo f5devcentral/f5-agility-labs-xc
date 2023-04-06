@@ -1,7 +1,7 @@
-Lab 3: Exploring Service Policies 
+Lab 4: Malicious Users 
 =================================
 
-The following lab tasks will guide you the configuration of various Service Policies 
+The following lab tasks will guide you the configuration of the Malicious User Configuration
 which can be used to implement a variety of security controls. 
 
 Task 1: Creating Local Namespace Service Policies  
