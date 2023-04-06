@@ -1,9 +1,0 @@
-{
-  A -- B;
-  network {
-    group{
-      B;
-    }
-    C;
-  }
-}
