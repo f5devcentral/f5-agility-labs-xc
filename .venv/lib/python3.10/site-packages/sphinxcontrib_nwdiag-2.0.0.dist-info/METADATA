@@ -1,0 +1,73 @@
+Metadata-Version: 2.1
+Name: sphinxcontrib-nwdiag
+Version: 2.0.0
+Summary: Sphinx "nwdiag" extension
+Home-page: http://github.com/blockdiag/sphinxcontrib-nwdiag
+Author: Takeshi KOMIYA
+Author-email: i.tkomiya@gmail.com
+License: BSD
+Platform: any
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Environment :: Console
+Classifier: Environment :: Web Environment
+Classifier: Framework :: Sphinx :: Extension
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Topic :: Documentation
+Classifier: Topic :: Documentation :: Sphinx
+Classifier: Topic :: Utilities
+Requires-Dist: blockdiag (>=1.5.0)
+Requires-Dist: nwdiag (>=1.0.3)
+Requires-Dist: Sphinx (>=2.0)
+
+====================
+sphinxcontrib-nwdiag
+====================
+
+.. image:: https://travis-ci.org/blockdiag/sphinxcontrib-nwdiag.svg?branch=master
+   :target: https://travis-ci.org/blockdiag/sphinxcontrib-nwdiag
+
+.. image:: https://coveralls.io/repos/blockdiag/sphinxcontrib-nwdiag/badge.png?branch=master
+   :target: https://coveralls.io/r/blockdiag/sphinxcontrib-nwdiag?branch=master
+
+.. image:: https://codeclimate.com/github/blockdiag/sphinxcontrib-nwdiag/badges/gpa.svg
+   :target: https://codeclimate.com/github/blockdiag/sphinxcontrib-nwdiag
+
+A sphinx extension for embedding network related diagrams using nwdiag_.
+
+For now, nwdiag supports these diagrams:
+
+- logical network diagram
+- rack structure diagram
+- packet structure diagram
+
+This extension enables you to insert network related diagrams into your document.
+Following code is an example::
+
+   .. nwdiag::
+
+      nwdiag {
+        network {
+          web01; web02;
+        }
+        network {
+          web01; web02; db01;
+        }
+      }
+
+.. _nwdiag: http://bitbucket.org/blockdiag/nwdiag/
+
+
+For more details, see `online documentation`_ at http://blockdiag.com/.
+
+.. _online documentation: http://blockdiag.com/en/nwdiag/sphinxcontrib.html
+
+

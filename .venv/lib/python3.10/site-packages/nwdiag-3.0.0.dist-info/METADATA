@@ -1,0 +1,131 @@
+Metadata-Version: 2.1
+Name: nwdiag
+Version: 3.0.0
+Summary: nwdiag generates network-diagram image from text
+Home-page: http://blockdiag.com/
+Author: Takeshi Komiya
+Author-email: i.tkomiya@gmail.com
+License: Apache License 2.0
+Download-URL: http://pypi.python.org/pypi/nwdiag
+Project-URL: Code, https://github.com/blockdiag/nwdiag
+Project-URL: Issue tracker, https://github.com/blockdiag/nwdiag/issues
+Keywords: diagram,generator
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: System Administrators
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Topic :: Software Development
+Classifier: Topic :: Software Development :: Documentation
+Classifier: Topic :: Text Processing :: Markup
+Requires-Python: >=3.7
+Description-Content-Type: text/x-rst
+License-File: LICENSE
+Requires-Dist: blockdiag (>=3.0.0)
+Provides-Extra: pdf
+Requires-Dist: reportlab ; extra == 'pdf'
+Provides-Extra: rst
+Requires-Dist: docutils ; extra == 'rst'
+Provides-Extra: testing
+Requires-Dist: nose ; extra == 'testing'
+Requires-Dist: pep8 (>=1.3) ; extra == 'testing'
+Requires-Dist: flake8 ; extra == 'testing'
+Requires-Dist: flake8-coding ; extra == 'testing'
+Requires-Dist: flake8-copyright ; extra == 'testing'
+Requires-Dist: flake8-isort ; extra == 'testing'
+Requires-Dist: reportlab ; extra == 'testing'
+Requires-Dist: docutils ; extra == 'testing'
+
+`nwdiag` generate network-diagram image file from spec-text file.
+
+.. image:: https://drone.io/bitbucket.org/blockdiag/nwdiag/status.png
+   :target: https://drone.io/bitbucket.org/blockdiag/nwdiag
+   :alt: drone.io CI build status
+
+.. image:: https://pypip.in/v/nwdiag/badge.png
+   :target: https://pypi.python.org/pypi/nwdiag/
+   :alt: Latest PyPI version
+
+.. image:: https://pypip.in/d/nwdiag/badge.png
+   :target: https://pypi.python.org/pypi/nwdiag/
+   :alt: Number of PyPI downloads
+
+
+Features
+========
+* Generate network-diagram from dot like text (basic feature).
+* Multilingualization for node-label (utf-8 only).
+
+You can get some examples and generated images on 
+`blockdiag.com <http://blockdiag.com/en/nwdiag/nwdiag-examples.html>`_ .
+
+Setup
+=====
+
+Use easy_install or pip::
+
+   $ sudo easy_install nwdiag
+
+   Or
+
+   $ sudo pip nwdiag
+
+
+spec-text setting sample
+========================
+
+Few examples are available.
+You can get more examples at
+`blockdiag.com`_ .
+
+simple.diag
+------------
+
+simple.diag is simply define nodes and transitions by dot-like text format::
+
+    nwdiag {
+      network dmz {
+          address = "210.x.x.x/24"
+
+          web01 [address = "210.x.x.1"];
+          web02 [address = "210.x.x.2"];
+      }
+      network internal {
+          address = "172.x.x.x/24";
+
+          web01 [address = "172.x.x.1"];
+          web02 [address = "172.x.x.2"];
+          db01;
+          db02;
+      }
+    }
+
+
+Usage
+=====
+
+Execute nwdiag command::
+
+   $ nwdiag simple.diag
+   $ ls simple.png
+   simple.png
+
+
+Requirements
+============
+* Python 3.7 or later
+* blockdiag 1.5.0 or later
+* funcparserlib 0.3.6 or later
+* reportlab (optional)
+* wand and imagemagick (optional)
+* setuptools
+
+
+License
+=======
+Apache License 2.0
+
+

@@ -1,0 +1,160 @@
+Metadata-Version: 2.1
+Name: blockdiag
+Version: 3.0.0
+Summary: blockdiag generates block-diagram image from text
+Home-page: http://blockdiag.com/
+Author: Takeshi Komiya
+Author-email: i.tkomiya@gmail.com
+License: Apache License 2.0
+Download-URL: http://pypi.python.org/pypi/blockdiag
+Project-URL: Code, https://github.com/blockdiag/blockdiag
+Project-URL: Issue tracker, https://github.com/blockdiag/blockdiag/issues
+Keywords: diagram,generator
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: System Administrators
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Topic :: Software Development
+Classifier: Topic :: Software Development :: Documentation
+Classifier: Topic :: Text Processing :: Markup
+Requires-Python: >=3.7
+Description-Content-Type: text/x-rst
+License-File: LICENSE
+Requires-Dist: setuptools
+Requires-Dist: funcparserlib (>=1.0.0a0)
+Requires-Dist: Pillow (>3.0)
+Requires-Dist: webcolors
+Provides-Extra: pdf
+Requires-Dist: reportlab ; extra == 'pdf'
+Provides-Extra: rst
+Requires-Dist: docutils ; extra == 'rst'
+Provides-Extra: testing
+Requires-Dist: nose ; extra == 'testing'
+Requires-Dist: flake8 ; extra == 'testing'
+Requires-Dist: flake8-coding ; extra == 'testing'
+Requires-Dist: flake8-copyright ; extra == 'testing'
+Requires-Dist: flake8-isort ; extra == 'testing'
+Requires-Dist: reportlab ; extra == 'testing'
+Requires-Dist: docutils ; extra == 'testing'
+
+`blockdiag` generate block-diagram image file from spec-text file.
+
+.. image:: https://github.com/blockdiag/blockdiag/actions/workflows/main.yml/badge.svg
+   :target: https://github.com/blockdiag/blockdiag/actions/workflows/main.yml
+   :alt: GitHub Action CI build status
+
+.. image:: https://img.shields.io/pypi/v/blockdiag
+   :target: https://pypi.python.org/pypi/blockdiag/
+   :alt: Latest PyPI version
+
+.. image:: https://img.shields.io/pypi/dm/blockdiag
+   :target: https://pypi.python.org/pypi/blockdiag/
+   :alt: Number of PyPI downloads
+
+
+Features
+========
+* Generate block-diagram from dot like text (basic feature).
+* Multilingualization for node-label (utf-8 only).
+
+You can get some examples and generated images on
+`blockdiag.com <http://blockdiag.com/en/blockdiag/examples.html>`_ .
+
+Setup
+=====
+
+Use pip::
+
+   $ sudo pip install blockdiag
+
+If you want to export as PDF format, give pdf arguments::
+
+   $ sudo pip install "blockdiag[pdf]"
+
+
+Copy and modify ini file. example::
+
+   $ cp <blockdiag installed path>/blockdiag/examples/simple.diag .
+   $ vi simple.diag
+
+Please refer to `spec-text setting sample`_ section for the format of the
+`simpla.diag` configuration file.
+
+spec-text setting sample
+========================
+Few examples are available.
+You can get more examples at
+`blockdiag.com`_ .
+
+simple.diag
+------------
+simple.diag is simply define nodes and transitions by dot-like text format::
+
+    diagram admin {
+      top_page -> config -> config_edit -> config_confirm -> top_page;
+    }
+
+screen.diag
+------------
+screen.diag is more complexly sample. diaglam nodes have a alternative label
+and some transitions::
+
+    diagram admin {
+      top_page [label = "Top page"];
+
+      foo_index [label = "List of FOOs"];
+      foo_detail [label = "Detail FOO"];
+      foo_add [label = "Add FOO"];
+      foo_add_confirm [label = "Add FOO (confirm)"];
+      foo_edit [label = "Edit FOO"];
+      foo_edit_confirm [label = "Edit FOO (confirm)"];
+      foo_delete_confirm [label = "Delete FOO (confirm)"];
+
+      bar_detail [label = "Detail of BAR"];
+      bar_edit [label = "Edit BAR"];
+      bar_edit_confirm [label = "Edit BAR (confirm)"];
+
+      logout;
+
+      top_page -> foo_index;
+      top_page -> bar_detail;
+
+      foo_index -> foo_detail;
+                   foo_detail -> foo_edit;
+                   foo_detail -> foo_delete_confirm;
+      foo_index -> foo_add -> foo_add_confirm -> foo_index;
+      foo_index -> foo_edit -> foo_edit_confirm -> foo_index;
+      foo_index -> foo_delete_confirm -> foo_index;
+
+      bar_detail -> bar_edit -> bar_edit_confirm -> bar_detail;
+    }
+
+
+Usage
+=====
+Execute blockdiag command::
+
+   $ blockdiag simple.diag
+   $ ls simple.png
+   simple.png
+
+
+Requirements
+============
+* Python 3.7 or later
+* Pillow 3.0 or later
+* funcparserlib 1.0.0a0 or later
+* reportlab (optional)
+* wand and imagemagick (optional)
+* setuptools
+
+
+License
+=======
+Apache License 2.0
+
+
