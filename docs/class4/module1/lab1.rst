@@ -1,33 +1,58 @@
-Lab 1: Creating a Site (Simulator)
+Lab 1: Building an XC Node
 ==================================
 
-F5 Simulators
--------------
+Previously you should have received an email to access the shared Distributed Cloud Lab Environment.
 
-F5 provides "simulations" of its services via "F5 Simulators".  We will first use the 
-Distributed Cloud Simulator to familiarize you with the environment.  Later in the lab 
-we will make use of a shared lab environment that will let you interact with a "live" system.
-
-Exercise #1
------------
-
-Please visit: https://simulator.f5.com/s/cloud2cloud_via_httplb/nav/sim1/020/0
+Start by logging into Distributed Cloud Console.  You should have previously received an email to create an account.
 
 
-Note that you will need to pay attention for fields that are highlighted.  Some of them like "Show Advanced Fields" 
-may appear on the bottom right of the screen.
+#. Please log into your assigned Distributed Cloud tenant. https://f5-xc-lab-mcn.console.ves.volterra.io 
 
-.. image:: ../images/f5-simulator-show-advanced-fields.png
+   .. note:: The Distributed Cloud GUI has a relatively short timeout. This is not configurable. We have an enhancement request to allow this to be configured.
 
-You can opt to fill in the form fields or you can click on the "Next" button to allow the simulator to fill-in 
-the fields as required.  Note that all of these actions can also be performed via the Distributed Cloud API.
+#. When you first login you will need to select your "persona"
 
-.. image:: ../images/f5-simulator-next.png
+   Enter your persona as "NetOps" and level as "Intermediate".  You can change these settings after logging in as well.
 
-Stop when you reach the step of clicking on "Apply" after creating your AWS Site.
+   Your persona will highlight workflows within F5 Distributed Cloud.  You will be able to access all services, but making use of
+   personas can focus your view on particular tasks that are relevant to your role.
 
-.. image:: ../images/f5-simulator-apply-site.png
+#. Several tooltips will appear.  You can close these out.
 
-Congratulations you just simulated deploying your AWS Site via the Distributed Cloud Console.  If you like you can complete
-running the simulator to deploy an Azure Site and create an HTTP Load Balancer.  In the next Lab Exercise we will
-be creating Load Balancer resources in the "Live" lab environment.
+#. Click on "Account Settings" by expanding the "Account" icon in the top right of the screen and 
+   clicking on "Account Settings".  In the resulting window you can observe the **Work domains and skill level** section and 
+   other administrative functions.
+   
+.. note::
+   *For the purposes of this lab, permissions have been restricted to lab operations.  As some menus will be locked and not visible.*
+
+|intro006|
+
+|intro007|
+
+
+#. Namespaces, which provide an environment for isolating configured applications or enforcing role-based access controls, are leveraged
+   within the F5 Distributed Cloud Console.  For the purposes of this lab, each lab attendee has been provided a unique **namespace** which
+   you will be defaulted to (in terms of GUI navigation) for all tasks performed through the course of this lab.
+
+#. Click on the **Select Service** in the left-hand navigation. In the resulting fly out navigation, click **Load Balancers**.
+
+#. In the **Load Balancers** configuration screen observe the URL. In the URI path, locate the **<adjective-animal>** namespace that you have
+   been assigned. It will be located in the portion of the URI path between */namespaces/* and */sites/* as shown in this example 
+   **…/namespaces/<namespace>/sites/…**. Note the namespace as it will be used throughout the lab tasks that follow.
+
+   .. note::                                                                               
+      *Administratively, there are other ways to find namespaces. Due to access and permission restrictions for this particular lab, those menus are not available.*
+
+|intro008|
+                                                                                   |
+|intro009|                                                                                   |
+
+.. |intro006| image:: ../images/intro-006.png
+   :width: 800px
+.. |intro007| image:: ../images/intro-007.png
+   :width: 800px
+.. |intro008| image:: ../images/intro-008.png
+   :width: 800px
+.. |intro009| image:: ../images/intro-009.png
+   :width: 800px

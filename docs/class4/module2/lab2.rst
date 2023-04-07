@@ -1,5 +1,5 @@
-Lab 2: Create HTTP Load Balancer
-================================
+Lab 2: Adding L7 Security to the App  Connect Proxy
+=====================================================
 
 In this lab exercise we will create an HTTP Load Balancer that will allow you
 to access frontend application that will allow you to explore the AWS environment.
