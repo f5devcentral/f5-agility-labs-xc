@@ -1,5 +1,5 @@
-F5 Distributed Cloud 101 - WAF/WAAP Deployment Models 
-=====================================================
+F5 Distributed Cloud - Introduction to F5 Distributed Cloud
+===========================================================
 
 `Last updated: 2022-11-28 5:00 PM ET`
 
