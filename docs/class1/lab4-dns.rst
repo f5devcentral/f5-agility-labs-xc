@@ -135,7 +135,7 @@ Secondary DNS, and DNS Load Balancing.
 +----------------------------------------------------------------------------------------------+
 | 14. In the left-hand navigation menu, under the **Manage** section expand the **DNS**        |
 |                                                                                              |
-|    **Load Balancer Management** section and select **DNS Load Balancer Pools.**              |
+|     **Load Balancer Management** section and select **DNS Load Balancer Pools.**             |
 |                                                                                              |
 | 15. Click the **Add DNS Load Balancer Pool** button.                                         |
 +----------------------------------------------------------------------------------------------+
@@ -147,9 +147,9 @@ Secondary DNS, and DNS Load Balancing.
 +----------------------------------------------------------------------------------------------+
 | 16. In the resulting window note the available pool member types by expanding the **Pool**   |
 |                                                                                              |
-|    **Type** dropdown.  This is where you can select the type of pool member that will be     |
+|     **Type** dropdown.  This is where you can select the type of pool member that will be    |
 |                                                                                              |
-|    DNS load balanced.                                                                        |
+|     DNS load balanced.                                                                       |
 |                                                                                              |
 | 17. Select **A** from the **Pool Type** dropdown.                                            |
 |                                                                                              |
@@ -184,7 +184,7 @@ Secondary DNS, and DNS Load Balancing.
 +----------------------------------------------------------------------------------------------+
 | 22. In the left-hand navigation menu, under the **Manage** section expand the **DNS**        |
 |                                                                                              |
-|    **Load Balancer Management** section and select **DNS Load Balancers.**                   |
+|     **Load Balancer Management** section and select **DNS Load Balancers.**                  |
 |                                                                                              |
 | 23. Click the **Add DNS Load Balancer** button.                                              |
 +----------------------------------------------------------------------------------------------+
@@ -196,9 +196,9 @@ Secondary DNS, and DNS Load Balancing.
 +----------------------------------------------------------------------------------------------+
 | 24. In the resulting window note the available record types by expanding the **Record Type** |
 |                                                                                              |
-|    dropdown.  This is where you can select the type of DNS record to provide by the DNS load |
+|     dropdown.  This is where you can select the type of DNS record to provide by the DNS load|
 |                                                                                              |
-|    balancer.                                                                                 |
+|     balancer.                                                                                |
 |                                                                                              |
 | 25. Select **Configure** from the **Load Balancing Rule List** section.                      |
 |                                                                                              |
