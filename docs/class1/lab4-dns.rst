@@ -256,6 +256,8 @@ Secondary DNS, and DNS Load Balancing.
    :width: 800px
 .. |lab010| image:: _static/lab4-010.png
    :width: 800px
+.. |lab011| image:: _static/lab4-011.png
+   :width: 800px
 .. |lab012| image:: _static/lab4-012.png
    :width: 800px
 .. |lab013| image:: _static/lab4-013.png
