@@ -23,10 +23,7 @@ to connect to our "on-prem" site.
 Regional Edge
 ~~~~~~~~~~~~~
 
-A Regional Edge (RE) is part of Distributed Cloud Global Network that provides connectivity 
-to services.  Previously when we deployed the UDF / AWS sites these were considered
-"Customer Edge (CE)" and they make use of RE to communicate (each CE is associated with 
-two RE).
+We have already deployed the UDF / AWS sites. These are considered a "Customer Edge (CE)" and they make use of a Regional Edge (RE) to communicate. (Each CE is associated with two REs.) REs are part of the Distributed Cloud Global Network that provides connectivity to services.
 
 
 Exercise 1:  Public Origin Pool
@@ -91,17 +88,27 @@ We will first create an Origin Pool that refers to the frontend application serv
 Exercise 2: HTTP Load Balancer Configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+#. Navigate to your account settings by clicking the person icon in the upper-right corner.
+
+   |account_settings|
+
+#. From the menu on the left side, under "Personal Management", click on "My Namespaces". Find the namespace from the list that is an adjective and an animal (not "shared" or "system"). In this example, it is "super-koala".
+
+   |adjective-animal|
+
+#. Click on the red F5 logo in the upper-left of the screen to return to the main screen.
+#. Click on the tile labled "Load Balancers".
 #. Navigate the menu to go to "Manage"->"Load Balancers"->"HTTP Load Balancers" and click on "Add HTTP Load Balancer".
 
    |http_lb_menu| |http_lb_add|
 
-#. Enter the following variables *Note: the adjective-animal variable will be the namespace in your Account Settings*:
+#. Enter the following variables (and replace [adjective-animal] with the namespace found in your account settings from the previous step):
 
    ================================= =====
    Variable                          Value
    ================================= =====
    Name                              frontend
-   Domains                           adjective-animal.lab-mcn.f5demos.com
+   Domains                           [adjective-animal].lab-sec.f5demos.com
    Select type of Load Balancer      HTTP
    Automatically Manage DNS Records  Yes/Check 
    ================================= =====
@@ -114,7 +121,7 @@ We'll next configure the "Default Origin Servers".
     
 #. Click on the *Add Item* in the *Origin Pools* section.
 
-#. The "Select Origin Pool Method" will be set to "Origin Pool". Under the "Origin Pool" dropdown menu select the "fronted-public" you created earlier.
+#. The "Select Origin Pool Method" will be set to "Origin Pool". Under the "Origin Pool" dropdown menu select the "[adjective-animal]/fronted-public" you created earlier.
  
 #. Click *Apply* to exit the "Origin Pool with Weight and Priority" dialogue.
 
@@ -125,7 +132,7 @@ We'll next configure the "Default Origin Servers".
 #. Click *Save and Exit* to create the HTTP Load Balancer.
 
 Once the HTTP Load Balancer has been deployed, you should now be able to go to the DNS name that you entered 
-previously in a web browser.  The FQDN we used in our example is http://adjective-animal.lab-mcn.f5demos.com.  
+previously in a web browser.  The FQDN this example is http://select-weasel.lab-sec.f5demos.com.  
 Your FQDN should follow the format of [unique name].[supplied domain name for your tenant].
 
 The public demo app should look like the following:
