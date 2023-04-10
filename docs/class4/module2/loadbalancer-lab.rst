@@ -202,7 +202,7 @@ Exercise 5: Edit HTTP Load Balancer Configuration
 
 #. Click on "Apply"
 #. Click on "Save and Exit"
-#. Refresh your browser window for "http://adjective-animal.lab-mcn.f5demos.com" (example: poetic-quail.lab-mcn.f5demos.com) and you should now have access to a diagnostic tool that will let you explore the environment.
+#. Refresh your browser window for "http://[adjective-animal].lab-sec.f5demos.com" (example: http://select-weasel.lab-sec.f5demos.com) and you should now have access to a diagnostic tool that will let you explore the environment.
 
    .. image:: ../images/m-container-tool.png
 
@@ -215,6 +215,7 @@ We can also view analytics of our HTTP Load Balancer.
 
    .. image:: ../images/http_lb_stats.png
 
+#. Review the Performance Dashboard and ensure Healthscore section shows an Application Health of 100/100 and is green.
 
 .. |app-context| image:: ../images/app-context.png
 .. |http_lb_menu| image:: ../images/http_lb_menu.png
