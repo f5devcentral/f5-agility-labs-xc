@@ -217,6 +217,9 @@ We can also view analytics of our HTTP Load Balancer.
 
 #. Review the Performance Dashboard and ensure Healthscore section shows an Application Health of 100/100 and is green.
 
+   .. image:: ../images/healthscore-100.png
+       :width: 25%
+
 .. |app-context| image:: ../images/app-context.png
 .. |http_lb_menu| image:: ../images/http_lb_menu.png
 .. |http_lb_add| image:: ../images/http_lb_add.png
