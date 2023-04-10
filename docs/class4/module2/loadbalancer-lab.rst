@@ -93,9 +93,9 @@ Exercise 2: HTTP Load Balancer Configuration
 .. image:: ../images/account_settings.png
        :width: 25%
 
-#. From the menu on the left side, under "Personal Management", click on "My Namespaces". Find the namespace from the list that is an adjective and an animal (not "shared" or "system"). In this example, it is "super-koala".
+#. From the menu on the left side, under "Personal Management", click on "My Namespaces". Find the namespace from the list that is an adjective and an animal (not "shared" or "system"). In this example, it is "select-weasel".
 
-.. image:: ../images/adjective-animal.png
+.. image:: ../images/adjective-animal-weasel.png
 
 #. Click on the red F5 logo in the upper-left of the screen to return to the main screen.
 #. Click on the tile labled "Load Balancers".
