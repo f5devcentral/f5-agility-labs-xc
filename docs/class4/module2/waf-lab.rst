@@ -1,33 +1,42 @@
-# Protect your site from application vulnerabilities using XC WAF
+Lab 2: Protect your site from application vulnerabilities using XC WAF
+======================================================================
+
+Prerequisites:
+
+* An account and namespace on Distributed Cloud
+* A deployment of the "[Agility 2022] F5XC Security" UDF blueprint in running state
+* Completion of Lab 1, "Create HTTP Load Balancer"
 
 **Objective:**
+~~~~~~~~~~~~~~
 
 Protect your site from application vulnerabilities using XC WAF
 
 Required Outcome:
 
-* Configure a new HTTP**S** load balancer with the name, "frontend-secure", that points to the *frontend-private* origin pool.
-* Ensure the new site works by navigating to https://adjective-animal.lab-sec.f5demos.com
+* Configure a new **HTTPS** load balancer with the name, "frontend-secure", that points to the *frontend-private* origin pool.
+* Ensure the new site works by navigating to https://[adjective-animal].lab-sec.f5demos.com (where [adjective-animal] is the namespace randomly assigned to you in Lab 1).
 * Use ssllabs.com to ensure the HTTPS site gets an "A" score.
-* Use a WAF to detect and then block most common attacks
-* ~~Block self identified bots~~
+* Configure a WAF to detect and then block most common attacks
+* Test out some attack methods and ensure your website blocks them
 
 **Why:**
+~~~~~~~~
 
 Scaling application traffic, high availability ,progressive application version updates
 
 **How:**
+~~~~~~~~
 
-* (Instructions for creating an HTTPS loadbalancer?)
+* First, create an HTTPS loadbalancer with the name, "frontend-secure". See (https://docs.cloud.f5.com/docs/how-to/app-networking/http-load-balancer).
 * Create a WAF *in transparent mode* and attach it to the frontend-secure loadbalancer. See (https://docs.cloud.f5.com/docs/how-to/app-security).
   (NOTE: for this workshop, you can skip the sections on attaching the WAF to a specific route, configuring a Data Guard, creating WAF Exclusion Rules, and WAF Processing for Specific Match Criteria.).
 
 **Validation:**
+~~~~~~~~~~~~~~~
 
-* Browser to the HTTPS version of the website with the following added to the end of the URL: “?cat%20/etc/passwd”
+* Browse to the HTTPS version of the website and add a path of "/foo" to the end of the URL. Ensure you get a "404 Not Found" page and are blocked. (You should not see a "The requested URL was rejected." message.)
+* Browse to the same FQDN but change the ending to “?cat%20/etc/passwd”. This time, you should receive a "The requested URL was rejected." message. That means your request was blocked.
+* Browse to the same FQDN again (other exploits?).
 * Go to Web App & API Protection-->Overview-->Dashboards-->Security Dashboard to ensure you see this listed in the "Top Attacks by Signatures" section.
-* Now, change the WAF to *blocking* mode and try the same URL again. What do you see now? (Hint: You may need to open an incognito browser window to avoid caching.)
-* ~~How long did it take to complete the steps here?~~
-* ~~Show that malicious requests get blocked~~
-* ~~Show that self identified bots are blocked~~
-* ~~What is the workflow for dealing with a false positive?~~
+* Now, change the WAF to *blocking* mode and try the same exploits again. What do you see now? (Hint: You may need to open an incognito browser window to avoid caching.)
