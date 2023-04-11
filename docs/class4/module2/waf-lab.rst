@@ -1,4 +1,4 @@
-Lab 2: Protect your site from application vulnerabilities using XC WAF
+Lab 3: Protect your site from application vulnerabilities using XC WAF
 ======================================================================
 
 Prerequisites:
