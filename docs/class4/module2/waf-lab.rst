@@ -23,20 +23,18 @@ Required Outcome:
 **Why:**
 ~~~~~~~~
 
-Scaling application traffic, high availability ,progressive application version updates
+Scaling application traffic, high availability, progressive application version updates
 
 **How:**
 ~~~~~~~~
 
 * First, create an HTTPS loadbalancer with the name, "frontend-secure". See (https://docs.cloud.f5.com/docs/how-to/app-networking/http-load-balancer).
-* Create a WAF *in transparent mode* and attach it to the frontend-secure loadbalancer. See (https://docs.cloud.f5.com/docs/how-to/app-security).
+* Create a WAF *in blocking mode* and attach it to the frontend-secure loadbalancer. See (https://docs.cloud.f5.com/docs/how-to/app-security).
   (NOTE: for this workshop, you can skip the sections on attaching the WAF to a specific route, configuring a Data Guard, creating WAF Exclusion Rules, and WAF Processing for Specific Match Criteria.).
 
 **Validation:**
 ~~~~~~~~~~~~~~~
 
-* Browse to the HTTPS version of the website and add a path of "/foo" to the end of the URL. Ensure you get a "404 Not Found" page and are blocked. (You should not see a "The requested URL was rejected." message.)
-* Browse to the same FQDN but change the ending to “?cat%20/etc/passwd”. This time, you should receive a "The requested URL was rejected." message. That means your request was blocked.
-* Browse to the same FQDN again (other exploits?).
+* Browse to the HTTPS version of the website and add a path of "/foo" to the end of the URL. Ensure you get a "404 Not Found" page. (You should not see a "The requested URL was rejected." message.)
+* Browse to the same FQDN (without "/foo") but try out other common URL exploits by appending strings such as “?cat%20/etc/passwd” and "<script>alert("TEST");</script>" to the end of the URL. You should receive the message, "The requested URL was rejected." This means the Distributed Cloud WAF identified the request as potentially malicious and blocked it.
 * Go to Web App & API Protection-->Overview-->Dashboards-->Security Dashboard to ensure you see this listed in the "Top Attacks by Signatures" section.
-* Now, change the WAF to *blocking* mode and try the same exploits again. What do you see now? (Hint: You may need to open an incognito browser window to avoid caching.)
