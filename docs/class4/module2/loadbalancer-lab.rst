@@ -1,4 +1,4 @@
-Lab 1: Create HTTP Load Balancer
+Lab 2: Create HTTP Load Balancer
 ================================
 
 In this lab exercise we will create an HTTP Load Balancer that will allow you
