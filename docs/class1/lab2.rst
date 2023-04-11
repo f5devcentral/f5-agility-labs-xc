@@ -25,11 +25,11 @@ then proxying the clean traffic to the protected resource via the CE.
 
 #. Client -> CE -> Protected resource
 In this scenario, the CE advertises the services directly.  While this topology sacrificies some functionality such as 
-volumetric DDoS protection and anycast availability, there are some use cases where it can be beneficial.  
+volumetric DDoS protection and anycast availability from the Distributed Cloud global network, there are some use cases where it can be beneficial.  
 One such example is when clients and protected resources are both local to each other without having to traverse the Internet.
 
-Upon CE deployment, two secure tunnels are automatically setup between the CE and the two closest REs.  These redundant tunnels provide
-high availability in the unlikely event of an outage at a specific RE.
+Upon CE deployment, two encrypted tunnels are automatically setup between the CE and the two closest REs.  These redundant tunnels provide
+high availability in the unlikely event of an outage at a specific RE within the Distributed Cloud global network.
 
 In the event of an Internet outage at a CE site, local survivability can continue to provide data plane services locally for a period of time.  
 During this time, control plane services are suspended and will resume upon Internet connection reestablishment.
@@ -54,7 +54,9 @@ Exercise 1: Introduction to F5 Distributed Cloud AWS VPC Site
    use in this lab.  Click on the "student-awsnet"
 
    You will be able to observe several metrics about the health of the site.  
-   Spend a few minutes navigating the tabs at the top of the screen, to the right of the "Dashboard" tab
+   Spend a few minutes navigating the tabs at the top of the screen, to the right of the "Dashboard" tab.
+
+   NOTE:  The health and performance 
 
    .. image:: _static/student-awsnet-site-metrics.png
 
