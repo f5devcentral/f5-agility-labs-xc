@@ -1,5 +1,5 @@
-Introduction: Accessing F5 Distributed Cloud Console
-====================================================
+Lab 1 (Introduction): Access to the F5 Distributed Cloud Console
+================================================================
 
 Welcome to this F5 Distributed Cloud Lab. The following tasks will guide you through the initial 
 access requirements for this multi-part lab.  Lab attendees should have received an invitation 
