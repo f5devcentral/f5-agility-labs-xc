@@ -438,9 +438,9 @@ Task 4. Test the Application Firewall and View Security Events
 |                                                                                              |
 | 7. Expand your latest security event as shown.                                               |
 |                                                                                              |
-| 8. Note the summary detail provided **Information** link and identify the **Request ID**     |
+| 8. Note the summary detail provided in the **Information** link.  The **Request ID** which   |
 |                                                                                              |
-|    which is synonymous with **Support ID** (filterable) from the Security Event Block Page.  |
+|    is synonymous with **Support ID** (filterable) from the Security Event Block Page.        |
 |                                                                                              |
 | 9. Scroll to the bottom of the information screen to see specific signatures detected and    |
 |                                                                                              |
@@ -452,6 +452,8 @@ Task 4. Test the Application Firewall and View Security Events
 | |lab044|                                                                                     |
 |                                                                                              |
 | |lab045|                                                                                     |
+|                                                                                              |
+| |lab046|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
@@ -563,6 +565,8 @@ Task 4. Test the Application Firewall and View Security Events
 .. |lab044| image:: _static/lab1-044.png
    :width: 800px
 .. |lab045| image:: _static/lab1-045.png
+   :width: 800px
+.. |lab046| image:: _static/lab1-046.png
    :width: 800px
 .. |labend| image:: _static/labend.png
    :width: 800px
