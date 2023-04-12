@@ -41,4 +41,4 @@ Scaling application traffic, high availability, progressive application version 
 
 **Alternative Lab:**
 ~~~~~~~~~~~~~~~
-If you get stuck or would prefer guided version, you can instead go to our [Protecting a Public Endpoint](https://clouddocs.f5.com/training/community/f5xc/html/class1/lab1.html) lab.
+If you get stuck or would prefer guided version, you can instead go to our Protecting a Public Endpoint lab: https://clouddocs.f5.com/training/community/f5xc/html/class1/lab1.html
