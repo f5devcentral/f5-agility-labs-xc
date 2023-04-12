@@ -1,10 +1,11 @@
 F5 Distributed Cloud 101 - Introduction to Deployment Models and Services
-=====================================================
+=========================================================================
  
 Welcome
 -------
  
-In this lab, attendees will be introduced to the F5 Distributed Cloud Services platform.  Attendees will create proxy services for publishing and securing applications that are served by both public and private endpoints. Attendees will also explore the DNS, Observability, and CDN capabilities of the platform.
+In this lab, attendees will be introduced to the F5 Distributed Cloud Services platform.  Attendees will create proxy services for publishing and securing
+applications that are served by both public and private endpoints. Attendees will also explore the DNS, Observability, and CDN capabilities of the platform.
  
 Objectives:
 ----------
@@ -14,7 +15,6 @@ Objectives:
 - Gain an understanding of how to deploy a site for providing connectivity to a private endpoint
 - Gain an understanding of DNS, Observability, and CDN
  
-
 Lab & Tasks:
 ------------
  
