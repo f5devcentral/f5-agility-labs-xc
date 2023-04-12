@@ -46,7 +46,7 @@ We will first create an Origin Pool that refers to the frontend application serv
 #. Navigate the menu to go to "Manage"->"Load Balancers"->"Origin Pools". Click on *Add Origin Pool*.
 
    .. image:: ../images/menu-manage-load-balancers-origin-aprilui.png
-      :width: 50%
+      :width: 35%
 
 
 #. Enter the following variables:
@@ -209,7 +209,7 @@ We can also view analytics of our HTTP Load Balancer.
 
 #. Navigate the menu to go to "Virtual Hosts"->"HTTP Load Balancers" and click on "Performance Monitoring" under "frontend"
 
-   .. image:: ../images/http_lb_stats.png
+   .. image:: ../images/http_lb_stats-aprilui.png
 
 #. Review the Performance Dashboard and ensure Healthscore section shows an Application Health of 100/100 and is green.
 
@@ -217,8 +217,8 @@ We can also view analytics of our HTTP Load Balancer.
        :width: 25%
 
 .. |app-context| image:: ../images/app-context.png
-.. |http_lb_menu| image:: ../images/http_lb_menu.png
-.. |http_lb_add| image:: ../images/http_lb_add.png
+.. |http_lb_menu| image:: ../images/http_lb_menu-aprilui.png
+.. |http_lb_add| image:: ../images/http_lb_add-aprilui.png
 .. |http_lb| image:: ../images/http_lb.png
 .. |http_lb_origin_pool_config| image:: ../images/http_lb_origin_pool_config.png
 .. |http_lb_origin_pool_health_check| image:: ../images/http_lb_origin_pool_health_check.png
