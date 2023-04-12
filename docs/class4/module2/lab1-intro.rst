@@ -148,7 +148,7 @@ After following the invitation email's to **Update Password**, proceed to the fi
 .. |intro007| image:: ../images/intro-007.png
    :width: 800px
 .. |intro008| image:: ../images/intro-008-aprilui.png
-   :width: 800px
+   :width: 600px
 .. |intro009| image:: ../images/intro-009-aprilui.png
    :width: 800px
 .. |labbgn| image:: ../images/labbgn.png
