@@ -121,7 +121,7 @@ Network.
 +----------------------------------------------------------------------------------------------+
 | 15. After returning to the prior window, note the values of **Timeout(s)**, **Interval(s),   |
 |                                                                                              |
-|    **Unhealthy Threshold**, and **Healthy Threshold**.                                       |
+|     **Unhealthy Threshold**, and **Healthy Threshold**.                                      |
 |                                                                                              |
 | 16. Click **Continue**.                                                                      |
 |                                                                                              |
