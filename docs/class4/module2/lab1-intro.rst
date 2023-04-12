@@ -105,9 +105,9 @@ After following the invitation email's to **Update Password**, proceed to the fi
 |                                                                                              |
 | 9. Click on the **Select Service** in the left-hand navigation. In the resulting fly out     |
 |                                                                                              |
-|    navigation, click **Load Balancers**.                                                     |
+|    navigation, click **Multi-Cloud App Connect**.                                                     |
 |                                                                                              |
-| 10. In the **Load Balancers** configuration screen observe the URL. In the URI path, locate  |
+| 10. In the **Multi-Cloud App** configuration screen observe the URL. In the URI path, locate  |
 |                                                                                              |
 |     the **<adjective-animal>** namespace that you have been assigned. It will be located in  |
 |                                                                                              |
@@ -128,7 +128,7 @@ After following the invitation email's to **Update Password**, proceed to the fi
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| **Beginning of Lab:**  You are now ready to begin the lab, Enjoy! Ask questions as needed.   |
+| **Beginning of Lab:**  You are now ready to begin the lab! Please ask questions as needed.   |
 +----------------------------------------------------------------------------------------------+
 | |labbgn|                                                                                     |
 +----------------------------------------------------------------------------------------------+
@@ -147,9 +147,9 @@ After following the invitation email's to **Update Password**, proceed to the fi
    :width: 800px
 .. |intro007| image:: ../images/intro-007.png
    :width: 800px
-.. |intro008| image:: ../images/intro-008.png
+.. |intro008| image:: ../images/intro-008-aprilui.png
    :width: 800px
-.. |intro009| image:: ../images/intro-009.png
-   :width: 800px
+.. |intro009| image:: ../images/intro-009-aprilui.png
+   :width: 600px
 .. |labbgn| image:: ../images/labbgn.png
    :width: 800px
