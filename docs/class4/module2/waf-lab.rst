@@ -38,3 +38,7 @@ Scaling application traffic, high availability, progressive application version 
 * Browse to the HTTPS version of the website and add a path of "/foo" to the end of the URL. Ensure you get a "404 Not Found" page. (You should not see a "The requested URL was rejected." message.)
 * Browse to the same FQDN (without "/foo") but try out other common URL exploits by appending strings such as “?cat%20/etc/passwd” and "<script>alert("TEST");</script>" to the end of the URL. You should receive the message, "The requested URL was rejected." This means the Distributed Cloud WAF identified the request as potentially malicious and blocked it.
 * Go to Web App & API Protection-->Overview-->Dashboards-->Security Dashboard to ensure you see this listed in the "Top Attacks by Signatures" section.
+
+**Alternative Lab:**
+~~~~~~~~~~~~~~~
+If you get stuck or would prefer guided version, you can instead go to our [Protecting a Public Endpoint](https://clouddocs.f5.com/training/community/f5xc/html/class1/lab1.html) lab.
