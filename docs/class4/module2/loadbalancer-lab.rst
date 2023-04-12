@@ -198,9 +198,9 @@ Exercise 5: Edit HTTP Load Balancer Configuration
 
 #. Click on "Apply"
 #. Click on "Save and Exit"
-#. Refresh your browser window for "http://[adjective-animal].lab-sec.f5demos.com" (example: http://select-weasel.lab-sec.f5demos.com) and you should now have access to a diagnostic tool that will let you explore the environment.
+#. Refresh your browser window for "http://[adjective-animal].lab-sec.f5demos.com" (example: http://select-weasel.lab-sec.f5demos.com) and you should now see the private demo app.
 
-   .. image:: ../images/m-container-tool.png
+   .. image:: ../images/m-container-tool-aprilui.png
 
 Exercise 6: Review General Monitoring Stats
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
