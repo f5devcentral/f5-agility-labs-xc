@@ -38,14 +38,14 @@ We will first create an Origin Pool that refers to the frontend application serv
    .. image:: ../images/namespace_url.png
 
 
-#. Start in Distributed Cloud Console and switch to the "Load Balancers" context. It can be access either from the Home page or an internal page.
+#. Start in Distributed Cloud Console and switch to the "Multi-Cloud App Connect" context. It can be access either from the Home page or an internal page.
 
-   .. image:: ../images/load-balancers-menu.png
+   .. image:: ../images/load-balancers-menu-aprilui.png
        :width: 50%
 
 #. Navigate the menu to go to "Manage"->"Load Balancers"->"Origin Pools". Click on *Add Origin Pool*.
 
-   .. image:: ../images/menu-manage-load-balancers-origin.png
+   .. image:: ../images/menu-manage-load-balancers-origin-aprilui.png
       :width: 50%
 
 
