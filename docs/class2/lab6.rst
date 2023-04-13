@@ -71,7 +71,9 @@ In this task you will navigate to the client side defense tile to start reviewin
 | 4. **Review** the Actions available by clicking the three dots under Action.                 |
 |                                                                                              |
 |    Add to allow list                                                                         |
+|                                                                                              |
 |    Add to mitigate list                                                                      |
+|                                                                                              |
 +----------------------------------------------------------------------------------------------+
 | |lab005|                                                                                     |
 +----------------------------------------------------------------------------------------------+
