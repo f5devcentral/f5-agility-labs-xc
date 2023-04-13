@@ -64,8 +64,6 @@ Exercise 2: Apply WAF Policy to HTTP Load Balancer
 
 #. Click on "Edit Configuration" in the upper right of the screen.
 
-   .. image:: _static/screenshot-global-vip-edit-config.png
-
 #. Under the *Web Application Firewall* section 
 
 #. Choose the following options:
@@ -104,7 +102,8 @@ Exercise 4: Performance and Security
 
    We can view details of successful requests and blocks by navigating to "Virtual Hosts"
 
-#. Click on "Select service" and select "Load Balancers". Click "Virtual Hosts" -> "HTTP Load Balancers" and click on your [adjective-animal].lab-sec.f5demos.com Load Balancer
+#. Click on "Select service" and select "Web App & API Protection". Click "Load Balancers" -> "HTTP Load Balancers" and click on your [adjective-animal].lab-sec.f5demos.com Load Balancer
+(Or click on Dashboards --> Performance Dashboard.
 
    .. image:: _static/performance-overview.png
       :width: 50%
@@ -112,6 +111,15 @@ Exercise 4: Performance and Security
    You will see a health score of your application as well as end to end latency of the connection.
 
    .. image:: _static/screenshot-global-vip-performance-dashboard.png
+      :width: 50%
+  
+#. Scroll to the bottom of the page and click on the load balancer you just configured to see its performance stats.
+
+   .. image:: _static/screenshot-global-vip-loadbalancer-performance-select.png
+
+#. View the dashboard.
+
+   .. image:: _static/screenshot-global-vip-loadbalancer-dashboard.png
       :width: 50%
 
 #. Click on "Requests" in the upper page navigation
@@ -121,7 +129,11 @@ Exercise 4: Performance and Security
    .. image:: _static/screenshot-global-vip-public-requests.png
       :width: 50%
 
-#. Click on the "Performance Monitoring" dropdown and select "Security Monitoring".
+#. In the upper-left, click on Dashboard-->Security Dashboard.
+
+   .. image:: _static/select-security-dashboard.png
+      :width: 50%
+
 #. Click on "Security Events"
    You will be able to see details of the security events.
 
