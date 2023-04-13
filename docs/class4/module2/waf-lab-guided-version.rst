@@ -134,7 +134,7 @@ Exercise 4: Performance and Security
 
 Next we will demonstrate applying the same WAF Policy to your private end point.
 
-#. Navigate the menu to go to "Manage" -> "HTTP Load Balancers" and look for the Load Balancer that you previously created.
+#. Navigate the menu to go to "Manage" -> "HTTP Load Balancers" and click on your [adjective-animal].lab-sec.f5demos.com Load Balancer
 
 #. Click on the three dots "..." to the right of the name of your Load Balancer and select the "Manage Configuration" option.
 
