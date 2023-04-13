@@ -83,12 +83,15 @@ by any script running on the end-user's browser when accessing a CSD protected w
 
 **Allow List:** Displays a list of domains that the user has decided don't need mitigation and 
 are allowed free access.
+
 +----------------------------------------------------------------------------------------------+
 | |lab006|                                                                                     |
++----------------------------------------------------------------------------------------------+
 +----------------------------------------------------------------------------------------------+
 | 6. Click **Script List** under Monitoring on the left side.                                  |
 |                                                                                              |
 |**Note** :  Your data might be different than the screen grab shown below :                   |
+|                                                                                              |
 +----------------------------------------------------------------------------------------------+
 | |lab007|                                                                                     |
 +----------------------------------------------------------------------------------------------+
