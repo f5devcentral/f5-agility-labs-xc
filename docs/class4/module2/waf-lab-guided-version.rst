@@ -53,13 +53,18 @@ We will create a blocking WAF policy.
 
 
 
-Exercise 2: Configure WAF Policy
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-#.
+Exercise 2: Apply WAF Policy to HTTP Load Balancer
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-#.
+#. Navigate the menu to go to "Manage"->"HTTP Load Balancers" and look for the Load Balancer named *go find the name * that you previously created.
 
-#.
+#. Click on the three dots "..." to the right of the name of your Load Balancer and select the "Manage Configuration" option.
+
+   .. image:: _static/screenshot-global-vip-actions-manage.png
+
+#. Click on "Edit Configuration" in the upper right of the screen.
+
+   .. image:: _static/screenshot-global-vip-edit-config.png
 
 #. Under the *Web Application Firewall* section 
 
@@ -72,13 +77,7 @@ Exercise 2: Configure WAF Policy
    Select App Firewall             [NAMESPACE]/blocking-app-firewall
    =============================== =================================
 
-#. Click "*Save and Exit* to create the HTTP Load Balancer.
-
-Once the HTTP Load Balancer has been deployed, you should now be able to go to the DNS name that you entered 
-previously in a web browser.  The FQDN we used in our example is http://stable-sheep.lab-sec.f5demos.com.  
-Your FQDN should follow the format of [unique name].[supplied domain name for your tenant].
-
-.. note:: If you are having challenges connecting to the "f5demos.com" name you can also try connecting to the "ves.io" name.
+#. Click "*Save and Exit* to update the HTTP Load Balancer.
 
 Exercise 4: Verify Configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -133,7 +132,20 @@ Exercise 5: Performance and Security
    .. image:: _static/screenshot-global-vip-public-security-events-details.png
       :width: 50%
 
-Next we will demonstrate how we can securely connect to your private AWS resources via a AppMesh node.
+Next we will demonstrate applying the same WAF Policy to your private end point.
+
+#. Navigate the menu to go to "Manage"->"HTTP Load Balancers" and look for the Load Balancer named *go find the name * that you previously created.
+
+#. Click on the three dots "..." to the right of the name of your Load Balancer and select the "Manage Configuration" option.
+
+#. Under "Origins" find your previous "public" Origin pool and click on the three dots "..." to the right under "Actions" and select "Edit"
+
+   .. image:: _static/screenshot-global-vip-edit-config-pools.png
+
+#. Change the selection of "Origin Pool" to "public" from "private" and click "Apply"
+
+   .. image:: _static/screenshot-global-vip-edit-config-pools-select.png
+
 
 
 .. |app-context| image:: _static/app-context.png
