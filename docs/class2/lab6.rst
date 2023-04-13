@@ -28,29 +28,36 @@ Task 1: Navigate to the Client-Side Defense Tile
 In this task you will navigate to the client side defense tile to start reviewing CSD options.
 
 +----------------------------------------------------------------------------------------------+
-| 1. On the left top click the F5 red ball.                                                    |
+| 1. On the left top click the F5 red ball.                                                    | 
+|                                                                                              |
 | Under Common Services find the tile for **Client-Side Defense**                              |
++----------------------------------------------------------------------------------------------+
+|  |lab001|                                                                                    |
++----------------------------------------------------------------------------------------------+
+|   Click the Client-Side Defense tile.                                                        |
 |                                                                                              |
-|    Click the Client-Side Defense Tile.                                                       |
 +----------------------------------------------------------------------------------------------+
-| |lab001|                                                                                     |
-| |lab002|                                                                                     |
-+----------------------------------------------------------------------------------------------+
-
-The CSD Monitoring Dashboard page displays the suspicious network interactions with additional 
-information for deciding whether to mitigate or allow a suspicious domain. When a web page with 
-CSD protection is loaded on the end-user’s browser, scripts running on that webpage interact with 
-other domains. 
-The Suspicious Domains list displays a list of the domains that those scripts interact with and 
-which CSD detected to be potentially malicious.
-
-+----------------------------------------------------------------------------------------------+
+|  |lab002|                                                                                    |
 |                                                                                              |
-| 2. Review the existing Dashboard and Dashboard Elements                                      |
++----------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------+
+|The CSD Monitoring Dashboard page displays the suspicious network interactions with additional| 
+|information for deciding whether to mitigate or allow a suspicious domain. When a web page    |
+|with CSD protection is loaded on the end-user’s browser, scripts running on that webpage      | 
+|interact with other domains.                                                                  |
+|The Suspicious Domains list displays a list of the domains that those scripts interact with   |
+|and which CSD detected to be potentially malicious.                                           |
++----------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------+
+|  2. Review the existing Dashboard and Dashboard Elements                                     |
+|                                                                                              |
 +----------------------------------------------------------------------------------------------+
 | **Note** :  Your data might be different than the screen grab shown below :                  |
 |                                                                                              |
 | |lab003|                                                                                     |
+|                                                                                              |
+|                                                                                              |
++----------------------------------------------------------------------------------------------+
 |                                                                                              |
 | 3. Click on a domain and review the details in the flyout.                                   |
 |                                                                                              |
