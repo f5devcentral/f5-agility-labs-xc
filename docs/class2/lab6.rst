@@ -121,23 +121,23 @@ are allowed free access.
 | |labend|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
-.. |lab001| image:: _static/lab6-001.png
+.. |lab001| image:: _static/lab6-001.PNG
    :width: 800px
-.. |lab002| image:: _static/lab6-002.png
+.. |lab002| image:: _static/lab6-002.PNG
    :width: 800px
-.. |lab003| image:: _static/lab6-003.png
+.. |lab003| image:: _static/lab6-003.PNG
    :width: 800px
-.. |lab004| image:: _static/lab6-004.png
+.. |lab004| image:: _static/lab6-004.PNG
    :width: 800px
-.. |lab005| image:: _static/lab6-005.png
+.. |lab005| image:: _static/lab6-005.PNG
    :width: 800px
-.. |lab006| image:: _static/lab6-006.png
+.. |lab006| image:: _static/lab6-006.PNG
    :width: 800px
-.. |lab007| image:: _static/lab6-007.png
+.. |lab007| image:: _static/lab6-007.PNG
    :width: 800px
-.. |lab008| image:: _static/lab6-008.png
+.. |lab008| image:: _static/lab6-008.PNG
    :width: 800px
-.. |lab009| image:: _static/lab6-009.png
+.. |lab009| image:: _static/lab6-009.PNG
    :width: 800px
 .. |labend| image:: _static/labend.png
    :width: 800px
