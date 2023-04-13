@@ -48,7 +48,8 @@ which CSD detected to be potentially malicious.
 |                                                                                              |
 | 2. Review the existing Dashboard and Dashboard Elements                                      |
 +----------------------------------------------------------------------------------------------+
-| **Note** :  Your data might be different than the screen grab shown below :                  |                                                                       |
+| **Note** :  Your data might be different than the screen grab shown below :                  |
+|                                                                                              |
 | |lab003|                                                                                     |
 |                                                                                              |
 | 3. Click on a domain and review the details in the flyout.                                   |
