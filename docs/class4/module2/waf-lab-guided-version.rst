@@ -56,7 +56,7 @@ We will create a blocking WAF policy.
 Exercise 2: Apply WAF Policy to HTTP Load Balancer
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-#. Navigate the menu to go to "Manage"->"HTTP Load Balancers" and look for the Load Balancer named *go find the name * that you previously created.
+#. Navigate the menu to go to "Manage"->"HTTP Load Balancers" and look for the Load Balancer named [adjective-animal].lab-sec.f5demos.com that you previously created.
 
 #. Click on the three dots "..." to the right of the name of your Load Balancer and select the "Manage Configuration" option.
 
@@ -79,7 +79,7 @@ Exercise 2: Apply WAF Policy to HTTP Load Balancer
 
 #. Click "*Save and Exit* to update the HTTP Load Balancer.
 
-Exercise 4: Verify Configuration
+Exercise 3: Verify Configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The public demo app should look like the following:
@@ -97,14 +97,14 @@ You should see a block page.
 
 .. image:: _static/screenshot-global-vip-public-cat-etc-passwd.png
 
-Exercise 5: Performance and Security 
+Exercise 4: Performance and Security 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 #. Start in F5 Distributed Cloud Console and switch to the "Web App & API Protection" context. [You should already be here from previous lab]
 
    We can view details of successful requests and blocks by navigating to "Virtual Hosts"
 
-#. Click on "Select service" and select "Load Balancers". Click "Virtual Hosts"->"HTTP Load Balancers" and click on your "global" Load Balancer
+#. Click on "Select service" and select "Load Balancers". Click "Virtual Hosts" -> "HTTP Load Balancers" and click on your [adjective-animal].lab-sec.f5demos.com Load Balancer
 
    .. image:: _static/performance-overview.png
       :width: 50%
@@ -134,15 +134,15 @@ Exercise 5: Performance and Security
 
 Next we will demonstrate applying the same WAF Policy to your private end point.
 
-#. Navigate the menu to go to "Manage"->"HTTP Load Balancers" and look for the Load Balancer named *go find the name * that you previously created.
+#. Navigate the menu to go to "Manage" -> "HTTP Load Balancers" and look for the Load Balancer that you previously created.
 
 #. Click on the three dots "..." to the right of the name of your Load Balancer and select the "Manage Configuration" option.
 
-#. Under "Origins" find your previous "public" Origin pool and click on the three dots "..." to the right under "Actions" and select "Edit"
+#. Under "Origins" find your previous "frontend-public" Origin pool and click on the three dots "..." to the right under "Actions" and select "Edit"
 
    .. image:: _static/screenshot-global-vip-edit-config-pools.png
 
-#. Change the selection of "Origin Pool" to "public" from "private" and click "Apply"
+#. Change the selection of "Origin Pool" to "frontend-private" from "frontend-public" and click "Apply"
 
    .. image:: _static/screenshot-global-vip-edit-config-pools-select.png
 
