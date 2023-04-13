@@ -150,9 +150,9 @@ Next we will demonstrate applying the same WAF Policy to your private end point.
 
 .. |app-context| image:: _static/app-context.png
    :width: 75%
-.. |select-service| image:: _static/select-service.jpg
-   :width: 75%
-.. |namespace-selection| image:: _static/namespace-selection.png
+.. |select-service| image:: _static/select-service-aprilui.png
+   :width: 50%
+.. |namespace-selection| image:: _static/namespace_url.png
    :width: 75%
 .. |op-pool-basic| image:: _static/op-pool-basic.png
 .. |lb-basic| image:: _static/lb-basic.png
