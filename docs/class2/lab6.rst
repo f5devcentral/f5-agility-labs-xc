@@ -6,13 +6,14 @@ that protects web applications against Formjacking, Magecart, and other maliciou
 
 This multi-phase protection system includes detection, alerting, and mitigation.
 
-**Detection**. A continuously evolving signal set allows CSD to understand when scripts on web pages start reading 
-  PII or exhibit signs of exfiltration.
+**Detection**. A continuously evolving signal set allows CSD to understand when scripts on web pages 
+ start reading PII or exhibit signs of exfiltration.
 
 **Alerting**. CSD generates timely alerts on malicious changes in behavior of scripts, provided by a 
   continuously improving Analysis Engine. 
   The Analysis Engine contains a machine learning component for accurate and informative analysis 
-  and provides details on the behavior of malicious script to help troubleshoot and identify the root cause.
+  and provides details on the behavior of malicious script to help troubleshoot and identify the root 
+  cause.
 
 **Mitigation**. CSD detects threats in real-time and provides enforcement with one-click mitigation. 
   CSD leverages the same obfuscation and signal technology as F5® Distributed Cloud Bot Defense, 
@@ -34,7 +35,7 @@ In this task you will navigate to the client side defense tile to start reviewin
 +----------------------------------------------------------------------------------------------+
 |  |lab001|                                                                                    |
 +----------------------------------------------------------------------------------------------+
-|   Click the Client-Side Defense tile.                                                        |
+|  Click the Client-Side Defense tile.                                                         |
 |                                                                                              |
 +----------------------------------------------------------------------------------------------+
 |  |lab002|                                                                                    |
@@ -61,7 +62,7 @@ In this task you will navigate to the client side defense tile to start reviewin
 |                                                                                              |
 | 3. Click on a domain and review the details in the flyout.                                   |
 |                                                                                              |
-|  Review the status, details, risk score ,risk reasoning, etc. Close the flyout.              |                                     |
+|  Review the status, details, risk score ,risk reasoning, etc. Close the flyout.              |                            
 +----------------------------------------------------------------------------------------------+
 | |lab004|                                                                                     |
 +----------------------------------------------------------------------------------------------+
