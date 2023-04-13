@@ -1,5 +1,5 @@
-Lab 1: Protecting a Public Endpoint
-===================================
+Lab 3: Protecting a Public and Private Endpoint
+===============================================
 
 During this lab you will be introduced to creating a WAF policy in F5 Distributed Cloud
 and using that policy to protect your lab resource that is a "Public Endpoint"
