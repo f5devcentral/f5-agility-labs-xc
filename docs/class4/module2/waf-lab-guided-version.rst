@@ -98,22 +98,22 @@ You should see a block page.
 Exercise 4: Performance and Security 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-#. Start in F5 Distributed Cloud Console and switch to the "Web App & API Protection" context. [You should already be here from previous lab]
+#. Start in F5 Distributed Cloud Console and switch to the "Web App & API Protection" context. [You should already be here from the previous lab]
 
    We can view details of successful requests and blocks by navigating to "Virtual Hosts"
 
-#. Click on "Select service" and select "Web App & API Protection". Click "Load Balancers" -> "HTTP Load Balancers" and click on your [adjective-animal].lab-sec.f5demos.com Load Balancer
-(Or click on Dashboards --> Performance Dashboard.
+#. Click on "Select service" and select "Web App & API Protection".
+#. Click on Dashboards --> Performance Dashboard.
 
    .. image:: _static/performance-overview.png
       :width: 50%
 
-   You will see a health score of your application as well as end to end latency of the connection.
+   You will see a health score of your environment and several other metrics.
 
    .. image:: _static/screenshot-global-vip-performance-dashboard.png
       :width: 50%
   
-#. Scroll to the bottom of the page and click on the load balancer you just configured to see its performance stats.
+#. Scroll to the bottom of the page and click on the load balancer you just configured to see its performance statistics.
 
    .. image:: _static/screenshot-global-vip-loadbalancer-performance-select.png
 
@@ -122,19 +122,29 @@ Exercise 4: Performance and Security
    .. image:: _static/screenshot-global-vip-loadbalancer-dashboard.png
       :width: 50%
 
-#. Click on "Requests" in the upper page navigation
+#. Click on "Requests" in the upper page navigation. If you visited the website ([adjective-animal].lab-sec.f5demos.com/) more than 5 minutes ago, you may need to click on the drop-down timeframe menu in the upper-right and update it to "Last 1 hour". (Make a note of this step in case it become needed for future steps in this lab.)
 
-   You should be able to view logs for individual requests.
+   .. image:: _static/update-last-hour.png
+      :width: 50%
+
+   You should now be able to view logs for individual requests.
 
    .. image:: _static/screenshot-global-vip-public-requests.png
       :width: 50%
 
-#. In the upper-left, click on Dashboard-->Security Dashboard.
+#. In the left navigation bar, under Overview, click on Dashboards --> Security Dashboard.
 
    .. image:: _static/select-security-dashboard.png
       :width: 50%
 
-#. Click on "Security Events"
+#. Scroll to the bottom of the page and click on the load balancer you previously configured to see its security metrics.
+
+   .. image:: _static/screenshot-global-vip-loadbalancer-performance-select.png
+
+#. Click on the "Security Events" tab at the top of the page.
+
+   .. image:: _static/security-events-tab.png
+
    You will be able to see details of the security events.
 
    .. image:: _static/screenshot-global-vip-public-security-events.png
@@ -146,9 +156,21 @@ Exercise 4: Performance and Security
 
 Next we will demonstrate applying the same WAF Policy to your private end point.
 
-#. Navigate the menu to go to "Manage" -> "HTTP Load Balancers" and look for the Load Balancer that you previously created.
+#. Navigate the menu to go to Manage --> Load Balancers --> HTTP Load Balancers and look for the Load Balancer that you previously created.
 
 #. Click on the three dots "..." to the right of the name of your Load Balancer and select the "Manage Configuration" option.
+
+#. Click on the "Edit Configuration" in the far upper-right corner of the page.
+
+   .. image:: _static/edit-configuration-button.png
+
+#. [Instruction]
+
+   .. image:: _static/select-origin-pool.png
+
+#. [Instruction]
+
+   .. image:: _static/edit-origin-pool-configuration.png
 
 #. Under "Origins" find your previous "frontend-public" Origin pool and click on the three dots "..." to the right under "Actions" and select "Edit"
 
@@ -157,6 +179,10 @@ Next we will demonstrate applying the same WAF Policy to your private end point.
 #. Change the selection of "Origin Pool" to "frontend-private" from "frontend-public" and click "Apply"
 
    .. image:: _static/screenshot-global-vip-edit-config-pools-select.png
+   
+   (OR)
+   
+   .. image:: _static/change-origin-pool-public-to-private.png
 
 
 
