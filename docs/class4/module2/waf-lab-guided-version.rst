@@ -5,6 +5,8 @@ During this lab you will be introduced to creating a WAF policy in F5 Distribute
 and using that policy to protect your lab resource that is a "Public Endpoint"
 in AWS (webserver with an EIP).
 
+Note: If you did the extra credit exercise in the previous lab and created an **HTTPS** load balancer, use that one for all exercises that reference the HTTP load balancer.
+
 Task 1. Create WAF Policy
 -------------------------
 
