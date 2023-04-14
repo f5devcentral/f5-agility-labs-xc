@@ -14,9 +14,6 @@ Protect your site from application vulnerabilities using XC WAF
 
 Required Outcome:
 
-* Configure a new **HTTPS** load balancer with the name, "frontend-secure", that points to the *frontend-private* origin pool.
-* Ensure the new site works by navigating to https://[adjective-animal].lab-sec.f5demos.com (where [adjective-animal] is the namespace randomly assigned to you in Lab 1).
-* Use ssllabs.com to ensure the HTTPS site gets an "A" score.
 * Configure a WAF to detect and then block most common attacks
 * Test out some attack methods and ensure your website blocks them
 
