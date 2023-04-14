@@ -25,14 +25,14 @@ Scaling application traffic, high availability, progressive application version 
 **How:**
 ~~~~~~~~
 
-* First, create an HTTPS loadbalancer with the name, "frontend-secure". See (https://docs.cloud.f5.com/docs/how-to/app-networking/http-load-balancer).
+* If you did the extra credit exercise in the previous lab and created an **HTTPS** load balancer, use that one for the exercises in this lab. Otherwise, you may either create one now (see https://docs.cloud.f5.com/docs/how-to/app-networking/http-load-balancer) or proceed with the HTTP load balancer already created.
 * Create a WAF *in blocking mode* and attach it to the frontend-secure loadbalancer. See (https://docs.cloud.f5.com/docs/how-to/app-security).
   (NOTE: for this workshop, you can skip the sections on attaching the WAF to a specific route, configuring a Data Guard, creating WAF Exclusion Rules, and WAF Processing for Specific Match Criteria.).
 
 **Validation:**
 ~~~~~~~~~~~~~~~
 
-* Browse to the HTTPS version of the website and add a path of "/foo" to the end of the URL. Ensure you get a "404 Not Found" page. (You should not see a "The requested URL was rejected." message.)
+* Browse to your website and add a path of "/foo" to the end of the URL. Ensure you get a "404 Not Found" page. (You should not see a "The requested URL was rejected." message.)
 * Browse to the same FQDN (without "/foo") but try out other common URL exploits by appending strings such as “?cat%20/etc/passwd” and "<script>alert("TEST");</script>" to the end of the URL. You should receive the message, "The requested URL was rejected." This means the Distributed Cloud WAF identified the request as potentially malicious and blocked it.
 * Go to Web App & API Protection-->Overview-->Dashboards-->Security Dashboard to ensure you see this listed in the "Top Attacks by Signatures" section.
 
