@@ -221,7 +221,7 @@ We can also view analytics of our HTTP Load Balancer.
 
 *Note: This exercise is completely optional. To make it more challenging, the exact steps needed to accomplish this are left up to the student.*
 
-#. Configure a new **HTTPS** load balancer with the name, "frontend-secure", that points to the *frontend-private* origin pool.
+#. Configure a new **HTTPS** load balancer with the name, "frontend-secure", that points to the *frontend-private* origin pool. (For help, see https://docs.cloud.f5.com/docs/how-to/app-networking/http-load-balancer).
 #. Ensure the new site works by navigating to https://[adjective-animal].lab-sec.f5demos.com (where [adjective-animal] is you namespace.
 #. Use ssllabs.com to ensure the site gets an "A" score.
 #. For the remainder of this workshop, use this new HTTPS load balancer instead of the HTTP version previously created whenever a load balancer is mentioned.
