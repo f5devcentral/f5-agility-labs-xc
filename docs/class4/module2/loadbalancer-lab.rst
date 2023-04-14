@@ -216,6 +216,18 @@ We can also view analytics of our HTTP Load Balancer.
    .. image:: ../images/healthscore-100.png
        :width: 25%
 
+** Extra Credit: Exercise 7: Create HTTPS Load Balancer **
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+*Note: This exercise is completely optional. To make it more challenging, the exact steps needed to accomplish this are left up to the student.*
+
+#. Configure a new **HTTPS** load balancer with the name, "frontend-secure", that points to the *frontend-private* origin pool.
+#. Ensure the new site works by navigating to https://[adjective-animal].lab-sec.f5demos.com (where [adjective-animal] is you namespace.
+#. Use ssllabs.com to ensure the site gets an "A" score.
+#. For the remainder of this workshop, use this new HTTPS load balancer instead of the HTTP version previously created whenever a load balancer is mentioned.
+
+   .. image:: ../images/ssllabs-A-grade.png
+
 .. |app-context| image:: ../images/app-context.png
 .. |http_lb_menu| image:: ../images/http_lb_menu-aprilui.png
 .. |http_lb_add| image:: ../images/http_lb_add-aprilui.png
