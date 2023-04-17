@@ -1,4 +1,4 @@
-F5 Distributed Cloud 101 - Introduction to Deployment Models and Services
+F5 Distributed Cloud - Introduction to Deployment Models and Services
 =========================================================================
  
 Welcome
