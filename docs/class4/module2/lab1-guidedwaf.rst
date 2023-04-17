@@ -155,7 +155,7 @@ Exercise 4: Performance and Security
 
    .. image:: _static/screenshot-global-vip-public-security-events.png
 
-   Clicking on the arrow to the left of a security event will expand the details.
+#. Click on the arrow to the left of a security event to expand the details.
 
    .. image:: _static/screenshot-global-vip-public-security-events-details.png
       :width: 100%
@@ -171,25 +171,21 @@ Next we will demonstrate applying the same WAF Policy to your private end point.
    .. image:: _static/edit-configuration-button.png
       :width: 50%
 
-#. [Instruction]
+#. Select Origins in the left navigation pane and click on the frontend-private origin pool.
 
    .. image:: _static/select-origin-pool.png
       :width: 100%
       
-#. [Instruction]
+#. In the "Origin Pool with Weight and Priority" section, click "Edit Configuration" next to the origin pool.
 
    .. image:: _static/edit-origin-pool-configuration.png
       :width: 75%
 
-#. Under "Origins" find your previous "frontend-public" Origin pool and click on the three dots "..." to the right under "Actions" and select "Edit"
+#. Under "Origins" find your previous "frontend-public" Origin pool and click on the pencil icon on the right under "Actions" and select "Edit"
 
    .. image:: _static/screenshot-global-vip-edit-config-pools.png
 
 #. Change the selection of "Origin Pool" to "frontend-private" from "frontend-public" and click "Apply"
-
-   .. image:: _static/screenshot-global-vip-edit-config-pools-select.png
-   
-   (OR)
    
    .. image:: _static/change-origin-pool-public-to-private.png
 
