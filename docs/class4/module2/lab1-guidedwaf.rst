@@ -1,4 +1,4 @@
-Lab 1: Protecting a Public and Private Endpoint
+Lab 1: Option 1 - Guided WAF Deployment
 ===============================================
 
 During this lab you will be introduced to creating a WAF policy in F5 Distributed Cloud
