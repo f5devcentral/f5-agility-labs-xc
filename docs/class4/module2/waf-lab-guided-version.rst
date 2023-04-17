@@ -5,6 +5,8 @@ During this lab you will be introduced to creating a WAF policy in F5 Distribute
 and using that policy to protect your lab resource that is a "Public Endpoint"
 in AWS (webserver with an EIP).
 
+Note: If you did the extra credit exercise in the previous lab and created an **HTTPS** load balancer, use that one for all exercises that reference the HTTP load balancer.
+
 Task 1. Create WAF Policy
 -------------------------
 
@@ -64,8 +66,6 @@ Exercise 2: Apply WAF Policy to HTTP Load Balancer
 
 #. Click on "Edit Configuration" in the upper right of the screen.
 
-   .. image:: _static/screenshot-global-vip-edit-config.png
-
 #. Under the *Web Application Firewall* section 
 
 #. Choose the following options:
@@ -100,29 +100,57 @@ You should see a block page.
 Exercise 4: Performance and Security 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-#. Start in F5 Distributed Cloud Console and switch to the "Web App & API Protection" context. [You should already be here from previous lab]
+#. You should already be in the "Web App & API Protection" context from the previous lab. If not, click on "Select service" and select "Web App & API Protection".
 
-   We can view details of successful requests and blocks by navigating to "Virtual Hosts"
+   |select-service|
 
-#. Click on "Select service" and select "Load Balancers". Click "Virtual Hosts" -> "HTTP Load Balancers" and click on your [adjective-animal].lab-sec.f5demos.com Load Balancer
+#. Click on Dashboards --> Performance Dashboard.
 
    .. image:: _static/performance-overview.png
       :width: 50%
 
-   You will see a health score of your application as well as end to end latency of the connection.
+   You will see a health score of your environment and several other metrics.
 
    .. image:: _static/screenshot-global-vip-performance-dashboard.png
       :width: 50%
+  
+#. Scroll to the bottom of the page and click on the load balancer you just configured to see its performance statistics.
 
-#. Click on "Requests" in the upper page navigation
+   .. image:: _static/screenshot-global-vip-loadbalancer-performance-select.png
 
-   You should be able to view logs for individual requests.
+#. View the dashboard.
+
+   .. image:: _static/screenshot-global-vip-loadbalancer-dashboard.png
+      :width: 50%
+
+#. Click on "Requests" in the upper page navigation.
+
+   |select-requests|
+
+#. If you visited the website ([adjective-animal].lab-sec.f5demos.com/) more than 5 minutes ago, you may need to click on the drop-down timeframe menu in the upper-right and update it to "Last 1 hour". (Make a note of this step in case it become needed for future steps in this lab.)
+
+   .. image:: _static/update-last-hour.png
+      :width: 25%
+
+   You should now be able to view logs for individual requests.
 
    .. image:: _static/screenshot-global-vip-public-requests.png
       :width: 50%
 
-#. Click on the "Performance Monitoring" dropdown and select "Security Monitoring".
-#. Click on "Security Events"
+#. In the left navigation bar, under Overview, click on Dashboards --> Security Dashboard.
+
+   .. image:: _static/select-security-dashboard.png
+      :width: 50%
+
+#. Scroll to the bottom of the page and click on the load balancer you previously configured to see its security metrics.
+
+   .. image:: _static/screenshot-global-vip-loadbalancer-performance-select.png
+
+#. Click on the "Security Events" tab at the top of the page.
+
+   .. image:: _static/security-events-tab.png
+     :width: 75%
+
    You will be able to see details of the security events.
 
    .. image:: _static/screenshot-global-vip-public-security-events.png
@@ -130,13 +158,28 @@ Exercise 4: Performance and Security
    Clicking on the arrow to the left of a security event will expand the details.
 
    .. image:: _static/screenshot-global-vip-public-security-events-details.png
-      :width: 50%
+      :width: 100%
 
 Next we will demonstrate applying the same WAF Policy to your private end point.
 
-#. Navigate the menu to go to "Manage" -> "HTTP Load Balancers" and click on your [adjective-animal].lab-sec.f5demos.com Load Balancer
+#. Navigate the menu to go to "Manage" -> "HTTP Load Balancers" and look for the Load Balancer that you previously created.
 
 #. Click on the three dots "..." to the right of the name of your Load Balancer and select the "Manage Configuration" option.
+
+#. Click on the "Edit Configuration" in the far upper-right corner of the page.
+
+   .. image:: _static/edit-configuration-button.png
+      :width: 50%
+
+#. [Instruction]
+
+   .. image:: _static/select-origin-pool.png
+      :width: 100%
+      
+#. [Instruction]
+
+   .. image:: _static/edit-origin-pool-configuration.png
+      :width: 75%
 
 #. Under "Origins" find your previous "frontend-public" Origin pool and click on the three dots "..." to the right under "Actions" and select "Edit"
 
@@ -145,17 +188,22 @@ Next we will demonstrate applying the same WAF Policy to your private end point.
 #. Change the selection of "Origin Pool" to "frontend-private" from "frontend-public" and click "Apply"
 
    .. image:: _static/screenshot-global-vip-edit-config-pools-select.png
+   
+   (OR)
+   
+   .. image:: _static/change-origin-pool-public-to-private.png
 
 
 
 .. |app-context| image:: _static/app-context.png
    :width: 75%
-.. |select-service| image:: _static/select-service.jpg
-   :width: 75%
-.. |namespace-selection| image:: _static/namespace-selection.png
+.. |select-service| image:: _static/select-service-aprilui.png
+   :width: 50%
+.. |namespace-selection| image:: _static/namespace_url.png
    :width: 75%
 .. |op-pool-basic| image:: _static/op-pool-basic.png
 .. |lb-basic| image:: _static/lb-basic.png
+.. |select-requests| image:: _static/select-requests.png
 
 .. |origin_pools_menu| image:: _static/origin_pools_menu.png
 .. |origin_pools_add| image:: _static/origin_pools_add.png
