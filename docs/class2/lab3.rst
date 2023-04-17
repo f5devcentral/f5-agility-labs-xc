@@ -98,7 +98,7 @@ In this task you will add geo-filter and allowed-ip based service policies.
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 13. Enter your IP address captured in Step 9 above with mask notation (//32)as shown then    |
+| 13. Enter your IP address captured in Step 9 above with mask notation (**/32**) as shown then|
 |                                                                                              |
 |     click the **Apply** button.                                                              |
 +----------------------------------------------------------------------------------------------+
@@ -113,13 +113,17 @@ In this task you will add geo-filter and allowed-ip based service policies.
 | |lab013|                                                                                     |
 |                                                                                              |
 | |lab014|                                                                                     |
+|                                                                                              |
+| |lab015|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
 | 15. Observe the resulting added **allowed-ip** Service Policy added in your namespace.       |
 +----------------------------------------------------------------------------------------------+
-| |lab015|                                                                                     |
+| |lab016|                                                                                     |
 +----------------------------------------------------------------------------------------------+
+
+
 
 Task 2: Attaching Service Policies and configuring IP Reputation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -259,6 +263,8 @@ It will also help you understand additional approaches for Service Policies.
 | |lab033|                                                                                     |
 |                                                                                              |
 | |lab034|                                                                                     |
+|                                                                                              |
+| |lab035|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
@@ -268,10 +274,199 @@ It will also help you understand additional approaches for Service Policies.
 |                                                                                              |
 |     access the application.                                                                  |
 +----------------------------------------------------------------------------------------------+
-| |lab035|                                                                                     |
+| |lab036|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
-Task 3: Observing Route Configurations
+
+Task 3: Create,  assign and test Custom Policy
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In this task you will add Custom Policy and assign to your Load Balancer.
+
++----------------------------------------------------------------------------------------------+
+| 1. In the left-hand navigation menu, expand the **Security** section and click **Service**   |
+|                                                                                              |
+|    **Policies**. In the flyout menu, click the **Service Policies** link.                    |
+|                                                                                              |
+| 2. Observe the existing Service Policies and note they are source from the **shared**        |
+|                                                                                              |
+|    namespace which means they could be used within any other namespace.                      |
+|                                                                                              |
+| 3. Click **Add Service Policy** in the top left area as shown.                               |
++----------------------------------------------------------------------------------------------+
+| |lab001|                                                                                     |
+|                                                                                              |
+| |lab002|                                                                                     |
++----------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------+
+| 4. In the **Metadata** section enter **custom-allow-rule** for the **Name** and then click   |
+|                                                                                              |
+|     **Rules** in the left-hand navigation.                                                   |
+|     Then select **Custom Rule List** from the dropdown for **Select Policy Rules**           |
+|                                                                                              |
+|     Locate **Rules** configuration section and click **Configure**.                          |
++----------------------------------------------------------------------------------------------+
+| |lab057|                                                                                     |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 5.  In the **Metadata** name new rule **custom-allow-rule** and toggle ***Show Advanced**    |
+|                                                                                              |
+|      to see extra features in **Action** section.                                            |
+|                                                                                              |
+|    In **Action** select **Allow** and from **App Firewall Action Type** clink drop-down menu |
+|    and select **App Firewall Detection Control**                                             |
+|                                                                                              |
++----------------------------------------------------------------------------------------------+
+| |lab058|                                                                                     |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 6. Scroll down to **Attack Types** and select **Non-Browser Client**                         |
+|                                                                                              |
+|     In section **Bot Names**  type Bot name **curl**                                         |
+|                                                                                              |
+| .. note:: *The selection will allow curl command to go through this Policy*                  |
+|                                                                                              |
++----------------------------------------------------------------------------------------------+
+| |lab059|                                                                                     |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 7.  In the section **Clients** toggle **Show Advanced Fields** switch                        |
+|                                                                                              |
+|     Select **IPv4Prefix List** from **Source IPv4 Match**                                    |
+|                                                                                              |
+| 8.  In **IP Prefix List** type your **IP Address/32** you already know from steps above      |
+|                                                                                              |
+| .. note::                                                                                    |
+|    *You can see your current IP address here (open in new browser tab): https://ipinfo.io*   |
++----------------------------------------------------------------------------------------------+
+| |lab060|                                                                                     |
+|                                                                                              |
+| |lab061|                                                                                     |
+|                                                                                              |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 9. In section **Request Match**  click on  **Method List** and select method **GET**         |
++----------------------------------------------------------------------------------------------+
+| |lab062|                                                                                     |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 10. In section **HTTP Path** click **Configure**                                             |
+|                                                                                              |
+|     In field **Prefix Values** type "/index.php" and hit **Apply**                           |
+|                                                                                              |
++----------------------------------------------------------------------------------------------+
+| |lab063|                                                                                     |
+|                                                                                              |
+| |lab064|                                                                                     |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 11. In section **HTTP Query Parameters** click **Add Item**                                  |
+|                                                                                              |
+|     In field **Query Parameter Name** input "page"                                           |
+|                                                                                              |
+|     and in **Match Options** select **Match Values**  with **Exact Value**: "access"         |
+|                                                                                              |
+|     Hit **Apply** to save new item.                                                          |
+|                                                                                              |
+|     Review your recent changes in **HTTP Query Parameters** abd press **Apply**  twice.      |
+|                                                                                              |
+|     Press **Save and Exit** to complete new **Service Policy** configuration.                |
+|                                                                                              |
++----------------------------------------------------------------------------------------------+
+| |lab065|                                                                                     |
+|                                                                                              |
+| |lab066|                                                                                     |
+|                                                                                              |
+| |lab067|                                                                                     |
+|                                                                                              |
+| |lab068|                                                                                     |
+|                                                                                              |
+| |lab069|                                                                                     |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 12. Return to the Load Balancer in the F5 Distributed Cloud Console, *Manage > Load Balancer*|
+|                                                                                              |
+|    *> HTTP Load Balancers* and use the **Action Dots** and click **Manage Configuration**    |
+|                                                                                              |
+| 13. Click **Edit Configuration** in the top right-hand corner.                               |
++----------------------------------------------------------------------------------------------+
+| |lab070|                                                                                     |
+|                                                                                              |
+| |lab071|                                                                                     |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 14. Select **Common Security Controls** on the left panel.                                   |
+|                                                                                              |
+| 15. Select **Apply Specified Service Policies** from drop down menu and click **Configure**  |
+|                                                                                              |
++----------------------------------------------------------------------------------------------+
+| |lab072|                                                                                     |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 15. From **Policies** drop down menu select your **custom-allow-rule**                       |
+|                                                                                              |
+| 16. Hit **Apply** to save your changes                                                       |
+|                                                                                              |
++----------------------------------------------------------------------------------------------+
+| |lab073|                                                                                     |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 15. From **Policies** drop down menu select your **custom-allow-rule**                       |
+|                                                                                              |
+| 16. Hit **Apply** to save your changes  and following **Save and Exit**                      |
+|                                                                                              |
++----------------------------------------------------------------------------------------------+
+| |lab073|                                                                                     |
+|                                                                                              |
+| |lab074|                                                                                     |
++----------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------+
+| 15. Try to access your website following URL                                                 |
+| ** http://<namespace>.lab-sec.f5demos.com/index.php?page=access**                            |
+|                                                                                              |
+| .. note::                                                                                    |
+|     *you should be able to successfully open website*                                        |
+|                                                                                              |
++----------------------------------------------------------------------------------------------+
+| |lab077|                                                                                     |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 16. Now try to manipulate with parameters for example make "**page**" value **"accessss""**  |
+|                                                                                              |
+|     Example url: **http://<namespace>.lab-sec.f5demos.com\/index.php\?page=accesss**         |
+|                                                                                              |
+| *note::you should see 403 Forbidden** message from Application Firewall.                     |
+|                                                                                              |
++----------------------------------------------------------------------------------------------+
+| |lab075|                                                                                     |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 17. Navigate to your **HTTP Balancer**  and From **Dashboard**                               |
+|     select **Security Evenets** to see more details about blocked request by App Firewall    |
+|                                                                                              |
+|     Example url: **http://<namespace>.lab-sec.f5demos.com\/index.php\?page=access**          |
+|                                                                                              |
++----------------------------------------------------------------------------------------------+
+| |lab076|                                                                                     |
++----------------------------------------------------------------------------------------------+
+
+
+Task 4: Observing Route Configurations
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The following steps will enable you to attach Service Policies to your configured Load Balancer.
@@ -284,8 +479,6 @@ It will also help you understand additional approaches for Service Policies.
 |                                                                                              |
 | 2. Click **Edit Configuration** in the top right-hand corner.                                |
 +----------------------------------------------------------------------------------------------+
-| |lab036|                                                                                     |
-|                                                                                              |
 | |lab037|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
@@ -409,3 +602,46 @@ It will also help you understand additional approaches for Service Policies.
    :width: 800px
 .. |labend| image:: _static/labend.png
    :width: 800px
+.. |lab057| image:: _static/lab3-057.png
+   :width: 800px   
+.. |lab058| image:: _static/lab3-058.png
+   :width: 800px   
+.. |lab059| image:: _static/lab3-059.png
+   :width: 800px   
+.. |lab060| image:: _static/lab3-060.png
+   :width: 800px   
+.. |lab061| image:: _static/lab3-061.png
+   :width: 800px   
+.. |lab062| image:: _static/lab3-062.png
+   :width: 800px   
+.. |lab063| image:: _static/lab3-063.png
+   :width: 800px   
+.. |lab064| image:: _static/lab3-064.png
+   :width: 800px   
+.. |lab065| image:: _static/lab3-065.png
+   :width: 800px   
+.. |lab066| image:: _static/lab3-066.png
+   :width: 800px   
+.. |lab067| image:: _static/lab3-067.png
+   :width: 800px   
+.. |lab068| image:: _static/lab3-068.png
+   :width: 800px   
+.. |lab069| image:: _static/lab3-069.png
+   :width: 800px   
+.. |lab070| image:: _static/lab3-070.png
+   :width: 800px   
+.. |lab071| image:: _static/lab3-071.png
+   :width: 800px   
+.. |lab072| image:: _static/lab3-072.png
+   :width: 800px   
+.. |lab073| image:: _static/lab3-073.png
+   :width: 800px   
+.. |lab074| image:: _static/lab3-074.png
+   :width: 800px   
+.. |lab075| image:: _static/lab3-075.png
+   :width: 800px   
+.. |lab076| image:: _static/lab3-076.png
+   :width: 800px   
+.. |lab077| image:: _static/lab3-077.png
+   :width: 800px   
+      
