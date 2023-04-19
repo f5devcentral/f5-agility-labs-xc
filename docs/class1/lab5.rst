@@ -1,4 +1,4 @@
-Lab 5: Introduction to Observability.
+Lab 5: Introduction to Observability
 ====================================
 
 Have you ever wished that you knew about impending application issues before your users or 
@@ -6,7 +6,7 @@ boss did?  Application performance issues or outages usually provide clues befor
 manifest into larger problems.  Synthetic monitors provides you the opportunity to often fix 
 them before they become large-scale issues.
 
-Task 1: Test
+Task 1:
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 Configure a synthetic monitor  
