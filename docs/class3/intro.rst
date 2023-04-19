@@ -228,5 +228,3 @@ only on the Jumphost.
    :width: 800px
 .. |labbgn| image:: _static/labbgn.png
    :width: 800px
-.. |labend| image:: _static/labend.png
-   :width: 800px
