@@ -228,21 +228,13 @@ configure DNS Load Balancer Health Checks, DNS Load Balancer Pools, and DNS Load
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| **End of Lab 1:**  This concludes Lab 1.  In this lab you created an origin pool to connect  |
+| **End of Lab 5:**  This concludes Lab 4.  In this lab you reviewed where to configure        |
 |                                                                                              |
-| to the application, you then created a load balancer and associated the origin pool to the   |
+| Delegated DNS, Primary and Secondary DNS, and DNS Load Balancing.  Distributed Cloud supports|
 |                                                                                              |
-| load balancer.  This allowed the application to be advertised via the F5 Distributed Cloud   |
+| multiple DNS deployment models to meet different design goals.                               |
 |                                                                                              |
-| Global Network.  The Distributed Cloud Console was then used to review telemetry data        |
-|                                                                                              |
-| gathered for the application.  Next an Application Firewall policy was created and assigned  |
-|                                                                                              |
-| to protect the application.  Finally a sample attack was run against the application and the |
-|                                                                                              |
-| security event data was reviewed within the Distributed Cloud Console.                       |
-|                                                                                              |
-| A brief presentation will be shared prior to the beginning of Lab 2.                         |
+| A brief presentation will be shared prior to the beginning of Lab 5.                         |
 +----------------------------------------------------------------------------------------------+
 | |labend|                                                                                     |
 +----------------------------------------------------------------------------------------------+
