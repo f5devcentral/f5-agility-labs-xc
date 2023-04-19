@@ -1,108 +1,288 @@
-(Optional) Lab 4: Fine Tuning a WAF Policy
-==========================================
+Lab 4: Introduction to Additional F5 Distributed Cloud Services
+===============================================================
 
-This lab is also covered in the xC WAF 102 course.
- 
-In this next lab we will learn how to customize a WAF policy.
+Lab 4 will provide and introduction to additional F5 Distributed Cloud Services.  This 
+lab will focus on DNS, Observability, Content Delivery Netowrk (CDN), Multi Cloud 
+Networking, and Managed Kubernetes.  All configuration will be made via the F5 Distributed 
+Cloud Console and within the F5 Distributed Cloud Global Network services architecture.
 
-We will go through the actions of disabling specific WAF rules that 
-are associated with a specific Load Balancer and application path.
+For the tasks that follow, you should have already noted your individual **namespace**. If you
+failed to note it, return to the **Introduction** section of this lab, follow the instructions
+provided and note your **namespace** accordingly. The **Delegated Domain** and the F5 
+Distributed Cloud **Tenant** are listed below for your convenience as they will be the same for
+all lab attendees.
 
-Leveraging Support ID/Request ID
---------------------------------
+* **Delegated Domain:** *.lab-sec.f5demos.com* 
+* **F5 Distributed Cloud Tenant:** https://f5-xc-lab-sec.console.ves.volterra.io 
 
-In the previous lab exercises you may have noticed that a "support ID" appears 
-when you trigger a WAF block.
+Following the tasks in the prior **Introduction** Section, you should now be able to access the
+F5 Distributed Cloud Console, having set your Work Domain Roles and Skill levels. If you have
+not done so already, please login to your tenant for this lab and proceed to Task 1.
 
-.. code-block::
-   
-   The requested URL was rejected. Please consult with your administrator.
-   
-   Your support ID is: 218bdf56-f34a-42f4-931b-1ba5f8873353
-   
-   [Go Back]
-   
-We can use the reported support ID to disable specific signatures.
+Task 1: DNS Introduction
+~~~~~~~~~~~~~~~~~~~~~~~~
 
-Exercise 1: Generate Cross Site Scripting (XSS)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+The following steps will demonstrate where DNS features are configured within the F5 Distributed
+Cloud Console.  These steps will review where to configure a Delegated DNS Domain, Primary DNS,
+Secondary DNS, and DNS Load Balancing.
 
-#. Send the following request to your `[NAMESPACE].lab-sec.f5demos.com` site
++----------------------------------------------------------------------------------------------+
+| 1. If you are not still logged into the F5 Distributed Console, login.                       |
+|                                                                                              |
+| 2. If you are on the Main Dashboard Select the DNS Management tile or if you are already in  |
+|                                                                                              |
+|    one of the services you can select **DNS Management** from the **Select service**         |
+|                                                                                              |
+|    dropdown.                                                                                 |
++----------------------------------------------------------------------------------------------+
+| |lab001|                                                                                     |
+|                                                                                              |
+| |lab002|                                                                                     |
++----------------------------------------------------------------------------------------------+
 
-   ``/headers/?username=<script>window.open(%27hello%20world%27);</script>``
+**Delegated DNS**
 
-#. Retrieve the "support ID" that is displayed. Copy the value into your clipboard (i.e. highlight support ID in Chrome and select "Copy" / Ctrl-C).
++----------------------------------------------------------------------------------------------+
+| 3. In the left-hand navigation menu, expand the **Manage** section and click the             |
+|                                                                                              |
+|    **Delegated Domain Management** link.                                                     |
+|                                                                                              |
+| 4. Notice that the *lab-sec.f5demos.com* domain has been delegated to this tenant. Delegated |
+|                                                                                              |
+|    domains allow Distributed Cloud to automatically create DNS entries for objects configured|
+|                                                                                              |
+|    within Distributed Cloud.  You utilized this feature to create a DNS entry for your       |
+|                                                                                              |
+|    application in Lab 1.                                                                     |
++----------------------------------------------------------------------------------------------+
+| |lab003|                                                                                     |
++----------------------------------------------------------------------------------------------+
 
-#. Click on "Select service" and select "Load Balancers". Click "Virtual Hosts"->"HTTP Load Balancers" and click on your "global" Load Balancer
+**Primary and Secondary DNS**
 
-#. Select the "global" Load Balancer. Click on the "Performance Monitoring" dropdown and select "Security Monitoring". Select the "Security Events" tab.
++----------------------------------------------------------------------------------------------+
+| 5. In the left-hand navigation menu, under the **Manage** section click the **DNS**          |
+|                                                                                              |
+|    **Management** link.                                                                      |
+|                                                                                              |
+| 6. Click the **Add DNS Zone** button.                                                        |
++----------------------------------------------------------------------------------------------+
+| |lab004|                                                                                     |
+|                                                                                              |
+| |lab005|                                                                                     |
++----------------------------------------------------------------------------------------------+
 
-#. Click on "Refresh" (on the page) until you see a request that matches the time of your most recent request.
++----------------------------------------------------------------------------------------------+
+| 7. In the resulting window note the **Domain Name** field.  This is where you enter the      |
+|                                                                                              |
+|    zone domain name that Distributed Cloud will provide DNS responses for.                   |  
+|                                                                                              |
+| 8. Note the **Zone Type** dropdown under the **DNS Zone Configuration** section.  This is    |
+|                                                                                              |
+|    where you select if Distributed Cloud will be a Primary or Secondary DNS server for the   |
+|                                                                                              |
+|    DNS zone specified.                                                                       |
+|                                                                                              |
+| 9. Click **Cancel and Exit** to close this window.                                           |
+|                                                                                              |
+| .. note::                                                                                    |
+|    *Your current role does not have permissions to create Primary or Secondary DNS Zones.*   |
+|                                                                                              |
+|    *If you click Save and Exit you will receive an error message stating you do not have*    |
+|                                                                                              |
+|    *access with your current role.*                                                          |
++----------------------------------------------------------------------------------------------+
+| |lab006|                                                                                     |
+|                                                                                              |
+| |lab007|                                                                                     |
++----------------------------------------------------------------------------------------------+
 
-   .. image:: _static/screenshot-global-vip-public-security-events-refresh.png   
-#. Click on "Add Filter" under Security events
-   
-   .. image:: _static/screenshot-global-vip-public-security-events-add-filter.png
+**DNS Load Balancers**
 
-#. Select "req_id"
-   
-   .. warning:: If you do not see "req_id" you may need refresh your browser window.  Also ensure that you see at least one event on the page.
-#. Select the Operator "In"
-#. Paste in the support ID.
-   
-   .. image:: _static/screenshot-global-vip-public-security-events-paste-req-id.png
-   
-#. Click the "Assign a custom value(s)... link"
-   
-   .. image:: _static/screenshot-global-vip-public-security-events-paste-req-id-assign.png
-   
-#. At the bottom of the page you should see the desired Security Event.  Scroll to the far right to look for the "Actions" column and click on the three dots "..."
-#. Select "Create WAF Exclusion Rule" from the "Actions" menu
-   
-   .. image:: _static/create-exception-rule-action.png
-      :width: 75%
++----------------------------------------------------------------------------------------------+
+| 10. In the left-hand navigation menu, under the **Manage** section expand the **DNS**        |
+|                                                                                              |
+|     **Load Balancer Management** section and select **DNS Load Balancer Health Checks.**     |
+|                                                                                              |
+| 11. Click the **Add DNS Load Balancer Health Check** button.                                 |
++----------------------------------------------------------------------------------------------+
+| |lab008|                                                                                     |
+|                                                                                              |
+| |lab009|                                                                                     |
++----------------------------------------------------------------------------------------------+
 
-Exercise 2: Creating WAF Exclusion Rule
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
++----------------------------------------------------------------------------------------------+
+| 12. In the resulting window note the available Health Check Types under the **Health Check** |
+|                                                                                              |
+|     **Type** dropdown.  This is where you can select the type of health check that will be   |
+|                                                                                              |
+|     utilized to verify the application is available.                                         |
+|                                                                                              |
+| 13. Click **Cancel and Exit** to close this window.                                          |
+|                                                                                              |
+| .. note::                                                                                    |
+|    *Your current role does not have permissions to create DNS Load Balancer Health Checks.*  |
+|                                                                                              |
+|    *If you click Save and Exit you will receive an error message stating you do not have*    |
+|                                                                                              |
+|    *access with your current role.*                                                          |
++----------------------------------------------------------------------------------------------+
+| |lab010|                                                                                     |
+|                                                                                              |
+| |lab011|                                                                                     |
++----------------------------------------------------------------------------------------------+
 
-#. Take note of the list of Signature IDs that are listed.
++----------------------------------------------------------------------------------------------+
+| 14. In the left-hand navigation menu, under the **Manage** section expand the **DNS**        |
+|                                                                                              |
+|     **Load Balancer Management** section and select **DNS Load Balancer Pools.**             |
+|                                                                                              |
+| 15. Click the **Add DNS Load Balancer Pool** button.                                         |
++----------------------------------------------------------------------------------------------+
+| |lab012|                                                                                     |
+|                                                                                              |
+| |lab013|                                                                                     |
++----------------------------------------------------------------------------------------------+
 
-   .. image:: _static/waf-exclusion-rules-ids.png
-      :width: 75%
-	  
-#. Search for one of the IDs at: https://clouddocs.f5.com/cloud-services/latest/f5-cloud-services-Essential.App.Protect-Details.html
-   For example searching for "200000098" should return a "XSS script tag (Parameter)" signature.
-#. Click on "Apply". You will now be taken to the "WAF Exclusion Rules" dialogue.
-#. Click on "Apply". You will now be taken into the HTTP Load Balancer configuration and you should see under "WAF Exclusion Rules" it should show as "Configured".
-#. Scroll to the bottom of the page and click on "Save and Exit"
-#. Retry visiting your site with the same URL to your `[NAMESPACE].lab-sec.f5demos.com` site
++----------------------------------------------------------------------------------------------+
+| 16. In the resulting window note the available pool member types by expanding the **Pool**   |
+|                                                                                              |
+|     **Type** dropdown.  This is where you can select the type of pool member that will be    |
+|                                                                                              |
+|     DNS load balanced.                                                                       |
+|                                                                                              |
+| 17. Select **A** from the **Pool Type** dropdown.                                            |
+|                                                                                              |
+| 18. Click **Add Item** in the **Pool Members** section.                                      |
+|                                                                                              |
+| 19. In the resulting window note the **Public IP** field.  This is where you specify the     |
+|                                                                                              |
+|     the public IP of the pool member.                                                        |
+|                                                                                              |
+| 20. Also note the **Load Balancing Ration** and **Load Balancing Priority** fields.  These   |
+|                                                                                              |
+|     values control how the pool member will be load balanced.                                |
+|                                                                                              |
+| 21. Click **Cancel and Exit**                                                                |
+|                                                                                              |
+| .. note::                                                                                    |
+|    *Your current role does not have permissions to create DNS Load Balancer Pools.*          |
+|                                                                                              |
+|    *If you click Save and Exit you will receive an error message stating you do not have*    |
+|                                                                                              |
+|    *access with your current role.*                                                          |
++----------------------------------------------------------------------------------------------+
+| |lab014|                                                                                     |
+|                                                                                              |
+| |lab015|                                                                                     |
+|                                                                                              |
+| |lab016|                                                                                     |
+|                                                                                              |
+| |lab017|                                                                                     |
++----------------------------------------------------------------------------------------------+
 
-   ``/headers/?username=<script>window.open(%27hello%20world%27);</script>``
++----------------------------------------------------------------------------------------------+
+| 22. In the left-hand navigation menu, under the **Manage** section expand the **DNS**        |
+|                                                                                              |
+|     **Load Balancer Management** section and select **DNS Load Balancers.**                  |
+|                                                                                              |
+| 23. Click the **Add DNS Load Balancer** button.                                              |
++----------------------------------------------------------------------------------------------+
+| |lab018|                                                                                     |
+|                                                                                              |
+| |lab019|                                                                                     |
++----------------------------------------------------------------------------------------------+
 
-Exercise 3: View Requests Log
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
++----------------------------------------------------------------------------------------------+
+| 24. In the resulting window note the available record types by expanding the **Record Type** |
+|                                                                                              |
+|     dropdown.  This is where you can select the type of DNS record to provide by the DNS load|
+|                                                                                              |
+|     balancer.                                                                                |
+|                                                                                              |
+| 25. Select **Configure** from the **Load Balancing Rule List** section.                      |
+|                                                                                              |
+| 26. In the resulting window click the **Add Item** Button.                                   |
+|                                                                                              |
+| 27. In the resulting window click **Add Label** under the **Selector Expression.**  Note the |
+|                                                                                              |
+|     available Geo Location Selectors.                                                        |
+|                                                                                              |
+| 28. Click outside the dropdown to close the dropdown.                                        |
+|                                                                                              |
+| 29. Note the **Use DNS Load Balancer pool** dropdown.  This is where you select the pool to  |
+|                                                                                              |
+|     to be used with this Load Balancing Rule.                                                |
+|                                                                                              |
+| 30. Click **Cancel and Exit**                                                                |
+|                                                                                              |
+| .. note::                                                                                    |
+|    *Your current role does not have permissions to create DNS Load Balancers.*               |
+|                                                                                              |
+|    *If you click Save and Exit you will receive an error message stating you do not have*    |
+|                                                                                              |
+|    *access with your current role.*                                                          |
++----------------------------------------------------------------------------------------------+
+| |lab020|                                                                                     |
+|                                                                                              |
+| |lab021|                                                                                     |
+|                                                                                              |
+| |lab022|                                                                                     |
+|                                                                                              |
+| |lab023|                                                                                     |
+|                                                                                              |
+| |lab024|                                                                                     |
+|                                                                                              |
+| |lab025|                                                                                     |
++----------------------------------------------------------------------------------------------+
 
-We can also view requests that have been excluded from a WAF policy by viewing 
-the requests log.
-
-#. From the "Security Events" page in F5 Distributed Cloud Console click on the "Requests" menu item at the top of the page.
-#. Look for a "GET" request for `/headers/` and click on the arrow on the left of the date to expand the entry.
-#. Observe that under "Policy Hits" you will see the WAF exclusion rule that was triggered.
-   
-   .. image:: _static/requests-policy-exclusion.png
-      :width: 50%
-
-#. Try visiting your site with the a different URL to your `[NAMESPACE].lab-sec.f5demos.com` site:
-   ``/txt/?username=<script>window.open(%27hello%20world%27);</script>``
-
-#. Observe that this request is blocked. F5 Distributed Cloud WAF can exclude signatures by both Signature ID and path; and these exclusions are tied to a specific HTTP Load Balancer.
-
-Congratulations you have completed the lab!
-
-Video Walkthrough 
-^^^^^^^^^^^^^^^^^
-Optional Video you can watch if you get stuck
-
-.. raw:: html
-
-   <iframe width="560" height="315" src="https://www.youtube.com/embed/s-BHH0Qayfc?start=523" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+.. |lab001| image:: _static/lab4-001.png
+   :width: 800px
+.. |lab002| image:: _static/lab4-002.png
+   :width: 800px
+.. |lab003| image:: _static/lab4-003.png
+   :width: 800px
+.. |lab004| image:: _static/lab4-004.png
+   :width: 800px
+.. |lab005| image:: _static/lab4-005.png
+   :width: 800px
+.. |lab006| image:: _static/lab4-006.png
+   :width: 800px
+.. |lab007| image:: _static/lab4-007.png
+   :width: 800px
+.. |lab008| image:: _static/lab4-008.png
+   :width: 800px
+.. |lab009| image:: _static/lab4-009.png
+   :width: 800px
+.. |lab010| image:: _static/lab4-010.png
+   :width: 800px
+.. |lab011| image:: _static/lab4-011.png
+   :width: 800px
+.. |lab012| image:: _static/lab4-012.png
+   :width: 800px
+.. |lab013| image:: _static/lab4-013.png
+   :width: 800px
+.. |lab014| image:: _static/lab4-014.png
+   :width: 800px
+.. |lab015| image:: _static/lab4-015.png
+   :width: 800px
+.. |lab016| image:: _static/lab4-016.png
+   :width: 800px
+.. |lab017| image:: _static/lab4-017.png
+   :width: 800px
+.. |lab018| image:: _static/lab4-018.png
+   :width: 800px
+.. |lab019| image:: _static/lab4-019.png
+   :width: 800px
+.. |lab020| image:: _static/lab4-020.png
+   :width: 800px
+.. |lab021| image:: _static/lab4-021.png
+   :width: 800px
+.. |lab022| image:: _static/lab4-022.png
+   :width: 800px
+.. |lab023| image:: _static/lab4-023.png
+   :width: 800px
+.. |lab024| image:: _static/lab4-024.png
+   :width: 800px
+.. |lab025| image:: _static/lab4-025.png
+   :width: 800px
