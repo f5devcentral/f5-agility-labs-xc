@@ -227,6 +227,26 @@ configure DNS Load Balancer Health Checks, DNS Load Balancer Pools, and DNS Load
 | |lab025|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
++----------------------------------------------------------------------------------------------+
+| **End of Lab 1:**  This concludes Lab 1.  In this lab you created an origin pool to connect  |
+|                                                                                              |
+| to the application, you then created a load balancer and associated the origin pool to the   |
+|                                                                                              |
+| load balancer.  This allowed the application to be advertised via the F5 Distributed Cloud   |
+|                                                                                              |
+| Global Network.  The Distributed Cloud Console was then used to review telemetry data        |
+|                                                                                              |
+| gathered for the application.  Next an Application Firewall policy was created and assigned  |
+|                                                                                              |
+| to protect the application.  Finally a sample attack was run against the application and the |
+|                                                                                              |
+| security event data was reviewed within the Distributed Cloud Console.                       |
+|                                                                                              |
+| A brief presentation will be shared prior to the beginning of Lab 2.                         |
++----------------------------------------------------------------------------------------------+
+| |labend|                                                                                     |
++----------------------------------------------------------------------------------------------+
+
 .. |lab001| image:: _static/lab4-001.png
    :width: 800px
 .. |lab002| image:: _static/lab4-002.png
@@ -276,4 +296,6 @@ configure DNS Load Balancer Health Checks, DNS Load Balancer Pools, and DNS Load
 .. |lab024| image:: _static/lab4-024.png
    :width: 800px
 .. |lab025| image:: _static/lab4-025.png
+   :width: 800px
+.. |labend| image:: _static/labend.png
    :width: 800px
