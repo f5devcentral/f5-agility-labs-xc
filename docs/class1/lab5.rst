@@ -1,8 +1,10 @@
-Lab 5: Introduction to Observability
+Lab 5: Introduction to Observability.
 ====================================
 
-Have you ever wished that you knew about impending application issues before your users or boss did?  Application performance issues or
-outages usually provide clues before they manifest into larger problems.  Synthetic monitors provides you the opportunity to often fix them before they become large-scale issues.
+Have you ever wished that you knew about impending application issues before your users or 
+boss did?  Application performance issues or outages usually provide clues before they 
+manifest into larger problems.  Synthetic monitors provides you the opportunity to often fix 
+them before they become large-scale issues.
 
 Task 1: Test
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -59,9 +61,11 @@ Review the statistics gathered by the synthetic monitor
    .. image:: _static/monitor-data.png
       :width: 75%
 
-#. Take a few minutes to review the items on the report, including:  days until certificate expiration, latency, global response time breakdown, and 
+#. Take a few minutes to review the items on the report, including:  
+days until certificate expiration, latency, global response time breakdown, and 
 response time by region (source).
-#. Click the "TLS Report" link and review the TLS detailed report.  Press the X to close the report and return to the synthetic monitor statistics.
+#. Click the "TLS Report" link and review the TLS detailed report.  
+Press the X to close the report and return to the synthetic monitor statistics.
 
    .. image:: _static/tls-report-link.png
       :width: 75%
@@ -69,6 +73,7 @@ response time by region (source).
    .. image:: _static/tls-report.png
       :width: 75%
 
-#. Note that you can configure alerts to be sent to you when monitor thresholds are exceeded.
+#. Note that you can configure alerts to be sent to you when monitor thresholds are exceeded, 
+however alerts are out of scope for this lab.
 
 =======
