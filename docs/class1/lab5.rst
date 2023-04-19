@@ -6,7 +6,7 @@ boss did?  Application performance issues or outages usually provide clues befor
 manifest into larger problems.  Synthetic monitors provides you the opportunity to often fix 
 them before they become large-scale issues.
 
-Task 1:
+Task 1: 
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 Configure a synthetic monitor  
@@ -76,4 +76,3 @@ Press the X to close the report and return to the synthetic monitor statistics.
 #. Note that you can configure alerts to be sent to you when monitor thresholds are exceeded, 
 however alerts are out of scope for this lab.
 
-=======
