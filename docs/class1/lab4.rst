@@ -1,30 +1,15 @@
-Lab 4: Introduction to Additional F5 Distributed Cloud Services
+Lab 4: Introduction to F5 Distributed Cloud DNS
 ===============================================================
 
-Lab 4 will provide and introduction to additional F5 Distributed Cloud Services.  This 
-lab will focus on DNS, Observability, Content Delivery Netowrk (CDN), Multi Cloud 
-Networking, and Managed Kubernetes.  All configuration will be made via the F5 Distributed 
-Cloud Console and within the F5 Distributed Cloud Global Network services architecture.
+This lab provides an introduction to DNS services available on F5 Distributed Cloud.  This 
+lab will demonstrate where to configured Delegated DNS, Primary and Secondary DNS, and DNS
+Load Balancing.  All configuration will be made via the F5 Distributed Cloud Console and 
+within the F5 Distributed Cloud Global Network services architecture.
 
-For the tasks that follow, you should have already noted your individual **namespace**. If you
-failed to note it, return to the **Introduction** section of this lab, follow the instructions
-provided and note your **namespace** accordingly. The **Delegated Domain** and the F5 
-Distributed Cloud **Tenant** are listed below for your convenience as they will be the same for
-all lab attendees.
+Task 1: Delegated DNS
+~~~~~~~~~~~~~~~~~~~~~
 
-* **Delegated Domain:** *.lab-sec.f5demos.com* 
-* **F5 Distributed Cloud Tenant:** https://f5-xc-lab-sec.console.ves.volterra.io 
-
-Following the tasks in the prior **Introduction** Section, you should now be able to access the
-F5 Distributed Cloud Console, having set your Work Domain Roles and Skill levels. If you have
-not done so already, please login to your tenant for this lab and proceed to Task 1.
-
-Task 1: DNS Introduction
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-The following steps will demonstrate where DNS features are configured within the F5 Distributed
-Cloud Console.  These steps will review where to configure a Delegated DNS Domain, Primary DNS,
-Secondary DNS, and DNS Load Balancing.
+This task reviews where to configure a Delegated DNS Domain.
 
 +----------------------------------------------------------------------------------------------+
 | 1. If you are not still logged into the F5 Distributed Console, login.                       |
@@ -39,8 +24,6 @@ Secondary DNS, and DNS Load Balancing.
 |                                                                                              |
 | |lab002|                                                                                     |
 +----------------------------------------------------------------------------------------------+
-
-**Delegated DNS**
 
 +----------------------------------------------------------------------------------------------+
 | 3. In the left-hand navigation menu, expand the **Manage** section and click the             |
@@ -58,14 +41,18 @@ Secondary DNS, and DNS Load Balancing.
 | |lab003|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
-**Primary and Secondary DNS**
+Task 2: Primary and Secondary DNS
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The following steps will demonstrate where DNS features are configured within the F5 Distributed
+Cloud Console.  This task reviews where to configure Primary and Secondary DNS for a zone.
 
 +----------------------------------------------------------------------------------------------+
-| 5. In the left-hand navigation menu, under the **Manage** section click the **DNS**          |
+| 1. In the left-hand navigation menu, under the **Manage** section click the **DNS**          |
 |                                                                                              |
 |    **Management** link.                                                                      |
 |                                                                                              |
-| 6. Click the **Add DNS Zone** button.                                                        |
+| 2. Click the **Add DNS Zone** button.                                                        |
 +----------------------------------------------------------------------------------------------+
 | |lab004|                                                                                     |
 |                                                                                              |
@@ -73,17 +60,17 @@ Secondary DNS, and DNS Load Balancing.
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 7. In the resulting window note the **Domain Name** field.  This is where you enter the      |
+| 3. In the resulting window note the **Domain Name** field.  This is where you enter the      |
 |                                                                                              |
 |    zone domain name that Distributed Cloud will provide DNS responses for.                   |  
 |                                                                                              |
-| 8. Note the **Zone Type** dropdown under the **DNS Zone Configuration** section.  This is    |
+| 4. Note the **Zone Type** dropdown under the **DNS Zone Configuration** section.  This is    |
 |                                                                                              |
 |    where you select if Distributed Cloud will be a Primary or Secondary DNS server for the   |
 |                                                                                              |
 |    DNS zone specified.                                                                       |
 |                                                                                              |
-| 9. Click **Cancel and Exit** to close this window.                                           |
+| 5. Click **Cancel and Exit** to close this window.                                           |
 |                                                                                              |
 | .. note::                                                                                    |
 |    *Your current role does not have permissions to create Primary or Secondary DNS Zones.*   |
@@ -97,14 +84,18 @@ Secondary DNS, and DNS Load Balancing.
 | |lab007|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
-**DNS Load Balancers**
+Task 3: DNS Load Balancers
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This task reviews where to configure DNS Load Balancing.  This task demonstrates where to 
+configure DNS Load Balancer Health Checks, DNS Load Balancer Pools, and DNS Load Balancers.
 
 +----------------------------------------------------------------------------------------------+
-| 10. In the left-hand navigation menu, under the **Manage** section expand the **DNS**        |
+| 1. In the left-hand navigation menu, under the **Manage** section expand the **DNS**         |
 |                                                                                              |
 |     **Load Balancer Management** section and select **DNS Load Balancer Health Checks.**     |
 |                                                                                              |
-| 11. Click the **Add DNS Load Balancer Health Check** button.                                 |
+| 2. Click the **Add DNS Load Balancer Health Check** button.                                  |
 +----------------------------------------------------------------------------------------------+
 | |lab008|                                                                                     |
 |                                                                                              |
@@ -112,13 +103,13 @@ Secondary DNS, and DNS Load Balancing.
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 12. In the resulting window note the available Health Check Types under the **Health Check** |
+| 3. In the resulting window note the available Health Check Types under the **Health Check**  |
 |                                                                                              |
 |     **Type** dropdown.  This is where you can select the type of health check that will be   |
 |                                                                                              |
 |     utilized to verify the application is available.                                         |
 |                                                                                              |
-| 13. Click **Cancel and Exit** to close this window.                                          |
+| 4. Click **Cancel and Exit** to close this window.                                           |
 |                                                                                              |
 | .. note::                                                                                    |
 |    *Your current role does not have permissions to create DNS Load Balancer Health Checks.*  |
@@ -133,11 +124,11 @@ Secondary DNS, and DNS Load Balancing.
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 14. In the left-hand navigation menu, under the **Manage** section expand the **DNS**        |
+| 5. In the left-hand navigation menu, under the **Manage** section expand the **DNS**         |
 |                                                                                              |
 |     **Load Balancer Management** section and select **DNS Load Balancer Pools.**             |
 |                                                                                              |
-| 15. Click the **Add DNS Load Balancer Pool** button.                                         |
+| 6. Click the **Add DNS Load Balancer Pool** button.                                          |
 +----------------------------------------------------------------------------------------------+
 | |lab012|                                                                                     |
 |                                                                                              |
@@ -145,25 +136,25 @@ Secondary DNS, and DNS Load Balancing.
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 16. In the resulting window note the available pool member types by expanding the **Pool**   |
+| 7. In the resulting window note the available pool member types by expanding the **Pool**    |
 |                                                                                              |
 |     **Type** dropdown.  This is where you can select the type of pool member that will be    |
 |                                                                                              |
 |     DNS load balanced.                                                                       |
 |                                                                                              |
-| 17. Select **A** from the **Pool Type** dropdown.                                            |
+| 8. Select **A** from the **Pool Type** dropdown.                                             |
 |                                                                                              |
-| 18. Click **Add Item** in the **Pool Members** section.                                      |
+| 9. Click **Add Item** in the **Pool Members** section.                                       |
 |                                                                                              |
-| 19. In the resulting window note the **Public IP** field.  This is where you specify the     |
+| 10. In the resulting window note the **Public IP** field.  This is where you specify the     |
 |                                                                                              |
 |     the public IP of the pool member.                                                        |
 |                                                                                              |
-| 20. Also note the **Load Balancing Ration** and **Load Balancing Priority** fields.  These   |
+| 11. Also note the **Load Balancing Ration** and **Load Balancing Priority** fields.  These   |
 |                                                                                              |
 |     values control how the pool member will be load balanced.                                |
 |                                                                                              |
-| 21. Click **Cancel and Exit**                                                                |
+| 12. Click **Cancel and Exit**                                                                |
 |                                                                                              |
 | .. note::                                                                                    |
 |    *Your current role does not have permissions to create DNS Load Balancer Pools.*          |
@@ -182,11 +173,11 @@ Secondary DNS, and DNS Load Balancing.
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 22. In the left-hand navigation menu, under the **Manage** section expand the **DNS**        |
+| 13. In the left-hand navigation menu, under the **Manage** section expand the **DNS**        |
 |                                                                                              |
 |     **Load Balancer Management** section and select **DNS Load Balancers.**                  |
 |                                                                                              |
-| 23. Click the **Add DNS Load Balancer** button.                                              |
+| 14. Click the **Add DNS Load Balancer** button.                                              |
 +----------------------------------------------------------------------------------------------+
 | |lab018|                                                                                     |
 |                                                                                              |
@@ -194,27 +185,27 @@ Secondary DNS, and DNS Load Balancing.
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 24. In the resulting window note the available record types by expanding the **Record Type** |
+| 15. In the resulting window note the available record types by expanding the **Record Type** |
 |                                                                                              |
 |     dropdown.  This is where you can select the type of DNS record to provide by the DNS load|
 |                                                                                              |
 |     balancer.                                                                                |
 |                                                                                              |
-| 25. Select **Configure** from the **Load Balancing Rule List** section.                      |
+| 16. Select **Configure** from the **Load Balancing Rule List** section.                      |
 |                                                                                              |
-| 26. In the resulting window click the **Add Item** Button.                                   |
+| 17. In the resulting window click the **Add Item** Button.                                   |
 |                                                                                              |
-| 27. In the resulting window click **Add Label** under the **Selector Expression.**  Note the |
+| 18. In the resulting window click **Add Label** under the **Selector Expression.**  Note the |
 |                                                                                              |
 |     available Geo Location Selectors.                                                        |
 |                                                                                              |
-| 28. Click outside the dropdown to close the dropdown.                                        |
+| 19. Click outside the dropdown to close the dropdown.                                        |
 |                                                                                              |
-| 29. Note the **Use DNS Load Balancer pool** dropdown.  This is where you select the pool to  |
+| 20. Note the **Use DNS Load Balancer pool** dropdown.  This is where you select the pool to  |
 |                                                                                              |
 |     to be used with this Load Balancing Rule.                                                |
 |                                                                                              |
-| 30. Click **Cancel and Exit**                                                                |
+| 21. Click **Cancel and Exit**                                                                |
 |                                                                                              |
 | .. note::                                                                                    |
 |    *Your current role does not have permissions to create DNS Load Balancers.*               |
