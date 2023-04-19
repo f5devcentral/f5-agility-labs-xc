@@ -228,7 +228,7 @@ configure DNS Load Balancer Health Checks, DNS Load Balancer Pools, and DNS Load
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| **End of Lab 5:**  This concludes Lab 4.  In this lab you reviewed where to configure        |
+| **End of Lab 4:**  This concludes Lab 4.  In this lab you reviewed where to configure        |
 |                                                                                              |
 | Delegated DNS, Primary and Secondary DNS, and DNS Load Balancing.  Distributed Cloud supports|
 |                                                                                              |
