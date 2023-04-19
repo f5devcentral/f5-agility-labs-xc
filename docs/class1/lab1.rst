@@ -215,6 +215,7 @@ Network.
 
 Task 2: Testing the Application and Viewing Telemetry Data
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 The following steps will validate access to the application via web browser, review the 
 Performance Monitoring dashboard, and gather request details.
 
@@ -380,6 +381,9 @@ Task 1.
 
 Task 4. Test the Application Firewall and View Security Events
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The following steps will test and validate the Web Application Firewall, review the  Security
+Monitoring dashboard, and gather security event details.
 
 +----------------------------------------------------------------------------------------------+
 | 1. Open another tab in your browser (Chrome shown), navigate to the newly configured Load    |
