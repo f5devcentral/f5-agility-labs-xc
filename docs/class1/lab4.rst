@@ -232,7 +232,7 @@ configure DNS Load Balancer Health Checks, DNS Load Balancer Pools, and DNS Load
 |                                                                                              |
 | Delegated DNS, Primary and Secondary DNS, and DNS Load Balancing.  Distributed Cloud supports|
 |                                                                                              |
-| multiple DNS deployment models to satisfy different design goals.                               |
+| multiple DNS deployment models to satisfy different design goals.                            |
 |                                                                                              |
 | A brief presentation will be shared prior to the beginning of Lab 5.                         |
 +----------------------------------------------------------------------------------------------+
