@@ -57,19 +57,21 @@ Task 1:  Review the synthetic monitor data
 
    .. image:: _static/click-example-com.png
       :width: 75%
+  
+#. Please take a few minutes to review the information in the report, including:  
+days until certificate expiration, latency, global response time breakdown, and 
+response time by region (source).  
 
    .. image:: _static/monitor_data.png
       :width: 75%
 
-#. Take a few minutes to review the items on the report, including:  
-days until certificate expiration, latency, global response time breakdown, and 
-response time by region (source).
 #. Click the "TLS Report" link and review the TLS detailed report.  
 Press the X to close the report and return to the synthetic monitor statistics.
 
    .. image:: _static/tls_report-link.png
       :width: 75%
-
+  
+  
    .. image:: _static/tls-report.png
       :width: 75%
 
