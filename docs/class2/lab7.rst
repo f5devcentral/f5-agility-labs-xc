@@ -5,11 +5,11 @@ F5® Distributed API Discovery & Protection provides key security functionality 
 deliver and secure APIs. This lab's tasks will walk through the configuration steps and note additional
 configurations available.
 
-  **API Discovery**: Provided via machine-based learning processes, enables visualiation of the API Framework,
+* **API Discovery**: Provided via machine-based learning processes, enables visualiation of the API Framework,
   assesses use of end-points, discovers new end-points based on flows, identifies use of sensative information,   
   and enables swagger file export.
 
-  **API Protection**: Encompasses a set of defintions and controls to protect and secure the functions, use and 
+* **API Protection**: Encompasses a set of defintions and controls to protect and secure the functions, use and 
   endpoints of the delivered API's framework. 
 
 Task 1: Swagger File Import & Version Control
@@ -39,7 +39,7 @@ version control features.
 |                                                                                              |
 |    the **Metadata** section.                                                                 |
 |                                                                                              |
-| 5. For the next step, use the following link, |file01| API-File-Link to download the         |
+| 5. For the next step, use the following link, 'app-api-file-v1'_. to download the              |
 |                                                                                              |
 |    JSON/OpenAPI spec file **app-api-v1.json** to your local desktop or workspace.            |
 |                                                                                              |
@@ -72,7 +72,7 @@ version control features.
 +----------------------------------------------------------------------------------------------+
 | 9. The **Edit Swagger File** window will be shown.                                           |
 |                                                                                              |
-| 10. For the next step, use the following link, |file02| to download the                      |
+| 10. For the next step, use the following link, 'app-api-file-v2'_. to download the           |
 |                                                                                              |
 |     JSON/OpenAPI spec file **app-api-v2.json** to your local desktop or workspace.           |
 |                                                                                              |
@@ -365,8 +365,8 @@ previously built Load Balancer object delivering the targeted application/API.
 | |labend|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
-.. |file01| image:: _static/app-api-v1.json
-.. |file02| image:: _static/app-api-v2.json
+.. _app-api-file-v1: _static/app-api-v1.json
+.. _app-api-file-v2: _static/app-api-v2.json
 
 .. |lab001| image:: _static/lab7-001.png
    :width: 800px
