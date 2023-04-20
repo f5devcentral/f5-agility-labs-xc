@@ -71,7 +71,8 @@ Press the X to close the report and return to the synthetic monitor statistics.
    .. image:: _static/tls_report-link.png
       :width: 75%
   
-  
+<br>
+
    .. image:: _static/tls-report.png
       :width: 75%
 
