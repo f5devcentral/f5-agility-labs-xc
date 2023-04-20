@@ -62,7 +62,7 @@ Exercise 1: Introduction to F5 Distributed Cloud AWS VPC Site
    .. image:: _static/student-awsnet-link.png
       :width: 75% 
 
-<br>
+     
 
    .. image:: _static/student-awsnet-site-metrics.png
       :width: 75% 
