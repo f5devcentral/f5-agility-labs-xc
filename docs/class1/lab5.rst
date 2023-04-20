@@ -6,7 +6,7 @@ boss did?  Application performance issues or outages usually provide clues befor
 manifest into larger problems.  Synthetic monitors provides you the opportunity to often fix 
 them before they become large-scale issues.
 
-Task 1:  Configure a synthetic monitor  
+Task 1:  Create a synthetic monitor  
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 #. Click the "Select Service" drop down menu on the sidebar and select "Observability".  
@@ -58,7 +58,7 @@ Task 1:  Review the synthetic monitor data
    .. image:: _static/click-example-com.png
       :width: 75%
 
-   .. image:: _static/monitor-data.png
+   .. image:: _static/monitor_data.png
       :width: 75%
 
 #. Take a few minutes to review the items on the report, including:  
@@ -67,7 +67,7 @@ response time by region (source).
 #. Click the "TLS Report" link and review the TLS detailed report.  
 Press the X to close the report and return to the synthetic monitor statistics.
 
-   .. image:: _static/tls-report-link.png
+   .. image:: _static/tls_report-link.png
       :width: 75%
 
    .. image:: _static/tls-report.png
