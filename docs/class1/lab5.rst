@@ -13,9 +13,8 @@ Task 1:  Configure a synthetic monitor
 
    .. image:: _static/menu_observability.png
       :width: 75%
-  
-<br><br>
-#. Click the "Add HTTP Monitor" button.  
+     
+#. Click the "Add HTTP Monitor" button.
 
    .. image:: _static/add_http_monitor.png
       :width: 75%
