@@ -47,12 +47,12 @@ Exercise 1: Introduction to F5 Distributed Cloud AWS VPC Site
    From the top left "Select service" and look under "All Services"->"Multi-Cloud Network Connect"
 
    .. image:: _static/menu_multi_cloud_network_connect.png
-      :width: 75% 
+      :width: 50% 
       
 #. Go to Manage > Site Management > AWS VPC Sites
 
    .. image:: _static/menu_aws_vpcsites.png
-      :width: 75% 
+      :width: 50% 
 
 #. Find the "student-awsnet" site
 
