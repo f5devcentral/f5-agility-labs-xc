@@ -1,4 +1,4 @@
-Lab 7: API Disocvery & Protection 
+Lab 7: API Discovery & Protection 
 =================================
 
 F5® Distributed API Discovery & Protection provides key security functionality to visualize, understand, 
@@ -365,77 +365,77 @@ previsouly built Load Balancer object delivering the targeted application/API.
 | |labend|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
-.. |lab001| image:: _static/lab7-001.PNG
+.. |lab001| image:: _static/lab7-001.png
    :width: 800px
-.. |lab002| image:: _static/lab7-002.PNG
+.. |lab002| image:: _static/lab7-002.png
    :width: 800px
-.. |lab003| image:: _static/lab7-003.PNG
+.. |lab003| image:: _static/lab7-003.png
    :width: 800px
-.. |lab004| image:: _static/lab7-004.PNG
+.. |lab004| image:: _static/lab7-004.png
    :width: 800px
-.. |lab005| image:: _static/lab7-005.PNG
+.. |lab005| image:: _static/lab7-005.png
    :width: 800px
-.. |lab006| image:: _static/lab7-006.PNG
+.. |lab006| image:: _static/lab7-006.png
    :width: 800px
-.. |lab007| image:: _static/lab7-007.PNG
+.. |lab007| image:: _static/lab7-007.png
    :width: 800px
-.. |lab008| image:: _static/lab7-008.PNG
+.. |lab008| image:: _static/lab7-008.png
    :width: 800px
-.. |lab009| image:: _static/lab7-009.PNG
+.. |lab009| image:: _static/lab7-009.png
    :width: 800px
-.. |lab010| image:: _static/lab7-001.PNG
+.. |lab010| image:: _static/lab7-001.png
    :width: 800px
-.. |lab011| image:: _static/lab7-002.PNG
+.. |lab011| image:: _static/lab7-002.png
    :width: 800px
-.. |lab012| image:: _static/lab7-003.PNG
+.. |lab012| image:: _static/lab7-003.png
    :width: 800px
-.. |lab013| image:: _static/lab7-004.PNG
+.. |lab013| image:: _static/lab7-004.png
    :width: 800px
-.. |lab014| image:: _static/lab7-005.PNG
+.. |lab014| image:: _static/lab7-005.png
    :width: 800px
-.. |lab015| image:: _static/lab7-006.PNG
+.. |lab015| image:: _static/lab7-006.png
    :width: 800px
-.. |lab016| image:: _static/lab7-007.PNG
+.. |lab016| image:: _static/lab7-007.png
    :width: 800px
-.. |lab017| image:: _static/lab7-008.PNG
+.. |lab017| image:: _static/lab7-008.png
    :width: 800px
-.. |lab018| image:: _static/lab7-009.PNG
+.. |lab018| image:: _static/lab7-009.png
    :width: 800px
-.. |lab019| image:: _static/lab7-001.PNG
+.. |lab019| image:: _static/lab7-001.png
    :width: 800px
-.. |lab020| image:: _static/lab7-002.PNG
+.. |lab020| image:: _static/lab7-002.png
    :width: 800px
-.. |lab021| image:: _static/lab7-003.PNG
+.. |lab021| image:: _static/lab7-003.png
    :width: 800px
-.. |lab022| image:: _static/lab7-004.PNG
+.. |lab022| image:: _static/lab7-004.png
    :width: 800px
-.. |lab023| image:: _static/lab7-005.PNG
+.. |lab023| image:: _static/lab7-005.png
    :width: 800px
-.. |lab024| image:: _static/lab7-006.PNG
+.. |lab024| image:: _static/lab7-006.png
    :width: 800px
-.. |lab025| image:: _static/lab7-007.PNG
+.. |lab025| image:: _static/lab7-007.png
    :width: 800px
-.. |lab026| image:: _static/lab7-008.PNG
+.. |lab026| image:: _static/lab7-008.png
    :width: 800px
-.. |lab027| image:: _static/lab7-009.PNG
+.. |lab027| image:: _static/lab7-009.png
    :width: 800px
-.. |lab028| image:: _static/lab7-001.PNG
+.. |lab028| image:: _static/lab7-001.png
    :width: 800px
-.. |lab029| image:: _static/lab7-002.PNG
+.. |lab029| image:: _static/lab7-002.png
    :width: 800px
-.. |lab030| image:: _static/lab7-003.PNG
+.. |lab030| image:: _static/lab7-003.png
    :width: 800px
-.. |lab031| image:: _static/lab7-004.PNG
+.. |lab031| image:: _static/lab7-004.png
    :width: 800px
-.. |lab032| image:: _static/lab7-005.PNG
+.. |lab032| image:: _static/lab7-005.png
    :width: 800px
-.. |lab033| image:: _static/lab7-006.PNG
+.. |lab033| image:: _static/lab7-006.png
    :width: 800px
-.. |lab034| image:: _static/lab7-007.PNG
+.. |lab034| image:: _static/lab7-007.png
    :width: 800px
-.. |lab035| image:: _static/lab7-008.PNG
+.. |lab035| image:: _static/lab7-008.png
    :width: 800px
-.. |lab036| image:: _static/lab7-009.PNG
+.. |lab036| image:: _static/lab7-009.png
    :width: 800px
 .. |labend| image:: _static/labend.png
    :width: 800px
