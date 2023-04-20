@@ -62,14 +62,12 @@ Exercise 1: Introduction to F5 Distributed Cloud AWS VPC Site
    .. image:: _static/student-awsnet-link.png
       :width: 75% 
 
-     
+   You will be able to observe several metrics about the health of the site.  
+   Spend a few minutes navigating the tabs at the top of the screen, to the right of the "Dashboard" tab.     
 
    .. image:: _static/student-awsnet-site-metrics.png
       :width: 75% 
 
-   You will be able to observe several metrics about the health of the site.  
-   Spend a few minutes navigating the tabs at the top of the screen, 
-   to the right of the "Dashboard" tab.
 
    NOTE:  The health shown is specific to the CE site and the performance data shown 
    is an aggregate of all applications whose data is passing through this CE.
