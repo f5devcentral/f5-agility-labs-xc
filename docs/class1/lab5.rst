@@ -57,7 +57,7 @@ Task 1:  Review the synthetic monitor data
 
    .. image:: _static/click-example-com.png
       :width: 75%
-  
+
 #. Please take a few minutes to review the information in the report, including:  
 days until certificate expiration, latency, global response time breakdown, and 
 response time by region (source).  
