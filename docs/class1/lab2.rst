@@ -62,6 +62,8 @@ Exercise 1: Introduction to F5 Distributed Cloud AWS VPC Site
    .. image:: _static/student-awsnet-link.png
       :width: 75% 
 
+<br>
+
    .. image:: _static/student-awsnet-site-metrics.png
       :width: 75% 
 
@@ -84,8 +86,8 @@ Clicking on the "Next" button in the top right will allow you to see similar ste
 .. image:: _static/f5xc-simulator-vpc-site.png
    :width: 75%
 
+Exercise 3 (Optional): Video walkthrough
 ^^^^^^^^^^^^^^^^^
-Optional Video you can watch if you get stuck
 
 NOTE:  The terms Distributed Cloud and AppMesh reflect the updated branding launched in 2022.  
 Prior to that, the term Volterra was used for the platform and the term VoltMesh was used for the node.
