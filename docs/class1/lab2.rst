@@ -19,11 +19,13 @@ We have also already created a shared F5 Distributed Cloud AWS VPC Site within t
 
 Once an AppMesh node has been deployed as a Customer Edge (CE), it unlocks two additional topologies.
 
-#. Client -> RE -> CE -> Protected resource
+#. Client -> RE -> CE -> Protected resource  
+
 Leveraging F5 Distributed Cloud REs to provide WAF and other services upstream, 
 then proxying the clean traffic to the protected resource via the CE.
 
-#. Client -> CE -> Protected resource
+#. Client -> CE -> Protected resource  
+
 In this scenario, the CE advertises the services directly.  While this topology sacrificies some functionality such as 
 volumetric DDoS protection and anycast availability from the Distributed Cloud global network, there are some use cases where it can be beneficial.  
 One such example is when clients and protected resources are both local to each other without having to traverse the Internet.
@@ -45,34 +47,30 @@ Exercise 1: Introduction to F5 Distributed Cloud AWS VPC Site
    From the top left "Select service" and look under "All Services"->"Multi-Cloud Network Connect"
 
    .. image:: _static/menu_multi_cloud_network_connect.png
-      :width: 75% 
+      :width: 50% 
       
 #. Go to Manage > Site Management > AWS VPC Sites
 
    .. image:: _static/menu_aws_vpcsites.png
-      :width: 75% 
+      :width: 50% 
 
 #. Find the "student-awsnet" site
 
    In this lab environment we have already deployed a shared AWS VPC Site that we will 
+   use in this lab.  Click on "student-awsnet".
 
-   use in this lab.  Click on the "student-awsnet"
+   .. image:: _static/student-awsnet-link.png
+      :width: 75% 
 
    You will be able to observe several metrics about the health of the site.  
-   Spend a few minutes navigating the tabs at the top of the screen, to the right of the "Dashboard" tab.
-
-   NOTE:  The health and performance 
+   Spend a few minutes navigating the tabs at the top of the screen, to the right of the "Dashboard" tab.     
 
    .. image:: _static/student-awsnet-site-metrics.png
       :width: 75% 
 
-   You will be able to observe several metrics about the health of the site.  
-   Spend a few minutes navigating the tabs at the top of the screen, 
-   to the right of the "Dashboard" tab.
 
    NOTE:  The health shown is specific to the CE site and the performance data shown 
    is an aggregate of all applications whose data is passing through this CE.
-   AppMesh nodes can also be deployed into Azure, GCP, VMware and KVM.
 
 Exercise 2 (Optional): F5 F5 Distributed Cloud Simulator
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -86,8 +84,8 @@ Clicking on the "Next" button in the top right will allow you to see similar ste
 .. image:: _static/f5xc-simulator-vpc-site.png
    :width: 75%
 
+Exercise 3 (Optional): Video walkthrough
 ^^^^^^^^^^^^^^^^^
-Optional Video you can watch if you get stuck
 
 NOTE:  The terms Distributed Cloud and AppMesh reflect the updated branding launched in 2022.  
 Prior to that, the term Volterra was used for the platform and the term VoltMesh was used for the node.
