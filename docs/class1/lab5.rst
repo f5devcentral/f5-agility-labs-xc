@@ -6,20 +6,20 @@ boss did?  Application performance issues or outages usually provide clues befor
 manifest into larger problems.  Synthetic monitors provides you the opportunity to often fix 
 them before they become large-scale issues.
 
-Task 1: 
+Task 1:  Configure a synthetic monitor  
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-Configure a synthetic monitor  
-
-#. Click the "Select Service" drop down menu on the sidebar and select "Observability".
+#. Click the "Select Service" drop down menu on the sidebar and select "Observability".  
 
    .. image:: _static/menu_observability.png
       :width: 75%
-
-#. Click the "Add HTTP Monitor" button.
+  
+<br><br>
+#. Click the "Add HTTP Monitor" button.  
 
    .. image:: _static/add_http_monitor.png
       :width: 75%
+  
 
 #. In the name field, type "example-com".
 #. In the URL field, type "https://example.com".
@@ -45,7 +45,8 @@ Configure a synthetic monitor
 
 #. Wait 30-60 seconds for the monitors to update.
 
-Review the statistics gathered by the synthetic monitor
+Task 1:  Review the synthetic monitor data
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 #. Click on HTTP Monitors in the sidebar.
 #. Click the All Monitors tab near the top of the screen.
