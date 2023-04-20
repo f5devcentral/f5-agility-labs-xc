@@ -59,6 +59,9 @@ Exercise 1: Introduction to F5 Distributed Cloud AWS VPC Site
    In this lab environment we have already deployed a shared AWS VPC Site that we will 
    use in this lab.  Click on "student-awsnet".
 
+   .. image:: _static/student-awsnet-link.png
+      :width: 75% 
+
    .. image:: _static/student-awsnet-site-metrics.png
       :width: 75% 
 
