@@ -3,13 +3,13 @@ Lab 4: App Connect - Solving IP Overlap
 
 **Objective:**
 
-*Implement App Connect to overcome IP Address overlap in AWS/Azure.  
+* Implement App Connect to overcome IP Address overlap in AWS/Azure.  
 
-*Provide private and secure connectivity between all sites. 
+* Provide private and secure connectivity between all sites. 
 
-*Configure policy to only permit port 80 between these sites. 
+* Configure policy to only permit port 80 between these sites. 
 
-*Review network security events in the XC console.
+* Review network security events in the XC console.
 
 |
 

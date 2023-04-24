@@ -3,11 +3,11 @@ Lab 2: Configuring Network Connect (L3/L4 Routing Firewall )
 
 **Objective:**
 
-*Verify the XC Node's health. 
+* Verify the XC Node's health. 
 
-*Configure Network Connect to connect the Data Center network to the AWS Network.
+* Configure Network Connect to connect the Data Center network to the AWS Network.
 
-*Test connectivity and configure Enhanced Firewall for network security
+* Test connectivity and configure Enhanced Firewall for network security
 
 **Narrative:** 
 Now that your XC Node is provisioned, it's time to verify, explore the XC Console and set up Network Connect to establish secure connectivity between the Data Center and AWS networks. 
@@ -175,15 +175,15 @@ A Fleet is used to configure infrastructure components (like nodes) in one or mo
 
 Fleet configuration includes the following information
 
-*Software image release to be deployed on the Fleet
+* Software image release to be deployed on the Fleet
 
-*Virtual networks
+* Virtual networks
 
-*List of interface and devices to be configured on every node
+* List of interface and devices to be configured on every node
 
-*Connections between the virtual networks
+* Connections between the virtual networks
 
-*Security policies applied in the Site
+* Security policies applied in the Site
 
 
 .. Note:: In this lab we have already created a fleet called "student-fleet" for you due to permission restrictions.  
@@ -208,9 +208,9 @@ The **Network Connectors** are configured as:
 
 **student-global-connector**
 
-*Network Connector Type: Direct, Site Local Inside to a Global Network
+* Network Connector Type: Direct, Site Local Inside to a Global Network
 
-*Global Virtual Network: system/student-global 
+* Global Virtual Network: system/student-global 
 
 |
 
@@ -218,17 +218,17 @@ The **Network Connectors** are configured as:
 
 *Network Connector Type: SNAT, Site Local Inside to Site Local Outside
 
-*Routing Mode: Default Gateway
+* Routing Mode: Default Gateway
 
-*SNAT Source IP Selection: Interface IP
+* SNAT Source IP Selection: Interface IP
 
 |
 
 **student-ce-global-connector**
 
-*Network Connector Type: Direct, Site Local Outside to a Global Network
+* Network Connector Type: Direct, Site Local Outside to a Global Network
 
-*Global Virtual Network: system/student-global 
+* Global Virtual Network: system/student-global 
 
 |
 

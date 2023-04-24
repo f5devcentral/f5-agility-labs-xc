@@ -3,11 +3,11 @@ Lab 1: Building an XC Node (CE)
 
 **Objective:**
 
-*Get familiar with the UDF Lab Environment. 
+* Get familiar with the UDF Lab Environment. 
 
-*Deploy an XC Node to define the Customer Edge at the UDF Data Center.
+* Deploy an XC Node to define the Customer Edge at the UDF Data Center.
 
-*Explore and become familiar with the Distributed Cloud Console.
+* Explore and become familiar with the Distributed Cloud Console.
 
 **Narrative:** 
 
@@ -26,7 +26,7 @@ Now, Lab 1 starts right after you have loaded the downloadable XC Node OVA on to
 |
 
 **Prerequisite**
---------------
+------------------
 
 .. NOTE:: You should have received an email from F5 Distributed Cloud User Management <no-reply@volterratmails.io> with the content as follows:
 
@@ -67,6 +67,7 @@ Click on **"Account Settings"** by expanding the **"Account"** icon in the top r
 In the resulting window you can observe the **Work domains and skill level** section and other administrative functions.
    
 .. note:: **For the purposes of this lab, permissions have been restricted to lab operations.  As some menus will be locked and not visible.**
+
 |
 
 .. image:: ../images/intro1.png 

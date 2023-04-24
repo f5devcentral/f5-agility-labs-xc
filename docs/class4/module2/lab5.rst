@@ -3,11 +3,11 @@ Lab 5: Bonus Lab - L7 App Routing & Security
 
 **Objective:**
 
-*Configure the Global Frontend to perform Layer 7 routing.
+* Configure the Global Frontend to perform Layer 7 routing.
 
-*Configure security policy to protect the frontends from OWASP Top 10 web attacks.  
+* Configure security policy to protect the frontends from OWASP Top 10 web attacks.  
 
-*Test connectivity and review application security events in the XC console.
+* Test connectivity and review application security events in the XC console.
 
 .. image:: ../images/lab5bizreq.png
 

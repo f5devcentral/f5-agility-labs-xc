@@ -1,14 +1,15 @@
 Lab 3: Globally Available Front End 
-================================================
+=======================================
+
 **Objective:**
 
-*Use XC Regional Edges to provide future-proof, globally available frontend.
+* Use XC Regional Edges to provide future-proof, globally available frontend.
 
-*XC frontend (RE) must be able to load balance the 2 cloud frontends. 
+* XC frontend (RE) must be able to load balance the 2 cloud frontends. 
 
-*Expose Azure private frontend without adding a public IP for the workload. 
+* Expose Azure private frontend without adding a public IP for the workload. 
 
-*Always prefer the AWS frontend for ingress traffic. 
+* Always prefer the AWS frontend for ingress traffic. 
 
 **What they want:**
 
