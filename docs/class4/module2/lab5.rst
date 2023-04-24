@@ -136,7 +136,7 @@ Click **Apply**, **Apply**, **Save and Exit**.
 Testing L7 Routing
 --------------------
 
-In your browser open a new tab to: **http://[animal-name]-frontend.lab-mcn.f5demos.com**
+In your browser open a new tab to: **http://[animal-name]-acme-frontend.lab-mcn.f5demos.com**
 
 Once you have loaded the site sucessfully, try adding the URI **/aws** and reload the page. 
 
@@ -203,7 +203,7 @@ For a SQL Injection (SQLi) attack, run the following command from your "Online D
 
 SQLi::
 
-    curl -A "Mozilla/5.0', (select*from(select(sleep(20)))a)) #" http://[animal-name]-frontend.lab-mcn.f5demos.com/ --resolve [animal-name]-frontend.lab-mcn.f5demos.com:80:159.60.128.61
+    curl -A "Mozilla/5.0', (select*from(select(sleep(20)))a)) #" http://[animal-name]-acme-frontend.lab-mcn.f5demos.com/ --resolve [animal-name]-acme-frontend.lab-mcn.f5demos.com:80:159.60.128.61
 
 
 |
@@ -217,15 +217,15 @@ For some various other attacks you can modify the command and URI as shown below
 
 Other Attack Samples::
 
-    curl -X GET "http://[animal-name]-frontend.lab-mcn.f5demos.com/?cmd=cat%20/etc/passwd" --resolve [animal-name]-frontend.lab-mcn.f5demos.com:80:159.60.128.61
+    curl -X GET "http://[animal-name]-acme-frontend.lab-mcn.f5demos.com/?cmd=cat%20/etc/passwd" --resolve [animal-name]-acme-frontend.lab-mcn.f5demos.com:80:159.60.128.61
 
 Or::
     
-    curl -X GET "http://[animal-name]-frontend.lab-mcn.f5demos.com/product?id=4%20OR%201=1" --resolve [animal-name]-frontend.lab-mcn.f5demos.com:80:159.60.128.61
+    curl -X GET "http://[animal-name]-acme-frontend.lab-mcn.f5demos.com/product?id=4%20OR%201=1" --resolve [animal-name]-acme-frontend.lab-mcn.f5demos.com:80:159.60.128.61
 
 Or::
 
-    curl -X GET "http://[animal-name]-frontend.lab-mcn.f5demos.com/../../../../etc/shadow" --resolve [animal-name]-frontend.lab-mcn.f5demos.com:80:159.60.128.61
+    curl -X GET "http://[animal-name]-acme-frontend.lab-mcn.f5demos.com/../../../../etc/shadow" --resolve [animal-name]-acme-frontend.lab-mcn.f5demos.com:80:159.60.128.61
 
 
 Here are the URI paths from above for easy reference: 
@@ -278,7 +278,7 @@ For the SQL Injection (SQLi) attack, run the following command from your "Online
 
 SQLi::
 
-    curl -A "Mozilla/5.0', (select*from(select(sleep(20)))a)) #" http://[animal-name]-frontend.lab-mcn.f5demos.com/ --resolve [animal-name]-frontend.lab-mcn.f5demos.com:80:159.60.128.61
+    curl -A "Mozilla/5.0', (select*from(select(sleep(20)))a)) #" http://[animal-name]-acme-frontend.lab-mcn.f5demos.com/ --resolve [animal-name]-acme-frontend.lab-mcn.f5demos.com:80:159.60.128.61
 
 
 |
@@ -291,15 +291,15 @@ For some various other attacks you can modify the command and URI as shown below
 
 Other Attack Samples::
 
-    curl -X GET "http://[animal-name]-frontend.lab-mcn.f5demos.com/?cmd=cat%20/etc/passwd" --resolve [animal-name]-frontend.lab-mcn.f5demos.com:80:159.60.128.61
+    curl -X GET "http://[animal-name]-acme-frontend.lab-mcn.f5demos.com/?cmd=cat%20/etc/passwd" --resolve [animal-name]-acme-frontend.lab-mcn.f5demos.com:80:159.60.128.61
 
 Or::
     
-    curl -X GET "http://[animal-name]-frontend.lab-mcn.f5demos.com/product?id=4%20OR%201=1" --resolve [animal-name]-frontend.lab-mcn.f5demos.com:80:159.60.128.61
+    curl -X GET "http://[animal-name]-acme-frontend.lab-mcn.f5demos.com/product?id=4%20OR%201=1" --resolve [animal-name]-acme-frontend.lab-mcn.f5demos.com:80:159.60.128.61
 
 Or::
 
-    curl -X GET "http://[animal-name]-frontend.lab-mcn.f5demos.com/../../../../etc/shadow" --resolve [animal-name]-frontend.lab-mcn.f5demos.com:80:159.60.128.61
+    curl -X GET "http://[animal-name]-acme-frontend.lab-mcn.f5demos.com/../../../../etc/shadow" --resolve [animal-name]-acme-frontend.lab-mcn.f5demos.com:80:159.60.128.61
 
 |
 
