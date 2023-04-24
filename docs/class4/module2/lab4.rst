@@ -156,7 +156,7 @@ In my example, my animal-name was **wanted-swan**. If you want to see the full H
 
 Success! Your stomach growls and it's time for lunch! You have now met every requirement thrown at you thus far with F5 Distrib.... **Ring Ring** 
 
-.. Important:: Your phone rings! Just as you were finishing up your testing and about to head to lunch, the CIO calls your desk directly with an urgent request and it sounds like that new Pho restaurant is going to have to wait. There is an immediate requirement for the frontend in AWS to connect to and API on the frontend in Azure privately over port 80. Additionally, this API should be "Read Only" for any API clients originating in the Data Center. This traffic CAN NOT be sent unencrypted over the Internet. Can we use F5 Distributed Cloud? 
+.. Important:: Your phone rings! Just as you were finishing up your testing and about to head to lunch, the CIO calls your desk directly with an urgent request and it sounds like that new Pho restaurant is going to have to wait. There is an immediate requirement for the frontend in AWS to connect to an API on the frontend in Azure, privately over port 80. Additionally, this API should be "Read Only" for any API clients originating in AWS. This traffic CAN NOT be sent unencrypted over the Internet. Can we use F5 Distributed Cloud to quickly bridge these CSP's? 
 
 Narrative Update
 ----------------------
