@@ -1,4 +1,4 @@
-F5 Distributed Cloud - Advanced BoT Security
+F5 Distributed Cloud - Advanced Bot Security
 ============================================
 
 Welcome

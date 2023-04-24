@@ -1,5 +1,5 @@
-F5 Distributed Cloud 301 - Introduction to Managed Kubernetes
-=============================================================
+F5 Distributed Cloud - AppStack CaaS & K8s Delivery Options
+===========================================================
 
 This Lab environment highlights some of the basic concepts of F5 Distributed Cloud (XC) AppStack.
 
