@@ -1,7 +1,7 @@
 TO BE DONE
 ===========
 
-NEW Blueprint: Agility 2023 - F5 XC - Intro to MCN https://udf.f5.com/b/e7b1b7be-fc0e-467d-a598-d3fa4567ba84#documentation
+NEW Blueprint as of 4/24/23 4PM EST. https://udf.f5.com/b/b792f881-0806-486e-8350-14b7aa65fa0b#documentation
 
 NOTE - Lab 1-4 are complete and ready to test. 
 
