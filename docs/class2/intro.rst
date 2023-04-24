@@ -145,13 +145,13 @@ step below to access the F5 Distributed Cloud Lab Tenant.
    :width: 800px
 .. |intro005| image:: _static/intro-005.png
    :width: 800px
-.. |intro006| image:: _static/intro-006-updated.png
+.. |intro006| image:: _static/intro-006.png
    :width: 800px
 .. |intro007| image:: _static/intro-007.png
    :width: 800px
-.. |intro008| image:: _static/intro-008-updated.png
+.. |intro008| image:: _static/intro-008.png
    :width: 800px
-.. |intro009| image:: _static/intro-009-updated.png
+.. |intro009| image:: _static/intro-009.png
    :width: 800px
 .. |labbgn| image:: _static/labbgn.png
    :width: 800px
