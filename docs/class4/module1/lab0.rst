@@ -5,13 +5,17 @@ NEW Blueprint: Agility 2023 - F5 XC - Intro to MCN https://udf.f5.com/b/e7b1b7be
 
 NOTE - Lab 1-4 are complete and ready to test. 
 
-**The following items need to be addressed as of 04/22/22 10PM**
+**The following items need to be addressed as of 04/24/23 3PM**
 
-1. CE registration permission issues continue to plague testers. (manual process until script kicks in monday)
+1. CE registration permission issues. (manual process until script kicks in monday)
+
+4/24 3PM Update - Permissions changes should have taken effect. Nilesh to test as "student account". 
 
 2. Weirdness at end of Lab 3 load balancing - see screenshot in lab. mixed graphics from both sites when [Shift + refresh] 
 
-4/22- 3PM - Chas suggested using persistence. this does NOT fix the issue. tried several persistence types...provided feedback. 
+4/22- 3PM - Chas and I reveiwed. persistent settings have no effect on the issue. 
+
+4/24 3PM Update - Per Update call, Chas still looking into this issue. 
 
 
 
@@ -37,7 +41,6 @@ Determine best section to fill out with exploritory work. analytics, dashboard e
 2. Very end of Lab 4 needs an adjustement to the service policy steps and add where to review deny logs
 
 4/22 - Will be complete by 11:59PM on 4/22 - Done
-
 
 4. Lab 5 - Add resource to AWS workload (image, page whatever) for /aws. Add resource to Azure workoad for /azure (Chas)
 

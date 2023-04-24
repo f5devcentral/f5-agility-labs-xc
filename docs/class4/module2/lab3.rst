@@ -19,13 +19,13 @@ Lab 3: Globally Available Front End
 Unfortunately, after doing your due diligence, you find that the Azure VNET overlaps with the AWS subnets. To make matters worse, 
 the Azure server is not associated with any public IP and there is a security directive in place to not have any workload servers in Azure associated with a public IP without a security device. 
 
-Lately the site has been getting pounded with traffic and frontend security has become a hot topic at ACME. 
+Lately, the site has been getting pounded with attack traffic and frontend security has become a hot topic at ACME. 
 You think to yourself, this is going to be tricky, and reach out to your trusted F5 Solutions Engineer to see how this will work with Distributed Cloud. 
 
 Your F5 Solutions Engineer explains that IP overlap between sites is a common problem and one that can be easily solved with Distributed Cloud App Connect. 
-App Connect alleviates this problem by leveraging the XC Nodes as Software-Defined roxies rather than Software-Defined Routers as they were configured with Network Connect.
+App Connect alleviates this problem by leveraging the XC Nodes as Software-Defined roxies rather than Software-Defined Routers as they were configured with Network Connect. Additionally App Connect enforces a default deny architecture, where only the port and domain name defined on the load balancer will accept traffic. 
 
-Also, you are informed that by using F5 Distributed Cloud Regional Edges for the frontend workloads, you will be able to have full proxy visibility and analytics for the client traffic so the Security team will be pleased. 
+Also, you are informed that by using F5 Distributed Cloud Regional Edges for the frontend workloads, you will be able to have full proxy security, visibility and analytics for the client traffic so the Security team will be pleased. 
 
 After reviewing the architecture with you, your Solutions Engineer advises you to break up these requirements in to 2 specific deliverables. 
 

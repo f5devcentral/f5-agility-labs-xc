@@ -156,7 +156,7 @@ In my example, my animal-name was **wanted-swan**. If you want to see the full H
 
 Success! Your stomach growls and it's time for lunch! You have now met every requirement thrown at you thus far with F5 Distrib.... **Ring Ring** 
 
-.. Important:: Your phone rings! Just as you were finishing up your testing and about to head to lunch, the CIO calls your desk directly with an urgent request and it sounds like that new Pho restaurant is going to have to wait. There is an immediate requirement for the frontend in AWS to connect to the frontend in Azure privately over port 80. This traffic CAN NOT be sent unencrypted over the Internet. Can we use F5 Distributed Cloud? 
+.. Important:: Your phone rings! Just as you were finishing up your testing and about to head to lunch, the CIO calls your desk directly with an urgent request and it sounds like that new Pho restaurant is going to have to wait. There is an immediate requirement for the frontend in AWS to connect to and API on the frontend in Azure privately over port 80. Additionally, this API should be "Read Only" for any API clients originating in the Data Center. This traffic CAN NOT be sent unencrypted over the Internet. Can we use F5 Distributed Cloud? 
 
 Narrative Update
 ----------------------
@@ -172,8 +172,6 @@ They said you could use it if you need to test connectivity from the AWS fronten
 .. image:: ../images/cioreq.png
 
 |
-
-.. .. Warning:: The following steps will ask you to create a host file entry on your personal machine. If you are not comfortable with this or do not have the permissions you can just read through the rest of this lab for reference. 
 
 Expose AWS Diag Tool
 ----------------------
@@ -332,7 +330,20 @@ Let's try that command again but with the shorthand version by using **\-\-head*
 
 |
 
-Head is one of many HTTP methods. Some other common ones are GET and POST. What if we we didn't want to allow **Head** or only allow certain HTTP methods between these two workloads? 
+Adding Security
+------------------------
+
+You just configured an App Connect Proxy listening on port 80 of the Inside interface of the AWS XC Node. Since the App Connect Proxy is **default-deny** and only accepts traffic on the configured load balancer port with the appropriate Layer 7 Domain information, we can rest assured that no other ports will be permitted. 
+
+The second request to ensure that the **pretend API running on port 80 in Azure is Read Only or R/O**, can easily be solved with a Service Policy. For ease of demonstration we will make use of two HTTP methods and **pretend that HEAD is R/W** and of course **GET is natively R/O.**
+
+Head is one of many HTTP methods used to interact with API's amongst other things. Some other common ones are GET, POST and PUT. 
+
+Technically speaking, The HEAD method is identical to GET except that the server MUST NOT return a message-body in the response. 
+
+.. Note:: In our Lab we are just pretending that HEAD is R/W. 
+
+What if we we didn't want to allow **HEAD** or only allow certain HTTP methods between these two workloads? 
 
 In general, for any of our HTTP Load Balancers, what if we wanted to block a geolocation? 
 What if we wanted to allow some IP's and disallow others? How about file type enforcements?
@@ -342,7 +353,7 @@ What if we wanted to allow some IP's and disallow others? How about file type en
 Service Policies
 ------------------
 
-While Service Policies can do many things, we will go through a quick exercise to simply block the HTTP Method of **head** for our AWS to Azure HTTP Load Balancer. This example could easily be expanded upon. 
+While Service Policies can do many things, we will go through a quick exercise to simply block the HTTP Method of **HEAD** for our AWS to Azure HTTP Load Balancer. This example could easily be expanded upon. 
 
 When you create a **Service Policy** it intrinsically contains a **default deny**. Therefore, our Service Policy will actually be a definition of what is allowed. 
 
