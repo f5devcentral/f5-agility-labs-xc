@@ -365,8 +365,8 @@ previously built Load Balancer object delivering the targeted application/API.
 | |labend|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
-.. _app-api-file-v1: _static/app-api-v1.json
-.. _app-api-file-v2: _static/app-api-v2.json
+.. _app-api-file-v1: ./_static/app-api-v1.json
+.. _app-api-file-v2: ./_static/app-api-v2.json
 
 .. |lab001| image:: _static/lab7-001.png
    :width: 800px
