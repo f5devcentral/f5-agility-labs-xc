@@ -29,17 +29,25 @@ Task 1: Configure Load Balancer, Origin Pool, WAF and BotDefense (7 min)
 The following steps will allow you to deploy and advertise a globally available application.  These
 steps will define an application, register its DNS and assign a target as an origin.
 
-1. Following the **Introduction** section  instructions, you should now be in the **Load Balancers** configuration window. If for some reason you are not in the **Load Balancers** window, use the **Select Service** in the left-hand navigation, and click **Load Balancers** as shown in the *Introduction section, Task 2, Step 9*.                |
-2. In the left-hand navigation expand **Manage** and click **Load Balancers > HTTP Load Balancers**
-3. In the resulting screen click the **Add HTTP Load Balancer** in the graphic as shown.
-
-.. note::
-   *You have defaulted to your specific namespace as that is the only namespace to which you*
-   *have administrative access.*                                                             
-
-|lab001|
- 
-|lab002|
++----------------------------------------------------------------------------------------------+
+| 1. Following the **Introduction** section  instructions, you should now be in the **Load**   |
+|    **Balancers** configuration window. If for some reason you are not in the **Load**        |
+|    **Balancers** window, use the **Select Service** in the left-hand navigation, and click   |
+|    **Load Balancers** as shown in the *Introduction section, Task 2, Step 9*.                |
+|                                                                                              |
+| 2. In the left-hand navigation expand **Manage** and click **Load Balancers > HTTP Load**    |
+|    Balancers**                                                                               |
+|                                                                                              |
+| 3. In the resulting screen click the **Add HTTP Load Balancer** in the graphic as shown.     |
+|                                                                                              |
+| .. note::                                                                                    |
+|    *You have defaulted to your specific namespace as that is the only namespace to which you*|
+|    *have administrative access.*                                                             |                                                             
++----------------------------------------------------------------------------------------------+
+| |lab001|                                                                                     |
+|                                                                                              |
+| |lab002|                                                                                     |
++----------------------------------------------------------------------------------------------+
 
 3. Using the left-hand navigation and in the sections as shown, enter the following data. Values where **<namespace>** is required, use the name of your given namespace.
 
