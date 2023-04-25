@@ -386,59 +386,59 @@ previously built Load Balancer object delivering the targeted application/API.
    :width: 800px
 .. |lab009| image:: _static/lab7-009.png
    :width: 800px
-.. |lab010| image:: _static/lab7-001.png
+.. |lab010| image:: _static/lab7-010.png
    :width: 800px
-.. |lab011| image:: _static/lab7-002.png
+.. |lab011| image:: _static/lab7-011.png
    :width: 800px
-.. |lab012| image:: _static/lab7-003.png
+.. |lab012| image:: _static/lab7-012.png
    :width: 800px
-.. |lab013| image:: _static/lab7-004.png
+.. |lab013| image:: _static/lab7-013.png
    :width: 800px
-.. |lab014| image:: _static/lab7-005.png
+.. |lab014| image:: _static/lab7-014.png
    :width: 800px
-.. |lab015| image:: _static/lab7-006.png
+.. |lab015| image:: _static/lab7-015.png
    :width: 800px
-.. |lab016| image:: _static/lab7-007.png
+.. |lab016| image:: _static/lab7-016.png
    :width: 800px
-.. |lab017| image:: _static/lab7-008.png
+.. |lab017| image:: _static/lab7-017.png
    :width: 800px
-.. |lab018| image:: _static/lab7-009.png
+.. |lab018| image:: _static/lab7-018.png
    :width: 800px
-.. |lab019| image:: _static/lab7-001.png
+.. |lab019| image:: _static/lab7-019.png
    :width: 800px
-.. |lab020| image:: _static/lab7-002.png
+.. |lab020| image:: _static/lab7-020.png
    :width: 800px
-.. |lab021| image:: _static/lab7-003.png
+.. |lab021| image:: _static/lab7-021.png
    :width: 800px
-.. |lab022| image:: _static/lab7-004.png
+.. |lab022| image:: _static/lab7-022.png
    :width: 800px
-.. |lab023| image:: _static/lab7-005.png
+.. |lab023| image:: _static/lab7-023.png
    :width: 800px
-.. |lab024| image:: _static/lab7-006.png
+.. |lab024| image:: _static/lab7-024.png
    :width: 800px
-.. |lab025| image:: _static/lab7-007.png
+.. |lab025| image:: _static/lab7-025.png
    :width: 800px
-.. |lab026| image:: _static/lab7-008.png
+.. |lab026| image:: _static/lab7-026.png
    :width: 800px
-.. |lab027| image:: _static/lab7-009.png
+.. |lab027| image:: _static/lab7-027.png
    :width: 800px
-.. |lab028| image:: _static/lab7-001.png
+.. |lab028| image:: _static/lab7-028.png
    :width: 800px
-.. |lab029| image:: _static/lab7-002.png
+.. |lab029| image:: _static/lab7-029.png
    :width: 800px
-.. |lab030| image:: _static/lab7-003.png
+.. |lab030| image:: _static/lab7-030.png
    :width: 800px
-.. |lab031| image:: _static/lab7-004.png
+.. |lab031| image:: _static/lab7-031.png
    :width: 800px
-.. |lab032| image:: _static/lab7-005.png
+.. |lab032| image:: _static/lab7-032.png
    :width: 800px
-.. |lab033| image:: _static/lab7-006.png
+.. |lab033| image:: _static/lab7-033.png
    :width: 800px
-.. |lab034| image:: _static/lab7-007.png
+.. |lab034| image:: _static/lab7-034.png
    :width: 800px
-.. |lab035| image:: _static/lab7-008.png
+.. |lab035| image:: _static/lab7-035.png
    :width: 800px
-.. |lab036| image:: _static/lab7-009.png
+.. |lab036| image:: _static/lab7-036.png
    :width: 800px
 .. |labend| image:: _static/labend.png
    :width: 800px

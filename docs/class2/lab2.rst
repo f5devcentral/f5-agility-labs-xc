@@ -13,11 +13,9 @@ This lab will begin back in the F5 Distributed Cloud Console.
 
 +----------------------------------------------------------------------------------------------+
 | 1. In the left-hand navigation menu, expand the **Security** section and click the **App**   |
-|                                                                                              |
 |    **Firewall** link.                                                                        |
 |                                                                                              |
 | 2. On your App Firewall policy **<namespace>-appfw**, click the three dots in the **Actions**|
-|                                                                                              |
 |    column and then click **Manage Configuration**.                                           |
 |                                                                                              |
 | 3. Click **Edit Configuration** in the top right corner.                                     |
@@ -29,7 +27,6 @@ This lab will begin back in the F5 Distributed Cloud Console.
 
 +----------------------------------------------------------------------------------------------+
 | 4. Using the left-hand navigation, click **Detection Settings** and the in the **Detection** |
-|                                                                                              |
 |    **Settings** section, click the **Signature-Based Bot Protection** dropdown menu.         |
 |                                                                                              |
 | 5. From the **Signature-Based Bot Protection** dropdown menu, select **Custom**.             |
@@ -39,9 +36,7 @@ This lab will begin back in the F5 Distributed Cloud Console.
 
 +----------------------------------------------------------------------------------------------+
 | 6. In the expanded configuration window, observe the three Bot signature categories;         |
-|                                                                                              |
 |    **Malicious, Suspicious,** and **Good**. Also observe the actions **Block, Ignore**, and  |
-|                                                                                              |
 |    **Report** which can be reviewed by selecting one of the dropdowns.                       |
 |                                                                                              |
 | 7. Click **Cancel and Exit** to leave this window.                                           |
@@ -53,7 +48,6 @@ This lab will begin back in the F5 Distributed Cloud Console.
 
 +----------------------------------------------------------------------------------------------+
 | 8. Open a terminal window or DOS prompt on your respective client and issue the following    |
-|                                                                                              |
 |    **curl** command: *curl -v http://<namespace>lab-sec.f5demos.com*.                        |
 |                                                                                              |
 | 9. Observe the **User Agent** and response content.                                          |
@@ -66,7 +60,6 @@ This lab will begin back in the F5 Distributed Cloud Console.
 
 +----------------------------------------------------------------------------------------------+
 | 10. Return to the F5 Distributed Cloud Console, in the left-hand navigation menu, expand the |
-|                                                                                              |
 |     **Virtual Hosts** section and click the **HTTP Load Balancers** link.                    |
 |                                                                                              |
 | 11. On your named Load Balancer, select the **Security Monitoring**, link as shown.          |
@@ -82,9 +75,7 @@ This lab will begin back in the F5 Distributed Cloud Console.
 
 +----------------------------------------------------------------------------------------------+
 | 13. Locate your most recent security event, which should be your curl request. Expand the    |
-|                                                                                              |
 |     security event as you have done in prior exercises to observe the "Suspicious" Bot       |
-|                                                                                              |
 |     reporting. Remember the setting for Suspicious Bot was set to *Report* from Step 5 above.|
 +----------------------------------------------------------------------------------------------+
 | |lab009|                                                                                     |
@@ -98,7 +89,6 @@ implementation.
 
 +----------------------------------------------------------------------------------------------+
 | 1. Open another tab in your browser (Chrome shown), navigate to your application/Load        |
-|                                                                                              |
 |    Balancer configuration: **http://<namespace>.lab-sec.f5demos.com**.                       |
 |                                                                                              |
 | 2. Enable developer tools (Chrome shown (use F12)) and click on the **Network** tab.         |
@@ -117,11 +107,9 @@ implementation.
 
 +----------------------------------------------------------------------------------------------+
 | 5. In the Developer window, find the **POST** to **auth.php**. *You can also use the filter* |
-|                                                                                              |
 |    *to find auth.php*. Select the respective line as shown.                                  |
 |                                                                                              |
 | 6. Select the **Request** tab in the payload window that appears and observe that you only   |
-|                                                                                              |
 |    see limited form POST data (identity, token, & submit).                                   |
 +----------------------------------------------------------------------------------------------+
 | |lab012|                                                                                     |
@@ -131,7 +119,6 @@ implementation.
 
 +----------------------------------------------------------------------------------------------+
 | 7. Return to the Load Balancer in the F5 Distributed Cloud Console, *Manage > Load Balancer* |
-|                                                                                              |
 |    *> HTTP Load Balancers* and use the **Action Dots** and click **Manage Configuration**    |
 |                                                                                              |
 | 8. Click **Edit Configuration** in the top right-hand corner.                                |
@@ -205,7 +192,6 @@ implementation.
 | 20. Repeat Task 2 Steps 1-6.  Note you many need to close your browser and clean cookies     |
 |                                                                                              |
 | 21. Observe now that there is additional telemetry being passed in the POST request.  This   |
-|                                                                                              |
 |     telemetry will be used to determine if the connecting client is an Automated Bot.        |
 +----------------------------------------------------------------------------------------------+
 | |lab027|                                                                                     |
