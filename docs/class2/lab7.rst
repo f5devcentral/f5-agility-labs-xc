@@ -28,7 +28,6 @@ version control features.
 | 2. In the left-hand navigation, click on **Files** under the **Manage** section.             |
 |                                                                                              |
 | 3. Click **Add Swagger File** in the main window area as shown. Alternatively, the link near |
-|                                                                                              |
 |    the top of the window can also be used.                                                   |
 +----------------------------------------------------------------------------------------------+
 | |lab002|                                                                                     |
@@ -36,15 +35,12 @@ version control features.
 
 +----------------------------------------------------------------------------------------------+
 | 4. In the resulting **New Swagger File** window, input **app-api** for the **Name** under    |
-|                                                                                              |
 |    the **Metadata** section.                                                                 |
 |                                                                                              |
 | 5. For the next step, use the following link, 'app-api-file-v1'_. to download the              |
-|                                                                                              |
 |    JSON/OpenAPI spec file **app-api-v1.json** to your local desktop or workspace.            |
 |                                                                                              |
 | 6. In the **Upload Swagger File** section, click the **Upload File** button. Select the file |
-|                                                                                              |
 |    downloaded in Step 5 above and click **Save**.                                            |
 +----------------------------------------------------------------------------------------------+
 | |lab003|                                                                                     |
@@ -58,12 +54,10 @@ version control features.
 
 +----------------------------------------------------------------------------------------------+
 | 8. In the resulting **Swagger Files** window, you will see the upload file with additional   |
-|                                                                                              |
 |    metadata. Click the three dots **...** in the **Action** column.                          |
 |                                                                                              |
 | .. note::                                                                                    |
 |    *You will also see a dialogue box, in the bottom left of your screen indicating the file* |
-|                                                                                              |
 |    *has been successfully added.*                                                            |
 +----------------------------------------------------------------------------------------------+
 | |lab005|                                                                                     |
@@ -73,14 +67,12 @@ version control features.
 | 9. The **Edit Swagger File** window will be shown.                                           |
 |                                                                                              |
 | 10. For the next step, use the following link, 'app-api-file-v2'_. to download the           |
-|                                                                                              |
 |     JSON/OpenAPI spec file **app-api-v2.json** to your local desktop or workspace.           |
 |                                                                                              |
 | .. note::                                                                                    |
 |    *This is a modified version (v2) of the JSON/OpenAPI spec file you previously downloaded* |
 |                                                                                              |
 | 11. In the **Upload Swagger File** section, click the **Upload File** button. Select the file|
-|                                                                                              |
 |     downloaded in Step 10 above and click **Save**.                                          |
 +----------------------------------------------------------------------------------------------+
 | |lab006|                                                                                     |
@@ -88,11 +80,9 @@ version control features.
 
 +----------------------------------------------------------------------------------------------+
 | 12. In the resulting **Swagger Files** window, you will see the upload file with additional  |
-|                                                                                              |
 |     metadata seen previously.                                                                |
 |                                                                                              |
 | 13. Note now that there are **2** versions available of the **app-api** file.  Click the     |
-|                                                                                              |
 |     **2** in the **Versions** column.                                                        |
 +----------------------------------------------------------------------------------------------+
 | |lab007|                                                                                     |
@@ -103,7 +93,6 @@ version control features.
 |                                                                                              |
 | .. note::                                                                                    |
 |    *This is a API File update process can also be peformed through the F5 Distributed Cloud* |
-|                                                                                              |
 |    *API framework.                                                                           |
 |                                                                                              |
 | 15. Click **X** in the top-right corner and proceed to the next task.                        |
@@ -119,7 +108,6 @@ pointer to imported swagger files you just uploaded.
 
 +----------------------------------------------------------------------------------------------+
 | 1. In the left-hand navigation of the **Web App & API Protection** service, click on **API** |
-|                                                                                              |
 |    **Management** under the **Manage** section and then click **API Definition**.            |
 +----------------------------------------------------------------------------------------------+
 | |lab009|                                                                                     |
@@ -127,7 +115,6 @@ pointer to imported swagger files you just uploaded.
 
 +----------------------------------------------------------------------------------------------+
 | 2. In the resulting **API Definition** window, click **Add API Definition** in the main      |
-|                                                                                              |
 |    window area as shown.                                                                     |
 +----------------------------------------------------------------------------------------------+
 | |lab010|                                                                                     |
@@ -135,15 +122,12 @@ pointer to imported swagger files you just uploaded.
 
 +----------------------------------------------------------------------------------------------+
 | 3. In the resulting **New API Definition** window, input **app-api-spec** for the **Name**   |
-|                                                                                              |
 |    under the **Metadata** section.                                                           |
 |                                                                                              |
 | 4. In the **Swagger Specs** section, click the **Arrow** in the **Select Item** box in the   |
-|                                                                                              |
 |    **Swagger Specs** column.                                                                 |
 |                                                                                              |
 | 5. Select the version 2 of the previously uploaded swagger spec file. It will be in the      |
-|                                                                                              |
 |    format **<adjective-animal>/app-api/v2-<current-date>**.                                  |
 |                                                                                              |
 | 6. Once selected, click **Save and Exit** in the bottom-right corner.                        |
@@ -159,7 +143,6 @@ previously built Load Balancer object delivering the targeted application/API.
 
 +----------------------------------------------------------------------------------------------+
 | 1. In the left-hand navigation of the **Web App & API Protection** service, click on **Load**|
-|                                                                                              |
 |    **Balancers** under the **Manage** section.                                               |
 +----------------------------------------------------------------------------------------------+
 | |lab012|                                                                                     |
@@ -167,7 +150,6 @@ previously built Load Balancer object delivering the targeted application/API.
 
 +----------------------------------------------------------------------------------------------+
 | 2. In the resulting **Load Balancers** window, click on the three dots **...** in the        |
-|                                                                                              |
 |    **Action** column, and the select **Manage Configuration**.                               |
 +----------------------------------------------------------------------------------------------+
 | |lab013|                                                                                     |
@@ -183,7 +165,6 @@ previously built Load Balancer object delivering the targeted application/API.
 | 4. Click **API Protection** in the left-hand navigation.                                     |
 |                                                                                              |
 | 5. In the **API Protection** section, click the drop-down arrow next to **API Definition**   |
-|                                                                                              |
 |    and select **Enable**.                                                                    |
 +----------------------------------------------------------------------------------------------+
 | |lab015|                                                                                     |
@@ -191,7 +172,6 @@ previously built Load Balancer object delivering the targeted application/API.
 
 +----------------------------------------------------------------------------------------------+
 | 6. In the updated **Use API Definition** section, click the drop-down arrow and select the   |
-|                                                                                              |
 | 7. previously created API Definition **<adjective-animal>/app-api-spec**.                    |
 +----------------------------------------------------------------------------------------------+
 | |lab016|                                                                                     |
@@ -199,7 +179,6 @@ previously built Load Balancer object delivering the targeted application/API.
 
 +----------------------------------------------------------------------------------------------+
 | 8. In the **API Protection** section, click the drop-down arrow next to **API Discovery**    |
-|                                                                                              |
 |    and select **Enable**.                                                                    |
 +----------------------------------------------------------------------------------------------+
 | |lab017|                                                                                     |
@@ -207,9 +186,7 @@ previously built Load Balancer object delivering the targeted application/API.
 
 +----------------------------------------------------------------------------------------------+
 | 9. In the updated **API Discovery** section, click the drop-down arrow next to **Learn**     |
-|                                                                                              |
 |    **from Traffic with Redirect Response** and then select **Enable Learning from Redirect** |
-|                                                                                              |
 |    *Traffic**.                                                                               |
 +----------------------------------------------------------------------------------------------+
 | |lab018|                                                                                     |
@@ -223,7 +200,6 @@ previously built Load Balancer object delivering the targeted application/API.
 
 +----------------------------------------------------------------------------------------------+
 | 11. In the resulting **API Protection Rules** window, click **Configure** in the **API**     |
-|                                                                                              |
 |     **Endpoints** section.                                                                   |
 +----------------------------------------------------------------------------------------------+
 | |lab020|                                                                                     |
@@ -237,7 +213,6 @@ previously built Load Balancer object delivering the targeted application/API.
 
 +----------------------------------------------------------------------------------------------+
 | 13. In the resulting window, input **block-endpoint** in the **Name** field of the           |
-|                                                                                              |
 |     **Metadata** section.                                                                    |
 |                                                                                              |
 | 14. In the **Action** area, click the drop-down arrow indicated and select **Deny**.         |
@@ -287,7 +262,6 @@ previously built Load Balancer object delivering the targeted application/API.
 
 +----------------------------------------------------------------------------------------------+
 | 22. Note that API Protection Rules are configure for the API Endpoints and click, the        |
-|                                                                                              |
 |     **Apply** button.                                                                        |
 +----------------------------------------------------------------------------------------------+
 | |lab028|                                                                                     |
@@ -307,7 +281,6 @@ previously built Load Balancer object delivering the targeted application/API.
 
 +----------------------------------------------------------------------------------------------+
 | 2. Locate the **Rate Limiting** area of the **Common Security Controls** aand use the        |
-|                                                                                              |
 |    drop-down to select **API Rate Limit**.                                                   |
 +----------------------------------------------------------------------------------------------+
 | |lab030|                                                                                     |
@@ -315,7 +288,6 @@ previously built Load Balancer object delivering the targeted application/API.
 
 +----------------------------------------------------------------------------------------------+
 | 3. In the expanded menu under **Rate Limiting**, click **Configure** in the **API**          |
-|                                                                                              |
 |    **Endpoints** area.                                                                       |
 +----------------------------------------------------------------------------------------------+
 | |lab031|                                                                                     |
@@ -329,7 +301,6 @@ previously built Load Balancer object delivering the targeted application/API.
 
 +----------------------------------------------------------------------------------------------+
 | 5. In the resulting configuration window, select **/v2/store/order/{orderId}** for **API**   |
-|                                                                                              |
 |    **Endpoint** input.                                                                       |
 |                                                                                              |
 | 6. Select **ANY** for **Method** input and then click the **Apply** button.                  |
@@ -351,10 +322,14 @@ previously built Load Balancer object delivering the targeted application/API.
 
 +----------------------------------------------------------------------------------------------+
 | 9. Click **Other Settings** in the left-hand navigation to reach the bottom of the HTTP      |
-|                                                                                              |
 |    Load Balancer configuration and click the **Apply** button.                               |
 +----------------------------------------------------------------------------------------------+
 | |lab036|                                                                                     |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| This configuration higlights the elements needed to deploy API Discovery & Prptection.  This |
+| configuration can also be fully deployed and managed via the F5 Disitributed Cloud API.      |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
