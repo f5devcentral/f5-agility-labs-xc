@@ -11,15 +11,18 @@ In this task you will add geo-filter and allowed-ip based service policies.
 
 +----------------------------------------------------------------------------------------------+
 | 1. In the left-hand navigation menu, expand the **Security** section and click **Service**   |
+|                                                                                              |
 |    **Policies**. In the flyout menu, click the **Service Policies** link.                    |
 |                                                                                              |
 | 2. Observe the existing Service Policies and note they are source from the **shared**        |
+|                                                                                              |
 |    namespace which means they could be used within any other namespace.                      |
 |                                                                                              |
 | 3. Click **Add Service Policy** in the top left area as shown.                               |
 |                                                                                              |
 | .. note::                                                                                    |
 |    *Using shared namespace Service Policies provides the ability to use API-updated*         |
+|                                                                                              |
 |    *policy controls to implement common service security across multiple resources.*         |
 +----------------------------------------------------------------------------------------------+
 | |lab001|                                                                                     |
@@ -29,6 +32,7 @@ In this task you will add geo-filter and allowed-ip based service policies.
 
 +----------------------------------------------------------------------------------------------+
 | 4. In the **Metadata** section enter **geo-filter** for the **Name** and then click **Rules**|
+|                                                                                              |
 |    in the left-hand navigation.                                                              |
 +----------------------------------------------------------------------------------------------+
 | |lab003|                                                                                     |
@@ -36,11 +40,13 @@ In this task you will add geo-filter and allowed-ip based service policies.
 
 +----------------------------------------------------------------------------------------------+
 | 5. Select **Denied Sources** from the dropdown for **Select Policy Rules**, then locate the  |
+|                                                                                              |
 |    **Country List** input field.                                                             |
 |                                                                                              |
 | 6. Begin typing **Fiji** and then select it from the list that appears.                      |
 |                                                                                              |
 | 7. Click the dropdown for **Default Action**. Observe the available options and select       |
+|                                                                                              |
 |    **Next Policy** then click **Save and Exit**.                                             |
 +----------------------------------------------------------------------------------------------+
 | |lab004|                                                                                     |
@@ -58,6 +64,7 @@ In this task you will add geo-filter and allowed-ip based service policies.
 
 +----------------------------------------------------------------------------------------------+
 | 9. Open another tab in your browser (Chrome shown), navigate to https://ipinfo.io and note   |
+|                                                                                              |
 |    your IP address as shown. (example provided)                                              |
 +----------------------------------------------------------------------------------------------+
 | |lab008|                                                                                     |
@@ -71,6 +78,7 @@ In this task you will add geo-filter and allowed-ip based service policies.
 
 +----------------------------------------------------------------------------------------------+
 | 11. In the **Metadata** section enter **allowed-ip** for the **Name** and then click         |
+|                                                                                              |
 |     **Rules** in the left-hand navigation.                                                   |
 +----------------------------------------------------------------------------------------------+
 | |lab010|                                                                                     |
@@ -78,10 +86,12 @@ In this task you will add geo-filter and allowed-ip based service policies.
 
 +----------------------------------------------------------------------------------------------+
 | 12. Select **Allowed Sources** from the dropdown for **Select Policy Rules**, then locate the|
+|                                                                                              |
 |     **IPv4 Prefix List** configuration section and click **Configure**.                      |
 |                                                                                              |
 | .. note::                                                                                    |
 |    *The section just below "List of IP Prefix Set" allows you to build a collection of*      |
+|                                                                                              |
 |    *of various IP lists which can be maintained through API controls.*                       |
 +----------------------------------------------------------------------------------------------+
 | |lab011|                                                                                     |
@@ -89,6 +99,7 @@ In this task you will add geo-filter and allowed-ip based service policies.
 
 +----------------------------------------------------------------------------------------------+
 | 13. Enter your IP address captured in Step 9 above with mask notation (//32)as shown then    |
+|                                                                                              |
 |     click the **Apply** button.                                                              |
 +----------------------------------------------------------------------------------------------+
 | |lab012|                                                                                     |
@@ -96,6 +107,7 @@ In this task you will add geo-filter and allowed-ip based service policies.
 
 +----------------------------------------------------------------------------------------------+
 | 14. In the resulting window, click the dropdown for **Default Action**, and select **Deny**  |
+|                                                                                              |
 |     then click **Save and Exit**.                                                            |
 +----------------------------------------------------------------------------------------------+
 | |lab013|                                                                                     |
@@ -117,6 +129,7 @@ It will also help you understand additional approaches for Service Policies.
 
 +----------------------------------------------------------------------------------------------+
 | 1. Return to the Load Balancer in the F5 Distributed Cloud Console, *Manage > Load Balancer* |
+|                                                                                              |
 |    *> HTTP Load Balancers* and use the **Action Dots** and click **Manage Configuration**    |
 |                                                                                              |
 | 2. Click **Edit Configuration** in the top right-hand corner.                                |
@@ -144,6 +157,7 @@ It will also help you understand additional approaches for Service Policies.
 
 +----------------------------------------------------------------------------------------------+
 | 6. In the resulting **Policies** window, use the **List of Policies** dropdown to select     |
+|                                                                                              |
 |    your **<namespace>/geo-filter** Service Policy. Then click **Apply**.                     |
 +----------------------------------------------------------------------------------------------+
 | |lab022|                                                                                     |
@@ -151,12 +165,15 @@ It will also help you understand additional approaches for Service Policies.
 
 +----------------------------------------------------------------------------------------------+
 | 7. Returning to the Load Balancer window, you will note the changes shown in your            |
+|                                                                                              |
 |    **Service Policies** section.                                                             |
 |                                                                                              |
 | 8. As we are already in this section, we will go ahead and add IP reputation filtering. This |
+|                                                                                              |
 |    can be added as a Service Policy (shared or local namespace) or as a direct configuration.|
 |                                                                                              |
 | 9. To start, the IP Reputation configuration, locate the IP Reputation section and click the |
+|                                                                                              |
 |    dropdown menu, then select **Enable**.                                                    |
 +----------------------------------------------------------------------------------------------+
 | |lab023|                                                                                     |
@@ -166,9 +183,11 @@ It will also help you understand additional approaches for Service Policies.
 
 +----------------------------------------------------------------------------------------------+
 | 10. Using the **List of IP Threat Categories to choose** you may add any of the configured   |
+|                                                                                              |
 |     Threat categories.                                                                       |
 |                                                                                              |
 | 11. Select **Spam Sources** and **Tor Proxy**, then scroll to the bottom of the window and   |
+|                                                                                              |
 |     click the **Save and Exit** button.                                                      |
 +----------------------------------------------------------------------------------------------+
 | |lab025|                                                                                     |
@@ -182,12 +201,17 @@ It will also help you understand additional approaches for Service Policies.
 
 +----------------------------------------------------------------------------------------------+
 | 12. In your browser (Chrome shown), navigate to your application/Load Balancer configuration:|
+|                                                                                              |
 |     **http://<namespace>.lab-sec.f5demos.com**.                                              |
 |                                                                                              |
 | 13. You should receive a 403 Forbidden error.  This is due to a Service Policy configuration |
+|                                                                                              |
 |     error.  Because we only attached the **geo-filter** Service Policy and the **Default**   |
+|                                                                                              |
 |     **Action** was **Next Policy**, there is no other or next policy to "Allow" traffic,     |
+|                                                                                              |
 |     therefore, all other traffic is disallowed producing the 403.  This is will also show in |
+|                                                                                              |
 |     the **Security Events** window.                                                          |
 +----------------------------------------------------------------------------------------------+
 | |lab029|                                                                                     |
@@ -195,6 +219,7 @@ It will also help you understand additional approaches for Service Policies.
 
 +----------------------------------------------------------------------------------------------+
 | 14. Return to the Load Balancer in the F5 Distributed Cloud Console, *Manage > Load Balancer*|
+|                                                                                              |
 |     *> HTTP Load Balancers* and use the **Action Dots** and click **Manage Configuration**   |
 |                                                                                              |
 | 15. Click **Edit Configuration** in the top right-hand corner.                               |
@@ -212,14 +237,18 @@ It will also help you understand additional approaches for Service Policies.
 
 +----------------------------------------------------------------------------------------------+
 | 18. In the resulting window click **Add Item** and from the dropdown select you allow-ip     |
+|                                                                                              |
 |     Service Policy **<namespace>/allowed-ip**.                                               |
 |                                                                                              |
 | 20. Observe the order. Service Policies must be ordered correctly in a order to process      |
+|                                                                                              |
 |     traffic as intended.  Click **Apply** when completed.                                    |
 |                                                                                              |
 | .. note::                                                                                    |
 |   *Because the "allowed-ip" begins with an allowed ip (yours) and ends in a "Deny" a*        |
+|                                                                                              |
 |   *positive security model will be applied (denying all other traffic).  Similar positive or*|
+|                                                                                              |
 |   *negative service policies can be created and applied (Headers, methods, file types, etc)* |
 |                                                                                              |
 | 21. Scroll to the bottom of the HTTP Load Balancer configuration and click **Save and Exit**.|
@@ -233,7 +262,9 @@ It will also help you understand additional approaches for Service Policies.
 
 +----------------------------------------------------------------------------------------------+
 | 22. In your browser (Chrome shown), navigate to your application/Load Balancer configuration:|
+|                                                                                              |
 |     **http://<namespace>.lab-sec.f5demos.com**. You should now be able to successfully       |
+|                                                                                              |
 |     access the application.                                                                  |
 +----------------------------------------------------------------------------------------------+
 | |lab035|                                                                                     |
@@ -247,6 +278,7 @@ It will also help you understand additional approaches for Service Policies.
 
 +----------------------------------------------------------------------------------------------+
 | 1. Return to the Load Balancer in the F5 Distributed Cloud Console, *Manage > Load Balancer* |
+|                                                                                              |
 |    *> HTTP Load Balancers* and use the **Action Dots** and click **Manage Configuration**    |
 |                                                                                              |
 | 2. Click **Edit Configuration** in the top right-hand corner.                                |
@@ -272,7 +304,9 @@ It will also help you understand additional approaches for Service Policies.
 | 7. In the resulting menu, toggle the **Show Advanced Fields** button to the **On** position. |
 |                                                                                              |
 | 8. Observe the various route types and matching criteria controls that can be leveraged to   |
+|                                                                                              |
 |    securely control access, perform pool targeting, make path responses or develop custom    |
+|                                                                                              |
 |    control to secure protected applications.                                                 |
 +----------------------------------------------------------------------------------------------+
 | |lab039|                                                                                     |
