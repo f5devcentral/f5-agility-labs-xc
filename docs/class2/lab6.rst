@@ -6,16 +6,16 @@ that protects web applications against Formjacking, Magecart, and other maliciou
 
 This multi-phase protection system includes detection, alerting, and mitigation.
 
-**Detection**. A continuously evolving signal set allows CSD to understand when scripts on web pages 
+* **Detection**: A continuously evolving signal set allows CSD to understand when scripts on web pages 
  start reading PII or exhibit signs of exfiltration.
 
-**Alerting**. CSD generates timely alerts on malicious changes in behavior of scripts, provided by a 
+* **Alerting**: CSD generates timely alerts on malicious changes in behavior of scripts, provided by a 
   continuously improving Analysis Engine. 
   The Analysis Engine contains a machine learning component for accurate and informative analysis 
   and provides details on the behavior of malicious script to help troubleshoot and identify the root 
   cause.
 
-**Mitigation**. CSD detects threats in real-time and provides enforcement with one-click mitigation. 
+* **Mitigation**: CSD detects threats in real-time and provides enforcement with one-click mitigation. 
   CSD leverages the same obfuscation and signal technology as F5® Distributed Cloud Bot Defense, 
   delivering unparalleled efficacy.
 
@@ -30,39 +30,39 @@ In this task you will navigate to the client side defense tile to start reviewin
 
 +----------------------------------------------------------------------------------------------+
 | 1. On the left top click the F5 red ball.                                                    | 
-|                                                                                              |
-| Under Common Services find the tile for **Client-Side Defense**                              |
+|    Under Common Services find the tile for **Client-Side Defense**                           |
 +----------------------------------------------------------------------------------------------+
 |  |lab001|                                                                                    |
 +----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
 |  Click the Client-Side Defense tile.                                                         |
-|                                                                                              |
 +----------------------------------------------------------------------------------------------+
 |  |lab002|                                                                                    |
-|                                                                                              |
 +----------------------------------------------------------------------------------------------+
+
 +----------------------------------------------------------------------------------------------+
 |The CSD Monitoring Dashboard page displays the suspicious network interactions with additional| 
 |information for deciding whether to mitigate or allow a suspicious domain. When a web page    |
 |with CSD protection is loaded on the end-user’s browser, scripts running on that webpage      | 
 |interact with other domains.                                                                  |
+|                                                                                              |
 |The Suspicious Domains list displays a list of the domains that those scripts interact with   |
 |and which CSD detected to be potentially malicious.                                           |
 +----------------------------------------------------------------------------------------------+
+
 +----------------------------------------------------------------------------------------------+
-|  2. Review the existing Dashboard and Dashboard Elements                                     |
+| 2. Review the existing Dashboard and Dashboard Elements                                      |
 |                                                                                              |
+| .. note::                                                                                    |
+|    *Your data might be different than the screen grab shown below*                           |
 +----------------------------------------------------------------------------------------------+
-| **Note** :  Your data might be different than the screen grab shown below :                  |
-|                                                                                              |
 | |lab003|                                                                                     |
-|                                                                                              |
-|                                                                                              |
 +----------------------------------------------------------------------------------------------+
-|                                                                                              |
+
++----------------------------------------------------------------------------------------------+
 | 3. Click on a domain and review the details in the flyout.                                   |
-|                                                                                              |
-|  Review the status, details, risk score ,risk reasoning, etc. Close the flyout.              |                            
+|    Review the status, details, risk score ,risk reasoning, etc. Close the flyout.            |                            
 +----------------------------------------------------------------------------------------------+
 | |lab004|                                                                                     |
 +----------------------------------------------------------------------------------------------+
@@ -73,7 +73,6 @@ In this task you will navigate to the client side defense tile to start reviewin
 |    Add to allow list                                                                         |
 |                                                                                              |
 |    Add to mitigate list                                                                      |
-|                                                                                              |
 +----------------------------------------------------------------------------------------------+
 | |lab005|                                                                                     |
 +----------------------------------------------------------------------------------------------+
@@ -81,33 +80,35 @@ In this task you will navigate to the client side defense tile to start reviewin
 +----------------------------------------------------------------------------------------------+
 | 5. Click **Network** under Monitoring on the left side.                                      |
 +----------------------------------------------------------------------------------------------+
+
 The CSD Monitoring Network page displays several tabs for displaying holistic network data, 
 which can assist you when deciding whether to mitigate or allow a suspicious domain:
 
-**All Domains:** When a web page with CSD protection is loaded, scripts running on that web page interact 
+* **All Domains:** When a web page with CSD protection is loaded, scripts running on that web page interact 
 with other domains. The All Domains list displays a list of the domains that those scripts interact with.
 
-**Mitigate List:** Displays a list of domains that the user has assigned for mitigation. 
+* **Mitigate List:** Displays a list of domains that the user has assigned for mitigation. 
 When a domain is assigned for mitigation, CSD blocks that domain and it cannot be accessed 
 by any script running on the end-user's browser when accessing a CSD protected web page.
 
-**Allow List:** Displays a list of domains that the user has decided don't need mitigation and 
+* **Allow List:** Displays a list of domains that the user has decided don't need mitigation and 
 are allowed free access.
 
 +----------------------------------------------------------------------------------------------+
 | |lab006|                                                                                     |
 +----------------------------------------------------------------------------------------------+
+
 +----------------------------------------------------------------------------------------------+
 | 6. Click **Script List** under Monitoring on the left side.                                  |
 |                                                                                              |
-|**Note** :  Your data might be different than the screen grab shown below :                   |
-|                                                                                              |
+| .. note::                                                                                    |
+|    *Your data might be different than the screen grab shown below*                           |
 +----------------------------------------------------------------------------------------------+
 | |lab007|                                                                                     |
 +----------------------------------------------------------------------------------------------+
-|                                                                                              |
+
++----------------------------------------------------------------------------------------------+
 | 7. Click on a URL under "Script Name" and review the overview screen                         |
-|                                                                                              |
 |    Script Behaviors Over Time                                                                |
 +----------------------------------------------------------------------------------------------+
 | |lab008|                                                                                     |
@@ -117,8 +118,9 @@ are allowed free access.
 | 8. Click **Form Fields** under Monitoring on the left side.  This shows any form fields      |
 |    that are protected by CSD                                                                 |
 |                                                                                              |
-|**Note** :  Your data might be different than the screen grab shown below :                   |
-| Also you may not have any data based on the configuration of the CSD                         |
+| .. note::                                                                                    |
+|    *Your data might be different than the screen grab shown below. Also you may not have*    |
+|    *any data based on the configuration of the CSD*.                                         |
 +----------------------------------------------------------------------------------------------+
 | |lab009|                                                                                     |
 +----------------------------------------------------------------------------------------------+

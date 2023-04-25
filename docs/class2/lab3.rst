@@ -111,8 +111,6 @@ In this task you will add geo-filter and allowed-ip based service policies.
 | |lab016|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
-
-
 Task 2: Attaching Service Policies and configuring IP Reputation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -218,7 +216,7 @@ It will also help you understand additional approaches for Service Policies.
 | 18. In the resulting window click **Add Item** and from the dropdown select you allow-ip     |
 |     Service Policy **<namespace>/allowed-ip**.                                               |
 |                                                                                              |
-| 20. Observe the order. Service Policies must be ordered correctly in a order to process      |
+| 19. Observe the order. Service Policies must be ordered correctly in a order to process      |
 |     traffic as intended.  Click **Apply** when completed.                                    |
 |                                                                                              |
 | .. note::                                                                                    |
@@ -226,7 +224,7 @@ It will also help you understand additional approaches for Service Policies.
 |   *positive security model will be applied (denying all other traffic).  Similar positive or*|
 |   *negative service policies can be created and applied (Headers, methods, file types, etc)* |
 |                                                                                              |
-| 21. Scroll to the bottom of the HTTP Load Balancer configuration and click **Save and Exit**.|
+| 20. Scroll to the bottom of the HTTP Load Balancer configuration and click **Save and Exit**.|
 +----------------------------------------------------------------------------------------------+
 | |lab032|                                                                                     |
 |                                                                                              |
@@ -238,16 +236,15 @@ It will also help you understand additional approaches for Service Policies.
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 22. In your browser (Chrome shown), navigate to your application/Load Balancer configuration:|
+| 21. In your browser (Chrome shown), navigate to your application/Load Balancer configuration:|
 |     **http://<namespace>.lab-sec.f5demos.com**. You should now be able to successfully       |
 |     access the application.                                                                  |
 +----------------------------------------------------------------------------------------------+
 | |lab036|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
-
-Task 3: Create,  assign and test Custom Policy
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Task 3: Create, assign and test Custom Policy
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 In this task you will add Custom Policy and assign to your Load Balancer.
 
 +----------------------------------------------------------------------------------------------+
@@ -264,47 +261,41 @@ In this task you will add Custom Policy and assign to your Load Balancer.
 | |lab002|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
-
 +----------------------------------------------------------------------------------------------+
 | 4. In the **Metadata** section enter **custom-allow-rule** for the **Name** and then click   |
 |    **Rules** in the left-hand navigation.                                                    |
 |                                                                                              |
 | 5. Then select **Custom Rule List** from the dropdown for **Select Policy Rules**.           |
-|                                                                                              |
-|     Locate **Rules** configuration section and click **Configure**.                          |
+|    Locate **Rules** configuration section and click **Configure**.                           |
 +----------------------------------------------------------------------------------------------+
 | |lab057|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 5.  In the **Metadata** name new rule **custom-allow-rule** and toggle ***Show Advanced**    |
+| 6. In the **Metadata** name new rule **custom-allow-rule** and toggle ***Show Advanced**     |
+|    to see extra features in **Action** section.                                              |
 |                                                                                              |
-|      to see extra features in **Action** section.                                            |
-|                                                                                              |
-|    In **Action** select **Allow** and from **App Firewall Action Type** clink drop-down menu |
+| 7. In **Action** select **Allow** and from **App Firewall Action Type** clink drop-down menu |
 |    and select **App Firewall Detection Control**                                             |
-|                                                                                              |
 +----------------------------------------------------------------------------------------------+
 | |lab058|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 6. Scroll down to **Attack Types** and select **Non-Browser Client**                         |
+| 8. Scroll down to **Attack Types** and select **Non-Browser Client**                         |
+|    In section **Bot Names**  type Bot name **curl**                                          |
 |                                                                                              |
-|     In section **Bot Names**  type Bot name **curl**                                         |
-|                                                                                              |
-| .. note:: *The selection will allow curl command to go through this Policy*                  |
-|                                                                                              |
+| .. note::                                                                                    |
+|    *The selection will allow curl command to go through this Policy*                         |
 +----------------------------------------------------------------------------------------------+
 | |lab059|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 7.  In the section **Clients** toggle **Show Advanced Fields** switch                        |
-|                                                                                              |
+| 9. In the section **Clients** toggle **Show Advanced Fields** switch                         |
 |     Select **IPv4Prefix List** from **Source IPv4 Match**                                    |
 |                                                                                              |
-| 8.  In **IP Prefix List** type your **IP Address/32** you already know from steps above      |
+| 10. In **IP Prefix List** type your **IP Address/32** you already know from steps above      |
 |                                                                                              |
 | .. note::                                                                                    |
 |    *You can see your current IP address here (open in new browser tab): https://ipinfo.io*   |
@@ -312,19 +303,18 @@ In this task you will add Custom Policy and assign to your Load Balancer.
 | |lab060|                                                                                     |
 |                                                                                              |
 | |lab061|                                                                                     |
-|                                                                                              |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 9. In section **Request Match**  click on  **Method List** and select method **GET**         |
+| 11. In section **Request Match**  click on  **Method List** and select method **GET**        |
 +----------------------------------------------------------------------------------------------+
 | |lab062|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 10. In section **HTTP Path** click **Configure**                                             |
+| 12. In section **HTTP Path** click **Configure**                                             |
 |                                                                                              |
-|     In field **Prefix Values** type "/index.php" and hit **Apply**                           |
+| 13. In field **Prefix Values** type "/index.php" and hit **Apply**                           |
 |                                                                                              |
 +----------------------------------------------------------------------------------------------+
 | |lab063|                                                                                     |
@@ -333,7 +323,7 @@ In this task you will add Custom Policy and assign to your Load Balancer.
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 11. In section **HTTP Query Parameters** click **Add Item**                                  |
+| 14. In section **HTTP Query Parameters** click **Add Item**                                  |
 |                                                                                              |
 |     In field **Query Parameter Name** input "page"                                           |
 |                                                                                              |
@@ -358,11 +348,11 @@ In this task you will add Custom Policy and assign to your Load Balancer.
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 12. Return to the Load Balancer in the F5 Distributed Cloud Console, *Manage > Load Balancer*|
+| 15. Return to the Load Balancer in the F5 Distributed Cloud Console, *Manage > Load Balancer*|
 |                                                                                              |
 |    *> HTTP Load Balancers* and use the **Action Dots** and click **Manage Configuration**    |
 |                                                                                              |
-| 13. Click **Edit Configuration** in the top right-hand corner.                               |
+| 16. Click **Edit Configuration** in the top right-hand corner.                               |
 +----------------------------------------------------------------------------------------------+
 | |lab070|                                                                                     |
 |                                                                                              |
@@ -370,28 +360,26 @@ In this task you will add Custom Policy and assign to your Load Balancer.
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 14. Select **Common Security Controls** on the left panel.                                   |
+| 17. Select **Common Security Controls** on the left panel.                                   |
 |                                                                                              |
-| 15. Select **Apply Specified Service Policies** from drop down menu and click **Configure**  |
+| 18. Select **Apply Specified Service Policies** from drop down menu and click **Configure**  |
 |                                                                                              |
 +----------------------------------------------------------------------------------------------+
 | |lab072|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 15. From **Policies** drop down menu select your **custom-allow-rule**                       |
+| 19. From **Policies** drop down menu select your **custom-allow-rule**                       |
 |                                                                                              |
-| 16. Hit **Apply** to save your changes                                                       |
-|                                                                                              |
+| 20. Hit **Apply** to save your changes                                                       |
 +----------------------------------------------------------------------------------------------+
 | |lab073|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 15. From **Policies** drop down menu select your **custom-allow-rule**                       |
+| 21. From **Policies** drop down menu select your **custom-allow-rule**                       |
 |                                                                                              |
-| 16. Hit **Apply** to save your changes  and following **Save and Exit**                      |
-|                                                                                              |
+| 22. Hit **Apply** to save your changes  and following **Save and Exit**                      |
 +----------------------------------------------------------------------------------------------+
 | |lab073|                                                                                     |
 |                                                                                              |
@@ -400,23 +388,21 @@ In this task you will add Custom Policy and assign to your Load Balancer.
 
 
 +----------------------------------------------------------------------------------------------+
-| 15. Try to access your website following URL                                                 |
+| 23. Try to access your website following URL                                                 |
 | ** http://<namespace>.lab-sec.f5demos.com/index.php?page=access**                            |
 |                                                                                              |
 | .. note::                                                                                    |
 |     *you should be able to successfully open website*                                        |
-|                                                                                              |
 +----------------------------------------------------------------------------------------------+
 | |lab077|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
 | 16. Now try to manipulate with parameters for example make "**page**" value **"accessss""**  |
-|                                                                                              |
 |     Example url: **http://<namespace>.lab-sec.f5demos.com\/index.php\?page=accesss**         |
 |                                                                                              |
-| *note::you should see 403 Forbidden** message from Application Firewall.                     |
-|                                                                                              |
+| .. note::                                                                                    |
+|    *You should see **403 Forbidden** message from Application Firewall.                      |
 +----------------------------------------------------------------------------------------------+
 | |lab075|                                                                                     |
 +----------------------------------------------------------------------------------------------+
@@ -426,7 +412,6 @@ In this task you will add Custom Policy and assign to your Load Balancer.
 |     select **Security Evenets** to see more details about blocked request by App Firewall    |
 |                                                                                              |
 |     Example url: **http://<namespace>.lab-sec.f5demos.com\/index.php\?page=access**          |
-|                                                                                              |
 +----------------------------------------------------------------------------------------------+
 | |lab076|                                                                                     |
 +----------------------------------------------------------------------------------------------+
@@ -440,7 +425,6 @@ It will also help you understand additional approaches for Service Policies.
 
 +----------------------------------------------------------------------------------------------+
 | 1. Return to the Load Balancer in the F5 Distributed Cloud Console, *Manage > Load Balancer* |
-|                                                                                              |
 |    *> HTTP Load Balancers* and use the **Action Dots** and click **Manage Configuration**    |
 |                                                                                              |
 | 2. Click **Edit Configuration** in the top right-hand corner.                                |
@@ -464,9 +448,7 @@ It will also help you understand additional approaches for Service Policies.
 | 7. In the resulting menu, toggle the **Show Advanced Fields** button to the **On** position. |
 |                                                                                              |
 | 8. Observe the various route types and matching criteria controls that can be leveraged to   |
-|                                                                                              |
 |    securely control access, perform pool targeting, make path responses or develop custom    |
-|                                                                                              |
 |    control to secure protected applications.                                                 |
 +----------------------------------------------------------------------------------------------+
 | |lab039|                                                                                     |
