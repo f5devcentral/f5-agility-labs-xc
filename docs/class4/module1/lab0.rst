@@ -3,7 +3,7 @@ TO BE DONE
 
 NEW Blueprint as of 4/24/23 4PM EST. https://udf.f5.com/b/b792f881-0806-486e-8350-14b7aa65fa0b#documentation
 
-NOTE - Lab 1-4 are complete and ready to test. 
+NOTE - All Labs are complete and ready to test. 
 
 **The following items need to be addressed as of 04/24/23 3PM**
 
