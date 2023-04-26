@@ -39,7 +39,7 @@ version control features.
 |                                                                                              |
 |    the **Metadata** section.                                                                 |
 |                                                                                              |
-| 5. For the next step, use the following link, 'app-api-file-v1'_. to download the              |
+| 5. For the next step, use the following link, 'app-api-file-v1'_. to download the            |
 |                                                                                              |
 |    JSON/OpenAPI spec file **app-api-v1.json** to your local desktop or workspace.            |
 |                                                                                              |

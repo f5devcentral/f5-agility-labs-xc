@@ -300,9 +300,7 @@ Task 3: Configure an Application Firewall Policy to Protect the Application
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The following steps will guide you through adding a Web Application Firewall (WAF) Policy.
-
 These steps will create a WAF Policy and apply the WAF policy to the load balancer created in 
-
 Task 1.
 
 +----------------------------------------------------------------------------------------------+
@@ -316,7 +314,7 @@ Task 1.
 |                                                                                              |
 | 2. In the left-hand navigation expand **Security** and click **App Firewall**.               |
 |                                                                                              |
-| 3. On the resulting page click **Add App Firewall**                                          | 
+| 3. On the resulting page click **Add App Firewall**                                          |
 +----------------------------------------------------------------------------------------------+
 | |lab029|                                                                                     |
 |                                                                                              |
@@ -360,7 +358,6 @@ Task 1.
 |                                                                                              |
 | |lab036|                                                                                     |
 +----------------------------------------------------------------------------------------------+
-
 
 +----------------------------------------------------------------------------------------------+
 | 11. Under the **Web Application Firewall** section select **Enable** from the **Web**        |
