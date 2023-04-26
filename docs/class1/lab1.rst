@@ -363,7 +363,7 @@ Task 1.
 
 
 +----------------------------------------------------------------------------------------------+
-| 11. Under the **Web Application Firewall** section select **Enable** from the **Web**
+| 11. Under the **Web Application Firewall** section select **Enable** from the **Web**        |
 |                                                                                              |
 |     **Application Firewall (WAF)** dropdown.                                                 |
 |                                                                                              |
