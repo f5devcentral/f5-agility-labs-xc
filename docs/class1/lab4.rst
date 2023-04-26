@@ -1,4 +1,4 @@
-Lab 4: Introduction to F5 Distributed Cloud DNS
+Lab: Introduction to F5 Distributed Cloud DNS
 ===============================================================
 
 This lab provides an introduction to DNS services available on F5 Distributed Cloud.  This 
