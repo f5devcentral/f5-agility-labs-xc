@@ -1,4 +1,4 @@
-Lab 6: Introduction to CDN
+Lab: Introduction to CDN
 ====================================
 
 Lab 6 will provide and introduction to...
