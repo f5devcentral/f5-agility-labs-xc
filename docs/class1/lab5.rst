@@ -1,4 +1,4 @@
-Lab 5: Introduction to Observability
+Lab: Introduction to Observability
 ====================================
 
 Have you ever wished that you knew about impending application issues before your users or 
