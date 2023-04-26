@@ -1,4 +1,4 @@
-Lab 2: Deploying an AWS VPC Site
+Lab: Deploying an AWS VPC Site
 ================================
 
 In the previous lab you learned how to protect a resource that is already on the Public Internet.
