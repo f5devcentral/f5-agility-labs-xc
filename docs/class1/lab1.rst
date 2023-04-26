@@ -251,7 +251,7 @@ Performance Monitoring dashboard, and gather request details.
 +----------------------------------------------------------------------------------------------+
 | 5. Change the viewable time period from Last 5 minutes (default) to **1 hour** by selecting  |
 |                                                                                              |
-|    the dropdown shown, click **Last 1 hour** then clicking **Apply**.                            |
+|    the dropdown shown, click **Last 1 hour** then clicking **Apply**.                        |
 |                                                                                              |
 | 6. Note the **End to end Latency** tile.  This shows the average latency for all requests to |
 |                                                                                              |
