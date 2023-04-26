@@ -20,7 +20,7 @@ Lab 4: App Connect - Solving IP Overlap
 **Narrative:** 
 
 Now that the globally available frontend has been deployed, it's time to start working on **Deliverable #2** and configure backend connectivity. Since Network Connect does **NOT** support IP overlap, we will configure the XC Nodes with App Connect proxies. 
-Recall that Network Connect, connects networks by using the XC Nodes as Software-Defined Routers and App Connect uses the XC Nodes as Software-Defined Proxies to connect applications. Think...NetworkAAS or ProxyAAS. 
+Recall that Network Connect joins networks by using the XC Nodes as Software-Defined Routers and App Connect uses the XC Nodes as Software-Defined Proxies to connect applications. Think...NetworkAAS or ProxyAAS. 
 
 |
 
@@ -362,7 +362,7 @@ Back in XC Console, from the **Side menu** under **Security**, click on **Servic
 ==================================      ==============
 Variable                                Value
 ==================================      ==============
-Name                                    [animal-name-allow-get-sp]
+Name                                    [animal-name]-allow-get-sp
 Server Selection                        Server Name
 Server Name                             [animal-name]-aws-to-azure-lb.lab-mcn.f5demos.com
 Select Policy Rules                     Custom Rule List

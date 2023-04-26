@@ -24,9 +24,9 @@ Lately, the site has been getting pounded with attack traffic and frontend secur
 You think to yourself, this is going to be tricky, and reach out to your trusted F5 Solutions Engineer to see how this will work with Distributed Cloud. 
 
 Your F5 Solutions Engineer explains that IP overlap between sites is a common problem and one that can be easily solved with Distributed Cloud App Connect. 
-App Connect alleviates this problem by leveraging the XC Nodes as Software-Defined roxies rather than Software-Defined Routers as they were configured with Network Connect. Additionally App Connect enforces a default deny architecture, where only the port and domain name defined on the load balancer will accept traffic. 
+App Connect alleviates this problem by leveraging the XC Nodes as Software-Defined Proxies rather than Software-Defined Routers as they were configured with Network Connect. Additionally App Connect enforces a default deny architecture, where only the port and domain name defined on the load balancer will accept traffic. 
 
-Also, you are informed that by using F5 Distributed Cloud Regional Edges for the frontend workloads, you will be able to have full proxy security, visibility and analytics for the client traffic so the Security team will be pleased. 
+Also, you are informed that by using F5 Distributed Cloud Regional Edges for the frontend workloads, you will be able to have full proxy security, visibility and analytics for the client traffic, so the Security team will be pleased. 
 
 After reviewing the architecture with you, your Solutions Engineer advises you to break up these requirements in to 2 specific deliverables. 
 
@@ -221,7 +221,7 @@ Testing
 
 Go ahead and open up a **Command Prompt** or **Terminal** on your personal machine and type the following command: 
 
-**nslookup [animal-name]-acme-frontend.lab-msc.f5demos.com** and note the IP address that is returned. 
+**nslookup [animal-name]-acme-frontend.lab-mcn.f5demos.com** and note the IP address that is returned. 
 
 In my example, I am using a terminal on MAC and my animal-name was **rested-tiger**.
 
@@ -231,7 +231,7 @@ In my example, I am using a terminal on MAC and my animal-name was **rested-tige
 
 |
 
-Now open up a new tab in your browser and try http://[animal-name]-acme-frontend.lab-msc.f5demos.com
+Now open up a new tab in your browser and try http://[animal-name]-acme-frontend.lab-mcn.f5demos.com
 
 If you reached this page, you set it up right! Nice work. 
 
