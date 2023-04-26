@@ -1,7 +1,7 @@
-Lab 1: Deploying F5 Distributed Cloud Proxy Services to Securely Deliver a Public Endpoint
+Lab: Deploying F5 Distributed Cloud Proxy Services to Securely Deliver a Public Endpoint
 ==========================================================================================
 
-Lab 1 will focus on the deployment and security of an existing hosted application using F5 
+This lab will focus on the deployment and security of an existing hosted application using F5 
 Distributed Cloud Platform and Services.  This lab will be deployed in a SaaS only 
 configuration with no on-premises (public or private cloud) elements.  All configuration
 will be made via the F5 Distributed Cloud Console and within the F5 Distributed Cloud Global
