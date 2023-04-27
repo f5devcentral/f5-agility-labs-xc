@@ -203,9 +203,11 @@ These steps will demonstrate various aspects of the configuration.
 | .. note::                                                                                    |
 |    *The pointer record for the CNAME is listed under "Host Name". It is also listed on the*  |
 |                                                                                              |
-|    *"HTTP Load Balancers" screen for each Load Balancer. The associated "Tenant IP" is also* |
+|    *"HTTP Load Balancers" screen for each Load Balancer. The associated "Default/Tenant IP"* |
 |                                                                                              |
-|    *shown. The "Tenant IP" is uniquely assigned to each F5 Distributed Cloud Tenant.*        |
+|    *is also shown. The "Default/Tenant IP" is uniquely assigned to each *F5 Distributed      |
+|                                                                                              |
+|    * Cloud Tenant.*                                                                          |
 +----------------------------------------------------------------------------------------------+
 | |lab021|                                                                                     |
 +----------------------------------------------------------------------------------------------+
@@ -268,18 +270,18 @@ review the generated event data to make additional configuration changes.
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 4a. Returning to the F5 Distributed Cloud Console, use the left-hand menu to select          |
+| 4. Returning to the F5 Distributed Cloud Console, use the left-hand menu to select           |
 |                                                                                              |
-|     **Overview** > **Perfromance Dashboard** section.  This dashboard will give you a summary|
+|    **Overview** > **Dashboard** > **Perfromance Dashboard** section.  This dashboard will    |
 |                                                                                              |
-|     view for all of the configured Load Balancers.                                           |
+|    give you a summary view for all of the configured Load Balancers.                         |
 |                                                                                              |
 | .. note::                                                                                    |
 |    *As you have not run many requests, summary analytics may not be available in the*        |
 |                                                                                              |
 |    *dashboard view yet.*                                                                     |
 |                                                                                              |
-| 4b. Scroll to the bottom and select your load balancer.                                      |
+| 5. Scroll to the bottom and select your load balancer.                                       |
 +----------------------------------------------------------------------------------------------+
 | |lab027a|                                                                                    |
 |                                                                                              |
@@ -287,9 +289,11 @@ review the generated event data to make additional configuration changes.
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 5. From the **Dashboard** view, using the horizontal navigation, click **Requests**.         |
+| 6. From the **Performance Dashboard** view, using the horizontal navigation, click           |
 |                                                                                              |
-| 6. Change the viewable time period from 5 minutes (default) to **1 hour** by selecting the   |
+|    **Requests**.                                                                             |
+|                                                                                              |
+| 7. Change the viewable time period from 5 minutes (default) to **1 hour** by selecting the   |
 |                                                                                              |
 |    dropdown shown, click **Last 1 hour** then clicking **Apply**.                            |
 |                                                                                              |
@@ -302,13 +306,13 @@ review the generated event data to make additional configuration changes.
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 7. Expand one of the requests and noted on the **Information** link that summary request     |
+| 8. Expand one of the requests and noted on the **Information** link that summary request     |
 |                                                                                              |
 |    details are available as is per request duration timing. Note that you can also use the   |
 |                                                                                              |
 |    horizontal, clickable response code filters to quickly filter requests.                   |
 |                                                                                              |
-| 8. Click on the **JSON** link to get more data about the request.                            |
+| 9. Click on the **JSON** link to get more data about the request.                            |
 +----------------------------------------------------------------------------------------------+
 | |lab029|                                                                                     |
 |                                                                                              |
