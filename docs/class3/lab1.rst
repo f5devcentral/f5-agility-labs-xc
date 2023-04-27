@@ -145,11 +145,11 @@ Task 1: Configure Load Balancer, Origin Pool, WAF and BotDefense (7 min)
 | |lab015|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
-16. Back in the HTTP Load Balancer configuration, click **Bot Protection** in the left-hand navigation.
+17. Back in the HTTP Load Balancer configuration, click **Bot Protection** in the left-hand navigation.
 
-17. From the **Bot Defense** dropdown, select **Enable**.
+18. From the **Bot Defense** dropdown, select **Enable**.
 
-18. In the added menu option, click **Configure**.
+19. In the added menu option, click **Configure**.
 
 |lab017|
 
