@@ -23,182 +23,67 @@ Following the tasks in the prior **Introduction** Section, you should now be abl
 F5 Distributed Cloud Console, having set your Work Domain Roles and Skill levels. If you have not
 done so already, please login to your tenant for this lab and proceed to Task 1.
 
-Task 1: Configure Load Balancer, Origin Pool, WAF & BotDefense (7 min)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Task 1: Configure Load Balancer, Origin Pool, WAF and BotDefense (7 min)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The following steps will allow you to deploy and advertise a globally available application.  These
 steps will define an application, register its DNS and assign a target as an origin.
 
-+----------------------------------------------------------------------------------------------+
-| 1. Following the **Introduction** section instructions, you should now be in the **Web**     |
-|                                                                                              |
-|    **App & API Protection** configuration window. If for some reason you are not in the      |
-|                                                                                              |
-|    **Web App & API Protection** window, use the **Select Service** in the left-hand          |
-|                                                                                              |
-|    navigation, and click **Web App & API Protection** as shown in the *Introduction Section* | 
-|                                                                                              |
-| 2. In the left-hand navigation expand **Manage** and click **Load Balancers > HTTP Load**    |
-|                                                                                              |
-|    **Balancers**                                                                             |
-|                                                                                              |
-| 3. In the resulting screen click the **Add HTTP Load Balancer** in the graphic as shown.     |
-|                                                                                              |
-| .. note::                                                                                    |
-|    *You have defaulted to your specific namespace as that is the only namespace to which you*|
-|                                                                                              |
-|    *have administrative access.*                                                             |
-+----------------------------------------------------------------------------------------------+
-| |lab001|                                                                                     |
-|                                                                                              |
-| |lab002|                                                                                     |
-+----------------------------------------------------------------------------------------------+
+1. Following the **Introduction** section  instructions, you should now be in the **Load Balancers** configuration window. If for some reason you are not in the **Load Balancers** window, use the **Select Service** in the left-hand navigation, and click **Load Balancers** as shown in the *Introduction section, Task 2, Step 9*.                |
+2. In the left-hand navigation expand **Manage** and click **Load Balancers > HTTP Load Balancers**
+3. In the resulting screen click the **Add HTTP Load Balancer** in the graphic as shown.
 
-+----------------------------------------------------------------------------------------------+
-| 4. Using the left-hand navigation and in the sections as shown, enter the following          |
-|                                                                                              |
-|    data. Values where **<namespace>** is required, use the name of your given namespace.     |
-|                                                                                              |
-|    * **Metadata:Name ID:**  *<namespace>-lb*                                                 |
-|    * **Basic Configuration: List of Domains:** *<namespace>.lab-sec.f5demos.com*             |
-|    * **Basic Configuration: Select Type of Load Balancer:** *HTTP*                           |
-|    * **Basic Configuration: Automatically Manage DNS Records:** *(Check the checkbox)*       |
-|    * **Basic Configuration: HTTP Port:** *80*                                                |
-+----------------------------------------------------------------------------------------------+
-| |lab003|                                                                                     |
-+----------------------------------------------------------------------------------------------+
+.. note::
+   *You have defaulted to your specific namespace as that is the only namespace to which you*
+   *have administrative access.*                                                             
 
-+----------------------------------------------------------------------------------------------+
-| 5. In the current window's left-hand navigation, click **Origins**. Next,                    |
-|                                                                                              |
-|    click **Add Item** within the **Origin Pools** section of **Origins**.                    |
-+----------------------------------------------------------------------------------------------+
-| |lab004|                                                                                     |
-+----------------------------------------------------------------------------------------------+
+|lab001|
+ 
+|lab002|
 
-+----------------------------------------------------------------------------------------------+
-| 6. In the resulting window, use the drop down as shown and click **Create new Origin Pool**. |
-+----------------------------------------------------------------------------------------------+
-| |lab005|                                                                                     |
-+----------------------------------------------------------------------------------------------+
+3. Using the left-hand navigation and in the sections as shown, enter the following data. Values where **<namespace>** is required, use the name of your given namespace.
 
-+----------------------------------------------------------------------------------------------+
-| 7. In the resulting window, enter **<namespace>-pool** in the **Name** field and click       |
-|                                                                                              |
-|    **Add Item** under **Origin Servers**                                                     |
-+----------------------------------------------------------------------------------------------+
-| |lab006|                                                                                     |
-+----------------------------------------------------------------------------------------------+
+   * **Metadata:Name ID:**  *<namespace>-lb*
+   * **Basic Configuration: Domains and LB Type:** *<namespace>.lab-sec.f5demos.com*
+   * **Basic Configuration: Load Balancer Type:** *HTTP*
+   * **Basic Configuration: Automatically Manage DNS Records:** *(Check the checkbox)*
+   * **Basic Configuration: HTTP Port:** *80*
+|lab003|
 
-+----------------------------------------------------------------------------------------------+
-| 8. In the resulting window, **Public DNS Name of Origin Server** should be selected for      |
-|                                                                                              |
-|    **Select Type of Origin Server**.                                                         |
-|                                                                                              |
-| 9. For **DNS Name** enter the following hostname:                                            |
-|                                                                                              |
-|    **airline-backend.f5se.com** and then click **Apply**                                     |
-+----------------------------------------------------------------------------------------------+
-| |lab007|                                                                                     |
-+----------------------------------------------------------------------------------------------+
+4. In the current window's left-hand navigation, click **Origins**. Next, click **Add Item** within the **Origin Pools** section of **Origins**.
 
-+----------------------------------------------------------------------------------------------+
-| 10. After returning to the prior window, make sure **Port:** under **Basic Configuration**   |
-|                                                                                              |
-|     is configured for **80**.                                                                |
-|                                                                                              |
-| 11. Leave all other values as shown while scrolling to the bottom and click, **Continue**.   |
-|                                                                                              |
-| 12. After returning to the next window and confirming the content, click **Apply**.          |
-+----------------------------------------------------------------------------------------------+
-| |lab008|                                                                                     |
-|                                                                                              |
-| |lab009|                                                                                     |
-|                                                                                              |
-| |lab010|                                                                                     |
-+----------------------------------------------------------------------------------------------+
+|lab004|
 
-Task 2: Configure WAF Policy on the Load Balancer
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+5. In the resulting window, use the drop down as shown and click **Add Item**.
 
-The following steps will guide you through adding a Web Application Firewall (WAF) Policy.
+|lab005|
 
-+----------------------------------------------------------------------------------------------+
-| 1. Continuing in the **HTTP Load Balancer** section, on the left-hand menu clik on the       |
-|                                                                                              |
-|    **Web Application Firewall (WAF)** and select **Enable**.                                 |
-+----------------------------------------------------------------------------------------------+
-| |lab012|                                                                                     |
-+----------------------------------------------------------------------------------------------+
+6. In the resulting window, enter **<namespace>-pool** in the **Name** field and click **Add Item** under **Origin Servers**.
 
-+----------------------------------------------------------------------------------------------+
-| 2. In the resulting **App Firewall** drop down select **Add Item**.                          |
-|                                                                                              |
-| .. note::                                                                                    |
-|    *The "shared/base-appfw" policy is in the "shared namespace" which can be applied to*     |
-|                                                                                              |
-|    *multiple Load Balancer configurations across namespaces, reducing policy sprawl.*        |
-+----------------------------------------------------------------------------------------------+
-| |lab014|                                                                                     |
-+----------------------------------------------------------------------------------------------+
+|lab006|
 
-+----------------------------------------------------------------------------------------------+
-| 3. In the resulting window's **Metadata** section enter **<namespace>-appfw** for the        |
-|    **Name**.                                                                                 |
-|                                                                                              |
-| 4. Under **Enforcement Mode**, change the mode to **Blocking**.                              |
-|                                                                                              |
-| 5. In the **Detection Settings** section, click the **Security Policy** dropdown.            |
-|                                                                                              |
-| 6. Select **Custom** from the dropdown menu. Additional configurations will become available.|
-+----------------------------------------------------------------------------------------------+
-| |lab015|                                                                                     |
-|                                                                                              |
-| |lab016|                                                                                     |
-+----------------------------------------------------------------------------------------------+
+7. In the resulting window, **Public DNS Name of Origin Server** should be selected for **Select Type of Origin Server**.
+8. For **DNS Name** enter the following hostname: **airline-backend.f5se.com** and then click **Apply**
 
-+----------------------------------------------------------------------------------------------+
-| 7. In the expanded configuration, use the dropdown for **Signature Selection by Accuracy**   |
-|                                                                                              |
-|    and select **High, Medium, and Low**.                                                     |
-|                                                                                              |
-| 8. Leaving all other values as default, scroll to the bottom and click **Continue**.         |
-+----------------------------------------------------------------------------------------------+
-| |lab017|                                                                                     |
-|                                                                                              |
-| |lab018|                                                                                     |
-+----------------------------------------------------------------------------------------------+
+|lab007|
 
-+----------------------------------------------------------------------------------------------+
-| 9. In the resulting **HTTP Load Balancer** window, scroll to the **Other Settings**          |
-|                                                                                              |
-|    section and note the **VIP Advertisement** setting.                                       |
-|                                                                                              |
-| .. note::                                                                                    |
-|    *The above selection controls how/where the application is advertised. The "Internet"*    |
-|                                                                                              |
-|    *setting means that this application will be advertised globally using the F5*            |
-|                                                                                              |
-|    *Distributed Cloud Global Network utilizing Anycast.*                                     |
-|                                                                                              |
-| 10. Click **Save and Exit** at the bottom of the **HTTP Load Balancer** configuration screen.|
-+----------------------------------------------------------------------------------------------+
-| |lab019|                                                                                     |
-+----------------------------------------------------------------------------------------------+
+9. After returning to the prior window, make sure **Port:** under **Origin Servers** is configured for **80**.
+10. Leave all other values as shown while scrolling to the bottom and click, **Continue**.
+11. After returning to the next window and confirming the content, click **Apply**.
 
+|lab008|
+ 
+|lab009|
+ 
+|lab010|
 
-
-Original Lab
-
-
-
-12. Continuing in the **Security Configuration** section, click on the **Select Web Application Firewall (WAF Config)** and select **App Firewall**.
+12. Continuing in the **Web Application Firewall** section, from the dropdown, select **Enable**.
 
 |lab012|
 
 |lab013|
 
-13. In the resulting **App Firewall** drop down select **Create new App Firewall**.
+13. In the resulting **Enable** drop down select **Add Item**.
 
 .. note::
    *The "shared/base-appfw" policy is in the "shared namespace" which can be applied to multiple Load Balancer configurations across namespaces, reducing policy sprawl.*
@@ -211,11 +96,11 @@ Original Lab
 
 |lab015|
 
-|lab016|
 
-16. Back in the HTTP Load Balancer configuration, click **Security Configuration** in the left-hand navigation.
 
-17. From the **Bot Defense Config** dropdown, select **Specify Bot Defense Configuration**.
+16. Back in the HTTP Load Balancer configuration, click **Bot Protection** in the left-hand navigation.
+
+17. From the **Bot Defense** dropdown, select **Enable**.
 
 18. In the added menu option, click **Configure**.
 
@@ -227,7 +112,7 @@ Original Lab
 
 19. Observe the additional positioning options in the **JavaScript Insertion** section.
 
-20. Click **Configure** in the **Protected Endpoints Section**
+20. Click **Configure** in the **Protected App Endpoints** section
 
 21. In the new **App Endpoint Type** click **Add Item**
 
@@ -242,11 +127,13 @@ Original Lab
     * **Protocol:** *BOTH*
     * **Path:Path Match:** *Prefix*
     * **Prefix:** */user/vipsignin*
+
+    Scroll down further and follow below 
     * **Bot Traffic Mitigation:Select Bot Mitigation Action:** *Flag*
 	* **Bot Traffic Mitigation:Include Mitigation Headers:** *Append Headers**
     * Leave **Inference Header Name** and **Automation Type Header Name** as their respective defaults.	
 
-23. Scroll to the bottom and click **Add Item**
+23. Scroll to the bottom and click **Apply**
 
 |lab022|
 
@@ -256,10 +143,10 @@ Original Lab
 
 25. Then click **Apply** on the **Protected App Endpoints** screen
 
-26. In the resulting **HTTP Load Balancer** window, scroll to the **Advanced Configuration** section and note the **Where to Advertise the VIP** setting. 
+26. In the resulting **HTTP Load Balancer** window, scroll to the **Other Settings** section and note the **VIP Advertisement** setting. 
 
 .. note::                                                                                    
-   *The above selection controls how/where the application is advertised. The "Advertise On Internet" setting means that this application will be advertised globally using the F5 Distributed Cloud Global Network utilizing Anycast.*
+   *The above selection controls how/where the application is advertised. The "Internet" setting means that this application will be advertised globally using the F5 Distributed Cloud Global Network utilizing Anycast.*
 
 27. Click **Save and Exit** at the bottom of the **HTTP Load Balancer** configuration screen.
 
@@ -275,117 +162,59 @@ Original Lab
 
 |lab028|
  
-Task 3: Curl - Direct (10min)
+Task 2: Curl - Direct (10min)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-+----------------------------------------------------------------------------------------------+
-| ..alert::                                                                                    |
-|   **Run this lab from the JUMPHOST**                                                         |
-+----------------------------------------------------------------------------------------------+
 
-+----------------------------------------------------------------------------------------------+
-| 1. Launch the Chrome Browser and navigate to https://airline-backend.f5se.com/user/vipsignin |
-|                                                                                              |
-| 2. Once loaded right click on the page and choose **Inspect** then navigate to the           |
-|                                                                                              |
-|    **Network** tab on the new right hand side window.  This will allow you to monitor what   |
-|    content is loaded and submitted during interactions with the site.                        |
-+----------------------------------------------------------------------------------------------+
-| |lab029|                                                                                     |
-+----------------------------------------------------------------------------------------------+
+**Run this lab from the JUMPHOST**
 
-+----------------------------------------------------------------------------------------------+
-| 3. On the login prompt enter the following testing username: **john.smith@nobody.com**       |
-|                                                                                              |
-|    password: **test123** and then click **Confirm**                                          |
-|                                                                                              |
-| 4. This should log you into the account but more important look on the right side panel      |
-|                                                                                              |
-|    finding the **vipsignin** POST request.  Clicking on this entry and you will see the POST |
-|                                                                                              |
-|    request that was created for your login.                                                  |
-|                                                                                              |
-| 5. Switch to the **payload** tab and we can see the exact data that was submitted.           |
-|                                                                                              |
-|    The Username and Password are expected but we also see a tracking token (though not used  |
-|                                                                                              |
-|    here)                                                                                     |
-+----------------------------------------------------------------------------------------------+
-|  |lab030|                                                                                    |
-+----------------------------------------------------------------------------------------------+
+1. Launch the Chrome Browser and navigate to https://airline-backend.f5se.com/user/vipsignin
 
-+----------------------------------------------------------------------------------------------+
-| 6. Right click on the **vipsignin** entry choose **Copy** and **Copy as cURL (BASH)** open   |
-|                                                                                              |
-| **Notepad** from the windows start menu and paste the contents in.  This will allow you to   |
-|                                                                                              |
-| inspect the query in greater detail.                                                         |
-+----------------------------------------------------------------------------------------------+
-| |lab031|                                                                                     |
-+----------------------------------------------------------------------------------------------+
+2. Once loaded right click on the page and choose **Inspect** then navigate to the **Network** tab on the new right hand side window.  This will allow you to monitor what content is loaded and submitted during interactions with the site.
 
-+----------------------------------------------------------------------------------------------+
-| 7. Click the **Ubuntu** icon on the desktop to open a bash prompt.  Once open you can paste  |
-|                                                                                              |
-|    the same curl data into the bash prompt to execute the query.  This example shows just how|
-|                                                                                              |
-|    easy it is as a basic level it is to execute credential stuffing style attacks.           |
-|                                                                                              |
-| 8. Using any scripting language (python, perl, bash) it becomes trivial to be able to test   |
-|                                                                                              |
-|    large amounts of username and password combinations.                                      |
-+----------------------------------------------------------------------------------------------+
-| |lab032|                                                                                     |
-+----------------------------------------------------------------------------------------------+
+|lab029|
 
-Task 4: Compare Via Bot Defense (5min)
+3. On the login prompt enter the following testing username: **john.smith@nobody.com** password: **test123** and then click **Confirm**
+
+4. This should log you into the account but more important look on the right side panel finding the **vipsignin** POST request.  Clicking on this entry and you will see the POST request that was created for your login.
+
+5. Switch to the **payload** tab and we can see the exact data that was submitted.  The Username and Password are expected but we also see a tracking token (though not used here)
+
+|lab030|
+
+6. Right click on the **vipsignin** entry choose **Copy** and **Copy as cURL (BASH)** open **Notepad** from the windows start menu and paste the contents in.  This will allow you to inspect the query in greater detail.
+
+|lab031|
+
+7. Click the **Ubuntu** icon on the desktop to open a bash prompt.  Once open you can paste the same curl data into the bash prompt to execute the query.  This example shows just how easy it is as a basic level it is to execute credential stuffing style attacks.
+
+8. Using any scripting language (python, perl, bash) it becomes trivial to be able to test large amounts of username and password combinations.
+
+|lab032|
+
+Task 3: Compare Via Bot Defense (5min)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-+----------------------------------------------------------------------------------------------+
-| ..alert::                                                                                    |
-|   **Run this lab from the JUMPHOST**                                                         |
-+----------------------------------------------------------------------------------------------+
+**Run this lab from the JUMPHOST**
 
-+----------------------------------------------------------------------------------------------+
-| 1. Launch the Chrome Browser and navigate to:                                                | 
-|                                                                                              |
-|    **http://namespace.lab-sec.f5demos.com/user/vipsignin** (note: HTTP not HTTPS)            | 
-|                                                                                              |
-| 2. Once loaded right click on the page and choose **Inspect** then navigate to the           |
-|                                                                                              |
-|    **Network** tab on the new right hand side window.  This will allow you to monitor what   |
-|                                                                                              |
-|    content is loaded and submitted during interactions with the site.                        |
-+----------------------------------------------------------------------------------------------+
-| |lab029|                                                                                     |
-+----------------------------------------------------------------------------------------------+
+1. Launch the Chrome Browser and navigate to **http://namespace.lab-sec.f5demos.com/user/vipsignin** (note: HTTP not HTTPS)
 
-+----------------------------------------------------------------------------------------------+
-| 3. On the login prompt enter the following testing username: **john.smith@nobody.com**       |
-|                                                                                              |
-|    password: **test123** and then click **Confirm**                                          |
-|                                                                                              |
-| 4. This should log you into the account but more important look on the right side panel      |
-|                                                                                              |
-|    finding the **vipsignin** POST request.  Clicking on this entry and you will see the POST |
-|                                                                                              |
-|    request that was created for your login.                                                  |
-|                                                                                              |
-| 5. Switch to the **payload** tab and we can see the exact data that was submitted.           |
-|                                                                                              |
-| 6. We can see several additional payload entries.  The hardened Javascript silently          |
-|                                                                                              |
-|    interrogates the browser and watches as users interact with the page capturing telemetry  |
-|                                                                                              |
-|    which is encrypted and sent along with the POST.                                          |
-+----------------------------------------------------------------------------------------------+
+2. Once loaded right click on the page and choose **Inspect** then navigate to the **Network** tab on the new right hand side window.  This will allow you to monitor what content is loaded and submitted during interactions with the site.
+
+|lab029|
+
+3. On the login prompt enter the following testing username: **john.smith@nobody.com** password: **test123** and then click **Confirm**
+
+4. This should log you into the account but more important look on the right side panel finding the **vipsignin** POST request.  Clicking on this entry and you will see the POST request that was created for your login.
+
+5. Switch to the **payload** tab and we can see the exact data that was submitted.
+
+6. We can see several additional payload entries.  The hardened Javascript silently interrogates the browser and watches as users interact with the page capturing telemetry which is encrypted and sent along with the POST.
+
 |lab033|
-+----------------------------------------------------------------------------------------------+
 
-+----------------------------------------------------------------------------------------------+
-| **End of Lab 1:**  This concludes Lab 1, feel free to review and test the configuration.     |
-+----------------------------------------------------------------------------------------------+
-| |labend|                                                                                     |
-+----------------------------------------------------------------------------------------------+
+**End of Lab 1:**  This concludes Lab 1, feel free to review and test the configuration.
+ 
+|labend|
 
 .. |lab001| image:: _static/lab1-001.png
    :width: 800px
