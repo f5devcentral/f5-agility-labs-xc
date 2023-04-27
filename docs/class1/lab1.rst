@@ -1,20 +1,20 @@
-Lab 1: Deploying F5 Distributed Cloud Proxy Services to Securely Deliver a Public Endpoint
+Lab: Deploying F5 Distributed Cloud Proxy Services to Securely Deliver a Public Endpoint
 ==========================================================================================
 
-Lab 1 will focus on the deployment and security of an existing hosted application using F5 
-Distributed Cloud Platform and Services.  This lab will be deployed in a SaaS only 
+This lab will focus on the deployment and security of an existing hosted application using F5
+Distributed Cloud Platform and Services.  This lab will be deployed in a SaaS only
 configuration with no on-premises (public or private cloud) elements.  All configuration
 will be made via the F5 Distributed Cloud Console and within the F5 Distributed Cloud Global
 Network services architecture.
 
 For the tasks that follow, you should have already noted your individual **namespace**. If you
 failed to note it, return to the **Introduction** section of this lab, follow the instructions
-provided and note your **namespace** accordingly. The **Delegated Domain** and the F5 
+provided and note your **namespace** accordingly. The **Delegated Domain** and the F5
 Distributed Cloud **Tenant** are listed below for your convenience as they will be the same for
 all lab attendees.
 
-* **Delegated Domain:** *.lab-sec.f5demos.com* 
-* **F5 Distributed Cloud Tenant:** https://f5-xc-lab-sec.console.ves.volterra.io 
+* **Delegated Domain:** *.lab-sec.f5demos.com*
+* **F5 Distributed Cloud Tenant:** https://f5-xc-lab-sec.console.ves.volterra.io
 
 Following the tasks in the prior **Introduction** Section, you should now be able to access the
 F5 Distributed Cloud Console, having set your Work Domain Roles and Skill levels. If you have
@@ -216,7 +216,7 @@ Network.
 Task 2: Testing the Application and Viewing Telemetry Data
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The following steps will validate access to the application via web browser, review the 
+The following steps will validate access to the application via web browser, review the
 Performance Monitoring dashboard, and gather request details.
 
 +----------------------------------------------------------------------------------------------+
@@ -251,7 +251,7 @@ Performance Monitoring dashboard, and gather request details.
 +----------------------------------------------------------------------------------------------+
 | 5. Change the viewable time period from Last 5 minutes (default) to **1 hour** by selecting  |
 |                                                                                              |
-|    the dropdown shown, click **Last 1 hour** then clicking **Apply**.                            |
+|    the dropdown shown, click **Last 1 hour** then clicking **Apply**.                        |
 |                                                                                              |
 | 6. Note the **End to end Latency** tile.  This shows the average latency for all requests to |
 |                                                                                              |
@@ -290,6 +290,9 @@ Performance Monitoring dashboard, and gather request details.
 | 11. Note the **Duration** section.  This shows the latency for this specific request.  These |
 |                                                                                              |
 |     values can be compared to the average latency data noted in step 6.                      |
+| .. note::                                                                                    |
+|    * above the **Hide Chart** area, is an icon labeled **Refresh: Updated X minutes ago**    |
+|    * please manually select the refresh icon to see current data                             |
 +----------------------------------------------------------------------------------------------+
 | |lab027|                                                                                     |
 |                                                                                              |
@@ -300,9 +303,7 @@ Task 3: Configure an Application Firewall Policy to Protect the Application
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The following steps will guide you through adding a Web Application Firewall (WAF) Policy.
-
 These steps will create a WAF Policy and apply the WAF policy to the load balancer created in 
-
 Task 1.
 
 +----------------------------------------------------------------------------------------------+
@@ -316,7 +317,7 @@ Task 1.
 |                                                                                              |
 | 2. In the left-hand navigation expand **Security** and click **App Firewall**.               |
 |                                                                                              |
-| 3. On the resulting page click **Add App Firewall**                                          | 
+| 3. On the resulting page click **Add App Firewall**                                          |
 +----------------------------------------------------------------------------------------------+
 | |lab029|                                                                                     |
 |                                                                                              |
@@ -354,16 +355,15 @@ Task 1.
 +----------------------------------------------------------------------------------------------+
 | 9. On the resulting page click **Edit Configuration**.                                       |
 |                                                                                              |
-| 10. Click **Web Application Firewall** in the left-hand navigation.                          |  
+| 10. Click **Web Application Firewall** in the left-hand navigation.                          |
 +----------------------------------------------------------------------------------------------+
 | |lab035|                                                                                     |
 |                                                                                              |
 | |lab036|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
-
 +----------------------------------------------------------------------------------------------+
-| 11. Under the **Web Application Firewall** section select **Enable** from the **Web**
+| 11. Under the **Web Application Firewall** section select **Enable** from the **Web**        |
 |                                                                                              |
 |     **Application Firewall (WAF)** dropdown.                                                 |
 |                                                                                              |
@@ -419,7 +419,7 @@ Monitoring dashboard, and gather security event details.
 +----------------------------------------------------------------------------------------------+
 | |lab040|                                                                                     |
 |                                                                                              |
-| |lab041|
+| |lab041|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+

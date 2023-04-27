@@ -1,4 +1,4 @@
-Lab 5: Introduction to Observability
+Lab: Introduction to Observability
 ====================================
 
 Have you ever wished that you knew about impending application issues before your users or 
@@ -44,7 +44,7 @@ Task 1:  Create a synthetic monitor
 
 #. Wait 30-60 seconds for the monitors to update.
 
-Task 1:  Review the synthetic monitor data
+Task 2:  Review the synthetic monitor data
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 1. Click on HTTP Monitors in the sidebar.

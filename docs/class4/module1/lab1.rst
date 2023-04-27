@@ -316,7 +316,7 @@ Scroll down to Site to Site Tunnel Type and click on the drop down arrow
 
 |
 
-This setting determines the VPN connectivity protocols used between the CE and the Regional Edges. The XC Node will autamatically bring up redundant tunnels to two different RE's. 
+This setting determines the VPN connectivity protocols used between the CE and the Regional Edges. The XC Node will automatically bring up redundant tunnels to two different RE's. 
 These tunnels are self-healing and can fallback when using the configuration setting of IPSEC or SSL.
 Select **IPSEC or SSL** from the list.  
 
