@@ -115,26 +115,35 @@ Task 1: Configure Load Balancer, Origin Pool, WAF and BotDefense (7 min)
 | |lab010|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
-12. Continuing in the **Web Application Firewall** section, from the dropdown, select **Enable**.
++----------------------------------------------------------------------------------------------+
+| 1. Continuing in the **HTTP Load Balancer** section, on the left-hand menu clik on the       |
+|                                                                                              |
+|    **Web Application Firewall (WAF)** and select **Enable**.                                 |
++----------------------------------------------------------------------------------------------+
+| |lab012|                                                                                     |
+|                                                                                              |
+| |lab013|                                                                                     |
++----------------------------------------------------------------------------------------------+
 
-|lab012|
++----------------------------------------------------------------------------------------------+
+| 2. In the resulting **App Firewall** drop down select **Add Item**.                          |
+|                                                                                              |
+| .. note::                                                                                    |
+|    *The "shared/base-appfw" policy is in the "shared namespace" which can be applied to*     |
+|                                                                                              |
+|    *multiple Load Balancer configurations across namespaces, reducing policy sprawl.*        |
++----------------------------------------------------------------------------------------------+
+| |lab014|                                                                                     |
++----------------------------------------------------------------------------------------------+
 
-|lab013|
-
-13. In the resulting **Enable** drop down select **Add Item**.
-
-.. note::
-   *The "shared/base-appfw" policy is in the "shared namespace" which can be applied to multiple Load Balancer configurations across namespaces, reducing policy sprawl.*
-
-|lab014|
-
-14. In the resulting window's **Metadata** section enter **<namespace>-appfw** for the **Name**.
-
-15. Leaving all other values as default, scroll to the bottom and click **Continue**.
-
-|lab015|
-
-
++----------------------------------------------------------------------------------------------+
+| 15. In the resulting window's **Metadata** section enter **<namespace>-appfw** for the       |
+|    **Name**.                                                                                 |
+|                                                                                              |
+| 16. Leaving all other values as default, scroll to the bottom and click Continue.            |                            |
++----------------------------------------------------------------------------------------------+
+| |lab015|                                                                                     |
++----------------------------------------------------------------------------------------------+
 
 16. Back in the HTTP Load Balancer configuration, click **Bot Protection** in the left-hand navigation.
 
