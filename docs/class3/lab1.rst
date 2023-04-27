@@ -44,32 +44,32 @@ steps will define an application, register its DNS and assign a target as an ori
 3. Using the left-hand navigation and in the sections as shown, enter the following data. Values where **<namespace>** is required, use the name of your given namespace.
 
    * **Metadata:Name ID:**  *<namespace>-lb*
-   * **Basic Configuration: List of Domains:** *<namespace>.lab-sec.f5demos.com*
-   * **Basic Configuration: Select Type of Load Balancer:** *HTTP*
+   * **Basic Configuration: Domains and LB Type:** *<namespace>.lab-sec.f5demos.com*
+   * **Basic Configuration: Load Balancer Type:** *HTTP*
    * **Basic Configuration: Automatically Manage DNS Records:** *(Check the checkbox)*
    * **Basic Configuration: HTTP Port:** *80*
 |lab003|
 
-4. In the current window's left-hand navigation, click **Default Origin Servers**. Next, click **Add Item** within the **Origin Pools** section of **Default Origin Servers**.
+4. In the current window's left-hand navigation, click **Origins**. Next, click **Add Item** within the **Origin Pools** section of **Origins**.
 
 |lab004|
 
-5. In the resulting window, use the drop down as shown and click **Create new Origin Pool**.
+5. In the resulting window, use the drop down as shown and click **Add Item**.
 
 |lab005|
 
-6. In the resulting window, enter **<namespace>-pool** in the **Name** field and click **Add Item** under **Basic Configuration: Origin Servers**.
+6. In the resulting window, enter **<namespace>-pool** in the **Name** field and click **Add Item** under **Origin Servers**.
 
 |lab006|
 
 7. In the resulting window, **Public DNS Name of Origin Server** should be selected for **Select Type of Origin Server**.
-8. For **DNS Name** enter the following hostname: **airline-backend.f5se.com** and then click **Add Item**
+8. For **DNS Name** enter the following hostname: **airline-backend.f5se.com** and then click **Apply**
 
 |lab007|
 
-9. After returning to the prior window, make sure **Port:** under **Basic Configuration** is configured for **80**.
+9. After returning to the prior window, make sure **Port:** under **Origin Servers** is configured for **80**.
 10. Leave all other values as shown while scrolling to the bottom and click, **Continue**.
-11. After returning to the next window and confirming the content, click **Add Item**.
+11. After returning to the next window and confirming the content, click **Apply**.
 
 |lab008|
  
@@ -77,13 +77,13 @@ steps will define an application, register its DNS and assign a target as an ori
  
 |lab010|
 
-12. Continuing in the **Security Configuration** section, click on the **Select Web Application Firewall (WAF Config)** and select **App Firewall**.
+12. Continuing in the **Web Application Firewall** section, from the dropdown, select **Enable**.
 
 |lab012|
 
 |lab013|
 
-13. In the resulting **App Firewall** drop down select **Create new App Firewall**.
+13. In the resulting **Enable** drop down select **Add Item**.
 
 .. note::
    *The "shared/base-appfw" policy is in the "shared namespace" which can be applied to multiple Load Balancer configurations across namespaces, reducing policy sprawl.*
@@ -96,11 +96,11 @@ steps will define an application, register its DNS and assign a target as an ori
 
 |lab015|
 
-|lab016|
 
-16. Back in the HTTP Load Balancer configuration, click **Security Configuration** in the left-hand navigation.
 
-17. From the **Bot Defense Config** dropdown, select **Specify Bot Defense Configuration**.
+16. Back in the HTTP Load Balancer configuration, click **Bot Protection** in the left-hand navigation.
+
+17. From the **Bot Defense** dropdown, select **Enable**.
 
 18. In the added menu option, click **Configure**.
 
@@ -112,7 +112,7 @@ steps will define an application, register its DNS and assign a target as an ori
 
 19. Observe the additional positioning options in the **JavaScript Insertion** section.
 
-20. Click **Configure** in the **Protected Endpoints Section**
+20. Click **Configure** in the **Protected App Endpoints** section
 
 21. In the new **App Endpoint Type** click **Add Item**
 
@@ -127,11 +127,13 @@ steps will define an application, register its DNS and assign a target as an ori
     * **Protocol:** *BOTH*
     * **Path:Path Match:** *Prefix*
     * **Prefix:** */user/vipsignin*
+
+    Scroll down further and follow below 
     * **Bot Traffic Mitigation:Select Bot Mitigation Action:** *Flag*
 	* **Bot Traffic Mitigation:Include Mitigation Headers:** *Append Headers**
     * Leave **Inference Header Name** and **Automation Type Header Name** as their respective defaults.	
 
-23. Scroll to the bottom and click **Add Item**
+23. Scroll to the bottom and click **Apply**
 
 |lab022|
 
@@ -141,10 +143,10 @@ steps will define an application, register its DNS and assign a target as an ori
 
 25. Then click **Apply** on the **Protected App Endpoints** screen
 
-26. In the resulting **HTTP Load Balancer** window, scroll to the **Advanced Configuration** section and note the **Where to Advertise the VIP** setting. 
+26. In the resulting **HTTP Load Balancer** window, scroll to the **Other Settings** section and note the **VIP Advertisement** setting. 
 
 .. note::                                                                                    
-   *The above selection controls how/where the application is advertised. The "Advertise On Internet" setting means that this application will be advertised globally using the F5 Distributed Cloud Global Network utilizing Anycast.*
+   *The above selection controls how/where the application is advertised. The "Internet" setting means that this application will be advertised globally using the F5 Distributed Cloud Global Network utilizing Anycast.*
 
 27. Click **Save and Exit** at the bottom of the **HTTP Load Balancer** configuration screen.
 

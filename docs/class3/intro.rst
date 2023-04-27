@@ -107,9 +107,9 @@ step below to access the F5 Distributed Cloud Lab Tenant.
 |                                                                                              |
 | 9. Click on the **Select Service** in the left-hand navigation. In the resulting fly out     |
 |                                                                                              |
-|    navigation, click **Load Balancers**.                                                     |
+|    navigation, click **Distributed Apps**.                                                   |
 |                                                                                              |
-| 10. In the **Load Balancers** configuration screen observe the URL. In the URI path, locate  |
+| 10. In the **Distributed Apps** configuration screen observe the URL. In the URI path, locate|
 |                                                                                              |
 |     the **<adjective-animal>** namespace that you have been assigned. It will be located in  |
 |                                                                                              |
