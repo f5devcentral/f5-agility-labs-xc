@@ -101,23 +101,23 @@ step below to access the F5 Distributed Cloud Lab Tenant.
 |                                                                                              |
 |    Console.  For the purposes of this lab, each lab attendee has been provided a unique      |
 |                                                                                              |
-|    **namespace** which you will defaulted to (in terms of GUI navigation) for all tasks      |
+|    **namespace** which you will be defaulted to (in terms of GUI navigation) for all tasks   |
 |                                                                                              |
 |    performed through the course of this lab.                                                 |
 |                                                                                              |
 | 9. Click on the **Select Service** in the left-hand navigation. In the resulting fly out     |
 |                                                                                              |
-|    navigation, click **Distributed Apps**.                                                   |
+|    navigation, click **Web App & API Protection**.                                           |
 |                                                                                              |
-| 10. In the **Distributed Apps** configuration screen observe the URL. In the URI path, locate|
+| 10. In the **Web App & API Protection** configuration screen observe the URL. In the URI     |
 |                                                                                              |
-|     the **<adjective-animal>** namespace that you have been assigned. It will be located in  |
+|     path, locate the **<adjective-animal>** namespace that you have been assigned. It will be|
 |                                                                                              |
-|     the portion of the URI path between */namespaces/* and */sites/* as shown in this        |
+|     located in the portion of the URI path between */namespaces/* and */overview/* as shown  |
 |                                                                                              |
-|     example **…/namespaces/<namespace>/sites/…**. Note the namespace as it will be used      |
+|     in this example **…/namespaces/<namespace>/overview/…**. Note the namespace as it will   |
 |                                                                                              |
-|     throughout the lab tasks that follow.                                                    |
+|     be used throughout the lab tasks that follow.                                            |
 |                                                                                              |
 | .. note::                                                                                    |
 |    *Administratively, there are other ways to find namespaces. Due to access and permission* |
