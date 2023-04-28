@@ -69,15 +69,15 @@ steps will define an application, register its DNS and assign a target as an ori
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 5. In the current window's left-hand navigation, click **Origins**. Next,                    |
+| 5. In the current window's left-hand navigation, click **Origins**. In the adjacent          |
 |                                                                                              |
-|    click **Add Item** within the **Origin Pools** section of **Origins**.                    |
+|    **Origins** section, under **Origin Pools**, click **Add Item**.                          |
 +----------------------------------------------------------------------------------------------+
 | |lab004|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 6. In the resulting window, use the drop down as shown and click **Create new Origin Pool**. |
+| 6. In the resulting window, use the drop down as shown and click **Add Item**.               |
 +----------------------------------------------------------------------------------------------+
 | |lab005|                                                                                     |
 +----------------------------------------------------------------------------------------------+
@@ -85,7 +85,7 @@ steps will define an application, register its DNS and assign a target as an ori
 +----------------------------------------------------------------------------------------------+
 | 7. In the resulting window, enter **<namespace>-pool** in the **Name** field and click       |
 |                                                                                              |
-|    **Add Item** under **Origin Servers**                                                     |
+|    **Add Item** under **Origin Servers** as shown.                                           |
 +----------------------------------------------------------------------------------------------+
 | |lab006|                                                                                     |
 +----------------------------------------------------------------------------------------------+
@@ -95,7 +95,7 @@ steps will define an application, register its DNS and assign a target as an ori
 |                                                                                              |
 |    **Select Type of Origin Server**.                                                         |
 |                                                                                              |
-| 9. For **DNS Name** enter the following hostname:                                            |
+| 9. In the **DNS Name** field enter the following hostname:                                   |
 |                                                                                              |
 |    **demo-app.amer.myedgedemo.com** and then click **Apply**                                 |
 +----------------------------------------------------------------------------------------------+
@@ -103,9 +103,9 @@ steps will define an application, register its DNS and assign a target as an ori
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 10. After returning to the prior window, make sure **Port:** under **Basic Configuration**   |
+| 10. After returning to the prior window, make sure **Port:** within the **Origin Servers**   |
 |                                                                                              |
-|     is configured for **80**.                                                                |
+|     section, under **Origin Server Port* is configured for **80**.                           |
 |                                                                                              |
 | 11. Leave all other values as shown while scrolling to the bottom and click, **Continue**.   |
 |                                                                                              |
@@ -125,15 +125,15 @@ The following steps will guide you through adding a Web Application Firewall (WA
 These steps will demonstrate various aspects of the configuration.
 
 +----------------------------------------------------------------------------------------------+
-| 1. Continuing in the **HTTP Load Balancer** section, on the left-hand menu clik on the       |
+| 1. Continuing in the **HTTP Load Balancer** section, on the left-hand menu click on the      |
 |                                                                                              |
-|    **Web Application Firewall (WAF)** and select **Enable**.                                 |
+|    **Web Application Firewall (WAF)** drop down and select **Enable**.                       |
 +----------------------------------------------------------------------------------------------+
 | |lab012|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 2. In the resulting **App Firewall** drop down select **Add Item**.                          |
+| 2. In the resulting **Enable** field drop down, select **Add Item**.                         |
 |                                                                                              |
 | .. note::                                                                                    |
 |    *The "shared/base-appfw" policy is in the "shared namespace" which can be applied to*     |
@@ -144,7 +144,7 @@ These steps will demonstrate various aspects of the configuration.
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 3. In the resulting window's **Metadata** section enter **<namespace>-appfw** for the        |
+| 3. In the new window's **Metadata** section enter **<namespace>-appfw** for the              |
 |    **Name**.                                                                                 |
 |                                                                                              |
 | 4. Under **Enforcement Mode**, change the mode to **Blocking**.                              |
@@ -159,26 +159,40 @@ These steps will demonstrate various aspects of the configuration.
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 7. In the expanded configuration, use the dropdown for **Signature Selection by Accuracy**   |
+| 7. In the expanded configuration, in the **Attack Signatures** section use the dropdown for  |
 |                                                                                              |
-|    and select **High, Medium, and Low**.                                                     |
+|    **Signature Selection by Accuracy** and select **High, Medium, and Low**.                 |
 |                                                                                              |
-| 8. Leaving all other values as default, scroll to the bottom and click **Continue**.         |
+| .. note::                                                                                    |
+|    *Automatic Attack Signatures Tuning is enabled which engages automatic a False Positive*  |
+|                                                                                              |
+|    *suppression engine.  Any suppressed events are logged within Security Events*.           |
+|                                                                                              |
+| .. note::                                                                                    |
+|    *Attack Signatures Staging is disabled.  This can be enabled should an Application*       |
+|                                                                                              |
+|    *Firewall that new or updated attack signatures be staged (monitored) for a period of*    |
+|                                                                                              |
+|    *prior to enforcement (blocking).*                                                        |
 +----------------------------------------------------------------------------------------------+
 | |lab017|                                                                                     |
-|                                                                                              |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 8. Leaving all other values as default, scroll to the bottom and click **Continue**.         |
++----------------------------------------------------------------------------------------------+
 | |lab018|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 9. In the resulting **HTTP Load Balancer** window, scroll to the **Other Settings**          |
+| 9. Returning to the **HTTP Load Balancer** window, scroll to (or click in the left-hand      |
 |                                                                                              |
-|    section and note the **VIP Advertisement** setting.                                       |
+|    navigation) to the **Other Settings** section and note the **VIP Advertisement** setting. |
 |                                                                                              |
 | .. note::                                                                                    |
 |    *The above selection controls how/where the application is advertised. The "Internet"*    |
 |                                                                                              |
-|    *setting means that this application will be advertised globally using the F5*            |
+|    *setting means that this application will be advertised globally from the F5*             |
 |                                                                                              |
 |    *Distributed Cloud Global Network utilizing Anycast.*                                     |
 |                                                                                              |
@@ -201,13 +215,11 @@ These steps will demonstrate various aspects of the configuration.
 | 12. Click **DNS Information** in the left-hand navigation.                                   |
 |                                                                                              |
 | .. note::                                                                                    |
-|    *The pointer record for the CNAME is listed under "Host Name". It is also listed on the*  |
+|    *The value for a CNAME is listed under "Host Name". The associated "Default/Tenant IP"*   |
 |                                                                                              |
-|    *"HTTP Load Balancers" screen for each Load Balancer. The associated "Default/Tenant IP"* |
+|    *is also shown under **IP Address**. The "Default/Tenant IP" is uniquely assigned to*     |
 |                                                                                              |
-|    *is also shown. The "Default/Tenant IP" is uniquely assigned to each F5 Distributed*      |
-|                                                                                              |
-|    *Cloud Tenant.*                                                                           |
+|    *each F5 Distributed Cloud Tenant. Additional Public IPs can be added to the Tenant.*     |
 +----------------------------------------------------------------------------------------------+
 | |lab021|                                                                                     |
 +----------------------------------------------------------------------------------------------+
@@ -219,7 +231,11 @@ These steps will demonstrate various aspects of the configuration.
 |    *The JSON payload (or YAML format, from dropdown) provides the entire Load Balancer*      |
 |                                                                                              |
 |    *configuration for backup or subsequent CI/CD automation operations.*                     |
-|                                                                                              |
++----------------------------------------------------------------------------------------------+
+| |lab022|                                                                                     |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
 | 14. Click **Documentation** in the horizontal navigation at the top of the screen.           |
 |                                                                                              |
 | .. note::                                                                                    |
@@ -231,8 +247,6 @@ These steps will demonstrate various aspects of the configuration.
 |                                                                                              |
 | 15. Click **Cancel and Exit** to return to the **HTTP Load Balancers** screen.               |
 +----------------------------------------------------------------------------------------------+
-| |lab022|                                                                                     |
-|                                                                                              |
 | |lab023|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
@@ -272,7 +286,7 @@ review the generated event data to make additional configuration changes.
 +----------------------------------------------------------------------------------------------+
 | 4. Returning to the F5 Distributed Cloud Console, use the left-hand menu to select           |
 |                                                                                              |
-|    **Overview** > **Dashboard** > **Perfromance Dashboard** section.  This dashboard will    |
+|    **Overview** > **Dashboard** > **Performance Dashboard** section.  This dashboard will    |
 |                                                                                              |
 |    give you a summary view for all of the configured Load Balancers.                         |
 |                                                                                              |
@@ -280,11 +294,13 @@ review the generated event data to make additional configuration changes.
 |    *As you have not run many requests, summary analytics may not be available in the*        |
 |                                                                                              |
 |    *dashboard view yet.*                                                                     |
-|                                                                                              |
-| 5. Scroll to the bottom and select your load balancer.                                       |
 +----------------------------------------------------------------------------------------------+
 | |lab027a|                                                                                    |
-|                                                                                              |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 5. Scroll to the bottom and select your load balancer.                                       |
++----------------------------------------------------------------------------------------------+
 | |lab027b|                                                                                    |
 +----------------------------------------------------------------------------------------------+
 
