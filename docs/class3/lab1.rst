@@ -114,17 +114,15 @@ Task 1: Configure Load Balancer, Origin Pool, WAF and BotDefense (7 min)
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 1. Continuing in the **HTTP Load Balancer** section, on the left-hand menu click on the      |
+| 13. Continuing in the **HTTP Load Balancer** section, on the left-hand menu click on the     |
 |                                                                                              |
 |    **Web Application Firewall (WAF)** and select **Enable**.                                 |
 +----------------------------------------------------------------------------------------------+
 | |lab012|                                                                                     |
-|                                                                                              |
-| |lab013|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 2. In the resulting **App Firewall** drop down select **Add Item**.                          |
+| 14. In the resulting **App Firewall** drop down select **Add Item**.                         |
 |                                                                                              |
 | .. note::                                                                                    |
 |    *The "shared/base-appfw" policy is in the "shared namespace" which can be applied to*     |
@@ -138,7 +136,7 @@ Task 1: Configure Load Balancer, Origin Pool, WAF and BotDefense (7 min)
 | 15. In the resulting window's **Metadata** section enter **<namespace>-appfw** for the       |
 |    **Name**.                                                                                 |
 |                                                                                              |
-| 16. Leaving all other values as default, scroll to the bottom and click Continue.            |                            |
+| 16. Leaving all other values as default, scroll to the bottom and click Continue.            | 
 +----------------------------------------------------------------------------------------------+
 | |lab015|                                                                                     |
 +----------------------------------------------------------------------------------------------+
