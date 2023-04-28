@@ -97,5 +97,8 @@ In this lab, we will learn the following:
 #. Wait for your virtual K8s current state to show as *Ready* (this can take 5 minutes or more). This is your virtual Kubernetes cluster assigned to the virtual site *agility-k8s-vsite*. 
    As you already know, virtual site *agility-k8s-vsite* has three sites (*agility-vpc-site-one*, *agility-vpc-site-two*, *agility-vpc-site-three*)  
 
-   .. image:: ../images/distributedappclickvirtualk8sstatus.png
+   .. image:: ../images/distributedappclickvirtualk8sstatus-in-progress.png
+      :width: 600pt
+
+   .. image:: ../images/distributedappclickvirtualk8sstatus-updated.png
       :width: 600pt
