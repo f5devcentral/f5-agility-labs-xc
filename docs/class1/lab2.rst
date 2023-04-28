@@ -70,15 +70,15 @@ Exercise 1: Introduction to F5 Distributed Cloud AWS VPC Site
    NOTE:  The health shown is specific to the CE site and the performance data shown 
    is an aggregate of all applications whose data is passing through this CE.
 
-Exercise 2: F5 F5 Distributed Cloud Simulator
+Exercise 2: F5 Distributed Cloud Simulator
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Since the AWS site in this lab was pre-built for you, you may want to walk through the process using the 
+Since the AWS site in this lab was pre-built for you, take a few minutes to walk through the process using the 
 F5 Distributed Cloud Simulator.
 
 https://simulator.f5.com/s/cloud2cloud_via_sites_brownfield/nav/aws/005/0
 
-Clicking on the "Next" button in the top right will allow you to see similar steps that were used to create the site.
+Clicking on the "Next" button in the top right of the simulator will allow you to see similar steps that were used to create the site.
 
 .. image:: _static/f5xc-simulator-vpc-site.png
    :width: 75%
@@ -86,8 +86,7 @@ Clicking on the "Next" button in the top right will allow you to see similar ste
 Exercise 3 (Optional): Video walkthrough
 ^^^^^^^^^^^^^^^^^
 
-NOTE:  The terms Distributed Cloud and AppMesh reflect the updated branding launched in 2022.  
-Prior to that, the term Volterra was used for the platform and the term VoltMesh was used for the node.
+NOTE:  The term Distributed Cloud reflects the updated branding launched in 2022.  Prior to that, the platform was called Volterra.
 
 .. raw:: html
 
