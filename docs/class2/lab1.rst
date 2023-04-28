@@ -536,7 +536,11 @@ customize the WAF policy just built.
 |    Click on the three action dots in the **Actions** column then **Manage Configuration**    |
 |                                                                                              |
 |    from the dropdown menu.                                                                   |
-|                                                                                              |
++----------------------------------------------------------------------------------------------+
+| |lab046|                                                                                     |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
 | 2. Click on the **JSON** tab in the horizontal navigation as shown and scroll to find the    |
 |                                                                                              |
 |    **waf_exclusion_rule** section. Observe that the exclusion rule is associated with the    |
@@ -548,55 +552,49 @@ customize the WAF policy just built.
 |                                                                                              |
 | 3. Click on the **Cancel and Exit** to return to the prior window.                           |
 +----------------------------------------------------------------------------------------------+
-| |lab046|                                                                                     |
-|                                                                                              |
 | |lab047|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 4. In the left-hand navigation menu, expand the **Security** section and click the **App**   |
+| 4. In the left-hand navigation menu, navigate  to **Manage** section and click the **App**   |
 |                                                                                              |
 |    **Firewall** link.                                                                        |
 |                                                                                              |
 | 5. On your App Firewall policy **<namespace>-appfw**, click the three dots in the **Actions**|
 |                                                                                              |
 |    column and then click **Manage Configuration**.                                           |
-|                                                                                              |
-| 6. Click **Edit Configuration** in the top right corner.                                     |
 +----------------------------------------------------------------------------------------------+
 | |lab048|                                                                                     |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 6. Click **Edit Configuration** in the top right corner.                                     |
 |                                                                                              |
-| |lab049|                                                                                     |
-|                                                                                              |
+| 7. Use the left-hand navigation and click on **Advanced Configuration**.                     |
++----------------------------------------------------------------------------------------------+
 | |lab050|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 7. Use the left-hand navigation and click on **Advanced Configuration**.                     |
+| 8. Click the drop down menu for **Blocking Response Page** in the **Advanced Configuration** |
 |                                                                                              |
-| 8. Toggle the **Show Advanced Fields** button to on.                                         |
-|                                                                                              |
-| 9. Click the dropdown on **Blocking Response Page** and select **Custom** from the dropdown. |
+|    section.                                                                                  |
 +----------------------------------------------------------------------------------------------+
 | |lab051|                                                                                     |
-|                                                                                              |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 9. Click the dropdown on **Blocking Response Page** and select **Custom** from the dropdown. |
++----------------------------------------------------------------------------------------------+
 | |lab052|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
 | 10. In the **Blocking Response Page Body** replace the existing text with the text provided  |
 |                                                                                              |
-|     below.                                                                                   |
-|                                                                                              |
-| 11. Click **Save and Exit** when completed.                                                  |
-|                                                                                              |
-| 12. You can rerun an attack from Task 3: Step 2 to see the new custom block page.            |
+|     below. Click **Save and Exit** when completed.                                           |
 +----------------------------------------------------------------------------------------------+
 | |lab053|                                                                                     |
-|                                                                                              |
-| |lab054|                                                                                     |
-|                                                                                              |
-| |lab055|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 Sample Blocking Response Page to be copied::
@@ -619,6 +617,12 @@ Sample Blocking Response Page to be copied::
   </div></div></td></tr></table></div>
   <div style="background-color: #222222; position: fixed; bottom: 0px; height: 40px; width: 100%; text-align: center;"></div>
   </body></html>
+
++----------------------------------------------------------------------------------------------+
+| 11. You can rerun an attack from Task 3: Step 2 to see the new custom block page.            |
++----------------------------------------------------------------------------------------------+
+| |lab055|                                                                                     |
++----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
 | **End of Lab 1:**  This concludes Lab 1, feel free to review and test the configuration.     |
