@@ -327,62 +327,128 @@ review the generated event data to make additional configuration changes.
 |    details are available as is per request duration timing. Note that you can also use the   |
 |                                                                                              |
 |    horizontal, clickable response code filters to quickly filter requests.                   |
-|                                                                                              |
-| 9. Click on the **JSON** link to get more data about the request.                            |
 +----------------------------------------------------------------------------------------------+
 | |lab029|                                                                                     |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 9. Click on the **JSON** link to get more data about the request.                            |
 |                                                                                              |
+| 10. Click **Add Filter** as shown to see how you can filter by key identifiers.              |
++----------------------------------------------------------------------------------------------+
 | |lab030|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 9. Use the **Monitoring** dropdown near your Load Balancer name at the top of the screen to  |
+| 11. The resulting **Search** input field and listed **Keys**, can be used to filter requests |
 |                                                                                              |
-|    to select **Security Monitoring**.                                                        |
+|     in this view.                                                                            |
+|                                                                                              |
+| .. note::                                                                                    |
+|    *The available Key list to search is dynamically updated based on the requests in the*    |
+|                                                                                              |
+|    *selected time view.*                                                                     |
++----------------------------------------------------------------------------------------------+
+| |lab030a|                                                                                    |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 12. Closing the filters view, note the available **Quick Filters** for Response Codes which  |
+|                                                                                              |
+|     allows quickly filtering the requests by toggling on off each response code category.    |
+|                                                                                              |
+| .. note::                                                                                    |
+|    *Allows you to quickly filter down to 4xx and 5xx errors that need review.*               |
+|                                                                                              |
+| 13. Click the **Forensics** tab on the right side of the view as shown.                      |
++----------------------------------------------------------------------------------------------+
+| |lab030b|                                                                                    |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 14. The *Forensics* Filter  provides summarized top categories which provides quicker        |
+|                                                                                              |
+|     analysis of the request log data.  Collapse the **Forensics** view when done using the   |
+|                                                                                              |
+|     indicated arrow.                                                                         |
+|                                                                                              |
+| .. note::                                                                                    |
+|    *Individual forensic categories can be changed using the noted pencil icon to surface*    |
+|                                                                                              |
+|    *additional top data details.*                                                            |
++----------------------------------------------------------------------------------------------+
+| |lab030c|                                                                                    |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 15. Using the left-hand navigation, click **Dashboards** and then select **Security**        |
+|                                                                                              |
+|    **Dashboard**.                                                                            |
 +----------------------------------------------------------------------------------------------+
 | |lab031|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 10. From the **Dashboard** view, using the horizontal navigation, click **Security Events**. |
+| 16. Review the **Security Dashboard** display (you may have limited data) and then scroll to |
 |                                                                                              |
-| 11. Expand your latest security event as shown.                                              |
+|    **Load Balancers** section and click the <adjective-animal>-lb object.                    |
+|                                                                                              |
+| .. note::                                                                                    |
+|    *This is a multi-application view. Here you could get the summary security status of*     |
+|                                                                                              |
+|    *each application (iw Threat Level, WAF Mode, etc)* and then click into one for more*     |
+|                                                                                              |
+|    *specific details.*                                                                       |
++----------------------------------------------------------------------------------------------+
+| |lab031|                                                                                     |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 17. From the **Security Dashboard** view, using the horizontal navigation, click **Security**|
+|                                                                                              |
+|     **Events**.                                                                              |
++---------------------------------------------------------------------------------------------+
+| |lab032|                                                                                     |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 18. Expand your latest security event as shown.                                              |
 |                                                                                              |
 | .. note::                                                                                    |
 |    *If you lost your 1 Hour Filter, re-apply using Task 3: Step 6*                           |
 +----------------------------------------------------------------------------------------------+
-| |lab032|                                                                                     |
-|                                                                                              |
 | |lab033|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 12. Note the summary detail provided **Information** link and identify the **Request ID**    |
+| 19. Note the summary detail provided **Information** link and identify the **Request ID**    |
 |                                                                                              |
 |     which is synonymous with **Support ID** (filterable) from the Security Event Block Page. |
-|                                                                                              |
-| 13. Scroll to the bottom of the information screen to see specific signatures detected and   |
++----------------------------------------------------------------------------------------------+
+| |lab034|                                                                                     |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 20. Scroll to the bottom of the information screen to see specific signatures detected and   |
 |                                                                                              |
 |     actions taken during the security event.                                                 |
 |                                                                                              |
 | .. note::                                                                                    |
-|    *Similar to a Request, Security Events also have additional detail in JSON format.*       |
+|    *Similar to a Requests, Security Events also have additional detail in JSON format.*      |
 |                                                                                              |
-| 14. Next, click on the **Add Filter** link just under the **Security Events** title near the |
+| 21. Next, click on the **Add Filter** link just under the **Security Events** title near the |
 |                                                                                              |
 |     top of the **Security Events** window.                                                   |
 +----------------------------------------------------------------------------------------------+
-| |lab034|                                                                                     |
-|                                                                                              |
 | |lab035|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 15. Type **req** in the open dialogue window and select **req_id** from the dropdown.        |
+| 22. Type **req** in the open dialogue window and select **req_id** from the dropdown.        |
 |                                                                                              |
-| 16. Next, select **In** from the **Select Operator** dropdown.                               |
+| 23. Next, select **In** from the **Select Operator** dropdown.                               |
 |                                                                                              |
-| 17. Finally, select/assign a value that matches one of your recorded **Support IDs** from    |
+| 24. Finally, select/assign a value that matches one of your copied **Support IDs** from      |
 |                                                                                              |
 |     Task 3, Step 2 as shown.  You can also optionally just paste the Support ID in the       |
 |                                                                                              |
@@ -396,32 +462,32 @@ review the generated event data to make additional configuration changes.
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 18. You should now be filtered to a single Security Event, as shown with your selected       |
+| 25. You should now be filtered to a single Security Event, as shown with your selected       |
 |                                                                                              |
 |     filter. You can expand and review the request as desired using the **arrow** icon.       |
 |                                                                                              |
-| 19. Under the **Actions** column, click on the three Action dots (Scroll to right).          |
+| 26. Under the **Actions** column, click on the three Action dots (Scroll to right).          |
+|                                                                                              |
+| 27. Select **Create WAF Exclusion rule** from the dropdown that appears.                     |
+|                                                                                              |
+| .. note::                                                                                    |
+|    *Adding requestor to "Blocked or Trusted Clients" is also available.*                     |
 +----------------------------------------------------------------------------------------------+
 | |lab039|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 18. Select **Create WAF Exclusion rule** from the dropdown that appears.                     |
-|                                                                                              |
-| .. note::                                                                                    |
-|    *Adding requestor to "Blocked or Trusted Clients" is also available.*                     |
-|                                                                                              |
-| 19. In the subsequent **Simple WAF Exclusion Rule** window, review the settings (which are   |
+| 28. In the subsequent **Simple WAF Exclusion Rule** window, review the settings (which are   |
 |                                                                                              |
 |     editable) by scrolling through the window.  The values have been auto-populated based on |
 |                                                                                              |
-|     the selected event to be excluded.                                                       |
+|     the selected event to be excluded. Note the various sections and possible controls.      |
 |                                                                                              |
-| 20. In the **Expiration  Timestamp** field enter a timestamp 10 minutes from now at which    |
+| 29. In the **Expiration  Timestamp** field enter a timestamp 10 minutes from now at which    |
 |                                                                                              |
 |     the exclusion should expire. (helpful when testing/validating). the format should be as  |
 |                                                                                              |
-|     shown *YYYY-MM-DD HH:MM:SS+00:00 (2022-05-30T01:21:00+00:00)*.                           |
+|     shown *YYYY-MM-DD HH:MM:SS+00:00 (2023-05-30T01:21:00+00:00)*.                           |
 |                                                                                              |
 | 21. Click **Apply** when complete.                                                           |
 +----------------------------------------------------------------------------------------------+
