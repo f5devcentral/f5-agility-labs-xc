@@ -453,6 +453,9 @@ review the generated event data to make additional configuration changes.
 |     Task 3, Step 2 as shown.  You can also optionally just paste the Support ID in the       |
 |                                                                                              |
 |     value field and click **Apply**.                                                         |
+|                                                                                              |
+| .. note::                                                                                    |
+|    *As in the prior task, Security Events also support Quick Filters and Forensics*          |
 +----------------------------------------------------------------------------------------------+
 | |lab036|                                                                                     |
 |                                                                                              |
