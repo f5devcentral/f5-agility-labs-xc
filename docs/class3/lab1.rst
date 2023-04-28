@@ -25,6 +25,9 @@ done so already, please login to your tenant for this lab and proceed to Task 1.
 
 Task 1: Configure Load Balancer, Origin Pool, WAF and BotDefense (7 min)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. note::                                                                                    
+   *You have defaulted to your specific namespace as that is the only namespace to which you*
+   *have administrative access.*                                                             
 
 +----------------------------------------------------------------------------------------------+
 | 1. Following the **Introduction** section instructions, you should now be in the **Web**     |
@@ -40,11 +43,6 @@ Task 1: Configure Load Balancer, Origin Pool, WAF and BotDefense (7 min)
 |    **Balancers**                                                                             |
 |                                                                                              |
 | 3. In the resulting screen click the **Add HTTP Load Balancer** in the graphic as shown.     |
-|                                                                                              |
-| .. note::                                                                                    |
-|    *You have defaulted to your specific namespace as that is the only namespace to which you*|
-|                                                                                              |
-|    *have administrative access.*                                                             |
 +----------------------------------------------------------------------------------------------+
 | |lab001|                                                                                     |
 |                                                                                              |
@@ -116,7 +114,7 @@ Task 1: Configure Load Balancer, Origin Pool, WAF and BotDefense (7 min)
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 1. Continuing in the **HTTP Load Balancer** section, on the left-hand menu clik on the       |
+| 1. Continuing in the **HTTP Load Balancer** section, on the left-hand menu click on the      |
 |                                                                                              |
 |    **Web Application Firewall (WAF)** and select **Enable**.                                 |
 +----------------------------------------------------------------------------------------------+
