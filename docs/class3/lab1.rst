@@ -281,13 +281,13 @@ Task 3: Compare Via Bot Defense (5min)
    :width: 800px
 .. |lab010| image:: _static/lab1-010-updated.png
    :width: 800px
-.. |lab012| image:: _static/lab1-012.png
+.. |lab012| image:: _static/lab1-012-updated.png
    :width: 800px
 .. |lab013| image:: _static/lab1-013.png
    :width: 800px
-.. |lab014| image:: _static/lab1-014.png
+.. |lab014| image:: _static/lab1-014-updated.png
    :width: 800px
-.. |lab015| image:: _static/lab1-015.png
+.. |lab015| image:: _static/lab1-015-updated.png
    :width: 800px
 .. |lab016| image:: _static/lab1-016.png
    :width: 800px
