@@ -133,10 +133,9 @@ Task 1: Configure Load Balancer, Origin Pool, WAF and BotDefense (7 min)
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 15. In the resulting window's **Metadata** section enter **<namespace>-appfw** for the       |
-|    **Name**.                                                                                 |
+| 15. In the resulting window's **Metadata** field enter **<namespace>-appfw** for the **Name**|
 |                                                                                              |
-| 16. Leaving all other values as default, scroll to the bottom and click Continue.            | 
+| 16. Leaving all other values as default, scroll to the bottom and click **Continue**.        | 
 +----------------------------------------------------------------------------------------------+
 | |lab015|                                                                                     |
 +----------------------------------------------------------------------------------------------+
@@ -209,11 +208,11 @@ Task 1: Configure Load Balancer, Origin Pool, WAF and BotDefense (7 min)
 +----------------------------------------------------------------------------------------------+
 
 .. note::                                                                                    
-   *The above selection controls how/where the application is advertised. The "Internet" setting*
-
-   *means that this application will be advertised globally using the F5 Distributed Cloud Global*
-
-   *Network utilizing Anycast.*
+   *The above selection controls how/where the application is advertised. The "Internet"*
+   
+   *setting means that this application will be advertised globally using the F5 Distributed*
+   
+   *Cloud Global Network utilizing Anycast.*
 
 +----------------------------------------------------------------------------------------------+
 | 27. Note the indicated hostname (copy to notepad or note tool) as this will be used in the   |
