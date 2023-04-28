@@ -1,9 +1,10 @@
 Lab 1: Deploying and Managing F5 Distributed Cloud Web Application Firewall Configuration
 =========================================================================================
 
-.. warning :: If you ran the **F5 Distributed Cloud 101** lab previously, please delete the LB from the
-   previous lab. We will create a new LB in this lab with the same name. What's more, please jump to 
-   Task 1 directly.
+.. warning :: If you are using multiple labs in one course, understand that some steps below
+   may be redundant depending on labs deployed. To gain full benefits from this lab, please 
+   delete any objects created in your prior lab and continue with this lab as all necessary
+   objects will be recreated. 
 
 Lab 1 will focus on the deployment and security of an existing hosted application using F5 
 Distributed Cloud Platform and Services. This lab will be deployed in a SaaS only configuration 
@@ -105,7 +106,7 @@ steps will define an application, register its DNS and assign a target as an ori
 +----------------------------------------------------------------------------------------------+
 | 10. After returning to the prior window, make sure **Port:** within the **Origin Servers**   |
 |                                                                                              |
-|     section, under **Origin Server Port* is configured for **80**.                           |
+|     section, under **Origin Server Port** is configured for **80**.                          |
 |                                                                                              |
 | 11. Leave all other values as shown while scrolling to the bottom and click, **Continue**.   |
 |                                                                                              |
@@ -162,6 +163,12 @@ These steps will demonstrate various aspects of the configuration.
 | 7. In the expanded configuration, in the **Attack Signatures** section use the dropdown for  |
 |                                                                                              |
 |    **Signature Selection by Accuracy** and select **High, Medium, and Low**.                 |
++----------------------------------------------------------------------------------------------+
+| |lab017|                                                                                     |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 8. Leaving all other values as default, scroll to the bottom and click **Continue**.         |
 |                                                                                              |
 | .. note::                                                                                    |
 |    *Automatic Attack Signatures Tuning is enabled which engages automatic a False Positive*  |
@@ -174,12 +181,6 @@ These steps will demonstrate various aspects of the configuration.
 |    *Firewall that new or updated attack signatures be staged (monitored) for a period of*    |
 |                                                                                              |
 |    *prior to enforcement (blocking).*                                                        |
-+----------------------------------------------------------------------------------------------+
-| |lab017|                                                                                     |
-+----------------------------------------------------------------------------------------------+
-
-+----------------------------------------------------------------------------------------------+
-| 8. Leaving all other values as default, scroll to the bottom and click **Continue**.         |
 +----------------------------------------------------------------------------------------------+
 | |lab018|                                                                                     |
 +----------------------------------------------------------------------------------------------+
@@ -214,23 +215,21 @@ These steps will demonstrate various aspects of the configuration.
 +----------------------------------------------------------------------------------------------+
 | 12. Click **DNS Information** in the left-hand navigation.                                   |
 |                                                                                              |
-| .. note::                                                                                    |
-|    *The value for a CNAME is listed under "Host Name". The associated "Default/Tenant IP"*   |
+|    The value for a CNAME is listed under **Host Name**. The associated "Default/Tenant IP"   |
 |                                                                                              |
-|    *is also shown under **IP Address**. The "Default/Tenant IP" is uniquely assigned to*     |
+|    is also shown under **IP Address**. The "Default/Tenant IP" is uniquely assigned to each  |
 |                                                                                              |
-|    *each F5 Distributed Cloud Tenant. Additional Public IPs can be added to the Tenant.*     |
+|    F5 Distributed Cloud Tenant. Additional Public IPs can be added to the Tenant.            |
 +----------------------------------------------------------------------------------------------+
 | |lab021|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 13. Click **JSON** in the horizontal navigation at the top of the screen.                    |
+| 13. Click **JSON** in the horizontal navigation at the top-left of the screen.               |
 |                                                                                              |
-| .. note::                                                                                    |
-|    *The JSON payload (or YAML format, from dropdown) provides the entire Load Balancer*      |
+|    The JSON payload (or YAML format, from dropdown) provides for the entire Load Balancer    |
 |                                                                                              |
-|    *configuration for backup or subsequent CI/CD automation operations.*                     |
+|    configuration.  This can be used for backup or subsequent CI/CD automation operations.    |
 +----------------------------------------------------------------------------------------------+
 | |lab022|                                                                                     |
 +----------------------------------------------------------------------------------------------+
@@ -238,12 +237,11 @@ These steps will demonstrate various aspects of the configuration.
 +----------------------------------------------------------------------------------------------+
 | 14. Click **Documentation** in the horizontal navigation at the top of the screen.           |
 |                                                                                              |
-| .. note::                                                                                    |
-|    *The Documentation screen provides details on the F5 Distributed Cloud Console API.*      |
+|    The Documentation screen provides details on the F5 Distributed Cloud Console API.        |
 |                                                                                              |
-|    *All operations in the F5 Distributed Cloud Platform are API-first. This includes all GUI*|
+|    All operations in the F5 Distributed Cloud Platform are API-first. This includes all GUI  |
 |                                                                                              |
-|    *actions and associated audit logging.*                                                   |
+|    actions and associated audit logging.                                                     |
 |                                                                                              |
 | 15. Click **Cancel and Exit** to return to the **HTTP Load Balancers** screen.               |
 +----------------------------------------------------------------------------------------------+
@@ -286,9 +284,9 @@ review the generated event data to make additional configuration changes.
 +----------------------------------------------------------------------------------------------+
 | 4. Returning to the F5 Distributed Cloud Console, use the left-hand menu to select           |
 |                                                                                              |
-|    **Overview** > **Dashboard** > **Performance Dashboard** section.  This dashboard will    |
+|    **Overview > Dashboard > Performance Dashboard** section.  This dashboard will provide a  |
 |                                                                                              |
-|    give you a summary view for all of the configured Load Balancers.                         |
+|    summary view for all of the configured Load Balancers.                                    |
 |                                                                                              |
 | .. note::                                                                                    |
 |    *As you have not run many requests, summary analytics may not be available in the*        |
@@ -322,11 +320,9 @@ review the generated event data to make additional configuration changes.
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 8. Expand one of the requests and noted on the **Information** link that summary request     |
+| 8. Expand one of the requests and note the **Information** tab link. This summarizes request |
 |                                                                                              |
-|    details are available as is per request duration timing. Note that you can also use the   |
-|                                                                                              |
-|    horizontal, clickable response code filters to quickly filter requests.                   |
+|    details and provides request duration timing.                                             |
 +----------------------------------------------------------------------------------------------+
 | |lab029|                                                                                     |
 +----------------------------------------------------------------------------------------------+
@@ -355,7 +351,9 @@ review the generated event data to make additional configuration changes.
 +----------------------------------------------------------------------------------------------+
 | 12. Closing the filters view, note the available **Quick Filters** for Response Codes which  |
 |                                                                                              |
-|     allows quickly filtering the requests by toggling on off each response code category.    |
+|     allows quickly filtering the requests by toggling **on** or **off** each response code   |
+|                                                                                              |
+|     category.                                                                                |
 |                                                                                              |
 | .. note::                                                                                    |
 |    *Allows you to quickly filter down to 4xx and 5xx errors that need review.*               |
@@ -383,15 +381,19 @@ review the generated event data to make additional configuration changes.
 +----------------------------------------------------------------------------------------------+
 | 15. Using the left-hand navigation, click **Dashboards** and then select **Security**        |
 |                                                                                              |
-|    **Dashboard**.                                                                            |
+|     **Dashboard**.                                                                           |
 +----------------------------------------------------------------------------------------------+
 | |lab031|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 16. Review the **Security Dashboard** display (you may have limited data) and then scroll to |
-|                                                                                              |
-|    **Load Balancers** section and click the <adjective-animal>-lb object.                    |
+| 16. Review the **Security Dashboard** display (you may have limited data) .                  |
++----------------------------------------------------------------------------------------------+
+| |lab031a|                                                                                    |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 17. Scroll to **Load Balancers** section and click the **<adjective-animal>-lb** object.     |
 |                                                                                              |
 | .. note::                                                                                    |
 |    *This is a multi-application view. Here you could get the summary security status of*     |
@@ -400,13 +402,11 @@ review the generated event data to make additional configuration changes.
 |                                                                                              |
 |    *specific details.*                                                                       |
 +----------------------------------------------------------------------------------------------+
-| |lab031a|                                                                                    |
-|                                                                                              |
 | |lab031b|                                                                                    |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 17. From the **Security Dashboard** view, using the horizontal navigation, click **Security**|
+| 18. From the **Security Dashboard** view, using the horizontal navigation, click **Security**|
 |                                                                                              |
 |     **Events**.                                                                              |
 +----------------------------------------------------------------------------------------------+
@@ -414,7 +414,7 @@ review the generated event data to make additional configuration changes.
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 18. Expand your latest security event as shown.                                              |
+| 19. Expand your latest security event as shown.                                              |
 |                                                                                              |
 | .. note::                                                                                    |
 |    *If you lost your 1 Hour Filter, re-apply using Task 3: Step 6*                           |
@@ -423,7 +423,7 @@ review the generated event data to make additional configuration changes.
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 19. Note the summary detail provided **Information** link and identify the **Request ID**    |
+| 20. Note the summary detail provided **Information** link and identify the **Request ID**    |
 |                                                                                              |
 |     which is synonymous with **Support ID** (filterable) from the Security Event Block Page. |
 +----------------------------------------------------------------------------------------------+
@@ -431,14 +431,14 @@ review the generated event data to make additional configuration changes.
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 20. Scroll to the bottom of the information screen to see specific signatures detected and   |
+| 21. Scroll to the bottom of the information screen to see specific signatures detected and   |
 |                                                                                              |
 |     actions taken during the security event.                                                 |
 |                                                                                              |
 | .. note::                                                                                    |
-|    *Similar to a Requests, Security Events also have additional detail in JSON format.*      |
+|    *Similar to Requests, Security Events also have additional detail in JSON format.*        |
 |                                                                                              |
-| 21. Next, click on the **Add Filter** link just under the **Security Events** title near the |
+| 22. Next, click on the **Add Filter** link just under the **Security Events** title near the |
 |                                                                                              |
 |     top of the **Security Events** window.                                                   |
 +----------------------------------------------------------------------------------------------+
@@ -446,11 +446,11 @@ review the generated event data to make additional configuration changes.
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 22. Type **req** in the open dialogue window and select **req_id** from the dropdown.        |
+| 23. Type **req** in the open dialogue window and select **req_id** from the dropdown.        |
 |                                                                                              |
-| 23. Next, select **In** from the **Select Operator** dropdown.                               |
+| 24. Next, select **In** from the **Select Operator** dropdown.                               |
 |                                                                                              |
-| 24. Finally, select/assign a value that matches one of your copied **Support IDs** from      |
+| 25. Finally, select/assign a value that matches one of your copied **Support IDs** from      |
 |                                                                                              |
 |     Task 3, Step 2 as shown.  You can also optionally just paste the Support ID in the       |
 |                                                                                              |
@@ -467,13 +467,13 @@ review the generated event data to make additional configuration changes.
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 25. You should now be filtered to a single Security Event, as shown with your selected       |
+| 26. You should now be filtered to a single "Security Event", as shown with your selected     |
 |                                                                                              |
 |     filter. You can expand and review the request as desired using the **arrow** icon.       |
 |                                                                                              |
-| 26. Under the **Actions** column, click on the three Action dots (Scroll to right).          |
+| 27. Under the **Actions** column, click on the three Action dots (Scroll to right).          |
 |                                                                                              |
-| 27. Select **Create WAF Exclusion rule** from the dropdown that appears.                     |
+| 28. Select **Create WAF Exclusion rule** from the dropdown that appears.                     |
 |                                                                                              |
 | .. note::                                                                                    |
 |    *Adding requestor to "Blocked or Trusted Clients" is also available.*                     |
@@ -482,19 +482,19 @@ review the generated event data to make additional configuration changes.
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 28. In the subsequent **Simple WAF Exclusion Rule** window, review the settings (which are   |
+| 29. In the subsequent **Simple WAF Exclusion Rule** window, review the settings (which are   |
 |                                                                                              |
 |     editable) by scrolling through the window.  The values have been auto-populated based on |
 |                                                                                              |
 |     the selected event to be excluded. Note the various sections and possible controls.      |
 |                                                                                              |
-| 29. In the **Expiration  Timestamp** field enter a timestamp 10 minutes from now at which    |
+| 30. In the **Expiration  Timestamp** field enter a timestamp 10 minutes from now at which    |
 |                                                                                              |
 |     the exclusion should expire. (helpful when testing/validating). the format should be as  |
 |                                                                                              |
 |     shown *YYYY-MM-DD HH:MM:SS+00:00 (2023-05-30T01:21:00+00:00)*.                           |
 |                                                                                              |
-| 21. Click **Apply** when complete.                                                           |
+| 31. Click **Apply** when complete.                                                           |
 +----------------------------------------------------------------------------------------------+
 | |lab040|                                                                                     |
 |                                                                                              |
@@ -504,13 +504,13 @@ review the generated event data to make additional configuration changes.
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 22. Click **Apply** on the **WAF Exclusion Rules** summary screen.                           |
+| 32. Click **Apply** on the **WAF Exclusion Rules** summary screen.                           |
 |                                                                                              |
-| 23. Click on **Security Configuration** in the left-hand navigation and note the added       |
+| 33. Click on **Security Configuration** in the left-hand navigation and note the added       |
 |                                                                                              |
 |     **WAF Exclusion Rules** configuration.                                                   |
 |                                                                                              |
-| 24. Scroll to the bottom of the **HTTP Load Balancer** configuration window and click the    |
+| 34. Scroll to the bottom of the **HTTP Load Balancer** configuration window and click the    |
 |                                                                                              |
 |     **Save and Exit** button.                                                                |
 |                                                                                              |
