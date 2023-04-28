@@ -400,14 +400,16 @@ review the generated event data to make additional configuration changes.
 |                                                                                              |
 |    *specific details.*                                                                       |
 +----------------------------------------------------------------------------------------------+
-| |lab031|                                                                                     |
+| |lab031a|                                                                                    |
+|                                                                                              |
+| |lab031b|                                                                                    |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
 | 17. From the **Security Dashboard** view, using the horizontal navigation, click **Security**|
 |                                                                                              |
 |     **Events**.                                                                              |
-+---------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------+
 | |lab032|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
@@ -686,7 +688,17 @@ Sample Blocking Response Page to be copied::
    :width: 800px
 .. |lab030| image:: _static/lab1-030.png
    :width: 800px
+.. |lab030a| image:: _static/lab1-030a.png
+   :width: 800px
+.. |lab030b| image:: _static/lab1-030b.png
+   :width: 800px
+.. |lab030c| image:: _static/lab1-030c.png
+   :width: 800px
 .. |lab031| image:: _static/lab1-031.png
+   :width: 800px
+.. |lab031a| image:: _static/lab1-031a.png
+   :width: 800px
+.. |lab031b| image:: _static/lab1-031b.png
    :width: 800px
 .. |lab032| image:: _static/lab1-032.png
    :width: 800px
