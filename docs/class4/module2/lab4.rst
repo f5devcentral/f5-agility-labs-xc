@@ -165,7 +165,7 @@ You have met all the requirements thus far, but that phone call had a real sense
 Unfortunately, you don't have access to any of the workloads in the CSP environments but one of your friends over on the Application team recently let you know about a diagnostic tool they use on their AWS frontend. It's called the "In-Container-Diagnostic tool" and it runs on their AWS instance on port 8080. 
 They said you could use it if you need to test connectivity from the AWS frontend to the Azure frontend but they can't give you direct access to the container or workload itself. 
 
-"No problem" you reply, and quickly set out to configure a new frontend in XC for the Diag tool. After you expose the Diag tool, you will configure and test via the Diag tool, an internal load balancer for port 80 traffic between the AWS frontend and Azure frontend. 
+"No problem" you reply, and quickly set out to configure a new frontend in XC for the Diag tool. After you expose the Diag tool, you will configure an internal load balancer for port 80 traffic between the AWS frontend and Azure frontend. You will use the Diag tool to then verify this connectivity. 
 
 |
 
