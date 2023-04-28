@@ -3,21 +3,19 @@ Lab: Deploying an AWS VPC Site
 
 In the previous lab you learned how to protect a resource that is already on the Public Internet.
 
-In this lab we will look at two additional topologies where you can use an AppMesh node
+In this lab we will look at two additional topologies where you can use a Customer Edge (CE)
 to protect a resource that is not directly exposed to the Internet.
 
 F5 Distributed Cloud AWS VPC Site
 ---------------------------------
 
-In addition to protecting resources using F5 Distributed Cloud WAF enforcement at an F5 Regional Edge (RE),
-you can also deploy an AppMesh node that can protect resources that are not directly connected to the Internet.  
-
-When we deploy an AppMesh node, we refer to these locations as a Customer Edge (CE).  
-In this exercise, we will review the process to deploy a Customer Edge (CE).  
-In our existing lab environment, we have already deployed an AppMesh node to establish a CE in our AWS VPC.
+In addition to protecting resources using F5 Distributed Cloud WAF/WAAP enforcement at an F5 Regional Edge (RE),
+you can also deploy a Customer Edge (CE) that can protect resources that are not directly connected to the Internet.  
+ 
+In this exercise, we will review a CE that has already been deployed in an AWS VPC.
 We have also already created a shared F5 Distributed Cloud AWS VPC Site within the Distributed Cloud Console.
 
-Once an AppMesh node has been deployed as a Customer Edge (CE), it unlocks two additional topologies.
+Once a CE has been deployed, it unlocks two additional topologies.
 
 #. Client -> RE -> CE -> Protected resource  
 
@@ -33,10 +31,10 @@ One such example is when clients and protected resources are both local to each 
 Upon CE deployment, two encrypted tunnels are automatically setup between the CE and the two closest REs.  These redundant tunnels provide
 high availability in the unlikely event of an outage at a specific RE within the Distributed Cloud global network.
 
-In the event of an Internet outage at a CE site, local survivability can continue to provide data plane services locally for a period of time.  
+In the event of an Internet outage at a CE site, local survivability will continue to provide data plane services locally for a period of time.  
 During this time, control plane services are suspended and will resume upon Internet connection reestablishment.
 
-While a single AppMesh node CE may be adequate for non-production environments, a high-availability cluster of at least 3 AppMesh nodes 
+While a single CE may be adequate for non-production environments, a high-availability cluster of at least 3 AppMesh nodes 
 is highly recommended at each CE site for production.
 
 Exercise 1: Introduction to F5 Distributed Cloud AWS VPC Site
@@ -72,10 +70,11 @@ Exercise 1: Introduction to F5 Distributed Cloud AWS VPC Site
    NOTE:  The health shown is specific to the CE site and the performance data shown 
    is an aggregate of all applications whose data is passing through this CE.
 
-Exercise 2 (Optional): F5 F5 Distributed Cloud Simulator
+Exercise 2: F5 F5 Distributed Cloud Simulator
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Since the AWS site in this lab was pre-built for you, you may want to simulate the process using the F5 Distributed Cloud Simulator.
+Since the AWS site in this lab was pre-built for you, you may want to walk through the process using the 
+F5 Distributed Cloud Simulator.
 
 https://simulator.f5.com/s/cloud2cloud_via_sites_brownfield/nav/aws/005/0
 
