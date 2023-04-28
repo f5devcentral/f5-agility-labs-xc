@@ -17,12 +17,12 @@ We have also already created a shared F5 Distributed Cloud AWS VPC Site within t
 
 Once a CE has been deployed, it unlocks two additional topologies.
 
-#. Client -> RE -> CE -> Protected resource  
+1. Client -> RE -> CE -> Protected resource  
 
 Leveraging F5 Distributed Cloud REs to provide WAF and other services upstream, 
 then proxying the clean traffic to the protected resource via the CE.
 
-#. Client -> CE -> Protected resource  
+2. Client -> CE -> Protected resource  
 
 In this scenario, the CE advertises the services directly.  While this topology sacrifices some functionality such as 
 volumetric DDoS protection and anycast availability from the Distributed Cloud global network, there are some use cases where it can be beneficial.  
