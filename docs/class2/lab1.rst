@@ -36,7 +36,7 @@ steps will define an application, register its DNS and assign a target as an ori
 |                                                                                              |
 |    **Web App & API Protection** window, use the **Select Service** in the left-hand          |
 |                                                                                              |
-|    navigation, and click **Web App & API Protection** as shown in the *Introduction Section* | 
+|    navigation, and click **Web App & API Protection** as shown in the *Introduction Section* |
 |                                                                                              |
 | 2. In the left-hand navigation expand **Manage** and click **Load Balancers > HTTP Load**    |
 |                                                                                              |
@@ -205,9 +205,9 @@ These steps will demonstrate various aspects of the configuration.
 |                                                                                              |
 |    *"HTTP Load Balancers" screen for each Load Balancer. The associated "Default/Tenant IP"* |
 |                                                                                              |
-|    *is also shown. The "Default/Tenant IP" is uniquely assigned to each *F5 Distributed      |
+|    *is also shown. The "Default/Tenant IP" is uniquely assigned to each F5 Distributed*      |
 |                                                                                              |
-|    * Cloud Tenant.*                                                                          |
+|    *Cloud Tenant.*                                                                           |
 +----------------------------------------------------------------------------------------------+
 | |lab021|                                                                                     |
 +----------------------------------------------------------------------------------------------+

@@ -451,7 +451,7 @@ In this task you will add Custom Policy and assign to your Load Balancer.
 +----------------------------------------------------------------------------------------------+
 | 17. Navigate to your **HTTP Balancer**  and From **Dashboard**                               |
 |                                                                                              |
-|     select **Security Evenets** to see more details about blocked request by App Firewall    |
+|     select **Security Events** to see more details about blocked request by App Firewall     |
 |                                                                                              |
 |     Example url: **http://<namespace>.lab-sec.f5demos.com\/index.php\?page=access**          |
 +----------------------------------------------------------------------------------------------+

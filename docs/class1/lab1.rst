@@ -290,6 +290,7 @@ Performance Monitoring dashboard, and gather request details.
 | 11. Note the **Duration** section.  This shows the latency for this specific request.  These |
 |                                                                                              |
 |     values can be compared to the average latency data noted in step 6.                      |
+|                                                                                              |
 | .. note::                                                                                    |
 |    * above the **Hide Chart** area, is an icon labeled **Refresh: Updated X minutes ago**    |
 |    * please manually select the refresh icon to see current data                             |
@@ -303,8 +304,8 @@ Task 3: Configure an Application Firewall Policy to Protect the Application
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The following steps will guide you through adding a Web Application Firewall (WAF) Policy.
-These steps will create a WAF Policy and apply the WAF policy to the load balancer created in 
-Task 1.
+
+These steps will create a WAF Policy and apply the WAF policy to the load balancer created in Task 1.
 
 +----------------------------------------------------------------------------------------------+
 | 1. Following **Task 2**, you should have the **Multi-Cloud App Connect** navigation panel on |
@@ -382,7 +383,8 @@ Task 1.
 Task 4. Test the Application Firewall and View Security Events
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The following steps will test and validate the Web Application Firewall, review the  Security
+The following steps will test and validate the Web Application Firewall, review the Security
+
 Monitoring dashboard, and gather security event details.
 
 +----------------------------------------------------------------------------------------------+
@@ -411,9 +413,9 @@ Monitoring dashboard, and gather security event details.
 +----------------------------------------------------------------------------------------------+
 | 3. Returning to the F5 Distributed Cloud Console, use the left-hand navigation to navigate   |
 |                                                                                              |
-|    to Multi-Cloud App Connect setion and expand **Virtual Hosts** and click on **HTTP Load   |
+|    to Multi-Cloud App Connect section and expand **Virtual Hosts** and click on **HTTP Load**|
 |                                                                                              |
-|    Balancers**.                                                                              |
+|    **Balancers**.                                                                            |
 |                                                                                              |
 | 4. Click on the **Security Monitoring** link for your respective load balancer.              |
 +----------------------------------------------------------------------------------------------+

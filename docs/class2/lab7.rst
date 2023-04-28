@@ -5,11 +5,11 @@ F5® Distributed API Discovery & Protection provides key security functionality 
 deliver and secure APIs. This lab's tasks will walk through the configuration steps and note additional
 configurations available.
 
-* **API Discovery**: Provided via machine-based learning processes, enables visualiation of the API Framework,
-  assesses use of end-points, discovers new end-points based on flows, identifies use of sensative information,   
+* **API Discovery**: Provided via machine-based learning processes, enables visualization of the API Framework,
+  assesses use of end-points, discovers new end-points based on flows, identifies use of sensitive information,   
   and enables swagger file export.
 
-* **API Protection**: Encompasses a set of defintions and controls to protect and secure the functions, use and 
+* **API Protection**: Encompasses a set of definitions and controls to protect and secure the functions, use and 
   endpoints of the delivered API's framework. 
 
 Task 1: Swagger File Import & Version Control
@@ -102,7 +102,7 @@ version control features.
 | 14. In the resulting window, observe there are now two versions of the **app-api** spec file.|
 |                                                                                              |
 | .. note::                                                                                    |
-|    *This is a API File update process can also be peformed through the F5 Distributed Cloud* |
+|    *This is a API File update process can also be performed through the F5 Distributed Cloud*|
 |                                                                                              |
 |    *API framework.                                                                           |
 |                                                                                              |
@@ -114,7 +114,8 @@ version control features.
 Task 2: Swagger Definition
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In this task's series of steps you will establish the Swagger Defintion which serves as an object
+In this task's series of steps you will establish the Swagger Definition which serves as an object
+
 pointer to imported swagger files you just uploaded.
 
 +----------------------------------------------------------------------------------------------+
@@ -358,9 +359,9 @@ previously built Load Balancer object delivering the targeted application/API.
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| This configuration higlights the elements needed to deploy API Discovery & Prptection.  This |
+| This configuration highlights the elements needed to deploy API Discovery & Protection. This |
 |                                                                                              |
-| configuration can also be fully deployed and managed via the F5 Disitributed Cloud API.      |
+| configuration can also be fully deployed and managed via the F5 Distributed Cloud API.       |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+

@@ -26,7 +26,7 @@ then proxying the clean traffic to the protected resource via the CE.
 
 #. Client -> CE -> Protected resource  
 
-In this scenario, the CE advertises the services directly.  While this topology sacrificies some functionality such as 
+In this scenario, the CE advertises the services directly.  While this topology sacrifices some functionality such as 
 volumetric DDoS protection and anycast availability from the Distributed Cloud global network, there are some use cases where it can be beneficial.  
 One such example is when clients and protected resources are both local to each other without having to traverse the Internet.
 
