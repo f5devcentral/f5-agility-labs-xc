@@ -267,7 +267,7 @@ It will also help you understand additional approaches for Service Policies.
 +----------------------------------------------------------------------------------------------+
 | |lab031|                                                                                     |
 +----------------------------------------------------------------------------------------------+
-n b 
+
 +----------------------------------------------------------------------------------------------+
 | 21. In your browser (Chrome shown), navigate to your application/Load Balancer configuration:|
 |                                                                                              |
