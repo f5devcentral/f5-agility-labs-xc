@@ -12,9 +12,9 @@ In this task you will review the Bot signature configuration and view logged sec
 This lab will begin back in the F5 Distributed Cloud Console.
 
 +----------------------------------------------------------------------------------------------+
-| 1. In the left-hand navigation menu, expand the **Security** section and click the **App**   |
+| 1. Return to **Web App & API Protection**, in the left-hand navigation menu, click on        |
 |                                                                                              |
-|    **Firewall** link.                                                                        |
+|    **App Firewall**.                                                                         |
 |                                                                                              |
 | 2. On your App Firewall policy **<namespace>-appfw**, click the three dots in the **Actions**|
 |                                                                                              |
@@ -65,27 +65,32 @@ This lab will begin back in the F5 Distributed Cloud Console.
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 10. Return to the F5 Distributed Cloud Console, in the left-hand navigation menu, expand the |
+| 10. Return to the F5 Distributed Cloud Console, within **Web App & API Protection** in the   |
 |                                                                                              |
-|     **Virtual Hosts** section and click the **HTTP Load Balancers** link.                    |
-|                                                                                              |
-| 11. On your named Load Balancer, select the **Security Monitoring**, link as shown.          |
+|     left-hand navigation menu, click on **Dashboards > Security Dashboard**                  |
 +----------------------------------------------------------------------------------------------+
 | |lab007|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 12. From the **Security Monitoring** Dashboard, select **Security Events**.                  |
+| 11. Within the **Security Dashboard**, scroll down to the **Load Balancer** section and click|
+|                                                                                              |
+|     the configured Load Balancer *<adjective-animal>-lb*.                                    |   
 +----------------------------------------------------------------------------------------------+
 | |lab008|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 13. Locate your most recent security event, which should be your curl request. Expand the    |
+| 12. Select **Security Events** from the horizontal navigation.                               |
+|                                                                                              |
+| 13. Locate the most recent security event, which should be your curl request. Expand the     |
 |                                                                                              |
 |     security event as you have done in prior exercises to observe the "Suspicious" Bot       |
 |                                                                                              |
-|     reporting. Remember the setting for Suspicious Bot was set to *Report* from Step 5 above.|
+|     reporting. Remember the setting for Suspicious Bot was set to *Report* from Step 6 above.|
+|                                                                                              |
+| .. note::                                                                                    |
+|    *You can review the steps of Lab1, Task 3, Step 8 to locate the information detail*.      |  
 +----------------------------------------------------------------------------------------------+
 | |lab009|                                                                                     |
 +----------------------------------------------------------------------------------------------+
