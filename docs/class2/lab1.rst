@@ -632,49 +632,49 @@ Sample Blocking Response Page to be copied::
 | |labend|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
-.. |lab001| image:: _static/lab1-001-updated.png
+.. |lab001| image:: _static/lab1-001.png
    :width: 800px
-.. |lab002| image:: _static/lab1-002-updated.png
+.. |lab002| image:: _static/lab1-002.png
    :width: 800px
-.. |lab003| image:: _static/lab1-003-updated.png
+.. |lab003| image:: _static/lab1-003.png
    :width: 800px
-.. |lab004| image:: _static/lab1-004-updated.png
+.. |lab004| image:: _static/lab1-004.png
    :width: 800px
-.. |lab005| image:: _static/lab1-005-updated.png
+.. |lab005| image:: _static/lab1-005.png
    :width: 800px
-.. |lab006| image:: _static/lab1-006-updated.png
+.. |lab006| image:: _static/lab1-006.png
    :width: 800px
-.. |lab007| image:: _static/lab1-007-updated.png
+.. |lab007| image:: _static/lab1-007.png
    :width: 800px
-.. |lab008| image:: _static/lab1-008-updated.png
+.. |lab008| image:: _static/lab1-008.png
    :width: 800px
-.. |lab009| image:: _static/lab1-009-updated.png
+.. |lab009| image:: _static/lab1-009.png
    :width: 800px
-.. |lab010| image:: _static/lab1-010-updated.png
+.. |lab010| image:: _static/lab1-010.png
    :width: 800px
-.. |lab012| image:: _static/lab1-012-updated.png
+.. |lab012| image:: _static/lab1-012.png
    :width: 800px
 .. |lab013| image:: _static/lab1-013.png
    :width: 800px
-.. |lab014| image:: _static/lab1-014-updated.png
+.. |lab014| image:: _static/lab1-014.png
    :width: 800px
-.. |lab015| image:: _static/lab1-015-updated.png
+.. |lab015| image:: _static/lab1-015.png
    :width: 800px
-.. |lab016| image:: _static/lab1-016-updated.png
+.. |lab016| image:: _static/lab1-016.png
    :width: 800px
-.. |lab017| image:: _static/lab1-017-updated.png
+.. |lab017| image:: _static/lab1-017.png
    :width: 800px
-.. |lab018| image:: _static/lab1-018-updated.png
+.. |lab018| image:: _static/lab1-018.png
    :width: 800px
-.. |lab019| image:: _static/lab1-019-updated.png
+.. |lab019| image:: _static/lab1-019.png
    :width: 800px
-.. |lab020| image:: _static/lab1-020-updated.png
+.. |lab020| image:: _static/lab1-020.png
    :width: 800px
-.. |lab021| image:: _static/lab1-021-updated.png
+.. |lab021| image:: _static/lab1-021.png
    :width: 800px
-.. |lab022| image:: _static/lab1-022-updated.png
+.. |lab022| image:: _static/lab1-022.png
    :width: 800px
-.. |lab023| image:: _static/lab1-023-updated.png
+.. |lab023| image:: _static/lab1-023.png
    :width: 800px
 .. |lab024| image:: _static/lab1-024.png
    :width: 800px
@@ -682,17 +682,13 @@ Sample Blocking Response Page to be copied::
    :width: 800px
 .. |lab026| image:: _static/lab1-026.png
    :width: 800px
-.. |lab027a| image:: _static/lab1-027a-updated.png
-   :width: 800px
-.. |lab027b| image:: _static/lab1-027b-updated.png
+.. |lab027| image:: _static/lab1-027.png
    :width: 800px
 .. |lab028| image:: _static/lab1-028.png
    :width: 800px
 .. |lab029| image:: _static/lab1-029.png
    :width: 800px
 .. |lab030| image:: _static/lab1-030.png
-   :width: 800px
-.. |lab030a| image:: _static/lab1-030a.png
    :width: 800px
 .. |lab030b| image:: _static/lab1-030b.png
    :width: 800px
