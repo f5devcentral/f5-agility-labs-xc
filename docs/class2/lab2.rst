@@ -28,7 +28,7 @@ This lab will begin back in the F5 Distributed Cloud Console.
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 4. Using the left-hand navigation, click **Detection Settings** and the in the **Detection** |
+| 4. Using the left-hand navigation, click **Detection Settings**.  In the **Detection**       |
 |                                                                                              |
 |    **Settings** section, click the **Signature-Based Bot Protection** dropdown menu.         |
 |                                                                                              |
@@ -54,7 +54,7 @@ This lab will begin back in the F5 Distributed Cloud Console.
 +----------------------------------------------------------------------------------------------+
 | 8. Open a terminal window or DOS prompt on your respective client and issue the following    |
 |                                                                                              |
-|    **curl** command: *curl -v http://<namespace>lab-sec.f5demos.com*.                        |
+|    **curl** command: *curl -v http://<namespace>.lab-sec.f5demos.com*.                       |
 |                                                                                              |
 | 9. Observe the **User Agent** and response content.                                          |
 |                                                                                              |
@@ -95,8 +95,8 @@ This lab will begin back in the F5 Distributed Cloud Console.
 | |lab009|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
-Task 2: Enabling AI-Driven F5 Distributed Cloud BotDefense
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Task 2: Enabling F5 Distributed Cloud BotDefense
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The following steps will enable you to deploy F5 Distributed Cloud BotDefense and understand its
 implementation.
@@ -147,33 +147,33 @@ implementation.
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 9. Click **Security Configuration** in the left-hand navigation.                             |
+| 9. Click **Bot Protection** in the left-hand navigation.                                     |
 |                                                                                              |
-| 10. From the **Bot Defense Config** dropdown, select **Specify Bot Defense Configuration**.  |
+| 10. In the **Bot Protection** section, use the drop down under **Bot Defense** and select    |
 |                                                                                              |
-| 11. In the added menu option, click **Configure**.                                           |
+|     **Enable**.                                                                              |
 +----------------------------------------------------------------------------------------------+
 | |lab016|                                                                                     |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 11. In the new **Bot Defense Policy** section, click **Configure**.                          |
 |                                                                                              |
+| 12. In the new **Protected App Endpoints** window, under **App Endpoint Type**,  click       |
+|                                                                                              |
+|     **Configure**.                                                                           |
+|                                                                                              |
+| 13. In the new **App Endpoint Type** window, click  **App Item**.                            |
++----------------------------------------------------------------------------------------------+
 | |lab017|                                                                                     |
 |                                                                                              |
 | |lab018|                                                                                     |
-+----------------------------------------------------------------------------------------------+
-
-+----------------------------------------------------------------------------------------------+
-| 12. Observe the additional positioning options in the **JavaScript Insertion** section.      |
 |                                                                                              |
-| 13. Click **Configure** in the **Protected Endpoints Section**                               |
-|                                                                                              |
-| 14. In the new **App Endpoint Type** click **Add Item**                                      |
-+----------------------------------------------------------------------------------------------+
 | |lab019|                                                                                     |
-|                                                                                              |
-| |lab020|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 15. In the **Application Endpoint** scroll through the section use the following values:     |
+| 14. In the **Application Endpoint** input the following values in the fields identified:     |
 |                                                                                              |
 |     * **Metadata\\Name:** *auth-bot*                                                         |
 |     * **HTTP Methods:** *POST*                                                               |
@@ -182,32 +182,39 @@ implementation.
 |     * **Prefix:** */auth.php*                                                                |
 |     * **Bot Traffic Mitigation\Select Bot Mitigation Action:** *Block*                       |
 |                                                                                              |
-| 16. Scroll to the bottom and click **Add Item**                                              |
+| 15. Scroll to the bottom and click **Apply**.                                                |
 +----------------------------------------------------------------------------------------------+
-| |lab021|                                                                                     |
+| |lab020|                                                                                     |
 |                                                                                              |
-| |lab022|                                                                                     |
+| |lab021|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 17. Then click **Apply** on the **App Endpoint Type** screen                                 |
+| 16. Click **Apply** on the **App Endpoint Type** window.                                     |
 |                                                                                              |
-| 18. Then click **Apply** on the **Protected App Endpoints** screen                           |
+| 17. Observe the additional positioning options in the **JavaScript Insertion** section of    |
 |                                                                                              |
-| 19. Then scroll to the bottom on the **HTTP Load Balancer** screen, and click **Save and**   |
-|     **Exit**.                                                                                |
+|     the **Protected App Endpoints** window, then click **Apply**.                            |
 +----------------------------------------------------------------------------------------------+
-| |lab023|                                                                                     |
+| |lab022|                                                                                     |
 |                                                                                              |
+| |lab023|                                                                                     |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 18. Observe that the **Bot Defense Policy** is now configured.                               |
+|                                                                                              |
+| 19. Click **Other Settings** in the left-hand navigation or scroll to the bottom on the      |
+|                                                                                              |
+|     **HTTP Load Balancer** screen, and click **Save and Exit**.                              |
++----------------------------------------------------------------------------------------------+
 | |lab024|                                                                                     |
 |                                                                                              |
 | |lab025|                                                                                     |
-|                                                                                              |
-| |lab026|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 20. Repeat Task 2 Steps 1-6.  Note you many need to close your browser and clean cookies     |
+| 20. Repeat Task 2 Steps 1-6.  Note you many need to close your browser and clear cookies     |
 |                                                                                              |
 | 21. Observe now that there is additional telemetry being passed in the POST request.  This   |
 |                                                                                              |
