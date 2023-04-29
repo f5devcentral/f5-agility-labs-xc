@@ -652,6 +652,8 @@ Sample Blocking Response Page to be copied::
    :width: 800px
 .. |lab010| image:: _static/lab1-010.png
    :width: 800px
+.. |lab011| image:: _static/lab1-011.png
+   :width: 800px
 .. |lab012| image:: _static/lab1-012.png
    :width: 800px
 .. |lab013| image:: _static/lab1-013.png
