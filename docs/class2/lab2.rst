@@ -75,7 +75,7 @@ This lab will begin back in the F5 Distributed Cloud Console.
 +----------------------------------------------------------------------------------------------+
 | 11. Within the **Security Dashboard**, scroll down to the **Load Balancer** section and click|
 |                                                                                              |
-|     the configured Load Balancer *<adjective-animal>-lb*.                                    |   
+|     the configured Load Balancer *<namespace>-lb*.                                           |   
 +----------------------------------------------------------------------------------------------+
 | |lab008|                                                                                     |
 +----------------------------------------------------------------------------------------------+
