@@ -35,7 +35,7 @@ In this task you will add a Rate Limiting Policy to the application Load Balance
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 7. In the expanded **Custom Rate Limiting Parameters** click the **Configure** Link.         |
+| 7. In the expanded **Custom Rate Limiting Parameters** click the **View Configuration** Link.|
 +----------------------------------------------------------------------------------------------+
 | |lab004|                                                                                     |
 +----------------------------------------------------------------------------------------------+
@@ -103,9 +103,9 @@ In this task you will add a Rate Limiting Policy to the application Load Balance
 |                                                                                              |
 | .. note::                                                                                    |
 |                                                                                              |
-| *Although its already protect by Bot Defense, we can also control the rate at which the*     |
+|    *Although its already protect by Bot Defense, we can also control the rate at which the*  |
 |                                                                                              |
-| *specific authentication page can be POSTed to (or any other page).*                         |
+|    *specific authentication page can be POSTed to (or any other page).*                      |
 +----------------------------------------------------------------------------------------------+
 | |lab012|                                                                                     |
 |                                                                                              |
@@ -117,7 +117,7 @@ In this task you will add a Rate Limiting Policy to the application Load Balance
 |                                                                                              |
 |     **Rate Limiter Policy** window.                                                          |
 |                                                                                              |
-| 21. Observe the added rule in the **Rule** window and then click **Apply*.                   |
+| 21. Observe the added rule in the **Rule** window and then click **Apply**.                  |
 |                                                                                              |
 | 22. Complete the custom **Rate Limiter Policy** by clicking **Continue**.                    |
 +----------------------------------------------------------------------------------------------+
@@ -133,9 +133,13 @@ In this task you will add a Rate Limiting Policy to the application Load Balance
 |                                                                                              |
 |     interval and the Burst Multiplier.                                                       |
 |                                                                                              |
-| 24. Also observe that IPs can be allowed without RAte Limiting policies being applied        |
+| 24. Also observe that IPs can be allowed without Rate Limiting policies being applied        |
 |                                                                                              |
 | 25. Click **Apply** to add the **Rate Limit Configuration** to the application Load Balancer.|
+|                                                                                              |
+| .. note::                                                                                    |
+|                                                                                              |
+|    *Although only one rule is being added, multiple Rate Limit rules can be attached.*       |
 +----------------------------------------------------------------------------------------------+
 | |lab017|                                                                                     |
 +----------------------------------------------------------------------------------------------+
