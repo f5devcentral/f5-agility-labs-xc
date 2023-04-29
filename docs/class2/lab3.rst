@@ -10,9 +10,11 @@ Task 1: Creating Local Namespace Service Policies
 In this task you will add geo-filter and allowed-ip based service policies.
 
 +----------------------------------------------------------------------------------------------+
-| 1. In the left-hand navigation menu, expand the **Security** section and click **Service**   |
+| 1. Within Web **App & API Protection**, under the **Manage** section in the left-hand        |
 |                                                                                              |
-|    **Policies**. In the flyout menu, click the **Service Policies** link.                    |
+|    navigation menu, click **Service Policies**. In the flyout menu, click the **Service**    |
+|                                                                                              |
+|    Policies** link.                                                                          |
 |                                                                                              |
 | 2. Observe the existing Service Policies and note they are source from the **shared**        |
 |                                                                                              |
@@ -34,16 +36,16 @@ In this task you will add geo-filter and allowed-ip based service policies.
 | 4. In the **Metadata** section enter **geo-filter** for the **Name** and then click **Rules**|
 |                                                                                              |
 |    in the left-hand navigation.                                                              |
+|                                                                                              |
+| 5. Select **Denied Sources** from the dropdown for **Select Policy Rules**.                  |
 +----------------------------------------------------------------------------------------------+
 | |lab003|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 5. Select **Denied Sources** from the dropdown for **Select Policy Rules**, then locate the  |
+| 6. Locate the **Country List** input field and begin typing **Fiji** and then select it from |
 |                                                                                              |
-|    **Country List** input field.                                                             |
-|                                                                                              |
-| 6. Begin typing **Fiji** and then select it from the list that appears.                      |
+|    the list that appears.                                                                    |
 |                                                                                              |
 | 7. Click the dropdown for **Default Action**. Observe the available options and select       |
 |                                                                                              |
@@ -52,14 +54,12 @@ In this task you will add geo-filter and allowed-ip based service policies.
 | |lab004|                                                                                     |
 |                                                                                              |
 | |lab005|                                                                                     |
-|                                                                                              |
-| |lab006|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
 | 8. Observe the resulting added **geo-filter** Service Policy added in your namespace.        |
 +----------------------------------------------------------------------------------------------+
-| |lab007|                                                                                     |
+| |lab006|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
@@ -67,60 +67,64 @@ In this task you will add geo-filter and allowed-ip based service policies.
 |                                                                                              |
 |    your IP address as shown. (example provided)                                              |
 +----------------------------------------------------------------------------------------------+
-| |lab008|                                                                                     |
+| |lab007|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
 | 10. Return to the **Service Policies** window and click **Add Service Policy**.              |
 +----------------------------------------------------------------------------------------------+
-| |lab009|                                                                                     |
+| |lab008|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
 | 11. In the **Metadata** section enter **allowed-ip** for the **Name** and then click         |
 |                                                                                              |
 |     **Rules** in the left-hand navigation.                                                   |
+|                                                                                              |
+| 12. Select **Allowed Sources** from the dropdown for **Select Policy Rules**.                |
 +----------------------------------------------------------------------------------------------+
-| |lab010|                                                                                     |
+| |lab009|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 12. Select **Allowed Sources** from the dropdown for **Select Policy Rules**, then locate the|
-|                                                                                              |
-|     **IPv4 Prefix List** configuration section and click **Configure**.                      |
+| 13. In the updated **IPv4 Prefix List** section, click **Configure** link.                   |
 |                                                                                              |
 | .. note::                                                                                    |
 |    *The section just below "List of IP Prefix Set" allows you to build a collection of*      |
 |                                                                                              |
 |    *of various IP lists which can be maintained through API controls.*                       |
 +----------------------------------------------------------------------------------------------+
+| |lab010|                                                                                     |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 14. Enter your IP address captured in Step 9 above with mask notation (**/32**) as shown then|
+|                                                                                              |
+|     click the **Apply** button.                                                              |
++----------------------------------------------------------------------------------------------+
 | |lab011|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 13. Enter your IP address captured in Step 9 above with mask notation (**/32**) as shown then|
+| 15. In the resulting window, observer **IPv4 Prefix List** in now configured then scroll to  |
 |                                                                                              |
-|     click the **Apply** button.                                                              |
+|     the bottom of the **Rules** section.                                                     |
 +----------------------------------------------------------------------------------------------+
 | |lab012|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 14. In the resulting window, click the dropdown for **Default Action**, and select **Deny**  |
+| 16. Locate and click the dropdown for **Default Action**, and select **Deny* then click      |
 |                                                                                              |
-|     then click **Save and Exit**.                                                            |
+|     **Save and Exit**.                                                                       |
 +----------------------------------------------------------------------------------------------+
 | |lab013|                                                                                     |
-|                                                                                              |
-| |lab014|                                                                                     |
-|                                                                                              |
-| |lab015|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 15. Observe the resulting added **allowed-ip** Service Policy added in your namespace.       |
+| 17. Observe the resulting added **allowed-ip** Service Policy added in your namespace.       |
 +----------------------------------------------------------------------------------------------+
-| |lab016|                                                                                     |
+| |lab014|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 Task 2: Attaching Service Policies and configuring IP Reputation
@@ -136,25 +140,21 @@ It will also help you understand additional approaches for Service Policies.
 |                                                                                              |
 | 2. Click **Edit Configuration** in the top right-hand corner.                                |
 +----------------------------------------------------------------------------------------------+
+| |lab015|                                                                                     |
+|                                                                                              |
 | |lab016|                                                                                     |
-|                                                                                              |
-| |lab017|                                                                                     |
-|                                                                                              |
-| |lab018|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 3. Click **Security Configuration** in the left-hand navigation.                             |
+| 3. Click **Common Security Controls** in the left-hand navigation.                           |
 |                                                                                              |
 | 4. From the **Service Policies** dropdown, select **Apply Specified Service Policies**.      |
 |                                                                                              |
 | 5. In the added menu for **Apply Specified Service Policies**, click **Configure**.          |
 +----------------------------------------------------------------------------------------------+
-| |lab019|                                                                                     |
+| |lab017|                                                                                     |
 |                                                                                              |
-| |lab020|                                                                                     |
-|                                                                                              |
-| |lab021|                                                                                     |
+| |lab018|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
@@ -162,7 +162,7 @@ It will also help you understand additional approaches for Service Policies.
 |                                                                                              |
 |    your **<namespace>/geo-filter** Service Policy. Then click **Apply**.                     |
 +----------------------------------------------------------------------------------------------+
-| |lab022|                                                                                     |
+| |lab019|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
@@ -174,13 +174,11 @@ It will also help you understand additional approaches for Service Policies.
 |                                                                                              |
 |    can be added as a Service Policy (shared or local namespace) or as a direct configuration.|
 |                                                                                              |
-| 9. To start, the IP Reputation configuration, locate the IP Reputation section and click the |
+| 9. To start, the IP Reputation configuration, locate the **IP Reputation** section and click |
 |                                                                                              |
-|    dropdown menu, then select **Enable**.                                                    |
+|    the dropdown menu, then select **Enable**.                                                |
 +----------------------------------------------------------------------------------------------+
-| |lab023|                                                                                     |
-|                                                                                              |
-| |lab024|                                                                                     |
+| |lab020|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
@@ -188,17 +186,15 @@ It will also help you understand additional approaches for Service Policies.
 |                                                                                              |
 |     Threat categories.                                                                       |
 |                                                                                              |
-| 11. Select **Spam Sources** and **Tor Proxy**, then scroll to the bottom of the window and   |
+| 11. Select **Spam Sources** and **Tor Proxy**, then click **Other Settings** in the left-hand|
 |                                                                                              |
-|     click the **Save and Exit** button.                                                      |
+|     navigation or scroll to the bottom of the window and click the **Save and Exit** button. |                                                     |
 +----------------------------------------------------------------------------------------------+
-| |lab025|                                                                                     |
+| |lab021|                                                                                     |
 |                                                                                              |
-| |lab026|                                                                                     |
+| |lab022|                                                                                     |
 |                                                                                              |
-| |lab027|                                                                                     |
-|                                                                                              |
-| |lab028|                                                                                     |
+| |lab023|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
@@ -216,31 +212,35 @@ It will also help you understand additional approaches for Service Policies.
 |                                                                                              |
 |     the **Security Events** window.                                                          |
 +----------------------------------------------------------------------------------------------+
-| |lab029|                                                                                     |
+| |lab024|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 14. Return to the Load Balancer in the F5 Distributed Cloud Console, *Manage > Load Balancer*|
+| 14. Return to **Web App & API Protection** in the F5 Distributed Cloud Console, **Manage >** |
 |                                                                                              |
-|     *> HTTP Load Balancers* and use the **Action Dots** and click **Manage Configuration**   |
+|     **Load Balancer > HTTP Load Balancers** and use the **Action Dots** and click **Manage** |
+|                                                                                              |
+|     **Configuration**.                                                                       |  
 |                                                                                              |
 | 15. Click **Edit Configuration** in the top right-hand corner.                               |
 +----------------------------------------------------------------------------------------------+
-| |lab030|                                                                                     |
+| |lab025|                                                                                     |
+|                                                                                              |
+| |lab026|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 16. Click **Security Configuration** in the left-hand navigation.                            |
+| 16. Click **Common Security Controls** in the left-hand navigation.                          |
 |                                                                                              |
 | 17. From the **Service Policies** section, click **Edit Configuration**.                     |
 +----------------------------------------------------------------------------------------------+
-| |lab031|                                                                                     |
+| |lab027|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 18. In the resulting window click **Add Item** and from the dropdown select you allow-ip     |
+| 18. In the resulting window click **Add Item**.  From the added dropdown select the allow-ip |
 |                                                                                              |
-|     Service Policy **<namespace>/allowed-ip**.                                               |
+|     Service Policy previously created. **<namespace>/allowed-ip**.                           |
 |                                                                                              |
 | 19. Observe the order. Service Policies must be ordered correctly in a order to process      |
 |                                                                                              |
@@ -252,16 +252,20 @@ It will also help you understand additional approaches for Service Policies.
 |   *positive security model will be applied (denying all other traffic).  Similar positive or*|
 |                                                                                              |
 |   *negative service policies can be created and applied (Headers, methods, file types, etc)* |
-|                                                                                              |
-| 20. Scroll to the bottom of the HTTP Load Balancer configuration and click **Save and Exit**.|
 +----------------------------------------------------------------------------------------------+
-| |lab032|                                                                                     |
+| |lab028|                                                                                     |
 |                                                                                              |
-| |lab033|                                                                                     |
+| |lab029|                                                                                     |
 |                                                                                              |
-| |lab034|                                                                                     |
+| |lab030|                                                                                     |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 20. Click **Other Settings** in the left-hand navigation or scroll to the bottom of the      |
 |                                                                                              |
-| |lab035|                                                                                     |
+|     HTTP Load Balancer configuration and click **Save and Exit**.                            |
++----------------------------------------------------------------------------------------------+
+| |lab031|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
@@ -271,7 +275,7 @@ It will also help you understand additional approaches for Service Policies.
 |                                                                                              |
 |     access the application.                                                                  |
 +----------------------------------------------------------------------------------------------+
-| |lab036|                                                                                     |
+| |lab032|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 Task 3: Create, assign and test Custom Policy
