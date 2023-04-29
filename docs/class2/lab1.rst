@@ -215,11 +215,11 @@ These steps will demonstrate various aspects of the configuration.
 +----------------------------------------------------------------------------------------------+
 | 12. Click **DNS Information** in the left-hand navigation.                                   |
 |                                                                                              |
-|    The value for a CNAME is listed under **Host Name**. The associated "Default/Tenant IP"   |
+|     The value for a CNAME is listed under **Host Name**. The associated "Default/Tenant IP"  |
 |                                                                                              |
-|    is also shown under **IP Address**. The "Default/Tenant IP" is uniquely assigned to each  |
+|     is also shown under **IP Address**. The "Default/Tenant IP" is uniquely assigned to each |
 |                                                                                              |
-|    F5 Distributed Cloud Tenant. Additional Public IPs can be added to the Tenant.            |
+|     F5 Distributed Cloud Tenant. Additional Public IPs can be added to the Tenant.           |
 +----------------------------------------------------------------------------------------------+
 | |lab021|                                                                                     |
 +----------------------------------------------------------------------------------------------+
@@ -227,9 +227,9 @@ These steps will demonstrate various aspects of the configuration.
 +----------------------------------------------------------------------------------------------+
 | 13. Click **JSON** in the horizontal navigation at the top-left of the screen.               |
 |                                                                                              |
-|    The JSON payload (or YAML format, from dropdown) provides for the entire Load Balancer    |
+|     The JSON payload (or YAML format, from dropdown) provides for the entire Load Balancer   |
 |                                                                                              |
-|    configuration.  This can be used for backup or subsequent CI/CD automation operations.    |
+|     configuration.  This can be used for backup or subsequent CI/CD automation operations.   |
 +----------------------------------------------------------------------------------------------+
 | |lab022|                                                                                     |
 +----------------------------------------------------------------------------------------------+
@@ -237,11 +237,11 @@ These steps will demonstrate various aspects of the configuration.
 +----------------------------------------------------------------------------------------------+
 | 14. Click **Documentation** in the horizontal navigation at the top of the screen.           |
 |                                                                                              |
-|    The Documentation screen provides details on the F5 Distributed Cloud Console API.        |
+|     The Documentation screen provides details on the F5 Distributed Cloud Console API.       |
 |                                                                                              |
-|    All operations in the F5 Distributed Cloud Platform are API-first. This includes all GUI  |
+|     All operations in the F5 Distributed Cloud Platform are API-first. This includes all GUI |
 |                                                                                              |
-|    actions and associated audit logging.                                                     |
+|     actions and associated audit logging.                                                    |
 |                                                                                              |
 | 15. Click **Cancel and Exit** to return to the **HTTP Load Balancers** screen.               |
 +----------------------------------------------------------------------------------------------+
@@ -393,7 +393,7 @@ review the generated event data to make additional configuration changes.
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 17. Scroll to **Load Balancers** section and click the **<adjective-animal>-lb** object.     |
+| 17. Scroll to **Load Balancers** section and click the **<namespace>-lb** object.            |
 |                                                                                              |
 | .. note::                                                                                    |
 |    *This is a multi-application view. Here you could get the summary security status of*     |
