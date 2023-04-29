@@ -163,7 +163,7 @@ implementation.
 |                                                                                              |
 |     **Configure**.                                                                           |
 |                                                                                              |
-| 13. In the new **App Endpoint Type** window, click  **App Item**.                            |
+| 13. In the new **App Endpoint Type** window, click  **Add Item**.                            |
 +----------------------------------------------------------------------------------------------+
 | |lab017|                                                                                     |
 |                                                                                              |
