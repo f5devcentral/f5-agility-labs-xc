@@ -169,21 +169,21 @@ These steps will demonstrate various aspects of the configuration.
 
 +----------------------------------------------------------------------------------------------+
 | 8. Leaving all other values as default, scroll to the bottom and click **Continue**.         |
-|                                                                                              |
-| .. note::                                                                                    |
-|    *Automatic Attack Signatures Tuning is enabled which engages automatic a False Positive*  |
-|                                                                                              |
-|    *suppression engine.  Any suppressed events are logged within Security Events*.           |
-|                                                                                              |
-| .. note::                                                                                    |
-|    *Attack Signatures Staging is disabled.  This can be enabled should an Application*       |
-|                                                                                              |
-|    *Firewall that new or updated attack signatures be staged (monitored) for a period of*    |
-|                                                                                              |
-|    *prior to enforcement (blocking).*                                                        |
 +----------------------------------------------------------------------------------------------+
 | |lab016|                                                                                     |
 +----------------------------------------------------------------------------------------------+
+
+.. note::
+   *Automatic Attack Signatures Tuning is enabled which engages automatic a False Positive*
+ 
+   *suppression engine.  Any suppressed events are logged within Security Events*.
+
+.. note::
+   *Attack Signatures Staging is disabled.  This can be enabled should an Application*
+
+   *Firewall that new or updated attack signatures be staged (monitored) for a period of*
+
+   *prior to enforcement (blocking).*
 
 +----------------------------------------------------------------------------------------------+
 | 9. Returning to the **HTTP Load Balancer** window, scroll to (or click in the left-hand      |
@@ -287,19 +287,19 @@ review the generated event data to make additional configuration changes.
 |    **Overview > Dashboard > Performance Dashboard** section.  This dashboard will provide a  |
 |                                                                                              |
 |    summary view for all of the configured Load Balancers.                                    |
-|                                                                                              |
-| .. note::                                                                                    |
-|    *As you have not run many requests, summary analytics may not be available in the*        |
-|                                                                                              |
-|    *dashboard view yet.*                                                                     |
 +----------------------------------------------------------------------------------------------+
-| |lab025|                                                                                    |
+| |lab025|                                                                                     |
 +----------------------------------------------------------------------------------------------+
+
+.. note::
+   *As you have not run many requests, summary analytics may not be available in the*
+
+   *dashboard view yet.*
 
 +----------------------------------------------------------------------------------------------+
 | 5. Scroll to the bottom and select your load balancer.                                       |
 +----------------------------------------------------------------------------------------------+
-| |lab026|                                                                                    |
+| |lab026|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
@@ -360,7 +360,7 @@ review the generated event data to make additional configuration changes.
 |                                                                                              |
 | 13. Click the **Forensics** tab on the right side of the view as shown.                      |
 +----------------------------------------------------------------------------------------------+
-| |lab031|                                                                                    |
+| |lab031|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
@@ -375,7 +375,7 @@ review the generated event data to make additional configuration changes.
 |                                                                                              |
 |    *additional top data details.*                                                            |
 +----------------------------------------------------------------------------------------------+
-| |lab032|                                                                                    |
+| |lab032|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
@@ -389,7 +389,7 @@ review the generated event data to make additional configuration changes.
 +----------------------------------------------------------------------------------------------+
 | 16. Review the **Security Dashboard** display (you may have limited data) .                  |
 +----------------------------------------------------------------------------------------------+
-| |lab034|                                                                                    |
+| |lab034|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
@@ -402,7 +402,7 @@ review the generated event data to make additional configuration changes.
 |                                                                                              |
 |    *specific details.*                                                                       |
 +----------------------------------------------------------------------------------------------+
-| |lab035|                                                                                    |
+| |lab035|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
