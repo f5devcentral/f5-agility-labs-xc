@@ -587,6 +587,8 @@ It will also help you understand additional approaches for Service Policies.
 |    * **Direct Response Route**: Matches on path and/or HTTP method and responds directly to  |
 |                        matching traffic.                                                     |
 |    * **Custom Route Object**: Leverages a reference route object created outside this view.  |
+|                                                                                              |
+| 7. Click **Cancel and Exit** once through with exploring the feature.                        |
 +----------------------------------------------------------------------------------------------+
 | |lab067|                                                                                     |
 |                                                                                              |
