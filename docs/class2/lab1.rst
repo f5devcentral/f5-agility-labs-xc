@@ -470,7 +470,9 @@ review the generated event data to make additional configuration changes.
 |                                                                                              |
 |     the exclusion should expire. (helpful when testing/validating). the format should be as  |
 |                                                                                              |
-|     shown *YYYY-MM-DD HH:MM:SS+00:00 (2023-05-30T01:21:00+00:00)*.                           |
+|     shown *YYYY-MM-DD HH:MM:SS+00:00 (2023-05-30T01:21:00+00:00)*. **HH** must be in 24 hour |
+|                                                                                              |
+|     format (there is no APM/PM).                                                             |
 |                                                                                              |
 | 31. Click **Apply** when complete.                                                           |
 +----------------------------------------------------------------------------------------------+
