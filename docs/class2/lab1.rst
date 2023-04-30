@@ -44,16 +44,15 @@ steps will define an application, register its DNS and assign a target as an ori
 |    **Balancers**                                                                             |
 |                                                                                              |
 | 3. In the resulting screen click the **Add HTTP Load Balancer** in the graphic as shown.     |
-|                                                                                              |
-| .. note::                                                                                    |
-|    *You have defaulted to your specific namespace as that is the only namespace to which you*|
-|                                                                                              |
-|    *have administrative access.*                                                             |
 +----------------------------------------------------------------------------------------------+
 | |lab001|                                                                                     |
 |                                                                                              |
 | |lab002|                                                                                     |
 +----------------------------------------------------------------------------------------------+
+
+.. note::
+   *You have defaulted to your specific namespace as that is the only namespace to which you*
+   *have administrative access.*
 
 +----------------------------------------------------------------------------------------------+
 | 4. Using the left-hand navigation and in the sections as shown, enter the following          |
@@ -135,14 +134,13 @@ These steps will demonstrate various aspects of the configuration.
 
 +----------------------------------------------------------------------------------------------+
 | 2. In the resulting **Enable** field drop down, select **Add Item**.                         |
-|                                                                                              |
-| .. note::                                                                                    |
-|    *The "shared/base-appfw" policy is in the "shared namespace" which can be applied to*     |
-|                                                                                              |
-|    *multiple Load Balancer configurations across namespaces, reducing policy sprawl.*        |
 +----------------------------------------------------------------------------------------------+
 | |lab012|                                                                                     |
 +----------------------------------------------------------------------------------------------+
+
+.. note::
+   *The "shared/base-appfw" policy is in the "shared namespace" which can be applied to* 
+   *multiple Load Balancer configurations across namespaces, reducing policy sprawl.* 
 
 +----------------------------------------------------------------------------------------------+
 | 3. In the new window's **Metadata** section enter **<namespace>-appfw** for the              |
@@ -175,14 +173,11 @@ These steps will demonstrate various aspects of the configuration.
 
 .. note::
    *Automatic Attack Signatures Tuning is enabled which engages automatic a False Positive*
- 
    *suppression engine.  Any suppressed events are logged within Security Events.*
 
 .. note::
    *Attack Signatures Staging is disabled.  This can be enabled should an Application*
-
    *Firewall that new or updated attack signatures be staged (monitored) for a period of*
-
    *prior to enforcement (blocking).*
 
 +----------------------------------------------------------------------------------------------+
@@ -190,17 +185,15 @@ These steps will demonstrate various aspects of the configuration.
 |                                                                                              |
 |    navigation) to the **Other Settings** section and note the **VIP Advertisement** setting. |
 |                                                                                              |
-| .. note::                                                                                    |
-|    *The above selection controls how/where the application is advertised. The "Internet"*    |
-|                                                                                              |
-|    *setting means that this application will be advertised globally from the F5*             |
-|                                                                                              |
-|    *Distributed Cloud Global Network utilizing Anycast.*                                     |
-|                                                                                              |
 | 10. Click **Save and Exit** at the bottom of the **HTTP Load Balancer** configuration screen.|
 +----------------------------------------------------------------------------------------------+
 | |lab017|                                                                                     |
 +----------------------------------------------------------------------------------------------+
+
+.. note::
+   *The above selection controls how/where the application is advertised. The "Internet"*
+   *setting means that this application will be advertised globally from the F5*
+   *Distributed Cloud Global Network utilizing Anycast.*
 
 +----------------------------------------------------------------------------------------------+
 | 10. In the **HTTP Load Balancers** window, note the application hostname under the           |
@@ -293,7 +286,6 @@ review the generated event data to make additional configuration changes.
 
 .. note::
    *As you have not run many requests, summary analytics may not be available in the*
-
    *dashboard view yet.*
 
 +----------------------------------------------------------------------------------------------+
@@ -310,14 +302,13 @@ review the generated event data to make additional configuration changes.
 | 7. Change the viewable time period from 5 minutes (default) to **1 hour** by selecting the   |
 |                                                                                              |
 |    dropdown shown, click **Last 1 hour** then clicking **Apply**.                            |
-|                                                                                              |
-| .. note::                                                                                    |
-|    *Security Event data may take 15-20 seconds to populate in the Console. Please force a*   |
-|                                                                                              |
-|    *refresh using the Refresh icon next to the Time Period selection in step 6.*             |
 +----------------------------------------------------------------------------------------------+
 | |lab027|                                                                                     |
 +----------------------------------------------------------------------------------------------+
+
+.. note::
+   *Security Event data may take 15-20 seconds to populate in the Console. Please force a*
+   *refresh using the Refresh icon next to the Time Period selection in step 6.*
 
 +----------------------------------------------------------------------------------------------+
 | 8. Expand one of the requests and note the **Information** tab link. This summarizes request |
@@ -339,14 +330,13 @@ review the generated event data to make additional configuration changes.
 | 11. The resulting **Search** input field and listed **Keys**, can be used to filter requests |
 |                                                                                              |
 |     in this view.                                                                            |
-|                                                                                              |
-| .. note::                                                                                    |
-|    *The available Key list to search is dynamically updated based on the requests in the*    |
-|                                                                                              |
-|    *selected time view.*                                                                     |
 +----------------------------------------------------------------------------------------------+
 | |lab030|                                                                                     |
 +----------------------------------------------------------------------------------------------+
+
+.. note::
+   *The available Key list to search is dynamically updated based on the requests in the*
+   *selected time view.* 
 
 +----------------------------------------------------------------------------------------------+
 | 12. Closing the filters view, note the available **Quick Filters** for Response Codes which  |
@@ -354,9 +344,6 @@ review the generated event data to make additional configuration changes.
 |     allows quickly filtering the requests by toggling **on** or **off** each response code   |
 |                                                                                              |
 |     category.                                                                                |
-|                                                                                              |
-| .. note::                                                                                    |
-|    *Allows you to quickly filter down to 4xx and 5xx errors that need review.*               |
 |                                                                                              |
 | 13. Click the **Forensics** tab on the right side of the view as shown.                      |
 +----------------------------------------------------------------------------------------------+
@@ -369,14 +356,13 @@ review the generated event data to make additional configuration changes.
 |     analysis of the request log data.  Collapse the **Forensics** view when done using the   |
 |                                                                                              |
 |     indicated arrow.                                                                         |
-|                                                                                              |
-| .. note::                                                                                    |
-|    *Individual forensic categories can be changed using the noted pencil icon to surface*    |
-|                                                                                              |
-|    *additional top data details.*                                                            |
 +----------------------------------------------------------------------------------------------+
 | |lab032|                                                                                     |
 +----------------------------------------------------------------------------------------------+
+
+.. note::
+   *Individual forensic categories can be changed using the noted pencil icon to surface*
+   *additional top data details.*
 
 +----------------------------------------------------------------------------------------------+
 | 15. Using the left-hand navigation, click **Dashboards** and then select **Security**        |
@@ -394,16 +380,14 @@ review the generated event data to make additional configuration changes.
 
 +----------------------------------------------------------------------------------------------+
 | 17. Scroll to **Load Balancers** section and click the **<namespace>-lb** object.            |
-|                                                                                              |
-| .. note::                                                                                    |
-|    *This is a multi-application view. Here you could get the summary security status of*     |
-|                                                                                              |
-|    *each application (iw Threat Level, WAF Mode, etc)* and then click into one for more*     |
-|                                                                                              |
-|    *specific details.*                                                                       |
 +----------------------------------------------------------------------------------------------+
 | |lab035|                                                                                     |
 +----------------------------------------------------------------------------------------------+
+
+.. note::
+   *This is a multi-application view. Here you could get the summary security status of*
+   *each application (iw Threat Level, WAF Mode, etc)* and then click into one for more*
+   *specific details.*
 
 +----------------------------------------------------------------------------------------------+
 | 18. From the **Security Dashboard** view, using the horizontal navigation, click **Security**|
@@ -415,12 +399,12 @@ review the generated event data to make additional configuration changes.
 
 +----------------------------------------------------------------------------------------------+
 | 19. Expand your latest security event as shown.                                              |
-|                                                                                              |
-| .. note::                                                                                    |
-|    *If you lost your 1 Hour Filter, re-apply using Task 3: Step 6*                           |
 +----------------------------------------------------------------------------------------------+
 | |lab037|                                                                                     |
 +----------------------------------------------------------------------------------------------+
+
+.. note::
+   *If you lost your 1 Hour Filter, re-apply using Task 3: Step 6*
 
 +----------------------------------------------------------------------------------------------+
 | 20. Note the summary detail provided **Information** link and identify the **Request ID**    |
@@ -434,9 +418,6 @@ review the generated event data to make additional configuration changes.
 | 21. Scroll to the bottom of the information screen to see specific signatures detected and   |
 |                                                                                              |
 |     actions taken during the security event.                                                 |
-|                                                                                              |
-| .. note::                                                                                    |
-|    *Similar to Requests, Security Events also have additional detail in JSON format.*        |
 |                                                                                              |
 | 22. Next, click on the **Add Filter** link just under the **Security Events** title near the |
 |                                                                                              |
@@ -455,9 +436,6 @@ review the generated event data to make additional configuration changes.
 |     Task 3, Step 2 as shown.  You can also optionally just paste the Support ID in the       |
 |                                                                                              |
 |     value field and click **Apply**.                                                         |
-|                                                                                              |
-| .. note::                                                                                    |
-|    *As in the prior task, Security Events also support Quick Filters and Forensics*          |
 +----------------------------------------------------------------------------------------------+
 | |lab040|                                                                                     |
 |                                                                                              |
@@ -474,12 +452,12 @@ review the generated event data to make additional configuration changes.
 | 27. Under the **Actions** column, click on the three Action dots (Scroll to right).          |
 |                                                                                              |
 | 28. Select **Create WAF Exclusion rule** from the dropdown that appears.                     |
-|                                                                                              |
-| .. note::                                                                                    |
-|    *Adding requestor to "Blocked or Trusted Clients" is also available.*                     |
 +----------------------------------------------------------------------------------------------+
 | |lab043|                                                                                     |
 +----------------------------------------------------------------------------------------------+
+
+.. note::
+   *Adding requestor/client to "Blocked or Trusted Clients" is also available.* 
 
 +----------------------------------------------------------------------------------------------+
 | 29. In the subsequent **Simple WAF Exclusion Rule** window, review the settings (which are   |
@@ -515,7 +493,7 @@ review the generated event data to make additional configuration changes.
 |     **Save and Exit** button.                                                                |
 |                                                                                              |
 | .. note::                                                                                    |
-|    *Rerunning the attack you just excluded, you will note that it is no longer blocked*.     |
+|    *Rerunning the attack you just excluded, you will see that it is no longer blocked*.      |
 +----------------------------------------------------------------------------------------------+
 | |lab047|                                                                                     |
 |                                                                                              |
