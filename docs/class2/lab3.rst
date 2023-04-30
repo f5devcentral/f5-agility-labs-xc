@@ -580,13 +580,13 @@ It will also help you understand additional approaches for Service Policies.
 |                                                                                              |
 |    route types: .                                                                            |
 |                                                                                              |
-|    * **Simple Route**: Matches on path and/or HTTP method and forward traffic to the         |
+|    * **Simple Route:** Matches on path and/or HTTP method and forward traffic to the         |
 |                        associated pool.                                                      |
-|    * **Redirect Route**: Matches on path and/or HTTP method and redirects matching traffic   |
+|    * **Redirect Route:** Matches on path and/or HTTP method and redirects matching traffic   |
 |                        to a different URL.                                                   |
-|    * **Direct Response Route**: Matches on path and/or HTTP method and responds directly to  |
+|    * **Direct Response Route:** Matches on path and/or HTTP method and responds directly to  |
 |                        matching traffic.                                                     |
-|    * **Custom Route Object**: Leverages a reference route object created outside this view.  |
+|    * **Custom Route Object:** Leverages a reference route object created outside this view.  |
 |                                                                                              |
 | 7. Click **Cancel and Exit** once through with exploring the feature.                        |
 +----------------------------------------------------------------------------------------------+
