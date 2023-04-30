@@ -43,8 +43,8 @@ version control features.
 |                                                                                              |
 |    **app-api-v1.json** to your local desktop or workspace.                                   |
 |                                                                                              |
-|     Link::                                                                                   |
-|       http://demo-app.amer.myedgedemo.com/lab/app-api-v1.json                                |
+|    Link::                                                                                    |
+|      http://demo-app.amer.myedgedemo.com/lab/app-api-v1.json                                 |
 |                                                                                              |
 | 6. In the **Upload Swagger File** section, click the **Upload File** button. Select the file |
 |                                                                                              |
@@ -77,7 +77,7 @@ version control features.
 |                                                                                              |
 | 10. For the next step, use the following link, to download the JSON/OpenAPI spec file        |
 |                                                                                              |
-|    **app-api-v1.json** to your local desktop or workspace.                                   |
+|     **app-api-v1.json** to your local desktop or workspace.                                  |
 |                                                                                              |
 |     Link::                                                                                   |
 |       http://demo-app.amer.myedgedemo.com/lab/app-api-v1.json                                |
