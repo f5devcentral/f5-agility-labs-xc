@@ -311,7 +311,7 @@ blocking/deny rules to illustrate Service Policy controls.
 |                                                                                              |
 |    **Manage** section and click **Service Policies**. In the flyout menu, click the          |
 |                                                                                              |
-|    **Service Policies** link.                                                                | 
+|    **Service Policies** link.                                                                |
 |                                                                                              |
 | 3. Observe the existing Service Policies and note that some are sourced from the **shared**  |
 |                                                                                              |
