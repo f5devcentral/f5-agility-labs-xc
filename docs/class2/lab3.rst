@@ -114,7 +114,7 @@ In this task you will add geo-filter and allowed-ip based service policies.
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 16. Locate and click the dropdown for **Default Action**, and select **Deny* then click      |
+| 16. Locate and click the dropdown for **Default Action**, and select **Deny** then click     |
 |                                                                                              |
 |     **Save and Exit**.                                                                       |
 +----------------------------------------------------------------------------------------------+
@@ -134,9 +134,9 @@ The following steps will enable you to attach Service Policies to your configure
 It will also help you understand additional approaches for Service Policies.
 
 +----------------------------------------------------------------------------------------------+
-| 1. Return to the Load Balancer in the F5 Distributed Cloud Console, *Manage > Load Balancer* |
+| 1. Return to the Load Balancer in the F5 Distributed Cloud Console,**Manage > Load Balancer**|
 |                                                                                              |
-|    *> HTTP Load Balancers* and use the **Action Dots** and click **Manage Configuration**    |
+|    **> HTTP Load Balancers** and use the **Action Dots** and click **Manage Configuration**  |
 |                                                                                              |
 | 2. Click **Edit Configuration** in the top right-hand corner.                                |
 +----------------------------------------------------------------------------------------------+
@@ -160,7 +160,7 @@ It will also help you understand additional approaches for Service Policies.
 +----------------------------------------------------------------------------------------------+
 | 6. In the resulting **Policies** window, use the **List of Policies** dropdown to select     |
 |                                                                                              |
-|    your **<namespace>/geo-filter** Service Policy. Then click **Apply**.                     |
+|    your **<namespace>/geo-filter** Service Policy then click **Apply**.                      |
 +----------------------------------------------------------------------------------------------+
 | |lab019|                                                                                     |
 +----------------------------------------------------------------------------------------------+
@@ -174,17 +174,17 @@ It will also help you understand additional approaches for Service Policies.
 |                                                                                              |
 |    can be added as a Service Policy (shared or local namespace) or as a direct configuration.|
 |                                                                                              |
-| 9. To start, the IP Reputation configuration, locate the **IP Reputation** section and click |
+| 9. To start, the IP Reputation as a direct configuration (on the Load Balancer), locate the  |
 |                                                                                              |
-|    the dropdown menu, then select **Enable**.                                                |
+|    **IP Reputation** section and click the dropdown menu, then select **Enable**.            |
 +----------------------------------------------------------------------------------------------+
 | |lab020|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 10. Using the **List of IP Threat Categories to choose** you may add any of the configured   |
+| 10. Using the **List of IP Threat Categories to choose** you may add any of the available    |
 |                                                                                              |
-|     Threat categories.                                                                       |
+|     Threat Categories listed.                                                                |
 |                                                                                              |
 | 11. Select **Spam Sources** and **Tor Proxy**, then click **Other Settings** in the left-hand|
 |                                                                                              |
@@ -238,9 +238,9 @@ It will also help you understand additional approaches for Service Policies.
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 18. In the resulting window click **Add Item**.  From the added dropdown select the allow-ip |
+| 18. In the resulting window click **Add Item** as shown.  From the added dropdown select the |
 |                                                                                              |
-|     Service Policy previously created. **<namespace>/allowed-ip**.                           |
+|     **<namespace>/allowed-ip** Service Policy previously created.                            |
 |                                                                                              |
 | 19. Observe the order. Service Policies must be ordered correctly in a order to process      |
 |                                                                                              |
@@ -251,7 +251,7 @@ It will also help you understand additional approaches for Service Policies.
 |                                                                                              |
 |   *positive security model will be applied (denying all other traffic).  Similar positive or*|
 |                                                                                              |
-|   *negative service policies can be created and applied (Headers, methods, file types, etc)* |
+|   *negative service policies can be created and applied*                                     |
 +----------------------------------------------------------------------------------------------+
 | |lab028|                                                                                     |
 |                                                                                              |
@@ -284,9 +284,9 @@ In this task you will add Custom Policy and assign it to your Load Balancer. Cus
 Policies provide the flexibility to build **Positive** or **Negative** security models and custom
 rules or controls.
 
-Since, through prior lab tasks, Fiji has been Geo-location blocked, and your testing resource's 
-IP has been allowed, denying all others, we will build some additional blocking/deny rules to 
-Illustrate Service Policy controls. 
+Through prior lab tasks, Fiji has been Geo-location blocked, and your testing resource's 
+IP has been allowed, and all other IP addresses have been denied> You will build some additional 
+blocking/deny rules to illustrate Service Policy controls. 
 
 +----------------------------------------------------------------------------------------------+
 | 1. Before beginning this task, re-evaluate your access from your client to the following:    |
@@ -295,6 +295,7 @@ Illustrate Service Policy controls.
 |    * **cURL**: http://<namespace>.lab-sec.f5demos.com                                        |
 |    * **cURL**: http://<namespace>.lab-sec.f5demos.com?page=header                            |
 |                                                                                              |
+|    The expectation is that all are successful based on the current Service Policies.         |
 | .. note::                                                                                    |
 |    *cURL is supported on Windows, Mac & Linux platforms*.                                    |
 +----------------------------------------------------------------------------------------------+
@@ -306,11 +307,13 @@ Illustrate Service Policy controls.
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 2. In the left-hand navigation menu, expand the **Manage** section and click **Service**     |
+| 2. Returning to **Web App & API Protection**, in the left-hand navigation menu, expand the   |
 |                                                                                              |
-|    **Policies**. In the flyout menu, click the **Service Policies** link.                    |
+|    **Manage** section and click **Service Policies**. In the flyout menu, click the          |
 |                                                                                              |
-| 3. Observe the existing Service Policies and note they are source from the **shared**        |
+|    **Service Policies** link.                                                                | 
+|                                                                                              |
+| 3. Observe the existing Service Policies and note that some are sourced from the **shared**  |
 |                                                                                              |
 |    namespace which means they could be used within any other namespace.                      |
 |                                                                                              |
@@ -352,7 +355,7 @@ Illustrate Service Policy controls.
 +----------------------------------------------------------------------------------------------+
 | 10. In the expanded **App Firewall Detection Control**, locate the **Attack Types** section  |
 |                                                                                              |
-|    and click **Add Item** as shown.                                                          |
+|     and click **Add Item** as shown.                                                         |
 |                                                                                              |
 | 11. In the new input field for **Attack Type**, use the drop-down to select **Non-Browser**  |
 |                                                                                              |
@@ -521,9 +524,9 @@ Illustrate Service Policy controls.
 +----------------------------------------------------------------------------------------------+
 | 36. Time to re-access your access. Now test the following from your client:                  |
 |                                                                                              |
-|    * **Browser**: http://<namespace>.lab-sec.f5demos.com?page=header                         |
-|    * **cURL**: http://<namespace>.lab-sec.f5demos.com                                        |
-|    * **cURL**: http://<namespace>.lab-sec.f5demos.com?page=header                            |
+|     * **Browser**: http://<namespace>.lab-sec.f5demos.com?page=header                        |
+|     * **cURL**: http://<namespace>.lab-sec.f5demos.com                                       |
+|     * **cURL**: http://<namespace>.lab-sec.f5demos.com?page=header                           |
 |                                                                                              |
 | 37. What where your results?                                                                 |
 +----------------------------------------------------------------------------------------------+
