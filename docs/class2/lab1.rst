@@ -176,7 +176,7 @@ These steps will demonstrate various aspects of the configuration.
 .. note::
    *Automatic Attack Signatures Tuning is enabled which engages automatic a False Positive*
  
-   *suppression engine.  Any suppressed events are logged within Security Events*.
+   *suppression engine.  Any suppressed events are logged within Security Events.*
 
 .. note::
    *Attack Signatures Staging is disabled.  This can be enabled should an Application*
