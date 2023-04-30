@@ -39,9 +39,12 @@ version control features.
 |                                                                                              |
 |    the **Metadata** section.                                                                 |
 |                                                                                              |
-| 5. For the next step, use the following link, 'app-api-file-v1'_. to download the            |
+| 5. For the next step, use the following link, to download the JSON/OpenAPI spec file         |
 |                                                                                              |
-|    JSON/OpenAPI spec file **app-api-v1.json** to your local desktop or workspace.            |
+|    **app-api-v1.json** to your local desktop or workspace.                                   |
+|                                                                                              |
+|     Link::                                                                                   |
+|       http://demo-app.amer.myedgedemo.com/lab/app-api-v1.json                                |
 |                                                                                              |
 | 6. In the **Upload Swagger File** section, click the **Upload File** button. Select the file |
 |                                                                                              |
@@ -72,9 +75,12 @@ version control features.
 +----------------------------------------------------------------------------------------------+
 | 9. The **Edit Swagger File** window will be shown.                                           |
 |                                                                                              |
-| 10. For the next step, use the following link, 'app-api-file-v2'_. to download the           |
+| 10. For the next step, use the following link, to download the JSON/OpenAPI spec file        |
 |                                                                                              |
-|     JSON/OpenAPI spec file **app-api-v2.json** to your local desktop or workspace.           |
+|    **app-api-v1.json** to your local desktop or workspace.                                   |
+|                                                                                              |
+|     Link::                                                                                   |
+|       http://demo-app.amer.myedgedemo.com/lab/app-api-v1.json                                |
 |                                                                                              |
 | .. note::                                                                                    |
 |    *This is a modified version (v2) of the JSON/OpenAPI spec file you previously downloaded* |
@@ -372,8 +378,8 @@ previously built Load Balancer object delivering the targeted application/API.
 | |labend|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
-.. _app-api-file-v1: https://github.com/f5devcentral/f5-agility-labs-xc/blob/agility2023/docs/class2/_static/app-api-v1.json
-.. _app-api-file-v2: https://github.com/f5devcentral/f5-agility-labs-xc/blob/agility2023/docs/class2/_static/app-api-v2.json
+.. _app-api-file-v1: http://demo-app.amer.myedgedemo.com/lab/app-api-v1.json
+.. _app-api-file-v2: http://demo-app.amer.myedgedemo.com/lab/app-api-v2.json
 .. |lab001| image:: _static/lab7-001.png
    :width: 800px
 .. |lab002| image:: _static/lab7-002.png
