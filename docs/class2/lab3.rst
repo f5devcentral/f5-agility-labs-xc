@@ -546,41 +546,53 @@ The following steps will enable you to attach Service Policies to your configure
 It will also help you understand additional approaches for Service Policies.
 
 +----------------------------------------------------------------------------------------------+
-| 1. Return to the Load Balancer in the F5 Distributed Cloud Console, *Manage > Load Balancer* |
+| 1. Within **Web App & API Protection** in the F5 Distributed Cloud Console, **Manage >**     |
 |                                                                                              |
-|    *> HTTP Load Balancers* and use the **Action Dots** and click **Manage Configuration**    |
+|    **Load Balancer > HTTP Load Balancers** and use the **Action Dots** and click **Manage**  |
+|                                                                                              |
+|    **Configuration**.                                                                        |
 |                                                                                              |
 | 2. Click **Edit Configuration** in the top right-hand corner.                                |
 +----------------------------------------------------------------------------------------------+
 | |lab063|                                                                                     |
-+----------------------------------------------------------------------------------------------+
-
-+----------------------------------------------------------------------------------------------+
-| 3. Click **Routes Configuration** in the left-hand navigation.                               |
 |                                                                                              |
-| 4. Toggle the **Show Advanced Fields** button to the **On** position.                        |
-|                                                                                              |
-| 5. Under the **Routes** section, click **Configure**.                                        |
-+----------------------------------------------------------------------------------------------+
 | |lab064|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 6. In **Routes**, click the **Add Item** link.                                               |
+| 3. Click **Routes** in the left-hand navigation and the click **Configure** as shown.        |
 |                                                                                              |
-| 7. In the resulting menu, toggle the **Show Advanced Fields** button to the **On** position. |
-|                                                                                              |
-| 8. Observe the various route types and matching criteria controls that can be leveraged to   |
-|                                                                                              |
-|    securely control access, perform pool targeting, make path responses or develop custom    |
-|                                                                                              |
-|    control to secure protected applications.                                                 |
+| 4. In **Routes** window, click the **Add Item** link.                                        |
 +----------------------------------------------------------------------------------------------+
 | |lab065|                                                                                     |
 |                                                                                              |
 | |lab066|                                                                                     |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 5. Observe the various route types and matching criteria controls that can be leveraged to   |
 |                                                                                              |
+|    securely control application flow, perform pool targeting, make path responses or develop |
+|                                                                                              |
+|    custom control to secure protected applications.                                          |
+|                                                                                              |
+| 6. An example walkthrough of **Simple Route** is shown but feel free to look at all the      |
+|                                                                                              |
+|    route types: .                                                                            |
+|                                                                                              |
+|    * **Simple Route**: Matches on path and/or HTTP method and forward traffic to the         |
+|                        associated pool.                                                      |
+|    * **Redirect Route**: Matches on path and/or HTTP method and redirects matching traffic   |
+|                        to a different URL.                                                   |
+|    * **Direct Response Route**: Matches on path and/or HTTP method and responds directly to  |
+|                        matching traffic.                                                     |
+|    * **Custom Route Object**: Leverages a reference route object created outside this view.  |
++----------------------------------------------------------------------------------------------+
 | |lab067|                                                                                     |
+|                                                                                              |
+| |lab068|                                                                                     |
+|                                                                                              |
+| |lab069|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
@@ -724,6 +736,10 @@ It will also help you understand additional approaches for Service Policies.
 .. |lab066| image:: _static/lab3-066.png
    :width: 800px   
 .. |lab067| image:: _static/lab3-067.png
+   :width: 800px   
+.. |lab068| image:: _static/lab3-068.png
+   :width: 800px   
+.. |lab069| image:: _static/lab3-069.png
    :width: 800px   
 .. |labend| image:: _static/labend.png
    :width: 800px
