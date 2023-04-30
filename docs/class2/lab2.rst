@@ -14,7 +14,7 @@ This lab will begin back in the F5 Distributed Cloud Console.
 +----------------------------------------------------------------------------------------------+
 | 1. Return to **Web App & API Protection**, in the left-hand navigation menu, click on        |
 |                                                                                              |
-|    **App Firewall**.                                                                         |
+|    **App Firewall**, under **Manage**.                                                       |
 |                                                                                              |
 | 2. On your App Firewall policy **<namespace>-appfw**, click the three dots in the **Actions**|
 |                                                                                              |

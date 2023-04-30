@@ -172,12 +172,12 @@ These steps will demonstrate various aspects of the configuration.
 +----------------------------------------------------------------------------------------------+
 
 .. note::
-   *Automatic Attack Signatures Tuning is enabled which engages automatic a False Positive*
+   *Automatic Attack Signatures Tuning is enabled which engages an automatic False Positive*
    *suppression engine.  Any suppressed events are logged within Security Events.*
 
 .. note::
    *Attack Signatures Staging is disabled.  This can be enabled should an Application*
-   *Firewall that new or updated attack signatures be staged (monitored) for a period of*
+   *Firewall with new or updated attack signatures be staged (monitored) for a period of*
    *prior to enforcement (blocking).*
 
 +----------------------------------------------------------------------------------------------+
