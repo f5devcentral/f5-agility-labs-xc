@@ -1,4 +1,4 @@
-Lab 4: Rate Limiting
+Lab 5: Rate Limiting
 ====================
 
 The following lab tasks will guide you the configuration of Rate Limiting feature sets.
