@@ -343,9 +343,9 @@ blocking/deny rules to illustrate Service Policy controls.
 |                                                                                              |
 |    **Show Advanced Fields** to see extra configuration options in **Action** section.        |
 |                                                                                              |
-| 9. In the **Action** section, select **Deny** for the **Action** & use the drop-down select  |
+| 9. In the **Action** section, select **Deny** for the **Action** and then in the left-hand   |
 |                                                                                              |
-|    menu for **Select App Firewall Action Type** to select **App Firewall Detection Control**.|
+|    navigation click **Request Match**.                                                       |
 +----------------------------------------------------------------------------------------------+
 | |lab039|                                                                                     |
 |                                                                                              |
@@ -353,23 +353,19 @@ blocking/deny rules to illustrate Service Policy controls.
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 10. In the expanded **App Firewall Detection Control**, locate the **Attack Types** section  |
+| 10. In the **HTTP Method** section, use the **Method List** dropdown to select **GET**.      |
 |                                                                                              |
-|     and click **Add Item** as shown.                                                         |
-|                                                                                              |
-| 11. In the new input field for **Attack Type**, use the drop-down to select **Non-Browser**  |
-|                                                                                              |
-|     **Client**.                                                                              |
+| 11. In the **HTTP Headers** section click **Add Item**.                                      |
 +----------------------------------------------------------------------------------------------+
 | |lab041|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 12. In the expanded **App Firewall Detection Control**, locate the **Bot Names** section     |
+| 12. In the **Header Matcher** window, input **user-agent** for ^^Header Name** as shown.     |
 |                                                                                              |
-|     and click **Add Item** as shown.                                                         |
+| 13. Click **Add Item** under the **Regex Values** area and input **(?)^.*curl.*$.** then     |
 |                                                                                              |
-| 13. In the new input field for **Bot Name**, enter **curl** as shown.                        |
+|     click **Apply**                                                                          |
 +----------------------------------------------------------------------------------------------+
 | |lab042|                                                                                     |
 +----------------------------------------------------------------------------------------------+
