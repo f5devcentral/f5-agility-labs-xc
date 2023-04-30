@@ -151,7 +151,7 @@ pointer to imported swagger files you just uploaded.
 |                                                                                              |
 | 5. Select the version 2 of the previously uploaded swagger spec file. It will be in the      |
 |                                                                                              |
-|    format **<adjective-animal>/app-api/v2-<current-date>**.                                  |
+|    format **<namespace>/app-api/v2-<current-date>**.                                         |
 |                                                                                              |
 | 6. Once selected, click **Save and Exit** in the bottom-right corner.                        |
 +----------------------------------------------------------------------------------------------+
@@ -199,7 +199,7 @@ previously built Load Balancer object delivering the targeted application/API.
 +----------------------------------------------------------------------------------------------+
 | 6. In the updated **Use API Definition** section, click the drop-down arrow and select the   |
 |                                                                                              |
-| 7. previously created API Definition **<adjective-animal>/app-api-spec**.                    |
+| 7. previously created API Definition **<namespace>/app-api-spec**.                           |
 +----------------------------------------------------------------------------------------------+
 | |lab016|                                                                                     |
 +----------------------------------------------------------------------------------------------+
