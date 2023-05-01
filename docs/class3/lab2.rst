@@ -64,7 +64,7 @@ then for the **Left String** we use **<input id="csrf_token" name="csrf_token" t
 
 |lab011|
 
-15. Additionally we can go to the distributed cloud dashboard outside of the RDP Jumphost.  Clickon *HTTP Load Balancers* then *Security Monitoring* and explore using the *Bot Defense* tabs.  One thing to note that this attack is seeing as Token Missing, essentially this means that the unique token embedded in the Javascript file was not provided. This is typically of attacks that don't use a browser to render the page.
+15. Additionally we can go to the distributed cloud dashboard outside of the RDP Jumphost.  Click on *Web App & API Protection* then *Security Monitoring* and explore using the *Bot Defense* tabs.  One thing to note that this attack is seeing as Token Missing, essentially this means that the unique token embedded in the Javascript file was not provided. This is typically of attacks that don't use a browser to render the page.
 
 |lab012|
 
