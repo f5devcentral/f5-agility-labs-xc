@@ -79,82 +79,28 @@ Network.
 | 7. After returning to the prior window, change the **Port:** under **Origin server Port**    |
 |                                                                                              |
 |    to **80**.                                                                                |
+|                                                                                              |
+| 8. Scroll to the bottom and click **Save and Exit**.                                         |
 +----------------------------------------------------------------------------------------------+
 | |lab005|                                                                                     |
-+----------------------------------------------------------------------------------------------+
-
-+----------------------------------------------------------------------------------------------+
-| 8. In the **Health Checks**, click **Add Item**.                                             |
 |                                                                                              |
-| 9. From the resulting Health Check object dropdown select **Add Item**.                      |
-+----------------------------------------------------------------------------------------------+
 | |lab006|                                                                                     |
-|                                                                                              |
-| |lab007|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 10. In the resulting window enter **<namespace>-hc** in the **Name** field.                  |
+| 9. In the left-hand navigation expand **Manage** and click **Load Balancers > HTTP Load**    |
 |                                                                                              |
-| 11. In the **Health Check Parameters** section click **View Configuration** under the        |
+|     **Balancers**.                                                                           |
 |                                                                                              |
-|     **HTTP HealthCheck** section.                                                            |
+| 10. In the resulting screen click the **Add HTTP Load Balancer** in the graphic as shown.    |
 +----------------------------------------------------------------------------------------------+
+| |lab007|                                                                                     |
+|                                                                                              |
 | |lab008|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 12. In the resulting window note the value of the **Path** parameter.                        |
-|                                                                                              |
-| 13. Also note the value of the **Expected Status Codes** parameter.                          |
-|                                                                                              |
-| 14. Click **Back** to retain the default settings.                                           |
-|                                                                                              |
-| .. note::                                                                                    |
-|    *The default Health Check makes a request to the root path and expects a response code of*|
-|                                                                                              |
-|    *200. These values can be modified to meet the requirements of the application.*          |
-+----------------------------------------------------------------------------------------------+
-| |lab009|                                                                                     |
-+----------------------------------------------------------------------------------------------+
-
-+----------------------------------------------------------------------------------------------+
-| 15. After returning to the prior window, note the values of **Timeout(s)**, **Interval(s),   |
-|                                                                                              |
-|     **Unhealthy Threshold**, and **Healthy Threshold**.                                      |
-|                                                                                              |
-| 16. Click **Continue**.                                                                      |
-|                                                                                              |
-| .. note::                                                                                    |
-|    *The Timeout, Interval, Unhealthy Threshold, and Healthy Threshold control how often*     |
-|                                                                                              |
-|    *health checks are sent and when an endpoint is marked healthy or unhealthy.  These*      |
-|                                                                                              |
-|    *values can be modified to meet the requirements of the application.*                     |
-+----------------------------------------------------------------------------------------------+
-| |lab010|                                                                                     |
-+----------------------------------------------------------------------------------------------+
-
-+----------------------------------------------------------------------------------------------+
-| 17. After returning to the Origin Pool configuration window, click **Save and Exit**.        |
-+----------------------------------------------------------------------------------------------+
-| |lab011|                                                                                     |
-+----------------------------------------------------------------------------------------------+
-
-+----------------------------------------------------------------------------------------------+
-| 18. In the left-hand navigation expand **Manage** and click **Load Balancers > HTTP Load**   |
-|                                                                                              |
-|     **Balancers**.                                                                           |
-|                                                                                              |
-| 19. In the resulting screen click the **Add HTTP Load Balancer** in the graphic as shown.    |
-+----------------------------------------------------------------------------------------------+
-| |lab012|                                                                                     |
-|                                                                                              |
-| |lab013|                                                                                     |
-+----------------------------------------------------------------------------------------------+
-
-+----------------------------------------------------------------------------------------------+
-| 20. Using the left-hand navigation and in the sections as shown, enter the following         |
+| 11. Using the left-hand navigation and in the sections as shown, enter the following         |
 |                                                                                              |
 |     data. Values where **<namespace>** is required, use the name of your given namespace.    |
 |                                                                                              |
@@ -164,35 +110,35 @@ Network.
 |     * **Domains and LB Type: Automatically Manage DNS Records:** *(Check the checkbox)*      |
 |     * **Domains and LB Type: HTTP Port:** *80*                                               |
 +----------------------------------------------------------------------------------------------+
-| |lab014|                                                                                     |
+| |lab009|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 21. In the current window's left-hand navigation, click **Origins**. Next, click **Add Item**|
+| 12. In the current window's left-hand navigation, click **Origins**. Next, click **Add Item**|
 |                                                                                              |
 |     within the **Origin Pools** section of **Origins**.                                      |
 +----------------------------------------------------------------------------------------------+
-| |lab015|                                                                                     |
+| |lab010|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 22. In the resulting window, verify **Origin Pool** is selected for **Select Origin Pool**   |
+| 13. In the resulting window, verify **Origin Pool** is selected for **Select Origin Pool**   |
 |                                                                                              |
 |     **Method**.                                                                              |
 |                                                                                              |
-| 23. Select the **<namespace>/<namespace>-pool** from the **Origin Pool**  dropdown.          |
+| 14. Select the **<namespace>/<namespace>-pool** from the **Origin Pool**  dropdown.          |
 |                                                                                              |
-| 24. Click **Apply**                                                                          |
+| 15. Click **Apply**                                                                          |
 +----------------------------------------------------------------------------------------------+
-| |lab016|                                                                                     |
+| |lab011|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 25. In the resulting **HTTP Load Balancer** window, scroll to the **Other Settings** section |
+| 16. In the resulting **HTTP Load Balancer** window, scroll to the **Other Settings** section |
 |                                                                                              |
 |     and note the **VIP Advertisement** setting.                                              |
 |                                                                                              |
-| 26. Click **Save and Exit** at the bottom of the **HTTP Load Balancer** configuration screen.|
+| 17. Click **Save and Exit** at the bottom of the **HTTP Load Balancer** configuration screen.|
 |                                                                                              |
 | .. note::                                                                                    |
 |    *The VIP Advertisement selection controls how/where the application is advertised. The*   |
@@ -201,16 +147,16 @@ Network.
 |                                                                                              |
 |    *Distributed Cloud Global Network utilizing Anycast.*                                     |
 +----------------------------------------------------------------------------------------------+
-| |lab017|                                                                                     |
+| |lab012|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 27. In the **HTTP Load Balancers** window, note the application hostname under the           |
+| 18. In the **HTTP Load Balancers** window, note the application hostname under the           |
 |                                                                                              |
 |     **Domains** column *(This was done in Task1: Step 19)*.                                  |
 |                                                                                              |
 +----------------------------------------------------------------------------------------------+
-| |lab018|                                                                                     |
+| |lab013|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 Task 2: Testing the Application and Viewing Telemetry Data
@@ -228,9 +174,9 @@ Performance Monitoring dashboard, and gather request details.
 |                                                                                              |
 | 2. Navigate to the **HEADER** section under **Menu** to generate additional traffic.         |
 +----------------------------------------------------------------------------------------------+
-| |lab019|                                                                                     |
+| |lab014|                                                                                     |
 |                                                                                              |
-| |lab020|                                                                                     |
+| |lab015|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
@@ -243,9 +189,9 @@ Performance Monitoring dashboard, and gather request details.
 | 4. Click on **Performance Monitoring** link provided for your respective load balancer.      |
 |                                                                                              |
 +----------------------------------------------------------------------------------------------+
-| |lab021|                                                                                     |
+| |lab016|                                                                                     |
 |                                                                                              |
-| |lab022|                                                                                     |
+| |lab017|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
@@ -262,9 +208,9 @@ Performance Monitoring dashboard, and gather request details.
 |                                                                                              |
 |    *dashboard view yet.*                                                                     |
 +----------------------------------------------------------------------------------------------+
-| |lab023|                                                                                     |
+| |lab018|                                                                                     |
 |                                                                                              |
-| |lab024|                                                                                     |
+| |lab019|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
@@ -277,9 +223,9 @@ Performance Monitoring dashboard, and gather request details.
 | .. note::                                                                                    |
 |    *This data can be filtered to quickly narrow in on points of interest.*                   |
 +----------------------------------------------------------------------------------------------+
-| |lab025|                                                                                     |
+| |lab020|                                                                                     |
 |                                                                                              |
-| |lab026|                                                                                     |
+| |lab021|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
@@ -291,9 +237,9 @@ Performance Monitoring dashboard, and gather request details.
 |                                                                                              |
 |     values can be compared to the average latency data noted in step 6.                      |
 +----------------------------------------------------------------------------------------------+
-| |lab027|                                                                                     |
+| |lab022|                                                                                     |
 |                                                                                              |
-| |lab028|                                                                                     |
+| |lab023|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 Task 3: Configure an Application Firewall Policy to Protect the Application
@@ -318,9 +264,9 @@ Task 1.
 |                                                                                              |
 | 3. On the resulting page click **Add App Firewall**                                          | 
 +----------------------------------------------------------------------------------------------+
-| |lab029|                                                                                     |
+| |lab024|                                                                                     |
 |                                                                                              |
-| |lab030|                                                                                     |
+| |lab025|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
@@ -332,9 +278,9 @@ Task 1.
 |                                                                                              |
 | 6. Leaving all other values as default, scroll to the bottom and click **Save and Exit**.    |
 +----------------------------------------------------------------------------------------------+
-| |lab031|                                                                                     |
+| |lab026|                                                                                     |
 |                                                                                              |
-| |lab032|                                                                                     |
+| |lab027|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
@@ -346,9 +292,9 @@ Task 1.
 |                                                                                              |
 |    *(<namespace>-lb)*.  Click the ellipsis under Actions and select **Manage Configuration**.|
 +----------------------------------------------------------------------------------------------+
-| |lab033|                                                                                     |
+| |lab028|                                                                                     |
 |                                                                                              |
-| |lab034|                                                                                     |
+| |lab029|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
@@ -356,9 +302,9 @@ Task 1.
 |                                                                                              |
 | 10. Click **Web Application Firewall** in the left-hand navigation.                          |  
 +----------------------------------------------------------------------------------------------+
-| |lab035|                                                                                     |
+| |lab030|                                                                                     |
 |                                                                                              |
-| |lab036|                                                                                     |
+| |lab031|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 
@@ -373,9 +319,9 @@ Task 1.
 |                                                                                              |
 | 13. Scroll to the bottom of the page and click **Save and Exit**                             |
 +----------------------------------------------------------------------------------------------+
-| |lab037|                                                                                     |
+| |lab032|                                                                                     |
 |                                                                                              |
-| |lab038|                                                                                     |
+| |lab033|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 
@@ -405,7 +351,7 @@ Monitoring dashboard, and gather security event details.
 |                                                                                              |
 |    *The block page can be customized to provide additional information.*                     |
 +----------------------------------------------------------------------------------------------+
-| |lab039|                                                                                     |
+| |lab034|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
@@ -417,9 +363,9 @@ Monitoring dashboard, and gather security event details.
 |                                                                                              |
 | 4. Click on the **Security Monitoring** link for your respective load balancer.              |
 +----------------------------------------------------------------------------------------------+
-| |lab040|                                                                                     |
+| |lab035|                                                                                     |
 |                                                                                              |
-| |lab041|
+| |lab036|
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
@@ -432,9 +378,9 @@ Monitoring dashboard, and gather security event details.
 | .. note::                                                                                    |
 |    *If you lost your 1 Hour Filter, re-apply using Task 2: Step 5*                           |
 +----------------------------------------------------------------------------------------------+
-| |lab042|                                                                                     |
+| |lab037|                                                                                     |
 |                                                                                              |
-| |lab043|                                                                                     |
+| |lab038|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
@@ -453,11 +399,11 @@ Monitoring dashboard, and gather security event details.
 | .. note::                                                                                    |
 |    *Similar to a Request, Security Events also have additional detail in JSON format.*       |
 +----------------------------------------------------------------------------------------------+
-| |lab044|                                                                                     |
+| |lab039|                                                                                     |
 |                                                                                              |
-| |lab045|                                                                                     |
+| |lab040|                                                                                     |
 |                                                                                              |
-| |lab046|                                                                                     |
+| |lab041|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
@@ -559,18 +505,6 @@ Monitoring dashboard, and gather security event details.
 .. |lab039| image:: _static/lab1-039.png
    :width: 800px
 .. |lab040| image:: _static/lab1-040.png
-   :width: 800px
-.. |lab041| image:: _static/lab1-041.png
-   :width: 800px
-.. |lab042| image:: _static/lab1-042.png
-   :width: 800px
-.. |lab043| image:: _static/lab1-043.png
-   :width: 800px
-.. |lab044| image:: _static/lab1-044.png
-   :width: 800px
-.. |lab045| image:: _static/lab1-045.png
-   :width: 800px
-.. |lab046| image:: _static/lab1-046.png
    :width: 800px
 .. |labend| image:: _static/labend.png
    :width: 800px
