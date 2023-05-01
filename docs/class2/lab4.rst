@@ -5,9 +5,10 @@ The following lab tasks will guide you the configuration of the Malicious User C
 which can be used to implement a variety of security controls. 
 
 Task 1: Creating a User Identification Policy 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In this task you will add malicious user detection and create a malicious user mitigation and challenge.
+In this task you will build a user identification policy which will be the basis of identifying 
+clients/users for machine learning driven analysis for malicious user mitigation and actions.
 
 +----------------------------------------------------------------------------------------------+
 | 1. Within **Web App & API Protection** in the F5 Distributed Cloud Console, **Manage >**     |
@@ -90,6 +91,12 @@ In this task you will add malicious user detection and create a malicious user m
 |                                                                                              |
 | |lab011|                                                                                     |
 +----------------------------------------------------------------------------------------------+
+
+Task 2: Enable Malicious User Detection and Mitigation Actions 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+In this task you will leverage the user identification policy just built and then enable malicious
+user detection and create a malicious user mitigation and challenge.
 
 +----------------------------------------------------------------------------------------------+
 | 13. Click **Common Security Controls** in the left-hand navigation.                          |
