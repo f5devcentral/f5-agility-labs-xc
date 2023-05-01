@@ -70,7 +70,7 @@ Network.
 +---------------------------------------------------------------------------------------------------------------+
 
 +---------------------------------------------------------------------------------------------------------------+
-| 7. After returning to the prior window, change the **Port:** under **Origin server Port** to **80**.          |
+| 7. After returning to the prior window, change the **Port** under **Origin server Port** to **80**.           |
 |                                                                                                               |
 | 8. Scroll to the bottom and click **Save and Exit**.                                                          |
 +---------------------------------------------------------------------------------------------------------------+
@@ -124,7 +124,7 @@ Network.
 +---------------------------------------------------------------------------------------------------------------+
 | 16. In the resulting **HTTP Load Balancer** window, scroll to the **Other Settings** section and note the     |
 |                                                                                                               |
-|      **VIP Advertisement** setting.                                                                           |
+|     **VIP Advertisement** setting.                                                                            |
 |                                                                                                               |
 | 17. Click **Save and Exit** at the bottom of the **HTTP Load Balancer** configuration screen.                 |
 |                                                                                                               |
@@ -185,7 +185,7 @@ Performance Monitoring dashboard, and gather request details.
 |                                                                                                               |
 | 6. Note the **End to end Latency** tile.  This shows the average latency for all requests to this load        |
 |                                                                                                               |
-|     balancer.                                                                                                 |
+|    balancer.                                                                                                  |
 |                                                                                                               |
 | .. note::                                                                                                     |
 |    *As you have not run many requests, summary analytics may not be available in the dashboard view yet.*     |
@@ -264,7 +264,7 @@ Task 1.
 +---------------------------------------------------------------------------------------------------------------+
 
 +---------------------------------------------------------------------------------------------------------------+
-| 7. In the left-hand navigation expand **Manage** and click **Load Balancers > HTTP **Load Balancers**         |
+| 7. In the left-hand navigation expand **Manage** and click **Load Balancers > HTTP Load Balancers**           |
 |                                                                                                               |
 | 8. On the resulting page find the HTTP Load Balancer created in **Task 1** *(<namespace>-lb)*.  Click the     |
 |                                                                                                               |
