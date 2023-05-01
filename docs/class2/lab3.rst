@@ -536,8 +536,6 @@ effectively control the access to protected applications and APIs.
 Task 4: Observing Route Configurations
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-NOTE: THIS SECTION HS NOT YET BEEN UPDATED
-
 The following steps will enable you to attach Service Policies to your configured Load Balancer.
 It will also help you understand additional approaches for Service Policies.
 
