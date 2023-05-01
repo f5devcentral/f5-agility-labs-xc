@@ -50,7 +50,7 @@ In this lab, we will learn the following:
    .. image:: ../images/4add_vk8s_workload-updated.png
       :width: 600pt
 
-#. Complete the **Metadata** section by using your Firstname initial and Lastname altogether and append “-workload” at the end. Ex: For Andrew Smith, the site name will be “asmith-workload” (without the quotes!) the value for **Name** and **Description**, then select **Service** from the **Select Type of Workload** list.
+#. Complete the **Metadata** section by using your Firstname initial and Lastname altogether and append “-workload” at the end. Ex: For Andrew Smith, the site name will be “asmith-workload” (without the quotes!) Use this value for **Name** and **Description**, then select **Service** from the **Select Type of Workload** list.
 
    .. image:: ../images/5workload_metadata_and_service-updated.png
       :width: 600pt
