@@ -54,20 +54,20 @@ In this lab, we will learn the following:
 
 #. You can see a summary of stats and configurations for site *agility-vpc-site-one*. Notice the labels used to deploy the site. Can you guess where 
    this customer edge site is deployed? We can see by the labels that this site is deployed on the Google Cloud Platform (GCP). You can deploy a 
-   customer edge site on ANY major cloud provider and also on-prem. Click on the **agility-vpc-site-one** link to see more details about the site
+   customer edge site on ANY major cloud provider and also on-prem. Click on **agility-vpc-site-one** to see more details about the customer edge site.
 
-   .. image:: ../images/distributedappclickvpcsiteoneexploresite.png
+   .. image:: ../images/distributedappclickvpcsiteoneexploresite-updated.png
       :width: 400pt
 
 #. You can get a lot of helpful information for site *agility-vpc-site-one* and its workloads, including application metrics, number of Pods, 
    deployment status, etc. Spend some time exploring the different tabs. Of course, there is no information because we have not deployed any workload on this site.
 
-   .. image:: ../images/distributedappclickvpcsiteoneexploresite2.png
+   .. image:: ../images/distributedappclickvpcsiteoneexploresite2-updated.png
       :width: 400pt
 
 **Exercise 2 - Create a Virtual K8s**
 
-#. Click **Virtual K8s** under the **Applications** section.
+#. In the left-hand side of the console, click **Virtual K8s** under the **Applications** section.
 
    .. image:: ../images/distributedappclickvirtualk8s.png
       :width: 250pt
@@ -97,5 +97,8 @@ In this lab, we will learn the following:
 #. Wait for your virtual K8s current state to show as *Ready* (this can take 5 minutes or more). This is your virtual Kubernetes cluster assigned to the virtual site *agility-k8s-vsite*. 
    As you already know, virtual site *agility-k8s-vsite* has three sites (*agility-vpc-site-one*, *agility-vpc-site-two*, *agility-vpc-site-three*)  
 
-   .. image:: ../images/distributedappclickvirtualk8sstatus.png
+   .. image:: ../images/distributedappclickvirtualk8sstatus-in-progress.png
+      :width: 600pt
+
+   .. image:: ../images/distributedappclickvirtualk8sstatus-updated.png
       :width: 600pt
