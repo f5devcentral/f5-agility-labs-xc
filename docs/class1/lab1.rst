@@ -345,7 +345,7 @@ Monitoring dashboard, and gather security event details.
 +---------------------------------------------------------------------------------------------------------------+
 | 5. From the **Dashboard** view, using the horizontal navigation, click **Security Events**.                   |
 |                                                                                                               |
-| 8. Note the **Chart** shows a graphical representation of all of the response codes for the selected time     |
+| 6. Note the **Chart** shows a graphical representation of all of the response codes for the selected time     |
 |                                                                                                               |
 |    frame.                                                                                                     |
 |                                                                                                               |
@@ -358,17 +358,17 @@ Monitoring dashboard, and gather security event details.
 +---------------------------------------------------------------------------------------------------------------+
 
 +---------------------------------------------------------------------------------------------------------------+
-| 6. Click the **Hide Chart** link to free up space in the browser window.                                      |
+| 7. Click the **Hide Chart** link to free up space in the browser window.                                      |
 |                                                                                                               |
-| 7. Expand your latest security event as shown.                                                                |
+| 8. Expand your latest security event as shown.                                                                |
 |                                                                                                               |
-| 8. Note the summary detail provided in the **Information** link.  The **Request ID** which is synonymous with |
+| 9. Note the summary detail provided in the **Information** link.  The **Request ID** which is synonymous with |
 |                                                                                                               |
 |    **Support ID** (filterable) from the Security Event Block Page.                                            |
 |                                                                                                               |
-| 9. Scroll to the bottom of the information screen to see specific signatures detected and actions taken during|
+| 10. Scroll to the bottom of the information screen to see specific signatures detected and actions taken      |
 |                                                                                                               |
-|    the security event.                                                                                        |
+|     during the security event.                                                                                |
 |                                                                                                               |
 | .. note::                                                                                                     |
 |    *Similar to a Request, Security Events also have additional detail in JSON format.*                        |
