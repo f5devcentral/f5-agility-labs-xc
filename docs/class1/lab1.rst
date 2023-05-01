@@ -31,133 +31,121 @@ Network.
 +---------------------------------------------------------------------------------------------------------------+
 | 1. Following the **Introduction** section  instructions, you should now be in the **Multi-Cloud App Connect** |
 |                                                                                                               |
-|    **Cloud App Connect** configuration window. If for some reason you are not in the                          |
+|    configuration window. If for some reason you are not in the **Multi-Cloud App Connect** window, use the    |
 |                                                                                                               |
-|    **Multi-Cloud App Connect** window, use the **Select Service** in the left-hand                            |
+|    **Select Service** in the left-hand navigation, and click **Multi-Cloud App Connect** as shown in the      |
 |                                                                                                               |
-|    navigation, and click **Multi-Cloud App Connect** as shown in the *Introduction section,                   |
+|    *Introduction section, Task 2, Step 9*.                                                                    |
 |                                                                                                               |
-|    Task 2, Step 9*.                                                                                           |
-|                                                                                                               |
-| 2. In the left-hand navigation expand **Manage** and click **Load Balancers > Origin **                       |
-|                                                                                                               |
-|    **Pools**                                                                                                  |
+| 2. In the left-hand navigation expand **Manage** and click **Load Balancers > Origin Pools**                  |
 |                                                                                                               |
 | 3. In the resulting screen click the **Add Origin Pool** in the graphic as shown.                             |
 |                                                                                                               |
 | .. note::                                                                                                     |
-|    *You have defaulted to your specific namespace as that is the only namespace to which you*                 |
+|    *You have defaulted to your specific namespace as that is the only namespace to which you have             |
 |                                                                                                               |
-|    *have administrative access.*                                                                              |
+|    *administrative access.**                                                                                  |
 +---------------------------------------------------------------------------------------------------------------+
 | |lab001|                                                                                                      |
 |                                                                                                               |
 | |lab002|                                                                                                      |
 +---------------------------------------------------------------------------------------------------------------+
 
-+----------------------------------------------------------------------------------------------+
-| 4. In the resulting window, enter **<namespace>-pool** in the **Name** field and click       |
-|                                                                                              |
-|    **Add Item** under **Origin Servers**                                                     |
-+----------------------------------------------------------------------------------------------+
-| |lab003|                                                                                     |
-+----------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------+
+| 4. In the resulting window, enter **<namespace>-pool** in the **Name** field and click **Add Item** under     |
+|                                                                                                               |
+|    **Origin Servers**                                                                                         |
++---------------------------------------------------------------------------------------------------------------+
+| |lab003|                                                                                                      |
++---------------------------------------------------------------------------------------------------------------+
 
-+----------------------------------------------------------------------------------------------+
-| 5. In the resulting window, **Public DNS Name of Origin Server** should be selected for      |
-|                                                                                              |
-|    **Select Type of Origin Server**.                                                         |
-|                                                                                              |
-| 6. For **DNS Name** enter the following hostname:                                            |
-|                                                                                              |
-|    **demo-app.amer.myedgedemo.com** and then click **Apply**                                 |
-+----------------------------------------------------------------------------------------------+
-| |lab004|                                                                                     |
-+----------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------+
+| 5. In the resulting window, **Public DNS Name of Origin Server** should be selected for **Select Type of**    |
+|                                                                                                               |
+|     **Origin Server**.                                                                                        |
+|                                                                                                               |
+| 6. For **DNS Name** enter the following hostname: **demo-app.amer.myedgedemo.com** and then click **Apply**   |
++---------------------------------------------------------------------------------------------------------------+
+| |lab004|                                                                                                      |
++---------------------------------------------------------------------------------------------------------------+
 
-+----------------------------------------------------------------------------------------------+
-| 7. After returning to the prior window, change the **Port:** under **Origin server Port**    |
-|                                                                                              |
-|    to **80**.                                                                                |
-|                                                                                              |
-| 8. Scroll to the bottom and click **Save and Exit**.                                         |
-+----------------------------------------------------------------------------------------------+
-| |lab005|                                                                                     |
-|                                                                                              |
-| |lab006|                                                                                     |
-+----------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------+
+| 7. After returning to the prior window, change the **Port:** under **Origin server Port** to **80**.          |
+|                                                                                                               |
+| 8. Scroll to the bottom and click **Save and Exit**.                                                          |
++---------------------------------------------------------------------------------------------------------------+
+| |lab005|                                                                                                      |
+|                                                                                                               |
+| |lab006|                                                                                                      |
++---------------------------------------------------------------------------------------------------------------+
 
-+----------------------------------------------------------------------------------------------+
-| 9. In the left-hand navigation expand **Manage** and click **Load Balancers > HTTP Load**    |
-|                                                                                              |
-|     **Balancers**.                                                                           |
-|                                                                                              |
-| 10. In the resulting screen click the **Add HTTP Load Balancer** in the graphic as shown.    |
-+----------------------------------------------------------------------------------------------+
-| |lab007|                                                                                     |
-|                                                                                              |
-| |lab008|                                                                                     |
-+----------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------+
+| 9. In the left-hand navigation expand **Manage** and click **Load Balancers > HTTP Load** **Balancers**.      |
+|                                                                                                               |
+| 10. In the resulting screen click the **Add HTTP Load Balancer** in the graphic as shown.                     |
++---------------------------------------------------------------------------------------------------------------+
+| |lab007|                                                                                                      |
+|                                                                                                               |
+| |lab008|                                                                                                      |
++---------------------------------------------------------------------------------------------------------------+
 
-+----------------------------------------------------------------------------------------------+
-| 11. Using the left-hand navigation and in the sections as shown, enter the following         |
-|                                                                                              |
-|     data. Values where **<namespace>** is required, use the name of your given namespace.    |
-|                                                                                              |
-|     * **Metadata:Name ID:**  *<namespace>-lb*                                                |
-|     * **Domains and LB Type: List of Domains:** *<namespace>.lab-sec.f5demos.com*            |
-|     * **Domains and LB Type: Select Type of Load Balancer:** *HTTP*                          |
-|     * **Domains and LB Type: Automatically Manage DNS Records:** *(Check the checkbox)*      |
-|     * **Domains and LB Type: HTTP Port:** *80*                                               |
-+----------------------------------------------------------------------------------------------+
-| |lab009|                                                                                     |
-+----------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------+
+| 11. Using the left-hand navigation and in the sections as shown, enter the following data. Values where       |
+|                                                                                                               |
+|     **<namespace>** is required, use the name of your given namespace.                                        |
+|                                                                                                               |
+|     * **Metadata:Name ID:**  *<namespace>-lb*                                                                 |
+|     * **Domains and LB Type: List of Domains:** *<namespace>.lab-sec.f5demos.com*                             |
+|     * **Domains and LB Type: Select Type of Load Balancer:** *HTTP*                                           |
+|     * **Domains and LB Type: Automatically Manage DNS Records:** *(Check the checkbox)*                       |
+|     * **Domains and LB Type: HTTP Port:** *80*                                                                |
++---------------------------------------------------------------------------------------------------------------+
+| |lab009|                                                                                                      |
++---------------------------------------------------------------------------------------------------------------+
 
-+----------------------------------------------------------------------------------------------+
-| 12. In the current window's left-hand navigation, click **Origins**. Next, click **Add Item**|
-|                                                                                              |
-|     within the **Origin Pools** section of **Origins**.                                      |
-+----------------------------------------------------------------------------------------------+
-| |lab010|                                                                                     |
-+----------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------+
+| 12. In the current window's left-hand navigation, click **Origins**. Next, click **Add Item Pools** section of|
+|                                                                                                               |
+|     **Origins**.                                                                                              |
++---------------------------------------------------------------------------------------------------------------+
+| |lab010|                                                                                                      |
++---------------------------------------------------------------------------------------------------------------+
 
-+----------------------------------------------------------------------------------------------+
-| 13. In the resulting window, verify **Origin Pool** is selected for **Select Origin Pool**   |
-|                                                                                              |
-|     **Method**.                                                                              |
-|                                                                                              |
-| 14. Select the **<namespace>/<namespace>-pool** from the **Origin Pool**  dropdown.          |
-|                                                                                              |
-| 15. Click **Apply**                                                                          |
-+----------------------------------------------------------------------------------------------+
-| |lab011|                                                                                     |
-+----------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------+
+| 13. In the resulting window, verify **Origin Pool** is selected for **Select Origin Pool **Method**.          |
+|                                                                                                               |
+| 14. Select the **<namespace>/<namespace>-pool** from the **Origin Pool**  dropdown.                           |
+|                                                                                                               |
+| 15. Click **Apply**                                                                                           |
++---------------------------------------------------------------------------------------------------------------+
+| |lab011|                                                                                                      |
++---------------------------------------------------------------------------------------------------------------+
 
-+----------------------------------------------------------------------------------------------+
-| 16. In the resulting **HTTP Load Balancer** window, scroll to the **Other Settings** section |
-|                                                                                              |
-|     and note the **VIP Advertisement** setting.                                              |
-|                                                                                              |
-| 17. Click **Save and Exit** at the bottom of the **HTTP Load Balancer** configuration screen.|
-|                                                                                              |
-| .. note::                                                                                    |
-|    *The VIP Advertisement selection controls how/where the application is advertised. The*   |
-|                                                                                              |
-|    *"Internet" setting means that this application will be advertised globally using the F5* |
-|                                                                                              |
-|    *Distributed Cloud Global Network utilizing Anycast.*                                     |
-+----------------------------------------------------------------------------------------------+
-| |lab012|                                                                                     |
-+----------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------+
+| 16. In the resulting **HTTP Load Balancer** window, scroll to the **Other Settings** section and note the     |
+|                                                                                                               |
+|      **VIP Advertisement** setting.                                                                           |
+|                                                                                                               |
+| 17. Click **Save and Exit** at the bottom of the **HTTP Load Balancer** configuration screen.                 |
+|                                                                                                               |
+| .. note::                                                                                                     |
+|    *The VIP Advertisement selection controls how/where the application is advertised. The "Internet" setting* |
+|                                                                                                               |
+|    *means that this application will be advertised globally using the F5 Distributed Cloud Global Network*    |
+|                                                                                                               |
+|    *utilizing Anycast.*                                                                                       |
++---------------------------------------------------------------------------------------------------------------+
+| |lab012|                                                                                                      |
++---------------------------------------------------------------------------------------------------------------+
 
-+----------------------------------------------------------------------------------------------+
-| 18. In the **HTTP Load Balancers** window, note the application hostname under the           |
-|                                                                                              |
-|     **Domains** column *(This was done in Task1: Step 19)*.                                  |
-|                                                                                              |
-+----------------------------------------------------------------------------------------------+
-| |lab013|                                                                                     |
-+----------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------+
+| 18. In the **HTTP Load Balancers** window, note the application hostname under the **Domains** column *(This* |
+|                                                                                                               |
+|     *was done in Task1: Step 19)*.                                                                            |
+|                                                                                                               |
++---------------------------------------------------------------------------------------------------------------+
+| |lab013|                                                                                                      |
++---------------------------------------------------------------------------------------------------------------+
 
 Task 2: Testing the Application and Viewing Telemetry Data
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -165,82 +153,76 @@ Task 2: Testing the Application and Viewing Telemetry Data
 The following steps will validate access to the application via web browser, review the 
 Performance Monitoring dashboard, and gather request details.
 
-+----------------------------------------------------------------------------------------------+
-| 1. Open another tab in your browser (Chrome shown), navigate to the newly configured Load    |
-|                                                                                              |
-|    Balancer configuration: **http://<namespace>.lab-sec.f5demos.com**, to confirm it is      |
-|                                                                                              |
-|    functional.                                                                               |
-|                                                                                              |
-| 2. Navigate to the **HEADER** section under **Menu** to generate additional traffic.         |
-+----------------------------------------------------------------------------------------------+
-| |lab014|                                                                                     |
-|                                                                                              |
-| |lab015|                                                                                     |
-+----------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------+
+| 1. Open another tab in your browser (Chrome shown), navigate to the newly configured Load Balancer            |
+|                                                                                                               |
+|    configuration: **http://<namespace>.lab-sec.f5demos.com**, to confirm it is functional.                    |
+|                                                                                                               |
+| 2. Navigate to the **HEADER** section under **Menu** to generate additional traffic.                          |
++---------------------------------------------------------------------------------------------------------------+
+| |lab014|                                                                                                      |
+|                                                                                                               |
+| |lab015|                                                                                                      |
++---------------------------------------------------------------------------------------------------------------+
 
-+----------------------------------------------------------------------------------------------+
-| 3. Returning to the F5 Distributed Cloud Console, use the left-hand navigation to navigate   |
-|                                                                                              |
-|    to Multi-Cloud App Connect section and expand **Virtual Hosts** and then click on         |
-|                                                                                              |
-|    **HTTP Load Balancers**                                                                   |
-|                                                                                              |
-| 4. Click on **Performance Monitoring** link provided for your respective load balancer.      |
-|                                                                                              |
-+----------------------------------------------------------------------------------------------+
-| |lab016|                                                                                     |
-|                                                                                              |
-| |lab017|                                                                                     |
-+----------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------+
+| 3. Returning to the F5 Distributed Cloud Console, use the left-hand navigation to navigate to Multi-Cloud App |
+|                                                                                                               |
+|    Connect section and expand **Virtual Hosts** and then click on **HTTP Load Balancers**                     |
+|                                                                                                               |
+| 4. Click on **Performance Monitoring** link provided for your respective load balancer.                       |
+|                                                                                                               |
++---------------------------------------------------------------------------------------------------------------+
+| |lab016|                                                                                                      |
+|                                                                                                               |
+| |lab017|                                                                                                      |
++---------------------------------------------------------------------------------------------------------------+
 
-+----------------------------------------------------------------------------------------------+
-| 5. Change the viewable time period from Last 5 minutes (default) to **1 hour** by selecting  |
-|                                                                                              |
-|    the dropdown shown, click **Last 1 hour** then clicking **Apply**.                            |
-|                                                                                              |
-| 6. Note the **End to end Latency** tile.  This shows the average latency for all requests to |
-|                                                                                              |
-|    this load balancer.                                                                       |
-|                                                                                              |
-| .. note::                                                                                    |
-|    *As you have not run many requests, summary analytics may not be available in the*        |
-|                                                                                              |
-|    *dashboard view yet.*                                                                     |
-+----------------------------------------------------------------------------------------------+
-| |lab018|                                                                                     |
-|                                                                                              |
-| |lab019|                                                                                     |
-+----------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------+
+| 5. Change the viewable time period from Last 5 minutes (default) to **1 hour** by selecting the dropdown      |
+|                                                                                                               |
+|    shown, click **Last 1 hour** then clicking **Apply**.                                                      |
+|                                                                                                               |
+| 6. Note the **End to end Latency** tile.  This shows the average latency for all requests to this load        |
+|                                                                                                               |
+|     balancer.                                                                                                 |
+|                                                                                                               |
+| .. note::                                                                                                     |
+|    *As you have not run many requests, summary analytics may not be available in the dashboard view yet.*     |
++---------------------------------------------------------------------------------------------------------------+
+| |lab018|                                                                                                      |
+|                                                                                                               |
+| |lab019|                                                                                                      |
++---------------------------------------------------------------------------------------------------------------+
 
-+----------------------------------------------------------------------------------------------+
-| 7. Click the **Requests** link to see detailed information about individual requests.        |
-|                                                                                              |
-| 8. Note the **Chart** shows a graphical representation of all of the response codes for the  |
-|                                                                                              |
-|    selected time frame.                                                                      |
-|                                                                                              |
-| .. note::                                                                                    |
-|    *This data can be filtered to quickly narrow in on points of interest.*                   |
-+----------------------------------------------------------------------------------------------+
-| |lab020|                                                                                     |
-|                                                                                              |
-| |lab021|                                                                                     |
-+----------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------+
+| 7. Click the **Requests** link to see detailed information about individual requests.                         |
+|                                                                                                               |
+| 8. Note the **Chart** shows a graphical representation of all of the response codes for the selected time     |
+|                                                                                                               |
+|    frame.                                                                                                     |
+|                                                                                                               |
+| .. note::                                                                                                     |
+|    *This data can be filtered to quickly narrow in on points of interest.*                                    |
++---------------------------------------------------------------------------------------------------------------+
+| |lab020|                                                                                                      |
+|                                                                                                               |
+| |lab021|                                                                                                      |
++---------------------------------------------------------------------------------------------------------------+
 
-+----------------------------------------------------------------------------------------------+
-| 9. Click the **Hide Chart** link to free up space in the browser window.                     |
-|                                                                                              |
-| 10. Expand one of the individual requests to view additional details about that request.     |
-|                                                                                              |
-| 11. Note the **Duration** section.  This shows the latency for this specific request.  These |
-|                                                                                              |
-|     values can be compared to the average latency data noted in step 6.                      |
-+----------------------------------------------------------------------------------------------+
-| |lab022|                                                                                     |
-|                                                                                              |
-| |lab023|                                                                                     |
-+----------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------+
+| 9. Click the **Hide Chart** link to free up space in the browser window.                                      |
+|                                                                                                               |
+| 10. Expand one of the individual requests to view additional details about that request.                      |
+|                                                                                                               |
+| 11. Note the **Duration** section.  This shows the latency for this specific request.  These values can be    |
+|                                                                                                               |
+|     compared to the average latency data noted in step 6.                                                     |
++---------------------------------------------------------------------------------------------------------------+
+| |lab022|                                                                                                      |
+|                                                                                                               |
+| |lab023|                                                                                                      |
++---------------------------------------------------------------------------------------------------------------+
 
 Task 3: Configure an Application Firewall Policy to Protect the Application
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -251,78 +233,74 @@ These steps will create a WAF Policy and apply the WAF policy to the load balanc
 
 Task 1.
 
-+----------------------------------------------------------------------------------------------+
-| 1. Following **Task 2**, you should have the **Multi-Cloud App Connect** navigation panel on |
-|                                                                                              |
-|    the left of your console.  If for some reason you do not see the **Multi-Cloud App**      |
-|                                                                                              |
-|    **Connect** navigation panel, use the **Select Service** dropdown at the top left, and    |
-|                                                                                              |
-|    click **Multi-Cloud App Connect** as shown in the *Introduction section, Task 2, Step 9*. |
-|                                                                                              |
-| 2. In the left-hand navigation expand **Security** and click **App Firewall**.               |
-|                                                                                              |
-| 3. On the resulting page click **Add App Firewall**                                          | 
-+----------------------------------------------------------------------------------------------+
-| |lab024|                                                                                     |
-|                                                                                              |
-| |lab025|                                                                                     |
-+----------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------+
+| 1. Following **Task 2**, you should have the **Multi-Cloud App Connect** navigation panel on the left of your |
+|                                                                                                               |
+|    console.  If for some reason you do not see the **Multi-Cloud App Connect** navigation panel, use the      |
+|                                                                                                               |
+|    **Select Service** dropdown at the top left, and click **Multi-Cloud App Connect** as shown in the         |
+|                                                                                                               |
+|    *Introduction section, Task 2, Step 9*.                                                                    |
+|                                                                                                               |
+| 2. In the left-hand navigation expand **Security** and click **App Firewall**.                                |
+|                                                                                                               |
+| 3. On the resulting page click **Add App Firewall**                                                           | 
++---------------------------------------------------------------------------------------------------------------+
+| |lab024|                                                                                                      |
+|                                                                                                               |
+| |lab025|                                                                                                      |
++---------------------------------------------------------------------------------------------------------------+
 
-+----------------------------------------------------------------------------------------------+
-| 4. In the resulting window's **Metadata** section enter **<namespace>-appfw** for the        |
-|                                                                                              |
-|    **Name**.                                                                                 |
-|                                                                                              |
-| 5. Under **Enforcement Mode**, change the mode to **Blocking**.                              |
-|                                                                                              |
-| 6. Leaving all other values as default, scroll to the bottom and click **Save and Exit**.    |
-+----------------------------------------------------------------------------------------------+
-| |lab026|                                                                                     |
-|                                                                                              |
-| |lab027|                                                                                     |
-+----------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------+
+| 4. In the resulting window's **Metadata** section enter **<namespace>-appfw** for the **Name**.               |
+|                                                                                                               |
+| 5. Under **Enforcement Mode**, change the mode to **Blocking**.                                               |
+|                                                                                                               |
+| 6. Leaving all other values as default, scroll to the bottom and click **Save and Exit**.                     |
++---------------------------------------------------------------------------------------------------------------+
+| |lab026|                                                                                                      |
+|                                                                                                               |
+| |lab027|                                                                                                      |
++---------------------------------------------------------------------------------------------------------------+
 
-+----------------------------------------------------------------------------------------------+
-| 7. In the left-hand navigation expand **Manage** and click **Load Balancers > HTTP **        |
-|                                                                                              |
-|    **Load Balancers**                                                                        |
-|                                                                                              |
-| 8. On the resulting page find the HTTP Load Balancer created in **Task 1**                   |
-|                                                                                              |
-|    *(<namespace>-lb)*.  Click the ellipsis under Actions and select **Manage Configuration**.|
-+----------------------------------------------------------------------------------------------+
-| |lab028|                                                                                     |
-|                                                                                              |
-| |lab029|                                                                                     |
-+----------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------+
+| 7. In the left-hand navigation expand **Manage** and click **Load Balancers > HTTP **Load Balancers**         |
+|                                                                                                               |
+| 8. On the resulting page find the HTTP Load Balancer created in **Task 1** *(<namespace>-lb)*.  Click the     |
+|                                                                                                               |
+|    ellipsis under Actions and select **Manage Configuration**.                                                |
++---------------------------------------------------------------------------------------------------------------+
+| |lab028|                                                                                                      |
+|                                                                                                               |
+| |lab029|                                                                                                      |
++---------------------------------------------------------------------------------------------------------------+
 
-+----------------------------------------------------------------------------------------------+
-| 9. On the resulting page click **Edit Configuration**.                                       |
-|                                                                                              |
-| 10. Click **Web Application Firewall** in the left-hand navigation.                          |  
-+----------------------------------------------------------------------------------------------+
-| |lab030|                                                                                     |
-|                                                                                              |
-| |lab031|                                                                                     |
-+----------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------+
+| 9. On the resulting page click **Edit Configuration**.                                                        |
+|                                                                                                               |
+| 10. Click **Web Application Firewall** in the left-hand navigation.                                           |  
++---------------------------------------------------------------------------------------------------------------+
+| |lab030|                                                                                                      |
+|                                                                                                               |
+| |lab031|                                                                                                      |
++---------------------------------------------------------------------------------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------+
-| 11. Under the **Web Application Firewall** section select **Enable** from the **Web**
-|                                                                                              |
-|     **Application Firewall (WAF)** dropdown.                                                 |
-|                                                                                              |
-| 12. Select the Web Application Firewall name that you created in *Steps 1-6* of this task    |
-|                                                                                              |
-|     *(<namespace>-appfw)* from the **Enable** dropdown.                                      |
-|                                                                                              |
-| 13. Scroll to the bottom of the page and click **Save and Exit**                             |
-+----------------------------------------------------------------------------------------------+
-| |lab032|                                                                                     |
-|                                                                                              |
-| |lab033|                                                                                     |
-+----------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------+
+| 11. Under the **Web Application Firewall** section select **Enable** from the **Web Application Firewall **   |
+|                                                                                                               |
+|     **(WAF)** dropdown.                                                                                       |
+|                                                                                                               |
+| 12. Select the Web Application Firewall name that you created in *Steps 1-6* of this task                     |
+|                                                                                                               |
+|     *(<namespace>-appfw)* from the **Enable** dropdown.                                                       |
+|                                                                                                               |
+| 13. Scroll to the bottom of the page and click **Save and Exit**                                              |
++---------------------------------------------------------------------------------------------------------------+
+| |lab032|                                                                                                      |
+|                                                                                                               |
+| |lab033|                                                                                                      |
++---------------------------------------------------------------------------------------------------------------+
 
 
 Task 4. Test the Application Firewall and View Security Events
