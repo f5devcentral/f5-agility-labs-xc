@@ -472,7 +472,7 @@ review the generated event data to make additional configuration changes.
 |                                                                                              |
 |     shown *YYYY-MM-DD HH:MM:SS+00:00 (2023-05-30T01:21:00+00:00)*. **HH** must be in 24 hour |
 |                                                                                              |
-|     format (there is no APM/PM).                                                             |
+|     format (there is no AM/PM).                                                              |
 |                                                                                              |
 | 31. Click **Apply** when complete.                                                           |
 +----------------------------------------------------------------------------------------------+
