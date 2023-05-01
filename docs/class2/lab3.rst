@@ -363,7 +363,7 @@ blocking/deny rules to illustrate Service Policy controls.
 +----------------------------------------------------------------------------------------------+
 | 12. In the **Header Matcher** window, input **user-agent** for **Header Name** as shown.     |
 |                                                                                              |
-| 13. Click **Add Item** under the **Regex Values** area and input **(?)^.*curl.*$.** then     |
+| 13. Click **Add Item** under the **Regex Values** area and input **(?i)^.*curl.*$** then     |
 |                                                                                              |
 |     click **Apply**                                                                          |
 +----------------------------------------------------------------------------------------------+
