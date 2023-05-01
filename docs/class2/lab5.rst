@@ -10,7 +10,7 @@ Task 1: Establishing a Baseline
 
 In this task you will access a test website/webpage to experience access without a Rate Limiting Policy
 engaged.  Following completion of Task1, you will build a Rate Limit Policy (Task2) and the test the 
-Rate Limited experience
+Rate Limited experience (Task3).
 
 +----------------------------------------------------------------------------------------------+
 | 1. In your local web browser access the following link, replacing namespace with your own:   |
