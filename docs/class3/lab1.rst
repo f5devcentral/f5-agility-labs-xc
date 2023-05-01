@@ -26,130 +26,83 @@ done so already, please login to your tenant for this lab and proceed to Task 1.
 Task 1: Configure Load Balancer, Origin Pool, WAF and BotDefense (7 min)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-+----------------------------------------------------------------------------------------------+
-| 1. Following the **Introduction** section instructions, you should now be in the **Web**     |
-|                                                                                              |
-|    **App & API Protection** configuration window. If for some reason you are not in the      |
-|                                                                                              |
-|    **Web App & API Protection** window, use the **Select Service** in the left-hand          |
-|                                                                                              |
-|    navigation, and click **Web App & API Protection** as shown in the *Introduction Section* | 
-|                                                                                              |
-| 2. In the left-hand navigation expand **Manage** and click **Load Balancers > HTTP Load**    |
-|                                                                                              |
-|    **Balancers**                                                                             |
-|                                                                                              |
-| 3. In the resulting screen click the **Add HTTP Load Balancer** in the graphic as shown.     |
-|                                                                                              |
-| .. note::                                                                                    |
-|    *You have defaulted to your specific namespace as that is the only namespace to which you*|
-|                                                                                              |
-|    *have administrative access.*                                                             |
-+----------------------------------------------------------------------------------------------+
-| |lab001|                                                                                     |
-|                                                                                              |
-| |lab002|                                                                                     |
-+----------------------------------------------------------------------------------------------+
+The following steps will allow you to deploy and advertise a globally available application.  These
+steps will define an application, register its DNS and assign a target as an origin.
 
-+----------------------------------------------------------------------------------------------+
-| 4. Using the left-hand navigation and in the sections as shown, enter the following          |
-|                                                                                              |
-|    data. Values where **<namespace>** is required, use the name of your given namespace.     |
-|                                                                                              |
-|    * **Metadata:Name ID:**  *<namespace>-lb*                                                 |
-|    * **Basic Configuration: List of Domains:** *<namespace>.lab-sec.f5demos.com*             |
-|    * **Basic Configuration: Select Type of Load Balancer:** *HTTP*                           |
-|    * **Basic Configuration: Automatically Manage DNS Records:** *(Check the checkbox)*       |
-|    * **Basic Configuration: HTTP Port:** *80*                                                |
-+----------------------------------------------------------------------------------------------+
-| |lab003|                                                                                     |
-+----------------------------------------------------------------------------------------------+
+1. Following the **Introduction** section  instructions, you should now be in the **Load Balancers** configuration window. If for some reason you are not in the **Load Balancers** window, use the **Select Service** in the left-hand navigation, and click **Load Balancers** as shown in the *Introduction section, Task 2, Step 9*.                |
+2. In the left-hand navigation expand **Manage** and click **Load Balancers > HTTP Load Balancers**
+3. In the resulting screen click the **Add HTTP Load Balancer** in the graphic as shown.
 
-+----------------------------------------------------------------------------------------------+
-| 5. In the current window's left-hand navigation, click **Origins**. Next,                    |
-|                                                                                              |
-|    click **Add Item** within the **Origin Pools** section of **Origins**.                    |
-+----------------------------------------------------------------------------------------------+
-| |lab004|                                                                                     |
-+----------------------------------------------------------------------------------------------+
+.. note::
+   *You have defaulted to your specific namespace as that is the only namespace to which you*
+   *have administrative access.*                                                             
 
-+----------------------------------------------------------------------------------------------+
-| 6. In the resulting window, use the drop down as shown and click **Create new Origin Pool**. |
-+----------------------------------------------------------------------------------------------+
-| |lab005|                                                                                     |
-+----------------------------------------------------------------------------------------------+
+|lab001|
+ 
+|lab002|
 
-+----------------------------------------------------------------------------------------------+
-| 7. In the resulting window, enter **<namespace>-pool** in the **Name** field and click       |
-|                                                                                              |
-|    **Add Item** under **Origin Servers**                                                     |
-+----------------------------------------------------------------------------------------------+
-| |lab006|                                                                                     |
-+----------------------------------------------------------------------------------------------+
+3. Using the left-hand navigation and in the sections as shown, enter the following data. Values where **<namespace>** is required, use the name of your given namespace.
 
-+----------------------------------------------------------------------------------------------+
-| 8. In the resulting window, **Public DNS Name of Origin Server** should be selected for      |
-|                                                                                              |
-|    **Select Type of Origin Server**.                                                         |
-|                                                                                              |
-| 9. For **DNS Name** enter the following hostname:                                            |
-|                                                                                              |
-|    **airline-backend.f5se.com** and then click **Apply**                                     |
-+----------------------------------------------------------------------------------------------+
-| |lab007|                                                                                     |
-+----------------------------------------------------------------------------------------------+
+   * **Metadata:Name ID:**  *<namespace>-lb*
+   * **Basic Configuration: List of Domains:** *<namespace>.lab-sec.f5demos.com*
+   * **Basic Configuration: Select Type of Load Balancer:** *HTTP*
+   * **Basic Configuration: Automatically Manage DNS Records:** *(Check the checkbox)*
+   * **Basic Configuration: HTTP Port:** *80*
+|lab003|
 
-+----------------------------------------------------------------------------------------------+
-| 10. After returning to the prior window, make sure **Port:** under **Basic Configuration**   |
-|                                                                                              |
-|     is configured for **80**.                                                                |
-|                                                                                              |
-| 11. Leave all other values as shown while scrolling to the bottom and click, **Continue**.   |
-|                                                                                              |
-| 12. After returning to the next window and confirming the content, click **Apply**.          |
-+----------------------------------------------------------------------------------------------+
-| |lab008|                                                                                     |
-|                                                                                              |
-| |lab009|                                                                                     |
-|                                                                                              |
-| |lab010|                                                                                     |
-+----------------------------------------------------------------------------------------------+
+4. In the current window's left-hand navigation, click **Default Origin Servers**. Next, click **Add Item** within the **Origin Pools** section of **Default Origin Servers**.
 
-+----------------------------------------------------------------------------------------------+
-| 1. Continuing in the **HTTP Load Balancer** section, on the left-hand menu clik on the       |
-|                                                                                              |
-|    **Web Application Firewall (WAF)** and select **Enable**.                                 |
-+----------------------------------------------------------------------------------------------+
-| |lab012|                                                                                     |
-|                                                                                              |
-| |lab013|                                                                                     |
-+----------------------------------------------------------------------------------------------+
+|lab004|
 
-+----------------------------------------------------------------------------------------------+
-| 2. In the resulting **App Firewall** drop down select **Add Item**.                          |
-|                                                                                              |
-| .. note::                                                                                    |
-|    *The "shared/base-appfw" policy is in the "shared namespace" which can be applied to*     |
-|                                                                                              |
-|    *multiple Load Balancer configurations across namespaces, reducing policy sprawl.*        |
-+----------------------------------------------------------------------------------------------+
-| |lab014|                                                                                     |
-+----------------------------------------------------------------------------------------------+
+5. In the resulting window, use the drop down as shown and click **Create new Origin Pool**.
 
-+----------------------------------------------------------------------------------------------+
-| 15. In the resulting window's **Metadata** section enter **<namespace>-appfw** for the       |
-|    **Name**.                                                                                 |
-|                                                                                              |
-| 16. Leaving all other values as default, scroll to the bottom and click Continue.            |                            |
-+----------------------------------------------------------------------------------------------+
-| |lab015|                                                                                     |
-+----------------------------------------------------------------------------------------------+
+|lab005|
 
-17. Back in the HTTP Load Balancer configuration, click **Bot Protection** in the left-hand navigation.
+6. In the resulting window, enter **<namespace>-pool** in the **Name** field and click **Add Item** under **Basic Configuration: Origin Servers**.
 
-18. From the **Bot Defense** dropdown, select **Enable**.
+|lab006|
 
-19. In the added menu option, click **Configure**.
+7. In the resulting window, **Public DNS Name of Origin Server** should be selected for **Select Type of Origin Server**.
+8. For **DNS Name** enter the following hostname: **airline-backend.f5se.com** and then click **Add Item**
+
+|lab007|
+
+9. After returning to the prior window, make sure **Port:** under **Basic Configuration** is configured for **80**.
+10. Leave all other values as shown while scrolling to the bottom and click, **Continue**.
+11. After returning to the next window and confirming the content, click **Add Item**.
+
+|lab008|
+ 
+|lab009|
+ 
+|lab010|
+
+12. Continuing in the **Security Configuration** section, click on the **Select Web Application Firewall (WAF Config)** and select **App Firewall**.
+
+|lab012|
+
+|lab013|
+
+13. In the resulting **App Firewall** drop down select **Create new App Firewall**.
+
+.. note::
+   *The "shared/base-appfw" policy is in the "shared namespace" which can be applied to multiple Load Balancer configurations across namespaces, reducing policy sprawl.*
+
+|lab014|
+
+14. In the resulting window's **Metadata** section enter **<namespace>-appfw** for the **Name**.
+
+15. Leaving all other values as default, scroll to the bottom and click **Continue**.
+
+|lab015|
+
+|lab016|
+
+16. Back in the HTTP Load Balancer configuration, click **Security Configuration** in the left-hand navigation.
+
+17. From the **Bot Defense Config** dropdown, select **Specify Bot Defense Configuration**.
+
+18. In the added menu option, click **Configure**.
 
 |lab017|
 
@@ -159,7 +112,7 @@ Task 1: Configure Load Balancer, Origin Pool, WAF and BotDefense (7 min)
 
 19. Observe the additional positioning options in the **JavaScript Insertion** section.
 
-20. Click **Configure** in the **Protected App Endpoints** section
+20. Click **Configure** in the **Protected Endpoints Section**
 
 21. In the new **App Endpoint Type** click **Add Item**
 
@@ -174,13 +127,11 @@ Task 1: Configure Load Balancer, Origin Pool, WAF and BotDefense (7 min)
     * **Protocol:** *BOTH*
     * **Path:Path Match:** *Prefix*
     * **Prefix:** */user/vipsignin*
-
-    Scroll down further and follow below 
     * **Bot Traffic Mitigation:Select Bot Mitigation Action:** *Flag*
 	* **Bot Traffic Mitigation:Include Mitigation Headers:** *Append Headers**
     * Leave **Inference Header Name** and **Automation Type Header Name** as their respective defaults.	
 
-23. Scroll to the bottom and click **Apply**
+23. Scroll to the bottom and click **Add Item**
 
 |lab022|
 
@@ -190,10 +141,10 @@ Task 1: Configure Load Balancer, Origin Pool, WAF and BotDefense (7 min)
 
 25. Then click **Apply** on the **Protected App Endpoints** screen
 
-26. In the resulting **HTTP Load Balancer** window, scroll to the **Other Settings** section and note the **VIP Advertisement** setting. 
+26. In the resulting **HTTP Load Balancer** window, scroll to the **Advanced Configuration** section and note the **Where to Advertise the VIP** setting. 
 
 .. note::                                                                                    
-   *The above selection controls how/where the application is advertised. The "Internet" setting means that this application will be advertised globally using the F5 Distributed Cloud Global Network utilizing Anycast.*
+   *The above selection controls how/where the application is advertised. The "Advertise On Internet" setting means that this application will be advertised globally using the F5 Distributed Cloud Global Network utilizing Anycast.*
 
 27. Click **Save and Exit** at the bottom of the **HTTP Load Balancer** configuration screen.
 
@@ -263,25 +214,25 @@ Task 3: Compare Via Bot Defense (5min)
  
 |labend|
 
-.. |lab001| image:: _static/lab1-001-updated.png
+.. |lab001| image:: _static/lab1-001.png
    :width: 800px
-.. |lab002| image:: _static/lab1-002-updated.png
+.. |lab002| image:: _static/lab1-002.png
    :width: 800px
-.. |lab003| image:: _static/lab1-003-updated.png
+.. |lab003| image:: _static/lab1-003.png
    :width: 800px
-.. |lab004| image:: _static/lab1-004-updated.png
+.. |lab004| image:: _static/lab1-004.png
    :width: 800px
-.. |lab005| image:: _static/lab1-005-updated.png
+.. |lab005| image:: _static/lab1-005.png
    :width: 800px
-.. |lab006| image:: _static/lab1-006-updated.png
+.. |lab006| image:: _static/lab1-006.png
    :width: 800px
-.. |lab007| image:: _static/lab1-007-updated.png
+.. |lab007| image:: _static/lab1-007.png
    :width: 800px
-.. |lab008| image:: _static/lab1-008-updated.png
+.. |lab008| image:: _static/lab1-008.png
    :width: 800px
-.. |lab009| image:: _static/lab1-009-updated.png
+.. |lab009| image:: _static/lab1-009.png
    :width: 800px
-.. |lab010| image:: _static/lab1-010-updated.png
+.. |lab010| image:: _static/lab1-010.png
    :width: 800px
 .. |lab012| image:: _static/lab1-012.png
    :width: 800px

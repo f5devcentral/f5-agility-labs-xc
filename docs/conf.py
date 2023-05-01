@@ -16,7 +16,7 @@ import f5_sphinx_theme
 classname = "F5 Distributed Cloud"
 
 # OPTIONAL: The URL to the GitHub Repository for this class
-github_repo = "https://github.com/aconley245/f5-agility-labs-xc"
+github_repo = "https://github.com/f5devcentral/f5-agility-labs-xc"
 
 #
 # END CONFIG
