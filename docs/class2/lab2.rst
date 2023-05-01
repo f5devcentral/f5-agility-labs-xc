@@ -138,9 +138,9 @@ implementation.
   *Make sure to logoff using the menu on the right of the web application you just accessed*
 
 +----------------------------------------------------------------------------------------------+
-| 7. Return to the Load Balancer in the F5 Distributed Cloud Console, *Manage > Load Balancer* |
+| 7. Return to the Load Balancer in the F5 Distributed Cloud Console,**Manage > Load Balancer**|
 |                                                                                              |
-|    *> HTTP Load Balancers* and use the **Action Dots** and click **Manage Configuration**    |
+|    **> HTTP Load Balancers** and use the **Action Dots** and click **Manage Configuration**  |
 |                                                                                              |
 | 8. Click **Edit Configuration** in the top right-hand corner.                                |
 +----------------------------------------------------------------------------------------------+
