@@ -99,33 +99,33 @@ In this task you will leverage the user identification policy just built and the
 user detection and create a malicious user mitigation and challenge.
 
 +----------------------------------------------------------------------------------------------+
-| 13. Click **Common Security Controls** in the left-hand navigation.                          |
+| 1. Click **Common Security Controls** in the left-hand navigation.                           |
 |                                                                                              |
-| 14. Click the dropdown for **Malicious User Detection** and select **Enable**.               |
+| 2. Click the dropdown for **Malicious User Detection** and select **Enable**.                |
 +----------------------------------------------------------------------------------------------+
 | |lab012|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 15. Click the dropdown for **Malicious User Mitigation And Challenges** and select           |
+| 3. Click the dropdown for **Malicious User Mitigation And Challenges** and select            |
 |                                                                                              |
-|     **Enable**.                                                                              |
+|    **Enable**.                                                                               |
 +----------------------------------------------------------------------------------------------+
 | |lab013|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 16. Click the dropdown for **Malicious User Mitigation Settings** and select **Custom**.     |
+| 4. Click the dropdown for **Malicious User Mitigation Settings** and select **Custom**.      |
 +----------------------------------------------------------------------------------------------+
 | |lab014|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 17. Click the dropdown for **Custom**.  Observe the two other policies.                      |
+| 5. Click the dropdown for **Custom**.  Observe the two other policies.                       |
 |                                                                                              |
-|     **shared/lab-sec-user-mitigation**                                                       |
+|    **shared/lab-sec-user-mitigation**                                                        |
 |                                                                                              |
-|     **ves-io-shared/ves-io-default-malicious-user-mitigation**                               |
+|    **ves-io-shared/ves-io-default-malicious-user-mitigation**                                |
 |                                                                                              |
 | .. note::                                                                                    |
 |                                                                                              |
@@ -133,31 +133,31 @@ user detection and create a malicious user mitigation and challenge.
 |                                                                                              |
 | *mitigation controls to implement common service security across multiple resources.*        |
 |                                                                                              |
-| 18. Select **Add Item**.                                                                     |
+| 6. Select **Add Item**.                                                                      |
 +----------------------------------------------------------------------------------------------+
 | |lab015|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 19. In the **Metadata** section enter **security-user-mitigation** for the **Name** and      |
+| 7. In the **Metadata** section enter **security-user-mitigation** for the **Name** and       |
 |                                                                                              |
-|     then click **Add Item** under **Rules**.                                                 |
+|    then click **Add Item** under **Rules**.                                                  |
 +----------------------------------------------------------------------------------------------+
 | |lab016|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 20. In the resulting window, click the dropdown for **Threat Level** and select **Low**.     |
+| 8. In the resulting window, click the dropdown for **Threat Level** and select **Low**.      |
 |                                                                                              |
-| 21. Click the dropdown for **Action** and select **Java Script Challenge**.                  |
+| 9. Click the dropdown for **Action** and select **Java Script Challenge**.                   |
 |                                                                                              |
-| 22. Select **Apply**.                                                                        |
+| 10. Select **Apply**.                                                                        |
 +----------------------------------------------------------------------------------------------+
 | |lab017|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 23. In the **Malicious User Mitigation** window review the rule just created and click       |
+| 11. In the **Malicious User Mitigation** window review the rule just created and click       |
 |                                                                                              |
 |     **Add Item** again.                                                                      |
 +----------------------------------------------------------------------------------------------+
@@ -165,17 +165,17 @@ user detection and create a malicious user mitigation and challenge.
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 24. In the resulting window, click the dropdown for **Threat Level** and select **Medium**.  |
+| 12. In the resulting window, click the dropdown for **Threat Level** and select **Medium**.  |
 |                                                                                              |
-| 25. Click the dropdown for **Action** and select **Captcha Challenge**.                      |
+| 13. Click the dropdown for **Action** and select **Captcha Challenge**.                      |
 |                                                                                              |
-| 26. Select **Apply**.                                                                        |
+| 14. Select **Apply**.                                                                        |
 +----------------------------------------------------------------------------------------------+
 | |lab019|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 27. In the **Malicious User Mitigation** window review the rules just created and click      |
+| 15. In the **Malicious User Mitigation** window review the rules just created and click      |
 |                                                                                              |
 |     **Add Item** again.                                                                      |
 +----------------------------------------------------------------------------------------------+
@@ -183,23 +183,23 @@ user detection and create a malicious user mitigation and challenge.
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 28. In the resulting window, click the dropdown for **Threat Level** and select **High**.    |
+| 16. In the resulting window, click the dropdown for **Threat Level** and select **High**.    |
 |                                                                                              |
-| 29. Click the dropdown for **Action** and select **Block Temporarily**.                      |
+| 17. Click the dropdown for **Action** and select **Block Temporarily**.                      |
 |                                                                                              |
-| 30. Select **Apply**.                                                                        |
+| 18. Select **Apply**.                                                                        |
 +----------------------------------------------------------------------------------------------+
 | |lab021|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 31. Observe the three Rules created and select **Continue**.                                 |
+| 19. Observe the three Rules created and select **Continue**.                                 |
 +----------------------------------------------------------------------------------------------+
 | |lab022|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 31. Note the updated **Malicious User Mitigation and Challenges** section and click on       |
+| 20. Note the updated **Malicious User Mitigation and Challenges** section and click on       |
 |                                                                                              |
 |     **Other Settings** in the left-hand navigation or scroll to the bottom of the window and |
 |                                                                                              |
