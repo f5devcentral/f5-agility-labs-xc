@@ -134,6 +134,9 @@ implementation.
 | |lab013|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
+..warning:: 
+  *Make sure to use the menu on the right-menu of the web application you just accessed*
+
 +----------------------------------------------------------------------------------------------+
 | 7. Return to the Load Balancer in the F5 Distributed Cloud Console, *Manage > Load Balancer* |
 |                                                                                              |
