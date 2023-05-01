@@ -125,7 +125,6 @@ Task 2: Attaching Service Policies and configuring IP Reputation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The following steps will enable you to attach Service Policies to your configured Load Balancer.
-
 It will also help you understand additional approaches for Service Policies.
 
 +----------------------------------------------------------------------------------------------+

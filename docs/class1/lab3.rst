@@ -1,4 +1,4 @@
-Lab 3: Protecting a Private Endpoint
+Lab: Protecting a Private Endpoint
 ====================================
 
 In the previous lab you learned how an AppMesh node can be deployed 
