@@ -62,7 +62,7 @@ Network.
 +---------------------------------------------------------------------------------------------------------------+
 | 5. In the resulting window, **Public DNS Name of Origin Server** should be selected for **Select Type of**    |
 |                                                                                                               |
-|     **Origin Server**.                                                                                        |
+|    **Origin Server**.                                                                                         |
 |                                                                                                               |
 | 6. For **DNS Name** enter the following hostname: **demo-app.amer.myedgedemo.com** and then click **Apply**   |
 +---------------------------------------------------------------------------------------------------------------+
@@ -309,100 +309,94 @@ Task 4. Test the Application Firewall and View Security Events
 The following steps will test and validate the Web Application Firewall, review the  Security
 Monitoring dashboard, and gather security event details.
 
-+----------------------------------------------------------------------------------------------+
-| 1. Open another tab in your browser (Chrome shown), navigate to the newly configured Load    |
-|                                                                                              |
-|    Balancer configuration: **http://<namespace>.lab-sec.f5demos.com**, to confirm it is      |
-|                                                                                              |
-|    functional.                                                                               |
-|                                                                                              |
-| 2. Using some of the sample attacks below, add the URI path & variables to your application  |
-|                                                                                              |
-|    to generate security event data.                                                          |
-|                                                                                              |
-|    * /?cmd=cat%20/etc/passwd                                                                 |
-|    * /product?id=4%20OR%201=1                                                                |
-|    * /cart?search=aaa'><script>prompt('Please+enter+your+password');</script>                |
-|                                                                                              |
-| .. note::                                                                                    |
-|    *The web application firewall is blocking these requests to protect the application.*     |
-|                                                                                              |
-|    *The block page can be customized to provide additional information.*                     |
-+----------------------------------------------------------------------------------------------+
-| |lab034|                                                                                     |
-+----------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------+
+| 1. Open another tab in your browser (Chrome shown), navigate to the newly configured Load Balancer            |
+|                                                                                                               |
+|    configuration: **http://<namespace>.lab-sec.f5demos.com**, to confirm it is functional.                    |
+|                                                                                                               |
+| 2. Using some of the sample attacks below, add the URI path & variables to your application to generate       |
+|                                                                                                               |
+|    security event data.                                                                                       |
+|                                                                                                               |
+|    * /?cmd=cat%20/etc/passwd                                                                                  |
+|    * /product?id=4%20OR%201=1                                                                                 |
+|    * /cart?search=aaa'><script>prompt('Please+enter+your+password');</script>                                 |
+|                                                                                                               |
+| .. note::                                                                                                     |
+|    *The web application firewall is blocking these requests to protect the application. The block page can*   |
+|                                                                                                               |
+|    *be customized to provide additional information.*                                                         |
++---------------------------------------------------------------------------------------------------------------+
+| |lab034|                                                                                                      |
++---------------------------------------------------------------------------------------------------------------+
 
-+----------------------------------------------------------------------------------------------+
-| 3. Returning to the F5 Distributed Cloud Console, use the left-hand navigation to navigate   |
-|                                                                                              |
-|    to Multi-Cloud App Connect setion and expand **Virtual Hosts** and click on **HTTP Load   |
-|                                                                                              |
-|    Balancers**.                                                                              |
-|                                                                                              |
-| 4. Click on the **Security Monitoring** link for your respective load balancer.              |
-+----------------------------------------------------------------------------------------------+
-| |lab035|                                                                                     |
-|                                                                                              |
-| |lab036|
-+----------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------+
+| 3. Returning to the F5 Distributed Cloud Console, use the left-hand navigation to navigate to Multi-Cloud App |
+|                                                                                                               |
+|    Connect setion and expand **Virtual Hosts** and click on **HTTP Load Balancers**.                          |
+|                                                                                                               |
+| 4. Click on the **Security Monitoring** link for your respective load balancer.                               |
++---------------------------------------------------------------------------------------------------------------+
+| |lab035|                                                                                                      |
+|                                                                                                               |
+| |lab036|                                                                                                      |
++---------------------------------------------------------------------------------------------------------------+
 
-+----------------------------------------------------------------------------------------------+
-| 5. From the **Dashboard** view, using the horizontal navigation, click **Security Events**.  |
-|                                                                                              |
-| 8. Note the **Chart** shows a graphical representation of all of the response codes for the  |
-|                                                                                              |
-|    selected time frame.                                                                      |
-|                                                                                              |
-| .. note::                                                                                    |
-|    *If you lost your 1 Hour Filter, re-apply using Task 2: Step 5*                           |
-+----------------------------------------------------------------------------------------------+
-| |lab037|                                                                                     |
-|                                                                                              |
-| |lab038|                                                                                     |
-+----------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------+
+| 5. From the **Dashboard** view, using the horizontal navigation, click **Security Events**.                   |
+|                                                                                                               |
+| 8. Note the **Chart** shows a graphical representation of all of the response codes for the selected time     |
+|                                                                                                               |
+|    frame.                                                                                                     |
+|                                                                                                               |
+| .. note::                                                                                                     |
+|    *If you lost your 1 Hour Filter, re-apply using Task 2: Step 5*                                            |
++---------------------------------------------------------------------------------------------------------------+
+| |lab037|                                                                                                      |
+|                                                                                                               |
+| |lab038|                                                                                                      |
++---------------------------------------------------------------------------------------------------------------+
 
-+----------------------------------------------------------------------------------------------+
-| 6. Click the **Hide Chart** link to free up space in the browser window.                     |
-|                                                                                              |
-| 7. Expand your latest security event as shown.                                               |
-|                                                                                              |
-| 8. Note the summary detail provided in the **Information** link.  The **Request ID** which   |
-|                                                                                              |
-|    is synonymous with **Support ID** (filterable) from the Security Event Block Page.        |
-|                                                                                              |
-| 9. Scroll to the bottom of the information screen to see specific signatures detected and    |
-|                                                                                              |
-|    actions taken during the security event.                                                  |
-|                                                                                              |
-| .. note::                                                                                    |
-|    *Similar to a Request, Security Events also have additional detail in JSON format.*       |
-+----------------------------------------------------------------------------------------------+
-| |lab039|                                                                                     |
-|                                                                                              |
-| |lab040|                                                                                     |
-|                                                                                              |
-| |lab041|                                                                                     |
-+----------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------+
+| 6. Click the **Hide Chart** link to free up space in the browser window.                                      |
+|                                                                                                               |
+| 7. Expand your latest security event as shown.                                                                |
+|                                                                                                               |
+| 8. Note the summary detail provided in the **Information** link.  The **Request ID** which is synonymous with |
+|                                                                                                               |
+|    **Support ID** (filterable) from the Security Event Block Page.                                            |
+|                                                                                                               |
+| 9. Scroll to the bottom of the information screen to see specific signatures detected and actions taken during|
+|                                                                                                               |
+|    the security event.                                                                                        |
+|                                                                                                               |
+| .. note::                                                                                                     |
+|    *Similar to a Request, Security Events also have additional detail in JSON format.*                        |
++---------------------------------------------------------------------------------------------------------------+
+| |lab039|                                                                                                      |
+|                                                                                                               |
+| |lab040|                                                                                                      |
+|                                                                                                               |
+| |lab041|                                                                                                      |
++---------------------------------------------------------------------------------------------------------------+
 
-+----------------------------------------------------------------------------------------------+
-| **End of Lab 1:**  This concludes Lab 1.  In this lab you created an origin pool to connect  |
-|                                                                                              |
-| to the application, you then created a load balancer and associated the origin pool to the   |
-|                                                                                              |
-| load balancer.  This allowed the application to be advertised via the F5 Distributed Cloud   |
-|                                                                                              |
-| Global Network.  The Distributed Cloud Console was then used to review telemetry data        |
-|                                                                                              |
-| gathered for the application.  Next an Application Firewall policy was created and assigned  |
-|                                                                                              |
-| to protect the application.  Finally a sample attack was run against the application and the |
-|                                                                                              |
-| security event data was reviewed within the Distributed Cloud Console.                       |
-|                                                                                              |
-| A brief presentation will be shared prior to the beginning of Lab 2.                         |
-+----------------------------------------------------------------------------------------------+
-| |labend|                                                                                     |
-+----------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------+
+| **End of Lab 1:**  This concludes Lab 1.  In this lab you created an origin pool to connect to the            |
+|                                                                                                               |
+| application, you then created a load balancer and associated the origin pool to the load balancer.  This      |
+|                                                                                                               |
+| allowed the application to be advertised via the F5 Distributed Cloud Global Network.  The Distributed Cloud  |
+|                                                                                                               |
+| Console was then used to review telemetry data gathered for the application.  Next an Application Firewall    |
+|                                                                                                               |
+| policy was created and assigned to protect the application.  Finally a sample attack was run against the      |
+|                                                                                                               |
+| application and the security event data was reviewed within the Distributed Cloud Console.                    |
+|                                                                                                               |
+| A brief presentation will be shared prior to the beginning of Lab 2.                                          |
++---------------------------------------------------------------------------------------------------------------+
+| |labend|                                                                                                      |
++---------------------------------------------------------------------------------------------------------------+
 
 .. |lab001| image:: _static/lab1-001.png
    :width: 800px
