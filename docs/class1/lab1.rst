@@ -28,32 +28,32 @@ These steps will create an origin pool, add a health monitor, define an applicat
 its DNS, and advertise the application on the Internet using the F5 Distributed Cloud Global
 Network.
 
-+----------------------------------------------------------------------------------------------+
-| 1. Following the **Introduction** section  instructions, you should now be in the **Multi-** |
-|                                                                                              |
-|    **Cloud App Connect** configuration window. If for some reason you are not in the         |
-|                                                                                              |
-|    **Multi-Cloud App Connect** window, use the **Select Service** in the left-hand           |
-|                                                                                              |
-|    navigation, and click **Multi-Cloud App Connect** as shown in the *Introduction section,  |
-|                                                                                              |
-|    Task 2, Step 9*.                                                                          |
-|                                                                                              |
-| 2. In the left-hand navigation expand **Manage** and click **Load Balancers > Origin **      |
-|                                                                                              |
-|    **Pools**                                                                                 |
-|                                                                                              |
-| 3. In the resulting screen click the **Add Origin Pool** in the graphic as shown.            |
-|                                                                                              |
-| .. note::                                                                                    |
-|    *You have defaulted to your specific namespace as that is the only namespace to which you*|
-|                                                                                              |
-|    *have administrative access.*                                                             |
-+----------------------------------------------------------------------------------------------+
-| |lab001|                                                                                     |
-|                                                                                              |
-| |lab002|                                                                                     |
-+----------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------+
+| 1. Following the **Introduction** section  instructions, you should now be in the **Multi-Cloud App Connect** |
+|                                                                                                               |
+|    **Cloud App Connect** configuration window. If for some reason you are not in the                          |
+|                                                                                                               |
+|    **Multi-Cloud App Connect** window, use the **Select Service** in the left-hand                            |
+|                                                                                                               |
+|    navigation, and click **Multi-Cloud App Connect** as shown in the *Introduction section,                   |
+|                                                                                                               |
+|    Task 2, Step 9*.                                                                                           |
+|                                                                                                               |
+| 2. In the left-hand navigation expand **Manage** and click **Load Balancers > Origin **                       |
+|                                                                                                               |
+|    **Pools**                                                                                                  |
+|                                                                                                               |
+| 3. In the resulting screen click the **Add Origin Pool** in the graphic as shown.                             |
+|                                                                                                               |
+| .. note::                                                                                                     |
+|    *You have defaulted to your specific namespace as that is the only namespace to which you*                 |
+|                                                                                                               |
+|    *have administrative access.*                                                                              |
++---------------------------------------------------------------------------------------------------------------+
+| |lab001|                                                                                                      |
+|                                                                                                               |
+| |lab002|                                                                                                      |
++---------------------------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
 | 4. In the resulting window, enter **<namespace>-pool** in the **Name** field and click       |
