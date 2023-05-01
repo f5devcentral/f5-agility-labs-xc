@@ -3,14 +3,13 @@ Lab: Deploying an AWS VPC Site
 
 In the previous lab you learned how to protect a resource that is already on the Public Internet.
 
-In this lab we will look at two additional topologies where you can use a Customer Edge (CE)
-to protect a resource that is not directly exposed to the Internet.
+In this lab we will look at two additional topologies where you can use a Customer Edge (CE).
 
 F5 Distributed Cloud AWS VPC Site
 ---------------------------------
 
 In addition to protecting resources using F5 Distributed Cloud WAF/WAAP enforcement at an F5 Regional Edge (RE),
-you can also deploy a Customer Edge (CE) that can protect resources that are not directly connected to the Internet.  
+you can also deploy a Customer Edge (CE) that may or may not be exposed to the public Internet.
  
 In this exercise, we will review a CE that has already been deployed in an AWS VPC.
 We have also already created a shared F5 Distributed Cloud AWS VPC Site within the Distributed Cloud Console.
@@ -20,7 +19,8 @@ Once a CE has been deployed, it unlocks two additional topologies.
 1. Client -> RE -> CE -> Protected resource  
 
 Leveraging F5 Distributed Cloud REs to provide WAF and other services upstream, 
-then proxying the clean traffic to the protected resource via the CE.
+then proxying the clean traffic to the protected resource via the CE.  It is recommended that a firewall rule be placed at the site with the CE
+to only allow traffic from an RE.  This ensures that all traffic is scrubbed upstream before entering the site.
 
 2. Client -> CE -> Protected resource  
 
@@ -28,14 +28,13 @@ In this scenario, the CE advertises the services directly.  While this topology 
 volumetric DDoS protection and anycast availability from the Distributed Cloud global network, there are some use cases where it can be beneficial.  
 One such example is when clients and protected resources are both local to each other without having to traverse the Internet.
 
-Upon CE deployment, two encrypted tunnels are automatically setup between the CE and the two closest REs.  These redundant tunnels provide
+With either toplogy, two encrypted tunnels are automatically created between the CE and the two closest REs.  These redundant tunnels provide
 high availability in the unlikely event of an outage at a specific RE within the Distributed Cloud global network.
 
 In the event of an Internet outage at a CE site, local survivability will continue to provide data plane services locally for a period of time.  
 During this time, control plane services are suspended and will resume upon Internet connection reestablishment.
 
-While a single CE may be adequate for non-production environments, a high-availability cluster of at least 3 AppMesh nodes 
-is highly recommended at each CE site for production.
+While a single CE may be adequate for non-production environments, a high-availability cluster of at least 3 CE's is highly recommended for production.
 
 Exercise 1: Introduction to F5 Distributed Cloud AWS VPC Site
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
