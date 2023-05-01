@@ -330,6 +330,8 @@ Now we will retest access to our website and see if our experience has indeed ch
 |    *Review Lab1/Task3 to find Security Events. You can copy you support ID to search with!*  |
 +----------------------------------------------------------------------------------------------+
 | |lab035|                                                                                     |
+|                                                                                              |
+| |lab036|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
@@ -411,6 +413,8 @@ Now we will retest access to our website and see if our experience has indeed ch
 .. |lab034| image:: _static/lab5-034.png
    :width: 800px
 .. |lab035| image:: _static/lab5-035.png
+   :width: 800px
+.. |lab036| image:: _static/lab5-036.png
    :width: 800px
 .. |labend| image:: _static/labend.png
    :width: 800px
