@@ -478,5 +478,7 @@ Monitoring dashboard, and gather security event details.
    :width: 800px
 .. |lab040| image:: _static/lab1-040.png
    :width: 800px
+.. |lab041| image:: _static/lab1-041.png
+   :width: 800px
 .. |labend| image:: _static/labend.png
    :width: 800px
