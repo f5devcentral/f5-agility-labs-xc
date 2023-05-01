@@ -291,9 +291,9 @@ blocking/deny rules to illustrate Service Policy controls.
 +----------------------------------------------------------------------------------------------+
 | 1. Before beginning this task, re-evaluate your access from your client to the following:    |
 |                                                                                              |
-|    * **Browser**: http://<namespace>.lab-sec.f5demos.com?page=header                         |
-|    * **cURL**: http://<namespace>.lab-sec.f5demos.com                                        |
-|    * **cURL**: http://<namespace>.lab-sec.f5demos.com?page=header                            |
+|    * **Browser**: http://<namespace>.lab-sec.f5demos.com/index.php?page=header               |
+|    * **cURL**: http://<namespace>.lab-sec.f5demos.com/                                       |
+|    * **cURL**: http://<namespace>.lab-sec.f5demos.com/index.php?page=header                  |
 |                                                                                              |
 |    The expectation is that all are successful based on the current Service Policies.         |
 | .. note::                                                                                    |
@@ -520,9 +520,9 @@ blocking/deny rules to illustrate Service Policy controls.
 +----------------------------------------------------------------------------------------------+
 | 36. Time to re-access your access. Now test the following from your client:                  |
 |                                                                                              |
-|     * **Browser**: http://<namespace>.lab-sec.f5demos.com?page=header                        |
-|     * **cURL**: http://<namespace>.lab-sec.f5demos.com                                       |
-|     * **cURL**: http://<namespace>.lab-sec.f5demos.com?page=header                           |
+|    * **Browser**: http://<namespace>.lab-sec.f5demos.com/index.php?page=header               |
+|    * **cURL**: http://<namespace>.lab-sec.f5demos.com/                                       |
+|    * **cURL**: http://<namespace>.lab-sec.f5demos.com/index.php?page=header                  |
 |                                                                                              |
 | 37. What where your results?                                                                 |
 +----------------------------------------------------------------------------------------------+
