@@ -5,13 +5,9 @@ NEW Blueprint as of 4/24/23 4PM EST. https://udf.f5.com/b/b792f881-0806-486e-835
 
 NOTE - All Labs are complete and ready to test. 
 
-**The following items need to be addressed as of 04/24/23 3PM**
+**The following items need to be addressed as of 005/01/23 10AM**
 
-1. CE registration permission issues. (manual process until script kicks in monday)
-
-4/24 3PM Update - Permissions changes should have taken effect. Nilesh to test as "student account". 
-
-2. Weirdness at end of Lab 3 load balancing - see screenshot in lab. mixed graphics from both sites when [Shift + refresh] 
+1. Weirdness at end of Lab 3 load balancing - see screenshot in lab. mixed graphics from both sites when [Shift + refresh] 
 
 4/22- 3PM - Chas and I reveiwed. persistent settings have no effect on the issue. 
 
@@ -48,3 +44,7 @@ Determine best section to fill out with exploritory work. analytics, dashboard e
 
 3. Lab 5 - 4/22- 10PM 70% complete. Bot Defense is disabled for tenant. Need to enable to show bot defense profile. Final note - bot cut from lab 
  
+
+1. CE registration permission issues. (manual process until script kicks in monday)
+
+4/24 3PM Update - Permissions changes should have taken effect. Nilesh to test as "student account". 
