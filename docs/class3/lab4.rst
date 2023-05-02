@@ -219,77 +219,77 @@ and additional detailed information about these requests.
    console; **Bad Bot Report**, **Protection Coverage Report**,
    **Transaction Usage**.
 
-.. |lab001| image:: _static/image1.png
+.. |lab001| image:: _static/lab4image1.png
    :alt: Graphical user interface, application, Teams Description automatically generated
    :width: 6.5in
    :height: 4.91597in
 
-.. |lab002| image:: Documents/Agility 2023/media/image2.png
+.. |lab002| image:: _static/lab4image2.png
    :alt: Graphical user interface, application, Teams Description automatically generated
    :width: 6.5in
    :height: 2.88264in
 
-.. |lab003| image:: Documents/Agility 2023/media/image3.png
+.. |lab003| image:: _static/lab4image3.png
    :alt: Graphical user interface, application, Teams Description automatically generated
    :width: 6.5in
    :height: 3.99514in
 
-.. |lab004| image:: Documents/Agility 2023/media/image4.png
+.. |lab004| image:: _static/lab4image4.png
    :alt: Graphical user interface, application, Teams Description automatically generated
    :width: 6.5in
    :height: 2.96181in
 
-.. |lab005| image:: Documents/Agility 2023/media/image5.png
+.. |lab005| image:: _static/lab4image5.png
    :alt: Graphical user interface, website Description automatically generated
    :width: 6.5in
    :height: 3.57778in
 
-.. |lab006| image:: Documents/Agility 2023/media/image6.png
+.. |lab006| image:: _static/lab4image6.png
    :alt: Graphical user interface, text, application Description automatically generated
    :width: 4.68476in
    :height: 5.54063in
 
-.. |lab007| image:: Documents/Agility 2023/media/image7.png
+.. |lab007| image:: _static/lab4image7.png
    :alt: Graphical user interface Description automatically generated
    :width: 6.5in
    :height: 6.68194in
 
-.. |lab008| image:: Documents/Agility 2023/media/image8.png
+.. |lab008| image:: _static/lab4image8.png
    :alt: Graphical user interface, text, application, Word, email Description automatically generated
    :width: 6.5in
    :height: 3.70903in
 
-.. |lab009| image:: Documents/Agility 2023/media/image9.png
+.. |lab009| image:: _static/lab4image9.png
    :alt: Graphical user interface, application Description automatically generated
    :width: 6.5in
    :height: 4.74792in
 
-.. |lab010| image:: Documents/Agility 2023/media/image10.png
+.. |lab010| image:: _static/lab4image10.png
    :alt: Graphical user interface, text, application Description automatically generated
    :width: 6.5in
    :height: 2.74722in
 
-.. |lab011| image:: Documents/Agility 2023/media/image11.png
+.. |lab011| image:: _static/lab4image11.png
    :alt: Graphical user interface, text, application, email Description automatically generated
    :width: 6.5in
    :height: 3.07083in
 
-.. |lab012| image:: Documents/Agility 2023/media/image12.png
+.. |lab012| image:: _static/lab4image12.png
    :alt: Graphical user interface, application Description automatically generated
    :width: 5.87275in
    :height: 3.07943in
 
-.. |lab013| image:: Documents/Agility 2023/media/image13.png
+.. |lab013| image:: _static/lab4image13.png
    :alt: Graphical user interface Description automatically generated
    :width: 5.99382in
    :height: 4.64393in
 
-.. |lab014| image:: Documents/Agility 2023/media/image14.png
+.. |lab014| image:: _static/lab4image14.png
    :alt: Graphical user interface, application, Teams Description automatically generated
    :width: 6.5in
    :height: 4.46111in
 
-.. |lab015| image:: Documents/Agility 2023/media/image15.png
+.. |lab015| image:: _static/lab4image15.png
    :alt: A picture containing table Description automatically generated
    :width: 6.5in
    :height: 3.26667in
