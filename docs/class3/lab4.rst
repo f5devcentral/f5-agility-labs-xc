@@ -37,17 +37,12 @@ Task 1: Define the protected application in F5 Distributed Cloud Bot Defense
 
 |lab004|
 
-6. dtfgsdfgsadf
-
-**
-**
-
 Task 2: Configure F5 BIGIP Distributed Cloud Bot Defense connector profile
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 1. Select the **Airline App** Access Method for your F5 BIGIP in your UDF deployment.
 
-**ADD SCREENSHOT HERE** : **Screenshot of student view of UDF deployment BIGIP access methods with "Airline App” Access Method highlighted.**
+|lab017|
 
 2. From this new browser tab, take note of the FQDN. You will need it
    when configuring the F5 Distributed Cloud Bot Defense profile later
@@ -57,7 +52,7 @@ Task 2: Configure F5 BIGIP Distributed Cloud Bot Defense connector profile
 
 3. Access the TMUI of your BIGIP 17.1. Login credentials are **admin/f5xcdemo!**.
 
-**ADD SCREENSHOT HERE: Screenshot of student/course view of UDF deployment BIGIP access methods with “TMUI” Access Method highlighted**
+|lab016|
 
 4. In the F5 BIGIP TMUI, browse to **Distributed Cloud Services > Bot  Defense > BD Profiles** and click the (+) icon to create a new Bot Defense profile.
 
@@ -236,5 +231,13 @@ and additional detailed information about these requests.
    :height: 4.46111in
 
 .. |lab015| image:: _static/lab4-image15.png
+   :width: 6.5in
+   :height: 3.26667in
+
+.. |lab016| image:: _static/lab4-image16.png
+   :width: 6.5in
+   :height: 3.26667in
+   
+.. |lab017| image:: _static/lab4-image17.png
    :width: 6.5in
    :height: 3.26667in
