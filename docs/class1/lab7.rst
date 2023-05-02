@@ -34,6 +34,6 @@ be creating Load Balancer resources in the "Live" lab environment.
 
 
 
-.. |lab007-1| image:: _static/lab7-001.PNG
-.. |lab007-2| image:: _static/lab7-002.PNG
-.. |lab007-3| image:: _static/lab7-003.PNG
+.. |lab007-1| image:: _static/lab7-001.png
+.. |lab007-2| image:: _static/lab7-002.png
+.. |lab007-3| image:: _static/lab7-003.png
