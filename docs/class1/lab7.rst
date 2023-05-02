@@ -1,12 +1,11 @@
-Lab 1: Introduction to MCN
+Lab 7: Introduction to MCN
 ==================================
 
 This lab will make use of F5 Distributed Cloud Simulators to emulate the process of setting up two different sites (one in AWS, one on premises)
 
 
-F5 provides "simulations" of its services via "F5 Simulators".  We will first use the 
-Distributed Cloud Simulator to familiarize you with the environment.  Later in the lab 
-we will make use of a shared lab environment that will let you interact with a "live" system.
+F5 provides "simulations" of its services via "F5 Simulators".  We will use the 
+Distributed Cloud Simulator to familiarize you with the MCN concept.
 
 Task 1: Creating a Site
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
