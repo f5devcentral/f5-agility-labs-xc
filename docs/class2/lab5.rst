@@ -36,11 +36,9 @@ In this task you will add a Rate Limiting Policy to the application Load Balance
 |                                                                                              |
 |    navigation, expand **Manage** and click **Load Balancers > HTTP Load Balancers**.         |
 |                                                                                              |
-| 2. In the resulting screen click the **Add HTTP Load Balancer** in the graphic as shown.     |
+| 2. Use the **Action Dots** and click **Manage Configuration**                                |
 |                                                                                              |
-| 3. Use the **Action Dots** and click **Manage Configuration**                                |
-|                                                                                              |
-| 4. Click **Edit Configuration** in the top right-hand corner.                                |
+| 3. Click **Edit Configuration** in the top right-hand corner.                                |
 +----------------------------------------------------------------------------------------------+
 | |lab001|                                                                                     |
 |                                                                                              |
@@ -48,21 +46,21 @@ In this task you will add a Rate Limiting Policy to the application Load Balance
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 5. Click **Common Security Controls** in the left-hand navigation & locate **Rate Limiting**.|
+| 4. Click **Common Security Controls** in the left-hand navigation & locate **Rate Limiting**.|
 |                                                                                              |
-| 6. Click the dropdown for **Rate Limiting** and select **Custom Rate Limiting Parameters**.  |
+| 5. Click the dropdown for **Rate Limiting** and select **Custom Rate Limiting Parameters**.  |
 +----------------------------------------------------------------------------------------------+
 | |lab003|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 7. In the expanded **Custom Rate Limiting Parameters** click the **View Configuration** Link.|
+| 6. In the expanded **Custom Rate Limiting Parameters** click the **View Configuration** Link.|
 +----------------------------------------------------------------------------------------------+
 | |lab004|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 8. In the resulting **Rate Limit Configuration** window, in the **Request Rate Limiter**     |
+| 7. In the resulting **Rate Limit Configuration** window, in the **Request Rate Limiter**     |
 |                                                                                              |
 |    section set the following values as shown:                                                |
 |                                                                                              |
@@ -70,25 +68,25 @@ In this task you will add a Rate Limiting Policy to the application Load Balance
 |    * **Per Period:** Minute                                                                  |
 |    * **Burst Multiplier:** 1                                                                 |
 |                                                                                              |
-| 9. Click the drop-down for **Rate Limiter Policies** and select **Rate Limiter Policies**.   |
+| 8. Click the drop-down for **Rate Limiter Policies** and select **Rate Limiter Policies**.   |
 +----------------------------------------------------------------------------------------------+
 | |lab005|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 10. In the new row for **Rate Limiter Policies**, click the dropdown an then select **Add**  |
+| 9. In the new row for **Rate Limiter Policies**, click the dropdown an then select **Add**   |
 |                                                                                              |
-|     **Item** from the list as shown.                                                         |
+|    **Item** from the list as shown.                                                          |
 +----------------------------------------------------------------------------------------------+
 | |lab006|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 11. In the **Rate Limiter Policy** window, enter **rate-limit** in the **Name** field in     |
+| 10. In the **Rate Limiter Policy** window, enter **rate-limit** in the **Name** field in     |
 |                                                                                              |
 |     **Metadata** section and then click **Configure** within the **Rules** section.          |
 |                                                                                              |
-| 12. In the resulting **Rules** window, click **Add Item**.                                   |
+| 11. In the resulting **Rules** window, click **Add Item**.                                   |
 +----------------------------------------------------------------------------------------------+
 | |lab007|                                                                                     |
 |                                                                                              |
@@ -96,23 +94,23 @@ In this task you will add a Rate Limiting Policy to the application Load Balance
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 13. In the **Rate Limiter Policy** window within the **Metadata** section input              |
+| 12. In the **Rate Limiter Policy** window within the **Metadata** section input              |
 |                                                                                              |
 |     **rate-limit-auth** into the **Name** field.                                             |
 |                                                                                              |
-| 14. Using the **Actions** drop-down select, **Apply Rate Limiter**.                          |
+| 13. Using the **Actions** drop-down select, **Apply Rate Limiter**.                          |
 |                                                                                              |
-| 15. In the left-hand navigation, click on **Request Match**.                                 |
+| 14. In the left-hand navigation, click on **Request Match**.                                 |
 +----------------------------------------------------------------------------------------------+
 | |lab009|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 16. In the **Request Match** section and select the **Configure** link in the **HTTP Method**|
+| 15. In the **Request Match** section and select the **Configure** link in the **HTTP Method**|
 |                                                                                              |
 |     section as shown.                                                                        |
 |                                                                                              |
-| 17. In the resulting **HTTP Method** window under **Method List**, select **POST** then      |
+| 16. In the resulting **HTTP Method** window under **Method List**, select **POST** then      |
 |                                                                                              |
 |     click **Apply**.                                                                         |
 +----------------------------------------------------------------------------------------------+
@@ -122,13 +120,13 @@ In this task you will add a Rate Limiting Policy to the application Load Balance
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 18. Observe that **HTTP Method** now appears **Configured**.                                 |
+| 17. Observe that **HTTP Method** now appears **Configured**.                                 |
 |                                                                                              |
-| 19. Further down in the **Request Match** section, select the **Configure** link in the      |
+| 18. Further down in the **Request Match** section, select the **Configure** link in the      |
 |                                                                                              |
 |     **HTTP Path** section as shown.                                                          |
 |                                                                                              |
-| 20. Observe the various Path definition options, click **Add Item** in the **Prefix Values** |
+| 19. Observe the various Path definition options, click **Add Item** in the **Prefix Values** |
 |                                                                                              |
 |     section the input **/auth.php** as shown and then click **Apply**.                       |
 |                                                                                              |
@@ -144,11 +142,11 @@ In this task you will add a Rate Limiting Policy to the application Load Balance
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 21. Observe that **HTTP Path** now also appears **Configured**. Click **Apply** on the       |
+| 20. Observe that **HTTP Path** now also appears **Configured**. Click **Apply** on the       |
 |                                                                                              |
 |     **Rate Limiter Policy** window.                                                          |
 |                                                                                              |
-| 22. Observe the rate limit rule just created and click **Add Item** to build another rule.   |
+| 21. Observe the rate limit rule just created and click **Add Item** to build another rule.   |
 +----------------------------------------------------------------------------------------------+
 | |lab014|                                                                                     |
 |                                                                                              |
@@ -156,23 +154,23 @@ In this task you will add a Rate Limiting Policy to the application Load Balance
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 23. In the **Rate Limiter Policy** window within the **Metadata** section input              |
+| 22. In the **Rate Limiter Policy** window within the **Metadata** section input              |
 |                                                                                              |
 |     **rate-limit-page** into the **Name** field.                                             |
 |                                                                                              |
-| 24. Using the **Actions** drop-down select, **Apply Rate Limiter**.                          |
+| 23. Using the **Actions** drop-down select, **Apply Rate Limiter**.                          |
 |                                                                                              |
-| 25. In the left-hand navigation, click on **Request Match**.                                 |
+| 24. In the left-hand navigation, click on **Request Match**.                                 |
 +----------------------------------------------------------------------------------------------+
 | |lab016|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 26. In the **Request Match** section and select the **Configure** link in the **HTTP Method**|
+| 25. In the **Request Match** section and select the **Configure** link in the **HTTP Method**|
 |                                                                                              |
 |     section as shown.                                                                        |
 |                                                                                              |
-| 27. In the resulting **HTTP Method** window under **Method List**, select **GET** then       |
+| 26. In the resulting **HTTP Method** window under **Method List**, select **GET** then       |
 |                                                                                              |
 |     click **Apply**.                                                                         |
 +----------------------------------------------------------------------------------------------+
@@ -182,13 +180,13 @@ In this task you will add a Rate Limiting Policy to the application Load Balance
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 28. Observe that **HTTP Method** now appears **Configured**.                                 |
+| 27. Observe that **HTTP Method** now appears **Configured**.                                 |
 |                                                                                              |
-| 29. Further down in the **Request Match** section, select the **Configure** link in the      |
+| 28. Further down in the **Request Match** section, select the **Configure** link in the      |
 |                                                                                              |
 |     **HTTP Path** section as shown.                                                          |
 |                                                                                              |
-| 30. Observe the various Path definition options, click **Add Item** in the **Prefix Values** |
+| 29. Observe the various Path definition options, click **Add Item** in the **Prefix Values** |
 |                                                                                              |
 |     section the input **/ratelimit.php** as shown and then click **Apply**.                  |
 +----------------------------------------------------------------------------------------------+
@@ -198,11 +196,11 @@ In this task you will add a Rate Limiting Policy to the application Load Balance
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 31. Observe that **HTTP Path** now also appears **Configured**. Click **Apply** on the       |
+| 30. Observe that **HTTP Path** now also appears **Configured**. Click **Apply** on the       |
 |                                                                                              |
 |     **Rate Limiter Policy** window.                                                          |
 |                                                                                              |
-| 32. Observe the added rate limit rule and click **Add Item** to build another rule.          |
+| 31. Observe the added rate limit rule and click **Add Item** to build another rule.          |
 +----------------------------------------------------------------------------------------------+
 | |lab021|                                                                                     |
 |                                                                                              |
@@ -210,23 +208,23 @@ In this task you will add a Rate Limiting Policy to the application Load Balance
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 33. In the **Rate Limiter Policy** window within the **Metadata** section input              |
+| 32. In the **Rate Limiter Policy** window within the **Metadata** section input              |
 |                                                                                              |
 |     **bypass** into the **Name** field.                                                      |
 |                                                                                              |
-| 34. Using the **Actions** drop-down select, **Bypass Rate Limiter**.                         |
+| 33. Using the **Actions** drop-down select, **Bypass Rate Limiter**.                         |
 |                                                                                              |
-| 35. In the left-hand navigation, click on **Request Match**.                                 |
+| 34. In the left-hand navigation, click on **Request Match**.                                 |
 +----------------------------------------------------------------------------------------------+
 | |lab023|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 36. In the **Request Match** section and select the **Configure** link in the **HTTP Method**|
+| 35. In the **Request Match** section and select the **Configure** link in the **HTTP Method**|
 |                                                                                              |
 |     section as shown.                                                                        |
 |                                                                                              |
-| 37. In the resulting **HTTP Method** window under **Method List**, select **ANY** then       |
+| 36. In the resulting **HTTP Method** window under **Method List**, select **ANY** then       |
 |                                                                                              |
 |     click **Apply**.                                                                         |
 +----------------------------------------------------------------------------------------------+
@@ -236,13 +234,13 @@ In this task you will add a Rate Limiting Policy to the application Load Balance
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 38. Observe that **HTTP Method** now appears **Configured**.                                 |
+| 37. Observe that **HTTP Method** now appears **Configured**.                                 |
 |                                                                                              |
-| 39. Further down in the **Request Match** section, select the **Configure** link in the      |
+| 38. Further down in the **Request Match** section, select the **Configure** link in the      |
 |                                                                                              |
 |     **HTTP Path** section as shown.                                                          |
 |                                                                                              |
-| 40. Observe the various Path definition options, click **Add Item** in the **Prefix Values** |
+| 39. Observe the various Path definition options, click **Add Item** in the **Prefix Values** |
 |                                                                                              |
 |     section the input **/** as shown and then click **Apply**.                               |
 +----------------------------------------------------------------------------------------------+
@@ -252,11 +250,11 @@ In this task you will add a Rate Limiting Policy to the application Load Balance
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 41. Observe that **HTTP Path** now also appears **Configured**. Click **Apply** on the       |
+| 40. Observe that **HTTP Path** now also appears **Configured**. Click **Apply** on the       |
 |                                                                                              |
 |     **Rate Limiter Policy** window.                                                          |
 |                                                                                              |
-| 42. Observe the three created rate limit rules and click **Apply**.                          |
+| 41. Observe the three created rate limit rules and click **Apply**.                          |
 +----------------------------------------------------------------------------------------------+
 | |lab028|                                                                                     |
 |                                                                                              |
@@ -264,7 +262,7 @@ In this task you will add a Rate Limiting Policy to the application Load Balance
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 43. Observe that rules are now **Configured**. Complete the custom **Rate Limiter Policy** by|
+| 42. Observe that rules are now **Configured**. Complete the custom **Rate Limiter Policy** by|
 |                                                                                              |
 |     clicking **Continue**.                                                                   |
 +----------------------------------------------------------------------------------------------+
@@ -272,13 +270,13 @@ In this task you will add a Rate Limiting Policy to the application Load Balance
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 44. Observe the **Request Rate Limiter** options for number of requests, the Per Period      |
+| 43. Observe the **Request Rate Limiter** options for number of requests, the Per Period      |
 |                                                                                              |
 |     interval and the Burst Multiplier.                                                       |
 |                                                                                              |
-| 45. Also observe that IPs can be allowed without Rate Limiting policies being applied        |
+| 44. Also observe that IPs can be allowed without Rate Limiting policies being applied        |
 |                                                                                              |
-| 46. Click **Apply** to add the **Rate Limit Configuration** to the application Load Balancer.|
+| 45. Click **Apply** to add the **Rate Limit Configuration** to the application Load Balancer.|
 |                                                                                              |
 | .. note::                                                                                    |
 |                                                                                              |
@@ -288,11 +286,11 @@ In this task you will add a Rate Limiting Policy to the application Load Balance
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 47. Observe that the **Custom Rate Limiting Parameters** now show **Configured** and then    |
+| 46. Observe that the **Custom Rate Limiting Parameters** now show **Configured** and then    |
 |                                                                                              |
 |     click on **Other Settings** in the left-hand navigation.                                 |
 |                                                                                              |
-| 48. Once at the bottom of the **HTTP Load Balancer** configuration, click **Save and Exit**. |
+| 47. Once at the bottom of the **HTTP Load Balancer** configuration, click **Save and Exit**. |
 +----------------------------------------------------------------------------------------------+
 | |lab032|                                                                                     |
 |                                                                                              |
