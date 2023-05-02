@@ -80,7 +80,7 @@ version control features.
 |     **app-api-v1.json** to your local desktop or workspace.                                  |
 |                                                                                              |
 |     Link::                                                                                   |
-|       http://demo-app.amer.myedgedemo.com/lab/app-api-v1.json                                |
+|       http://demo-app.amer.myedgedemo.com/lab/app-api-v2.json                                |
 |                                                                                              |
 | .. note::                                                                                    |
 |    *This is a modified version (v2) of the JSON/OpenAPI spec file you previously downloaded* |
