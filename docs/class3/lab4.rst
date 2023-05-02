@@ -1,25 +1,25 @@
-**Exercise 1 – Define the protected application in F5 Distributed Cloud
-Bot Defense**
+Lab 4: F5 Distributed Cloud Bot Defense connector for BIG-IP
+============================================================
+
+This lab will focus on the deployment of Bot Defense via a Bot Defense Connector on a BIG-IP.
+You will use both the F5 Distributed Cloud Console and a BIG-IP in your lab deployment to complete
+this lab.
+
+
+Task 1: Define the protected application in F5 Distributed Cloud Bot Defense
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 1. Login to your F5 Distributed Cloud tenant at
    https://f5-xc-lab-sec.console.ves.volterra.io/web/home.
 
 2. From the Home page select the Bot Defense tile.
 
-.. image:: Documents/Agility 2023/media/image1.png
-   :alt: Graphical user interface, application, Teams Description
-   automatically generated
-   :width: 6.5in
-   :height: 4.91597in
+|lab001|
 
 3. From the left-hand menu select **Manage >> Applications**. Then
    select the “\ **Add Protected Application**\ ” button.
 
-.. image:: Documents/Agility 2023/media/image2.png
-   :alt: Graphical user interface, application, Teams Description
-   automatically generated
-   :width: 6.5in
-   :height: 2.88264in
+|lab002|
 
 4. On the Protected Application screen do the following:
 
@@ -32,32 +32,24 @@ Bot Defense**
 
    d. Click **Save and Exit**.
 
-.. image:: Documents/Agility 2023/media/image3.png
-   :alt: Graphical user interface, application, Teams Description
-   automatically generated
-   :width: 6.5in
-   :height: 3.99514in
+|lab003|
 
 5. This will return you to the Applications screen. Click the ellipsis
    icon on the right of your newly defined application. Here you will
    find the ability to copy various values that are needed to configure
    the BIGIP connector.
 
-.. image:: Documents/Agility 2023/media/image4.png
-   :alt: Graphical user interface, application, Teams Description
-   automatically generated
-   :width: 6.5in
-   :height: 2.96181in
+|lab004|
 
 6. dtfgsdfgsadf
 
 **
 **
 
-**Exercise 2 – Configure F5 BIGIP Distributed Cloud Bot Defense
-connector profile.**
+Task 2: Configure F5 BIGIP Distributed Cloud Bot Defense connector profile
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-7. Select the **Airline App** Access Method for your F5 BIGIP in your
+1. Select the **Airline App** Access Method for your F5 BIGIP in your
    UDF deployment.
 
 **ADD SCREENSHOT HERE**
@@ -65,17 +57,13 @@ connector profile.**
 **Screenshot of student view of UDF deployment BIGIP access methods with
 “Airline App” Access Method highlighted.**
 
-8. From this new browser tab, take note of the FQDN. You will need it
+2. From this new browser tab, take note of the FQDN. You will need it
    when configuring the F5 Distributed Cloud Bot Defense profile later
    in this lab.
 
-.. image:: Documents/Agility 2023/media/image5.png
-   :alt: Graphical user interface, website Description automatically
-   generated
-   :width: 6.5in
-   :height: 3.57778in
+|lab005|
 
-9. Access the TMUI of your BIGIP 17.1. Login credentials are
+3. Access the TMUI of your BIGIP 17.1. Login credentials are
    **admin/f5xcdemo!**.
 
 **ADD SCREENSHOT HERE**
@@ -83,17 +71,13 @@ connector profile.**
 **Screenshot of student/course view of UDF deployment BIGIP access
 methods with “TMUI” Access Method highlighted**
 
-10. In the F5 BIGIP TMUI, browse to **Distributed Cloud Services >> Bot
+4. In the F5 BIGIP TMUI, browse to **Distributed Cloud Services >> Bot
     Defense >> BD Profiles** and click the (+) icon to create a new Bot
     Defense profile.
 
-.. image:: Documents/Agility 2023/media/image6.png
-   :alt: Graphical user interface, text, application Description
-   automatically generated
-   :width: 4.68476in
-   :height: 5.54063in
+|lab006|
 
-11. On the **New BD Profile…** screen edit the following settings:
+5. On the **New BD Profile…** screen edit the following settings:
 
 ..
 
@@ -114,10 +98,7 @@ c. Paste into the **Tenant ID** field the value copied from F5
 d. Paste into the **API Key** field the value copied from F5 Distributed
    Cloud console.
 
-.. image:: Documents/Agility 2023/media/image7.png
-   :alt: Graphical user interface Description automatically generated
-   :width: 6.5in
-   :height: 6.68194in
+|lab007|
 
    **JS Insertion Configuration**
 
@@ -130,7 +111,7 @@ f. In the **JS Inject Included Paths**, enter **/user/signin** and click
 
    **Protected Endpoint(s) – Web**
 
-g. For **Protected URIs**:
+6. For **Protected URIs**:
 
    i. In the **Host** field paste in the FQDN from the Airline App
       Access Method to you BIGIP.
@@ -146,11 +127,7 @@ iii. Select **Block** from the **Mitigation Action** dropdown.
 
 iv.  Click **Add**.
 
-.. image:: Documents/Agility 2023/media/image8.png
-   :alt: Graphical user interface, text, application, Word, email
-   Description automatically generated
-   :width: 6.5in
-   :height: 3.70903in
+|lab008|
 
    **Advanced Features**
 
@@ -161,11 +138,7 @@ i. From the **Protection Pool – Web** dropdown select the
 
 j. From the **SSL Profile** dropdown select the **serverssl** profile.
 
-.. image:: Documents/Agility 2023/media/image9.png
-   :alt: Graphical user interface, application Description automatically
-   generated
-   :width: 6.5in
-   :height: 4.74792in
+|lab009|
 
 k. Choose **X-Forwarded-For** from the **Source of Client IP Address**
    dropdown.
@@ -176,17 +149,13 @@ The F5 Distributed Cloud Bot Defense connector profile is now
 configured. However, in order to protect the application we must assign
 the BD profile to the virtual server.
 
-12. From the F5 BIGIP TMUI, browse to **Local Traffic >> Virtual
+7. From the F5 BIGIP TMUI, browse to **Local Traffic >> Virtual
     Servers**. Select the **airline-backend.f5se.com** virtual server.
 
-.. image:: Documents/Agility 2023/media/image10.png
-   :alt: Graphical user interface, text, application Description
-   automatically generated
-   :width: 6.5in
-   :height: 2.74722in
+|lab010|
 
-13. Select the **Distributed Cloud Services** tab at the top and then do
-    the following:
+8. Select the **Distributed Cloud Services** tab at the top and then do
+   the following:
 
     a. Set **Bot Defense** to **Enabled**.
 
@@ -195,13 +164,11 @@ the BD profile to the virtual server.
 
     c. Click **Update**.
 
-.. image:: Documents/Agility 2023/media/image11.png
-   :alt: Graphical user interface, text, application, email Description
-   automatically generated
-   :width: 6.5in
-   :height: 3.07083in
+|lab011|
 
-Exercise 2 – Test and Monitor Protected Traffic
+
+Task 3: Test and Monitor Protected Traffic
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 1. Select the **Airline App** Access Method for your F5 BIGIP in your
    UDF deployment
@@ -213,11 +180,7 @@ Exercise 2 – Test and Monitor Protected Traffic
 3. Enter any email address and password and click **Confirm** to submit
    a login attempt.
 
-.. image:: Documents/Agility 2023/media/image12.png
-   :alt: Graphical user interface, application Description automatically
-   generated
-   :width: 5.87275in
-   :height: 3.07943in
+|lab012|
 
 4. Try several login attempts with your browser.
 
@@ -226,10 +189,7 @@ Exercise 2 – Test and Monitor Protected Traffic
    request to the login page, right-clicking it, and choosing “Copy as
    cURL”.
 
-.. image:: Documents/Agility 2023/media/image13.png
-   :alt: Graphical user interface Description automatically generated
-   :width: 5.99382in
-   :height: 4.64393in
+|lab013|
 
 You can then paste the copied request into a terminal/command prompt and
 hit **Enter**.
@@ -242,21 +202,14 @@ Repeat this several times to generate many requests.
 7. From the left-hand menu, select **Overview >>** **Monitor**. Change
    the time range to **Last 1 hour**.
 
-.. image:: Documents/Agility 2023/media/image14.png
-   :alt: Graphical user interface, application, Teams Description
-   automatically generated
-   :width: 6.5in
-   :height: 4.46111in
+|lab014|
 
 Here you will see a high-level overview of the traffic to your Bot
 Defense protected applications.
 
 8. From the left-hand menu, select **Report >> Traffic Analyzer**.
 
-.. image:: Documents/Agility 2023/media/image15.png
-   :alt: A picture containing table Description automatically generated
-   :width: 6.5in
-   :height: 3.26667in
+|lab015|
 
 Here you can see the most recent requests associated with your
 connector-protected applications, the Traffic Type, the Automation Type,
@@ -265,3 +218,78 @@ and additional detailed information about these requests.
 9. Browse to the other sections under **Report** in the Bot Defense
    console; **Bad Bot Report**, **Protection Coverage Report**,
    **Transaction Usage**.
+
+.. |lab001| image:: _static/image1.png
+   :alt: Graphical user interface, application, Teams Description automatically generated
+   :width: 6.5in
+   :height: 4.91597in
+
+.. |lab002| image:: Documents/Agility 2023/media/image2.png
+   :alt: Graphical user interface, application, Teams Description automatically generated
+   :width: 6.5in
+   :height: 2.88264in
+
+.. |lab003| image:: Documents/Agility 2023/media/image3.png
+   :alt: Graphical user interface, application, Teams Description automatically generated
+   :width: 6.5in
+   :height: 3.99514in
+
+.. |lab004| image:: Documents/Agility 2023/media/image4.png
+   :alt: Graphical user interface, application, Teams Description automatically generated
+   :width: 6.5in
+   :height: 2.96181in
+
+.. |lab005| image:: Documents/Agility 2023/media/image5.png
+   :alt: Graphical user interface, website Description automatically generated
+   :width: 6.5in
+   :height: 3.57778in
+
+.. |lab006| image:: Documents/Agility 2023/media/image6.png
+   :alt: Graphical user interface, text, application Description automatically generated
+   :width: 4.68476in
+   :height: 5.54063in
+
+.. |lab007| image:: Documents/Agility 2023/media/image7.png
+   :alt: Graphical user interface Description automatically generated
+   :width: 6.5in
+   :height: 6.68194in
+
+.. |lab008| image:: Documents/Agility 2023/media/image8.png
+   :alt: Graphical user interface, text, application, Word, email Description automatically generated
+   :width: 6.5in
+   :height: 3.70903in
+
+.. |lab009| image:: Documents/Agility 2023/media/image9.png
+   :alt: Graphical user interface, application Description automatically generated
+   :width: 6.5in
+   :height: 4.74792in
+
+.. |lab010| image:: Documents/Agility 2023/media/image10.png
+   :alt: Graphical user interface, text, application Description automatically generated
+   :width: 6.5in
+   :height: 2.74722in
+
+.. |lab011| image:: Documents/Agility 2023/media/image11.png
+   :alt: Graphical user interface, text, application, email Description automatically generated
+   :width: 6.5in
+   :height: 3.07083in
+
+.. |lab012| image:: Documents/Agility 2023/media/image12.png
+   :alt: Graphical user interface, application Description automatically generated
+   :width: 5.87275in
+   :height: 3.07943in
+
+.. |lab013| image:: Documents/Agility 2023/media/image13.png
+   :alt: Graphical user interface Description automatically generated
+   :width: 5.99382in
+   :height: 4.64393in
+
+.. |lab014| image:: Documents/Agility 2023/media/image14.png
+   :alt: Graphical user interface, application, Teams Description automatically generated
+   :width: 6.5in
+   :height: 4.46111in
+
+.. |lab015| image:: Documents/Agility 2023/media/image15.png
+   :alt: A picture containing table Description automatically generated
+   :width: 6.5in
+   :height: 3.26667in
