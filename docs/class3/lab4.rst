@@ -219,77 +219,77 @@ and additional detailed information about these requests.
    console; **Bad Bot Report**, **Protection Coverage Report**,
    **Transaction Usage**.
 
-.. |lab001| image:: _static/lab4image1.png
+.. |lab001| image:: _static/lab4-image1.png
    :alt: Graphical user interface, application, Teams Description automatically generated
    :width: 6.5in
    :height: 4.91597in
 
-.. |lab002| image:: _static/lab4image2.png
+.. |lab002| image:: _static/lab4-image2.png
    :alt: Graphical user interface, application, Teams Description automatically generated
    :width: 6.5in
    :height: 2.88264in
 
-.. |lab003| image:: _static/lab4image3.png
+.. |lab003| image:: _static/lab4-image3.png
    :alt: Graphical user interface, application, Teams Description automatically generated
    :width: 6.5in
    :height: 3.99514in
 
-.. |lab004| image:: _static/lab4image4.png
+.. |lab004| image:: _static/lab4-image4.png
    :alt: Graphical user interface, application, Teams Description automatically generated
    :width: 6.5in
    :height: 2.96181in
 
-.. |lab005| image:: _static/lab4image5.png
+.. |lab005| image:: _static/lab4-image5.png
    :alt: Graphical user interface, website Description automatically generated
    :width: 6.5in
    :height: 3.57778in
 
-.. |lab006| image:: _static/lab4image6.png
+.. |lab006| image:: _static/lab4-image6.png
    :alt: Graphical user interface, text, application Description automatically generated
    :width: 4.68476in
    :height: 5.54063in
 
-.. |lab007| image:: _static/lab4image7.png
+.. |lab007| image:: _static/lab4-image7.png
    :alt: Graphical user interface Description automatically generated
    :width: 6.5in
    :height: 6.68194in
 
-.. |lab008| image:: _static/lab4image8.png
+.. |lab008| image:: _static/lab4-image8.png
    :alt: Graphical user interface, text, application, Word, email Description automatically generated
    :width: 6.5in
    :height: 3.70903in
 
-.. |lab009| image:: _static/lab4image9.png
+.. |lab009| image:: _static/lab4-image9.png
    :alt: Graphical user interface, application Description automatically generated
    :width: 6.5in
    :height: 4.74792in
 
-.. |lab010| image:: _static/lab4image10.png
+.. |lab010| image:: _static/lab4-image10.png
    :alt: Graphical user interface, text, application Description automatically generated
    :width: 6.5in
    :height: 2.74722in
 
-.. |lab011| image:: _static/lab4image11.png
+.. |lab011| image:: _static/lab4-image11.png
    :alt: Graphical user interface, text, application, email Description automatically generated
    :width: 6.5in
    :height: 3.07083in
 
-.. |lab012| image:: _static/lab4image12.png
+.. |lab012| image:: _static/lab4-image12.png
    :alt: Graphical user interface, application Description automatically generated
    :width: 5.87275in
    :height: 3.07943in
 
-.. |lab013| image:: _static/lab4image13.png
+.. |lab013| image:: _static/lab4-image13.png
    :alt: Graphical user interface Description automatically generated
    :width: 5.99382in
    :height: 4.64393in
 
-.. |lab014| image:: _static/lab4image14.png
+.. |lab014| image:: _static/lab4-image14.png
    :alt: Graphical user interface, application, Teams Description automatically generated
    :width: 6.5in
    :height: 4.46111in
 
-.. |lab015| image:: _static/lab4image15.png
+.. |lab015| image:: _static/lab4-image15.png
    :alt: A picture containing table Description automatically generated
    :width: 6.5in
    :height: 3.26667in
