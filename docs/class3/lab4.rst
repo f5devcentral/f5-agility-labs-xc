@@ -5,7 +5,6 @@ This lab will focus on the deployment of Bot Defense via a Bot Defense Connector
 You will use both the F5 Distributed Cloud Console and a BIG-IP in your lab deployment to complete
 this lab.
 
-
 Task 1: Define the protected application in F5 Distributed Cloud Bot Defense
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -56,26 +55,19 @@ Task 2: Configure F5 BIGIP Distributed Cloud Bot Defense connector profile
 
 |lab005|
 
-3. Access the TMUI of your BIGIP 17.1. Login credentials are
-   **admin/f5xcdemo!**.
+3. Access the TMUI of your BIGIP 17.1. Login credentials are **admin/f5xcdemo!**.
 
-**ADD SCREENSHOT HERE** : **Screenshot of student/course view of UDF deployment BIGIP access methods with “TMUI” Access Method highlighted**
+**ADD SCREENSHOT HERE: Screenshot of student/course view of UDF deployment BIGIP access methods with “TMUI” Access Method highlighted**
 
-4. In the F5 BIGIP TMUI, browse to **Distributed Cloud Services >> Bot
-    Defense >> BD Profiles** and click the (+) icon to create a new Bot
-    Defense profile.
+4. In the F5 BIGIP TMUI, browse to **Distributed Cloud Services > Bot  Defense > BD Profiles** and click the (+) icon to create a new Bot Defense profile.
 
 |lab006|
 
 5. On the **New BD Profile…** screen edit the following settings:
 
-   ..
-
    **General Properties**
 
    a. Give the BD profile a descriptive **Name**.
-
-   ..
 
    **API Request Settings**
 
@@ -85,7 +77,7 @@ Task 2: Configure F5 BIGIP Distributed Cloud Bot Defense connector profile
 
    d. Paste into the **API Key** field the value copied from F5 Distributed Cloud console.
 
-|lab007|
+   |lab007|
 
    **JS Insertion Configuration**
 
@@ -93,15 +85,11 @@ Task 2: Configure F5 BIGIP Distributed Cloud Bot Defense connector profile
 
    f. In the **JS Inject Included Paths**, enter **/user/signin** and click **Add**.
 
-   ..
-
    **Protected Endpoint(s) – Web**
 
    g. For **Protected URIs**:
 
       i. In the **Host** field paste in the FQDN from the Airline App Access Method to you BIGIP.
-
-   ..
 
       *(See Exercise 1 step 8. FQDN for your Airline App will be similar to 3995dde2-4cf8-4c5b-89f2-2d0717d76d5b.access.udf.f5.com.)*
 
@@ -111,7 +99,7 @@ Task 2: Configure F5 BIGIP Distributed Cloud Bot Defense connector profile
 
       iv.  Click **Add**.
 
-|lab008|
+      |lab008|
 
    **Advanced Features**
 
@@ -121,7 +109,7 @@ Task 2: Configure F5 BIGIP Distributed Cloud Bot Defense connector profile
 
    j. From the **SSL Profile** dropdown select the **serverssl** profile.
 
-|lab009|
+   |lab009|
 
    k. Choose **X-Forwarded-For** from the **Source of Client IP Address** dropdown.
 
@@ -144,7 +132,6 @@ the BD profile to the virtual server.
    c. Click **Update**.
 
 |lab011|
-
 
 Task 3: Test and Monitor Protected Traffic
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
