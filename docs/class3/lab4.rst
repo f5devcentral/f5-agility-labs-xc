@@ -91,7 +91,8 @@ Task 2: Configure F5 BIGIP Distributed Cloud Bot Defense connector profile
 
       i. In the **Host** field paste in the FQDN from the Airline App Access Method to you BIGIP.
 
-      *(See Exercise 1 step 8. FQDN for your Airline App will be similar to 3995dde2-4cf8-4c5b-89f2-2d0717d76d5b.access.udf.f5.com.)*
+      .. note::
+         *See Exercise 1 step 8. FQDN for your Airline App will be similar to 3995dde2-4cf8-4c5b-89f2-2d0717d76d5b.access.udf.f5.com.*
 
       ii.  Enter **/user/signin** into the **Path** field.
 
