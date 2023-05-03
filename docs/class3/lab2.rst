@@ -46,7 +46,7 @@ then for the **Left String** we use **<input id="csrf_token" name="csrf_token" t
 
 |lab007|
 
-10. Add a new **PARSE** block.  Configure **Var/Cap Name** as "*SECRET*" and click "*IS CAPTURE*".  Then for the **Left String** we use **SECRET: !!!** and Right String we use **!!!**   This will capture and save the value to the log during an attack.  Ensure your configuration is *SAVED*.
+10. Add a new **PARSE** block.  Configure **Var/Cap Name** as "*SECRET*" and click "*IS CAPTURE*".  Then for the **Left String** we use **SECRET !!!** and Right String we use **!!!**   This will capture and save the value to the log during an attack.  Ensure your configuration is *SAVED*.
 
 11. Now its time to run a large credential stuffing attack!
 

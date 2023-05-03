@@ -87,7 +87,7 @@ step below to access the F5 Distributed Cloud Lab Tenant.
 | .. note::                                                                                    |
 |    *For the purposes of this lab, permissions have been restricted to lab operations.  As a* |
 |                                                                                              |
-|    *some menus will be locked and not visible.*                                              |
+|    *result some menus will be locked and not visible.*                                       |
 +----------------------------------------------------------------------------------------------+
 | |intro006|                                                                                   |
 |                                                                                              |

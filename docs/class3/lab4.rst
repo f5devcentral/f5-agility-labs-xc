@@ -20,7 +20,7 @@ Task 1: Define the protected application in F5 Distributed Cloud Bot Defense
 
 4. On the Protected Application screen do the following:
 
-   a. Give the application a descriptive **Name** (like “f5airlines” or “airline.f5demo.com”)
+   a. Give the application a descriptive **Name** (like “f5airlines”)
 
    b. Leave the **Application Region** as “US”.
 
