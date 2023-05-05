@@ -29,7 +29,7 @@ Rate Limited experience (Task3).
 +----------------------------------------------------------------------------------------------+
 
 Task 2: Creating a Rate Limiting Policy 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In this task you will add a Rate Limiting Policy to the application Load Balancer previously created.
 
