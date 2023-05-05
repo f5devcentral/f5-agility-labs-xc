@@ -5,6 +5,8 @@ The following lab tasks will guide you the configuration of Rate Limiting featur
 Rate Limiting can be used to implement a variety of L7 security controls; assisting in L7 DDoS, 
 protecting heavy URLs (service process impactful) or mitigating impacts to other controlled endpoints.  
 
+**Expected Lab Time: 20 minutes**
+
 Task 1: Establishing a Baseline
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
