@@ -6,6 +6,8 @@ already available via the Web Application Firewall configuration. The security c
 will then be extended through F5 Distributed Bot Defense, an AI-driven, behavioral security 
 feature set to protect the previously configured application from advanced Bot threats. 
 
+**Expected Lab Time: 25 minutes**
+
 Task 1: Reviewing Signature-based Bot protection   
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 In this task you will review the Bot signature configuration and view logged security events.
