@@ -1,4 +1,4 @@
-Lab: Introduction to F5 Distributed Cloud DNS
+Lab 4: Introduction to F5 Distributed Cloud DNS
 ===============================================================
 
 This lab provides an introduction to DNS services available on F5 Distributed Cloud.  This 
@@ -45,6 +45,7 @@ Task 2: Primary and Secondary DNS
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The following steps will demonstrate where DNS features are configured within the F5 Distributed
+
 Cloud Console.  This task reviews where to configure Primary and Secondary DNS for a zone.
 
 +----------------------------------------------------------------------------------------------+
@@ -62,7 +63,7 @@ Cloud Console.  This task reviews where to configure Primary and Secondary DNS f
 +----------------------------------------------------------------------------------------------+
 | 3. In the resulting window note the **Domain Name** field.  This is where you enter the      |
 |                                                                                              |
-|    zone domain name that Distributed Cloud will provide DNS responses for.                   |  
+|    zone domain name that Distributed Cloud will provide DNS responses for.                   |
 |                                                                                              |
 | 4. Note the **Zone Type** dropdown under the **DNS Zone Configuration** section.  This is    |
 |                                                                                              |
@@ -88,12 +89,13 @@ Task 3: DNS Load Balancers
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This task reviews where to configure DNS Load Balancing.  This task demonstrates where to 
+
 configure DNS Load Balancer Health Checks, DNS Load Balancer Pools, and DNS Load Balancers.
 
 +----------------------------------------------------------------------------------------------+
 | 1. In the left-hand navigation menu, under the **Manage** section expand the **DNS**         |
 |                                                                                              |
-|     **Load Balancer Management** section and select **DNS Load Balancer Health Checks.**     |
+|    **Load Balancer Management** section and select **DNS Load Balancer Health Checks.**      |
 |                                                                                              |
 | 2. Click the **Add DNS Load Balancer Health Check** button.                                  |
 +----------------------------------------------------------------------------------------------+
@@ -105,9 +107,9 @@ configure DNS Load Balancer Health Checks, DNS Load Balancer Pools, and DNS Load
 +----------------------------------------------------------------------------------------------+
 | 3. In the resulting window note the available Health Check Types under the **Health Check**  |
 |                                                                                              |
-|     **Type** dropdown.  This is where you can select the type of health check that will be   |
+|    **Type** dropdown.  This is where you can select the type of health check that will be    |
 |                                                                                              |
-|     utilized to verify the application is available.                                         |
+|    utilized to verify the application is available.                                          |
 |                                                                                              |
 | 4. Click **Cancel and Exit** to close this window.                                           |
 |                                                                                              |
@@ -126,7 +128,7 @@ configure DNS Load Balancer Health Checks, DNS Load Balancer Pools, and DNS Load
 +----------------------------------------------------------------------------------------------+
 | 5. In the left-hand navigation menu, under the **Manage** section expand the **DNS**         |
 |                                                                                              |
-|     **Load Balancer Management** section and select **DNS Load Balancer Pools.**             |
+|    **Load Balancer Management** section and select **DNS Load Balancer Pools.**              |
 |                                                                                              |
 | 6. Click the **Add DNS Load Balancer Pool** button.                                          |
 +----------------------------------------------------------------------------------------------+
@@ -138,9 +140,9 @@ configure DNS Load Balancer Health Checks, DNS Load Balancer Pools, and DNS Load
 +----------------------------------------------------------------------------------------------+
 | 7. In the resulting window note the available pool member types by expanding the **Pool**    |
 |                                                                                              |
-|     **Type** dropdown.  This is where you can select the type of pool member that will be    |
+|    **Type** dropdown.  This is where you can select the type of pool member that will be     |
 |                                                                                              |
-|     DNS load balanced.                                                                       |
+|    DNS load balanced.                                                                        |
 |                                                                                              |
 | 8. Select **A** from the **Pool Type** dropdown.                                             |
 |                                                                                              |
@@ -187,7 +189,7 @@ configure DNS Load Balancer Health Checks, DNS Load Balancer Pools, and DNS Load
 +----------------------------------------------------------------------------------------------+
 | 15. In the resulting window note the available record types by expanding the **Record Type** |
 |                                                                                              |
-|     dropdown.  This is where you can select the type of DNS record to provide by the DNS load|
+|     dropdown. This is where you can select the type of DNS record to provide by the DNS load |
 |                                                                                              |
 |     balancer.                                                                                |
 |                                                                                              |

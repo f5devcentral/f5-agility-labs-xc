@@ -203,10 +203,13 @@ Click on the 3 dots at the far right hand side of student-fleet and select **Man
 
 In the next screen click on **Edit Configuration** in the top right of the screen and **Observe** the Fleet Configuration and Network Connectors. 
 
+A Network Connector is used to create a connection between two virtual networks on a given site. 
+
+For more information on Network Connectors and their functions you can review this link: https://docs.cloud.f5.com/docs/how-to/networking/network-connectors
 
 The **Network Connectors** are configured as:
 
-**student-global-connector**
+**student-global-connector** 
 
 * Network Connector Type: Direct, Site Local Inside to a Global Network
 
@@ -232,7 +235,7 @@ The **Network Connectors** are configured as:
 
 |
 
-Also, notice Network Firewall is NOT currently defined. We will come back to that in a few moments. 
+Also, notice Network Firewall is **NOT** currently defined. We will come back to that in a few moments. 
 
 Click **Cancel and Exit.**
 
@@ -263,7 +266,7 @@ From your UDF environment browser tab,  click on **Access >> Web Shell** on the 
 
 Type **ping 10.0.3.253** and hit **Enter**. You **WILL NOT** get a response. 
 
-Back in the XC Console, navigate to **Multi-Cloud Network Connect >> Sites >> Site List** and find **"your animal name"**
+Back in the XC Console, navigate to **Multi-Cloud Network Connect >> Sites >> Site List** and find your **"animal-name"**
 Click the **3 buttons** under the **Action Menu** under **"your animal name"** and select **Manage Configuration**. 
 
 In the top right click **Edit Configuration**. 
@@ -305,7 +308,7 @@ Check back on your web shell tab with the ping going. Success!!
 .. important:: If you want to tear down this connectivity it is as easy as removing the label. 
 
 
-In XC Console, navigate to **Multi-Cloud Network Connect** >> **Sites** click on **Site List**, click directly on **"your animal name"** and finally click on the **Tools** menu on the top, far right. 
+In XC Console, navigate to **Multi-Cloud Network Connect** >> **Sites** click on **Site List**, click directly on your **"animal-name"** and finally click on the **Tools** menu on the top, far right. 
 
 Click on **Show Routes** 
 
@@ -353,6 +356,10 @@ Next, push the keyboard "up arrow " and run the same command but targeted at por
 .. image:: ../images/8080.png
 
 |
+
+.. Important:: If you are not getting a **"200 OK"** repsponse, please see a lab assistant before moving on. 
+
+
 
 .. Note:: We now have to close port 8080 per the ACME Corp security department requirement. 
 

@@ -25,7 +25,6 @@ Lab & Tasks:
 
 .. toctree::
    :maxdepth: 2
-   :numbered:
    :caption: Labs:
    :glob:
    

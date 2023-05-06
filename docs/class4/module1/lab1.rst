@@ -99,7 +99,7 @@ From the **Select service** menu, click on **Web App & API Protection**.
 |
 
 In the **Web App & API Protection Security Dashboard** configuration screen **observe** the browser URL. In the URI path, locate the **<adjective-animal>** namespace that you have
-been assigned. It will be located in the portion of the URI path between */namespaces/* and */sites/* as shown in this example: **…/namespaces/<namespace>/sites/…**. 
+been assigned. It will be located in the portion of the URI path between */namespaces/* and */sites/* as shown in this example: **…/namespaces/<namespace>/overview/**. 
    
 **Note your namespace as it will be used throughout the labs today.**
 

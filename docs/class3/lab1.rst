@@ -26,6 +26,7 @@ done so already, please login to your tenant for this lab and proceed to Task 1.
 Task 1: Configure Load Balancer, Origin Pool, WAF and BotDefense
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+
 +----------------------------------------------------------------------------------------------+
 | 1. Following the **Introduction** section instructions, you should now be in the **Web**     |
 |                                                                                              |
@@ -40,11 +41,6 @@ Task 1: Configure Load Balancer, Origin Pool, WAF and BotDefense
 |    **Balancers**                                                                             |
 |                                                                                              |
 | 3. In the resulting screen click the **Add HTTP Load Balancer** in the graphic as shown.     |
-|                                                                                              |
-| .. note::                                                                                    |
-|    *You have defaulted to your specific namespace as that is the only namespace to which you*|
-|                                                                                              |
-|    *have administrative access.*                                                             |
 +----------------------------------------------------------------------------------------------+
 | |lab001|                                                                                     |
 |                                                                                              |
@@ -74,7 +70,7 @@ Task 1: Configure Load Balancer, Origin Pool, WAF and BotDefense
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 6. In the resulting window, use the drop down as shown and click **Create new Origin Pool**. |
+| 6. In the resulting window, use the drop down as shown and click **Add Item**.               |
 +----------------------------------------------------------------------------------------------+
 | |lab005|                                                                                     |
 +----------------------------------------------------------------------------------------------+
@@ -116,17 +112,15 @@ Task 1: Configure Load Balancer, Origin Pool, WAF and BotDefense
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 1. Continuing in the **HTTP Load Balancer** section, on the left-hand menu clik on the       |
+| 13. Continuing in the **HTTP Load Balancer** section, on the left-hand menu click on the     |
 |                                                                                              |
 |    **Web Application Firewall (WAF)** and select **Enable**.                                 |
 +----------------------------------------------------------------------------------------------+
 | |lab012|                                                                                     |
-|                                                                                              |
-| |lab013|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 2. In the resulting **App Firewall** drop down select **Add Item**.                          |
+| 14. In the resulting **App Firewall** drop down select **Add Item**.                         |
 |                                                                                              |
 | .. note::                                                                                    |
 |    *The "shared/base-appfw" policy is in the "shared namespace" which can be applied to*     |
@@ -137,77 +131,94 @@ Task 1: Configure Load Balancer, Origin Pool, WAF and BotDefense
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 15. In the resulting window's **Metadata** section enter **<namespace>-appfw** for the       |
-|    **Name**.                                                                                 |
+| 15. In the resulting window's **Metadata** field enter **<namespace>-appfw** for the **Name**|
 |                                                                                              |
-| 16. Leaving all other values as default, scroll to the bottom and click Continue.            |                            |
+| 16. Leaving all other values as default, scroll to the bottom and click **Continue**.        | 
 +----------------------------------------------------------------------------------------------+
 | |lab015|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
-17. Back in the HTTP Load Balancer configuration, click **Bot Protection** in the left-hand navigation.
++----------------------------------------------------------------------------------------------+
+| 17. In the left-hand navigation, click **Bot Protection**. In the **Bot Protection** Section,|
+|                                                                                              |
+|     Change the **Bot Defense** dropdown to **Enable**.                                       |
++----------------------------------------------------------------------------------------------+
+| |lab016|                                                                                     |
++----------------------------------------------------------------------------------------------+
 
-18. From the **Bot Defense** dropdown, select **Enable**.
++----------------------------------------------------------------------------------------------+
+| 18. In the resulting **Bot Defense Policy** section, click the **Configure** link.           |
++----------------------------------------------------------------------------------------------+
+| |lab017|                                                                                     |
++----------------------------------------------------------------------------------------------+
 
-19. In the added menu option, click **Configure**.
++----------------------------------------------------------------------------------------------+
+| 19. In the **Protected App Endpoints** window, click the **Configure** link under **App**    |
+|                                                                                              |
+|     **Endpoint Type**.                                                                       | 
+|                                                                                              |
+| 20. In the resulting window, click the **Add Item** in the **App Endpoint Type** section.    |
++----------------------------------------------------------------------------------------------+
+| |lab018|                                                                                     |
+|                                                                                              |
+| |lab019|                                                                                     |
++----------------------------------------------------------------------------------------------+
 
-|lab017|
++----------------------------------------------------------------------------------------------+
+| 21. In the resulting **App Endpoint Type** window, input the following values as shown:      |
+|                                                                                              |
+| * **Metadata:Name:** *auth-bot*                                                              | 
+| * **HTTP Methods:** *POST*                                                                   |
+| * **Protocol:** *BOTH*                                                                       |
+| * **Path:Path Match:** *Prefix*                                                              |
+| * **Prefix:** */user/vipsignin*                                                              |
+| * **Bot Traffic Mitigation:Select Bot Mitigation Action:** *Flag*                            |
+| * **Bot Traffic Mitigation:Include Mitigation Headers:** *Append Headers**                   |
+| * **Inference Header Name** and **Automation Type Header Name** as defaults (unchanged).     |
+|                                                                                              |
+| 22. Scroll to the bottom and click **Apply**                                                 |
++----------------------------------------------------------------------------------------------+
+| |lab020|                                                                                     |
+|                                                                                              |
+| |lab021|                                                                                     |
++----------------------------------------------------------------------------------------------+
 
-|lab018|
++----------------------------------------------------------------------------------------------+
+| 23. Then click **Apply** on the **App Endpoint Type** screen                                 |
+|                                                                                              |
+| 24. Then click **Apply** on the **Protected App Endpoints** screen                           |
+|                                                                                              |
+| 25. Observe the **Bot Defense Policy** is now configured.                                    |
++----------------------------------------------------------------------------------------------+
+| |lab022|                                                                                     |
+|                                                                                              |
+| |lab023|                                                                                     |
+|                                                                                              |
+| |lab024|                                                                                     |
++----------------------------------------------------------------------------------------------+
 
-|lab019|
-
-19. Observe the additional positioning options in the **JavaScript Insertion** section.
-
-20. Click **Configure** in the **Protected App Endpoints** section
-
-21. In the new **App Endpoint Type** click **Add Item**
-
-|lab020|
-
-|lab021|
-
-22. In the **Application Endpoint** scroll through the section use the following values:
-
-    * **Metadata:Name:** *auth-bot*
-    * **HTTP Methods:** *POST*
-    * **Protocol:** *BOTH*
-    * **Path:Path Match:** *Prefix*
-    * **Prefix:** */user/vipsignin*
-
-    Scroll down further and follow below 
-    * **Bot Traffic Mitigation:Select Bot Mitigation Action:** *Flag*
-	* **Bot Traffic Mitigation:Include Mitigation Headers:** *Append Headers**
-    * Leave **Inference Header Name** and **Automation Type Header Name** as their respective defaults.	
-
-23. Scroll to the bottom and click **Apply**
-
-|lab022|
-
-|lab023|
-
-24. Then click **Apply** on the **App Endpoint Type** screen
-
-25. Then click **Apply** on the **Protected App Endpoints** screen
-
-26. In the resulting **HTTP Load Balancer** window, scroll to the **Other Settings** section and note the **VIP Advertisement** setting. 
++----------------------------------------------------------------------------------------------+
+| 26. Use the left-hand navigation and click **Other Settings** or scroll to the bottom on the |
+|                                                                                              |
+|     **HTTP Load Balancer** screen, and click **Save and Exit**.                              |
++----------------------------------------------------------------------------------------------+
+| |lab025|                                                                                     |
++----------------------------------------------------------------------------------------------+
 
 .. note::                                                                                    
-   *The above selection controls how/where the application is advertised. The "Internet" setting means that this application will be advertised globally using the F5 Distributed Cloud Global Network utilizing Anycast.*
+   *The above selection controls how/where the application is advertised. The "Internet"*
+   
+   *setting means that this application will be advertised globally using the F5 Distributed*
+   
+   *Cloud Global Network utilizing Anycast.*
 
-27. Click **Save and Exit** at the bottom of the **HTTP Load Balancer** configuration screen.
-
-28. You will then be returned to the HTTP Load Balancer summary screen.
-
-|lab024|
-
-|lab025|
- 
-|lab026|
-
-|lab027|
-
-|lab028|
++----------------------------------------------------------------------------------------------+
+| 27. Note the indicated hostname (copy to notepad or note tool) as this will be used in the   |
+|                                                                                              |
+|     exercises that follow.                                                                   |
++----------------------------------------------------------------------------------------------+
+| |lab026|                                                                                     |
++----------------------------------------------------------------------------------------------+
  
 Task 2: Curl - Direct
 ~~~~~~~~~~~~~~~~~~~~~
@@ -263,25 +274,25 @@ Task 3: Compare Via Bot Defense (5min)
  
 |labend|
 
-.. |lab001| image:: _static/lab1-001-updated.png
+.. |lab001| image:: _static/lab1-001.png
    :width: 800px
-.. |lab002| image:: _static/lab1-002-updated.png
+.. |lab002| image:: _static/lab1-002.png
    :width: 800px
-.. |lab003| image:: _static/lab1-003-updated.png
+.. |lab003| image:: _static/lab1-003.png
    :width: 800px
-.. |lab004| image:: _static/lab1-004-updated.png
+.. |lab004| image:: _static/lab1-004.png
    :width: 800px
-.. |lab005| image:: _static/lab1-005-updated.png
+.. |lab005| image:: _static/lab1-005.png
    :width: 800px
-.. |lab006| image:: _static/lab1-006-updated.png
+.. |lab006| image:: _static/lab1-006.png
    :width: 800px
-.. |lab007| image:: _static/lab1-007-updated.png
+.. |lab007| image:: _static/lab1-007.png
    :width: 800px
-.. |lab008| image:: _static/lab1-008-updated.png
+.. |lab008| image:: _static/lab1-008.png
    :width: 800px
-.. |lab009| image:: _static/lab1-009-updated.png
+.. |lab009| image:: _static/lab1-009.png
    :width: 800px
-.. |lab010| image:: _static/lab1-010-updated.png
+.. |lab010| image:: _static/lab1-010.png
    :width: 800px
 .. |lab012| image:: _static/lab1-012.png
    :width: 800px
@@ -312,10 +323,6 @@ Task 3: Compare Via Bot Defense (5min)
 .. |lab025| image:: _static/lab1-025.png
    :width: 800px
 .. |lab026| image:: _static/lab1-026.png
-   :width: 800px
-.. |lab027| image:: _static/lab1-027.png
-   :width: 800px
-.. |lab028| image:: _static/lab1-028.png
    :width: 800px
 .. |lab029| image:: _static/Slide1.png
    :width: 800px

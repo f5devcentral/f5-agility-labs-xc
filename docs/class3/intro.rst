@@ -87,7 +87,7 @@ step below to access the F5 Distributed Cloud Lab Tenant.
 | .. note::                                                                                    |
 |    *For the purposes of this lab, permissions have been restricted to lab operations.  As a* |
 |                                                                                              |
-|    *some menus will be locked and not visible.*                                              |
+|    *result some menus will be locked and not visible.*                                       |
 +----------------------------------------------------------------------------------------------+
 | |intro006|                                                                                   |
 |                                                                                              |
@@ -181,11 +181,11 @@ only on the Jumphost.
 +----------------------------------------------------------------------------------------------+
 | 5. You will then be prompted to log in as Administrator to the JumpHost.  Note the prompt    |
 |                                                                                              |
-|    may render differently for other RDP clients. If you expereince an abnormally long delay  |
+|    may render differently for other RDP clients. If you experience an abnormally long delay  |
 |                                                                                              |
 |    in accessing the JumpHost, changing the **If server authentication fails** setting to     |
 |                                                                                              |
-|    **Connect and dont warn me**.  If you cannot connect, please alert a lab team member.     |
+|    **Connect and don't warn me**.  If you cannot connect, please alert a lab team member.    |
 |                                                                                              |
 |    Anti-virus configurations, VPN or conflicting applications can also complicate access.    |
 +----------------------------------------------------------------------------------------------+

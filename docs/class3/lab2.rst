@@ -33,7 +33,6 @@ it  makes curl like requests.
 **!!! For this step an issue has been identified copy & pasting these values from the lab document via RDP. They seem to lose escape characters. Ensure you find and copy them from the LOG window as seen in the previous step!!! **
 then for the **Left String** we use **<input id="csrf_token" name="csrf_token" type="hidden" value="** and Right String we use **">** Check **ENC. OUTPUT**. This will capture the token between the left and right strings and store it in a variable named CSRF for future use.
 
-
 |lab005|
 
 7. Add a new **REQUEST** block. Configure URL as **http://namespace.lab-sec.f5demos.com/user/vipsignin** ensure **Method** is **POST**.  In the POST DATA Field use the follow exactly: **email=<USERNAME>&password=<PASSWORD>&csrf_token=<CSRF>**  The information within <> brackets are variables and will be filled in at runtime.  Now fill in the credentials **john.smith@nobody.com:test123** in the **DATA** field and ensure **Credentials** is the method selected.  Now hit **Start**, switch to **HTML View** and we should see the bot was successfully able to log into the account.
@@ -46,7 +45,7 @@ then for the **Left String** we use **<input id="csrf_token" name="csrf_token" t
 
 |lab007|
 
-10. Add a new **PARSE** block.  Configure **Var/Cap Name** as "*SECRET*" and click "*IS CAPTURE*".  Then for the **Left String** we use **SECRET: !!!** and Right String we use **!!!**   This will capture and save the value to the log during an attack.  Ensure your configuration is *SAVED*.
+10. Add a new **PARSE** block.  Configure **Var/Cap Name** as "*SECRET*" and click "*IS CAPTURE*".  Then for the **Left String** we use **SECRET !!!** and Right String we use **!!!**   This will capture and save the value to the log during an attack.  Ensure your configuration is *SAVED*.
 
 11. Now its time to run a large credential stuffing attack!
 
