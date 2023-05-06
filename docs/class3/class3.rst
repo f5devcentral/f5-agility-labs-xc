@@ -20,7 +20,7 @@ Lab & Tasks:
 
 -  All Lab requirements will be noted in the tasks that follow
 
--  Estimated completion time: 3 Labs of varying lengths
+-  Estimated completion time: 4 Labs of varying lengths
 
 
 .. toctree::
