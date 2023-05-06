@@ -23,8 +23,8 @@ Following the tasks in the prior **Introduction** Section, you should now be abl
 F5 Distributed Cloud Console, having set your Work Domain Roles and Skill levels. If you have not
 done so already, please login to your tenant for this lab and proceed to Task 1.
 
-Task 1: Configure Load Balancer, Origin Pool, WAF and BotDefense (7 min)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Task 1: Configure Load Balancer, Origin Pool, WAF and BotDefense
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +----------------------------------------------------------------------------------------------+
 | 1. Following the **Introduction** section instructions, you should now be in the **Web**     |
@@ -209,8 +209,8 @@ Task 1: Configure Load Balancer, Origin Pool, WAF and BotDefense (7 min)
 
 |lab028|
  
-Task 2: Curl - Direct (10min)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Task 2: Curl - Direct
+~~~~~~~~~~~~~~~~~~~~~
 
 **Run this lab from the JUMPHOST**
 
