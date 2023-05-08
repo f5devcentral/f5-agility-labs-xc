@@ -41,7 +41,7 @@ then for the **Left String** we use **<input id="csrf_token" name="csrf_token" t
 
 8. Next we want to ensure we identify when the login was successful and to capture the secret word.
 
-9. Add a new **KEY CHECK** block. Click the **Keychain +** button twice.  Now in the first entry this will be to determine success we will look in the page source for the follow string.  Enter "Login Successful" in the indicated field.  For the second block we will use this for failure.  Change the type to FAILURE and enter "Incorrect Details" into the indicated field.
+9. Add a new **KEY CHECK** block. Click the **Keychain +** button twice.  Now in the first entry this will be to determine success we will look in the page source for the follow string. Click the Key + button once for each new Keychain and enter "Login Successful" in the indicated field.  For the second block we will use this for failure.  Change the type to FAILURE and enter "Incorrect Details" into the indicated field.
 
 |lab007|
 
