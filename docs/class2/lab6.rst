@@ -19,15 +19,24 @@ In this task's series of steps you will import swagger files into the F5 Distrib
 version control features.
 
 +----------------------------------------------------------------------------------------------+
-| 1. In the left top click the F5 ball and navigate to the **Web App & API Protection** Tile.  |
+| 1. For the next series of steps, to download the JSON/OpenAPI spec file **app-api-v1.json**  |
+|                                                                                              |
+|    **app-api-v1.json** to your local desktop or workspace.                                   |
+|                                                                                              |
+|    Link::                                                                                    |
+|      http://demo-app.amer.myedgedemo.com/lab/app-api-v1.json                                 |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 2. In the left top click the F5 ball and navigate to the **Web App & API Protection** Tile.  |
 +----------------------------------------------------------------------------------------------+
 | |lab001|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 2. In the left-hand navigation, click on **Files** under the **Manage** section.             |
+| 3. In the left-hand navigation, click on **Files** under the **Manage** section.             |
 |                                                                                              |
-| 3. Click **Add Swagger File** in the main window area as shown. Alternatively, the link near |
+| 4. Click **Add Swagger File** in the main window area as shown. Alternatively, the link near |
 |                                                                                              |
 |    the top of the window can also be used.                                                   |
 +----------------------------------------------------------------------------------------------+
@@ -35,20 +44,13 @@ version control features.
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 4. In the resulting **New Swagger File** window, input **app-api** for the **Name** under    |
+| 5. In the resulting **New Swagger File** window, input **app-api** for the **Name** under    |
 |                                                                                              |
 |    the **Metadata** section.                                                                 |
 |                                                                                              |
-| 5. For the next step, use the following link, to download the JSON/OpenAPI spec file         |
-|                                                                                              |
-|    **app-api-v1.json** to your local desktop or workspace.                                   |
-|                                                                                              |
-|    Link::                                                                                    |
-|      http://demo-app.amer.myedgedemo.com/lab/app-api-v1.json                                 |
-|                                                                                              |
 | 6. In the **Upload Swagger File** section, click the **Upload File** button. Select the file |
 |                                                                                              |
-|    downloaded in Step 5 above and click **Save**.                                            |
+|    downloaded in Step 1 above and click **Open**.                                            |
 +----------------------------------------------------------------------------------------------+
 | |lab003|                                                                                     |
 +----------------------------------------------------------------------------------------------+
@@ -56,48 +58,60 @@ version control features.
 +----------------------------------------------------------------------------------------------+
 | 7. Observe that the file **app-api-v1.json**  is present and the click **Save and Exit**     |
 +----------------------------------------------------------------------------------------------+
-| |lab004|                                                                                     |
+| |lab003a|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
 | 8. In the resulting **Swagger Files** window, you will see the upload file with additional   |
 |                                                                                              |
-|    metadata. Click the three dots **...** in the **Action** column.                          |
+|    metadata.                                                                                 |
 |                                                                                              |
 | .. note::                                                                                    |
 |    *You will also see a dialogue box, in the bottom left of your screen indicating the file* |
 |                                                                                              |
 |    *has been successfully added.*                                                            |
 +----------------------------------------------------------------------------------------------+
-| |lab005|                                                                                     |
+| |lab004|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 9. The **Edit Swagger File** window will be shown.                                           |
+| 9. For the next step, use the following link, to download the JSON/OpenAPI spec file         |
 |                                                                                              |
-| 10. For the next step, use the following link, to download the JSON/OpenAPI spec file        |
-|                                                                                              |
-|     **app-api-v1.json** to your local desktop or workspace.                                  |
+|     **app-api-v2.json** to your local desktop or workspace.                                  |
 |                                                                                              |
 |     Link::                                                                                   |
 |       http://demo-app.amer.myedgedemo.com/lab/app-api-v2.json                                |
 |                                                                                              |
 | .. note::                                                                                    |
 |    *This is a modified version (v2) of the JSON/OpenAPI spec file you previously downloaded* |
-|                                                                                              |
-| 11. In the **Upload Swagger File** section, click the **Upload File** button. Select the file|
-|                                                                                              |
-|     downloaded in Step 10 above and click **Save**.                                          |
-+----------------------------------------------------------------------------------------------+
-| |lab006|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 12. In the resulting **Swagger Files** window, you will see the upload file with additional  |
+| 10. Returning to the **Swagger Files** window you were at previously, click the three dots … |
+|                                                                                              |
+|     in the **Action** column.  In the resulting selection menu, select **Update New Version**|
++----------------------------------------------------------------------------------------------+
+| |lab005|                                                                                     |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 11. In the **Upload Swagger File** section, click the **Upload File** button. Select the file|
+|                                                                                              |
+|     downloaded in Step 9 above and click **Open**.                                           |
+|                                                                                              |
+| 12. Observe that the file **app-api-v1.json**  is present and the click **Save and Exit**    |
++----------------------------------------------------------------------------------------------+
+| |lab006|                                                                                     |
+|                                                                                              |
+| |lab006a|                                                                                     |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 13. In the resulting **Swagger Files** window, you will see the upload file with additional  |
 |                                                                                              |
 |     metadata seen previously.                                                                |
 |                                                                                              |
-| 13. Note now that there are **2** versions available of the **app-api** file.  Click the     |
+| 14. Note now that there are **2** versions available of the **app-api** file.  Click the     |
 |                                                                                              |
 |     **2** in the **Versions** column.                                                        |
 +----------------------------------------------------------------------------------------------+
@@ -105,14 +119,14 @@ version control features.
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 14. In the resulting window, observe there are now two versions of the **app-api** spec file.|
+| 15. In the resulting window, observe there are now two versions of the **app-api** spec file.|
 |                                                                                              |
 | .. note::                                                                                    |
 |    *This is a API File update process can also be performed through the F5 Distributed Cloud*|
 |                                                                                              |
 |    *API framework.                                                                           |
 |                                                                                              |
-| 15. Click **X** in the top-right corner and proceed to the next task.                        |
+| 16. Click **X** in the top-right corner and proceed to the next task.                        |
 +----------------------------------------------------------------------------------------------+
 | |lab008|                                                                                     |
 +----------------------------------------------------------------------------------------------+
@@ -388,11 +402,15 @@ previously built Load Balancer object delivering the targeted application/API.
    :width: 800px
 .. |lab003| image:: _static/lab6-003.png
    :width: 800px
+.. |lab003a| image:: _static/lab6-003a.png
+   :width: 800px
 .. |lab004| image:: _static/lab6-004.png
    :width: 800px
 .. |lab005| image:: _static/lab6-005.png
    :width: 800px
 .. |lab006| image:: _static/lab6-006.png
+   :width: 800px
+.. |lab006a| image:: _static/lab6-006a.png
    :width: 800px
 .. |lab007| image:: _static/lab6-007.png
    :width: 800px
