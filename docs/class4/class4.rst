@@ -13,6 +13,7 @@ Demonstrate and understand when to use F5 Distributed Cloud Network Connect or A
 
 .. Caution:: Please be aware that there is a waiting period after Lab 1, while provisioning occurs. If you are an instructor, please have students proceed with Lab 1 prior to any presentation, to give ample time for processes to complete. 
 
+This Lab uses the **[Agility] F5XC Introduction into MCN** UDF Blueprint. 
 
 .. toctree::
    :maxdepth: 1
