@@ -1,126 +1,389 @@
-Lab 6: Client-Side Defense 
+Lab 6: API Discovery & Protection 
 =================================
 
-F5® Distributed Cloud Client-Side Defense (CSD) provides a multi-phase protection system 
-that protects web applications against Formjacking, Magecart, and other malicious JavaScript attacks. 
+F5® Distributed API Discovery & Protection provides key security functionality to visualize, understand, 
+deliver and secure APIs. This lab's tasks will walk through the configuration steps and note additional
+configurations available.
 
-This multi-phase protection system includes detection, alerting, and mitigation.
+* **API Discovery**: Provided via machine-based learning processes, enables visualization of the API Framework,
+  assesses use of end-points, discovers new end-points based on flows, identifies use of sensitive information,   
+  and enables swagger file export.
 
-**Detection**. A continuously evolving signal set allows CSD to understand when scripts on web pages 
- start reading PII or exhibit signs of exfiltration.
+* **API Protection**: Encompasses a set of definitions and controls to protect and secure the functions, use and 
+  endpoints of the delivered API's framework. 
 
-**Alerting**. CSD generates timely alerts on malicious changes in behavior of scripts, provided by a 
-  continuously improving Analysis Engine. 
-  The Analysis Engine contains a machine learning component for accurate and informative analysis 
-  and provides details on the behavior of malicious script to help troubleshoot and identify the root 
-  cause.
+Task 1: Swagger File Import & Version Control
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**Mitigation**. CSD detects threats in real-time and provides enforcement with one-click mitigation. 
-  CSD leverages the same obfuscation and signal technology as F5® Distributed Cloud Bot Defense, 
-  delivering unparalleled efficacy.
-
-The following lab tasks will guide you through the REVIEW of the Client-Side Defense,
-which can be used to implement a variety of security controls to monitor and mitigate fraudulent
-requests at the client devices. 
-
-Task 1: Navigate to the Client-Side Defense Tile 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-In this task you will navigate to the client side defense tile to start reviewing CSD options.
+In this task's series of steps you will import swagger files into the F5 Distributed Cloud tenant and explore 
+version control features.
 
 +----------------------------------------------------------------------------------------------+
-| 1. On the left top click the F5 red ball.                                                    | 
+| 1. For the next series of steps, to download the JSON/OpenAPI spec file **app-api-v1.json**  |
 |                                                                                              |
-| Under Common Services find the tile for **Client-Side Defense**                              |
-+----------------------------------------------------------------------------------------------+
-|  |lab001|                                                                                    |
-+----------------------------------------------------------------------------------------------+
-|  Click the Client-Side Defense tile.                                                         |
+|    **app-api-v1.json** to your local desktop or workspace.                                   |
 |                                                                                              |
+|    Link::                                                                                    |
+|      http://demo-app.amer.myedgedemo.com/lab/app-api-v1.json                                 |
 +----------------------------------------------------------------------------------------------+
-|  |lab002|                                                                                    |
+
++----------------------------------------------------------------------------------------------+
+| 2. In the left top click the F5 ball and navigate to the **Web App & API Protection** Tile.  |
++----------------------------------------------------------------------------------------------+
+| |lab001|                                                                                     |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 3. In the left-hand navigation, click on **Files** under the **Manage** section.             |
 |                                                                                              |
-+----------------------------------------------------------------------------------------------+
-+----------------------------------------------------------------------------------------------+
-|The CSD Monitoring Dashboard page displays the suspicious network interactions with additional| 
-|information for deciding whether to mitigate or allow a suspicious domain. When a web page    |
-|with CSD protection is loaded on the end-user’s browser, scripts running on that webpage      | 
-|interact with other domains.                                                                  |
-|The Suspicious Domains list displays a list of the domains that those scripts interact with   |
-|and which CSD detected to be potentially malicious.                                           |
-+----------------------------------------------------------------------------------------------+
-+----------------------------------------------------------------------------------------------+
-|  2. Review the existing Dashboard and Dashboard Elements                                     |
+| 4. Click **Add Swagger File** in the main window area as shown. Alternatively, the link near |
 |                                                                                              |
+|    the top of the window can also be used.                                                   |
 +----------------------------------------------------------------------------------------------+
-| **Note** :  Your data might be different than the screen grab shown below :                  |
+| |lab002|                                                                                     |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 5. In the resulting **New Swagger File** window, input **app-api** for the **Name** under    |
 |                                                                                              |
+|    the **Metadata** section.                                                                 |
+|                                                                                              |
+| 6. In the **Upload Swagger File** section, click the **Upload File** button. Select the file |
+|                                                                                              |
+|    downloaded in Step 1 above and click **Open**.                                            |
++----------------------------------------------------------------------------------------------+
 | |lab003|                                                                                     |
-|                                                                                              |
-|                                                                                              |
 +----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 7. Observe that the file **app-api-v1.json**  is present and the click **Save and Exit**     |
++----------------------------------------------------------------------------------------------+
+| |lab003a|                                                                                     |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 8. In the resulting **Swagger Files** window, you will see the upload file with additional   |
 |                                                                                              |
-| 3. Click on a domain and review the details in the flyout.                                   |
+|    metadata.                                                                                 |
 |                                                                                              |
-|  Review the status, details, risk score ,risk reasoning, etc. Close the flyout.              |                            
+| .. note::                                                                                    |
+|    *You will also see a dialogue box, in the bottom left of your screen indicating the file* |
+|                                                                                              |
+|    *has been successfully added.*                                                            |
 +----------------------------------------------------------------------------------------------+
 | |lab004|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 4. **Review** the Actions available by clicking the three dots under Action.                 |
+| 9. For the next step, use the following link, to download the JSON/OpenAPI spec file         |
 |                                                                                              |
-|    Add to allow list                                                                         |
+|     **app-api-v2.json** to your local desktop or workspace.                                  |
 |                                                                                              |
-|    Add to mitigate list                                                                      |
+|     Link::                                                                                   |
+|       http://demo-app.amer.myedgedemo.com/lab/app-api-v2.json                                |
 |                                                                                              |
+| .. note::                                                                                    |
+|    *This is a modified version (v2) of the JSON/OpenAPI spec file you previously downloaded* |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 10. Returning to the **Swagger Files** window you were at previously, click the three dots … |
+|                                                                                              |
+|     in the **Action** column.  In the resulting selection menu, select **Update New Version**|
 +----------------------------------------------------------------------------------------------+
 | |lab005|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 5. Click **Network** under Monitoring on the left side.                                      |
-+----------------------------------------------------------------------------------------------+
-The CSD Monitoring Network page displays several tabs for displaying holistic network data, 
-which can assist you when deciding whether to mitigate or allow a suspicious domain:
-
-**All Domains:** When a web page with CSD protection is loaded, scripts running on that web page interact 
-with other domains. The All Domains list displays a list of the domains that those scripts interact with.
-
-**Mitigate List:** Displays a list of domains that the user has assigned for mitigation. 
-When a domain is assigned for mitigation, CSD blocks that domain and it cannot be accessed 
-by any script running on the end-user's browser when accessing a CSD protected web page.
-
-**Allow List:** Displays a list of domains that the user has decided don't need mitigation and 
-are allowed free access.
-
+| 11. In the **Upload Swagger File** section, click the **Upload File** button. Select the file|
+|                                                                                              |
+|     downloaded in Step 9 above and click **Open**.                                           |
+|                                                                                              |
+| 12. Observe that the file **app-api-v1.json**  is present and the click **Save and Exit**    |
 +----------------------------------------------------------------------------------------------+
 | |lab006|                                                                                     |
-+----------------------------------------------------------------------------------------------+
-+----------------------------------------------------------------------------------------------+
-| 6. Click **Script List** under Monitoring on the left side.                                  |
 |                                                                                              |
-|**Note** :  Your data might be different than the screen grab shown below :                   |
+| |lab006a|                                                                                     |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 13. In the resulting **Swagger Files** window, you will see the upload file with additional  |
 |                                                                                              |
+|     metadata seen previously.                                                                |
+|                                                                                              |
+| 14. Note now that there are **2** versions available of the **app-api** file.  Click the     |
+|                                                                                              |
+|     **2** in the **Versions** column.                                                        |
 +----------------------------------------------------------------------------------------------+
 | |lab007|                                                                                     |
 +----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 15. In the resulting window, observe there are now two versions of the **app-api** spec file.|
 |                                                                                              |
-| 7. Click on a URL under "Script Name" and review the overview screen                         |
+| .. note::                                                                                    |
+|    *This is a API File update process can also be performed through the F5 Distributed Cloud*|
 |                                                                                              |
-|    Script Behaviors Over Time                                                                |
+|    *API framework.                                                                           |
+|                                                                                              |
+| 16. Click **X** in the top-right corner and proceed to the next task.                        |
 +----------------------------------------------------------------------------------------------+
 | |lab008|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
+Task 2: Swagger Definition
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+In this task's series of steps you will establish the Swagger Definition which serves as an object
+
+pointer to imported swagger files you just uploaded.
+
 +----------------------------------------------------------------------------------------------+
-| 8. Click **Form Fields** under Monitoring on the left side.  This shows any form fields      |
-|    that are protected by CSD                                                                 |
+| 1. In the left-hand navigation of the **Web App & API Protection** service, click on **API** |
 |                                                                                              |
-|**Note** :  Your data might be different than the screen grab shown below :                   |
-| Also you may not have any data based on the configuration of the CSD                         |
+|    **Management** under the **Manage** section and then click **API Definition**.            |
 +----------------------------------------------------------------------------------------------+
 | |lab009|                                                                                     |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 2. In the resulting **API Definition** window, click **Add API Definition** in the main      |
+|                                                                                              |
+|    window area as shown.                                                                     |
++----------------------------------------------------------------------------------------------+
+| |lab010|                                                                                     |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 3. In the resulting **New API Definition** window, input **app-api-spec** for the **Name**   |
+|                                                                                              |
+|    under the **Metadata** section.                                                           |
+|                                                                                              |
+| 4. In the **Swagger Specs** section, click the **Arrow** in the **Select Item** box in the   |
+|                                                                                              |
+|    **Swagger Specs** column.                                                                 |
+|                                                                                              |
+| 5. Select the version 2 of the previously uploaded swagger spec file. It will be in the      |
+|                                                                                              |
+|    format **<namespace>/app-api/v2-<current-date>**.                                         |
+|                                                                                              |
+| 6. Once selected, click **Save and Exit** in the bottom-right corner.                        |
++----------------------------------------------------------------------------------------------+
+| |lab011|                                                                                     |
++----------------------------------------------------------------------------------------------+
+
+Task 3: Attaching API Discovery & Protection to Load Balancer Object 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+In this task's series of steps you will enable the API Discovery & Protection feature on the 
+previously built Load Balancer object delivering the targeted application/API.
+
++----------------------------------------------------------------------------------------------+
+| 1. In the left-hand navigation of the **Web App & API Protection** service, click on **Load**|
+|                                                                                              |
+|    **Balancers** under the **Manage** section.                                               |
++----------------------------------------------------------------------------------------------+
+| |lab012|                                                                                     |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 2. In the resulting **Load Balancers** window, click on the three dots **...** in the        |
+|                                                                                              |
+|    **Action** column, and the select **Manage Configuration**.                               |
++----------------------------------------------------------------------------------------------+
+| |lab013|                                                                                     |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 3. Click **Edit Configuration** in the top-right corner.                                     |
++----------------------------------------------------------------------------------------------+
+| |lab014|                                                                                     |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 4. Click **API Protection** in the left-hand navigation.                                     |
+|                                                                                              |
+| 5. In the **API Protection** section, click the drop-down arrow next to **API Definition**   |
+|                                                                                              |
+|    and select **Enable**.                                                                    |
++----------------------------------------------------------------------------------------------+
+| |lab015|                                                                                     |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 6. In the updated **Use API Definition** section, click the drop-down arrow and select the   |
+|                                                                                              |
+| 7. previously created API Definition **<namespace>/app-api-spec**.                           |
++----------------------------------------------------------------------------------------------+
+| |lab016|                                                                                     |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 8. In the **API Protection** section, click the drop-down arrow next to **API Discovery**    |
+|                                                                                              |
+|    and select **Enable**.                                                                    |
++----------------------------------------------------------------------------------------------+
+| |lab017|                                                                                     |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 9. In the updated **API Discovery** section, click the drop-down arrow next to **Learn**     |
+|                                                                                              |
+|    **from Traffic with Redirect Response** and then select **Enable Learning from Redirect** |
+|                                                                                              |
+|    *Traffic**.                                                                               |
++----------------------------------------------------------------------------------------------+
+| |lab018|                                                                                     |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 10. In the **API Protection Rules** section, click the **Configure** link.                   |
++----------------------------------------------------------------------------------------------+
+| |lab019|                                                                                     |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 11. In the resulting **API Protection Rules** window, click **Configure** in the **API**     |
+|                                                                                              |
+|     **Endpoints** section.                                                                   |
++----------------------------------------------------------------------------------------------+
+| |lab020|                                                                                     |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 12. Click **Add Item** in the **API Endpoints** window.                                      |
++----------------------------------------------------------------------------------------------+
+| |lab021|                                                                                     |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 13. In the resulting window, input **block-endpoint** in the **Name** field of the           |
+|                                                                                              |
+|     **Metadata** section.                                                                    |
+|                                                                                              |
+| 14. In the **Action** area, click the drop-down arrow indicated and select **Deny**.         |
++----------------------------------------------------------------------------------------------+
+| |lab022|                                                                                     |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 15. In the **API Endpoint** section, click on the **API Endpoint** input field as indicated. |
+|                                                                                              |
+| 16. Select the **See Suggestions** link.                                                     |
++----------------------------------------------------------------------------------------------+
+| |lab023|                                                                                     |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 17. Select **/v2/user** from the available options provided.                                 |
+|                                                                                              |
+| .. note::                                                                                    |
+|    *The endpoints available are provided via the spec you previously imported and defined*   |
+|                                                                                              |
+| 18. In the **HTTP Methods** area, click in the **Method List** input field.                  |
++----------------------------------------------------------------------------------------------+
+| |lab024|                                                                                     |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 19. Select **Any** from the available methods provided.                                      |
+|                                                                                              |
+| .. note::                                                                                    |
+|    *Multiple methods can be selected if needed*                                              |
++----------------------------------------------------------------------------------------------+
+| |lab025|                                                                                     |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 20. Review the configuration and click, the **Apply** button.                                |
++----------------------------------------------------------------------------------------------+
+| |lab026|                                                                                     |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 21. Review the API Endpoint deny rule and click, the **Apply** button.                       |
++----------------------------------------------------------------------------------------------+
+| |lab027|                                                                                     |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 22. Note that API Protection Rules are configure for the API Endpoints and click, the        |
+|                                                                                              |
+|     **Apply** button.                                                                        |
++----------------------------------------------------------------------------------------------+
+| |lab028|                                                                                     |
++----------------------------------------------------------------------------------------------+
+
+Task 4: Attach API Rate Limiting to Load Balancer Object 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+In this task's series of steps you will enable the API Rate Limiting feature on the 
+previously built Load Balancer object delivering the targeted application/API.
+
++----------------------------------------------------------------------------------------------+
+| 1. Using the left-hand navigation, click the **Common Security Controls** link.              |
++----------------------------------------------------------------------------------------------+
+| |lab029|                                                                                     |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 2. Locate the **Rate Limiting** area of the **Common Security Controls** and use the         |
+|                                                                                              |
+|    drop-down to select **API Rate Limit**.                                                   |
++----------------------------------------------------------------------------------------------+
+| |lab030|                                                                                     |
+|                                                                                              |
+| |lab031|                                                                                     |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 3. In the expanded menu under **Rate Limiting**, click **Configure** in the **API**          |
+|                                                                                              |
+|    **Endpoints** area.                                                                       |
++----------------------------------------------------------------------------------------------+
+| |lab032|                                                                                     |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 4. In the resulting window **API Endpoints** window, click **Add Item**.                     |
++----------------------------------------------------------------------------------------------+
+| |lab033|                                                                                     |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 5. In the resulting configuration window, select **/v2/store/order/{orderId}** for **API**   |
+|                                                                                              |
+|    **Endpoint** input.                                                                       |
+|                                                                                              |
+| 6. Select **ANY** for **Method** input and then click the **Apply** button.                  |
++----------------------------------------------------------------------------------------------+
+| |lab034|                                                                                     |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 7. Review the API Endpoint rate limiting rule and click, the **Apply** button.               |
++----------------------------------------------------------------------------------------------+
+| |lab035|                                                                                     |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 8. Note the updated configuration for API Rate limiting, Click **Other Settings** in  the    |
+|                                                                                              |
+|    the left-hand navigation.                                                                 |
++----------------------------------------------------------------------------------------------+
+| |lab036|                                                                                     |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 9. Once at the bottom of the HTTP Load Balancer configuration and click the **Apply** button.|
++----------------------------------------------------------------------------------------------+
+| |lab037|                                                                                     |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| This configuration highlights the elements needed to deploy API Discovery & Protection. This |
+|                                                                                              |
+| configuration can also be fully deployed and managed via the F5 Distributed Cloud API.       |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
@@ -131,23 +394,85 @@ are allowed free access.
 | |labend|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
-.. |lab001| image:: _static/lab6-001.PNG
+.. _app-api-file-v1: http://demo-app.amer.myedgedemo.com/lab/app-api-v1.json
+.. _app-api-file-v2: http://demo-app.amer.myedgedemo.com/lab/app-api-v2.json
+.. |lab001| image:: _static/lab6-001.png
    :width: 800px
-.. |lab002| image:: _static/lab6-002.PNG
+.. |lab002| image:: _static/lab6-002.png
    :width: 800px
-.. |lab003| image:: _static/lab6-003.PNG
+.. |lab003| image:: _static/lab6-003.png
    :width: 800px
-.. |lab004| image:: _static/lab6-004.PNG
+.. |lab003a| image:: _static/lab6-003a.png
    :width: 800px
-.. |lab005| image:: _static/lab6-005.PNG
+.. |lab004| image:: _static/lab6-004.png
    :width: 800px
-.. |lab006| image:: _static/lab6-006.PNG
+.. |lab005| image:: _static/lab6-005.png
    :width: 800px
-.. |lab007| image:: _static/lab6-007.PNG
+.. |lab006| image:: _static/lab6-006.png
    :width: 800px
-.. |lab008| image:: _static/lab6-008.PNG
+.. |lab006a| image:: _static/lab6-006a.png
    :width: 800px
-.. |lab009| image:: _static/lab6-009.PNG
+.. |lab007| image:: _static/lab6-007.png
+   :width: 800px
+.. |lab008| image:: _static/lab6-008.png
+   :width: 800px
+.. |lab009| image:: _static/lab6-009.png
+   :width: 800px
+.. |lab010| image:: _static/lab6-010.png
+   :width: 800px
+.. |lab011| image:: _static/lab6-011.png
+   :width: 800px
+.. |lab012| image:: _static/lab6-012.png
+   :width: 800px
+.. |lab013| image:: _static/lab6-013.png
+   :width: 800px
+.. |lab014| image:: _static/lab6-014.png
+   :width: 800px
+.. |lab015| image:: _static/lab6-015.png
+   :width: 800px
+.. |lab016| image:: _static/lab6-016.png
+   :width: 800px
+.. |lab017| image:: _static/lab6-017.png
+   :width: 800px
+.. |lab018| image:: _static/lab6-018.png
+   :width: 800px
+.. |lab019| image:: _static/lab6-019.png
+   :width: 800px
+.. |lab020| image:: _static/lab6-020.png
+   :width: 800px
+.. |lab021| image:: _static/lab6-021.png
+   :width: 800px
+.. |lab022| image:: _static/lab6-022.png
+   :width: 800px
+.. |lab023| image:: _static/lab6-023.png
+   :width: 800px
+.. |lab024| image:: _static/lab6-024.png
+   :width: 800px
+.. |lab025| image:: _static/lab6-025.png
+   :width: 800px
+.. |lab026| image:: _static/lab6-026.png
+   :width: 800px
+.. |lab027| image:: _static/lab6-027.png
+   :width: 800px
+.. |lab028| image:: _static/lab6-028.png
+   :width: 800px
+.. |lab029| image:: _static/lab6-029.png
+   :width: 800px
+.. |lab030| image:: _static/lab6-030.png
+   :width: 800px
+.. |lab031| image:: _static/lab6-031.png
+   :width: 800px
+.. |lab032| image:: _static/lab6-032.png
+   :width: 800px
+.. |lab033| image:: _static/lab6-033.png
+   :width: 800px
+.. |lab034| image:: _static/lab6-034.png
+   :width: 800px
+.. |lab035| image:: _static/lab6-035.png
+   :width: 800px
+.. |lab036| image:: _static/lab6-036.png
+   :width: 800px
+.. |lab036| image:: _static/lab6-036.png
    :width: 800px
 .. |labend| image:: _static/labend.png
    :width: 800px

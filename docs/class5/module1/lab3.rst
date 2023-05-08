@@ -10,7 +10,7 @@ In this lab, we will learn the following:
 
 #. Click the distributed apps tile on the F5 Distributed Cloud Services home page.
 
-   .. image:: ../images/distributedappclick.png
+   .. image:: ../images/distributedappclick-updated.png
       :width: 400pt
 
 #. Click virtual K8s under the applications section.
@@ -20,10 +20,13 @@ In this lab, we will learn the following:
 
 #. Click the three dots under the "Action" column and then click **Kubeconfig**.
 
-   .. image:: ../images/distributedappclickvirtualk8kubeconfig.png
+   .. image:: ../images/distributedappclickvirtualk8kubeconfig-updated.png
       :width: 650pt
 
 #. When prompted to select an expiration date, pick a future date that will give you adequate time to complete the lab.
+
+   .. image:: ../images/kubeconfigexpirydate.png
+      :width: 650pt
 
 #. If your browser prompts you for a location to download the file, select a directory you prefer and click **Save**.
 
