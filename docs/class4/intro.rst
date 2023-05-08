@@ -12,7 +12,7 @@ with the AWS workloads over a secure connection. For lab simplicity, the backend
 It could just as easily be thought of as a API to API, container to container or frontend to backend. Other backends or frontends may be added in the future.  
 
 As the Network Engineer, you are tasked with evaluating how to securely connect the Data Center network to the AWS network. 
-At first you consider the classic methods of deploying and managing your own IP-SEC solution but realize that this will be complex and costly.
+At first you consider the classic methods of deploying and managing your own IPSec solution but realize that this will be complex and costly.
 
 You recently saw a post on LinkedIn about a SaaS product that F5 has, claiming to solve multi-cloud network complexities. 
 Given your current predicament and industry knowledge of F5 being a leader for decades, you decide to check it out and end up in the chair you are sitting in today: Taking a first-hand look at how F5 makes Multi-Cloud Networking (MCN) simple and secure. 
