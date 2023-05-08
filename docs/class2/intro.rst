@@ -107,17 +107,17 @@ step below to access the F5 Distributed Cloud Lab Tenant.
 |                                                                                              |
 | 9. Click on the **Select Service** in the left-hand navigation. In the resulting fly out     |
 |                                                                                              |
-|    navigation, click **Web App & API Protection**.                                           |
+|    navigation, click **Load Balancers**.                                                     |
 |                                                                                              |
-| 10. In the **Web App & API Protection** configuration screen observe the URL. In the URI     |
+| 10. In the **Load Balancers** configuration screen observe the URL. In the URI path, locate  |
 |                                                                                              |
-|     path, locate the **<adjective-animal>** namespace that you have been assigned. It will be|
+|     the **<adjective-animal>** namespace that you have been assigned. It will be located in  |
 |                                                                                              |
-|     located in the portion of the URI path between */namespaces/* and */overview/* as shown  |
+|     the portion of the URI path between */namespaces/* and */sites/* as shown in this        |
 |                                                                                              |
-|     in this example **…/namespaces/<namespace>/overview/…**. Note the namespace as it will   |
+|     example **…/namespaces/<namespace>/sites/…**. Note the namespace as it will be used      |
 |                                                                                              |
-|     be used throughout the lab tasks that follow.                                            |
+|     throughout the lab tasks that follow.                                                    |
 |                                                                                              |
 | .. note::                                                                                    |
 |    *Administratively, there are other ways to find namespaces. Due to access and permission* |
