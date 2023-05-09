@@ -63,7 +63,7 @@ In this test we will replicate a more "human like" automation that fully renders
 
 |lab012|
 
-16. Additionally we can go to the distributed cloud dashboard  outside of the RDP Jumphost.  Clickon *HTTP Load Balancers* then *Security Monitoring* and explore using the *Bot Defense* tabs.  One thing to note that this attack is seeing as Threat Intelligence, essentially this means that the telemetry information was able to determine if this was a bot based on how it acted and the signals received.
+16. Additionally we can go to the distributed cloud dashboard  outside of the RDP Jumphost.  Click on *Web App & API Protection* then *Dashboards* and then *Security Dashboard*. Scroll down and select <namespace>-lb under *Load Balancers* and explore using the *Bot Defense* tab at the top right of the dashboard.
 
 |lab013|
 
