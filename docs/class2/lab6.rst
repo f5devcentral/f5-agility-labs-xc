@@ -77,10 +77,10 @@ version control features.
 +----------------------------------------------------------------------------------------------+
 | 9. For the next step, use the following link, to download the JSON/OpenAPI spec file         |
 |                                                                                              |
-|     **app-api-v2.json** to your local desktop or workspace.                                  |
+|    **app-api-v2.json** to your local desktop or workspace.                                   |
 |                                                                                              |
-|     Link::                                                                                   |
-|       http://demo-app.amer.myedgedemo.com/lab/app-api-v2.json                                |
+|    Link::                                                                                    |
+|      http://demo-app.amer.myedgedemo.com/lab/app-api-v2.json                                 |
 |                                                                                              |
 | .. note::                                                                                    |
 |    *This is a modified version (v2) of the JSON/OpenAPI spec file you previously downloaded* |
