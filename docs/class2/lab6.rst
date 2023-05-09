@@ -58,7 +58,7 @@ version control features.
 +----------------------------------------------------------------------------------------------+
 | 7. Observe that the file **app-api-v1.json**  is present and the click **Save and Exit**     |
 +----------------------------------------------------------------------------------------------+
-| |lab003a|                                                                                     |
+| |lab003a|                                                                                    |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
@@ -103,7 +103,7 @@ version control features.
 +----------------------------------------------------------------------------------------------+
 | |lab006|                                                                                     |
 |                                                                                              |
-| |lab006a|                                                                                     |
+| |lab006a|                                                                                    |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
@@ -122,9 +122,9 @@ version control features.
 | 15. In the resulting window, observe there are now two versions of the **app-api** spec file.|
 |                                                                                              |
 | .. note::                                                                                    |
-|    *This is a API File update process can also be performed through the F5 Distributed Cloud*|
+|    *This is an API File update process which can also be performed through the F5*           |
 |                                                                                              |
-|    *API framework.                                                                           |
+|    *Distributed Cloud API framework.                                                         |
 |                                                                                              |
 | 16. Click **X** in the top-right corner and proceed to the next task.                        |
 +----------------------------------------------------------------------------------------------+
