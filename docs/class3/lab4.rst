@@ -14,7 +14,7 @@ Task 1: Define the protected application in F5 Distributed Cloud Bot Defense
 
 |lab001|
 
-3. From the left-hand menu select **Manage >> Applications**. Then select the “\ **Add Protected Application**\ ” button.
+3. From the left-hand menu select **Manage >> Applications**. Then select the “\ **Add Application**\ ” button.
 
 |lab002|
 
