@@ -161,7 +161,7 @@ Click **Cancel and Exit**.
 
 .. Note:: Due to tenant permissions you will not be able to create your own Global Virtual Network.  
  
-If you wanted to configure this outside of the lab, you would literally click **Add Virtual Network** button, enter a name for the Virtual Network and make sure it is type **Global**. Very simple! 
+If you wanted to configure this outside of the lab, you would simply click **Add Virtual Network** button, enter a name for the Virtual Network and make sure it is type **Global**. Simple indeed! 
 
 The configuration **would** look like the screen below.
  
@@ -242,7 +242,9 @@ Click **Cancel and Exit.**
 
 Fleet Label 
 -------------
-Fleet has a field called fleet_label. When a Fleet object is created, the system automatically creates a known_label ves.io/fleet=. 
+Labels are a map of string keys and values that can be used to organize and categorize objects within Distributed Cloud.
+
+Fleet has a field called fleet_label. When a Fleet object is created, the system automatically creates a **"known_label"** named: **"ves.io/fleet"**. 
 The known_label is created in the Shared namespace for the tenant. A site is made a "member of Fleet" when this known_label is added to the site. 
 A site can have at most one known_label of type ves.io/fleet and hence belongs to exactly one Fleet at any given time.
 
@@ -309,6 +311,9 @@ Check back on your web shell tab with the ping going. Success!!
 
 
 In XC Console, navigate to **Multi-Cloud Network Connect** >> **Sites** click on **Site List**, click directly on your **"animal-name"** and finally click on the **Tools** menu on the top, far right. 
+
+.. note:: If you do not see the Tools menu there should be a right chevron ">" that will allow you to access additional menu items.
+
 
 Click on **Show Routes** 
 

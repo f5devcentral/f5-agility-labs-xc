@@ -38,7 +38,7 @@ Now, Lab 1 starts right after you have loaded the downloadable XC Node OVA on to
  
 If you have not already, please click on **Update Password**, and change your credentials. Ensure you adhere to the password strength restrictions and make a mental note of these credentials as you will need them several times throughout the labs today. 
 
-Once you've set your new password you will be presented with the following screen:
+Once you've set your new password (make sure to include 1 upper, 1 lower and 1 special character), you will be asked to "Log In" and then presented with the following screen:
 
 |
 
@@ -56,17 +56,21 @@ In the domain field, enter: **f5-xc-lab-mcn**, click **Next** and sign in with y
 ---------------------------------
 
 
-After accepting the Terms and Conditions, you will need to select your "Persona". 
+After accepting the Terms of Service and Privacy Policy, you will need to select your "Persona". 
 
-Enter your persona as **"NetOps"** and level as **"Intermediate"**.  You can change these settings after logging in as well.
+Enter your persona as **"NetOps"** and click **next**. 
+
+Enter your level as **"Intermediate"** and then click **Get Started**.  
 
 Your persona will highlight workflows within F5 Distributed Cloud.
 You will be able to access all services, but making use of personas can focus your view on particular tasks that are relevant to your role.
 
+You can change these settings at any time. 
+
 Click on **"Account Settings"** by expanding the **"Account"** icon in the top right of the screen and clicking on **"Account Settings".**  
 In the resulting window you can observe the **Work domains and skill level** section and other administrative functions.
    
-.. note:: **For the purposes of this lab, permissions have been restricted to lab operations.  As some menus will be locked and not visible.**
+.. note:: **For the purposes of this lab, permissions have been restricted to lab operations. Some menus/functions will be locked and/or not visible.**
 
 |
 
@@ -87,8 +91,7 @@ In the resulting window you can observe the **Work domains and skill level** sec
 
 
 Namespaces, which provide an environment for isolating configured applications or enforcing role-based access controls, are leveraged
-within the F5 Distributed Cloud Console.  For the purposes of this lab, each lab attendee has been pre-assigned a unique **namespace** 
-for all tasks performed in this lab.
+within the F5 Distributed Cloud Console. For the purposes of this lab, each lab attendee has been pre-assigned a unique **namespace**.
 
 From the **Select service** menu, click on **Web App & API Protection**. 
 
@@ -99,7 +102,7 @@ From the **Select service** menu, click on **Web App & API Protection**.
 |
 
 In the **Web App & API Protection Security Dashboard** configuration screen **observe** the browser URL. In the URI path, locate the **<adjective-animal>** namespace that you have
-been assigned. It will be located in the portion of the URI path between */namespaces/* and */sites/* as shown in this example: **…/namespaces/<namespace>/overview/**. 
+been assigned. It will be located in the portion of the URI path between */namespaces/* and */overview/* as shown in this example: **…/namespaces/<namespace>/overview/**. 
    
 **Note your namespace as it will be used throughout the labs today.**
 
@@ -111,7 +114,7 @@ been assigned. It will be located in the portion of the URI path between */names
 
 |
 
-.. note:: Administratively, there are other ways to find namespaces. Due to access and permission restrictions for this particular lab, those menus are not available.
+.. note:: Administratively, there are other ways to find namespaces. Due to permission restrictions for this particular lab, those menus are not available.
 
 
 
@@ -316,7 +319,7 @@ Scroll down to Site to Site Tunnel Type and click on the drop down arrow
 
 |
 
-This setting determines the VPN connectivity protocols used between the CE and the Regional Edges. The XC Node will automatically bring up redundant tunnels to two different RE's. 
+This setting determines the VPN connectivity protocols used between the Customer Edge and the Regional Edges. The XC Node will automatically bring up redundant tunnels to two different RE's. 
 These tunnels are self-healing and can fallback when using the configuration setting of IPSEC or SSL.
 Select **IPSEC or SSL** from the list.  
 
