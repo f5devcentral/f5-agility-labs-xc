@@ -249,8 +249,8 @@ Task 2: Curl - Direct
 
 |lab032|
 
-Task 3: Compare Via Bot Defense (5min)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Task 3: Compare Via Bot Defense
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **Run this lab from the JUMPHOST**
 
