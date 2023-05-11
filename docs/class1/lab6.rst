@@ -93,7 +93,7 @@ You can also select it from the left drop-down menu.
  
      .. image:: _static/lab6-013.png
        
-#. In chrome, right click on the screen and navigate to developer tools (Inspect). Then click on the "Network' tab and check th 'Disable cache' option before refreshing the page a few times. You can see that the static content is being presented from cache.
+#. In chrome, right click on the screen and navigate to developer tools (Inspect). Then click on the "Network' tab and check the 'Disable cache' option before refreshing the page a few times. 
 
 #. Select the upper lefthand menu and navigate to the various sub-pages to generate some traffic. 
 
@@ -111,7 +111,13 @@ You can also select it from the left drop-down menu.
 
      .. image:: _static/lab6-016.PNG
      
-#. On the main dashboard, you will notice requests being categorized as 'Hits' or 'Misses'. A cache miss occurs when a client device makes a request to the CDN and the CDN cache does not have the requested content. A cache hit occurs when the CDN cache has the requested content. Content is delivered with lower Time-To-First-Byte (TTFB) on a cache hit because the CDN can immediately deliver the content to the end user without having to make an origin pull. An origin pull occurs anytime the CDN server needs to pass a request to the origin server. This typically occurs on a cache miss. On an origin pull, the CDN will cache the content contained in the origin server's response. Subsequent requests for the same content will result in a cache hit and lower latency for end users.
+#. On the main dashboard, you will notice requests being categorized as 'Hits' or 'Misses'. 
+
+A cache miss occurs when a client device makes a request to the CDN and the CDN cache does not have the requested content. 
+
+A cache hit occurs when the CDN cache has the requested content. Content is delivered with lower Time-To-First-Byte (TTFB) on a cache hit because the CDN can immediately deliver the content to the end user without having to make an origin pull. 
+
+An origin pull occurs anytime the CDN server needs to pass a request to the origin server. This typically occurs on a cache miss. On an origin pull, the CDN will cache the content contained in the origin server's response. Subsequent requests for the same content will result in a cache hit and lower latency for end users.
 
 #. You will notice a series of 'Misses' after refreshing the page serveral times. The reason the requests are identified as 'misses' is due to the 'Cache-Control' headers that are being injected into the request/resonse. Distributed Cloud CDN allows you to configure "Header Controls' and additional 'Cache Options'. 
 
