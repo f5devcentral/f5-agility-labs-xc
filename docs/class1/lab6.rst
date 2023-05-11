@@ -121,7 +121,9 @@ You can also select it from the left drop-down menu.
 
 #. You will notice a series of 'Misses' after refreshing the page serveral times. The reason the requests are identified as 'misses' is due to the 'Cache-Control' headers that are being injected into the request/resonse and origin caching. Distributed Cloud CDN allows you to configure advanced "Header Controls' and additional 'Cache Options'. 
 
-#. Lets go back into the CDN Distribution configuration by navigating to Manage > Distributions. Under the 'Actions' Column, click the ellipses (ie. three dots), then select Manage Configuration.
+#. Lets go back into the CDN Distribution configuration by navigating to Manage > Distributions. 
+
+#. Under the 'Actions' Column, click the ellipses (ie. three dots), then select Manage Configuration.
 
      .. image:: _static/lab6-017.png
      
