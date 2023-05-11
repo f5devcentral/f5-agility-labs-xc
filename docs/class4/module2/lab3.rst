@@ -293,33 +293,34 @@ You should be back to the AWS page now.
 
 |
 
-**Testing Load Balancing**
+.. 
+  **Testing Load Balancing**
 
-Although this isn't an ACME requirement at the moment, you decide to test an Active/Active pool configuration. 
-Currrently, you have a Global frontend [http://animal-name-acme-frontend.lab-mcn.f5demos.com] that points to a pool with a public EC2 workload in AWS and a pool with a private IP workload in Azure sitting behind the CE.
-You are configured for Active/Standby load-balancing of the pools due to the priority setting in the pool. 
-
-
-In **XC Console**, navigate to **Manage >> HTTP Load Balancers**,  click on the **3 Button** Actions Menu and choose **Manage Configuration** for your **[animal-name]-acme-frontend**. 
-
-Click **Edit Configuration** in the upper right and then click the **pencil/edit** icon next to the Azure Origin Pool. 
-
-|
-
-.. image:: ../images/editazure.png
-
-|
-
-Change the priority to **1**, click **Apply** and **Save and Exit**.
-
-Go back to your browser tab that you had open to http://[animal-name]-frontend.lab-mcn.f5demos.com and hit **[Shift + Refresh]**.
+  Although this isn't an ACME requirement at the moment, you decide to test an Active/Active pool configuration. 
+  Currrently, you have a Global frontend [http://animal-name-acme-frontend.lab-mcn.f5demos.com] that points to a pool with a public EC2 workload in AWS and a pool with a private IP workload in Azure sitting behind the CE.
+  You are configured for Active/Standby load-balancing of the pools due to the priority setting in the pool. 
 
 
-|
+  In **XC Console**, navigate to **Manage >> HTTP Load Balancers**,  click on the **3 Button** Actions Menu and choose **Manage Configuration** for your **[animal-name]-acme-frontend**. 
 
-.. image:: ../images/weird-results.png
+  Click **Edit Configuration** in the upper right and then click the **pencil/edit** icon next to the Azure Origin Pool. 
 
-|
+  |
+  
+  .. image:: ../images/editazure.png
+
+  |
+
+  Change the priority to **1**, click **Apply** and **Save and Exit**.
+
+  Go back to your browser tab that you had open to http://[animal-name]-frontend.lab-mcn.f5demos.com and hit **[Shift + Refresh]**.
+
+
+  |
+
+  .. image:: ../images/weird-results.png
+
+  |
 
 Dashboard and Analytics
 -------------------------
