@@ -171,13 +171,13 @@ You can also select it from the left drop-down menu.
 
      .. image:: _static/lab6-028.PNG
      
-#. You will now be returned to the main Distributed configuration. The final step is to change the default TTL value from the origin server for demoonstration purposes. Select 'Configure' under the 'Cache Options'.
+#. You will now be returned to the main Distributed configuration. The final step is to change the 'Default Chace TTL' value from the origin server for demonstration purposes. Select 'Configure' under the 'Cache Options'.
 
      .. image:: _static/lab6-029.PNG
 
-#. Under the 'Cache Settings' menu, select 'Disable Cache' to disable the caching of content from the origin server. 
+#. Under the 'Cache Settings' menu, select 'Default Cache TTL' and set the 'Default Cache TTL' value to '5d' then click 'Apply'.
 
-     .. image:: _static/lab6-030.PNG
+     .. image:: _static/lab6-030b.PNG
      
 #. Once 'Header Control' and 'Cache Options' are configured click Save and Exit at the bottom. 
 
