@@ -177,7 +177,7 @@ You can also select it from the left drop-down menu.
 
 #. Under the 'Cache Settings' menu, select 'Default Cache TTL' and set the 'Default Cache TTL' value to '5d' then click 'Apply'.
 
-     .. image:: _static/lab6-030b.PNG
+     .. image:: _static/lab6-030b.png
      
 #. Once 'Header Control' and 'Cache Options' are configured click Save and Exit at the bottom. 
 
