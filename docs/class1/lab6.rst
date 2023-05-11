@@ -146,9 +146,7 @@ You can also select it from the left drop-down menu.
 #. We are now going to remove the 'Cache-Control' header from both the Origin reqeust and response. Select 'Configure' under the 'Remove Origin Request Header' option. 
 
      .. image:: _static/lab6-023.PNG
-     
-     .. image:: _static/lab6-023a.PNG
-     
+    
 #. Select 'Add Item'
 
      .. image:: _static/lab6-023.PNG
