@@ -99,7 +99,7 @@ You can also select it from the left drop-down menu.
 
       .. image:: _static/lab6-014b.PNG
       
-   Congratuations!! You successfully deployed a CDN Distribution within F5XC.
+   Congratulations!! You successfully deployed a CDN Distribution within F5XC.
 
 #. Now you will see monitoring/performance statistics within the F5XC dashboard. 
 
@@ -185,5 +185,8 @@ You can also select it from the left drop-down menu.
      
 #. With the advanced options configured, we can now retest/refresh the application to see the new results. 
 
+#. Now you will see the 'hits' counter increase.
+
+     .. image:: _static/lab6-032.PNG
 
 #. Lab Completed!
