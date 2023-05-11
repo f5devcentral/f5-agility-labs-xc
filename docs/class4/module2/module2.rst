@@ -8,7 +8,7 @@ Everything has been running terrific at ACME with your current Network Connect m
 ACME has aquired a new company that utilizes Azure IAAS but none of their servers are public facing due to security governance. 
 
 ACME wants to implement a globally available frontend that can serve content from either AWS or Azure without directly giving any of the Azure workloads a public IP. 
-Inbound Internet traffic should always be sent to the public AWS frontend DNS name with the Azure private-ip frontend acting as a backup for now.  (We've seen weirder things!) 
+Inbound Internet traffic should always be sent to the public AWS frontend DNS name with the Azure private-ip frontend acting as a backup for now.  
 
 The on-prem backend server must be able to scan the private frontend in Azure on port 80. 
 The frontend server in Azure WILL NOT have a public IP. ACME has truly gone multi-cloud!

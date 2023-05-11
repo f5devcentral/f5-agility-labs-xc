@@ -55,7 +55,7 @@ Multi-Cloud App Connect
 
 From the **Select service** menu, click on **Multi-Cloud App Connect** and then click on **App Site List**.
 
-Notice **your animal name** CE Node is available for App Connect configurations but shows a color status as Grey because of a Health Score of "Unused". Let's get an App Connect config going!
+Notice **your animal name** CE Node is available for App Connect configurations but shows a color status as Grey because of a Health Score of "Unused". We will now get an App Connect config going and start using the CE as a proxy!
 
 |
 
@@ -225,6 +225,8 @@ Go ahead and open up a **Command Prompt** or **Terminal** on your personal machi
 
 In my example, I am using a terminal on MAC and my animal-name was **rested-tiger**.
 
+.. Note:: This may take a few moments to become resolvable depending on your local DNS configuration. 
+
 |
 
 .. image:: ../images/nslookup.png
@@ -280,6 +282,8 @@ Go back to XC Console and edit the AWS pool again to disable TLS and bring the A
 Click **Save and Exit**.
 
 Go back to your browser tab that you had open to http://[animal-name]-frontend.lab-mcn.f5demos.com and hit **[Shift + Refresh]**.
+
+.. note:: If you receive a 503 error, please wait a moment and [Shift + Refresh] your browser.
 
 You should be back to the AWS page now. 
 

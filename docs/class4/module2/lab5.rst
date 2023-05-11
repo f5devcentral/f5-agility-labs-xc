@@ -16,11 +16,11 @@ Lab 5: Bonus Lab - L7 App Routing & Security
 Much like "The Real World", the requirements never stop coming. Now, ACME has 2 new deliverables for you to figure out. 
 
 **First**, a new API has been added to the cloud frontends and will require Layer 7 routing at the global frontend in XC. 
-The requirement is for any requests that have **/aws** in the URI should be routed to AWS. 
+The requirement is for any requests that have **/aws** in the URI to be routed to AWS. 
 Any requests with **/azure** should be routed to Azure. 
 
-**Second**, ever since exposing the frontends globally, they have noticed alot of attack type traffic coming in to their application. 
-They have asked if there is a way to apply security policy to identify and remediate these attacks which seem to target the application with common OWASP Top 10 type attacks.  
+**Second**, ever since exposing the frontends globally, they have noticed a lot of attack type traffic coming into their application. 
+They have asked if there is a way to apply a security policy to identify and remediate these attacks which seem to target the application with common OWASP Top 10 type attacks.  
 
 |
 
@@ -190,14 +190,14 @@ L7 Security
 
 If you haven't noticed, all along today, there has always been an underlying theme of security in all of the configurations we setup. It's very rare in this day and age to expose a resource or public frontend without some basic protection. 
 
-A common theme was also reviewed in the narrative above. Your new public frontend has started getting alot of unwanted attention and there is an immediate need to apply some security controls to expose and mitigate the unwanted traffic. We hear from customers with this request every day. 
+A common theme was also reviewed in the narrative above. Your new public frontend has started getting a lot of unwanted attention and there is an immediate need to apply some security controls to expose and mitigate the unwanted traffic. We hear from customers with this request every day. 
 
 With **F5 Distributed Cloud App Connect**, adding a WAF policy is just as easy as everything else we've setup so far. 
 
 **First**, we will test out our attacks on the site without any WAF policy and observe the response. 
 
-Testing Vulns
----------------
+Testing Vulnerabilities
+------------------------
 
 For a SQL Injection (SQLi) attack, run the following command from your "Online Diag Tool". If you closed or lost that tab, the link is: **http://[animal-name]-awstool.lab-mcn.f5demos.com**
 
@@ -271,8 +271,8 @@ Your HTTP Load Balancer Configuration should now look like this.
 
 Click **Save and Exit**. 
 
-Testing Vulns with WAF 
------------------------
+Testing Vulnerabilities with WAF 
+----------------------------------
 
 For the SQL Injection (SQLi) attack, run the following command from your "Online Diag Tool". If you closed or lost that tab, the link is: **http://[animal-name]-awstool.lab-mcn.f5demos.com**
 

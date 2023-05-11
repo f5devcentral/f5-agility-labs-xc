@@ -49,7 +49,7 @@ Origin Pools                            See Below
 
 **Origin Pools**
 
-Click **Add Item** and under "Origin Pool" select the **Azure pool** with your animal name. 
+Click **Add Item** and under "Origin Pool" select the **Azure pool** with your animal name and click **Apply**. 
 
 Your config should look like this so far: 
 
@@ -134,9 +134,11 @@ Recall the mandatory **Domains** field that was required when you configured the
 
 We will now use a tool to help test this with a built-in "resolve" function. 
 
-From the Ubuntu Client **Web Shell** browser tab, type the following command **(with your animal-name)** and hit **Enter**.::
+From the Ubuntu Client **Web Shell** browser tab, type or paste the following command **(with your animal-name)** and hit **Enter**.::
 
     curl --head http://[animal-name]-backend-vip-to-azure.lab-mcn.f5demos.com --resolve [animal-name]-backend-vip-to-azure.lab-mcn.f5demos.com:80:10.1.1.5
+
+.. note:: On a MAC you should be able to [CMD + v] and on a PC [Shift + Insert] to paste into the web shell. 
 
 |
 
@@ -195,7 +197,7 @@ Select Type of Origin Server            IP address of Origin Server on given Sit
 IP                                      10.0.3.253
 Site or Virtual Site                    Site
 Site                                    system/student-awsnet
-Select Network on the site              Inside
+Select Network on the site              Inside Network
 ==================================      ==============
 
 Click **Apply** and the **Save and Exit**. 
@@ -377,7 +379,7 @@ Variable                                Value
 Name                                    allow-get
 Action                                  Allow
 Clients                                 Any Client
-Servers                                 **Add Item** >> [animal-name]-aws-to-azure-lb.lab-mcn.f5demos.com
+Servers                                 **Add Item** >> **Exact Value** >> [animal-name]-aws-to-azure-lb.lab-mcn.f5demos.com
 HTTP Method/Method List                 Get
 HTTP Path                               **Configure** >> **Add Item** add **/** under **Prefix Values**. 
 ==================================      ==============
@@ -497,6 +499,8 @@ You may have to click refresh in the upper right or change your time frame if yo
 
 **Expand** one of the log entries that had a **403** response code. These were the forbidden **Head** requests. 
 Look through the request data and determine the policy that was applied to the request as well as the **result**. 
+
+.. note:: If you do not see a response code column in the data, click on the wheel on the right, next to the search edit box and check response code. Click Apply.
 
 |
 
