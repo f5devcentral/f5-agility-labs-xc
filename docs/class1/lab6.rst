@@ -119,13 +119,11 @@ You can also select it from the left drop-down menu.
 
    An origin pull occurs anytime the CDN server needs to pass a request to the origin server. This typically occurs on a cache miss. On an origin pull, the CDN will cache the content contained in the origin server's response. Subsequent requests for the same content will result in a cache hit and lower latency for end users.
 
-#. You will notice a series of 'Misses' after refreshing the page serveral times. The reason the requests are identified as 'misses' is due to the 'Cache-Control' headers that are being injected into the request/resonse. Distributed Cloud CDN allows you to configure "Header Controls' and additional 'Cache Options'. 
+#. You will notice a series of 'Misses' after refreshing the page serveral times. The reason the requests are identified as 'misses' is due to the 'Cache-Control' headers that are being injected into the request/resonse and origin caching. Distributed Cloud CDN allows you to configure advanced "Header Controls' and additional 'Cache Options'. 
 
-#. Lets go back into the CDN Distribution configuration by navigating to Manage > Distributions.
+#. Lets go back into the CDN Distribution configuration by navigating to Manage > Distributions. Under the 'Actions' Column, click the ellipses (ie. three dots), then select Manage Configuration.
 
-#. Under the 'Actions' Column, click the ellipses (ie. three dots), then select Manage Configuration.
-
-     .. image:: _static/lab6-017.PNG
+     .. image:: _static/lab6-017.png
      
      .. image:: _static/lab6-018.PNG
 
