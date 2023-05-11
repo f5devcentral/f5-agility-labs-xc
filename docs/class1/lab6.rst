@@ -157,6 +157,8 @@ You can also select it from the left drop-down menu.
 
 #. Perform the same step for the 'Remove Response Header' option. 
      
+     .. image:: _static/lab6-025.PNG
+     
 #. Select 'Add Item'
 
      .. image:: _static/lab6-026.PNG
