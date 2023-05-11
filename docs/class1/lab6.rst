@@ -153,9 +153,9 @@ You can also select it from the left drop-down menu.
 	  
 #. Enter 'Cache-Control' as the header name. Then select 'Apply' at the bottom of the screen.
 
-#. Perform the same step for the 'Remove Response Header' option. 
+          .. image:: _static/lab6-025.PNG
 
-     .. image:: _static/lab6-025.PNG
+#. Perform the same step for the 'Remove Response Header' option. 
      
 #. Select 'Add Item'
 
