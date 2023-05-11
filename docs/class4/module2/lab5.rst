@@ -223,18 +223,12 @@ Or::
     
     curl -X GET "http://[animal-name]-acme-frontend.lab-mcn.f5demos.com/product?id=4%20OR%201=1" --resolve [animal-name]-acme-frontend.lab-mcn.f5demos.com:80:159.60.128.61
 
-Or::
-
-    curl -X GET "http://[animal-name]-acme-frontend.lab-mcn.f5demos.com/../../../../etc/shadow" --resolve [animal-name]-acme-frontend.lab-mcn.f5demos.com:80:159.60.128.61
-
 
 Here are the URI paths from above for easy reference: 
 
 **/?cmd=cat%20/etc/passwd**
 
 **/product?id=4%20OR%201=1**
-
-**/../../../../etc/shadow**
 
 |
 
@@ -296,10 +290,6 @@ Other Attack Samples::
 Or::
     
     curl -X GET "http://[animal-name]-acme-frontend.lab-mcn.f5demos.com/product?id=4%20OR%201=1" --resolve [animal-name]-acme-frontend.lab-mcn.f5demos.com:80:159.60.128.61
-
-Or::
-
-    curl -X GET "http://[animal-name]-acme-frontend.lab-mcn.f5demos.com/../../../../etc/shadow" --resolve [animal-name]-acme-frontend.lab-mcn.f5demos.com:80:159.60.128.61
 
 |
 
