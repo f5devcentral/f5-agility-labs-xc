@@ -171,7 +171,7 @@ You can also select it from the left drop-down menu.
 
      .. image:: _static/lab6-028.PNG
      
-#. You will now be returned to the main Distributed configuration. The final step is to disable caching from the origin server for demoonstration purposes. Select 'Configure' under the 'Cache Options'.
+#. You will now be returned to the main Distributed configuration. The final step is to change the default TTL value from the origin server for demoonstration purposes. Select 'Configure' under the 'Cache Options'.
 
      .. image:: _static/lab6-029.PNG
 
