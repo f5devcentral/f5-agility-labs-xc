@@ -69,17 +69,20 @@ We will first create an Origin Pool that refers to the "Private Endpoint" site i
 
 .. note::                                                                                    
 
+
 *The default Health Check makes a request to the root path and expects a response code of*
 
 *200. These values can be modified to meet the requirements of the application.*          
 
-#. After returning to the prior window, note the values of **Timeout(s)**, **Interval(s),   
+
+13. After returning to the prior window, note the values of **Timeout(s)**, **Interval(s)**,   
 
 **Unhealthy Threshold**, and **Healthy Threshold**.                                      
 
-#. Click **Continue**.                                                                      
+14. Click **Continue**.                                                                      
 
 .. note::                                                                                    
+
 
 *The Timeout, Interval, Unhealthy Threshold, and Healthy Threshold control how often*     
 
@@ -87,7 +90,8 @@ We will first create an Origin Pool that refers to the "Private Endpoint" site i
 
 *values can be modified to meet the requirements of the application.*                     
 
-#. After returning to the Origin Pool configuration window, click **Save and Exit**.        
+
+15. After returning to the Origin Pool configuration window, click **Save and Exit**.        
 
 .. |app-context| image:: _static/app-context.png
 .. |origin_pools_menu| image:: _static/origin_pools_menu.png
