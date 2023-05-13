@@ -369,7 +369,7 @@ Monitoring dashboard, and gather security event details.
 |     during the security event.                                                                                |
 |                                                                                                               |
 | .. note::                                                                                                     |
-|    *Note that Requests have additional detail in JSON format.*                        |
+|    *Note that Requests have additional detail in JSON format*                        |
 +---------------------------------------------------------------------------------------------------------------+
 | |lab039|                                                                                                      |
 |                                                                                                               |
