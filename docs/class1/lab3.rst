@@ -53,64 +53,41 @@ We will first create an Origin Pool that refers to the "Private Endpoint" site i
    Port                              8080
    ================================= =====
 
-+----------------------------------------------------------------------------------------------+
-| 8. In the **Health Checks**, click **Add Item**.                                             |
-|                                                                                              |
-| 9. From the resulting Health Check object dropdown select **Add Item**.                      |
-+----------------------------------------------------------------------------------------------+
-| |lab006|                                                                                     |
-|                                                                                              |
-| |lab007|                                                                                     |
-+----------------------------------------------------------------------------------------------+
+#. In the **Health Checks**, click **Add Item**.                                             
 
-+----------------------------------------------------------------------------------------------+
-| 10. In the resulting window enter **<namespace>-hc** in the **Name** field.                  |
-|                                                                                              |
-| 11. In the **Health Check Parameters** section click **View Configuration** under the        |
-|                                                                                              |
-|     **HTTP HealthCheck** section.                                                            |
-+----------------------------------------------------------------------------------------------+
-| |lab008|                                                                                     |
-+----------------------------------------------------------------------------------------------+
+#. From the resulting Health Check object dropdown select **Add Item**.                      
 
-+----------------------------------------------------------------------------------------------+
-| 12. In the resulting window note the value of the **Path** parameter.                        |
-|                                                                                              |
-| 13. Also note the value of the **Expected Status Codes** parameter.                          |
-|                                                                                              |
-| 14. Click **Back** to retain the default settings.                                           |
-|                                                                                              |
-| .. note::                                                                                    |
-|    *The default Health Check makes a request to the root path and expects a response code of*|
-|                                                                                              |
-|    *200. These values can be modified to meet the requirements of the application.*          |
-+----------------------------------------------------------------------------------------------+
-| |lab009|                                                                                     |
-+----------------------------------------------------------------------------------------------+
+#. In the resulting window enter **<namespace>-hc** in the **Name** field.  
 
-+----------------------------------------------------------------------------------------------+
-| 15. After returning to the prior window, note the values of **Timeout(s)**, **Interval(s),   |
-|                                                                                              |
-|     **Unhealthy Threshold**, and **Healthy Threshold**.                                      |
-|                                                                                              |
-| 16. Click **Continue**.                                                                      |
-|                                                                                              |
-| .. note::                                                                                    |
-|    *The Timeout, Interval, Unhealthy Threshold, and Healthy Threshold control how often*     |
-|                                                                                              |
-|    *health checks are sent and when an endpoint is marked healthy or unhealthy.  These*      |
-|                                                                                              |
-|    *values can be modified to meet the requirements of the application.*                     |
-+----------------------------------------------------------------------------------------------+
-| |lab010|                                                                                     |
-+----------------------------------------------------------------------------------------------+
+#. In the **Health Check Parameters** section click **View Configuration** under the **HTTP HealthCheck** section.                                                      
 
-+----------------------------------------------------------------------------------------------+
-| 17. After returning to the Origin Pool configuration window, click **Save and Exit**.        |
-+----------------------------------------------------------------------------------------------+
-| |lab011|                                                                                     |
-+----------------------------------------------------------------------------------------------+
+#. In the resulting window note the value of the **Path** parameter.   
 
+#. Also note the value of the **Expected Status Codes** parameter.       
+
+#. Click **Back** to retain the default settings.                                           
+
+.. note::                                                                                    
+
+*The default Health Check makes a request to the root path and expects a response code of*
+
+*200. These values can be modified to meet the requirements of the application.*          
+
+#. After returning to the prior window, note the values of **Timeout(s)**, **Interval(s),   
+
+**Unhealthy Threshold**, and **Healthy Threshold**.                                      
+
+#. Click **Continue**.                                                                      
+
+.. note::                                                                                    
+
+*The Timeout, Interval, Unhealthy Threshold, and Healthy Threshold control how often*     
+
+*health checks are sent and when an endpoint is marked healthy or unhealthy.  These*      
+
+*values can be modified to meet the requirements of the application.*                     
+
+#. After returning to the Origin Pool configuration window, click **Save and Exit**.        
 
 .. |app-context| image:: _static/app-context.png
 .. |origin_pools_menu| image:: _static/origin_pools_menu.png
