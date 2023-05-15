@@ -20,3 +20,4 @@ Welcome to the |classbold| for F5 Agility |year|
    :glob:
 
    class*/class*
+   archive*/archive*
