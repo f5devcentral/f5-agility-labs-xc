@@ -23,24 +23,35 @@ In this lab, we will learn the following:
 
 #. Select **Applications -> Virtual K8s -> <your cluster name> -> Dashboard**. You should see one pod per site.
 
-   .. image:: ../images/13validate_vK8s_dashboard.png
+   .. image:: ../images/13validate_vK8s_dashboard-updated.png
       :width: 600pt
 
 #. Select **Deployments**, then select the menu under **Actions** for your deployment, then **Edit**
 
-   .. image:: ../images/14edit_deployment.png
+   .. image:: ../images/14edit_deployment-updated.png
       :width: 600pt
 
 #. Ensure **Edit** mode is enabled, expand the **spec** section, and modify **replicas** from *1* to *3* and select **Save**
 
-   .. image:: ../images/15modify_deployment_spec.png
+   .. image:: ../images/15modify_deployment_spec-updated.png
       :width: 600pt
 
 **Exercise 2 - Review Scaled vK8s Deployment**
 
-#. It may take a few moments, but on the vK8s cluster dashboard, number of **Running Pods** should increase to 9. Upon refreshing the list, you may notice the number of **Sites with Error** gradually decrease as **Running Pods** increases.
+#. It may take a few moments, but on the vK8s cluster dashboard, number of **Running Pods** should increase to 9. Upon refreshing the list, you may notice the number of **Sites with Error** gradually decrease as **Running Pods** increases.  
 
-   .. image:: ../images/16review_scaled_deployment.png
+   .. image:: ../images/16review_scaled_deployment-updated.png
       :width: 600pt
 
-This concludes Module 2: Deploy and Scale Virtual K8s Workload. Thank you for taking the time to complete these exercises! Please continue on to module 3 for a look at how to publish your application for users to consume.
+#. The F5 XC platform can also provide more information on the specific pods directly from the web console.  Click on **Pods** in the top menu.
+
+
+   .. image:: ../images/17review_scaled_pods.png
+      :width: 600pt
+
+#. In this view, you can see the specific pod information such as resource consumption, site deployment and node location, message status.  (you may need to click the "Refresh" button)
+
+   .. image:: ../images/18review_pods_information.png
+      :width: 600pt
+
+This concludes Module 2: Deploy and Scale Virtual K8s Workload. Thank you for taking the time to complete these exercises! Please continue on to module 3 for a look at how to publish your application for users to consume.  

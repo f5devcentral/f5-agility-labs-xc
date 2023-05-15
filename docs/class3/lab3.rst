@@ -39,11 +39,11 @@ In this test we will replicate a more "human like" automation that fully renders
 
 8. Next we want to ensure we identify when the login was successful and to capture the secret word.
 
-9. Add a new **KEY CHECK** block. Click the Keychain + button twice.  Now in the first entry this will be to determine success we will look in the page source for the follow string.  Enter **Login Successful** in the indicated field.  For the second block we will use this for failure.  Change the type to **FAILURE** and enter **Incorrect Details** into the indicated field.
+9. Add a new **KEY CHECK** block. Click the Keychain + button twice.  Now in the first entry this will be to determine success we will look in the page source for the follow string. Click the Key + button once for each new Keychain and enter **Login Successful** in the indicated field.  For the second block we will use this for failure.  Change the type to **FAILURE** and enter **Incorrect Details** into the indicated field.
 
 |lab008|
 
-10. Add a new **PARSE** block.  Configure **Var/Cap Name** as "*SECRET*" and click "*IS CAPTURE*".  Then for the **Left String** we use **SECRET: !!!** and Right String we use **!!!**   This will capture and save the value to the log during an attack.  Ensure your configuration is *SAVED*.
+10. Add a new **PARSE** block.  Configure **Var/Cap Name** as "*SECRET*" and click "*IS CAPTURE*".  Then for the **Left String** we use **SECRET !!!** and Right String we use **!!!**   This will capture and save the value to the log during an attack.  Ensure your configuration is *SAVED*.
 
 |lab009|
 
@@ -63,7 +63,7 @@ In this test we will replicate a more "human like" automation that fully renders
 
 |lab012|
 
-16. Additionally we can go to the distributed cloud dashboard  outside of the RDP Jumphost.  Clickon *HTTP Load Balancers* then *Security Monitoring* and explore using the *Bot Defense* tabs.  One thing to note that this attack is seeing as Threat Intelligence, essentially this means that the telemetry information was able to determine if this was a bot based on how it acted and the signals received.
+16. Additionally we can go to the distributed cloud dashboard  outside of the RDP Jumphost.  Click on *Web App & API Protection* then *Dashboards* and then *Security Dashboard*. Scroll down and select <namespace>-lb under *Load Balancers* and explore using the *Bot Defense* tab at the top right of the dashboard.
 
 |lab013|
 

@@ -34,7 +34,7 @@ Task 2: F5 Distributed Cloud Console Login
 
 The following will guide you through the initial Lab environment access within the 
 F5 Distributed Cloud Console.  You should have received an email with an invitation to 
-access a F5 Distributed Cloud Tenant. The email will come from **no-reply@volterramails.io**.
+access a F5 Distributed Cloud Tenant. The email will come from **no-reply@cloud.f5.com**.
 
 The name of the F5 Distributed Cloud tenant that we will be using is **f5-xc-lab-sec**
 Additionally, the following are important elements of this lab and will be used throughout the 
@@ -105,17 +105,17 @@ After following the invitation email's to **Update Password**, proceed to the fi
 |                                                                                              |
 | 9. Click on the **Select Service** in the left-hand navigation. In the resulting fly out     |
 |                                                                                              |
-|    navigation, click **Load Balancers**.                                                     |
+|    navigation, click **Web App & API Protection**.                                           |
 |                                                                                              |
-| 10. In the **Load Balancers** configuration screen observe the URL. In the URI path, locate  |
+| 10. In the **Web App & API Protection** configuration screen observe the URL. In the URI     |
 |                                                                                              |
-|     the **<adjective-animal>** namespace that you have been assigned. It will be located in  |
+|     path, locate the **<adjective-animal>** namespace that you have been assigned. It will be|
 |                                                                                              |
-|     the portion of the URI path between */namespaces/* and */sites/* as shown in this        |
+|     located in the portion of the URI path between */namespaces/* and */overview/* as shown  |
 |                                                                                              |
-|     example **…/namespaces/<namespace>/sites/…**. Note the namespace as it will be used      |
+|     in this example **…/namespaces/<namespace>/overview/…**. Note the namespace as it will   |
 |                                                                                              |
-|     throughout the lab tasks that follow.                                                    |
+|     be used throughout the lab tasks that follow.                                            |
 |                                                                                              |
 | .. note::                                                                                    |
 |    *Administratively, there are other ways to find namespaces. Due to access and permission* |

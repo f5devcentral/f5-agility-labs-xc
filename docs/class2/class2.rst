@@ -1,4 +1,4 @@
-F5 Distributed Cloud  102 - WAF/WAAP Deeper Dive
+F5 Distributed Cloud - WAF/WAAP Deeper Dive
 ================================================
 
 Welcome
@@ -26,7 +26,6 @@ Lab & Tasks:
 
 .. toctree::
    :maxdepth: 2
-   :numbered:
    :caption: Labs:
    :glob:
    
