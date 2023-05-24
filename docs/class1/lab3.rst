@@ -124,21 +124,21 @@ Exercise 1: HTTP Load Balancer Configuration
 
 #. Start in F5 Distributed Cloud Console and switch to the "Web App & API Protection" context. [You should already be here from previous lab]
 
-#. Navigate the menu to go to "Manage"->"HTTP Load Balancers" and look for the Load Balancer named *global* that you previously created.
+#. Navigate the menu to go to "Manage"->"HTTP Load Balancers" and look for the Load Balancer named *<namespace>-lb* that you previously created.
 
-#. Click on the three dots "..." to the right of the name of your *global* Load Balancer and select the "Manage Configuration" option.
+#. Click on the three dots "..." to the right of the name of your *<namespace>-lb* Load Balancer and select the "Manage Configuration" option.
 
    .. image:: _static/screenshot-global-vip-actions-manage.png
 
-#. Click on "Edit Configuration" in the upper right of the screen (after your *global* Load Balancer is loaded).
+#. Click on "Edit Configuration" in the upper right of the screen (after your *<namespace>-lb* Load Balancer is loaded).
 
    .. image:: _static/screenshot-global-vip-edit-config.png
 
-#. Under "Origins" find your previous "public" Origin pool and click on the three dots "..." to the right under "Actions" and select "Edit"
+#. Under "Origins" find your previous "<namespace>-pool" Origin pool and click on the three dots "..." to the right under "Actions" and select "Edit"
 
    .. image:: _static/screenshot-global-vip-edit-config-pools.png
 
-#. Change the selection of "Origin Pool" to "private" from "public" and click "Apply"
+#. Change the selection of "Origin Pool" from "<namespace>-pool" to "private" and click "Apply"
 
    .. image:: _static/screenshot-global-vip-edit-config-pools-select.png
 
@@ -244,7 +244,7 @@ Exercise 4: Configure WAF Policy
    Variable                        Value
    =============================== =================================
    Web Application Firewall (WAF)  Enable
-   Select App Firewall             [NAMESPACE]/app-firewall
+   Select App Firewall             [NAMESPACE]/suited-guppy-appfw
    =============================== =================================
 
 #. Click "Save and Exit" to create the HTTP Load Balancer.
@@ -291,7 +291,9 @@ In this topology we are sending traffic to the AWS EIP that's attached to the Ap
 
 We then connect to the AWS resource via it's Private IP address.  
 
-Try adding the following to the URL "?cat%20/etc/passwd".
+<! Try adding the following to the URL "?cat%20/etc/passwd".  ###this request hung without providing a blocking page>
+
+Try adding the following to the URL "/cart?search=aaa’><script>prompt(‘Please+enter+your+password’);</script>"
 
 You should see a block page.  This is similar behavior to what we saw in the previous lab,
 but in this case the enforcement of the WAF policy is occurring on the AppMesh node
