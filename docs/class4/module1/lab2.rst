@@ -26,10 +26,10 @@ If you are not already logged into the console, please do so now by opening the 
 
 https://f5-xc-lab-mcn.console.ves.volterra.io/
 
-From the **Select service** menu, click on **Multi-Cloud Network Connect** and then click on **Site List,**
+From the **Select service** menu, click on **Multi-Cloud Network Connect** and then click on **Sites,**
 
 Your XC Node should have registered successfully and will appear green with a Health Score of 100. You may need to click **Refresh** in the top right corner
-if you do not see your animal name. In this example I was assigned **rested-tiger**.
+if you do not see your animal name. In this example I was assigned and filtered for **busy-goblin**.
 
 |
 
@@ -46,7 +46,7 @@ From this Dashboard you can note the current **Site Admin State, Provider, SW ve
 **Please DO NOT click "Upgrade" on any of the Sites!**
 
 
-Instead, **Click** on the three dots under the **Actions** column at the far right of the screen of **"your animal"**  Site and click on **Manage Configuration**. In this screenshot I was **rested-tiger**. 
+Instead, **Click** on the three dots under the **Actions** column at the far right of the screen of **"your animal"**  Site and click on **Manage Configuration**. In this screenshot I was **busy-goblin**. 
 
 |
 
@@ -102,7 +102,7 @@ This will load the API specification for a Customer Edge Node. Review briefly an
 |
 
 
-In the **Site List** screen, click on your Customer Edge Node **animal name**.  
+In the **Site** screen, click on your Customer Edge Node **animal name**.  (It should have a green status symbol)
 
 The default landing is a Dashboard giving you a detailed summary of the Customer Edge Node.  **Briefly** explore the extensive menus and analytics at the top of the screen.
 
@@ -145,7 +145,7 @@ Global Virtual Network
 
 To connect two or more Distributed Cloud node environments together across the Distributed Cloud network we will need to connect the sites through a Global Virtual Network.  
 
-Confirm you are still in the **Multi-Cloud Network Connect** Console under **Site List**. If not, click on the **Select Service** in the left-hand navigation and click on **Multi-Cloud Network Connect**.
+Confirm you are still in the **Multi-Cloud Network Connect** Console under **Sites**. If not, click on the **Select Service** in the left-hand navigation and click on **Multi-Cloud Network Connect**.
 
 On the left side menu, navigate to  **Manage >> Networking >> Virtual Networks**. 
 
@@ -268,7 +268,7 @@ From your UDF environment browser tab,  click on **Access >> Web Shell** on the 
 
 Type **ping 10.0.3.253** and hit **Enter**. You **WILL NOT** get a response. 
 
-Back in the XC Console, navigate to **Multi-Cloud Network Connect >> Sites >> Site List** and find your **"animal-name"**
+Back in the XC Console, navigate to **Multi-Cloud Network Connect >> Sites** and find your **"animal-name"**
 Click the **3 buttons** under the **Action Menu** under **"your animal name"** and select **Manage Configuration**. 
 
 In the top right click **Edit Configuration**. 
@@ -310,7 +310,7 @@ Check back on your web shell tab with the ping going. Success!!
 .. important:: If you want to tear down this connectivity it is as easy as removing the label. 
 
 
-In XC Console, navigate to **Multi-Cloud Network Connect** >> **Sites** click on **Site List**, click directly on your **"animal-name"** and finally click on the **Tools** menu on the top, far right. 
+In XC Console, navigate to **Multi-Cloud Network Connect** >> **Sites** and click directly on your **"animal-name"** and finally click on the **Tools** menu on the top, far right. 
 
 .. note:: If you do not see the Tools menu there should be a right chevron ">" that will allow you to access additional menu items.
 
@@ -467,7 +467,7 @@ Click **Apply** and **Save and Exit**.
 
 Summary
 ---------------------------------
-You have now created the firewall policy necessary to secure these two networks. Outside of the lab envirnoment you would now add this policy to the fleet by managing your fleet and adding an Enhanced Firewall policy.
+You have now created the firewall policy necessary to secure these two networks. Outside of the lab environment you would now add this policy to the fleet by managing your fleet and adding an Enhanced Firewall policy.
 
 |
 

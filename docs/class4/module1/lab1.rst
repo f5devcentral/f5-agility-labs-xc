@@ -232,8 +232,8 @@ Set the following parameters and leave everything else as default:
 Variable                        Value
 ==============================  =====
 Token                           Insert the Site Token UID you collected earlier
-Cluster Name                    Insert your unique namespace <verb, animal>
-Hostname                        Insert your unique namespace <verb, animal> 
+Cluster Name                    Insert your unique namespace <verb-animal>
+Hostname                        Insert your unique namespace <verb-animal> 
 Latitude                        33.812
 Longitude                       -117.91
 ==============================  =====
@@ -341,7 +341,7 @@ Once the registration completes, you can see the cluster in the “Other Registr
 |
 
 The Customer Edge Node Admin portal will also reflect some changes in its status, although the node still requires some additional configuration.
-From the menu on the left click on **Site List** and observe your Nodes (animal name). Hint: You may have to hit **Refresh**  in the upper right corner. 
+From the menu on the left click on **Sites** and observe your Nodes (animal-name). Hint: You may have to hit **Refresh**  in the upper right corner. 
 
 |
 
