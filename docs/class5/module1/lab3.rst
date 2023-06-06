@@ -30,7 +30,7 @@ In this lab, we will learn the following:
 
 #. If your browser prompts you for a location to download the file, select a directory you prefer and click **Save**.
 
-#. Click the config kubeconfig is downloaded, and follow the Kubernetes documentation to configure your local kubctl tool. 
+#. Click 'Kubeconfig.' The kubeconfig file is downloaded. Follow the Kubernetes documentation to configure your local kubctl tool. 
 
     `Organizing Cluster Access Using kubeconfig Files <https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/>`_
 
