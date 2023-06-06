@@ -55,7 +55,7 @@ In this test we will replicate a more "human like" automation that fully renders
 
 13. Swith to the *RUNNER* menu.  Choose *NEW* and click on the entry to edit it.
 
-14. Click *SELECT CFG* and choose the configuration we just created *Human Credential Stuffing*, click *SELECT LIST* and choose *LAB2* and lastly hit *START* and watch the attack begin. Leave the number of bots set to 1 as multiple browser may make the system slow.  If you need to rerun the test you need to reset the start count to 1 (Used if you have a very long credential list)
+14. Click *SELECT CFG* and choose the configuration we just created *Human Credential Stuffing*, click *SELECT LIST* and choose *Lab1-Combolist.txt* and lastly hit *START* and watch the attack begin. Leave the number of bots set to 1 as multiple browser may make the system slow.  If you need to rerun the test you need to reset the start count to 1 (Used if you have a very long credential list)
 
 |lab011|
 
