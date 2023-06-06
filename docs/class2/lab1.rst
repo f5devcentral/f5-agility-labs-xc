@@ -393,7 +393,7 @@ review the generated event data to make additional configuration changes.
 +----------------------------------------------------------------------------------------------+
 | 18. From the **Security Dashboard** view, using the horizontal navigation, click **Security**|
 |                                                                                              |
-|     **Events**.                                                                              |
+|     **Analytics**.                                                                           |
 +----------------------------------------------------------------------------------------------+
 | |lab036|                                                                                     |
 +----------------------------------------------------------------------------------------------+
@@ -420,9 +420,9 @@ review the generated event data to make additional configuration changes.
 |                                                                                              |
 |     actions taken during the security event.                                                 |
 |                                                                                              |
-| 22. Next, click on the **Add Filter** link just under the **Security Events** title near the |
+| 22. Next, click on the **Add Filter** link just under the **Security Analytics** title near  |
 |                                                                                              |
-|     top of the **Security Events** window.                                                   |
+|     the top of the **Security Analytics** window.                                            |
 +----------------------------------------------------------------------------------------------+
 | |lab039|                                                                                     |
 +----------------------------------------------------------------------------------------------+
