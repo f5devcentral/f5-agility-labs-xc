@@ -29,7 +29,7 @@ it  makes curl like requests.
 
 |lab004|
 
-6. Add a new **PARSE** block. Configure **Var/Cap Name** as "*CSRF*".  
+6. Add a new **PARSE** block. Configure **Var/Cap Name** as "*CSRF*" **CASE SENSITIVE**.  
 **!!! For this step an issue has been identified copy & pasting these values from the lab document via RDP. They seem to lose escape characters. Ensure you find and copy them from the LOG window as seen in the previous step!!! **
 then for the **Left String** we use **<input id="csrf_token" name="csrf_token" type="hidden" value="** and Right String we use **">** Check **ENC. OUTPUT**. This will capture the token between the left and right strings and store it in a variable named CSRF for future use.
 
@@ -51,7 +51,7 @@ then for the **Left String** we use **<input id="csrf_token" name="csrf_token" t
 
 |lab008|
 
-12. Swith to the *RUNNER* menu.  Choose *NEW* and click on the entry to edit it.
+12. Switch to the *RUNNER* menu.  Choose *NEW* and click on the entry to edit it.
 
 |lab009|
 
