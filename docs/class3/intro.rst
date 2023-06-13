@@ -164,6 +164,7 @@ only on the Jumphost.
 | 3. Returning to the UDF Course screen in your browser and the **Deployment** tab and click   |
 |                                                                                              |
 |    on the **Access** link. From the resulting dropdown, click on the resolution you prefer.  |
+|    If you don't get a resolution selection, just accept the default.                         |
 +----------------------------------------------------------------------------------------------+
 | |intro012|                                                                                   |
 +----------------------------------------------------------------------------------------------+
