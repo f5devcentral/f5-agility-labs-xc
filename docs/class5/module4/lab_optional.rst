@@ -35,9 +35,9 @@ In this lab, we will learn perform the following:
       `kubectl describe pod <podname>`
    
    *View deployment and service*
-      `kubectl get deployment agility`
+      `kubectl get deployment <user>-workload`
    
-      `kubectl get svc agility`
+      `kubectl get svc <user>-workload`
 
    *View all resources in your namespace*
       `kubectl get all`
@@ -46,13 +46,13 @@ In this lab, we will learn perform the following:
       `kubectl get pods <podname> -o yaml`
  
    *View output of the deployment in yaml format*
-      `kubectl get deployment agility -o yaml`
+      `kubectl get deployment <user>-workload -o yaml`
 
    *View output of the service in yaml format*
-      `kubectl get svc agility -o yaml`
+      `kubectl get svc <user>-workload -o yaml`
    
    *Save the output of the deployment in yaml format*
-      `kubectl get deployment -o yaml > agility.yaml`
+      `kubectl get deployment <username>-workload -o yaml > agility.yaml`
 
    *View the saved yaml deployment*
       `find the file in the current directory:
