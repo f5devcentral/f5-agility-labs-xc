@@ -60,7 +60,7 @@ You can also select it from the left drop-down menu.
    ================================= =====
    Variable                          Value	
    ================================= =====
-   DNS Name:                         demo-app.amer.myedgedemo.com
+   DNS Name:                         appedge.one
    Enable TLS for Origin Servers     No TLS
    ================================= =====
    
@@ -74,7 +74,7 @@ You can also select it from the left drop-down menu.
    Variable                          Value	
    ================================= =====
    Type of Origin Server:            Public DNS Name of Origin Server
-   DNS Name                          demo-app.amer.myedgedemo.com
+   DNS Name                          appedge.one
    ================================= =====
    
       .. image:: _static/lab6-010.PNG
@@ -171,7 +171,7 @@ You can also select it from the left drop-down menu.
 
      .. image:: _static/lab6-028.PNG
      
-#. You will now be returned to the main Distributed configuration. The final step is to change the 'Default Chace TTL' value from the origin server for demonstration purposes. Select 'Configure' under the 'Cache Options'.
+#. You will now be returned to the main Distributed configuration. The final step is to change the 'Default Cache TTL' value from the origin server for demonstration purposes. Select 'Configure' under the 'Cache Options'.
 
      .. image:: _static/lab6-029.PNG
 
