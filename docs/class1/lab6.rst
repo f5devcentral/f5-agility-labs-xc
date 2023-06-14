@@ -64,7 +64,7 @@ You can also select it from the left drop-down menu.
    Enable TLS for Origin Servers     No TLS
    ================================= =====
    
-      .. image:: _static/lab6-008.PNG
+      .. image:: _static/lab6-008b.PNG
       
 #. Select 'Add Item' under the 'List of Origin Servers'. 
 
@@ -77,7 +77,7 @@ You can also select it from the left drop-down menu.
    DNS Name                          appedge.one
    ================================= =====
    
-      .. image:: _static/lab6-010.PNG
+      .. image:: _static/lab6-010b.PNG
       
 #. Select 'Apply' > 'Apply' > 'Save and Exit'.
 
