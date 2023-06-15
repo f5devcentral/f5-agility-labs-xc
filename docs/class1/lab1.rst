@@ -341,7 +341,7 @@ Monitoring dashboard, and gather security event details.
 +---------------------------------------------------------------------------------------------------------------+
 
 +---------------------------------------------------------------------------------------------------------------+
-| 5. From the **Dashboard** view, using the horizontal navigation, click **Requests**.                   |
+| 5. From the **Dashboard** view, using the horizontal navigation, click **Requests**.                          |
 |                                                                                                               |
 | 6. Note the **Chart** shows a graphical representation of all of the response codes for the selected time     |
 |                                                                                                               |
@@ -360,16 +360,16 @@ Monitoring dashboard, and gather security event details.
 |                                                                                                               |
 | 8. Expand your latest security event as shown.                                                                |
 |                                                                                                               |
-| 9. Note the summary detail provided in the **Information** link.  The **req_id** which is synonymous with |
+| 9. Note the summary detail provided in the **Information** link.  The **req_id** which is synonymous with     |
 |                                                                                                               |
-|    **Support ID** (filterable) from the block page.                                            |
+|    **Support ID** (filterable) from the block page.                                                           |
 |                                                                                                               |
 | 10. Scroll to the bottom of the information screen to see specific signatures detected and actions taken      |
 |                                                                                                               |
 |     during the security event.                                                                                |
 |                                                                                                               |
 | .. note::                                                                                                     |
-|    *Note that Requests have additional detail in JSON format*                        |
+|    *Note that Requests have additional detail in JSON format*                                                 |
 +---------------------------------------------------------------------------------------------------------------+
 | |lab039|                                                                                                      |
 |                                                                                                               |
