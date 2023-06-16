@@ -143,9 +143,9 @@ are allowed free access.
 +----------------------------------------------------------------------------------------------+
 
 .. |lab001| image:: _static/lab7-001.png
-   :width: 800px
+   :width: 400px
 .. |lab002| image:: _static/lab7-002.png
-   :width: 800px
+   :width: 300px
 .. |lab003| image:: _static/lab7-003.png
    :width: 800px
 .. |lab004| image:: _static/lab7-004.png
