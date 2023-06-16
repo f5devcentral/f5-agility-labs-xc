@@ -474,5 +474,7 @@ previously built Load Balancer object delivering the targeted application/API.
    :width: 800px
 .. |lab036| image:: _static/lab6-036.png
    :width: 800px
+.. |lab037| image:: _static/lab6-037.png
+   :width: 800px
 .. |labend| image:: _static/labend.png
    :width: 800px
