@@ -53,18 +53,6 @@ Leverage App Connect for secure site to site connectivity regardless of IP overl
 Multi-Cloud App Connect
 ----------------------------
 
-From the **Select service** menu, click on **Multi-Cloud App Connect** and then click on **App Site List**.
-
-Notice **your animal name** CE Node is available for App Connect configurations but shows a color status as Grey because of a Health Score of "Unused". We will now get an App Connect config going and start using the CE as a proxy!
-
-|
-
-.. image:: ../images/appcsites.png
-
-|
-
-What does this really mean? 
-
 With **Network Connect** you connected routed networks with your CE Node which acted as a Software-Defined Router. 
 
 Now with **App Connect** you will be configuring our Regional Edges and your CE Nodes as Sofware-Defined-Proxies to provide connectivity between workloads. The CE's can do both functions simultaneously!!  
