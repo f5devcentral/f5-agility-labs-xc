@@ -310,14 +310,15 @@ You should be back to the AWS page now.
 
   |
 
+
 Dashboard and Analytics
 -------------------------
 
 Now that we've sent several requests to our shiny new **Globally Available Frontend**, we can take a look at the traffic dashboards. 
 
-In **XC Console** >> **Multi-Cloud App Connect** >> **Virtual Hosts** click on **HTTP Load Balancers**. 
+In **XC Console** >> **Multi-Cloud App Connect** >> **Overview** click on **Performance**. 
 
-Click directly on your **[animal-name-acme-frontend]**.
+Scroll all the way to the bottom and under **Load Balancers**, click directly on your **[animal-name-acme-frontend]**.
 
 |
 
