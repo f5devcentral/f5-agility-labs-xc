@@ -147,7 +147,7 @@ In your production environment you will need to create your own Site Token to re
 
 |
 
-Copy the UID of the the **student-ce-site** token and paste if somewhere you can reference later (word, notepad etc).
+Copy the UID of the the **student-ce-site** token and paste it somewhere you can reference later (word, notepad etc).
 
 |
 
