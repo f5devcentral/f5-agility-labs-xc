@@ -303,7 +303,7 @@ If you search your HTTP Load Balancers for your **animal-name**, you should now 
 Testing AWS to Azure LB
 ------------------------
 
-You now have a load balancer running in AWS on the inside interface of your AWS XC Node. The inside interface IP of the AWS XC Node is **10.0.5.176**. 
+You now have a load balancer running in AWS on the inside interface of your AWS XC Node. The inside interface IP of the AWS XC Node is **10.0.5.101**. 
 
 We will now use the In-Container Diag tool to test connectivity.  
 
@@ -311,7 +311,7 @@ If you don't already have a tab open to the Diag tool, in your browser go to: ht
 
 Click on **Run Command** and paste in the following:: 
 
-    curl  http://[animal-name]-aws-to-azure-lb.lab-mcn.f5demos.com --resolve [animal-name]-aws-to-azure-lb.lab-mcn.f5demos.com:80:10.0.5.176
+    curl  http://[animal-name]-aws-to-azure-lb.lab-mcn.f5demos.com --resolve [animal-name]-aws-to-azure-lb.lab-mcn.f5demos.com:80:10.0.5.101
 
 |
 
@@ -324,7 +324,7 @@ In just a few moments, you now have full proxy connectivity between IP Overlappe
 
 Let's try that command again but with the shorthand version by using **\-\-head**::
 
-    curl --head  http://[animal-name]-aws-to-azure-lb.lab-mcn.f5demos.com --resolve [animal-name]-aws-to-azure-lb.lab-mcn.f5demos.com:80:10.0.5.176
+    curl --head  http://[animal-name]-aws-to-azure-lb.lab-mcn.f5demos.com --resolve [animal-name]-aws-to-azure-lb.lab-mcn.f5demos.com:80:10.0.5.101
 
 |
 
@@ -379,7 +379,7 @@ Variable                                Value
 Name                                    allow-get
 Action                                  Allow
 Clients                                 Any Client
-Servers                                 **Add Item** >> **Exact Value** >> [animal-name]-aws-to-azure-lb.lab-mcn.f5demos.com
+Servers                                 Domain Matcher >> **Exact Value** >> [animal-name]-aws-to-azure-lb.lab-mcn.f5demos.com
 HTTP Method/Method List                 Get
 HTTP Path                               **Configure** >> **Add Item** add **/** under **Prefix Values**. 
 ==================================      ==============
@@ -443,19 +443,19 @@ If you don't already have a tab open to the Diag tool, in your browser go to: ht
 
 Try your curl command again **without** the **--head** flag.:: 
 
-    curl http://[animal-name]-aws-to-azure-lb.lab-mcn.f5demos.com --resolve [animal-name]-aws-to-azure-lb.lab-mcn.f5demos.com:80:10.0.5.176
+    curl http://[animal-name]-aws-to-azure-lb.lab-mcn.f5demos.com --resolve [animal-name]-aws-to-azure-lb.lab-mcn.f5demos.com:80:10.0.5.101
 
 
 |
 
-.. image:: ../images/allowget.png
+.. image:: ../images/success.png
 
 
 |
 
 Now run the command again but insert the **\-\-head** command.::
 
-    curl --head  http://[animal-name]-aws-to-azure-lb.lab-mcn.f5demos.com --resolve [animal-name]-aws-to-azure-lb.lab-mcn.f5demos.com:80:10.0.5.176
+    curl --head  http://[animal-name]-aws-to-azure-lb.lab-mcn.f5demos.com --resolve [animal-name]-aws-to-azure-lb.lab-mcn.f5demos.com:80:10.0.5.101
 
 |
 
@@ -471,7 +471,7 @@ You have now successfully configured an application layer **Service Policy** tha
 Review Service Policy Logs
 ---------------------------
 
-Back in XC Console, from the **Side menu** under **Virtual Hosts** click on **HTTP Load Balancers** and then click on your **[animal-name]-aws-to-azure-lb**.
+Back in XC Console, from the **Side menu** under **Overview**, click on **Applications** and scroll down and click on your **[animal-name]-aws-to-azure-lb** under **Load Balancers**.
 
 
 |
@@ -488,7 +488,7 @@ Take a moment to observe some of the analytics and then click on the **Requests*
 
 |
 
-Here you will find the full request log. You will see the request path as well as the response code given back to the client. 
+Here you will find the full request log. You will see the request path and if you click the little settings gear on the far right, you can add the Response Code given back to the client and several other metrics. 
 You may have to click refresh in the upper right or change your time frame if you took a break or don't see any data. 
 
 |

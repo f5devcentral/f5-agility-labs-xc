@@ -161,9 +161,9 @@ You should see this:
 
 So, how do we know for certain which workload was actually answering and this wasn't all smoke and mirrors?
 
-Back in XC Console, from the **Side menu** under **Virtual Hosts**, click on **HTTP Load Balancers**. 
+Back in XC Console, from the **Side menu** under **Overview**, click on **Perfomance**. 
 
-Click on **Performance Monitoring** under your **[animal-name-acme-frontend]** and then click the **Requests** tab (top middle).
+Scroll all the way to the bottom and under **Load Balancers**, click directly on your **[animal-name-acme-frontend]** and then click the **Requests** tab (top middle).
 
 .. Note:: Remember to click refresh and adjust time-frame as necessary. 
 
@@ -241,7 +241,7 @@ Now that you've confirmed that the application is indeed vulnerable to these typ
 Applying WAF 
 ---------------
 
-Back in XC Console, from the **Side menu** under **Manage**, click on **Load Balancers**, **HTTP Load Balancers** >> Actions >> **Manage Configuration** for the **[animal-name]-acme-frontend**. 
+Back in XC Console, from the **Side menu** under **Manage**, click on **Load Balancers**, **HTTP Load Balancers** >> **Actions** >> **Manage Configuration** for the **[animal-name]-acme-frontend**. 
 
 Click **Edit Configuration** and scroll down to the **Web Application Firewall** section. In the dropdown choose **Enable**
 
@@ -302,9 +302,9 @@ Reviewing WAF Logs
 
 In this final section, we will review the WAF logs for the attacks we just tested.
 
-Back in XC Console, from the **Side menu** under **Virtual Hosts**, click on **HTTP Load Balancers**. 
+Back in XC Console, from the **Side menu** under **Overview**, click on **Applications**. 
 
-Click on **Security Monitoring** under your **[animal-name-acme-frontend]** and then click the **Security Events** tab (top middle).
+Scroll all the way to the bottom and under **Load Balancers**, click directly on your **[animal-name-acme-frontend]** and then click the **Security Analytics** tab (top middle).
 
 |
 
