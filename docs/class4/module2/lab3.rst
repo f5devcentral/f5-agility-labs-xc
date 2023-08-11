@@ -251,7 +251,7 @@ Under **TLS**, hit the dropdown and choose **Enable** and click **Save and Exit*
 
 **Check it out....**
 
-Go back to your browser tab that you had open to http://[animal-name]-frontend.lab-mcn.f5demos.com and hit **[Shift + Refresh]**.
+Go back to your browser tab that you had open to http://[animal-name]-acme-frontend.lab-mcn.f5demos.com and hit **[Shift + Refresh]**.
 
 |
 
