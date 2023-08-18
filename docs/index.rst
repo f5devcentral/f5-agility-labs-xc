@@ -21,3 +21,4 @@ Welcome to the |classbold| for F5 Agility |year|
 
    class*/class*
    archive*/archive*
+   2hour*/2hour*
