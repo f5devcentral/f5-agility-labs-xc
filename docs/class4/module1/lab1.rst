@@ -165,13 +165,14 @@ There are two approaches for setting up your Customer Edge deployment both will 
  
 In your browser, you should have a tab open to the UDF course. Under the F5 Distributed Cloud CE, click on **Access >> Console**
 
-This should redirect you to the CLI and prompt for authentication. Type in the default username/password:
-
 |
 
 .. image:: ../images/cli-01.png 
 
 |
+
+This should redirect you to the CLI and prompt for authentication. Type in the default username/password:
+
 ==============================  =====
 Variable                        Value
 ==============================  =====
