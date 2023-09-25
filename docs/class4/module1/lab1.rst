@@ -203,6 +203,7 @@ At the **>>>** type the word **configure** and then enter.
 |
 
 Use the following response values to complete the prompts:
+
 ================================  ====================================================
 Question                          Response Value
 ================================  ====================================================
