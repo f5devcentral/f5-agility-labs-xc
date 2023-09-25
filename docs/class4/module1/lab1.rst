@@ -158,6 +158,76 @@ Copy the UID of the the **student-ce-site** token and paste it somewhere you can
 **Setting up the Customer Edge**
 ----------------------------------
 
+There are two approaches for setting up your Customer Edge deployment both will be reviewed in the sections that follow.  Select the method designated by your lab team instructions
+
+**Option 1: CLI Site Setup**
+----------------------
+ 
+In your browser, you should have a tab open to the UDF course. Under the F5 Distributed Cloud CE, click on **Access >> Console**
+
+This should redirect you to the CLI and prompt for authentication. Type in the default username/password:
+
+|
+
+.. image:: ../images/cli-01.png 
+
+|
+==============================  =====
+Variable                        Value
+==============================  =====
+Default Username:                **admin**
+Default Password:                **Volterra123**
+==============================  =====
+
+|
+
+.. image:: ../images/cli-02.png 
+
+|
+
+Change the password as directed. Remember the new password should you need to log in again. 
+
+|
+
+.. image:: ../images/cli-03.png 
+
+|
+
+At the **>>>** type the word **configure** and then enter. 
+
+|
+
+.. image:: ../images/cli-04.png 
+
+|
+
+Use the following response values to complete the prompts:
+================================  ====================================================
+Question                          Response Value
+================================  ====================================================
+What is your token?               Insert the Site Token UID you collected earlier
+What is your site name?           Insert your unique namespace <verb-animal>
+What is your hostname?            Insert your unique namespace <verb-animal> 
+What is your latitude?            33.812
+What is your longitude?           -117.91
+What is your default fleet name?  Enter (This selects the default of **optional**)
+Select your certified hardware?   Enter (This selects the default of **kvm-voltmesh**)
+Select your primary outside NIC?  Enter (This selects the default of **eth0**)
+================================  ==================================================== 
+
+The response values will then be summarized. Confirm they are correct and type **y** for **yes**. If not, answer **n** and correct any values. 
+
+|
+
+.. image:: ../images/cli-05.png 
+
+|
+
+We will now go accept the Customer Edge registration in Distributed Cloud console. Proceed to **Registering the Customer Edge**.
+
+**Option 2: Site UI Site Setup**
+----------------------
+
 In your browser, you should have a tab open to the UDF course. Under the F5 Distributed Cloud CE, click on **Access >> Site UI**
 
 |
@@ -262,7 +332,7 @@ After you save the configuration, you will be taken back to the Dashboard, notic
 
 |
 
-We will now go accept the Customer Edge registration in Distributed Cloud console. 
+We will now go accept the Customer Edge registration in Distributed Cloud console. Proceed to **Registering the Customer Edge**.
 
 
 **Registering the Customer Edge**
