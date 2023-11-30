@@ -1,49 +1,157 @@
-Introduction to the Lab
-=======================
+Introduction: Accessing F5 Distributed Cloud Console
+====================================================
 
-**Narrative:**
+Welcome to this F5 Distributed Cloud Lab. The following tasks will guide you through the initial 
+access requirements for this multi-part lab.  Lab attendees should have received an invitation 
+(which requests you update your password for access) email to the lab environment. Please check 
+the email address used for course registration and its associated spam folders to see if the
+invitation email has been received.  If you have not received an email, please contact a member
+of the lab team.
+ 
+The F5 Distributed Cloud Console, where a majority of all lab tasks will be conducted, is a SaaS
+based control-plane for services which provides a GUI and API for managing network, security, and
+compute services. The F5 Distributed Cloud Console can manage "sites" in existing on-premises,
+private data centers and sites within AWS, Azure, and GCP public cloud environments.
 
-Congratulations! You are a Network Engineer at ACME Corp. 
+Task 1: Lab Environment
+~~~~~~~~~~~~~~~~~~~~~~~
 
++----------------------------------------------------------------------------------------------+
+| The image below represents an overview of the lab environment. F5 Distributed Cloud Services |
+|                                                                                              |
+| will be configured as a SaaS Edge delivery and security service tier to a publicly hosted web|
+|                                                                                              |
+| application. The key elements lab attendees will interact with are as follows:               |
+|                                                                                              |
+| * **F5 Distributed Cloud Console**                                                           |
+| * **F5 Distributed Cloud Global Network / Application Delivery Network (ADN)**               |
+| * **Publicly hosted application (Public Cloud)**                                             |
++----------------------------------------------------------------------------------------------+
+| |intro001|                                                                                   |
++----------------------------------------------------------------------------------------------+
 
-ACME has an Application Team that supports internally developed traditional and modern apps, vendor provided and SaaS applications. 
-They have started utilizing some public cloud (AWS) IaaS for several applications and have come to you with a new requirement that an on-prem backend server must be able to securely communicate
-with the AWS workloads over a secure connection. For lab simplicity, the backend server in the "Data Center" is a pretend security device in this exercise, and needs to scan the AWS workload on port 80. 
-It could just as easily be thought of as a API to API, container to container or frontend to backend. Other backends or frontends may be added in the future.  
+Task 2: F5 Distributed Cloud Console Login
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-As the Network Engineer, you are tasked with evaluating how to securely connect the Data Center network to the AWS network. 
-At first you consider the classic methods of deploying and managing your own IPSec solution but realize that this will be complex and costly.
+The following will guide you through the initial Lab environment access within the F5 Distributed
+Cloud Console.  You should have received an email with an invitation to access a F5 Distributed
+Cloud Tenant. The email will come from **no-reply@volterramails.io**.
 
-You recently saw a post on LinkedIn about a SaaS product that F5 has, claiming to solve multi-cloud network complexities. 
-Given your current predicament and industry knowledge of F5 being a leader for decades, you decide to check it out and end up in the chair you are sitting in today: Taking a first-hand look at how F5 makes Multi-Cloud Networking (MCN) simple and secure. 
+The name of the F5 Distributed Cloud tenant that we will be using for this lab is **f5-xc-lab-sec**
+Additionally, the following are key configuration elements for this lab and will be used
+throughout the lab tasks that follow.
 
-.. Note:: The requirements start out easy enough but will get progressively more "Real World" as the labs progress.
+* F5 Distributed Cloud Console: https://f5-xc-lab-sec.console.ves.volterra.io/
+* Delegated Domain: **lab-sec.f5demos.com**
 
-**Before Cloud Migration - "The Good Ol' Days"**
+After following the invitation email's instructions to **Update Password**, proceed to the first
+step below to access the F5 Distributed Cloud Lab Tenant. 
 
-.. image:: ./images/pre-migration.png
++----------------------------------------------------------------------------------------------+
+| 1. Please log into the F5 Distributed Cloud Lab Tenant with your user ID (email) & password. |
+|                                                                                              |
+|    https://f5-xc-lab-sec.console.ves.volterra.io/                                            |
+|                                                                                              |
+| 2. When you first login, accept the Lab tenant EULA. Click the check box and then click      |
+|                                                                                              |
+|    **Accept and Agree**.                                                                     |
+|                                                                                              |
+| 3. Select all work domain roles and click **Next** to see various configuration options.     |
+|                                                                                              |
+|    Roles can be changed any time later if desired.                                           |
+|                                                                                              |
+| 4. Click the **Advanced** skill level to expose more menu options and then click **Get**     |
+|                                                                                              |
+|    **Started** to begin. You can change this setting after logging in as well.               |
+|                                                                                              |
+| 5. Several **Guidance ToolTips** will appear, you can safely close these as they appear.     |
++----------------------------------------------------------------------------------------------+
+| |intro002|                                                                                   |
+|                                                                                              |
+| |intro003|                                                                                   |
+|                                                                                              |
+| |intro004|                                                                                   |
+|                                                                                              |
+| |intro005|                                                                                   |
++----------------------------------------------------------------------------------------------+
 
++----------------------------------------------------------------------------------------------+
+| 6. You can adjust your work domains and skill level (not required) by clicking on the        |
+|                                                                                              |
+|    **Account** icon in the top right of the screen and then clicking on **Account Settings**.|
+|                                                                                              |
+| 7. In the resulting window you can observe the **Work domains and skill level** section and  |
+|                                                                                              |
+|    other administrative functions.                                                           |
+|                                                                                              |
+| .. note::                                                                                    |
+|    *For the purposes of this lab, permissions have been restricted to lab operations.  As*   |
+|                                                                                              |
+|    *some menus will be locked and not visible.*                                              |
++----------------------------------------------------------------------------------------------+
+| |intro006|                                                                                   |
+|                                                                                              |
+| |intro007|                                                                                   |
++----------------------------------------------------------------------------------------------+
 
-**After Cloud Migration - "Current State"**
++----------------------------------------------------------------------------------------------+
+| 8. Namespaces, which provide an environment for isolating configured applications or         |
+|                                                                                              |
+|    enforcing role-based access controls, are leveraged within the F5 Distributed Cloud       |
+|                                                                                              |
+|    Console.  For the purposes of this lab, each lab attendee has been provided a unique      |
+|                                                                                              |
+|    **namespace** which you will be defaulted to (in terms of GUI navigation) for all tasks   |
+|                                                                                              |
+|    performed through the course of this lab.                                                 |
+|                                                                                              |
+| 9. Click on the **Select Service** in the left-hand navigation. In the resulting fly out     |
+|                                                                                              |
+|    navigation, click **Web App & API Protection**.                                           |
+|                                                                                              |
+| 10. In the **Web App & API Protection** configuration screen observe the URL. In the URI     |
+|                                                                                              |
+|     path, locate the **<adjective-animal>** namespace that you have been assigned. It will be|
+|                                                                                              |
+|     located in the portion of the URI path between */namespaces/* and */overview/* as shown  |
+|                                                                                              |
+|     in this example **…/namespaces/<namespace>/overview/…**. Note the namespace as it will   |
+|                                                                                              |
+|     be used throughout the lab tasks that follow.                                            |
+|                                                                                              |
+| .. note::                                                                                    |
+|    *Administratively, there are other ways to find namespaces. Due to access and permission* |
+|                                                                                              |
+|    *restrictions for this particular lab, those menus are not available.*                    |
++----------------------------------------------------------------------------------------------+
+| |intro008|                                                                                   |
+|                                                                                              |
+| |intro009|                                                                                   |
++----------------------------------------------------------------------------------------------+
 
-.. image:: ./images/post-migration.png
++----------------------------------------------------------------------------------------------+
+| **Beginning of Lab:**  You are now ready to begin the lab, Enjoy! Ask questions as needed.   |
++----------------------------------------------------------------------------------------------+
+| |labbgn|                                                                                     |
++----------------------------------------------------------------------------------------------+
 
-
-**Your job, should you choose to accept it, and avoid demotion to the help desk, is to figure out the best way for the backend workload to privately communicate with the frontend workload.**
-
-
-Lab Environment
----------------
-
-The Data Center environment is emulated by the F5 UDF lab framework and contains an Ubuntu Server and a Distributed Cloud (XC) Node that you will be configuring in Lab 1. 
-
-The AWS cloud environment contains a prebuilt XC Node and a workload hosting a web frontend.  **You will not have access to the AWS console.**
-
-The Azure cloud environment contains a prebuilt XC Node and a workload hosting a web frontend.  **You will not have access to the Azure console.**
-
-.. Important:: While we are keeping the labs intentionally simple today with just a single Data Center and 2 Cloud Services Providers (CSP's), F5 Distributed Cloud supports much more advanced use-cases. 
-
-.. toctree::
-   :maxdepth: 1
-   :glob:
-
+.. |intro001| image:: _static/intro-001.png
+   :width: 800px
+.. |intro002| image:: _static/intro-002.png
+   :width: 800px
+.. |intro003| image:: _static/intro-003.png
+   :width: 800px
+.. |intro004| image:: _static/intro-004.png
+   :width: 800px
+.. |intro005| image:: _static/intro-005.png
+   :width: 800px
+.. |intro006| image:: _static/intro-006.png
+   :width: 800px
+.. |intro007| image:: _static/intro-007.png
+   :width: 800px
+.. |intro008| image:: _static/intro-008.png
+   :width: 800px
+.. |intro009| image:: _static/intro-009.png
+   :width: 800px
+.. |labbgn| image:: _static/labbgn.png
+   :width: 800px
