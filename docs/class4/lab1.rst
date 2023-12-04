@@ -1,4 +1,4 @@
-Lab 1: Deploying and Managing F5 Distributed Cloud Web Application Firewall Configuration
+Lab 1: API Discovery
 =========================================================================================
 
 .. warning :: If you are using multiple labs in one course, understand that some steps below
@@ -119,490 +119,218 @@ steps will define an application, register its DNS and assign a target as an ori
 | |lab010|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
-Task 2: Configure WAF Policy on the Load Balancer
+Task 2: Swagger File Import & Version Control
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The following steps will guide you through adding a Web Application Firewall (WAF) Policy.
-These steps will demonstrate various aspects of the configuration.
+In this task's series of steps you will import swagger files into the F5 Distributed Cloud tenant and explore 
+version control features.
 
 +----------------------------------------------------------------------------------------------+
-| 1. Continuing in the **HTTP Load Balancer** section, on the left-hand menu click on the      |
+| 1. For the next series of steps, to download the JSON/OpenAPI spec file **app-api-v1.json**  |
 |                                                                                              |
-|    **Web Application Firewall (WAF)** drop down and select **Enable**.                       |
+|    **app-api-v1.json** to your local desktop or workspace.                                   |
+|                                                                                              |
+|    Link::                                                                                    |
+|      http://demo-app.amer.myedgedemo.com/lab/app-api-v1.json                                 |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 2. In the left top click the F5 ball and navigate to the **Web App & API Protection** Tile.  |
++----------------------------------------------------------------------------------------------+
+| |lab001|                                                                                     |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 3. In the left-hand navigation, click on **Files** under the **Manage** section.             |
+|                                                                                              |
+| 4. Click **Add Swagger File** in the main window area as shown. Alternatively, the link near |
+|                                                                                              |
+|    the top of the window can also be used.                                                   |
++----------------------------------------------------------------------------------------------+
+| |lab002|                                                                                     |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 5. In the resulting **New Swagger File** window, input **app-api** for the **Name** under    |
+|                                                                                              |
+|    the **Metadata** section.                                                                 |
+|                                                                                              |
+| 6. In the **Upload Swagger File** section, click the **Upload File** button. Select the file |
+|                                                                                              |
+|    downloaded in Step 1 above and click **Open**.                                            |
++----------------------------------------------------------------------------------------------+
+| |lab003|                                                                                     |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 7. Observe that the file **app-api-v1.json**  is present and the click **Save and Exit**     |
++----------------------------------------------------------------------------------------------+
+| |lab003a|                                                                                    |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 8. In the resulting **Swagger Files** window, you will see the upload file with additional   |
+|                                                                                              |
+|    metadata.                                                                                 |
+|                                                                                              |
+| .. note::                                                                                    |
+|    *You will also see a dialogue box, in the bottom left of your screen indicating the file* |
+|                                                                                              |
+|    *has been successfully added.*                                                            |
++----------------------------------------------------------------------------------------------+
+| |lab004|                                                                                     |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 9. For the next step, use the following link, to download the JSON/OpenAPI spec file         |
+|                                                                                              |
+|    **app-api-v2.json** to your local desktop or workspace.                                   |
+|                                                                                              |
+|    Link::                                                                                    |
+|      http://demo-app.amer.myedgedemo.com/lab/app-api-v2.json                                 |
+|                                                                                              |
+| .. note::                                                                                    |
+|    *This is a modified version (v2) of the JSON/OpenAPI spec file you previously downloaded* |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 10. Returning to the **Swagger Files** window you were at previously, click the three dots … |
+|                                                                                              |
+|     in the **Action** column.  In the resulting selection menu, select **Update New Version**|
++----------------------------------------------------------------------------------------------+
+| |lab005|                                                                                     |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 11. In the **Upload Swagger File** section, click the **Upload File** button. Select the file|
+|                                                                                              |
+|     downloaded in Step 9 above and click **Open**.                                           |
+|                                                                                              |
+| 12. Observe that the file **app-api-v1.json**  is present and the click **Save and Exit**    |
++----------------------------------------------------------------------------------------------+
+| |lab006|                                                                                     |
+|                                                                                              |
+| |lab006a|                                                                                    |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 13. In the resulting **Swagger Files** window, you will see the upload file with additional  |
+|                                                                                              |
+|     metadata seen previously.                                                                |
+|                                                                                              |
+| 14. Note now that there are **2** versions available of the **app-api** file.  Click the     |
+|                                                                                              |
+|     **2** in the **Versions** column.                                                        |
++----------------------------------------------------------------------------------------------+
+| |lab007|                                                                                     |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 15. In the resulting window, observe there are now two versions of the **app-api** spec file.|
+|                                                                                              |
+| .. note::                                                                                    |
+|    *This is an API File update process which can also be performed through the F5*           |
+|                                                                                              |
+|    *Distributed Cloud API framework.                                                         |
+|                                                                                              |
+| 16. Click **X** in the top-right corner and proceed to the next task.                        |
++----------------------------------------------------------------------------------------------+
+| |lab008|                                                                                     |
++----------------------------------------------------------------------------------------------+
+
+Task 2: Swagger Definition
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+In this task's series of steps you will establish the Swagger Definition which serves as an object
+
+pointer to imported swagger files you just uploaded.
+
++----------------------------------------------------------------------------------------------+
+| 1. In the left-hand navigation of the **Web App & API Protection** service, click on **API** |
+|                                                                                              |
+|    **Management** under the **Manage** section and then click **API Definition**.            |
++----------------------------------------------------------------------------------------------+
+| |lab009|                                                                                     |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 2. In the resulting **API Definition** window, click **Add API Definition** in the main      |
+|                                                                                              |
+|    window area as shown.                                                                     |
++----------------------------------------------------------------------------------------------+
+| |lab010|                                                                                     |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 3. In the resulting **New API Definition** window, input **app-api-spec** for the **Name**   |
+|                                                                                              |
+|    under the **Metadata** section.                                                           |
+|                                                                                              |
+| 4. In the **Swagger Specs** section, click the **Arrow** in the **Select Item** box in the   |
+|                                                                                              |
+|    **Swagger Specs** column.                                                                 |
+|                                                                                              |
+| 5. Select the version 2 of the previously uploaded swagger spec file. It will be in the      |
+|                                                                                              |
+|    format **<namespace>/app-api/v2-<current-date>**.                                         |
+|                                                                                              |
+| 6. Once selected, click **Save and Exit** in the bottom-right corner.                        |
 +----------------------------------------------------------------------------------------------+
 | |lab011|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
+Task 3: Enabling API Inventory and Dicovery
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+In this task's series of steps you will enable the API Inventory and Dicovery feature on the 
+previously built Load Balancer object delivering the targeted application/API.
+
 +----------------------------------------------------------------------------------------------+
-| 2. In the resulting **Enable** field drop down, select **Add Item**.                         |
+| 1. In the left-hand navigation of the **Web App & API Protection** service, click on **Load**|
+|                                                                                              |
+|    **Balancers** under the **Manage** section.                                               |
 +----------------------------------------------------------------------------------------------+
 | |lab012|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
-.. note::
-   *The "shared/base-appfw" policy is in the "shared namespace" which can be applied to* 
-   *multiple Load Balancer configurations across namespaces, reducing policy sprawl.* 
-
 +----------------------------------------------------------------------------------------------+
-| 3. In the new window's **Metadata** section enter **<namespace>-appfw** for the              |
-|    **Name**.                                                                                 |
+| 2. In the resulting **Load Balancers** window, click on the three dots **...** in the        |
 |                                                                                              |
-| 4. Under **Enforcement Mode**, change the mode to **Blocking**.                              |
-|                                                                                              |
-| 5. In the **Detection Settings** section, click the **Security Policy** dropdown.            |
-|                                                                                              |
-| 6. Select **Custom** from the dropdown menu. Additional configurations will become available.|
+|    **Action** column, and the select **Manage Configuration**.                               |
 +----------------------------------------------------------------------------------------------+
 | |lab013|                                                                                     |
-|                                                                                              |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 3. Click **Edit Configuration** in the top-right corner.                                     |
++----------------------------------------------------------------------------------------------+
 | |lab014|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 7. In the expanded configuration, in the **Attack Signatures** section use the dropdown for  |
+| 4. Click **API Protection** in the left-hand navigation.                                     |
 |                                                                                              |
-|    **Signature Selection by Accuracy** and select **High, Medium, and Low**.                 |
+| 5. In the **API Protection** section, click the drop-down arrow next to **API Definition**   |
+|                                                                                              |
+|    and select **Enable**.                                                                    |
 +----------------------------------------------------------------------------------------------+
 | |lab015|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 8. Leaving all other values as default, scroll to the bottom and click **Continue**.         |
+| 6. In the updated **Use API Definition** section, click the drop-down arrow and select the   |
+|                                                                                              |
+| 7. previously created API Definition **<namespace>/app-api-spec**.                           |
 +----------------------------------------------------------------------------------------------+
 | |lab016|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
-.. note::
-   *Automatic Attack Signatures Tuning is enabled which engages an automatic False Positive*
-   *suppression engine.  Any suppressed events are logged within Security Events.*
-
-.. note::
-   *Attack Signatures Staging is disabled.  This can be enabled should an Application*
-   *Firewall with new or updated attack signatures be staged (monitored) for a period of*
-   *prior to enforcement (blocking).*
-
 +----------------------------------------------------------------------------------------------+
-| 9. Returning to the **HTTP Load Balancer** window, scroll to (or click in the left-hand      |
+| 8. In the **API Protection** section, click the drop-down arrow next to **API Discovery**    |
 |                                                                                              |
-|    navigation) to the **Other Settings** section and note the **VIP Advertisement** setting. |
-|                                                                                              |
-| 10. Click **Save and Exit** at the bottom of the **HTTP Load Balancer** configuration screen.|
+|    and select **Enable**.                                                                    |
 +----------------------------------------------------------------------------------------------+
 | |lab017|                                                                                     |
-+----------------------------------------------------------------------------------------------+
-
-.. note::
-   *The above selection controls how/where the application is advertised. The "Internet"*
-   *setting means that this application will be advertised globally from the F5*
-   *Distributed Cloud Global Network utilizing Anycast.*
-
-+----------------------------------------------------------------------------------------------+
-| 10. In the **HTTP Load Balancers** window, note the application hostname under the           |
-|                                                                                              |
-|     **Domains** column *(This was done in Task1: Step 4)*.                                   |
-|                                                                                              |
-| 11. Click the **Action** dots, and then in the subsequent menu **Manage Configuration**.     |
-+----------------------------------------------------------------------------------------------+
-| |lab018|                                                                                     |
-+----------------------------------------------------------------------------------------------+
-
-+----------------------------------------------------------------------------------------------+
-| 12. Click **DNS Information** in the left-hand navigation.                                   |
-|                                                                                              |
-|     The value for a CNAME is listed under **Host Name**. The associated "Default/Tenant IP"  |
-|                                                                                              |
-|     is also shown under **IP Address**. The "Default/Tenant IP" is uniquely assigned to each |
-|                                                                                              |
-|     F5 Distributed Cloud Tenant. Additional Public IPs can be added to the Tenant.           |
-+----------------------------------------------------------------------------------------------+
-| |lab019|                                                                                     |
-+----------------------------------------------------------------------------------------------+
-
-+----------------------------------------------------------------------------------------------+
-| 13. Click **JSON** in the horizontal navigation at the top-left of the screen.               |
-|                                                                                              |
-|     The JSON payload (or YAML format, from dropdown) provides for the entire Load Balancer   |
-|                                                                                              |
-|     configuration.  This can be used for backup or subsequent CI/CD automation operations.   |
-+----------------------------------------------------------------------------------------------+
-| |lab020|                                                                                     |
-+----------------------------------------------------------------------------------------------+
-
-+----------------------------------------------------------------------------------------------+
-| 14. Click **Documentation** in the horizontal navigation at the top of the screen.           |
-|                                                                                              |
-|     The Documentation screen provides details on the F5 Distributed Cloud Console API.       |
-|                                                                                              |
-|     All operations in the F5 Distributed Cloud Platform are API-first. This includes all GUI |
-|                                                                                              |
-|     actions and associated audit logging.                                                    |
-|                                                                                              |
-| 15. Click **Cancel and Exit** to return to the **HTTP Load Balancers** screen.               |
-+----------------------------------------------------------------------------------------------+
-| |lab021|                                                                                     |
-+----------------------------------------------------------------------------------------------+
-
-Task 3: Testing the WAF Policy & Reviewing Event Data  
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-You will now perform basic testing of the Web Application Firewall (WAF) Policy. You will also 
-review the generated event data to make additional configuration changes.
-
-+----------------------------------------------------------------------------------------------+
-| 1. Open another tab in your browser (Chrome shown), navigate to the newly configured Load    |
-|                                                                                              |
-|    Balancer configuration: **http://<namespace>.lab-sec.f5demos.com**, to confirm it is      |
-|                                                                                              |
-|    functional.                                                                               |
-|                                                                                              |
-| 2. Using some of the sample attacks below, add the URI path & variables to your application  |
-|                                                                                              |
-|    to generate security event data.                                                          |
-|                                                                                              |
-|    * /?cmd=cat%20/etc/passwd                                                                 |
-|    * /product?id=4%20OR%201=1                                                                |
-|    * /../../../../etc/shadow                                                                 |
-|    * /cart?search=aaa'><script>prompt('Please+enter+your+password');</script>                |
-|                                                                                              |
-| 3. In the resulting block screens, note the **URL** and the **Support ID**. (copy and paste  |
-|                                                                                              |
-|    to a notepad or note resource).                                                           |
-+----------------------------------------------------------------------------------------------+
-| |lab022|                                                                                     |
-|                                                                                              |
-| |lab023|                                                                                     |
-|                                                                                              |
-| |lab024|                                                                                     |
-+----------------------------------------------------------------------------------------------+
-
-+----------------------------------------------------------------------------------------------+
-| 4. Returning to the F5 Distributed Cloud Console, use the left-hand menu to select           |
-|                                                                                              |
-|    **Overview > Dashboard > Performance Dashboard** section.  This dashboard will provide a  |
-|                                                                                              |
-|    summary view for all of the configured Load Balancers.                                    |
-+----------------------------------------------------------------------------------------------+
-| |lab025|                                                                                     |
-+----------------------------------------------------------------------------------------------+
-
-.. note::
-   *As you have not run many requests, summary analytics may not be available in the*
-   *dashboard view yet.*
-
-+----------------------------------------------------------------------------------------------+
-| 5. Scroll to the bottom and select your load balancer.                                       |
-+----------------------------------------------------------------------------------------------+
-| |lab026|                                                                                     |
-+----------------------------------------------------------------------------------------------+
-
-+----------------------------------------------------------------------------------------------+
-| 6. From the **Performance Dashboard** view, using the horizontal navigation, click           |
-|                                                                                              |
-|    **Requests**.                                                                             |
-|                                                                                              |
-| 7. Change the viewable time period from 5 minutes (default) to **1 hour** by selecting the   |
-|                                                                                              |
-|    dropdown shown, click **Last 1 hour** then clicking **Apply**.                            |
-+----------------------------------------------------------------------------------------------+
-| |lab027|                                                                                     |
-+----------------------------------------------------------------------------------------------+
-
-.. note::
-   *Security Event data may take 15-20 seconds to populate in the Console. Please force a*
-   *refresh using the Refresh icon next to the Time Period selection in step 6.*
-
-+----------------------------------------------------------------------------------------------+
-| 8. Expand one of the requests and note the **Information** tab link. This summarizes request |
-|                                                                                              |
-|    details and provides request duration timing.                                             |
-+----------------------------------------------------------------------------------------------+
-| |lab028|                                                                                     |
-+----------------------------------------------------------------------------------------------+
-
-+----------------------------------------------------------------------------------------------+
-| 9. Click on the **JSON** link to get more data about the request.                            |
-|                                                                                              |
-| 10. Click **Add Filter** as shown to see how you can filter by key identifiers.              |
-+----------------------------------------------------------------------------------------------+
-| |lab029|                                                                                     |
-+----------------------------------------------------------------------------------------------+
-
-+----------------------------------------------------------------------------------------------+
-| 11. The resulting **Search** input field and listed **Keys**, can be used to filter requests |
-|                                                                                              |
-|     in this view.                                                                            |
-+----------------------------------------------------------------------------------------------+
-| |lab030|                                                                                     |
-+----------------------------------------------------------------------------------------------+
-
-.. note::
-   *The available Key list to search is dynamically updated based on the requests in the*
-   *selected time view.* 
-
-+----------------------------------------------------------------------------------------------+
-| 12. Closing the filters view, note the available **Quick Filters** for Response Codes which  |
-|                                                                                              |
-|     allows quickly filtering the requests by toggling **on** or **off** each response code   |
-|                                                                                              |
-|     category.                                                                                |
-|                                                                                              |
-| 13. Click the **Forensics** tab on the right side of the view as shown.                      |
-+----------------------------------------------------------------------------------------------+
-| |lab031|                                                                                     |
-+----------------------------------------------------------------------------------------------+
-
-+----------------------------------------------------------------------------------------------+
-| 14. The *Forensics* Filter  provides summarized top categories which provides quicker        |
-|                                                                                              |
-|     analysis of the request log data.  Collapse the **Forensics** view when done using the   |
-|                                                                                              |
-|     indicated arrow.                                                                         |
-+----------------------------------------------------------------------------------------------+
-| |lab032|                                                                                     |
-+----------------------------------------------------------------------------------------------+
-
-.. note::
-   *Individual forensic categories can be changed using the noted pencil icon to surface*
-   *additional top data details.*
-
-+----------------------------------------------------------------------------------------------+
-| 15. Using the left-hand navigation, click **Dashboards** and then select **Security**        |
-|                                                                                              |
-|     **Dashboard**.                                                                           |
-+----------------------------------------------------------------------------------------------+
-| |lab033|                                                                                     |
-+----------------------------------------------------------------------------------------------+
-
-+----------------------------------------------------------------------------------------------+
-| 16. Review the **Security Dashboard** display (you may have limited data) .                  |
-+----------------------------------------------------------------------------------------------+
-| |lab034|                                                                                     |
-+----------------------------------------------------------------------------------------------+
-
-+----------------------------------------------------------------------------------------------+
-| 17. Scroll to **Load Balancers** section and click the **<namespace>-lb** object.            |
-+----------------------------------------------------------------------------------------------+
-| |lab035|                                                                                     |
-+----------------------------------------------------------------------------------------------+
-
-.. note::
-   *This is a multi-application view. Here you could get the summary security status of*
-   *each application (iw Threat Level, WAF Mode, etc)* and then click into one for more*
-   *specific details.*
-
-+----------------------------------------------------------------------------------------------+
-| 18. From the **Security Dashboard** view, using the horizontal navigation, click **Security**|
-|                                                                                              |
-|     **Analytics**.                                                                           |
-+----------------------------------------------------------------------------------------------+
-| |lab036|                                                                                     |
-+----------------------------------------------------------------------------------------------+
-
-+----------------------------------------------------------------------------------------------+
-| 19. Expand your latest security event as shown.                                              |
-+----------------------------------------------------------------------------------------------+
-| |lab037|                                                                                     |
-+----------------------------------------------------------------------------------------------+
-
-.. note::
-   *If you lost your 1 Hour Filter, re-apply using Task 3: Step 6*
-
-+----------------------------------------------------------------------------------------------+
-| 20. Note the summary detail provided **Information** link and identify the **Request ID**    |
-|                                                                                              |
-|     which is synonymous with **Support ID** (filterable) from the Security Event Block Page. |
-+----------------------------------------------------------------------------------------------+
-| |lab038|                                                                                     |
-+----------------------------------------------------------------------------------------------+
-
-+----------------------------------------------------------------------------------------------+
-| 21. Scroll to the bottom of the information screen to see specific signatures detected and   |
-|                                                                                              |
-|     actions taken during the security event.                                                 |
-|                                                                                              |
-| 22. Next, click on the **Add Filter** link just under the **Security Analytics** title near  |
-|                                                                                              |
-|     the top of the **Security Analytics** window.                                            |
-+----------------------------------------------------------------------------------------------+
-| |lab039|                                                                                     |
-+----------------------------------------------------------------------------------------------+
-
-+----------------------------------------------------------------------------------------------+
-| 23. Type **req** in the open dialogue window and select **req_id** from the dropdown.        |
-|                                                                                              |
-| 24. Next, select **In** from the **Select Operator** dropdown.                               |
-|                                                                                              |
-| 25. Finally, select/assign a value that matches one of your copied **Support IDs** from      |
-|                                                                                              |
-|     Task 3, Step 2 as shown.  You can also optionally just paste the Support ID in the       |
-|                                                                                              |
-|     value field and click **Apply**.                                                         |
-+----------------------------------------------------------------------------------------------+
-| |lab040|                                                                                     |
-|                                                                                              |
-| |lab041|                                                                                     |
-|                                                                                              |
-| |lab042|                                                                                     |
-+----------------------------------------------------------------------------------------------+
-
-+----------------------------------------------------------------------------------------------+
-| 26. You should now be filtered to a single "Security Event", as shown with your selected     |
-|                                                                                              |
-|     filter. You can expand and review the request as desired using the **arrow** icon.       |
-|                                                                                              |
-| 27. Under the **Actions** column, click on the three Action dots (Scroll to right).          |
-|                                                                                              |
-| 28. Select **Create WAF Exclusion rule** from the dropdown that appears.                     |
-+----------------------------------------------------------------------------------------------+
-| |lab043|                                                                                     |
-+----------------------------------------------------------------------------------------------+
-
-.. note::
-   *Adding requestor/client to "Blocked or Trusted Clients" is also available.* 
-
-+----------------------------------------------------------------------------------------------+
-| 29. In the subsequent **Simple WAF Exclusion Rule** window, review the settings (which are   |
-|                                                                                              |
-|     editable) by scrolling through the window.  The values have been auto-populated based on |
-|                                                                                              |
-|     the selected event to be excluded. Note the various sections and possible controls.      |
-|                                                                                              |
-| 30. In the **Expiration  Timestamp** field enter a timestamp 10 minutes from now at which    |
-|                                                                                              |
-|     the exclusion should expire. (helpful when testing/validating). the format should be as  |
-|                                                                                              |
-|     shown *YYYY-MM-DD HH:MM:SS+00:00 (2023-05-30T01:21:00+00:00)*. **HH** must be in 24 hour |
-|                                                                                              |
-|     format (there is no AM/PM).                                                              |
-|                                                                                              |
-| 31. Click **Apply** when complete.                                                           |
-+----------------------------------------------------------------------------------------------+
-| |lab044|                                                                                     |
-|                                                                                              |
-| |lab045|                                                                                     |
-|                                                                                              |
-| |lab046|                                                                                     |
-+----------------------------------------------------------------------------------------------+
-
-+----------------------------------------------------------------------------------------------+
-| 32. Click **Apply** on the **WAF Exclusion Rules** summary screen.                           |
-|                                                                                              |
-| 33. Click on **Security Configuration** in the left-hand navigation and note the added       |
-|                                                                                              |
-|     **WAF Exclusion Rules** configuration.                                                   |
-|                                                                                              |
-| 34. Scroll to the bottom of the **HTTP Load Balancer** configuration window and click the    |
-|                                                                                              |
-|     **Save and Exit** button.                                                                |
-|                                                                                              |
-| .. note::                                                                                    |
-|    *Rerunning the attack you just excluded, you will see that it is no longer blocked*.      |
-+----------------------------------------------------------------------------------------------+
-| |lab047|                                                                                     |
-|                                                                                              |
-| |lab048|                                                                                     |
-|                                                                                              |
-| |lab049|                                                                                     |
-+----------------------------------------------------------------------------------------------+
-
-Task 4: Understanding Exclusions and Customizing WAF Policy  
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-In this task you will come to understand how exclusions are applied. You will also further  
-customize the WAF policy just built.
-
-+----------------------------------------------------------------------------------------------+
-| 1. In the **HTTP Load Balancers** window **(Manage > Load Balancers > HTTP Load Balancers)** |
-|                                                                                              |
-|    Click on the three action dots in the **Actions** column then **Manage Configuration**    |
-|                                                                                              |
-|    from the dropdown menu.                                                                   |
-+----------------------------------------------------------------------------------------------+
-| |lab050|                                                                                     |
-+----------------------------------------------------------------------------------------------+
-
-+----------------------------------------------------------------------------------------------+
-| 2. Click on the **JSON** tab in the horizontal navigation as shown and scroll to find the    |
-|                                                                                              |
-|    **waf_exclusion_rule** section. Observe that the exclusion rule is associated with the    |
-|                                                                                              |
-|    Load Balancer configuration and not the WAF Policy.                                       |
-|                                                                                              |
-| .. note::                                                                                    |
-|    *This allows for policy reuse and reduces the need for specific application WAF Policies*.|
-|                                                                                              |
-| 3. Click on the **Cancel and Exit** to return to the prior window.                           |
-+----------------------------------------------------------------------------------------------+
-| |lab051|                                                                                     |
-+----------------------------------------------------------------------------------------------+
-
-+----------------------------------------------------------------------------------------------+
-| 4. In the left-hand navigation menu, navigate  to **Manage** section and click the **App**   |
-|                                                                                              |
-|    **Firewall** link.                                                                        |
-|                                                                                              |
-| 5. On your App Firewall policy **<namespace>-appfw**, click the three dots in the **Actions**|
-|                                                                                              |
-|    column and then click **Manage Configuration**.                                           |
-+----------------------------------------------------------------------------------------------+
-| |lab052|                                                                                     |
-+----------------------------------------------------------------------------------------------+
-
-+----------------------------------------------------------------------------------------------+
-| 6. Click **Edit Configuration** in the top right corner.                                     |
-|                                                                                              |
-| 7. Use the left-hand navigation and click on **Advanced Configuration**.                     |
-+----------------------------------------------------------------------------------------------+
-| |lab053|                                                                                     |
-+----------------------------------------------------------------------------------------------+
-
-+----------------------------------------------------------------------------------------------+
-| 8. Click the drop down menu for **Blocking Response Page** in the **Advanced Configuration** |
-|                                                                                              |
-|    section.                                                                                  |
-+----------------------------------------------------------------------------------------------+
-| |lab054|                                                                                     |
-+----------------------------------------------------------------------------------------------+
-
-+----------------------------------------------------------------------------------------------+
-| 9. Click the dropdown on **Blocking Response Page** and select **Custom** from the dropdown. |
-+----------------------------------------------------------------------------------------------+
-| |lab055|                                                                                     |
-+----------------------------------------------------------------------------------------------+
-
-+----------------------------------------------------------------------------------------------+
-| 10. In the **Blocking Response Page Body** replace the existing text with the text provided  |
-|                                                                                              |
-|     below. Click **Save and Exit** when completed.                                           |
-+----------------------------------------------------------------------------------------------+
-| |lab056|                                                                                     |
-+----------------------------------------------------------------------------------------------+
-
-Sample Blocking Response Page to be copied::
-
-  <style>body { font-family: Source Sans Pro, sans-serif; }</style>
-  <html style="margin: 0;"><head><title>Rejected Request</title></head>
-  <body style="margin : 0;">
-  <div style="background-color: #046b99; height: 40px; width: 100%;"></div>
-  <div style="min-height: 100px; background-color: white; text-align: center;"></div>
-  <div style="background-color: #fdb81e; height: 5px; width: 100%;"></div>
-  <div id="main-content" style="width: 100%; ">
-  <table width="100%"><tr><td style="text-align: center;">
-  <div style="margin-left: 50px;">
-  <div style="margin-bottom: 35px;"><br/>
-  <span style="font-size: 40pt; color: #046b99;">Rejected Request</span>
-  </div><div style="font-size: 14pt;">
-  <p>The requested URL was rejected. Please consult with your administrator.</p>
-  <p>Your Support ID is: <span style="color:red; font-weight:bold">{{request_id}}</span></p>
-  <p><a href="javascript:history.back()">[Go Back]</a></p>
-  </div></div></td></tr></table></div>
-  <div style="background-color: #222222; position: fixed; bottom: 0px; height: 40px; width: 100%; text-align: center;"></div>
-  </body></html>
-
-+----------------------------------------------------------------------------------------------+
-| 11. You can rerun an attack from Task 3: Step 2 to see the new custom block page.            |
-+----------------------------------------------------------------------------------------------+
-| |lab057|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+

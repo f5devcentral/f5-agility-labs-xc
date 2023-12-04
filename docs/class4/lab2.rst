@@ -1,294 +1,295 @@
-Lab 2: Reviewing Signature-based Bot Strategies and enabling F5 Distributed Cloud BotDefense
-============================================================================================
+Lab 6: API Protection & Rate Limiting
+=================================
 
-The following lab tasks will guide you through a review of signature-based Bot protections
-already available via the Web Application Firewall configuration. The security configuration
-will then be extended through F5 Distributed Bot Defense, an AI-driven, behavioral security 
-feature set to protect the previously configured application from advanced Bot threats. 
+F5® Distributed API Discovery & Protection provides key security functionality to visualize, understand, 
+deliver and secure APIs. This lab's tasks will walk through the configuration steps and note additional
+configurations available.
 
-**Expected Lab Time: 25 minutes**
+* **API Discovery**: Provided via machine-based learning processes, enables visualization of the API Framework,
+  assesses use of end-points, discovers new end-points based on flows, identifies use of sensitive information,   
+  and enables swagger file export.
 
-Task 1: Reviewing Signature-based Bot protection   
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-In this task you will review the Bot signature configuration and view logged security events.
-This lab will begin back in the F5 Distributed Cloud Console.
+* **API Protection**: Encompasses a set of definitions and controls to protect and secure the functions, use and 
+  endpoints of the delivered API's framework. 
 
-+----------------------------------------------------------------------------------------------+
-| 1. Return to **Web App & API Protection**, in the left-hand navigation menu, click on        |
-|                                                                                              |
-|    **App Firewall**, under **Manage**.                                                       |
-|                                                                                              |
-| 2. On your App Firewall policy **<namespace>-appfw**, click the three dots in the **Actions**|
-|                                                                                              |
-|    column and then click **Manage Configuration**.                                           |
-|                                                                                              |
-| 3. Click **Edit Configuration** in the top right corner.                                     |
-+----------------------------------------------------------------------------------------------+
-| |lab001|                                                                                     |
-|                                                                                              |
-| |lab002|                                                                                     |
-+----------------------------------------------------------------------------------------------+
+
+Task 3: Attaching API Discovery & Protection to Load Balancer Object 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+In this task's series of steps you will enable the API Discovery & Protection feature on the 
+previously built Load Balancer object delivering the targeted application/API.
 
 +----------------------------------------------------------------------------------------------+
-| 4. Using the left-hand navigation, click **Detection Settings**.  In the **Detection**       |
+| 1. In the left-hand navigation of the **Web App & API Protection** service, click on **Load**|
 |                                                                                              |
-|    **Settings** section, click the **Signature-Based Bot Protection** dropdown menu.         |
-|                                                                                              |
-| 5. From the **Signature-Based Bot Protection** dropdown menu, select **Custom**.             |
-+----------------------------------------------------------------------------------------------+
-| |lab003|                                                                                     |
-+----------------------------------------------------------------------------------------------+
-
-+----------------------------------------------------------------------------------------------+
-| 6. In the expanded configuration window, observe the three Bot signature categories;         |
-|                                                                                              |
-|    **Malicious, Suspicious,** and **Good**. Also observe the actions **Block, Ignore**, and  |
-|                                                                                              |
-|    **Report** which can be reviewed by selecting one of the dropdowns.                       |
-|                                                                                              |
-| 7. Click **Cancel and Exit** to leave this window.                                           |
-+----------------------------------------------------------------------------------------------+
-| |lab004|                                                                                     |
-|                                                                                              |
-| |lab005|                                                                                     |
-+----------------------------------------------------------------------------------------------+
-
-+----------------------------------------------------------------------------------------------+
-| 8. Open a terminal window or DOS prompt on your respective client and issue the following    |
-|                                                                                              |
-|    **curl** command: *curl -v http://<namespace>.lab-sec.f5demos.com*.                       |
-|                                                                                              |
-| 9. Observe the **User Agent** and response content.                                          |
-|                                                                                              |
-| .. note::                                                                                    |
-|    *curl is installed on Windows10+, and is available on most Linux or MAC platforms*.       |
-+----------------------------------------------------------------------------------------------+
-| |lab006|                                                                                     |
-+----------------------------------------------------------------------------------------------+
-
-+----------------------------------------------------------------------------------------------+
-| 10. Return to the F5 Distributed Cloud Console, within **Web App & API Protection** in the   |
-|                                                                                              |
-|     left-hand navigation menu, click on **Dashboards > Security Dashboard**                  |
-+----------------------------------------------------------------------------------------------+
-| |lab007|                                                                                     |
-+----------------------------------------------------------------------------------------------+
-
-+----------------------------------------------------------------------------------------------+
-| 11. Within the **Security Dashboard**, scroll down to the **Load Balancer** section and click|
-|                                                                                              |
-|     the configured Load Balancer *<namespace>-lb*.                                           |   
-+----------------------------------------------------------------------------------------------+
-| |lab008|                                                                                     |
-+----------------------------------------------------------------------------------------------+
-
-+----------------------------------------------------------------------------------------------+
-| 12. Select **Security Events** from the horizontal navigation.                               |
-|                                                                                              |
-| 13. Locate the most recent security event, which should be your curl request. Expand the     |
-|                                                                                              |
-|     security event as you have done in prior exercises to observe the "Suspicious" Bot       |
-|                                                                                              |
-|     reporting. Remember the setting for Suspicious Bot was set to *Report* from Step 6 above.|
-|                                                                                              |
-| .. note::                                                                                    |
-|    *You can review the steps of Lab1, Task 3, Step 8 to locate the information detail*.      |  
-+----------------------------------------------------------------------------------------------+
-| |lab009|                                                                                     |
-+----------------------------------------------------------------------------------------------+
-
-Task 2: Enabling F5 Distributed Cloud BotDefense
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-The following steps will enable you to deploy F5 Distributed Cloud BotDefense and understand its
-implementation.
-
-+----------------------------------------------------------------------------------------------+
-| 1. Open another tab in your browser (Chrome shown), navigate to your application/Load        |
-|                                                                                              |
-|    Balancer configuration: **http://<namespace>.lab-sec.f5demos.com**.                       |
-|                                                                                              |
-| 2. Enable developer tools (Chrome shown (use F12)) and click on the **Network** tab.         |
-|                                                                                              |
-| 3. Using the 3 bars/menu icon (top right), navigate to **Access** link.                      |
-|                                                                                              |
-| 4. In the resulting login screen use the following values to login and click **Submit**      |
-|                                                                                              |
-|    - **Identity:** **user@f5.com**                                                           |
-|    - **Token:** **password**                                                                 |
-+----------------------------------------------------------------------------------------------+
-| |lab010|                                                                                     |
-|                                                                                              |
-| |lab011|                                                                                     |
-+----------------------------------------------------------------------------------------------+
-
-+----------------------------------------------------------------------------------------------+
-| 5. In the Developer window, find the **POST** to **auth.php**. *You can also use the filter* |
-|                                                                                              |
-|    *to find auth.php*. Select the respective line as shown.                                  |
-|                                                                                              |
-| 6. Select the **Request** tab in the payload window that appears and observe that you only   |
-|                                                                                              |
-|    see limited form POST data (identity, token, & submit).                                   |
+|    **Balancers** under the **Manage** section.                                               |
 +----------------------------------------------------------------------------------------------+
 | |lab012|                                                                                     |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 2. In the resulting **Load Balancers** window, click on the three dots **...** in the        |
 |                                                                                              |
+|    **Action** column, and the select **Manage Configuration**.                               |
++----------------------------------------------------------------------------------------------+
 | |lab013|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
-.. warning:: 
-  *Make sure to logoff using the menu on the right of the web application you just accessed*
-
 +----------------------------------------------------------------------------------------------+
-| 7. Return to the Load Balancer in the F5 Distributed Cloud Console,**Manage > Load Balancer**|
-|                                                                                              |
-|    **> HTTP Load Balancers** and use the **Action Dots** and click **Manage Configuration**  |
-|                                                                                              |
-| 8. Click **Edit Configuration** in the top right-hand corner.                                |
+| 3. Click **Edit Configuration** in the top-right corner.                                     |
 +----------------------------------------------------------------------------------------------+
 | |lab014|                                                                                     |
-|                                                                                              |
-| |lab015|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 9. Click **Bot Protection** in the left-hand navigation.                                     |
+| 4. In the updated **API Discovery** section, click the drop-down arrow next to **Learn**     |
 |                                                                                              |
-| 10. In the **Bot Protection** section, use the drop down under **Bot Defense** and select    |
+|    **from Traffic with Redirect Response** and then select **Enable Learning from Redirect** |
 |                                                                                              |
-|     **Enable**.                                                                              |
+|    *Traffic**.                                                                               |
 +----------------------------------------------------------------------------------------------+
-| |lab016|                                                                                     |
-+----------------------------------------------------------------------------------------------+
-
-+----------------------------------------------------------------------------------------------+
-| 11. In the new **Bot Defense Policy** section, click **Configure**.                          |
-|                                                                                              |
-| 12. In the new **Protected App Endpoints** window, under **App Endpoint Type**,  click       |
-|                                                                                              |
-|     **Configure**.                                                                           |
-|                                                                                              |
-| 13. In the new **App Endpoint Type** window, click  **Add Item**.                            |
-+----------------------------------------------------------------------------------------------+
-| |lab017|                                                                                     |
-|                                                                                              |
 | |lab018|                                                                                     |
-|                                                                                              |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 5. In the **API Protection Rules** section, click the **Configure** link.                   |
++----------------------------------------------------------------------------------------------+
 | |lab019|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 14. In the **Application Endpoint** input the following values in the fields identified:     |
+| 6. In the resulting **API Protection Rules** window, click **Configure** in the **API**     |
 |                                                                                              |
-|     * **Metadata\\Name:** *auth-bot*                                                         |
-|     * **HTTP Methods:** *POST*                                                               |
-|     * **Protocol:** *BOTH*                                                                   |
-|     * **Path\\Path Match:** *Prefix*                                                         |
-|     * **Prefix:** */auth.php*                                                                |
-|     * **Bot Traffic Mitigation\Select Bot Mitigation Action:** *Block*                       |
-|                                                                                              |
-| 15. Scroll to the bottom and click **Apply**.                                                |
+|     **Endpoints** section.                                                                   |
 +----------------------------------------------------------------------------------------------+
 | |lab020|                                                                                     |
-|                                                                                              |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 7. Click **Add Item** in the **API Endpoints** window.                                      |
++----------------------------------------------------------------------------------------------+
 | |lab021|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 16. Click **Apply** on the **App Endpoint Type** window.                                     |
+| 8. In the resulting window, input **block-endpoint** in the **Name** field of the           |
 |                                                                                              |
-| 17. Observe the additional positioning options in the **JavaScript Insertion** section of    |
+|     **Metadata** section.                                                                    |
 |                                                                                              |
-|     the **Protected App Endpoints** window, then click **Apply**.                            |
+| 9. In the **Action** area, click the drop-down arrow indicated and select **Deny**.         |
 +----------------------------------------------------------------------------------------------+
 | |lab022|                                                                                     |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 10. In the **API Endpoint** section, click on the **API Endpoint** input field as indicated. |
 |                                                                                              |
+| 11. Select the **See Suggestions** link.                                                     |
++----------------------------------------------------------------------------------------------+
 | |lab023|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 18. Observe that the **Bot Defense Policy** is now configured.                               |
+| 12. Select **/v2/user** from the available options provided.                                 |
 |                                                                                              |
-| 19. Click **Other Settings** in the left-hand navigation or scroll to the bottom on the      |
+| .. note::                                                                                    |
+|    *The endpoints available are provided via the spec you previously imported and defined*   |
 |                                                                                              |
-|     **HTTP Load Balancer** screen, and click **Save and Exit**.                              |
+| 13. In the **HTTP Methods** area, click in the **Method List** input field.                  |
 +----------------------------------------------------------------------------------------------+
 | |lab024|                                                                                     |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 14. Select **Any** from the available methods provided.                                      |
 |                                                                                              |
+| .. note::                                                                                    |
+|    *Multiple methods can be selected if needed*                                              |
++----------------------------------------------------------------------------------------------+
 | |lab025|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 20. Repeat Task 2 Steps 1-6.  Note you many need to close your browser and clear cookies     |
-|                                                                                              |
-| 21. Observe now that there is additional telemetry being passed in the POST request.  This   |
-|                                                                                              |
-|     telemetry will be used to determine if the connecting client is an Automated Bot.        |
+| 15. Review the configuration and click, the **Apply** button.                                |
++----------------------------------------------------------------------------------------------+
+| |lab026|                                                                                     |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 16. Review the API Endpoint deny rule and click, the **Apply** button.                       |
 +----------------------------------------------------------------------------------------------+
 | |lab027|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| **End of Lab 2:**  This concludes Lab 2, feel free to review and test the configuration.     |
+| 17. Note that API Protection Rules are configure for the API Endpoints and click, the        |
 |                                                                                              |
-| A brief presentation will be shared prior to the beginning of Lab 3.                         |
+|     **Apply** button.                                                                        |
++----------------------------------------------------------------------------------------------+
+| |lab028|                                                                                     |
++----------------------------------------------------------------------------------------------+
+
+Task 4: Attach API Rate Limiting to Load Balancer Object 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+In this task's series of steps you will enable the API Rate Limiting feature on the 
+previously built Load Balancer object delivering the targeted application/API.
+
++----------------------------------------------------------------------------------------------+
+| 1. Using the left-hand navigation, click the **Common Security Controls** link.              |
++----------------------------------------------------------------------------------------------+
+| |lab029|                                                                                     |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 2. Locate the **Rate Limiting** area of the **Common Security Controls** and use the         |
+|                                                                                              |
+|    drop-down to select **API Rate Limit**.                                                   |
++----------------------------------------------------------------------------------------------+
+| |lab030|                                                                                     |
+|                                                                                              |
+| |lab031|                                                                                     |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 3. In the expanded menu under **Rate Limiting**, click **Configure** in the **API**          |
+|                                                                                              |
+|    **Endpoints** area.                                                                       |
++----------------------------------------------------------------------------------------------+
+| |lab032|                                                                                     |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 4. In the resulting window **API Endpoints** window, click **Add Item**.                     |
++----------------------------------------------------------------------------------------------+
+| |lab033|                                                                                     |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 5. In the resulting configuration window, select **/v2/store/order/{orderId}** for **API**   |
+|                                                                                              |
+|    **Endpoint** input.                                                                       |
+|                                                                                              |
+| 6. Select **ANY** for **Method** input and then click the **Apply** button.                  |
++----------------------------------------------------------------------------------------------+
+| |lab034|                                                                                     |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 7. Review the API Endpoint rate limiting rule and click, the **Apply** button.               |
++----------------------------------------------------------------------------------------------+
+| |lab035|                                                                                     |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 8. Note the updated configuration for API Rate limiting, Click **Other Settings** in  the    |
+|                                                                                              |
+|    the left-hand navigation.                                                                 |
++----------------------------------------------------------------------------------------------+
+| |lab036|                                                                                     |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 9. Once at the bottom of the HTTP Load Balancer configuration and click the **Apply** button.|
++----------------------------------------------------------------------------------------------+
+| |lab037|                                                                                     |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| This configuration highlights the elements needed to deploy API Discovery & Protection. This |
+|                                                                                              |
+| configuration can also be fully deployed and managed via the F5 Distributed Cloud API.       |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| **End of Lab 6:**  This concludes Lab 6.                                                     |
+|                                                                                              |
+| A Q&A session will begin shortly after conclusion of the overall lab.                        |
 +----------------------------------------------------------------------------------------------+
 | |labend|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
-.. |lab001| image:: _static/lab2-001.png
+.. _app-api-file-v1: http://demo-app.amer.myedgedemo.com/lab/app-api-v1.json
+.. _app-api-file-v2: http://demo-app.amer.myedgedemo.com/lab/app-api-v2.json
+.. |lab001| image:: _static/lab6-001.png
    :width: 800px
-.. |lab002| image:: _static/lab2-002.png
+.. |lab002| image:: _static/lab6-002.png
    :width: 800px
-.. |lab003| image:: _static/lab2-003.png
+.. |lab003| image:: _static/lab6-003.png
    :width: 800px
-.. |lab004| image:: _static/lab2-004.png
+.. |lab003a| image:: _static/lab6-003a.png
    :width: 800px
-.. |lab005| image:: _static/lab2-005.png
+.. |lab004| image:: _static/lab6-004.png
    :width: 800px
-.. |lab006| image:: _static/lab2-006.png
+.. |lab005| image:: _static/lab6-005.png
    :width: 800px
-.. |lab007| image:: _static/lab2-007.png
+.. |lab006| image:: _static/lab6-006.png
    :width: 800px
-.. |lab008| image:: _static/lab2-008.png
+.. |lab006a| image:: _static/lab6-006a.png
    :width: 800px
-.. |lab009| image:: _static/lab2-009.png
+.. |lab007| image:: _static/lab6-007.png
    :width: 800px
-.. |lab010| image:: _static/lab2-010.png
+.. |lab008| image:: _static/lab6-008.png
    :width: 800px
-.. |lab011| image:: _static/lab2-011.png
+.. |lab009| image:: _static/lab6-009.png
    :width: 800px
-.. |lab012| image:: _static/lab2-012.png
+.. |lab010| image:: _static/lab6-010.png
    :width: 800px
-.. |lab013| image:: _static/lab2-013.png
+.. |lab011| image:: _static/lab6-011.png
    :width: 800px
-.. |lab014| image:: _static/lab2-014.png
+.. |lab012| image:: _static/lab6-012.png
    :width: 800px
-.. |lab015| image:: _static/lab2-015.png
+.. |lab013| image:: _static/lab6-013.png
    :width: 800px
-.. |lab016| image:: _static/lab2-016.png
+.. |lab014| image:: _static/lab6-014.png
    :width: 800px
-.. |lab017| image:: _static/lab2-017.png
+.. |lab015| image:: _static/lab6-015.png
    :width: 800px
-.. |lab018| image:: _static/lab2-018.png
+.. |lab016| image:: _static/lab6-016.png
    :width: 800px
-.. |lab019| image:: _static/lab2-019.png
+.. |lab017| image:: _static/lab6-017.png
    :width: 800px
-.. |lab020| image:: _static/lab2-020.png
+.. |lab018| image:: _static/lab6-018.png
    :width: 800px
-.. |lab021| image:: _static/lab2-021.png
+.. |lab019| image:: _static/lab6-019.png
    :width: 800px
-.. |lab022| image:: _static/lab2-022.png
+.. |lab020| image:: _static/lab6-020.png
    :width: 800px
-.. |lab023| image:: _static/lab2-023.png
+.. |lab021| image:: _static/lab6-021.png
    :width: 800px
-.. |lab024| image:: _static/lab2-024.png
+.. |lab022| image:: _static/lab6-022.png
    :width: 800px
-.. |lab025| image:: _static/lab2-025.png
+.. |lab023| image:: _static/lab6-023.png
    :width: 800px
-.. |lab026| image:: _static/lab2-026.png
+.. |lab024| image:: _static/lab6-024.png
    :width: 800px
-.. |lab027| image:: _static/lab2-027.png
+.. |lab025| image:: _static/lab6-025.png
+   :width: 800px
+.. |lab026| image:: _static/lab6-026.png
+   :width: 800px
+.. |lab027| image:: _static/lab6-027.png
+   :width: 800px
+.. |lab028| image:: _static/lab6-028.png
+   :width: 800px
+.. |lab029| image:: _static/lab6-029.png
+   :width: 800px
+.. |lab030| image:: _static/lab6-030.png
+   :width: 800px
+.. |lab031| image:: _static/lab6-031.png
+   :width: 800px
+.. |lab032| image:: _static/lab6-032.png
+   :width: 800px
+.. |lab033| image:: _static/lab6-033.png
+   :width: 800px
+.. |lab034| image:: _static/lab6-034.png
+   :width: 800px
+.. |lab035| image:: _static/lab6-035.png
+   :width: 800px
+.. |lab036| image:: _static/lab6-036.png
+   :width: 800px
+.. |lab036| image:: _static/lab6-036.png
+   :width: 800px
+.. |lab037| image:: _static/lab6-037.png
    :width: 800px
 .. |labend| image:: _static/labend.png
    :width: 800px
