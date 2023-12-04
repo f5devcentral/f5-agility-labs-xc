@@ -1,4 +1,4 @@
-Lab 1: Deploying F5 Distributed Cloud Proxy Services to Securely Deliver a Public Endpoint
+Lab 1: Review Developer Portal
 ==========================================================================================
 
 This lab will focus on the deployment and security of an existing hosted application using F5
@@ -37,36 +37,128 @@ Network.
 |                                                                                                               |
 |    *Introduction section, Task 2, Step 9*.                                                                    |
 |                                                                                                               |
-| 2. In the left-hand navigation expand **Manage** and click **Load Balancers > Origin Pools**                  |
+| 2. In the top right corner of the Distributed Cloud Console click the **User Icon** dropdown and select       |
 |                                                                                                               |
-| 3. In the resulting screen click the **Add Origin Pool** in the graphic as shown.                             |
+|    **Account Settings**.                                                                                      |
+|                                                                                                               |
+| 3. In the resulting screen click **Credentials** under the Peronal Management Heading on the left.            |
+|                                                                                                               |
+| 4. Click **Add Credentials**.                                                                                 |
+|                                                                                                               |
+| 5. Fill in the resulting form with the following values:                                                      |
+|                                                                                                               |
+|     * **Credential Name ID:**  *<namespace>-api-token*                                                        |
+|     * **Credential Type: Select: ** *API Token*                                                               |
+|     * **Expiry Date: Select:** *<date two day in the future of today's date>*                                 |
+|                                                                                                               |
+| 6. Click **Generate**.                                                                                        |
+|                                                                                                               |
+| 7. On the form that appears copy your API token and save it for use later.  Then click **Done**.              |
 |                                                                                                               |
 | .. note::                                                                                                     |
-|    *You have defaulted to your specific namespace as that is the only namespace to which you have             |
+|    *If you don't save your API token or you lose it, you will need to generate a new API token. After an API* |
 |                                                                                                               |
-|    *administrative access.**                                                                                  |
+|    *token is generated, it can not be retrieved again later.*                                                 |
 +---------------------------------------------------------------------------------------------------------------+
-| |lab001|                                                                                                      |
+| |lab1-Account_Settings|                                                                                       |
 |                                                                                                               |
-| |lab002|                                                                                                      |
+| |lab1-Credentials|                                                                                            |
+|                                                                                                               |
+| |lab1-Add_Credentials|                                                                                        |
+|                                                                                                               |
+| |lab1-Generate_API_Token|                                                                                     |
+|                                                                                                               |
+| |lab1-API_Token|                                                                                              |
 +---------------------------------------------------------------------------------------------------------------+
 
 +---------------------------------------------------------------------------------------------------------------+
-| 4. In the resulting window, enter **<namespace>-pool** in the **Name** field and click **Add Item** under     |
+| 8. In the top right corner of the Distributed Cloud Console click the **Support** dropdown and select **API** |
 |                                                                                                               |
-|    **Origin Servers**                                                                                         |
+|    **Docummentation**.                                                                                        |
+|                                                                                                               |
+| .. note::                                                                                                     |
+|    *This takes you to the online documentations for the F5 Distributed Cloud Services API.  Here you can*     |
+|                                                                                                               |
+|    *review or download the API specification.*                                                                |
+|                                                                                                               |
+| 9. In the resulting screen click the **API Developer Portal** link in the top menu.                           |
 +---------------------------------------------------------------------------------------------------------------+
-| |lab003|                                                                                                      |
+| |lab1-API_Documentation|                                                                                      |
+|                                                                                                               |
+| |lab1-API_Developer_Portal|                                                                                   |
 +---------------------------------------------------------------------------------------------------------------+
 
 +---------------------------------------------------------------------------------------------------------------+
-| 5. In the resulting window, **Public DNS Name of Origin Server** should be selected for **Select Type of**    |
+| 10. In the resulting window, enter **f5-xc-lab-app** in the **Please enter your domain** text field and click |
 |                                                                                                               |
-|    **Origin Server**.                                                                                         |
+|    **Access portal.**                                                                                         |
 |                                                                                                               |
-| 6. For **DNS Name** enter the following hostname: **demo-app.amer.myedgedemo.com** and then click **Apply**   |
+| 11. In the resulting screen click the **Authorize** link in the top right corner.                             |
+|                                                                                                               |
+| 12. In the form that appears, enter your API Token in the **Paste your API token** field and click            |
+|                                                                                                               |
+|     **Authorize**.                                                                                            |
 +---------------------------------------------------------------------------------------------------------------+
-| |lab004|                                                                                                      |
+| |lab1-API_Developer_Portal_Domain|                                                                            |
+|                                                                                                               |
+| |lab1-Portal_Authorize|                                                                                       |
+|                                                                                                               |
+| |lab1-Portal_Set_Token|                                                                                       |
++---------------------------------------------------------------------------------------------------------------+
+
++---------------------------------------------------------------------------------------------------------------+
+| 13. In the Dev Portal, scroll through the APIs on the left until you find **Namespace** and then click        |
+|                                                                                                               |
+|     **Namespace**.                                                                                            |
+|                                                                                                               |
+| 14. Under the **default** section in schemes, click the arrow to expand **GET /api/web/namespaces** and then  |
+|                                                                                                               |
+|     click **Try it out**.                                                                                     |
+|                                                                                                               |
+| 15. Click **Execute**.  You may have to scroll down slightly to show the **Execute** icon depending on your   |
+|                                                                                                               |
+|     screen resolution.                                                                                        |
+|                                                                                                               |
+| 16. Review the **Response body** data. You may have to scroll down slightly to show the **Response body** data|
+|                                                                                                               |
+|     depending on your screen resolution.                                                                      |
+|                                                                                                               |
+| 17. The Reponse body is a JSON formatted representation of all of the namespaces configured within the        |
+|                                                                                                               |
+|     the **f5-xc-lab-app** tenant.  Find the JSON section for your namespace.                                  |
++---------------------------------------------------------------------------------------------------------------+
+| |lab1-Portal_Namespace|                                                                                       |
+|                                                                                                               |
+| |lab1-Portal_Try_It_Out|                                                                                      |
+|                                                                                                               |
+| |lab1-Portal_Execute|                                                                                         |
+|                                                                                                               |
+| |lab1-Namespaces_JSON|                                                                                        |
++---------------------------------------------------------------------------------------------------------------+
+
+Next you will set parameters within the API query to limit the results that are returned.
++---------------------------------------------------------------------------------------------------------------+
+| 18. Scroll down through the **Namespace** APIs until you find **GET /api/web/namespaces/{name}** and click the|
+|                                                                                                               |
+|    the arrow to expand this API and then click **Try it out**.                                                |
+|                                                                                                               |
+| 19. Enter your tenant name in the **namespace** field and then click **Execute**.                             |
+|                                                                                                               |
+| 20. Review the **Response body** data. You may have to scroll down slightly to show the **Response body** data|
+|                                                                                                               |
+|     depending on your screen resolution.                                                                      |
+|                                                                                                               |
+| .. note::                                                                                                     |
+|    *The parameters you entered in the **name** field were used to execute the API query and limit the*        |
+|                                                                                                               |
+|    *returned values.  Parameters can also be used when creating new objects.*                                         |
+|                                                                                                               |
++---------------------------------------------------------------------------------------------------------------+
+| |lab1-Portal_Namespaces_Name|                                                                                 |
+|                                                                                                               |
+| |lab1-Portal_Namespaces_Name_Execute|                                                                         |
+|                                                                                                               |
+| |lab1-Portal_Namespaces_Name_JSON|                                                                            |
 +---------------------------------------------------------------------------------------------------------------+
 
 +---------------------------------------------------------------------------------------------------------------+
