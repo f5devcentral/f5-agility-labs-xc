@@ -220,53 +220,53 @@ user detection and create a malicious user mitigation and challenge.
 | |labend|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
-.. |lab001| image:: _static/lab4-001.png
+.. |lab001| image:: _static/lab3-001.png
    :width: 800px
-.. |lab002| image:: _static/lab4-002.png
+.. |lab002| image:: _static/lab3-002.png
    :width: 800px
-.. |lab003| image:: _static/lab4-003.png
+.. |lab003| image:: _static/lab3-003.png
    :width: 800px
-.. |lab004| image:: _static/lab4-004.png
+.. |lab004| image:: _static/lab3-004.png
    :width: 800px
-.. |lab005| image:: _static/lab4-005.png
+.. |lab005| image:: _static/lab3-005.png
    :width: 800px
-.. |lab006| image:: _static/lab4-006.png
+.. |lab006| image:: _static/lab3-006.png
    :width: 800px
-.. |lab007| image:: _static/lab4-007.png
+.. |lab007| image:: _static/lab3-007.png
    :width: 800px
-.. |lab008| image:: _static/lab4-008.png
+.. |lab008| image:: _static/lab3-008.png
    :width: 800px
-.. |lab009| image:: _static/lab4-009.png
+.. |lab009| image:: _static/lab3-009.png
    :width: 800px
-.. |lab010| image:: _static/lab4-010.png
+.. |lab010| image:: _static/lab3-010.png
    :width: 800px
-.. |lab011| image:: _static/lab4-011.png
+.. |lab011| image:: _static/lab3-011.png
    :width: 800px
-.. |lab012| image:: _static/lab4-012.png
+.. |lab012| image:: _static/lab3-012.png
    :width: 800px
-.. |lab013| image:: _static/lab4-013.png
+.. |lab013| image:: _static/lab3-013.png
    :width: 800px
-.. |lab014| image:: _static/lab4-014.png
+.. |lab014| image:: _static/lab3-014.png
    :width: 800px
-.. |lab015| image:: _static/lab4-015.png
+.. |lab015| image:: _static/lab3-015.png
    :width: 800px
-.. |lab016| image:: _static/lab4-016.png
+.. |lab016| image:: _static/lab3-016.png
    :width: 800px
-.. |lab017| image:: _static/lab4-017.png
+.. |lab017| image:: _static/lab3-017.png
    :width: 800px
-.. |lab018| image:: _static/lab4-018.png
+.. |lab018| image:: _static/lab3-018.png
    :width: 800px
-.. |lab019| image:: _static/lab4-019.png
+.. |lab019| image:: _static/lab3-019.png
    :width: 800px
-.. |lab020| image:: _static/lab4-020.png
+.. |lab020| image:: _static/lab3-020.png
    :width: 800px
-.. |lab021| image:: _static/lab4-021.png
+.. |lab021| image:: _static/lab3-021.png
    :width: 800px
-.. |lab022| image:: _static/lab4-022.png
+.. |lab022| image:: _static/lab3-022.png
    :width: 800px
-.. |lab023| image:: _static/lab4-023.png
+.. |lab023| image:: _static/lab3-023.png
    :width: 800px
-.. |lab024| image:: _static/lab4-024.png
+.. |lab024| image:: _static/lab3-024.png
    :width: 800px
 .. |labend| image:: _static/labend.png
    :width: 800px
