@@ -12,7 +12,7 @@ services that provides a UI and API for managing network, security, and compute 
 Distributed Cloud Console can manage "sites" in existing on-premises data centers and sites in
 AWS, Azure, and GCP cloud environments.
 
-Task 1: Lab Environment
+Task 1: Lab Environment (chas was here)
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 +----------------------------------------------------------------------------------------------+
