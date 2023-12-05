@@ -1,19 +1,13 @@
-Lab 6: API Protection & Rate Limiting
+Lab 2: API Protection & Rate Limiting
 =================================
 
-F5® Distributed API Discovery & Protection provides key security functionality to visualize, understand, 
-deliver and secure APIs. This lab's tasks will walk through the configuration steps and note additional
-configurations available.
+F5® Distributed API Protection provides key security functionality to secure APIs. 
+This lab's tasks will walk through the configuration steps and note additional configurations available.
 
-* **API Discovery**: Provided via machine-based learning processes, enables visualization of the API Framework,
-  assesses use of end-points, discovers new end-points based on flows, identifies use of sensitive information,   
-  and enables swagger file export.
+**API Protection**: Encompasses a set of definitions and controls to protect and secure the functions, use and 
+endpoints of the delivered API's framework. 
 
-* **API Protection**: Encompasses a set of definitions and controls to protect and secure the functions, use and 
-  endpoints of the delivered API's framework. 
-
-
-Task 3: Attaching API Protection to Load Balancer Object 
+Task 1: Attaching API Protection to Load Balancer Object 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In this task's series of steps you will enable the API Discovery & Protection feature on the 
