@@ -74,7 +74,7 @@ utilizing the Developer Portal.
 |    **Docummentation**.                                                                                        |
 |                                                                                                               |
 | .. note::                                                                                                     |
-|    *This takes you to the online documentations for the F5 Distributed Cloud Services API.  Here you can*     |
+|    *This takes you to the online documentation for the F5 Distributed Cloud Services API.  Here you can*     |
 |                                                                                                               |
 |    *review or download the API specification.*                                                                |
 |                                                                                                               |
@@ -96,7 +96,7 @@ utilizing the Developer Portal.
 |                                                                                                               |
 |     **Authorize**.                                                                                            |
 +---------------------------------------------------------------------------------------------------------------+
-| |lab1-API_Developer_Portal_Domain|                                                                            |
+| |lab1-Portal_Domain|                                                                            |
 |                                                                                                               |
 | |lab1-Portal_Authorize|                                                                                       |
 |                                                                                                               |
@@ -138,7 +138,7 @@ Next you will set parameters within the API query to limit the results that are 
 +---------------------------------------------------------------------------------------------------------------+
 | 18. Scroll down through the **Namespace** APIs until you find **GET /api/web/namespaces/{name}** and click the|
 |                                                                                                               |
-|    the arrow to expand this API and then click **Try it out**.                                                |
+|     the arrow to expand this API and then click **Try it out**.                                               |
 |                                                                                                               |
 | 19. Enter your tenant name in the **namespace** field and then click **Execute**.                             |
 |                                                                                                               |
@@ -205,7 +205,7 @@ to the Distributed Cloud API.
    :width: 800px
 .. |lab1-API_Developer_Portal| image:: _static/lab1-API_Developer_Portal.png
    :width: 800px
-.. |lab1-API_Developer_Portal_Domain| image:: _static/lab1-API_Developer_Portal_Domain.png
+.. |lab1-Portal_Domain| image:: _static/lab1-Portal_Domain.png
    :width: 800px
 .. |lab1-Portal_Authorize| image:: _static/lab1-Portal_Authorize.png
    :width: 800px
@@ -219,7 +219,7 @@ to the Distributed Cloud API.
    :width: 800px
 .. |lab1-Portal_Namespaces_JSON| image:: _static/lab1-Portal_Namespaces_JSON.png
    :width: 800px
-.. |lab1-Portal_Namespaces_Name|| image:: _static/lab1-Portal_Namespaces_Name.png
+.. |lab1-Portal_Namespaces_Name| image:: _static/lab1-Portal_Namespaces_Name.png
    :width: 800px
 .. |lab1-Portal_Namespaces_Name_Execute| image:: _static/lab1-Portal_Namespaces_Name_Execute.png
    :width: 800px
