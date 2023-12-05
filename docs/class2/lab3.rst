@@ -213,7 +213,7 @@ user detection and create a malicious user mitigation and challenge.
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| **End of Lab 4:**  This concludes Lab 4, feel free to review and test the configuration.     |
+| **End of Lab 3:**  This concludes Lab 3, feel free to review and test the configuration.     |
 |                                                                                              |
 | A Q&A session will begin shortly to conclude the overall lab.                                |
 +----------------------------------------------------------------------------------------------+
