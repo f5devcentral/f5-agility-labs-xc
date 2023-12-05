@@ -1,11 +1,9 @@
 Lab 2: API Protection & Rate Limiting
 =================================
 
-F5® Distributed API Protection provides key security functionality to secure APIs. 
-This lab's tasks will walk through the configuration steps and note additional configurations available.
+F5® Distributed API Protection provides key security functionality to secure APIs.
 
-**API Protection**: Encompasses a set of definitions and controls to protect and secure the functions, use and 
-endpoints of the delivered API's framework. 
+This lab's tasks will walk through the configuration steps and note additional configurations available.
 
 Task 1: Attaching API Protection to Load Balancer Object 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
