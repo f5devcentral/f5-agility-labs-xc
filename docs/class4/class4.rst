@@ -4,17 +4,18 @@ F5 Distributed Cloud: API Discovery & Protection
 Welcome
 -------
 
-In this lab, attendees will take a deeper dive into F5 Web Application and API Protection (WAAP).
-Attendees will review WAAP Policy Frameworks, exercise configuration options, review security events
-and perform exclusion handling. Attendees will also explore Service Policy configuration and AI-driven 
-BotDefense deployment configurations.  
+In this lab, participants will explore the depths of F5 Web Application
+and API Protection (WAAP) within F5 Distributed Cloud. Dive headfirst into 
+the cutting-edge world of API Discovery, uncovering what’s within, Sensitive Data 
+and Authentication State detection. Get hands-on experience as you unleash 
+the power of API Protection and API Rate Limiting.  
 
 Objective:
 ----------
 
 -  Gain a deeper understanding of key F5 Distributed Cloud security functions and controls
 
--  Gain an understanding WAAP Policies, Service Policies and BotDefense configuration.
+-  Explore building an API Inventory and API Disovery, while configuring API Protection
 
 Lab & Tasks:
 ------------

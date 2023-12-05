@@ -137,7 +137,7 @@ version control features.
 +----------------------------------------------------------------------------------------------+
 | 2. In the left top click the F5 ball and navigate to the **Web App & API Protection** Tile.  |
 +----------------------------------------------------------------------------------------------+
-| |lab001|                                                                                     |
+| |lab011|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
@@ -147,7 +147,7 @@ version control features.
 |                                                                                              |
 |    the top of the window can also be used.                                                   |
 +----------------------------------------------------------------------------------------------+
-| |lab002|                                                                                     |
+| |lab012|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
@@ -159,13 +159,13 @@ version control features.
 |                                                                                              |
 |    downloaded in Step 1 above and click **Open**.                                            |
 +----------------------------------------------------------------------------------------------+
-| |lab003|                                                                                     |
+| |lab013|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
 | 7. Observe that the file **app-api-v1.json**  is present and the click **Save and Exit**     |
 +----------------------------------------------------------------------------------------------+
-| |lab003a|                                                                                    |
+| |lab014|                                                                                    |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
@@ -178,7 +178,7 @@ version control features.
 |                                                                                              |
 |    *has been successfully added.*                                                            |
 +----------------------------------------------------------------------------------------------+
-| |lab004|                                                                                     |
+| |lab015|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
@@ -198,7 +198,7 @@ version control features.
 |                                                                                              |
 |     in the **Action** column.  In the resulting selection menu, select **Update New Version**|
 +----------------------------------------------------------------------------------------------+
-| |lab005|                                                                                     |
+| |lab016|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
@@ -208,9 +208,9 @@ version control features.
 |                                                                                              |
 | 12. Observe that the file **app-api-v1.json**  is present and the click **Save and Exit**    |
 +----------------------------------------------------------------------------------------------+
-| |lab006|                                                                                     |
+| |lab017|                                                                                     |
 |                                                                                              |
-| |lab006a|                                                                                    |
+| |lab018|                                                                                    |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
@@ -222,7 +222,7 @@ version control features.
 |                                                                                              |
 |     **2** in the **Versions** column.                                                        |
 +----------------------------------------------------------------------------------------------+
-| |lab007|                                                                                     |
+| |lab019|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
@@ -235,7 +235,7 @@ version control features.
 |                                                                                              |
 | 16. Click **X** in the top-right corner and proceed to the next task.                        |
 +----------------------------------------------------------------------------------------------+
-| |lab008|                                                                                     |
+| |lab020|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 Task 2: Swagger Definition
@@ -250,7 +250,7 @@ pointer to imported swagger files you just uploaded.
 |                                                                                              |
 |    **Management** under the **Manage** section and then click **API Definition**.            |
 +----------------------------------------------------------------------------------------------+
-| |lab009|                                                                                     |
+| |lab021|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
@@ -258,7 +258,7 @@ pointer to imported swagger files you just uploaded.
 |                                                                                              |
 |    window area as shown.                                                                     |
 +----------------------------------------------------------------------------------------------+
-| |lab010|                                                                                     |
+| |lab022|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
@@ -276,7 +276,7 @@ pointer to imported swagger files you just uploaded.
 |                                                                                              |
 | 6. Once selected, click **Save and Exit** in the bottom-right corner.                        |
 +----------------------------------------------------------------------------------------------+
-| |lab011|                                                                                     |
+| |lab023|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 Task 3: Enabling API Inventory and Dicovery
@@ -290,7 +290,7 @@ previously built Load Balancer object delivering the targeted application/API.
 |                                                                                              |
 |    **Balancers** under the **Manage** section.                                               |
 +----------------------------------------------------------------------------------------------+
-| |lab012|                                                                                     |
+| |lab024|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
@@ -298,13 +298,13 @@ previously built Load Balancer object delivering the targeted application/API.
 |                                                                                              |
 |    **Action** column, and the select **Manage Configuration**.                               |
 +----------------------------------------------------------------------------------------------+
-| |lab013|                                                                                     |
+| |lab025|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
 | 3. Click **Edit Configuration** in the top-right corner.                                     |
 +----------------------------------------------------------------------------------------------+
-| |lab014|                                                                                     |
+| |lab026|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
@@ -314,7 +314,7 @@ previously built Load Balancer object delivering the targeted application/API.
 |                                                                                              |
 |    and select **Enable**.                                                                    |
 +----------------------------------------------------------------------------------------------+
-| |lab015|                                                                                     |
+| |lab027|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
@@ -322,7 +322,7 @@ previously built Load Balancer object delivering the targeted application/API.
 |                                                                                              |
 | 7. previously created API Definition **<namespace>/app-api-spec**.                           |
 +----------------------------------------------------------------------------------------------+
-| |lab016|                                                                                     |
+| |lab028|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
@@ -330,7 +330,7 @@ previously built Load Balancer object delivering the targeted application/API.
 |                                                                                              |
 |    and select **Enable**.                                                                    |
 +----------------------------------------------------------------------------------------------+
-| |lab017|                                                                                     |
+| |lab029|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
@@ -361,99 +361,63 @@ previously built Load Balancer object delivering the targeted application/API.
    :width: 800px
 .. |lab010| image:: _static/lab1-010.png
    :width: 800px
-.. |lab011| image:: _static/lab1-011.png
+.. |lab011| image:: _static/lab1a-001.png
    :width: 800px
-.. |lab012| image:: _static/lab1-012.png
+.. |lab012| image:: _static/lab1a-002.png
    :width: 800px
-.. |lab013| image:: _static/lab1-013.png
+.. |lab013| image:: _static/lab1a-003.png
    :width: 800px
-.. |lab014| image:: _static/lab1-014.png
+.. |lab014| image:: _static/lab1a-004.png
    :width: 800px
-.. |lab015| image:: _static/lab1-015.png
+.. |lab015| image:: _static/lab1a-005.png
    :width: 800px
-.. |lab016| image:: _static/lab1-016.png
+.. |lab016| image:: _static/lab1a-006.png
    :width: 800px
-.. |lab017| image:: _static/lab1-017.png
+.. |lab017| image:: _static/lab1a-007.png
    :width: 800px
-.. |lab018| image:: _static/lab1-018.png
+.. |lab018| image:: _static/lab1a-008.png
    :width: 800px
-.. |lab019| image:: _static/lab1-019.png
+.. |lab019| image:: _static/lab1a-009.png
    :width: 800px
-.. |lab020| image:: _static/lab1-020.png
+.. |lab020| image:: _static/lab1a-010.png
    :width: 800px
-.. |lab021| image:: _static/lab1-021.png
+.. |lab021| image:: _static/lab1a-011.png
    :width: 800px
-.. |lab022| image:: _static/lab1-022.png
+.. |lab022| image:: _static/lab1a-012.png
    :width: 800px
-.. |lab023| image:: _static/lab1-023.png
+.. |lab023| image:: _static/lab1a-013.png
    :width: 800px
-.. |lab024| image:: _static/lab1-024.png
+.. |lab024| image:: _static/lab1a-014.png
    :width: 800px
-.. |lab025| image:: _static/lab1-025.png
+.. |lab025| image:: _static/lab1a-015.png
    :width: 800px
-.. |lab026| image:: _static/lab1-026.png
+.. |lab026| image:: _static/lab1a-016.png
    :width: 800px
-.. |lab027| image:: _static/lab1-027.png
+.. |lab027| image:: _static/lab1a-017.png
    :width: 800px
-.. |lab028| image:: _static/lab1-028.png
+.. |lab028| image:: _static/lab1a-018.png
    :width: 800px
-.. |lab029| image:: _static/lab1-029.png
+.. |lab029| image:: _static/lab1a-019.png
    :width: 800px
-.. |lab030| image:: _static/lab1-030.png
+.. |lab020| image:: _static/lab1a-020.png
    :width: 800px
-.. |lab031| image:: _static/lab1-031.png
+.. |lab021| image:: _static/lab1a-021.png
    :width: 800px
-.. |lab032| image:: _static/lab1-032.png
+.. |lab022| image:: _static/lab1a-022.png
    :width: 800px
-.. |lab033| image:: _static/lab1-033.png
+.. |lab023| image:: _static/lab1a-023.png
    :width: 800px
-.. |lab034| image:: _static/lab1-034.png
+.. |lab024| image:: _static/lab1a-024.png
    :width: 800px
-.. |lab035| image:: _static/lab1-035.png
+.. |lab025| image:: _static/lab1a-025.png
    :width: 800px
-.. |lab036| image:: _static/lab1-036.png
+.. |lab026| image:: _static/lab1a-026.png
    :width: 800px
-.. |lab037| image:: _static/lab1-037.png
+.. |lab027| image:: _static/lab1a-027.png
    :width: 800px
-.. |lab038| image:: _static/lab1-038.png
+.. |lab028| image:: _static/lab1a-028.png
    :width: 800px
-.. |lab039| image:: _static/lab1-039.png
-   :width: 800px
-.. |lab040| image:: _static/lab1-040.png
-   :width: 800px
-.. |lab041| image:: _static/lab1-041.png
-   :width: 800px
-.. |lab042| image:: _static/lab1-042.png
-   :width: 800px
-.. |lab043| image:: _static/lab1-043.png
-   :width: 800px
-.. |lab044| image:: _static/lab1-044.png
-   :width: 800px
-.. |lab045| image:: _static/lab1-045.png
-   :width: 800px
-.. |lab046| image:: _static/lab1-046.png
-   :width: 800px
-.. |lab047| image:: _static/lab1-047.png
-   :width: 800px
-.. |lab048| image:: _static/lab1-048.png
-   :width: 800px
-.. |lab049| image:: _static/lab1-049.png
-   :width: 800px
-.. |lab050| image:: _static/lab1-050.png
-   :width: 800px
-.. |lab051| image:: _static/lab1-051.png
-   :width: 800px
-.. |lab052| image:: _static/lab1-052.png
-   :width: 800px
-.. |lab053| image:: _static/lab1-053.png
-   :width: 800px
-.. |lab054| image:: _static/lab1-054.png
-   :width: 800px
-.. |lab055| image:: _static/lab1-055.png
-   :width: 800px
-.. |lab056| image:: _static/lab1-056.png
-   :width: 800px
-.. |lab057| image:: _static/lab1-057.png
+.. |lab029| image:: _static/lab1a-029.png
    :width: 800px
 .. |labend| image:: _static/labend.png
    :width: 800px

@@ -4,16 +4,17 @@ F5 Distributed Cloud: Application Firewall & Services
 Welcome
 -------
 
-In this lab, attendees will take a deeper dive into F5 Application Firewall, Bot Defence and Malicious User.
-Attendees will review AFW Policy Frameworks, exercise configuration options, review security events
-and perform exclusion handling. Attendees will also explore Siganture and Signal based Bot Defense, along with dehavior driven Malicius User. 
+In this lab, participants will embark on a journey through Web Application 
+and API Protection (WAAP) within F5 Distributed Cloud. Get ready to be hands-on, 
+deploying and managing a Web Application Firewall, while gaining experience 
+with F5 Distributed Cloud Bot Defense and Malicious Users.
 
 Objective:
 ----------
 
 -  Gain a deeper understanding of key F5 Distributed Cloud security functions and controls
 
--  Gain an understanding WAAP Policies, Service Policies and BotDefense configuration.
+-  Explore WAAP Policies, BotDefense configuration, and behavior based Malicious User
 
 Lab & Tasks:
 ------------
