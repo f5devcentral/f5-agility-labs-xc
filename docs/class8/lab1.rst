@@ -165,7 +165,9 @@ Task 2: Create & Review Our First Proxy Configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The following steps will create an origin pool and http load balancer utilizing Postman to post JSON definitions
-to the Distributed Cloud API.
+to the Distributed Cloud API. For this task you will be using a Windows 10 host that is part of the UDF 
+deployment.  The Windows 10 host has Postman pre-installed to save time in the lab.  To install and utilize 
+postman outside of the lab visit https://www.postman.com/downloads/.
 
 +---------------------------------------------------------------------------------------------------------------+
 | 1.                                                                                                            |
