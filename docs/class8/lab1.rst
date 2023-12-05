@@ -45,7 +45,7 @@ utilizing the Developer Portal.
 | 5. Fill in the resulting form with the following values:                                                      |
 |                                                                                                               |
 |     * **Credential Name ID:**  *<namespace>-api-token*                                                        |
-|     * **Credential Type: Select: ** *API Token*                                                               |
+|     * **Credential Type: Select:** *API Token*                                                                |
 |     * **Expiry Date: Select:** *<date two day in the future of today's date>*                                 |
 |                                                                                                               |
 | 6. Click **Generate**.                                                                                        |
@@ -88,7 +88,7 @@ utilizing the Developer Portal.
 +---------------------------------------------------------------------------------------------------------------+
 | 10. In the resulting window, enter **f5-xc-lab-app** in the **Please enter your domain** text field and click |
 |                                                                                                               |
-|    **Access portal.**                                                                                         |
+|     **Access portal.**                                                                                        |
 |                                                                                                               |
 | 11. In the resulting screen click the **Authorize** link in the top right corner.                             |
 |                                                                                                               |
@@ -130,10 +130,11 @@ utilizing the Developer Portal.
 |                                                                                                               |
 | |lab1-Portal_Execute|                                                                                         |
 |                                                                                                               |
-| |lab1-Namespaces_JSON|                                                                                        |
+| |lab1-Portal_Namespaces_JSON|                                                                                        |
 +---------------------------------------------------------------------------------------------------------------+
 
 Next you will set parameters within the API query to limit the results that are returned.
+
 +---------------------------------------------------------------------------------------------------------------+
 | 18. Scroll down through the **Namespace** APIs until you find **GET /api/web/namespaces/{name}** and click the|
 |                                                                                                               |
@@ -148,7 +149,7 @@ Next you will set parameters within the API query to limit the results that are 
 | .. note::                                                                                                     |
 |    *The parameters you entered in the **name** field were used to execute the API query and limit the*        |
 |                                                                                                               |
-|    *returned values.  Parameters can also be used when creating new objects.*                                         |
+|    *returned values.  Parameters can also be used when creating new objects.*                                 |
 |                                                                                                               |
 +---------------------------------------------------------------------------------------------------------------+
 | |lab1-Portal_Namespaces_Name|                                                                                 |
@@ -216,7 +217,7 @@ to the Distributed Cloud API.
    :width: 800px
 .. |lab1-Portal_Execute| image:: _static/lab1-Portal_Execute.png
    :width: 800px
-.. |lab1-Namespaces_JSON| image:: _static/lab1-Namespaces_JSON.png
+.. |lab1-Portal_Namespaces_JSON| image:: _static/lab1-Portal_Namespaces_JSON.png
    :width: 800px
 .. |lab1-Portal_Namespaces_Name|| image:: _static/lab1-Portal_Namespaces_Name.png
    :width: 800px
