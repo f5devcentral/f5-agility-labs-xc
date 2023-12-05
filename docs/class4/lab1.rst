@@ -46,9 +46,9 @@ steps will define an application, register its DNS and assign a target as an ori
 |                                                                                              |
 | 3. In the resulting screen click the **Add HTTP Load Balancer** in the graphic as shown.     |
 +----------------------------------------------------------------------------------------------+
-| |lab001|                                                                                     |
+| |lab1-task1-001|                                                                             |
 |                                                                                              |
-| |lab002|                                                                                     |
+| |lab1-task1-002|                                                                             |
 +----------------------------------------------------------------------------------------------+
 
 .. note::
@@ -66,7 +66,7 @@ steps will define an application, register its DNS and assign a target as an ori
 |    * **Basic Configuration: Automatically Manage DNS Records:** *(Check the checkbox)*       |
 |    * **Basic Configuration: HTTP Port:** *80*                                                |
 +----------------------------------------------------------------------------------------------+
-| |lab003|                                                                                     |
+| |lab1-task1-003|                                                                             |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
@@ -74,13 +74,13 @@ steps will define an application, register its DNS and assign a target as an ori
 |                                                                                              |
 |    **Origins** section, under **Origin Pools**, click **Add Item**.                          |
 +----------------------------------------------------------------------------------------------+
-| |lab004|                                                                                     |
+| |lab1-task1-004|                                                                             |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
 | 6. In the resulting window, use the drop down as shown and click **Add Item**.               |
 +----------------------------------------------------------------------------------------------+
-| |lab005|                                                                                     |
+| |lab1-task1-005|                                                                             |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
@@ -88,7 +88,7 @@ steps will define an application, register its DNS and assign a target as an ori
 |                                                                                              |
 |    **Add Item** under **Origin Servers** as shown.                                           |
 +----------------------------------------------------------------------------------------------+
-| |lab006|                                                                                     |
+| |lab1-task1-006|                                                                             |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
@@ -100,7 +100,7 @@ steps will define an application, register its DNS and assign a target as an ori
 |                                                                                              |
 |    **demo-app.amer.myedgedemo.com** and then click **Apply**                                 |
 +----------------------------------------------------------------------------------------------+
-| |lab007|                                                                                     |
+| |lab1-task1-007|                                                                             |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
@@ -112,11 +112,11 @@ steps will define an application, register its DNS and assign a target as an ori
 |                                                                                              |
 | 12. After returning to the next window and confirming the content, click **Apply**.          |
 +----------------------------------------------------------------------------------------------+
-| |lab008|                                                                                     |
+| |lab1-task1-008|                                                                             |
 |                                                                                              |
-| |lab009|                                                                                     |
+| |lab1-task1-009|                                                                             |
 |                                                                                              |
-| |lab010|                                                                                     |
+| |lab1-task1-010|                                                                             |
 +----------------------------------------------------------------------------------------------+
 
 Task 2: Swagger File Import & Version Control
@@ -137,7 +137,7 @@ version control features.
 +----------------------------------------------------------------------------------------------+
 | 2. In the left top click the F5 ball and navigate to the **Web App & API Protection** Tile.  |
 +----------------------------------------------------------------------------------------------+
-| |lab011|                                                                                     |
+| |lab1-task2-001|                                                                             |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
@@ -147,7 +147,7 @@ version control features.
 |                                                                                              |
 |    the top of the window can also be used.                                                   |
 +----------------------------------------------------------------------------------------------+
-| |lab012|                                                                                     |
+| |lab1-task2-002|                                                                             |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
@@ -159,13 +159,13 @@ version control features.
 |                                                                                              |
 |    downloaded in Step 1 above and click **Open**.                                            |
 +----------------------------------------------------------------------------------------------+
-| |lab013|                                                                                     |
+| |lab1-task2-003|                                                                             |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
 | 7. Observe that the file **app-api-v1.json**  is present and the click **Save and Exit**     |
 +----------------------------------------------------------------------------------------------+
-| |lab014|                                                                                    |
+| |lab1-task2-004|                                                                             |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
@@ -178,7 +178,7 @@ version control features.
 |                                                                                              |
 |    *has been successfully added.*                                                            |
 +----------------------------------------------------------------------------------------------+
-| |lab015|                                                                                     |
+| |lab1-task2-005|                                                                             |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
@@ -198,7 +198,7 @@ version control features.
 |                                                                                              |
 |     in the **Action** column.  In the resulting selection menu, select **Update New Version**|
 +----------------------------------------------------------------------------------------------+
-| |lab016|                                                                                     |
+| |lab1-task2-006|                                                                             |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
@@ -208,9 +208,9 @@ version control features.
 |                                                                                              |
 | 12. Observe that the file **app-api-v1.json**  is present and the click **Save and Exit**    |
 +----------------------------------------------------------------------------------------------+
-| |lab017|                                                                                     |
+| |lab1-task2-007|                                                                             |
 |                                                                                              |
-| |lab018|                                                                                    |
+| |lab1-task2-008|                                                                             |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
@@ -222,7 +222,7 @@ version control features.
 |                                                                                              |
 |     **2** in the **Versions** column.                                                        |
 +----------------------------------------------------------------------------------------------+
-| |lab019|                                                                                     |
+| |lab1-task2-009|                                                                             |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
@@ -235,10 +235,10 @@ version control features.
 |                                                                                              |
 | 16. Click **X** in the top-right corner and proceed to the next task.                        |
 +----------------------------------------------------------------------------------------------+
-| |lab020|                                                                                     |
+| |lab1-task2-010|                                                                             |
 +----------------------------------------------------------------------------------------------+
 
-Task 2: Swagger Definition
+Task 3: Swagger Definition
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In this task's series of steps you will establish the Swagger Definition which serves as an object
@@ -250,7 +250,7 @@ pointer to imported swagger files you just uploaded.
 |                                                                                              |
 |    **Management** under the **Manage** section and then click **API Definition**.            |
 +----------------------------------------------------------------------------------------------+
-| |lab021|                                                                                     |
+| |lab1-task3-001|                                                                             |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
@@ -258,7 +258,7 @@ pointer to imported swagger files you just uploaded.
 |                                                                                              |
 |    window area as shown.                                                                     |
 +----------------------------------------------------------------------------------------------+
-| |lab022|                                                                                     |
+| |lab1-task3-002|                                                                             |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
@@ -276,10 +276,10 @@ pointer to imported swagger files you just uploaded.
 |                                                                                              |
 | 6. Once selected, click **Save and Exit** in the bottom-right corner.                        |
 +----------------------------------------------------------------------------------------------+
-| |lab023|                                                                                     |
+| |lab1-task3-003|                                                                             |
 +----------------------------------------------------------------------------------------------+
 
-Task 3: Enabling API Inventory and Dicovery
+Task 4: Enabling API Inventory and Dicovery
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In this task's series of steps you will enable the API Inventory and Dicovery feature on the 
@@ -290,7 +290,7 @@ previously built Load Balancer object delivering the targeted application/API.
 |                                                                                              |
 |    **Balancers** under the **Manage** section.                                               |
 +----------------------------------------------------------------------------------------------+
-| |lab024|                                                                                     |
+| |lab1-task4-001|                                                                             |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
@@ -298,13 +298,13 @@ previously built Load Balancer object delivering the targeted application/API.
 |                                                                                              |
 |    **Action** column, and the select **Manage Configuration**.                               |
 +----------------------------------------------------------------------------------------------+
-| |lab025|                                                                                     |
+| |lab1-task4-002|                                                                             |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
 | 3. Click **Edit Configuration** in the top-right corner.                                     |
 +----------------------------------------------------------------------------------------------+
-| |lab026|                                                                                     |
+| |lab1-task4-003|                                                                             |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
@@ -314,7 +314,7 @@ previously built Load Balancer object delivering the targeted application/API.
 |                                                                                              |
 |    and select **Enable**.                                                                    |
 +----------------------------------------------------------------------------------------------+
-| |lab027|                                                                                     |
+| |lab1-task4-004|                                                                             |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
@@ -322,7 +322,7 @@ previously built Load Balancer object delivering the targeted application/API.
 |                                                                                              |
 | 7. previously created API Definition **<namespace>/app-api-spec**.                           |
 +----------------------------------------------------------------------------------------------+
-| |lab028|                                                                                     |
+| |lab1-task4-005|                                                                             |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
@@ -330,7 +330,17 @@ previously built Load Balancer object delivering the targeted application/API.
 |                                                                                              |
 |    and select **Enable**.                                                                    |
 +----------------------------------------------------------------------------------------------+
-| |lab029|                                                                                     |
+| |lab1-task4-006|                                                                             |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 9. In the updated **API Discovery** section, click the drop-down arrow next to **Learn**     |
+|                                                                                              |
+|    **from Traffic with Redirect Response** and then select **Enable Learning from Redirect** |
+|                                                                                              |
+|    *Traffic**.                                                                               |
++----------------------------------------------------------------------------------------------+
+| |lab1-task4-007|                                                                             |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
@@ -341,83 +351,63 @@ previously built Load Balancer object delivering the targeted application/API.
 | |labend|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
-.. |lab001| image:: _static/lab1-001.png
+.. |lab1-task1-001| image:: _static/lab1-task1-001.png
    :width: 800px
-.. |lab002| image:: _static/lab1-002.png
+.. |lab1-task1-002| image:: _static/lab1-task1-002.png
    :width: 800px
-.. |lab003| image:: _static/lab1-003.png
+.. |lab1-task1-003| image:: _static/lab1-task1-003.png
    :width: 800px
-.. |lab004| image:: _static/lab1-004.png
+.. |lab1-task1-004| image:: _static/lab1-task1-004.png
    :width: 800px
-.. |lab005| image:: _static/lab1-005.png
+.. |lab1-task1-005| image:: _static/lab1-task1-005.png
    :width: 800px
-.. |lab006| image:: _static/lab1-006.png
+.. |lab1-task1-006| image:: _static/lab1-task1-006.png
    :width: 800px
-.. |lab007| image:: _static/lab1-007.png
+.. |lab1-task1-007| image:: _static/lab1-task1-007.png
    :width: 800px
-.. |lab008| image:: _static/lab1-008.png
+.. |lab1-task1-008| image:: _static/lab1-task1-008.png
    :width: 800px
-.. |lab009| image:: _static/lab1-009.png
+.. |lab1-task1-009| image:: _static/lab1-task1-009.png
    :width: 800px
-.. |lab010| image:: _static/lab1-010.png
+.. |lab1-task1-010| image:: _static/lab1-task1-010.png
    :width: 800px
-.. |lab011| image:: _static/lab1a-001.png
+.. |lab1-task2-001| image:: _static/lab1-task2-001.png
    :width: 800px
-.. |lab012| image:: _static/lab1a-002.png
+.. |lab1-task2-002| image:: _static/lab1-task2-002.png
    :width: 800px
-.. |lab013| image:: _static/lab1a-003.png
+.. |lab1-task2-003| image:: _static/lab1-task2-003.png
    :width: 800px
-.. |lab014| image:: _static/lab1a-004.png
+.. |lab1-task2-004| image:: _static/lab1-task2-004.png
    :width: 800px
-.. |lab015| image:: _static/lab1a-005.png
+.. |lab1-task2-005| image:: _static/lab1-task2-005.png
    :width: 800px
-.. |lab016| image:: _static/lab1a-006.png
+.. |lab1-task2-006| image:: _static/lab1-task2-006.png
    :width: 800px
-.. |lab017| image:: _static/lab1a-007.png
+.. |lab1-task2-007| image:: _static/lab1-task2-007.png
    :width: 800px
-.. |lab018| image:: _static/lab1a-008.png
+.. |lab1-task2-008| image:: _static/lab1-task2-008.png
    :width: 800px
-.. |lab019| image:: _static/lab1a-009.png
+.. |lab1-task2-009| image:: _static/lab1-task2-009.png
    :width: 800px
-.. |lab020| image:: _static/lab1a-010.png
+.. |lab1-task2-010| image:: _static/lab1-task2-010.png
    :width: 800px
-.. |lab021| image:: _static/lab1a-011.png
+.. |lab1-task3-001| image:: _static/lab1-task3-001.png
    :width: 800px
-.. |lab022| image:: _static/lab1a-012.png
+.. |lab1-task3-002| image:: _static/lab1-task3-002.png
    :width: 800px
-.. |lab023| image:: _static/lab1a-013.png
+.. |lab1-task3-003| image:: _static/lab1-task3-004.png
    :width: 800px
-.. |lab024| image:: _static/lab1a-014.png
+.. |lab1-task4-001| image:: _static/lab1-task4-001.png
    :width: 800px
-.. |lab025| image:: _static/lab1a-015.png
+.. |lab1-task4-002| image:: _static/lab1-task4-002.png
    :width: 800px
-.. |lab026| image:: _static/lab1a-016.png
+.. |lab1-task4-003| image:: _static/lab1-task4-003.png
    :width: 800px
-.. |lab027| image:: _static/lab1a-017.png
+.. |lab1-task4-004| image:: _static/lab1-task4-004.png
    :width: 800px
-.. |lab028| image:: _static/lab1a-018.png
+.. |lab1-task4-005| image:: _static/lab1-task4-005.png
    :width: 800px
-.. |lab029| image:: _static/lab1a-019.png
-   :width: 800px
-.. |lab020| image:: _static/lab1a-020.png
-   :width: 800px
-.. |lab021| image:: _static/lab1a-021.png
-   :width: 800px
-.. |lab022| image:: _static/lab1a-022.png
-   :width: 800px
-.. |lab023| image:: _static/lab1a-023.png
-   :width: 800px
-.. |lab024| image:: _static/lab1a-024.png
-   :width: 800px
-.. |lab025| image:: _static/lab1a-025.png
-   :width: 800px
-.. |lab026| image:: _static/lab1a-026.png
-   :width: 800px
-.. |lab027| image:: _static/lab1a-027.png
-   :width: 800px
-.. |lab028| image:: _static/lab1a-028.png
-   :width: 800px
-.. |lab029| image:: _static/lab1a-029.png
+.. |lab1-task4-006| image:: _static/lab1-task4-006.png
    :width: 800px
 .. |labend| image:: _static/labend.png
    :width: 800px

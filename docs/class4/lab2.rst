@@ -24,7 +24,7 @@ previously built Load Balancer object delivering the targeted application/API.
 |                                                                                              |
 |    **Balancers** under the **Manage** section.                                               |
 +----------------------------------------------------------------------------------------------+
-| |lab001|                                                                                     |
+| |lab2-task1-001|                                                                             |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
@@ -32,53 +32,43 @@ previously built Load Balancer object delivering the targeted application/API.
 |                                                                                              |
 |    **Action** column, and the select **Manage Configuration**.                               |
 +----------------------------------------------------------------------------------------------+
-| |lab002|                                                                                     |
+| |lab2-task1-002|                                                                             |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
 | 3. Click **Edit Configuration** in the top-right corner.                                     |
 +----------------------------------------------------------------------------------------------+
-| |lab003|                                                                                     |
+| |lab2-task1-003|                                                                             |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 4. In the updated **API Discovery** section, click the drop-down arrow next to **Learn**     |
-|                                                                                              |
-|    **from Traffic with Redirect Response** and then select **Enable Learning from Redirect** |
-|                                                                                              |
-|    *Traffic**.                                                                               |
+| 5. In the **API Protection Rules** section, click the **Configure** link.                    |
 +----------------------------------------------------------------------------------------------+
-| |lab004|                                                                                     |
+| |lab2-task1-004|                                                                             |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 5. In the **API Protection Rules** section, click the **Configure** link.                   |
-+----------------------------------------------------------------------------------------------+
-| |lab005|                                                                                     |
-+----------------------------------------------------------------------------------------------+
-
-+----------------------------------------------------------------------------------------------+
-| 6. In the resulting **API Protection Rules** window, click **Configure** in the **API**     |
+| 6. In the resulting **API Protection Rules** window, click **Configure** in the **API**      |
 |                                                                                              |
 |     **Endpoints** section.                                                                   |
 +----------------------------------------------------------------------------------------------+
-| |lab006|                                                                                     |
+| |lab2-task1-005|                                                                             |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 7. Click **Add Item** in the **API Endpoints** window.                                      |
+| 7. Click **Add Item** in the **API Endpoints** window.                                       |
 +----------------------------------------------------------------------------------------------+
-| |lab007|                                                                                     |
+| |lab2-task1-006|                                                                             |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 8. In the resulting window, input **block-endpoint** in the **Name** field of the           |
+| 8. In the resulting window, input **block-endpoint** in the **Name** field of the            |
 |                                                                                              |
 |     **Metadata** section.                                                                    |
 |                                                                                              |
-| 9. In the **Action** area, click the drop-down arrow indicated and select **Deny**.         |
+| 9. In the **Action** area, click the drop-down arrow indicated and select **Deny**.          |
 +----------------------------------------------------------------------------------------------+
-| |lab008|                                                                                     |
+| |lab2-task1-007|                                                                             |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
@@ -86,7 +76,7 @@ previously built Load Balancer object delivering the targeted application/API.
 |                                                                                              |
 | 11. Select the **See Suggestions** link.                                                     |
 +----------------------------------------------------------------------------------------------+
-| |lab009|                                                                                     |
+| |lab2-task1-008|                                                                             |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
@@ -97,7 +87,7 @@ previously built Load Balancer object delivering the targeted application/API.
 |                                                                                              |
 | 13. In the **HTTP Methods** area, click in the **Method List** input field.                  |
 +----------------------------------------------------------------------------------------------+
-| |lab010|                                                                                     |
+| |lab2-task1-009|                                                                             |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
@@ -106,19 +96,19 @@ previously built Load Balancer object delivering the targeted application/API.
 | .. note::                                                                                    |
 |    *Multiple methods can be selected if needed*                                              |
 +----------------------------------------------------------------------------------------------+
-| |lab011|                                                                                     |
+| |lab2-task1-010|                                                                             |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
 | 15. Review the configuration and click, the **Apply** button.                                |
 +----------------------------------------------------------------------------------------------+
-| |lab012|                                                                                     |
+| |lab2-task1-011|                                                                             |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
 | 16. Review the API Endpoint deny rule and click, the **Apply** button.                       |
 +----------------------------------------------------------------------------------------------+
-| |lab013|                                                                                     |
+| |lab2-task1-012|                                                                             |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
@@ -126,10 +116,10 @@ previously built Load Balancer object delivering the targeted application/API.
 |                                                                                              |
 |     **Apply** button.                                                                        |
 +----------------------------------------------------------------------------------------------+
-| |lab014|                                                                                     |
+| |lab2-task1-013|                                                                             |
 +----------------------------------------------------------------------------------------------+
 
-Task 4: Attach API Rate Limiting to Load Balancer Object 
+Task 2: Attach API Rate Limiting to Load Balancer Object 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In this task's series of steps you will enable the API Rate Limiting feature on the 
@@ -138,7 +128,7 @@ previously built Load Balancer object delivering the targeted application/API.
 +----------------------------------------------------------------------------------------------+
 | 1. Using the left-hand navigation, click the **Common Security Controls** link.              |
 +----------------------------------------------------------------------------------------------+
-| |lab015|                                                                                     |
+| |lab2-task1-001|                                                                             |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
@@ -146,9 +136,9 @@ previously built Load Balancer object delivering the targeted application/API.
 |                                                                                              |
 |    drop-down to select **API Rate Limit**.                                                   |
 +----------------------------------------------------------------------------------------------+
-| |lab016|                                                                                     |
+| |lab2-task1-002|                                                                             |
 |                                                                                              |
-| |lab017|                                                                                     |
+| |lab2-task1-003|                                                                             |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
@@ -156,13 +146,13 @@ previously built Load Balancer object delivering the targeted application/API.
 |                                                                                              |
 |    **Endpoints** area.                                                                       |
 +----------------------------------------------------------------------------------------------+
-| |lab018|                                                                                     |
+| |lab2-task1-004|                                                                             |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
 | 4. In the resulting window **API Endpoints** window, click **Add Item**.                     |
 +----------------------------------------------------------------------------------------------+
-| |lab019|                                                                                     |
+| |lab2-task1-005|                                                                             |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
@@ -172,13 +162,13 @@ previously built Load Balancer object delivering the targeted application/API.
 |                                                                                              |
 | 6. Select **ANY** for **Method** input and then click the **Apply** button.                  |
 +----------------------------------------------------------------------------------------------+
-| |lab020|                                                                                     |
+| |lab2-task1-006|                                                                             |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
 | 7. Review the API Endpoint rate limiting rule and click, the **Apply** button.               |
 +----------------------------------------------------------------------------------------------+
-| |lab021|                                                                                     |
+| |lab2-task1-007|                                                                             |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
@@ -186,13 +176,13 @@ previously built Load Balancer object delivering the targeted application/API.
 |                                                                                              |
 |    the left-hand navigation.                                                                 |
 +----------------------------------------------------------------------------------------------+
-| |lab022|                                                                                     |
+| |lab2-task1-008|                                                                             |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
 | 9. Once at the bottom of the HTTP Load Balancer configuration and click the **Apply** button.|
 +----------------------------------------------------------------------------------------------+
-| |lab023|                                                                                     |
+| |lab2-task1-009|                                                                             |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
@@ -209,87 +199,49 @@ previously built Load Balancer object delivering the targeted application/API.
 | |labend|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
-.. _app-api-file-v1: http://demo-app.amer.myedgedemo.com/lab/app-api-v1.json
-.. _app-api-file-v2: http://demo-app.amer.myedgedemo.com/lab/app-api-v2.json
-.. |lab001| image:: _static/lab6-001.png
+.. |lab2-task1-001| image:: _static/lab2-task1-001.png
    :width: 800px
-.. |lab002| image:: _static/lab6-002.png
+.. |lab2-task1-002| image:: _static/lab2-task1-002.png
    :width: 800px
-.. |lab003| image:: _static/lab6-003.png
+.. |lab2-task1-003| image:: _static/lab2-task1-003.png
    :width: 800px
-.. |lab004| image:: _static/lab6-003a.png
+.. |lab2-task1-004| image:: _static/lab2-task1-004.png
    :width: 800px
-.. |lab005| image:: _static/lab6-004.png
+.. |lab2-task1-005| image:: _static/lab2-task1-005.png
    :width: 800px
-.. |lab006| image:: _static/lab6-005.png
+.. |lab2-task1-006| image:: _static/lab2-task1-006.png
    :width: 800px
-.. |lab007| image:: _static/lab6-006.png
+.. |lab2-task1-007| image:: _static/lab2-task1-007.png
    :width: 800px
-.. |lab008| image:: _static/lab6-006a.png
+.. |lab2-task1-008| image:: _static/lab2-task1-008.png
    :width: 800px
-.. |lab009| image:: _static/lab6-007.png
+.. |lab2-task1-009| image:: _static/lab2-task1-009.png
    :width: 800px
-.. |lab010| image:: _static/lab6-008.png
+.. |lab2-task1-010| image:: _static/lab2-task1-010.png
    :width: 800px
-.. |lab009| image:: _static/lab6-009.png
+.. |lab2-task1-011| image:: _static/lab2-task1-011.png
    :width: 800px
-.. |lab010| image:: _static/lab6-010.png
+.. |lab2-task1-012| image:: _static/lab2-task1-012.png
    :width: 800px
-.. |lab011| image:: _static/lab6-011.png
+.. |lab2-task1-013| image:: _static/lab2-task1-013.png
    :width: 800px
-.. |lab012| image:: _static/lab6-012.png
+.. |lab2-task2-001| image:: _static/lab2-task2-001.png
    :width: 800px
-.. |lab013| image:: _static/lab6-013.png
+.. |lab2-task2-002| image:: _static/lab2-task2-002.png
    :width: 800px
-.. |lab014| image:: _static/lab6-014.png
+.. |lab2-task2-003| image:: _static/lab2-task2-003.png
    :width: 800px
-.. |lab015| image:: _static/lab6-015.png
+.. |lab2-task2-004| image:: _static/lab2-task2-004.png
    :width: 800px
-.. |lab016| image:: _static/lab6-016.png
+.. |lab2-task2-005| image:: _static/lab2-task2-005.png
    :width: 800px
-.. |lab017| image:: _static/lab6-017.png
+.. |lab2-task2-006| image:: _static/lab2-task2-006.png
    :width: 800px
-.. |lab018| image:: _static/lab6-018.png
+.. |lab2-task2-007| image:: _static/lab2-task2-007.png
    :width: 800px
-.. |lab019| image:: _static/lab6-019.png
+.. |lab2-task2-008| image:: _static/lab2-task2-008.png
    :width: 800px
-.. |lab020| image:: _static/lab6-020.png
-   :width: 800px
-.. |lab021| image:: _static/lab6-021.png
-   :width: 800px
-.. |lab022| image:: _static/lab6-022.png
-   :width: 800px
-.. |lab023| image:: _static/lab6-023.png
-   :width: 800px
-.. |lab024| image:: _static/lab6-024.png
-   :width: 800px
-.. |lab025| image:: _static/lab6-025.png
-   :width: 800px
-.. |lab026| image:: _static/lab6-026.png
-   :width: 800px
-.. |lab027| image:: _static/lab6-027.png
-   :width: 800px
-.. |lab028| image:: _static/lab6-028.png
-   :width: 800px
-.. |lab029| image:: _static/lab6-029.png
-   :width: 800px
-.. |lab030| image:: _static/lab6-030.png
-   :width: 800px
-.. |lab031| image:: _static/lab6-031.png
-   :width: 800px
-.. |lab032| image:: _static/lab6-032.png
-   :width: 800px
-.. |lab033| image:: _static/lab6-033.png
-   :width: 800px
-.. |lab034| image:: _static/lab6-034.png
-   :width: 800px
-.. |lab035| image:: _static/lab6-035.png
-   :width: 800px
-.. |lab036| image:: _static/lab6-036.png
-   :width: 800px
-.. |lab036| image:: _static/lab6-036.png
-   :width: 800px
-.. |lab037| image:: _static/lab6-037.png
+.. |lab2-task2-009| image:: _static/lab2-task2-009png
    :width: 800px
 .. |labend| image:: _static/labend.png
    :width: 800px
