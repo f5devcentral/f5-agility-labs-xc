@@ -147,9 +147,9 @@ Next you will set parameters within the API query to limit the results that are 
 |     depending on your screen resolution.                                                                      |
 |                                                                                                               |
 | .. note::                                                                                                     |
-|    *The parameters you entered in the **name** field were used to execute the API query and limit the*        |
+|    *The parameters you entered in the name field were used to execute the API query and limit the returned*   |
 |                                                                                                               |
-|    *returned values.  Parameters can also be used when creating new objects.*                                 |
+|    *values.  Parameters can also be used when creating new objects.*                                          |
 |                                                                                                               |
 +---------------------------------------------------------------------------------------------------------------+
 | |lab1-Portal_Namespaces_Name|                                                                                 |
