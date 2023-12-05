@@ -42,7 +42,7 @@ utilizing the Developer Portal.
 |                                                                                                               |
 | 4. Click **Add Credentials**.                                                                                 |
 |                                                                                                               |
-| 5. Fill in the resulting form with the following values:                                                      |
+| 5. Fill in the resulting form with the following values\:                                                      |
 |                                                                                                               |
 |     * **Credential Name ID:**  *<namespace>-api-token*                                                        |
 |     * **Credential Type: Select:** *API Token*                                                                |
