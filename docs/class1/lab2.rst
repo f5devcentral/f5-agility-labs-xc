@@ -6,9 +6,42 @@ In the previous lab you learned how to protect a resource that is already on the
 In this next lab we will look at two additional topologies of how you can use a Customer Edge node
 to secure traffic that is going to an endpoint that is not directly exposed to the Internet.
 
-These topoligies require creating a site and deploying a Customer Edge node. This lab has auto deployed an AWS site with a Customer Edge node for you. You may walk through this process using the F5 Distributed Cloud Simulator if you wish.
+In this lab we will protect an application that is hosted in AWS but not directly exposed to the Internet.
+
+F5 Distributed Cloud AWS VPC Site
+---------------------------------
+
+In addition to protecting resources using F5 Distributed Cloud WAF/WAAP enforcement at an F5 Regional Edge (RE),
+you can also deploy a Customer Edge (CE) that may or may not be exposed to the public Internet. CE nodes may be 
+deployed in physical data centers and/or public cloud environments.
+ 
+Once a CE has been deployed, it unlocks two additional topologies.
+
+1. Client -> RE -> CE -> Protected resource  
+
+Leveraging F5 Distributed Cloud REs to provide WAF and other services upstream, 
+then proxying the clean traffic to the protected resource via the CE.  It is recommended that a firewall rule be placed at the site with the CE
+to only allow traffic from an RE.  This ensures that all traffic is scrubbed upstream before entering the site.
+
+2. Client -> CE -> Protected resource  
+
+In this scenario, the CE advertises the services directly.  While this topology sacrifices some functionality such as 
+volumetric DDoS protection and anycast availability from the Distributed Cloud global network, there are some use cases where it can be beneficial.  
+One such example is when clients and protected resources are both local to each other without having to traverse the Internet.
+
+With either toplogy, two encrypted tunnels are automatically created between the CE and the two closest REs.  These redundant tunnels provide
+high availability in the unlikely event of an outage at a specific RE within the Distributed Cloud global network.
+
+In the event of an Internet outage at a CE site, local survivability will continue to provide data plane services locally for a period of time.  
+During this time, control plane services are suspended and will resume upon Internet connection reestablishment.
+
+While a single CE may be adequate for non-production environments, a high-availability cluster of at least 3 CE's is highly recommended for production.
+
+This lab has auto deployed an AWS site with a Customer Edge node for you. You may walk through this process using the F5 Distributed Cloud Simulator if you wish.
 
 https://simulator.f5.com/s/cloud2cloud_via_sites_brownfield/nav/aws/005/0
+
+Continue with the steps below to allow secure connectivity to the AWS hosted application. 
 
 
 Task 1. Create Origin Pools
