@@ -176,8 +176,7 @@ documentation and download links for installing an RDP client.
 +-------------------+-------------------------------------------------------------------------------------------+
 | Operating System  | Documentation and Download Link                                                           | 
 +===================+===========================================================================================+
-| macOS             | https://learn.microsoft.com/en-us/windows-server/remote/remote-desktop-services/clients/  |
-|                   | remote-desktop-mac                                                                        |
+| macOS             | 'Remote Desktop Mac'_                                                                     |
 +-------------------+-------------------------------------------------------------------------------------------+
 | iOS/iPadOS        | https://learn.microsoft.com/en-us/windows-server/remote/remote-desktop-services/clients/  |
 |                   | remote-desktop-ios                                                                        |
@@ -254,5 +253,6 @@ Windows 10 host via WebRDP_.
 .. |labend| image:: _static/labend.png
    :width: 800px
 
-.. _RDPClient: rdpclient.rst
-.. _WebRDP: webrdp.rst
+.. _'Remote Desktop Mac': https://learn.microsoft.com/en-us/windows-server/remote/remote-desktop-services/clients/remote-desktop-mac
+.. _RDPClient: /docs/class8/rdpclient.rst
+.. _WebRDP: /docs/class8/webrdp.rst
