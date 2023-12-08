@@ -224,12 +224,12 @@ Performance Monitoring dashboard, and gather request details.
 | |lab023|                                                                                                      |
 +---------------------------------------------------------------------------------------------------------------+
 
-Task 3: Configure an Application Firewall Policy to Protect the Application
+Task 3: Add an Application Firewall Policy to Protect the Application
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The following steps will guide you through adding a Web Application Firewall (WAF) Policy.
 
-These steps will create a WAF Policy and apply the WAF policy to the load balancer created in Task 1.
+These steps will apply a preconfigured WAF policy to the load balancer created in Task 1.
 
 +---------------------------------------------------------------------------------------------------------------+
 | 1. Following **Task 2**, you should have the **Multi-Cloud App Connect** navigation panel on the left of your |
@@ -239,32 +239,9 @@ These steps will create a WAF Policy and apply the WAF policy to the load balanc
 |    **Select Service** dropdown at the top left, and click **Multi-Cloud App Connect** as shown in the         |
 |                                                                                                               |
 |    *Introduction section, Task 2, Step 9*.                                                                    |
+| 2. In the left-hand navigation expand **Manage** and click **Load Balancers > HTTP Load Balancers**           |
 |                                                                                                               |
-| 2. In the left-hand navigation expand **Security** and click **App Firewall**.                                |
-|                                                                                                               |
-| 3. On the resulting page click **Add App Firewall**                                                           | 
-+---------------------------------------------------------------------------------------------------------------+
-| |lab024|                                                                                                      |
-|                                                                                                               |
-| |lab025|                                                                                                      |
-+---------------------------------------------------------------------------------------------------------------+
-
-+---------------------------------------------------------------------------------------------------------------+
-| 4. In the resulting window's **Metadata** section enter **<namespace>-appfw** for the **Name**.               |
-|                                                                                                               |
-| 5. Under **Enforcement Mode**, change the mode to **Blocking**.                                               |
-|                                                                                                               |
-| 6. Leaving all other values as default, scroll to the bottom and click **Save and Exit**.                     |
-+---------------------------------------------------------------------------------------------------------------+
-| |lab026|                                                                                                      |
-|                                                                                                               |
-| |lab027|                                                                                                      |
-+---------------------------------------------------------------------------------------------------------------+
-
-+---------------------------------------------------------------------------------------------------------------+
-| 7. In the left-hand navigation expand **Manage** and click **Load Balancers > HTTP Load Balancers**           |
-|                                                                                                               |
-| 8. On the resulting page find the HTTP Load Balancer created in **Task 1** *(<namespace>-lb)*.  Click the     |
+| 3. On the resulting page find the HTTP Load Balancer created in **Task 1** *(<namespace>-lb)*.  Click the     |
 |                                                                                                               |
 |    ellipsis under Actions and select **Manage Configuration**.                                                |
 +---------------------------------------------------------------------------------------------------------------+
@@ -274,9 +251,9 @@ These steps will create a WAF Policy and apply the WAF policy to the load balanc
 +---------------------------------------------------------------------------------------------------------------+
 
 +---------------------------------------------------------------------------------------------------------------+
-| 9. On the resulting page click **Edit Configuration**.                                                        |
+| 4. On the resulting page click **Edit Configuration**.                                                        |
 |                                                                                                               |
-| 10. Click **Web Application Firewall** in the left-hand navigation.                                           |  
+| 5. Click **Web Application Firewall** in the left-hand navigation.                                            |  
 +---------------------------------------------------------------------------------------------------------------+
 | |lab030|                                                                                                      |
 |                                                                                                               |
@@ -285,15 +262,15 @@ These steps will create a WAF Policy and apply the WAF policy to the load balanc
 
 
 +---------------------------------------------------------------------------------------------------------------+
-| 11. Under the **Web Application Firewall** section select **Enable** from the **Web Application Firewall**    |
+| 6. Under the **Web Application Firewall** section select **Enable** from the **Web Application Firewall**     |
 |                                                                                                               |
 |     **(WAF)** dropdown.                                                                                       |
 |                                                                                                               |
-| 12. Select the Web Application Firewall name that you created in *Steps 1-6* of this task                     |
+| 7. Select preconfigured the Web Application Firewall                                                          |
 |                                                                                                               |
-|     *(<namespace>-appfw)* from the **Enable** dropdown.                                                       |
+|     *(default-blocking-appfw)* from the **Enable** dropdown.                                                  |
 |                                                                                                               |
-| 13. Scroll to the bottom of the page and click **Save and Exit**                                              |
+| 8. Scroll to the bottom of the page and click **Save and Exit**                                               |
 +---------------------------------------------------------------------------------------------------------------+
 | |lab032|                                                                                                      |
 |                                                                                                               |
