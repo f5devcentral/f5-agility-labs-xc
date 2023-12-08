@@ -254,5 +254,5 @@ Windows 10 host via WebRDP_.
 .. |labend| image:: _static/labend.png
    :width: 800px
 
-.. _RDPClient: /rdpclient.rst
-.. _WebRDP: /webrdp.rst
+.. _RDPClient: rdpclient.rst
+.. _WebRDP: webrdp.rst
