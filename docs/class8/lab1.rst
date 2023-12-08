@@ -169,6 +169,30 @@ to the Distributed Cloud API. For this task you will be using a Windows 10 host 
 deployment.  The Windows 10 host has Postman pre-installed to save time in the lab.  To install and utilize 
 postman outside of the lab visit https://www.postman.com/downloads/.
 
+An RDP client is recommended to access the Windows 10 host.  Current versions of Microsoft Windows should 
+include an RDP client pre-installed.  If you are using an operating system other than Windows, below are 
+documentation and download links for installing an RDP client.
+
++-------------------+-------------------------------------------------------------------------------------------+
+| Operating System  | Documentation and Download Link                                                           | 
++===================+===========================================================================================+
+| macOS             | https://learn.microsoft.com/en-us/windows-server/remote/remote-desktop-services/clients/  |
+|                   | remote-desktop-mac                                                                        |
++-------------------+-------------------------------------------------------------------------------------------+
+| iOS/iPadOS        | https://learn.microsoft.com/en-us/windows-server/remote/remote-desktop-services/clients/  |
+|                   | remote-desktop-ios                                                                        |
++-------------------+-------------------------------------------------------------------------------------------+
+| Android/Chrome OS | https://learn.microsoft.com/en-us/windows-server/remote/remote-desktop-services/clients/  |
+|                   | remote-desktop-android                                                                    |
++-------------------+-------------------------------------------------------------------------------------------+
+| Linux             | https://remmina.org/                                                                      |
++-------------------+-------------------------------------------------------------------------------------------+
+
+If you are unable to install an RDP client or cannot connect via RDP to the Windows 10 host, you can use the 
+WebRDP jump host within the UDF environment to access the Windows 10 host via a web browser. Here are 
+instructions for connecting to the Windows 10 host via RDPClient_. Here are instructions for connecting to the
+Windows 10 host via WebRDP_. 
+
 +---------------------------------------------------------------------------------------------------------------+
 | 1.                                                                                                            |
 +---------------------------------------------------------------------------------------------------------------+
@@ -229,3 +253,6 @@ postman outside of the lab visit https://www.postman.com/downloads/.
    :width: 800px
 .. |labend| image:: _static/labend.png
    :width: 800px
+
+.. _RDPClient: /rdpclient.rst
+.. _WebRDP: /webrdp.rst
