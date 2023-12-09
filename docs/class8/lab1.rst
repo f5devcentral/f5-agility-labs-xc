@@ -253,6 +253,6 @@ Windows 10 host via WebRDP_.
 .. |labend| image:: _static/labend.png
    :width: 800px
 
-.. _'Remote Desktop Mac': https://learn.microsoft.com/en-us/windows-server/remote/remote-desktop-services/clients/remote-desktop-mac
+.. _Remote Desktop Mac: https://learn.microsoft.com/en-us/windows-server/remote/remote-desktop-services/clients/remote-desktop-mac/
 .. _RDPClient doc::  rdpclient.rst
 .. _WebRDP  doc:: webrdp.rst
