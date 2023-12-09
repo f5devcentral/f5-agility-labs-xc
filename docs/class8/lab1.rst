@@ -178,13 +178,11 @@ documentation and download links for installing an RDP client.
 +===================+===========================================================================================+
 | macOS             | `Remote Desktop Mac`_                                                                     |
 +-------------------+-------------------------------------------------------------------------------------------+
-| iOS/iPadOS        | https://learn.microsoft.com/en-us/windows-server/remote/remote-desktop-services/clients/  |
-|                   | remote-desktop-ios                                                                        |
+| iOS/iPadOS        | `Remote Desktop iOS`_                                                                     |
 +-------------------+-------------------------------------------------------------------------------------------+
-| Android/Chrome OS | https://learn.microsoft.com/en-us/windows-server/remote/remote-desktop-services/clients/  |
-|                   | remote-desktop-android                                                                    |
+| Android/Chrome OS | `Remote Desktop Android`_                                                                 |
 +-------------------+-------------------------------------------------------------------------------------------+
-| Linux             | https://remmina.org/                                                                      |
+| Linux             | `Remote Desktop Linux`_                                                                   |
 +-------------------+-------------------------------------------------------------------------------------------+
 
 If you are unable to install an RDP client or cannot connect via RDP to the Windows 10 host, you can use the 
@@ -254,5 +252,8 @@ Windows 10 host via WebRDP_.
    :width: 800px
 
 .. _Remote Desktop Mac: https://learn.microsoft.com/en-us/windows-server/remote/remote-desktop-services/clients/remote-desktop-mac/
-.. _RDPClient doc::  rdpclient.rst
-.. _WebRDP  doc:: webrdp.rst
+.. _Remote Desktop iOS: https://learn.microsoft.com/en-us/windows-server/remote/remote-desktop-services/clients/remote-desktop-ios/
+.. _Remote Desktop Android: https://learn.microsoft.com/en-us/windows-server/remote/remote-desktop-services/clients/remote-desktop-android/
+.. _Remote Desktop Linux: https://remmina.org/ 
+.. _RDPClient:  /docs/class8/rdpclient.rst
+.. _WebRDP: /docs/class8/webrdp.rst
