@@ -254,5 +254,5 @@ Windows 10 host via WebRDP_.
    :width: 800px
 
 .. _'Remote Desktop Mac': https://learn.microsoft.com/en-us/windows-server/remote/remote-desktop-services/clients/remote-desktop-mac
-.. _RDPClient: /docs/class8/rdpclient.rst
-.. _WebRDP: /docs/class8/webrdp.rst
+.. _RDPClient doc::  rdpclient.rst
+.. _WebRDP  doc:: webrdp.rst
