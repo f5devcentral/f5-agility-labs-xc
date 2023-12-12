@@ -124,6 +124,8 @@ utilizing the Developer Portal.
 |    *values. Parameters can also be used when creating new objects.*                                           |
 |                                                                                                               |
 +---------------------------------------------------------------------------------------------------------------+
+| |lab1-Portal_Namespace|                                                                                       |
+|                                                                                                               |
 | |lab1-Portal_Namespaces_Name|                                                                                 |
 |                                                                                                               |
 | |lab1-Portal_Namespaces_Name_Execute|                                                                         |
@@ -285,6 +287,8 @@ Windows 10 client via WebRDP_.
 .. |lab1-Portal_Authorize| image:: _static/lab1-Portal_Authorize.png
    :width: 800px
 .. |lab1-Portal_Set_Token| image:: _static/lab1-Portal_Set_Token.png
+   :width: 800px
+.. |lab1-Portal_Namespace| image:: _static/lab1-Portal_Namespace.png
    :width: 800px
 .. |lab1-Portal_Namespaces_Name| image:: _static/lab1-Portal_Namespaces_Name.png
    :width: 800px
