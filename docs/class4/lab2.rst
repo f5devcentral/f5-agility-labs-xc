@@ -233,7 +233,7 @@ previously built Load Balancer object delivering the targeted application/API.
    :width: 800px
 .. |lab2-task2-008| image:: _static/lab2-task2-008.png
    :width: 800px
-.. |lab2-task2-009| image:: _static/lab2-task2-009png
+.. |lab2-task2-009| image:: _static/lab2-task2-009.png
    :width: 800px
 .. |labend| image:: _static/labend.png
    :width: 800px

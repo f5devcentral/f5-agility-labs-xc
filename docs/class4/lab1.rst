@@ -231,7 +231,7 @@ version control features.
 | .. note::                                                                                    |
 |    *This is an API File update process which can also be performed through the F5*           |
 |                                                                                              |
-|    *Distributed Cloud API framework.                                                         |
+|    *Distributed Cloud API framework.*                                                        |
 |                                                                                              |
 | 16. Click **X** in the top-right corner and proceed to the next task.                        |
 +----------------------------------------------------------------------------------------------+
@@ -395,7 +395,7 @@ previously built Load Balancer object delivering the targeted application/API.
    :width: 800px
 .. |lab1-task3-002| image:: _static/lab1-task3-002.png
    :width: 800px
-.. |lab1-task3-003| image:: _static/lab1-task3-004.png
+.. |lab1-task3-003| image:: _static/lab1-task3-003.png
    :width: 800px
 .. |lab1-task4-001| image:: _static/lab1-task4-001.png
    :width: 800px
@@ -408,6 +408,8 @@ previously built Load Balancer object delivering the targeted application/API.
 .. |lab1-task4-005| image:: _static/lab1-task4-005.png
    :width: 800px
 .. |lab1-task4-006| image:: _static/lab1-task4-006.png
+   :width: 800px
+.. |lab1-task4-007| image:: _static/lab1-task4-007.png
    :width: 800px
 .. |labend| image:: _static/labend.png
    :width: 800px
