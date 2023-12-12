@@ -1,20 +1,19 @@
-F5 Distributed Cloud - WAF/WAAP Deeper Dive
-================================================
+F5 Distributed Cloud - Service Policies & Rate Limiting
+=======================================================
 
 Welcome
 -------
 
-In this lab, attendees will take a deeper dive into F5 Web Application and API Protection (WAAP).
-Attendees will review WAAP Policy Frameworks, exercise configuration options, review security events
-and perform exclusion handling. Attendees will also explore Service Policy configuration and AI-driven 
-BotDefense deployment configurations.  
+In this lab, attendees will take a deeper dive into F5 Service Policies and Rate Limiting to provide application security.
+Attendees will review Security Policy Frameworks, exercise configuration options, review security events
+and perform hands-on configurations. Attendees will also explore rate limiting deployment configurations.  
 
 Objective:
 ----------
 
 -  Gain a deeper understanding of key F5 Distributed Cloud security functions and controls
 
--  Gain an understanding WAAP Policies, Service Policies and BotDefense configuration.
+-  Gain an understanding Service Policies and Rate Limiting configurations
 
 Lab & Tasks:
 ------------
