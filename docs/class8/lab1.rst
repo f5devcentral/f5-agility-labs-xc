@@ -138,10 +138,10 @@ utilizing the Developer Portal.
 Task 2: Create & Review Our First Proxy Configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The following steps will create an origin pool and http load balancer utilizing Postman to post JSON definitions
-to the Distributed Cloud API. For this task you will be using a Windows 10 client that is part of the UDF 
-deployment.  The Windows 10 client has Postman pre-installed to save time in the lab.  To install and utilize 
-postman outside of the lab visit https://www.postman.com/downloads/.
+The following steps will create Health Check, an Origin Pool and Http Load Balancer utilizing Postman to post 
+JSON definitions to the Distributed Cloud API. For this task you will be using a Windows 10 client that is part 
+of the UDF deployment. The Windows 10 client has Postman pre-installed to save time in the lab.  To install and 
+utilize postman outside of the lab visit https://www.postman.com/downloads/.
 
 An RDP client is recommended to access the Windows 10 client.  Current versions of Microsoft Windows should 
 include an RDP client pre-installed.  If you are using an operating system other than Windows, below are 
