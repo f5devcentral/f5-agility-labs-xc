@@ -119,6 +119,14 @@ steps will define an application, register its DNS and assign a target as an ori
 | |lab1-task1-010|                                                                             |
 +----------------------------------------------------------------------------------------------+
 
++----------------------------------------------------------------------------------------------+
+| 13. After returning to the HTTP Load Balancer window, select **Other Settings* on the left   |
+|                                                                                              |
+|     then click on **Save and Exit** at the bottom right of window.                           |
++----------------------------------------------------------------------------------------------+
+| |lab1-task1-011|                                                                             |
++----------------------------------------------------------------------------------------------+
+
 Task 2: Swagger File Import & Version Control
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -206,7 +214,7 @@ version control features.
 |                                                                                              |
 |     downloaded in Step 9 above and click **Open**.                                           |
 |                                                                                              |
-| 12. Observe that the file **app-api-v1.json**  is present and the click **Save and Exit**    |
+| 12. Observe that the file **app-api-v2.json**  is present and the click **Save and Exit**    |
 +----------------------------------------------------------------------------------------------+
 | |lab1-task2-007|                                                                             |
 |                                                                                              |
@@ -289,11 +297,7 @@ previously built Load Balancer object delivering the targeted application/API.
 | 1. In the left-hand navigation of the **Web App & API Protection** service, click on **Load**|
 |                                                                                              |
 |    **Balancers** under the **Manage** section.                                               |
-+----------------------------------------------------------------------------------------------+
-| |lab1-task4-001|                                                                             |
-+----------------------------------------------------------------------------------------------+
-
-+----------------------------------------------------------------------------------------------+
+|                                                                                              |
 | 2. In the resulting **Load Balancers** window, click on the three dots **...** in the        |
 |                                                                                              |
 |    **Action** column, and the select **Manage Configuration**.                               |
@@ -370,6 +374,8 @@ previously built Load Balancer object delivering the targeted application/API.
 .. |lab1-task1-009| image:: _static/lab1-task1-009.png
    :width: 800px
 .. |lab1-task1-010| image:: _static/lab1-task1-010.png
+   :width: 800px
+.. |lab1-task1-011| image:: _static/lab1-task1-011.png
    :width: 800px
 .. |lab1-task2-001| image:: _static/lab1-task2-001.png
    :width: 800px
