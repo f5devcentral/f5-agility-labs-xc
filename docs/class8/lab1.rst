@@ -286,19 +286,37 @@ Windows 10 client via WebRDP_.
    :width: 800px
 .. |lab1-Portal_Set_Token| image:: _static/lab1-Portal_Set_Token.png
    :width: 800px
-.. |lab1-Portal_Namespace| image:: _static/lab1-Portal_Namespace.png
-   :width: 800px
-.. |lab1-Portal_Try_It_Out| image:: _static/lab1-Portal_Try_It_Out.png
-   :width: 800px
-.. |lab1-Portal_Execute| image:: _static/lab1-Portal_Execute.png
-   :width: 800px
-.. |lab1-Portal_Namespaces_JSON| image:: _static/lab1-Portal_Namespaces_JSON.png
-   :width: 800px
 .. |lab1-Portal_Namespaces_Name| image:: _static/lab1-Portal_Namespaces_Name.png
    :width: 800px
 .. |lab1-Portal_Namespaces_Name_Execute| image:: _static/lab1-Portal_Namespaces_Name_Execute.png
    :width: 800px
 .. |lab1-Portal_Namespaces_Name_JSON| image:: _static/lab1-Portal_Namespaces_Name_JSON.png
+   :width: 800px
+.. |lab1-Postman| image:: _static/lab1-Postman.png
+   :width: 800px
+.. |lab1-Postman_Variables| image:: _static/lab1-Postman_Variables.png
+   :width: 800px
+.. |lab1-Postman_Namespace| image:: _static/lab1-Postman_Namespace.png
+   :width: 800px
+.. |lab1-Postman_Namespace_Results| image:: _static/lab1-Postman_Namespace_Results.png
+   :width: 800px
+.. |lab1-Postman_HC_Body| image:: _static/lab1-Postman_HC_Body.png
+   :width: 800px
+.. |lab1-Postman_HC_Send| image:: _static/lab1-Postman_HC_Send.png
+   :width: 800px
+.. |lab1-Postman_HC_Results| image:: _static/lab1-Postman_HC_Results.png
+   :width: 800px
+.. |lab1-Postman_Pool_Body| image:: _static/lab1-Postman_Pool_Body.png
+   :width: 800px
+.. |lab1-Postman_Pool_Send| image:: _static/lab1-Postman_Pool_Send.png
+   :width: 800px
+.. |lab1-Postman_Pool_Results| image:: _static/lab1-Postman_Pool_Results.png
+   :width: 800px
+.. |lab1-Postman_LB_Body| image:: _static/lab1-Postman_LB_Body.png
+   :width: 800px
+.. |lab1-Postman_LB_Send| image: _static/lab1-Postman_LB_Send.png
+   :width: 800px
+.. |lab1-Postman_LB_Results| image: _static/lab1-Postman_LB_Results.png
    :width: 800px
 .. |labend| image:: _static/labend.png
    :width: 800px
