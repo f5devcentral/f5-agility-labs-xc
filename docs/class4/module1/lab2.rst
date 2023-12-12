@@ -463,6 +463,11 @@ Click **Apply** and **Save and Exit**.
 
 .. image:: ../images/save.png
 
+Create the Firewall Network and associate the Enhanced Firewall Policy:
+
+.. image:: ../images/FNwithEnhancedFWPolicies.png
+
+
 |
 
 Summary
