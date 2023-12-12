@@ -44,9 +44,9 @@ utilizing the Developer Portal.
 |                                                                                                               |
 | 5. Fill in the resulting form with the following values                                                       |
 |                                                                                                               |
-|     * **Credential Name ID:**  *<namespace>-api-token*                                                        |
-|     * **Credential Type: Select:** *API Token*                                                                |
-|     * **Expiry Date: Select:** *<date two day in the future of today's date>*                                 |
+|    * **Credential Name ID:**  *<namespace>-api-token*                                                         |
+|    * **Credential Type: Select:** *API Token*                                                                 |
+|    * **Expiry Date: Select:** *<date two day in the future of today's date>*                                  |
 |                                                                                                               |
 | 6. Click **Generate**.                                                                                        |
 |                                                                                                               |
@@ -96,7 +96,7 @@ utilizing the Developer Portal.
 |                                                                                                               |
 |     **Authorize**.                                                                                            |
 +---------------------------------------------------------------------------------------------------------------+
-| |lab1-Portal_Domain|                                                                            |
+| |lab1-Portal_Domain|                                                                                          |
 |                                                                                                               |
 | |lab1-Portal_Authorize|                                                                                       |
 |                                                                                                               |
@@ -108,48 +108,20 @@ utilizing the Developer Portal.
 |                                                                                                               |
 |     **Namespace**.                                                                                            |
 |                                                                                                               |
-| 14. Under the **default** section in schemes, click the arrow to expand **GET /api/web/namespaces** and then  |
+| 14. Under the **default** section in schemes, scroll down through the **Namespace** APIs until you find       |
 |                                                                                                               |
-|     click **Try it out**.                                                                                     |
+|     **GET /api/web/namespaces/{name}** and click the arrow to expand this API and then click **Try it out**.  |
 |                                                                                                               |
-| 15. Click **Execute**.  You may have to scroll down slightly to show the **Execute** icon depending on your   |
-|                                                                                                               |
-|     screen resolution.                                                                                        |
+| 15. Enter your namespace name in the **namespace** field and then click **Execute**.                          |
 |                                                                                                               |
 | 16. Review the **Response body** data. You may have to scroll down slightly to show the **Response body** data|
-|                                                                                                               |
-|     depending on your screen resolution.                                                                      |
-|                                                                                                               |
-| 17. The Reponse body is a JSON formatted representation of all of the namespaces configured within the        |
-|                                                                                                               |
-|     the **f5-xc-lab-app** tenant.  Find the JSON section for your namespace.                                  |
-+---------------------------------------------------------------------------------------------------------------+
-| |lab1-Portal_Namespace|                                                                                       |
-|                                                                                                               |
-| |lab1-Portal_Try_It_Out|                                                                                      |
-|                                                                                                               |
-| |lab1-Portal_Execute|                                                                                         |
-|                                                                                                               |
-| |lab1-Portal_Namespaces_JSON|                                                                                        |
-+---------------------------------------------------------------------------------------------------------------+
-
-Next you will set parameters within the API query to limit the results that are returned.
-
-+---------------------------------------------------------------------------------------------------------------+
-| 18. Scroll down through the **Namespace** APIs until you find **GET /api/web/namespaces/{name}** and click the|
-|                                                                                                               |
-|     the arrow to expand this API and then click **Try it out**.                                               |
-|                                                                                                               |
-| 19. Enter your tenant name in the **namespace** field and then click **Execute**.                             |
-|                                                                                                               |
-| 20. Review the **Response body** data. You may have to scroll down slightly to show the **Response body** data|
 |                                                                                                               |
 |     depending on your screen resolution.                                                                      |
 |                                                                                                               |
 | .. note::                                                                                                     |
 |    *The parameters you entered in the name field were used to execute the API query and limit the returned*   |
 |                                                                                                               |
-|    *values.  Parameters can also be used when creating new objects.*                                          |
+|    *values. Parameters can also be used when creating new objects.*                                           |
 |                                                                                                               |
 +---------------------------------------------------------------------------------------------------------------+
 | |lab1-Portal_Namespaces_Name|                                                                                 |
@@ -165,11 +137,11 @@ Task 2: Create & Review Our First Proxy Configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The following steps will create an origin pool and http load balancer utilizing Postman to post JSON definitions
-to the Distributed Cloud API. For this task you will be using a Windows 10 host that is part of the UDF 
-deployment.  The Windows 10 host has Postman pre-installed to save time in the lab.  To install and utilize 
+to the Distributed Cloud API. For this task you will be using a Windows 10 client that is part of the UDF 
+deployment.  The Windows 10 client has Postman pre-installed to save time in the lab.  To install and utilize 
 postman outside of the lab visit https://www.postman.com/downloads/.
 
-An RDP client is recommended to access the Windows 10 host.  Current versions of Microsoft Windows should 
+An RDP client is recommended to access the Windows 10 client.  Current versions of Microsoft Windows should 
 include an RDP client pre-installed.  If you are using an operating system other than Windows, below are 
 documentation and download links for installing an RDP client.
 
@@ -186,14 +158,94 @@ documentation and download links for installing an RDP client.
 +-------------------+-------------------------------------------------------------------------------------------+
 
 If you are unable to install an RDP client or cannot connect via RDP to the Windows 10 host, you can use the 
-WebRDP jump host within the UDF environment to access the Windows 10 host via a web browser. Here are 
-instructions for connecting to the Windows 10 host via RDPClient_. Here are instructions for connecting to the
-Windows 10 host via WebRDP_. 
+WebRDP jump host within the UDF environment to access the Windows 10 client via a web browser. Here are 
+instructions for connecting to the Windows 10 client via RDPClient_. Here are instructions for connecting to the
+Windows 10 client via WebRDP_. 
 
 +---------------------------------------------------------------------------------------------------------------+
-| 1.                                                                                                            |
-+---------------------------------------------------------------------------------------------------------------+
+| 1. From the Windows 10 client deployed as part of the UDF, open Postman.                                      |
 |                                                                                                               |
+| 2. Click on **Environments** on the left side of Postman and then select **Appworld - XC Automation**.        |
+|                                                                                                               |
+| 3. Fill in the variables with the corresponding values for your lab environment.                              |
+|                                                                                                               |
+|    * **api-token:**  *<api-token>*                                                                            |
+|    * **tenant:**  *f5-xc-lab-app*                                                                             |
+|    * **namespace:**  *<namespace>*                                                                            |
++---------------------------------------------------------------------------------------------------------------+
+| |lab1-Postman|                                                                                                |
+|                                                                                                               |
+| |lab1-Postman_Variables|                                                                                      |
++---------------------------------------------------------------------------------------------------------------+
+
++---------------------------------------------------------------------------------------------------------------+
+| 4. Select **Collections** from the left side of Postman and then expand **Appworld - XC Automation** and      |
+|                                                                                                               |
+|    select **Get My Namespace** and click **Send**.                                                            |
+|                                                                                                               |
+| 5. Review the results in the **Body** section of Postman. You should see a 200 OK response code and the name  |
+|                                                                                                               |
+|    of you namespace should appear in the **metadata**. These results should match the results from Task 1     |
+|                                                                                                               |
+|    step 16.                                                                                                   |
++---------------------------------------------------------------------------------------------------------------+
+| |lab1-Postman_Namespace|                                                                                      |
+|                                                                                                               |
+| |lab1-Postman_Namespace_Results|                                                                              |
++---------------------------------------------------------------------------------------------------------------+
+
++---------------------------------------------------------------------------------------------------------------+
+| 6. Select **Create Health Check** under the Appworld - XC Automation collection and select **Body**.          |
+|                                                                                                               |
+| 7. Review the JSON in the **Body** section. This data is what is sent to the Distributed Cloud API to create  |
+|                                                                                                               |
+|    a new Health Check.                                                                                        |
+|                                                                                                               |
+| 8. Click **Send** to create the Health Check.                                                                 |
+|                                                                                                               |
+| 9. Review the results in the **Body** section of Postman. You should see a 200 OK response code               |
++---------------------------------------------------------------------------------------------------------------+
+| |lab1-Postman_HC_Body|                                                                                        |
+|                                                                                                               |
+| |lab1-Postman_HC_Send|                                                                                        |
+|                                                                                                               |
+| |lab1-Postman_HC_Results|                                                                                     |
++---------------------------------------------------------------------------------------------------------------+
+
++---------------------------------------------------------------------------------------------------------------+
+| 10. Select **Create Origin Pool** under the Appworld - XC Automation collection and select **Body**.          |
+|                                                                                                               |
+| 11. Review the JSON in the **Body** section. This data is what is sent to the Distributed Cloud API to create |
+|                                                                                                               |
+|     a new Origin Pool.                                                                                        |
+|                                                                                                               |
+| 12. Click **Send** to create the Origin Pool.                                                                 |
+|                                                                                                               |
+| 13. Review the results in the **Body** section of Postman. You should see a 200 OK response code              |
++---------------------------------------------------------------------------------------------------------------+
+| |lab1-Postman_Pool_Body|                                                                                      |
+|                                                                                                               |
+| |lab1-Postman_Pool_Send|                                                                                      |
+|                                                                                                               |
+| |lab1-Postman_Pool_Results|                                                                                   |
++---------------------------------------------------------------------------------------------------------------+
+
++---------------------------------------------------------------------------------------------------------------+
+| 14. Select **Create HTTP Load Balancer** under the Appworld - XC Automation collection and select **Body**.   |
+|                                                                                                               |
+| 15. Review the JSON in the **Body** section. This data is what is sent to the Distributed Cloud API to create |
+|                                                                                                               |
+|     a new HTTP Load Balancer.                                                                                 |
+|                                                                                                               |
+| 16. Click **Send** to create the HTTP Load Balancer.                                                          |
+|                                                                                                               |
+| 17. Review the results in the **Body** section of Postman. You should see a 200 OK response code              |
++---------------------------------------------------------------------------------------------------------------+
+| |lab1-Postman_LB_Body|                                                                                        |
+|                                                                                                               |
+| |lab1-Postman_LB_Send|                                                                                        |
+|                                                                                                               |
+| |lab1-Postman_LB_Results|                                                                                     |
 +---------------------------------------------------------------------------------------------------------------+
 
 +---------------------------------------------------------------------------------------------------------------+
