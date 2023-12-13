@@ -100,7 +100,7 @@ steps will define an application, register its DNS and assign a target as an ori
 |                                                                                              |
 |    **petapi.cloud.myf5demo.com** and then click **Apply**                                    |
 +----------------------------------------------------------------------------------------------+
-| |lab1-task1-007|                                                                             |
+| |lab1-task1-007-break|                                                                       |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
@@ -137,7 +137,7 @@ steps will define an application, register its DNS and assign a target as an ori
 | .. note::                                                                                    |
 |    If dogs are more your style, **/DogLookup/GetAllDogs** is also available.                 |
 +----------------------------------------------------------------------------------------------+
-| |lab1-task1-012|                                                                             |
+| |lab1-task1-012-break|                                                                       |
 +----------------------------------------------------------------------------------------------+
 
 Task 2: Swagger File Import & Version Control

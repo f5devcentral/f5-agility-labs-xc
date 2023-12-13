@@ -40,9 +40,9 @@ previously built Load Balancer object delivering the targeted application/API.
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 5. In the resulting **API Protection Rules** window, click **Configure** in the **API**      |
+| 5. In the resulting **API Protection Rules** window, click **Configure** in the              |
 |                                                                                              |
-|     **Endpoints** section.                                                                   |
+|    **API Endpoints** section.                                                                |
 +----------------------------------------------------------------------------------------------+
 | |lab2-task1-005|                                                                             |
 +----------------------------------------------------------------------------------------------+
@@ -56,7 +56,7 @@ previously built Load Balancer object delivering the targeted application/API.
 +----------------------------------------------------------------------------------------------+
 | 7. In the resulting window, input **block-endpoint** in the **Name** field of the            |
 |                                                                                              |
-|     **Metadata** section.                                                                    |
+|    **Metadata** section.                                                                    |
 |                                                                                              |
 | 8. In the **Action** area, click the drop-down arrow indicated and select **Deny**.          |
 +----------------------------------------------------------------------------------------------+
@@ -116,7 +116,7 @@ previously built Load Balancer object delivering the targeted application/API.
 |                                                                                              |
 |     at the bottom right of window.                                                           |
 +----------------------------------------------------------------------------------------------+
-| |lab1-task4-008|                                                                             |
+| |lab1-task4-008-break|                                                                       |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
@@ -126,7 +126,7 @@ previously built Load Balancer object delivering the targeted application/API.
 |                                                                                              |
 |     **http://<namespace>.lab-sec.f5demos.com/api/CatLookup/GetAllCats**                      |
 +----------------------------------------------------------------------------------------------+
-| |lab2-task1-014|                                                                             |
+| |lab2-task1-014-break|                                                                       |
 +----------------------------------------------------------------------------------------------+
 
 
@@ -205,31 +205,19 @@ previously built Load Balancer object delivering the targeted application/API.
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 11. Note the updated configuration for API Rate limiting, Click **Other Settings** in  the   |
+| 11. Note the updated configuration for API Rate limiting, Click **Other Settings** on the    |
 |                                                                                              |
-|    the left-hand navigation.                                                                 |
+|     the left, navigation on the bottom right then click on **Save and Exit**                 |
++----------------------------------------------------------------------------------------------+
 +----------------------------------------------------------------------------------------------+
 | |lab2-task2-008|                                                                             |
 +----------------------------------------------------------------------------------------------+
-
-+----------------------------------------------------------------------------------------------+
-| 12. Once at the bottom of the HTTP Load Balancer configuration and click                     |
-|                                                                                              |
-|     the **Apply** button.                                                                    |
 +----------------------------------------------------------------------------------------------+
 | |lab2-task2-009|                                                                             |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 13. Select **Other Settings** on the left then click on **Save and Exit**                    |
-|                                                                                              |
-|     at the bottom right of window.                                                           |
-+----------------------------------------------------------------------------------------------+
-| |lab1-task4-008|                                                                             |
-+----------------------------------------------------------------------------------------------+
-
-+----------------------------------------------------------------------------------------------+
-| 14. Using another browser tab, navigate to the the following URL to confirm                  |
+| 12. Using another browser tab, navigate to the the following URL to confirm                  |
 |                                                                                              |
 |     rate limiting, by freshing your tab several times.                                       |
 |                                                                                              |
