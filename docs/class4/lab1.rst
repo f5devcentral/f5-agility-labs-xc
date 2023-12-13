@@ -128,9 +128,9 @@ steps will define an application, register its DNS and assign a target as an ori
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 14. Using another browser tab, navigate to the the following URL to confirm                  |
+| 14. Using another browser tab, navigate to the the following URL to confirm the Load Balancer|
 |                                                                                              |
-|     the Load Balancer has been configured properly.                                          |
+|     has been configured properly.                                                            |
 |                                                                                              |
 |     **http://<namespace>.lab-sec.f5demos.com/api/CatLookup/GetAllCats**                      |
 |                                                                                              |
@@ -147,12 +147,12 @@ In this task's series of steps you will import swagger files into the F5 Distrib
 version control features.
 
 +----------------------------------------------------------------------------------------------+
-| 1. For the next series of steps, to download the JSON/OpenAPI spec file **demo-api-v1.json** |
+| 1. For the next series of steps, to download the JSON/OpenAPI spec file **app-api-v1.json**  |
 |                                                                                              |
-|    **demo-api-v1.json** to your local desktop or workspace.                                  |
+|    **app-api-v1.json** to your local desktop or workspace.                                   |
 |                                                                                              |
 |    Link::                                                                                    |
-|      http://petapi.cloud.myf5demo.com/lab/demo-api-v1.json                                   |
+|      http://petapi.cloud.myf5demo.com/lab/app-api-v1.json                                    |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
@@ -172,7 +172,7 @@ version control features.
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 5. In the resulting **New Swagger File** window, input **demo-api** for the **Name** under   |
+| 5. In the resulting **New Swagger File** window, input **app-api** for the **Name** under    |
 |                                                                                              |
 |    the **Metadata** section.                                                                 |
 |                                                                                              |
@@ -184,7 +184,7 @@ version control features.
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 7. Observe that the file **demo-api-v1**  is present and the click **Save and Exit**         |
+| 7. Observe that the file **app-api-v1**  is present and the click **Save and Exit**          |
 +----------------------------------------------------------------------------------------------+
 | |lab1-task2-004|                                                                             |
 +----------------------------------------------------------------------------------------------+
@@ -205,10 +205,10 @@ version control features.
 +----------------------------------------------------------------------------------------------+
 | 9. For the next step, use the following link, to download the JSON/OpenAPI spec file         |
 |                                                                                              |
-|    **demo-api-v2.json** to your local desktop or workspace.                                  |
+|    **app-api-v2.json** to your local desktop or workspace.                                   |
 |                                                                                              |
 |    Link::                                                                                    |
-|      http://petapi.cloud.myf5demo.com/lab/demo-api-v2.json                                   |
+|      http://petapi.cloud.myf5demo.com/lab/app-api-v2.json                                    |
 |                                                                                              |
 | .. note::                                                                                    |
 |    *This is a modified version (v2) of the JSON/OpenAPI spec file you previously downloaded* |
@@ -227,7 +227,7 @@ version control features.
 |                                                                                              |
 |     downloaded in Step 9 above and click **Open**.                                           |
 |                                                                                              |
-| 12. Observe that the file **demo-api-v2**  is present and the click **Save and Exit**        |
+| 12. Observe that the file **app-api-v2**  is present and the click **Save and Exit**         |
 +----------------------------------------------------------------------------------------------+
 | |lab1-task2-007|                                                                             |
 |                                                                                              |
@@ -239,7 +239,7 @@ version control features.
 |                                                                                              |
 |     metadata seen previously.                                                                |
 |                                                                                              |
-| 14. Note now that there are **2** versions available of the **demo-api** file.               |
+| 14. Note now that there are **2** versions available of the **app-api** file.                |
 |                                                                                              |
 |     Click the **2** in the **Versions** column.                                              |
 +----------------------------------------------------------------------------------------------+
@@ -247,7 +247,7 @@ version control features.
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 15. In the resulting window, observe there are now two versions of the **demo-api**          |
+| 15. In the resulting window, observe there are now two versions of the **app-api**           |
 |                                                                                              |
 |     spec file.                                                                               |
 |                                                                                              |
@@ -285,7 +285,7 @@ pointer to imported swagger files you just uploaded.
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 3. In the resulting **New API Definition** window, input **demo-api-spec**                   |
+| 3. In the resulting **New API Definition** window, input **app-api-spec**                    |
 |                                                                                              |
 |    for the **Name** under the **Metadata** section.                                          |
 |                                                                                              |
@@ -295,7 +295,7 @@ pointer to imported swagger files you just uploaded.
 |                                                                                              |
 | 5. Select the version 2 of the previously uploaded swagger spec file. It will be in the      |
 |                                                                                              |
-|    format **<namespace>/demo-api/v2-<current-date>**.                                        |
+|    format **<namespace>/app-api/v2-<current-date>**.                                         |
 |                                                                                              |
 | 6. Once selected, click **Save and Exit** in the bottom-right corner.                        |
 +----------------------------------------------------------------------------------------------+
@@ -339,7 +339,7 @@ previously built Load Balancer object delivering the targeted application/API.
 +----------------------------------------------------------------------------------------------+
 | 6. In the updated **Use API Definition** section, click the drop-down arrow and select the   |
 |                                                                                              |
-| 7. previously created API Definition **<namespace>/demo-api-spec**.                          |
+| 7. previously created API Definition **<namespace>/app-api-spec**.                           |
 +----------------------------------------------------------------------------------------------+
 | |lab1-task4-005|                                                                             |
 +----------------------------------------------------------------------------------------------+
