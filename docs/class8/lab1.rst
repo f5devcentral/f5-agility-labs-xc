@@ -74,7 +74,7 @@ utilizing the Developer Portal.
 |    **Docummentation**.                                                                                        |
 |                                                                                                               |
 | .. note::                                                                                                     |
-|    *This takes you to the online documentation for the F5 Distributed Cloud Services API.  Here you can*     |
+|    *This takes you to the online documentation for the F5 Distributed Cloud Services API.  Here you can*      |
 |                                                                                                               |
 |    *review or download the API specification.*                                                                |
 |                                                                                                               |
@@ -133,9 +133,7 @@ utilizing the Developer Portal.
 | |lab1-Portal_Namespaces_Name_JSON|                                                                            |
 +---------------------------------------------------------------------------------------------------------------+
 
-
-
-Task 2: Create & Review Our First Proxy Configuration
+Task 2: Create A Proxy Configuration Using Postman
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The following steps will create Health Check, an Origin Pool and Http Load Balancer utilizing Postman to post 
@@ -250,18 +248,148 @@ Windows 10 client via WebRDP_.
 | |lab1-Postman_LB_Results|                                                                                     |
 +---------------------------------------------------------------------------------------------------------------+
 
+Task 3: Review & Test Proxy Configuration
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The following steps will review the configuations created using Postman in the Distributed Cloud Console.  The
+configuration will then be tested utilizing a web browser to access the web appliaction.
+
 +---------------------------------------------------------------------------------------------------------------+
-| **End of Lab 1:**  This concludes Lab 1.  In this lab you created an origin pool to connect to the            |
+| 1. From the Windows 10 client deployed as part of the UDF, open Chrome.                                       |
 |                                                                                                               |
-| application, you then created a load balancer and associated the origin pool to the load balancer.  This      |
+| 2. Click on the **XC Console** bookmark to be taken to the XC Console login.                                  |
 |                                                                                                               |
-| allowed the application to be advertised via the F5 Distributed Cloud Global Network.  The Distributed Cloud  |
+| 3. Enter your e-mail address in the **Email** form and password in the **Password** form and click **Sign**   |
 |                                                                                                               |
-| Console was then used to review telemetry data gathered for the application.  Next an Application Firewall    |
+|    **In**.                                                                                                    |
++---------------------------------------------------------------------------------------------------------------+
+| |lab1-Chrome|                                                                                                 |
 |                                                                                                               |
-| policy was created and assigned to protect the application.  Finally a sample attack was run against the      |
+| |lab1-XC_Bookmark|                                                                                            |
 |                                                                                                               |
-| application and the security event data was reviewed within the Distributed Cloud Console.                    |
+| |lab1-XC_Signin|                                                                                              |
++---------------------------------------------------------------------------------------------------------------+
+
++---------------------------------------------------------------------------------------------------------------+
+| 4. Within the Distributed Cloud dashboard select the **Multi-Cloud App Connect** tile.                        |
+|                                                                                                               |
+| 5. In the resulting screen, expand the **Manage** menu and click **Load Balancers** and then select           |
+|                                                                                                               |
+|    *Health Checks**.                                                                                          |
+|                                                                                                               |
+| 6. From the Health Checks page, locate the Health Check that you created via Postman.  Click the **ellipsis** |
+|                                                                                                               |
+|    under **Actions** and select **Manage Configuration**.                                                     |
+|                                                                                                               |
+| 7. From the resulting screen, review the Health Check configuration data and then click **JSON**.             |
+|                                                                                                               |
+| 8. Review the resulting JSON data.  This JSON matches JSON from the body section of Postman request that      |
+|                                                                                                               |
+|    created the Health Check.                                                                                  |
+|                                                                                                               |
+| 9. Click **Cancel and Exit** to close out the Health Check configuration.                                     |
+|                                                                                                               |
+| .. note::                                                                                                     |
+|    *There may be slight variations in the JSON because you don't need to post default values when calling the*|
+|                                                                                                               |
+|    *API. If you want to automate a task in Distributed Cloud but are unsure of the required JSON, you can*    |
+|                                                                                                               |
+|    *configure a test object via the GUI and then use this JSON tab to get the corresponding JSON config.*     |
++---------------------------------------------------------------------------------------------------------------+
+| |lab1-XC_App_Connect|                                                                                         |
+|                                                                                                               |
+| |lab1-XC_HC|                                                                                                  |
+|                                                                                                               |
+| |lab1-XC_HC_Manage|                                                                                           |
+|                                                                                                               |
+| |lab1-XC_HC_JSON|                                                                                             |
+|                                                                                                               |
+| |lab1-XC_HC_JSON_Data|                                                                                        |
++---------------------------------------------------------------------------------------------------------------+
+
++---------------------------------------------------------------------------------------------------------------+
+| 10. Under the Multi-Cloud App Connect Manage menu, select **Load Balancers** and then click on **Origin**     |
+|                                                                                                               |
+|     **Pools**.                                                                                                |
+|                                                                                                               |
+| 11. From the Origin Pools page, locate the Origin Pool that you created via Postman.  Click the **ellipsis**  |
+|                                                                                                               |
+|     under **Actions** and select **Manage Configuration**.                                                    |
+|                                                                                                               |
+| 12. From the resulting screen, review the Origin Pool configuration data and then click **JSON**.             |
+|                                                                                                               |
+| 13. Review the resulting JSON data.  This JSON matches JSON from the body section of Postman request that     |
+|                                                                                                               |
+|     created the Origin Pool.                                                                                  |
+|                                                                                                               |
+| .. note::                                                                                                     |
+|    *There may be slight variations in the JSON because you don't need to post default values when calling the*|
+|                                                                                                               |
+|    *API. If you want to automate a task in Distributed Cloud but are unsure of the required JSON, you can*    |
+|                                                                                                               |
+|    *configure a test object via the GUI and then use this JSON tab to get the corresponding JSON config.*     |
++---------------------------------------------------------------------------------------------------------------+
+| |lab1-XC_Pool|                                                                                                |
+|                                                                                                               |
+| |lab1-XC_Pool_Manage|                                                                                         |
+|                                                                                                               |
+| |lab1-XC_Pool_JSON|                                                                                           |
+|                                                                                                               |
+| |lab1-XC_Pool_JSON_Data|                                                                                      |
++---------------------------------------------------------------------------------------------------------------+
+
++---------------------------------------------------------------------------------------------------------------+
+| 14. Under the Multi-Cloud App Connect Manage menu, select **Load Balancers** and then click on **HTTP**       |
+|                                                                                                               |
+|     **Load Balancers**.                                                                                       |
+|                                                                                                               |
+| 15. From the HTTP Load Balancers page, locate the HTTP Load Balancer that you created via Postman.  Click the |
+|                                                                                                               |
+|     **ellipsis** under **Actions** and select **Manage Configuration**.                                       |
+|                                                                                                               |
+| 16. From the resulting screen, review the HTTP Load Balancer configuration data and then click **JSON**.      |
+|                                                                                                               |
+| 17. Review the resulting JSON data.  This JSON matches JSON from the body section of Postman request that     |
+|                                                                                                               |
+|     created the HTTP Load Balancer.                                                                           |
+|                                                                                                               |
+| .. note::                                                                                                     |
+|    *There may be slight variations in the JSON because you don't need to post default values when calling the*|
+|                                                                                                               |
+|    *API. If you want to automate a task in Distributed Cloud but are unsure of the required JSON, you can*    |
+|                                                                                                               |
+|    *configure a test object via the GUI and then use this JSON tab to get the corresponding JSON config.*     |
++---------------------------------------------------------------------------------------------------------------+
+| |lab1-XC_LB|                                                                                                  |
+|                                                                                                               |
+| |lab1-XC_LB_Manage|                                                                                           |
+|                                                                                                               |
+| |lab1-XC_LB_JSON|                                                                                             |
+|                                                                                                               |
+| |lab1-XC_LB_JSON_Data|                                                                                        |
++---------------------------------------------------------------------------------------------------------------+
+
++---------------------------------------------------------------------------------------------------------------+
+| 18. Open a new tab in your Chrome browser and enter the following URL                                         |
+|                                                                                                               |
+|     **http://<namespace>-demoshop.lab-app.f5demos.com**                                                       |
+|                                                                                                               |
+| .. note::                                                                                                     |
+|    *This illustrates that you are able to configure the delivery of an application via the Distributed Cloud* |
+|                                                                                                               |
+|    *API utilizing Postman.*                                                                                   |
++---------------------------------------------------------------------------------------------------------------+
+| |lab1-Demoshop|                                                                                                  |
++---------------------------------------------------------------------------------------------------------------+
+
++---------------------------------------------------------------------------------------------------------------+
+| **End of Lab 1:**  This concludes Lab 1. In this lab you learned about the Distributed Cloud Developer Portal |
+|                                                                                                               |
+| and how it can help you test API calls. You then expanded upon that knowledge and utilized Postman to deploy  |
+|                                                                                                               |
+| a Health Check, Origin Pool, and HTTP Load Balancer. Next, you verified the configuration that was pushed to  |
+|                                                                                                               |
+| the Distributed Console. Finally, you verified the application you published was available from a web browser.|
 |                                                                                                               |
 | A brief presentation will be shared prior to the beginning of Lab 2.                                          |
 +---------------------------------------------------------------------------------------------------------------+
@@ -318,9 +446,43 @@ Windows 10 client via WebRDP_.
    :width: 800px
 .. |lab1-Postman_LB_Body| image:: _static/lab1-Postman_LB_Body.png
    :width: 800px
-.. |lab1-Postman_LB_Send| image: _static/lab1-Postman_LB_Send.png
+.. |lab1-Postman_LB_Send| image:: _static/lab1-Postman_LB_Send.png
    :width: 800px
-.. |lab1-Postman_LB_Results| image: _static/lab1-Postman_LB_Results.png
+.. |lab1-Postman_LB_Results| image:: _static/lab1-Postman_LB_Results.png
+   :width: 800px
+.. |lab1-Chrome| image:: _static/lab1-Chrome.png
+   :width: 800px
+.. |lab1-XC_Bookmark| image:: _static/lab1-XC_Bookmark.png
+   :width: 800px
+.. |lab1-XC_Signin| image:: _static/lab1-XC_Signin.png
+   :width: 800px
+.. |lab1-XC_App_Connect| image:: _static/lab1-XC_App_Connect.png
+   :width: 800px
+.. |lab1-XC_HC| image:: _static/lab1-XC_HC.png
+   :width: 800px
+.. |lab1-XC_HC_Manage| image:: _static/lab1-XC_HC_Manage.png
+   :width: 800px
+.. |lab1-XC_HC_JSON| image:: _static/lab1-XC_HC_JSON.png
+   :width: 800px
+.. |lab1-XC_HC_JSON_Data| image:: _static/lab1-XC_HC_JSON_Data.png
+   :width: 800px
+.. |lab1-XC_Pool| image:: _static/lab1-XC_Pool.png
+   :width: 800px
+.. |lab1-XC_Pool_Manage| image:: _static/lab1-XC_Pool_Manage.png
+   :width: 800px
+.. |lab1-XC_Pool_JSON| image:: _static/lab1-XC_Pool_JSON.png
+   :width: 800px
+.. |lab1-XC_Pool_JSON_Data| image:: _static/lab1-XC_Pool_JSON_Data.png
+   :width: 800px
+.. |lab1-XC_LB| image:: _static/lab1-XC_LB.png
+   :width: 800px
+.. |lab1-XC_LB_Manage| image:: _static/lab1-XC_LB_Manage.png
+   :width: 800px
+.. |lab1-XC_LB_JSON| image:: _static/lab1-XC_LB_JSON.png
+   :width: 800px
+.. |lab1-XC_LB_JSON_Data| image:: _static/lab1-XC_LB_JSON_Data.png
+   :width: 800px
+.. |lab1-Demoshop| image:: _static/lab1-Demoshop.png
    :width: 800px
 .. |labend| image:: _static/labend.png
    :width: 800px
