@@ -136,9 +136,6 @@ steps will define an application, register its DNS and assign a target as an ori
 |     has been configured properly.                                                            |
 |                                                                                              |
 |     **http://<namespace>.lab-sec.f5demos.com/api/CatLookup/GetAllCats**                      |
-|                                                                                              |
-| .. note::                                                                                    |
-|    If dogs are more your style, **/DogLookup/GetAllDogs** is also available.                 |
 +----------------------------------------------------------------------------------------------+
 | |lab1-task1-012|                                                                             |
 +----------------------------------------------------------------------------------------------+
