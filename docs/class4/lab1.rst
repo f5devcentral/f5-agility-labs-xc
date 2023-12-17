@@ -31,18 +31,12 @@ Task 1: Configure Load Balancer and Origin Pool
 The following steps will allow you to deploy and advertise a globally available application.  These
 steps will define an application, register its DNS and assign a target as an origin.
 
+
 +----------------------------------------------------------------------------------------------+
-| 1. Following the **Introduction** section instructions, you should now be in the **Web**     |
-|                                                                                              |
-|    **App & API Protection** configuration window.                                            |
-|                                                                                              |
-| .. note::                                                                                    |
-|    If for some reason you are not in the                                                     |
-|                                                                                              |
-|    **Web App & API Protection** window, use the **Select Service** in the left-hand          |
-|                                                                                              |
-|    navigation, and click **Web App & API Protection** as shown in the *Introduction Section* |
-|                                                                                              |
+| 1. In the left top click the F5 ball and navigate to the **Web App & API Protection** Tile.  |
++----------------------------------------------------------------------------------------------+
+| |lab1-task2-001|                                                                             |
++----------------------------------------------------------------------------------------------+
 | 2. In the left-hand navigation expand **Manage** and click **Load Balancers > HTTP Load**    |
 |                                                                                              |
 |    **Balancers**                                                                             |
