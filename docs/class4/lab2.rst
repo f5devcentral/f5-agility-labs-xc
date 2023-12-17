@@ -1,7 +1,7 @@
 Lab 2: API Protection & Rate Limiting
 =================================
 
-F5® Distributed API Protection provides key security functionality to secure APIs.
+F5® Distributed Cloud API Protection provides key security functionality to secure APIs.
 
 This lab's tasks will walk through the configuration steps and note additional configurations available.
 
@@ -56,7 +56,7 @@ previously built Load Balancer object delivering the targeted application/API.
 +----------------------------------------------------------------------------------------------+
 | 7. In the resulting window, input **block-endpoint** in the **Name** field of the            |
 |                                                                                              |
-|    **Metadata** section.                                                                    |
+|    **Metadata** section.                                                                     |
 |                                                                                              |
 | 8. In the **Action** area, click the drop-down arrow indicated and select **Deny**.          |
 +----------------------------------------------------------------------------------------------+
@@ -64,7 +64,7 @@ previously built Load Balancer object delivering the targeted application/API.
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 9. In the **API Endpoint** section, click on the **API Endpoint** input field as indicated. |
+| 9. In the **API Endpoint** section, click on the **API Endpoint** input field as indicated.  |
 |                                                                                              |
 | 10. Select the **See Suggestions** link.                                                     |
 +----------------------------------------------------------------------------------------------+
