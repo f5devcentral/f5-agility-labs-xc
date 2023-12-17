@@ -34,7 +34,10 @@ steps will define an application, register its DNS and assign a target as an ori
 +----------------------------------------------------------------------------------------------+
 | 1. Following the **Introduction** section instructions, you should now be in the **Web**     |
 |                                                                                              |
-|    **App & API Protection** configuration window. If for some reason you are not in the      |
+|    **App & API Protection** configuration window.                                            |
+|                                                                                              |
+| .. note::                                                                                    |
+|    If for some reason you are not in the                                                     |
 |                                                                                              |
 |    **Web App & API Protection** window, use the **Select Service** in the left-hand          |
 |                                                                                              |
@@ -137,7 +140,7 @@ steps will define an application, register its DNS and assign a target as an ori
 | .. note::                                                                                    |
 |    If dogs are more your style, **/DogLookup/GetAllDogs** is also available.                 |
 +----------------------------------------------------------------------------------------------+
-| |lab1-task1-012-break|                                                                       |
+| |lab1-task1-012|                                                                             |
 +----------------------------------------------------------------------------------------------+
 
 Task 2: Swagger File Import & Version Control
@@ -289,7 +292,7 @@ pointer to imported swagger files you just uploaded.
 |                                                                                              |
 |    for the **Name** under the **Metadata** section.                                          |
 |                                                                                              |
-| 4. In the **Swagger Specs** section, click the **Arrow** in the **Select Item** box in the   |
+| 4. In the **Swagger Specs** section, click **Add Item** box in the                           |
 |                                                                                              |
 |    **Swagger Specs** column.                                                                 |
 |                                                                                              |
@@ -302,10 +305,10 @@ pointer to imported swagger files you just uploaded.
 | |lab1-task3-003|                                                                             |
 +----------------------------------------------------------------------------------------------+
 
-Task 4: Enabling API Inventory and Dicovery
+Task 4: Enabling API Inventory and Discovery
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In this task's series of steps you will enable the API Inventory and Dicovery feature on the 
+In this task's series of steps you will enable the API Inventory and Discovery feature on the 
 previously built Load Balancer object delivering the targeted application/API.
 
 +----------------------------------------------------------------------------------------------+
