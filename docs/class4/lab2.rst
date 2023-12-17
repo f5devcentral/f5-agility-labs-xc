@@ -167,8 +167,6 @@ previously built Load Balancer object delivering the targeted application/API.
 |                                                                                              |
 |    drop-down to select **API Rate Limit**.                                                   |
 +----------------------------------------------------------------------------------------------+
-| |lab2-task2-002|                                                                             |
-|                                                                                              |
 | |lab2-task2-003|                                                                             |
 +----------------------------------------------------------------------------------------------+
 
