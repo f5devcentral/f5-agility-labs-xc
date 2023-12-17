@@ -75,7 +75,8 @@ previously built Load Balancer object delivering the targeted application/API.
 | 11. Select **/api/CatLookup/GetAllCats** from the available options provided.                |
 |                                                                                              |
 | .. note::                                                                                    |
-|    *The endpoints available are provided via the spec you previously imported and defined*   |
+|    *The available endpoints are provided by the swagger previously imported,                 |
+|    or identified by API Discovery*                                                           |
 |                                                                                              |
 | 12. In the **HTTP Methods** area, click in the **Method List** input field.                  |
 +----------------------------------------------------------------------------------------------+
