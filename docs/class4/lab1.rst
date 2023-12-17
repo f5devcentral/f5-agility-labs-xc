@@ -35,7 +35,7 @@ steps will define an application, register its DNS and assign a target as an ori
 +----------------------------------------------------------------------------------------------+
 | 1. In the left top click the F5 ball and navigate to the **Web App & API Protection** Tile.  |
 +----------------------------------------------------------------------------------------------+
-| |lab1-task2-001|                                                                             |
+| |class4-shared-001|                                                                          |
 +----------------------------------------------------------------------------------------------+
 | 2. In the left-hand navigation expand **Manage** and click **Load Balancers > HTTP Load**    |
 |                                                                                              |
@@ -43,7 +43,7 @@ steps will define an application, register its DNS and assign a target as an ori
 |                                                                                              |
 | 3. In the resulting screen click the **Add HTTP Load Balancer** in the graphic as shown.     |
 +----------------------------------------------------------------------------------------------+
-| |lab1-task1-001|                                                                             |
+| |class4-shared-002|                                                                          |
 |                                                                                              |
 | |lab1-task1-002|                                                                             |
 +----------------------------------------------------------------------------------------------+
@@ -152,7 +152,7 @@ version control features.
 +----------------------------------------------------------------------------------------------+
 | 2. In the left top click the F5 ball and navigate to the **Web App & API Protection** Tile.  |
 +----------------------------------------------------------------------------------------------+
-| |lab1-task2-001|                                                                             |
+| |class4-shared-001|                                                                          |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
@@ -311,13 +311,13 @@ previously built Load Balancer object delivering the targeted application/API.
 |                                                                                              |
 |    **Action** column, and the select **Manage Configuration**.                               |
 +----------------------------------------------------------------------------------------------+
-| |lab1-task4-002|                                                                             |
+| |class4-shared-003|                                                                          |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
 | 3. Click **Edit Configuration** in the top-right corner.                                     |
 +----------------------------------------------------------------------------------------------+
-| |lab1-task4-003|                                                                             |
+| |class4-shared-004|                                                                          |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
@@ -375,6 +375,14 @@ previously built Load Balancer object delivering the targeted application/API.
 | |labend|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
+.. |class4-shared-001| image:: _static/class4-shared-001.png
+   :width: 800px
+.. |class4-shared-002| image:: _static/class4-shared-002.png
+   :width: 800px
+.. |class4-shared-003| image:: _static/class4-shared-003.png
+   :width: 800px
+.. |class4-shared-004| image:: _static/class4-shared-004.png
+   :width: 800px
 .. |lab1-task1-001| image:: _static/lab1-task1-001.png
    :width: 800px
 .. |lab1-task1-002| image:: _static/lab1-task1-002.png
