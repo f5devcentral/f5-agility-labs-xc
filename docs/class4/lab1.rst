@@ -103,7 +103,7 @@ steps will define an application, register its DNS and assign a target as an ori
 |                                                                                              |
 |    **petapi.cloud.myf5demo.com** and then click **Apply**                                    |
 +----------------------------------------------------------------------------------------------+
-| |lab1-task1-007-break|                                                                       |
+| |lab1-task1-007|                                                                             |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
@@ -405,6 +405,8 @@ previously built Load Balancer object delivering the targeted application/API.
 .. |lab1-task1-010| image:: _static/lab1-task1-010.png
    :width: 800px
 .. |lab1-task1-011| image:: _static/lab1-task1-011.png
+   :width: 800px
+.. |lab1-task1-012| image:: _static/lab1-task1-012.png
    :width: 800px
 .. |lab1-task2-001| image:: _static/lab1-task2-001.png
    :width: 800px
