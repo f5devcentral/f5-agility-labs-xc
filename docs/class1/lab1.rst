@@ -268,7 +268,7 @@ These steps will apply a preconfigured WAF policy to the load balancer created i
 |                                                                                                               |
 | 7. Select preconfigured the Web Application Firewall                                                          |
 |                                                                                                               |
-|     *(shared/base-appfw)* from the **Enable** dropdown.                                                  |
+|     *(shared/base-appfw)* from the **Enable** dropdown.                                                       |
 |                                                                                                               |
 | 8. Scroll to the bottom of the page and click **Save and Exit**                                               |
 +---------------------------------------------------------------------------------------------------------------+
