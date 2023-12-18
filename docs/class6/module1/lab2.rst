@@ -46,7 +46,8 @@ From this Dashboard you can note the current **Site Admin State, Provider, SW ve
 **Please DO NOT click "Upgrade" on any of the Sites!**
 
 
-Instead, **Click** on the three dots under the **Actions** column at the far right of the screen of **"your animal"**  Site and click on **Manage Configuration**. In this screenshot I was **busy-goblin**. 
+Instead, **Click** on the three dots under the **Actions** column at the far right of the screen of **"your animal"**  Site and click on **Manage Configuration**. In this screenshot I was **busy-goblin**.
+.. NOTE:: You may need to scroll horizontally inside the table to see the three dots at the righthand side. Alternately, you can zoom out (Ctrl -) on the page to see them.
 
 |
 
@@ -266,7 +267,11 @@ From your UDF environment browser tab,  click on **Access >> Web Shell** on the 
 
 **The workload in AWS has an IP address of 10.0.3.253**
 
-Type **ping 10.0.3.253** and hit **Enter**. You **WILL NOT** get a response. 
+Type **ping -O 10.0.3.253** and hit **Enter**. You **WILL NOT** get a response. Continue the ping in the steps below.
+
+.. NOTE:: -O is the uppercase letter "O"
+
+.. image:: ../images/pingO.png
 
 Back in the XC Console, navigate to **Multi-Cloud Network Connect >> Sites** and find your **"animal-name"**
 Click the **3 buttons** under the **Action Menu** under **"your animal name"** and select **Manage Configuration**. 
@@ -371,7 +376,7 @@ Next, push the keyboard "up arrow " and run the same command but targeted at por
 Enhanced Firewall Policy
 ---------------------------------
 
-You will now configure the F5 Distributed Cloud Enhanced Firewall to provide network security between these sites. 
+You will now configure the F5 Distributed Cloud Enhanced Firewall to provide network security between these sites. Custom Enhanced Firewall policies make it possible to define intent-based rules, such as allowing only traffic to/from sites wit a specific label, like "ves.io/fleet in 'student-fleet'"" in your deployed site above. Additional criteria for rules can include tags belonging to resources that live in public clouds, such as the AWS VPC name or any other discoverable attribute.
 
 .. Note:: Due to lab architecture, we will only be able to configure the policies but not apply. We will show you the final step to apply your policy for reference, but you will not actually be able to apply or test.  
 

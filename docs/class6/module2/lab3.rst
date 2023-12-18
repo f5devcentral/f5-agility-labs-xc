@@ -57,7 +57,7 @@ With **Network Connect** you connected routed networks with your CE Node which a
 
 Now with **App Connect** you will be configuring our Regional Edges and your CE Nodes as Sofware-Defined-Proxies to provide connectivity between workloads. The CE's can do both functions simultaneously!!  
 
-In the **Side menu** under **Manage** click on **Load Balancers** >> **Origin Pools** and click the **Add Origin Pool** button. 
+In the **Side menu** select service **Multi-Cloud App Connect**, then navigate to **Manage** click on **Load Balancers** >> **Origin Pools** and click the **Add Origin Pool** button. 
 
 
 AWS Origin Pool
@@ -136,6 +136,8 @@ Select Network on the site      Inside Network
 ==============================  =====
 
 Click **Apply**. 
+
+Health Checks: Under “Health Check object” click the **Select Item** dropdown and choose the object that you created previously for the AWS origin pool. The name of the health check should be [animal-name]/[animal-name]-http.
 
 Your config should look like this: 
 
