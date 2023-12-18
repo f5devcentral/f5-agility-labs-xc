@@ -1,73 +1,16 @@
-Lab 3: Exploring Routes & Rate Limiting
+Lab 3: Exploring Rate Limiting & Routes
 =======================================
 
-The following lab tasks will guide you through the configuration of Routes and Rate Limiting feature sets.
+The following lab tasks will guide you through the configuration of Rate Limiting feature sets.
 Rate Limiting can be used to implement a variety of L7 security controls; assisting in L7 DDoS, 
 protecting heavy URLs (service process impactful) or mitigating impacts to other controlled endpoints.  
+
+Routes in F5 XC can be utilized to accomplish L7 routing based on URI to multiple origin pools. 
 
 **Expected Lab Time: 20 minutes**
 
 
-Task 1: Observing Route Configurations
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-The following steps will enable you to attach Service Policies to your configured Load Balancer.
-It will also help you understand additional approaches for Service Policies.
-
-+----------------------------------------------------------------------------------------------+
-| 1. Within **Web App & API Protection** in the F5 Distributed Cloud Console, **Manage >**     |
-|                                                                                              |
-|    **Load Balancer > HTTP Load Balancers** and use the **Action Dots** and click **Manage**  |
-|                                                                                              |
-|    **Configuration**.                                                                        |
-|                                                                                              |
-| 2. Click **Edit Configuration** in the top right-hand corner.                                |
-+----------------------------------------------------------------------------------------------+
-| |lab063|                                                                                     |
-|                                                                                              |
-| |lab064|                                                                                     |
-+----------------------------------------------------------------------------------------------+
-
-+----------------------------------------------------------------------------------------------+
-| 3. Click **Routes** in the left-hand navigation and the click **Configure** as shown.        |
-|                                                                                              |
-| 4. In **Routes** window, click the **Add Item** link.                                        |
-+----------------------------------------------------------------------------------------------+
-| |lab065|                                                                                     |
-|                                                                                              |
-| |lab066|                                                                                     |
-+----------------------------------------------------------------------------------------------+
-
-+----------------------------------------------------------------------------------------------+
-| 5. Observe the various route types and matching criteria controls that can be leveraged to   |
-|                                                                                              |
-|    securely control application flow, perform pool targeting, make path responses or develop |
-|                                                                                              |
-|    custom control to secure protected applications.                                          |
-|                                                                                              |
-| 6. An example walkthrough of **Simple Route** is shown but feel free to look at all the      |
-|                                                                                              |
-|    route types: .                                                                            |
-|                                                                                              |
-|    * **Simple Route:** Matches on path and/or HTTP method and forward traffic to the         |
-|                        associated pool.                                                      |
-|    * **Redirect Route:** Matches on path and/or HTTP method and redirects matching traffic   |
-|                        to a different URL.                                                   |
-|    * **Direct Response Route:** Matches on path and/or HTTP method and responds directly to  |
-|                        matching traffic.                                                     |
-|    * **Custom Route Object:** Leverages a reference route object created outside this view.  |
-|                                                                                              |
-| 7. Click **Cancel and Exit** once through with exploring the feature.                        |
-+----------------------------------------------------------------------------------------------+
-| |lab067|                                                                                     |
-|                                                                                              |
-| |lab068|                                                                                     |
-|                                                                                              |
-| |lab069|                                                                                     |
-+----------------------------------------------------------------------------------------------+
-
-
-Task 2: Establishing a Baseline
+Task 1: Establishing a Baseline
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In this task you will access a test website/webpage to experience access without a Rate Limiting Policy
@@ -192,11 +135,6 @@ In this task you will add a Rate Limiting Policy to the application Load Balance
 |                                                                                              |
 |     section the input **/auth.php** as shown and then click **Apply**.                       |
 |                                                                                              |
-| .. note::                                                                                    |
-|                                                                                              |
-|    *Although its already protect by Bot Defense, we can also control the rate at which the*  |
-|                                                                                              |
-|    *specific authentication page can be POSTed to (or any other page).*                      |
 +----------------------------------------------------------------------------------------------+
 | |lab012|                                                                                     |
 |                                                                                              |
@@ -387,12 +325,73 @@ Now we will retest access to our website and see if our experience has indeed ch
 |                                                                                              |
 | .. note::                                                                                    |
 |                                                                                              |
-|    *Review Lab1/Task3 to find Security Events. You can copy you support ID to search with!*  |
+|    *Review Lab2/Task4 to find Security Events. You can copy you support ID to search with!*  |
 +----------------------------------------------------------------------------------------------+
 | |lab035|                                                                                     |
 |                                                                                              |
 | |lab036|                                                                                     |
 +----------------------------------------------------------------------------------------------+
+
+
+
+Task 4: Observing Route Configurations
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The following steps will enable you to attach Service Policies to your configured Load Balancer.
+It will also help you understand additional approaches for Service Policies.
+
++----------------------------------------------------------------------------------------------+
+| 1. Within **Web App & API Protection** in the F5 Distributed Cloud Console, **Manage >**     |
+|                                                                                              |
+|    **Load Balancer > HTTP Load Balancers** and use the **Action Dots** and click **Manage**  |
+|                                                                                              |
+|    **Configuration**.                                                                        |
+|                                                                                              |
+| 2. Click **Edit Configuration** in the top right-hand corner.                                |
++----------------------------------------------------------------------------------------------+
+| |lab063|                                                                                     |
+|                                                                                              |
+| |lab064|                                                                                     |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 3. Click **Routes** in the left-hand navigation and the click **Configure** as shown.        |
+|                                                                                              |
+| 4. In **Routes** window, click the **Add Item** link.                                        |
++----------------------------------------------------------------------------------------------+
+| |lab065|                                                                                     |
+|                                                                                              |
+| |lab066|                                                                                     |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 5. Observe the various route types and matching criteria controls that can be leveraged to   |
+|                                                                                              |
+|    securely control application flow, perform pool targeting, make path responses or develop |
+|                                                                                              |
+|    custom control to secure protected applications.                                          |
+|                                                                                              |
+| 6. An example walkthrough of **Simple Route** is shown but feel free to look at all the      |
+|                                                                                              |
+|    route types: .                                                                            |
+|                                                                                              |
+|    * **Simple Route:** Matches on path and/or HTTP method and forward traffic to the         |
+|                        associated pool.                                                      |
+|    * **Redirect Route:** Matches on path and/or HTTP method and redirects matching traffic   |
+|                        to a different URL.                                                   |
+|    * **Direct Response Route:** Matches on path and/or HTTP method and responds directly to  |
+|                        matching traffic.                                                     |
+|    * **Custom Route Object:** Leverages a reference route object created outside this view.  |
+|                                                                                              |
+| 7. Click **Cancel and Exit** once through with exploring the feature.                        |
++----------------------------------------------------------------------------------------------+
+| |lab067|                                                                                     |
+|                                                                                              |
+| |lab068|                                                                                     |
+|                                                                                              |
+| |lab069|                                                                                     |
++----------------------------------------------------------------------------------------------+
+
 
 +----------------------------------------------------------------------------------------------+
 | **End of Lab 5:**  This concludes Lab 5, feel free to review and test the configuration.     |

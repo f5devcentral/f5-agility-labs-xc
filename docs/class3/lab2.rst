@@ -1,8 +1,10 @@
-Lab 2: Exploring Service Policies 
-=================================
+Lab 2: Enabling Application Security with Service Policies 
+==========================================================
 
 The following lab tasks will guide you the configuration of various Service Policies 
-which can be used to implement a variety of security controls. 
+which can be used to implement a variety of security controls. The goals of this section of the lab will
+be to create specific policies to enforce positive and negative enforcement rules based on geo-location,
+IP addresses, and custom header properties.  
 
 **Expected Lab Time: 30 minutes**
 
@@ -549,19 +551,19 @@ on which security control blocked the client from accessing an application based
 |                                                                                              |
 |     **Dashboard**.                                                                           |
 +----------------------------------------------------------------------------------------------+
-| |lab033|                                                                                     |
+| |lab063|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
 | 2. Review the **Security Dashboard** display (you may have limited data) .                   |
 +----------------------------------------------------------------------------------------------+
-| |lab034|                                                                                     |
+| |lab064|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
 | 3. Scroll to **Load Balancers** section and click the **<namespace>-lb** object.             |
 +----------------------------------------------------------------------------------------------+
-| |lab035|                                                                                     |
+| |lab065|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 .. note::
@@ -574,13 +576,13 @@ on which security control blocked the client from accessing an application based
 |                                                                                              |
 |     **Analytics**.                                                                           |
 +----------------------------------------------------------------------------------------------+
-| |lab036|                                                                                     |
+| |lab066|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
 | 5. Expand your latest security event as shown.                                               |
 +----------------------------------------------------------------------------------------------+
-| |lab037|                                                                                     |
+| |lab067|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 .. note::
@@ -591,7 +593,7 @@ on which security control blocked the client from accessing an application based
 |                                                                                              |
 |     which is synonymous with **Support ID** (filterable) from the Security Event Block Page. |
 +----------------------------------------------------------------------------------------------+
-| |lab038|                                                                                     |
+| |lab068|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
@@ -603,7 +605,7 @@ on which security control blocked the client from accessing an application based
 |                                                                                              |
 |     the top of the **Security Analytics** window.                                            |
 +----------------------------------------------------------------------------------------------+
-| |lab039|                                                                                     |
+| |lab069|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
@@ -617,11 +619,11 @@ on which security control blocked the client from accessing an application based
 |                                                                                              |
 |     value field and click **Apply**.                                                         |
 +----------------------------------------------------------------------------------------------+
-| |lab040|                                                                                     |
+| |lab070|                                                                                     |
 |                                                                                              |
-| |lab041|                                                                                     |
+| |lab071|                                                                                     |
 |                                                                                              |
-| |lab042|                                                                                     |
+| |lab072|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
@@ -661,6 +663,14 @@ location with the country of your test client.
 |                                                                                              |
 | 5. Scroll down and click **Save and Exit**.                                                  |
 |                                                                                              |
++----------------------------------------------------------------------------------------------+
+| |lab073|                                                                                     |
+|                                                                                              |
+| |lab074|                                                                                     |
+|                                                                                              |
+| |lab075|                                                                                     |
+|                                                                                              |
++----------------------------------------------------------------------------------------------+
 | 6. Access http://<namespace>.lab-sec.f5demos.com/ from your web browser.                     |
 |                                                                                              |
 | What happened?  Investigate utilizing the security dashboard to confirm.                     |
@@ -670,13 +680,7 @@ location with the country of your test client.
 |    **> HTTP Load Balancers** and use the **Action Dots** and click **Manage Configuration**. |
 |                                                                                              |
 | 8. Click **Edit Configuration** in the top right-hand corner.                                |
-+----------------------------------------------------------------------------------------------+
 |                                                                                              |
-|                                                                                              |
-|                                                                                              |
-+----------------------------------------------------------------------------------------------+
-
-+----------------------------------------------------------------------------------------------+
 | 9. Click **Common Security Controls** in the left-hand navigation.                           |
 |                                                                                              |
 | 10. From the **Service Policies** section, select **Edit Configuration**.                    |
@@ -685,14 +689,18 @@ location with the country of your test client.
 |                                                                                              |
 | 12. Click **Apply**.  Then click **Save and Exit**                                           |
 |                                                                                              |
-| 12. Restest from your web browser.  Is access restored?                                      |
+| 12. Test from your web browser.  Is access restored?                                         |
 |                                                                                              |
 +----------------------------------------------------------------------------------------------+
+| |lab076|                                                                                     |
 |                                                                                              |
+| |lab077|                                                                                     |
+|                                                                                              |
+| |lab078|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| **End of Lab 3:**  This concludes Lab 3, feel free to review and test the configuration.     |
+| **End of Lab 2:**  This concludes Lab 2, feel free to review and test the configuration.     |
 |                                                                                              |
 | A Q&A session will begin shortly to conclude the overall lab.                                |
 +----------------------------------------------------------------------------------------------+
@@ -836,6 +844,24 @@ location with the country of your test client.
 .. |lab068| image:: _static/lab2-068.png
    :width: 800px   
 .. |lab069| image:: _static/lab2-069.png
+   :width: 800px   
+.. |lab070| image:: _static/lab2-070.png
+   :width: 800px   
+.. |lab071| image:: _static/lab2-071.png
+   :width: 800px   
+.. |lab072| image:: _static/lab2-072.png
+   :width: 800px   
+.. |lab073| image:: _static/lab2-073.png
+   :width: 800px   
+.. |lab074| image:: _static/lab2-074.png
+   :width: 800px   
+.. |lab075| image:: _static/lab2-075.png
+   :width: 800px   
+.. |lab076| image:: _static/lab2-076.png
+   :width: 800px   
+.. |lab077| image:: _static/lab2-077.png
+   :width: 800px   
+.. |lab078| image:: _static/lab2-078.png
    :width: 800px   
 .. |labend| image:: _static/labend.png
    :width: 800px
