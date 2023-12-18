@@ -40,7 +40,7 @@ This lab will begin back in the Windows 10 client deployed as part of the UDF.
 | 6. Review the results in the **Body** section of Postman. You should see a 200 OK response code.              |
 |                                                                                                               |
 | .. note::                                                                                                     |
-|    *Since you are modifying an existing object, you use the PUT method here instead of the POST method.       |
+|    *Since you are modifying an existing object, you use the PUT method here instead of the POST method.*      |
 +---------------------------------------------------------------------------------------------------------------+
 | |lab2-Postman_LB_AppFW_Body|                                                                                  |
 |                                                                                                               |
@@ -131,7 +131,7 @@ application. Postman will then be used to attach the Service Policy to the HTTP 
 | 6. Review the results in the **Body** section of Postman. You should see a 200 OK response code.              |
 |                                                                                                               |
 | .. note::                                                                                                     |
-|    *Since you are modifying an existing object, you use the PUT method here instead of the POST method.       |
+|    *Since you are modifying an existing object, you use the PUT method here instead of the POST method.*      |
 +---------------------------------------------------------------------------------------------------------------+
 | |lab2-Postman_LB_SP_Body|                                                                                     |
 |                                                                                                               |
