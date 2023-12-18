@@ -203,7 +203,7 @@ Windows 10 client via WebRDP_.
 |                                                                                                               |
 | 8. Click **Send** to create the Health Check.                                                                 |
 |                                                                                                               |
-| 9. Review the results in the **Body** section of Postman. You should see a 200 OK response code               |
+| 9. Review the results in the **Body** section of Postman. You should see a 200 OK response code.              |
 +---------------------------------------------------------------------------------------------------------------+
 | |lab1-Postman_HC_Body|                                                                                        |
 |                                                                                                               |
@@ -221,7 +221,7 @@ Windows 10 client via WebRDP_.
 |                                                                                                               |
 | 12. Click **Send** to create the Origin Pool.                                                                 |
 |                                                                                                               |
-| 13. Review the results in the **Body** section of Postman. You should see a 200 OK response code              |
+| 13. Review the results in the **Body** section of Postman. You should see a 200 OK response code.             |
 +---------------------------------------------------------------------------------------------------------------+
 | |lab1-Postman_Pool_Body|                                                                                      |
 |                                                                                                               |
@@ -239,7 +239,7 @@ Windows 10 client via WebRDP_.
 |                                                                                                               |
 | 16. Click **Send** to create the HTTP Load Balancer.                                                          |
 |                                                                                                               |
-| 17. Review the results in the **Body** section of Postman. You should see a 200 OK response code              |
+| 17. Review the results in the **Body** section of Postman. You should see a 200 OK response code.             |
 +---------------------------------------------------------------------------------------------------------------+
 | |lab1-Postman_LB_Body|                                                                                        |
 |                                                                                                               |
