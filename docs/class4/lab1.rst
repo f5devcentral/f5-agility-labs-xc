@@ -31,22 +31,19 @@ Task 1: Configure Load Balancer and Origin Pool
 The following steps will allow you to deploy and advertise a globally available application.  These
 steps will define an application, register its DNS and assign a target as an origin.
 
+
 +----------------------------------------------------------------------------------------------+
-| 1. Following the **Introduction** section instructions, you should now be in the **Web**     |
-|                                                                                              |
-|    **App & API Protection** configuration window. If for some reason you are not in the      |
-|                                                                                              |
-|    **Web App & API Protection** window, use the **Select Service** in the left-hand          |
-|                                                                                              |
-|    navigation, and click **Web App & API Protection** as shown in the *Introduction Section* |
-|                                                                                              |
+| 1. In the left top click the F5 ball and navigate to the **Web App & API Protection** Tile.  |
++----------------------------------------------------------------------------------------------+
+| |class4-shared-001|                                                                          |
++----------------------------------------------------------------------------------------------+
 | 2. In the left-hand navigation expand **Manage** and click **Load Balancers > HTTP Load**    |
 |                                                                                              |
 |    **Balancers**                                                                             |
 |                                                                                              |
 | 3. In the resulting screen click the **Add HTTP Load Balancer** in the graphic as shown.     |
 +----------------------------------------------------------------------------------------------+
-| |lab1-task1-001|                                                                             |
+| |class4-shared-002|                                                                          |
 |                                                                                              |
 | |lab1-task1-002|                                                                             |
 +----------------------------------------------------------------------------------------------+
@@ -98,7 +95,7 @@ steps will define an application, register its DNS and assign a target as an ori
 |                                                                                              |
 | 9. In the **DNS Name** field enter the following hostname:                                   |
 |                                                                                              |
-|    **demo-app.amer.myedgedemo.com** and then click **Apply**                                 |
+|    **petapi.cloud.myf5demo.com** and then click **Apply**                                    |
 +----------------------------------------------------------------------------------------------+
 | |lab1-task1-007|                                                                             |
 +----------------------------------------------------------------------------------------------+
@@ -119,6 +116,24 @@ steps will define an application, register its DNS and assign a target as an ori
 | |lab1-task1-010|                                                                             |
 +----------------------------------------------------------------------------------------------+
 
++----------------------------------------------------------------------------------------------+
+| 13. After returning to the HTTP Load Balancer window, select **Other Settings** on the left  |
+|                                                                                              |
+|     then click on **Save and Exit** at the bottom right of window.                           |
++----------------------------------------------------------------------------------------------+
+| |lab1-task1-011|                                                                             |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 14. Using another browser tab, navigate to the the following URL to confirm the Load Balancer|
+|                                                                                              |
+|     has been configured properly.                                                            |
+|                                                                                              |
+|     **http://<namespace>.lab-sec.f5demos.com/api/CatLookup/GetAllCats**                      |
++----------------------------------------------------------------------------------------------+
+| |lab1-task1-012|                                                                             |
++----------------------------------------------------------------------------------------------+
+
 Task 2: Swagger File Import & Version Control
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -131,13 +146,13 @@ version control features.
 |    **app-api-v1.json** to your local desktop or workspace.                                   |
 |                                                                                              |
 |    Link::                                                                                    |
-|      http://demo-app.amer.myedgedemo.com/lab/app-api-v1.json                                 |
+|      http://petapi.cloud.myf5demo.com/lab/app-api-v1.json                                    |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
 | 2. In the left top click the F5 ball and navigate to the **Web App & API Protection** Tile.  |
 +----------------------------------------------------------------------------------------------+
-| |lab1-task2-001|                                                                             |
+| |class4-shared-001|                                                                          |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
@@ -163,7 +178,7 @@ version control features.
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 7. Observe that the file **app-api-v1.json**  is present and the click **Save and Exit**     |
+| 7. Observe that the file **app-api-v1**  is present and the click **Save and Exit**          |
 +----------------------------------------------------------------------------------------------+
 | |lab1-task2-004|                                                                             |
 +----------------------------------------------------------------------------------------------+
@@ -187,7 +202,7 @@ version control features.
 |    **app-api-v2.json** to your local desktop or workspace.                                   |
 |                                                                                              |
 |    Link::                                                                                    |
-|      http://demo-app.amer.myedgedemo.com/lab/app-api-v2.json                                 |
+|      http://petapi.cloud.myf5demo.com/lab/app-api-v2.json                                    |
 |                                                                                              |
 | .. note::                                                                                    |
 |    *This is a modified version (v2) of the JSON/OpenAPI spec file you previously downloaded* |
@@ -206,7 +221,7 @@ version control features.
 |                                                                                              |
 |     downloaded in Step 9 above and click **Open**.                                           |
 |                                                                                              |
-| 12. Observe that the file **app-api-v1.json**  is present and the click **Save and Exit**    |
+| 12. Observe that the file **app-api-v2**  is present and the click **Save and Exit**         |
 +----------------------------------------------------------------------------------------------+
 | |lab1-task2-007|                                                                             |
 |                                                                                              |
@@ -218,20 +233,22 @@ version control features.
 |                                                                                              |
 |     metadata seen previously.                                                                |
 |                                                                                              |
-| 14. Note now that there are **2** versions available of the **app-api** file.  Click the     |
+| 14. Note now that there are **2** versions available of the **app-api** file.                |
 |                                                                                              |
-|     **2** in the **Versions** column.                                                        |
+|     Click the **2** in the **Versions** column.                                              |
 +----------------------------------------------------------------------------------------------+
 | |lab1-task2-009|                                                                             |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 15. In the resulting window, observe there are now two versions of the **app-api** spec file.|
+| 15. In the resulting window, observe there are now two versions of the **app-api**           |
+|                                                                                              |
+|     spec file.                                                                               |
 |                                                                                              |
 | .. note::                                                                                    |
 |    *This is an API File update process which can also be performed through the F5*           |
 |                                                                                              |
-|    *Distributed Cloud API framework.                                                         |
+|    *Distributed Cloud API framework.*                                                        |
 |                                                                                              |
 | 16. Click **X** in the top-right corner and proceed to the next task.                        |
 +----------------------------------------------------------------------------------------------+
@@ -262,11 +279,11 @@ pointer to imported swagger files you just uploaded.
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 3. In the resulting **New API Definition** window, input **app-api-spec** for the **Name**   |
+| 3. In the resulting **New API Definition** window, input **app-api-spec**                    |
 |                                                                                              |
-|    under the **Metadata** section.                                                           |
+|    for the **Name** under the **Metadata** section.                                          |
 |                                                                                              |
-| 4. In the **Swagger Specs** section, click the **Arrow** in the **Select Item** box in the   |
+| 4. In the **Swagger Specs** section, click **Add Item** box in the                           |
 |                                                                                              |
 |    **Swagger Specs** column.                                                                 |
 |                                                                                              |
@@ -279,32 +296,28 @@ pointer to imported swagger files you just uploaded.
 | |lab1-task3-003|                                                                             |
 +----------------------------------------------------------------------------------------------+
 
-Task 4: Enabling API Inventory and Dicovery
+Task 4: Enabling API Inventory and Discovery
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In this task's series of steps you will enable the API Inventory and Dicovery feature on the 
+In this task's series of steps you will enable the API Inventory and Discovery feature on the 
 previously built Load Balancer object delivering the targeted application/API.
 
 +----------------------------------------------------------------------------------------------+
 | 1. In the left-hand navigation of the **Web App & API Protection** service, click on **Load**|
 |                                                                                              |
 |    **Balancers** under the **Manage** section.                                               |
-+----------------------------------------------------------------------------------------------+
-| |lab1-task4-001|                                                                             |
-+----------------------------------------------------------------------------------------------+
-
-+----------------------------------------------------------------------------------------------+
+|                                                                                              |
 | 2. In the resulting **Load Balancers** window, click on the three dots **...** in the        |
 |                                                                                              |
 |    **Action** column, and the select **Manage Configuration**.                               |
 +----------------------------------------------------------------------------------------------+
-| |lab1-task4-002|                                                                             |
+| |class4-shared-003|                                                                          |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
 | 3. Click **Edit Configuration** in the top-right corner.                                     |
 +----------------------------------------------------------------------------------------------+
-| |lab1-task4-003|                                                                             |
+| |class4-shared-004|                                                                          |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
@@ -339,18 +352,37 @@ previously built Load Balancer object delivering the targeted application/API.
 |    **from Traffic with Redirect Response** and then select **Enable Learning from Redirect** |
 |                                                                                              |
 |    *Traffic**.                                                                               |
+|                                                                                              |
+| .. note::                                                                                    |
+|    *API Discovery will be explored within a demo following this lab*                         |
 +----------------------------------------------------------------------------------------------+
 | |lab1-task4-007|                                                                             |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
+| 10. Select **Other Settings** on the left then click on **Save and Exit**                    |
+|                                                                                              |
+|     at the bottom right of window.                                                           |
++----------------------------------------------------------------------------------------------+
+| |lab1-task4-008|                                                                             |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
 | **End of Lab 1:**  This concludes Lab 1, feel free to review and test the configuration.     |
 |                                                                                              |
-| A brief presentation will be shared prior to the beginning of Lab 2.                         |
+| A brief presentation and demo will be shared prior to the beginning of Lab 2.                |
 +----------------------------------------------------------------------------------------------+
 | |labend|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
+.. |class4-shared-001| image:: _static/class4-shared-001.png
+   :width: 800px
+.. |class4-shared-002| image:: _static/class4-shared-002.png
+   :width: 800px
+.. |class4-shared-003| image:: _static/class4-shared-003.png
+   :width: 800px
+.. |class4-shared-004| image:: _static/class4-shared-004.png
+   :width: 800px
 .. |lab1-task1-001| image:: _static/lab1-task1-001.png
    :width: 800px
 .. |lab1-task1-002| image:: _static/lab1-task1-002.png
@@ -370,6 +402,10 @@ previously built Load Balancer object delivering the targeted application/API.
 .. |lab1-task1-009| image:: _static/lab1-task1-009.png
    :width: 800px
 .. |lab1-task1-010| image:: _static/lab1-task1-010.png
+   :width: 800px
+.. |lab1-task1-011| image:: _static/lab1-task1-011.png
+   :width: 800px
+.. |lab1-task1-012| image:: _static/lab1-task1-012.png
    :width: 800px
 .. |lab1-task2-001| image:: _static/lab1-task2-001.png
    :width: 800px
@@ -395,7 +431,7 @@ previously built Load Balancer object delivering the targeted application/API.
    :width: 800px
 .. |lab1-task3-002| image:: _static/lab1-task3-002.png
    :width: 800px
-.. |lab1-task3-003| image:: _static/lab1-task3-004.png
+.. |lab1-task3-003| image:: _static/lab1-task3-003.png
    :width: 800px
 .. |lab1-task4-001| image:: _static/lab1-task4-001.png
    :width: 800px
@@ -408,6 +444,10 @@ previously built Load Balancer object delivering the targeted application/API.
 .. |lab1-task4-005| image:: _static/lab1-task4-005.png
    :width: 800px
 .. |lab1-task4-006| image:: _static/lab1-task4-006.png
+   :width: 800px
+.. |lab1-task4-007| image:: _static/lab1-task4-007.png
+   :width: 800px
+.. |lab1-task4-008| image:: _static/lab1-task4-008.png
    :width: 800px
 .. |labend| image:: _static/labend.png
    :width: 800px

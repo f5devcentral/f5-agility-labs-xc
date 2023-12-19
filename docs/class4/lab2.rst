@@ -1,7 +1,7 @@
 Lab 2: API Protection & Rate Limiting
 =================================
 
-F5® Distributed API Protection provides key security functionality to secure APIs.
+F5® Distributed Cloud API Protection provides key security functionality to secure APIs.
 
 This lab's tasks will walk through the configuration steps and note additional configurations available.
 
@@ -16,7 +16,7 @@ previously built Load Balancer object delivering the targeted application/API.
 |                                                                                              |
 |    **Balancers** under the **Manage** section.                                               |
 +----------------------------------------------------------------------------------------------+
-| |lab2-task1-001|                                                                             |
+| |class4-shared-002|                                                                          |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
@@ -24,66 +24,67 @@ previously built Load Balancer object delivering the targeted application/API.
 |                                                                                              |
 |    **Action** column, and the select **Manage Configuration**.                               |
 +----------------------------------------------------------------------------------------------+
-| |lab2-task1-002|                                                                             |
+| |class4-shared-003|                                                                          |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
 | 3. Click **Edit Configuration** in the top-right corner.                                     |
 +----------------------------------------------------------------------------------------------+
-| |lab2-task1-003|                                                                             |
+| |class4-shared-004|                                                                          |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 5. In the **API Protection Rules** section, click the **Configure** link.                    |
+| 4. In the **API Protection Rules** section, click the **Configure** link.                    |
 +----------------------------------------------------------------------------------------------+
 | |lab2-task1-004|                                                                             |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 6. In the resulting **API Protection Rules** window, click **Configure** in the **API**      |
+| 5. In the resulting **API Protection Rules** window, click **Configure** in the              |
 |                                                                                              |
-|     **Endpoints** section.                                                                   |
+|    **API Endpoints** section.                                                                |
 +----------------------------------------------------------------------------------------------+
 | |lab2-task1-005|                                                                             |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 7. Click **Add Item** in the **API Endpoints** window.                                       |
+| 6. Click **Add Item** in the **API Endpoints** window.                                       |
 +----------------------------------------------------------------------------------------------+
 | |lab2-task1-006|                                                                             |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 8. In the resulting window, input **block-endpoint** in the **Name** field of the            |
+| 7. In the resulting window, input **block-endpoint** in the **Name** field of the            |
 |                                                                                              |
-|     **Metadata** section.                                                                    |
+|    **Metadata** section.                                                                     |
 |                                                                                              |
-| 9. In the **Action** area, click the drop-down arrow indicated and select **Deny**.          |
+| 8. In the **Action** area, click the drop-down arrow indicated and select **Deny**.          |
 +----------------------------------------------------------------------------------------------+
 | |lab2-task1-007|                                                                             |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 10. In the **API Endpoint** section, click on the **API Endpoint** input field as indicated. |
+| 9. In the **API Endpoint** section, click on the **API Endpoint** input field as indicated.  |
 |                                                                                              |
-| 11. Select the **See Suggestions** link.                                                     |
+| 10. Select the **See Suggestions** link.                                                     |
 +----------------------------------------------------------------------------------------------+
 | |lab2-task1-008|                                                                             |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 12. Select **/v2/user** from the available options provided.                                 |
+| 11. Select **/api/CatLookup/GetAllCats** from the available options provided.                |
 |                                                                                              |
 | .. note::                                                                                    |
-|    *The endpoints available are provided via the spec you previously imported and defined*   |
+|    *The available endpoints are provided by the swagger previously imported,                 |
+|    or identified by API Discovery*                                                           |
 |                                                                                              |
-| 13. In the **HTTP Methods** area, click in the **Method List** input field.                  |
+| 12. In the **HTTP Methods** area, click in the **Method List** input field.                  |
 +----------------------------------------------------------------------------------------------+
 | |lab2-task1-009|                                                                             |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 14. Select **Any** from the available methods provided.                                      |
+| 13. Select **Any** from the available methods provided.                                      |
 |                                                                                              |
 | .. note::                                                                                    |
 |    *Multiple methods can be selected if needed*                                              |
@@ -92,24 +93,41 @@ previously built Load Balancer object delivering the targeted application/API.
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 15. Review the configuration and click, the **Apply** button.                                |
+| 14. Review the configuration and click, the **Apply** button.                                |
 +----------------------------------------------------------------------------------------------+
 | |lab2-task1-011|                                                                             |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 16. Review the API Endpoint deny rule and click, the **Apply** button.                       |
+| 15. Review the API Endpoint deny rule and click, the **Apply** button.                       |
 +----------------------------------------------------------------------------------------------+
 | |lab2-task1-012|                                                                             |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 17. Note that API Protection Rules are configure for the API Endpoints and click, the        |
+| 16. Note that API Protection Rules are configure for the API Endpoints and click, the        |
 |                                                                                              |
 |     **Apply** button.                                                                        |
 +----------------------------------------------------------------------------------------------+
 | |lab2-task1-013|                                                                             |
 +----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 17. Select **Other Settings** on the left then click on **Save and Exit**                    |
+|                                                                                              |
+|     at the bottom right of window.                                                           |
++----------------------------------------------------------------------------------------------+
+| |lab2-task2-009|                                                                             |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 18. Using another browser tab, navigate to the the following URL to confirm                  |
+|                                                                                              |
+|     access is denied.                                                                        |
+|                                                                                              |
+|     **http://<namespace>.lab-sec.f5demos.com/api/CatLookup/GetAllCats**                      |
++----------------------------------------------------------------------------------------------+
+
 
 Task 2: Attach API Rate Limiting to Load Balancer Object 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -118,23 +136,43 @@ In this task's series of steps you will enable the API Rate Limiting feature on 
 previously built Load Balancer object delivering the targeted application/API.
 
 +----------------------------------------------------------------------------------------------+
-| 1. Using the left-hand navigation, click the **Common Security Controls** link.              |
+| 1. In the left-hand navigation of the **Web App & API Protection** service, click on **Load**|
+|                                                                                              |
+|    **Balancers** under the **Manage** section.                                               |
++----------------------------------------------------------------------------------------------+
+| |class4-shared-002|                                                                          |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 2. In the resulting **Load Balancers** window, click on the three dots **...** in the        |
+|                                                                                              |
+|    **Action** column, and the select **Manage Configuration**.                               |
++----------------------------------------------------------------------------------------------+
+| |class4-shared-003|                                                                          |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 3. Click **Edit Configuration** in the top-right corner.                                     |
++----------------------------------------------------------------------------------------------+
+| |class4-shared-004|                                                                          |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 4. Using the left-hand navigation, click the **Common Security Controls** link.              |
 +----------------------------------------------------------------------------------------------+
 | |lab2-task2-001|                                                                             |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 2. Locate the **Rate Limiting** area of the **Common Security Controls** and use the         |
+| 5. Locate the **Rate Limiting** area of the **Common Security Controls** and use the         |
 |                                                                                              |
 |    drop-down to select **API Rate Limit**.                                                   |
 +----------------------------------------------------------------------------------------------+
-| |lab2-task2-002|                                                                             |
-|                                                                                              |
 | |lab2-task2-003|                                                                             |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 3. In the expanded menu under **Rate Limiting**, click **Configure** in the **API**          |
+| 6. In the expanded menu under **Rate Limiting**, click **Configure** in the **API**          |
 |                                                                                              |
 |    **Endpoints** area.                                                                       |
 +----------------------------------------------------------------------------------------------+
@@ -142,39 +180,43 @@ previously built Load Balancer object delivering the targeted application/API.
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 4. In the resulting window **API Endpoints** window, click **Add Item**.                     |
+| 7. In the resulting window **API Endpoints** window, click **Add Item**.                     |
 +----------------------------------------------------------------------------------------------+
 | |lab2-task2-005|                                                                             |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 5. In the resulting configuration window, select **/v2/store/order/{orderId}** for **API**   |
+| 8. In the resulting configuration window, select **/api/DogLookup/GetAllDogs** for **API**   |
 |                                                                                              |
 |    **Endpoint** input.                                                                       |
 |                                                                                              |
-| 6. Select **ANY** for **Method** input and then click the **Apply** button.                  |
+| 9. Select **ANY** for **Method** input and then click the **Apply** button.                  |
 +----------------------------------------------------------------------------------------------+
 | |lab2-task2-006|                                                                             |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 7. Review the API Endpoint rate limiting rule and click, the **Apply** button.               |
+| 10. Review the API Endpoint rate limiting rule and click, the **Apply** button.              |
 +----------------------------------------------------------------------------------------------+
 | |lab2-task2-007|                                                                             |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 8. Note the updated configuration for API Rate limiting, Click **Other Settings** in  the    |
+| 11. Note the updated configuration for API Rate limiting, Click **Other Settings** on the    |
 |                                                                                              |
-|    the left-hand navigation.                                                                 |
+|     the left, navigation on the bottom right then click on **Save and Exit**                 |
 +----------------------------------------------------------------------------------------------+
 | |lab2-task2-008|                                                                             |
 +----------------------------------------------------------------------------------------------+
+| |lab2-task2-009|                                                                             |
++----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 9. Once at the bottom of the HTTP Load Balancer configuration and click the **Apply** button.|
-+----------------------------------------------------------------------------------------------+
-| |lab2-task2-009|                                                                             |
+| 12. Using another browser tab, navigate to the the following URL to confirm                  |
+|                                                                                              |
+|     rate limiting, by freshing your tab several times.                                       |
+|                                                                                              |
+|     **http://<namespace>.lab-sec.f5demos.com/api/DogLookup/GetAllDogs**                      |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
@@ -191,6 +233,14 @@ previously built Load Balancer object delivering the targeted application/API.
 | |labend|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
+.. |class4-shared-001| image:: _static/class4-shared-001.png
+   :width: 800px
+.. |class4-shared-002| image:: _static/class4-shared-002.png
+   :width: 800px
+.. |class4-shared-003| image:: _static/class4-shared-003.png
+   :width: 800px
+.. |class4-shared-004| image:: _static/class4-shared-004.png
+   :width: 800px
 .. |lab2-task1-001| image:: _static/lab2-task1-001.png
    :width: 800px
 .. |lab2-task1-002| image:: _static/lab2-task1-002.png
@@ -233,7 +283,7 @@ previously built Load Balancer object delivering the targeted application/API.
    :width: 800px
 .. |lab2-task2-008| image:: _static/lab2-task2-008.png
    :width: 800px
-.. |lab2-task2-009| image:: _static/lab2-task2-009png
+.. |lab2-task2-009| image:: _static/lab2-task2-009.png
    :width: 800px
 .. |labend| image:: _static/labend.png
    :width: 800px
