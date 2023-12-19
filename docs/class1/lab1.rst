@@ -372,9 +372,8 @@ Monitoring dashboard, and gather security event details.
 |                                                                                                               |
 | Console was then used to review telemetry data gathered for the application.  Next an Application Firewall    |
 |                                                                                                               |
-| policy was created and assigned to protect the application.  Finally a sample attack was run against the      |
-|                                                                                                               |
-| application and the security event data was reviewed within the Distributed Cloud Console.                    |
+| policy was assigned to protect the application.  Finally a sample attack was run against the application and  |
+| the security event data was reviewed within the Distributed Cloud Console.                                    |
 |                                                                                                               |
 | A brief presentation will be shared prior to the beginning of Lab 2.                                          |
 +---------------------------------------------------------------------------------------------------------------+
