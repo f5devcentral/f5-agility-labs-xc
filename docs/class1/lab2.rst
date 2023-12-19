@@ -55,7 +55,7 @@ Exercise 1: Create Private Origin Pool
 
 We will first create an Origin Pool that refers to the "Private Endpoint" site in our lab environment.
 
-#. Start in F5 Distributed Cloud Console and switch back to the "Web App & API Protection" context.
+#. Start in F5 Distributed Cloud Console and switch back to the **Multi-Cloud App Connect** context.
 
 #. Navigate the menu to go to "Manage"->"Load Balancers"->"Origin Pools". Click on *Add Origin Pool*.
 
@@ -91,45 +91,9 @@ We will first create an Origin Pool that refers to the "Private Endpoint" site i
    Port                              8080
    ================================= =====
 
-#. In the **Health Checks**, click **Add Item**.                                             
-
-#. From the resulting Health Check object dropdown select **Add Item**.                      
-
-#. In the resulting window enter **<namespace>-hc** in the **Name** field.  
-
-#. In the **Health Check Parameters** section click **View Configuration** under the **HTTP HealthCheck** section.                                                      
-
-#. In the resulting window note the value of the **Path** parameter.   
-
-#. Also note the value of the **Expected Status Codes** parameter.       
-
-#. Click **Back** to retain the default settings.                                           
-
-.. note::                                                                                    
 
 
-*The default Health Check makes a request to the root path and expects a response code of*
-
-*200. These values can be modified to meet the requirements of the application.*          
-
-
-13. After returning to the prior window, note the values of **Timeout(s)**, **Interval(s)**,   
-
-**Unhealthy Threshold**, and **Healthy Threshold**.                                      
-
-14. Click **Continue**.                                                                      
-
-.. note::                                                                                    
-
-
-*The Timeout, Interval, Unhealthy Threshold, and Healthy Threshold control how often*     
-
-*health checks are sent and when an endpoint is marked healthy or unhealthy.  These*      
-
-*values can be modified to meet the requirements of the application.*                     
-
-
-15. After returning to the Origin Pool configuration window, click **Save and Exit**.        
+#. Click **Save and Exit**.        
 
 .. |app-context| image:: _static/app-context.png
 .. |origin_pools_menu| image:: _static/origin_pools_menu.png
@@ -160,7 +124,7 @@ the "Private Endpoint" via the AppMesh node that is deployed in the AWS lab envi
 Exercise 1: HTTP Load Balancer Configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-#. Start in F5 Distributed Cloud Console and switch to the "Web App & API Protection" context. [You should already be here from previous lab]
+#. Start in F5 Distributed Cloud Console and switch to the **Multi-Cloud App Connect** context. [You should already be here from previous lab]
 
 #. Navigate the menu to go to "Manage"->"HTTP Load Balancers" and look for the Load Balancer named *<namespace>-lb* that you previously created.
 
@@ -183,7 +147,7 @@ Exercise 1: HTTP Load Balancer Configuration
 #. Click "*Save and Exit* to update the HTTP Load Balancer.
 
 You should now be able to go to the DNS name that you entered 
-previously in a web browser.  The FQDN we used in our example is http://stable-sheep.lab-sec.f5demos.com/.  
+previously in a web browser.  The FQDN we used in our example is http://worthy-gecko.lab-sec.f5demos.com/.  
 
 Exercise 2: Verify Configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -219,7 +183,7 @@ In the next lab exercise we will deploy a Load Balancer on the AppMesh node that
 Exercise 1: HTTP Load Balancer Configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-#. Start in F5 Distributed Cloud Console and switch to the "Web App & API Protection" context. [You should already be here from previous lab]
+#. Start in F5 Distributed Cloud Console and switch to the **Multi-Cloud App Connect** context. [You should already be here from previous lab]
 
 #. Navigate the menu to go to "Manage"->"HTTP Load Balancers" and click on "Add HTTP Load Balancer".
 
@@ -282,7 +246,7 @@ Exercise 4: Configure WAF Policy
    Variable                        Value
    =============================== =================================
    Web Application Firewall (WAF)  Enable
-   Select App Firewall             [NAMESPACE]/suited-guppy-appfw
+   Select App Firewall             shared/base-appfw
    =============================== =================================
 
 #. Click "Save and Exit" to create the HTTP Load Balancer.
