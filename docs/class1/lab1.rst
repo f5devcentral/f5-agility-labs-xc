@@ -141,7 +141,7 @@ Network.
 +---------------------------------------------------------------------------------------------------------------+
 | 18. In the **HTTP Load Balancers** window, note the application hostname under the **Domains** column *(This* |
 |                                                                                                               |
-|     *was done in Task1: Step 19)*.                                                                            |
+|     *was done in Task1: Step 11)*.                                                                            |
 |                                                                                                               |
 +---------------------------------------------------------------------------------------------------------------+
 | |lab013|                                                                                                      |
@@ -308,19 +308,31 @@ Monitoring dashboard, and gather security event details.
 +---------------------------------------------------------------------------------------------------------------+
 | 3. Returning to the F5 Distributed Cloud Console, use the left-hand navigation to navigate to Multi-Cloud App |
 |                                                                                                               |
-|    Connect setion and expand **Virtual Hosts** and click on **HTTP Load Balancers**.                          |
+|    Connect section and expand **Virtual Hosts** and then click on **HTTP Load Balancers**                     |
 |                                                                                                               |
-| 4. Click on the **Security Monitoring** link for your respective load balancer.                               |
+| 4. Click on **Performance Monitoring** link provided for your respective load balancer.                       |
+|                                                                                                               |
 +---------------------------------------------------------------------------------------------------------------+
-| |lab035|                                                                                                      |
+| |lab016|                                                                                                      |
 |                                                                                                               |
-| |lab036|                                                                                                      |
+| |lab017|                                                                                                      |
 +---------------------------------------------------------------------------------------------------------------+
 
 +---------------------------------------------------------------------------------------------------------------+
-| 5. From the **Dashboard** view, using the horizontal navigation, click **Requests**.                          |
+| 5. Returning to the F5 Distributed Cloud Console, use the left-hand navigation to navigate to Multi-Cloud App |
 |                                                                                                               |
-| 6. Note the **Chart** shows a graphical representation of all of the response codes for the selected time     |
+|    Connect setion and expand **Virtual Hosts** and click on **HTTP Load Balancers**.                          |
+|                                                                                                               |
+| 6. Click on the **Security Monitoring** link for your respective load balancer.                               |
++---------------------------------------------------------------------------------------------------------------+
+| |lab035|                                                                                                      |
+|                                                                                                               |                                                                                                      |
++---------------------------------------------------------------------------------------------------------------+
+
++---------------------------------------------------------------------------------------------------------------+
+| 7. From the **Dashboard** view, using the horizontal navigation, click **Requests**.                          |
+|                                                                                                               |
+| 8. Note the **Chart** shows a graphical representation of all of the response codes for the selected time     |
 |                                                                                                               |
 |    frame.                                                                                                     |
 |                                                                                                               |
@@ -333,15 +345,15 @@ Monitoring dashboard, and gather security event details.
 +---------------------------------------------------------------------------------------------------------------+
 
 +---------------------------------------------------------------------------------------------------------------+
-| 7. Click the **Hide Chart** link to free up space in the browser window.                                      |
+| 9. Click the **Hide Chart** link to free up space in the browser window.                                      |
 |                                                                                                               |
-| 8. Expand your latest security event as shown.                                                                |
+| 10. Expand your latest security event as shown.                                                               |
 |                                                                                                               |
-| 9. Note the summary detail provided in the **Information** link.  The **req_id** which is synonymous with     |
+| 11. Note the summary detail provided in the **Information** link.  The **req_id** which is synonymous with    |
 |                                                                                                               |
 |    **Support ID** (filterable) from the block page.                                                           |
 |                                                                                                               |
-| 10. Scroll to the bottom of the information screen to see specific signatures detected and actions taken      |
+| 12. Scroll to the bottom of the information screen to see specific signatures detected and actions taken      |
 |                                                                                                               |
 |     during the security event.                                                                                |
 |                                                                                                               |
