@@ -308,9 +308,9 @@ Monitoring dashboard, and gather security event details.
 +---------------------------------------------------------------------------------------------------------------+
 | 3. Returning to the F5 Distributed Cloud Console, use the left-hand navigation to navigate to Multi-Cloud App |
 |                                                                                                               |
-|    Connect section and expand **Virtual Hosts** and then click on **HTTP Load Balancers**                     |
+|    Connect section and click on **Performance**                                                               |
 |                                                                                                               |
-| 4. Click on **Performance Monitoring** link provided for your respective load balancer.                       |
+| 4. Scroll to the **Load Balancers** section of the page and click the link for your respective load balancer. |
 |                                                                                                               |
 +---------------------------------------------------------------------------------------------------------------+
 | |lab016|                                                                                                      |
@@ -319,18 +319,14 @@ Monitoring dashboard, and gather security event details.
 +---------------------------------------------------------------------------------------------------------------+
 
 +---------------------------------------------------------------------------------------------------------------+
-| 5. Returning to the F5 Distributed Cloud Console, use the left-hand navigation to navigate to Multi-Cloud App |
-|                                                                                                               |
-|    Connect setion and expand **Virtual Hosts** and click on **HTTP Load Balancers**.                          |
-|                                                                                                               |
-| 6. Click on the **Security Monitoring** link for your respective load balancer.                               |
+| 5. Click the **Performance Monitoring** dropdown at the top of the page and select **Security Monitoring**    |
 +---------------------------------------------------------------------------------------------------------------+
 | |lab035|                                                                                                      |
-|                                                                                                               |                                                                                                      |
+|                                                                                                               |
 +---------------------------------------------------------------------------------------------------------------+
 
 +---------------------------------------------------------------------------------------------------------------+
-| 7. From the **Dashboard** view, using the horizontal navigation, click **Requests**.                          |
+| 7. From the **Dashboard** view, using the horizontal navigation, click **Security Analytics**.                |
 |                                                                                                               |
 | 8. Note the **Chart** shows a graphical representation of all of the response codes for the selected time     |
 |                                                                                                               |
