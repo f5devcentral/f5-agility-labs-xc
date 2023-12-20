@@ -4,12 +4,15 @@ Lab 3: Instructor Walk-through
 Adding onto the previous labs this will be a walkthrough of the further topics available in the full 4 hour lab.
 
 The additional topics to be walked through are below which comprise of the orignal course labs 4-7.
-4. Distributed Cloud DNS
-5. Distributed Cloud Observability 
-6. Distributed Cloud CDN (Content Delivery Network)
-7. Distributed Cloud Multi Cloud Network (MCN)
+
+* Lab 4 - Distributed Cloud DNS
+* Lab 5 - Distributed Cloud Observability 
+* Lab 6 - Distributed Cloud CDN (Content Delivery Network)
+* Lab 7 - Distributed Cloud Multi Cloud Network (MCN)
 
 Note Distributed Cloud will be refered to as XC going forward.
+
+
 
 Lab 4: XC DNS:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -25,7 +28,7 @@ Summary of key topics:
 * Primary and Secondary DNS
 * DNS Load Balancing
 
-[DNS Lab Link](https://clouddocs.f5.com/training/community/f5xc/html/class1/lab4.html)
+`DNS Lab Link <https://clouddocs.f5.com/training/community/f5xc/html/class1/lab4.html>`_ 
 
 |lab004|    
 
@@ -41,7 +44,7 @@ Summary of topics:
 * Setup sythetic monitor
 * Review dashboards
 
-[Observability Lab Link](https://clouddocs.f5.com/training/community/f5xc/html/class1/lab5.html)
+`Observability Lab Link <https://clouddocs.f5.com/training/community/f5xc/html/class1/lab5.html>`_ 
 
 |lab005|    
 
@@ -56,7 +59,7 @@ Summary of topics:
 * Basic and adavnaced CDN Setup
 * Observability of CDN performance via dashboards 
 
-[CDN Lab Link](https://clouddocs.f5.com/training/community/f5xc/html/class1/lab6.html)
+`CDN Lab Link <https://clouddocs.f5.com/training/community/f5xc/html/class1/lab6.html>`_ 
 
 |lab006|    
 
@@ -71,7 +74,7 @@ Summary of topics:
 * Setup of site via SaaS portal to Cloud
 * Observability - CE dashboard
 
-[MCN Lab Link](https://clouddocs.f5.com/training/community/f5xc/html/class1/lab7.html)
+`MCN Lab Link <https://clouddocs.f5.com/training/community/f5xc/html/class1/lab7.html>`_ 
 
 |lab007|    
 
@@ -82,5 +85,5 @@ Summary of topics:
    :width: 800px
 .. |lab006| image:: _static/lab6-001.png
    :width: 800px
-.. |lab007| image:: _static/lab7-001.png
+.. |lab007| image:: _static/lab7-004.png
    :width: 800px
