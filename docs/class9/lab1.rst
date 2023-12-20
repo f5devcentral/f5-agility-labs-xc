@@ -1,14 +1,14 @@
 Lab 1: Policy Supervisor Overview
 =================================
 
-Policy Supervisor is an online unified configuration solution for security policies, built with the purposes of managing and converting configuration across multiple F5 Web App Firewall solutions.
-It enables operators of F5 WAF technologies to easily convert policy files from BIG-IP AWAF, F5 Distributed Cloud WAF, and NGINX NAP formats. In the process Policy Supervisor generates and uses an intermediate
-JSON-based common declarative format called CDP (Common Declarative Policy) for policy lifecycle management. After a policy is converted to CDP, it can then be deployed to any supported WAF Solution, which is referred to as a Provider in Policy Supervisor lingo. Please refer to the [GitHub repo for the Policy Supervisor Tutorial](https://github.com/f5devcentral/ps-convert) for currently supported Provider types.
+*Policy Supervisor* is an online unified configuration solution for security policies, built with the purposes of managing and converting configuration across multiple F5 Web App Firewall solutions.
+It enables operators of F5 WAF technologies to easily convert policy files from *BIG-IP AWAF*, *F5 Distributed Cloud WAF*, and *NGINX NAP* formats. In the process Policy Supervisor generates and uses an intermediate
+JSON-based common declarative format called CDP (*Common Declarative Policy*) for policy lifecycle management. After a policy is converted to CDP, it can then be deployed to any supported WAF Solution, which is referred to as a *Provider* in *Policy Supervisor* lingo. Please refer to the Tutorial in the GitHub repo (https://github.com/f5devcentral/ps-convert) for currently supported *Provider* types.
 
-Policy Supervisor provides a graphical interface for visual policy creation, editing and management for traditional SecOps personas.
+*Policy Supervisor* provides a graphical interface for visual policy creation, editing and management for traditional SecOps personas.
 
-Task 1: Login and create a new provider
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Task 1: Login to Policy Supervisor and create a new provider
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The following steps will walk you through connecting *Policy Supervisor* to your *BIG-IP WAF*.
 
@@ -29,44 +29,58 @@ When you add a BIG-IP instance as a *provider*, you must first set up an *agent*
 
 +---------------------------------------------------------------------------------------------------------------+
 | 1. Login to https://policysupervisor.io                                                                       |
+|                                                                                                               |
+| |lab001|                                                                                                      |
+|                                                                                                               |
 | 2. On the *Overview > Providers* page, click **Add Provider**. If this is the first provider being added,     |
 |    there are two *Add Provider* buttons on the screen.                                                        |
-|                                                                                                               |
-| .. image:: image9.png                                                                                         |
-|     :width: 800px                                                                                             |
-|                                                                                                               |
-|                                                                                                               |
 | 3. On the resultant *Add Providers* pane, in the *Provider Type* drop-down, choose **BIG-IP**.                |
-| 4. In the *Select Agent* field, click **+ Add new agent**.                                                    |
 |                                                                                                               |
-| .. image:: image17.png                                                                                        |
+| |lab002|                                                                                                      |
 |                                                                                                               |
+| 4. Below the *Select Agent* field, click on the **+ Add new agent** link.                                     |
+| 5. The *Add Agent* pane slides out, with an automatically-generated token as a long text string.              |
+|    Copy and paste the value of the **Token** to a text file to be used later.                                 |
 |                                                                                                               |
-| 5. An Add Agent pane slides out, with a token generated as a long text string.                                |
-|    Copy and paste the Token to a text file to be used later                                                   |
-| 6. In the *Add Agent* pane, click the *agent-install* link to open the GitLab repository.                     |
-| 7. On the *gitlab.policysupervisor.io* site, right-click on the agent-installer file name                     |
-| 8. Select **Copy Link**. A URL similar to this one is copied to your clipboard:                               |
-|    For example: *…gitlab.policysupervisor.io/wafps/agent-install/-/package_files/…*                           |
+| |lab003|                                                                                                      |
+|                                                                                                               |
+| 6. In the same *Add Agent* pane, click **agent-install** (step 1) to open the GitLab repository page.         |
+|                                                                                                               |
+| |lab004|                                                                                                      |
+|                                                                                                               |
+| 7. On the *gitlab.policysupervisor.io* page, **right-click** the **agent-installer** file name and            |
+| select **Copy Link**. (A URL similar to this one will be copied to your clipboard:                            |
+| https ://gitlab.policysupervisor.io/wafps/agent-install/-/package_files/…/download*)                          |
 |                                                                                                               |
 | .. note::                                                                                                     |
-|    *The version of the *agent-installer* file will be different than the one shown in the image above.        |
+|    *The version of the *agent-installer* file is periodically upgraded.                                       |
 |                                                                                                               |
 +---------------------------------------------------------------------------------------------------------------+
-| .. image:: image9.png                                                                                         |
-|     :width: 800px                                                                                             |
+
+Task 2: Install the Policy Supervisor Agent in your UDF lab
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Next, we will install the Agent on your UDF virtual lab environment's *Superjumphost* linux machine.
+This machine has access to the BIG-IP's management interface and can also communicate with Policy Supervisor across the Internet.
+
++---------------------------------------------------------------------------------------------------------------+
+| 1. Go back to https://udf.f5.com and select the "WEB SHELL" access method for the Superjumphost machine.      |
+|                                                                                                               |
+| |lab001|                                                                                                      |
+|                                                                                                               |
+| 2. Set the working directory to /tmp with this linux command:                                                 |
+|    **cd /tmp**                                                                                                |
+|                                                                                                               |
+| 3. Use the URL copied at step 7 above to download the installer via the command line:                         |
+|    **wget [...insert URL here...]**                                                                           |
+|                                                                                                               |
+| 4. After the download completes, rename the file with this linux command:                                     |
+|    **mv download agent-installer**                                                                            |
+|                                                                                                               |
 +---------------------------------------------------------------------------------------------------------------+
 
+
 Step-by-step instructions:
-            Login to https://policysupervisor.io
-            Click "Add Provider"
-            Select the "BIG-IP" option for the provider type.
-            Click "+ Add new agent"
-            Select/copy the value of the token and save for later.
-            In the Add Agent pane, click the agent-install link to open the GitLab repository.
-            On the gitlab.policysupervisor.io site, right-click on the agent-installer file name and select Copy Link.
-            A URL similar to this one is copied to your clipboard:
-            …https://gitlab.policysupervisor.io/wafps/agent-install/-/package_files/….
 In UDF, select the "WEB SHELL" access method for the Superjumphost machine.
 cd /tmp
 Execute the following wget command on the command line to retrieve the policy supervisor agent software:
@@ -469,13 +483,13 @@ Monitoring dashboard, and gather security event details.
 | |labend|                                                                                                      |
 +---------------------------------------------------------------------------------------------------------------+
 
-.. |lab001| image:: _static/lab1-001.png
+.. |lab001| image:: image9.png
    :width: 800px
-.. |lab002| image:: _static/lab1-002.png
+.. |lab002| image:: image17.png
    :width: 800px
-.. |lab003| image:: _static/lab1-003.png
+.. |lab003| image:: image18.png
    :width: 800px
-.. |lab004| image:: _static/lab1-004.png
+.. |lab004| image:: image19.png
    :width: 800px
 .. |lab005| image:: _static/lab1-005.png
    :width: 800px
