@@ -1,155 +1,78 @@
-Introduction: Accessing F5 Distributed Cloud Console
+Introduction: F5 WAF Policy Supervisor
 ====================================================
 
-Welcome to this F5 Distributed Cloud Lab. The following tasks will guide you through the initial 
-access requirements for this multi-part lab.  Lab attendees should have received an invitation 
-email to the lab environment based on the submitted registration email.  Please check email and
-spam folders if it has not been received.  If you have not received an email, please contact a 
+Welcome to this F5 WAF Policy Supervisor Lab. The following tasks will guide you through the initial 
+access requirements for this lab. Lab attendees should have received an invitation 
+email to the lab environment based on the submitted registration email. Please check email and
+spam folders if it has not been received. If you have not received an email, please contact a 
 member of the lab team.
- 
-F5 Distributed Cloud Console where this lab will be conducted, is a SaaS control-plane for 
-services that provides a UI and API for managing network, security, and compute services. The F5
-Distributed Cloud Console can manage "sites" in existing on-premises data centers and sites in
-AWS, Azure, and GCP cloud environments.
 
 Task 1: Lab Environment
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 +----------------------------------------------------------------------------------------------+
-| The image below represents an overview of the lab environment. F5 Distributed Cloud Services |
-|                                                                                              |
-| will be configured as a SaaS Edge delivery and security service tier to a publicly hosted web|
-|                                                                                              |
-| application. Key elements lab attendees will interact with are as follows:                   |
+| The image below represents an overview of the lab environment.                               |
 |                                                                                              |
 | * **F5 Distributed Cloud Console**                                                           |
-| * **F5 Distributed Cloud Global Network / Application Delivery Network (ADN)**               |
-| * **Publicly hosted application (Public Cloud)**                                             |
+| * **F5 Unified Demo Framework **                                                             |
+|                                                                                              |
 +----------------------------------------------------------------------------------------------+
 | |intro001|                                                                                   |
 +----------------------------------------------------------------------------------------------+
 
-Task 2: F5 Distributed Cloud Console Login
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Task 2: Accessing the Lab Environment
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The following will guide you through the initial Lab environment access within the 
-F5 Distributed Cloud Console.  You should have received an email with an invitation to 
-access a F5 Distributed Cloud Tenant. The email will come from **no-reply@cloud.f5.com**.
+This is a multi-step process that will involve:
 
-The name of the F5 Distributed Cloud tenant that we will be using is **f5-xc-lab-sec**
-Additionally, the following are important elements of this lab and will be used throughout the 
-lab tasks that follow.
+1. Finding email invite to lab
+2. Creating F5 account (If you don't have one already)
+3. Setting up MFA for your F5 account (If you haven't already)
+4. Signing into the lab environment
 
-* F5 Distributed Cloud Console: **https://f5-xc-lab-sec.console.ves.volterra.io/**
-* Delegated Domain: **lab-sec.f5demos.com**
+You should have received an email invitation to join the lab
 
-After following the invitation email's to **Update Password**, proceed to the first step below. 
+.. image:: email-invite.png
+    :scale: 25%
 
-+----------------------------------------------------------------------------------------------+
-| 1. Please log into F5 Distributed Cloud Lab Tenant with your user ID (email) and password.   |
-|                                                                                              |
-|    **https://f5-xc-lab-sec.console.ves.volterra.io/**                                        |
-|                                                                                              |
-| 2. When you first login, accept the Lab tenant EULA. Click the check box and the click       |
-|                                                                                              |
-|    **Accept and Agree**.                                                                     |
-|                                                                                              |
-| 3. Select all persona roles and click **Next** to see all the various configuration options. |
-|                                                                                              |
-|    Personas can be changed anytime if desired.                                               |
-|                                                                                              |
-| 4. Click **Advanced** to expose more menu options and the **Get Started** to begin. You can  |
-|                                                                                              |
-|    change this setting after logging in as well.                                             |
-|                                                                                              |
-| 5. Several **Guidance ToolTips** will appear, you can safely close these out.                |
-+----------------------------------------------------------------------------------------------+
-| |intro002|                                                                                   |
-|                                                                                              |
-| |intro003|                                                                                   |
-|                                                                                              |
-| |intro004|                                                                                   |
-|                                                                                              |
-| |intro005|                                                                                   |
-+----------------------------------------------------------------------------------------------+
+Click on the link below "You can login to the UDF here"
 
-+----------------------------------------------------------------------------------------------+
-| 6. You can adjust your work domains and skill level (not required) by clicking on the        |
-|                                                                                              |
-|    **Account** icon in the top right of the screen and then clicking on **Account Settings**.|
-|                                                                                              |
-| 7. In the resulting window you can observe the **Work domains and skill level** section and  |
-|                                                                                              |
-|    other administrative functions.                                                           |
-|                                                                                              |
-| .. note::                                                                                    |
-|    *For the purposes of this lab, permissions have been restricted to lab operations.  As a* |
-|                                                                                              |
-|    *some menus will be locked and not visible.*                                              |
-+----------------------------------------------------------------------------------------------+
-| |intro006|                                                                                   |
-|                                                                                              |
-| |intro007|                                                                                   |
-+----------------------------------------------------------------------------------------------+
+If you do not already have an F5 account you, will be prompted to create one.
 
-+----------------------------------------------------------------------------------------------+
-| 8. Namespaces, which provide an environment for isolating configured applications or         |
-|                                                                                              |
-|    enforcing role-based access controls, are leveraged within the F5 Distributed Cloud       |
-|                                                                                              |
-|    Console.  For the purposes of this lab, each lab attendee has been provided a unique      |
-|                                                                                              |
-|    **namespace** which you will defaulted to (in terms of GUI navigation) for all tasks      |
-|                                                                                              |
-|    performed through the course of this lab.                                                 |
-|                                                                                              |
-| 9. Click on the **Select Service** in the left-hand navigation. In the resulting fly out     |
-|                                                                                              |
-|    navigation, click **Web App & API Protection**.                                           |
-|                                                                                              |
-| 10. In the **Web App & API Protection** configuration screen observe the URL. In the URI     |
-|                                                                                              |
-|     path, locate the **<adjective-animal>** namespace that you have been assigned. It will be|
-|                                                                                              |
-|     located in the portion of the URI path between */namespaces/* and */overview/* as shown  |
-|                                                                                              |
-|     in this example **…/namespaces/<namespace>/overview/…**. Note the namespace as it will   |
-|                                                                                              |
-|     be used throughout the lab tasks that follow.                                            |
-|                                                                                              |
-| .. note::                                                                                    |
-|    *Administratively, there are other ways to find namespaces. Due to access and permission* |
-|                                                                                              |
-|    *restrictions for this particular lab, those menus are not available.*                    |
-+----------------------------------------------------------------------------------------------+
-| |intro008|                                                                                   |
-|                                                                                              |
-| |intro009|                                                                                   |
-+----------------------------------------------------------------------------------------------+
+.. image:: create-account.png
+    :scale: 25%
+
+You should receive a new email to activate your account.
+
+.. image:: activate-account.png
+    :scale: 25%
+
+After you click on 'Activate Account' you should see the following screen.
+
+.. image:: account-activated.png
+    :scale: 25%
+
+You should next go to https://udf.f5.com (Yes, I know this is a lot of steps, sorry!)
+
+.. image:: udf-login.png
+    :scale: 25%
+
+Click on "Invited Users"
+
+You will now be prompted to set up MFA access to the lab environment (required)
+
+.. image:: mfa-setup.png
+    :scale: 25%
+
+After you complete your setup by selecting "Finish", you will be able to launch this course.
+
+.. image:: launch-course.png
+    :scale: 25%
 
 +----------------------------------------------------------------------------------------------+
 | **Beginning of Lab:**  You are now ready to begin the lab, Enjoy! Ask questions as needed.   |
 +----------------------------------------------------------------------------------------------+
-| |labbgn|                                                                                     |
+| .. image:: labbgn.png                                                                        |
+|  :width: 800px                                                                               |
 +----------------------------------------------------------------------------------------------+
 
-.. |intro001| image:: _static/intro-001.png
-   :width: 800px
-.. |intro002| image:: _static/intro-002.png
-   :width: 800px
-.. |intro003| image:: _static/intro-003.png
-   :width: 800px
-.. |intro004| image:: _static/intro-004.png
-   :width: 800px
-.. |intro005| image:: _static/intro-005.png
-   :width: 800px
-.. |intro006| image:: _static/intro-006.png
-   :width: 800px
-.. |intro007| image:: _static/intro-007.png
-   :width: 800px
-.. |intro008| image:: _static/intro-008.png
-   :width: 800px
-.. |intro009| image:: _static/intro-009.png
-   :width: 800px
-.. |labbgn| image:: _static/labbgn.png
-   :width: 800px

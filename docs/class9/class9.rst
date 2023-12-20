@@ -4,12 +4,12 @@ F5 Distributed Cloud - WAF Policy Supervisor
 Welcome
 -------
 
-In this lab, attendees will be introduced to the F5 Policy Supervisor.  Attendees will explore the features and functionality, including ingesting exting policies and deploying policies to other WAF endpoints.
+In this lab, attendees will be introduced to the F5 Policy Supervisor and will explore the features and functionality, including the ingestion of exting policies and deployment of policies to various WAF endpoints.
 
 Objectives:
 ----------
 
-- Gain an understanding of deploying 
+- Gain an understanding of WAF policy conversion and deployment. 
 
 Lab & Tasks:
 ------------
