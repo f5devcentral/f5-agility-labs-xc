@@ -1,55 +1,128 @@
-Lab 1: Deploying F5 Distributed Cloud Proxy Services to Securely Deliver a Public Endpoint
-==========================================================================================
+Lab 1: Policy Supervisor Overview
+=================================
 
-This lab will focus on the deployment and security of an existing hosted application using F5
-Distributed Cloud Platform and Services.  This lab will be deployed in a SaaS only
-configuration with no on-premises (public or private cloud) elements.  All configuration
-will be made via the F5 Distributed Cloud Console and within the F5 Distributed Cloud Global
-Network services architecture.
+Policy Supervisor is an online unified configuration solution for security policies, built with the purposes of managing and converting configuration across multiple F5 Web App Firewall solutions.
+It enables operators of F5 WAF technologies to easily convert policy files from BIG-IP AWAF, F5 Distributed Cloud WAF, and NGINX NAP formats. In the process Policy Supervisor generates and uses an intermediate
+JSON-based common declarative format called CDP (Common Declarative Policy) for policy lifecycle management. After a policy is converted to CDP, it can then be deployed to any supported WAF Solution, which is referred to as a Provider in Policy Supervisor lingo. Please refer to the [GitHub repo for the Policy Supervisor Tutorial](https://github.com/f5devcentral/ps-convert) for currently supported Provider types.
 
-For the tasks that follow, you should have already noted your individual **namespace**. If you
-failed to note it, return to the **Introduction** section of this lab, follow the instructions
-provided and note your **namespace** accordingly. The **Delegated Domain** and the F5
-Distributed Cloud **Tenant** are listed below for your convenience as they will be the same for
-all lab attendees.
+Policy Supervisor provides a graphical interface for visual policy creation, editing and management for traditional SecOps personas.
 
-* **Delegated Domain:** *.lab-sec.f5demos.com*
-* **F5 Distributed Cloud Tenant:** https://f5-xc-lab-sec.console.ves.volterra.io
+Task 1: Login and create a new provider
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Following the tasks in the prior **Introduction** Section, you should now be able to access the
-F5 Distributed Cloud Console, having set your Work Domain Roles and Skill levels. If you have
-not done so already, please login to your tenant for this lab and proceed to Task 1.
+The following steps will walk you through connecting *Policy Supervisor* to your *BIG-IP WAF*.
 
-Task 1: Configure Load Balancer and Origin Pool
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The first step is to create a *Provider*.
 
-The following steps will allow you to deploy and advertise a globally available application.
-These steps will create an origin pool, add a health monitor, define an application, register
-its DNS, and advertise the application on the Internet using the F5 Distributed Cloud Global
-Network.
+A *Provider* is a generic name used by *Policy Supervisor* to indicate an F5 Web App Firewall. The supported *Provider* types are: *F5 Distributed Cloud WAF*, *BIG-IP Advanced WAF* (AWAF), and *NGINX Application Protection* (NAP). Add and connect *providers* in *Policy Supervisor* to enable the deployment of your configuration policies across endpoints and load balancers for complete WAF protection.
+
+When you add a BIG-IP instance as a *provider*, you must first set up an *agent* and associated secret on the private network to enable a secure connection between the BIG-IP instance and *Policy Supervisor*.
+
+- The *agent* must be connected to the same private network where the *provider* is running to ensure a secure connection between *Policy Supervisor* and the *provider*.
+- The *agent* machine must also have outbound Internet access for connectivity back to *Policy Supervisor*.
+- The *Policy Supervisor* *Agent* is a Linux binary that is first installed on this machine/VM and is registered using a unique token generated in the *Policy Supervisor* UI for your *Policy Supervisor* *workspace* only.
+- The *Agent* is used to create *Secrets*, which are stored in your environment only and are never transmitted outside of your network.
+- These *secrets* are used to connect to your *BIG-IP AWAF* or *NGINX NAP* instance to execute various policy-related functions within a Docker container environment on that machine/VM.
+
+.. note::
+   *Installation of the *Policy Supervisor Agent* requires Docker and wget to be installed on your Linux machine/VM!*
 
 +---------------------------------------------------------------------------------------------------------------+
-| 1. Following the **Introduction** section  instructions, you should now be in the **Multi-Cloud App Connect** |
+| 1. Login to https://policysupervisor.io                                                                       |
+| 2. On the *Overview > Providers* page, click **Add Provider**. If this is the first provider being added,     |
+|    there are two *Add Provider* buttons on the screen.                                                        |
 |                                                                                                               |
-|    configuration window. If for some reason you are not in the **Multi-Cloud App Connect** window, use the    |
+| .. image:: image9.png                                                                                         |
+|     :width: 800px                                                                                             |
 |                                                                                                               |
-|    **Select Service** in the left-hand navigation, and click **Multi-Cloud App Connect** as shown in the      |
 |                                                                                                               |
-|    *Introduction section, Task 2, Step 9*.                                                                    |
+| 3. On the resultant *Add Providers* pane, in the *Provider Type* drop-down, choose **BIG-IP**.                |
+| 4. In the *Select Agent* field, click **+ Add new agent**.                                                    |
 |                                                                                                               |
-| 2. In the left-hand navigation expand **Manage** and click **Load Balancers > Origin Pools**                  |
+| .. image:: image17.png                                                                                        |
 |                                                                                                               |
-| 3. In the resulting screen click the **Add Origin Pool** in the graphic as shown.                             |
+|                                                                                                               |
+| 5. An Add Agent pane slides out, with a token generated as a long text string.                                |
+|    Copy and paste the Token to a text file to be used later                                                   |
+| 6. In the *Add Agent* pane, click the *agent-install* link to open the GitLab repository.                     |
+| 7. On the *gitlab.policysupervisor.io* site, right-click on the agent-installer file name                     |
+| 8. Select **Copy Link**. A URL similar to this one is copied to your clipboard:                               |
+|    For example: *…gitlab.policysupervisor.io/wafps/agent-install/-/package_files/…*                           |
 |                                                                                                               |
 | .. note::                                                                                                     |
-|    *You have defaulted to your specific namespace as that is the only namespace to which you have             |
+|    *The version of the *agent-installer* file will be different than the one shown in the image above.        |
 |                                                                                                               |
-|    *administrative access.**                                                                                  |
 +---------------------------------------------------------------------------------------------------------------+
-| |lab001|                                                                                                      |
-|                                                                                                               |
-| |lab002|                                                                                                      |
+| .. image:: image9.png                                                                                         |
+|     :width: 800px                                                                                             |
 +---------------------------------------------------------------------------------------------------------------+
+
+Step-by-step instructions:
+            Login to https://policysupervisor.io
+            Click "Add Provider"
+            Select the "BIG-IP" option for the provider type.
+            Click "+ Add new agent"
+            Select/copy the value of the token and save for later.
+            In the Add Agent pane, click the agent-install link to open the GitLab repository.
+            On the gitlab.policysupervisor.io site, right-click on the agent-installer file name and select Copy Link.
+            A URL similar to this one is copied to your clipboard:
+            …https://gitlab.policysupervisor.io/wafps/agent-install/-/package_files/….
+In UDF, select the "WEB SHELL" access method for the Superjumphost machine.
+cd /tmp
+Execute the following wget command on the command line to retrieve the policy supervisor agent software:
+wget  https://gitlab.policysupervisor.io/wafps/agent-inst…….
+Rename the downloaded package from download to agent-installer by using the following command:
+mv download agent-installer
+Next, give the installer package execution rights to enable it to run:
+chmod +x ./agent-installer
+Then, go ahead and run the agent installer by using the following command:
+./agent-installer
+Paste the token copied above when prompted.
+Type "udf" when prompted for the agent name.
+Wait for the agent registration to complete successfully.
+Type "bigip" when prompted for the secret name.
+Type "admin" when prompted for the username.
+Type "Canada123!" when prompted for the password.
+Press "Enter" when prompted for the ssh key path (we're not using one in this demo).
+Press "Enter" when prompted to select an option (choose the default "Finish" option).
+Go back to the policysupervisor.io web page and click "Done".
+Select the "udf" option for on the dropdown list for "Agent".
+The *Secrets* field is then displayed. From the *Secrets* drop-down list, choose the **bigip** secret you created above and click **Continue**.
+Click "Continue".
+Type "bigip1" for the "Provider Name".
+Type "https://10.1.1.6" for the "Provider URL".
+Click the "Test Connection" button.
+Wait for the tests to complete successfully.
+Click the "Add another Provider" button.
+Select the "BIG-IP" optino for the provider type.
+Select the "udf" option for on the dropdown list for "Agent".
+Select the "bigip" option on the dropdown list for "Secret".
+Click "Continue".
+Type "bigip2" for the "Provider Name".
+Type "https://10.1.1.7" for the "Provider URL".
+Click the "Test Connection" button.
+Wait for the tests to complete successfully.
+Click the "Got to overview" link.
+Click to select the "bigip1" provider.
+Click "Ingest Policies".
+Select the discovered policy (i.e., "My_ASM_Rapid_Deployment_Po…").
+Click Continue.
+Click Next.
+Type "Ingest from bigip1" for the quired "commit message".
+Click " Save & Ingest Policy".
+Wait for the ingestion to complete successfully.
+Click "Policies Overview".
+Select the policy.
+Click "Deploy".
+Select the "bigip2" option from the "Provider" dropdown.
+Type "Deploy to bigip2" in the commit message text box.
+Click the "Conversion Summary" button.
+Wait for the Conversion Summary screen to appear.
+Click the "Save & Continue" button.
+Click the "Continue Deployment" button.
+Select the "service" Virtual server from the dropdown list.
+Click the "Next button.
+Click the "Deploy" button.
 
 +---------------------------------------------------------------------------------------------------------------+
 | 4. In the resulting window, enter **<namespace>-pool** in the **Name** field and click **Add Item** under     |

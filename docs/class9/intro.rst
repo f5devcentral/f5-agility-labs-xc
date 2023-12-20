@@ -13,11 +13,11 @@ Task 1: Lab Environment
 +----------------------------------------------------------------------------------------------+
 | The image below represents an overview of the lab environment.                               |
 |                                                                                              |
+| * **F5 Unified Demo Framework**                                                              |
 | * **F5 Distributed Cloud Console**                                                           |
-| * **F5 Unified Demo Framework **                                                             |
 |                                                                                              |
 +----------------------------------------------------------------------------------------------+
-| |intro001|                                                                                   |
+| [insert image for lab components here]                                                       |
 +----------------------------------------------------------------------------------------------+
 
 Task 2: Accessing the Lab Environment
@@ -69,6 +69,8 @@ After you complete your setup by selecting "Finish", you will be able to launch 
 .. image:: launch-course.png
     :scale: 25%
 
+Let's begin!
+~~~~~~~~~~~~
 +----------------------------------------------------------------------------------------------+
 | **Beginning of Lab:**  You are now ready to begin the lab, Enjoy! Ask questions as needed.   |
 +----------------------------------------------------------------------------------------------+
