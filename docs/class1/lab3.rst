@@ -83,7 +83,7 @@ Summary of topics:
    :width: 800px
 .. |lab005| image:: _static/menu_observability.png
    :width: 800px
-.. |lab006| image:: _static/lab6-001.png
+.. |lab006| image:: _static/lab6-001.PNG
    :width: 800px
 .. |lab007| image:: _static/lab7-004.png
    :width: 800px
