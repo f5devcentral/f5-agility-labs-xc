@@ -39,26 +39,27 @@ When you add a BIG-IP instance as a *provider*, you must first set up an *agent*
 | |lab005|                                                                                                      |
 |                                                                                                               |
 | 2. On the *Overview > Providers* page, click **Add Provider**. If this is the first provider being added,     |
-|    there are two **Add Provider** buttons on the screen.                                                      |
+|    there are two **Add Provider** buttons on the screen. The *Add Providers* pane will appears.               |
 |                                                                                                               |
 | |lab001|                                                                                                      |
+| |lab008|                                                                                                      |
 |                                                                                                               |
-| 3. In the *Add Providers* pane that appears, choose the **BIG-IP** option for the *Provider Type*             |
-|    and below the *Select Agent* field, click on the **+ Add new agent** link.                                 |
-|    The *Add Agent* pane slides out and a token is automatically-generated as a long text string.              |
+| 3. There are no *agents* configure yet. Choose **BIG-IP** for the *Provider Type* and click                   |
+|    **+ Add new agent** that will appear below the *Select Agent* drowpdown once you select a *Provider Type**.|
+|    The *Add Agent* pane will appear and a token will be automatically generated as a long text string.        |
 |                                                                                                               |
 | |lab002|                                                                                                      |
 |                                                                                                               |
-| 4. Copy and paste the value of the **Token** to a text file. *(You will need it later to install the agent.)* |
+| 4. Copy and paste (save) the value of the **Token** to a text file. *(It will be used in the *Task 2* below.)*|
 |                                                                                                               |
 | |lab003|                                                                                                      |
 |                                                                                                               |
-| 6. Within the same *Add Agent* pane, click **agent-install** (step 1) to open the GitLab repository page.     |
+| 6. Within the same *Add Agent* pane, follow the **Go to agent-install** link (step 1) to the repository page. |
 |                                                                                                               |
 | |lab004|                                                                                                      |
 |                                                                                                               |
-| 7. On this *gitlab.policysupervisor.io* page, **right-click** on the **agent-installer** file name to         |
-| **Copy Link**. *This copied URL is required in the next task.*                                                |
+| 7. On the *Package Registry* page, **right-click** on the **agent-installer** file name and select            |
+| **Copy Link**. *This copied URL will be used in the next task.*                                               |
 |                                                                                                               |
 | .. note::                                                                                                     |
 |     *The version of the agent-installer file is upgraded from time to time.*                                  |
@@ -68,47 +69,54 @@ When you add a BIG-IP instance as a *provider*, you must first set up an *agent*
 Task 2: Install the Policy Supervisor Agent in your lab environment
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Next, we will use the token and the URL obtain in task 1 above to install the Agent on your UDF virtual lab environment, on your *SuperJumpHost* Linux machine.
-This Linux machine is connected to the same management network as your BIG-IP and it can communicate with Policy Supervisor across the Internet.
+Next, we will use the *token* and the *URL* obtain in task 1 above to install the *Agent* on your UDF virtual lab environment.
+The *Agent* will be installed on your *SuperJumpHost* Linux machine, which is connected to the same management network as your BIG-IP.
+The *SuperJumpHost* can also communicate with Policy Supervisor across the Internet.
 
 +---------------------------------------------------------------------------------------------------------------+
-| 1. Go back to https://udf.f5.com and click **Deployment** to display the deployment tab.                      |
+| 1. Use a different window to go back to https://udf.f5.com and click **Deployment** to see virtual systems.   |
 |                                                                                                               |
 | |lab006|                                                                                                      |
 |                                                                                                               |
-| 2. Find the **SuperJumpHost** system and click the corresponding **ACCESS** link.                             |
-| 3. Click to select **Web Sell** to access the command line interface of the SuperJumpHost machine.            |
+| 2. Find the **SuperJumpHost** system and click the **ACCESS** link below to see the options.                  |
+|                                                                                                               |
+| 3. Select **Web Sell** to access the command line interface of the SuperJumpHost machine in a new browser tab.|
 |                                                                                                               |
 | |lab007|                                                                                                      |
 |                                                                                                               |
-| 2. Set your working directory to /tmp with this linux command:                                                |
-|    **cd /tmp**                                                                                                |
+| 4. Set your working directory to */tmp* with this linux command: ``cd /tmp``                                  |
 |                                                                                                               |
-| 3. Use the URL copied at step 7 above to download the installer via the command line:                         |
-|    **wget [...insert URL here...]**                                                                           |
+| 5. Use the URL copied at step 7 above to download the installer via the command line:                         |
+|    ``wget [...insert URL from aboe Task 1 here...]``                                                          |
 |                                                                                                               |
-| 4. After the download completes, rename the file with this linux command:                                     |
-|    **mv download agent-installer**                                                                            |
+| 6. After the download completes, rename the file with this linux command:                                     |
+|    ``mv download agent-installer``                                                                            |
 |                                                                                                               |
-| Next, give the installer package execution rights to enable it to run:                                        |
-| chmod +x ./agent-installer                                                                                    |
+| 7. Next, give the installer package execution rights to enable it to run:                                     |
+|    ``chmod +x ./agent-installer``                                                                             |
 |                                                                                                               |
-| Then, go ahead and run the agent installer by using the following command:                                    |
-| ./agent-installer                                                                                             |
+| |lab009|                                                                                                      |
 |                                                                                                               |
-| Paste the token copied above when prompted.                                                                   |
+| 8. Run the agent installer by using the following command:                                                    |
+|    ``./agent-installer``                                                                                      |
 |                                                                                                               |
-| Enter the name "udf" when prompted for the agent name and wait for registration to complete successfully.     |
+| 9. Paste the token copied from *Task 1* above when prompted.                                                  |
 |                                                                                                               |
-| Type "bigip" when prompted for the secret name.                                                               |
+| 10. Enter the name ``udf`` when prompted for the agent name. Wait for registration to complete successfully.  |
 |                                                                                                               |
-| Type "admin" when prompted for the username.                                                                  |
+| |lab010|                                                                                                      |
 |                                                                                                               |
-| Type "Canada123!" when prompted for the password.                                                             |
+| 11. Type ``bigip`` when prompted for the secret name.                                                         |
 |                                                                                                               |
-| Press "Enter" when prompted for the ssh key path (we're not using one in this demo).                          |
+| 12. Type ``admin`` when prompted for the username.                                                            |
 |                                                                                                               |
-| Press "Enter" when prompted to select an option (choose the default "Finish" option).                         |
+| 13. Type ``Canada123!`` when prompted for a password.                                                         |
+|                                                                                                               |
+| 14. Press "**Enter**" when prompted for the *ssh key path* (we're not using one in this demo).                |
+|                                                                                                               |
+| 15. Press "**Enter**" when prompted to select an option (choose the default "*Finish*" option).               |
+|                                                                                                               |
+| |lab011|                                                                                                      |
 |                                                                                                               |
 +---------------------------------------------------------------------------------------------------------------+
 
@@ -224,4 +232,12 @@ Now that the *Agent* is ready, the configuration of the new *Provider* can be co
 .. |lab006| image:: UDFDeploymentTab.png
    :width: 800px
 .. |lab007| image:: UDFWebShell.png
+   :width: 800px
+.. |lab008| image:: AzureADLogin.png
+   :width: 800px
+.. |lab009| image:: install_agent.png
+   :width: 800px
+.. |lab010| image:: agentsetup.png
+   :width: 800px
+.. |lab011| image:: agentsecret.png
    :width: 800px

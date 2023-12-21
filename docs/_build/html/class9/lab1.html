@@ -14,7 +14,7 @@
   <meta name="title" content="Lab 1: Policy Supervisor Overview"/>
   <meta name="product" content="F5 Distributed Cloud"/>
   <meta name="version" content=""/>
-  <meta name="updated_date"  content="2023-12-21 17:40:18"/>
+  <meta name="updated_date"  content="2023-12-21 22:15:30"/>
   <meta name="archived" content="Archived documents excluded"/>
   <meta name="doc_type" content="Manual"/>
   <meta name="lifecycle" content="release"/>
@@ -193,25 +193,26 @@ JSON-based common declarative format called CDP (<em>Common Declarative Policy</
 <p><a class="reference internal" href="../_images/PSLoginWindow.png"><img alt="lab005" src="../_images/PSLoginWindow.png" style="width: 800px;" /></a></p>
 <ol class="arabic simple" start="2">
 <li>On the <em>Overview &gt; Providers</em> page, click <strong>Add Provider</strong>. If this is the first provider being added,
-there are two <strong>Add Provider</strong> buttons on the screen.</li>
+there are two <strong>Add Provider</strong> buttons on the screen. The <em>Add Providers</em> pane will appears.</li>
 </ol>
-<p><a class="reference internal" href="../_images/image9.png"><img alt="lab001" src="../_images/image9.png" style="width: 800px;" /></a></p>
+<p><a class="reference internal" href="../_images/image9.png"><img alt="lab001" src="../_images/image9.png" style="width: 800px;" /></a>
+<a class="reference internal" href="../_images/AzureADLogin.png"><img alt="lab008" src="../_images/AzureADLogin.png" style="width: 800px;" /></a></p>
 <ol class="arabic simple" start="3">
-<li>In the <em>Add Providers</em> pane that appears, choose the <strong>BIG-IP</strong> option for the <em>Provider Type</em>
-and below the <em>Select Agent</em> field, click on the <strong>+ Add new agent</strong> link.
-The <em>Add Agent</em> pane slides out and a token is automatically-generated as a long text string.</li>
+<li>There are no <em>agents</em> configure yet. Choose <strong>BIG-IP</strong> for the <em>Provider Type</em> and click
+<strong>+ Add new agent</strong> that will appear below the <em>Select Agent</em> drowpdown once you select a <em>Provider Type*</em>.
+The <em>Add Agent</em> pane will appear and a token will be automatically generated as a long text string.</li>
 </ol>
 <p><a class="reference internal" href="../_images/image17.png"><img alt="lab002" src="../_images/image17.png" style="width: 800px;" /></a></p>
 <ol class="arabic simple" start="4">
-<li>Copy and paste the value of the <strong>Token</strong> to a text file. <em>(You will need it later to install the agent.)</em></li>
+<li>Copy and paste (save) the value of the <strong>Token</strong> to a text file. <em>(It will be used in the *Task 2</em> below.)*</li>
 </ol>
 <p><a class="reference internal" href="../_images/image18.png"><img alt="lab003" src="../_images/image18.png" style="width: 800px;" /></a></p>
 <ol class="arabic simple" start="6">
-<li>Within the same <em>Add Agent</em> pane, click <strong>agent-install</strong> (step 1) to open the GitLab repository page.</li>
+<li>Within the same <em>Add Agent</em> pane, follow the <strong>Go to agent-install</strong> link (step 1) to the repository page.</li>
 </ol>
 <p><a class="reference internal" href="../_images/image19.png"><img alt="lab004" src="../_images/image19.png" style="width: 800px;" /></a></p>
-<p>7. On this <em>gitlab.policysupervisor.io</em> page, <strong>right-click</strong> on the <strong>agent-installer</strong> file name to
-<strong>Copy Link</strong>. <em>This copied URL is required in the next task.</em></p>
+<p>7. On the <em>Package Registry</em> page, <strong>right-click</strong> on the <strong>agent-installer</strong> file name and select
+<strong>Copy Link</strong>. <em>This copied URL will be used in the next task.</em></p>
 <div class="last admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last"><em>The version of the agent-installer file is upgraded from time to time.</em></p>
@@ -223,41 +224,48 @@ The <em>Add Agent</em> pane slides out and a token is automatically-generated as
 </div>
 <div class="section" id="task-2-install-the-policy-supervisor-agent-in-your-lab-environment">
 <h2>Task 2: Install the Policy Supervisor Agent in your lab environment<a class="headerlink" href="#task-2-install-the-policy-supervisor-agent-in-your-lab-environment" title="Permalink to this heading">¶</a></h2>
-<p>Next, we will use the token and the URL obtain in task 1 above to install the Agent on your UDF virtual lab environment, on your <em>SuperJumpHost</em> Linux machine.
-This Linux machine is connected to the same management network as your BIG-IP and it can communicate with Policy Supervisor across the Internet.</p>
+<p>Next, we will use the <em>token</em> and the <em>URL</em> obtain in task 1 above to install the <em>Agent</em> on your UDF virtual lab environment.
+The <em>Agent</em> will be installed on your <em>SuperJumpHost</em> Linux machine, which is connected to the same management network as your BIG-IP.
+The <em>SuperJumpHost</em> can also communicate with Policy Supervisor across the Internet.</p>
 <table border="1" class="docutils align-default">
 <colgroup>
 <col width="100%" />
 </colgroup>
 <tbody valign="top">
 <tr class="row-odd"><td><ol class="first arabic simple">
-<li>Go back to <a class="reference external" href="https://udf.f5.com">https://udf.f5.com</a> and click <strong>Deployment</strong> to display the deployment tab.</li>
+<li>Use a different window to go back to <a class="reference external" href="https://udf.f5.com">https://udf.f5.com</a> and click <strong>Deployment</strong> to see virtual systems.</li>
 </ol>
 <p><a class="reference internal" href="../_images/UDFDeploymentTab.png"><img alt="lab006" src="../_images/UDFDeploymentTab.png" style="width: 800px;" /></a></p>
 <ol class="arabic simple" start="2">
-<li>Find the <strong>SuperJumpHost</strong> system and click the corresponding <strong>ACCESS</strong> link.</li>
-<li>Click to select <strong>Web Sell</strong> to access the command line interface of the SuperJumpHost machine.</li>
+<li>Find the <strong>SuperJumpHost</strong> system and click the <strong>ACCESS</strong> link below to see the options.</li>
+<li>Select <strong>Web Sell</strong> to access the command line interface of the SuperJumpHost machine in a new browser tab.</li>
 </ol>
 <p><a class="reference internal" href="../_images/UDFWebShell.png"><img alt="lab007" src="../_images/UDFWebShell.png" style="width: 800px;" /></a></p>
-<ol class="arabic simple" start="2">
-<li>Set your working directory to /tmp with this linux command:
-<strong>cd /tmp</strong></li>
+<ol class="arabic simple" start="4">
+<li>Set your working directory to <em>/tmp</em> with this linux command: <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">/tmp</span></code></li>
 <li>Use the URL copied at step 7 above to download the installer via the command line:
-<strong>wget […insert URL here…]</strong></li>
+<code class="docutils literal notranslate"><span class="pre">wget</span> <span class="pre">[...insert</span> <span class="pre">URL</span> <span class="pre">from</span> <span class="pre">aboe</span> <span class="pre">Task</span> <span class="pre">1</span> <span class="pre">here...]</span></code></li>
 <li>After the download completes, rename the file with this linux command:
-<strong>mv download agent-installer</strong></li>
+<code class="docutils literal notranslate"><span class="pre">mv</span> <span class="pre">download</span> <span class="pre">agent-installer</span></code></li>
+<li>Next, give the installer package execution rights to enable it to run:
+<code class="docutils literal notranslate"><span class="pre">chmod</span> <span class="pre">+x</span> <span class="pre">./agent-installer</span></code></li>
 </ol>
-<p>Next, give the installer package execution rights to enable it to run:
-chmod +x ./agent-installer</p>
-<p>Then, go ahead and run the agent installer by using the following command:
-./agent-installer</p>
-<p>Paste the token copied above when prompted.</p>
-<p>Enter the name “udf” when prompted for the agent name and wait for registration to complete successfully.</p>
-<p>Type “bigip” when prompted for the secret name.</p>
-<p>Type “admin” when prompted for the username.</p>
-<p>Type “Canada123!” when prompted for the password.</p>
-<p>Press “Enter” when prompted for the ssh key path (we’re not using one in this demo).</p>
-<p class="last">Press “Enter” when prompted to select an option (choose the default “Finish” option).</p>
+<p><a class="reference internal" href="../_images/install_agent.png"><img alt="lab009" src="../_images/install_agent.png" style="width: 800px;" /></a></p>
+<ol class="arabic simple" start="8">
+<li>Run the agent installer by using the following command:
+<code class="docutils literal notranslate"><span class="pre">./agent-installer</span></code></li>
+<li>Paste the token copied from <em>Task 1</em> above when prompted.</li>
+<li>Enter the name <code class="docutils literal notranslate"><span class="pre">udf</span></code> when prompted for the agent name. Wait for registration to complete successfully.</li>
+</ol>
+<p><a class="reference internal" href="../_images/agentsetup.png"><img alt="lab010" src="../_images/agentsetup.png" style="width: 800px;" /></a></p>
+<ol class="arabic simple" start="11">
+<li>Type <code class="docutils literal notranslate"><span class="pre">bigip</span></code> when prompted for the secret name.</li>
+<li>Type <code class="docutils literal notranslate"><span class="pre">admin</span></code> when prompted for the username.</li>
+<li>Type <code class="docutils literal notranslate"><span class="pre">Canada123!</span></code> when prompted for a password.</li>
+<li>Press “<strong>Enter</strong>” when prompted for the <em>ssh key path</em> (we’re not using one in this demo).</li>
+<li>Press “<strong>Enter</strong>” when prompted to select an option (choose the default “<em>Finish</em>” option).</li>
+</ol>
+<p class="last"><a class="reference internal" href="../_images/agentsecret.png"><img alt="lab011" src="../_images/agentsecret.png" style="width: 800px;" /></a></p>
 </td>
 </tr>
 </tbody>
