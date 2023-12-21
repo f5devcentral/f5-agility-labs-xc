@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<head>
+  
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-PPZPQ6');</script>
+  <!-- End Google Tag Manager -->
+    <title>Lab 2: Reviewing Signature-based Bot Strategies and enabling F5 Distributed Cloud BotDefense</title>
+  
+
+  <meta charset="utf-8">
+  <!-- Twitter Bootstrap viewport setting -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- F5 metadata -->
+  <meta name="title" content="Lab 2: Reviewing Signature-based Bot Strategies and enabling F5 Distributed Cloud BotDefense"/>
+  <meta name="product" content="F5 Distributed Cloud"/>
+  <meta name="version" content=""/>
+  <meta name="updated_date"  content="2023-12-21 17:40:18"/>
+  <meta name="archived" content="Archived documents excluded"/>
+  <meta name="doc_type" content="Manual"/>
+  <meta name="lifecycle" content="release"/>
+  <meta name="F5 Distributed Cloud" content=""/>
+
+
+  
+
+  
+  <link href="https://cdn.f5.com/favicon.ico" rel="icon">
+
+</head>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lab 2: Reviewing Signature-based Bot Strategies and enabling F5 Distributed Cloud BotDefense &#8212; F5 Distributed Cloud  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" href="../../../_static/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/css/f5.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/css/f5-theme.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/css/CoveoFullSearch.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/css/custom.css" type="text/css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/21fb8a09c3.css" type="text/css" />
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/sphinx_highlight.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+  </head><body>
+  <div id="clouddocs-header"></div>
+
+    <div id="sidebar" class="section-nav">
+      
+      <!--  version selector ------------------>
+      <div id="version_selector_wrapper">
+      </div>
+      <nav class="nav-sidebartoc">
+
+        
+         <h5>F5 Distributed Cloud  </h5>
+        
+
+        <hr>
+        <span class="nav-sidebartoc">
+            <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../class1/class1.html">F5 Distributed Cloud - Introduction to Deployment Models and Services</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../class2/class2.html">F5 Distributed Cloud - WAF/WAAP Deeper Dive</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../class3/class3.html">F5 Distributed Cloud - WAF/WAAP Deeper Dive</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../class4/class4.html">F5 Distributed Cloud - WAF/WAAP Deeper Dive</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../class5/class5.html">F5 Distributed Cloud - Advanced Bot Security</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../class6/class6.html">F5 Distributed Cloud - Intro to Multi-Cloud Networking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../class7/class7.html">F5 Distributed Cloud - AppStack CaaS &amp; K8s Delivery Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../class8/class8.html">F5 Distributed Cloud - Introduction to Deployment Models and Services</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../class9/class9.html">F5 Distributed Cloud - WAF Policy Supervisor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../archive.html">Archived F5 Distributed Cloud Labs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../2hour/2hour.html">Two (2) Hour F5 Distributed Cloud Labs</a></li>
+</ul>
+
+        </span><!-- Use this file to add extra links to the bottom of the ToC sidebar -->
+<hr>
+  <span class="nav-sidebartoc">
+ <!-- insert content here -->
+  </span>
+      </nav>
+    </div>
+
+
+    <div id="right-sidebar">
+      <h7 style="font-weight:normal">On this page:</h7>
+      <nav class="nav-sidebartoc">
+        <span class="nav-sidebartoc">
+            <ul>
+<li><a class="reference internal" href="#">Lab 2: Reviewing Signature-based Bot Strategies and enabling F5 Distributed Cloud BotDefense</a><ul>
+<li><a class="reference internal" href="#task-1-reviewing-signature-based-bot-protection">Task 1: Reviewing Signature-based Bot protection</a></li>
+<li><a class="reference internal" href="#task-2-enabling-f5-distributed-cloud-botdefense">Task 2: Enabling F5 Distributed Cloud BotDefense</a></li>
+</ul>
+</li>
+</ul>
+
+         </span>
+      </nav>
+    </div>
+
+
+
+
+
+  
+  <div class="main active" id="content" >
+    <article class="docs-container site-article-inner">
+              <!-- custom breadcrumb -->
+        <h5>
+            <a href="../../../index.html">F5 Distributed Cloud</a>
+
+          <span class="right">
+             <a href="../../../_sources/archive/2023/class2/lab2.rst.txt" rel="nofollow">Source</a> |
+             <a href="https://github.com/f5devcentral/f5-agility-labs-xc">Edit on <i class="fa fa-github" aria-hidden="true"></i></a>
+          </span>
+        </h5>
+        <!-- end custom breadcrumb -->
+      
+
+
+    <!--a title="Export PDF" id="export-pdf" class="btn btn btn-link pull-right">View PDF</a-->
+    <button type="button" id="export-pdf" class="btn btn-link right">PDF</button>
+
+
+    
+     
+         <div class="sidebar" id="version-warning" style="display: none;">
+           <p class="first sidebar-title">
+           <span class="icon fa fa-info-circle fa-lg"></span> Version notice:</p>
+           <p class="last" id="currentVersion"></p>
+          </div>
+
+
+     <div role="main">
+        
+  <div class="section" id="lab-2-reviewing-signature-based-bot-strategies-and-enabling-f5-distributed-cloud-botdefense">
+<h1>Lab 2: Reviewing Signature-based Bot Strategies and enabling F5 Distributed Cloud BotDefense<a class="headerlink" href="#lab-2-reviewing-signature-based-bot-strategies-and-enabling-f5-distributed-cloud-botdefense" title="Permalink to this heading">¶</a></h1>
+<p>The following lab tasks will guide you through a review of signature-based Bot protections
+already available via the Web Application Firewall configuration. The security configuration
+will then be extended through F5 Distributed Bot Defense, an AI-driven, behavioral security
+feature set to protect the previously configured application from advanced Bot threats.</p>
+<p><strong>Expected Lab Time: 25 minutes</strong></p>
+<div class="section" id="task-1-reviewing-signature-based-bot-protection">
+<h2>Task 1: Reviewing Signature-based Bot protection<a class="headerlink" href="#task-1-reviewing-signature-based-bot-protection" title="Permalink to this heading">¶</a></h2>
+<p>In this task you will review the Bot signature configuration and view logged security events.
+This lab will begin back in the F5 Distributed Cloud Console.</p>
+<table border="1" class="docutils align-default">
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><ol class="first last arabic">
+<li><p class="first">Return to <strong>Web App &amp; API Protection</strong>, in the left-hand navigation menu, click on</p>
+<p><strong>App Firewall</strong>, under <strong>Manage</strong>.</p>
+</li>
+<li><p class="first">On your App Firewall policy <strong>&lt;namespace&gt;-appfw</strong>, click the three dots in the <strong>Actions</strong></p>
+<p>column and then click <strong>Manage Configuration</strong>.</p>
+</li>
+<li><p class="first">Click <strong>Edit Configuration</strong> in the top right corner.</p>
+</li>
+</ol>
+</td>
+</tr>
+<tr class="row-even"><td><p class="first"><a class="reference internal" href="../../../_images/lab2-0012.png"><img alt="lab001" src="../../../_images/lab2-0012.png" style="width: 800px;" /></a></p>
+<p class="last"><a class="reference internal" href="../../../_images/lab2-0022.png"><img alt="lab002" src="../../../_images/lab2-0022.png" style="width: 800px;" /></a></p>
+</td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils align-default">
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><ol class="first last arabic" start="4">
+<li><p class="first">Using the left-hand navigation, click <strong>Detection Settings</strong>.  In the <strong>Detection</strong></p>
+<p><strong>Settings</strong> section, click the <strong>Signature-Based Bot Protection</strong> dropdown menu.</p>
+</li>
+<li><p class="first">From the <strong>Signature-Based Bot Protection</strong> dropdown menu, select <strong>Custom</strong>.</p>
+</li>
+</ol>
+</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="../../../_images/lab2-0032.png"><img alt="lab003" src="../../../_images/lab2-0032.png" style="width: 800px;" /></a></td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils align-default">
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><ol class="first last arabic" start="6">
+<li><p class="first">In the expanded configuration window, observe the three Bot signature categories;</p>
+<p><strong>Malicious, Suspicious,</strong> and <strong>Good</strong>. Also observe the actions <strong>Block, Ignore</strong>, and</p>
+<p><strong>Report</strong> which can be reviewed by selecting one of the dropdowns.</p>
+</li>
+<li><p class="first">Click <strong>Cancel and Exit</strong> to leave this window.</p>
+</li>
+</ol>
+</td>
+</tr>
+<tr class="row-even"><td><p class="first"><a class="reference internal" href="../../../_images/lab2-0042.png"><img alt="lab004" src="../../../_images/lab2-0042.png" style="width: 800px;" /></a></p>
+<p class="last"><a class="reference internal" href="../../../_images/lab2-0052.png"><img alt="lab005" src="../../../_images/lab2-0052.png" style="width: 800px;" /></a></p>
+</td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils align-default">
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><ol class="first arabic" start="8">
+<li><p class="first">Open a terminal window or DOS prompt on your respective client and issue the following</p>
+<p><strong>curl</strong> command: <em>curl -v http://&lt;namespace&gt;.lab-sec.f5demos.com</em>.</p>
+</li>
+<li><p class="first">Observe the <strong>User Agent</strong> and response content.</p>
+</li>
+</ol>
+<div class="last admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><em>curl is installed on Windows10+, and is available on most Linux or MAC platforms</em>.</p>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="../../../_images/lab2-0062.png"><img alt="lab006" src="../../../_images/lab2-0062.png" style="width: 800px;" /></a></td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils align-default">
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><ol class="first last arabic" start="10">
+<li><p class="first">Return to the F5 Distributed Cloud Console, within <strong>Web App &amp; API Protection</strong> in the</p>
+<p>left-hand navigation menu, click on <strong>Dashboards &gt; Security Dashboard</strong></p>
+</li>
+</ol>
+</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="../../../_images/lab2-0072.png"><img alt="lab007" src="../../../_images/lab2-0072.png" style="width: 800px;" /></a></td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils align-default">
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><ol class="first last arabic" start="11">
+<li><p class="first">Within the <strong>Security Dashboard</strong>, scroll down to the <strong>Load Balancer</strong> section and click</p>
+<p>the configured Load Balancer <em>&lt;namespace&gt;-lb</em>.</p>
+</li>
+</ol>
+</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="../../../_images/lab2-0082.png"><img alt="lab008" src="../../../_images/lab2-0082.png" style="width: 800px;" /></a></td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils align-default">
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><ol class="first arabic" start="12">
+<li><p class="first">Select <strong>Security Events</strong> from the horizontal navigation.</p>
+</li>
+<li><p class="first">Locate the most recent security event, which should be your curl request. Expand the</p>
+<p>security event as you have done in prior exercises to observe the “Suspicious” Bot</p>
+<p>reporting. Remember the setting for Suspicious Bot was set to <em>Report</em> from Step 6 above.</p>
+</li>
+</ol>
+<div class="last admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><em>You can review the steps of Lab1, Task 3, Step 8 to locate the information detail</em>.</p>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="../../../_images/lab2-0092.png"><img alt="lab009" src="../../../_images/lab2-0092.png" style="width: 800px;" /></a></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="task-2-enabling-f5-distributed-cloud-botdefense">
+<h2>Task 2: Enabling F5 Distributed Cloud BotDefense<a class="headerlink" href="#task-2-enabling-f5-distributed-cloud-botdefense" title="Permalink to this heading">¶</a></h2>
+<p>The following steps will enable you to deploy F5 Distributed Cloud BotDefense and understand its
+implementation.</p>
+<table border="1" class="docutils align-default">
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><ol class="first last arabic">
+<li><p class="first">Open another tab in your browser (Chrome shown), navigate to your application/Load</p>
+<p>Balancer configuration: <strong>http://&lt;namespace&gt;.lab-sec.f5demos.com</strong>.</p>
+</li>
+<li><p class="first">Enable developer tools (Chrome shown (use F12)) and click on the <strong>Network</strong> tab.</p>
+</li>
+<li><p class="first">Using the 3 bars/menu icon (top right), navigate to <strong>Access</strong> link.</p>
+</li>
+<li><p class="first">In the resulting login screen use the following values to login and click <strong>Submit</strong></p>
+<ul class="simple">
+<li><strong>Identity:</strong> <strong>user&#64;f5.com</strong></li>
+<li><strong>Token:</strong> <strong>password</strong></li>
+</ul>
+</li>
+</ol>
+</td>
+</tr>
+<tr class="row-even"><td><p class="first"><a class="reference internal" href="../../../_images/lab2-0102.png"><img alt="lab010" src="../../../_images/lab2-0102.png" style="width: 800px;" /></a></p>
+<p class="last"><a class="reference internal" href="../../../_images/lab2-0112.png"><img alt="lab011" src="../../../_images/lab2-0112.png" style="width: 800px;" /></a></p>
+</td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils align-default">
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><ol class="first last arabic" start="5">
+<li><p class="first">In the Developer window, find the <strong>POST</strong> to <strong>auth.php</strong>. <em>You can also use the filter</em></p>
+<p><em>to find auth.php</em>. Select the respective line as shown.</p>
+</li>
+<li><p class="first">Select the <strong>Request</strong> tab in the payload window that appears and observe that you only</p>
+<p>see limited form POST data (identity, token, &amp; submit).</p>
+</li>
+</ol>
+</td>
+</tr>
+<tr class="row-even"><td><p class="first"><a class="reference internal" href="../../../_images/lab2-0122.png"><img alt="lab012" src="../../../_images/lab2-0122.png" style="width: 800px;" /></a></p>
+<p class="last"><a class="reference internal" href="../../../_images/lab2-0132.png"><img alt="lab013" src="../../../_images/lab2-0132.png" style="width: 800px;" /></a></p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last"><em>Make sure to logoff using the menu on the right of the web application you just accessed</em></p>
+</div>
+<table border="1" class="docutils align-default">
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><ol class="first last arabic" start="7">
+<li><p class="first">Return to the Load Balancer in the F5 Distributed Cloud Console,**Manage &gt; Load Balancer**</p>
+<p><strong>&gt; HTTP Load Balancers</strong> and use the <strong>Action Dots</strong> and click <strong>Manage Configuration</strong></p>
+</li>
+<li><p class="first">Click <strong>Edit Configuration</strong> in the top right-hand corner.</p>
+</li>
+</ol>
+</td>
+</tr>
+<tr class="row-even"><td><p class="first"><a class="reference internal" href="../../../_images/lab2-0142.png"><img alt="lab014" src="../../../_images/lab2-0142.png" style="width: 800px;" /></a></p>
+<p class="last"><a class="reference internal" href="../../../_images/lab2-0152.png"><img alt="lab015" src="../../../_images/lab2-0152.png" style="width: 800px;" /></a></p>
+</td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils align-default">
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><ol class="first last arabic" start="9">
+<li><p class="first">Click <strong>Bot Protection</strong> in the left-hand navigation.</p>
+</li>
+<li><p class="first">In the <strong>Bot Protection</strong> section, use the drop down under <strong>Bot Defense</strong> and select</p>
+<p><strong>Enable</strong>.</p>
+</li>
+</ol>
+</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="../../../_images/lab2-0162.png"><img alt="lab016" src="../../../_images/lab2-0162.png" style="width: 800px;" /></a></td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils align-default">
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><ol class="first last arabic" start="11">
+<li><p class="first">In the new <strong>Bot Defense Policy</strong> section, click <strong>Configure</strong>.</p>
+</li>
+<li><p class="first">In the new <strong>Protected App Endpoints</strong> window, under <strong>App Endpoint Type</strong>,  click</p>
+<p><strong>Configure</strong>.</p>
+</li>
+<li><p class="first">In the new <strong>App Endpoint Type</strong> window, click  <strong>Add Item</strong>.</p>
+</li>
+</ol>
+</td>
+</tr>
+<tr class="row-even"><td><p class="first"><a class="reference internal" href="../../../_images/lab2-0172.png"><img alt="lab017" src="../../../_images/lab2-0172.png" style="width: 800px;" /></a></p>
+<p><a class="reference internal" href="../../../_images/lab2-0182.png"><img alt="lab018" src="../../../_images/lab2-0182.png" style="width: 800px;" /></a></p>
+<p class="last"><a class="reference internal" href="../../../_images/lab2-0192.png"><img alt="lab019" src="../../../_images/lab2-0192.png" style="width: 800px;" /></a></p>
+</td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils align-default">
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><ol class="first last arabic simple" start="14">
+<li>In the <strong>Application Endpoint</strong> input the following values in the fields identified:<ul>
+<li><strong>Metadata\Name:</strong> <em>auth-bot</em></li>
+<li><strong>HTTP Methods:</strong> <em>POST</em></li>
+<li><strong>Protocol:</strong> <em>BOTH</em></li>
+<li><strong>Path\Path Match:</strong> <em>Prefix</em></li>
+<li><strong>Prefix:</strong> <em>/auth.php</em></li>
+<li><strong>Bot Traffic MitigationSelect Bot Mitigation Action:</strong> <em>Block</em></li>
+</ul>
+</li>
+<li>Scroll to the bottom and click <strong>Apply</strong>.</li>
+</ol>
+</td>
+</tr>
+<tr class="row-even"><td><p class="first"><a class="reference internal" href="../../../_images/lab2-0202.png"><img alt="lab020" src="../../../_images/lab2-0202.png" style="width: 800px;" /></a></p>
+<p class="last"><a class="reference internal" href="../../../_images/lab2-0212.png"><img alt="lab021" src="../../../_images/lab2-0212.png" style="width: 800px;" /></a></p>
+</td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils align-default">
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><ol class="first last arabic" start="16">
+<li><p class="first">Click <strong>Apply</strong> on the <strong>App Endpoint Type</strong> window.</p>
+</li>
+<li><p class="first">Observe the additional positioning options in the <strong>JavaScript Insertion</strong> section of</p>
+<p>the <strong>Protected App Endpoints</strong> window, then click <strong>Apply</strong>.</p>
+</li>
+</ol>
+</td>
+</tr>
+<tr class="row-even"><td><p class="first"><a class="reference internal" href="../../../_images/lab2-0222.png"><img alt="lab022" src="../../../_images/lab2-0222.png" style="width: 800px;" /></a></p>
+<p class="last"><a class="reference internal" href="../../../_images/lab2-0232.png"><img alt="lab023" src="../../../_images/lab2-0232.png" style="width: 800px;" /></a></p>
+</td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils align-default">
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><ol class="first last arabic" start="18">
+<li><p class="first">Observe that the <strong>Bot Defense Policy</strong> is now configured.</p>
+</li>
+<li><p class="first">Click <strong>Other Settings</strong> in the left-hand navigation or scroll to the bottom on the</p>
+<p><strong>HTTP Load Balancer</strong> screen, and click <strong>Save and Exit</strong>.</p>
+</li>
+</ol>
+</td>
+</tr>
+<tr class="row-even"><td><p class="first"><a class="reference internal" href="../../../_images/lab2-0242.png"><img alt="lab024" src="../../../_images/lab2-0242.png" style="width: 800px;" /></a></p>
+<p class="last"><a class="reference internal" href="../../../_images/lab2-0252.png"><img alt="lab025" src="../../../_images/lab2-0252.png" style="width: 800px;" /></a></p>
+</td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils align-default">
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><ol class="first last arabic" start="20">
+<li><p class="first">Repeat Task 2 Steps 1-6.  Note you many need to close your browser and clear cookies</p>
+</li>
+<li><p class="first">Observe now that there is additional telemetry being passed in the POST request.  This</p>
+<p>telemetry will be used to determine if the connecting client is an Automated Bot.</p>
+</li>
+</ol>
+</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="../../../_images/lab2-0272.png"><img alt="lab027" src="../../../_images/lab2-0272.png" style="width: 800px;" /></a></td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils align-default">
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><p class="first"><strong>End of Lab 2:</strong>  This concludes Lab 2, feel free to review and test the configuration.</p>
+<p class="last">A brief presentation will be shared prior to the beginning of Lab 3.</p>
+</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="../../../_images/labend4.png"><img alt="labend" src="../../../_images/labend4.png" style="width: 800px;" /></a></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+     </div>
+    
+
+    </article>
+  </div>
+
+</div>
+
+
+  <div id="clouddocs-footer"></div>
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+
+  <script src="../../../_static/js/index.js"></script>
+  <script src="../../../_static/js/jquery.appear.js"></script>
+  <script src="../../../_static/js/printThis.js"></script>
+  <script src="../../../_static/js/bootstrap.min.js"></script>
+  <script src="../../../_static/js/clouddocs.js"></script>
+  <script src="../../../_static/js/CoveoJsSearch.Lazy.min.js"></script>
+  </body>
+</html>

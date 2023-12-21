@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<head>
+  
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-PPZPQ6');</script>
+  <!-- End Google Tag Manager -->
+    <title>Lab 2 - Create a Virtual Kubernetes Cluster</title>
+  
+
+  <meta charset="utf-8">
+  <!-- Twitter Bootstrap viewport setting -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- F5 metadata -->
+  <meta name="title" content="Lab 2 - Create a Virtual Kubernetes Cluster"/>
+  <meta name="product" content="F5 Distributed Cloud"/>
+  <meta name="version" content=""/>
+  <meta name="updated_date"  content="2023-12-21 17:40:18"/>
+  <meta name="archived" content="Archived documents excluded"/>
+  <meta name="doc_type" content="Manual"/>
+  <meta name="lifecycle" content="release"/>
+  <meta name="F5 Distributed Cloud" content=""/>
+
+
+  
+
+  
+  <link href="https://cdn.f5.com/favicon.ico" rel="icon">
+
+</head>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lab 2 - Create a Virtual Kubernetes Cluster &#8212; F5 Distributed Cloud  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css" />
+    <link rel="stylesheet" href="../../../../_static/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/css/f5.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/css/f5-theme.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/css/CoveoFullSearch.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/21fb8a09c3.css" type="text/css" />
+    <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+    <script src="../../../../_static/jquery.js"></script>
+    <script src="../../../../_static/underscore.js"></script>
+    <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../../../_static/doctools.js"></script>
+    <script src="../../../../_static/sphinx_highlight.js"></script>
+    <script src="../../../../_static/clipboard.min.js"></script>
+    <script src="../../../../_static/copybutton.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" /> 
+  </head><body>
+  <div id="clouddocs-header"></div>
+
+    <div id="sidebar" class="section-nav">
+      
+      <!--  version selector ------------------>
+      <div id="version_selector_wrapper">
+      </div>
+      <nav class="nav-sidebartoc">
+
+        
+         <h5>F5 Distributed Cloud  </h5>
+        
+
+        <hr>
+        <span class="nav-sidebartoc">
+            <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../class1/class1.html">F5 Distributed Cloud - Introduction to Deployment Models and Services</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../class2/class2.html">F5 Distributed Cloud - WAF/WAAP Deeper Dive</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../class3/class3.html">F5 Distributed Cloud - WAF/WAAP Deeper Dive</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../class4/class4.html">F5 Distributed Cloud - WAF/WAAP Deeper Dive</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../class5/class5.html">F5 Distributed Cloud - Advanced Bot Security</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../class6/class6.html">F5 Distributed Cloud - Intro to Multi-Cloud Networking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../class7/class7.html">F5 Distributed Cloud - AppStack CaaS &amp; K8s Delivery Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../class8/class8.html">F5 Distributed Cloud - Introduction to Deployment Models and Services</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../class9/class9.html">F5 Distributed Cloud - WAF Policy Supervisor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../archive.html">Archived F5 Distributed Cloud Labs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../2hour/2hour.html">Two (2) Hour F5 Distributed Cloud Labs</a></li>
+</ul>
+
+        </span><!-- Use this file to add extra links to the bottom of the ToC sidebar -->
+<hr>
+  <span class="nav-sidebartoc">
+ <!-- insert content here -->
+  </span>
+      </nav>
+    </div>
+
+
+    <div id="right-sidebar">
+      <h7 style="font-weight:normal">On this page:</h7>
+      <nav class="nav-sidebartoc">
+        <span class="nav-sidebartoc">
+            <ul>
+<li><a class="reference internal" href="#">Lab 2 - Create a Virtual Kubernetes Cluster</a></li>
+</ul>
+
+         </span>
+      </nav>
+    </div>
+
+
+
+
+
+  
+  <div class="main active" id="content" >
+    <article class="docs-container site-article-inner">
+              <!-- custom breadcrumb -->
+        <h5>
+            <a href="../../../../index.html">F5 Distributed Cloud</a>
+
+          <span class="right">
+             <a href="../../../../_sources/archive/2023/class5/module1/lab2.rst.txt" rel="nofollow">Source</a> |
+             <a href="https://github.com/f5devcentral/f5-agility-labs-xc">Edit on <i class="fa fa-github" aria-hidden="true"></i></a>
+          </span>
+        </h5>
+        <!-- end custom breadcrumb -->
+      
+
+
+    <!--a title="Export PDF" id="export-pdf" class="btn btn btn-link pull-right">View PDF</a-->
+    <button type="button" id="export-pdf" class="btn btn-link right">PDF</button>
+
+
+    
+     
+         <div class="sidebar" id="version-warning" style="display: none;">
+           <p class="first sidebar-title">
+           <span class="icon fa fa-info-circle fa-lg"></span> Version notice:</p>
+           <p class="last" id="currentVersion"></p>
+          </div>
+
+
+     <div role="main">
+        
+  <div class="section" id="lab-2-create-a-virtual-kubernetes-cluster">
+<h1>Lab 2 - Create a Virtual Kubernetes Cluster<a class="headerlink" href="#lab-2-create-a-virtual-kubernetes-cluster" title="Permalink to this heading">¶</a></h1>
+<p>F5 Distributed Cloud App Stack is a SaaS-based offering to deploy, secure, and operate a fleet of applications across the distributed infrastructure in multi-cloud or edge environments. It can scale to a large number of clusters and locations with centralized orchestration, observability, and operations to reduce the complexity of managing a fleet of distributed clusters.</p>
+<p>In this lab, we will learn the following:</p>
+<ul class="simple">
+<li>Access the <strong>Distributed Apps</strong> service in the F5 Distributed Cloud console</li>
+<li>Create a Virtual Kubernetes Cluster (Virtual K8s) to run a demo app</li>
+</ul>
+<p><strong>Core concepts</strong></p>
+<blockquote>
+<div><dl class="docutils">
+<dt><em>Virtual K8s (vK8s)</em></dt><dd><cite>vK8s refers to a virtual Kubernetes cluster. F5 Distributed Cloud Services support a Kubernetes compatible API for centralized orchestration of applications across a fleet of sites
+(customer sites or F5 Distributed Cloud Regional Edge). This API is considered “Kubernetes compatible”, because not all Kubernetes APIs or resources
+are supported. However, for the API(s) that are supported, it is 100% compatible. We have implemented a distributed control
+plane within our global infrastructure to manage scheduling and scaling of applications across multiple (tens to hundreds of thousands of)
+sites, where each site in itself is also a managed physical K8s cluster.</cite></dd>
+<dt><em>Virtual Sites</em></dt><dd><cite>vK8s objects have a reference to the virtual-site which selects the sites on which the application can be deployed, secured, and operated.
+The virtual-site reference of vK8s is used as the default virtual-site for the given vK8s.</cite></dd>
+</dl>
+<p>For more core concepts, please review <a class="reference external" href="https://docs.cloud.f5.com/docs/ves-concepts">F5 Distributed Cloud documentation</a></p>
+</div></blockquote>
+<p><strong>Exercise 1 - Explore sites and virtual site</strong></p>
+<ol class="arabic">
+<li><p class="first">Select the <strong>Distributed Apps</strong> tile on the F5 Distributed Cloud Services home page.</p>
+<a class="reference internal image-reference" href="../../../../_images/distributedappclick1.png"><img alt="../../../../_images/distributedappclick1.png" src="../../../../_images/distributedappclick1.png" style="width: 400pt;" /></a>
+</li>
+<li><p class="first">Within the Distributed Apps side menu and under <strong>Applications</strong>, click on <strong>Virtual Sites</strong>.</p>
+<a class="reference internal image-reference" href="../../../../_images/distributedappclickvirtualsite1.png"><img alt="../../../../_images/distributedappclickvirtualsite1.png" src="../../../../_images/distributedappclickvirtualsite1.png" style="width: 250pt;" /></a>
+</li>
+<li><p class="first">Locate the Virtual Site named <em>agility-k8s-vsite</em>.</p>
+<blockquote>
+<div><div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">For this lab, we have provisioned a Virtual Site called <em>agility-k8s-vsite</em> to save time</p>
+</div>
+</div></blockquote>
+<a class="reference internal image-reference" href="../../../../_images/distributedappclickagilityk8svsite1.png"><img alt="../../../../_images/distributedappclickagilityk8svsite1.png" src="../../../../_images/distributedappclickagilityk8svsite1.png" style="width: 400pt;" /></a>
+</li>
+<li><p class="first">Virtual site <em>agility-k8s-vsite</em> contains three customer edge sites. As mentioned in the core concepts section, a virtual site is a construct that
+selects the sites on which the application can be deployed, secured, and operated. All workloads assigned to site <em>agility-k8s-vsite</em> will be
+replicated across all three sites. Select <strong>agility-vpc-site-one</strong></p>
+<a class="reference internal image-reference" href="../../../../_images/distributedappclickvpcsiteone1.png"><img alt="../../../../_images/distributedappclickvpcsiteone1.png" src="../../../../_images/distributedappclickvpcsiteone1.png" style="width: 400pt;" /></a>
+</li>
+<li><p class="first">You can see a summary of stats and configurations for site <em>agility-vpc-site-one</em>. Notice the labels used to deploy the site. Can you guess where
+this customer edge site is deployed? We can see by the labels that this site is deployed on the Google Cloud Platform (GCP). You can deploy a
+customer edge site on ANY major cloud provider and also on-prem. Click on <strong>agility-vpc-site-one</strong> to see more details about the customer edge site.</p>
+<a class="reference internal image-reference" href="../../../../_images/distributedappclickvpcsiteoneexploresite-updated.png"><img alt="../../../../_images/distributedappclickvpcsiteoneexploresite-updated.png" src="../../../../_images/distributedappclickvpcsiteoneexploresite-updated.png" style="width: 400pt;" /></a>
+</li>
+<li><p class="first">You can get a lot of helpful information for site <em>agility-vpc-site-one</em> and its workloads, including application metrics, number of Pods,
+deployment status, etc. Spend some time exploring the different tabs. Of course, there is no information because we have not deployed any workload on this site.</p>
+<a class="reference internal image-reference" href="../../../../_images/distributedappclickvpcsiteoneexploresite2-updated.png"><img alt="../../../../_images/distributedappclickvpcsiteoneexploresite2-updated.png" src="../../../../_images/distributedappclickvpcsiteoneexploresite2-updated.png" style="width: 400pt;" /></a>
+</li>
+</ol>
+<p><strong>Exercise 2 - Create a Virtual K8s</strong></p>
+<ol class="arabic">
+<li><p class="first">In the left-hand side of the console, click <strong>Virtual K8s</strong> under the <strong>Applications</strong> section.</p>
+<a class="reference internal image-reference" href="../../../../_images/distributedappclickvirtualk8s1.png"><img alt="../../../../_images/distributedappclickvirtualk8s1.png" src="../../../../_images/distributedappclickvirtualk8s1.png" style="width: 250pt;" /></a>
+</li>
+<li><p class="first">There are currently no Virtual K8s, so let’s create one! Click <strong>Add Virtual K8s</strong></p>
+<a class="reference internal image-reference" href="../../../../_images/distributedappclickaddvirtualk8s1.png"><img alt="../../../../_images/distributedappclickaddvirtualk8s1.png" src="../../../../_images/distributedappclickaddvirtualk8s1.png" style="width: 250pt;" /></a>
+</li>
+<li><p class="first">Enter the site <strong>Name</strong> using your Firstname initial and Lastname altogether and append “-vk8” at the end. Ex: For Andrew Smith, the site name will be <em>“asmith-vk8”</em> (without the quotes!)</p>
+<a class="reference internal image-reference" href="../../../../_images/distributedappclickvirtualk8ssettings1.png"><img alt="../../../../_images/distributedappclickvirtualk8ssettings1.png" src="../../../../_images/distributedappclickvirtualk8ssettings1.png" style="width: 600pt;" /></a>
+</li>
+<li><p class="first">Click the <strong>Add Item</strong> button in the <em>Virtual Sites</em> section</p>
+<a class="reference internal image-reference" href="../../../../_images/distributedappclickvirtualk8ssettings21.png"><img alt="../../../../_images/distributedappclickvirtualk8ssettings21.png" src="../../../../_images/distributedappclickvirtualk8ssettings21.png" style="width: 450pt;" /></a>
+</li>
+<li><p class="first">Select the <cite>shared/agility-k8s-vsite</cite> site from the dropdown.</p>
+<a class="reference internal image-reference" href="../../../../_images/distributedappclickvirtualk8ssettings31.png"><img alt="../../../../_images/distributedappclickvirtualk8ssettings31.png" src="../../../../_images/distributedappclickvirtualk8ssettings31.png" style="width: 450pt;" /></a>
+</li>
+<li><p class="first">Click the <strong>Save and Exit</strong> button at the bottom of the page.</p>
+</li>
+<li><p class="first">Wait for your virtual K8s current state to show as <em>Ready</em> (this can take 5 minutes or more). This is your virtual Kubernetes cluster assigned to the virtual site <em>agility-k8s-vsite</em>.
+As you already know, virtual site <em>agility-k8s-vsite</em> has three sites (<em>agility-vpc-site-one</em>, <em>agility-vpc-site-two</em>, <em>agility-vpc-site-three</em>)</p>
+<a class="reference internal image-reference" href="../../../../_images/distributedappclickvirtualk8sstatus-in-progress.png"><img alt="../../../../_images/distributedappclickvirtualk8sstatus-in-progress.png" src="../../../../_images/distributedappclickvirtualk8sstatus-in-progress.png" style="width: 600pt;" /></a>
+<a class="reference internal image-reference" href="../../../../_images/distributedappclickvirtualk8sstatus-updated.png"><img alt="../../../../_images/distributedappclickvirtualk8sstatus-updated.png" src="../../../../_images/distributedappclickvirtualk8sstatus-updated.png" style="width: 600pt;" /></a>
+</li>
+</ol>
+</div>
+
+
+     </div>
+    
+
+    </article>
+  </div>
+
+</div>
+
+
+  <div id="clouddocs-footer"></div>
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+
+  <script src="../../../../_static/js/index.js"></script>
+  <script src="../../../../_static/js/jquery.appear.js"></script>
+  <script src="../../../../_static/js/printThis.js"></script>
+  <script src="../../../../_static/js/bootstrap.min.js"></script>
+  <script src="../../../../_static/js/clouddocs.js"></script>
+  <script src="../../../../_static/js/CoveoJsSearch.Lazy.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<head>
+  
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-PPZPQ6');</script>
+  <!-- End Google Tag Manager -->
+    <title>Lab 5: Bonus Lab - L7 App Routing &amp; Security</title>
+  
+
+  <meta charset="utf-8">
+  <!-- Twitter Bootstrap viewport setting -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- F5 metadata -->
+  <meta name="title" content="Lab 5: Bonus Lab - L7 App Routing &amp; Security"/>
+  <meta name="product" content="F5 Distributed Cloud"/>
+  <meta name="version" content=""/>
+  <meta name="updated_date"  content="2023-12-21 17:40:18"/>
+  <meta name="archived" content="Archived documents excluded"/>
+  <meta name="doc_type" content="Manual"/>
+  <meta name="lifecycle" content="release"/>
+  <meta name="F5 Distributed Cloud" content=""/>
+
+
+  
+
+  
+  <link href="https://cdn.f5.com/favicon.ico" rel="icon">
+
+</head>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lab 5: Bonus Lab - L7 App Routing &amp; Security &#8212; F5 Distributed Cloud  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" href="../../_static/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/css/f5.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/css/f5-theme.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/css/CoveoFullSearch.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/21fb8a09c3.css" type="text/css" />
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="F5 Distributed Cloud - AppStack CaaS &amp; K8s Delivery Options" href="../../class7/class7.html" />
+    <link rel="prev" title="Lab 4: App Connect - Solving IP Overlap" href="lab4.html" /> 
+  </head><body>
+  <div id="clouddocs-header"></div>
+
+    <div id="sidebar" class="section-nav">
+      
+      <!--  version selector ------------------>
+      <div id="version_selector_wrapper">
+      </div>
+      <nav class="nav-sidebartoc">
+
+        
+         <h5>F5 Distributed Cloud  </h5>
+        
+
+        <hr>
+        <span class="nav-sidebartoc">
+            <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../class1/class1.html">F5 Distributed Cloud - Introduction to Deployment Models and Services</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class2/class2.html">F5 Distributed Cloud - WAF/WAAP Deeper Dive</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class3/class3.html">F5 Distributed Cloud - WAF/WAAP Deeper Dive</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class4/class4.html">F5 Distributed Cloud - WAF/WAAP Deeper Dive</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class5/class5.html">F5 Distributed Cloud - Advanced Bot Security</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../class6.html">F5 Distributed Cloud - Intro to Multi-Cloud Networking</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../intro.html">Introduction to the Lab</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module1/module1.html">Module 1: Network Connect</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="module2.html">Module 2: App Connect</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="lab3.html">Lab 3: Globally Available Front End</a></li>
+<li class="toctree-l3"><a class="reference internal" href="lab4.html">Lab 4: App Connect - Solving IP Overlap</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Lab 5: Bonus Lab - L7 App Routing &amp; Security</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../class7/class7.html">F5 Distributed Cloud - AppStack CaaS &amp; K8s Delivery Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class8/class8.html">F5 Distributed Cloud - Introduction to Deployment Models and Services</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class9/class9.html">F5 Distributed Cloud - WAF Policy Supervisor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../archive/archive.html">Archived F5 Distributed Cloud Labs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../2hour/2hour.html">Two (2) Hour F5 Distributed Cloud Labs</a></li>
+</ul>
+
+        </span><!-- Use this file to add extra links to the bottom of the ToC sidebar -->
+<hr>
+  <span class="nav-sidebartoc">
+ <!-- insert content here -->
+  </span>
+      </nav>
+    </div>
+
+
+    <div id="right-sidebar">
+      <h7 style="font-weight:normal">On this page:</h7>
+      <nav class="nav-sidebartoc">
+        <span class="nav-sidebartoc">
+            <ul>
+<li><a class="reference internal" href="#">Lab 5: Bonus Lab - L7 App Routing &amp; Security</a><ul>
+<li><a class="reference internal" href="#l7-app-routing">L7 App Routing</a></li>
+<li><a class="reference internal" href="#testing-l7-routing">Testing L7 Routing</a></li>
+<li><a class="reference internal" href="#l7-security">L7 Security</a></li>
+<li><a class="reference internal" href="#testing-vulnerabilities">Testing Vulnerabilities</a></li>
+<li><a class="reference internal" href="#applying-waf">Applying WAF</a></li>
+<li><a class="reference internal" href="#testing-vulnerabilities-with-waf">Testing Vulnerabilities with WAF</a></li>
+<li><a class="reference internal" href="#reviewing-waf-logs">Reviewing WAF Logs</a></li>
+<li><a class="reference internal" href="#sanity-check">Sanity Check</a></li>
+<li><a class="reference internal" href="#outro">Outro</a></li>
+</ul>
+</li>
+</ul>
+
+         </span>
+      </nav>
+    </div>
+
+
+
+
+
+  
+  <div class="main active" id="content" >
+    <article class="docs-container site-article-inner">
+              <!-- custom breadcrumb -->
+        <h5>
+            <a href="../../index.html">F5 Distributed Cloud</a>
+              &gt; <a href="../class6.html">F5 Distributed Cloud - Intro to Multi-Cloud Networking</a>
+              &gt; <a href="module2.html">Module 2: App Connect</a>
+
+          <span class="right">
+             <a href="../../_sources/class6/module2/lab5.rst.txt" rel="nofollow">Source</a> |
+             <a href="https://github.com/f5devcentral/f5-agility-labs-xc">Edit on <i class="fa fa-github" aria-hidden="true"></i></a>
+          </span>
+        </h5>
+        <!-- end custom breadcrumb -->
+      
+
+
+    <!--a title="Export PDF" id="export-pdf" class="btn btn btn-link pull-right">View PDF</a-->
+    <button type="button" id="export-pdf" class="btn btn-link right">PDF</button>
+
+
+    
+     
+         <div class="sidebar" id="version-warning" style="display: none;">
+           <p class="first sidebar-title">
+           <span class="icon fa fa-info-circle fa-lg"></span> Version notice:</p>
+           <p class="last" id="currentVersion"></p>
+          </div>
+
+
+     <div role="main">
+        
+  <div class="section" id="lab-5-bonus-lab-l7-app-routing-security">
+<h1>Lab 5: Bonus Lab - L7 App Routing &amp; Security<a class="headerlink" href="#lab-5-bonus-lab-l7-app-routing-security" title="Permalink to this heading">¶</a></h1>
+<p><strong>Objective:</strong></p>
+<ul class="simple">
+<li>Configure the Global Frontend to perform Layer 7 routing.</li>
+<li>Configure security policy to protect the frontends from OWASP Top 10 web attacks.</li>
+<li>Test connectivity and review application security events in the XC console.</li>
+</ul>
+<img alt="../../_images/lab5bizreq1.png" src="../../_images/lab5bizreq1.png" />
+<p><strong>Narrative:</strong></p>
+<p>Much like “The Real World”, the requirements never stop coming. Now, ACME has 2 new deliverables for you to figure out.</p>
+<p><strong>First</strong>, a new API has been added to the cloud frontends and will require Layer 7 routing at the global frontend in XC.
+The requirement is for any requests that have <strong>/aws</strong> in the URI to be routed to AWS.
+Any requests with <strong>/azure</strong> should be routed to Azure.</p>
+<p><strong>Second</strong>, ever since exposing the frontends globally, they have noticed a lot of attack type traffic coming into their application.
+They have asked if there is a way to apply a security policy to identify and remediate these attacks which seem to target the application with common OWASP Top 10 type attacks.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="../../_images/lab51.png" src="../../_images/lab51.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="section" id="l7-app-routing">
+<h2>L7 App Routing<a class="headerlink" href="#l7-app-routing" title="Permalink to this heading">¶</a></h2>
+<p><strong>Adding Layer 7 App Routing with F5 Distributed Cloud is a simple task,</strong> but one thing we haven’t done yet is configure an <strong>internal pool</strong> for the <strong>AWS workload</strong>. So far, we have been pointing at a public DNS name in the AWS Origin pool, so that could in theory, change or resolve to different IP’s/AZ’s, at different times.
+What we essentially want is a static proxy into the AWS environment that this one particular frontend is located in, which is also where our CE Node is deployed.</p>
+<p>In the <strong>Side menu</strong> under <strong>Manage</strong> click on <strong>Load Balancers</strong> &gt;&gt; <strong>Origin Pools</strong> and click <strong>Manage Configuration</strong> under the <strong>3 Button</strong> Action Menu on your <strong>[animal-name]-azure-pool</strong>.</p>
+<p>Cick <strong>Clone Object</strong>.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="../../_images/clone1.png" src="../../_images/clone1.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>For the name call it: <strong>[animal-name]-aws-internal</strong> and click the pencil <strong>edit</strong> icon next to the <strong>Origin Server</strong>.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="../../_images/edit1.png" src="../../_images/edit1.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Simply change the <strong>Site</strong> from <strong>system/student-azurenet</strong> to <strong>system/student-awsnet</strong>.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="../../_images/orgaws1.png" src="../../_images/orgaws1.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Click <strong>Apply</strong></p>
+<p>Your Origin Pool config should now look like this:</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="../../_images/awsconf1.png" src="../../_images/awsconf1.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Click <strong>Save and Exit</strong>.</p>
+<p>Now we will configure the <strong>Global Frontend</strong> Load Balancer to point at both the AWS and Azure “IP-overlapped workloads” and we will add Layer 7 URI routing so traffic arrives at the appropriate Origin Server.</p>
+<p>In the <strong>Side menu</strong> under <strong>Manage</strong> click on <strong>Load Balancers</strong> &gt;&gt; <strong>HTTP Load Balancers</strong> and click on the <strong>3 Buttons</strong> under the <strong>Actions</strong> menu for your <strong>animal-name-acme-frontend</strong>.</p>
+<p>Click <strong>Manage Configuration</strong> and then <strong>Edit Configuration</strong> in the top right.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="../../_images/lab5mg1.png" src="../../_images/lab5mg1.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Scroll down to where you see <strong>Routes</strong> and click the blue hyperlink “<strong>Configure</strong>”</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="../../_images/routes2.png" src="../../_images/routes2.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Click <strong>Add Item</strong>.</p>
+<p>Enter the following values:</p>
+<table border="1" class="docutils align-default">
+<colgroup>
+<col width="30%" />
+<col width="70%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Variable</th>
+<th class="head">Value</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Route Type</td>
+<td>Simple Route</td>
+</tr>
+<tr class="row-odd"><td>HTTP Method</td>
+<td>GET</td>
+</tr>
+<tr class="row-even"><td>Path Match</td>
+<td>Prefix</td>
+</tr>
+<tr class="row-odd"><td>Prefix</td>
+<td>/aws</td>
+</tr>
+<tr class="row-even"><td>Headers</td>
+<td>Leave Default</td>
+</tr>
+<tr class="row-odd"><td>Origin Pools</td>
+<td><strong>Add Item</strong> &gt;&gt; Origin Pool = <strong>[animal-name]-aws-internal</strong>, Click <strong>Apply</strong>.</td>
+</tr>
+<tr class="row-even"><td>Host Rewrite Method</td>
+<td>Disable Host Rewrite</td>
+</tr>
+</tbody>
+</table>
+<p>Click <strong>Apply</strong>.</p>
+<p>Click <strong>Add Item</strong> again.</p>
+<table border="1" class="docutils align-default">
+<colgroup>
+<col width="31%" />
+<col width="69%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Variable</th>
+<th class="head">Value</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Route Type</td>
+<td>Simple Route</td>
+</tr>
+<tr class="row-odd"><td>HTTP Method</td>
+<td>GET</td>
+</tr>
+<tr class="row-even"><td>Path Match</td>
+<td>Prefix</td>
+</tr>
+<tr class="row-odd"><td>Prefix</td>
+<td>/azure</td>
+</tr>
+<tr class="row-even"><td>Headers</td>
+<td>Leave Default</td>
+</tr>
+<tr class="row-odd"><td>Origin Pools</td>
+<td><strong>Add Item</strong> &gt;&gt; Origin Pool = <strong>[animal-name]-azure-pool</strong>, Click <strong>Apply</strong>.</td>
+</tr>
+<tr class="row-even"><td>Host Rewrite Method</td>
+<td>Disable Host Rewrite</td>
+</tr>
+</tbody>
+</table>
+<p>Click <strong>Apply</strong>, <strong>Apply</strong>, <strong>Save and Exit</strong>.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="../../_images/routes11.png" src="../../_images/routes11.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="testing-l7-routing">
+<h2>Testing L7 Routing<a class="headerlink" href="#testing-l7-routing" title="Permalink to this heading">¶</a></h2>
+<p>In your browser open a new tab to: <strong>http://[animal-name]-acme-frontend.lab-mcn.f5demos.com</strong></p>
+<p>Once you have loaded the site sucessfully, try adding the URI <strong>/aws</strong> and reload the page.</p>
+<p>You should see this:</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="../../_images/awsuri1.png" src="../../_images/awsuri1.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Now try adding the URI <strong>/azure</strong> and reload the page.</p>
+<p>You should see this:</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="../../_images/azureuri1.png" src="../../_images/azureuri1.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>So, how do we know for certain which workload was actually answering and this wasn’t all smoke and mirrors?</p>
+<p>Back in XC Console, from the <strong>Side menu</strong> under <strong>Overview</strong>, click on <strong>Perfomance</strong>.</p>
+<p>Scroll all the way to the bottom and under <strong>Load Balancers</strong>, click directly on your <strong>[animal-name-acme-frontend]</strong> and then click the <strong>Requests</strong> tab (top middle).</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Remember to click refresh and adjust time-frame as necessary.</p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="../../_images/perfmo1.png" src="../../_images/perfmo1.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Notice the requests clearly show the URI and the Origin Server.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="../../_images/perfmo21.png" src="../../_images/perfmo21.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Mission accomplished yet again!!! And with only a few short steps and simple concepts. The more you use F5 Distributed Cloud, the more powerful you become but as you know, with that power comes great responsibility…especially with security!</p>
+</div>
+<div class="section" id="l7-security">
+<h2>L7 Security<a class="headerlink" href="#l7-security" title="Permalink to this heading">¶</a></h2>
+<p>If you haven’t noticed, all along today, there has always been an underlying theme of security in all of the configurations we setup. It’s very rare in this day and age to expose a resource or public frontend without some basic protection.</p>
+<p>A common theme was also reviewed in the narrative above. Your new public frontend has started getting a lot of unwanted attention and there is an immediate need to apply some security controls to expose and mitigate the unwanted traffic. We hear from customers with this request every day.</p>
+<p>With <strong>F5 Distributed Cloud App Connect</strong>, adding a WAF policy is just as easy as everything else we’ve setup so far.</p>
+<p><strong>First</strong>, we will test out our attacks on the site without any WAF policy and observe the response.</p>
+</div>
+<div class="section" id="testing-vulnerabilities">
+<h2>Testing Vulnerabilities<a class="headerlink" href="#testing-vulnerabilities" title="Permalink to this heading">¶</a></h2>
+<p>For a SQL Injection (SQLi) attack, run the following command from your “Online Diag Tool”. If you closed or lost that tab, the link is: <strong>http://[animal-name]-awstool.lab-mcn.f5demos.com</strong></p>
+<p>SQLi:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="o">-</span><span class="n">A</span> <span class="s2">&quot;Mozilla/5.0&#39;, (select*from(select(sleep(20)))a)) #&quot;</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="p">[</span><span class="n">animal</span><span class="o">-</span><span class="n">name</span><span class="p">]</span><span class="o">-</span><span class="n">acme</span><span class="o">-</span><span class="n">frontend</span><span class="o">.</span><span class="n">lab</span><span class="o">-</span><span class="n">mcn</span><span class="o">.</span><span class="n">f5demos</span><span class="o">.</span><span class="n">com</span><span class="o">/</span> <span class="o">--</span><span class="n">resolve</span> <span class="p">[</span><span class="n">animal</span><span class="o">-</span><span class="n">name</span><span class="p">]</span><span class="o">-</span><span class="n">acme</span><span class="o">-</span><span class="n">frontend</span><span class="o">.</span><span class="n">lab</span><span class="o">-</span><span class="n">mcn</span><span class="o">.</span><span class="n">f5demos</span><span class="o">.</span><span class="n">com</span><span class="p">:</span><span class="mi">80</span><span class="p">:</span><span class="mf">159.60.128.61</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="../../_images/sqli1.png" src="../../_images/sqli1.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>For some various other attacks you can modify the command and URI as shown below and try these:</p>
+<p>Other Attack Samples:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="o">-</span><span class="n">X</span> <span class="n">GET</span> <span class="s2">&quot;http://[animal-name]-acme-frontend.lab-mcn.f5demos.com/?cmd=cat%20/etc/passwd&quot;</span> <span class="o">--</span><span class="n">resolve</span> <span class="p">[</span><span class="n">animal</span><span class="o">-</span><span class="n">name</span><span class="p">]</span><span class="o">-</span><span class="n">acme</span><span class="o">-</span><span class="n">frontend</span><span class="o">.</span><span class="n">lab</span><span class="o">-</span><span class="n">mcn</span><span class="o">.</span><span class="n">f5demos</span><span class="o">.</span><span class="n">com</span><span class="p">:</span><span class="mi">80</span><span class="p">:</span><span class="mf">159.60.128.61</span>
+</pre></div>
+</div>
+<p>Or:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="o">-</span><span class="n">X</span> <span class="n">GET</span> <span class="s2">&quot;http://[animal-name]-acme-frontend.lab-mcn.f5demos.com/product?id=4%20OR%201=1&quot;</span> <span class="o">--</span><span class="n">resolve</span> <span class="p">[</span><span class="n">animal</span><span class="o">-</span><span class="n">name</span><span class="p">]</span><span class="o">-</span><span class="n">acme</span><span class="o">-</span><span class="n">frontend</span><span class="o">.</span><span class="n">lab</span><span class="o">-</span><span class="n">mcn</span><span class="o">.</span><span class="n">f5demos</span><span class="o">.</span><span class="n">com</span><span class="p">:</span><span class="mi">80</span><span class="p">:</span><span class="mf">159.60.128.61</span>
+</pre></div>
+</div>
+<p>Here are the URI paths from above for easy reference:</p>
+<p><strong>/?cmd=cat%20/etc/passwd</strong></p>
+<p><strong>/product?id=4%20OR%201=1</strong></p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="../../_images/varattack1.png" src="../../_images/varattack1.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Now that you’ve confirmed that the application is indeed vulnerable to these types of attacks, it’s time to put a WAF policy in place and start blocking these immediately.</p>
+</div>
+<div class="section" id="applying-waf">
+<h2>Applying WAF<a class="headerlink" href="#applying-waf" title="Permalink to this heading">¶</a></h2>
+<p>Back in XC Console, from the <strong>Side menu</strong> under <strong>Manage</strong>, click on <strong>Load Balancers</strong>, <strong>HTTP Load Balancers</strong> &gt;&gt; <strong>Actions</strong> &gt;&gt; <strong>Manage Configuration</strong> for the <strong>[animal-name]-acme-frontend</strong>.</p>
+<p>Click <strong>Edit Configuration</strong> and scroll down to the <strong>Web Application Firewall</strong> section. In the dropdown choose <strong>Enable</strong></p>
+<p>Under <strong>Enable</strong>, click <strong>Add Item</strong>.</p>
+<p>For a name, call it your <strong>[animal-name]-waf</strong> and set the <strong>Enforcement Mode</strong> to blocking. Leave all others <strong>default</strong> and click <strong>Continue</strong>.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="../../_images/waf1.png" src="../../_images/waf1.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Your HTTP Load Balancer Configuration should now look like this.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="../../_images/lbwaf1.png" src="../../_images/lbwaf1.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Click <strong>Save and Exit</strong>.</p>
+</div>
+<div class="section" id="testing-vulnerabilities-with-waf">
+<h2>Testing Vulnerabilities with WAF<a class="headerlink" href="#testing-vulnerabilities-with-waf" title="Permalink to this heading">¶</a></h2>
+<p>For the SQL Injection (SQLi) attack, run the following command from your “Online Diag Tool”. If you closed or lost that tab, the link is: <strong>http://[animal-name]-awstool.lab-mcn.f5demos.com</strong></p>
+<p>SQLi:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="o">-</span><span class="n">A</span> <span class="s2">&quot;Mozilla/5.0&#39;, (select*from(select(sleep(20)))a)) #&quot;</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="p">[</span><span class="n">animal</span><span class="o">-</span><span class="n">name</span><span class="p">]</span><span class="o">-</span><span class="n">acme</span><span class="o">-</span><span class="n">frontend</span><span class="o">.</span><span class="n">lab</span><span class="o">-</span><span class="n">mcn</span><span class="o">.</span><span class="n">f5demos</span><span class="o">.</span><span class="n">com</span><span class="o">/</span> <span class="o">--</span><span class="n">resolve</span> <span class="p">[</span><span class="n">animal</span><span class="o">-</span><span class="n">name</span><span class="p">]</span><span class="o">-</span><span class="n">acme</span><span class="o">-</span><span class="n">frontend</span><span class="o">.</span><span class="n">lab</span><span class="o">-</span><span class="n">mcn</span><span class="o">.</span><span class="n">f5demos</span><span class="o">.</span><span class="n">com</span><span class="p">:</span><span class="mi">80</span><span class="p">:</span><span class="mf">159.60.128.61</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="../../_images/sqliblock1.png" src="../../_images/sqliblock1.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>For some various other attacks you can modify the command and URI as shown below and try these: <strong>All should be Blocked or “Rejected”</strong>.</p>
+<p>Other Attack Samples:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="o">-</span><span class="n">X</span> <span class="n">GET</span> <span class="s2">&quot;http://[animal-name]-acme-frontend.lab-mcn.f5demos.com/?cmd=cat%20/etc/passwd&quot;</span> <span class="o">--</span><span class="n">resolve</span> <span class="p">[</span><span class="n">animal</span><span class="o">-</span><span class="n">name</span><span class="p">]</span><span class="o">-</span><span class="n">acme</span><span class="o">-</span><span class="n">frontend</span><span class="o">.</span><span class="n">lab</span><span class="o">-</span><span class="n">mcn</span><span class="o">.</span><span class="n">f5demos</span><span class="o">.</span><span class="n">com</span><span class="p">:</span><span class="mi">80</span><span class="p">:</span><span class="mf">159.60.128.61</span>
+</pre></div>
+</div>
+<p>Or:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="o">-</span><span class="n">X</span> <span class="n">GET</span> <span class="s2">&quot;http://[animal-name]-acme-frontend.lab-mcn.f5demos.com/product?id=4%20OR%201=1&quot;</span> <span class="o">--</span><span class="n">resolve</span> <span class="p">[</span><span class="n">animal</span><span class="o">-</span><span class="n">name</span><span class="p">]</span><span class="o">-</span><span class="n">acme</span><span class="o">-</span><span class="n">frontend</span><span class="o">.</span><span class="n">lab</span><span class="o">-</span><span class="n">mcn</span><span class="o">.</span><span class="n">f5demos</span><span class="o">.</span><span class="n">com</span><span class="p">:</span><span class="mi">80</span><span class="p">:</span><span class="mf">159.60.128.61</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="../../_images/varblock1.png" src="../../_images/varblock1.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="reviewing-waf-logs">
+<h2>Reviewing WAF Logs<a class="headerlink" href="#reviewing-waf-logs" title="Permalink to this heading">¶</a></h2>
+<p>In this final section, we will review the WAF logs for the attacks we just tested.</p>
+<p>Back in XC Console, from the <strong>Side menu</strong> under <strong>Overview</strong>, click on <strong>Applications</strong>.</p>
+<p>Scroll all the way to the bottom and under <strong>Load Balancers</strong>, click directly on your <strong>[animal-name-acme-frontend]</strong> and then click the <strong>Security Analytics</strong> tab (top middle).</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="../../_images/secmon1.png" src="../../_images/secmon1.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Remember to click refresh and adjust time-frame as necessary.</p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="../../_images/secevents1.png" src="../../_images/secevents1.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Click on the <strong>Requests</strong> tab (top middle) and then click the <strong>Add Filter</strong> icon:</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="../../_images/filter1.png" src="../../_images/filter1.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Type <strong>waf</strong> in the search field, and select <strong>waf_action</strong> &gt;&gt; <strong>In</strong> &gt;&gt; <strong>Block</strong> &gt;&gt; <strong>Apply</strong>.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="../../_images/wafaction1.png" src="../../_images/wafaction1.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>You can now see a filtered <strong>Request Log</strong> view of all blocked events. Feel free to play around with other filters and explore the security events.</p>
+</div>
+<div class="section" id="sanity-check">
+<h2>Sanity Check<a class="headerlink" href="#sanity-check" title="Permalink to this heading">¶</a></h2>
+<p><strong>This is what you just deployed.</strong></p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="../../_images/lab5sanity1.png" src="../../_images/lab5sanity1.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="outro">
+<h2>Outro<a class="headerlink" href="#outro" title="Permalink to this heading">¶</a></h2>
+<p>What a long day it has been at ACME corp…. but you look at your watch and realize that you could have never setup what you just did, in the time it took you, even 3 years ago. The magic of F5 Distributed Cloud Network Connect and App Connect solutions greatly simplify modern problems while saving time and enhancing security.</p>
+<p><strong>We hope you enjoyed this lab!</strong></p>
+<p><strong>End of Lab 5</strong></p>
+</div>
+</div>
+
+
+     </div>
+    
+     <div class="row next-prev-btn-row">
+       <div class="col-lg-12">
+       
+        <a href="lab4.html" title="Lab 4: App Connect - Solving IP Overlap" accesskey="p" class="btn btn-primary left"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Previous</a>
+       
+       
+          <a href="../../class7/class7.html" title="F5 Distributed Cloud - AppStack CaaS &amp; K8s Delivery Options" accesskey="n" class="btn btn-primary right">Next <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
+       
+     </div>
+     </div>
+    
+
+    </article>
+  </div>
+
+</div>
+
+
+  <div id="clouddocs-footer"></div>
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+
+  <script src="../../_static/js/index.js"></script>
+  <script src="../../_static/js/jquery.appear.js"></script>
+  <script src="../../_static/js/printThis.js"></script>
+  <script src="../../_static/js/bootstrap.min.js"></script>
+  <script src="../../_static/js/clouddocs.js"></script>
+  <script src="../../_static/js/CoveoJsSearch.Lazy.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<head>
+  
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-PPZPQ6');</script>
+  <!-- End Google Tag Manager -->
+    <title>Lab 2: Configuring Network Connect (L3/L4 Routing Firewall )</title>
+  
+
+  <meta charset="utf-8">
+  <!-- Twitter Bootstrap viewport setting -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- F5 metadata -->
+  <meta name="title" content="Lab 2: Configuring Network Connect (L3/L4 Routing Firewall )"/>
+  <meta name="product" content="F5 Distributed Cloud"/>
+  <meta name="version" content=""/>
+  <meta name="updated_date"  content="2023-12-21 17:40:18"/>
+  <meta name="archived" content="Archived documents excluded"/>
+  <meta name="doc_type" content="Manual"/>
+  <meta name="lifecycle" content="release"/>
+  <meta name="F5 Distributed Cloud" content=""/>
+
+
+  
+
+  
+  <link href="https://cdn.f5.com/favicon.ico" rel="icon">
+
+</head>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lab 2: Configuring Network Connect (L3/L4 Routing Firewall ) &#8212; F5 Distributed Cloud  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" href="../../_static/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/css/f5.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/css/f5-theme.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/css/CoveoFullSearch.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/21fb8a09c3.css" type="text/css" />
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Module 2: App Connect" href="../module2/module2.html" />
+    <link rel="prev" title="Lab 1: Building an XC Node (CE)" href="lab1.html" /> 
+  </head><body>
+  <div id="clouddocs-header"></div>
+
+    <div id="sidebar" class="section-nav">
+      
+      <!--  version selector ------------------>
+      <div id="version_selector_wrapper">
+      </div>
+      <nav class="nav-sidebartoc">
+
+        
+         <h5>F5 Distributed Cloud  </h5>
+        
+
+        <hr>
+        <span class="nav-sidebartoc">
+            <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../class1/class1.html">F5 Distributed Cloud - Introduction to Deployment Models and Services</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class2/class2.html">F5 Distributed Cloud - WAF/WAAP Deeper Dive</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class3/class3.html">F5 Distributed Cloud - WAF/WAAP Deeper Dive</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class4/class4.html">F5 Distributed Cloud - WAF/WAAP Deeper Dive</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class5/class5.html">F5 Distributed Cloud - Advanced Bot Security</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../class6.html">F5 Distributed Cloud - Intro to Multi-Cloud Networking</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../intro.html">Introduction to the Lab</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="module1.html">Module 1: Network Connect</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="lab1.html">Lab 1: Building an XC Node (CE)</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Lab 2: Configuring Network Connect (L3/L4 Routing Firewall )</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../module2/module2.html">Module 2: App Connect</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../class7/class7.html">F5 Distributed Cloud - AppStack CaaS &amp; K8s Delivery Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class8/class8.html">F5 Distributed Cloud - Introduction to Deployment Models and Services</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class9/class9.html">F5 Distributed Cloud - WAF Policy Supervisor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../archive/archive.html">Archived F5 Distributed Cloud Labs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../2hour/2hour.html">Two (2) Hour F5 Distributed Cloud Labs</a></li>
+</ul>
+
+        </span><!-- Use this file to add extra links to the bottom of the ToC sidebar -->
+<hr>
+  <span class="nav-sidebartoc">
+ <!-- insert content here -->
+  </span>
+      </nav>
+    </div>
+
+
+    <div id="right-sidebar">
+      <h7 style="font-weight:normal">On this page:</h7>
+      <nav class="nav-sidebartoc">
+        <span class="nav-sidebartoc">
+            <ul>
+<li><a class="reference internal" href="#">Lab 2: Configuring Network Connect (L3/L4 Routing Firewall )</a><ul>
+<li><a class="reference internal" href="#verify-the-xc-node-s-health">Verify the XC Node’s Health</a></li>
+<li><a class="reference internal" href="#narrative-check">Narrative Check</a></li>
+<li><a class="reference internal" href="#configuring-network-connect">Configuring Network Connect</a></li>
+<li><a class="reference internal" href="#global-virtual-network">Global Virtual Network</a></li>
+<li><a class="reference internal" href="#fleets">Fleets</a></li>
+<li><a class="reference internal" href="#review-fleet-config">Review Fleet Config</a></li>
+<li><a class="reference internal" href="#fleet-label">Fleet Label</a></li>
+<li><a class="reference internal" href="#bringing-up-the-connection">Bringing up the Connection</a></li>
+<li><a class="reference internal" href="#enhanced-firewall-policy">Enhanced Firewall Policy</a></li>
+<li><a class="reference internal" href="#summary">Summary</a></li>
+<li><a class="reference internal" href="#logging">Logging</a></li>
+<li><a class="reference internal" href="#sanity-check">Sanity Check</a></li>
+</ul>
+</li>
+</ul>
+
+         </span>
+      </nav>
+    </div>
+
+
+
+
+
+  
+  <div class="main active" id="content" >
+    <article class="docs-container site-article-inner">
+              <!-- custom breadcrumb -->
+        <h5>
+            <a href="../../index.html">F5 Distributed Cloud</a>
+              &gt; <a href="../class6.html">F5 Distributed Cloud - Intro to Multi-Cloud Networking</a>
+              &gt; <a href="module1.html">Module 1: Network Connect</a>
+
+          <span class="right">
+             <a href="../../_sources/class6/module1/lab2.rst.txt" rel="nofollow">Source</a> |
+             <a href="https://github.com/f5devcentral/f5-agility-labs-xc">Edit on <i class="fa fa-github" aria-hidden="true"></i></a>
+          </span>
+        </h5>
+        <!-- end custom breadcrumb -->
+      
+
+
+    <!--a title="Export PDF" id="export-pdf" class="btn btn btn-link pull-right">View PDF</a-->
+    <button type="button" id="export-pdf" class="btn btn-link right">PDF</button>
+
+
+    
+     
+         <div class="sidebar" id="version-warning" style="display: none;">
+           <p class="first sidebar-title">
+           <span class="icon fa fa-info-circle fa-lg"></span> Version notice:</p>
+           <p class="last" id="currentVersion"></p>
+          </div>
+
+
+     <div role="main">
+        
+  <div class="section" id="lab-2-configuring-network-connect-l3-l4-routing-firewall">
+<h1>Lab 2: Configuring Network Connect (L3/L4 Routing Firewall )<a class="headerlink" href="#lab-2-configuring-network-connect-l3-l4-routing-firewall" title="Permalink to this heading">¶</a></h1>
+<p><strong>Objective:</strong></p>
+<ul class="simple">
+<li>Verify the XC Node’s health.</li>
+<li>Configure Network Connect to connect the Data Center network to the AWS Network.</li>
+<li>Test connectivity and configure Enhanced Firewall for network security</li>
+</ul>
+<p><strong>Narrative:</strong>
+Now that your XC Node is provisioned, it’s time to verify, explore the XC Console and set up Network Connect to establish secure connectivity between the Data Center and AWS networks.
+After the setup is complete, you will test connectivity and configure network security.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="../../_images/lab2biz1.png" src="../../_images/lab2biz1.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="section" id="verify-the-xc-node-s-health">
+<h2>Verify the XC Node’s Health<a class="headerlink" href="#verify-the-xc-node-s-health" title="Permalink to this heading">¶</a></h2>
+<p>If you are not already logged into the console, please do so now by opening the following URL in your browser:</p>
+<p><a class="reference external" href="https://f5-xc-lab-mcn.console.ves.volterra.io/">https://f5-xc-lab-mcn.console.ves.volterra.io/</a></p>
+<p>From the <strong>Select service</strong> menu, click on <strong>Multi-Cloud Network Connect</strong> and then click on <strong>Sites,</strong></p>
+<p>Your XC Node should have registered successfully and will appear green with a Health Score of 100. You may need to click <strong>Refresh</strong> in the top right corner
+if you do not see your animal name. In this example I was assigned and filtered for <strong>busy-goblin</strong>.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="../../_images/registeredce1.png" src="../../_images/registeredce1.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">If you do not see your Site as registered or in a healthy state please see a Lab Assistant.</p>
+</div>
+<p>From this Dashboard you can note the current <strong>Site Admin State, Provider, SW version, and OS version.</strong></p>
+<p><strong>Please DO NOT click “Upgrade” on any of the Sites!</strong></p>
+<p>Instead, <strong>Click</strong> on the three dots under the <strong>Actions</strong> column at the far right of the screen of <strong>“your animal”</strong>  Site and click on <strong>Manage Configuration</strong>. In this screenshot I was <strong>busy-goblin</strong>.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="../../_images/action1.png" src="../../_images/action1.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Review the <strong>Metadata, Site Type</strong> and <strong>Coordinates</strong> fields as well as the <strong>Connected REs</strong> (Regional Edge) section.</p>
+<p>These are the closest Regional Edge sites based on the latitude and longitude information provided during the deployment process. <strong>Each CE has an auto-provisioned self-healing secure tunnel to redundant RE’s.</strong></p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="../../_images/remeta1.png" src="../../_images/remeta1.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Look at the top left-hand corner where you see Form, Documentation and JSON. <strong>You will see these fields throughout the Distributed Cloud Console configuration menus.</strong></p>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">Distributed Cloud is built with an API-first strategy. All the configurations can be done via GUI or API calls.</p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>You can view the JSON file of the configuration by clicking <strong>JSON</strong>.</p>
+<img alt="../../_images/json2.png" src="../../_images/json2.png" />
+<p>This is the JSON code of the configuration which could be saved to create a backup of the Customer Edge configuration, but that is beyond the scope of this lab.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="../../_images/json11.png" src="../../_images/json11.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Click on <strong>Documentation</strong>.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="../../_images/docu1.png" src="../../_images/docu1.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>This will load the API specification for a Customer Edge Node. Review briefly and click <strong>Cancel and Exit</strong></p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="../../_images/sitev1.png" src="../../_images/sitev1.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>In the <strong>Site</strong> screen, click on your Customer Edge Node <strong>animal name</strong>.  (It should have a green status symbol)</p>
+<p>The default landing is a Dashboard giving you a detailed summary of the Customer Edge Node.  <strong>Briefly</strong> explore the extensive menus and analytics at the top of the screen.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="../../_images/dash11.png" src="../../_images/dash11.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="narrative-check">
+<h2>Narrative Check<a class="headerlink" href="#narrative-check" title="Permalink to this heading">¶</a></h2>
+<p>Now that you are familiar with your new “Software Defined” Node, we can start getting our hands dirty with the real configuration necessary to meet ACME Corp’s first requirement to
+get the network in the Data Center connected to the network in AWS. The backend security device will need to “scan” the frontend in AWS on port 80 and all other ports must be blocked.</p>
+</div>
+<div class="section" id="configuring-network-connect">
+<h2>Configuring Network Connect<a class="headerlink" href="#configuring-network-connect" title="Permalink to this heading">¶</a></h2>
+<p>In our lab today, an Ubuntu Server in the UDF environment will simulate the backend.
+The AWS frontend workload is already deployed along with an XC Node to extend the Customer Edge in the AWS cloud.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The Data Center backend has a pre-existing route to 10.0.3.0/24 and it points to the single outside interface of the Data Center XC Node.  The AWS workload has a route to 10.1.1.0/24 that points to the inside interface of the AWS XC Node.</p>
+</div>
+<img alt="../../_images/netconnlab1.png" src="../../_images/netconnlab1.png" />
+<p>What you have done so far in Lab 1 and the beginning of Lab 2, is setup the ACME Data Center XC Node to extend the Data Center Customer Edge.
+Your next goal is to simply establish routing between these environments by using a hub and spoke model with our Regional Edges as shown in the diagram above.</p>
+<p><strong>All traffic between these networks will now be routed through auto-provisioned, self-healing and encrypted tunnels between the defined Customer Edges and the XC Regional Edges.</strong></p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">In this lab some objects are already created due to permission requirements in the XC Lab environment. You will still observe and walkthrough the configuration for referrence.</p>
+</div>
+</div>
+<div class="section" id="global-virtual-network">
+<h2>Global Virtual Network<a class="headerlink" href="#global-virtual-network" title="Permalink to this heading">¶</a></h2>
+<p>To connect two or more Distributed Cloud node environments together across the Distributed Cloud network we will need to connect the sites through a Global Virtual Network.</p>
+<p>Confirm you are still in the <strong>Multi-Cloud Network Connect</strong> Console under <strong>Sites</strong>. If not, click on the <strong>Select Service</strong> in the left-hand navigation and click on <strong>Multi-Cloud Network Connect</strong>.</p>
+<p>On the left side menu, navigate to  <strong>Manage &gt;&gt; Networking &gt;&gt; Virtual Networks</strong>.</p>
+<p><strong>Observe</strong> the pre-configured <strong>student-global</strong> Virtual Network. Click the the dots under the <strong>Action</strong> menu for <strong>student-global</strong> and then <strong>Manage Config</strong>. Note the very simple config.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="../../_images/studglob1.png" src="../../_images/studglob1.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Click <strong>Cancel and Exit</strong>.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Due to tenant permissions you will not be able to create your own Global Virtual Network.</p>
+</div>
+<p>If you wanted to configure this outside of the lab, you would simply click <strong>Add Virtual Network</strong> button, enter a name for the Virtual Network and make sure it is type <strong>Global</strong>. Simple indeed!</p>
+<p>The configuration <strong>would</strong> look like the screen below.</p>
+<img alt="../../_images/meta1.png" src="../../_images/meta1.png" />
+</div>
+<div class="section" id="fleets">
+<h2>Fleets<a class="headerlink" href="#fleets" title="Permalink to this heading">¶</a></h2>
+<p>A Fleet is used to configure infrastructure components (like nodes) in one or more F5® Distributed Cloud Services Customer Edge (CE) sites homogeneously.</p>
+<p>Fleet configuration includes the following information</p>
+<ul class="simple">
+<li>Software image release to be deployed on the Fleet</li>
+<li>Virtual networks</li>
+<li>List of interface and devices to be configured on every node</li>
+<li>Connections between the virtual networks</li>
+<li>Security policies applied in the Site</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">In this lab we have already created a fleet called “student-fleet” for you due to permission restrictions.</p>
+</div>
+</div>
+<div class="section" id="review-fleet-config">
+<h2>Review Fleet Config<a class="headerlink" href="#review-fleet-config" title="Permalink to this heading">¶</a></h2>
+<p>In Multi-Cloud Network Connect context, go down to <strong>Manage &gt;&gt; Site Management &gt;&gt; Fleets.</strong></p>
+<p>Click on the 3 dots at the far right hand side of student-fleet and select <strong>Manage Configuration</strong></p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="../../_images/studfleet1.png" src="../../_images/studfleet1.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>In the next screen click on <strong>Edit Configuration</strong> in the top right of the screen and <strong>Observe</strong> the Fleet Configuration and Network Connectors.</p>
+<p>A Network Connector is used to create a connection between two virtual networks on a given site.</p>
+<p>For more information on Network Connectors and their functions you can review this link: <a class="reference external" href="https://docs.cloud.f5.com/docs/how-to/networking/network-connectors">https://docs.cloud.f5.com/docs/how-to/networking/network-connectors</a></p>
+<p>The <strong>Network Connectors</strong> are configured as:</p>
+<p><strong>student-global-connector</strong></p>
+<ul class="simple">
+<li>Network Connector Type: Direct, Site Local Inside to a Global Network</li>
+<li>Global Virtual Network: system/student-global</li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p><strong>student-snat-connector</strong></p>
+<p><a href="#id1"><span class="problematic" id="id2">*</span></a>Network Connector Type: SNAT, Site Local Inside to Site Local Outside</p>
+<ul class="simple">
+<li>Routing Mode: Default Gateway</li>
+<li>SNAT Source IP Selection: Interface IP</li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p><strong>student-ce-global-connector</strong></p>
+<ul class="simple">
+<li>Network Connector Type: Direct, Site Local Outside to a Global Network</li>
+<li>Global Virtual Network: system/student-global</li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Also, notice Network Firewall is <strong>NOT</strong> currently defined. We will come back to that in a few moments.</p>
+<p>Click <strong>Cancel and Exit.</strong></p>
+</div>
+<div class="section" id="fleet-label">
+<h2>Fleet Label<a class="headerlink" href="#fleet-label" title="Permalink to this heading">¶</a></h2>
+<p>Labels are a map of string keys and values that can be used to organize and categorize objects within Distributed Cloud.</p>
+<p>Fleet has a field called fleet_label. When a Fleet object is created, the system automatically creates a <strong>“known_label”</strong> named: <strong>“ves.io/fleet”</strong>.
+The known_label is created in the Shared namespace for the tenant. A site is made a “member of Fleet” when this known_label is added to the site.
+A site can have at most one known_label of type ves.io/fleet and hence belongs to exactly one Fleet at any given time.</p>
+<p><strong>Note</strong> the <strong>Fleet Label Value</strong> of the <strong>student-fleet</strong>. The label is also named <strong>student-fleet</strong>.</p>
+<img alt="../../_images/flv1.png" src="../../_images/flv1.png" />
+</div>
+<div class="section" id="bringing-up-the-connection">
+<h2>Bringing up the Connection<a class="headerlink" href="#bringing-up-the-connection" title="Permalink to this heading">¶</a></h2>
+<p>From your UDF environment browser tab,  click on <strong>Access &gt;&gt; Web Shell</strong> on the Ubuntu Client. This will open a new tab to a Web Shell.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="../../_images/ubuntu1.png" src="../../_images/ubuntu1.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p><strong>The workload in AWS has an IP address of 10.0.3.253</strong></p>
+<p>Type <strong>ping 10.0.3.253</strong> and hit <strong>Enter</strong>. You <strong>WILL NOT</strong> get a response.</p>
+<p>Back in the XC Console, navigate to <strong>Multi-Cloud Network Connect &gt;&gt; Sites</strong> and find your <strong>“animal-name”</strong>
+Click the <strong>3 buttons</strong> under the <strong>Action Menu</strong> under <strong>“your animal name”</strong> and select <strong>Manage Configuration</strong>.</p>
+<p>In the top right click <strong>Edit Configuration</strong>.</p>
+<p>You should be here. We will be adding a <strong>Fleet Label</strong> to tag our CE Node into the fleet.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="../../_images/fleetlabel3.png" src="../../_images/fleetlabel3.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Click <strong>Add Label</strong> under the <strong>Labels</strong> section and select the label <strong>ves.io/fleet.</strong>
+For the value click on <strong>student-fleet</strong>, scroll down, <strong>Save and Exit</strong>.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="../../_images/fleetlabel11.png" src="../../_images/fleetlabel11.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>It should look like this:</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="../../_images/fleetlabel21.png" src="../../_images/fleetlabel21.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Check back on your web shell tab with the ping going. Success!!</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="../../_images/ping1.png" src="../../_images/ping1.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">If you want to tear down this connectivity it is as easy as removing the label.</p>
+</div>
+<p>In XC Console, navigate to <strong>Multi-Cloud Network Connect</strong> &gt;&gt; <strong>Sites</strong> and click directly on your <strong>“animal-name”</strong> and finally click on the <strong>Tools</strong> menu on the top, far right.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If you do not see the Tools menu there should be a right chevron “&gt;” that will allow you to access additional menu items.</p>
+</div>
+<p>Click on <strong>Show Routes</strong></p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="../../_images/shroutes1.png" src="../../_images/shroutes1.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Set Virtual Network Type to: <strong>VIRTUAL_NETWORK_SITE_LOCAL_INSIDE</strong> and click the blue <strong>Show routes</strong> button</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="../../_images/shroutes21.png" src="../../_images/shroutes21.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Scroll down to see the AWS subnet route <strong>“10.0.3.0/24</strong> being advertised through the tunnel.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="../../_images/shroutes31.png" src="../../_images/shroutes31.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Routing is good, now let’s test some other ports.
+Go back to the web shell where you ran a ping. We will now test 2 ports that we know the server is listening on.</p>
+<p><strong>Port 80</strong> - Simple Web page</p>
+<p><strong>Port 8080</strong> - Diagnostic tool</p>
+<p>Our first test will be to port 80. In the web shell type: <strong>curl --head http://10.0.3.253</strong></p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="../../_images/curl1.png" src="../../_images/curl1.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Next, push the keyboard “up arrow ” and run the same command but targeted at port 8080 like this: <strong>curl --head http://10.0.3.253:8080</strong></p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="../../_images/80801.png" src="../../_images/80801.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">If you are not getting a <strong>“200 OK”</strong> repsponse, please see a lab assistant before moving on.</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">We now have to close port 8080 per the ACME Corp security department requirement.</p>
+</div>
+</div>
+<div class="section" id="enhanced-firewall-policy">
+<h2>Enhanced Firewall Policy<a class="headerlink" href="#enhanced-firewall-policy" title="Permalink to this heading">¶</a></h2>
+<p>You will now configure the F5 Distributed Cloud Enhanced Firewall to provide network security between these sites.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Due to lab architecture, we will only be able to configure the policies but not apply. We will show you the final step to apply your policy for reference, but you will not actually be able to apply or test.</p>
+</div>
+<p>Navigate to <strong>Manage &gt;&gt; Firewall &gt;&gt; Enhanced Firewall Policies</strong> and click <strong>Add Enhanced Firewall Policy</strong>.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<table border="1" class="docutils align-default">
+<colgroup>
+<col width="47%" />
+<col width="53%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Variable</th>
+<th class="head">Value</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Name</td>
+<td>[animal-name]-fwp</td>
+</tr>
+<tr class="row-odd"><td>Select Enhanced Firewall Policy Rule Type</td>
+<td>Custom Enhanced Firewall Policy Rule Selection</td>
+</tr>
+</tbody>
+</table>
+<p>Click the blue <strong>Configure</strong> hyperlink.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="../../_images/efwp1.png" src="../../_images/efwp1.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Click on <strong>Add Item</strong> to bring up the Rules creation screen. Here you will notice several powerful <strong>“Enhanced”</strong> Source and Destination Traffic filters.</p>
+<table border="1" class="docutils align-default">
+<colgroup>
+<col width="30%" />
+<col width="70%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Variable</th>
+<th class="head">Value</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Name</td>
+<td>[animal-name]-allow-80</td>
+</tr>
+<tr class="row-odd"><td>Source Traffic Filter</td>
+<td>IPv4 Prefix List &gt;&gt; Click Configure and add 10.1.1.0/24 then click <strong>Apply</strong>.</td>
+</tr>
+<tr class="row-even"><td>Destination Traffic Filter</td>
+<td>IPv4 Prefix List &gt;&gt; Click Configure and add 10.0.3.0/24 then click <strong>Apply</strong>.</td>
+</tr>
+<tr class="row-odd"><td>Select Type of Traffic to Match</td>
+<td>Match Protocol and Port Ranges</td>
+</tr>
+<tr class="row-even"><td>Match Protocol and Port Ranges</td>
+<td>TCP &gt;&gt; click <strong>Add Item</strong> and add <strong>80</strong>.</td>
+</tr>
+<tr class="row-odd"><td>Action</td>
+<td>Allow</td>
+</tr>
+</tbody>
+</table>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="../../_images/allow801.png" src="../../_images/allow801.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Click <strong>Apply</strong> and your screen should look like this:</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="../../_images/fwver1.png" src="../../_images/fwver1.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Now we will create the <strong>default deny</strong> to prevent any other traffic between these two networks.</p>
+<p>Click <strong>Add Item</strong> again to add another rule to the <strong>Enhanced Firewall Policy</strong>.</p>
+<table border="1" class="docutils align-default">
+<colgroup>
+<col width="30%" />
+<col width="70%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Variable</th>
+<th class="head">Value</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Name</td>
+<td>[animal-name]-deny-all</td>
+</tr>
+<tr class="row-odd"><td>Source Traffic Filter</td>
+<td>IPv4 Prefix List &gt;&gt; Click Configure and add 10.1.1.0/24 then click <strong>Apply</strong>.</td>
+</tr>
+<tr class="row-even"><td>Destination Traffic Filter</td>
+<td>IPv4 Prefix List &gt;&gt; Click Configure and add 10.0.3.0/24 then click <strong>Apply</strong>.</td>
+</tr>
+<tr class="row-odd"><td>Select Type of Traffic to Match</td>
+<td>Match All Traffic</td>
+</tr>
+<tr class="row-even"><td>Action</td>
+<td>Deny</td>
+</tr>
+</tbody>
+</table>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="../../_images/denyall1.png" src="../../_images/denyall1.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Click <strong>Apply</strong> and your screen should look like this:</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="../../_images/fwver21.png" src="../../_images/fwver21.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Click <strong>Apply</strong> and <strong>Save and Exit</strong>.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="../../_images/save1.png" src="../../_images/save1.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this heading">¶</a></h2>
+<p>You have now created the firewall policy necessary to secure these two networks. Outside of the lab environment you would now add this policy to the fleet by managing your fleet and adding an Enhanced Firewall policy.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="../../_images/fleetpol1.png" src="../../_images/fleetpol1.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="logging">
+<h2>Logging<a class="headerlink" href="#logging" title="Permalink to this heading">¶</a></h2>
+<p>Customers often ask about the logging options with F5 Distributed Cloud. There are two main options for logging.</p>
+<ol class="arabic simple">
+<li>Global Logging - Logging related to activities that occur within Distributed Cloud and on the Regional Edges such as load balancers or WAAP/Bot policy.</li>
+<li>Site Local Logging - Logging related to activities that occur within the Customer Edge Boundary such as load balancers or WAAP/Bot policies runnning locally on an XC Node.</li>
+</ol>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This is the last “Read Only” lab section. Our apologies for the inconvenience.</p>
+</div>
+<p><strong>Global Logging</strong>:</p>
+<p>To observe <strong>(NOT configure)</strong> the Global Logging configuration options, in the side-menu, browse to <strong>Manage &gt;&gt; Log Management &gt;&gt; Global Log Receiver</strong> and click <strong>Add Global Log Receiver</strong>.</p>
+<p>Take particular notice of the different <strong>Log Types</strong> and <strong>Receiver Configurations</strong> which include AWS, Azure and Splunk options to namedrop a few.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="../../_images/globlog1.png" src="../../_images/globlog1.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Click <strong>Cancel and Exit</strong> and Discard any changes.</p>
+<p><strong>Site Local Logging</strong>:</p>
+<p>To observe <strong>(NOT configure)</strong> the Site Local Logging configuration options, in the side-menu, browse to <strong>Manage &gt;&gt; Log Management &gt;&gt; Log Receiver</strong> and click <strong>Add Log Receiver</strong>.</p>
+<p>Click on the <strong>Show Advanced Fields</strong> button on the right and take note of the <strong>Where</strong></p>
+<p>Click <strong>Cancel and Exit</strong> and Discard any changes.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="../../_images/locallog1.png" src="../../_images/locallog1.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p><strong>Applying Site Local Logging</strong>:</p>
+<p>To observe <strong>(NOT configure)</strong> the application of the Site Local Logging profile, browse to <strong>Manage &gt;&gt; Site Management &gt;&gt; Fleets</strong>, click the <strong>3 button</strong> Action menu and click <strong>Manage Configuration</strong>.</p>
+<p>Scroll down to observe the <strong>Logs Streaming</strong> field under <strong>Advanced Configuration</strong>. Outside of the lab environment, you would enable this and select your <strong>Log Receiver</strong> profile.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="../../_images/logs1.png" src="../../_images/logs1.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Click <strong>Cancel and Exit</strong>.</p>
+<p>You can now feel free to explore the <strong>Multi-Cloud Network Connect</strong> Site menus while everyone is getting caught up.</p>
+<p>Click on <strong>Site Map</strong>, <strong>Site Security</strong>, which is where we would review our firewall logs in “real world”, and finally, head down to the <strong>Service Info</strong> Section and click on <strong>About</strong>.</p>
+</div>
+<div class="section" id="sanity-check">
+<h2>Sanity Check<a class="headerlink" href="#sanity-check" title="Permalink to this heading">¶</a></h2>
+<p><strong>This is what you just deployed.</strong></p>
+<img alt="../../_images/lab2rev1.png" src="../../_images/lab2rev1.png" />
+<p><strong>We hope you enjoyed this lab!</strong></p>
+<p><strong>End of Lab 2</strong></p>
+</div>
+</div>
+
+
+     </div>
+    
+     <div class="row next-prev-btn-row">
+       <div class="col-lg-12">
+       
+        <a href="lab1.html" title="Lab 1: Building an XC Node (CE)" accesskey="p" class="btn btn-primary left"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Previous</a>
+       
+       
+          <a href="../module2/module2.html" title="Module 2: App Connect" accesskey="n" class="btn btn-primary right">Next <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
+       
+     </div>
+     </div>
+    
+
+    </article>
+  </div>
+
+</div>
+
+
+  <div id="clouddocs-footer"></div>
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+
+  <script src="../../_static/js/index.js"></script>
+  <script src="../../_static/js/jquery.appear.js"></script>
+  <script src="../../_static/js/printThis.js"></script>
+  <script src="../../_static/js/bootstrap.min.js"></script>
+  <script src="../../_static/js/clouddocs.js"></script>
+  <script src="../../_static/js/CoveoJsSearch.Lazy.min.js"></script>
+  </body>
+</html>

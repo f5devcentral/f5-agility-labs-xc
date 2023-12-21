@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<head>
+  
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-PPZPQ6');</script>
+  <!-- End Google Tag Manager -->
+    <title>Lab 1: Deploying Load Balancer, Configuring F5 Distributed Cloud BotDefense</title>
+  
+
+  <meta charset="utf-8">
+  <!-- Twitter Bootstrap viewport setting -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- F5 metadata -->
+  <meta name="title" content="Lab 1: Deploying Load Balancer, Configuring F5 Distributed Cloud BotDefense"/>
+  <meta name="product" content="F5 Distributed Cloud"/>
+  <meta name="version" content=""/>
+  <meta name="updated_date"  content="2023-12-21 17:40:18"/>
+  <meta name="archived" content="Archived documents excluded"/>
+  <meta name="doc_type" content="Manual"/>
+  <meta name="lifecycle" content="release"/>
+  <meta name="F5 Distributed Cloud" content=""/>
+
+
+  
+
+  
+  <link href="https://cdn.f5.com/favicon.ico" rel="icon">
+
+</head>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lab 1: Deploying Load Balancer, Configuring F5 Distributed Cloud BotDefense &#8212; F5 Distributed Cloud  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" href="../../../_static/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/css/f5.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/css/f5-theme.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/css/CoveoFullSearch.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/css/custom.css" type="text/css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/21fb8a09c3.css" type="text/css" />
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/sphinx_highlight.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+  </head><body>
+  <div id="clouddocs-header"></div>
+
+    <div id="sidebar" class="section-nav">
+      
+      <!--  version selector ------------------>
+      <div id="version_selector_wrapper">
+      </div>
+      <nav class="nav-sidebartoc">
+
+        
+         <h5>F5 Distributed Cloud  </h5>
+        
+
+        <hr>
+        <span class="nav-sidebartoc">
+            <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../class1/class1.html">F5 Distributed Cloud - Introduction to Deployment Models and Services</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../class2/class2.html">F5 Distributed Cloud - WAF/WAAP Deeper Dive</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../class3/class3.html">F5 Distributed Cloud - WAF/WAAP Deeper Dive</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../class4/class4.html">F5 Distributed Cloud - WAF/WAAP Deeper Dive</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../class5/class5.html">F5 Distributed Cloud - Advanced Bot Security</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../class6/class6.html">F5 Distributed Cloud - Intro to Multi-Cloud Networking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../class7/class7.html">F5 Distributed Cloud - AppStack CaaS &amp; K8s Delivery Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../class8/class8.html">F5 Distributed Cloud - Introduction to Deployment Models and Services</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../class9/class9.html">F5 Distributed Cloud - WAF Policy Supervisor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../archive.html">Archived F5 Distributed Cloud Labs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../2hour/2hour.html">Two (2) Hour F5 Distributed Cloud Labs</a></li>
+</ul>
+
+        </span><!-- Use this file to add extra links to the bottom of the ToC sidebar -->
+<hr>
+  <span class="nav-sidebartoc">
+ <!-- insert content here -->
+  </span>
+      </nav>
+    </div>
+
+
+    <div id="right-sidebar">
+      <h7 style="font-weight:normal">On this page:</h7>
+      <nav class="nav-sidebartoc">
+        <span class="nav-sidebartoc">
+            <ul>
+<li><a class="reference internal" href="#">Lab 1: Deploying Load Balancer, Configuring F5 Distributed Cloud BotDefense</a><ul>
+<li><a class="reference internal" href="#task-1-configure-load-balancer-origin-pool-waf-and-botdefense">Task 1: Configure Load Balancer, Origin Pool, WAF and BotDefense</a></li>
+<li><a class="reference internal" href="#task-2-curl-direct">Task 2: Curl - Direct</a></li>
+<li><a class="reference internal" href="#task-3-compare-via-bot-defense">Task 3: Compare Via Bot Defense</a></li>
+</ul>
+</li>
+</ul>
+
+         </span>
+      </nav>
+    </div>
+
+
+
+
+
+  
+  <div class="main active" id="content" >
+    <article class="docs-container site-article-inner">
+              <!-- custom breadcrumb -->
+        <h5>
+            <a href="../../../index.html">F5 Distributed Cloud</a>
+
+          <span class="right">
+             <a href="../../../_sources/archive/2023/class3/lab1.rst.txt" rel="nofollow">Source</a> |
+             <a href="https://github.com/f5devcentral/f5-agility-labs-xc">Edit on <i class="fa fa-github" aria-hidden="true"></i></a>
+          </span>
+        </h5>
+        <!-- end custom breadcrumb -->
+      
+
+
+    <!--a title="Export PDF" id="export-pdf" class="btn btn btn-link pull-right">View PDF</a-->
+    <button type="button" id="export-pdf" class="btn btn-link right">PDF</button>
+
+
+    
+     
+         <div class="sidebar" id="version-warning" style="display: none;">
+           <p class="first sidebar-title">
+           <span class="icon fa fa-info-circle fa-lg"></span> Version notice:</p>
+           <p class="last" id="currentVersion"></p>
+          </div>
+
+
+     <div role="main">
+        
+  <div class="section" id="lab-1-deploying-load-balancer-configuring-f5-distributed-cloud-botdefense">
+<h1>Lab 1: Deploying Load Balancer, Configuring F5 Distributed Cloud BotDefense<a class="headerlink" href="#lab-1-deploying-load-balancer-configuring-f5-distributed-cloud-botdefense" title="Permalink to this heading">¶</a></h1>
+<p>Lab 1 will focus on the deployment and security of an existing hosted application using F5
+Distributed Cloud Platform and Services. This lab will be deployed in a SaaS only configuration
+with no on-premises (public or private cloud) elements.  All configurations will be made via
+the F5 Distributed Cloud Console and within the F5 Distributed Cloud Global Network services architecture.</p>
+<p>The overall goal of this set of labs is to showcase how easy it is for F5 Distributed Cloud BotDefense
+to be enabled. This lab will also act as a quick refresher of how web-based login forms work and how easily
+they can be exploited by credential stuffing attacks. Once this initial lab is complete, we will expand
+on the concepts of attacks and security by utilizing the automation toolkit known as OpenBullet.</p>
+<p>For the tasks that follow, you should have already noted your individual <strong>namespace</strong>. If you
+failed to note it, return to the <strong>Introduction</strong> section of this lab, follow the instructions
+provided and note your <strong>namespace</strong> accordingly. The <strong>Delegated Domain</strong> and the F5 Distributed Cloud
+<strong>Tenant</strong> are listed below for your convenience as they will be the same for all lab attendees.</p>
+<ul class="simple">
+<li><strong>Delegated Domain:</strong> <em>.lab-sec.f5demos.com</em></li>
+<li><strong>F5 Distributed Cloud Tenant:</strong> <a class="reference external" href="https://f5-xc-lab-sec.console.ves.volterra.io">https://f5-xc-lab-sec.console.ves.volterra.io</a></li>
+</ul>
+<p>Following the tasks in the prior <strong>Introduction</strong> Section, you should now be able to access the
+F5 Distributed Cloud Console, having set your Work Domain Roles and Skill levels. If you have not
+done so already, please login to your tenant for this lab and proceed to Task 1.</p>
+<div class="section" id="task-1-configure-load-balancer-origin-pool-waf-and-botdefense">
+<h2>Task 1: Configure Load Balancer, Origin Pool, WAF and BotDefense<a class="headerlink" href="#task-1-configure-load-balancer-origin-pool-waf-and-botdefense" title="Permalink to this heading">¶</a></h2>
+<table border="1" class="docutils align-default">
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><ol class="first last arabic">
+<li><p class="first">Following the <strong>Introduction</strong> section instructions, you should now be in the <strong>Web</strong></p>
+<p><strong>App &amp; API Protection</strong> configuration window. If for some reason you are not in the</p>
+<p><strong>Web App &amp; API Protection</strong> window, use the <strong>Select Service</strong> in the left-hand</p>
+<p>navigation, and click <strong>Web App &amp; API Protection</strong> as shown in the <em>Introduction Section</em></p>
+</li>
+<li><p class="first">In the left-hand navigation expand <strong>Manage</strong> and click <strong>Load Balancers &gt; HTTP Load</strong></p>
+<p><strong>Balancers</strong></p>
+</li>
+<li><p class="first">In the resulting screen click the <strong>Add HTTP Load Balancer</strong> in the graphic as shown.</p>
+</li>
+</ol>
+</td>
+</tr>
+<tr class="row-even"><td><p class="first"><a class="reference internal" href="../../../_images/lab1-0015.png"><img alt="lab001" src="../../../_images/lab1-0015.png" style="width: 800px;" /></a></p>
+<p class="last"><a class="reference internal" href="../../../_images/lab1-0025.png"><img alt="lab002" src="../../../_images/lab1-0025.png" style="width: 800px;" /></a></p>
+</td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils align-default">
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><ol class="first last arabic" start="4">
+<li><p class="first">Using the left-hand navigation and in the sections as shown, enter the following</p>
+<p>data. Values where <strong>&lt;namespace&gt;</strong> is required, use the name of your given namespace.</p>
+<ul class="simple">
+<li><strong>Metadata:Name ID:</strong>  <em>&lt;namespace&gt;-lb</em></li>
+<li><strong>Basic Configuration: List of Domains:</strong> <em>&lt;namespace&gt;.lab-sec.f5demos.com</em></li>
+<li><strong>Basic Configuration: Select Type of Load Balancer:</strong> <em>HTTP</em></li>
+<li><strong>Basic Configuration: Automatically Manage DNS Records:</strong> <em>(Check the checkbox)</em></li>
+<li><strong>Basic Configuration: HTTP Port:</strong> <em>80</em></li>
+</ul>
+</li>
+</ol>
+</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="../../../_images/lab1-0035.png"><img alt="lab003" src="../../../_images/lab1-0035.png" style="width: 800px;" /></a></td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils align-default">
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><ol class="first last arabic" start="5">
+<li><p class="first">In the current window’s left-hand navigation, click <strong>Origins</strong>. Next,</p>
+<p>click <strong>Add Item</strong> within the <strong>Origin Pools</strong> section of <strong>Origins</strong>.</p>
+</li>
+</ol>
+</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="../../../_images/lab1-0045.png"><img alt="lab004" src="../../../_images/lab1-0045.png" style="width: 800px;" /></a></td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils align-default">
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><ol class="first last arabic simple" start="6">
+<li>In the resulting window, use the drop down as shown and click <strong>Add Item</strong>.</li>
+</ol>
+</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="../../../_images/lab1-0055.png"><img alt="lab005" src="../../../_images/lab1-0055.png" style="width: 800px;" /></a></td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils align-default">
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><ol class="first last arabic" start="7">
+<li><p class="first">In the resulting window, enter <strong>&lt;namespace&gt;-pool</strong> in the <strong>Name</strong> field and click</p>
+<p><strong>Add Item</strong> under <strong>Origin Servers</strong></p>
+</li>
+</ol>
+</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="../../../_images/lab1-0065.png"><img alt="lab006" src="../../../_images/lab1-0065.png" style="width: 800px;" /></a></td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils align-default">
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><ol class="first last arabic" start="8">
+<li><p class="first">In the resulting window, <strong>Public DNS Name of Origin Server</strong> should be selected for</p>
+<p><strong>Select Type of Origin Server</strong>.</p>
+</li>
+<li><p class="first">For <strong>DNS Name</strong> enter the following hostname:</p>
+<p><strong>airline-backend.f5se.com</strong> and then click <strong>Apply</strong></p>
+</li>
+</ol>
+</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="../../../_images/lab1-0075.png"><img alt="lab007" src="../../../_images/lab1-0075.png" style="width: 800px;" /></a></td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils align-default">
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><ol class="first last arabic" start="10">
+<li><p class="first">After returning to the prior window, make sure <strong>Port:</strong> under <strong>Basic Configuration</strong></p>
+<p>is configured for <strong>80</strong>.</p>
+</li>
+<li><p class="first">Leave all other values as shown while scrolling to the bottom and click, <strong>Continue</strong>.</p>
+</li>
+<li><p class="first">After returning to the next window and confirming the content, click <strong>Apply</strong>.</p>
+</li>
+</ol>
+</td>
+</tr>
+<tr class="row-even"><td><p class="first"><a class="reference internal" href="../../../_images/lab1-0085.png"><img alt="lab008" src="../../../_images/lab1-0085.png" style="width: 800px;" /></a></p>
+<p><a class="reference internal" href="../../../_images/lab1-0095.png"><img alt="lab009" src="../../../_images/lab1-0095.png" style="width: 800px;" /></a></p>
+<p class="last"><a class="reference internal" href="../../../_images/lab1-0105.png"><img alt="lab010" src="../../../_images/lab1-0105.png" style="width: 800px;" /></a></p>
+</td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils align-default">
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><ol class="first arabic simple" start="13">
+<li>Continuing in the <strong>HTTP Load Balancer</strong> section, on the left-hand menu click on the</li>
+</ol>
+<blockquote class="last">
+<div><strong>Web Application Firewall (WAF)</strong> and select <strong>Enable</strong>.</div></blockquote>
+</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="../../../_images/lab1-0125.png"><img alt="lab012" src="../../../_images/lab1-0125.png" style="width: 800px;" /></a></td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils align-default">
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><ol class="first arabic simple" start="14">
+<li>In the resulting <strong>App Firewall</strong> drop down select <strong>Add Item</strong>.</li>
+</ol>
+<div class="last admonition note">
+<p class="first admonition-title">Note</p>
+<p><em>The “shared/base-appfw” policy is in the “shared namespace” which can be applied to</em></p>
+<p class="last"><em>multiple Load Balancer configurations across namespaces, reducing policy sprawl.</em></p>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="../../../_images/lab1-0145.png"><img alt="lab014" src="../../../_images/lab1-0145.png" style="width: 800px;" /></a></td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils align-default">
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><ol class="first last arabic simple" start="15">
+<li>In the resulting window’s <strong>Metadata</strong> field enter <strong>&lt;namespace&gt;-appfw</strong> for the <strong>Name</strong></li>
+<li>Leaving all other values as default, scroll to the bottom and click <strong>Continue</strong>.</li>
+</ol>
+</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="../../../_images/lab1-0155.png"><img alt="lab015" src="../../../_images/lab1-0155.png" style="width: 800px;" /></a></td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils align-default">
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><ol class="first last arabic" start="17">
+<li><p class="first">In the left-hand navigation, click <strong>Bot Protection</strong>. In the <strong>Bot Protection</strong> Section,</p>
+<p>Change the <strong>Bot Defense</strong> dropdown to <strong>Enable</strong>.</p>
+</li>
+</ol>
+</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="../../../_images/lab1-0165.png"><img alt="lab016" src="../../../_images/lab1-0165.png" style="width: 800px;" /></a></td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils align-default">
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><ol class="first last arabic simple" start="18">
+<li>In the resulting <strong>Bot Defense Policy</strong> section, click the <strong>Configure</strong> link.</li>
+</ol>
+</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="../../../_images/lab1-0175.png"><img alt="lab017" src="../../../_images/lab1-0175.png" style="width: 800px;" /></a></td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils align-default">
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><ol class="first last arabic" start="19">
+<li><p class="first">In the <strong>Protected App Endpoints</strong> window, click the <strong>Configure</strong> link under <strong>App</strong></p>
+<p><strong>Endpoint Type</strong>.</p>
+</li>
+<li><p class="first">In the resulting window, click the <strong>Add Item</strong> in the <strong>App Endpoint Type</strong> section.</p>
+</li>
+</ol>
+</td>
+</tr>
+<tr class="row-even"><td><p class="first"><a class="reference internal" href="../../../_images/lab1-0185.png"><img alt="lab018" src="../../../_images/lab1-0185.png" style="width: 800px;" /></a></p>
+<p class="last"><a class="reference internal" href="../../../_images/lab1-0195.png"><img alt="lab019" src="../../../_images/lab1-0195.png" style="width: 800px;" /></a></p>
+</td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils align-default">
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><ol class="first arabic simple" start="21">
+<li>In the resulting <strong>App Endpoint Type</strong> window, input the following values as shown:</li>
+</ol>
+<ul class="simple">
+<li><strong>Metadata:Name:</strong> <em>auth-bot</em></li>
+<li><strong>HTTP Methods:</strong> <em>POST</em></li>
+<li><strong>Protocol:</strong> <em>BOTH</em></li>
+<li><strong>Path:Path Match:</strong> <em>Prefix</em></li>
+<li><strong>Prefix:</strong> <em>/user/vipsignin</em></li>
+<li><strong>Bot Traffic Mitigation:Select Bot Mitigation Action:</strong> <em>Flag</em></li>
+<li><strong>Bot Traffic Mitigation:Include Mitigation Headers:</strong> <em>Append Headers*</em></li>
+<li><strong>Inference Header Name</strong> and <strong>Automation Type Header Name</strong> as defaults (unchanged).</li>
+</ul>
+<ol class="last arabic simple" start="22">
+<li>Scroll to the bottom and click <strong>Apply</strong></li>
+</ol>
+</td>
+</tr>
+<tr class="row-even"><td><p class="first"><a class="reference internal" href="../../../_images/lab1-0205.png"><img alt="lab020" src="../../../_images/lab1-0205.png" style="width: 800px;" /></a></p>
+<p class="last"><a class="reference internal" href="../../../_images/lab1-0215.png"><img alt="lab021" src="../../../_images/lab1-0215.png" style="width: 800px;" /></a></p>
+</td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils align-default">
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><ol class="first last arabic simple" start="23">
+<li>Then click <strong>Apply</strong> on the <strong>App Endpoint Type</strong> screen</li>
+<li>Then click <strong>Apply</strong> on the <strong>Protected App Endpoints</strong> screen</li>
+<li>Observe the <strong>Bot Defense Policy</strong> is now configured.</li>
+</ol>
+</td>
+</tr>
+<tr class="row-even"><td><p class="first"><a class="reference internal" href="../../../_images/lab1-0225.png"><img alt="lab022" src="../../../_images/lab1-0225.png" style="width: 800px;" /></a></p>
+<p><a class="reference internal" href="../../../_images/lab1-0235.png"><img alt="lab023" src="../../../_images/lab1-0235.png" style="width: 800px;" /></a></p>
+<p class="last"><a class="reference internal" href="../../../_images/lab1-0245.png"><img alt="lab024" src="../../../_images/lab1-0245.png" style="width: 800px;" /></a></p>
+</td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils align-default">
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><ol class="first last arabic" start="26">
+<li><p class="first">Use the left-hand navigation and click <strong>Other Settings</strong> or scroll to the bottom on the</p>
+<p><strong>HTTP Load Balancer</strong> screen, and click <strong>Save and Exit</strong>.</p>
+</li>
+</ol>
+</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="../../../_images/lab1-0255.png"><img alt="lab025" src="../../../_images/lab1-0255.png" style="width: 800px;" /></a></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p><em>The above selection controls how/where the application is advertised. The “Internet”</em></p>
+<p><em>setting means that this application will be advertised globally using the F5 Distributed</em></p>
+<p class="last"><em>Cloud Global Network utilizing Anycast.</em></p>
+</div>
+<table border="1" class="docutils align-default">
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><ol class="first last arabic" start="27">
+<li><p class="first">Note the indicated hostname (copy to notepad or note tool) as this will be used in the</p>
+<p>exercises that follow.</p>
+</li>
+</ol>
+</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="../../../_images/lab1-0265.png"><img alt="lab026" src="../../../_images/lab1-0265.png" style="width: 800px;" /></a></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="task-2-curl-direct">
+<h2>Task 2: Curl - Direct<a class="headerlink" href="#task-2-curl-direct" title="Permalink to this heading">¶</a></h2>
+<p><strong>Run this lab from the JUMPHOST</strong></p>
+<ol class="arabic simple">
+<li>Launch the Chrome Browser and navigate to <a class="reference external" href="https://airline-backend.f5se.com/user/vipsignin">https://airline-backend.f5se.com/user/vipsignin</a></li>
+<li>Once loaded right click on the page and choose <strong>Inspect</strong> then navigate to the <strong>Network</strong> tab on the new right hand side window.  This will allow you to monitor what content is loaded and submitted during interactions with the site.</li>
+</ol>
+<p><a class="reference internal" href="../../../_images/Slide18.png"><img alt="lab029" src="../../../_images/Slide18.png" style="width: 800px;" /></a></p>
+<ol class="arabic simple" start="3">
+<li>On the login prompt enter the following testing username: <strong>john.smith&#64;nobody.com</strong> password: <strong>test123</strong> and then click <strong>Confirm</strong></li>
+<li>This should log you into the account but more important look on the right side panel finding the <strong>vipsignin</strong> POST request.  Clicking on this entry and you will see the POST request that was created for your login.</li>
+<li>Switch to the <strong>payload</strong> tab and we can see the exact data that was submitted.  The Username and Password are expected but we also see a tracking token (though not used here)</li>
+</ol>
+<p><a class="reference internal" href="../../../_images/Slide210.png"><img alt="lab030" src="../../../_images/Slide210.png" style="width: 800px;" /></a></p>
+<ol class="arabic simple" start="6">
+<li>Right click on the <strong>vipsignin</strong> entry choose <strong>Copy</strong> and <strong>Copy as cURL (BASH)</strong> open <strong>Notepad</strong> from the windows start menu and paste the contents in.  This will allow you to inspect the query in greater detail.</li>
+</ol>
+<p><a class="reference internal" href="../../../_images/Slide31.png"><img alt="lab031" src="../../../_images/Slide31.png" style="width: 800px;" /></a></p>
+<ol class="arabic simple" start="7">
+<li>Click the <strong>Ubuntu</strong> icon on the desktop to open a bash prompt.  Once open you can paste the same curl data into the bash prompt to execute the query.  This example shows just how easy it is as a basic level it is to execute credential stuffing style attacks.</li>
+<li>Using any scripting language (python, perl, bash) it becomes trivial to be able to test large amounts of username and password combinations.</li>
+</ol>
+<p><a class="reference internal" href="../../../_images/Slide41.png"><img alt="lab032" src="../../../_images/Slide41.png" style="width: 800px;" /></a></p>
+</div>
+<div class="section" id="task-3-compare-via-bot-defense">
+<h2>Task 3: Compare Via Bot Defense<a class="headerlink" href="#task-3-compare-via-bot-defense" title="Permalink to this heading">¶</a></h2>
+<p><strong>Run this lab from the JUMPHOST</strong></p>
+<ol class="arabic simple">
+<li>Launch the Chrome Browser and navigate to <strong>http://namespace.lab-sec.f5demos.com/user/vipsignin</strong> (note: HTTP not HTTPS)</li>
+<li>Once loaded right click on the page and choose <strong>Inspect</strong> then navigate to the <strong>Network</strong> tab on the new right hand side window.  This will allow you to monitor what content is loaded and submitted during interactions with the site.</li>
+</ol>
+<p><a class="reference internal" href="../../../_images/Slide18.png"><img alt="lab029" src="../../../_images/Slide18.png" style="width: 800px;" /></a></p>
+<ol class="arabic simple" start="3">
+<li>On the login prompt enter the following testing username: <strong>john.smith&#64;nobody.com</strong> password: <strong>test123</strong> and then click <strong>Confirm</strong></li>
+<li>This should log you into the account but more important look on the right side panel finding the <strong>vipsignin</strong> POST request.  Clicking on this entry and you will see the POST request that was created for your login.</li>
+<li>Switch to the <strong>payload</strong> tab and we can see the exact data that was submitted.</li>
+<li>We can see several additional payload entries.  The hardened Javascript silently interrogates the browser and watches as users interact with the page capturing telemetry which is encrypted and sent along with the POST.</li>
+</ol>
+<p><a class="reference internal" href="../../../_images/Slide51.png"><img alt="lab033" src="../../../_images/Slide51.png" style="width: 800px;" /></a></p>
+<p><strong>End of Lab 1:</strong>  This concludes Lab 1, feel free to review and test the configuration.</p>
+<p><a class="reference internal" href="../../../_images/labend5.png"><img alt="labend" src="../../../_images/labend5.png" style="width: 800px;" /></a></p>
+</div>
+</div>
+
+
+     </div>
+    
+
+    </article>
+  </div>
+
+</div>
+
+
+  <div id="clouddocs-footer"></div>
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+
+  <script src="../../../_static/js/index.js"></script>
+  <script src="../../../_static/js/jquery.appear.js"></script>
+  <script src="../../../_static/js/printThis.js"></script>
+  <script src="../../../_static/js/bootstrap.min.js"></script>
+  <script src="../../../_static/js/clouddocs.js"></script>
+  <script src="../../../_static/js/CoveoJsSearch.Lazy.min.js"></script>
+  </body>
+</html>

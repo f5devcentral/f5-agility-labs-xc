@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<head>
+  
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-PPZPQ6');</script>
+  <!-- End Google Tag Manager -->
+    <title>3. Lab 2: Browsers, Automation Tools, and the ATI Dashboard</title>
+  
+
+  <meta charset="utf-8">
+  <!-- Twitter Bootstrap viewport setting -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- F5 metadata -->
+  <meta name="title" content="3. Lab 2: Browsers, Automation Tools, and the ATI Dashboard"/>
+  <meta name="product" content="F5 Distributed Cloud"/>
+  <meta name="version" content=""/>
+  <meta name="updated_date"  content="2023-12-21 17:40:18"/>
+  <meta name="archived" content="Archived documents excluded"/>
+  <meta name="doc_type" content="Manual"/>
+  <meta name="lifecycle" content="release"/>
+  <meta name="F5 Distributed Cloud" content=""/>
+
+
+  
+
+  
+  <link href="https://cdn.f5.com/favicon.ico" rel="icon">
+
+</head>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3. Lab 2: Browsers, Automation Tools, and the ATI Dashboard &#8212; F5 Distributed Cloud  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" href="../../../_static/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/css/f5.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/css/f5-theme.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/css/CoveoFullSearch.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/css/custom.css" type="text/css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/21fb8a09c3.css" type="text/css" />
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/sphinx_highlight.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+  </head><body>
+  <div id="clouddocs-header"></div>
+
+    <div id="sidebar" class="section-nav">
+      
+      <!--  version selector ------------------>
+      <div id="version_selector_wrapper">
+      </div>
+      <nav class="nav-sidebartoc">
+
+        
+         <h5>F5 Distributed Cloud  </h5>
+        
+
+        <hr>
+        <span class="nav-sidebartoc">
+            <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../class1/class1.html">F5 Distributed Cloud - Introduction to Deployment Models and Services</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../class2/class2.html">F5 Distributed Cloud - WAF/WAAP Deeper Dive</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../class3/class3.html">F5 Distributed Cloud - WAF/WAAP Deeper Dive</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../class4/class4.html">F5 Distributed Cloud - WAF/WAAP Deeper Dive</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../class5/class5.html">F5 Distributed Cloud - Advanced Bot Security</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../class6/class6.html">F5 Distributed Cloud - Intro to Multi-Cloud Networking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../class7/class7.html">F5 Distributed Cloud - AppStack CaaS &amp; K8s Delivery Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../class8/class8.html">F5 Distributed Cloud - Introduction to Deployment Models and Services</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../class9/class9.html">F5 Distributed Cloud - WAF Policy Supervisor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../archive.html">Archived F5 Distributed Cloud Labs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../2hour/2hour.html">Two (2) Hour F5 Distributed Cloud Labs</a></li>
+</ul>
+
+        </span><!-- Use this file to add extra links to the bottom of the ToC sidebar -->
+<hr>
+  <span class="nav-sidebartoc">
+ <!-- insert content here -->
+  </span>
+      </nav>
+    </div>
+
+
+    <div id="right-sidebar">
+      <h7 style="font-weight:normal">On this page:</h7>
+      <nav class="nav-sidebartoc">
+        <span class="nav-sidebartoc">
+            <ul>
+<li><a class="reference internal" href="#">3. Lab 2: Browsers, Automation Tools, and the ATI Dashboard</a><ul>
+<li><a class="reference internal" href="#browser-devtools">3.1. 1. Browser Devtools</a></li>
+<li><a class="reference internal" href="#inspecting-requests">3.2. 2. Inspecting Requests</a></li>
+<li><a class="reference internal" href="#generating-interesting-traffic">3.3. 3. Generating Interesting Traffic</a><ul>
+<li><a class="reference internal" href="#browser">3.3.1. Browser</a></li>
+<li><a class="reference internal" href="#curl">3.3.2. cURL</a></li>
+<li><a class="reference internal" href="#selenium">3.3.3. Selenium</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#reviewing-data-in-the-application-traffic-insights-dashboard">3.4. 4. Reviewing Data in the Application Traffic Insights Dashboard</a><ul>
+<li><a class="reference internal" href="#device-dashboard">3.4.1. Device Dashboard</a></li>
+<li><a class="reference internal" href="#bot-assessment-dashboard">3.4.2. Bot Assessment Dashboard</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+         </span>
+      </nav>
+    </div>
+
+
+
+
+
+  
+  <div class="main active" id="content" >
+    <article class="docs-container site-article-inner">
+              <!-- custom breadcrumb -->
+        <h5>
+            <a href="../../../index.html">F5 Distributed Cloud</a>
+
+          <span class="right">
+             <a href="../../../_sources/archive/2022/class7/lab2.rst.txt" rel="nofollow">Source</a> |
+             <a href="https://github.com/f5devcentral/f5-agility-labs-xc">Edit on <i class="fa fa-github" aria-hidden="true"></i></a>
+          </span>
+        </h5>
+        <!-- end custom breadcrumb -->
+      
+
+
+    <!--a title="Export PDF" id="export-pdf" class="btn btn btn-link pull-right">View PDF</a-->
+    <button type="button" id="export-pdf" class="btn btn-link right">PDF</button>
+
+
+    
+     
+         <div class="sidebar" id="version-warning" style="display: none;">
+           <p class="first sidebar-title">
+           <span class="icon fa fa-info-circle fa-lg"></span> Version notice:</p>
+           <p class="last" id="currentVersion"></p>
+          </div>
+
+
+     <div role="main">
+        
+  <div class="section" id="lab-2-browsers-automation-tools-and-the-ati-dashboard">
+<h1><span class="section-number">3. </span>Lab 2: Browsers, Automation Tools, and the ATI Dashboard<a class="headerlink" href="#lab-2-browsers-automation-tools-and-the-ati-dashboard" title="Permalink to this heading">¶</a></h1>
+<div class="section" id="browser-devtools">
+<h2><span class="section-number">3.1. </span>1. Browser Devtools<a class="headerlink" href="#browser-devtools" title="Permalink to this heading">¶</a></h2>
+<p>In your browser switch to the JuiceShop tab.  Open the browser’s “Developer Tools”.</p>
+<blockquote>
+<div><div class="figure align-default" id="id1">
+<img alt="../../../_images/ati-browser-inspect.png" src="../../../_images/ati-browser-inspect.png" />
+<p class="caption"><span class="caption-text">In most browsers the quickest way to do this is to right-click anywhere on the webpage and select “Inspect” (or “Inspect Element”) from the pop-up menu.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-default" id="id2">
+<img alt="../../../_images/ati-devtools-dock.png" src="../../../_images/ati-devtools-dock.png" />
+<p class="caption"><span class="caption-text">It is easiest to view the request log in the network tab if the developer tools window is at the bottom of the browser window rather than on the side.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+</div></blockquote>
+<p>In the developer tools window, switch to the “Network” tab.</p>
+<blockquote>
+<div><img alt="../../../_images/ati-devtools-network.png" src="../../../_images/ati-devtools-network.png" />
+</div></blockquote>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="inspecting-requests">
+<h2><span class="section-number">3.2. </span>2. Inspecting Requests<a class="headerlink" href="#inspecting-requests" title="Permalink to this heading">¶</a></h2>
+<p>With the developer tools (devtools) Network tab open, clear the request log (if any requests are visible), and then refresh the JuiceShop page.</p>
+<p>Scroll to the top of the request log and select the first request. It should be a request to your JuiceShop *.access.udf.f5.com domain.</p>
+<blockquote>
+<div><img alt="../../../_images/ati-devtools-juiceshop.png" src="../../../_images/ati-devtools-juiceshop.png" />
+</div></blockquote>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Select this request and click on the “Response” tab.</p>
+<blockquote>
+<div><div class="figure align-default" id="id3">
+<img alt="../../../_images/ati-juiceshop-jstag.png" src="../../../_images/ati-juiceshop-jstag.png" />
+<p class="caption"><span class="caption-text">Notice the script tag injected by the iApp, and the subsequent request to get that JavaScript.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+</div></blockquote>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Select the request for the javascript and look at the response.  This is the javascript returned by the F5XC ATI servers.  This javascript is generated “on-the-fly” and is unique for every user/session.</p>
+<blockquote>
+<div><img alt="../../../_images/ati-juiceshop-jsrequest.png" src="../../../_images/ati-juiceshop-jsrequest.png" />
+</div></blockquote>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Scroll down in the request log and look for a request to “dip”.  Select this request and then select the “Payload” tab.</p>
+<blockquote>
+<div><div class="figure align-default" id="id4">
+<img alt="../../../_images/ati-juiceshop-dip.png" src="../../../_images/ati-juiceshop-dip.png" />
+<p class="caption"><span class="caption-text">This is the XHR request initiated by the ATI JavaScript that reports the device ID and other telemetry to the F5XC ATI servers.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+<div class="legend">
+The payload of this request contains encoded and encrypted data only accessible by the F5XC ATI servers.</div>
+</div>
+</div></blockquote>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>In order to provide additional security for the Juiceshop website, it is only accessible to users who are authenticated to UDF.  Any requests that are sent to your JuiceShop UDF domain name will be blocked before they get to your UDF deployment BIGIP if they do not include your UDF session cookie.
+We will need this cookie in order for automated requests to reach your BIGIP and show up in the ATI dashboard.</p>
+<ol class="arabic simple">
+<li>In the browser devtools, select the “Application” tab.</li>
+<li>In the “Storage” section of the left-hand menu expand the “Cookies” section and click on the domain name listed.</li>
+<li>Look for a cookie named <strong>udf.sid</strong> and select it.</li>
+<li>From the “Cookie Value” pane select the entire cookie value.</li>
+<li>Copy the cookie value and paste it into a text editor for later use.</li>
+</ol>
+<blockquote>
+<div><img alt="../../../_images/ati-copy-cookie.png" src="../../../_images/ati-copy-cookie.png" />
+</div></blockquote>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="generating-interesting-traffic">
+<h2><span class="section-number">3.3. </span>3. Generating Interesting Traffic<a class="headerlink" href="#generating-interesting-traffic" title="Permalink to this heading">¶</a></h2>
+<p>Because the ATI dashboard is a high-level overview of your traffic, individual requests are not reflacted in the graphs and reports.  WE need to generate enough traffic for the graphs to populate and show data.</p>
+<p>There are several ways that we can do this.  For a production website that is publicly accessible this will hapen automatically in a matter of minutes.  We can try to mimic that by browsing around on the Juiceshop app in our browser.</p>
+<div class="section" id="browser">
+<h3><span class="section-number">3.3.1. </span>Browser<a class="headerlink" href="#browser" title="Permalink to this heading">¶</a></h3>
+<p>Browse around in the JuiceShop app for a few minutes.</p>
+</div>
+<div class="section" id="curl">
+<h3><span class="section-number">3.3.2. </span>cURL<a class="headerlink" href="#curl" title="Permalink to this heading">¶</a></h3>
+<p>Open a terminal on your computer and use curl to send requests your JuiceShop app.  You will need to include the udf.sid cookie in your curl request.</p>
+<p>Be sure to replace <code class="docutils literal notranslate"><span class="pre">&lt;&lt;your</span> <span class="pre">juice</span> <span class="pre">shop</span> <span class="pre">domain&gt;&gt;</span></code> and <code class="docutils literal notranslate"><span class="pre">&lt;&lt;your</span> <span class="pre">udf.sid</span> <span class="pre">cookie</span> <span class="pre">value&gt;&gt;</span></code> with the actual values.</p>
+<blockquote>
+<div><code class="docutils literal notranslate"><span class="pre">curl</span> <span class="pre">'https://&lt;&lt;your</span> <span class="pre">juice</span> <span class="pre">shop</span> <span class="pre">domain&gt;&gt;/'</span> <span class="pre">-H</span> <span class="pre">'Cookie:</span> <span class="pre">udf.sid=&lt;&lt;your</span> <span class="pre">udf.sid</span> <span class="pre">cookie</span> <span class="pre">value&gt;&gt;'</span></code></div></blockquote>
+<p>This will only send one request.  You could just send this command over and over but, we need lots of requests.  Also, this will send the request with the default curl User-Agent string making it very obvious that this is an automated request.</p>
+<p>If you are on a Linux or Mac computer you can use the following script from the command line to send 300 requests:</p>
+<blockquote>
+<div><code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">i</span> <span class="pre">in</span> <span class="pre">`seq</span> <span class="pre">300`;</span> <span class="pre">do</span> <span class="pre">curl</span> <span class="pre">'&lt;&lt;your</span> <span class="pre">juice</span> <span class="pre">shop</span> <span class="pre">domain&gt;&gt;/'</span> <span class="pre">-H</span> <span class="pre">'Cookie:</span> <span class="pre">udf.sid=&lt;&lt;paste</span> <span class="pre">cookie</span> <span class="pre">value</span> <span class="pre">here&gt;&gt;'</span> <span class="pre">-H</span> <span class="pre">'User-Agent:</span> <span class="pre">Mozilla/5.0</span> <span class="pre">(Macintosh;</span> <span class="pre">Intel</span> <span class="pre">Mac</span> <span class="pre">OS</span> <span class="pre">X</span> <span class="pre">10_15_7)</span> <span class="pre">AppleWebKit/537.36</span> <span class="pre">(KHTML,</span> <span class="pre">like</span> <span class="pre">Gecko)</span> <span class="pre">Chrome/100.0.4896.75</span> <span class="pre">Safari/537.36';</span> <span class="pre">done</span></code></div></blockquote>
+<p>If you are on a Windows computer you can use the following script from the command line to send 300 requests:</p>
+<blockquote>
+<div><code class="docutils literal notranslate"><span class="pre">FOR</span> <span class="pre">/L</span> <span class="pre">%I</span> <span class="pre">IN</span> <span class="pre">(1,1,300)</span> <span class="pre">DO</span> <span class="pre">curl</span> <span class="pre">'&lt;&lt;your</span> <span class="pre">juice</span> <span class="pre">shop</span> <span class="pre">domain&gt;&gt;/'</span> <span class="pre">-H</span> <span class="pre">'Cookie:</span> <span class="pre">udf.sid=&lt;&lt;paste</span> <span class="pre">cookie</span> <span class="pre">value</span> <span class="pre">here&gt;&gt;'</span> <span class="pre">-H</span> <span class="pre">'User-Agent:</span> <span class="pre">Mozilla/5.0</span> <span class="pre">(Macintosh;</span> <span class="pre">Intel</span> <span class="pre">Mac</span> <span class="pre">OS</span> <span class="pre">X</span> <span class="pre">10_15_7)</span> <span class="pre">AppleWebKit/537.36</span> <span class="pre">(KHTML,</span> <span class="pre">like</span> <span class="pre">Gecko)</span> <span class="pre">Chrome/100.0.4896.75</span> <span class="pre">Safari/537.36'</span></code></div></blockquote>
+<p>Repeat this a few times to send more than 1000 requests.</p>
+<p>Even though we are sending a valid User-Agent string, cURL is not able to process JavaScript and so it is still very easy to determine that the requests it sends are automated.</p>
+</div>
+<div class="section" id="selenium">
+<h3><span class="section-number">3.3.3. </span>Selenium<a class="headerlink" href="#selenium" title="Permalink to this heading">¶</a></h3>
+<p>Selenium is a browser automation tool often used by organizations to test their applications for functionality and performance.  It has the ability to automate all of the major browsers.</p>
+<p>Because Selenium is driving a real browser it has the ability to load the entire page, all of the resources on it (CSS, JS, images, etc.) and process any JavaScript.  It is, in fact, a real browser.</p>
+<p>Return to the UDF Lab console and select the WebShell access method for the LAMP server.</p>
+<p>In the WebShell window change to the /home/ubuntu directory.</p>
+<blockquote>
+<div><code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">/home/ubuntu</span></code></div></blockquote>
+<p>You will now run a python Selenium Script that will send requests to your JuiceShop app.</p>
+<p>In the WebShell window enter the following command:</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">juiceshop-bot.py</span></code></p>
+<p>When prompted paste in your JuiceShop UDF URL for the “Target URL”, and your “UDF Session Cookie” value. For “Request Count” enter 1000.</p>
+<img alt="../../../_images/ati-pysel-cmd.png" src="../../../_images/ati-pysel-cmd.png" />
+</div></blockquote>
+<p>The script will start and a log will appear tracking the progress of the script.  The script will take several minutes to complete.</p>
+<blockquote>
+<div><img alt="../../../_images/ati-pysel-running.png" src="../../../_images/ati-pysel-running.png" />
+</div></blockquote>
+<p>During this time you can use your local terminal to send more cURL requests or manually browse Juiceshop with your browser.</p>
+</div>
+</div>
+<div class="section" id="reviewing-data-in-the-application-traffic-insights-dashboard">
+<h2><span class="section-number">3.4. </span>4. Reviewing Data in the Application Traffic Insights Dashboard<a class="headerlink" href="#reviewing-data-in-the-application-traffic-insights-dashboard" title="Permalink to this heading">¶</a></h2>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p>Because the Application Traffic Insights dashboard is intended only to provide a high-level analysis of web application traffic the dashboard does not provide real-time updates of requests.  Traffic analyzed by ATI can take over an hour to reflect in the dashboard graphs.</p>
+<p>Please be patient and know that your data will eventully show up in the dashboard.</p>
+<p class="last">While you are waiting you can continue to send traffic to your JuiceShop app.  But remember if you use any other methods to send traffic that you must include the <strong>udf.sid</strong> cookie or it will not make it to your UDF BIGIP and so will not be reported to ATI.</p>
+</div>
+<p>In your browser return to the F5XC ATI dashboard.  If you have been away from this tab for a while, you may be prompted to reauthenticate.</p>
+<div class="section" id="device-dashboard">
+<h3><span class="section-number">3.4.1. </span>Device Dashboard<a class="headerlink" href="#device-dashboard" title="Permalink to this heading">¶</a></h3>
+<p>From the left-hand menu select the “Dashboard”.</p>
+<p>The Device Dashboard provides a high-level overview of the devices accessing your web applications.  Each of the graphs and tables provides some insights into those devices; how many unique devices, how many devices return to your websites, how long these devices have been known to your system, etc.
+Also, there are insights into the relationship of those devices with other identifers such as User-Agent and ASNs.</p>
+<blockquote>
+<div><img alt="../../../_images/ati-device-dashboard.png" src="../../../_images/ati-device-dashboard.png" />
+<img alt="../../../_images/ati-device-dashboard2.png" src="../../../_images/ati-device-dashboard2.png" />
+</div></blockquote>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="bot-assessment-dashboard">
+<h3><span class="section-number">3.4.2. </span>Bot Assessment Dashboard<a class="headerlink" href="#bot-assessment-dashboard" title="Permalink to this heading">¶</a></h3>
+<p>From the left-hand menu select the “Bot Assessment”.</p>
+<p>The Bot Assessment Dashboard provides a high-level overview of suspected automation to your web applications including the top ASNs that are the source of this traffic, and the top URLs that are targets of the automation.</p>
+<blockquote>
+<div><img alt="../../../_images/ati-dashboard-bot.png" src="../../../_images/ati-dashboard-bot.png" />
+</div></blockquote>
+</div>
+</div>
+</div>
+
+
+     </div>
+    
+
+    </article>
+  </div>
+
+</div>
+
+
+  <div id="clouddocs-footer"></div>
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+
+  <script src="../../../_static/js/index.js"></script>
+  <script src="../../../_static/js/jquery.appear.js"></script>
+  <script src="../../../_static/js/printThis.js"></script>
+  <script src="../../../_static/js/bootstrap.min.js"></script>
+  <script src="../../../_static/js/clouddocs.js"></script>
+  <script src="../../../_static/js/CoveoJsSearch.Lazy.min.js"></script>
+  </body>
+</html>

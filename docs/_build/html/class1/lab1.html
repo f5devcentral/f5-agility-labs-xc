@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<head>
+  
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-PPZPQ6');</script>
+  <!-- End Google Tag Manager -->
+    <title>Lab 1: Deploying F5 Distributed Cloud Proxy Services to Securely Deliver a Public Endpoint</title>
+  
+
+  <meta charset="utf-8">
+  <!-- Twitter Bootstrap viewport setting -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- F5 metadata -->
+  <meta name="title" content="Lab 1: Deploying F5 Distributed Cloud Proxy Services to Securely Deliver a Public Endpoint"/>
+  <meta name="product" content="F5 Distributed Cloud"/>
+  <meta name="version" content=""/>
+  <meta name="updated_date"  content="2023-12-21 17:40:18"/>
+  <meta name="archived" content="Archived documents excluded"/>
+  <meta name="doc_type" content="Manual"/>
+  <meta name="lifecycle" content="release"/>
+  <meta name="F5 Distributed Cloud" content=""/>
+
+
+  
+
+  
+  <link href="https://cdn.f5.com/favicon.ico" rel="icon">
+
+</head>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lab 1: Deploying F5 Distributed Cloud Proxy Services to Securely Deliver a Public Endpoint &#8212; F5 Distributed Cloud  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" href="../_static/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/css/f5.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/css/f5-theme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/css/CoveoFullSearch.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/21fb8a09c3.css" type="text/css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Lab 2: Deploying an AWS VPC Site" href="lab2.html" />
+    <link rel="prev" title="Introduction: Accessing F5 Distributed Cloud Console" href="intro.html" /> 
+  </head><body>
+  <div id="clouddocs-header"></div>
+
+    <div id="sidebar" class="section-nav">
+      
+      <!--  version selector ------------------>
+      <div id="version_selector_wrapper">
+      </div>
+      <nav class="nav-sidebartoc">
+
+        
+         <h5>F5 Distributed Cloud  </h5>
+        
+
+        <hr>
+        <span class="nav-sidebartoc">
+            <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="class1.html">F5 Distributed Cloud - Introduction to Deployment Models and Services</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="class1.html#welcome">Welcome</a></li>
+<li class="toctree-l2"><a class="reference internal" href="class1.html#objectives">Objectives:</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="class1.html#lab-tasks">Lab &amp; Tasks:</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="intro.html">Introduction: Accessing F5 Distributed Cloud Console</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Lab 1: Deploying F5 Distributed Cloud Proxy Services to Securely Deliver a Public Endpoint</a></li>
+<li class="toctree-l3"><a class="reference internal" href="lab2.html">Lab 2: Deploying an AWS VPC Site</a></li>
+<li class="toctree-l3"><a class="reference internal" href="lab3.html">Lab 3: Protecting a Private Endpoint</a></li>
+<li class="toctree-l3"><a class="reference internal" href="lab4.html">Lab 4: Introduction to F5 Distributed Cloud DNS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="lab5.html">Lab 5: Introduction to Observability</a></li>
+<li class="toctree-l3"><a class="reference internal" href="lab6.html">Lab 6: Introduction to Content Delivery Networks (CDN)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="lab7.html">Lab 7: Introduction to MCN</a></li>
+<li class="toctree-l3"><a class="reference internal" href="close.html">Conclusion</a></li>
+<li class="toctree-l3"><a class="reference internal" href="close.html#appendix">Appendix</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../class2/class2.html">F5 Distributed Cloud - WAF/WAAP Deeper Dive</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../class3/class3.html">F5 Distributed Cloud - WAF/WAAP Deeper Dive</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../class4/class4.html">F5 Distributed Cloud - WAF/WAAP Deeper Dive</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../class5/class5.html">F5 Distributed Cloud - Advanced Bot Security</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../class6/class6.html">F5 Distributed Cloud - Intro to Multi-Cloud Networking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../class7/class7.html">F5 Distributed Cloud - AppStack CaaS &amp; K8s Delivery Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../class8/class8.html">F5 Distributed Cloud - Introduction to Deployment Models and Services</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../class9/class9.html">F5 Distributed Cloud - WAF Policy Supervisor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../archive/archive.html">Archived F5 Distributed Cloud Labs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2hour/2hour.html">Two (2) Hour F5 Distributed Cloud Labs</a></li>
+</ul>
+
+        </span><!-- Use this file to add extra links to the bottom of the ToC sidebar -->
+<hr>
+  <span class="nav-sidebartoc">
+ <!-- insert content here -->
+  </span>
+      </nav>
+    </div>
+
+
+    <div id="right-sidebar">
+      <h7 style="font-weight:normal">On this page:</h7>
+      <nav class="nav-sidebartoc">
+        <span class="nav-sidebartoc">
+            <ul>
+<li><a class="reference internal" href="#">Lab 1: Deploying F5 Distributed Cloud Proxy Services to Securely Deliver a Public Endpoint</a><ul>
+<li><a class="reference internal" href="#task-1-configure-load-balancer-and-origin-pool">Task 1: Configure Load Balancer and Origin Pool</a></li>
+<li><a class="reference internal" href="#task-2-testing-the-application-and-viewing-telemetry-data">Task 2: Testing the Application and Viewing Telemetry Data</a></li>
+<li><a class="reference internal" href="#task-3-configure-an-application-firewall-policy-to-protect-the-application">Task 3: Configure an Application Firewall Policy to Protect the Application</a></li>
+<li><a class="reference internal" href="#task-4-test-the-application-firewall-and-view-security-events">Task 4. Test the Application Firewall and View Security Events</a></li>
+</ul>
+</li>
+</ul>
+
+         </span>
+      </nav>
+    </div>
+
+
+
+
+
+  
+  <div class="main active" id="content" >
+    <article class="docs-container site-article-inner">
+              <!-- custom breadcrumb -->
+        <h5>
+            <a href="../index.html">F5 Distributed Cloud</a>
+              &gt; <a href="class1.html">F5 Distributed Cloud - Introduction to Deployment Models and Services</a>
+
+          <span class="right">
+             <a href="../_sources/class1/lab1.rst.txt" rel="nofollow">Source</a> |
+             <a href="https://github.com/f5devcentral/f5-agility-labs-xc">Edit on <i class="fa fa-github" aria-hidden="true"></i></a>
+          </span>
+        </h5>
+        <!-- end custom breadcrumb -->
+      
+
+
+    <!--a title="Export PDF" id="export-pdf" class="btn btn btn-link pull-right">View PDF</a-->
+    <button type="button" id="export-pdf" class="btn btn-link right">PDF</button>
+
+
+    
+     
+         <div class="sidebar" id="version-warning" style="display: none;">
+           <p class="first sidebar-title">
+           <span class="icon fa fa-info-circle fa-lg"></span> Version notice:</p>
+           <p class="last" id="currentVersion"></p>
+          </div>
+
+
+     <div role="main">
+        
+  <div class="section" id="lab-1-deploying-f5-distributed-cloud-proxy-services-to-securely-deliver-a-public-endpoint">
+<h1>Lab 1: Deploying F5 Distributed Cloud Proxy Services to Securely Deliver a Public Endpoint<a class="headerlink" href="#lab-1-deploying-f5-distributed-cloud-proxy-services-to-securely-deliver-a-public-endpoint" title="Permalink to this heading">¶</a></h1>
+<p>This lab will focus on the deployment and security of an existing hosted application using F5
+Distributed Cloud Platform and Services.  This lab will be deployed in a SaaS only
+configuration with no on-premises (public or private cloud) elements.  All configuration
+will be made via the F5 Distributed Cloud Console and within the F5 Distributed Cloud Global
+Network services architecture.</p>
+<p>For the tasks that follow, you should have already noted your individual <strong>namespace</strong>. If you
+failed to note it, return to the <strong>Introduction</strong> section of this lab, follow the instructions
+provided and note your <strong>namespace</strong> accordingly. The <strong>Delegated Domain</strong> and the F5
+Distributed Cloud <strong>Tenant</strong> are listed below for your convenience as they will be the same for
+all lab attendees.</p>
+<ul class="simple">
+<li><strong>Delegated Domain:</strong> <em>.lab-sec.f5demos.com</em></li>
+<li><strong>F5 Distributed Cloud Tenant:</strong> <a class="reference external" href="https://f5-xc-lab-sec.console.ves.volterra.io">https://f5-xc-lab-sec.console.ves.volterra.io</a></li>
+</ul>
+<p>Following the tasks in the prior <strong>Introduction</strong> Section, you should now be able to access the
+F5 Distributed Cloud Console, having set your Work Domain Roles and Skill levels. If you have
+not done so already, please login to your tenant for this lab and proceed to Task 1.</p>
+<div class="section" id="task-1-configure-load-balancer-and-origin-pool">
+<h2>Task 1: Configure Load Balancer and Origin Pool<a class="headerlink" href="#task-1-configure-load-balancer-and-origin-pool" title="Permalink to this heading">¶</a></h2>
+<p>The following steps will allow you to deploy and advertise a globally available application.
+These steps will create an origin pool, add a health monitor, define an application, register
+its DNS, and advertise the application on the Internet using the F5 Distributed Cloud Global
+Network.</p>
+<table border="1" class="docutils align-default">
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><ol class="first arabic">
+<li><p class="first">Following the <strong>Introduction</strong> section  instructions, you should now be in the <strong>Multi-Cloud App Connect</strong></p>
+<p>configuration window. If for some reason you are not in the <strong>Multi-Cloud App Connect</strong> window, use the</p>
+<p><strong>Select Service</strong> in the left-hand navigation, and click <strong>Multi-Cloud App Connect</strong> as shown in the</p>
+<p><em>Introduction section, Task 2, Step 9</em>.</p>
+</li>
+<li><p class="first">In the left-hand navigation expand <strong>Manage</strong> and click <strong>Load Balancers &gt; Origin Pools</strong></p>
+</li>
+<li><p class="first">In the resulting screen click the <strong>Add Origin Pool</strong> in the graphic as shown.</p>
+</li>
+</ol>
+<div class="last admonition note">
+<p class="first admonition-title">Note</p>
+<p><a href="#id1"><span class="problematic" id="id2">*</span></a>You have defaulted to your specific namespace as that is the only namespace to which you have</p>
+<p class="last"><em>administrative access.*</em></p>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p class="first"><a class="reference internal" href="../_images/lab1-0016.png"><img alt="lab001" src="../_images/lab1-0016.png" style="width: 800px;" /></a></p>
+<p class="last"><a class="reference internal" href="../_images/lab1-0026.png"><img alt="lab002" src="../_images/lab1-0026.png" style="width: 800px;" /></a></p>
+</td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils align-default">
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><ol class="first last arabic" start="4">
+<li><p class="first">In the resulting window, enter <strong>&lt;namespace&gt;-pool</strong> in the <strong>Name</strong> field and click <strong>Add Item</strong> under</p>
+<p><strong>Origin Servers</strong></p>
+</li>
+</ol>
+</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="../_images/lab1-0036.png"><img alt="lab003" src="../_images/lab1-0036.png" style="width: 800px;" /></a></td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils align-default">
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><ol class="first last arabic" start="5">
+<li><p class="first">In the resulting window, <strong>Public DNS Name of Origin Server</strong> should be selected for <strong>Select Type of</strong></p>
+<p><strong>Origin Server</strong>.</p>
+</li>
+<li><p class="first">For <strong>DNS Name</strong> enter the following hostname: <strong>demo-app.amer.myedgedemo.com</strong> and then click <strong>Apply</strong></p>
+</li>
+</ol>
+</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="../_images/lab1-0046.png"><img alt="lab004" src="../_images/lab1-0046.png" style="width: 800px;" /></a></td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils align-default">
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><ol class="first last arabic simple" start="7">
+<li>After returning to the prior window, change the <strong>Port</strong> under <strong>Origin server Port</strong> to <strong>80</strong>.</li>
+<li>Scroll to the bottom and click <strong>Save and Exit</strong>.</li>
+</ol>
+</td>
+</tr>
+<tr class="row-even"><td><p class="first"><a class="reference internal" href="../_images/lab1-0056.png"><img alt="lab005" src="../_images/lab1-0056.png" style="width: 800px;" /></a></p>
+<p class="last"><a class="reference internal" href="../_images/lab1-0066.png"><img alt="lab006" src="../_images/lab1-0066.png" style="width: 800px;" /></a></p>
+</td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils align-default">
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><ol class="first last arabic simple" start="9">
+<li>In the left-hand navigation expand <strong>Manage</strong> and click <strong>Load Balancers &gt; HTTP Load</strong> <strong>Balancers</strong>.</li>
+<li>In the resulting screen click the <strong>Add HTTP Load Balancer</strong> in the graphic as shown.</li>
+</ol>
+</td>
+</tr>
+<tr class="row-even"><td><p class="first"><a class="reference internal" href="../_images/lab1-0076.png"><img alt="lab007" src="../_images/lab1-0076.png" style="width: 800px;" /></a></p>
+<p class="last"><a class="reference internal" href="../_images/lab1-0086.png"><img alt="lab008" src="../_images/lab1-0086.png" style="width: 800px;" /></a></p>
+</td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils align-default">
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><ol class="first last arabic" start="11">
+<li><p class="first">Using the left-hand navigation and in the sections as shown, enter the following data. Values where</p>
+<p><strong>&lt;namespace&gt;</strong> is required, use the name of your given namespace.</p>
+<ul class="simple">
+<li><strong>Metadata:Name ID:</strong>  <em>&lt;namespace&gt;-lb</em></li>
+<li><strong>Domains and LB Type: List of Domains:</strong> <em>&lt;namespace&gt;.lab-sec.f5demos.com</em></li>
+<li><strong>Domains and LB Type: Select Type of Load Balancer:</strong> <em>HTTP</em></li>
+<li><strong>Domains and LB Type: Automatically Manage DNS Records:</strong> <em>(Check the checkbox)</em></li>
+<li><strong>Domains and LB Type: HTTP Port:</strong> <em>80</em></li>
+</ul>
+</li>
+</ol>
+</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="../_images/lab1-0096.png"><img alt="lab009" src="../_images/lab1-0096.png" style="width: 800px;" /></a></td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils align-default">
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><ol class="first last arabic" start="12">
+<li><p class="first">In the current window’s left-hand navigation, click <strong>Origins</strong>. Next, click <strong>Add Item Pools</strong> section of</p>
+<p><strong>Origins</strong>.</p>
+</li>
+</ol>
+</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="../_images/lab1-0106.png"><img alt="lab010" src="../_images/lab1-0106.png" style="width: 800px;" /></a></td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils align-default">
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><ol class="first last arabic simple" start="13">
+<li>In the resulting window, verify <strong>Origin Pool</strong> is selected for <strong>Select Origin Pool **Method</strong>.</li>
+<li>Select the <strong>&lt;namespace&gt;/&lt;namespace&gt;-pool</strong> from the <strong>Origin Pool</strong>  dropdown.</li>
+<li>Click <strong>Apply</strong></li>
+</ol>
+</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="../_images/lab1-0113.png"><img alt="lab011" src="../_images/lab1-0113.png" style="width: 800px;" /></a></td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils align-default">
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><ol class="first arabic" start="16">
+<li><p class="first">In the resulting <strong>HTTP Load Balancer</strong> window, scroll to the <strong>Other Settings</strong> section and note the</p>
+<p><strong>VIP Advertisement</strong> setting.</p>
+</li>
+<li><p class="first">Click <strong>Save and Exit</strong> at the bottom of the <strong>HTTP Load Balancer</strong> configuration screen.</p>
+</li>
+</ol>
+<div class="last admonition note">
+<p class="first admonition-title">Note</p>
+<p><em>The VIP Advertisement selection controls how/where the application is advertised. The “Internet” setting</em></p>
+<p><em>means that this application will be advertised globally using the F5 Distributed Cloud Global Network</em></p>
+<p class="last"><em>utilizing Anycast.</em></p>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="../_images/lab1-0126.png"><img alt="lab012" src="../_images/lab1-0126.png" style="width: 800px;" /></a></td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils align-default">
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><ol class="first last arabic" start="18">
+<li><p class="first">In the <strong>HTTP Load Balancers</strong> window, note the application hostname under the <strong>Domains</strong> column <em>(This</em></p>
+<p><em>was done in Task1: Step 19)</em>.</p>
+</li>
+</ol>
+</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="../_images/lab1-0136.png"><img alt="lab013" src="../_images/lab1-0136.png" style="width: 800px;" /></a></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="task-2-testing-the-application-and-viewing-telemetry-data">
+<h2>Task 2: Testing the Application and Viewing Telemetry Data<a class="headerlink" href="#task-2-testing-the-application-and-viewing-telemetry-data" title="Permalink to this heading">¶</a></h2>
+<p>The following steps will validate access to the application via web browser, review the
+Performance Monitoring dashboard, and gather request details.</p>
+<table border="1" class="docutils align-default">
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><ol class="first last arabic">
+<li><p class="first">Open another tab in your browser (Chrome shown), navigate to the newly configured Load Balancer</p>
+<p>configuration: <strong>http://&lt;namespace&gt;.lab-sec.f5demos.com</strong>, to confirm it is functional.</p>
+</li>
+<li><p class="first">Navigate to the <strong>HEADER</strong> section under <strong>Menu</strong> to generate additional traffic.</p>
+</li>
+</ol>
+</td>
+</tr>
+<tr class="row-even"><td><p class="first"><a class="reference internal" href="../_images/lab1-0146.png"><img alt="lab014" src="../_images/lab1-0146.png" style="width: 800px;" /></a></p>
+<p class="last"><a class="reference internal" href="../_images/lab1-0156.png"><img alt="lab015" src="../_images/lab1-0156.png" style="width: 800px;" /></a></p>
+</td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils align-default">
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><ol class="first last arabic" start="3">
+<li><p class="first">Returning to the F5 Distributed Cloud Console, use the left-hand navigation to navigate to Multi-Cloud App</p>
+<p>Connect section and expand <strong>Virtual Hosts</strong> and then click on <strong>HTTP Load Balancers</strong></p>
+</li>
+<li><p class="first">Click on <strong>Performance Monitoring</strong> link provided for your respective load balancer.</p>
+</li>
+</ol>
+</td>
+</tr>
+<tr class="row-even"><td><p class="first"><a class="reference internal" href="../_images/lab1-0166.png"><img alt="lab016" src="../_images/lab1-0166.png" style="width: 800px;" /></a></p>
+<p class="last"><a class="reference internal" href="../_images/lab1-0176.png"><img alt="lab017" src="../_images/lab1-0176.png" style="width: 800px;" /></a></p>
+</td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils align-default">
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><ol class="first arabic" start="5">
+<li><p class="first">Change the viewable time period from Last 5 minutes (default) to <strong>1 hour</strong> by selecting the dropdown</p>
+<p>shown, click <strong>Last 1 hour</strong> then clicking <strong>Apply</strong>.</p>
+</li>
+<li><p class="first">Note the <strong>End to end Latency</strong> tile.  This shows the average latency for all requests to this load</p>
+<p>balancer.</p>
+</li>
+</ol>
+<div class="last admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><em>As you have not run many requests, summary analytics may not be available in the dashboard view yet.</em></p>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p class="first"><a class="reference internal" href="../_images/lab1-0186.png"><img alt="lab018" src="../_images/lab1-0186.png" style="width: 800px;" /></a></p>
+<p class="last"><a class="reference internal" href="../_images/lab1-0196.png"><img alt="lab019" src="../_images/lab1-0196.png" style="width: 800px;" /></a></p>
+</td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils align-default">
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><ol class="first arabic" start="7">
+<li><p class="first">Click the <strong>Requests</strong> link to see detailed information about individual requests.</p>
+</li>
+<li><p class="first">Note the <strong>Chart</strong> shows a graphical representation of all of the response codes for the selected time</p>
+<p>frame.</p>
+</li>
+</ol>
+<div class="last admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><em>This data can be filtered to quickly narrow in on points of interest.</em></p>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p class="first"><a class="reference internal" href="../_images/lab1-0206.png"><img alt="lab020" src="../_images/lab1-0206.png" style="width: 800px;" /></a></p>
+<p class="last"><a class="reference internal" href="../_images/lab1-0216.png"><img alt="lab021" src="../_images/lab1-0216.png" style="width: 800px;" /></a></p>
+</td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils align-default">
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><ol class="first last arabic" start="9">
+<li><p class="first">Click the <strong>Hide Chart</strong> link to free up space in the browser window.</p>
+</li>
+<li><p class="first">Expand one of the individual requests to view additional details about that request.</p>
+</li>
+<li><p class="first">Note the <strong>Duration</strong> section.  This shows the latency for this specific request.  These values can be</p>
+<p>compared to the average latency data noted in step 6.</p>
+</li>
+</ol>
+</td>
+</tr>
+<tr class="row-even"><td><p class="first"><a class="reference internal" href="../_images/lab1-0226.png"><img alt="lab022" src="../_images/lab1-0226.png" style="width: 800px;" /></a></p>
+<p class="last"><a class="reference internal" href="../_images/lab1-0236.png"><img alt="lab023" src="../_images/lab1-0236.png" style="width: 800px;" /></a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="task-3-configure-an-application-firewall-policy-to-protect-the-application">
+<h2>Task 3: Configure an Application Firewall Policy to Protect the Application<a class="headerlink" href="#task-3-configure-an-application-firewall-policy-to-protect-the-application" title="Permalink to this heading">¶</a></h2>
+<p>The following steps will guide you through adding a Web Application Firewall (WAF) Policy.</p>
+<p>These steps will create a WAF Policy and apply the WAF policy to the load balancer created in Task 1.</p>
+<table border="1" class="docutils align-default">
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><ol class="first last arabic">
+<li><p class="first">Following <strong>Task 2</strong>, you should have the <strong>Multi-Cloud App Connect</strong> navigation panel on the left of your</p>
+<p>console.  If for some reason you do not see the <strong>Multi-Cloud App Connect</strong> navigation panel, use the</p>
+<p><strong>Select Service</strong> dropdown at the top left, and click <strong>Multi-Cloud App Connect</strong> as shown in the</p>
+<p><em>Introduction section, Task 2, Step 9</em>.</p>
+</li>
+<li><p class="first">In the left-hand navigation expand <strong>Security</strong> and click <strong>App Firewall</strong>.</p>
+</li>
+<li><p class="first">On the resulting page click <strong>Add App Firewall</strong></p>
+</li>
+</ol>
+</td>
+</tr>
+<tr class="row-even"><td><p class="first"><a class="reference internal" href="../_images/lab1-0246.png"><img alt="lab024" src="../_images/lab1-0246.png" style="width: 800px;" /></a></p>
+<p class="last"><a class="reference internal" href="../_images/lab1-0256.png"><img alt="lab025" src="../_images/lab1-0256.png" style="width: 800px;" /></a></p>
+</td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils align-default">
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><ol class="first last arabic simple" start="4">
+<li>In the resulting window’s <strong>Metadata</strong> section enter <strong>&lt;namespace&gt;-appfw</strong> for the <strong>Name</strong>.</li>
+<li>Under <strong>Enforcement Mode</strong>, change the mode to <strong>Blocking</strong>.</li>
+<li>Leaving all other values as default, scroll to the bottom and click <strong>Save and Exit</strong>.</li>
+</ol>
+</td>
+</tr>
+<tr class="row-even"><td><p class="first"><a class="reference internal" href="../_images/lab1-0266.png"><img alt="lab026" src="../_images/lab1-0266.png" style="width: 800px;" /></a></p>
+<p class="last"><a class="reference internal" href="../_images/lab1-0275.png"><img alt="lab027" src="../_images/lab1-0275.png" style="width: 800px;" /></a></p>
+</td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils align-default">
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><ol class="first last arabic" start="7">
+<li><p class="first">In the left-hand navigation expand <strong>Manage</strong> and click <strong>Load Balancers &gt; HTTP Load Balancers</strong></p>
+</li>
+<li><p class="first">On the resulting page find the HTTP Load Balancer created in <strong>Task 1</strong> <em>(&lt;namespace&gt;-lb)</em>.  Click the</p>
+<p>ellipsis under Actions and select <strong>Manage Configuration</strong>.</p>
+</li>
+</ol>
+</td>
+</tr>
+<tr class="row-even"><td><p class="first"><a class="reference internal" href="../_images/lab1-0285.png"><img alt="lab028" src="../_images/lab1-0285.png" style="width: 800px;" /></a></p>
+<p class="last"><a class="reference internal" href="../_images/lab1-0294.png"><img alt="lab029" src="../_images/lab1-0294.png" style="width: 800px;" /></a></p>
+</td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils align-default">
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><ol class="first last arabic simple" start="9">
+<li>On the resulting page click <strong>Edit Configuration</strong>.</li>
+<li>Click <strong>Web Application Firewall</strong> in the left-hand navigation.</li>
+</ol>
+</td>
+</tr>
+<tr class="row-even"><td><p class="first"><a class="reference internal" href="../_images/lab1-0304.png"><img alt="lab030" src="../_images/lab1-0304.png" style="width: 800px;" /></a></p>
+<p class="last"><a class="reference internal" href="../_images/lab1-0314.png"><img alt="lab031" src="../_images/lab1-0314.png" style="width: 800px;" /></a></p>
+</td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils align-default">
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><ol class="first last arabic" start="11">
+<li><p class="first">Under the <strong>Web Application Firewall</strong> section select <strong>Enable</strong> from the <strong>Web Application Firewall</strong></p>
+<p><strong>(WAF)</strong> dropdown.</p>
+</li>
+<li><p class="first">Select the Web Application Firewall name that you created in <em>Steps 1-6</em> of this task</p>
+<p><em>(&lt;namespace&gt;-appfw)</em> from the <strong>Enable</strong> dropdown.</p>
+</li>
+<li><p class="first">Scroll to the bottom of the page and click <strong>Save and Exit</strong></p>
+</li>
+</ol>
+</td>
+</tr>
+<tr class="row-even"><td><p class="first"><a class="reference internal" href="../_images/lab1-0324.png"><img alt="lab032" src="../_images/lab1-0324.png" style="width: 800px;" /></a></p>
+<p class="last"><a class="reference internal" href="../_images/lab1-0334.png"><img alt="lab033" src="../_images/lab1-0334.png" style="width: 800px;" /></a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="task-4-test-the-application-firewall-and-view-security-events">
+<h2>Task 4. Test the Application Firewall and View Security Events<a class="headerlink" href="#task-4-test-the-application-firewall-and-view-security-events" title="Permalink to this heading">¶</a></h2>
+<p>The following steps will test and validate the Web Application Firewall, review the Security</p>
+<p>Monitoring dashboard, and gather security event details.</p>
+<table border="1" class="docutils align-default">
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><ol class="first arabic">
+<li><p class="first">Open another tab in your browser (Chrome shown), navigate to the newly configured Load Balancer</p>
+<p>configuration: <strong>http://&lt;namespace&gt;.lab-sec.f5demos.com</strong>, to confirm it is functional.</p>
+</li>
+<li><p class="first">Using some of the sample attacks below, add the URI path &amp; variables to your application to generate</p>
+<p>security event data.</p>
+<ul class="simple">
+<li>/?cmd=cat%20/etc/passwd</li>
+<li>/product?id=4%20OR%201=1</li>
+<li>/cart?search=aaa’&gt;&lt;script&gt;prompt(‘Please+enter+your+password’);&lt;/script&gt;</li>
+</ul>
+</li>
+</ol>
+<div class="last admonition note">
+<p class="first admonition-title">Note</p>
+<p><em>The web application firewall is blocking these requests to protect the application. The block page can</em></p>
+<p class="last"><em>be customized to provide additional information.</em></p>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="../_images/lab1-0344.png"><img alt="lab034" src="../_images/lab1-0344.png" style="width: 800px;" /></a></td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils align-default">
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><ol class="first last arabic" start="3">
+<li><p class="first">Returning to the F5 Distributed Cloud Console, use the left-hand navigation to navigate to Multi-Cloud App</p>
+<p>Connect setion and expand <strong>Virtual Hosts</strong> and click on <strong>HTTP Load Balancers</strong>.</p>
+</li>
+<li><p class="first">Click on the <strong>Security Monitoring</strong> link for your respective load balancer.</p>
+</li>
+</ol>
+</td>
+</tr>
+<tr class="row-even"><td><p class="first"><a class="reference internal" href="../_images/lab1-0354.png"><img alt="lab035" src="../_images/lab1-0354.png" style="width: 800px;" /></a></p>
+<p class="last"><a class="reference internal" href="../_images/lab1-0364.png"><img alt="lab036" src="../_images/lab1-0364.png" style="width: 800px;" /></a></p>
+</td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils align-default">
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><ol class="first arabic" start="5">
+<li><p class="first">From the <strong>Dashboard</strong> view, using the horizontal navigation, click <strong>Requests</strong>.</p>
+</li>
+<li><p class="first">Note the <strong>Chart</strong> shows a graphical representation of all of the response codes for the selected time</p>
+<p>frame.</p>
+</li>
+</ol>
+<div class="last admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><em>If you lost your 1 Hour Filter, re-apply using Task 2: Step 5</em></p>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p class="first"><a class="reference internal" href="../_images/lab1-0374.png"><img alt="lab037" src="../_images/lab1-0374.png" style="width: 800px;" /></a></p>
+<p class="last"><a class="reference internal" href="../_images/lab1-0384.png"><img alt="lab038" src="../_images/lab1-0384.png" style="width: 800px;" /></a></p>
+</td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils align-default">
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><ol class="first arabic" start="7">
+<li><p class="first">Click the <strong>Hide Chart</strong> link to free up space in the browser window.</p>
+</li>
+<li><p class="first">Expand your latest security event as shown.</p>
+</li>
+<li><p class="first">Note the summary detail provided in the <strong>Information</strong> link.  The <strong>req_id</strong> which is synonymous with</p>
+<p><strong>Support ID</strong> (filterable) from the block page.</p>
+</li>
+<li><p class="first">Scroll to the bottom of the information screen to see specific signatures detected and actions taken</p>
+<p>during the security event.</p>
+</li>
+</ol>
+<div class="last admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><em>Note that Requests have additional detail in JSON format</em></p>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p class="first"><a class="reference internal" href="../_images/lab1-0394.png"><img alt="lab039" src="../_images/lab1-0394.png" style="width: 800px;" /></a></p>
+<p><a class="reference internal" href="../_images/lab1-0404.png"><img alt="lab040" src="../_images/lab1-0404.png" style="width: 800px;" /></a></p>
+<p class="last"><a class="reference internal" href="../_images/lab1-0414.png"><img alt="lab041" src="../_images/lab1-0414.png" style="width: 800px;" /></a></p>
+</td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils align-default">
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><p class="first"><strong>End of Lab 1:</strong>  This concludes Lab 1.  In this lab you created an origin pool to connect to the</p>
+<p>application, you then created a load balancer and associated the origin pool to the load balancer.  This</p>
+<p>allowed the application to be advertised via the F5 Distributed Cloud Global Network.  The Distributed Cloud</p>
+<p>Console was then used to review telemetry data gathered for the application.  Next an Application Firewall</p>
+<p>policy was created and assigned to protect the application.  Finally a sample attack was run against the</p>
+<p>application and the security event data was reviewed within the Distributed Cloud Console.</p>
+<p class="last">A brief presentation will be shared prior to the beginning of Lab 2.</p>
+</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="../_images/labend6.png"><img alt="labend" src="../_images/labend6.png" style="width: 800px;" /></a></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+     </div>
+    
+     <div class="row next-prev-btn-row">
+       <div class="col-lg-12">
+       
+        <a href="intro.html" title="Introduction: Accessing F5 Distributed Cloud Console" accesskey="p" class="btn btn-primary left"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Previous</a>
+       
+       
+          <a href="lab2.html" title="Lab 2: Deploying an AWS VPC Site" accesskey="n" class="btn btn-primary right">Next <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
+       
+     </div>
+     </div>
+    
+
+    </article>
+  </div>
+
+</div>
+
+
+  <div id="clouddocs-footer"></div>
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+
+  <script src="../_static/js/index.js"></script>
+  <script src="../_static/js/jquery.appear.js"></script>
+  <script src="../_static/js/printThis.js"></script>
+  <script src="../_static/js/bootstrap.min.js"></script>
+  <script src="../_static/js/clouddocs.js"></script>
+  <script src="../_static/js/CoveoJsSearch.Lazy.min.js"></script>
+  </body>
+</html>

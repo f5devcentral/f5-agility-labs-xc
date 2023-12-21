@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<head>
+  
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-PPZPQ6');</script>
+  <!-- End Google Tag Manager -->
+    <title>Lab 1: Building an XC Node (CE)</title>
+  
+
+  <meta charset="utf-8">
+  <!-- Twitter Bootstrap viewport setting -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- F5 metadata -->
+  <meta name="title" content="Lab 1: Building an XC Node (CE)"/>
+  <meta name="product" content="F5 Distributed Cloud"/>
+  <meta name="version" content=""/>
+  <meta name="updated_date"  content="2023-12-21 17:40:18"/>
+  <meta name="archived" content="Archived documents excluded"/>
+  <meta name="doc_type" content="Manual"/>
+  <meta name="lifecycle" content="release"/>
+  <meta name="F5 Distributed Cloud" content=""/>
+
+
+  
+
+  
+  <link href="https://cdn.f5.com/favicon.ico" rel="icon">
+
+</head>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lab 1: Building an XC Node (CE) &#8212; F5 Distributed Cloud  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css" />
+    <link rel="stylesheet" href="../../../../_static/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/css/f5.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/css/f5-theme.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/css/CoveoFullSearch.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/21fb8a09c3.css" type="text/css" />
+    <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+    <script src="../../../../_static/jquery.js"></script>
+    <script src="../../../../_static/underscore.js"></script>
+    <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../../../_static/doctools.js"></script>
+    <script src="../../../../_static/sphinx_highlight.js"></script>
+    <script src="../../../../_static/clipboard.min.js"></script>
+    <script src="../../../../_static/copybutton.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" /> 
+  </head><body>
+  <div id="clouddocs-header"></div>
+
+    <div id="sidebar" class="section-nav">
+      
+      <!--  version selector ------------------>
+      <div id="version_selector_wrapper">
+      </div>
+      <nav class="nav-sidebartoc">
+
+        
+         <h5>F5 Distributed Cloud  </h5>
+        
+
+        <hr>
+        <span class="nav-sidebartoc">
+            <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../class1/class1.html">F5 Distributed Cloud - Introduction to Deployment Models and Services</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../class2/class2.html">F5 Distributed Cloud - WAF/WAAP Deeper Dive</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../class3/class3.html">F5 Distributed Cloud - WAF/WAAP Deeper Dive</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../class4/class4.html">F5 Distributed Cloud - WAF/WAAP Deeper Dive</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../class5/class5.html">F5 Distributed Cloud - Advanced Bot Security</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../class6/class6.html">F5 Distributed Cloud - Intro to Multi-Cloud Networking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../class7/class7.html">F5 Distributed Cloud - AppStack CaaS &amp; K8s Delivery Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../class8/class8.html">F5 Distributed Cloud - Introduction to Deployment Models and Services</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../class9/class9.html">F5 Distributed Cloud - WAF Policy Supervisor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../archive.html">Archived F5 Distributed Cloud Labs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../2hour/2hour.html">Two (2) Hour F5 Distributed Cloud Labs</a></li>
+</ul>
+
+        </span><!-- Use this file to add extra links to the bottom of the ToC sidebar -->
+<hr>
+  <span class="nav-sidebartoc">
+ <!-- insert content here -->
+  </span>
+      </nav>
+    </div>
+
+
+    <div id="right-sidebar">
+      <h7 style="font-weight:normal">On this page:</h7>
+      <nav class="nav-sidebartoc">
+        <span class="nav-sidebartoc">
+            <ul>
+<li><a class="reference internal" href="#">Lab 1: Building an XC Node (CE)</a><ul>
+<li><a class="reference internal" href="#prerequisite"><strong>Prerequisite</strong></a></li>
+<li><a class="reference internal" href="#logging-into-the-xc-console"><strong>Logging into the XC Console</strong></a></li>
+<li><a class="reference internal" href="#find-your-namespace"><strong>Find your Namespace</strong></a></li>
+<li><a class="reference internal" href="#site-token"><strong>Site Token</strong></a></li>
+<li><a class="reference internal" href="#setting-up-the-customer-edge"><strong>Setting up the Customer Edge</strong></a></li>
+<li><a class="reference internal" href="#option-1-cli-site-setup"><strong>Option 1: CLI Site Setup</strong></a></li>
+<li><a class="reference internal" href="#option-2-site-ui-site-setup"><strong>Option 2: Site UI Site Setup</strong></a></li>
+<li><a class="reference internal" href="#registering-the-customer-edge"><strong>Registering the Customer Edge</strong></a></li>
+<li><a class="reference internal" href="#sanity-check">Sanity Check</a></li>
+</ul>
+</li>
+</ul>
+
+         </span>
+      </nav>
+    </div>
+
+
+
+
+
+  
+  <div class="main active" id="content" >
+    <article class="docs-container site-article-inner">
+              <!-- custom breadcrumb -->
+        <h5>
+            <a href="../../../../index.html">F5 Distributed Cloud</a>
+
+          <span class="right">
+             <a href="../../../../_sources/archive/2023/class4/module1/lab1.rst.txt" rel="nofollow">Source</a> |
+             <a href="https://github.com/f5devcentral/f5-agility-labs-xc">Edit on <i class="fa fa-github" aria-hidden="true"></i></a>
+          </span>
+        </h5>
+        <!-- end custom breadcrumb -->
+      
+
+
+    <!--a title="Export PDF" id="export-pdf" class="btn btn btn-link pull-right">View PDF</a-->
+    <button type="button" id="export-pdf" class="btn btn-link right">PDF</button>
+
+
+    
+     
+         <div class="sidebar" id="version-warning" style="display: none;">
+           <p class="first sidebar-title">
+           <span class="icon fa fa-info-circle fa-lg"></span> Version notice:</p>
+           <p class="last" id="currentVersion"></p>
+          </div>
+
+
+     <div role="main">
+        
+  <div class="section" id="lab-1-building-an-xc-node-ce">
+<h1>Lab 1: Building an XC Node (CE)<a class="headerlink" href="#lab-1-building-an-xc-node-ce" title="Permalink to this heading">¶</a></h1>
+<p><strong>Objective:</strong></p>
+<ul class="simple">
+<li>Get familiar with the UDF Lab Environment.</li>
+<li>Deploy an XC Node to define the Customer Edge at the UDF Data Center.</li>
+<li>Explore and become familiar with the Distributed Cloud Console.</li>
+</ul>
+<p><strong>Narrative:</strong></p>
+<p>After consulting with your trusty F5 Solutions Engineer, you decide to setup F5 Distributed Cloud, Network Connect. This will allow for privately routed network connectivity between two disparate networks.
+You also found out that you can use the F5 Distributed Cloud, Enhanced Firewall to provide network security between Sites.
+We already did a push-button deployment of the AWS XC Node to define the Customer Edge in the ACME VPC, which only took a few moments.</p>
+<p>Now, Lab 1 starts right after you have loaded the downloadable XC Node OVA on to your Data Center’s local hypervisor (VMWARE or KVM).</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Your Data Center environment in these labs is the F5 UDF platform, which uses KVM as it’s underlying virtualization technology. The OVA has already been imported for you. We also have hardware and container deployment options for Production XC Nodes.</p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="../../../../_images/lab1intro.png" src="../../../../_images/lab1intro.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="section" id="prerequisite">
+<h2><strong>Prerequisite</strong><a class="headerlink" href="#prerequisite" title="Permalink to this heading">¶</a></h2>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">You should have received an email from F5 Distributed Cloud User Management &lt;<a class="reference external" href="mailto:no-reply&#37;&#52;&#48;volterratmails&#46;io">no-reply<span>&#64;</span>volterratmails<span>&#46;</span>io</a>&gt; with the content as follows:</p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="../../../../_images/updatepasswd.png" src="../../../../_images/updatepasswd.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>If you have not already, please click on <strong>Update Password</strong>, and change your credentials. Ensure you adhere to the password strength restrictions and make a mental note of these credentials as you will need them several times throughout the labs today.</p>
+<p>Once you’ve set your new password (make sure to include 1 upper, 1 lower and 1 special character), you will be asked to “Log In” and then presented with the following screen:</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="../../../../_images/tenantlogin.png" src="../../../../_images/tenantlogin.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>In the domain field, enter: <strong>f5-xc-lab-mcn</strong>, click <strong>Next</strong> and sign in with your email address and password you’ve just set, and proceed to accepting the Terms and Conditions.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">If you have not received the email to change your credentials or ran into problems changing your credentials, please stop and get help from one of the Lab Assistants.</p>
+</div>
+</div>
+<div class="section" id="logging-into-the-xc-console">
+<h2><strong>Logging into the XC Console</strong><a class="headerlink" href="#logging-into-the-xc-console" title="Permalink to this heading">¶</a></h2>
+<p>After accepting the Terms of Service and Privacy Policy, you will need to select your “Persona”.</p>
+<p>Enter your persona as <strong>“NetOps”</strong> and click <strong>next</strong>.</p>
+<p>Enter your level as <strong>“Intermediate”</strong> and then click <strong>Get Started</strong>.</p>
+<p>Your persona will highlight workflows within F5 Distributed Cloud.
+You will be able to access all services, but making use of personas can focus your view on particular tasks that are relevant to your role.</p>
+<p>You can change these settings at any time.</p>
+<p>Click on <strong>“Account Settings”</strong> by expanding the <strong>“Account”</strong> icon in the top right of the screen and clicking on <strong>“Account Settings”.</strong>
+In the resulting window you can observe the <strong>Work domains and skill level</strong> section and other administrative functions.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><strong>For the purposes of this lab, permissions have been restricted to lab operations. Some menus/functions will be locked and/or not visible.</strong></p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="../../../../_images/intro11.png" src="../../../../_images/intro11.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p><strong>For informational purposes only:</strong></p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="../../../../_images/intro21.png" src="../../../../_images/intro21.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="find-your-namespace">
+<h2><strong>Find your Namespace</strong><a class="headerlink" href="#find-your-namespace" title="Permalink to this heading">¶</a></h2>
+<p>Namespaces, which provide an environment for isolating configured applications or enforcing role-based access controls, are leveraged
+within the F5 Distributed Cloud Console. For the purposes of this lab, each lab attendee has been pre-assigned a unique <strong>namespace</strong>.</p>
+<p>From the <strong>Select service</strong> menu, click on <strong>Web App &amp; API Protection</strong>.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="../../../../_images/findnamespace.png" src="../../../../_images/findnamespace.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>In the <strong>Web App &amp; API Protection Security Dashboard</strong> configuration screen <strong>observe</strong> the browser URL. In the URI path, locate the <strong>&lt;adjective-animal&gt;</strong> namespace that you have
+been assigned. It will be located in the portion of the URI path between <em>/namespaces/</em> and <em>/overview/</em> as shown in this example: <strong>…/namespaces/&lt;namespace&gt;/overview/</strong>.</p>
+<p><strong>Note your namespace as it will be used throughout the labs today.</strong></p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">If you have problems locating your namespace, please see a lab assistance.</p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="../../../../_images/namespace1.png" src="../../../../_images/namespace1.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Administratively, there are other ways to find namespaces. Due to permission restrictions for this particular lab, those menus are not available.</p>
+</div>
+</div>
+<div class="section" id="site-token">
+<h2><strong>Site Token</strong><a class="headerlink" href="#site-token" title="Permalink to this heading">¶</a></h2>
+<p>Soon, you will be configuring an XC Node in the F5 UDF Lab Environment (Data Center) that will need a way to authenticate to the Distributed Cloud Infrastructure and associate it with your tenant. For this, you will need a Site Token.</p>
+<p>If you are not already logged into the console, please do so now by opening the following URL in your browser:</p>
+<p><a class="reference external" href="https://f5-xc-lab-mcn.console.ves.volterra.io/">https://f5-xc-lab-mcn.console.ves.volterra.io/</a></p>
+<p>From the <strong>Select service</strong> menu, click on <strong>Multi-Cloud Network Connect</strong>.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="../../../../_images/sitetoke.png" src="../../../../_images/sitetoke.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>On the side menu go down to <strong>Manage</strong>, then select <strong>Site Management &gt;&gt; Site Tokens</strong></p>
+<p>In the lab we have generated a Site Token for you to use named <strong>student-ce-site</strong>.
+In your production environment you will need to create your own Site Token to register your Customer Edge Node, which is literally two clicks and a name. Very simple!</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="../../../../_images/tokens.png" src="../../../../_images/tokens.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Copy the UID of the the <strong>student-ce-site</strong> token and paste it somewhere you can reference later (word, notepad etc).</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="../../../../_images/copytoke.png" src="../../../../_images/copytoke.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="setting-up-the-customer-edge">
+<h2><strong>Setting up the Customer Edge</strong><a class="headerlink" href="#setting-up-the-customer-edge" title="Permalink to this heading">¶</a></h2>
+<p>There are two approaches for setting up your Customer Edge deployment both will be reviewed in the sections that follow.  Select the method designated by your lab team instructions</p>
+</div>
+<div class="section" id="option-1-cli-site-setup">
+<h2><strong>Option 1: CLI Site Setup</strong><a class="headerlink" href="#option-1-cli-site-setup" title="Permalink to this heading">¶</a></h2>
+<p>In your browser, you should have a tab open to the UDF course. Under the F5 Distributed Cloud CE, click on <strong>Access &gt;&gt; Console</strong></p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="../../../../_images/cli-01.png" src="../../../../_images/cli-01.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>This should redirect you to the CLI and prompt for authentication. Type in the default username/password:</p>
+<table border="1" class="docutils align-default">
+<colgroup>
+<col width="65%" />
+<col width="35%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Variable</th>
+<th class="head">Value</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Default Username:</td>
+<td><strong>admin</strong></td>
+</tr>
+<tr class="row-odd"><td>Default Password:</td>
+<td><strong>Volterra123</strong></td>
+</tr>
+</tbody>
+</table>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="../../../../_images/cli-02.png" src="../../../../_images/cli-02.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Change the password as directed. Remember the new password should you need to log in again.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="../../../../_images/cli-03.png" src="../../../../_images/cli-03.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>At the <strong>&gt;&gt;&gt;</strong> type the word <strong>configure</strong> and then enter.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="../../../../_images/cli-04.png" src="../../../../_images/cli-04.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Use the following response values to complete the prompts:</p>
+<table border="1" class="docutils align-default">
+<colgroup>
+<col width="38%" />
+<col width="62%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Question</th>
+<th class="head">Response Value</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>What is your token?</td>
+<td>Insert the Site Token UID you collected earlier</td>
+</tr>
+<tr class="row-odd"><td>What is your site name?</td>
+<td>Insert your unique namespace &lt;verb-animal&gt;</td>
+</tr>
+<tr class="row-even"><td>What is your hostname?</td>
+<td>Insert your unique namespace &lt;verb-animal&gt;</td>
+</tr>
+<tr class="row-odd"><td>What is your latitude?</td>
+<td>33.812</td>
+</tr>
+<tr class="row-even"><td>What is your longitude?</td>
+<td>-117.91</td>
+</tr>
+<tr class="row-odd"><td>What is your default fleet name?</td>
+<td>Enter (This selects the default of <strong>optional</strong>)</td>
+</tr>
+<tr class="row-even"><td>Select your certified hardware?</td>
+<td>Enter (This selects the default of <strong>kvm-voltmesh</strong>)</td>
+</tr>
+<tr class="row-odd"><td>Select your primary outside NIC?</td>
+<td>Enter (This selects the default of <strong>eth0</strong>)</td>
+</tr>
+</tbody>
+</table>
+<p>The response values will then be summarized. Confirm they are correct and type <strong>y</strong> for <strong>yes</strong>. If not, answer <strong>n</strong> and correct any values.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="../../../../_images/cli-05.png" src="../../../../_images/cli-05.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>We will now go accept the Customer Edge registration in Distributed Cloud console. Proceed to <strong>Registering the Customer Edge</strong>.</p>
+</div>
+<div class="section" id="option-2-site-ui-site-setup">
+<h2><strong>Option 2: Site UI Site Setup</strong><a class="headerlink" href="#option-2-site-ui-site-setup" title="Permalink to this heading">¶</a></h2>
+<p>In your browser, you should have a tab open to the UDF course. Under the F5 Distributed Cloud CE, click on <strong>Access &gt;&gt; Site UI</strong></p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="../../../../_images/udf-ce.png" src="../../../../_images/udf-ce.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>This should prompt you for authentication and then open the Customer Edge Node Admin portal.</p>
+<p>Type in the default username/password:</p>
+<table border="1" class="docutils align-default">
+<colgroup>
+<col width="65%" />
+<col width="35%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Variable</th>
+<th class="head">Value</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Default Username:</td>
+<td><strong>admin</strong></td>
+</tr>
+<tr class="row-odd"><td>Default Password:</td>
+<td><strong>Volterra123</strong></td>
+</tr>
+</tbody>
+</table>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="../../../../_images/signin.png" src="../../../../_images/signin.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>You will be prompted to change the password at the initial log in. <strong>Make a mental note of these credentials as you will need them several times throughout the labs today.</strong></p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="../../../../_images/changepwd.png" src="../../../../_images/changepwd.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>After you set the password, the services will need to restart and then the Customer Edge node will present the Dashboard</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">You may have to Refresh your browser and log in again.</p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="../../../../_images/restart.png" src="../../../../_images/restart.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Once all services are up and running you should see the Dashboard which will have various colors and state as shown:</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="../../../../_images/dash.png" src="../../../../_images/dash.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>If you mouse-over each of the icons, the specific services will report their status in addition to the status reflected by the icon.</p>
+<p>Mouse over each of the components under VP Manager Status and note the components and their condition.  You can also click on <strong>“Show full status”</strong> and see a JSON report that is used to present the VP Manager Status in detail.</p>
+<p>You can also scroll down and see hardware details that describe the platform that the Customer Edge is installed on.</p>
+<p>Click the blue <strong>Configure Now</strong> button.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="../../../../_images/ceconf.png" src="../../../../_images/ceconf.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>This will take you to the <strong>Customer Edge Device Configuration</strong> page.</p>
+<p>Set the following parameters and leave everything else as default:</p>
+<table border="1" class="docutils align-default">
+<colgroup>
+<col width="39%" />
+<col width="61%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Variable</th>
+<th class="head">Value</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Token</td>
+<td>Insert the Site Token UID you collected earlier</td>
+</tr>
+<tr class="row-odd"><td>Cluster Name</td>
+<td>Insert your unique namespace &lt;verb-animal&gt;</td>
+</tr>
+<tr class="row-even"><td>Hostname</td>
+<td>Insert your unique namespace &lt;verb-animal&gt;</td>
+</tr>
+<tr class="row-odd"><td>Latitude</td>
+<td>33.812</td>
+</tr>
+<tr class="row-even"><td>Longitude</td>
+<td>-117.91</td>
+</tr>
+</tbody>
+</table>
+<p>The end result should look like the image below, and then click <strong>Save Configuration.</strong></p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="../../../../_images/devconf.png" src="../../../../_images/devconf.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>After you save the configuration, you will be taken back to the Dashboard, notice the status change to <strong>“Approval”</strong> after a few moments. (May need to refresh page)</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="../../../../_images/approval.png" src="../../../../_images/approval.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p><strong>If you encounter it, you can safely ignore this benign timing error due to the UDF lab environment.</strong></p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="../../../../_images/error.png" src="../../../../_images/error.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>We will now go accept the Customer Edge registration in Distributed Cloud console. Proceed to <strong>Registering the Customer Edge</strong>.</p>
+</div>
+<div class="section" id="registering-the-customer-edge">
+<h2><strong>Registering the Customer Edge</strong><a class="headerlink" href="#registering-the-customer-edge" title="Permalink to this heading">¶</a></h2>
+<p>Go back to the Distributed Cloud console.  If the session timed out, you will need to log back into the console using the following URL or refreshing your browser:</p>
+<p><a class="reference external" href="https://f5-xc-lab-mcn.console.ves.volterra.io/">https://f5-xc-lab-mcn.console.ves.volterra.io/</a></p>
+<p>From the <strong>Select service</strong> menu, click on <strong>Multi-Cloud Network Connect</strong>.</p>
+<p>On the side menu go down to <strong>Manage &gt;&gt; Site Management &gt;&gt; Registrations.</strong></p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="../../../../_images/sitemgt.png" src="../../../../_images/sitemgt.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>The Customer Edge node you configured from the previous step should appear on this list, if not give it a couple moments and refresh the screen by clicking the <strong>Refresh button</strong> at the top right-hand corner.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="../../../../_images/sitereg.png" src="../../../../_images/sitereg.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">This process can take a few minutes for the node to register with Distributed Cloud.</p>
+</div>
+<p>Once the Node appears in the Registration list, accept the registration by clicking on the blue check mark.</p>
+<p><strong>Click the blue check mark</strong> to accept the registration.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If you DO NOT see a blue check mark, it’s likely your browser width is NOT wide enough.  Simply increase the width of the browser and you should see the blue checkmark to approve the registration.</p>
+</div>
+<p>Once you have clicked the checkmark, the console will bring up the Registration Acceptance menu which shows all the settings of the Customer Edge node.  Note the parameters you’ve entered from the previous exercise are populated into the appropriate fields.</p>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">Look at the Cluster Size parameter and notice this is set to 1.  In this lab, we will only deploy a single-node-cluster and thus leave this setting as 1.  In a production environment, the best practice is to deploy a 3-node-cluster minimum.  In that case, the Cluster Size parameter would be set to 3 so an appropriately sized cluster can be formed.</p>
+</div>
+<p><strong>Leave the cluster size set to 1</strong></p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="../../../../_images/clustersize.png" src="../../../../_images/clustersize.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Scroll down to Site to Site Tunnel Type and click on the drop down arrow</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="../../../../_images/s2sarrow.png" src="../../../../_images/s2sarrow.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>This setting determines the VPN connectivity protocols used between the Customer Edge and the Regional Edges. The XC Node will automatically bring up redundant tunnels to two different RE’s.
+These tunnels are self-healing and can fallback when using the configuration setting of IPSEC or SSL.
+Select <strong>IPSEC or SSL</strong> from the list.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="../../../../_images/iporssl.png" src="../../../../_images/iporssl.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Click <strong>Save and Exit</strong>.</p>
+<p>Once the registration completes, you can see the cluster in the “Other Registrations” tab and the current state will be ADMITTED.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="../../../../_images/otherregs.png" src="../../../../_images/otherregs.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>The Customer Edge Node Admin portal will also reflect some changes in its status, although the node still requires some additional configuration.
+From the menu on the left click on <strong>Sites</strong> and observe your Nodes (animal-name). Hint: You may have to hit <strong>Refresh</strong>  in the upper right corner.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="../../../../_images/provisioning.png" src="../../../../_images/provisioning.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+<p>You should see the CE you just deployed on this list go through several phases of provisioning and you can observe the  <strong>Site Admin State, Health Score, and Software Version and OS version.</strong>
+You may also observe the Health score going up and down as services are spun up and restarted.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This step takes about 10 -15 minutes to complete and will finish up while we start our presentation and lecture.</p>
+</div>
+<p>The end result should look something like the following screen where the node is green at 100 percent health and has the latest software version.</p>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">Do not move on to Lab 2 until the CE is fully provisioned and <strong>Online</strong>.</p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="../../../../_images/prov2.png" src="../../../../_images/prov2.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="sanity-check">
+<h2>Sanity Check<a class="headerlink" href="#sanity-check" title="Permalink to this heading">¶</a></h2>
+<p><strong>This is what you just deployed.</strong></p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="../../../../_images/lab1fini.png" src="../../../../_images/lab1fini.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p><strong>We hope you enjoyed this lab!</strong></p>
+<p><strong>End of Lab 1</strong></p>
+</div>
+</div>
+
+
+     </div>
+    
+
+    </article>
+  </div>
+
+</div>
+
+
+  <div id="clouddocs-footer"></div>
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+
+  <script src="../../../../_static/js/index.js"></script>
+  <script src="../../../../_static/js/jquery.appear.js"></script>
+  <script src="../../../../_static/js/printThis.js"></script>
+  <script src="../../../../_static/js/bootstrap.min.js"></script>
+  <script src="../../../../_static/js/clouddocs.js"></script>
+  <script src="../../../../_static/js/CoveoJsSearch.Lazy.min.js"></script>
+  </body>
+</html>

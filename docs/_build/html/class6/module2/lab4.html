@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<head>
+  
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-PPZPQ6');</script>
+  <!-- End Google Tag Manager -->
+    <title>Lab 4: App Connect - Solving IP Overlap</title>
+  
+
+  <meta charset="utf-8">
+  <!-- Twitter Bootstrap viewport setting -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- F5 metadata -->
+  <meta name="title" content="Lab 4: App Connect - Solving IP Overlap"/>
+  <meta name="product" content="F5 Distributed Cloud"/>
+  <meta name="version" content=""/>
+  <meta name="updated_date"  content="2023-12-21 17:40:18"/>
+  <meta name="archived" content="Archived documents excluded"/>
+  <meta name="doc_type" content="Manual"/>
+  <meta name="lifecycle" content="release"/>
+  <meta name="F5 Distributed Cloud" content=""/>
+
+
+  
+
+  
+  <link href="https://cdn.f5.com/favicon.ico" rel="icon">
+
+</head>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lab 4: App Connect - Solving IP Overlap &#8212; F5 Distributed Cloud  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" href="../../_static/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/css/f5.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/css/f5-theme.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/css/CoveoFullSearch.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/21fb8a09c3.css" type="text/css" />
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Lab 5: Bonus Lab - L7 App Routing &amp; Security" href="lab5.html" />
+    <link rel="prev" title="Lab 3: Globally Available Front End" href="lab3.html" /> 
+  </head><body>
+  <div id="clouddocs-header"></div>
+
+    <div id="sidebar" class="section-nav">
+      
+      <!--  version selector ------------------>
+      <div id="version_selector_wrapper">
+      </div>
+      <nav class="nav-sidebartoc">
+
+        
+         <h5>F5 Distributed Cloud  </h5>
+        
+
+        <hr>
+        <span class="nav-sidebartoc">
+            <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../class1/class1.html">F5 Distributed Cloud - Introduction to Deployment Models and Services</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class2/class2.html">F5 Distributed Cloud - WAF/WAAP Deeper Dive</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class3/class3.html">F5 Distributed Cloud - WAF/WAAP Deeper Dive</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class4/class4.html">F5 Distributed Cloud - WAF/WAAP Deeper Dive</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class5/class5.html">F5 Distributed Cloud - Advanced Bot Security</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../class6.html">F5 Distributed Cloud - Intro to Multi-Cloud Networking</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../intro.html">Introduction to the Lab</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module1/module1.html">Module 1: Network Connect</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="module2.html">Module 2: App Connect</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="lab3.html">Lab 3: Globally Available Front End</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Lab 4: App Connect - Solving IP Overlap</a></li>
+<li class="toctree-l3"><a class="reference internal" href="lab5.html">Lab 5: Bonus Lab - L7 App Routing &amp; Security</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../class7/class7.html">F5 Distributed Cloud - AppStack CaaS &amp; K8s Delivery Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class8/class8.html">F5 Distributed Cloud - Introduction to Deployment Models and Services</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class9/class9.html">F5 Distributed Cloud - WAF Policy Supervisor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../archive/archive.html">Archived F5 Distributed Cloud Labs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../2hour/2hour.html">Two (2) Hour F5 Distributed Cloud Labs</a></li>
+</ul>
+
+        </span><!-- Use this file to add extra links to the bottom of the ToC sidebar -->
+<hr>
+  <span class="nav-sidebartoc">
+ <!-- insert content here -->
+  </span>
+      </nav>
+    </div>
+
+
+    <div id="right-sidebar">
+      <h7 style="font-weight:normal">On this page:</h7>
+      <nav class="nav-sidebartoc">
+        <span class="nav-sidebartoc">
+            <ul>
+<li><a class="reference internal" href="#">Lab 4: App Connect - Solving IP Overlap</a><ul>
+<li><a class="reference internal" href="#multi-cloud-app-connect">Multi-Cloud App Connect</a></li>
+<li><a class="reference internal" href="#testing-internal-lb">Testing Internal LB</a></li>
+<li><a class="reference internal" href="#narrative-update">Narrative Update</a></li>
+<li><a class="reference internal" href="#expose-aws-diag-tool">Expose AWS Diag Tool</a></li>
+<li><a class="reference internal" href="#create-aws-to-azure-lb">Create AWS to Azure LB</a></li>
+<li><a class="reference internal" href="#testing-aws-to-azure-lb">Testing AWS to Azure LB</a></li>
+<li><a class="reference internal" href="#adding-security">Adding Security</a></li>
+<li><a class="reference internal" href="#service-policies">Service Policies</a></li>
+<li><a class="reference internal" href="#apply-service-policy">Apply Service Policy</a></li>
+<li><a class="reference internal" href="#test-service-policy">Test Service Policy</a></li>
+<li><a class="reference internal" href="#review-service-policy-logs">Review Service Policy Logs</a></li>
+<li><a class="reference internal" href="#sanity-check">Sanity Check</a></li>
+</ul>
+</li>
+</ul>
+
+         </span>
+      </nav>
+    </div>
+
+
+
+
+
+  
+  <div class="main active" id="content" >
+    <article class="docs-container site-article-inner">
+              <!-- custom breadcrumb -->
+        <h5>
+            <a href="../../index.html">F5 Distributed Cloud</a>
+              &gt; <a href="../class6.html">F5 Distributed Cloud - Intro to Multi-Cloud Networking</a>
+              &gt; <a href="module2.html">Module 2: App Connect</a>
+
+          <span class="right">
+             <a href="../../_sources/class6/module2/lab4.rst.txt" rel="nofollow">Source</a> |
+             <a href="https://github.com/f5devcentral/f5-agility-labs-xc">Edit on <i class="fa fa-github" aria-hidden="true"></i></a>
+          </span>
+        </h5>
+        <!-- end custom breadcrumb -->
+      
+
+
+    <!--a title="Export PDF" id="export-pdf" class="btn btn btn-link pull-right">View PDF</a-->
+    <button type="button" id="export-pdf" class="btn btn-link right">PDF</button>
+
+
+    
+     
+         <div class="sidebar" id="version-warning" style="display: none;">
+           <p class="first sidebar-title">
+           <span class="icon fa fa-info-circle fa-lg"></span> Version notice:</p>
+           <p class="last" id="currentVersion"></p>
+          </div>
+
+
+     <div role="main">
+        
+  <div class="section" id="lab-4-app-connect-solving-ip-overlap">
+<h1>Lab 4: App Connect - Solving IP Overlap<a class="headerlink" href="#lab-4-app-connect-solving-ip-overlap" title="Permalink to this heading">¶</a></h1>
+<p><strong>Objective:</strong></p>
+<ul class="simple">
+<li>Implement App Connect to overcome IP Address overlap in AWS/Azure.</li>
+<li>Provide private and secure connectivity between all sites.</li>
+<li>Configure policy to only permit port 80 between these sites.</li>
+<li>Review network security events in the XC console.</li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="../../_images/lab4bizreq11.png" src="../../_images/lab4bizreq11.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p><strong>Narrative:</strong></p>
+<p>Now that the globally available frontend has been deployed, it’s time to start working on <strong>Deliverable #2</strong> and configure backend connectivity. Since Network Connect does <strong>NOT</strong> support IP overlap, we will configure the XC Nodes with App Connect proxies.
+Recall that Network Connect joins networks by using the XC Nodes as Software-Defined Routers and App Connect uses the XC Nodes as Software-Defined Proxies to connect applications. Think…NetworkAAS or ProxyAAS.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="../../_images/lab4goal1.png" src="../../_images/lab4goal1.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="section" id="multi-cloud-app-connect">
+<h2>Multi-Cloud App Connect<a class="headerlink" href="#multi-cloud-app-connect" title="Permalink to this heading">¶</a></h2>
+<p>In the <strong>Side menu</strong> under <strong>Manage</strong> click on <strong>Load Balancers</strong> &gt;&gt; <strong>HTTP Load Balancers</strong> and click the <strong>Add HTTP Load Balancer</strong> button.</p>
+<p>Enter the following values:</p>
+<table border="1" class="docutils align-default">
+<colgroup>
+<col width="39%" />
+<col width="61%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Variable</th>
+<th class="head">Value</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Name</td>
+<td>[animal-name]-backend-vip-to-azure</td>
+</tr>
+<tr class="row-odd"><td>Domains and LB Type</td>
+<td>[animal-name]-backend-vip-to-azure.lab-mcn.f5demos.com</td>
+</tr>
+<tr class="row-even"><td>Load Balancer Type</td>
+<td>HTTP</td>
+</tr>
+<tr class="row-odd"><td>Automatically Manage DNS Records</td>
+<td><strong>uncheck</strong></td>
+</tr>
+<tr class="row-even"><td>HTTP Port</td>
+<td>80</td>
+</tr>
+<tr class="row-odd"><td>Origin Pools</td>
+<td>See Below</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Origin Pools</strong></p>
+<p>Click <strong>Add Item</strong> and under “Origin Pool” select the <strong>Azure pool</strong> with your animal name and click <strong>Apply</strong>.</p>
+<p>Your config should look like this so far:</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="../../_images/backendvip1.png" src="../../_images/backendvip1.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p><strong>Scroll</strong> all the way down until you reach the <strong>Other Settings</strong> section. Here you will find the <strong>VIP Advertisement</strong> field.</p>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">In the previous lab, we took the default of <strong>Internet</strong> here. This means that the load balancer will be distributed across all Regional Edges in our anycast network. This time we will choose our Data Center CE to host the load balancer.</p>
+</div>
+<p>Hit the dropdown and select <strong>Custom</strong>.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="../../_images/custom1.png" src="../../_images/custom1.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Now click the <strong>Configure</strong> link right below that field:</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="../../_images/configure1.png" src="../../_images/configure1.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>On the <strong>“List of Sites to Advertise”</strong> screen click <strong>Add Item</strong>.</p>
+<p>Enter the following values:</p>
+<table border="1" class="docutils align-default">
+<colgroup>
+<col width="25%" />
+<col width="75%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Variable</th>
+<th class="head">Value</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Select Where to Advertise</td>
+<td>Site</td>
+</tr>
+<tr class="row-odd"><td>Site Network</td>
+<td>Outside Network (Since we only have 1 interface on our CE Node, it is “Outside” by default)</td>
+</tr>
+<tr class="row-even"><td>Site Reference</td>
+<td>system/[animal-name]</td>
+</tr>
+<tr class="row-odd"><td>TCP Listen Port Choice</td>
+<td>TCP Listen Port</td>
+</tr>
+<tr class="row-even"><td>TCP Listen Port</td>
+<td>80</td>
+</tr>
+</tbody>
+</table>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="../../_images/azint1.png" src="../../_images/azint1.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Click on <strong>Apply</strong>, <strong>Apply</strong>, and then <strong>Save and Exit</strong> on the main <strong>HTTP Load Balancer</strong> config screen.</p>
+</div>
+<div class="section" id="testing-internal-lb">
+<h2>Testing Internal LB<a class="headerlink" href="#testing-internal-lb" title="Permalink to this heading">¶</a></h2>
+<p>If that seemed easy, it’s because it was. Now, you will test the load balancer that you just configured on the Data Center XC Node.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="../../_images/node1.png" src="../../_images/node1.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>From the Ubuntu Client (backend) <strong>Web Shell</strong> browser tab, type the following command and hit Enter.</p>
+<p>curl <a class="reference external" href="http://10.1.1.5">http://10.1.1.5</a></p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="../../_images/curlerror1.png" src="../../_images/curlerror1.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Uh oh….! <strong>404 Not Found</strong>? But why?</p>
+<p>Recall the mandatory <strong>Domains</strong> field that was required when you configured the HTTP load balancer. <strong>XC App Connect HTTP Load Balancers natively perform Domain Name enforcement and DO NOT respond to requests without the expected Domain Name.</strong></p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="../../_images/domains1.png" src="../../_images/domains1.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>We will now use a tool to help test this with a built-in “resolve” function.</p>
+<p>From the Ubuntu Client <strong>Web Shell</strong> browser tab, type or paste the following command <strong>(with your animal-name)</strong> and hit <strong>Enter</strong>.:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="o">--</span><span class="n">head</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="p">[</span><span class="n">animal</span><span class="o">-</span><span class="n">name</span><span class="p">]</span><span class="o">-</span><span class="n">backend</span><span class="o">-</span><span class="n">vip</span><span class="o">-</span><span class="n">to</span><span class="o">-</span><span class="n">azure</span><span class="o">.</span><span class="n">lab</span><span class="o">-</span><span class="n">mcn</span><span class="o">.</span><span class="n">f5demos</span><span class="o">.</span><span class="n">com</span> <span class="o">--</span><span class="n">resolve</span> <span class="p">[</span><span class="n">animal</span><span class="o">-</span><span class="n">name</span><span class="p">]</span><span class="o">-</span><span class="n">backend</span><span class="o">-</span><span class="n">vip</span><span class="o">-</span><span class="n">to</span><span class="o">-</span><span class="n">azure</span><span class="o">.</span><span class="n">lab</span><span class="o">-</span><span class="n">mcn</span><span class="o">.</span><span class="n">f5demos</span><span class="o">.</span><span class="n">com</span><span class="p">:</span><span class="mi">80</span><span class="p">:</span><span class="mf">10.1.1.5</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">On a MAC you should be able to [CMD + v] and on a PC [Shift + Insert] to paste into the web shell.</p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="../../_images/curlhead1.png" src="../../_images/curlhead1.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>In my example, my animal-name was <strong>wanted-swan</strong>. If you want to see the full HTML of the site you can <strong>up arrow</strong> and run the command again without the <strong>--head</strong> flag.:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">curl</span>  <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="p">[</span><span class="n">animal</span><span class="o">-</span><span class="n">name</span><span class="p">]</span><span class="o">-</span><span class="n">backend</span><span class="o">-</span><span class="n">vip</span><span class="o">-</span><span class="n">to</span><span class="o">-</span><span class="n">azure</span><span class="o">.</span><span class="n">lab</span><span class="o">-</span><span class="n">mcn</span><span class="o">.</span><span class="n">f5demos</span><span class="o">.</span><span class="n">com</span> <span class="o">--</span><span class="n">resolve</span> <span class="p">[</span><span class="n">animal</span><span class="o">-</span><span class="n">name</span><span class="p">]</span><span class="o">-</span><span class="n">backend</span><span class="o">-</span><span class="n">vip</span><span class="o">-</span><span class="n">to</span><span class="o">-</span><span class="n">azure</span><span class="o">.</span><span class="n">lab</span><span class="o">-</span><span class="n">mcn</span><span class="o">.</span><span class="n">f5demos</span><span class="o">.</span><span class="n">com</span><span class="p">:</span><span class="mi">80</span><span class="p">:</span><span class="mf">10.1.1.5</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="../../_images/curltest1.png" src="../../_images/curltest1.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Success! Your stomach growls and it’s time for lunch! You have now met every requirement thrown at you thus far with F5 Distrib…. <strong>Ring Ring</strong></p>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">Your phone rings! Just as you were finishing up your testing and about to head to lunch, the CIO calls your desk directly with an urgent request and it sounds like that new Pho restaurant is going to have to wait. There is an immediate requirement for the frontend in AWS to connect to an API on the frontend in Azure, privately over port 80. Additionally, this API should be “Read Only” for any API clients originating in AWS. This traffic CAN NOT be sent unencrypted over the Internet. Can we use F5 Distributed Cloud to quickly bridge these CSP’s?</p>
+</div>
+</div>
+<div class="section" id="narrative-update">
+<h2>Narrative Update<a class="headerlink" href="#narrative-update" title="Permalink to this heading">¶</a></h2>
+<p>You have met all the requirements thus far, but that phone call had a real sense of urgency to it so, you’re going to have to act fast.</p>
+<p>Unfortunately, you don’t have access to any of the workloads in the CSP environments but one of your friends over on the Application team recently let you know about a diagnostic tool they use on their AWS frontend. It’s called the “In-Container-Diagnostic tool” and it runs on their AWS instance on port 8080.
+They said you could use it if you need to test connectivity from the AWS frontend to the Azure frontend but they can’t give you direct access to the container or workload itself.</p>
+<p>“No problem” you reply, and quickly set out to configure a new frontend in XC for the Diag tool. After you expose the Diag tool, you will configure an internal load balancer for port 80 traffic between the AWS frontend and Azure frontend. You will use the Diag tool to then verify this connectivity.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="../../_images/cioreq1.png" src="../../_images/cioreq1.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="expose-aws-diag-tool">
+<h2>Expose AWS Diag Tool<a class="headerlink" href="#expose-aws-diag-tool" title="Permalink to this heading">¶</a></h2>
+<p>In the <strong>Side menu</strong> under <strong>Manage</strong> click on <strong>Load Balancers</strong> &gt;&gt; <strong>Origin Pools</strong> and click the <strong>Add Origin Pool</strong> button.</p>
+<table border="1" class="docutils align-default">
+<colgroup>
+<col width="57%" />
+<col width="43%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Variable</th>
+<th class="head">Value</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Name</td>
+<td>[animal-name]-awstool-pool</td>
+</tr>
+<tr class="row-odd"><td>Origin Servers</td>
+<td><strong>Add Item</strong> &gt; See Below</td>
+</tr>
+<tr class="row-even"><td>Origin Server Port</td>
+<td>8080</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Origin Servers</strong></p>
+<table border="1" class="docutils align-default">
+<colgroup>
+<col width="45%" />
+<col width="55%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Variable</th>
+<th class="head">Value</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Select Type of Origin Server</td>
+<td>IP address of Origin Server on given Sites</td>
+</tr>
+<tr class="row-odd"><td>IP</td>
+<td>10.0.3.253</td>
+</tr>
+<tr class="row-even"><td>Site or Virtual Site</td>
+<td>Site</td>
+</tr>
+<tr class="row-odd"><td>Site</td>
+<td>system/student-awsnet</td>
+</tr>
+<tr class="row-even"><td>Select Network on the site</td>
+<td>Inside Network</td>
+</tr>
+</tbody>
+</table>
+<p>Click <strong>Apply</strong> and the <strong>Save and Exit</strong>.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="../../_images/toolpool1.png" src="../../_images/toolpool1.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>In the <strong>Side menu</strong> under <strong>Manage</strong> click on <strong>Load Balancers</strong> &gt;&gt; <strong>HTTP Load Balancers</strong> and click the <strong>Add HTTP Load Balancer</strong> button.</p>
+<p>Enter the following values:</p>
+<table border="1" class="docutils align-default">
+<colgroup>
+<col width="32%" />
+<col width="68%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Variable</th>
+<th class="head">Value</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Name</td>
+<td>[animal-name]-awstool</td>
+</tr>
+<tr class="row-odd"><td>Domains and LB Type</td>
+<td>[animal-name]-awstool.lab-mcn.f5demos.com</td>
+</tr>
+<tr class="row-even"><td>Load Balancer Type</td>
+<td>HTTP</td>
+</tr>
+<tr class="row-odd"><td>Automatically Manage DNS Records</td>
+<td><strong>check</strong> (Important!)</td>
+</tr>
+<tr class="row-even"><td>HTTP Port</td>
+<td>80</td>
+</tr>
+<tr class="row-odd"><td>Origin Pools</td>
+<td><strong>Add Item</strong> and select [animal-name-awstool-pool] and click <strong>Apply</strong>.</td>
+</tr>
+</tbody>
+</table>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="../../_images/toollb1.png" src="../../_images/toollb1.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Click <strong>Save and Exit</strong>.</p>
+<p>You should now be able to access the new globally availalable tool by accessing the following URL with your animal-name:</p>
+<p><a class="reference external" href="http://[animal-name]-awstool.lab-mcn.f5demos.com">http://[animal-name]-awstool.lab-mcn.f5demos.com</a></p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="../../_images/contool1.png" src="../../_images/contool1.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Please see a lab assistant if you can not access the tool site.</p>
+</div>
+</div>
+<div class="section" id="create-aws-to-azure-lb">
+<h2>Create AWS to Azure LB<a class="headerlink" href="#create-aws-to-azure-lb" title="Permalink to this heading">¶</a></h2>
+<p>Now that we have a way to test connectivity between AWS and Azure all we need to do is setup the HTTP Load Balancer (App Connect Proxy) to provide the secure connectivity.</p>
+<p>Back in XC Console, from the <strong>Side menu</strong> under <strong>Manage</strong> click on <strong>Load Balancers</strong> &gt;&gt; <strong>HTTP Load Balancers</strong> and click the <strong>Add HTTP Load Balancer</strong> button.</p>
+<p>Enter the following values:</p>
+<table border="1" class="docutils align-default">
+<colgroup>
+<col width="33%" />
+<col width="67%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Variable</th>
+<th class="head">Value</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Name</td>
+<td>[animal-name]-aws-to-azure-lb</td>
+</tr>
+<tr class="row-odd"><td>Domains and LB Type</td>
+<td>[animal-name]-aws-to-azure-lb.lab-mcn.f5demos.com</td>
+</tr>
+<tr class="row-even"><td>Load Balancer Type</td>
+<td>HTTP</td>
+</tr>
+<tr class="row-odd"><td>Automatically Manage DNS Records</td>
+<td><strong>uncheck</strong></td>
+</tr>
+<tr class="row-even"><td>HTTP Port</td>
+<td>80</td>
+</tr>
+<tr class="row-odd"><td>Origin Pools</td>
+<td><strong>Add Item</strong> and select [animal-name-azure-pool] and click <strong>Apply</strong>.</td>
+</tr>
+<tr class="row-even"><td>VIP Advertisement (at bottom)</td>
+<td><strong>Custom</strong> Click <strong>Configure</strong> See Below.</td>
+</tr>
+</tbody>
+</table>
+<p>Under <strong>List of Sites to Advertise</strong>,  click <strong>Add Item</strong>.</p>
+<p><strong>VIP Advertisement</strong></p>
+<table border="1" class="docutils align-default">
+<colgroup>
+<col width="39%" />
+<col width="61%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Variable</th>
+<th class="head">Value</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Select Where to Advertise</td>
+<td>Site</td>
+</tr>
+<tr class="row-odd"><td>Site Network</td>
+<td>Inside (The AWS node has 2 interface. Inside/Outside)</td>
+</tr>
+<tr class="row-even"><td>Site Reference</td>
+<td>system/student-awsnet</td>
+</tr>
+<tr class="row-odd"><td>TCP Listen Port Choice</td>
+<td>TCP Listen Port</td>
+</tr>
+<tr class="row-even"><td>TCP Listen Port</td>
+<td>80</td>
+</tr>
+</tbody>
+</table>
+<p>Click <strong>Apply</strong> and it should look ike this:</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="../../_images/advervip1.png" src="../../_images/advervip1.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Click <strong>Apply</strong> and then <strong>Save and Exit</strong> from the HTTP Load Balancer creation screen.</p>
+<p>If you search your HTTP Load Balancers for your <strong>animal-name</strong>, you should now see 4 as per the example below:</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="../../_images/4lbs1.png" src="../../_images/4lbs1.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="testing-aws-to-azure-lb">
+<h2>Testing AWS to Azure LB<a class="headerlink" href="#testing-aws-to-azure-lb" title="Permalink to this heading">¶</a></h2>
+<p>You now have a load balancer running in AWS on the inside interface of your AWS XC Node. The inside interface IP of the AWS XC Node is <strong>10.0.5.101</strong>.</p>
+<p>We will now use the In-Container Diag tool to test connectivity.</p>
+<p>If you don’t already have a tab open to the Diag tool, in your browser go to: <a class="reference external" href="http://[animal-name]-awstool.lab-mcn.f5demos.com">http://[animal-name]-awstool.lab-mcn.f5demos.com</a></p>
+<p>Click on <strong>Run Command</strong> and paste in the following:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">curl</span>  <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="p">[</span><span class="n">animal</span><span class="o">-</span><span class="n">name</span><span class="p">]</span><span class="o">-</span><span class="n">aws</span><span class="o">-</span><span class="n">to</span><span class="o">-</span><span class="n">azure</span><span class="o">-</span><span class="n">lb</span><span class="o">.</span><span class="n">lab</span><span class="o">-</span><span class="n">mcn</span><span class="o">.</span><span class="n">f5demos</span><span class="o">.</span><span class="n">com</span> <span class="o">--</span><span class="n">resolve</span> <span class="p">[</span><span class="n">animal</span><span class="o">-</span><span class="n">name</span><span class="p">]</span><span class="o">-</span><span class="n">aws</span><span class="o">-</span><span class="n">to</span><span class="o">-</span><span class="n">azure</span><span class="o">-</span><span class="n">lb</span><span class="o">.</span><span class="n">lab</span><span class="o">-</span><span class="n">mcn</span><span class="o">.</span><span class="n">f5demos</span><span class="o">.</span><span class="n">com</span><span class="p">:</span><span class="mi">80</span><span class="p">:</span><span class="mf">10.0.5.101</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="../../_images/success1.png" src="../../_images/success1.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>In just a few moments, you now have full proxy connectivity between IP Overlapped AWS and Azure resources over a private encrypted tunnel! Pretty sweet huh?</p>
+<p>Let’s try that command again but with the shorthand version by using <strong>--head</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="o">--</span><span class="n">head</span>  <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="p">[</span><span class="n">animal</span><span class="o">-</span><span class="n">name</span><span class="p">]</span><span class="o">-</span><span class="n">aws</span><span class="o">-</span><span class="n">to</span><span class="o">-</span><span class="n">azure</span><span class="o">-</span><span class="n">lb</span><span class="o">.</span><span class="n">lab</span><span class="o">-</span><span class="n">mcn</span><span class="o">.</span><span class="n">f5demos</span><span class="o">.</span><span class="n">com</span> <span class="o">--</span><span class="n">resolve</span> <span class="p">[</span><span class="n">animal</span><span class="o">-</span><span class="n">name</span><span class="p">]</span><span class="o">-</span><span class="n">aws</span><span class="o">-</span><span class="n">to</span><span class="o">-</span><span class="n">azure</span><span class="o">-</span><span class="n">lb</span><span class="o">.</span><span class="n">lab</span><span class="o">-</span><span class="n">mcn</span><span class="o">.</span><span class="n">f5demos</span><span class="o">.</span><span class="n">com</span><span class="p">:</span><span class="mi">80</span><span class="p">:</span><span class="mf">10.0.5.101</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="../../_images/head1.png" src="../../_images/head1.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="adding-security">
+<h2>Adding Security<a class="headerlink" href="#adding-security" title="Permalink to this heading">¶</a></h2>
+<p>You just configured an App Connect Proxy listening on port 80 of the Inside interface of the AWS XC Node. Since the App Connect Proxy is <strong>default-deny</strong> and only accepts traffic on the configured load balancer port with the appropriate Layer 7 Domain information, we can rest assured that no other ports will be permitted.</p>
+<p>The second request to ensure that the <strong>pretend API running on port 80 in Azure is Read Only or R/O</strong>, can easily be solved with a Service Policy. For ease of demonstration we will make use of two HTTP methods and <strong>pretend that HEAD is R/W</strong> and of course <strong>GET is natively R/O.</strong></p>
+<p>Head is one of many HTTP methods used to interact with API’s amongst other things. Some other common ones are GET, POST and PUT.</p>
+<p>Technically speaking, The HEAD method is identical to GET except that the server MUST NOT return a message-body in the response.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">In our Lab we are just pretending that HEAD is R/W.</p>
+</div>
+<p>What if we we didn’t want to allow <strong>HEAD</strong> or only allow certain HTTP methods between these two workloads?</p>
+<p>In general, for any of our HTTP Load Balancers, what if we wanted to block a geolocation?
+What if we wanted to allow some IP’s and disallow others? How about file type enforcements?</p>
+<p><strong>Service Policies to the Rescue!</strong></p>
+</div>
+<div class="section" id="service-policies">
+<h2>Service Policies<a class="headerlink" href="#service-policies" title="Permalink to this heading">¶</a></h2>
+<p>While Service Policies can do many things, we will go through a quick exercise to simply block the HTTP Method of <strong>HEAD</strong> for our AWS to Azure HTTP Load Balancer. This example could easily be expanded upon.</p>
+<p>When you create a <strong>Service Policy</strong> it intrinsically contains a <strong>default deny</strong>. Therefore, our Service Policy will actually be a definition of what is allowed.</p>
+<p>Back in XC Console, from the <strong>Side menu</strong> under <strong>Security</strong>, click on <strong>Service Policies</strong> &gt;&gt; <strong>Service Policies</strong> and click the <strong>Add Service Policy</strong> button.</p>
+<table border="1" class="docutils align-default">
+<colgroup>
+<col width="41%" />
+<col width="59%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Variable</th>
+<th class="head">Value</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Name</td>
+<td>[animal-name]-allow-get-sp</td>
+</tr>
+<tr class="row-odd"><td>Server Selection</td>
+<td>Server Name</td>
+</tr>
+<tr class="row-even"><td>Server Name</td>
+<td>[animal-name]-aws-to-azure-lb.lab-mcn.f5demos.com</td>
+</tr>
+<tr class="row-odd"><td>Select Policy Rules</td>
+<td>Custom Rule List</td>
+</tr>
+<tr class="row-even"><td>Rules</td>
+<td><strong>Configure</strong>, Click <strong>Add Item</strong> &gt; See Below:</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Rules</strong></p>
+<table border="1" class="docutils align-default">
+<colgroup>
+<col width="28%" />
+<col width="72%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Variable</th>
+<th class="head">Value</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Name</td>
+<td>allow-get</td>
+</tr>
+<tr class="row-odd"><td>Action</td>
+<td>Allow</td>
+</tr>
+<tr class="row-even"><td>Clients</td>
+<td>Any Client</td>
+</tr>
+<tr class="row-odd"><td>Servers</td>
+<td>Domain Matcher &gt;&gt; <strong>Exact Value</strong> &gt;&gt; [animal-name]-aws-to-azure-lb.lab-mcn.f5demos.com</td>
+</tr>
+<tr class="row-even"><td>HTTP Method/Method List</td>
+<td>Get</td>
+</tr>
+<tr class="row-odd"><td>HTTP Path</td>
+<td><strong>Configure</strong> &gt;&gt; <strong>Add Item</strong> add <strong>/</strong> under <strong>Prefix Values</strong>.</td>
+</tr>
+</tbody>
+</table>
+<p>Click <strong>Apply</strong>.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="../../_images/prefix1.png" src="../../_images/prefix1.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="../../_images/spget1.png" src="../../_images/spget1.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Scroll down and click <strong>Apply</strong>.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="../../_images/sp11.png" src="../../_images/sp11.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Click <strong>Apply</strong>.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="../../_images/sp21.png" src="../../_images/sp21.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Click <strong>Save and Exit</strong>.</p>
+</div>
+<div class="section" id="apply-service-policy">
+<h2>Apply Service Policy<a class="headerlink" href="#apply-service-policy" title="Permalink to this heading">¶</a></h2>
+<p>In the <strong>Side menu</strong> under <strong>Manage</strong> click on <strong>Load Balancers</strong> &gt;&gt; <strong>HTTP Load Balancers</strong> and then click the <strong>3 Button</strong> Action Menu &gt;&gt; <strong>Manage Configuration</strong> under your <strong>[animal-name]-aws-to-azure-lb</strong>.</p>
+<p>Click <strong>Edit Configuration</strong> and scroll down to <strong>Common Security Controls</strong>.</p>
+<p>Under <strong>Service Policies</strong>, hit the dropdown and choose, <strong>Apply Specified Service Policies</strong> and then click the blue <strong>Configure</strong>.</p>
+<p>Choose your <strong>[animal-name]-allow-get-sp</strong> and click <strong>Apply</strong> and then <strong>Save and Exit</strong>.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="../../_images/lbsp1.png" src="../../_images/lbsp1.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="test-service-policy">
+<h2>Test Service Policy<a class="headerlink" href="#test-service-policy" title="Permalink to this heading">¶</a></h2>
+<p>If you don’t already have a tab open to the Diag tool, in your browser go to: <a class="reference external" href="http://[animal-name]-awstool.lab-mcn.f5demos.com">http://[animal-name]-awstool.lab-mcn.f5demos.com</a></p>
+<p>Try your curl command again <strong>without</strong> the <strong>–head</strong> flag.:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="p">[</span><span class="n">animal</span><span class="o">-</span><span class="n">name</span><span class="p">]</span><span class="o">-</span><span class="n">aws</span><span class="o">-</span><span class="n">to</span><span class="o">-</span><span class="n">azure</span><span class="o">-</span><span class="n">lb</span><span class="o">.</span><span class="n">lab</span><span class="o">-</span><span class="n">mcn</span><span class="o">.</span><span class="n">f5demos</span><span class="o">.</span><span class="n">com</span> <span class="o">--</span><span class="n">resolve</span> <span class="p">[</span><span class="n">animal</span><span class="o">-</span><span class="n">name</span><span class="p">]</span><span class="o">-</span><span class="n">aws</span><span class="o">-</span><span class="n">to</span><span class="o">-</span><span class="n">azure</span><span class="o">-</span><span class="n">lb</span><span class="o">.</span><span class="n">lab</span><span class="o">-</span><span class="n">mcn</span><span class="o">.</span><span class="n">f5demos</span><span class="o">.</span><span class="n">com</span><span class="p">:</span><span class="mi">80</span><span class="p">:</span><span class="mf">10.0.5.101</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="../../_images/success1.png" src="../../_images/success1.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Now run the command again but insert the <strong>--head</strong> command.:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="o">--</span><span class="n">head</span>  <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="p">[</span><span class="n">animal</span><span class="o">-</span><span class="n">name</span><span class="p">]</span><span class="o">-</span><span class="n">aws</span><span class="o">-</span><span class="n">to</span><span class="o">-</span><span class="n">azure</span><span class="o">-</span><span class="n">lb</span><span class="o">.</span><span class="n">lab</span><span class="o">-</span><span class="n">mcn</span><span class="o">.</span><span class="n">f5demos</span><span class="o">.</span><span class="n">com</span> <span class="o">--</span><span class="n">resolve</span> <span class="p">[</span><span class="n">animal</span><span class="o">-</span><span class="n">name</span><span class="p">]</span><span class="o">-</span><span class="n">aws</span><span class="o">-</span><span class="n">to</span><span class="o">-</span><span class="n">azure</span><span class="o">-</span><span class="n">lb</span><span class="o">.</span><span class="n">lab</span><span class="o">-</span><span class="n">mcn</span><span class="o">.</span><span class="n">f5demos</span><span class="o">.</span><span class="n">com</span><span class="p">:</span><span class="mi">80</span><span class="p">:</span><span class="mf">10.0.5.101</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="../../_images/forbid1.png" src="../../_images/forbid1.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>You have now successfully configured an application layer <strong>Service Policy</strong> that enforces HTTP methods.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This is a primitive example of a much more powerful construct that can be used to enforce, secure and manipulate HTTP traffic much like iRules did on F5’s classic BIG-IP platform.</p>
+</div>
+</div>
+<div class="section" id="review-service-policy-logs">
+<h2>Review Service Policy Logs<a class="headerlink" href="#review-service-policy-logs" title="Permalink to this heading">¶</a></h2>
+<p>Back in XC Console, from the <strong>Side menu</strong> under <strong>Overview</strong>, click on <strong>Applications</strong> and scroll down and click on your <strong>[animal-name]-aws-to-azure-lb</strong> under <strong>Load Balancers</strong>.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="../../_images/awstoazure1.png" src="../../_images/awstoazure1.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Take a moment to observe some of the analytics and then click on the <strong>Requests</strong> tab at the top of the page.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="../../_images/requesttab1.png" src="../../_images/requesttab1.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Here you will find the full request log. You will see the request path and if you click the little settings gear on the far right, you can add the Response Code given back to the client and several other metrics.
+You may have to click refresh in the upper right or change your time frame if you took a break or don’t see any data.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="../../_images/perfmon1.png" src="../../_images/perfmon1.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p><strong>Expand</strong> one of the log entries that had a <strong>403</strong> response code. These were the forbidden <strong>Head</strong> requests.
+Look through the request data and determine the policy that was applied to the request as well as the <strong>result</strong>.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If you do not see a response code column in the data, click on the wheel on the right, next to the search edit box and check response code. Click Apply.</p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="../../_images/4031.png" src="../../_images/4031.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p><strong>Expand</strong> one of the log entries that had a <strong>200</strong> response code. These were the allowed <strong>Get</strong> requests.
+Look through the request data and determine the policy that was applied to the request as well as the <strong>result</strong>.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="../../_images/2001.png" src="../../_images/2001.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p><strong>Great job! You have now quickly completed every requirement thrown at you with F5 Distributed Cloud App Connect and Network Connect concepts.</strong></p>
+<p>There is a final bonus lab that will showcase some App Layer Routing and Security Concepts as well.</p>
+</div>
+<div class="section" id="sanity-check">
+<h2>Sanity Check<a class="headerlink" href="#sanity-check" title="Permalink to this heading">¶</a></h2>
+<p><strong>This is what you just deployed.</strong></p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="../../_images/lab4review1.png" src="../../_images/lab4review1.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p><strong>We hope you enjoyed this lab!</strong></p>
+<p><strong>End of Lab 4</strong></p>
+</div>
+</div>
+
+
+     </div>
+    
+     <div class="row next-prev-btn-row">
+       <div class="col-lg-12">
+       
+        <a href="lab3.html" title="Lab 3: Globally Available Front End" accesskey="p" class="btn btn-primary left"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Previous</a>
+       
+       
+          <a href="lab5.html" title="Lab 5: Bonus Lab - L7 App Routing &amp; Security" accesskey="n" class="btn btn-primary right">Next <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
+       
+     </div>
+     </div>
+    
+
+    </article>
+  </div>
+
+</div>
+
+
+  <div id="clouddocs-footer"></div>
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+
+  <script src="../../_static/js/index.js"></script>
+  <script src="../../_static/js/jquery.appear.js"></script>
+  <script src="../../_static/js/printThis.js"></script>
+  <script src="../../_static/js/bootstrap.min.js"></script>
+  <script src="../../_static/js/clouddocs.js"></script>
+  <script src="../../_static/js/CoveoJsSearch.Lazy.min.js"></script>
+  </body>
+</html>

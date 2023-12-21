@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<head>
+  
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-PPZPQ6');</script>
+  <!-- End Google Tag Manager -->
+    <title>Lab 3: Protecting a Private Endpoint</title>
+  
+
+  <meta charset="utf-8">
+  <!-- Twitter Bootstrap viewport setting -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- F5 metadata -->
+  <meta name="title" content="Lab 3: Protecting a Private Endpoint"/>
+  <meta name="product" content="F5 Distributed Cloud"/>
+  <meta name="version" content=""/>
+  <meta name="updated_date"  content="2023-12-21 17:40:18"/>
+  <meta name="archived" content="Archived documents excluded"/>
+  <meta name="doc_type" content="Manual"/>
+  <meta name="lifecycle" content="release"/>
+  <meta name="F5 Distributed Cloud" content=""/>
+
+
+  
+
+  
+  <link href="https://cdn.f5.com/favicon.ico" rel="icon">
+
+</head>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lab 3: Protecting a Private Endpoint &#8212; F5 Distributed Cloud  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" href="../_static/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/css/f5.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/css/f5-theme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/css/CoveoFullSearch.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/21fb8a09c3.css" type="text/css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Lab 4: Introduction to F5 Distributed Cloud DNS" href="lab4.html" />
+    <link rel="prev" title="Lab 2: Deploying an AWS VPC Site" href="lab2.html" /> 
+  </head><body>
+  <div id="clouddocs-header"></div>
+
+    <div id="sidebar" class="section-nav">
+      
+      <!--  version selector ------------------>
+      <div id="version_selector_wrapper">
+      </div>
+      <nav class="nav-sidebartoc">
+
+        
+         <h5>F5 Distributed Cloud  </h5>
+        
+
+        <hr>
+        <span class="nav-sidebartoc">
+            <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="class1.html">F5 Distributed Cloud - Introduction to Deployment Models and Services</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="class1.html#welcome">Welcome</a></li>
+<li class="toctree-l2"><a class="reference internal" href="class1.html#objectives">Objectives:</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="class1.html#lab-tasks">Lab &amp; Tasks:</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="intro.html">Introduction: Accessing F5 Distributed Cloud Console</a></li>
+<li class="toctree-l3"><a class="reference internal" href="lab1.html">Lab 1: Deploying F5 Distributed Cloud Proxy Services to Securely Deliver a Public Endpoint</a></li>
+<li class="toctree-l3"><a class="reference internal" href="lab2.html">Lab 2: Deploying an AWS VPC Site</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Lab 3: Protecting a Private Endpoint</a></li>
+<li class="toctree-l3"><a class="reference internal" href="lab4.html">Lab 4: Introduction to F5 Distributed Cloud DNS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="lab5.html">Lab 5: Introduction to Observability</a></li>
+<li class="toctree-l3"><a class="reference internal" href="lab6.html">Lab 6: Introduction to Content Delivery Networks (CDN)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="lab7.html">Lab 7: Introduction to MCN</a></li>
+<li class="toctree-l3"><a class="reference internal" href="close.html">Conclusion</a></li>
+<li class="toctree-l3"><a class="reference internal" href="close.html#appendix">Appendix</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../class2/class2.html">F5 Distributed Cloud - WAF/WAAP Deeper Dive</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../class3/class3.html">F5 Distributed Cloud - WAF/WAAP Deeper Dive</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../class4/class4.html">F5 Distributed Cloud - WAF/WAAP Deeper Dive</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../class5/class5.html">F5 Distributed Cloud - Advanced Bot Security</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../class6/class6.html">F5 Distributed Cloud - Intro to Multi-Cloud Networking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../class7/class7.html">F5 Distributed Cloud - AppStack CaaS &amp; K8s Delivery Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../class8/class8.html">F5 Distributed Cloud - Introduction to Deployment Models and Services</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../class9/class9.html">F5 Distributed Cloud - WAF Policy Supervisor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../archive/archive.html">Archived F5 Distributed Cloud Labs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2hour/2hour.html">Two (2) Hour F5 Distributed Cloud Labs</a></li>
+</ul>
+
+        </span><!-- Use this file to add extra links to the bottom of the ToC sidebar -->
+<hr>
+  <span class="nav-sidebartoc">
+ <!-- insert content here -->
+  </span>
+      </nav>
+    </div>
+
+
+    <div id="right-sidebar">
+      <h7 style="font-weight:normal">On this page:</h7>
+      <nav class="nav-sidebartoc">
+        <span class="nav-sidebartoc">
+            <ul>
+<li><a class="reference internal" href="#">Lab 3: Protecting a Private Endpoint</a><ul>
+<li><a class="reference internal" href="#task-1-create-origin-pools">Task 1. Create Origin Pools</a><ul>
+<li><a class="reference internal" href="#exercise-1-create-private-origin-pool">Exercise 1: Create Private Origin Pool</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#task-2-update-http-load-balancer-on-f5-distributed-cloud-regional-edge">Task 2. Update HTTP Load Balancer on F5 Distributed Cloud Regional Edge</a><ul>
+<li><a class="reference internal" href="#exercise-1-http-load-balancer-configuration">Exercise 1: HTTP Load Balancer Configuration</a></li>
+<li><a class="reference internal" href="#exercise-2-verify-configuration">Exercise 2: Verify Configuration</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#task-3-creating-http-load-balancer-on-f5-distributed-cloud-customer-edge">Task 3. Creating HTTP Load Balancer on F5 Distributed Cloud Customer Edge</a><ul>
+<li><a class="reference internal" href="#id1">Exercise 1: HTTP Load Balancer Configuration</a></li>
+<li><a class="reference internal" href="#exercise-2-configure-default-origin-server">Exercise 2: Configure Default Origin Server</a></li>
+<li><a class="reference internal" href="#exercise-3-configure-local-vip">Exercise 3: Configure Local VIP</a></li>
+<li><a class="reference internal" href="#exercise-4-configure-waf-policy">Exercise 4: Configure WAF Policy</a></li>
+<li><a class="reference internal" href="#exercise-5-verify-configuration">Exercise 5: Verify Configuration</a></li>
+<li><a class="reference internal" href="#exercise-6-verify-dns">Exercise 6: Verify DNS</a></li>
+<li><a class="reference internal" href="#video-walkthrough">Video Walkthrough</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+         </span>
+      </nav>
+    </div>
+
+
+
+
+
+  
+  <div class="main active" id="content" >
+    <article class="docs-container site-article-inner">
+              <!-- custom breadcrumb -->
+        <h5>
+            <a href="../index.html">F5 Distributed Cloud</a>
+              &gt; <a href="class1.html">F5 Distributed Cloud - Introduction to Deployment Models and Services</a>
+
+          <span class="right">
+             <a href="../_sources/class1/lab3.rst.txt" rel="nofollow">Source</a> |
+             <a href="https://github.com/f5devcentral/f5-agility-labs-xc">Edit on <i class="fa fa-github" aria-hidden="true"></i></a>
+          </span>
+        </h5>
+        <!-- end custom breadcrumb -->
+      
+
+
+    <!--a title="Export PDF" id="export-pdf" class="btn btn btn-link pull-right">View PDF</a-->
+    <button type="button" id="export-pdf" class="btn btn-link right">PDF</button>
+
+
+    
+     
+         <div class="sidebar" id="version-warning" style="display: none;">
+           <p class="first sidebar-title">
+           <span class="icon fa fa-info-circle fa-lg"></span> Version notice:</p>
+           <p class="last" id="currentVersion"></p>
+          </div>
+
+
+     <div role="main">
+        
+  <div class="section" id="lab-3-protecting-a-private-endpoint">
+<h1>Lab 3: Protecting a Private Endpoint<a class="headerlink" href="#lab-3-protecting-a-private-endpoint" title="Permalink to this heading">¶</a></h1>
+<p>In the previous lab you learned how an AppMesh node can be deployed</p>
+<p>In this next lab we will look at two additional topologies of how you can use an “AppMesh” node
+to secure traffic that is going to an endpoint that is not directly exposed to the Internet.</p>
+<div class="section" id="task-1-create-origin-pools">
+<h2>Task 1. Create Origin Pools<a class="headerlink" href="#task-1-create-origin-pools" title="Permalink to this heading">¶</a></h2>
+<p>Previously we created an origin pool that was accessible via the Public Internet.
+The next lab exercise will create an origin pool that will provide internal resources discovered with local DNS by the AppMesh node that is deployed in our lab AWS environment.</p>
+<div class="section" id="exercise-1-create-private-origin-pool">
+<h3>Exercise 1: Create Private Origin Pool<a class="headerlink" href="#exercise-1-create-private-origin-pool" title="Permalink to this heading">¶</a></h3>
+<p>We will first create an Origin Pool that refers to the “Private Endpoint” site in our lab environment.</p>
+<ol class="arabic">
+<li><p class="first">Start in F5 Distributed Cloud Console and switch back to the “Web App &amp; API Protection” context.</p>
+</li>
+<li><p class="first">Navigate the menu to go to “Manage”-&gt;”Load Balancers”-&gt;”Origin Pools”. Click on <em>Add Origin Pool</em>.</p>
+</li>
+<li><p class="first">Enter the following variables:</p>
+<table border="1" class="docutils align-default">
+<colgroup>
+<col width="83%" />
+<col width="18%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Variable</th>
+<th class="head">Value</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Name</td>
+<td>private</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><p class="first">Click on “Add Item” under the section “Origin Servers”</p>
+<p>Enter the following variables:</p>
+<table border="1" class="docutils align-default">
+<colgroup>
+<col width="45%" />
+<col width="55%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Variable</th>
+<th class="head">Value</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Select Type of Origin Server</td>
+<td>DNS Name of Origin Server on given Sites</td>
+</tr>
+<tr class="row-odd"><td>DNS Name</td>
+<td>private.lab.f5demos.internal</td>
+</tr>
+<tr class="row-even"><td>Site</td>
+<td>system/student-awsnet</td>
+</tr>
+</tbody>
+</table>
+<p><a class="reference internal" href="../_images/op-pool-basic-private3.png"><img alt="op-pool-basic" src="../_images/op-pool-basic-private3.png" style="width: 75%;" /></a></p>
+<p>Click on “Apply” to return to the previous screen.</p>
+</li>
+<li><p class="first">Below the “Origin Servers” section fill in the Port information</p>
+<table border="1" class="docutils align-default">
+<colgroup>
+<col width="87%" />
+<col width="13%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Variable</th>
+<th class="head">Value</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Port</td>
+<td>8080</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><p class="first">In the <strong>Health Checks</strong>, click <strong>Add Item</strong>.</p>
+</li>
+<li><p class="first">From the resulting Health Check object dropdown select <strong>Add Item</strong>.</p>
+</li>
+<li><p class="first">In the resulting window enter <strong>&lt;namespace&gt;-hc</strong> in the <strong>Name</strong> field.</p>
+</li>
+<li><p class="first">In the <strong>Health Check Parameters</strong> section click <strong>View Configuration</strong> under the <strong>HTTP HealthCheck</strong> section.</p>
+</li>
+<li><p class="first">In the resulting window note the value of the <strong>Path</strong> parameter.</p>
+</li>
+<li><p class="first">Also note the value of the <strong>Expected Status Codes</strong> parameter.</p>
+</li>
+<li><p class="first">Click <strong>Back</strong> to retain the default settings.</p>
+</li>
+</ol>
+<p><em>The default Health Check makes a request to the root path and expects a response code of</em></p>
+<p><em>200. These values can be modified to meet the requirements of the application.</em></p>
+<ol class="arabic simple" start="13">
+<li>After returning to the prior window, note the values of <strong>Timeout(s)</strong>, <strong>Interval(s)</strong>,</li>
+</ol>
+<p><strong>Unhealthy Threshold</strong>, and <strong>Healthy Threshold</strong>.</p>
+<ol class="arabic simple" start="14">
+<li>Click <strong>Continue</strong>.</li>
+</ol>
+<p><em>The Timeout, Interval, Unhealthy Threshold, and Healthy Threshold control how often</em></p>
+<p><em>health checks are sent and when an endpoint is marked healthy or unhealthy.  These</em></p>
+<p><em>values can be modified to meet the requirements of the application.</em></p>
+<ol class="arabic simple" start="15">
+<li>After returning to the Origin Pool configuration window, click <strong>Save and Exit</strong>.</li>
+</ol>
+</div>
+</div>
+<div class="section" id="task-2-update-http-load-balancer-on-f5-distributed-cloud-regional-edge">
+<h2>Task 2. Update HTTP Load Balancer on F5 Distributed Cloud Regional Edge<a class="headerlink" href="#task-2-update-http-load-balancer-on-f5-distributed-cloud-regional-edge" title="Permalink to this heading">¶</a></h2>
+<p>We will now update the HTTP load balancer that we previously created to connect to
+the “Private Endpoint” via the AppMesh node that is deployed in the AWS lab environment.</p>
+<img alt="../_images/testdrive-volterra-waf-hybrid-vip2.png" src="../_images/testdrive-volterra-waf-hybrid-vip2.png" />
+<div class="section" id="exercise-1-http-load-balancer-configuration">
+<h3>Exercise 1: HTTP Load Balancer Configuration<a class="headerlink" href="#exercise-1-http-load-balancer-configuration" title="Permalink to this heading">¶</a></h3>
+<ol class="arabic">
+<li><p class="first">Start in F5 Distributed Cloud Console and switch to the “Web App &amp; API Protection” context. [You should already be here from previous lab]</p>
+</li>
+<li><p class="first">Navigate the menu to go to “Manage”-&gt;”HTTP Load Balancers” and look for the Load Balancer named <em>&lt;namespace&gt;-lb</em> that you previously created.</p>
+</li>
+<li><p class="first">Click on the three dots “…” to the right of the name of your <em>&lt;namespace&gt;-lb</em> Load Balancer and select the “Manage Configuration” option.</p>
+<img alt="../_images/screenshot-global-vip-actions-manage2.png" src="../_images/screenshot-global-vip-actions-manage2.png" />
+</li>
+<li><p class="first">Click on “Edit Configuration” in the upper right of the screen (after your <em>&lt;namespace&gt;-lb</em> Load Balancer is loaded).</p>
+<img alt="../_images/screenshot-global-vip-edit-config2.png" src="../_images/screenshot-global-vip-edit-config2.png" />
+</li>
+<li><p class="first">Under “Origins” find your previous “&lt;namespace&gt;-pool” Origin pool and click on the three dots “…” to the right under “Actions” and select “Edit”</p>
+<img alt="../_images/screenshot-global-vip-edit-config-pools2.png" src="../_images/screenshot-global-vip-edit-config-pools2.png" />
+</li>
+<li><p class="first">Change the selection of “Origin Pool” from “&lt;namespace&gt;-pool” to “private” and click “Apply”</p>
+<img alt="../_images/screenshot-global-vip-edit-config-pools-select2.png" src="../_images/screenshot-global-vip-edit-config-pools-select2.png" />
+</li>
+<li><p class="first">Click “<em>Save and Exit</em> to update the HTTP Load Balancer.</p>
+</li>
+</ol>
+<p>You should now be able to go to the DNS name that you entered
+previously in a web browser.  The FQDN we used in our example is <a class="reference external" href="http://stable-sheep.lab-sec.f5demos.com/">http://stable-sheep.lab-sec.f5demos.com/</a>.</p>
+</div>
+<div class="section" id="exercise-2-verify-configuration">
+<h3>Exercise 2: Verify Configuration<a class="headerlink" href="#exercise-2-verify-configuration" title="Permalink to this heading">¶</a></h3>
+<p>The private demo app should look like the following:</p>
+<a class="reference internal image-reference" href="../_images/screenshot-global-vip-private2.png"><img alt="../_images/screenshot-global-vip-private2.png" src="../_images/screenshot-global-vip-private2.png" style="width: 50%;" /></a>
+<p>In this topology we are sending traffic to an AnyCast IP that is hosted in F5 Distributed Cloud’s Regional Edge.</p>
+<p>We then connect to the AWS resource via the AppMesh node that is deployed in the same VPC as the “Private Endpoint”.
+The AppMesh is only being used for network connectivity to the Private Endpoint; enforcement of the WAF policy is still
+being applied in the Regional Edge.</p>
+<p>In the next exercise we will look at a third topology of deploying a WAF policy that will be enforced within the AWS VPC
+on the AppMesh node (in the Customer Edge).</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/s-BHH0Qayfc?start=366" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+</div>
+<div class="section" id="task-3-creating-http-load-balancer-on-f5-distributed-cloud-customer-edge">
+<h2>Task 3. Creating HTTP Load Balancer on F5 Distributed Cloud Customer Edge<a class="headerlink" href="#task-3-creating-http-load-balancer-on-f5-distributed-cloud-customer-edge" title="Permalink to this heading">¶</a></h2>
+<p>In the previous lab exercises we were connecting to a F5 Distributed Cloud Load Balancer that was deployed in a Regional Edge.</p>
+<p>In the next lab exercise we will deploy a Load Balancer on the AppMesh node that was deployed in the AWS VPC (Customer Edge location).</p>
+<img alt="../_images/testdrive-volterra-waf-local-vip2.png" src="../_images/testdrive-volterra-waf-local-vip2.png" />
+<div class="section" id="id1">
+<h3>Exercise 1: HTTP Load Balancer Configuration<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h3>
+<ol class="arabic">
+<li><p class="first">Start in F5 Distributed Cloud Console and switch to the “Web App &amp; API Protection” context. [You should already be here from previous lab]</p>
+</li>
+<li><p class="first">Navigate the menu to go to “Manage”-&gt;”HTTP Load Balancers” and click on “Add HTTP Load Balancer”.</p>
+</li>
+<li><p class="first">Enter the following variables:</p>
+<table border="1" class="docutils align-default">
+<colgroup>
+<col width="52%" />
+<col width="48%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Variable</th>
+<th class="head">Value</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Name</td>
+<td>local</td>
+</tr>
+<tr class="row-odd"><td>Domains</td>
+<td>[NAMESPACE].aws.lab.f5demos.com</td>
+</tr>
+<tr class="row-even"><td>Select type of Load Balancer</td>
+<td>HTTP</td>
+</tr>
+<tr class="row-odd"><td>Automatically Manage DNS Records</td>
+<td>No/Unchecked</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ol>
+</div>
+<div class="section" id="exercise-2-configure-default-origin-server">
+<h3>Exercise 2: Configure Default Origin Server<a class="headerlink" href="#exercise-2-configure-default-origin-server" title="Permalink to this heading">¶</a></h3>
+<p>We’ll next configure the “Origin Servers”.</p>
+<ol class="arabic simple">
+<li>Click on the <em>Add Item</em> button in the the <em>Origin Pools</em> section.</li>
+<li>The “Select Origin Pool Method” will be set to “Origin Pool”. Under the “Origin Pool” dropdown menu select the “private” pool you created earlier.</li>
+<li>Click the <em>Apply</em> button to exit the “Origin Pool with Weight and Priority” dialogue.</li>
+</ol>
+</div>
+<div class="section" id="exercise-3-configure-local-vip">
+<h3>Exercise 3: Configure Local VIP<a class="headerlink" href="#exercise-3-configure-local-vip" title="Permalink to this heading">¶</a></h3>
+<p>Previously we configured a VIP that was advertised on F5’s Regional Edge (PoP) locations.
+We will modify this configuration to expose the service on the “Outside” interface of the AppMesh
+node that is deployed in AWS.  This will allow us to access the VIP via the Public IP Address (AWS Elastic IP)
+that is attached to that interface.  If we wished to only have the service available within the AWS VPC
+we could opt to use the “Inside” interface that does not have an AWS EIP attached.</p>
+<ol class="arabic">
+<li><p class="first">Under “Other Settings” set “VIP Advertisement” to “Custom”</p>
+<a class="reference internal image-reference" href="../_images/screenshot-local-vip-advertise-custom2.png"><img alt="../_images/screenshot-local-vip-advertise-custom2.png" src="../_images/screenshot-local-vip-advertise-custom2.png" style="width: 50%;" /></a>
+</li>
+<li><p class="first">Click on “Configure” under “Custom”</p>
+</li>
+<li><p class="first">In “List of Sites to Advertise”, click on “Add Item”</p>
+</li>
+<li><p class="first">For “Site Network” click on “Outside Network”</p>
+</li>
+<li><p class="first">For “Site Reference” select <cite>system/student-awsnet</cite></p>
+<a class="reference internal image-reference" href="../_images/lb-local-vip-advertise2.png"><img alt="../_images/lb-local-vip-advertise2.png" src="../_images/lb-local-vip-advertise2.png" style="width: 60%;" /></a>
+</li>
+<li><p class="first">Click on “Apply”</p>
+</li>
+<li><p class="first">Click on “Apply” to return to previous screen</p>
+</li>
+</ol>
+</div>
+<div class="section" id="exercise-4-configure-waf-policy">
+<h3>Exercise 4: Configure WAF Policy<a class="headerlink" href="#exercise-4-configure-waf-policy" title="Permalink to this heading">¶</a></h3>
+<ol class="arabic">
+<li><p class="first">Under the <em>Web Application Firewall</em> section</p>
+</li>
+<li><p class="first">Choose the following options:</p>
+<table border="1" class="docutils align-default">
+<colgroup>
+<col width="48%" />
+<col width="52%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Variable</th>
+<th class="head">Value</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Web Application Firewall (WAF)</td>
+<td>Enable</td>
+</tr>
+<tr class="row-odd"><td>Select App Firewall</td>
+<td>[NAMESPACE]/suited-guppy-appfw</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><p class="first">Click “Save and Exit” to create the HTTP Load Balancer.</p>
+</li>
+</ol>
+<p>Once the HTTP Load Balancer has been deployed, you should now be able to go to the DNS name that you entered
+previously in a web browser.  The FQDN we used in our example is <a class="reference external" href="http://stable-sheep.aws.lab.f5demos.com">http://stable-sheep.aws.lab.f5demos.com</a>.
+This is a wildcard DNS entry that points to the Public IP (AWS Elastic IP) that is attached to the AppMesh node.</p>
+</div>
+<div class="section" id="exercise-5-verify-configuration">
+<h3>Exercise 5: Verify Configuration<a class="headerlink" href="#exercise-5-verify-configuration" title="Permalink to this heading">¶</a></h3>
+<p>The private demo app should look like the following:</p>
+<a class="reference internal image-reference" href="../_images/screenshot-local-vip-private2.png"><img alt="../_images/screenshot-local-vip-private2.png" src="../_images/screenshot-local-vip-private2.png" style="width: 50%;" /></a>
+</div>
+<div class="section" id="exercise-6-verify-dns">
+<h3>Exercise 6: Verify DNS<a class="headerlink" href="#exercise-6-verify-dns" title="Permalink to this heading">¶</a></h3>
+<p>You can verify that you are connecting directly to AWS by comparing the DNS of the two hosts.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ dig +short student001.aws.lab.f5demos.com
+52.4.72.136
+
+$ dig -x 52.4.72.136 +short
+ec2-52-4-72-136.compute-1.amazonaws.com.
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ nslookup student001.aws.lab.f5demos.com
+
+Server:              2a01:cb04:765:e00:a6ce:daff:fe11:96ea
+Address:     2a01:cb04:765:e00:a6ce:daff:fe11:96ea#53
+
+Non-authoritative answer:
+Name:        student001.aws.lab.f5demos.com
+Address: 52.4.72.136
+</pre></div>
+</div>
+<p>In this topology we are sending traffic to the AWS EIP that’s attached to the AppMesh node in the AWS VPC.</p>
+<p>We then connect to the AWS resource via it’s Private IP address.</p>
+<p>&lt;! Try adding the following to the URL “?cat%20/etc/passwd”.  ###this request hung without providing a blocking page&gt;</p>
+<p>Try adding the following to the URL “/cart?search=aaa’&gt;&lt;script&gt;prompt(‘Please+enter+your+password’);&lt;/script&gt;”</p>
+<p>You should see a block page.  This is similar behavior to what we saw in the previous lab,
+but in this case the enforcement of the WAF policy is occurring on the AppMesh node
+that is deployed in the AWS Lab Environment and not in the F5 Distributed Cloud Regional Edge.</p>
+<p>In the next lab we will look at how to customize our WAF policy.</p>
+</div>
+<div class="section" id="video-walkthrough">
+<h3>Video Walkthrough<a class="headerlink" href="#video-walkthrough" title="Permalink to this heading">¶</a></h3>
+<p>Optional Video you can watch if you get stuck</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/s-BHH0Qayfc?start=400" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+</div>
+</div>
+
+
+     </div>
+    
+     <div class="row next-prev-btn-row">
+       <div class="col-lg-12">
+       
+        <a href="lab2.html" title="Lab 2: Deploying an AWS VPC Site" accesskey="p" class="btn btn-primary left"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Previous</a>
+       
+       
+          <a href="lab4.html" title="Lab 4: Introduction to F5 Distributed Cloud DNS" accesskey="n" class="btn btn-primary right">Next <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
+       
+     </div>
+     </div>
+    
+
+    </article>
+  </div>
+
+</div>
+
+
+  <div id="clouddocs-footer"></div>
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+
+  <script src="../_static/js/index.js"></script>
+  <script src="../_static/js/jquery.appear.js"></script>
+  <script src="../_static/js/printThis.js"></script>
+  <script src="../_static/js/bootstrap.min.js"></script>
+  <script src="../_static/js/clouddocs.js"></script>
+  <script src="../_static/js/CoveoJsSearch.Lazy.min.js"></script>
+  </body>
+</html>
