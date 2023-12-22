@@ -4,17 +4,17 @@
   <!-- Google Tag Manager -->
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-PPZPQ6');</script>
   <!-- End Google Tag Manager -->
-    <title>Lab 1: Policy Supervisor Overview</title>
+    <title>Lab 1: Connecting Policy Supervisor to BIG-IP WAF</title>
   
 
   <meta charset="utf-8">
   <!-- Twitter Bootstrap viewport setting -->
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <!-- F5 metadata -->
-  <meta name="title" content="Lab 1: Policy Supervisor Overview"/>
+  <meta name="title" content="Lab 1: Connecting Policy Supervisor to BIG-IP WAF"/>
   <meta name="product" content="F5 Distributed Cloud"/>
   <meta name="version" content=""/>
-  <meta name="updated_date"  content="2023-12-21 22:15:30"/>
+  <meta name="updated_date"  content="2023-12-22 16:58:44"/>
   <meta name="archived" content="Archived documents excluded"/>
   <meta name="doc_type" content="Manual"/>
   <meta name="lifecycle" content="release"/>
@@ -35,7 +35,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Lab 1: Policy Supervisor Overview &#8212; F5 Distributed Cloud  documentation</title>
+    <title>Lab 1: Connecting Policy Supervisor to BIG-IP WAF &#8212; F5 Distributed Cloud  documentation</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
@@ -90,7 +90,7 @@
 <li class="toctree-l2"><a class="reference internal" href="class9.html#objectives">Objectives:</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="class9.html#lab-tasks">Lab &amp; Tasks:</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="intro.html">Introduction: F5 WAF Policy Supervisor</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">Lab 1: Policy Supervisor Overview</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Lab 1: Connecting <strong>Policy Supervisor</strong> to BIG-IP WAF</a></li>
 <li class="toctree-l3"><a class="reference internal" href="close.html">Conclusion</a></li>
 <li class="toctree-l3"><a class="reference internal" href="close.html#appendix">Appendix</a></li>
 </ul>
@@ -115,9 +115,9 @@
       <nav class="nav-sidebartoc">
         <span class="nav-sidebartoc">
             <ul>
-<li><a class="reference internal" href="#">Lab 1: Policy Supervisor Overview</a><ul>
-<li><a class="reference internal" href="#task-1-login-to-policy-supervisor-and-create-a-new-provider">Task 1: Login to Policy Supervisor and create a new provider</a></li>
-<li><a class="reference internal" href="#task-2-install-the-policy-supervisor-agent-in-your-lab-environment">Task 2: Install the Policy Supervisor Agent in your lab environment</a></li>
+<li><a class="reference internal" href="#">Lab 1: Connecting <strong>Policy Supervisor</strong> to BIG-IP WAF</a><ul>
+<li><a class="reference internal" href="#task-1-create-a-new-policy-supervisor-provider">Task 1: Create a new <strong>Policy Supervisor</strong>  <em>Provider</em></a></li>
+<li><a class="reference internal" href="#task-2-install-a-policy-supervisor-agent">Task 2: Install a <strong>Policy Supervisor</strong> <em>Agent</em></a></li>
 <li><a class="reference internal" href="#task-3-finish-adding-a-new-provider-in-policy-supervisor">Task 3: Finish adding a new <em>provider</em> in <strong>Policy Supervisor</strong></a></li>
 </ul>
 </li>
@@ -163,15 +163,15 @@
 
      <div role="main">
         
-  <div class="section" id="lab-1-policy-supervisor-overview">
-<h1>Lab 1: Policy Supervisor Overview<a class="headerlink" href="#lab-1-policy-supervisor-overview" title="Permalink to this heading">¶</a></h1>
+  <div class="section" id="lab-1-connecting-policy-supervisor-to-big-ip-waf">
+<h1>Lab 1: Connecting <strong>Policy Supervisor</strong> to BIG-IP WAF<a class="headerlink" href="#lab-1-connecting-policy-supervisor-to-big-ip-waf" title="Permalink to this heading">¶</a></h1>
 <p><strong>Policy Supervisor</strong> is an online unified configuration solution for security policies, built with the purposes of managing and converting configuration across multiple F5 Web App Firewall solutions.
 It enables operators of F5 WAF technologies to easily convert policy files from <em>BIG-IP AWAF</em>, <em>F5 Distributed Cloud WAF</em>, and <em>NGINX NAP</em> formats. In the process <strong>Policy Supervisor</strong> generates and uses an intermediate
 JSON-based common declarative format called CDP (<em>Common Declarative Policy</em>) for policy lifecycle management. After a policy is converted to CDP, it can then be deployed to any supported WAF Solution, which is referred to as a <em>Provider</em> in <strong>Policy Supervisor</strong> lingo.</p>
 <p>Please refer to the Tutorial in the GitHub repo (<a class="reference external" href="https://github.com/f5devcentral/ps-convert">https://github.com/f5devcentral/ps-convert</a>) for currently supported <em>Provider</em> types.</p>
 <p><strong>Policy Supervisor</strong> provides a graphical interface for visual policy creation, editing and management for traditional SecOps personas.</p>
-<div class="section" id="task-1-login-to-policy-supervisor-and-create-a-new-provider">
-<h2>Task 1: Login to Policy Supervisor and create a new provider<a class="headerlink" href="#task-1-login-to-policy-supervisor-and-create-a-new-provider" title="Permalink to this heading">¶</a></h2>
+<div class="section" id="task-1-create-a-new-policy-supervisor-provider">
+<h2>Task 1: Create a new <strong>Policy Supervisor</strong>  <em>Provider</em><a class="headerlink" href="#task-1-create-a-new-policy-supervisor-provider" title="Permalink to this heading">¶</a></h2>
 <p>The following steps will walk you through connecting <strong>Policy Supervisor</strong> to your <em>BIG-IP WAF</em>.</p>
 <p>The first step is to create a <em>Provider</em>.</p>
 <p>A <em>Provider</em> is a generic name used by <strong>Policy Supervisor</strong> to indicate an F5 Web App Firewall. The supported <em>Provider</em> types are: <em>F5 Distributed Cloud WAF</em>, <em>BIG-IP Advanced WAF</em> (AWAF), and <em>NGINX Application Protection</em> (NAP). Add and connect <em>providers</em> in <strong>Policy Supervisor</strong> to enable the deployment of your configuration policies across endpoints and load balancers for complete WAF protection.</p>
@@ -183,47 +183,70 @@ JSON-based common declarative format called CDP (<em>Common Declarative Policy</
 <li>The <em>Agent</em> is used to create <em>Secrets</em>, which are stored in your environment only and are never transmitted outside of your network.</li>
 <li>These <em>secrets</em> are used to connect to your <em>BIG-IP AWAF</em> or <em>NGINX NAP</em> instance to execute various policy-related functions within a Docker container environment on that machine/VM.</li>
 </ul>
+<p><strong>Prerequisite</strong>                                                                             |</p>
+<p><em>Installation of the</em> <strong>Policy Supervisor Agent</strong> <em>requires the following applications on your Linux machine/VM:</em>
+-Docker
+-wget</p>
+<p>The same credentials for the <strong>f5-xc-lab-mcn</strong> tenant in the F5 Distributed Cloud Console can
+be used to access the F5 Policy Supervisor console.</p>
 <table border="1" class="docutils align-default">
 <colgroup>
 <col width="100%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><p class="first">1. Login to <a class="reference external" href="https://policysupervisor.io">https://policysupervisor.io</a> by clicking on <em>Sign In with Azure AD</em>
-[insert instructions for student’s to retrieve their XC ephemeral login credentials]</p>
-<p><a class="reference internal" href="../_images/PSLoginWindow.png"><img alt="lab005" src="../_images/PSLoginWindow.png" style="width: 800px;" /></a></p>
-<ol class="arabic simple" start="2">
+<tr class="row-odd"><td><ol class="first last arabic simple">
+<li>Login to <a class="reference external" href="https://policysupervisor.io">https://policysupervisor.io</a> by clicking on <em>Sign In with Azure AD</em> (instructions for login are
+provided in the previous introduction section of this lab guide).</li>
+</ol>
+</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="../_images/PSLoginWindow.png"><img alt="lab005" src="../_images/PSLoginWindow.png" style="width: 800px;" /></a></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="../_images/AzureADLogin.png"><img alt="lab008" src="../_images/AzureADLogin.png" style="width: 800px;" /></a></td>
+</tr>
+<tr class="row-even"><td><ol class="first last arabic simple" start="2">
 <li>On the <em>Overview &gt; Providers</em> page, click <strong>Add Provider</strong>. If this is the first provider being added,
 there are two <strong>Add Provider</strong> buttons on the screen. The <em>Add Providers</em> pane will appears.</li>
 </ol>
-<p><a class="reference internal" href="../_images/image9.png"><img alt="lab001" src="../_images/image9.png" style="width: 800px;" /></a>
-<a class="reference internal" href="../_images/AzureADLogin.png"><img alt="lab008" src="../_images/AzureADLogin.png" style="width: 800px;" /></a></p>
-<ol class="arabic simple" start="3">
+</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="../_images/image9.png"><img alt="lab001" src="../_images/image9.png" style="width: 800px;" /></a></td>
+</tr>
+<tr class="row-even"><td><ol class="first last arabic simple" start="3">
 <li>There are no <em>agents</em> configure yet. Choose <strong>BIG-IP</strong> for the <em>Provider Type</em> and click
 <strong>+ Add new agent</strong> that will appear below the <em>Select Agent</em> drowpdown once you select a <em>Provider Type*</em>.
 The <em>Add Agent</em> pane will appear and a token will be automatically generated as a long text string.</li>
 </ol>
-<p><a class="reference internal" href="../_images/image17.png"><img alt="lab002" src="../_images/image17.png" style="width: 800px;" /></a></p>
-<ol class="arabic simple" start="4">
+</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="../_images/image17.png"><img alt="lab002" src="../_images/image17.png" style="width: 800px;" /></a></td>
+</tr>
+<tr class="row-even"><td><ol class="first last arabic simple" start="4">
 <li>Copy and paste (save) the value of the <strong>Token</strong> to a text file. <em>(It will be used in the *Task 2</em> below.)*</li>
 </ol>
-<p><a class="reference internal" href="../_images/image18.png"><img alt="lab003" src="../_images/image18.png" style="width: 800px;" /></a></p>
-<ol class="arabic simple" start="6">
+</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="../_images/image18.png"><img alt="lab003" src="../_images/image18.png" style="width: 800px;" /></a></td>
+</tr>
+<tr class="row-even"><td><ol class="first last arabic simple" start="5">
 <li>Within the same <em>Add Agent</em> pane, follow the <strong>Go to agent-install</strong> link (step 1) to the repository page.</li>
 </ol>
-<p><a class="reference internal" href="../_images/image19.png"><img alt="lab004" src="../_images/image19.png" style="width: 800px;" /></a></p>
-<p>7. On the <em>Package Registry</em> page, <strong>right-click</strong> on the <strong>agent-installer</strong> file name and select
-<strong>Copy Link</strong>. <em>This copied URL will be used in the next task.</em></p>
-<div class="last admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last"><em>The version of the agent-installer file is upgraded from time to time.</em></p>
-</div>
 </td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="../_images/image19.png"><img alt="lab004" src="../_images/image19.png" style="width: 800px;" /></a></td>
+</tr>
+<tr class="row-even"><td>6. On the <em>Package Registry</em> page, <strong>right-click</strong> on the <strong>agent-installer</strong> file name and select
+<strong>Copy Link</strong>. <em>This copied URL will be used in the next task.</em></td>
 </tr>
 </tbody>
 </table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><em>The version of the agent-installer file is upgraded from time to time.</em></p>
 </div>
-<div class="section" id="task-2-install-the-policy-supervisor-agent-in-your-lab-environment">
-<h2>Task 2: Install the Policy Supervisor Agent in your lab environment<a class="headerlink" href="#task-2-install-the-policy-supervisor-agent-in-your-lab-environment" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="task-2-install-a-policy-supervisor-agent">
+<h2>Task 2: Install a <strong>Policy Supervisor</strong> <em>Agent</em><a class="headerlink" href="#task-2-install-a-policy-supervisor-agent" title="Permalink to this heading">¶</a></h2>
 <p>Next, we will use the <em>token</em> and the <em>URL</em> obtain in task 1 above to install the <em>Agent</em> on your UDF virtual lab environment.
 The <em>Agent</em> will be installed on your <em>SuperJumpHost</em> Linux machine, which is connected to the same management network as your BIG-IP.
 The <em>SuperJumpHost</em> can also communicate with Policy Supervisor across the Internet.</p>
@@ -232,41 +255,54 @@ The <em>SuperJumpHost</em> can also communicate with Policy Supervisor across th
 <col width="100%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><ol class="first arabic simple">
+<tr class="row-odd"><td><ol class="first last arabic simple">
 <li>Use a different window to go back to <a class="reference external" href="https://udf.f5.com">https://udf.f5.com</a> and click <strong>Deployment</strong> to see virtual systems.</li>
 </ol>
-<p><a class="reference internal" href="../_images/UDFDeploymentTab.png"><img alt="lab006" src="../_images/UDFDeploymentTab.png" style="width: 800px;" /></a></p>
-<ol class="arabic simple" start="2">
+</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="../_images/UDFDeploymentTab.png"><img alt="lab006" src="../_images/UDFDeploymentTab.png" style="width: 800px;" /></a></td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="2">
 <li>Find the <strong>SuperJumpHost</strong> system and click the <strong>ACCESS</strong> link below to see the options.</li>
 <li>Select <strong>Web Sell</strong> to access the command line interface of the SuperJumpHost machine in a new browser tab.</li>
 </ol>
-<p><a class="reference internal" href="../_images/UDFWebShell.png"><img alt="lab007" src="../_images/UDFWebShell.png" style="width: 800px;" /></a></p>
-<ol class="arabic simple" start="4">
+</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="../_images/UDFWebShell.png"><img alt="lab007" src="../_images/UDFWebShell.png" style="width: 800px;" /></a></td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="4">
 <li>Set your working directory to <em>/tmp</em> with this linux command: <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">/tmp</span></code></li>
 <li>Use the URL copied at step 7 above to download the installer via the command line:
-<code class="docutils literal notranslate"><span class="pre">wget</span> <span class="pre">[...insert</span> <span class="pre">URL</span> <span class="pre">from</span> <span class="pre">aboe</span> <span class="pre">Task</span> <span class="pre">1</span> <span class="pre">here...]</span></code></li>
+<code class="docutils literal notranslate"><span class="pre">wget</span> <span class="pre">*[...insert</span> <span class="pre">URL</span> <span class="pre">from</span> <span class="pre">aboe</span> <span class="pre">Task</span> <span class="pre">1</span> <span class="pre">here...]*</span></code></li>
 <li>After the download completes, rename the file with this linux command:
 <code class="docutils literal notranslate"><span class="pre">mv</span> <span class="pre">download</span> <span class="pre">agent-installer</span></code></li>
 <li>Next, give the installer package execution rights to enable it to run:
 <code class="docutils literal notranslate"><span class="pre">chmod</span> <span class="pre">+x</span> <span class="pre">./agent-installer</span></code></li>
 </ol>
-<p><a class="reference internal" href="../_images/install_agent.png"><img alt="lab009" src="../_images/install_agent.png" style="width: 800px;" /></a></p>
-<ol class="arabic simple" start="8">
+</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="../_images/install_agent.png"><img alt="lab009" src="../_images/install_agent.png" style="width: 800px;" /></a></td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="8">
 <li>Run the agent installer by using the following command:
 <code class="docutils literal notranslate"><span class="pre">./agent-installer</span></code></li>
 <li>Paste the token copied from <em>Task 1</em> above when prompted.</li>
 <li>Enter the name <code class="docutils literal notranslate"><span class="pre">udf</span></code> when prompted for the agent name. Wait for registration to complete successfully.</li>
 </ol>
-<p><a class="reference internal" href="../_images/agentsetup.png"><img alt="lab010" src="../_images/agentsetup.png" style="width: 800px;" /></a></p>
-<ol class="arabic simple" start="11">
+</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="../_images/agentsetup.png"><img alt="lab010" src="../_images/agentsetup.png" style="width: 800px;" /></a></td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="11">
 <li>Type <code class="docutils literal notranslate"><span class="pre">bigip</span></code> when prompted for the secret name.</li>
 <li>Type <code class="docutils literal notranslate"><span class="pre">admin</span></code> when prompted for the username.</li>
 <li>Type <code class="docutils literal notranslate"><span class="pre">Canada123!</span></code> when prompted for a password.</li>
 <li>Press “<strong>Enter</strong>” when prompted for the <em>ssh key path</em> (we’re not using one in this demo).</li>
 <li>Press “<strong>Enter</strong>” when prompted to select an option (choose the default “<em>Finish</em>” option).</li>
 </ol>
-<p class="last"><a class="reference internal" href="../_images/agentsecret.png"><img alt="lab011" src="../_images/agentsecret.png" style="width: 800px;" /></a></p>
 </td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="../_images/agentsecret.png"><img alt="lab011" src="../_images/agentsecret.png" style="width: 800px;" /></a></td>
 </tr>
 </tbody>
 </table>
@@ -319,24 +355,6 @@ was created above and click <strong>Continue</strong>.</p>
 <p>Click the “Next button.</p>
 <p class="last">Click the “Deploy” button.</p>
 </td>
-</tr>
-</tbody>
-</table>
-<table border="1" class="docutils align-default">
-<colgroup>
-<col width="100%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><p class="first"><strong>End of Lab 1:</strong>  This concludes Lab 1.  In this lab you created an origin pool to connect to the</p>
-<p>application, you then created a load balancer and associated the origin pool to the load balancer.  This</p>
-<p>allowed the application to be advertised via the F5 Distributed Cloud Global Network.  The Distributed Cloud</p>
-<p>Console was then used to review telemetry data gathered for the application.  Next an Application Firewall</p>
-<p>policy was created and assigned to protect the application.  Finally a sample attack was run against the</p>
-<p>application and the security event data was reviewed within the Distributed Cloud Console.</p>
-<p class="last">A brief presentation will be shared prior to the beginning of Lab 2.</p>
-</td>
-</tr>
-<tr class="row-even"><td><a href="#id1"><span class="problematic" id="id2">|labend|</span></a></td>
 </tr>
 </tbody>
 </table>

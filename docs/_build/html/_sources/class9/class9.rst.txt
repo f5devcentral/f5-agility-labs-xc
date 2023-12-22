@@ -10,7 +10,7 @@ Objectives:
 ----------
 
 - Gain an understanding of WAF policy conversion and deployment. 
-.. image:: 00-marketecture.png
+.. image:: _static/00-marketecture.png
     :scale: 25%
 
 Lab & Tasks:

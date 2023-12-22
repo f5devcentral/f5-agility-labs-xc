@@ -1,5 +1,5 @@
-Lab 1: Policy Supervisor Overview
-=================================
+Lab 1: Connecting **Policy Supervisor** to BIG-IP WAF
+=====================================================
 
 **Policy Supervisor** is an online unified configuration solution for security policies, built with the purposes of managing and converting configuration across multiple F5 Web App Firewall solutions.
 It enables operators of F5 WAF technologies to easily convert policy files from *BIG-IP AWAF*, *F5 Distributed Cloud WAF*, and *NGINX NAP* formats. In the process **Policy Supervisor** generates and uses an intermediate
@@ -9,8 +9,8 @@ Please refer to the Tutorial in the GitHub repo (https://github.com/f5devcentral
 
 **Policy Supervisor** provides a graphical interface for visual policy creation, editing and management for traditional SecOps personas.
 
-Task 1: Login to Policy Supervisor and create a new provider
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Task 1: Create a new **Policy Supervisor**  *Provider*
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The following steps will walk you through connecting **Policy Supervisor** to your *BIG-IP WAF*.
 
@@ -26,48 +26,50 @@ When you add a BIG-IP instance as a *provider*, you must first set up an *agent*
 - The *Agent* is used to create *Secrets*, which are stored in your environment only and are never transmitted outside of your network.
 - These *secrets* are used to connect to your *BIG-IP AWAF* or *NGINX NAP* instance to execute various policy-related functions within a Docker container environment on that machine/VM.
 
-.. prerequisites::
-   *Installation of the* **Policy Supervisor Agent** *requires the following applications on your Linux machine/VM:*
-     -Docker
-     -wget
+**Prerequisite**                                                                             |
+
+*Installation of the* **Policy Supervisor Agent** *requires the following applications on your Linux machine/VM:*
+-Docker
+-wget
+
+The same credentials for the **f5-xc-lab-mcn** tenant in the F5 Distributed Cloud Console can
+be used to access the F5 Policy Supervisor console.
 
 +---------------------------------------------------------------------------------------------------------------+
 |                                                                                                               |
-| 1. Login to https://policysupervisor.io by clicking on *Sign In with Azure AD*                                |
-| [insert instructions for student's to retrieve their XC ephemeral login credentials]                          |
-|                                                                                                               |
+| 1. Login to https://policysupervisor.io by clicking on *Sign In with Azure AD* (instructions for login are    |
+|    provided in the previous introduction section of this lab guide).                                          |
++---------------------------------------------------------------------------------------------------------------+
 | |lab005|                                                                                                      |
-|                                                                                                               |
++---------------------------------------------------------------------------------------------------------------+
+| |lab008|                                                                                                      |
++---------------------------------------------------------------------------------------------------------------+
 | 2. On the *Overview > Providers* page, click **Add Provider**. If this is the first provider being added,     |
 |    there are two **Add Provider** buttons on the screen. The *Add Providers* pane will appears.               |
-|                                                                                                               |
++---------------------------------------------------------------------------------------------------------------+
 | |lab001|                                                                                                      |
-| |lab008|                                                                                                      |
-|                                                                                                               |
++---------------------------------------------------------------------------------------------------------------+
 | 3. There are no *agents* configure yet. Choose **BIG-IP** for the *Provider Type* and click                   |
 |    **+ Add new agent** that will appear below the *Select Agent* drowpdown once you select a *Provider Type**.|
 |    The *Add Agent* pane will appear and a token will be automatically generated as a long text string.        |
-|                                                                                                               |
-| |lab002|                                                                                                      |
-|                                                                                                               |
-| 4. Copy and paste (save) the value of the **Token** to a text file. *(It will be used in the *Task 2* below.)*|
-|                                                                                                               |
-| |lab003|                                                                                                      |
-|                                                                                                               |
-| 6. Within the same *Add Agent* pane, follow the **Go to agent-install** link (step 1) to the repository page. |
-|                                                                                                               |
-| |lab004|                                                                                                      |
-|                                                                                                               |
-| 7. On the *Package Registry* page, **right-click** on the **agent-installer** file name and select            |
-| **Copy Link**. *This copied URL will be used in the next task.*                                               |
-|                                                                                                               |
-| .. note::                                                                                                     |
-|     *The version of the agent-installer file is upgraded from time to time.*                                  |
-|                                                                                                               |
 +---------------------------------------------------------------------------------------------------------------+
+| |lab002|                                                                                                      |
++---------------------------------------------------------------------------------------------------------------+
+| 4. Copy and paste (save) the value of the **Token** to a text file. *(It will be used in the *Task 2* below.)*|
++---------------------------------------------------------------------------------------------------------------+
+| |lab003|                                                                                                      |
++---------------------------------------------------------------------------------------------------------------+
+| 5. Within the same *Add Agent* pane, follow the **Go to agent-install** link (step 1) to the repository page. |
++---------------------------------------------------------------------------------------------------------------+
+| |lab004|                                                                                                      |
++---------------------------------------------------------------------------------------------------------------+
+| 6. On the *Package Registry* page, **right-click** on the **agent-installer** file name and select            |
+| **Copy Link**. *This copied URL will be used in the next task.*                                               |
++---------------------------------------------------------------------------------------------------------------+
+.. note:: *The version of the agent-installer file is upgraded from time to time.*
 
-Task 2: Install the Policy Supervisor Agent in your lab environment
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Task 2: Install a **Policy Supervisor** *Agent*
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Next, we will use the *token* and the *URL* obtain in task 1 above to install the *Agent* on your UDF virtual lab environment.
 The *Agent* will be installed on your *SuperJumpHost* Linux machine, which is connected to the same management network as your BIG-IP.
@@ -75,37 +77,37 @@ The *SuperJumpHost* can also communicate with Policy Supervisor across the Inter
 
 +---------------------------------------------------------------------------------------------------------------+
 | 1. Use a different window to go back to https://udf.f5.com and click **Deployment** to see virtual systems.   |
-|                                                                                                               |
++---------------------------------------------------------------------------------------------------------------+
 | |lab006|                                                                                                      |
-|                                                                                                               |
++---------------------------------------------------------------------------------------------------------------+
 | 2. Find the **SuperJumpHost** system and click the **ACCESS** link below to see the options.                  |
 |                                                                                                               |
 | 3. Select **Web Sell** to access the command line interface of the SuperJumpHost machine in a new browser tab.|
-|                                                                                                               |
++---------------------------------------------------------------------------------------------------------------+
 | |lab007|                                                                                                      |
-|                                                                                                               |
++---------------------------------------------------------------------------------------------------------------+
 | 4. Set your working directory to */tmp* with this linux command: ``cd /tmp``                                  |
 |                                                                                                               |
 | 5. Use the URL copied at step 7 above to download the installer via the command line:                         |
-|    ``wget [...insert URL from aboe Task 1 here...]``                                                          |
+|    ``wget *[...insert URL from aboe Task 1 here...]*``                                                        |
 |                                                                                                               |
 | 6. After the download completes, rename the file with this linux command:                                     |
 |    ``mv download agent-installer``                                                                            |
 |                                                                                                               |
 | 7. Next, give the installer package execution rights to enable it to run:                                     |
 |    ``chmod +x ./agent-installer``                                                                             |
-|                                                                                                               |
++---------------------------------------------------------------------------------------------------------------+
 | |lab009|                                                                                                      |
-|                                                                                                               |
++---------------------------------------------------------------------------------------------------------------+
 | 8. Run the agent installer by using the following command:                                                    |
 |    ``./agent-installer``                                                                                      |
 |                                                                                                               |
 | 9. Paste the token copied from *Task 1* above when prompted.                                                  |
 |                                                                                                               |
 | 10. Enter the name ``udf`` when prompted for the agent name. Wait for registration to complete successfully.  |
-|                                                                                                               |
++---------------------------------------------------------------------------------------------------------------+
 | |lab010|                                                                                                      |
-|                                                                                                               |
++---------------------------------------------------------------------------------------------------------------+
 | 11. Type ``bigip`` when prompted for the secret name.                                                         |
 |                                                                                                               |
 | 12. Type ``admin`` when prompted for the username.                                                            |
@@ -115,9 +117,8 @@ The *SuperJumpHost* can also communicate with Policy Supervisor across the Inter
 | 14. Press "**Enter**" when prompted for the *ssh key path* (we're not using one in this demo).                |
 |                                                                                                               |
 | 15. Press "**Enter**" when prompted to select an option (choose the default "*Finish*" option).               |
-|                                                                                                               |
++---------------------------------------------------------------------------------------------------------------+
 | |lab011|                                                                                                      |
-|                                                                                                               |
 +---------------------------------------------------------------------------------------------------------------+
 
 Task 3: Finish adding a new *provider* in **Policy Supervisor**
@@ -201,43 +202,25 @@ Now that the *Agent* is ready, the configuration of the new *Provider* can be co
 |                                                                                                               |
 +---------------------------------------------------------------------------------------------------------------+
 
-+---------------------------------------------------------------------------------------------------------------+
-| **End of Lab 1:**  This concludes Lab 1.  In this lab you created an origin pool to connect to the            |
-|                                                                                                               |
-| application, you then created a load balancer and associated the origin pool to the load balancer.  This      |
-|                                                                                                               |
-| allowed the application to be advertised via the F5 Distributed Cloud Global Network.  The Distributed Cloud  |
-|                                                                                                               |
-| Console was then used to review telemetry data gathered for the application.  Next an Application Firewall    |
-|                                                                                                               |
-| policy was created and assigned to protect the application.  Finally a sample attack was run against the      |
-|                                                                                                               |
-| application and the security event data was reviewed within the Distributed Cloud Console.                    |
-|                                                                                                               |
-| A brief presentation will be shared prior to the beginning of Lab 2.                                          |
-+---------------------------------------------------------------------------------------------------------------+
-| |labend|                                                                                                      |
-+---------------------------------------------------------------------------------------------------------------+
-
-.. |lab001| image:: image9.png
+.. |lab001| image:: _static/image9.png
    :width: 800px
-.. |lab002| image:: image17.png
+.. |lab002| image:: _static/image17.png
    :width: 800px
-.. |lab003| image:: image18.png
+.. |lab003| image:: _static/image18.png
    :width: 800px
-.. |lab004| image:: image19.png
+.. |lab004| image:: _static/image19.png
    :width: 800px
-.. |lab005| image:: PSLoginWindow.png
+.. |lab005| image:: _static/PSLoginWindow.png
    :width: 800px
-.. |lab006| image:: UDFDeploymentTab.png
+.. |lab006| image:: _static/UDFDeploymentTab.png
    :width: 800px
-.. |lab007| image:: UDFWebShell.png
+.. |lab007| image:: _static/UDFWebShell.png
    :width: 800px
-.. |lab008| image:: AzureADLogin.png
+.. |lab008| image:: _static/AzureADLogin.png
    :width: 800px
-.. |lab009| image:: install_agent.png
+.. |lab009| image:: _static/install_agent.png
    :width: 800px
-.. |lab010| image:: agentsetup.png
+.. |lab010| image:: _static/agentsetup.png
    :width: 800px
-.. |lab011| image:: agentsecret.png
+.. |lab011| image:: _static/agentsecret.png
    :width: 800px
