@@ -54,7 +54,7 @@ This lab will begin back in the Windows 10 client deployed as part of the UDF.
 | 8. Click **Download**.                                                                                        |
 |                                                                                                               |
 | .. note::                                                                                                     |
-|    *Use a password that you will remember for the certificate, if you don't remember your API cert password,  |
+|    *Use a password that you will remember for the certificate, if you don't remember your API cert password,* |
 |                                                                                                               |
 |    *you will need to generate a new API cert.*                                                                |
 +---------------------------------------------------------------------------------------------------------------+
@@ -76,25 +76,31 @@ This lab will begin back in the Windows 10 client deployed as part of the UDF.
 |   copy c:\Users\labuser\Downloads\f5-xc-lab-app.console.ves.volterra.io.api-creds.p12                         |
 |   c:\Users\labuser\xc-api-cert.p12                                                                            |
 |                                                                                                               |
-| 11. Enter your e-mail address in the **Email** form and password in the **Password** form and click **Sign**  |
+| 11. Set an environment variable for the API certificate password with the followind command:                  |
 |                                                                                                               |
-|    **In**.                                                                                                    |
+| .. code-block::                                                                                               |
+|   setx VES_P12_PASSWORD "<some_password>"                                                                     |
+|                                                                                                               |
+| 12. Close the command prompt window.                                                                          |
 +---------------------------------------------------------------------------------------------------------------+
 | |lab3-Terraform_Cmd_Prompt|                                                                                   |
 |                                                                                                               |
-| |lab1-XC_Bookmark|                                                                                            |
+| |lab3-Terraform_Cert_Copy|                                                                                    |
 |                                                                                                               |
-| |lab1-XC_Signin|                                                                                              |
+| |lab3-Terraform_Cert_Password|                                                                                |
 +---------------------------------------------------------------------------------------------------------------+
 
 +---------------------------------------------------------------------------------------------------------------+
-| 1. Double click the **Visual Studio Code** icon on the desktop to launch **Visual Studio Code**.              |
+| 13. Double click the **Visual Studio Code** icon on the desktop to launch **Visual Studio Code**.             |
 |                                                                                                               |
-| 2. When Visual Studio Code launches, click **File** and then **Open Folder...**.                              |
+| 14. When Visual Studio Code launches, click **File** and then **Open Folder...**.                             |
 |                                                                                                               |
-| 3. In the resulting window, paste **C:\Users\labuser\appworld-f5xc-automation\Terraform** into the location   |
+| 15. In the resulting window, paste the below text into the location bar, click the arrow to open that         |
 |                                                                                                               |
-|    bar, click the arrow to open that location, and then click **Select Folder**.                              |
+|    location, and then click **Select Folder**.                                                                |
+|                                                                                                               |
+| .. code-block::                                                                                               |
+|   c:\Users\labuser\appworld-f5xc-automation\Terraform                                                         |
 +---------------------------------------------------------------------------------------------------------------+
 | |lab3-Terraform_VSC|                                                                                          |
 |                                                                                                               |
@@ -104,24 +110,68 @@ This lab will begin back in the Windows 10 client deployed as part of the UDF.
 +---------------------------------------------------------------------------------------------------------------+
 
 +---------------------------------------------------------------------------------------------------------------+
-| 4. From the EXPLORER frame, click the new file icon next to the TERRAFORM folder, and then enter the name     |
+| 16. From the EXPLORER frame, click the new file icon next to the TERRAFORM folder, and then enter the name    |
 |                                                                                                               |
 |    **terraform.tfvars** for the new file that is created and press **Enter**.                                 |
 |                                                                                                               |
-| 5. This will open the **terraform.tfvars file in the right frame of Visual Studio Code, enter the following   |
+| 17. This will open the **terraform.tfvars file in the right frame of Visual Studio Code, enter the following  |
 |                                                                                                               |
-|    values into the file                                                                                       |
+|    values into the file:                                                                                      |
 |                                                                                                               |
-|    api_cert    = "/somepath/f5xc.cert"                                                                        |
-|    api_key     = "/somepath/f5xc.key"                                                                         |
+| .. code-block::                                                                                               |
+|    api_p12     = "c:/Users/labuser/xc-api-cert.p12"                                                           |
 |    tenant_name = "f5-xc-lab-app"                                                                              |
 |    namespace   = "<namespace>"                                                                                |
 |                                                                                                               |
-| 6. Click **File** and **Save** to save the changes you made to the file.                                      |
+| 18. Click **File** and **Save** to save the changes you made to the file.                                     |
 +---------------------------------------------------------------------------------------------------------------+
-| |lab3-Terraform_VSC_tfvars|                                                                                   |
+| |lab3-Terraform_VSC_Tfvars|                                                                                   |
 |                                                                                                               |
-| |lab3-Terraform_VSC_tfvars_values|                                                                            |
+| |lab3-Terraform_VSC_Tfvars_Values|                                                                            |
 |                                                                                                               |
-| |lab3-Terraform_VSC_tfvars_save|                                                                              |
+| |lab3-Terraform_VSC_Tfvars_Save|                                                                              |
++---------------------------------------------------------------------------------------------------------------+
+
++---------------------------------------------------------------------------------------------------------------+
+| 19. From the Visual Studio Code menu bar, click **View**, and then click **Terminal**.                        |
+|                                                                                                               |
+| 20. In the Terminal at the bottom of Visual Studio Code, enter the following command and press enter:         |
+|                                                                                                               |
+| .. code-block::                                                                                               |
+|   terraform init                                                                                              |
+|                                                                                                               |
+| 21. Review the Init Results. You should see a **Terraform has been successfully initialized!** message.       |
+|                                                                                                               |
+|     **DO NOT PROCEED AND ASK A LAB ASSISTNAT FOR HELP IF YOU DON'T SEE THE SUCCESSFULLY INITIALIZED MESSAGE.**|
+|                                                                                                               |
+| 22. In the Terminal enter the following command and press enter:                                              |
+|                                                                                                               |
+| .. code-block::                                                                                               |
+|   terraform plan                                                                                              |
+|                                                                                                               |
+| 23. Review the Plan results. This shows what Terraform is planning to create.                                 |
+|                                                                                                               |
+| 24. In the Terminal enter the following command and press enter:                                              |
+|                                                                                                               |
+| .. code-block::                                                                                               |
+|   terraform apply                                                                                             |
+|                                                                                                               |
+| 25. When prompted **Do you want to perform these actions?** type **yes** and press enter.                     |
+|                                                                                                               |
+| 26. Review the Apply results. This shows what Terraform created.                                              |
+|                                                                                                               |
++---------------------------------------------------------------------------------------------------------------+
+| |lab3-Terraform_VSC_Init|                                                                                     |
+|                                                                                                               |
+| |lab3-Terraform_VSC_Init_Success|                                                                             |
+|                                                                                                               |
+| |lab3-Terraform_VSC_Plan|                                                                                     |
+|                                                                                                               |
+| |lab3-Terraform_VSC_Plan_Results|                                                                             |
+|                                                                                                               |
+| |lab3-Terraform_VSC_Apply|                                                                                    |
+|                                                                                                               |
+| |lab3-Terraform_VSC_Apply_Yes|                                                                                |
+|                                                                                                               |
+| |lab3-Terraform_VSC_Apply_Results|                                                                            |
 +---------------------------------------------------------------------------------------------------------------+
