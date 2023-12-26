@@ -1,5 +1,5 @@
 Lab 1: API-First Console
-==========================================================================================
+========================
 
 This lab will focus on demonstrating the API-First capabilities of the F5 Distribured Cloud
 Console. Students will begin by creating an API token for authenticating to the API. Next,
@@ -20,7 +20,7 @@ F5 Distributed Cloud Console, having set your Work Domain Roles and Skill levels
 not done so already, please login to your tenant for this lab and proceed to Task 1.
 
 Task 1: Review Developer Portal
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The following steps will allow you to create an API Token and query the Distributed Cloud API
 utilizing the Developer Portal.  

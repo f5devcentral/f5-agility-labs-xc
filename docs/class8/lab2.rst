@@ -1,14 +1,15 @@
 Lab 2: Operationalize Security Configurations
-============================================================================================
+=============================================
 
 The following lab tasks will guide you through using Postman to modify an existinga HTTP Load Balancer deployment
-to apply a Web Application Firewall configuration and Service Policy configuration. This lab demonstrates the use
-of the PUT method to modify an existing object in Distributed Cloud.
+to apply a Web Application Firewall and Service Policy configuration. This lab demonstrates the use of the PUT 
+method to modify an existing object in Distributed Cloud.  Students will then use the DELETE method to delete
+the objects created in Lab 1 and Lab 2 in prepration for Lab 3.
 
 **Expected Lab Time: 20 minutes**
 
-Task 1: Create and Attach WAAP Policy  
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Task 1: Create & Attach WAAP Policy  
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 In this task you will use Postman to create an Application Firewall policy with the default settings. Postman 
 will then be used to attach the Application Firewall to the HTTP Load Balancer created in Lab 1. 
 
@@ -100,8 +101,8 @@ This lab will begin back in the Windows 10 client deployed as part of the UDF.
 | |lab2-XC_LB_AppFW_JSON_Data|                                                                                  |
 +---------------------------------------------------------------------------------------------------------------+
 
-Task 2: Create and Service Policy  
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Task 2: Create & Attach a Service Policy  
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 In this task you will use Postman to create a Service Policy that only allows specific contries to access your 
 application. Postman will then be used to attach the Service Policy to the HTTP Load Balancer created in Lab 1. 
 
