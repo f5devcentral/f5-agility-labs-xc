@@ -46,7 +46,7 @@ utilizing the Developer Portal.
 |                                                                                                               |
 |    * **Credential Name ID:**  *<namespace>-api-token*                                                         |
 |    * **Credential Type: Select:** *API Token*                                                                 |
-|    * **Expiry Date: Select:** *<date two day in the future of today's date>*                                  |
+|    * **Expiry Date: Select:** *<date two days in the future of today's date>*                                 |
 |                                                                                                               |
 | 6. Click **Generate**.                                                                                        |
 |                                                                                                               |

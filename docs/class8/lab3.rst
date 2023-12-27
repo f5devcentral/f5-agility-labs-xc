@@ -50,7 +50,7 @@ This lab will begin back in the Windows 10 client deployed as part of the UDF.
 |    * **Credential Type: Select:** *API Certificate*                                                           |
 |    * **Password:** *<some_password>*                                                                          |
 |    * **Confirm Password:** *<some_password>*                                                                  |
-|    * **Expiry Date: Select:** *<date two day in the future of today's date>*                                  |
+|    * **Expiry Date: Select:** *<date two days in the future of today's date>*                                 |
 |                                                                                                               |
 | 8. Click **Download**.                                                                                        |
 |                                                                                                               |
@@ -380,11 +380,11 @@ Application Firewall Policy that was created in Task 1 & 2.
    :width: 800px
 .. |lab3-Terraform_VSC_Folder_Select| image:: _static/lab3-Terraform_VSC_Folder_Select.png
    :width: 800px
-.. |lab3-Terraform_VSC_Tfvars| image:: _static/lab3-Terraform_VSC_Tfvars.png
+.. |lab3-Terraform_VSC_Tfvars| image:: _static/lab3-Terraform_VSC_tfvars.png
    :width: 800px
-.. |lab3-Terraform_VSC_Tfvars_Values| image:: _static/lab3-Terraform_VSC_Tfvars_Values.png
+.. |lab3-Terraform_VSC_Tfvars_Values| image:: _static/lab3-Terraform_VSC_tfvars_Values.png
    :width: 800px
-.. |lab3-Terraform_VSC_Tfvars_Save| image:: _static/lab3-Terraform_VSC_Tfvars_Save.png
+.. |lab3-Terraform_VSC_Tfvars_Save| image:: _static/lab3-Terraform_VSC_tfvars_Save.png
    :width: 800px
 .. |lab3-Terraform_VSC_Init| image:: _static/lab3-Terraform_VSC_Init.png
    :width: 800px
