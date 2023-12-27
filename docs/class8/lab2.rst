@@ -250,6 +250,20 @@ cleans up the environment in prepation for Lab3.
 | |lab2-Postman_HC_Delete_Results|                                                                              |
 +---------------------------------------------------------------------------------------------------------------+
 
++---------------------------------------------------------------------------------------------------------------+
+| **End of Lab 2:**  This concludes Lab 2. In this lab you learned how to use Postman to create an Web          |
+|                                                                                                               |
+| Application Firewall policy and Service Policy. You then used Postman to modify the HTTP Load Balancer you    |
+|                                                                                                               |
+| created in Lab 1 and apply the Web Application Firewall and Service policy. Lastly you used Postman to delete |
+|                                                                                                               |
+| all of the configuration from Lab 1 and Lab 2 in preperation for Lab 3.                                       |
+|                                                                                                               |
+| A brief presentation will be shared prior to the beginning of Lab 3.                                          |
++---------------------------------------------------------------------------------------------------------------+
+| |labend|                                                                                                      |
++---------------------------------------------------------------------------------------------------------------+
+
 .. |lab2-Postman_AppFW_Body| image:: _static/lab2-Postman_AppFW_Body.png
    :width: 800px
 .. |lab2-Postman_AppFW_Send| image:: _static/lab2-Postman_AppFW_Send.png
@@ -311,4 +325,6 @@ cleans up the environment in prepation for Lab3.
 .. |lab2-Postman_HC_Delete_Send| image:: _static/lab2-Postman_HC_Delete_Send.png
    :width: 800px
 .. |lab2-Postman_HC_Delete_Results| image:: _static/lab2-Postman_HC_Delete_Results.png
+   :width: 800px
+.. |labend| image:: _static/labend.png
    :width: 800px
