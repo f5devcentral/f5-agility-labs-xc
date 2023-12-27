@@ -98,7 +98,7 @@ This lab will begin back in the Windows 10 client deployed as part of the UDF.
 |                                                                                                               |
 | 15. In the resulting window, paste the below text into the location bar, click the arrow to open that         |
 |                                                                                                               |
-|    location, and then click **Select Folder**.                                                                |
+|     location, and then click **Select Folder**.                                                               |
 |                                                                                                               |
 | .. code-block::                                                                                               |
 |    c:\Users\labuser\appworld-f5xc-automation\Terraform                                                        |
@@ -113,11 +113,11 @@ This lab will begin back in the Windows 10 client deployed as part of the UDF.
 +---------------------------------------------------------------------------------------------------------------+
 | 16. From the EXPLORER frame, click the new file icon next to the TERRAFORM folder, and then enter the name    |
 |                                                                                                               |
-|    **terraform.tfvars** for the new file that is created and press **Enter**.                                 |
+|     **terraform.tfvars** for the new file that is created and press **Enter**.                                |
 |                                                                                                               |
 | 17. This will open the **terraform.tfvars file in the right frame of Visual Studio Code, enter the following  |
 |                                                                                                               |
-|    values into the file:                                                                                      |
+|     values into the file:                                                                                     |
 |                                                                                                               |
 | .. code-block::                                                                                               |
 |    api_p12     = "c:/Users/labuser/xc-api-cert.p12"                                                           |
@@ -239,11 +239,11 @@ objects within Distributed Cloud.
 |                                                                                                               |
 | |lab3-Terraform_VSC_Appfw_Create|                                                                             |
 |                                                                                                               |
-| |lab3-Terraform_VSC_Appfw_Disable|                                                                            |
+| |lab3-Terraform_VSC_Appfw_LB_Disable|                                                                         |
 |                                                                                                               |
-| |lab3-Terraform_VSC_Appfw_Config|                                                                             |
+| |lab3-Terraform_VSC_Appfw_LB_Config|                                                                          |
 |                                                                                                               |
-| |lab3-Terraform_VSC_Appfw_Save|                                                                               |
+| |lab3-Terraform_VSC_Main_Save|                                                                                |
 +---------------------------------------------------------------------------------------------------------------+
 
 +---------------------------------------------------------------------------------------------------------------+
@@ -288,7 +288,7 @@ objects within Distributed Cloud.
 |                                                                                                               |
 |     the **ellipsis** under **Actions** and select **Manage Configuration**.                                   |
 |                                                                                                               |
-| 14. From the resulting screen, select **Web Application Firewall* under the HTTP Load Balancer frame to jump  |
+| 14. From the resulting screen, select **Web Application Firewall** under the HTTP Load Balancer frame to jump |
 |                                                                                                               |
 |     to the **Web Application Firewall** configuration section.                                                |
 |                                                                                                               |
@@ -406,11 +406,11 @@ Application Firewall Policy that was created in Task 1 & 2.
    :width: 800px
 .. |lab3-Terraform_VSC_Appfw_Create| image:: _static/lab3-Terraform_VSC_Appfw_Create.png
    :width: 800px
-.. |lab3-Terraform_VSC_Appfw_Disable| image:: _static/lab3-Terraform_VSC_Appfw_Disable.png
+.. |lab3-Terraform_VSC_Appfw_LB_Disable| image:: _static/lab3-Terraform_VSC_Appfw_LB_Disable.png
    :width: 800px
-.. |lab3-Terraform_VSC_Appfw_Config| image:: _static/lab3-Terraform_VSC_Appfw_Config.png
+.. |lab3-Terraform_VSC_Appfw_LB_Config| image:: _static/lab3-Terraform_VSC_Appfw_LB_Config.png
    :width: 800px
-.. |lab3-Terraform_VSC_Appfw_Save| image:: _static/lab3-Terraform_VSC_Appfw_Save.png
+.. |lab3-Terraform_VSC_Main_Save| image:: _static/lab3-Terraform_VSC_Main_Save.png
    :width: 800px
 .. |lab3-Terraform_VSC_Appfw_Plan| image:: _static/lab3-Terraform_VSC_Appfw_Plan.png
    :width: 800px
