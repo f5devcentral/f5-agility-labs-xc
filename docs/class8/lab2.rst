@@ -290,7 +290,7 @@ cleans up the environment in prepation for Lab3.
    :width: 800px
 .. |lab1-XC_LB_JSON| image:: _static/lab1-XC_LB_JSON.png
    :width: 800px
-.. |lab2-XC_LB_AppFW_JSON_Data| image:: _static/ab2-XC_LB_AppFW_JSON_Data.png
+.. |lab2-XC_LB_AppFW_JSON_Data| image:: _static/lab2-XC_LB_AppFW_JSON_Data.png
    :width: 800px
 .. |lab2-Postman_SP_Body| image:: _static/lab2-Postman_SP_Body.png
    :width: 800px
