@@ -115,7 +115,7 @@ This lab will begin back in the Windows 10 client deployed as part of the UDF.
 |                                                                                                               |
 |     **terraform.tfvars** for the new file that is created and press **Enter**.                                |
 |                                                                                                               |
-| 17. This will open the **terraform.tfvars file in the right frame of Visual Studio Code, enter the following  |
+| 17. This will open the **terraform.tfvars** file in the right frame of Visual Studio Code, enter the following|
 |                                                                                                               |
 |     values into the file:                                                                                     |
 |                                                                                                               |
@@ -282,7 +282,7 @@ objects within Distributed Cloud.
 |                                                                                                               |
 | 12. In the resulting screen, expand the **Manage** menu and click **Load Balancers** and then select          |
 |                                                                                                               |
-|     *HTTP Load Balancers**.                                                                                   |
+|     **HTTP Load Balancers**.                                                                                  |
 |                                                                                                               |
 | 13. From the HTTP Load Balancers page, locate the HTTP Load Balancer that you created via Terraform.  Click   |
 |                                                                                                               |
@@ -382,9 +382,9 @@ Application Firewall Policy that was created in Task 1 & 2.
    :width: 800px
 .. |lab3-Terraform_VSC_Tfvars| image:: _static/lab3-Terraform_VSC_tfvars.png
    :width: 800px
-.. |lab3-Terraform_VSC_Tfvars_Values| image:: _static/lab3-Terraform_VSC_tfvars_Values.png
+.. |lab3-Terraform_VSC_Tfvars_Values| image:: _static/lab3-Terraform_VSC_tfvars_values.png
    :width: 800px
-.. |lab3-Terraform_VSC_Tfvars_Save| image:: _static/lab3-Terraform_VSC_tfvars_Save.png
+.. |lab3-Terraform_VSC_Tfvars_Save| image:: _static/lab3-Terraform_VSC_tfvars_save.png
    :width: 800px
 .. |lab3-Terraform_VSC_Init| image:: _static/lab3-Terraform_VSC_Init.png
    :width: 800px
@@ -436,7 +436,7 @@ Application Firewall Policy that was created in Task 1 & 2.
    :width: 800px
 .. |lab3-Terraform_VSC_Destroy| image:: _static/lab3-Terraform_VSC_Destroy.png
    :width: 800px
-.. |lab3-Terraform_VSC_Destroy_Yes| image:: _static/lab3-Terraform_VSC_Destroy_Yes.png
+.. |lab3-Terraform_VSC_Destroy_Yes| image:: _static/lab3-Terraform_VSC_Destroy_yes.png
    :width: 800px
 .. |lab3-Terraform_VSC_Destroy_Results| image:: _static/lab3-Terraform_VSC_Destroy_Results.png
    :width: 800px
