@@ -1,5 +1,5 @@
-Lab 1: Deploying and Managing F5 Distributed Cloud Web Application Firewall Configuration
-=========================================================================================
+Lab 1: Deploying an Application with F5 Distributed Cloud
+=========================================================
 
 .. warning :: If you are using multiple labs in one course, understand that some steps below
    may be redundant depending on labs deployed. To gain full benefits from this lab, please 
