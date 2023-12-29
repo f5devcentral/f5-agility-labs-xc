@@ -1,14 +1,15 @@
 Lab 2: Operationalize Security Configurations
-============================================================================================
+=============================================
 
 The following lab tasks will guide you through using Postman to modify an existinga HTTP Load Balancer deployment
-to apply a Web Application Firewall configuration and Service Policy configuration. This lab demonstrates the use
-of the PUT method to modify an existing object in Distributed Cloud.
+to apply a Web Application Firewall and Service Policy configuration. This lab demonstrates the use of the PUT 
+method to modify an existing object in Distributed Cloud.  Students will then use the DELETE method to delete
+the objects created in Lab 1 and Lab 2 in prepration for Lab 3.
 
 **Expected Lab Time: 20 minutes**
 
-Task 1: Create and Attach WAAP Policy  
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Task 1: Create & Attach WAAP Policy  
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 In this task you will use Postman to create an Application Firewall policy with the default settings. Postman 
 will then be used to attach the Application Firewall to the HTTP Load Balancer created in Lab 1. 
 
@@ -100,8 +101,8 @@ This lab will begin back in the Windows 10 client deployed as part of the UDF.
 | |lab2-XC_LB_AppFW_JSON_Data|                                                                                  |
 +---------------------------------------------------------------------------------------------------------------+
 
-Task 2: Create and Service Policy  
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Task 2: Create & Attach a Service Policy  
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 In this task you will use Postman to create a Service Policy that only allows specific contries to access your 
 application. Postman will then be used to attach the Service Policy to the HTTP Load Balancer created in Lab 1. 
 
@@ -249,6 +250,20 @@ cleans up the environment in prepation for Lab3.
 | |lab2-Postman_HC_Delete_Results|                                                                              |
 +---------------------------------------------------------------------------------------------------------------+
 
++---------------------------------------------------------------------------------------------------------------+
+| **End of Lab 2:**  This concludes Lab 2. In this lab you learned how to use Postman to create an Web          |
+|                                                                                                               |
+| Application Firewall policy and Service Policy. You then used Postman to modify the HTTP Load Balancer you    |
+|                                                                                                               |
+| created in Lab 1 and apply the Web Application Firewall and Service policy. Lastly you used Postman to delete |
+|                                                                                                               |
+| all of the configuration from Lab 1 and Lab 2 in preperation for Lab 3.                                       |
+|                                                                                                               |
+| A brief presentation will be shared prior to the beginning of Lab 3.                                          |
++---------------------------------------------------------------------------------------------------------------+
+| |labend|                                                                                                      |
++---------------------------------------------------------------------------------------------------------------+
+
 .. |lab2-Postman_AppFW_Body| image:: _static/lab2-Postman_AppFW_Body.png
    :width: 800px
 .. |lab2-Postman_AppFW_Send| image:: _static/lab2-Postman_AppFW_Send.png
@@ -275,7 +290,7 @@ cleans up the environment in prepation for Lab3.
    :width: 800px
 .. |lab1-XC_LB_JSON| image:: _static/lab1-XC_LB_JSON.png
    :width: 800px
-.. |lab2-XC_LB_AppFW_JSON_Data| image:: _static/ab2-XC_LB_AppFW_JSON_Data.png
+.. |lab2-XC_LB_AppFW_JSON_Data| image:: _static/lab2-XC_LB_AppFW_JSON_Data.png
    :width: 800px
 .. |lab2-Postman_SP_Body| image:: _static/lab2-Postman_SP_Body.png
    :width: 800px
@@ -310,4 +325,6 @@ cleans up the environment in prepation for Lab3.
 .. |lab2-Postman_HC_Delete_Send| image:: _static/lab2-Postman_HC_Delete_Send.png
    :width: 800px
 .. |lab2-Postman_HC_Delete_Results| image:: _static/lab2-Postman_HC_Delete_Results.png
+   :width: 800px
+.. |labend| image:: _static/labend.png
    :width: 800px
