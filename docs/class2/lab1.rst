@@ -1,223 +1,201 @@
 Lab 1: Deploying and Managing F5 Distributed Cloud Web Application Firewall Configuration
 =========================================================================================
 
-.. warning :: If you are using multiple labs in one course, understand that some steps below
-   may be redundant depending on labs deployed. To gain full benefits from this lab, please 
-   delete any objects created in your prior lab and continue with this lab as all necessary
-   objects will be recreated. 
+.. warning :: If you are using multiple labs in one course, understand that
+   some steps below may be redundant depending on labs deployed. To gain full
+   benefits from this lab, please delete any objects created in your prior lab
+   and continue with this lab as all necessary objects will be recreated.
 
-Lab 1 will focus on the deployment and security of an existing hosted application using F5 
-Distributed Cloud Platform and Services. This lab will be deployed in a SaaS only configuration 
-with no on-premises (public or private cloud) elements.  All configurations will be made via 
-the F5 Distributed Cloud Console and within the F5 Distributed Cloud Global Network services architecture.
+Lab 1 will focus on the deployment and security of an existing hosted
+application using F5 Distributed Cloud Platform and Services. This lab will be
+deployed in a SaaS only configuration with no on-premises (public or private
+cloud) elements.  All configurations will be made via the F5 Distributed Cloud
+Console and within the F5 Distributed Cloud Global Network services
+architecture.
 
-For the tasks that follow, you should have already noted your individual **namespace**. If you 
-failed to note it, return to the **Introduction** section of this lab, follow the instructions
-provided and note your **namespace** accordingly. The **Delegated Domain** and the F5 Distributed Cloud 
-**Tenant** are listed below for your convenience as they will be the same for all lab attendees.
+For the tasks that follow, you should have already noted your individual
+**namespace**. If you failed to note it, return to the **Introduction** section
+of this lab, follow the instructions provided and note your **namespace**
+accordingly. The **Delegated Domain** and the F5 Distributed Cloud **Tenant**
+are listed below for your convenience as they will be the same for all lab
+attendees.
 
-* **Delegated Domain:** *.lab-sec.f5demos.com* 
-* **F5 Distributed Cloud Tenant:** https://f5-xc-lab-sec.console.ves.volterra.io 
+* **Delegated Domain:** *.lab-sec.f5demos.com*
+* **F5 Distributed Cloud Tenant:** https://f5-xc-lab-sec.console.ves.volterra.io
 
-Following the tasks in the prior **Introduction** Section, you should now be able to access the
-F5 Distributed Cloud Console, having set your Work Domain Roles and Skill levels. If you have not
-done so already, please login to your tenant for this lab and proceed to Task 1.
+Following the tasks in the prior **Introduction** Section, you should now be
+able to access the F5 Distributed Cloud Console, having set your Work Domain
+Roles and Skill levels. If you have not done so already, please login to your
+tenant for this lab and proceed to Task 1.
 
 **Expected Lab Time: 25 minutes**
 
 Task 1: Configure Load Balancer and Origin Pool
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The following steps will allow you to deploy and advertise a globally available application.  These
-steps will define an application, register its DNS and assign a target as an origin.
+The following steps will allow you to deploy and advertise a globally available
+application. These steps will define an application, register its DNS and
+assign a target as an origin.
 
-+----------------------------------------------------------------------------------------------+
-| 1. Following the **Introduction** section instructions, you should now be in the **Web**     |
-|                                                                                              |
-|    **App & API Protection** configuration window. If for some reason you are not in the      |
-|                                                                                              |
-|    **Web App & API Protection** window, use the **Select Service** in the left-hand          |
-|                                                                                              |
-|    navigation, and click **Web App & API Protection** as shown in the *Introduction Section* |
-|                                                                                              |
-| 2. In the left-hand navigation expand **Manage** and click **Load Balancers > HTTP Load**    |
-|                                                                                              |
-|    **Balancers**                                                                             |
-|                                                                                              |
-| 3. In the resulting screen click the **Add HTTP Load Balancer** in the graphic as shown.     |
-+----------------------------------------------------------------------------------------------+
-| |lab001|                                                                                     |
-|                                                                                              |
-| |lab002|                                                                                     |
-+----------------------------------------------------------------------------------------------+
+#. Following the **Introduction** section instructions, you should now be in
+   the **Web** **App & API Protection** configuration window. If for some
+   reason you are not in the **Web App & API Protection** window, use the
+   **Select Service** in the left-hand navigation, and click **Web App & API
+   Protection** as shown in the *Introduction Section*
+
+#. In the left-hand navigation expand **Manage** and click **Load Balancers >
+   HTTP Load** **Balancers**
+
+#. In the resulting screen click the **Add HTTP Load Balancer** in the graphic
+   as shown.
+
+   |lab001|
+   |lab002|
 
 .. note::
-   *You have defaulted to your specific namespace as that is the only namespace to which you*
-   *have administrative access.*
+   *You have defaulted to your specific namespace as that is the only namespace
+   to which you* *have administrative access.*
 
-+----------------------------------------------------------------------------------------------+
-| 4. Using the left-hand navigation and in the sections as shown, enter the following          |
-|                                                                                              |
-|    data. Values where **<namespace>** is required, use the name of your given namespace.     |
-|                                                                                              |
-|    * **Metadata:Name ID:**  *<namespace>-lb*                                                 |
-|    * **Basic Configuration: List of Domains:** *<namespace>.lab-sec.f5demos.com*             |
-|    * **Basic Configuration: Select Type of Load Balancer:** *HTTP*                           |
-|    * **Basic Configuration: Automatically Manage DNS Records:** *(Check the checkbox)*       |
-|    * **Basic Configuration: HTTP Port:** *80*                                                |
-+----------------------------------------------------------------------------------------------+
-| |lab003|                                                                                     |
-+----------------------------------------------------------------------------------------------+
+#. Using the left-hand navigation and in the sections as shown, enter the
+   following data. Values where **<namespace>** is required, use the name of
+   your given namespace.
 
-+----------------------------------------------------------------------------------------------+
-| 5. In the current window's left-hand navigation, click **Origins**. In the adjacent          |
-|                                                                                              |
-|    **Origins** section, under **Origin Pools**, click **Add Item**.                          |
-+----------------------------------------------------------------------------------------------+
-| |lab004|                                                                                     |
-+----------------------------------------------------------------------------------------------+
+   * **Metadata:Name ID:**  *<namespace>-lb*
+   * **Basic Configuration: List of Domains:**
+     *<namespace>.lab-sec.f5demos.com*
+   * **Basic Configuration: Select Type of Load Balancer:** *HTTP*
+   * **Basic Configuration: Automatically Manage DNS Records:** *(Check the
+     * checkbox)*
+   * **Basic Configuration: HTTP Port:** *80*
 
-+----------------------------------------------------------------------------------------------+
-| 6. In the resulting window, use the drop down as shown and click **Add Item**.               |
-+----------------------------------------------------------------------------------------------+
-| |lab005|                                                                                     |
-+----------------------------------------------------------------------------------------------+
+   |lab003|
 
-+----------------------------------------------------------------------------------------------+
-| 7. In the resulting window, enter **<namespace>-pool** in the **Name** field and click       |
-|                                                                                              |
-|    **Add Item** under **Origin Servers** as shown.                                           |
-+----------------------------------------------------------------------------------------------+
-| |lab006|                                                                                     |
-+----------------------------------------------------------------------------------------------+
 
-+----------------------------------------------------------------------------------------------+
-| 8. In the resulting window, **Public DNS Name of Origin Server** should be selected for      |
-|                                                                                              |
-|    **Select Type of Origin Server**.                                                         |
-|                                                                                              |
-| 9. In the **DNS Name** field enter the following hostname:                                   |
-|                                                                                              |
-|    **demo-app.amer.myedgedemo.com** and then click **Apply**                                 |
-+----------------------------------------------------------------------------------------------+
-| |lab007|                                                                                     |
-+----------------------------------------------------------------------------------------------+
+#. In the current window's left-hand navigation, click **Origins**. In the
+   adjacent **Origins** section, under **Origin Pools**, click **Add Item**.
 
-+----------------------------------------------------------------------------------------------+
-| 10. After returning to the prior window, make sure **Port:** within the **Origin Servers**   |
-|                                                                                              |
-|     section, under **Origin Server Port** is configured for **80**.                          |
-|                                                                                              |
-| 11. Leave all other values as shown while scrolling to the bottom and click, **Continue**.   |
-|                                                                                              |
-| 12. After returning to the next window and confirming the content, click **Apply**.          |
-+----------------------------------------------------------------------------------------------+
-| |lab008|                                                                                     |
-|                                                                                              |
-| |lab009|                                                                                     |
-|                                                                                              |
-| |lab010|                                                                                     |
-+----------------------------------------------------------------------------------------------+
+   |lab004|
+
+#. In the resulting window, use the drop down as shown and click **Add Item**.
+   |lab005|
+
+#. In the resulting window, enter **<namespace>-pool** in the **Name** field
+   and click
+
+   **Add Item** under **Origin Servers** as shown.
+
+   |lab006|
+
+#. In the resulting window, **Public DNS Name of Origin Server** should be
+   selected for **Select Type of Origin Server**.
+
+#. In the **DNS Name** field enter the following hostname:
+
+   **demo-app.amer.myedgedemo.com** and then click **Apply**
+
+   |lab007|
+
+#. After returning to the prior window, make sure **Port:** within the
+   **Origin Servers** section, under **Origin Server Port** is configured for
+   **80**.
+
+#. Leave all other values as shown while scrolling to the bottom and click,
+   **Continue**.
+
+#. After returning to the next window and confirming the content, click
+   **Apply**.
+
+   |lab008|
+   |lab009|
+   |lab010|
 
 Task 2: Configure WAF Policy on the Load Balancer
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The following steps will guide you through adding a Web Application Firewall (WAF) Policy.
-These steps will demonstrate various aspects of the configuration.
+The following steps will guide you through adding a Web Application Firewall
+(WAF) Policy. These steps will demonstrate various aspects of the configuration.
 
-+----------------------------------------------------------------------------------------------+
-| 1. Continuing in the **HTTP Load Balancer** section, on the left-hand menu click on the      |
-|                                                                                              |
-|    **Web Application Firewall (WAF)** drop down and select **Enable**.                       |
-+----------------------------------------------------------------------------------------------+
-| |lab011|                                                                                     |
-+----------------------------------------------------------------------------------------------+
+#. Continuing in the **HTTP Load Balancer** section, on the left-hand menu
+   click on the **Web Application Firewall (WAF)** drop down and select
+   **Enable**.
 
-+----------------------------------------------------------------------------------------------+
-| 2. In the resulting **Enable** field drop down, select **Add Item**.                         |
-+----------------------------------------------------------------------------------------------+
-| |lab012|                                                                                     |
-+----------------------------------------------------------------------------------------------+
+   |lab011|
 
-.. note::
-   *The "shared/base-appfw" policy is in the "shared namespace" which can be applied to* 
-   *multiple Load Balancer configurations across namespaces, reducing policy sprawl.* 
+#. In the resulting **Enable** field drop down, select **Add Item**.
 
-+----------------------------------------------------------------------------------------------+
-| 3. In the new window's **Metadata** section enter **<namespace>-appfw** for the              |
-|    **Name**.                                                                                 |
-|                                                                                              |
-| 4. Under **Enforcement Mode**, change the mode to **Blocking**.                              |
-|                                                                                              |
-| 5. In the **Detection Settings** section, click the **Security Policy** dropdown.            |
-|                                                                                              |
-| 6. Select **Custom** from the dropdown menu. Additional configurations will become available.|
-+----------------------------------------------------------------------------------------------+
-| |lab013|                                                                                     |
-|                                                                                              |
-| |lab014|                                                                                     |
-+----------------------------------------------------------------------------------------------+
+   |lab012|
 
-+----------------------------------------------------------------------------------------------+
-| 7. In the expanded configuration, in the **Attack Signatures** section use the dropdown for  |
-|                                                                                              |
-|    **Signature Selection by Accuracy** and select **High, Medium, and Low**.                 |
-+----------------------------------------------------------------------------------------------+
-| |lab015|                                                                                     |
-+----------------------------------------------------------------------------------------------+
+   .. note::
+      *The "shared/base-appfw" policy is in the "shared namespace" which can be
+      applied to* *multiple Load Balancer configurations across namespaces,
+      reducing policy sprawl.*
 
-+----------------------------------------------------------------------------------------------+
-| 8. Leaving all other values as default, scroll to the bottom and click **Continue**.         |
-+----------------------------------------------------------------------------------------------+
-| |lab016|                                                                                     |
-+----------------------------------------------------------------------------------------------+
+#. In the new window's **Metadata** section enter **<namespace>-appfw** for the
+   **Name**.
 
-.. note::
-   *Automatic Attack Signatures Tuning is enabled which engages an automatic False Positive*
-   *suppression engine.  Any suppressed events are logged within Security Events.*
+#. Under **Enforcement Mode**, change the mode to **Blocking**.
 
-.. note::
-   *Attack Signatures Staging is disabled.  This can be enabled should an Application*
-   *Firewall with new or updated attack signatures be staged (monitored) for a period of*
-   *prior to enforcement (blocking).*
+#. In the **Detection Settings** section, click the **Security Policy**
+   dropdown.
 
-+----------------------------------------------------------------------------------------------+
-| 9. Returning to the **HTTP Load Balancer** window, scroll to (or click in the left-hand      |
-|                                                                                              |
-|    navigation) to the **Other Settings** section and note the **VIP Advertisement** setting. |
-|                                                                                              |
-| 10. Click **Save and Exit** at the bottom of the **HTTP Load Balancer** configuration screen.|
-+----------------------------------------------------------------------------------------------+
-| |lab017|                                                                                     |
-+----------------------------------------------------------------------------------------------+
+#. Select **Custom** from the dropdown menu. Additional configurations will
+   become available
 
-.. note::
-   *The above selection controls how/where the application is advertised. The "Internet"*
-   *setting means that this application will be advertised globally from the F5*
-   *Distributed Cloud Global Network utilizing Anycast.*
+   |lab013|
+   |lab014|
 
-+----------------------------------------------------------------------------------------------+
-| 10. In the **HTTP Load Balancers** window, note the application hostname under the           |
-|                                                                                              |
-|     **Domains** column *(This was done in Task1: Step 4)*.                                   |
-|                                                                                              |
-| 11. Click the **Action** dots, and then in the subsequent menu **Manage Configuration**.     |
-+----------------------------------------------------------------------------------------------+
-| |lab018|                                                                                     |
-+----------------------------------------------------------------------------------------------+
 
-+----------------------------------------------------------------------------------------------+
-| 12. Click **DNS Information** in the left-hand navigation.                                   |
-|                                                                                              |
-|     The value for a CNAME is listed under **Host Name**. The associated "Default/Tenant IP"  |
-|                                                                                              |
-|     is also shown under **IP Address**. The "Default/Tenant IP" is uniquely assigned to each |
-|                                                                                              |
-|     F5 Distributed Cloud Tenant. Additional Public IPs can be added to the Tenant.           |
-+----------------------------------------------------------------------------------------------+
-| |lab019|                                                                                     |
-+----------------------------------------------------------------------------------------------+
+#. In the expanded configuration, in the **Attack Signatures** section use the
+   dropdown for **Signature Selection by Accuracy** and select **High, Medium,
+   and Low**.
+ 
+   |lab015|
 
+#. Leaving all other values as default, scroll to the bottom and click
+   **Continue**.
+
+   |lab016|
+
+   .. note::
+      *Automatic Attack Signatures Tuning is enabled which engages an automatic
+      False Positive* *suppression engine.  Any suppressed events are logged
+      within Security Events.*
+
+   .. note::
+      *Attack Signatures Staging is disabled.  This can be enabled should an
+      Application* *Firewall with new or updated attack signatures be staged
+      (monitored) for a period of* *prior to enforcement (blocking).*
+
+#. Returning to the **HTTP Load Balancer** window, scroll to (or click in the
+   left-hand navigation) to the **Other Settings** section and note the **VIP
+   Advertisement** setting.
+
+#. Click **Save and Exit** at the bottom of the **HTTP Load Balancer**
+   configuration screen.|
+
+   |lab017|
+
+   .. note::
+      *The above selection controls how/where the application is advertised. The "Internet"*
+      *setting means that this application will be advertised globally from the F5*
+      *Distributed Cloud Global Network utilizing Anycast.*
+
+#. In the **HTTP Load Balancers** window, note the application hostname under
+   the **Domains** column *(This was done in Task1: Step 4)*.
+
+#. Click the **Action** dots, and then in the subsequent menu **Manage
+   Configuration**.
+
+   |lab018|
+
+#. Click **DNS Information** in the left-hand navigation.
+
+   The value for a CNAME is listed under **Host Name**. The associated
+   "Default/Tenant IP" is also shown under **IP Address**. The "Default/Tenant
+   IP" is uniquely assigned to each F5 Distributed Cloud Tenant. Additional
+   Public IPs can be added to the Tenant.
+
+   |lab019|
 +----------------------------------------------------------------------------------------------+
 | 13. Click **JSON** in the horizontal navigation at the top-left of the screen.               |
 |                                                                                              |
