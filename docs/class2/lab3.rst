@@ -160,7 +160,7 @@ user detection and create a malicious user mitigation and challenge.
                                                                                              
 A Q&A session will begin shortly to conclude the overall lab.                                
 
- |labend|                                                                                     
+|labend|                                                                                     
 
 .. |lab001| image:: _static/lab3-001.png
    :width: 800px
