@@ -96,11 +96,11 @@ user detection and create a malicious user mitigation and challenge.
                                                                                              
    **ves-io-shared/ves-io-default-malicious-user-mitigation**                                
                                                                                              
-.. note::                                                                                    
+   .. note::                                                                                    
                                                                                              
-**Using shared namespace Malicious User Mitigation provides the ability to use API-updated*   
+   **Using shared namespace Malicious User Mitigation provides the ability to use API-updated*   
                                                                                               
- *mitigation controls to implement common service security across multiple resources.*        
+   *mitigation controls to implement common service security across multiple resources.*        
                                                                                               
 #. Select **Add Item**.                                                                      
    
@@ -109,7 +109,7 @@ user detection and create a malicious user mitigation and challenge.
 #. In the **Metadata** section enter **security-user-mitigation** for the **Name** and       
    then click **Add Item** under **Rules**.                                                  
   
-  |lab016|                                                                                     
+   |lab016|                                                                                     
 
 #. In the resulting window, click the dropdown for **Threat Level** and select **Low**.      
                                                                                              
@@ -145,7 +145,7 @@ user detection and create a malicious user mitigation and challenge.
 
    |lab021|                                                                                     
 
-#.  Observe the three Rules created and select **Continue**.                                 
+#. Observe the three Rules created and select **Continue**.                                 
 
    |lab022|                                                                                     
 
