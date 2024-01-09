@@ -91,6 +91,8 @@ previously built Load Balancer object delivering the targeted application/API.
 
    **http://<namespace>.lab-sec.f5demos.com/api/CatLookup/GetAllCats**
 
+   |lab2-task1-014|
+
 Task 2: Attach API Rate Limiting to Load Balancer Object
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -152,6 +154,8 @@ previously built Load Balancer object delivering the targeted application/API.
 
    **http://<namespace>.lab-sec.f5demos.com/api/DogLookup/GetAllDogs**
 
+   |lab2-task2-010|
+
 This configuration highlights the elements needed to deploy API Discovery & Protection. This
 configuration can also be fully deployed and managed via the F5 Distributed Cloud API.
 
@@ -193,6 +197,8 @@ configuration can also be fully deployed and managed via the F5 Distributed Clou
    :width: 800px
 .. |lab2-task1-013| image:: _static/lab2-task1-013.png
    :width: 800px
+.. |lab2-task1-014| image:: _static/lab2-task1-014.png
+   :width: 500px
 .. |lab2-task2-001| image:: _static/lab2-task2-001.png
    :width: 800px
 .. |lab2-task2-002| image:: _static/lab2-task2-002.png
@@ -211,5 +217,7 @@ configuration can also be fully deployed and managed via the F5 Distributed Clou
    :width: 800px
 .. |lab2-task2-009| image:: _static/lab2-task2-009.png
    :width: 800px
+.. |lab2-task2-010| image:: _static/lab2-task2-010.png
+   :width: 500px
 .. |labend| image:: _static/labend.png
    :width: 800px
