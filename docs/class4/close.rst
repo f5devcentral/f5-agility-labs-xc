@@ -2,7 +2,7 @@ Conclusion
 ==========
 
 Thank you for your participation in the F5 Distributed Cloud Lab.
-This Lab Guide has highlighted how attendees can leverage F5 Distributed 
+This Lab Guide has highlighted how attendees can leverage F5 Distributed
 Cloud security to protect hosted applications and resources.
 
 Appendix
@@ -35,7 +35,7 @@ Appendix
 +----------------------------------------------------------------------------------------------+
 | US Headquarters: 801 5th Ave, Seattle, WA 98104 \| 888-882-4447                              |
 |                                                                                              |
-| Americas: info@f5.com                                                                        |
+| Americas: info@f5.com                                                                       |
 |                                                                                              |
 | Asia-Pacific: apacinfo@f5.com                                                                |
 |                                                                                              |

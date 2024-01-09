@@ -5,159 +5,159 @@ F5® Distributed Cloud API Protection provides key security functionality to sec
 
 This lab's tasks will walk through the configuration steps and note additional configurations available.
 
-Task 1: Attaching API Protection to Load Balancer Object 
+Task 1: Attaching API Protection to Load Balancer Object
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In this task's series of steps you will enable the API Discovery & Protection feature on the 
+In this task's series of steps you will enable the API Discovery & Protection feature on the
 previously built Load Balancer object delivering the targeted application/API.
 
 #. In the left-hand navigation of the **Web App & API Protection** service, click on **Load
-   Balancers** under the **Manage** section.                                               
+   Balancers** under the **Manage** section.
 
-   |class4-shared-002|                                                                          
+   |class4-shared-002|
 
-#. In the resulting **Load Balancers** window, click on the three dots **...** in the        
-   **Action** column, and the select **Manage Configuration**.                               
+#. In the resulting **Load Balancers** window, click on the three dots **...** in the
+   **Action** column, and the select **Manage Configuration**.
 
-   |class4-shared-003|                                                                          
+   |class4-shared-003|
 
-#. Click **Edit Configuration** in the top-right corner.                                     
+#. Click **Edit Configuration** in the top-right corner.
 
-   |class4-shared-004|                                                                          
+   |class4-shared-004|
 
-#. In the **API Protection Rules** section, click the **Configure** link.                    
+#. In the **API Protection Rules** section, click the **Configure** link.
 
-   |lab2-task1-004|                                                                             
+   |lab2-task1-004|
 
-#. In the resulting **API Protection Rules** window, click **Configure** in the              
-   **API Endpoints** section.                                                                
+#. In the resulting **API Protection Rules** window, click **Configure** in the
+   **API Endpoints** section.
 
-   |lab2-task1-005|                                                                             
+   |lab2-task1-005|
 
-#. Click **Add Item** in the **API Endpoints** window.                                       
+#. Click **Add Item** in the **API Endpoints** window.
 
-   |lab2-task1-006|                                                                             
+   |lab2-task1-006|
 
-#. In the resulting window, input **block-endpoint** in the **Name** field of the            
-   **Metadata** section.                                                                     
-                                                                                           
-#. In the **Action** area, click the drop-down arrow indicated and select **Deny**.          
+#. In the resulting window, input **block-endpoint** in the **Name** field of the
+   **Metadata** section.
 
-   |lab2-task1-007|                                                                             
+#. In the **Action** area, click the drop-down arrow indicated and select **Deny**.
 
-#. In the **API Endpoint** section, click on the **API Endpoint** input field as indicated.  
-                                                                                            
-#. Select the **See Suggestions** link.                                                     
+   |lab2-task1-007|
 
-   |lab2-task1-008|                                                                             
+#. In the **API Endpoint** section, click on the **API Endpoint** input field as indicated.
+
+#. Select the **See Suggestions** link.
+
+   |lab2-task1-008|
 
 #. Select **/api/CatLookup/GetAllCats** from the available options provided.
-                                                                                         
-   .. note::                                                                                    
-      *The available endpoints are provided by the swagger previously imported,                 
-      or identified by API Discovery*                                                           
-                                                                                          
-#. In the **HTTP Methods** area, click in the **Method List** input field.                  
 
-   |lab2-task1-009|                                                                             
+   .. note::
+      *The available endpoints are provided by the swagger previously imported,
+      or identified by API Discovery*
 
-#. Select **Any** from the available methods provided.                                      
-                                                                                             
-   .. note::                                                                                    
-      *Multiple methods can be selected if needed*                                              
+#. In the **HTTP Methods** area, click in the **Method List** input field.
 
-   |lab2-task1-010|                                                                             
+   |lab2-task1-009|
 
-#. Review the configuration and click, the **Apply** button.                                
+#. Select **Any** from the available methods provided.
 
-   |lab2-task1-011|                                                                             
+   .. note::
+      *Multiple methods can be selected if needed*
 
-#. Review the API Endpoint deny rule and click, the **Apply** button.                       
+   |lab2-task1-010|
 
-   |lab2-task1-012|                                                                             
+#. Review the configuration and click, the **Apply** button.
 
-#. Note that API Protection Rules are configure for the API Endpoints and click, the        
-   **Apply** button.                                                                        
+   |lab2-task1-011|
 
-   |lab2-task1-013|                                                                             
+#. Review the API Endpoint deny rule and click, the **Apply** button.
 
-#. Select **Other Settings** on the left then click on **Save and Exit**                    
-   at the bottom right of window.                                                           
+   |lab2-task1-012|
 
-   |lab2-task2-009|                                                                             
+#. Note that API Protection Rules are configure for the API Endpoints and click, the
+   **Apply** button.
+
+   |lab2-task1-013|
+
+#. Select **Other Settings** on the left then click on **Save and Exit**
+   at the bottom right of window.
+
+   |lab2-task2-009|
 
 #. Using another browser tab, navigate to the the following URL to confirm
-   access is denied.                                                                        
-                                                                                          
-   **http://<namespace>.lab-sec.f5demos.com/api/CatLookup/GetAllCats**                      
+   access is denied.
 
-Task 2: Attach API Rate Limiting to Load Balancer Object 
+   **http://<namespace>.lab-sec.f5demos.com/api/CatLookup/GetAllCats**
+
+Task 2: Attach API Rate Limiting to Load Balancer Object
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In this task's series of steps you will enable the API Rate Limiting feature on the 
+In this task's series of steps you will enable the API Rate Limiting feature on the
 previously built Load Balancer object delivering the targeted application/API.
 
 #. In the left-hand navigation of the **Web App & API Protection** service, click on **Load
-   Balancers** under the **Manage** section.                                               
+   Balancers** under the **Manage** section.
 
-   |class4-shared-002|                                                                          
+   |class4-shared-002|
 
-#. In the resulting **Load Balancers** window, click on the three dots **...** in the        
-   **Action** column, and the select **Manage Configuration**.                               
+#. In the resulting **Load Balancers** window, click on the three dots **...** in the
+   **Action** column, and the select **Manage Configuration**.
 
-   |class4-shared-003|                                                                          
+   |class4-shared-003|
 
-#. Click **Edit Configuration** in the top-right corner.                                     
+#. Click **Edit Configuration** in the top-right corner.
 
-   |class4-shared-004|                                                                          
+   |class4-shared-004|
 
-#. Using the left-hand navigation, click the **Common Security Controls** link.              
+#. Using the left-hand navigation, click the **Common Security Controls** link.
 
-   |lab2-task2-001|                                                                             
+   |lab2-task2-001|
 
-#. Locate the **Rate Limiting** area of the **Common Security Controls** and use the         
-   drop-down to select **API Rate Limit**.                                                   
+#. Locate the **Rate Limiting** area of the **Common Security Controls** and use the
+   drop-down to select **API Rate Limit**.
 
-   |lab2-task2-003|                                                                             
+   |lab2-task2-003|
 
-#. In the expanded menu under **Rate Limiting**, click **Configure** in the **API          
-   Endpoints** area.                                                                       
+#. In the expanded menu under **Rate Limiting**, click **Configure** in the **API
+   Endpoints** area.
 
-   |lab2-task2-004|                                                                             
+   |lab2-task2-004|
 
-#. In the resulting window **API Endpoints** window, click **Add Item**.                     
+#. In the resulting window **API Endpoints** window, click **Add Item**.
 
-   |lab2-task2-005|                                                                             
+   |lab2-task2-005|
 
-#. In the resulting configuration window, select **/api/DogLookup/GetAllDogs** for **API  
-   Endpoint** input.                                                                       
-                                                                                           
-#. Select **ANY** for **Method** input and then click the **Apply** button.                  
+#. In the resulting configuration window, select **/api/DogLookup/GetAllDogs** for **API
+   Endpoint** input.
 
-   |lab2-task2-006|                                                                             
+#. Select **ANY** for **Method** input and then click the **Apply** button.
 
-#. Review the API Endpoint rate limiting rule and click, the **Apply** button.              
+   |lab2-task2-006|
 
-   |lab2-task2-007|                                                                             
+#. Review the API Endpoint rate limiting rule and click, the **Apply** button.
 
-#. Note the updated configuration for API Rate limiting, Click **Other Settings** on the    
-   the left, navigation on the bottom right then click on **Save and Exit**                 
+   |lab2-task2-007|
 
-   |lab2-task2-008|                                                                             
+#. Note the updated configuration for API Rate limiting, Click **Other Settings** on the
+   the left, navigation on the bottom right then click on **Save and Exit**
 
-   |lab2-task2-009|                                                                             
+   |lab2-task2-008|
+
+   |lab2-task2-009|
 
 #. Using another browser tab, navigate to the the following URL to confirm
    rate limiting, by freshing your tab several times.
 
-   **http://<namespace>.lab-sec.f5demos.com/api/DogLookup/GetAllDogs**                      
+   **http://<namespace>.lab-sec.f5demos.com/api/DogLookup/GetAllDogs**
 
-This configuration highlights the elements needed to deploy API Discovery & Protection. This                                                                                            
-configuration can also be fully deployed and managed via the F5 Distributed Cloud API.       
+This configuration highlights the elements needed to deploy API Discovery & Protection. This
+configuration can also be fully deployed and managed via the F5 Distributed Cloud API.
 
-**End of Lab 2:**  This concludes Lab 2. A Q&A session will begin shortly after conclusion of the overall lab.                        
+**End of Lab 2:**  This concludes Lab 2. A Q&A session will begin shortly after conclusion of the overall lab.
 
-|labend|                                                                                    
+|labend|
 
 .. |class4-shared-001| image:: _static/class4-shared-001.png
    :width: 800px
