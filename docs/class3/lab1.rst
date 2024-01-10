@@ -104,9 +104,9 @@ steps will define an application, register its DNS and assign a target as an ori
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 10. After returning to the prior window, make sure **Port:** within the **Origin Servers**   |
+| 10. After returning to the prior window, set the **Port:** within the **Origin Servers**     |
 |                                                                                              |
-|     section, under **Origin Server Port** is configured for **80**.                          |
+|     section, under **Origin Server Port** to be configured for **80**.                       |
 |                                                                                              |
 | 11. Leave all other values as shown while scrolling to the bottom and click, **Continue**.   |
 |                                                                                              |
