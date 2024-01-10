@@ -14,7 +14,7 @@
   <meta name="title" content="F5 Distributed Cloud - WAF Policy Supervisor"/>
   <meta name="product" content="F5 Distributed Cloud"/>
   <meta name="version" content=""/>
-  <meta name="updated_date"  content="2024-01-10 14:51:32"/>
+  <meta name="updated_date"  content="2024-01-10 18:55:15"/>
   <meta name="archived" content="Archived documents excluded"/>
   <meta name="doc_type" content="Manual"/>
   <meta name="lifecycle" content="release"/>
@@ -166,30 +166,32 @@
 <h1>F5 Distributed Cloud - WAF Policy Supervisor<a class="headerlink" href="#f5-distributed-cloud-waf-policy-supervisor" title="Permalink to this heading">¶</a></h1>
 <div class="section" id="welcome">
 <h2>Welcome<a class="headerlink" href="#welcome" title="Permalink to this heading">¶</a></h2>
-<p>In this lab, attendees will be introduced to the F5 Policy Supervisor and will explore the features and functionality, including the ingestion of exting policies and deployment of policies to various WAF endpoints.</p>
+<p>In this lab, attendees will be introduced to the F5 <strong>Policy Supervisor</strong> and will explore the features and functionality, including the ingestion of exting policies and deployment of policies to various F5 WAF endpoints.</p>
 </div>
 <div class="section" id="objectives">
 <h2>Objectives:<a class="headerlink" href="#objectives" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
-<li>Gain an understanding of WAF policy conversion and deployment.</li>
+<li>Gain an understanding of F5 WAF policy conversion and deployment.</li>
 </ul>
 <a class="reference internal image-reference" href="../_images/00-marketecture.png"><img alt="../_images/00-marketecture.png" src="../_images/00-marketecture.png" style="width: 700.5px; height: 335.5px;" /></a>
 </div>
 <div class="section" id="lab-tasks">
 <h2>Lab &amp; Tasks:<a class="headerlink" href="#lab-tasks" title="Permalink to this heading">¶</a></h2>
-<p>The next page (Introduction) will cover the lab environment, access, and lab variables. In addition to their F5 UDF account, each student is provided and ephemeral account on the F5 Distributed Cloud service:</p>
-<ul class="simple">
-<li>F5 Distributed Cloud site node that can be used to UDF (network)</li>
-<li>NGINX webserver that only has a private IP address with no external access</li>
-</ul>
-<p>During the lab exercises we will explore …</p>
+<p>The next page (Introduction) will cover the lab environment, access, and lab variables.
+In addition to their F5 UDF account, each student is provided an ephemeral account on
+the F5 Distributed Cloud service Console, which the students must use if they do not already
+have access the F5 Distributed Cloud and F5 <strong>Policy Supervisor</strong> consoles.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><em>Students that already have working credentials to access to the F5 Distributed Cloud can use those same credentials to access the F5</em> <strong>Policy Supervisor</strong> <em>console</em>.</p>
+</div>
 <div class="toctree-wrapper compound">
-<p class="caption" role="heading"><span class="caption-text">Labs:</span></p>
+<p class="caption" role="heading"><span class="caption-text">The lab exercises are as follows:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="intro.html">Introduction: F5 WAF <strong>Policy Supervisor</strong></a><ul>
 <li class="toctree-l2"><a class="reference internal" href="intro.html#task-1-overview-of-the-lab-environment">Task 1: Overview of the Lab Environment</a></li>
 <li class="toctree-l2"><a class="reference internal" href="intro.html#task-2-accessing-the-udf-virtual-lab-environment">Task 2: Accessing the UDF Virtual Lab Environment</a></li>
-<li class="toctree-l2"><a class="reference internal" href="intro.html#task-3-accessing-the-f5-distributed-cloud-console">Task 3: Accessing the F5 Distributed Cloud Console</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro.html#task-3-setup-credentials-for-the-f5-distributed-cloud-console">Task 3: Setup credentials for the F5 Distributed Cloud Console</a></li>
 <li class="toctree-l2"><a class="reference internal" href="intro.html#task-4-accessing-the-f5-policy-supervisor-console">Task 4: Accessing the F5 <strong>Policy Supervisor</strong> Console</a></li>
 <li class="toctree-l2"><a class="reference internal" href="intro.html#let-s-begin"><strong>Let’s begin!</strong></a></li>
 </ul>
@@ -197,7 +199,8 @@
 <li class="toctree-l1"><a class="reference internal" href="lab1.html">Lab 1: Connecting <strong>Policy Supervisor</strong> to BIG-IP WAF</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="lab1.html#task-1-create-a-new-policy-supervisor-provider">Task 1: Create a new <strong>Policy Supervisor</strong>  <em>Provider</em></a></li>
 <li class="toctree-l2"><a class="reference internal" href="lab1.html#task-2-install-a-policy-supervisor-agent">Task 2: Install a <strong>Policy Supervisor Agent</strong></a></li>
-<li class="toctree-l2"><a class="reference internal" href="lab1.html#task-3-finish-adding-a-new-provider-in-policy-supervisor">Task 3: Finish adding a new <em>provider</em> in <strong>Policy Supervisor</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="lab1.html#task-3-finish-adding-a-first-provider-in-policy-supervisor">Task 3: Finish adding a first <em>provider</em> in <strong>Policy Supervisor</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="lab1.html#task-4-add-a-2nd-big-ip-provider-in-policy-supervisor">Task 4: Add a 2nd BIG-IP <em>provider</em> in <strong>Policy Supervisor</strong></a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="close.html">Conclusion</a></li>

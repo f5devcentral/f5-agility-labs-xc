@@ -14,7 +14,7 @@
   <meta name="title" content="Introduction: F5 WAF Policy Supervisor"/>
   <meta name="product" content="F5 Distributed Cloud"/>
   <meta name="version" content=""/>
-  <meta name="updated_date"  content="2024-01-10 14:51:32"/>
+  <meta name="updated_date"  content="2024-01-10 18:55:15"/>
   <meta name="archived" content="Archived documents excluded"/>
   <meta name="doc_type" content="Manual"/>
   <meta name="lifecycle" content="release"/>
@@ -118,8 +118,8 @@
 <li><a class="reference internal" href="#">Introduction: F5 WAF <strong>Policy Supervisor</strong></a><ul>
 <li><a class="reference internal" href="#task-1-overview-of-the-lab-environment">Task 1: Overview of the Lab Environment</a></li>
 <li><a class="reference internal" href="#task-2-accessing-the-udf-virtual-lab-environment">Task 2: Accessing the UDF Virtual Lab Environment</a></li>
-<li><a class="reference internal" href="#task-3-accessing-the-f5-distributed-cloud-console">Task 3: Accessing the F5 Distributed Cloud Console</a><ul>
-<li><a class="reference internal" href="#logging-into-the-xc-console"><strong>Logging into the XC Console</strong></a></li>
+<li><a class="reference internal" href="#task-3-setup-credentials-for-the-f5-distributed-cloud-console">Task 3: Setup credentials for the F5 Distributed Cloud Console</a><ul>
+<li><a class="reference internal" href="#optional-logging-into-the-f5-distributed-cloud-console">Optional: Logging into the F5 Distributed Cloud Console</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#task-4-accessing-the-f5-policy-supervisor-console">Task 4: Accessing the F5 <strong>Policy Supervisor</strong> Console</a></li>
@@ -171,9 +171,9 @@
   <div class="section" id="introduction-f5-waf-policy-supervisor">
 <h1>Introduction: F5 WAF <strong>Policy Supervisor</strong><a class="headerlink" href="#introduction-f5-waf-policy-supervisor" title="Permalink to this heading">¶</a></h1>
 <p>Welcome to this F5 WAF <strong>Policy Supervisor</strong> Lab. The following tasks will guide you through the initial
-access requirements for this lab. Lab attendees should have received an invitation
-email to the lab environment based on the submitted registration email. Please check email and
-spam folders if it has not been received. If you have not received an email, please contact a
+access requirements for this lab. Lab attendees should have already received an invitation
+email to the lab environment based on the email address used during the registration process. Please check
+your email spam folders if it has not been received. If you have not received an email, please contact a
 member of the lab team.</p>
 <div class="section" id="task-1-overview-of-the-lab-environment">
 <h2>Task 1: Overview of the Lab Environment<a class="headerlink" href="#task-1-overview-of-the-lab-environment" title="Permalink to this heading">¶</a></h2>
@@ -182,18 +182,15 @@ member of the lab team.</p>
 <col width="100%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><p class="first">The image below represents an overview of the lab environment.</p>
+<tr class="row-odd"><td><p class="first">The image below represents an overview of the lab environment, which is comprised of:</p>
 <ul class="last simple">
-<li><strong>F5 Unified Demo Framework (UDF)</strong></li>
-<li><strong>F5 Distributed Cloud Console</strong></li>
-<li><strong>F5 Policy Supervisor Console</strong></li>
+<li>F5 Unified Demo Framework (UDF) - <em>F5’s dedicated Private Cloud for demos and labs</em></li>
+<li>F5 Distributed Cloud Console - <em>F5 Public Cloud SaaS offerings</em></li>
+<li>F5 Policy Supervisor Console - <em>F5 WAF Policy Supervisor Service</em></li>
 </ul>
 </td>
 </tr>
-<tr class="row-even"><td><p class="first"><strong>&lt;insert an image that shows UDF components and Policy Supervisor here&gt;</strong></p>
-<p><a class="reference internal" href="../_images/intro-00112.png"><img alt="intro001" src="../_images/intro-00112.png" style="width: 800px;" /></a></p>
-<p class="last"><strong>&lt;insert an image that shows UDF components and Policy Supervisor here&gt;</strong></p>
-</td>
+<tr class="row-even"><td><a class="reference internal" href="../_images/intro-00112.png"><img alt="intro001" src="../_images/intro-00112.png" style="width: 800px;" /></a></td>
 </tr>
 </tbody>
 </table>
@@ -202,128 +199,132 @@ member of the lab team.</p>
 <h2>Task 2: Accessing the UDF Virtual Lab Environment<a class="headerlink" href="#task-2-accessing-the-udf-virtual-lab-environment" title="Permalink to this heading">¶</a></h2>
 <p>This is a multi-step process that will involve:</p>
 <ol class="arabic simple">
-<li>Finding email invite to lab</li>
-<li>Creating F5 account (If you don’t have one already)</li>
-<li>Setting up MFA for your F5 account (If you haven’t already)</li>
-<li>Signing into the lab environment</li>
+<li>Finding your invitation email for this UDF lab</li>
+<li>Creating your F5 UDF account (If you don’t have one already)</li>
+<li>Setting up MFA for your F5 UDF account (If you haven’t already)</li>
+<li>Signing into the UDF lab environment</li>
 </ol>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last"><strong>Prerequisite</strong> You should have received a UDF Course Registration email from F5 &lt;<a class="reference external" href="mailto:courses&#37;&#52;&#48;notify&#46;udf&#46;f5&#46;com">courses<span>&#64;</span>notify<span>&#46;</span>udf<span>&#46;</span>f5<span>&#46;</span>com</a>&gt; as shown below:</p>
-</div>
 <table border="1" class="docutils align-default">
 <colgroup>
 <col width="100%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><a class="first last reference internal image-reference" href="../_images/email-invite.png"><img alt="../_images/email-invite.png" src="../_images/email-invite.png" style="width: 800px;" /></a>
+<tr class="row-odd"><td>Locate your UDF Course Registration email from F5 &lt;<a class="reference external" href="mailto:courses&#37;&#52;&#48;notify&#46;udf&#46;f5&#46;com">courses<span>&#64;</span>notify<span>&#46;</span>udf<span>&#46;</span>f5<span>&#46;</span>com</a>&gt;.</td>
+</tr>
+<tr class="row-even"><td><a class="first last reference internal image-reference" href="../_images/email-invite.png"><img alt="../_images/email-invite.png" src="../_images/email-invite.png" style="width: 800px;" /></a>
 </td>
 </tr>
-<tr class="row-even"><td><p class="first">Click on the link below “You can login to the UDF here” (link is unique for each account).</p>
+<tr class="row-odd"><td><p class="first">Click on the link below <strong>You can login to the UDF here</strong> (link is unique for each account).</p>
 <p class="last">If you do not already have an F5 account you, will be prompted to create one.</p>
 </td>
 </tr>
-<tr class="row-odd"><td><a class="first last reference internal image-reference" href="../_images/create-account.png"><img alt="../_images/create-account.png" src="../_images/create-account.png" style="width: 400px;" /></a>
+<tr class="row-even"><td><a class="first last reference internal image-reference" href="../_images/create-account.png"><img alt="../_images/create-account.png" src="../_images/create-account.png" style="width: 400px;" /></a>
 </td>
 </tr>
-<tr class="row-even"><td>You should then receive a new email to activate your account.</td>
+<tr class="row-odd"><td>You should then receive a new email to activate your account.</td>
 </tr>
-<tr class="row-odd"><td><a class="first last reference internal image-reference" href="../_images/activate-account.png"><img alt="../_images/activate-account.png" src="../_images/activate-account.png" style="width: 800px;" /></a>
+<tr class="row-even"><td><a class="first last reference internal image-reference" href="../_images/activate-account.png"><img alt="../_images/activate-account.png" src="../_images/activate-account.png" style="width: 800px;" /></a>
 </td>
 </tr>
-<tr class="row-even"><td>After you click on ‘Activate Account’ you should see the following screen.</td>
+<tr class="row-odd"><td>After you click on <strong>Activate Account</strong>, you should see the following screen.</td>
 </tr>
-<tr class="row-odd"><td><a class="first last reference internal image-reference" href="../_images/account-activated.png"><img alt="../_images/account-activated.png" src="../_images/account-activated.png" style="width: 400px;" /></a>
+<tr class="row-even"><td><a class="first last reference internal image-reference" href="../_images/account-activated.png"><img alt="../_images/account-activated.png" src="../_images/account-activated.png" style="width: 400px;" /></a>
 </td>
 </tr>
-<tr class="row-even"><td>Now go to <a class="reference external" href="https://udf.f5.com">https://udf.f5.com</a> (Yes, I know this is a lot of steps, sorry!)</td>
+<tr class="row-odd"><td>Click <strong>Log in to continue</strong> (<a class="reference external" href="https://udf.f5.com">https://udf.f5.com</a>).</td>
 </tr>
-<tr class="row-odd"><td><a class="first last reference internal image-reference" href="../_images/udf-login.png"><img alt="../_images/udf-login.png" src="../_images/udf-login.png" style="width: 400px;" /></a>
+<tr class="row-even"><td><a class="first last reference internal image-reference" href="../_images/udf-login.png"><img alt="../_images/udf-login.png" src="../_images/udf-login.png" style="width: 400px;" /></a>
 </td>
 </tr>
-<tr class="row-even"><td><p class="first">Click on “Invited Users”.</p>
+<tr class="row-odd"><td><p class="first">Click on <strong>Invited Users</strong>.</p>
 <p class="last">You will now be prompted to set up MFA access to the lab environment (mandatory).</p>
 </td>
 </tr>
-<tr class="row-odd"><td><a class="first last reference internal image-reference" href="../_images/mfa-setup.png"><img alt="../_images/mfa-setup.png" src="../_images/mfa-setup.png" style="width: 400px;" /></a>
+<tr class="row-even"><td><a class="first last reference internal image-reference" href="../_images/mfa-setup.png"><img alt="../_images/mfa-setup.png" src="../_images/mfa-setup.png" style="width: 400px;" /></a>
 </td>
 </tr>
-<tr class="row-even"><td>After you complete your setup by selecting “Finish”, you will be able to launch this course.
-Click <strong>-&gt; LAUNCH</strong> now (it takes a few minutes for the lab components to launch).</td>
+<tr class="row-odd"><td>Click <strong>Finish</strong> to complete the account setup and click <strong>-&gt; LAUNCH</strong> now.
+(it takes several minutes for the lab virtual machines to deploy and start).</td>
 </tr>
-<tr class="row-odd"><td><a class="first last reference internal image-reference" href="../_images/launch-course.png"><img alt="../_images/launch-course.png" src="../_images/launch-course.png" style="width: 800px;" /></a>
+<tr class="row-even"><td><a class="first last reference internal image-reference" href="../_images/launch-course.png"><img alt="../_images/launch-course.png" src="../_images/launch-course.png" style="width: 800px;" /></a>
 </td>
 </tr>
 </tbody>
 </table>
 </div>
-<div class="section" id="task-3-accessing-the-f5-distributed-cloud-console">
-<h2>Task 3: Accessing the F5 Distributed Cloud Console<a class="headerlink" href="#task-3-accessing-the-f5-distributed-cloud-console" title="Permalink to this heading">¶</a></h2>
+<div class="section" id="task-3-setup-credentials-for-the-f5-distributed-cloud-console">
+<h2>Task 3: Setup credentials for the F5 Distributed Cloud Console<a class="headerlink" href="#task-3-setup-credentials-for-the-f5-distributed-cloud-console" title="Permalink to this heading">¶</a></h2>
 <p>F5 Distributed Cloud Console is a SaaS control-plane for
 services that provides a UI and API for managing network, security, and compute services. The F5
-Distributed Cloud Console can manage “sites” in existing on-premises data centers and sites in
+Distributed Cloud Console can manage <em>sites</em> in existing on-premises data centers and sites in
 AWS, Azure, and GCP cloud environments.</p>
 <p>The following steps will guide you through the initial Lab environment access within the
 F5 Distributed Cloud Console.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last"><strong>Prerequisite</strong> You should have received an email from F5 Distributed Cloud &lt;<a class="reference external" href="mailto:no-reply&#37;&#52;&#48;cloud&#46;f5&#46;com">no-reply<span>&#64;</span>cloud<span>&#46;</span>f5<span>&#46;</span>com</a>&gt; a few minutes after launching your course as instructed in the previous task.</p>
+<p class="last">If you already have access to the F5 Distributed Cloud, try using your existing
+credentials for login to the F5 <strong>Policy Supervisor</strong> console.
+If you do not already have workihg credentails, you must wait for an email from
+<strong>F5 Distributed Cloud &lt;no-reply&#64;cloud.f5.com&gt;</strong>, which should be delivered in your email
+inbox a few minutes after initial launch of this course in UDF.</p>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">If you have not received the email to change your credentials or ran into problems changing your credentials, please stop and get help from one of the Lab Assistants.</p>
 </div>
 <table border="1" class="docutils align-default">
 <colgroup>
 <col width="100%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td>Click on the <strong>Update Password</strong> button/link in the email you received from
-<em>F5 Distributed Cloud &lt;no-reply&#64;cloud.f5.com&gt;</em> to set your credentials.</td>
+<tr class="row-odd"><td>Locate the <strong>Update Your Account</strong> email sent to you from
+<em>F5 Distributed Cloud &lt;no-reply&#64;cloud.f5.com&gt;</em> and click the <strong>Update Password</strong> button/link
+in that email to set your credentials.</td>
 </tr>
 <tr class="row-even"><td><a class="first last reference internal image-reference" href="../_images/updatepasswdemail.png"><img alt="../_images/updatepasswdemail.png" src="../_images/updatepasswdemail.png" style="width: 800px;" /></a>
 </td>
 </tr>
 <tr class="row-odd"><td>Ensure you adhere to the password strength restrictions and make a mental note of these
 credentials as you will need them several times throughout this lab today.
-For this exercise, we recommend using the value <em>Canada123!</em> for your password.</td>
+<em>For this exercise, feel free to use the same password that was configured for you on</em>
+<em>the two BIG-IP appliances of your UDF virtual lab environment</em> (<strong>Canada123!</strong>).</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="../_images/PSUpdatePassword.png"><img alt="PSUpdatePassword" src="../_images/PSUpdatePassword.png" style="width: 800px;" /></a></td>
 </tr>
-<tr class="row-odd"><td>Once you’ve set your new password (<em>including 1 upper, 1 lower and 1 special character</em>,
-you will be asked to “Log In” and presented with the following screens (click to login):</td>
+<tr class="row-odd"><td>Once you’ve set your new password (<em>including 1 upper, 1 lower and 1 special character</em>),
+you will be prompted to <strong>Log In</strong> (click the button to login):</td>
 </tr>
 <tr class="row-even"><td><a class="first last reference internal image-reference" href="../_images/PSPasswordUpdated.png"><img alt="../_images/PSPasswordUpdated.png" src="../_images/PSPasswordUpdated.png" style="width: 800px;" /></a>
 </td>
 </tr>
 <tr class="row-odd"><td>In the domain field, enter: <strong>f5-xc-lab-mcn</strong>, click <strong>Next</strong> and sign in with your email
-address and password you’ve just set (i.e, <em>Canada123!</em>), and proceed to accepting the
+address and password you’ve just set (i.e, <strong>Canada123!</strong>), and proceed to accepting the
 Terms and Conditions.</td>
 </tr>
 <tr class="row-even"><td><a class="first last reference internal image-reference" href="../_images/tenantlogin2.png"><img alt="../_images/tenantlogin2.png" src="../_images/tenantlogin2.png" style="width: 800px;" /></a>
 </td>
 </tr>
-<tr class="row-odd"><td>Put a checmark in the box and click <strong>Accept and Agree</strong>.</td>
+<tr class="row-odd"><td>Put a checmark in the box and click to <strong>Accept and Agree</strong>.</td>
 </tr>
 <tr class="row-even"><td><a class="first last reference internal image-reference" href="../_images/PSTsandCs.png"><img alt="../_images/PSTsandCs.png" src="../_images/PSTsandCs.png" style="width: 800px;" /></a>
 </td>
 </tr>
 </tbody>
 </table>
-<div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">If you have not received the email to change your credentials or ran into problems changing your credentials, please stop and get help from one of the Lab Assistants.</p>
-</div>
-<div class="section" id="logging-into-the-xc-console">
-<h3><strong>Logging into the XC Console</strong><a class="headerlink" href="#logging-into-the-xc-console" title="Permalink to this heading">¶</a></h3>
-<p>After accepting the Terms of Service and Privacy Policy, you are prompted to select your <em>Persona</em>.</p>
+<div class="section" id="optional-logging-into-the-f5-distributed-cloud-console">
+<h3>Optional: Logging into the F5 Distributed Cloud Console<a class="headerlink" href="#optional-logging-into-the-f5-distributed-cloud-console" title="Permalink to this heading">¶</a></h3>
+<p>Upon the first successful login, you are prompted to select your <em>Persona</em>.</p>
 <table border="1" class="docutils align-default">
 <colgroup>
 <col width="100%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td>Put a checkmark to select <strong>“NetOps”</strong> for your persona and click <strong>next</strong>.</td>
+<tr class="row-odd"><td>Put a checkmark to select <strong>NetOps</strong> for your persona and click <strong>next</strong>.</td>
 </tr>
 <tr class="row-even"><td><a class="first last reference internal image-reference" href="../_images/PSPersona.png"><img alt="../_images/PSPersona.png" src="../_images/PSPersona.png" style="width: 800px;" /></a>
 </td>
 </tr>
-<tr class="row-odd"><td>Select <strong>“Intermediate”</strong> for your <em>level</em> and then click <strong>Get Started</strong>.</td>
+<tr class="row-odd"><td>Select <strong>Intermediate</strong> for your <em>level</em> and then click <strong>Get Started</strong>.</td>
 </tr>
 <tr class="row-even"><td><a class="first last reference internal image-reference" href="../_images/PSLevel.png"><img alt="../_images/PSLevel.png" src="../_images/PSLevel.png" style="width: 800px;" /></a>
 </td>
@@ -345,27 +346,27 @@ other administrative functions.</td>
 <tr class="row-even"><td>In the resulting window you can observe the <strong>Work domains and skill level</strong> section and
 other administrative functions.</td>
 </tr>
-<tr class="row-odd"><td><a class="first last reference internal image-reference" href="../_images/intro13.png"><img alt="../_images/intro13.png" src="../_images/intro13.png" style="width: 800px;" /></a>
+<tr class="row-odd"><td><a class="first last reference internal image-reference" href="../_images/intro23.png"><img alt="../_images/intro23.png" src="../_images/intro23.png" style="width: 800px;" /></a>
 </td>
 </tr>
 </tbody>
 </table>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last"><em>For the purposes of this lab, permissions have been restricted to lab operations. Some menus/functions will be locked and/or not visible.</em></p>
+<p class="last"><em>For the purposes of this lab, permissions on your ephemeral account have been restricted to lab operations. Some menus/functions will be locked and/or not visible.</em></p>
 </div>
 </div>
 </div>
 <div class="section" id="task-4-accessing-the-f5-policy-supervisor-console">
 <h2>Task 4: Accessing the F5 <strong>Policy Supervisor</strong> Console<a class="headerlink" href="#task-4-accessing-the-f5-policy-supervisor-console" title="Permalink to this heading">¶</a></h2>
 <p>The same credentials for the <strong>f5-xc-lab-mcn</strong> tenant in the F5 Distributed Cloud Console can
-be used to access the F5 <strong>Policy Supervisor</strong> console.</p>
+be used to access the F5 <strong>Policy Supervisor</strong> console if you don’t already have access.</p>
 <table border="1" class="docutils align-default">
 <colgroup>
 <col width="100%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td>Login to <a class="reference external" href="https://policysupervisor.io">https://policysupervisor.io</a> by clicking on <strong>Sign In with Azure AD</strong>.</td>
+<tr class="row-odd"><td>Browse to <a class="reference external" href="https://policysupervisor.io">https://policysupervisor.io</a> and click on <strong>Sign In with Azure AD</strong>.</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="../_images/PSLoginWindow.png"><img alt="intro010" src="../_images/PSLoginWindow.png" style="width: 800px;" /></a></td>
 </tr>

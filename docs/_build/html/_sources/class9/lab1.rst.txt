@@ -56,8 +56,8 @@ Access the F5 **Policy Supervisor** console at https://policysupervisor.io as in
 +---------------------------------------------------------------------------------------------------------------+
 | |lab003|                                                                                                      |
 +---------------------------------------------------------------------------------------------------------------+
-| 4. From within the *Add Agent* pane, find and click the **Go to agent-install** link (step #1).               |
-|    The *repository page* will open.                                                                           |
+| 4. From within the *Add Agent* pane, find and click the link to go to the **agent-install** page (step 1.).   |
+|    The corresponding GitLab *repository page* will open.                                                      |
 +---------------------------------------------------------------------------------------------------------------+
 | |lab004|                                                                                                      |
 +---------------------------------------------------------------------------------------------------------------+
@@ -69,20 +69,20 @@ Access the F5 **Policy Supervisor** console at https://policysupervisor.io as in
 Task 2: Install a **Policy Supervisor Agent**
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Next, we will use the *token* and the *URL* obtained in task 1 above to install the *Agent* on your UDF virtual lab environment.
+Next, we will use the **token** and the **URL** obtained in task 1 above to install the *Agent* on your UDF virtual lab environment.
 The *Agent* will be installed on your *SuperJumpHost* Linux machine, which is connected to the same management network as your BIG-IP.
 The *SuperJumpHost* is pre-configured in your lab environment with permission to communicate with the **Policy Supervisor** across the Internet.
 
 +---------------------------------------------------------------------------------------------------------------+
-| 1. In a different window go to https://udf.f5.com and browse to the **Deployment** tab to see virtual systems.|
+| 1. Browse to https://udf.f5.com again and find the **Deployment** tab to see your virtual machines.           |
 +---------------------------------------------------------------------------------------------------------------+
 | |lab006|                                                                                                      |
 +---------------------------------------------------------------------------------------------------------------+
-| 2. Find the **SuperJumpHost** system and click the **ACCESS** link to see a list of access options.           |
+| 2. Find the **SuperJumpHost** system and click its **ACCESS** link to see a list of access options.           |
 +---------------------------------------------------------------------------------------------------------------+
 | |lab007|                                                                                                      |
 +---------------------------------------------------------------------------------------------------------------+
-| 3. Select **Web Sell** to access the SuperJumpHost machine's command line interface in a new browser tab.     |
+| 3. Select **Web Sell** to access the **SuperJumpHost** machine's command line interface in a new browser tab. |
 +---------------------------------------------------------------------------------------------------------------+
 | |lab008|                                                                                                      |
 +---------------------------------------------------------------------------------------------------------------+
@@ -102,7 +102,8 @@ The *SuperJumpHost* is pre-configured in your lab environment with permission to
 +---------------------------------------------------------------------------------------------------------------+
 | |lab009|                                                                                                      |
 +---------------------------------------------------------------------------------------------------------------+
-| 9. Paste the token copied from *Task 1* above when prompted. *(command-V on a MAC, Ctrl-Shift-V on Windows)*  |
+| 9. Wait for the prompt and paste the token copied from *Task 1* above.                                        |
+|    *(command-V on a MAC, Ctrl-Shift-V on Windows)*                                                            |
 |                                                                                                               |
 | 10. Enter the name ``udf`` when prompted for the agent name.                                                  |
 |     Wait for registration to complete successfully (takes a few minutes).                                     |
@@ -122,24 +123,24 @@ The *SuperJumpHost* is pre-configured in your lab environment with permission to
 | |lab011|                                                                                                      |
 +---------------------------------------------------------------------------------------------------------------+
 
-Task 3: Finish adding a new *provider* in **Policy Supervisor**
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Task 3: Finish adding a first *provider* in **Policy Supervisor**
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Now that the *Agent* is ready, the configuration of the new *Provider* can be completed.
+The configuration of the new *Provider* can be completed now that the *Agent* is ready.
 
 +---------------------------------------------------------------------------------------------------------------+
-| 1. Go back to https://policysupervisor.io.                                                                    |
-|                                                                                                               |
-| Go back to the policysupervisor.io web page and click "Done" (return to the *Add Provider Pane* with *BIG-IP* |
+| Go to https://policysupervisor.io again and click "Done" (return to the *Add Provider Pane* with *BIG-IP*     |
 | selected for the *Provider Type*).                                                                            |
 |                                                                                                               |
-| Select the "udf" option that should not be visible on the dropdown list for *Agent*.                          |
+| Select the new **udf** option that should now be visible on the dropdown list for the *Agent* field           |
+| (the provider that was created in the previous task).                                                         |
 |                                                                                                               |
-| Click the *Secrets* field that should now be visible to see its drop-down list, choose the **bigip** secret   |
-| that was created in the previous step and click **Continue**.                                                 |
+| Choose the new **bigip** option that should now be visible on the drop-down list for the *Secrets* field      |
+| (the secret that was created in the previous task) and click **Continue**.                                    |
 |                                                                                                               |
-| The **Provider Name** and **Provider URL** will appear. Type **bigip1** for the **Provider Name** and type    | 
-| **https://10.1.1.6** for the **Provider URL**.                                                                |
+| The **Provider Name** and **Provider URL** fields will now appear.                                            |
+|                                                                                                               |
+| Type **bigip1** for the **Provider Name** and type **https://10.1.1.6** for the **Provider URL**.             |
 |                                                                                                               |
 +---------------------------------------------------------------------------------------------------------------+
 | .. image:: _static/PSAddProvider.png                                                                          |
@@ -149,6 +150,14 @@ Now that the *Agent* is ready, the configuration of the new *Provider* can be co
 +---------------------------------------------------------------------------------------------------------------+
 | .. image:: _static/PSProviderTestConnection.png                                                               |
 |    :width: 800px                                                                                              |
++---------------------------------------------------------------------------------------------------------------+
+
+Task 4: Add a 2nd BIG-IP *provider* in **Policy Supervisor**
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+We will re-use the same **udf** *Agent* and **bigip** *Secret* created in Task 2 above to manage the WAF policies on
+your 2nd BIG-IP because they areconnected to the same management network in your UDF virtual lab environment.
+
 +---------------------------------------------------------------------------------------------------------------+
 | Click the **Add another Provider** button to add the second BIG-IP appliance in your virtual lab environment. |
 |                                                                                                               |
@@ -164,6 +173,10 @@ Now that the *Agent* is ready, the configuration of the new *Provider* can be co
 |                                                                                                               |
 | Click the **Test Connection** button and wait for the tests to complete successfully.                         |
 |                                                                                                               |
++---------------------------------------------------------------------------------------------------------------+
+| .. image:: _static/PSAddProvider2.png                                                                         |
+|    :width: 800px                                                                                              |
++---------------------------------------------------------------------------------------------------------------+
 | Click the **Got to overview** link.                                                                           |
 +---------------------------------------------------------------------------------------------------------------+
 | .. image:: _static/PSProviderList.png                                                                         |
