@@ -14,7 +14,7 @@ Task 1: Establishing a Baseline
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In this task you will access a test website/webpage to experience access without a Rate Limiting Policy
-engaged.  Following completion of Task1, you will build a Rate Limit Policy (Task2) and the test the 
+engaged.  Following completion of Task1, you will build a Rate Limit Policy (Task2) and then test the 
 Rate Limited experience (Task3).
 
 +----------------------------------------------------------------------------------------------+
@@ -212,7 +212,7 @@ In this task you will add a Rate Limiting Policy to the application Load Balance
 |                                                                                              |
 |     **bypass** into the **Name** field.                                                      |
 |                                                                                              |
-| 33. Using the **Actions** drop-down select, **Bypass Rate Limiter**.                         |
+| 33. Using the **Actions** drop-down, select **Bypass Rate Limiter**.                         |
 |                                                                                              |
 | 34. In the left-hand navigation, click on **Request Match**.                                 |
 +----------------------------------------------------------------------------------------------+
@@ -220,7 +220,7 @@ In this task you will add a Rate Limiting Policy to the application Load Balance
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 35. In the **Request Match** section and select the **Configure** link in the **HTTP Method**|
+| 35. In the **Request Match** section, select the **Configure** link in the **HTTP Method**   |
 |                                                                                              |
 |     section as shown.                                                                        |
 |                                                                                              |
@@ -390,7 +390,7 @@ It will also help you understand additional approaches for Service Policies.
 |                                                                                              |
 +----------------------------------------------------------------------------------------------+
 |                                                                                              |
-| 7. To build an example L7 routing rule, select **8Simple Route.**                            |
+| 7. To build an example L7 routing rule, select **Simple Route.**                            |
 |                                                                                              |
 | 8. Select **ANY** as the HTTP method.                                                        |
 |                                                                                              |
