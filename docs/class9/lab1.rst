@@ -1,5 +1,5 @@
-Lab 1: Connecting **Policy Supervisor** to BIG-IP WAF
-=====================================================
+Lab 1: Managing BIG-IP Advanced WAF with  **Policy Supervisor**
+===============================================================
 
 **Policy Supervisor** is an online unified configuration solution for security policies, built with the purposes of managing and converting configuration across multiple F5 Web App Firewall solutions.
 It enables operators of F5 WAF technologies to easily convert policy files from *BIG-IP AWAF*, *F5 Distributed Cloud WAF*, and *NGINX NAP* formats. In the process **Policy Supervisor** generates and uses an intermediate
