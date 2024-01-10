@@ -4,17 +4,17 @@
   <!-- Google Tag Manager -->
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-PPZPQ6');</script>
   <!-- End Google Tag Manager -->
-    <title>Lab 1: Connecting Policy Supervisor to BIG-IP WAF</title>
+    <title>Lab 1: Managing BIG-IP Advanced WAF with Policy Supervisor</title>
   
 
   <meta charset="utf-8">
   <!-- Twitter Bootstrap viewport setting -->
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <!-- F5 metadata -->
-  <meta name="title" content="Lab 1: Connecting Policy Supervisor to BIG-IP WAF"/>
+  <meta name="title" content="Lab 1: Managing BIG-IP Advanced WAF with Policy Supervisor"/>
   <meta name="product" content="F5 Distributed Cloud"/>
   <meta name="version" content=""/>
-  <meta name="updated_date"  content="2024-01-10 18:55:15"/>
+  <meta name="updated_date"  content="2024-01-10 21:47:05"/>
   <meta name="archived" content="Archived documents excluded"/>
   <meta name="doc_type" content="Manual"/>
   <meta name="lifecycle" content="release"/>
@@ -35,7 +35,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Lab 1: Connecting Policy Supervisor to BIG-IP WAF &#8212; F5 Distributed Cloud  documentation</title>
+    <title>Lab 1: Managing BIG-IP Advanced WAF with Policy Supervisor &#8212; F5 Distributed Cloud  documentation</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
@@ -57,7 +57,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Conclusion" href="close.html" />
+    <link rel="next" title="Lab 2: Managing F5 Distributed Cloud WAF with Policy Supervisor" href="lab2.html" />
     <link rel="prev" title="Introduction: F5 WAF Policy Supervisor" href="intro.html" /> 
   </head><body>
   <div id="clouddocs-header"></div>
@@ -90,7 +90,8 @@
 <li class="toctree-l2"><a class="reference internal" href="class9.html#objectives">Objectives:</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="class9.html#lab-tasks">Lab &amp; Tasks:</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="intro.html">Introduction: F5 WAF <strong>Policy Supervisor</strong></a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">Lab 1: Connecting <strong>Policy Supervisor</strong> to BIG-IP WAF</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Lab 1: Managing BIG-IP Advanced WAF with  <strong>Policy Supervisor</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="lab2.html">Lab 2: Managing F5 Distributed Cloud WAF with <strong>Policy Supervisor</strong></a></li>
 <li class="toctree-l3"><a class="reference internal" href="close.html">Conclusion</a></li>
 <li class="toctree-l3"><a class="reference internal" href="close.html#appendix">Appendix</a></li>
 </ul>
@@ -115,11 +116,13 @@
       <nav class="nav-sidebartoc">
         <span class="nav-sidebartoc">
             <ul>
-<li><a class="reference internal" href="#">Lab 1: Connecting <strong>Policy Supervisor</strong> to BIG-IP WAF</a><ul>
+<li><a class="reference internal" href="#">Lab 1: Managing BIG-IP Advanced WAF with  <strong>Policy Supervisor</strong></a><ul>
 <li><a class="reference internal" href="#task-1-create-a-new-policy-supervisor-provider">Task 1: Create a new <strong>Policy Supervisor</strong>  <em>Provider</em></a></li>
 <li><a class="reference internal" href="#task-2-install-a-policy-supervisor-agent">Task 2: Install a <strong>Policy Supervisor Agent</strong></a></li>
 <li><a class="reference internal" href="#task-3-finish-adding-a-first-provider-in-policy-supervisor">Task 3: Finish adding a first <em>provider</em> in <strong>Policy Supervisor</strong></a></li>
 <li><a class="reference internal" href="#task-4-add-a-2nd-big-ip-provider-in-policy-supervisor">Task 4: Add a 2nd BIG-IP <em>provider</em> in <strong>Policy Supervisor</strong></a></li>
+<li><a class="reference internal" href="#task-5-ingest-an-existing-big-ip-waf-policy-in-policy-supervisor">Task 5: Ingest an existing BIG-IP WAF policy in <strong>Policy Supervisor</strong></a></li>
+<li><a class="reference internal" href="#task-6-confirm-successful-deployment-of-the-waf-policy-on-big-ip2">Task 6: Confirm successful deployment of the WAF policy on BIG-IP2</a></li>
 </ul>
 </li>
 </ul>
@@ -164,8 +167,8 @@
 
      <div role="main">
         
-  <div class="section" id="lab-1-connecting-policy-supervisor-to-big-ip-waf">
-<h1>Lab 1: Connecting <strong>Policy Supervisor</strong> to BIG-IP WAF<a class="headerlink" href="#lab-1-connecting-policy-supervisor-to-big-ip-waf" title="Permalink to this heading">¶</a></h1>
+  <div class="section" id="lab-1-managing-big-ip-advanced-waf-with-policy-supervisor">
+<h1>Lab 1: Managing BIG-IP Advanced WAF with  <strong>Policy Supervisor</strong><a class="headerlink" href="#lab-1-managing-big-ip-advanced-waf-with-policy-supervisor" title="Permalink to this heading">¶</a></h1>
 <p><strong>Policy Supervisor</strong> is an online unified configuration solution for security policies, built with the purposes of managing and converting configuration across multiple F5 Web App Firewall solutions.
 It enables operators of F5 WAF technologies to easily convert policy files from <em>BIG-IP AWAF</em>, <em>F5 Distributed Cloud WAF</em>, and <em>NGINX NAP</em> formats. In the process <strong>Policy Supervisor</strong> generates and uses an intermediate
 JSON-based common declarative format called CDP (<em>Common Declarative Policy</em>) for policy lifecycle management. After a policy is converted to CDP, it can then be deployed to any supported WAF Solution, which is referred to as a <em>Provider</em> in <strong>Policy Supervisor</strong> lingo.</p>
@@ -357,37 +360,188 @@ your 2nd BIG-IP because they areconnected to the same management network in your
 <p>Select the <strong>udf</strong> option for <strong>Agent</strong>.</p>
 <p>Select the <strong>bigip</strong> option for <strong>Secret</strong> <em>(the two BIG-IP’s have been configured with the same password)</em>.</p>
 <p>Click <strong>Continue</strong>.</p>
-<p>Type <strong>bigip2</strong> for the <strong>Provider Name</strong> and type <strong>https://10.1.1.7</strong> for the <strong>Provider URL</strong>.</p>
-<p class="last">Click the <strong>Test Connection</strong> button and wait for the tests to complete successfully.</p>
+<p class="last">Type <strong>bigip2</strong> for the <strong>Provider Name</strong> and type <strong>https://10.1.1.7</strong> for the <strong>Provider URL</strong>.</p>
 </td>
 </tr>
 <tr class="row-even"><td><a class="first last reference internal image-reference" href="../_images/PSAddProvider2.png"><img alt="../_images/PSAddProvider2.png" src="../_images/PSAddProvider2.png" style="width: 800px;" /></a>
 </td>
 </tr>
-<tr class="row-odd"><td>Click the <strong>Got to overview</strong> link.</td>
+<tr class="row-odd"><td>Click the <strong>Test Connection</strong> button and wait for the tests to complete successfully.</td>
+</tr>
+<tr class="row-even"><td><a class="first last reference internal image-reference" href="../_images/PSProviderTestConnection.png"><img alt="../_images/PSProviderTestConnection.png" src="../_images/PSProviderTestConnection.png" style="width: 800px;" /></a>
+</td>
+</tr>
+<tr class="row-odd"><td>Click the <strong>Go to overview</strong> link.</td>
 </tr>
 <tr class="row-even"><td><a class="first last reference internal image-reference" href="../_images/PSProviderList.png"><img alt="../_images/PSProviderList.png" src="../_images/PSProviderList.png" style="width: 800px;" /></a>
 </td>
 </tr>
-<tr class="row-odd"><td><p class="first">Click to select the “bigip1” provider.</p>
-<p>Click “Ingest Policies”.</p>
-<p>Select the discovered policy (i.e., “My_ASM_Rapid_Deployment_Po…”).</p>
-<p>Click Continue.</p>
-<p>Click Next.</p>
-<p>Type “Ingest from bigip1” for the quired “commit message”.</p>
-<p>Click ” Save &amp; Ingest Policy” and wait for the ingestion to complete successfully.</p>
-<p>Click “Policies Overview”.</p>
-<p>Select the policy.</p>
-<p>Click “Deploy”.</p>
-<p>Select the “bigip2” option from the “Provider” dropdown.</p>
-<p>Type “Deploy to bigip2” in the commit message text box.</p>
-<p>Click the “Conversion Summary” button and wait for the Conversion Summary screen to appear.</p>
-<p>Click the “Save &amp; Continue” button.</p>
-<p>Click the “Continue Deployment” button.</p>
-<p>Select the “service” Virtual server from the dropdown list.</p>
-<p>Click the “Next button.</p>
-<p class="last">Click the “Deploy” button.</p>
+</tbody>
+</table>
+</div>
+<div class="section" id="task-5-ingest-an-existing-big-ip-waf-policy-in-policy-supervisor">
+<h2>Task 5: Ingest an existing BIG-IP WAF policy in <strong>Policy Supervisor</strong><a class="headerlink" href="#task-5-ingest-an-existing-big-ip-waf-policy-in-policy-supervisor" title="Permalink to this heading">¶</a></h2>
+<p>BIG-IP1 is already configured with a WAF policy attached to the <strong>web_app</strong> virtual server.
+Let’s ingest this WAF policy into <strong>Policy Supervisor</strong>.</p>
+<table border="1" class="docutils align-default">
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>Start from the <strong>Providers Overview</strong> page.</td>
+</tr>
+<tr class="row-even"><td><a class="first last reference internal image-reference" href="../_images/PSBIGIPProvider.png"><img alt="../_images/PSBIGIPProvider.png" src="../_images/PSBIGIPProvider.png" style="width: 800px;" /></a>
 </td>
+</tr>
+<tr class="row-odd"><td>Click to select <strong>bigip1</strong>, then click <strong>Ingest Policies</strong>.</td>
+</tr>
+<tr class="row-even"><td><a class="first last reference internal image-reference" href="../_images/PSIngest.png"><img alt="../_images/PSIngest.png" src="../_images/PSIngest.png" style="width: 800px;" /></a>
+</td>
+</tr>
+<tr class="row-odd"><td>Select the discovered policy (i.e., <strong>My_ASM_Rapid…</strong>) and click <strong>Continue</strong>.</td>
+</tr>
+<tr class="row-even"><td><a class="first last reference internal image-reference" href="../_images/PSIngest2.png"><img alt="../_images/PSIngest2.png" src="../_images/PSIngest2.png" style="width: 800px;" /></a>
+</td>
+</tr>
+<tr class="row-odd"><td>Click <strong>Next</strong>.</td>
+</tr>
+<tr class="row-even"><td><a class="first last reference internal image-reference" href="../_images/PSIngest2b.png"><img alt="../_images/PSIngest2b.png" src="../_images/PSIngest2b.png" style="width: 800px;" /></a>
+</td>
+</tr>
+<tr class="row-odd"><td>Type <code class="docutils literal notranslate"><span class="pre">Ingest</span> <span class="pre">from</span> <span class="pre">bigip1</span></code> for the required <strong>commit message</strong>,
+click <strong>Save &amp; Ingest Policy</strong>, then wait for the ingestion to complete successfully.</td>
+</tr>
+<tr class="row-even"><td><a class="first reference internal image-reference" href="../_images/PSIngest3.png"><img alt="../_images/PSIngest3.png" src="../_images/PSIngest3.png" style="width: 800px;" /></a>
+<a class="last reference internal image-reference" href="../_images/PSIngest4.png"><img alt="../_images/PSIngest4.png" src="../_images/PSIngest4.png" style="width: 800px;" /></a>
+</td>
+</tr>
+<tr class="row-odd"><td>Click <strong>Policies Overview</strong>.</td>
+</tr>
+<tr class="row-even"><td><a class="first reference internal image-reference" href="../_images/PSDeploy1.png"><img alt="../_images/PSDeploy1.png" src="../_images/PSDeploy1.png" style="width: 800px;" /></a>
+<a class="last reference internal image-reference" href="../_images/PSDeploy2.png"><img alt="../_images/PSDeploy2.png" src="../_images/PSDeploy2.png" style="width: 800px;" /></a>
+</td>
+</tr>
+<tr class="row-odd"><td>Select the policy then find and click on the <strong>Deploy</strong> button.</td>
+</tr>
+<tr class="row-even"><td><a class="first last reference internal image-reference" href="../_images/PSDeploy3.png"><img alt="../_images/PSDeploy3.png" src="../_images/PSDeploy3.png" style="width: 800px;" /></a>
+</td>
+</tr>
+<tr class="row-odd"><td>Select the <strong>bigip2</strong> option from the <strong>Provider</strong> dropdown, type <code class="docutils literal notranslate"><span class="pre">Deploy</span> <span class="pre">to</span> <span class="pre">bigip2</span></code> in the mandatory commit
+message text box and click the <strong>Conversion Summary</strong> button.</td>
+</tr>
+<tr class="row-even"><td><a class="first last reference internal image-reference" href="../_images/PSDeploy4.png"><img alt="../_images/PSDeploy4.png" src="../_images/PSDeploy4.png" style="width: 800px;" /></a>
+</td>
+</tr>
+<tr class="row-odd"><td>Wait for the Conversion Summary screen to appear.</td>
+</tr>
+<tr class="row-even"><td><a class="first last reference internal image-reference" href="../_images/PSDeploy5.png"><img alt="../_images/PSDeploy5.png" src="../_images/PSDeploy5.png" style="width: 800px;" /></a>
+</td>
+</tr>
+<tr class="row-odd"><td>Click the <strong>Save &amp; Continue</strong> button.</td>
+</tr>
+<tr class="row-even"><td><a class="first last reference internal image-reference" href="../_images/PSDeploy6.png"><img alt="../_images/PSDeploy6.png" src="../_images/PSDeploy6.png" style="width: 800px;" /></a>
+</td>
+</tr>
+<tr class="row-odd"><td>Click the <strong>Continue Deployment</strong> button on the <em>Conversion Report</em> screen that appears.</td>
+</tr>
+<tr class="row-even"><td><a class="first last reference internal image-reference" href="../_images/PSDeploy7.png"><img alt="../_images/PSDeploy7.png" src="../_images/PSDeploy7.png" style="width: 800px;" /></a>
+</td>
+</tr>
+<tr class="row-odd"><td>Select the <strong>web_app</strong> virtual server from the dropdown list and click the <strong>Next</strong> button.</td>
+</tr>
+<tr class="row-even"><td><a class="first last reference internal image-reference" href="../_images/PSDeploy7b.png"><img alt="../_images/PSDeploy7b.png" src="../_images/PSDeploy7b.png" style="width: 800px;" /></a>
+</td>
+</tr>
+<tr class="row-odd"><td>Click the <strong>Deploy</strong> button.</td>
+</tr>
+<tr class="row-even"><td><a class="first reference internal image-reference" href="../_images/PSDeploy8.png"><img alt="../_images/PSDeploy8.png" src="../_images/PSDeploy8.png" style="width: 800px;" /></a>
+<a class="last reference internal image-reference" href="../_images/PSDeploy9.png"><img alt="../_images/PSDeploy9.png" src="../_images/PSDeploy9.png" style="width: 800px;" /></a>
+</td>
+</tr>
+<tr class="row-odd"><td>Wait for the deployment to successfully complete and click the <strong>Back to Overview</strong> button.</td>
+</tr>
+<tr class="row-even"><td><a class="first last reference internal image-reference" href="../_images/PSDeploy10.png"><img alt="../_images/PSDeploy10.png" src="../_images/PSDeploy10.png" style="width: 800px;" /></a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="task-6-confirm-successful-deployment-of-the-waf-policy-on-big-ip2">
+<h2>Task 6: Confirm successful deployment of the WAF policy on BIG-IP2<a class="headerlink" href="#task-6-confirm-successful-deployment-of-the-waf-policy-on-big-ip2" title="Permalink to this heading">¶</a></h2>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The password for the admin account on your BIG-IP appliances is set to <strong>Canada123!</strong>.</p>
+</div>
+<table border="1" class="docutils align-default">
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><ol class="first last arabic simple">
+<li>Browse to <a class="reference external" href="https://udf.f5.com">https://udf.f5.com</a> again and find the <strong>Deployment</strong> tab to see your virtual machines.</li>
+</ol>
+</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="../_images/UDFDeploymentTab.png"><img alt="lab006" src="../_images/UDFDeploymentTab.png" style="width: 800px;" /></a></td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="2">
+<li>Find <strong>bigip2</strong> under F5 Products and click its <strong>ACCESS</strong> link to see a list of access options.</li>
+</ol>
+</td>
+</tr>
+<tr class="row-even"><td><a class="first last reference internal image-reference" href="../_images/UDFTMUI.png"><img alt="../_images/UDFTMUI.png" src="../_images/UDFTMUI.png" style="width: 800px;" /></a>
+</td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="3">
+<li>Select <strong>TMUI</strong> to access the <strong>bigip2</strong> machine’s GUI management interface in a new browser tab.</li>
+</ol>
+</td>
+</tr>
+<tr class="row-even"><td><a class="first last reference internal image-reference" href="../_images/TMUILogin.png"><img alt="../_images/TMUILogin.png" src="../_images/TMUILogin.png" style="width: 800px;" /></a>
+</td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="4">
+<li>Login with username <strong>admin</strong> and password <strong>Canada123!</strong>, then click to the virtual servers list page.</li>
+</ol>
+</td>
+</tr>
+<tr class="row-even"><td><a class="first reference internal image-reference" href="../_images/TMUIVS.png"><img alt="../_images/TMUIVS.png" src="../_images/TMUIVS.png" style="width: 800px;" /></a>
+<a class="last reference internal image-reference" href="../_images/TMUIVS2.png"><img alt="../_images/TMUIVS2.png" src="../_images/TMUIVS2.png" style="width: 800px;" /></a>
+</td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="5">
+<li>Click on the <strong>web_app</strong> name to view the virtual sever’s properties page.</li>
+</ol>
+</td>
+</tr>
+<tr class="row-even"><td><a class="first last reference internal image-reference" href="../_images/TMUIVS3.png"><img alt="../_images/TMUIVS3.png" src="../_images/TMUIVS3.png" style="width: 800px;" /></a>
+</td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="6">
+<li>Browse to the virtual sever’s <strong>Security -&gt; Policies</strong> page.</li>
+</ol>
+</td>
+</tr>
+<tr class="row-even"><td><a class="first last reference internal image-reference" href="../_images/TMUIVS4.png"><img alt="../_images/TMUIVS4.png" src="../_images/TMUIVS4.png" style="width: 800px;" /></a>
+</td>
+</tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="7">
+<li>Observe that the Application Security Policy (e.g., the WAF policy) is <strong>Enabled</strong>.</li>
+</ol>
+</td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils align-default">
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><p class="first"><strong>WELL DONE!!!</strong></p>
+<p class="last">In the next lab we will deploy a WAF policy ingested from a BIG-IP appliance to an F5 Distributed Cloud WAF .</p>
+</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="../_images/labbgn12.png"><img alt="labbgn" src="../_images/labbgn12.png" style="width: 800px;" /></a></td>
 </tr>
 </tbody>
 </table>
@@ -403,7 +557,7 @@ your 2nd BIG-IP because they areconnected to the same management network in your
         <a href="intro.html" title="Introduction: F5 WAF Policy Supervisor" accesskey="p" class="btn btn-primary left"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Previous</a>
        
        
-          <a href="close.html" title="Conclusion" accesskey="n" class="btn btn-primary right">Next <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
+          <a href="lab2.html" title="Lab 2: Managing F5 Distributed Cloud WAF with Policy Supervisor" accesskey="n" class="btn btn-primary right">Next <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
        
      </div>
      </div>

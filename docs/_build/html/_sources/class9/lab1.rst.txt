@@ -1,5 +1,5 @@
-Lab 1: Connecting **Policy Supervisor** to BIG-IP WAF
-=====================================================
+Lab 1: Managing BIG-IP Advanced WAF with  **Policy Supervisor**
+===============================================================
 
 **Policy Supervisor** is an online unified configuration solution for security policies, built with the purposes of managing and converting configuration across multiple F5 Web App Firewall solutions.
 It enables operators of F5 WAF technologies to easily convert policy files from *BIG-IP AWAF*, *F5 Distributed Cloud WAF*, and *NGINX NAP* formats. In the process **Policy Supervisor** generates and uses an intermediate
@@ -171,54 +171,158 @@ your 2nd BIG-IP because they areconnected to the same management network in your
 |                                                                                                               |
 | Type **bigip2** for the **Provider Name** and type **https://10.1.1.7** for the **Provider URL**.             |
 |                                                                                                               |
-| Click the **Test Connection** button and wait for the tests to complete successfully.                         |
-|                                                                                                               |
 +---------------------------------------------------------------------------------------------------------------+
 | .. image:: _static/PSAddProvider2.png                                                                         |
 |    :width: 800px                                                                                              |
 +---------------------------------------------------------------------------------------------------------------+
-| Click the **Got to overview** link.                                                                           |
+| Click the **Test Connection** button and wait for the tests to complete successfully.                         |
++---------------------------------------------------------------------------------------------------------------+
+| .. image:: _static/PSProviderTestConnection.png                                                               |
+|    :width: 800px                                                                                              |
++---------------------------------------------------------------------------------------------------------------+
+| Click the **Go to overview** link.                                                                            |
 +---------------------------------------------------------------------------------------------------------------+
 | .. image:: _static/PSProviderList.png                                                                         |
 |    :width: 800px                                                                                              |
 +---------------------------------------------------------------------------------------------------------------+
-| Click to select the "bigip1" provider.                                                                        |
-|                                                                                                               |
-| Click "Ingest Policies".                                                                                      |
-|                                                                                                               |
-| Select the discovered policy (i.e., "My_ASM_Rapid_Deployment_Po…").                                           |
-|                                                                                                               |
-| Click Continue.                                                                                               |
-|                                                                                                               |
-| Click Next.                                                                                                   |
-|                                                                                                               |
-| Type "Ingest from bigip1" for the quired "commit message".                                                    |
-|                                                                                                               |
-| Click " Save & Ingest Policy" and wait for the ingestion to complete successfully.                            |
-|                                                                                                               |
-| Click "Policies Overview".                                                                                    |
-|                                                                                                               |
-| Select the policy.                                                                                            |
-|                                                                                                               |
-| Click "Deploy".                                                                                               |
-|                                                                                                               |
-| Select the "bigip2" option from the "Provider" dropdown.                                                      |
-|                                                                                                               |
-| Type "Deploy to bigip2" in the commit message text box.                                                       |
-|                                                                                                               |
-| Click the "Conversion Summary" button and wait for the Conversion Summary screen to appear.                   |
-|                                                                                                               |
-| Click the "Save & Continue" button.                                                                           |
-|                                                                                                               |
-| Click the "Continue Deployment" button.                                                                       |
-|                                                                                                               |
-| Select the "service" Virtual server from the dropdown list.                                                   |
-|                                                                                                               |
-| Click the "Next button.                                                                                       |
-|                                                                                                               |
-| Click the "Deploy" button.                                                                                    |
-|                                                                                                               |
+
+Task 5: Ingest an existing BIG-IP WAF policy in **Policy Supervisor**
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+BIG-IP1 is already configured with a WAF policy attached to the **web_app** virtual server.
+Let's ingest this WAF policy into **Policy Supervisor**.
+
 +---------------------------------------------------------------------------------------------------------------+
+| Start from the **Providers Overview** page.                                                                   |
++---------------------------------------------------------------------------------------------------------------+
+| .. image:: _static/PSBIGIPProvider.png                                                                        |
+|    :width: 800px                                                                                              |
++---------------------------------------------------------------------------------------------------------------+
+| Click to select **bigip1**, then click **Ingest Policies**.                                                   |
++---------------------------------------------------------------------------------------------------------------+
+| .. image:: _static/PSIngest.png                                                                               |
+|    :width: 800px                                                                                              |
++---------------------------------------------------------------------------------------------------------------+
+| Select the discovered policy (i.e., **My_ASM_Rapid…**) and click **Continue**.                                |
++---------------------------------------------------------------------------------------------------------------+
+| .. image:: _static/PSIngest2.png                                                                              |
+|    :width: 800px                                                                                              |
++---------------------------------------------------------------------------------------------------------------+
+| Click **Next**.                                                                                               |
++---------------------------------------------------------------------------------------------------------------+
+| .. image:: _static/PSIngest2b.png                                                                             |
+|    :width: 800px                                                                                              |
++---------------------------------------------------------------------------------------------------------------+
+| Type ``Ingest from bigip1`` for the required **commit message**,                                              |
+| click **Save & Ingest Policy**, then wait for the ingestion to complete successfully.                         |
++---------------------------------------------------------------------------------------------------------------+
+| .. image:: _static/PSIngest3.png                                                                              |
+|    :width: 800px                                                                                              |
+|                                                                                                               |
+| .. image:: _static/PSIngest4.png                                                                              |
+|    :width: 800px                                                                                              |
++---------------------------------------------------------------------------------------------------------------+
+| Click **Policies Overview**.                                                                                  |
++---------------------------------------------------------------------------------------------------------------+
+| .. image:: _static/PSDeploy1.png                                                                              |
+|    :width: 800px                                                                                              |
+|                                                                                                               |
+| .. image:: _static/PSDeploy2.png                                                                              |
+|    :width: 800px                                                                                              |
++---------------------------------------------------------------------------------------------------------------+
+| Select the policy then find and click on the **Deploy** button.                                               |
++---------------------------------------------------------------------------------------------------------------+
+| .. image:: _static/PSDeploy3.png                                                                              |
+|    :width: 800px                                                                                              |
++---------------------------------------------------------------------------------------------------------------+
+| Select the **bigip2** option from the **Provider** dropdown, type ``Deploy to bigip2`` in the mandatory commit|
+| message text box and click the **Conversion Summary** button.                                                 |
++---------------------------------------------------------------------------------------------------------------+
+| .. image:: _static/PSDeploy4.png                                                                              |
+|    :width: 800px                                                                                              |
++---------------------------------------------------------------------------------------------------------------+
+| Wait for the Conversion Summary screen to appear.                                                             |
++---------------------------------------------------------------------------------------------------------------+
+| .. image:: _static/PSDeploy5.png                                                                              |
+|    :width: 800px                                                                                              |
++---------------------------------------------------------------------------------------------------------------+
+| Click the **Save & Continue** button.                                                                         |
++---------------------------------------------------------------------------------------------------------------+
+| .. image:: _static/PSDeploy6.png                                                                              |
+|    :width: 800px                                                                                              |
++---------------------------------------------------------------------------------------------------------------+
+| Click the **Continue Deployment** button on the *Conversion Report* screen that appears.                      |
++---------------------------------------------------------------------------------------------------------------+
+| .. image:: _static/PSDeploy7.png                                                                              |
+|    :width: 800px                                                                                              |
++---------------------------------------------------------------------------------------------------------------+
+| Select the **web_app** virtual server from the dropdown list and click the **Next** button.                   |
++---------------------------------------------------------------------------------------------------------------+
+| .. image:: _static/PSDeploy7b.png                                                                             |
+|    :width: 800px                                                                                              |
++---------------------------------------------------------------------------------------------------------------+
+| Click the **Deploy** button.                                                                                  |
++---------------------------------------------------------------------------------------------------------------+
+| .. image:: _static/PSDeploy8.png                                                                              |
+|    :width: 800px                                                                                              |
+|                                                                                                               |
+| .. image:: _static/PSDeploy9.png                                                                              |
+|    :width: 800px                                                                                              |
++---------------------------------------------------------------------------------------------------------------+
+| Wait for the deployment to successfully complete and click the **Back to Overview** button.                   |
++---------------------------------------------------------------------------------------------------------------+
+| .. image:: _static/PSDeploy10.png                                                                             |
+|    :width: 800px                                                                                              |
++---------------------------------------------------------------------------------------------------------------+
+
+Task 6: Confirm successful deployment of the WAF policy on BIG-IP2
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. NOTE:: The password for the admin account on your BIG-IP appliances is set to **Canada123!**.
+
++---------------------------------------------------------------------------------------------------------------+
+| 1. Browse to https://udf.f5.com again and find the **Deployment** tab to see your virtual machines.           |
++---------------------------------------------------------------------------------------------------------------+
+| |lab006|                                                                                                      |
++---------------------------------------------------------------------------------------------------------------+
+| 2. Find **bigip2** under F5 Products and click its **ACCESS** link to see a list of access options.           |
++---------------------------------------------------------------------------------------------------------------+
+| .. image:: _static/UDFTMUI.png                                                                                |
+|    :width: 800px                                                                                              |
++---------------------------------------------------------------------------------------------------------------+
+| 3. Select **TMUI** to access the **bigip2** machine's GUI management interface in a new browser tab.          |
++---------------------------------------------------------------------------------------------------------------+
+| .. image:: _static/TMUILogin.png                                                                              |
+|    :width: 800px                                                                                              |
++---------------------------------------------------------------------------------------------------------------+
+| 4. Login with username **admin** and password **Canada123!**, then click to the virtual servers list page.    |
++---------------------------------------------------------------------------------------------------------------+
+| .. image:: _static/TMUIVS.png                                                                                 |
+|    :width: 800px                                                                                              |
+|                                                                                                               |
+| .. image:: _static/TMUIVS2.png                                                                                |
+|    :width: 800px                                                                                              |
++---------------------------------------------------------------------------------------------------------------+
+| 5. Click on the **web_app** name to view the virtual sever's properties page.                                 |
++---------------------------------------------------------------------------------------------------------------+
+| .. image:: _static/TMUIVS3.png                                                                                |
+|    :width: 800px                                                                                              |
++---------------------------------------------------------------------------------------------------------------+
+| 6. Browse to the virtual sever's **Security -> Policies** page.                                               |
++---------------------------------------------------------------------------------------------------------------+
+| .. image:: _static/TMUIVS4.png                                                                                |
+|    :width: 800px                                                                                              |
++---------------------------------------------------------------------------------------------------------------+
+| 7. Observe that the Application Security Policy (e.g., the WAF policy) is **Enabled**.                        |
++---------------------------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------------------------------+
+| **WELL DONE!!!**                                                                                                     |
+|                                                                                                                      |
+| In the next lab we will deploy a WAF policy ingested from a BIG-IP appliance to an F5 Distributed Cloud WAF .        |
++----------------------------------------------------------------------------------------------------------------------+
+| |labbgn|                                                                                                             |
++----------------------------------------------------------------------------------------------------------------------+
 
 .. |lab001| image:: _static/image9.png
    :width: 800px
@@ -239,4 +343,6 @@ your 2nd BIG-IP because they areconnected to the same management network in your
 .. |lab010| image:: _static/agentsetup.png
    :width: 800px
 .. |lab011| image:: _static/agentsecret.png
+   :width: 800px
+.. |labbgn| image:: _static/labbgn.png
    :width: 800px

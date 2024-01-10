@@ -73,8 +73,8 @@ This is a multi-step process that will involve:
 |    :width: 800px                                                                             |
 +----------------------------------------------------------------------------------------------+
 
-Task 3: Setup credentials for the F5 Distributed Cloud Console
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Task 3: Setup new credentials for the F5 Distributed Cloud Console
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  
 F5 Distributed Cloud Console is a SaaS control-plane for 
 services that provides a UI and API for managing network, security, and compute services. The F5
