@@ -1,7 +1,7 @@
-Introduction: F5 WAF Policy Supervisor
-====================================================
+Introduction: F5 WAF **Policy Supervisor**
+==========================================
 
-Welcome to this F5 WAF Policy Supervisor Lab. The following tasks will guide you through the initial 
+Welcome to this F5 WAF **Policy Supervisor** Lab. The following tasks will guide you through the initial 
 access requirements for this lab. Lab attendees should have received an invitation 
 email to the lab environment based on the submitted registration email. Please check email and
 spam folders if it has not been received. If you have not received an email, please contact a 
@@ -18,11 +18,11 @@ Task 1: Overview of the Lab Environment
 | * **F5 Policy Supervisor Console**                                                           |
 |                                                                                              |
 +----------------------------------------------------------------------------------------------+
-| **...insert a better image that shows UDF components and Policy Supervisor here...**         |
+| **<insert an image that shows UDF components and Policy Supervisor here>**                   |
 |                                                                                              |
 | |intro001|                                                                                   |
 |                                                                                              |
-| **...insert a better image that shows UDF components and Policy Supervisor here...**         |
+| **<insert an image that shows UDF components and Policy Supervisor here>**                   |
 +----------------------------------------------------------------------------------------------+
 
 Task 2: Accessing the UDF Virtual Lab Environment
@@ -87,71 +87,102 @@ AWS, Azure, and GCP cloud environments.
 The following steps will guide you through the initial Lab environment access within the 
 F5 Distributed Cloud Console. 
 
-.. NOTE:: **Prerequisite** You should have also received an email from F5 Distributed Cloud <no-reply@volterratmails.io> with the content as shown below:|                                                                                              |
+.. NOTE:: **Prerequisite** You should have received an email from F5 Distributed Cloud <no-reply@cloud.f5.com> a few minutes after launching your course as instructed in the previous task.
 +----------------------------------------------------------------------------------------------+
-| .. image:: _static/updatepasswd.png                                                          |
+| Click on the **Update Password** button/link in the email you received from                  |
+| *F5 Distributed Cloud <no-reply@cloud.f5.com>* to set your credentials.                      |
++----------------------------------------------------------------------------------------------+
+| .. image:: _static/updatepasswdemail.png                                                     |
 |    :width: 800px                                                                             |
 +----------------------------------------------------------------------------------------------+
-| If you have not already, please click on **Update Password**, and change your credentials.   |
 | Ensure you adhere to the password strength restrictions and make a mental note of these      |
-| credentials as you will need them several times throughout the labs today.                   |
-|                                                                                              |
-| Once you've set your new password (*make sure to include 1 upper, 1 lower and 1 special      |
-| character*), you will be asked to "Log In" and then presented with the following screen:     |
+| credentials as you will need them several times throughout this lab today.                   |
+| For this exercise, we recommend using the value *Canada123!* for your password.              |
++----------------------------------------------------------------------------------------------+
+| |PSUpdatePassword|                                                                           |
++----------------------------------------------------------------------------------------------+
+| Once you've set your new password (*including 1 upper, 1 lower and 1 special character*,     |
+| you will be asked to "Log In" and presented with the following screens (click to login):     |
++----------------------------------------------------------------------------------------------+
+| .. image:: _static/PSPasswordUpdated.png                                                     |
+|    :width: 800px                                                                             |
++----------------------------------------------------------------------------------------------+
+| In the domain field, enter: **f5-xc-lab-mcn**, click **Next** and sign in with your email    |
+| address and password you've just set (i.e, *Canada123!*), and proceed to accepting the       |
+| Terms and Conditions.                                                                        |
 +----------------------------------------------------------------------------------------------+
 | .. image:: _static/tenantlogin.png                                                           |
 |    :width: 800px                                                                             |
 +----------------------------------------------------------------------------------------------+
-| In the domain field, enter: **f5-xc-lab-mcn**, click **Next** and sign in with your email    |
-| address and password you've just set, and proceed to accepting the Terms and Conditions.     |
+| Put a checmark in the box and click **Accept and Agree**.                                    |
 +----------------------------------------------------------------------------------------------+
+| .. image:: _static/PSTsandCs.png                                                             |
+|    :width: 800px                                                                             |
++----------------------------------------------------------------------------------------------+
+
 .. warning:: If you have not received the email to change your credentials or ran into problems changing your credentials, please stop and get help from one of the Lab Assistants.
 
 **Logging into the XC Console**
 ---------------------------------
 
-After accepting the Terms of Service and Privacy Policy, you will need to select your "Persona". 
+After accepting the Terms of Service and Privacy Policy, you are prompted to select your *Persona*.
 
 +----------------------------------------------------------------------------------------------+
-| Enter your persona as **"NetOps"** and click **next**.                                       |
-|                                                                                              |
-| Enter your level as **"Intermediate"** and then click **Get Started**.                       |
-|                                                                                              |
+| Put a checkmark to select **"NetOps"** for your persona and click **next**.                  |
++----------------------------------------------------------------------------------------------+
+| .. image:: _static/PSPersona.png                                                             |
+|    :width: 800px                                                                             |
++----------------------------------------------------------------------------------------------+
+| Select **"Intermediate"** for your *level* and then click **Get Started**.                   |
++----------------------------------------------------------------------------------------------+
+| .. image:: _static/PSLevel.png                                                               |
+|    :width: 800px                                                                             |
++----------------------------------------------------------------------------------------------+
 | Your persona will highlight workflows within F5 Distributed Cloud.                           |
 | You will be able to access all services, but making use of personas can focus your view on   |
 | particular tasks that are relevant to your role.                                             |
 |                                                                                              |
-| **For informational purposes only:**                                                         |
-| You can change these settings at any time.                                                   |
-|                                                                                              |
-| Click on **"Account Settings"** by expanding the **"Account"** icon in the top right of the  |
-| screen and clicking on **"Account Settings".**                                               |
+| *For informational purposes only:*  You can change these settings at any time.               |
++----------------------------------------------------------------------------------------------+
+| Click on your *Account* icon in the top right of the screen and then click on                | 
+| **Account Settings**.                                                                        |
 | In the resulting window you can observe the **Work domains and skill level** section and     |
 | other administrative functions.                                                              |
 +----------------------------------------------------------------------------------------------+
 | .. image:: _static/intro1.png                                                                |
 |    :width: 800px                                                                             |
 +----------------------------------------------------------------------------------------------+
-| .. image:: _static/intro2.png                                                                |
+| In the resulting window you can observe the **Work domains and skill level** section and     |
+| other administrative functions.                                                              |
++----------------------------------------------------------------------------------------------+
+| .. image:: _static/intro1.png                                                                |
 |    :width: 800px                                                                             |
 +----------------------------------------------------------------------------------------------+
-.. note:: **For the purposes of this lab, permissions have been restricted to lab operations. Some menus/functions will be locked and/or not visible.**
+.. note:: *For the purposes of this lab, permissions have been restricted to lab operations. Some menus/functions will be locked and/or not visible.*
 
 Task 4: Accessing the F5 **Policy Supervisor** Console
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 The same credentials for the **f5-xc-lab-mcn** tenant in the F5 Distributed Cloud Console can
-be used to access the F5 Policy Supervisor console.
+be used to access the F5 **Policy Supervisor** console.
 
 +----------------------------------------------------------------------------------------------+
-| Login to https://policysupervisor.io by clicking on *Sign In with Azure AD*.                 |
+| Login to https://policysupervisor.io by clicking on **Sign In with Azure AD**.               |
 +----------------------------------------------------------------------------------------------+
 | |intro010|                                                                                   |
 +----------------------------------------------------------------------------------------------+
+| If prompted, click on **Work or shcool account** and proceed to login with the same          |
+| credentials configured in Task 3 above.                                                      |
++----------------------------------------------------------------------------------------------+
 | |intro011|                                                                                   |
 +----------------------------------------------------------------------------------------------+
-.. note:: **Use the F5 Distributed Cloud Console credentials from Task 3 above.**
+| The **Policy Supervisor** console opens on the **Providers** page upon successful login.     |
++----------------------------------------------------------------------------------------------+
+| .. image:: _static/image9.png                                                                |
+|    :width: 800px                                                                             |
++----------------------------------------------------------------------------------------------+
 
 **Let's begin!**
+~~~~~~~~~~~~~~~~
 
 +----------------------------------------------------------------------------------------------+
 | You are now ready to begin the lab, Enjoy! Ask questions as needed.                          |
@@ -183,3 +214,5 @@ be used to access the F5 Policy Supervisor console.
    :width: 800px
 .. |labbgn| image:: _static/labbgn.png
    :width: 800px
+.. |PSUpdatePassword| image:: _static/PSUpdatePassword.png
+      :width: 800px

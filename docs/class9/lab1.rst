@@ -26,85 +26,86 @@ When you add a BIG-IP instance as a *provider*, you must first set up an *agent*
 - The *Agent* is used to create *Secrets*, which are stored in your environment only and are never transmitted outside of your network.
 - These *secrets* are used to connect to your *BIG-IP AWAF* or *NGINX NAP* instance to execute various policy-related functions within a Docker container environment on that machine/VM.
 
-**Prerequisite**                                                                             |
+.. note::
+   **Prerequisites:**
+   **Policy Supervisor Agent** *requires the following applications to be installed on your Linux machine/VM:*
 
-*Installation of the* **Policy Supervisor Agent** *requires the following applications on your Linux machine/VM:*
--Docker
--wget
+   - Docker
+   - wget
 
-The same credentials for the **f5-xc-lab-mcn** tenant in the F5 Distributed Cloud Console can
-be used to access the F5 Policy Supervisor console.
+Access the F5 **Policy Supervisor** console at https://policysupervisor.io as instructed in the previous *Introduction* section of this lab guide.
+
+.. note::
+**Policy Supervisor** uses the *F5 Distributed Cloud Console* credentials.
 
 +---------------------------------------------------------------------------------------------------------------+
-|                                                                                                               |
-| 1. Login to https://policysupervisor.io by clicking on *Sign In with Azure AD* (instructions for login are    |
-|    provided in the previous introduction section of this lab guide).                                          |
-+---------------------------------------------------------------------------------------------------------------+
-| |lab005|                                                                                                      |
-+---------------------------------------------------------------------------------------------------------------+
-| |lab008|                                                                                                      |
-+---------------------------------------------------------------------------------------------------------------+
-| 2. On the *Overview > Providers* page, click **Add Provider**. If this is the first provider being added,     |
+| 1. On the *Overview > Providers* page, click **Add Provider**. If this is the first provider being added,     |
 |    there are two **Add Provider** buttons on the screen. The *Add Providers* pane will appears.               |
 +---------------------------------------------------------------------------------------------------------------+
 | |lab001|                                                                                                      |
 +---------------------------------------------------------------------------------------------------------------+
-| 3. There are no *agents* configure yet. Choose **BIG-IP** for the *Provider Type* and click                   |
-|    **+ Add new agent** that will appear below the *Select Agent* drowpdown once you select a *Provider Type**.|
-|    The *Add Agent* pane will appear and a token will be automatically generated as a long text string.        |
+| 2. There are no *agents* configure yet. Choose **BIG-IP** for the *Provider Type* and click                   |
+|    **+ Add new agent** that will appear below the *Select Agent* drowpdown after a *Provider Type* has been   |
+|    selected. The *Add Agent* pane will appear and a token will be automatically generated as a long text      |
+|    string.                                                                                                    |
 +---------------------------------------------------------------------------------------------------------------+
 | |lab002|                                                                                                      |
 +---------------------------------------------------------------------------------------------------------------+
-| 4. Copy and paste (save) the value of the **Token** to a text file. *(It will be used in the *Task 2* below.)*|
+| 3. Copy & paste (save) the value of the **Token** to a text file or notepad.                                  | 
+|    *(This token will be required in *Task 2* below.)*                                                         |
 +---------------------------------------------------------------------------------------------------------------+
 | |lab003|                                                                                                      |
 +---------------------------------------------------------------------------------------------------------------+
-| 5. Within the same *Add Agent* pane, follow the **Go to agent-install** link (step 1) to the repository page. |
+| 4. From within the *Add Agent* pane, find and click the **Go to agent-install** link (step #1).               |
+|    The *repository page* will open.                                                                           |
 +---------------------------------------------------------------------------------------------------------------+
 | |lab004|                                                                                                      |
 +---------------------------------------------------------------------------------------------------------------+
-| 6. On the *Package Registry* page, **right-click** on the **agent-installer** file name and select            |
-| **Copy Link**. *This copied URL will be used in the next task.*                                               |
+| 5. At the bottom of the *Package Registry* page, **right-click** on the **agent-installer** file name and     |
+| select **Copy Link**. *(This URL will be required in *Task 2* below.)*                                        |
 +---------------------------------------------------------------------------------------------------------------+
-.. note:: *The version of the agent-installer file is upgraded from time to time.*
+.. note:: *The URL for the agent-installer file changes from time to time when it is updated.*
 
-Task 2: Install a **Policy Supervisor** *Agent*
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Task 2: Install a **Policy Supervisor Agent**
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Next, we will use the *token* and the *URL* obtain in task 1 above to install the *Agent* on your UDF virtual lab environment.
+Next, we will use the *token* and the *URL* obtained in task 1 above to install the *Agent* on your UDF virtual lab environment.
 The *Agent* will be installed on your *SuperJumpHost* Linux machine, which is connected to the same management network as your BIG-IP.
-The *SuperJumpHost* can also communicate with Policy Supervisor across the Internet.
+The *SuperJumpHost* is pre-configured in your lab environment with permission to communicate with the **Policy Supervisor** across the Internet.
 
 +---------------------------------------------------------------------------------------------------------------+
-| 1. Use a different window to go back to https://udf.f5.com and click **Deployment** to see virtual systems.   |
+| 1. In a different window go to https://udf.f5.com and browse to the **Deployment** tab to see virtual systems.|
 +---------------------------------------------------------------------------------------------------------------+
 | |lab006|                                                                                                      |
 +---------------------------------------------------------------------------------------------------------------+
-| 2. Find the **SuperJumpHost** system and click the **ACCESS** link below to see the options.                  |
-|                                                                                                               |
-| 3. Select **Web Sell** to access the command line interface of the SuperJumpHost machine in a new browser tab.|
+| 2. Find the **SuperJumpHost** system and click the **ACCESS** link to see a list of access options.           |
 +---------------------------------------------------------------------------------------------------------------+
 | |lab007|                                                                                                      |
++---------------------------------------------------------------------------------------------------------------+
+| 3. Select **Web Sell** to access the SuperJumpHost machine's command line interface in a new browser tab.     |
++---------------------------------------------------------------------------------------------------------------+
+| |lab008|                                                                                                      |
 +---------------------------------------------------------------------------------------------------------------+
 | 4. Set your working directory to */tmp* with this linux command: ``cd /tmp``                                  |
 |                                                                                                               |
 | 5. Use the URL copied at step 7 above to download the installer via the command line:                         |
-|    ``wget *[...insert URL from aboe Task 1 here...]*``                                                        |
+|    ``wget <...insert URL from aboe Task 1 here...>``                                                          |
 |                                                                                                               |
 | 6. After the download completes, rename the file with this linux command:                                     |
 |    ``mv download agent-installer``                                                                            |
 |                                                                                                               |
 | 7. Next, give the installer package execution rights to enable it to run:                                     |
 |    ``chmod +x ./agent-installer``                                                                             |
+|                                                                                                               |
+| 8. Run the agent installer by using the following command:                                                    |
+|    ``./agent-installer``                                                                                      |
 +---------------------------------------------------------------------------------------------------------------+
 | |lab009|                                                                                                      |
 +---------------------------------------------------------------------------------------------------------------+
-| 8. Run the agent installer by using the following command:                                                    |
-|    ``./agent-installer``                                                                                      |
+| 9. Paste the token copied from *Task 1* above when prompted. *(command-V on a MAC, Ctrl-Shift-V on Windows)*  |
 |                                                                                                               |
-| 9. Paste the token copied from *Task 1* above when prompted.                                                  |
-|                                                                                                               |
-| 10. Enter the name ``udf`` when prompted for the agent name. Wait for registration to complete successfully.  |
+| 10. Enter the name ``udf`` when prompted for the agent name.                                                  |
+|     Wait for registration to complete successfully (takes a few minutes).                                     |
 +---------------------------------------------------------------------------------------------------------------+
 | |lab010|                                                                                                      |
 +---------------------------------------------------------------------------------------------------------------+
@@ -129,41 +130,45 @@ Now that the *Agent* is ready, the configuration of the new *Provider* can be co
 +---------------------------------------------------------------------------------------------------------------+
 | 1. Go back to https://policysupervisor.io.                                                                    |
 |                                                                                                               |
-| Go back to the policysupervisor.io web page and click "Done".                                                 |
+| Go back to the policysupervisor.io web page and click "Done" (return to the *Add Provider Pane* with *BIG-IP* |
+| selected for the *Provider Type*).                                                                            |
 |                                                                                                               |
-| Select the "udf" option for on the dropdown list for "Agent".                                                 |
+| Select the "udf" option that should not be visible on the dropdown list for *Agent*.                          |
 |                                                                                                               |
-| The *Secrets* field is then displayed. From the *Secrets* drop-down list, choose the **bigip** secret that    |
-| was created above and click **Continue**.                                                                     |
+| Click the *Secrets* field that should now be visible to see its drop-down list, choose the **bigip** secret   |
+| that was created in the previous step and click **Continue**.                                                 |
 |                                                                                                               |
-| Click "Continue".                                                                                             |
+| The **Provider Name** and **Provider URL** will appear. Type **bigip1** for the **Provider Name** and type    | 
+| **https://10.1.1.6** for the **Provider URL**.                                                                |
 |                                                                                                               |
-| Type "bigip1" for the "Provider Name".                                                                        |
++---------------------------------------------------------------------------------------------------------------+
+| .. image:: _static/PSAddProvider.png                                                                          |
+|    :width: 800px                                                                                              |
++---------------------------------------------------------------------------------------------------------------+
+| Click the **Test Connection** button and wait for the tests to complete successfully.                         |
++---------------------------------------------------------------------------------------------------------------+
+| .. image:: _static/PSProviderTestConnection.png                                                               |
+|    :width: 800px                                                                                              |
++---------------------------------------------------------------------------------------------------------------+
+| Click the **Add another Provider** button to add the second BIG-IP appliance in your virtual lab environment. |
 |                                                                                                               |
-| Type "https://10.1.1.6" for the "Provider URL".                                                               |
+| Select the **BIG-IP** option for the provider type.                                                           |
 |                                                                                                               |
-| Click the "Test Connection" button and wait for the tests to complete successfully.                           |
+| Select the **udf** option for **Agent**.                                                                      |
 |                                                                                                               |
-| Click the "Add another Provider" button.                                                                      |
+| Select the **bigip** option for **Secret** *(the two BIG-IP's have been configured with the same password)*.  |
 |                                                                                                               |
-| Select the "BIG-IP" optino for the provider type.                                                             |
+| Click **Continue**.                                                                                           |
 |                                                                                                               |
-| Select the "udf" option for on the dropdown list for "Agent".                                                 |
+| Type **bigip2** for the **Provider Name** and type **https://10.1.1.7** for the **Provider URL**.             |
 |                                                                                                               |
-| Select the "bigip" option on the dropdown list for "Secret".                                                  |
+| Click the **Test Connection** button and wait for the tests to complete successfully.                         |
 |                                                                                                               |
-| Click "Continue".                                                                                             |
-|                                                                                                               |
-| Type "bigip2" for the "Provider Name".                                                                        |
-|                                                                                                               |
-| Type "https://10.1.1.7" for the "Provider URL".                                                               |
-|                                                                                                               |
-| Click the "Test Connection" button.                                                                           |
-|                                                                                                               |
-| Wait for the tests to complete successfully.                                                                  |
-|                                                                                                               |
-| Click the "Got to overview" link.                                                                             |
-|                                                                                                               |
+| Click the **Got to overview** link.                                                                           |
++---------------------------------------------------------------------------------------------------------------+
+| .. image:: _static/PSProviderList.png                                                                         |
+|    :width: 800px                                                                                              |
++---------------------------------------------------------------------------------------------------------------+
 | Click to select the "bigip1" provider.                                                                        |
 |                                                                                                               |
 | Click "Ingest Policies".                                                                                      |
@@ -210,13 +215,11 @@ Now that the *Agent* is ready, the configuration of the new *Provider* can be co
    :width: 800px
 .. |lab004| image:: _static/image19.png
    :width: 800px
-.. |lab005| image:: _static/PSLoginWindow.png
-   :width: 800px
 .. |lab006| image:: _static/UDFDeploymentTab.png
    :width: 800px
 .. |lab007| image:: _static/UDFWebShell.png
    :width: 800px
-.. |lab008| image:: _static/AzureADLogin.png
+.. |lab008| image:: _static/UDFWebShellCLI.png
    :width: 800px
 .. |lab009| image:: _static/install_agent.png
    :width: 800px

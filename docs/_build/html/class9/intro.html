@@ -14,7 +14,7 @@
   <meta name="title" content="Introduction: F5 WAF Policy Supervisor"/>
   <meta name="product" content="F5 Distributed Cloud"/>
   <meta name="version" content=""/>
-  <meta name="updated_date"  content="2023-12-22 16:58:44"/>
+  <meta name="updated_date"  content="2024-01-10 14:51:32"/>
   <meta name="archived" content="Archived documents excluded"/>
   <meta name="doc_type" content="Manual"/>
   <meta name="lifecycle" content="release"/>
@@ -89,7 +89,7 @@
 <li class="toctree-l2"><a class="reference internal" href="class9.html#welcome">Welcome</a></li>
 <li class="toctree-l2"><a class="reference internal" href="class9.html#objectives">Objectives:</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="class9.html#lab-tasks">Lab &amp; Tasks:</a><ul class="current">
-<li class="toctree-l3 current"><a class="current reference internal" href="#">Introduction: F5 WAF Policy Supervisor</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Introduction: F5 WAF <strong>Policy Supervisor</strong></a></li>
 <li class="toctree-l3"><a class="reference internal" href="lab1.html">Lab 1: Connecting <strong>Policy Supervisor</strong> to BIG-IP WAF</a></li>
 <li class="toctree-l3"><a class="reference internal" href="close.html">Conclusion</a></li>
 <li class="toctree-l3"><a class="reference internal" href="close.html#appendix">Appendix</a></li>
@@ -115,7 +115,7 @@
       <nav class="nav-sidebartoc">
         <span class="nav-sidebartoc">
             <ul>
-<li><a class="reference internal" href="#">Introduction: F5 WAF Policy Supervisor</a><ul>
+<li><a class="reference internal" href="#">Introduction: F5 WAF <strong>Policy Supervisor</strong></a><ul>
 <li><a class="reference internal" href="#task-1-overview-of-the-lab-environment">Task 1: Overview of the Lab Environment</a></li>
 <li><a class="reference internal" href="#task-2-accessing-the-udf-virtual-lab-environment">Task 2: Accessing the UDF Virtual Lab Environment</a></li>
 <li><a class="reference internal" href="#task-3-accessing-the-f5-distributed-cloud-console">Task 3: Accessing the F5 Distributed Cloud Console</a><ul>
@@ -123,6 +123,7 @@
 </ul>
 </li>
 <li><a class="reference internal" href="#task-4-accessing-the-f5-policy-supervisor-console">Task 4: Accessing the F5 <strong>Policy Supervisor</strong> Console</a></li>
+<li><a class="reference internal" href="#let-s-begin"><strong>Let’s begin!</strong></a></li>
 </ul>
 </li>
 </ul>
@@ -168,8 +169,8 @@
      <div role="main">
         
   <div class="section" id="introduction-f5-waf-policy-supervisor">
-<h1>Introduction: F5 WAF Policy Supervisor<a class="headerlink" href="#introduction-f5-waf-policy-supervisor" title="Permalink to this heading">¶</a></h1>
-<p>Welcome to this F5 WAF Policy Supervisor Lab. The following tasks will guide you through the initial
+<h1>Introduction: F5 WAF <strong>Policy Supervisor</strong><a class="headerlink" href="#introduction-f5-waf-policy-supervisor" title="Permalink to this heading">¶</a></h1>
+<p>Welcome to this F5 WAF <strong>Policy Supervisor</strong> Lab. The following tasks will guide you through the initial
 access requirements for this lab. Lab attendees should have received an invitation
 email to the lab environment based on the submitted registration email. Please check email and
 spam folders if it has not been received. If you have not received an email, please contact a
@@ -189,9 +190,9 @@ member of the lab team.</p>
 </ul>
 </td>
 </tr>
-<tr class="row-even"><td><p class="first"><strong>…insert a better image that shows UDF components and Policy Supervisor here…</strong></p>
+<tr class="row-even"><td><p class="first"><strong>&lt;insert an image that shows UDF components and Policy Supervisor here&gt;</strong></p>
 <p><a class="reference internal" href="../_images/intro-00112.png"><img alt="intro001" src="../_images/intro-00112.png" style="width: 800px;" /></a></p>
-<p class="last"><strong>…insert a better image that shows UDF components and Policy Supervisor here…</strong></p>
+<p class="last"><strong>&lt;insert an image that shows UDF components and Policy Supervisor here&gt;</strong></p>
 </td>
 </tr>
 </tbody>
@@ -266,28 +267,42 @@ AWS, Azure, and GCP cloud environments.</p>
 F5 Distributed Cloud Console.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last"><strong>Prerequisite</strong> You should have also received an email from F5 Distributed Cloud &lt;<a class="reference external" href="mailto:no-reply&#37;&#52;&#48;volterratmails&#46;io">no-reply<span>&#64;</span>volterratmails<span>&#46;</span>io</a>&gt; with the content as shown below:|                                                                                              |</p>
+<p class="last"><strong>Prerequisite</strong> You should have received an email from F5 Distributed Cloud &lt;<a class="reference external" href="mailto:no-reply&#37;&#52;&#48;cloud&#46;f5&#46;com">no-reply<span>&#64;</span>cloud<span>&#46;</span>f5<span>&#46;</span>com</a>&gt; a few minutes after launching your course as instructed in the previous task.</p>
 </div>
 <table border="1" class="docutils align-default">
 <colgroup>
 <col width="100%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><a class="first last reference internal image-reference" href="../_images/updatepasswd2.png"><img alt="../_images/updatepasswd2.png" src="../_images/updatepasswd2.png" style="width: 800px;" /></a>
+<tr class="row-odd"><td>Click on the <strong>Update Password</strong> button/link in the email you received from
+<em>F5 Distributed Cloud &lt;no-reply&#64;cloud.f5.com&gt;</em> to set your credentials.</td>
+</tr>
+<tr class="row-even"><td><a class="first last reference internal image-reference" href="../_images/updatepasswdemail.png"><img alt="../_images/updatepasswdemail.png" src="../_images/updatepasswdemail.png" style="width: 800px;" /></a>
 </td>
 </tr>
-<tr class="row-even"><td><p class="first">If you have not already, please click on <strong>Update Password</strong>, and change your credentials.
-Ensure you adhere to the password strength restrictions and make a mental note of these
-credentials as you will need them several times throughout the labs today.</p>
-<p class="last">Once you’ve set your new password (<em>make sure to include 1 upper, 1 lower and 1 special
-character</em>), you will be asked to “Log In” and then presented with the following screen:</p>
+<tr class="row-odd"><td>Ensure you adhere to the password strength restrictions and make a mental note of these
+credentials as you will need them several times throughout this lab today.
+For this exercise, we recommend using the value <em>Canada123!</em> for your password.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="../_images/PSUpdatePassword.png"><img alt="PSUpdatePassword" src="../_images/PSUpdatePassword.png" style="width: 800px;" /></a></td>
+</tr>
+<tr class="row-odd"><td>Once you’ve set your new password (<em>including 1 upper, 1 lower and 1 special character</em>,
+you will be asked to “Log In” and presented with the following screens (click to login):</td>
+</tr>
+<tr class="row-even"><td><a class="first last reference internal image-reference" href="../_images/PSPasswordUpdated.png"><img alt="../_images/PSPasswordUpdated.png" src="../_images/PSPasswordUpdated.png" style="width: 800px;" /></a>
 </td>
 </tr>
-<tr class="row-odd"><td><a class="first last reference internal image-reference" href="../_images/tenantlogin2.png"><img alt="../_images/tenantlogin2.png" src="../_images/tenantlogin2.png" style="width: 800px;" /></a>
+<tr class="row-odd"><td>In the domain field, enter: <strong>f5-xc-lab-mcn</strong>, click <strong>Next</strong> and sign in with your email
+address and password you’ve just set (i.e, <em>Canada123!</em>), and proceed to accepting the
+Terms and Conditions.</td>
+</tr>
+<tr class="row-even"><td><a class="first last reference internal image-reference" href="../_images/tenantlogin2.png"><img alt="../_images/tenantlogin2.png" src="../_images/tenantlogin2.png" style="width: 800px;" /></a>
 </td>
 </tr>
-<tr class="row-even"><td>In the domain field, enter: <strong>f5-xc-lab-mcn</strong>, click <strong>Next</strong> and sign in with your email
-address and password you’ve just set, and proceed to accepting the Terms and Conditions.</td>
+<tr class="row-odd"><td>Put a checmark in the box and click <strong>Accept and Agree</strong>.</td>
+</tr>
+<tr class="row-even"><td><a class="first last reference internal image-reference" href="../_images/PSTsandCs.png"><img alt="../_images/PSTsandCs.png" src="../_images/PSTsandCs.png" style="width: 800px;" /></a>
+</td>
 </tr>
 </tbody>
 </table>
@@ -297,66 +312,89 @@ address and password you’ve just set, and proceed to accepting the Terms and C
 </div>
 <div class="section" id="logging-into-the-xc-console">
 <h3><strong>Logging into the XC Console</strong><a class="headerlink" href="#logging-into-the-xc-console" title="Permalink to this heading">¶</a></h3>
-<p>After accepting the Terms of Service and Privacy Policy, you will need to select your “Persona”.</p>
+<p>After accepting the Terms of Service and Privacy Policy, you are prompted to select your <em>Persona</em>.</p>
 <table border="1" class="docutils align-default">
 <colgroup>
 <col width="100%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><p class="first">Enter your persona as <strong>“NetOps”</strong> and click <strong>next</strong>.</p>
-<p>Enter your level as <strong>“Intermediate”</strong> and then click <strong>Get Started</strong>.</p>
-<p>Your persona will highlight workflows within F5 Distributed Cloud.
+<tr class="row-odd"><td>Put a checkmark to select <strong>“NetOps”</strong> for your persona and click <strong>next</strong>.</td>
+</tr>
+<tr class="row-even"><td><a class="first last reference internal image-reference" href="../_images/PSPersona.png"><img alt="../_images/PSPersona.png" src="../_images/PSPersona.png" style="width: 800px;" /></a>
+</td>
+</tr>
+<tr class="row-odd"><td>Select <strong>“Intermediate”</strong> for your <em>level</em> and then click <strong>Get Started</strong>.</td>
+</tr>
+<tr class="row-even"><td><a class="first last reference internal image-reference" href="../_images/PSLevel.png"><img alt="../_images/PSLevel.png" src="../_images/PSLevel.png" style="width: 800px;" /></a>
+</td>
+</tr>
+<tr class="row-odd"><td><p class="first">Your persona will highlight workflows within F5 Distributed Cloud.
 You will be able to access all services, but making use of personas can focus your view on
 particular tasks that are relevant to your role.</p>
-<p><strong>For informational purposes only:</strong>
-You can change these settings at any time.</p>
-<p class="last">Click on <strong>“Account Settings”</strong> by expanding the <strong>“Account”</strong> icon in the top right of the
-screen and clicking on <strong>“Account Settings”.</strong>
+<p class="last"><em>For informational purposes only:</em>  You can change these settings at any time.</p>
+</td>
+</tr>
+<tr class="row-even"><td>Click on your <em>Account</em> icon in the top right of the screen and then click on
+<strong>Account Settings</strong>.
 In the resulting window you can observe the <strong>Work domains and skill level</strong> section and
-other administrative functions.</p>
+other administrative functions.</td>
+</tr>
+<tr class="row-odd"><td><a class="first last reference internal image-reference" href="../_images/intro13.png"><img alt="../_images/intro13.png" src="../_images/intro13.png" style="width: 800px;" /></a>
 </td>
 </tr>
-<tr class="row-even"><td><a class="first last reference internal image-reference" href="../_images/intro13.png"><img alt="../_images/intro13.png" src="../_images/intro13.png" style="width: 800px;" /></a>
-</td>
+<tr class="row-even"><td>In the resulting window you can observe the <strong>Work domains and skill level</strong> section and
+other administrative functions.</td>
 </tr>
-<tr class="row-odd"><td><a class="first last reference internal image-reference" href="../_images/intro23.png"><img alt="../_images/intro23.png" src="../_images/intro23.png" style="width: 800px;" /></a>
+<tr class="row-odd"><td><a class="first last reference internal image-reference" href="../_images/intro13.png"><img alt="../_images/intro13.png" src="../_images/intro13.png" style="width: 800px;" /></a>
 </td>
 </tr>
 </tbody>
 </table>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last"><strong>For the purposes of this lab, permissions have been restricted to lab operations. Some menus/functions will be locked and/or not visible.</strong></p>
+<p class="last"><em>For the purposes of this lab, permissions have been restricted to lab operations. Some menus/functions will be locked and/or not visible.</em></p>
 </div>
 </div>
 </div>
 <div class="section" id="task-4-accessing-the-f5-policy-supervisor-console">
 <h2>Task 4: Accessing the F5 <strong>Policy Supervisor</strong> Console<a class="headerlink" href="#task-4-accessing-the-f5-policy-supervisor-console" title="Permalink to this heading">¶</a></h2>
 <p>The same credentials for the <strong>f5-xc-lab-mcn</strong> tenant in the F5 Distributed Cloud Console can
-be used to access the F5 Policy Supervisor console.</p>
+be used to access the F5 <strong>Policy Supervisor</strong> console.</p>
 <table border="1" class="docutils align-default">
 <colgroup>
 <col width="100%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td>Login to <a class="reference external" href="https://policysupervisor.io">https://policysupervisor.io</a> by clicking on <em>Sign In with Azure AD</em>.</td>
+<tr class="row-odd"><td>Login to <a class="reference external" href="https://policysupervisor.io">https://policysupervisor.io</a> by clicking on <strong>Sign In with Azure AD</strong>.</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="../_images/PSLoginWindow.png"><img alt="intro010" src="../_images/PSLoginWindow.png" style="width: 800px;" /></a></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="../_images/AzureADLogin.png"><img alt="intro011" src="../_images/AzureADLogin.png" style="width: 800px;" /></a></td>
+<tr class="row-odd"><td>If prompted, click on <strong>Work or shcool account</strong> and proceed to login with the same
+credentials configured in Task 3 above.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="../_images/AzureADLogin.png"><img alt="intro011" src="../_images/AzureADLogin.png" style="width: 800px;" /></a></td>
+</tr>
+<tr class="row-odd"><td>The <strong>Policy Supervisor</strong> console opens on the <strong>Providers</strong> page upon successful login.</td>
+</tr>
+<tr class="row-even"><td><a class="first last reference internal image-reference" href="../_images/image9.png"><img alt="../_images/image9.png" src="../_images/image9.png" style="width: 800px;" /></a>
+</td>
 </tr>
 </tbody>
 </table>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last"><strong>Use the F5 Distributed Cloud Console credentials from Task 3 above.</strong></p>
 </div>
-<p><strong>Let’s begin!</strong>
-+———————————————————————————————-+
-| You are now ready to begin the lab, Enjoy! Ask questions as needed.                          |
-+———————————————————————————————-+
-| <a class="reference internal" href="../_images/labbgn12.png"><img alt="labbgn" src="../_images/labbgn12.png" style="width: 800px;" /></a>                                                                                     |
-+———————————————————————————————-+</p>
+<div class="section" id="let-s-begin">
+<h2><strong>Let’s begin!</strong><a class="headerlink" href="#let-s-begin" title="Permalink to this heading">¶</a></h2>
+<table border="1" class="docutils align-default">
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>You are now ready to begin the lab, Enjoy! Ask questions as needed.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="../_images/labbgn12.png"><img alt="labbgn" src="../_images/labbgn12.png" style="width: 800px;" /></a></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 

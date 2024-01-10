@@ -14,7 +14,7 @@
   <meta name="title" content="Lab 1: Connecting Policy Supervisor to BIG-IP WAF"/>
   <meta name="product" content="F5 Distributed Cloud"/>
   <meta name="version" content=""/>
-  <meta name="updated_date"  content="2023-12-22 16:58:44"/>
+  <meta name="updated_date"  content="2024-01-10 14:51:32"/>
   <meta name="archived" content="Archived documents excluded"/>
   <meta name="doc_type" content="Manual"/>
   <meta name="lifecycle" content="release"/>
@@ -89,7 +89,7 @@
 <li class="toctree-l2"><a class="reference internal" href="class9.html#welcome">Welcome</a></li>
 <li class="toctree-l2"><a class="reference internal" href="class9.html#objectives">Objectives:</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="class9.html#lab-tasks">Lab &amp; Tasks:</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="intro.html">Introduction: F5 WAF Policy Supervisor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="intro.html">Introduction: F5 WAF <strong>Policy Supervisor</strong></a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Lab 1: Connecting <strong>Policy Supervisor</strong> to BIG-IP WAF</a></li>
 <li class="toctree-l3"><a class="reference internal" href="close.html">Conclusion</a></li>
 <li class="toctree-l3"><a class="reference internal" href="close.html#appendix">Appendix</a></li>
@@ -117,7 +117,7 @@
             <ul>
 <li><a class="reference internal" href="#">Lab 1: Connecting <strong>Policy Supervisor</strong> to BIG-IP WAF</a><ul>
 <li><a class="reference internal" href="#task-1-create-a-new-policy-supervisor-provider">Task 1: Create a new <strong>Policy Supervisor</strong>  <em>Provider</em></a></li>
-<li><a class="reference internal" href="#task-2-install-a-policy-supervisor-agent">Task 2: Install a <strong>Policy Supervisor</strong> <em>Agent</em></a></li>
+<li><a class="reference internal" href="#task-2-install-a-policy-supervisor-agent">Task 2: Install a <strong>Policy Supervisor Agent</strong></a></li>
 <li><a class="reference internal" href="#task-3-finish-adding-a-new-provider-in-policy-supervisor">Task 3: Finish adding a new <em>provider</em> in <strong>Policy Supervisor</strong></a></li>
 </ul>
 </li>
@@ -183,111 +183,116 @@ JSON-based common declarative format called CDP (<em>Common Declarative Policy</
 <li>The <em>Agent</em> is used to create <em>Secrets</em>, which are stored in your environment only and are never transmitted outside of your network.</li>
 <li>These <em>secrets</em> are used to connect to your <em>BIG-IP AWAF</em> or <em>NGINX NAP</em> instance to execute various policy-related functions within a Docker container environment on that machine/VM.</li>
 </ul>
-<p><strong>Prerequisite</strong>                                                                             |</p>
-<p><em>Installation of the</em> <strong>Policy Supervisor Agent</strong> <em>requires the following applications on your Linux machine/VM:</em>
--Docker
--wget</p>
-<p>The same credentials for the <strong>f5-xc-lab-mcn</strong> tenant in the F5 Distributed Cloud Console can
-be used to access the F5 Policy Supervisor console.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p><strong>Prerequisites:</strong>
+<strong>Policy Supervisor Agent</strong> <em>requires the following applications to be installed on your Linux machine/VM:</em></p>
+<ul class="last simple">
+<li>Docker</li>
+<li>wget</li>
+</ul>
+</div>
+<p>Access the F5 <strong>Policy Supervisor</strong> console at <a class="reference external" href="https://policysupervisor.io">https://policysupervisor.io</a> as instructed in the previous <em>Introduction</em> section of this lab guide.</p>
+<p><strong>Policy Supervisor</strong> uses the <em>F5 Distributed Cloud Console</em> credentials.</p>
 <table border="1" class="docutils align-default">
 <colgroup>
 <col width="100%" />
 </colgroup>
 <tbody valign="top">
 <tr class="row-odd"><td><ol class="first last arabic simple">
-<li>Login to <a class="reference external" href="https://policysupervisor.io">https://policysupervisor.io</a> by clicking on <em>Sign In with Azure AD</em> (instructions for login are
-provided in the previous introduction section of this lab guide).</li>
-</ol>
-</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="../_images/PSLoginWindow.png"><img alt="lab005" src="../_images/PSLoginWindow.png" style="width: 800px;" /></a></td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="../_images/AzureADLogin.png"><img alt="lab008" src="../_images/AzureADLogin.png" style="width: 800px;" /></a></td>
-</tr>
-<tr class="row-even"><td><ol class="first last arabic simple" start="2">
 <li>On the <em>Overview &gt; Providers</em> page, click <strong>Add Provider</strong>. If this is the first provider being added,
 there are two <strong>Add Provider</strong> buttons on the screen. The <em>Add Providers</em> pane will appears.</li>
 </ol>
 </td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="../_images/image9.png"><img alt="lab001" src="../_images/image9.png" style="width: 800px;" /></a></td>
+<tr class="row-even"><td><a class="reference internal" href="../_images/image9.png"><img alt="lab001" src="../_images/image9.png" style="width: 800px;" /></a></td>
 </tr>
-<tr class="row-even"><td><ol class="first last arabic simple" start="3">
+<tr class="row-odd"><td><ol class="first last arabic simple" start="2">
 <li>There are no <em>agents</em> configure yet. Choose <strong>BIG-IP</strong> for the <em>Provider Type</em> and click
-<strong>+ Add new agent</strong> that will appear below the <em>Select Agent</em> drowpdown once you select a <em>Provider Type*</em>.
-The <em>Add Agent</em> pane will appear and a token will be automatically generated as a long text string.</li>
+<strong>+ Add new agent</strong> that will appear below the <em>Select Agent</em> drowpdown after a <em>Provider Type</em> has been
+selected. The <em>Add Agent</em> pane will appear and a token will be automatically generated as a long text
+string.</li>
 </ol>
 </td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="../_images/image17.png"><img alt="lab002" src="../_images/image17.png" style="width: 800px;" /></a></td>
+<tr class="row-even"><td><a class="reference internal" href="../_images/image17.png"><img alt="lab002" src="../_images/image17.png" style="width: 800px;" /></a></td>
 </tr>
-<tr class="row-even"><td><ol class="first last arabic simple" start="4">
-<li>Copy and paste (save) the value of the <strong>Token</strong> to a text file. <em>(It will be used in the *Task 2</em> below.)*</li>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="3">
+<li>Copy &amp; paste (save) the value of the <strong>Token</strong> to a text file or notepad.
+<em>(This token will be required in *Task 2</em> below.)*</li>
 </ol>
 </td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="../_images/image18.png"><img alt="lab003" src="../_images/image18.png" style="width: 800px;" /></a></td>
+<tr class="row-even"><td><a class="reference internal" href="../_images/image18.png"><img alt="lab003" src="../_images/image18.png" style="width: 800px;" /></a></td>
 </tr>
-<tr class="row-even"><td><ol class="first last arabic simple" start="5">
-<li>Within the same <em>Add Agent</em> pane, follow the <strong>Go to agent-install</strong> link (step 1) to the repository page.</li>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="4">
+<li>From within the <em>Add Agent</em> pane, find and click the <strong>Go to agent-install</strong> link (step #1).
+The <em>repository page</em> will open.</li>
 </ol>
 </td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="../_images/image19.png"><img alt="lab004" src="../_images/image19.png" style="width: 800px;" /></a></td>
+<tr class="row-even"><td><a class="reference internal" href="../_images/image19.png"><img alt="lab004" src="../_images/image19.png" style="width: 800px;" /></a></td>
 </tr>
-<tr class="row-even"><td>6. On the <em>Package Registry</em> page, <strong>right-click</strong> on the <strong>agent-installer</strong> file name and select
-<strong>Copy Link</strong>. <em>This copied URL will be used in the next task.</em></td>
+<tr class="row-odd"><td>5. At the bottom of the <em>Package Registry</em> page, <strong>right-click</strong> on the <strong>agent-installer</strong> file name and
+select <strong>Copy Link</strong>. <em>(This URL will be required in *Task 2</em> below.)*</td>
 </tr>
 </tbody>
 </table>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last"><em>The version of the agent-installer file is upgraded from time to time.</em></p>
+<p class="last"><em>The URL for the agent-installer file changes from time to time when it is updated.</em></p>
 </div>
 </div>
 <div class="section" id="task-2-install-a-policy-supervisor-agent">
-<h2>Task 2: Install a <strong>Policy Supervisor</strong> <em>Agent</em><a class="headerlink" href="#task-2-install-a-policy-supervisor-agent" title="Permalink to this heading">¶</a></h2>
-<p>Next, we will use the <em>token</em> and the <em>URL</em> obtain in task 1 above to install the <em>Agent</em> on your UDF virtual lab environment.
+<h2>Task 2: Install a <strong>Policy Supervisor Agent</strong><a class="headerlink" href="#task-2-install-a-policy-supervisor-agent" title="Permalink to this heading">¶</a></h2>
+<p>Next, we will use the <em>token</em> and the <em>URL</em> obtained in task 1 above to install the <em>Agent</em> on your UDF virtual lab environment.
 The <em>Agent</em> will be installed on your <em>SuperJumpHost</em> Linux machine, which is connected to the same management network as your BIG-IP.
-The <em>SuperJumpHost</em> can also communicate with Policy Supervisor across the Internet.</p>
+The <em>SuperJumpHost</em> is pre-configured in your lab environment with permission to communicate with the <strong>Policy Supervisor</strong> across the Internet.</p>
 <table border="1" class="docutils align-default">
 <colgroup>
 <col width="100%" />
 </colgroup>
 <tbody valign="top">
 <tr class="row-odd"><td><ol class="first last arabic simple">
-<li>Use a different window to go back to <a class="reference external" href="https://udf.f5.com">https://udf.f5.com</a> and click <strong>Deployment</strong> to see virtual systems.</li>
+<li>In a different window go to <a class="reference external" href="https://udf.f5.com">https://udf.f5.com</a> and browse to the <strong>Deployment</strong> tab to see virtual systems.</li>
 </ol>
 </td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="../_images/UDFDeploymentTab.png"><img alt="lab006" src="../_images/UDFDeploymentTab.png" style="width: 800px;" /></a></td>
 </tr>
 <tr class="row-odd"><td><ol class="first last arabic simple" start="2">
-<li>Find the <strong>SuperJumpHost</strong> system and click the <strong>ACCESS</strong> link below to see the options.</li>
-<li>Select <strong>Web Sell</strong> to access the command line interface of the SuperJumpHost machine in a new browser tab.</li>
+<li>Find the <strong>SuperJumpHost</strong> system and click the <strong>ACCESS</strong> link to see a list of access options.</li>
 </ol>
 </td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="../_images/UDFWebShell.png"><img alt="lab007" src="../_images/UDFWebShell.png" style="width: 800px;" /></a></td>
 </tr>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="3">
+<li>Select <strong>Web Sell</strong> to access the SuperJumpHost machine’s command line interface in a new browser tab.</li>
+</ol>
+</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="../_images/UDFWebShellCLI.png"><img alt="lab008" src="../_images/UDFWebShellCLI.png" style="width: 800px;" /></a></td>
+</tr>
 <tr class="row-odd"><td><ol class="first last arabic simple" start="4">
 <li>Set your working directory to <em>/tmp</em> with this linux command: <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">/tmp</span></code></li>
 <li>Use the URL copied at step 7 above to download the installer via the command line:
-<code class="docutils literal notranslate"><span class="pre">wget</span> <span class="pre">*[...insert</span> <span class="pre">URL</span> <span class="pre">from</span> <span class="pre">aboe</span> <span class="pre">Task</span> <span class="pre">1</span> <span class="pre">here...]*</span></code></li>
+<code class="docutils literal notranslate"><span class="pre">wget</span> <span class="pre">&lt;...insert</span> <span class="pre">URL</span> <span class="pre">from</span> <span class="pre">aboe</span> <span class="pre">Task</span> <span class="pre">1</span> <span class="pre">here...&gt;</span></code></li>
 <li>After the download completes, rename the file with this linux command:
 <code class="docutils literal notranslate"><span class="pre">mv</span> <span class="pre">download</span> <span class="pre">agent-installer</span></code></li>
 <li>Next, give the installer package execution rights to enable it to run:
 <code class="docutils literal notranslate"><span class="pre">chmod</span> <span class="pre">+x</span> <span class="pre">./agent-installer</span></code></li>
+<li>Run the agent installer by using the following command:
+<code class="docutils literal notranslate"><span class="pre">./agent-installer</span></code></li>
 </ol>
 </td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="../_images/install_agent.png"><img alt="lab009" src="../_images/install_agent.png" style="width: 800px;" /></a></td>
 </tr>
-<tr class="row-odd"><td><ol class="first last arabic simple" start="8">
-<li>Run the agent installer by using the following command:
-<code class="docutils literal notranslate"><span class="pre">./agent-installer</span></code></li>
-<li>Paste the token copied from <em>Task 1</em> above when prompted.</li>
-<li>Enter the name <code class="docutils literal notranslate"><span class="pre">udf</span></code> when prompted for the agent name. Wait for registration to complete successfully.</li>
+<tr class="row-odd"><td><ol class="first last arabic simple" start="9">
+<li>Paste the token copied from <em>Task 1</em> above when prompted. <em>(command-V on a MAC, Ctrl-Shift-V on Windows)</em></li>
+<li>Enter the name <code class="docutils literal notranslate"><span class="pre">udf</span></code> when prompted for the agent name.
+Wait for registration to complete successfully (takes a few minutes).</li>
 </ol>
 </td>
 </tr>
@@ -318,25 +323,37 @@ The <em>SuperJumpHost</em> can also communicate with Policy Supervisor across th
 <tr class="row-odd"><td><ol class="first arabic simple">
 <li>Go back to <a class="reference external" href="https://policysupervisor.io">https://policysupervisor.io</a>.</li>
 </ol>
-<p>Go back to the policysupervisor.io web page and click “Done”.</p>
-<p>Select the “udf” option for on the dropdown list for “Agent”.</p>
-<p>The <em>Secrets</em> field is then displayed. From the <em>Secrets</em> drop-down list, choose the <strong>bigip</strong> secret that
-was created above and click <strong>Continue</strong>.</p>
-<p>Click “Continue”.</p>
-<p>Type “bigip1” for the “Provider Name”.</p>
-<p>Type “<a class="reference external" href="https://10.1.1.6">https://10.1.1.6</a>” for the “Provider URL”.</p>
-<p>Click the “Test Connection” button and wait for the tests to complete successfully.</p>
-<p>Click the “Add another Provider” button.</p>
-<p>Select the “BIG-IP” optino for the provider type.</p>
-<p>Select the “udf” option for on the dropdown list for “Agent”.</p>
-<p>Select the “bigip” option on the dropdown list for “Secret”.</p>
-<p>Click “Continue”.</p>
-<p>Type “bigip2” for the “Provider Name”.</p>
-<p>Type “<a class="reference external" href="https://10.1.1.7">https://10.1.1.7</a>” for the “Provider URL”.</p>
-<p>Click the “Test Connection” button.</p>
-<p>Wait for the tests to complete successfully.</p>
-<p>Click the “Got to overview” link.</p>
-<p>Click to select the “bigip1” provider.</p>
+<p>Go back to the policysupervisor.io web page and click “Done” (return to the <em>Add Provider Pane</em> with <em>BIG-IP</em>
+selected for the <em>Provider Type</em>).</p>
+<p>Select the “udf” option that should not be visible on the dropdown list for <em>Agent</em>.</p>
+<p>Click the <em>Secrets</em> field that should now be visible to see its drop-down list, choose the <strong>bigip</strong> secret
+that was created in the previous step and click <strong>Continue</strong>.</p>
+<p class="last">The <strong>Provider Name</strong> and <strong>Provider URL</strong> will appear. Type <strong>bigip1</strong> for the <strong>Provider Name</strong> and type
+<strong>https://10.1.1.6</strong> for the <strong>Provider URL</strong>.</p>
+</td>
+</tr>
+<tr class="row-even"><td><a class="first last reference internal image-reference" href="../_images/PSAddProvider.png"><img alt="../_images/PSAddProvider.png" src="../_images/PSAddProvider.png" style="width: 800px;" /></a>
+</td>
+</tr>
+<tr class="row-odd"><td>Click the <strong>Test Connection</strong> button and wait for the tests to complete successfully.</td>
+</tr>
+<tr class="row-even"><td><a class="first last reference internal image-reference" href="../_images/PSProviderTestConnection.png"><img alt="../_images/PSProviderTestConnection.png" src="../_images/PSProviderTestConnection.png" style="width: 800px;" /></a>
+</td>
+</tr>
+<tr class="row-odd"><td><p class="first">Click the <strong>Add another Provider</strong> button to add the second BIG-IP appliance in your virtual lab environment.</p>
+<p>Select the <strong>BIG-IP</strong> option for the provider type.</p>
+<p>Select the <strong>udf</strong> option for <strong>Agent</strong>.</p>
+<p>Select the <strong>bigip</strong> option for <strong>Secret</strong> <em>(the two BIG-IP’s have been configured with the same password)</em>.</p>
+<p>Click <strong>Continue</strong>.</p>
+<p>Type <strong>bigip2</strong> for the <strong>Provider Name</strong> and type <strong>https://10.1.1.7</strong> for the <strong>Provider URL</strong>.</p>
+<p>Click the <strong>Test Connection</strong> button and wait for the tests to complete successfully.</p>
+<p class="last">Click the <strong>Got to overview</strong> link.</p>
+</td>
+</tr>
+<tr class="row-even"><td><a class="first last reference internal image-reference" href="../_images/PSProviderList.png"><img alt="../_images/PSProviderList.png" src="../_images/PSProviderList.png" style="width: 800px;" /></a>
+</td>
+</tr>
+<tr class="row-odd"><td><p class="first">Click to select the “bigip1” provider.</p>
 <p>Click “Ingest Policies”.</p>
 <p>Select the discovered policy (i.e., “My_ASM_Rapid_Deployment_Po…”).</p>
 <p>Click Continue.</p>
