@@ -247,22 +247,23 @@ previously built Load Balancer object delivering the targeted application/API.
 
    |lab1-task4-004|
 
-#. In the updated **Use API Definition** section, click the drop-down arrow and select the
+#. In the second **API Definition** section, click the drop-down arrow and select the
    previously created API Definition **<namespace>/app-api-spec**.
 
    |lab1-task4-005|
 
-#. In the **API Protection** section, click the drop-down arrow next to **API Discovery**
-   and select **Enable**.
+#. Under **Validation**, select **All Endpoints** from drop-down then click on
+   **Edit Configuration**
 
    |lab1-task4-006|
 
-#. In the updated **API Discovery** section, click the drop-down arrow next to **Learn
-   from Traffic with Redirect Response** and then select **Enable Learning from Redirect
-   Traffic**.
+#. Within **All endpoints validation**, update **Request Validation Endforcement Type** to
+   **Block**. Click on **Apply** bottom right.
 
-   .. note::
-      *API Discovery will be explored within a demo following this lab*
+   |lab1-task4-006a|
+
+#. In the **API Protection** section, click the drop-down arrow next to **API Discovery**
+   and select **Enable**.
 
    |lab1-task4-007|
 
@@ -270,6 +271,24 @@ previously built Load Balancer object delivering the targeted application/API.
    at the bottom right of window.
 
    |lab1-task4-008|
+
+#. Using another browser tab, navigate to the the following URL to confirm
+   cat details.
+
+   **http://<namespace>.lab-sec.f5demos.com/api/CatLookup/GetByAge?age=5**
+
+   |lab1-task4-009|
+
+#. Using the same tab, update the URI parameter from **age=5** to **age=five**
+   and confirm the request has been blocked.
+
+   **http://<namespace>.lab-sec.f5demos.com/api/CatLookup/GetByAge?age=five**
+
+   |lab1-task4-010|
+
+   .. note::
+      *This request was blocked due to the uploaded swagger defining the
+      parameter type as "integer" for this endpoint.*
 
 **End of Lab 1:**  This concludes Lab 1, feel free to review and test the configuration.
 A brief presentation and demo will be shared prior to the beginning of Lab 2.
@@ -347,9 +366,15 @@ A brief presentation and demo will be shared prior to the beginning of Lab 2.
    :width: 800px
 .. |lab1-task4-006| image:: _static/lab1-task4-006.png
    :width: 800px
+.. |lab1-task4-006a| image:: _static/lab1-task4-006a.png
+   :width: 800px
 .. |lab1-task4-007| image:: _static/lab1-task4-007.png
    :width: 800px
 .. |lab1-task4-008| image:: _static/lab1-task4-008.png
    :width: 800px
+.. |lab1-task4-009| image:: _static/lab1-task4-009.png
+   :width: 400px
+.. |lab1-task4-010| image:: _static/lab1-task4-010.png
+   :width: 600px
 .. |labend| image:: _static/labend.png
    :width: 800px
