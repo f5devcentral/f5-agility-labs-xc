@@ -88,7 +88,7 @@ F5 Distributed Cloud Console.
    If you already have access to the F5 Distributed Cloud, try using your existing 
    credentials for login to the F5 **Policy Supervisor** console.
    If you do not already have workihg credentails, you must wait for an email from 
-   **F5 Distributed Cloud <no-reply@cloud.f5.com>**, which should be delivered in your email
+   **F5 Distributed Cloud <no-reply@cloud.f5.com>**, which should be delivered to your email
    inbox a few minutes after initial launch of this course in UDF.
 
 .. warning:: If you have not received the email to change your credentials or ran into problems changing your credentials, please stop and get help from one of the Lab Assistants.
@@ -130,18 +130,18 @@ F5 Distributed Cloud Console.
 Optional: Logging into the F5 Distributed Cloud Console
 -------------------------------------------------------
 
-Upon the first successful login, you are prompted to select your *Persona*.
-
 +----------------------------------------------------------------------------------------------+
-| Put a checkmark to select **NetOps** for your persona and click **next**.                    |
+| Upon the first successful login, you are prompted to select your *Persona*.                  |
 +----------------------------------------------------------------------------------------------+
 | .. image:: _static/PSPersona.png                                                             |
 |    :width: 800px                                                                             |
 +----------------------------------------------------------------------------------------------+
-| Select **Intermediate** for your *level* and then click **Get Started**.                     |
+| Put a checkmark to select **NetOps** for your persona and click **next**.                    |
 +----------------------------------------------------------------------------------------------+
 | .. image:: _static/PSLevel.png                                                               |
 |    :width: 800px                                                                             |
++----------------------------------------------------------------------------------------------+
+| Select **Intermediate** for your *level* and then click **Get Started**.                     |
 +----------------------------------------------------------------------------------------------+
 | Your persona will highlight workflows within F5 Distributed Cloud.                           |
 | You will be able to access all services, but making use of personas can focus your view on   |
@@ -149,19 +149,19 @@ Upon the first successful login, you are prompted to select your *Persona*.
 |                                                                                              |
 | *For informational purposes only:*  You can change these settings at any time.               |
 +----------------------------------------------------------------------------------------------+
+| .. image:: _static/intro1.png                                                                |
+|    :width: 800px                                                                             |
++----------------------------------------------------------------------------------------------+
 | Click on your *Account* icon in the top right of the screen and then click on                | 
 | **Account Settings**.                                                                        |
 | In the resulting window you can observe the **Work domains and skill level** section and     |
 | other administrative functions.                                                              |
 +----------------------------------------------------------------------------------------------+
-| .. image:: _static/intro1.png                                                                |
+| .. image:: _static/intro2.png                                                                |
 |    :width: 800px                                                                             |
 +----------------------------------------------------------------------------------------------+
 | In the resulting window you can observe the **Work domains and skill level** section and     |
 | other administrative functions.                                                              |
-+----------------------------------------------------------------------------------------------+
-| .. image:: _static/intro2.png                                                                |
-|    :width: 800px                                                                             |
 +----------------------------------------------------------------------------------------------+
 .. note:: *For the purposes of this lab, permissions on your ephemeral account have been restricted to lab operations. Some menus/functions will be locked and/or not visible.*
 
@@ -171,21 +171,22 @@ The same credentials for the **f5-xc-lab-mcn** tenant in the F5 Distributed Clou
 be used to access the F5 **Policy Supervisor** console if you don't already have access.
 
 +----------------------------------------------------------------------------------------------+
-| Browse to https://policysupervisor.io and click on **Sign In with Azure AD**.                |
+| Browse to https://policysupervisor.io.                                                       |
 +----------------------------------------------------------------------------------------------+
 | |intro010|                                                                                   |
++----------------------------------------------------------------------------------------------+
+| Click on **Sign In with Azure AD**.                                                          |
++----------------------------------------------------------------------------------------------+
+| |intro011|                                                                                   |
 +----------------------------------------------------------------------------------------------+
 | If prompted, click on **Work or shcool account** and proceed to login with the same          |
 | credentials configured in Task 3 above.                                                      |
 +----------------------------------------------------------------------------------------------+
-| |intro011|                                                                                   |
-+----------------------------------------------------------------------------------------------+
-| The **Policy Supervisor** console opens on the **Providers** page upon successful login.     |
-+----------------------------------------------------------------------------------------------+
 | .. image:: _static/image9.png                                                                |
 |    :width: 800px                                                                             |
 +----------------------------------------------------------------------------------------------+
-
+| The **Policy Supervisor** console opens on the **Providers** page upon successful login.     |
++----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
 | **Let's begin!** You are now ready to begin the lab. Enjoy! Ask questions as needed.         |
