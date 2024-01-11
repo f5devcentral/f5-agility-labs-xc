@@ -17,11 +17,12 @@ Lab & Tasks:
 ------------
 
 The next page (Introduction) will cover the lab environment, access, and lab variables.
-In addition to their F5 UDF account, each student is provided an ephemeral account on
-the F5 Distributed Cloud service Console, which the students must use if they do not already
-have access the F5 Distributed Cloud and F5 **Policy Supervisor** consoles. 
+Launching the virtual lab environment requires an F5 Unified Demo Framework (UDF) account. 
+Login to the F5 **Policy Supervisor** console also requires an active F5 Distributed Cloud account. 
+Upon launching this virtual lab, students are provided an ephemeral F5 Distributed Cloud account
+that allows them to login to both F5 Distributed Cloud and F5 **Policy Supervisor** consoles.
 
-.. note:: *Students that already have working credentials to access to the F5 Distributed Cloud can use those same credentials to access the F5* **Policy Supervisor** *console*.
+.. note:: *Students who already have an F5 Distributed Cloud account can use their existing credentials to access the F5* **Policy Supervisor** *console*.
 
 .. toctree::
    :maxdepth: 2
