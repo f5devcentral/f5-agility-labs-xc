@@ -103,15 +103,15 @@ which can be utilized to either explicitly deny or allow client traffic based on
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 14. Enter your IP address captured in Step 9 above with mask notation (**/32**) as shown then|
+| 14. Click Add Item and enter your IP address captured in Step 9 above with mask              |
 |                                                                                              |
-|     click the **Apply** button.                                                              |
+|     notation (**/32**) as shown then click the **Apply** button.                             |
 +----------------------------------------------------------------------------------------------+
 | |lab011|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 15. In the resulting window, observer **IPv4 Prefix List** in now configured then scroll to  |
+| 15. In the resulting window, observe **IPv4 Prefix List** is now configured then scroll to   |
 |                                                                                              |
 |     the bottom of the **Rules** section.                                                     |
 +----------------------------------------------------------------------------------------------+
@@ -127,7 +127,7 @@ which can be utilized to either explicitly deny or allow client traffic based on
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 17. Observe the resulting added **allowed-ip** Service Policy added in your namespace.       |
+| 17. Observe the **allowed-ip** Service Policy has been added in your namespace.              |
 +----------------------------------------------------------------------------------------------+
 | |lab014|                                                                                     |
 +----------------------------------------------------------------------------------------------+
@@ -136,7 +136,7 @@ Task 2: Attaching Service Policies and configuring IP Reputation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The following steps will enable you to attach Service Policies to your configured Load Balancer.
-It will also help you understand additional approaches for Service Policies.
+It will also help you understand additional approaches for implementing Service Policies.
 
 +----------------------------------------------------------------------------------------------+
 | 1. Return to the Load Balancer in the F5 Distributed Cloud Console,**Manage > Load Balancer**|
@@ -213,7 +213,7 @@ It will also help you understand additional approaches for Service Policies.
 |                                                                                              |
 |     **Action** was **Next Policy**, there is no other or next policy to "Allow" traffic,     |
 |                                                                                              |
-|     therefore, all other traffic is disallowed producing the 403.  This is will also show in |
+|     therefore, all other traffic is denied producing the 403.  This will also show in        |
 |                                                                                              |
 |     the **Security Events** window.                                                          |
 +----------------------------------------------------------------------------------------------+
@@ -285,12 +285,12 @@ It will also help you understand additional approaches for Service Policies.
 
 Task 3: Create, assign and test a Custom Service Policy
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-In this task you will add Custom Policy and assign it to your Load Balancer. Custom Service 
+In this task you will add a Custom Policy and assign it to your Load Balancer. Custom Service 
 Policies provide the flexibility to build **Positive** or **Negative** security models and custom
 rules or controls.
 
-Through prior lab tasks, Fiji has been Geo-location blocked, and your testing resource's 
-IP has been allowed, and all other IP addresses have been denied. You will build some additional 
+Through prior lab tasks, Fiji has been Geo-location blocked, your testing resource's 
+IP has been allowed, while all other IP addresses have been denied. You will build some additional 
 blocking/deny rules to illustrate Service Policy controls. 
 
 +----------------------------------------------------------------------------------------------+
@@ -423,7 +423,7 @@ blocking/deny rules to illustrate Service Policy controls.
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 22. In **Query Parameter Matcher** window, in the **Query Parameter Name**, field enter      |
+| 22. In **Query Parameter Matcher** window, in the **Query Parameter Name** field, enter      |
 |                                                                                              |
 |     **page**.                                                                                |
 |                                                                                              |
@@ -437,9 +437,9 @@ blocking/deny rules to illustrate Service Policy controls.
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 25. Observe that the **HTTP Query Parameters** is now **Configured** and scroll to the       |
+| 25. Observe that the **HTTP Query Parameters** has the value we configured and scroll to the |
 |                                                                                              |
-|     of the rule configuration and click **Apply**                                            |
+|     bottom of the rule configuration and click **Apply**                                     |
 +----------------------------------------------------------------------------------------------+
 | |lab050|                                                                                     |
 |                                                                                              |
@@ -523,7 +523,7 @@ blocking/deny rules to illustrate Service Policy controls.
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 36. Time to re-access your access. Now test the following from your client:                  |
+| 36. Time to reassess your access. Now test the following from your client:                   |
 |                                                                                              |
 |    * **Browser**: http://<namespace>.lab-sec.f5demos.com/index.php?page=header               |
 |    * **cURL**: http://<namespace>.lab-sec.f5demos.com/                                       |
@@ -639,8 +639,8 @@ Task 5: OPTIONAL - Service Policy Ordering
 Service Policies are processed in a top-down manner.  In this lab you will investigate how
 ordering of the service policies can affect client traffic.
 
-The objective is to expand the disallowed geo-filter the add a new country to existing Fiji  
-location with the country of your test client.
+The objective is to expand the denied sources geo-filter by adding an additional
+country. Add the country of your current test client.
 
 +----------------------------------------------------------------------------------------------+
 | 1. Returning to **Web App & API Protection**, in the left-hand navigation menu, expand the   |
