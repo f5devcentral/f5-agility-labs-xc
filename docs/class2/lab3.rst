@@ -1,224 +1,179 @@
-Lab 3: Malicious Users 
-=================================
+Lab 3: Malicious Users
+======================
 
-The following lab tasks will guide you the configuration of the Malicious User Configuration
-which can be used to implement a variety of security controls. 
+The following lab tasks will guide you the configuration of the Malicious User
+Configuration which can be used to implement a variety of security controls.
 
 **Expected Lab Time: 15 minutes**
 
-Task 1: Creating a User Identification Policy 
+Task 1: Creating a User Identification Policy
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In this task you will build a user identification policy which will be the basis of identifying 
-clients/users for machine learning driven analysis for malicious user mitigation and actions.
+In this task you will build a user identification policy which will be the
+basis of identifying clients/users for machine learning driven analysis for
+malicious user mitigation and actions.
 
-+----------------------------------------------------------------------------------------------+
-| 1. Within **Web App & API Protection** in the F5 Distributed Cloud Console, **Manage >**     |
-|                                                                                              |
-|    **Load Balancer > HTTP Load Balancers** and use the **Action Dots** and click **Manage**  |
-|                                                                                              |
-|    **Configuration**.                                                                        |
-|                                                                                              |
-| 2. Click **Edit Configuration** in the top right-hand corner.                                |
-+----------------------------------------------------------------------------------------------+
-| |lab001|                                                                                     |
-|                                                                                              |
-| |lab002|                                                                                     |
-+----------------------------------------------------------------------------------------------+
 
-+----------------------------------------------------------------------------------------------+
-| 3. Click **Common Security Controls** in the left-hand navigation and locate **User**        |
-|                                                                                              |
-|    **Identification**.                                                                       |
-|                                                                                              |
-| 4. Click the drop-down under **User Identification** and select **User Identification**      |
-|                                                                                              |
-|    **Policy** from the list.                                                                 |
-+----------------------------------------------------------------------------------------------+
-| |lab003|                                                                                     |
-+----------------------------------------------------------------------------------------------+
+#. Within **Web App & API Protection** in the F5 Distributed Cloud Console,
+   **Manage > Load Balancer > HTTP Load Balancers** and use the **Action Dots**
+   and click **Manage Configuration**.
 
-+----------------------------------------------------------------------------------------------+
-| 5. Click the dropdown for **User Identification Policy** and select **Add Item**.            |
-+----------------------------------------------------------------------------------------------+
-| |lab004|                                                                                     |
-+----------------------------------------------------------------------------------------------+
+#. Click **Edit Configuration** in the top right-hand corner.
 
-+----------------------------------------------------------------------------------------------+
-| 6. In the **User Identification** window, in the **Metadata** section enter **user-id**      |
-|                                                                                              |
-|    for the **Name** and then click **configure** under **User Identification Rules**.        |
-+----------------------------------------------------------------------------------------------+
-| |lab005|                                                                                     |
-+----------------------------------------------------------------------------------------------+
+   |lab001|
 
-+----------------------------------------------------------------------------------------------+
-| 7. In the resulting window for **User Identification Rules**, click **Add Item**.            |
-+----------------------------------------------------------------------------------------------+
-| |lab006|                                                                                     |
-+----------------------------------------------------------------------------------------------+
+   |lab002|
 
-+----------------------------------------------------------------------------------------------+
-| 8. In the **User Identification Rule** window click the drop-down for **Identifier Type**.   |
-|                                                                                              |
-|    Select **TLS Fingerprint** and click **Apply**.                                           |
-+----------------------------------------------------------------------------------------------+
-| |lab007|                                                                                     |
-+----------------------------------------------------------------------------------------------+
+#. Click **Common Security Controls** in the left-hand navigation and locate
+   **User Identification**.
 
-+----------------------------------------------------------------------------------------------+
-| 9. Returning to the window for **User Identification Rules**, observe the prior selection    |
-|                                                                                              |
-|    and click **Add Item**.                                                                   |
-+----------------------------------------------------------------------------------------------+
-| |lab008|                                                                                     |
-+----------------------------------------------------------------------------------------------+
+#. Click the drop-down under **User Identification** and select **User
+   Identification Policy** from the list.
 
-+----------------------------------------------------------------------------------------------+
-| 10. In the **User Identification Rule** window click the drop-down for **Identifier Type**.  |
-|                                                                                              |
-|     Select **Client IP Address** and click **Apply**. (*It should be already selected*)      |
-+----------------------------------------------------------------------------------------------+
-| |lab009|                                                                                     |
-+----------------------------------------------------------------------------------------------+
+   |lab003|
 
-+----------------------------------------------------------------------------------------------+
-| 11. Review the two **User Identification Rules** and click **Apply**.                        |
-|                                                                                              |
-| 12. Returning to the **User Identification** window, note that **User Identification Rules** |
-|                                                                                              |
-|     are now **Configured** and click **Continue**.                                           |
-+----------------------------------------------------------------------------------------------+
-| |lab010|                                                                                     |
-|                                                                                              |
-| |lab011|                                                                                     |
-+----------------------------------------------------------------------------------------------+
+#. Click the dropdown for **User Identification Policy** and select
+     **Add Item**.
 
-Task 2: Enable Malicious User Detection and Mitigation Actions 
+   |lab004|
+
+#. In the **User Identification** window, in the **Metadata** section enter
+   **user-id** for the **Name** and then click **configure** under **User
+   Identification Rules**.
+
+   |lab005|
+
+#. In the resulting window for **User Identification Rules**, click **Add
+   Item**.
+
+   |lab006|
+
+#. In the **User Identification Rule** window click the drop-down for
+   **Identifier Type**.
+
+   Select **TLS Fingerprint** and click **Apply**.
+
+   |lab007|
+
+#. Returning to the window for **User Identification Rules**, observe the prior
+   selection and click **Add Item**.
+
+   |lab008|
+
+#. In the **User Identification Rule** window click the drop-down for
+   **Identifier Type**. Select **Client IP Address** and click **Apply**. (*It
+   should be already selected*)
+
+   |lab009|
+
+#. Review the two **User Identification Rules** and click **Apply**.
+
+#. Returning to the **User Identification** window, note that **User
+   Identification Rules** are now **Configured** and click **Continue**.
+
+   |lab010|
+
+   |lab011|
+
+
+Task 2: Enable Malicious User Detection and Mitigation Actions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In this task you will leverage the user identification policy just built and then enable malicious
-user detection and create a malicious user mitigation and challenge.
+In this task you will leverage the user identification policy just built and
+then enable malicious user detection and create a malicious user mitigation and
+challenge.
 
-+----------------------------------------------------------------------------------------------+
-| 1. Click **Common Security Controls** in the left-hand navigation.                           |
-|                                                                                              |
-| 2. Click the dropdown for **Malicious User Detection** and select **Enable**.                |
-+----------------------------------------------------------------------------------------------+
-| |lab012|                                                                                     |
-+----------------------------------------------------------------------------------------------+
+#. Click **Common Security Controls** in the left-hand navigation.
 
-+----------------------------------------------------------------------------------------------+
-| 3. Click the dropdown for **Malicious User Mitigation And Challenges** and select            |
-|                                                                                              |
-|    **Enable**.                                                                               |
-+----------------------------------------------------------------------------------------------+
-| |lab013|                                                                                     |
-+----------------------------------------------------------------------------------------------+
+#. Click the dropdown for **Malicious User Detection** and select **Enable**.
 
-+----------------------------------------------------------------------------------------------+
-| 4. Click the dropdown for **Malicious User Mitigation Settings** and select **Custom**.      |
-+----------------------------------------------------------------------------------------------+
-| |lab014|                                                                                     |
-+----------------------------------------------------------------------------------------------+
+   |lab012|
 
-+----------------------------------------------------------------------------------------------+
-| 5. Click the dropdown for **Custom**.  Observe the two other policies.                       |
-|                                                                                              |
-|    **shared/lab-sec-user-mitigation**                                                        |
-|                                                                                              |
-|    **ves-io-shared/ves-io-default-malicious-user-mitigation**                                |
-|                                                                                              |
-| .. note::                                                                                    |
-|                                                                                              |
-| *Using shared namespace Malicious User Mitigation provides the ability to use API-updated*   |
-|                                                                                              |
-| *mitigation controls to implement common service security across multiple resources.*        |
-|                                                                                              |
-| 6. Select **Add Item**.                                                                      |
-+----------------------------------------------------------------------------------------------+
-| |lab015|                                                                                     |
-+----------------------------------------------------------------------------------------------+
+#. Click the dropdown for **Malicious User Mitigation And Challenges** and
+select **Enable**.
 
-+----------------------------------------------------------------------------------------------+
-| 7. In the **Metadata** section enter **security-user-mitigation** for the **Name** and       |
-|                                                                                              |
-|    then click **Add Item** under **Rules**.                                                  |
-+----------------------------------------------------------------------------------------------+
-| |lab016|                                                                                     |
-+----------------------------------------------------------------------------------------------+
+   |lab013|
 
-+----------------------------------------------------------------------------------------------+
-| 8. In the resulting window, click the dropdown for **Threat Level** and select **Low**.      |
-|                                                                                              |
-| 9. Click the dropdown for **Action** and select **Java Script Challenge**.                   |
-|                                                                                              |
-| 10. Select **Apply**.                                                                        |
-+----------------------------------------------------------------------------------------------+
-| |lab017|                                                                                     |
-+----------------------------------------------------------------------------------------------+
+#. Click the dropdown for **Malicious User Mitigation Settings** and select
+   **Custom**.
 
-+----------------------------------------------------------------------------------------------+
-| 11. In the **Malicious User Mitigation** window review the rule just created and click       |
-|                                                                                              |
-|     **Add Item** again.                                                                      |
-+----------------------------------------------------------------------------------------------+
-| |lab018|                                                                                     |
-+----------------------------------------------------------------------------------------------+
+   |lab014|
 
-+----------------------------------------------------------------------------------------------+
-| 12. In the resulting window, click the dropdown for **Threat Level** and select **Medium**.  |
-|                                                                                              |
-| 13. Click the dropdown for **Action** and select **Captcha Challenge**.                      |
-|                                                                                              |
-| 14. Select **Apply**.                                                                        |
-+----------------------------------------------------------------------------------------------+
-| |lab019|                                                                                     |
-+----------------------------------------------------------------------------------------------+
+#. Click the dropdown for **Custom**. Observe the two other policies.
 
-+----------------------------------------------------------------------------------------------+
-| 15. In the **Malicious User Mitigation** window review the rules just created and click      |
-|                                                                                              |
-|     **Add Item** again.                                                                      |
-+----------------------------------------------------------------------------------------------+
-| |lab020|                                                                                     |
-+----------------------------------------------------------------------------------------------+
+   **shared/lab-sec-user-mitigation**
 
-+----------------------------------------------------------------------------------------------+
-| 16. In the resulting window, click the dropdown for **Threat Level** and select **High**.    |
-|                                                                                              |
-| 17. Click the dropdown for **Action** and select **Block Temporarily**.                      |
-|                                                                                              |
-| 18. Select **Apply**.                                                                        |
-+----------------------------------------------------------------------------------------------+
-| |lab021|                                                                                     |
-+----------------------------------------------------------------------------------------------+
+   **ves-io-shared/ves-io-default-malicious-user-mitigation**
 
-+----------------------------------------------------------------------------------------------+
-| 19. Observe the three Rules created and select **Continue**.                                 |
-+----------------------------------------------------------------------------------------------+
-| |lab022|                                                                                     |
-+----------------------------------------------------------------------------------------------+
+   .. note::
 
-+----------------------------------------------------------------------------------------------+
-| 20. Note the updated **Malicious User Mitigation and Challenges** section and click on       |
-|                                                                                              |
-|     **Other Settings** in the left-hand navigation or scroll to the bottom of the window and |
-|                                                                                              |
-|     click the **Save and Exit** button.                                                      |
-+----------------------------------------------------------------------------------------------+
-| |lab023|                                                                                     |
-|                                                                                              |
-| |lab024|                                                                                     |
-+----------------------------------------------------------------------------------------------+
+      **Using shared namespace Malicious User Mitigation provides the ability
+      to use API-updated mitigation controls to implement common service
+      security across multiple resources.**
 
-+----------------------------------------------------------------------------------------------+
-| **End of Lab 3:**  This concludes Lab 3, feel free to review and test the configuration.     |
-|                                                                                              |
-| A Q&A session will begin shortly to conclude the overall lab.                                |
-+----------------------------------------------------------------------------------------------+
-| |labend|                                                                                     |
-+----------------------------------------------------------------------------------------------+
+#. Select **Add Item**.
+
+   |lab015|
+
+#. In the **Metadata** section enter **security-user-mitigation** for the
+   **Name** and then click **Add Item** under **Rules**.
+
+   |lab016|
+
+#. In the resulting window, click the dropdown for **Threat Level** and select
+   **Low**.
+
+#. Click the dropdown for **Action** and select **Java Script Challenge**.
+
+#. Select **Apply**.
+
+   |lab017|
+
+#. In the **Malicious User Mitigation** window review the rule just created and
+   click **Add Item** again.
+
+   |lab018|
+
+#. In the resulting window, click the dropdown for **Threat Level** and select
+   **Medium**.
+
+#. Click the dropdown for **Action** and select **Captcha Challenge**.
+
+#. Select **Apply**.
+
+   |lab019|
+
+#. In the **Malicious User Mitigation** window review the rules just created
+   and click **Add Item** again.
+
+   |lab020|
+
+#. In the resulting window, click the dropdown for **Threat Level** and select
+   **High**.
+
+#. Click the dropdown for **Action** and select **Block Temporarily**.
+
+#. Select **Apply**.
+
+   |lab021|
+
+#. Observe the three Rules created and select **Continue**.
+
+   |lab022|
+
+#. Note the updated **Malicious User Mitigation and Challenges** section and
+   click on **Other Settings** in the left-hand navigation or scroll to the
+   bottom of the window and click the **Save and Exit** button.
+
+   |lab023|
+   |lab024|
+
+**End of Lab 3:**  This concludes Lab 3, feel free to review and test the
+configuration.
+
+A Q&A session will begin shortly to conclude the overall lab.
+
+|labend|
 
 .. |lab001| image:: _static/lab3-001.png
    :width: 800px
