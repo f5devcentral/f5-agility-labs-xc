@@ -1,482 +1,348 @@
-Lab 1: Deploying F5 Distributed Cloud Proxy Services to Securely Deliver a Public Endpoint
-==========================================================================================
+Lab 1: Managing BIG-IP Advanced WAF with  **Policy Supervisor**
+===============================================================
 
-This lab will focus on the deployment and security of an existing hosted application using F5
-Distributed Cloud Platform and Services.  This lab will be deployed in a SaaS only
-configuration with no on-premises (public or private cloud) elements.  All configuration
-will be made via the F5 Distributed Cloud Console and within the F5 Distributed Cloud Global
-Network services architecture.
+**Policy Supervisor** is an online unified configuration solution for security policies, built with the purposes of managing and converting configuration across multiple F5 Web App Firewall solutions.
+It enables operators of F5 WAF technologies to easily convert policy files from *BIG-IP AWAF*, *F5 Distributed Cloud WAF*, and *NGINX NAP* formats. In the process **Policy Supervisor** generates and uses an intermediate
+JSON-based common declarative format called CDP (*Common Declarative Policy*) for policy lifecycle management. After a policy is converted to CDP, it can then be deployed to any supported WAF Solution, which is referred to as a *Provider* in **Policy Supervisor** lingo.
 
-For the tasks that follow, you should have already noted your individual **namespace**. If you
-failed to note it, return to the **Introduction** section of this lab, follow the instructions
-provided and note your **namespace** accordingly. The **Delegated Domain** and the F5
-Distributed Cloud **Tenant** are listed below for your convenience as they will be the same for
-all lab attendees.
+Please refer to the Tutorial in the GitHub repo (https://github.com/f5devcentral/ps-convert) for currently supported *Provider* types.
 
-* **Delegated Domain:** *.lab-sec.f5demos.com*
-* **F5 Distributed Cloud Tenant:** https://f5-xc-lab-sec.console.ves.volterra.io
+**Policy Supervisor** provides a graphical interface for visual policy creation, editing and management for traditional SecOps personas.
 
-Following the tasks in the prior **Introduction** Section, you should now be able to access the
-F5 Distributed Cloud Console, having set your Work Domain Roles and Skill levels. If you have
-not done so already, please login to your tenant for this lab and proceed to Task 1.
+Task 1: Create a new **Policy Supervisor**  *Provider*
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Task 1: Configure Load Balancer and Origin Pool
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The following steps will walk you through connecting **Policy Supervisor** to your *BIG-IP WAF*.
 
-The following steps will allow you to deploy and advertise a globally available application.
-These steps will create an origin pool, add a health monitor, define an application, register
-its DNS, and advertise the application on the Internet using the F5 Distributed Cloud Global
-Network.
+The first step is to create a *Provider*.
+
+A *Provider* is a generic name used by **Policy Supervisor** to indicate an F5 Web App Firewall. The supported *Provider* types are: *F5 Distributed Cloud WAF*, *BIG-IP Advanced WAF* (AWAF), and *NGINX Application Protection* (NAP). Add and connect *providers* in **Policy Supervisor** to enable the deployment of your configuration policies across endpoints and load balancers for complete WAF protection.
+
+When you add a BIG-IP instance as a *provider*, you must first set up an *agent* and associated secret on the private network to enable a secure connection between the BIG-IP instance and **Policy Supervisor**.
+
+- The *agent* must be connected to the same private network where the *provider* is running to ensure a secure connection between **Policy Supervisor** and the *provider*.
+- The *agent* machine must also have outbound Internet access for connectivity back to **Policy Supervisor**.
+- The **Policy Supervisor** *Agent* is a Linux binary that is first installed on this machine/VM and is registered using a unique token generated in the **Policy Supervisor** UI for your **Policy Supervisor** *workspace* only.
+- The *Agent* is used to create *Secrets*, which are stored in your environment only and are never transmitted outside of your network.
+- These *secrets* are used to connect to your *BIG-IP AWAF* or *NGINX NAP* instance to execute various policy-related functions within a Docker container environment on that machine/VM.
+
+.. note::
+   **Prerequisites:**
+   **Policy Supervisor Agent** *requires the following applications to be installed on your Linux machine/VM:*
+
+   - Docker
+   - wget
+
+Access the F5 **Policy Supervisor** console at https://policysupervisor.io as instructed in the previous *Introduction* section of this lab guide.
+
+.. note::
+**Policy Supervisor** uses the *F5 Distributed Cloud Console* credentials.
 
 +---------------------------------------------------------------------------------------------------------------+
-| 1. Following the **Introduction** section  instructions, you should now be in the **Multi-Cloud App Connect** |
-|                                                                                                               |
-|    configuration window. If for some reason you are not in the **Multi-Cloud App Connect** window, use the    |
-|                                                                                                               |
-|    **Select Service** in the left-hand navigation, and click **Multi-Cloud App Connect** as shown in the      |
-|                                                                                                               |
-|    *Introduction section, Task 2, Step 9*.                                                                    |
-|                                                                                                               |
-| 2. In the left-hand navigation expand **Manage** and click **Load Balancers > Origin Pools**                  |
-|                                                                                                               |
-| 3. In the resulting screen click the **Add Origin Pool** in the graphic as shown.                             |
-|                                                                                                               |
-| .. note::                                                                                                     |
-|    *You have defaulted to your specific namespace as that is the only namespace to which you have             |
-|                                                                                                               |
-|    *administrative access.**                                                                                  |
+| 1. On the *Overview > Providers* page, click **Add Provider**. If this is the first provider being added,     |
+|    there are two **Add Provider** buttons on the screen. The *Add Providers* pane will appears.               |
 +---------------------------------------------------------------------------------------------------------------+
 | |lab001|                                                                                                      |
-|                                                                                                               |
++---------------------------------------------------------------------------------------------------------------+
+| 2. There are no *agents* configure yet. Choose **BIG-IP** for the *Provider Type* and click                   |
+|    **+ Add new agent** that will appear below the *Select Agent* drowpdown after a *Provider Type* has been   |
+|    selected. The *Add Agent* pane will appear and a token will be automatically generated as a long text      |
+|    string.                                                                                                    |
++---------------------------------------------------------------------------------------------------------------+
 | |lab002|                                                                                                      |
 +---------------------------------------------------------------------------------------------------------------+
-
-+---------------------------------------------------------------------------------------------------------------+
-| 4. In the resulting window, enter **<namespace>-pool** in the **Name** field and click **Add Item** under     |
-|                                                                                                               |
-|    **Origin Servers**                                                                                         |
+| 3. Copy & paste (save) the value of the **Token** to a text file or notepad.                                  | 
+|    *(This token will be required in *Task 2* below.)*                                                         |
 +---------------------------------------------------------------------------------------------------------------+
 | |lab003|                                                                                                      |
 +---------------------------------------------------------------------------------------------------------------+
-
-+---------------------------------------------------------------------------------------------------------------+
-| 5. In the resulting window, **Public DNS Name of Origin Server** should be selected for **Select Type of**    |
-|                                                                                                               |
-|    **Origin Server**.                                                                                         |
-|                                                                                                               |
-| 6. For **DNS Name** enter the following hostname: **demo-app.amer.myedgedemo.com** and then click **Apply**   |
+| 4. From within the *Add Agent* pane, find and click the link to go to the **agent-install** page (step 1.).   |
+|    The corresponding GitLab *repository page* will open.                                                      |
 +---------------------------------------------------------------------------------------------------------------+
 | |lab004|                                                                                                      |
 +---------------------------------------------------------------------------------------------------------------+
+| 5. At the bottom of the *Package Registry* page, **right-click** on the **agent-installer** file name and     |
+| select **Copy Link**. *(This URL will be required in *Task 2* below.)*                                        |
++---------------------------------------------------------------------------------------------------------------+
+.. note:: *The URL for the agent-installer file changes from time to time when it is updated.*
+
+Task 2: Install a **Policy Supervisor Agent**
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Next, we will use the **token** and the **URL** obtained in task 1 above to install the *Agent* on your UDF virtual lab environment.
+The *Agent* will be installed on your *SuperJumpHost* Linux machine, which is connected to the same management network as your BIG-IP.
+The *SuperJumpHost* is pre-configured in your lab environment with permission to communicate with the **Policy Supervisor** across the Internet.
 
 +---------------------------------------------------------------------------------------------------------------+
-| 7. After returning to the prior window, change the **Port** under **Origin server Port** to **80**.           |
-|                                                                                                               |
-| 8. Scroll to the bottom and click **Save and Exit**.                                                          |
+| 1. Browse to https://udf.f5.com again and find the **Deployment** tab to see your virtual machines.           |
 +---------------------------------------------------------------------------------------------------------------+
-| |lab005|                                                                                                      |
-|                                                                                                               |
 | |lab006|                                                                                                      |
 +---------------------------------------------------------------------------------------------------------------+
-
-+---------------------------------------------------------------------------------------------------------------+
-| 9. In the left-hand navigation expand **Manage** and click **Load Balancers > HTTP Load** **Balancers**.      |
-|                                                                                                               |
-| 10. In the resulting screen click the **Add HTTP Load Balancer** in the graphic as shown.                     |
+| 2. Find the **SuperJumpHost** system and click its **ACCESS** link to see a list of access options.           |
 +---------------------------------------------------------------------------------------------------------------+
 | |lab007|                                                                                                      |
-|                                                                                                               |
++---------------------------------------------------------------------------------------------------------------+
+| 3. Select **Web Sell** to access the **SuperJumpHost** machine's command line interface in a new browser tab. |
++---------------------------------------------------------------------------------------------------------------+
 | |lab008|                                                                                                      |
 +---------------------------------------------------------------------------------------------------------------+
-
-+---------------------------------------------------------------------------------------------------------------+
-| 11. Using the left-hand navigation and in the sections as shown, enter the following data. Values where       |
+| 4. Set your working directory to */tmp* with this linux command: ``cd /tmp``                                  |
 |                                                                                                               |
-|     **<namespace>** is required, use the name of your given namespace.                                        |
+| 5. Use the URL copied at step 7 above to download the installer via the command line:                         |
+|    ``wget <...insert URL from aboe Task 1 here...>``                                                          |
 |                                                                                                               |
-|     * **Metadata:Name ID:**  *<namespace>-lb*                                                                 |
-|     * **Domains and LB Type: List of Domains:** *<namespace>.lab-sec.f5demos.com*                             |
-|     * **Domains and LB Type: Select Type of Load Balancer:** *HTTP*                                           |
-|     * **Domains and LB Type: Automatically Manage DNS Records:** *(Check the checkbox)*                       |
-|     * **Domains and LB Type: HTTP Port:** *80*                                                                |
+| 6. After the download completes, rename the file with this linux command:                                     |
+|    ``mv download agent-installer``                                                                            |
+|                                                                                                               |
+| 7. Next, give the installer package execution rights to enable it to run:                                     |
+|    ``chmod +x ./agent-installer``                                                                             |
+|                                                                                                               |
+| 8. Run the agent installer by using the following command:                                                    |
+|    ``./agent-installer``                                                                                      |
 +---------------------------------------------------------------------------------------------------------------+
 | |lab009|                                                                                                      |
 +---------------------------------------------------------------------------------------------------------------+
-
-+---------------------------------------------------------------------------------------------------------------+
-| 12. In the current window's left-hand navigation, click **Origins**. Next, click **Add Item Pools** section of|
+| 9. Wait for the prompt and paste the token copied from *Task 1* above.                                        |
+|    *(command-V on a MAC, Ctrl-Shift-V on Windows)*                                                            |
 |                                                                                                               |
-|     **Origins**.                                                                                              |
+| 10. Enter the name ``udf`` when prompted for the agent name.                                                  |
+|     Wait for registration to complete successfully (takes a few minutes).                                     |
 +---------------------------------------------------------------------------------------------------------------+
 | |lab010|                                                                                                      |
 +---------------------------------------------------------------------------------------------------------------+
-
-+---------------------------------------------------------------------------------------------------------------+
-| 13. In the resulting window, verify **Origin Pool** is selected for **Select Origin Pool **Method**.          |
+| 11. Type ``bigip`` when prompted for the secret name.                                                         |
 |                                                                                                               |
-| 14. Select the **<namespace>/<namespace>-pool** from the **Origin Pool**  dropdown.                           |
+| 12. Type ``admin`` when prompted for the username.                                                            |
 |                                                                                                               |
-| 15. Click **Apply**                                                                                           |
+| 13. Type ``Canada123!`` when prompted for a password.                                                         |
+|                                                                                                               |
+| 14. Press "**Enter**" when prompted for the *ssh key path* (we're not using one in this demo).                |
+|                                                                                                               |
+| 15. Press "**Enter**" when prompted to select an option (choose the default "*Finish*" option).               |
 +---------------------------------------------------------------------------------------------------------------+
 | |lab011|                                                                                                      |
 +---------------------------------------------------------------------------------------------------------------+
 
-+---------------------------------------------------------------------------------------------------------------+
-| 16. In the resulting **HTTP Load Balancer** window, scroll to the **Other Settings** section and note the     |
-|                                                                                                               |
-|     **VIP Advertisement** setting.                                                                            |
-|                                                                                                               |
-| 17. Click **Save and Exit** at the bottom of the **HTTP Load Balancer** configuration screen.                 |
-|                                                                                                               |
-| .. note::                                                                                                     |
-|    *The VIP Advertisement selection controls how/where the application is advertised. The "Internet" setting* |
-|                                                                                                               |
-|    *means that this application will be advertised globally using the F5 Distributed Cloud Global Network*    |
-|                                                                                                               |
-|    *utilizing Anycast.*                                                                                       |
-+---------------------------------------------------------------------------------------------------------------+
-| |lab012|                                                                                                      |
-+---------------------------------------------------------------------------------------------------------------+
+Task 3: Finish adding a first *provider* in **Policy Supervisor**
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The configuration of the new *Provider* can be completed now that the *Agent* is ready.
 
 +---------------------------------------------------------------------------------------------------------------+
-| 18. In the **HTTP Load Balancers** window, note the application hostname under the **Domains** column *(This* |
+| Go to https://policysupervisor.io again and click "Done" (return to the *Add Provider Pane* with *BIG-IP*     |
+| selected for the *Provider Type*).                                                                            |
 |                                                                                                               |
-|     *was done in Task1: Step 19)*.                                                                            |
+| Select the new **udf** option that should now be visible on the dropdown list for the *Agent* field           |
+| (the provider that was created in the previous task).                                                         |
+|                                                                                                               |
+| Choose the new **bigip** option that should now be visible on the drop-down list for the *Secrets* field      |
+| (the secret that was created in the previous task) and click **Continue**.                                    |
+|                                                                                                               |
+| The **Provider Name** and **Provider URL** fields will now appear.                                            |
+|                                                                                                               |
+| Type **bigip1** for the **Provider Name** and type **https://10.1.1.6** for the **Provider URL**.             |
 |                                                                                                               |
 +---------------------------------------------------------------------------------------------------------------+
-| |lab013|                                                                                                      |
+| .. image:: _static/PSAddProvider.png                                                                          |
+|    :width: 800px                                                                                              |
 +---------------------------------------------------------------------------------------------------------------+
-
-Task 2: Testing the Application and Viewing Telemetry Data
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-The following steps will validate access to the application via web browser, review the
-Performance Monitoring dashboard, and gather request details.
-
+| Click the **Test Connection** button and wait for the tests to complete successfully.                         |
 +---------------------------------------------------------------------------------------------------------------+
-| 1. Open another tab in your browser (Chrome shown), navigate to the newly configured Load Balancer            |
-|                                                                                                               |
-|    configuration: **http://<namespace>.lab-sec.f5demos.com**, to confirm it is functional.                    |
-|                                                                                                               |
-| 2. Navigate to the **HEADER** section under **Menu** to generate additional traffic.                          |
-+---------------------------------------------------------------------------------------------------------------+
-| |lab014|                                                                                                      |
-|                                                                                                               |
-| |lab015|                                                                                                      |
+| .. image:: _static/PSProviderTestConnection.png                                                               |
+|    :width: 800px                                                                                              |
 +---------------------------------------------------------------------------------------------------------------+
 
-+---------------------------------------------------------------------------------------------------------------+
-| 3. Returning to the F5 Distributed Cloud Console, use the left-hand navigation to navigate to Multi-Cloud App |
-|                                                                                                               |
-|    Connect section and expand **Virtual Hosts** and then click on **HTTP Load Balancers**                     |
-|                                                                                                               |
-| 4. Click on **Performance Monitoring** link provided for your respective load balancer.                       |
-|                                                                                                               |
-+---------------------------------------------------------------------------------------------------------------+
-| |lab016|                                                                                                      |
-|                                                                                                               |
-| |lab017|                                                                                                      |
-+---------------------------------------------------------------------------------------------------------------+
+Task 4: Add a 2nd BIG-IP *provider* in **Policy Supervisor**
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+We will re-use the same **udf** *Agent* and **bigip** *Secret* created in Task 2 above to manage the WAF policies on
+your 2nd BIG-IP because they areconnected to the same management network in your UDF virtual lab environment.
 
 +---------------------------------------------------------------------------------------------------------------+
-| 5. Change the viewable time period from Last 5 minutes (default) to **1 hour** by selecting the dropdown      |
+| Click the **Add another Provider** button to add the second BIG-IP appliance in your virtual lab environment. |
 |                                                                                                               |
-|    shown, click **Last 1 hour** then clicking **Apply**.                                                      |
+| Select the **BIG-IP** option for the provider type.                                                           |
 |                                                                                                               |
-| 6. Note the **End to end Latency** tile.  This shows the average latency for all requests to this load        |
+| Select the **udf** option for **Agent**.                                                                      |
 |                                                                                                               |
-|    balancer.                                                                                                  |
+| Select the **bigip** option for **Secret** *(the two BIG-IP's have been configured with the same password)*.  |
 |                                                                                                               |
-| .. note::                                                                                                     |
-|    *As you have not run many requests, summary analytics may not be available in the dashboard view yet.*     |
+| Click **Continue**.                                                                                           |
+|                                                                                                               |
+| Type **bigip2** for the **Provider Name** and type **https://10.1.1.7** for the **Provider URL**.             |
+|                                                                                                               |
 +---------------------------------------------------------------------------------------------------------------+
-| |lab018|                                                                                                      |
-|                                                                                                               |
-| |lab019|                                                                                                      |
+| .. image:: _static/PSAddProvider2.png                                                                         |
+|    :width: 800px                                                                                              |
 +---------------------------------------------------------------------------------------------------------------+
-
+| Click the **Test Connection** button and wait for the tests to complete successfully.                         |
 +---------------------------------------------------------------------------------------------------------------+
-| 7. Click the **Requests** link to see detailed information about individual requests.                         |
-|                                                                                                               |
-| 8. Note the **Chart** shows a graphical representation of all of the response codes for the selected time     |
-|                                                                                                               |
-|    frame.                                                                                                     |
-|                                                                                                               |
-| .. note::                                                                                                     |
-|    *This data can be filtered to quickly narrow in on points of interest.*                                    |
+| .. image:: _static/PSProviderTestConnection.png                                                               |
+|    :width: 800px                                                                                              |
 +---------------------------------------------------------------------------------------------------------------+
-| |lab020|                                                                                                      |
-|                                                                                                               |
-| |lab021|                                                                                                      |
+| Click the **Go to overview** link.                                                                            |
++---------------------------------------------------------------------------------------------------------------+
+| .. image:: _static/PSProviderList.png                                                                         |
+|    :width: 800px                                                                                              |
 +---------------------------------------------------------------------------------------------------------------+
 
-+---------------------------------------------------------------------------------------------------------------+
-| 9. Click the **Hide Chart** link to free up space in the browser window.                                      |
-|                                                                                                               |
-| 10. Expand one of the individual requests to view additional details about that request.                      |
-|                                                                                                               |
-| 11. Note the **Duration** section.  This shows the latency for this specific request.  These values can be    |
-|                                                                                                               |
-|     compared to the average latency data noted in step 6.                                                     |
-+---------------------------------------------------------------------------------------------------------------+
-| |lab022|                                                                                                      |
-|                                                                                                               |
-| |lab023|                                                                                                      |
-+---------------------------------------------------------------------------------------------------------------+
+Task 5: Ingest an existing BIG-IP WAF policy in **Policy Supervisor**
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Task 3: Configure an Application Firewall Policy to Protect the Application
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-The following steps will guide you through adding a Web Application Firewall (WAF) Policy.
-
-These steps will create a WAF Policy and apply the WAF policy to the load balancer created in Task 1.
+BIG-IP1 is already configured with a WAF policy attached to the **web_app** virtual server.
+Let's ingest this WAF policy into **Policy Supervisor**.
 
 +---------------------------------------------------------------------------------------------------------------+
-| 1. Following **Task 2**, you should have the **Multi-Cloud App Connect** navigation panel on the left of your |
-|                                                                                                               |
-|    console.  If for some reason you do not see the **Multi-Cloud App Connect** navigation panel, use the      |
-|                                                                                                               |
-|    **Select Service** dropdown at the top left, and click **Multi-Cloud App Connect** as shown in the         |
-|                                                                                                               |
-|    *Introduction section, Task 2, Step 9*.                                                                    |
-|                                                                                                               |
-| 2. In the left-hand navigation expand **Security** and click **App Firewall**.                                |
-|                                                                                                               |
-| 3. On the resulting page click **Add App Firewall**                                                           | 
+| Start from the **Providers Overview** page.                                                                   |
 +---------------------------------------------------------------------------------------------------------------+
-| |lab024|                                                                                                      |
-|                                                                                                               |
-| |lab025|                                                                                                      |
+| .. image:: _static/PSBIGIPProvider.png                                                                        |
+|    :width: 800px                                                                                              |
 +---------------------------------------------------------------------------------------------------------------+
-
+| Click to select **bigip1**, then click **Ingest Policies**.                                                   |
 +---------------------------------------------------------------------------------------------------------------+
-| 4. In the resulting window's **Metadata** section enter **<namespace>-appfw** for the **Name**.               |
-|                                                                                                               |
-| 5. Under **Enforcement Mode**, change the mode to **Blocking**.                                               |
-|                                                                                                               |
-| 6. Leaving all other values as default, scroll to the bottom and click **Save and Exit**.                     |
+| .. image:: _static/PSIngest.png                                                                               |
+|    :width: 800px                                                                                              |
 +---------------------------------------------------------------------------------------------------------------+
-| |lab026|                                                                                                      |
-|                                                                                                               |
-| |lab027|                                                                                                      |
+| Select the discovered policy (i.e., **My_ASM_Rapid…**) and click **Continue**.                                |
 +---------------------------------------------------------------------------------------------------------------+
-
+| .. image:: _static/PSIngest2.png                                                                              |
+|    :width: 800px                                                                                              |
 +---------------------------------------------------------------------------------------------------------------+
-| 7. In the left-hand navigation expand **Manage** and click **Load Balancers > HTTP Load Balancers**           |
-|                                                                                                               |
-| 8. On the resulting page find the HTTP Load Balancer created in **Task 1** *(<namespace>-lb)*.  Click the     |
-|                                                                                                               |
-|    ellipsis under Actions and select **Manage Configuration**.                                                |
+| Click **Next**.                                                                                               |
 +---------------------------------------------------------------------------------------------------------------+
-| |lab028|                                                                                                      |
-|                                                                                                               |
-| |lab029|                                                                                                      |
+| .. image:: _static/PSIngest2b.png                                                                             |
+|    :width: 800px                                                                                              |
 +---------------------------------------------------------------------------------------------------------------+
-
+| Type ``Ingest from bigip1`` for the required **commit message**,                                              |
+| click **Save & Ingest Policy**, then wait for the ingestion to complete successfully.                         |
 +---------------------------------------------------------------------------------------------------------------+
-| 9. On the resulting page click **Edit Configuration**.                                                        |
+| .. image:: _static/PSIngest3.png                                                                              |
+|    :width: 800px                                                                                              |
 |                                                                                                               |
-| 10. Click **Web Application Firewall** in the left-hand navigation.                                           |  
+| .. image:: _static/PSIngest4.png                                                                              |
+|    :width: 800px                                                                                              |
 +---------------------------------------------------------------------------------------------------------------+
-| |lab030|                                                                                                      |
-|                                                                                                               |
-| |lab031|                                                                                                      |
+| Click **Policies Overview**.                                                                                  |
 +---------------------------------------------------------------------------------------------------------------+
-
-
+| .. image:: _static/PSDeploy1.png                                                                              |
+|    :width: 800px                                                                                              |
+|                                                                                                               |
+| .. image:: _static/PSDeploy2.png                                                                              |
+|    :width: 800px                                                                                              |
 +---------------------------------------------------------------------------------------------------------------+
-| 11. Under the **Web Application Firewall** section select **Enable** from the **Web Application Firewall**    |
-|                                                                                                               |
-|     **(WAF)** dropdown.                                                                                       |
-|                                                                                                               |
-| 12. Select the Web Application Firewall name that you created in *Steps 1-6* of this task                     |
-|                                                                                                               |
-|     *(<namespace>-appfw)* from the **Enable** dropdown.                                                       |
-|                                                                                                               |
-| 13. Scroll to the bottom of the page and click **Save and Exit**                                              |
+| Select the policy then find and click on the **Deploy** button.                                               |
 +---------------------------------------------------------------------------------------------------------------+
-| |lab032|                                                                                                      |
-|                                                                                                               |
-| |lab033|                                                                                                      |
+| .. image:: _static/PSDeploy3.png                                                                              |
+|    :width: 800px                                                                                              |
 +---------------------------------------------------------------------------------------------------------------+
-
-Task 4. Test the Application Firewall and View Security Events
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-The following steps will test and validate the Web Application Firewall, review the Security
-
-Monitoring dashboard, and gather security event details.
-
+| Select the **bigip2** option from the **Provider** dropdown, type ``Deploy to bigip2`` in the mandatory commit|
+| message text box and click the **Conversion Summary** button.                                                 |
 +---------------------------------------------------------------------------------------------------------------+
-| 1. Open another tab in your browser (Chrome shown), navigate to the newly configured Load Balancer            |
-|                                                                                                               |
-|    configuration: **http://<namespace>.lab-sec.f5demos.com**, to confirm it is functional.                    |
-|                                                                                                               |
-| 2. Using some of the sample attacks below, add the URI path & variables to your application to generate       |
-|                                                                                                               |
-|    security event data.                                                                                       |
-|                                                                                                               |
-|    * /?cmd=cat%20/etc/passwd                                                                                  |
-|    * /product?id=4%20OR%201=1                                                                                 |
-|    * /cart?search=aaa'><script>prompt('Please+enter+your+password');</script>                                 |
-|                                                                                                               |
-| .. note::                                                                                                     |
-|    *The web application firewall is blocking these requests to protect the application. The block page can*   |
-|                                                                                                               |
-|    *be customized to provide additional information.*                                                         |
+| .. image:: _static/PSDeploy4.png                                                                              |
+|    :width: 800px                                                                                              |
 +---------------------------------------------------------------------------------------------------------------+
-| |lab034|                                                                                                      |
+| Wait for the Conversion Summary screen to appear.                                                             |
++---------------------------------------------------------------------------------------------------------------+
+| .. image:: _static/PSDeploy5.png                                                                              |
+|    :width: 800px                                                                                              |
++---------------------------------------------------------------------------------------------------------------+
+| Click the **Save & Continue** button.                                                                         |
++---------------------------------------------------------------------------------------------------------------+
+| .. image:: _static/PSDeploy6.png                                                                              |
+|    :width: 800px                                                                                              |
++---------------------------------------------------------------------------------------------------------------+
+| Click the **Continue Deployment** button on the *Conversion Report* screen that appears.                      |
++---------------------------------------------------------------------------------------------------------------+
+| .. image:: _static/PSDeploy7.png                                                                              |
+|    :width: 800px                                                                                              |
++---------------------------------------------------------------------------------------------------------------+
+| Select the **web_app** virtual server from the dropdown list and click the **Next** button.                   |
++---------------------------------------------------------------------------------------------------------------+
+| .. image:: _static/PSDeploy7b.png                                                                             |
+|    :width: 800px                                                                                              |
++---------------------------------------------------------------------------------------------------------------+
+| Click the **Deploy** button.                                                                                  |
++---------------------------------------------------------------------------------------------------------------+
+| .. image:: _static/PSDeploy8.png                                                                              |
+|    :width: 800px                                                                                              |
+|                                                                                                               |
+| .. image:: _static/PSDeploy9.png                                                                              |
+|    :width: 800px                                                                                              |
++---------------------------------------------------------------------------------------------------------------+
+| Wait for the deployment to successfully complete and click the **Back to Overview** button.                   |
++---------------------------------------------------------------------------------------------------------------+
+| .. image:: _static/PSDeploy10.png                                                                             |
+|    :width: 800px                                                                                              |
 +---------------------------------------------------------------------------------------------------------------+
 
-+---------------------------------------------------------------------------------------------------------------+
-| 3. Returning to the F5 Distributed Cloud Console, use the left-hand navigation to navigate to Multi-Cloud App |
-|                                                                                                               |
-|    Connect setion and expand **Virtual Hosts** and click on **HTTP Load Balancers**.                          |
-|                                                                                                               |
-| 4. Click on the **Security Monitoring** link for your respective load balancer.                               |
-+---------------------------------------------------------------------------------------------------------------+
-| |lab035|                                                                                                      |
-|                                                                                                               |
-| |lab036|                                                                                                      |
-+---------------------------------------------------------------------------------------------------------------+
+Task 6: Confirm successful deployment of the WAF policy on BIG-IP2
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. NOTE:: The password for the admin account on your BIG-IP appliances is set to **Canada123!**.
 
 +---------------------------------------------------------------------------------------------------------------+
-| 5. From the **Dashboard** view, using the horizontal navigation, click **Requests**.                          |
-|                                                                                                               |
-| 6. Note the **Chart** shows a graphical representation of all of the response codes for the selected time     |
-|                                                                                                               |
-|    frame.                                                                                                     |
-|                                                                                                               |
-| .. note::                                                                                                     |
-|    *If you lost your 1 Hour Filter, re-apply using Task 2: Step 5*                                            |
+| 1. Browse to https://udf.f5.com again and find the **Deployment** tab to see your virtual machines.           |
 +---------------------------------------------------------------------------------------------------------------+
-| |lab037|                                                                                                      |
-|                                                                                                               |
-| |lab038|                                                                                                      |
+| |lab006|                                                                                                      |
 +---------------------------------------------------------------------------------------------------------------+
-
+| 2. Find **bigip2** under F5 Products and click its **ACCESS** link to see a list of access options.           |
 +---------------------------------------------------------------------------------------------------------------+
-| 7. Click the **Hide Chart** link to free up space in the browser window.                                      |
-|                                                                                                               |
-| 8. Expand your latest security event as shown.                                                                |
-|                                                                                                               |
-| 9. Note the summary detail provided in the **Information** link.  The **req_id** which is synonymous with     |
-|                                                                                                               |
-|    **Support ID** (filterable) from the block page.                                                           |
-|                                                                                                               |
-| 10. Scroll to the bottom of the information screen to see specific signatures detected and actions taken      |
-|                                                                                                               |
-|     during the security event.                                                                                |
-|                                                                                                               |
-| .. note::                                                                                                     |
-|    *Note that Requests have additional detail in JSON format*                                                 |
+| .. image:: _static/UDFTMUI.png                                                                                |
+|    :width: 800px                                                                                              |
 +---------------------------------------------------------------------------------------------------------------+
-| |lab039|                                                                                                      |
+| 3. Select **TMUI** to access the **bigip2** machine's GUI management interface in a new browser tab.          |
++---------------------------------------------------------------------------------------------------------------+
+| .. image:: _static/TMUILogin.png                                                                              |
+|    :width: 800px                                                                                              |
++---------------------------------------------------------------------------------------------------------------+
+| 4. Login with username **admin** and password **Canada123!**, then click to the virtual servers list page.    |
++---------------------------------------------------------------------------------------------------------------+
+| .. image:: _static/TMUIVS.png                                                                                 |
+|    :width: 800px                                                                                              |
 |                                                                                                               |
-| |lab040|                                                                                                      |
-|                                                                                                               |
-| |lab041|                                                                                                      |
+| .. image:: _static/TMUIVS2.png                                                                                |
+|    :width: 800px                                                                                              |
++---------------------------------------------------------------------------------------------------------------+
+| 5. Click on the **web_app** name to view the virtual sever's properties page.                                 |
++---------------------------------------------------------------------------------------------------------------+
+| .. image:: _static/TMUIVS3.png                                                                                |
+|    :width: 800px                                                                                              |
++---------------------------------------------------------------------------------------------------------------+
+| 6. Browse to the virtual sever's **Security -> Policies** page.                                               |
++---------------------------------------------------------------------------------------------------------------+
+| .. image:: _static/TMUIVS4.png                                                                                |
+|    :width: 800px                                                                                              |
++---------------------------------------------------------------------------------------------------------------+
+| 7. Observe that the Application Security Policy (e.g., the WAF policy) is **Enabled**.                        |
 +---------------------------------------------------------------------------------------------------------------+
 
-+---------------------------------------------------------------------------------------------------------------+
-| **End of Lab 1:**  This concludes Lab 1.  In this lab you created an origin pool to connect to the            |
-|                                                                                                               |
-| application, you then created a load balancer and associated the origin pool to the load balancer.  This      |
-|                                                                                                               |
-| allowed the application to be advertised via the F5 Distributed Cloud Global Network.  The Distributed Cloud  |
-|                                                                                                               |
-| Console was then used to review telemetry data gathered for the application.  Next an Application Firewall    |
-|                                                                                                               |
-| policy was created and assigned to protect the application.  Finally a sample attack was run against the      |
-|                                                                                                               |
-| application and the security event data was reviewed within the Distributed Cloud Console.                    |
-|                                                                                                               |
-| A brief presentation will be shared prior to the beginning of Lab 2.                                          |
-+---------------------------------------------------------------------------------------------------------------+
-| |labend|                                                                                                      |
-+---------------------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------+
+| **WELL DONE!!!**                                                                                                     |
+|                                                                                                                      |
+| In the next lab we will deploy a WAF policy ingested from a BIG-IP appliance to an F5 Distributed Cloud WAF .        |
++----------------------------------------------------------------------------------------------------------------------+
+| |labbgn|                                                                                                             |
++----------------------------------------------------------------------------------------------------------------------+
 
-.. |lab001| image:: _static/lab1-001.png
+.. |lab001| image:: _static/image9.png
    :width: 800px
-.. |lab002| image:: _static/lab1-002.png
+.. |lab002| image:: _static/image17.png
    :width: 800px
-.. |lab003| image:: _static/lab1-003.png
+.. |lab003| image:: _static/image18.png
    :width: 800px
-.. |lab004| image:: _static/lab1-004.png
+.. |lab004| image:: _static/image19.png
    :width: 800px
-.. |lab005| image:: _static/lab1-005.png
+.. |lab006| image:: _static/UDFDeploymentTab.png
    :width: 800px
-.. |lab006| image:: _static/lab1-006.png
+.. |lab007| image:: _static/UDFWebShell.png
    :width: 800px
-.. |lab007| image:: _static/lab1-007.png
+.. |lab008| image:: _static/UDFWebShellCLI.png
    :width: 800px
-.. |lab008| image:: _static/lab1-008.png
+.. |lab009| image:: _static/install_agent.png
    :width: 800px
-.. |lab009| image:: _static/lab1-009.png
+.. |lab010| image:: _static/agentsetup.png
    :width: 800px
-.. |lab010| image:: _static/lab1-010.png
+.. |lab011| image:: _static/agentsecret.png
    :width: 800px
-.. |lab011| image:: _static/lab1-011.png
-   :width: 800px
-.. |lab012| image:: _static/lab1-012.png
-   :width: 800px
-.. |lab013| image:: _static/lab1-013.png
-   :width: 800px
-.. |lab014| image:: _static/lab1-014.png
-   :width: 800px
-.. |lab015| image:: _static/lab1-015.png
-   :width: 800px
-.. |lab016| image:: _static/lab1-016.png
-   :width: 800px
-.. |lab017| image:: _static/lab1-017.png
-   :width: 800px
-.. |lab018| image:: _static/lab1-018.png
-   :width: 800px
-.. |lab019| image:: _static/lab1-019.png
-   :width: 800px
-.. |lab020| image:: _static/lab1-020.png
-   :width: 800px
-.. |lab021| image:: _static/lab1-021.png
-   :width: 800px
-.. |lab022| image:: _static/lab1-022.png
-   :width: 800px
-.. |lab023| image:: _static/lab1-023.png
-   :width: 800px
-.. |lab024| image:: _static/lab1-024.png
-   :width: 800px
-.. |lab025| image:: _static/lab1-025.png
-   :width: 800px
-.. |lab026| image:: _static/lab1-026.png
-   :width: 800px
-.. |lab027| image:: _static/lab1-027.png
-   :width: 800px
-.. |lab028| image:: _static/lab1-028.png
-   :width: 800px
-.. |lab029| image:: _static/lab1-029.png
-   :width: 800px
-.. |lab030| image:: _static/lab1-030.png
-   :width: 800px
-.. |lab031| image:: _static/lab1-031.png
-   :width: 800px
-.. |lab032| image:: _static/lab1-032.png
-   :width: 800px
-.. |lab033| image:: _static/lab1-033.png
-   :width: 800px
-.. |lab034| image:: _static/lab1-034.png
-   :width: 800px
-.. |lab035| image:: _static/lab1-035.png
-   :width: 800px
-.. |lab036| image:: _static/lab1-036.png
-   :width: 800px
-.. |lab037| image:: _static/lab1-037.png
-   :width: 800px
-.. |lab038| image:: _static/lab1-038.png
-   :width: 800px
-.. |lab039| image:: _static/lab1-039.png
-   :width: 800px
-.. |lab040| image:: _static/lab1-040.png
-   :width: 800px
-.. |lab041| image:: _static/lab1-041.png
-   :width: 800px
-.. |labend| image:: _static/labend.png
+.. |labbgn| image:: _static/labbgn.png
    :width: 800px

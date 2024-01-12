@@ -1,134 +1,195 @@
-Introduction: Accessing F5 Distributed Cloud Console
-====================================================
+Introduction: F5 WAF **Policy Supervisor**
+==========================================
 
-Welcome to this F5 Distributed Cloud Lab. The following tasks will guide you through the initial 
-access requirements for this multi-part lab.  Lab attendees should have received an invitation 
-email to the lab environment based on the submitted registration email.  Please check email and
-spam folders if it has not been received.  If you have not received an email, please contact a 
+Welcome to this F5 WAF **Policy Supervisor** Lab. The following tasks will guide you through the initial 
+access requirements for this lab. Lab attendees should have already received an invitation 
+email to the lab environment based on the email address used during the registration process. Please check
+your email spam folders if it has not been received. If you have not received an email, please contact a 
 member of the lab team.
- 
-F5 Distributed Cloud Console where this lab will be conducted, is a SaaS control-plane for 
-services that provides a UI and API for managing network, security, and compute services. The F5
-Distributed Cloud Console can manage "sites" in existing on-premises data centers and sites in
-AWS, Azure, and GCP cloud environments.
 
-Task 1: Lab Environment
-~~~~~~~~~~~~~~~~~~~~~~~
+Task 1: Overview of the Lab Environment
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +----------------------------------------------------------------------------------------------+
-| The image below represents an overview of the lab environment. F5 Distributed Cloud Services |
+| The image below represents an overview of the lab environment, which is comprised of:        |
 |                                                                                              |
-| will be configured as a SaaS Edge delivery and security service tier to a publicly hosted web|
+| * F5 Unified Demo Framework (UDF) - *F5's dedicated Private Cloud for demos and labs*        |
+| * F5 Distributed Cloud Console - *F5 Public Cloud SaaS offerings*                            |
+| * F5 Policy Supervisor Console - *F5 WAF Policy Supervisor Service*                          |
 |                                                                                              |
-| application. Key elements lab attendees will interact with are as follows:                   |
-|                                                                                              |
-| * **F5 Distributed Cloud Console**                                                           |
-| * **F5 Distributed Cloud Global Network / Application Delivery Network (ADN)**               |
-| * **Publicly hosted application (Public Cloud)**                                             |
 +----------------------------------------------------------------------------------------------+
 | |intro001|                                                                                   |
 +----------------------------------------------------------------------------------------------+
 
-Task 2: F5 Distributed Cloud Console Login
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Task 2: Accessing the UDF Virtual Lab Environment
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The following will guide you through the initial Lab environment access within the 
-F5 Distributed Cloud Console.  You should have received an email with an invitation to 
-access a F5 Distributed Cloud Tenant. The email will come from **no-reply@cloud.f5.com**.
+This is a multi-step process that will involve:
 
-The name of the F5 Distributed Cloud tenant that we will be using is **f5-xc-lab-sec**
-Additionally, the following are important elements of this lab and will be used throughout the 
-lab tasks that follow.
-
-* F5 Distributed Cloud Console: **https://f5-xc-lab-sec.console.ves.volterra.io/**
-* Delegated Domain: **lab-sec.f5demos.com**
-
-After following the invitation email's to **Update Password**, proceed to the first step below. 
+1. Finding your invitation email for this UDF lab
+2. Creating your F5 UDF account (If you don't have one already)
+3. Setting up MFA for your F5 UDF account (If you haven't already)
+4. Signing into the UDF lab environment
 
 +----------------------------------------------------------------------------------------------+
-| 1. Please log into F5 Distributed Cloud Lab Tenant with your user ID (email) and password.   |
-|                                                                                              |
-|    **https://f5-xc-lab-sec.console.ves.volterra.io/**                                        |
-|                                                                                              |
-| 2. When you first login, accept the Lab tenant EULA. Click the check box and the click       |
-|                                                                                              |
-|    **Accept and Agree**.                                                                     |
-|                                                                                              |
-| 3. Select all persona roles and click **Next** to see all the various configuration options. |
-|                                                                                              |
-|    Personas can be changed anytime if desired.                                               |
-|                                                                                              |
-| 4. Click **Advanced** to expose more menu options and the **Get Started** to begin. You can  |
-|                                                                                              |
-|    change this setting after logging in as well.                                             |
-|                                                                                              |
-| 5. Several **Guidance ToolTips** will appear, you can safely close these out.                |
+| Locate your UDF Course Registration email from F5 <courses@notify.udf.f5.com>.               |
 +----------------------------------------------------------------------------------------------+
-| |intro002|                                                                                   |
+| .. image:: _static/email-invite.png                                                          |
+|   :width: 800px                                                                              |
++----------------------------------------------------------------------------------------------+
+| Click on the link below **You can login to the UDF here** (link is unique for each account). |
 |                                                                                              |
-| |intro003|                                                                                   |
+| If you do not already have an F5 account you, will be prompted to create one.                |
++----------------------------------------------------------------------------------------------+
+| .. image:: _static/create-account.png                                                        |
+|    :width: 400px                                                                             |
++----------------------------------------------------------------------------------------------+
+| You should then receive a new email to activate your account.                                |
++----------------------------------------------------------------------------------------------+
+| .. image:: _static/activate-account.png                                                      |
+|    :width: 800px                                                                             |
++----------------------------------------------------------------------------------------------+
+| After you click on **Activate Account**, you should see the following screen.                |
++----------------------------------------------------------------------------------------------+
+| .. image:: _static/account-activated.png                                                     |
+|    :width: 400px                                                                             |
++----------------------------------------------------------------------------------------------+
+| Click **Log in to continue** (https://udf.f5.com).                                           |
++----------------------------------------------------------------------------------------------+
+| .. image:: _static/udf-login.png                                                             |
+|    :width: 400px                                                                             |
++----------------------------------------------------------------------------------------------+
+| Click on **Invited Users**.                                                                  |
 |                                                                                              |
-| |intro004|                                                                                   |
+| You will now be prompted to set up MFA access to the lab environment (mandatory).            |
++----------------------------------------------------------------------------------------------+
+| .. image:: _static/mfa-setup.png                                                             |
+|    :width: 400px                                                                             |
++----------------------------------------------------------------------------------------------+
+| Click **Finish** to complete the account setup and click **-> LAUNCH** now.                  |
+| (it takes several minutes for the lab virtual machines to deploy and start).                 |
++----------------------------------------------------------------------------------------------+
+| .. image:: _static/launch-course.png                                                         |
+|    :width: 800px                                                                             |
++----------------------------------------------------------------------------------------------+
+
+Task 3: Setup new credentials for the F5 Distributed Cloud Console
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 
+F5 Distributed Cloud Console is a SaaS control-plane for 
+services that provides a UI and API for managing network, security, and compute services. The F5
+Distributed Cloud Console can manage *sites* in existing on-premises data centers and sites in
+AWS, Azure, and GCP cloud environments.
+
+The following steps will guide you through the initial Lab environment access within the 
+F5 Distributed Cloud Console. 
+
+.. NOTE:: 
+   If you already have access to the F5 Distributed Cloud, try using your existing 
+   credentials for login to the F5 **Policy Supervisor** console.
+   If you do not already have workihg credentails, you must wait for an email from 
+   **F5 Distributed Cloud <no-reply@cloud.f5.com>**, which should be delivered to your email
+   inbox a few minutes after initial launch of this course in UDF.
+
+.. warning:: If you have not received the email to change your credentials or ran into problems changing your credentials, please stop and get help from one of the Lab Assistants.
+
++----------------------------------------------------------------------------------------------+
+| Locate the **Update Your Account** email sent to you from                                    |
+| *F5 Distributed Cloud <no-reply@cloud.f5.com>* and click the **Update Password** button/link |
+| in that email to set your credentials.                                                       |
++----------------------------------------------------------------------------------------------+
+| .. image:: _static/updatepasswdemail.png                                                     |
+|    :width: 800px                                                                             |
++----------------------------------------------------------------------------------------------+
+| Ensure you adhere to the password strength restrictions and make a mental note of these      |
+| credentials as you will need them several times throughout this lab today.                   |
+| *For this exercise, feel free to use the same password that was configured for you on*       |
+| *the two BIG-IP appliances of your UDF virtual lab environment* (**Canada123!**).            |
++----------------------------------------------------------------------------------------------+
+| |PSUpdatePassword|                                                                           |
++----------------------------------------------------------------------------------------------+
+| Once you've set your new password (*including 1 upper, 1 lower and 1 special character*),    |
+| you will be prompted to **Log In** (click the button to login):                              |
++----------------------------------------------------------------------------------------------+
+| .. image:: _static/PSPasswordUpdated.png                                                     |
+|    :width: 800px                                                                             |
++----------------------------------------------------------------------------------------------+
+| In the domain field, enter: **f5-xc-lab-mcn**, click **Next** and sign in with your email    |
+| address and password you've just set (i.e, **Canada123!**), and proceed to accepting the     |
+| Terms and Conditions.                                                                        |
++----------------------------------------------------------------------------------------------+
+| .. image:: _static/tenantlogin.png                                                           |
+|    :width: 800px                                                                             |
++----------------------------------------------------------------------------------------------+
+| Put a checmark in the box and click to **Accept and Agree**.                                 |
++----------------------------------------------------------------------------------------------+
+| .. image:: _static/PSTsandCs.png                                                             |
+|    :width: 800px                                                                             |
++----------------------------------------------------------------------------------------------+
+
+Optional: Logging into the F5 Distributed Cloud Console
+-------------------------------------------------------
+
++----------------------------------------------------------------------------------------------+
+| Upon the first successful login, you are prompted to select your *Persona*.                  |
++----------------------------------------------------------------------------------------------+
+| .. image:: _static/PSPersona.png                                                             |
+|    :width: 800px                                                                             |
++----------------------------------------------------------------------------------------------+
+| Put a checkmark to select **NetOps** for your persona and click **next**.                    |
++----------------------------------------------------------------------------------------------+
+| .. image:: _static/PSLevel.png                                                               |
+|    :width: 800px                                                                             |
++----------------------------------------------------------------------------------------------+
+| Select **Intermediate** for your *level* and then click **Get Started**.                     |
++----------------------------------------------------------------------------------------------+
+| Your persona will highlight workflows within F5 Distributed Cloud.                           |
+| You will be able to access all services, but making use of personas can focus your view on   |
+| particular tasks that are relevant to your role.                                             |
 |                                                                                              |
-| |intro005|                                                                                   |
+| *For informational purposes only:*  You can change these settings at any time.               |
++----------------------------------------------------------------------------------------------+
+| .. image:: _static/intro1.png                                                                |
+|    :width: 800px                                                                             |
++----------------------------------------------------------------------------------------------+
+| Click on your *Account* icon in the top right of the screen and then click on                | 
+| **Account Settings**.                                                                        |
+| In the resulting window you can observe the **Work domains and skill level** section and     |
+| other administrative functions.                                                              |
++----------------------------------------------------------------------------------------------+
+| .. image:: _static/intro2.png                                                                |
+|    :width: 800px                                                                             |
++----------------------------------------------------------------------------------------------+
+| In the resulting window you can observe the **Work domains and skill level** section and     |
+| other administrative functions.                                                              |
++----------------------------------------------------------------------------------------------+
+.. note:: *For the purposes of this lab, permissions on your ephemeral account have been restricted to lab operations. Some menus/functions will be locked and/or not visible.*
+
+Task 4: Accessing the F5 **Policy Supervisor** Console
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The same credentials for the **f5-xc-lab-mcn** tenant in the F5 Distributed Cloud Console can
+be used to access the F5 **Policy Supervisor** console if you don't already have access.
+
++----------------------------------------------------------------------------------------------+
+| Browse to https://policysupervisor.io.                                                       |
++----------------------------------------------------------------------------------------------+
+| |intro010|                                                                                   |
++----------------------------------------------------------------------------------------------+
+| Click on **Sign In with Azure AD**.                                                          |
++----------------------------------------------------------------------------------------------+
+| |intro011|                                                                                   |
++----------------------------------------------------------------------------------------------+
+| If prompted, click on **Work or shcool account** and proceed to login with the same          |
+| credentials configured in Task 3 above.                                                      |
++----------------------------------------------------------------------------------------------+
+| .. image:: _static/image9.png                                                                |
+|    :width: 800px                                                                             |
++----------------------------------------------------------------------------------------------+
+| The **Policy Supervisor** console opens on the **Providers** page upon successful login.     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 6. You can adjust your work domains and skill level (not required) by clicking on the        |
-|                                                                                              |
-|    **Account** icon in the top right of the screen and then clicking on **Account Settings**.|
-|                                                                                              |
-| 7. In the resulting window you can observe the **Work domains and skill level** section and  |
-|                                                                                              |
-|    other administrative functions.                                                           |
-|                                                                                              |
-| .. note::                                                                                    |
-|    *For the purposes of this lab, permissions have been restricted to lab operations.  As a* |
-|                                                                                              |
-|    *some menus will be locked and not visible.*                                              |
-+----------------------------------------------------------------------------------------------+
-| |intro006|                                                                                   |
-|                                                                                              |
-| |intro007|                                                                                   |
-+----------------------------------------------------------------------------------------------+
-
-+----------------------------------------------------------------------------------------------+
-| 8. Namespaces, which provide an environment for isolating configured applications or         |
-|                                                                                              |
-|    enforcing role-based access controls, are leveraged within the F5 Distributed Cloud       |
-|                                                                                              |
-|    Console.  For the purposes of this lab, each lab attendee has been provided a unique      |
-|                                                                                              |
-|    **namespace** which you will defaulted to (in terms of GUI navigation) for all tasks      |
-|                                                                                              |
-|    performed through the course of this lab.                                                 |
-|                                                                                              |
-| 9. Click on the **Select Service** in the left-hand navigation. In the resulting fly out     |
-|                                                                                              |
-|    navigation, click **Web App & API Protection**.                                           |
-|                                                                                              |
-| 10. In the **Web App & API Protection** configuration screen observe the URL. In the URI     |
-|                                                                                              |
-|     path, locate the **<adjective-animal>** namespace that you have been assigned. It will be|
-|                                                                                              |
-|     located in the portion of the URI path between */namespaces/* and */overview/* as shown  |
-|                                                                                              |
-|     in this example **…/namespaces/<namespace>/overview/…**. Note the namespace as it will   |
-|                                                                                              |
-|     be used throughout the lab tasks that follow.                                            |
-|                                                                                              |
-| .. note::                                                                                    |
-|    *Administratively, there are other ways to find namespaces. Due to access and permission* |
-|                                                                                              |
-|    *restrictions for this particular lab, those menus are not available.*                    |
-+----------------------------------------------------------------------------------------------+
-| |intro008|                                                                                   |
-|                                                                                              |
-| |intro009|                                                                                   |
-+----------------------------------------------------------------------------------------------+
-
-+----------------------------------------------------------------------------------------------+
-| **Beginning of Lab:**  You are now ready to begin the lab, Enjoy! Ask questions as needed.   |
+| **Let's begin!** You are now ready to begin the lab. Enjoy! Ask questions as needed.         |
 +----------------------------------------------------------------------------------------------+
 | |labbgn|                                                                                     |
 +----------------------------------------------------------------------------------------------+
@@ -151,5 +212,11 @@ After following the invitation email's to **Update Password**, proceed to the fi
    :width: 800px
 .. |intro009| image:: _static/intro-009.png
    :width: 800px
+.. |intro010| image:: _static/PSLoginWindow.png
+   :width: 800px
+.. |intro011| image:: _static/AzureADLogin.png
+   :width: 800px
 .. |labbgn| image:: _static/labbgn.png
    :width: 800px
+.. |PSUpdatePassword| image:: _static/PSUpdatePassword.png
+      :width: 800px
