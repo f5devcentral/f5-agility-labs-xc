@@ -115,8 +115,7 @@ version control features.
 #. For the next series of steps, to download the JSON/OpenAPI spec file **app-api-v1.json**
    **app-api-v1.json** to your local desktop or workspace.
 
-   Link::
-      http://petapi.cloud.myf5demo.com/lab/app-api-v1.json
+   http://petapi.cloud.myf5demo.com/lab/app-api-v1.json
 
 #. In the left top click the F5 ball and navigate to the **Web App & API Protection** Tile.
 
@@ -150,11 +149,10 @@ version control features.
 
    |lab1-task2-005|
 
-#. For the next step, use the following link, to download the JSON/OpenAPI spec file
+#. **(Extra Credit Steps 9 - 16)** For the next step, use the following link, to download the JSON/OpenAPI spec file
    **app-api-v2.json** to your local desktop or workspace.
 
-   Link::
-    http://petapi.cloud.myf5demo.com/lab/app-api-v2.json
+   http://petapi.cloud.myf5demo.com/lab/app-api-v2.json
 
    .. note::
       *This is a modified version (v2) of the JSON/OpenAPI spec file you previously downloaded*
@@ -294,6 +292,7 @@ previously built Load Balancer object delivering the targeted application/API.
    **<namespace>.lab-sec.f5demos.com** load balancer name.
 
    |class4-shared-005|
+
    |class4-shared-006|
 
 #. Click on **Security Analytics**, observe the event. Expand event details by clicking on the **right arrow**.
