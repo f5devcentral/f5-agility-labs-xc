@@ -93,6 +93,24 @@ previously built Load Balancer object delivering the targeted application/API.
 
    |lab2-task1-014|
 
+#. Select **Security Dashboard** within the XC tab, scroll down and click on the
+   **<namespace>.lab-sec.f5demos.com** load balancer name.
+
+   |class4-shared-005|
+   |class4-shared-006|
+
+#. Click on **Security Analytics**, observe the event. Expand event details by clicking on the **right arrow**.
+   Events with the response code of **403** will be present.
+
+   .. note::
+      *Change time to 1 hour, and make sure the page has been refreshed*
+
+   |class4-shared-007|
+
+   .. note::
+      *Detection information will be near the bottom of the event detail.
+      api_sec_event will be listed with details regarding "api protection."*
+
 Task 2: Attach API Rate Limiting to Load Balancer Object
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -156,6 +174,24 @@ previously built Load Balancer object delivering the targeted application/API.
 
    |lab2-task2-010|
 
+#. Select **Security Dashboard** within the XC tab, scroll down and click on the
+   **<namespace>.lab-sec.f5demos.com** load balancer name.
+
+   |class4-shared-005|
+   |class4-shared-006|
+
+#. Click on **Security Analytics**, observe the event. Expand event details by clicking on the **right arrow**.
+   Events with the response code of **429** will be present.
+
+   .. note::
+      *Change time to 1 hour, and make sure the page has been refreshed*
+
+   |class4-shared-007|
+
+   .. note::
+      *Detection information will be near the bottom of the event detail.
+      api_sec_event will be listed with details regarding "rate limiting."*
+
 This configuration highlights the elements needed to deploy API Discovery & Protection. This
 configuration can also be fully deployed and managed via the F5 Distributed Cloud API.
 
@@ -170,6 +206,12 @@ configuration can also be fully deployed and managed via the F5 Distributed Clou
 .. |class4-shared-003| image:: _static/class4-shared-003.png
    :width: 800px
 .. |class4-shared-004| image:: _static/class4-shared-004.png
+   :width: 800px
+.. |class4-shared-005| image:: _static/class4-shared-005.png
+   :width: 800px
+.. |class4-shared-006| image:: _static/class4-shared-006.png
+   :width: 800px
+.. |class4-shared-007| image:: _static/class4-shared-007.png
    :width: 800px
 .. |lab2-task1-001| image:: _static/lab2-task1-001.png
    :width: 800px

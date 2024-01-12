@@ -290,6 +290,25 @@ previously built Load Balancer object delivering the targeted application/API.
       *This request was blocked due to the uploaded swagger defining the
       parameter type as "integer" for this endpoint.*
 
+#. Select **Security Dashboard** within the XC tab, scroll down and click on the
+   **<namespace>.lab-sec.f5demos.com** load balancer name.
+
+   |class4-shared-005|
+   |class4-shared-006|
+
+#. Click on **Security Analytics**, observe the event. Expand event details by clicking on the **right arrow**.
+   Events with the response code of **403** will be present.
+
+   .. note::
+      *Change time to 1 hour, and make sure the page has been refreshed*
+
+   |class4-shared-007|
+
+   .. note::
+      *Detection information will be near the bottom of the event detail.
+      api_sec_event will be listed with the following detail,
+      "Request Query Parameter Violation, an invalid integer".*
+
 **End of Lab 1:**  This concludes Lab 1, feel free to review and test the configuration.
 A brief presentation and demo will be shared prior to the beginning of Lab 2.
 
@@ -303,6 +322,12 @@ A brief presentation and demo will be shared prior to the beginning of Lab 2.
 .. |class4-shared-003| image:: _static/class4-shared-003.png
    :width: 800px
 .. |class4-shared-004| image:: _static/class4-shared-004.png
+   :width: 800px
+.. |class4-shared-005| image:: _static/class4-shared-005.png
+   :width: 800px
+.. |class4-shared-006| image:: _static/class4-shared-006.png
+   :width: 800px
+.. |class4-shared-007| image:: _static/class4-shared-007.png
    :width: 800px
 .. |lab1-task1-001| image:: _static/lab1-task1-001.png
    :width: 800px
