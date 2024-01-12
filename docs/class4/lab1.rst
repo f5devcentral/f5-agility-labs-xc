@@ -113,7 +113,7 @@ In this task's series of steps you will import swagger files into the F5 Distrib
 version control features.
 
 #. For the next series of steps, to download the JSON/OpenAPI spec file **app-api-v1.json**
-   **app-api-v1.json** to your local desktop or workspace.
+   to your local desktop or workspace.
 
    http://petapi.cloud.myf5demo.com/lab/app-api-v1.json
 
