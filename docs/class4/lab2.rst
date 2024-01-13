@@ -97,6 +97,7 @@ previously built Load Balancer object delivering the targeted application/API.
    **<namespace>.lab-sec.f5demos.com** load balancer name.
 
    |class4-shared-005|
+
    |class4-shared-006|
 
 #. Click on **Security Analytics**, observe the event. Expand event details by clicking on the **right arrow**.
@@ -178,6 +179,7 @@ previously built Load Balancer object delivering the targeted application/API.
    **<namespace>.lab-sec.f5demos.com** load balancer name.
 
    |class4-shared-005|
+
    |class4-shared-006|
 
 #. Click on **Security Analytics**, observe the event. Expand event details by clicking on the **right arrow**.

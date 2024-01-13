@@ -79,7 +79,7 @@ Cloud Console.
 
    |lab009|
 
-**Task 1: Optional Advanced Topics**
+#. **Optional Advanced Topic**
 
    Signature based Bot detection can be easily bypassed. By simply presenting a
    less suspicious user-agent string, a threat actor can easily bypass the
@@ -132,29 +132,31 @@ and understand its implementation.
 
    **Task 2: Optional Advanced Topics - Part 1**
 
-      Let’s explore how an attacker could perform credential stuffing attacks by
-      using the curl command: 
+   Let’s explore how an attacker could perform credential stuffing attacks by
+   using the curl command:
 
-      ``curl -v 'http://<namespace>.lab-sec.f5demos.com/auth.php'
-      -H 'Content-Type: application/x-www-form-urlencoded'
-      --user-agent 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.2.1 Safari/605.1.15'
-      --data-raw 'identity=user%40f5.com&token=password&submit=Submit'``
+   ``curl -v 'http://<namespace>.lab-sec.f5demos.com/auth.php'
+   -H 'Content-Type: application/x-www-form-urlencoded'
+   --user-agent 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.2.1 Safari/605.1.15'
+   --data-raw 'identity=user%40f5.com&token=password&submit=Submit'``
 
-      For this application, a successful logon will have a 302 response to the
-      location ./data.php?page=data
+   For this application, a successful logon will have a 302 response to the
+   location ./data.php?page=data
 
-      If we try an invalid password (password2 instead of password) for the same
-      request, we will also get a 302 response to the location
-      ./index.php?page=access&err=02
+   If we try an invalid password (password2 instead of password) for the same
+   request, we will also get a 302 response to the location
+   ./index.php?page=access&err=02
 
-      With this knowledge, we could use curl to perform a credential stuffing
-      attack and potentially avoid detection.
+   With this knowledge, we could use curl to perform a credential stuffing
+   attack and potentially avoid detection.
 
-      |lab013a|
-      *Note the return location of a successful logon above*
+   |lab013a|
 
-      |lab013b|
-      *Note the return location of a failed logon above*
+   *Note the return location of a successful logon above*
+
+   |lab013b|
+
+   *Note the return location of a failed logon above*
 
 #. Return to the Load Balancer in the F5 Distributed Cloud Console, **Manage >
    Load Balancer > HTTP Load Balancers** and use the **Action Dots** and
@@ -223,7 +225,7 @@ and understand its implementation.
 
    |lab027|
 
-**Task 2: Optional Advanced Topics - Part 2**
+   **Task 2: Optional Advanced Topics - Part 2**
 
    Will F5 Distributed Cloud Bot Defense will prevent curl initiated logon
    requests and its ability to perform credential stuffing attacks. Let’s find
@@ -247,7 +249,7 @@ and understand its implementation.
 configuration. A brief presentation will be shared prior to the beginning of
 Lab 3.
 
-   |labend|
+|labend|
 
 .. |lab001| image:: _static/lab2-001.png
    :width: 800px

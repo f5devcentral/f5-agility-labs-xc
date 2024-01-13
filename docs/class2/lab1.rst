@@ -203,7 +203,7 @@ configuration.
    Load Balancer configuration. This can be used for backup or subsequent
    CI/CD automation operations.
 
-  |lab020|
+   |lab020|
 
 
 
@@ -218,7 +218,7 @@ configuration.
 
 #. Click **Cancel and Exit** to return to the **HTTP Load Balancers** screen.
 
-  |lab021|
+   |lab021|
 
 
 Task 3: Testing the WAF Policy & Reviewing Event Data
@@ -264,7 +264,7 @@ configuration changes.
 
 #. Scroll to the bottom and select your load balancer.
 
-  |lab026|
+   |lab026|
 
 #. From the **Performance Dashboard** view, using the horizontal navigation,
    click **Requests**.
@@ -272,7 +272,7 @@ configuration changes.
 #. Change the viewable time period from 5 minutes (default) to **1 hour** by
    selecting the dropdown shown, click **Last 1 hour** then clicking **Apply**.
 
-  |lab027|
+   |lab027|
 
    .. note::
       *Security Event data may take 15-20 seconds to populate in the Console. Please force a*
@@ -393,12 +393,10 @@ configuration changes.
 
 #. Select **Create WAF Exclusion rule** from the dropdown that appears.
 
-  |lab043|
-
+   |lab043|
 
    .. note::
       *Adding requestor/client to "Blocked or Trusted Clients" is also available.*
-
 
 #. In the subsequent **Simple WAF Exclusion Rule** window, review the settings
    (which are editable) by scrolling through the window.  The values have been
@@ -521,7 +519,7 @@ configuration.
 
 A brief presentation will be shared prior to the beginning of Lab 2.
 
-    |labend|
+|labend|
 
 
 .. |lab001| image:: _static/lab1-001.png
