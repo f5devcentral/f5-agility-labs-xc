@@ -20,13 +20,13 @@ This lab will begin back in the Windows 10 client deployed as part of the UDF.
 |                                                                                                               |
 |    click on **Create App Firewall**, click on **Body**, and review the raw JSON content.                      |
 |                                                                                                               |
+| |lab2-Postman_AppFW_Body|                                                                                     |
++---------------------------------------------------------------------------------------------------------------+
 | 2. Click **Send** to POST the JSON to the Distributed Cloud API.                                              |
 |                                                                                                               |
-| 3. Review the results in the **Body** section of Postman. You should see a 200 OK response code.              |
-+---------------------------------------------------------------------------------------------------------------+
-| |lab2-Postman_AppFW_Body|                                                                                     |
-|                                                                                                               |
 | |lab2-Postman_AppFW_Send|                                                                                     |
++---------------------------------------------------------------------------------------------------------------+
+| 3. Review the results in the **Body** section of Postman. You should see a 200 OK response code.              |
 |                                                                                                               |
 | |lab2-Postman_AppFW_Results|                                                                                  |
 +---------------------------------------------------------------------------------------------------------------+
@@ -36,32 +36,32 @@ This lab will begin back in the Windows 10 client deployed as part of the UDF.
 |                                                                                                               |
 |    and review the raw JSON content.                                                                           |
 |                                                                                                               |
+| |lab2-Postman_LB_AppFW_Body|                                                                                  |
++---------------------------------------------------------------------------------------------------------------+
 | 5. Click **Send** to PUT the JSON to the Distributed Cloud API.                                               |
 |                                                                                                               |
+| |lab2-Postman_LB_AppFW_Send|                                                                                  |
++---------------------------------------------------------------------------------------------------------------+
 | 6. Review the results in the **Body** section of Postman. You should see a 200 OK response code.              |
+|                                                                                                               |
+| |lab2-Postman_LB_AppFW_Results|                                                                               |
 |                                                                                                               |
 | .. note::                                                                                                     |
 |    *Since you are modifying an existing object, you use the PUT method here instead of the POST method.*      |
-+---------------------------------------------------------------------------------------------------------------+
-| |lab2-Postman_LB_AppFW_Body|                                                                                  |
-|                                                                                                               |
-| |lab2-Postman_LB_AppFW_Send|                                                                                  |
-|                                                                                                               |
-| |lab2-Postman_LB_AppFW_Results|                                                                               |
 +---------------------------------------------------------------------------------------------------------------+
 
 +---------------------------------------------------------------------------------------------------------------+
 | 7. From the Windows 10 client deployed as part of the UDF, open Chrome.                                       |
 |                                                                                                               |
+| |lab1-Chrome|                                                                                                 |
++---------------------------------------------------------------------------------------------------------------+
 | 8. Click on the **XC Console** bookmark to be taken to the XC Console login.                                  |
 |                                                                                                               |
+| |lab1-XC_Bookmark|                                                                                            |
++---------------------------------------------------------------------------------------------------------------+
 | 9. Enter your e-mail address in the **Email** form and password in the **Password** form and click **Sign**   |
 |                                                                                                               |
 |    **In**.                                                                                                    |
-+---------------------------------------------------------------------------------------------------------------+
-| |lab1-Chrome|                                                                                                 |
-|                                                                                                               |
-| |lab1-XC_Bookmark|                                                                                            |
 |                                                                                                               |
 | |lab1-XC_Signin|                                                                                              |
 +---------------------------------------------------------------------------------------------------------------+
@@ -69,19 +69,29 @@ This lab will begin back in the Windows 10 client deployed as part of the UDF.
 +---------------------------------------------------------------------------------------------------------------+
 | 10. Within the Distributed Cloud dashboard select the **Multi-Cloud App Connect** tile.                       |
 |                                                                                                               |
+| |lab1-XC_App_Connect|                                                                                         |
++---------------------------------------------------------------------------------------------------------------+
 | 11. In the resulting screen, expand the **Manage** menu and click **Load Balancers** and then select          |
 |                                                                                                               |
 |     *HTTP Load Balancers**.                                                                                   |
 |                                                                                                               |
+| |lab1-XC_LB|                                                                                                  |
++---------------------------------------------------------------------------------------------------------------+
 | 12. From the HTTP Load Balancers page, locate the HTTP Load Balancer that you created via Postman.  Click the |
 |                                                                                                               |
 |     **ellipsis** under **Actions** and select **Manage Configuration**.                                       |
 |                                                                                                               |
+| |lab1-XC_LB_Manage|                                                                                           |
++---------------------------------------------------------------------------------------------------------------+
 | 13. From the resulting screen, review the HTTP Load Balancer configuration data and then click **JSON**.      |
 |                                                                                                               |
+| |lab1-XC_LB_JSON|                                                                                             |
++---------------------------------------------------------------------------------------------------------------+
 | 14. Review the resulting JSON data.  The **app_firewall** section matches JSON from the body section of       |
 |                                                                                                               |
 |     Postman PUT that added the Web Application Firewall to the HTTP Load Balancer.                            |
+|                                                                                                               |
+| |lab2-XC_LB_AppFW_JSON_Data|                                                                                  |
 |                                                                                                               |
 | .. note::                                                                                                     |
 |    *There may be slight variations in the JSON because you don't need to post default values when calling the*|
@@ -90,16 +100,9 @@ This lab will begin back in the Windows 10 client deployed as part of the UDF.
 |                                                                                                               |
 |    *configure a test object via the GUI and then use this JSON tab to get the corresponding JSON config.*     |
 +---------------------------------------------------------------------------------------------------------------+
-| |lab1-XC_App_Connect|                                                                                         |
-|                                                                                                               |
-| |lab1-XC_LB|                                                                                                  |
-|                                                                                                               |
-| |lab1-XC_LB_Manage|                                                                                           |
-|                                                                                                               |
-| |lab1-XC_LB_JSON|                                                                                             |
-|                                                                                                               |
-| |lab2-XC_LB_AppFW_JSON_Data|                                                                                  |
+| 15. Click **Cancel and Exit** to close out the Load Balancer configuration.                                   |
 +---------------------------------------------------------------------------------------------------------------+
+
 
 Task 2: Create & Attach a Service Policy  
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -111,13 +114,13 @@ application. Postman will then be used to attach the Service Policy to the HTTP 
 |                                                                                                               |
 |    click on **Create Service Policy**, click on **Body**, and review the raw JSON content.                    |
 |                                                                                                               |
+| |lab2-Postman_SP_Body|                                                                                        |
++---------------------------------------------------------------------------------------------------------------+
 | 2. Click **Send** to POST the JSON to the Distributed Cloud API.                                              |
 |                                                                                                               |
-| 3. Review the results in the **Body** section of Postman. You should see a 200 OK response code.              |
-+---------------------------------------------------------------------------------------------------------------+
-| |lab2-Postman_SP_Body|                                                                                        |
-|                                                                                                               |
 | |lab2-Postman_SP_Send|                                                                                        |
++---------------------------------------------------------------------------------------------------------------+
+| 3. Review the results in the **Body** section of Postman. You should see a 200 OK response code.              |
 |                                                                                                               |
 | |lab2-Postman_SP_Results|                                                                                     |
 +---------------------------------------------------------------------------------------------------------------+
@@ -127,32 +130,32 @@ application. Postman will then be used to attach the Service Policy to the HTTP 
 |                                                                                                               |
 |    **Body**, and review the raw JSON content.                                                                 |
 |                                                                                                               |
+| |lab2-Postman_LB_SP_Body|                                                                                     |
++---------------------------------------------------------------------------------------------------------------+
 | 5. Click **Send** to PUT the JSON to the Distributed Cloud API.                                               |
 |                                                                                                               |
+| |lab2-Postman_LB_SP_Send|                                                                                     |
++---------------------------------------------------------------------------------------------------------------+
 | 6. Review the results in the **Body** section of Postman. You should see a 200 OK response code.              |
+|                                                                                                               |
+| |lab2-Postman_LB_SP_Results|                                                                                  |
 |                                                                                                               |
 | .. note::                                                                                                     |
 |    *Since you are modifying an existing object, you use the PUT method here instead of the POST method.*      |
-+---------------------------------------------------------------------------------------------------------------+
-| |lab2-Postman_LB_SP_Body|                                                                                     |
-|                                                                                                               |
-| |lab2-Postman_LB_SP_Send|                                                                                     |
-|                                                                                                               |
-| |lab2-Postman_LB_SP_Results|                                                                                  |
 +---------------------------------------------------------------------------------------------------------------+
 
 +---------------------------------------------------------------------------------------------------------------+
 | 7. From the Windows 10 client deployed as part of the UDF, open Chrome.                                       |
 |                                                                                                               |
+| |lab1-Chrome|                                                                                                 |
++---------------------------------------------------------------------------------------------------------------+
 | 8. Click on the **XC Console** bookmark to be taken to the XC Console login.                                  |
 |                                                                                                               |
+| |lab1-XC_Bookmark|                                                                                            |
++---------------------------------------------------------------------------------------------------------------+
 | 9. Enter your e-mail address in the **Email** form and password in the **Password** form and click **Sign**   |
 |                                                                                                               |
 |    **In**.                                                                                                    |
-+---------------------------------------------------------------------------------------------------------------+
-| |lab1-Chrome|                                                                                                 |
-|                                                                                                               |
-| |lab1-XC_Bookmark|                                                                                            |
 |                                                                                                               |
 | |lab1-XC_Signin|                                                                                              |
 +---------------------------------------------------------------------------------------------------------------+
@@ -160,19 +163,29 @@ application. Postman will then be used to attach the Service Policy to the HTTP 
 +---------------------------------------------------------------------------------------------------------------+
 | 10. Within the Distributed Cloud dashboard select the **Multi-Cloud App Connect** tile.                       |
 |                                                                                                               |
+| |lab1-XC_App_Connect|                                                                                         |
++---------------------------------------------------------------------------------------------------------------+
 | 11. In the resulting screen, expand the **Manage** menu and click **Load Balancers** and then select          |
 |                                                                                                               |
 |     *HTTP Load Balancers**.                                                                                   |
 |                                                                                                               |
+| |lab1-XC_LB|                                                                                                  |
++---------------------------------------------------------------------------------------------------------------+
 | 12. From the HTTP Load Balancers page, locate the HTTP Load Balancer that you created via Postman.  Click the |
 |                                                                                                               |
 |     **ellipsis** under **Actions** and select **Manage Configuration**.                                       |
 |                                                                                                               |
+| |lab1-XC_LB_Manage|                                                                                           |
++---------------------------------------------------------------------------------------------------------------+
 | 13. From the resulting screen, review the HTTP Load Balancer configuration data and then click **JSON**.      |
 |                                                                                                               |
+| |lab1-XC_LB_JSON|                                                                                             |
++---------------------------------------------------------------------------------------------------------------+
 | 14. Review the resulting JSON data.  The **app_firewall** section matches JSON from the body section of       |
 |                                                                                                               |
 |     Postman PUT that added the Web Application Firewall to the HTTP Load Balancer.                            |
+|                                                                                                               |
+| |lab2-XC_LB_SP_JSON_Data|                                                                                     |
 |                                                                                                               |
 | .. note::                                                                                                     |
 |    *There may be slight variations in the JSON because you don't need to post default values when calling the*|
@@ -181,15 +194,7 @@ application. Postman will then be used to attach the Service Policy to the HTTP 
 |                                                                                                               |
 |    *configure a test object via the GUI and then use this JSON tab to get the corresponding JSON config.*     |
 +---------------------------------------------------------------------------------------------------------------+
-| |lab1-XC_App_Connect|                                                                                         |
-|                                                                                                               |
-| |lab1-XC_LB|                                                                                                  |
-|                                                                                                               |
-| |lab1-XC_LB_Manage|                                                                                           |
-|                                                                                                               |
-| |lab1-XC_LB_JSON|                                                                                             |
-|                                                                                                               |
-| |lab2-XC_LB_SP_JSON_Data|                                                                                     |
+| 15. Click **Cancel and Exit** to close out the Load Balancer configuration.                                   |
 +---------------------------------------------------------------------------------------------------------------+
 
 Task 3: Delete the Objects Created with Postman
@@ -203,9 +208,9 @@ cleans up the environment in prepation for Lab3.
 |                                                                                                               |
 |    click on **Delete HTTP Load Balancer**, click on **Send**.                                                 |
 |                                                                                                               |
-| 2. Review the results in the **Body** section of Postman. You should see a 200 OK response code.              |
-+---------------------------------------------------------------------------------------------------------------+
 | |lab2-Postman_LB_Delete_Send|                                                                                 |
++---------------------------------------------------------------------------------------------------------------+
+| 2. Review the results in the **Body** section of Postman. You should see a 200 OK response code.              |
 |                                                                                                               |
 | |lab2-Postman_LB_Delete_Results|                                                                              |
 +---------------------------------------------------------------------------------------------------------------+
@@ -213,9 +218,9 @@ cleans up the environment in prepation for Lab3.
 +---------------------------------------------------------------------------------------------------------------+
 | 3. From **Postman**, in the workspace pane click on **Delete Service Policy** and click **Send**.             |
 |                                                                                                               |
-| 4. Review the results in the **Body** section of Postman. You should see a 200 OK response code.              |
-+---------------------------------------------------------------------------------------------------------------+
 | |lab2-Postman_SP_Delete_Send|                                                                                 |
++---------------------------------------------------------------------------------------------------------------+
+| 4. Review the results in the **Body** section of Postman. You should see a 200 OK response code.              |
 |                                                                                                               |
 | |lab2-Postman_SP_Delete_Results|                                                                              |
 +---------------------------------------------------------------------------------------------------------------+
@@ -223,9 +228,9 @@ cleans up the environment in prepation for Lab3.
 +---------------------------------------------------------------------------------------------------------------+
 | 5. From **Postman**, in the workspace pane click on **Delete App Firewall** and click **Send**.               |
 |                                                                                                               |
-| 6. Review the results in the **Body** section of Postman. You should see a 200 OK response code.              |
-+---------------------------------------------------------------------------------------------------------------+
 | |lab2-Postman_AppFW_Delete_Send|                                                                              |
++---------------------------------------------------------------------------------------------------------------+
+| 6. Review the results in the **Body** section of Postman. You should see a 200 OK response code.              |
 |                                                                                                               |
 | |lab2-Postman_AppFW_Delete_Results|                                                                           |
 +---------------------------------------------------------------------------------------------------------------+
@@ -233,9 +238,9 @@ cleans up the environment in prepation for Lab3.
 +---------------------------------------------------------------------------------------------------------------+
 | 7. From **Postman**, in the workspace pane click on **Delete Origin Pool** and click **Send**.                |
 |                                                                                                               |
-| 8. Review the results in the **Body** section of Postman. You should see a 200 OK response code.              |
-+---------------------------------------------------------------------------------------------------------------+
 | |lab2-Postman_Pool_Delete_Send|                                                                               |
++---------------------------------------------------------------------------------------------------------------+
+| 8. Review the results in the **Body** section of Postman. You should see a 200 OK response code.              |
 |                                                                                                               |
 | |lab2-Postman_Pool_Delete_Results|                                                                            |
 +---------------------------------------------------------------------------------------------------------------+
@@ -243,9 +248,9 @@ cleans up the environment in prepation for Lab3.
 +---------------------------------------------------------------------------------------------------------------+
 | 9. From **Postman**, in the workspace pane click on **Delete Health Check** and click **Send**.               |
 |                                                                                                               |
-| 10. Review the results in the **Body** section of Postman. You should see a 200 OK response code.             |
-+---------------------------------------------------------------------------------------------------------------+
 | |lab2-Postman_HC_Delete_Send|                                                                                 |
++---------------------------------------------------------------------------------------------------------------+
+| 10. Review the results in the **Body** section of Postman. You should see a 200 OK response code.             |
 |                                                                                                               |
 | |lab2-Postman_HC_Delete_Results|                                                                              |
 +---------------------------------------------------------------------------------------------------------------+
@@ -260,7 +265,7 @@ cleans up the environment in prepation for Lab3.
 | all of the configuration from Lab 1 and Lab 2 in preperation for Lab 3.                                       |
 |                                                                                                               |
 | A brief presentation will be shared prior to the beginning of Lab 3.                                          |
-+---------------------------------------------------------------------------------------------------------------+
+|                                                                                                               |
 | |labend|                                                                                                      |
 +---------------------------------------------------------------------------------------------------------------+
 
