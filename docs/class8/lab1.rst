@@ -33,11 +33,13 @@ utilizing the Developer Portal.
 |    **Select Service** in the left-hand navigation, and click **Multi-Cloud App Connect** as shown in the      |
 |                                                                                                               |
 |    *Introduction section, Task 2, Step 9*.                                                                    |
-|                                                                                                               |
++---------------------------------------------------------------------------------------------------------------+
 | 2. In the top right corner of the Distributed Cloud Console click the **User Icon** dropdown and select       |
 |                                                                                                               |
 |    **Account Settings**.                                                                                      |
 |                                                                                                               |
+| |lab1-Account_Settings|                                                                                       |
++---------------------------------------------------------------------------------------------------------------+
 | 3. In the resulting screen click **Credentials** under the Peronal Management Heading on the left.            |
 |                                                                                                               |
 | 4. Click **Add Credentials**.                                                                                 |
@@ -57,8 +59,6 @@ utilizing the Developer Portal.
 |                                                                                                               |
 |    *token is generated, it can not be retrieved again later.*                                                 |
 +---------------------------------------------------------------------------------------------------------------+
-| |lab1-Account_Settings|                                                                                       |
-|                                                                                                               |
 | |lab1-Credentials|                                                                                            |
 |                                                                                                               |
 | |lab1-Add_Credentials|                                                                                        |
