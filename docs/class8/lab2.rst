@@ -16,6 +16,8 @@ will then be used to attach the Application Firewall to the HTTP Load Balancer c
 This lab will begin back in the Windows 10 client deployed as part of the UDF.
 
 +---------------------------------------------------------------------------------------------------------------+
+| **Create an Application Firewall and Apply It to Your Application Load Balancer Via Postman**                 |
++===============================================================================================================+
 | 1. Return to **Postman**, in the workspace pane expand **Appworld - XC Automation** if it isn't already,      |
 |                                                                                                               |
 |    click on **Create App Firewall**, click on **Body**, and review the raw JSON content.                      |
@@ -29,8 +31,6 @@ This lab will begin back in the Windows 10 client deployed as part of the UDF.
 | 3. Review the results in the **Body** section of Postman. You should see a 200 OK response code.              |
 |                                                                                                               |
 | |lab2-Postman_AppFW_Results|                                                                                  |
-+---------------------------------------------------------------------------------------------------------------+
-
 +---------------------------------------------------------------------------------------------------------------+
 | 4. From **Postman**, in the workspace pane click on **Add App FW to HTTP Load Balancer**, click on **Body**,  |
 |                                                                                                               |
@@ -51,6 +51,8 @@ This lab will begin back in the Windows 10 client deployed as part of the UDF.
 +---------------------------------------------------------------------------------------------------------------+
 
 +---------------------------------------------------------------------------------------------------------------+
+| **Verify the Application Firewall Was Created and Applied**                                                   |
++===============================================================================================================+
 | 7. From the Windows 10 client deployed as part of the UDF, open Chrome.                                       |
 |                                                                                                               |
 | |lab1-Chrome|                                                                                                 |
@@ -64,8 +66,6 @@ This lab will begin back in the Windows 10 client deployed as part of the UDF.
 |    **In**.                                                                                                    |
 |                                                                                                               |
 | |lab1-XC_Signin|                                                                                              |
-+---------------------------------------------------------------------------------------------------------------+
-
 +---------------------------------------------------------------------------------------------------------------+
 | 10. Within the Distributed Cloud dashboard select the **Multi-Cloud App Connect** tile.                       |
 |                                                                                                               |
@@ -110,6 +110,8 @@ In this task you will use Postman to create a Service Policy that only allows sp
 application. Postman will then be used to attach the Service Policy to the HTTP Load Balancer created in Lab 1. 
 
 +---------------------------------------------------------------------------------------------------------------+
+| **Create a Service Policy and Apply It to Your Application Load Balancer Via Postman**                        |
++===============================================================================================================+
 | 1. Return to **Postman**, in the workspace pane expand **Appworld - XC Automation** if it isn't already,      |
 |                                                                                                               |
 |    click on **Create Service Policy**, click on **Body**, and review the raw JSON content.                    |
@@ -145,6 +147,8 @@ application. Postman will then be used to attach the Service Policy to the HTTP 
 +---------------------------------------------------------------------------------------------------------------+
 
 +---------------------------------------------------------------------------------------------------------------+
+| **Verify the Service Policy Was Created and Applied**                                                         |
++===============================================================================================================+
 | 7. From the Windows 10 client deployed as part of the UDF, open Chrome.                                       |
 |                                                                                                               |
 | |lab1-Chrome|                                                                                                 |
@@ -158,8 +162,6 @@ application. Postman will then be used to attach the Service Policy to the HTTP 
 |    **In**.                                                                                                    |
 |                                                                                                               |
 | |lab1-XC_Signin|                                                                                              |
-+---------------------------------------------------------------------------------------------------------------+
-
 +---------------------------------------------------------------------------------------------------------------+
 | 10. Within the Distributed Cloud dashboard select the **Multi-Cloud App Connect** tile.                       |
 |                                                                                                               |
@@ -204,6 +206,8 @@ and Health Check.  This demonstrates how to use Postman to delete objects when t
 cleans up the environment in prepation for Lab3.
 
 +---------------------------------------------------------------------------------------------------------------+
+| **Delete Distributed Cloud Objects Via Postman**                                                              |
++===============================================================================================================+
 | 1. Return to **Postman**, in the workspace pane expand **Appworld - XC Automation** if it isn't already,      |
 |                                                                                                               |
 |    click on **Delete HTTP Load Balancer**, click on **Send**.                                                 |
@@ -214,8 +218,6 @@ cleans up the environment in prepation for Lab3.
 |                                                                                                               |
 | |lab2-Postman_LB_Delete_Results|                                                                              |
 +---------------------------------------------------------------------------------------------------------------+
-
-+---------------------------------------------------------------------------------------------------------------+
 | 3. From **Postman**, in the workspace pane click on **Delete Service Policy** and click **Send**.             |
 |                                                                                                               |
 | |lab2-Postman_SP_Delete_Send|                                                                                 |
@@ -223,8 +225,6 @@ cleans up the environment in prepation for Lab3.
 | 4. Review the results in the **Body** section of Postman. You should see a 200 OK response code.              |
 |                                                                                                               |
 | |lab2-Postman_SP_Delete_Results|                                                                              |
-+---------------------------------------------------------------------------------------------------------------+
-
 +---------------------------------------------------------------------------------------------------------------+
 | 5. From **Postman**, in the workspace pane click on **Delete App Firewall** and click **Send**.               |
 |                                                                                                               |
@@ -234,8 +234,6 @@ cleans up the environment in prepation for Lab3.
 |                                                                                                               |
 | |lab2-Postman_AppFW_Delete_Results|                                                                           |
 +---------------------------------------------------------------------------------------------------------------+
-
-+---------------------------------------------------------------------------------------------------------------+
 | 7. From **Postman**, in the workspace pane click on **Delete Origin Pool** and click **Send**.                |
 |                                                                                                               |
 | |lab2-Postman_Pool_Delete_Send|                                                                               |
@@ -243,8 +241,6 @@ cleans up the environment in prepation for Lab3.
 | 8. Review the results in the **Body** section of Postman. You should see a 200 OK response code.              |
 |                                                                                                               |
 | |lab2-Postman_Pool_Delete_Results|                                                                            |
-+---------------------------------------------------------------------------------------------------------------+
-
 +---------------------------------------------------------------------------------------------------------------+
 | 9. From **Postman**, in the workspace pane click on **Delete Health Check** and click **Send**.               |
 |                                                                                                               |
@@ -256,15 +252,17 @@ cleans up the environment in prepation for Lab3.
 +---------------------------------------------------------------------------------------------------------------+
 
 +---------------------------------------------------------------------------------------------------------------+
-| **End of Lab 2:**  This concludes Lab 2. In this lab you learned how to use Postman to create an Web          |
+| **End of Lab 2**                                                                                              |
++===============================================================================================================+
+| This concludes Lab 2. In this lab you learned how to use Postman to create an Web Application Firewall        |
 |                                                                                                               |
-| Application Firewall policy and Service Policy. You then used Postman to modify the HTTP Load Balancer you    |
+| policy and Service Policy. You then used Postman to modify the HTTP Load Balancer you created in Lab 1 and    |
 |                                                                                                               |
-| created in Lab 1 and apply the Web Application Firewall and Service policy. Lastly you used Postman to delete |
+| apply the Web Application Firewall and Service policy. Lastly you used Postman to delete all of the           |
 |                                                                                                               |
-| all of the configuration from Lab 1 and Lab 2 in preperation for Lab 3.                                       |
+| configuration from Lab 1 and Lab 2 in preperation for Lab 3. A brief presentation will be shared prior to the |
 |                                                                                                               |
-| A brief presentation will be shared prior to the beginning of Lab 3.                                          |
+| beginning of Lab 3.                                                                                           |
 |                                                                                                               |
 | |labend|                                                                                                      |
 +---------------------------------------------------------------------------------------------------------------+

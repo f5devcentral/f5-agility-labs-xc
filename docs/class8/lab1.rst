@@ -70,7 +70,10 @@ utilizing the Developer Portal.
 |    *token is generated, it can not be retrieved again later.*                                                 |
 +---------------------------------------------------------------------------------------------------------------+
 
+
 +---------------------------------------------------------------------------------------------------------------+
+| **Access the Distributed Cloud Developer Portal**                                                             |
++===============================================================================================================+
 | 8. In the top right corner of the Distributed Cloud Console click the **Support** dropdown and select **API** |
 |                                                                                                               |
 |    **Documentation**.                                                                                         |
@@ -85,8 +88,6 @@ utilizing the Developer Portal.
 | 9. In the resulting screen click the **API Developer Portal** link in the top menu.                           |
 |                                                                                                               |
 | |lab1-API_Developer_Portal|                                                                                   |
-+---------------------------------------------------------------------------------------------------------------+
-
 +---------------------------------------------------------------------------------------------------------------+
 | 10. In the resulting window, enter **f5-xc-lab-app** in the **Please enter your domain** text field and click |
 |                                                                                                               |
@@ -103,8 +104,6 @@ utilizing the Developer Portal.
 |     **Authorize**.                                                                                            |
 |                                                                                                               |
 | |lab1-Portal_Set_Token|                                                                                       |
-+---------------------------------------------------------------------------------------------------------------+
-
 +---------------------------------------------------------------------------------------------------------------+
 | 13. In the Dev Portal, scroll through the APIs on the left until you find **Namespace** and then click        |
 |                                                                                                               |
@@ -172,6 +171,8 @@ The username and password for the Windows 10 host are:
 +-----------+------------+
 
 +---------------------------------------------------------------------------------------------------------------+
+| **Utilize Postman to Send API Calls to the Distributed Cloud Console**                                        |
++===============================================================================================================+
 | 1. From the Windows 10 client deployed as part of the UDF, open Postman.                                      |
 |                                                                                                               |
 | |lab1-Postman|                                                                                                |
@@ -186,8 +187,6 @@ The username and password for the Windows 10 host are:
 |                                                                                                               |
 | |lab1-Postman_Variables|                                                                                      |
 +---------------------------------------------------------------------------------------------------------------+
-
-+---------------------------------------------------------------------------------------------------------------+
 | 4. Select **Collections** from the left side of Postman and then expand **Appworld - XC Automation** and      |
 |                                                                                                               |
 |    select **Get My Namespace** and click **Send**.                                                            |
@@ -201,8 +200,6 @@ The username and password for the Windows 10 host are:
 |    step 16.                                                                                                   |
 |                                                                                                               |
 | |lab1-Postman_Namespace_Results|                                                                              |
-+---------------------------------------------------------------------------------------------------------------+
-
 +---------------------------------------------------------------------------------------------------------------+
 | 6. Select **Create Health Check** under the Appworld - XC Automation collection and select **Body**.          |
 |                                                                                                               |
@@ -220,8 +217,6 @@ The username and password for the Windows 10 host are:
 |                                                                                                               |
 | |lab1-Postman_HC_Results|                                                                                     |
 +---------------------------------------------------------------------------------------------------------------+
-
-+---------------------------------------------------------------------------------------------------------------+
 | 10. Select **Create Origin Pool** under the Appworld - XC Automation collection and select **Body**.          |
 |                                                                                                               |
 | 11. Review the JSON in the **Body** section. This data is what is sent to the Distributed Cloud API to create |
@@ -237,8 +232,6 @@ The username and password for the Windows 10 host are:
 | 13. Review the results in the **Body** section of Postman. You should see a 200 OK response code.             |
 |                                                                                                               |
 | |lab1-Postman_Pool_Results|                                                                                   |
-+---------------------------------------------------------------------------------------------------------------+
-
 +---------------------------------------------------------------------------------------------------------------+
 | 14. Select **Create HTTP Load Balancer** under the Appworld - XC Automation collection and select **Body**.   |
 |                                                                                                               |
@@ -264,6 +257,8 @@ The following steps will review the configuations created using Postman in the D
 configuration will then be tested utilizing a web browser to access the web appliaction.
 
 +---------------------------------------------------------------------------------------------------------------+
+| **Verify the Objects Created with Postman**                                                                   |
++===============================================================================================================+
 | 1. From the Windows 10 client deployed as part of the UDF, open Chrome.                                       |
 |                                                                                                               |
 | |lab1-Chrome|                                                                                                 |
@@ -277,8 +272,6 @@ configuration will then be tested utilizing a web browser to access the web appl
 |    **In**.                                                                                                    |
 |                                                                                                               |
 | |lab1-XC_Signin|                                                                                              |
-+---------------------------------------------------------------------------------------------------------------+
-
 +---------------------------------------------------------------------------------------------------------------+
 | 4. Within the Distributed Cloud dashboard select the **Multi-Cloud App Connect** tile.                        |
 |                                                                                                               |
@@ -315,8 +308,6 @@ configuration will then be tested utilizing a web browser to access the web appl
 +---------------------------------------------------------------------------------------------------------------+
 | 9. Click **Cancel and Exit** to close out the Health Check configuration.                                     |
 +---------------------------------------------------------------------------------------------------------------+
-
-+---------------------------------------------------------------------------------------------------------------+
 | 10. Under the Multi-Cloud App Connect Manage menu, select **Load Balancers** and then click on **Origin**     |
 |                                                                                                               |
 |     **Pools**.                                                                                                |
@@ -347,8 +338,6 @@ configuration will then be tested utilizing a web browser to access the web appl
 |    *configure a test object via the GUI and then use this JSON tab to get the corresponding JSON config.*     |
 +---------------------------------------------------------------------------------------------------------------+
 | 14. Click **Cancel and Exit** to close out the Origin Pool configuration.                                     |
-+---------------------------------------------------------------------------------------------------------------+
-
 +---------------------------------------------------------------------------------------------------------------+
 | 15. Under the Multi-Cloud App Connect Manage menu, select **Load Balancers** and then click on **HTTP**       |
 |                                                                                                               |
@@ -383,6 +372,8 @@ configuration will then be tested utilizing a web browser to access the web appl
 +---------------------------------------------------------------------------------------------------------------+
 
 +---------------------------------------------------------------------------------------------------------------+
+| **Verify the Demo Shop App is Accessible Via a Web Browser**                                                  |
++===============================================================================================================+
 | 20. Open a new tab in your Chrome browser and enter the following URL                                         |
 |                                                                                                               |
 |     **http://<namespace>-demoshop.lab-app.f5demos.com**                                                       |
@@ -396,15 +387,17 @@ configuration will then be tested utilizing a web browser to access the web appl
 +---------------------------------------------------------------------------------------------------------------+
 
 +---------------------------------------------------------------------------------------------------------------+
-| **End of Lab 1:**  This concludes Lab 1. In this lab you learned about the Distributed Cloud Developer Portal |
+| **End of Lab 1**                                                                                              |
++===============================================================================================================+
+| This concludes Lab 1. In this lab you learned about the Distributed Cloud Developer Portal and how it can     |
 |                                                                                                               |
-| and how it can help you test API calls. You then expanded upon that knowledge and utilized Postman to deploy  |
+| help you test API calls. You then expanded upon that knowledge and utilized Postman to deploy a Health Check, |
 |                                                                                                               |
-| a Health Check, Origin Pool, and HTTP Load Balancer. Next, you verified the configuration that was pushed to  |
+| Origin Pool, and HTTP Load Balancer. Next, you verified the configuration that was pushed to the Distributed  |
 |                                                                                                               |
-| the Distributed Console. Finally, you verified the application you published was available from a web browser.|
+| Console. Finally, you verified the application you published was available from a web browser. A brief        |
 |                                                                                                               |
-| A brief presentation will be shared prior to the beginning of Lab 2.                                          |
+| presentation will be shared prior to the beginning of Lab 2.                                                  |
 |                                                                                                               |
 | |labend|                                                                                                      |
 +---------------------------------------------------------------------------------------------------------------+
