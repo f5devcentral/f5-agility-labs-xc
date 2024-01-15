@@ -1,4 +1,3 @@
-docs/_build/*
 media/
 .DS_Store
 pdf/*
@@ -9,4 +8,4 @@ terraform.tfstate*
 *.rpm
 *.swp
 .virtualenv
-docs/class6/temp
+docs/_build

@@ -5,7 +5,7 @@ Welcome
 -------
 
 In this lab, attendees will be introduced to the F5 Distributed Cloud Services platform.  Attendees will create proxy services for publishing and securing
-applications that are served by both public and private endpoints. Attendees will also explore the DNS, Observability, and CDN capabilities of the platform.
+applications that are served by both public and private endpoints. Attendees will also be introduced to the DNS, Observability, and CDN capabilities of the platform.
 
 Objectives:
 ----------
