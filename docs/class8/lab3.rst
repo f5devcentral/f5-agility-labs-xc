@@ -22,15 +22,15 @@ This lab will begin back in the Windows 10 client deployed as part of the UDF.
 +---------------------------------------------------------------------------------------------------------------+
 | 1. From the Windows 10 client deployed as part of the UDF, open Chrome.                                       |
 |                                                                                                               |
+| |lab1-Chrome|                                                                                                 |
++---------------------------------------------------------------------------------------------------------------+
 | 2. Click on the **XC Console** bookmark to be taken to the XC Console login.                                  |
 |                                                                                                               |
+| |lab1-XC_Bookmark|                                                                                            |
++---------------------------------------------------------------------------------------------------------------+
 | 3. Enter your e-mail address in the **Email** form and password in the **Password** form and click **Sign**   |
 |                                                                                                               |
 |    **In**.                                                                                                    |
-+---------------------------------------------------------------------------------------------------------------+
-| |lab1-Chrome|                                                                                                 |
-|                                                                                                               |
-| |lab1-XC_Bookmark|                                                                                            |
 |                                                                                                               |
 | |lab1-XC_Signin|                                                                                              |
 +---------------------------------------------------------------------------------------------------------------+
@@ -40,10 +40,16 @@ This lab will begin back in the Windows 10 client deployed as part of the UDF.
 |                                                                                                               |
 |    **Account Settings**.                                                                                      |
 |                                                                                                               |
+| |lab1-Account_Settings|                                                                                       |
++---------------------------------------------------------------------------------------------------------------+
 | 5. In the resulting screen click **Credentials** under the Peronal Management Heading on the left.            |
 |                                                                                                               |
+| |lab1-Credentials|                                                                                            |
++---------------------------------------------------------------------------------------------------------------+
 | 6. Click **Add Credentials**.                                                                                 |
 |                                                                                                               |
+| |lab1-Add_Credentials|                                                                                        |
++---------------------------------------------------------------------------------------------------------------+
 | 7. Fill in the resulting form with the following values                                                       |
 |                                                                                                               |
 |    * **Credential Name ID:**  *<namespace>-api-cert*                                                          |
@@ -54,67 +60,65 @@ This lab will begin back in the Windows 10 client deployed as part of the UDF.
 |                                                                                                               |
 | 8. Click **Download**.                                                                                        |
 |                                                                                                               |
+| |lab3-Terraform_Download_API_Cert|                                                                            |
+|                                                                                                               |
 | .. note::                                                                                                     |
 |    *Use a password that you will remember for the certificate, if you don't remember your API cert password,* |
 |                                                                                                               |
 |    *you will need to generate a new API cert.*                                                                |
 +---------------------------------------------------------------------------------------------------------------+
-| |lab1-Account_Settings|                                                                                       |
-|                                                                                                               |
-| |lab1-Credentials|                                                                                            |
-|                                                                                                               |
-| |lab1-Add_Credentials|                                                                                        |
-|                                                                                                               |
-| |lab3-Terraform_Download_API_Cert|                                                                            |
-+---------------------------------------------------------------------------------------------------------------+
 
 +---------------------------------------------------------------------------------------------------------------+
 | 9. Minimize the Chrome Browaser and double click the **Command Prompt** icon on the Windows 10 desktop.       |
 |                                                                                                               |
+| |lab3-Terraform_Cmd_Prompt|                                                                                   |
++---------------------------------------------------------------------------------------------------------------+
 | 10. Copy the certificate you downloaded to the labuser home folder using the command:                         |
 |                                                                                                               |
 | .. code-block:: bash                                                                                          |
 |    copy c:\Users\labuser\Downloads\f5-xc-lab-app.console.ves.volterra.io.api-creds.p12                        |
 |    c:\Users\labuser\xc-api-cert.p12                                                                           |
 |                                                                                                               |
+| |lab3-Terraform_Cert_Copy|                                                                                    |
++---------------------------------------------------------------------------------------------------------------+
 | 11. Set an environment variable for the API certificate password with the followind command:                  |
 |                                                                                                               |
 | .. code-block:: bash                                                                                          |
 |    setx VES_P12_PASSWORD "<some_password>"                                                                    |
 |                                                                                                               |
-| 12. Close the command prompt window.                                                                          |
-+---------------------------------------------------------------------------------------------------------------+
-| |lab3-Terraform_Cmd_Prompt|                                                                                   |
-|                                                                                                               |
-| |lab3-Terraform_Cert_Copy|                                                                                    |
-|                                                                                                               |
 | |lab3-Terraform_Cert_Password|                                                                                |
++---------------------------------------------------------------------------------------------------------------+
+| 12. Close the command prompt window.                                                                          |
 +---------------------------------------------------------------------------------------------------------------+
 
 +---------------------------------------------------------------------------------------------------------------+
 | 13. Double click the **Visual Studio Code** icon on the desktop to launch **Visual Studio Code**.             |
 |                                                                                                               |
+| |lab3-Terraform_VSC|                                                                                          |
++---------------------------------------------------------------------------------------------------------------+
 | 14. When Visual Studio Code launches, click **File** and then **Open Folder...**.                             |
 |                                                                                                               |
+| |lab3-Terraform_VSC_Folder|                                                                                   |
++---------------------------------------------------------------------------------------------------------------+
 | 15. In the resulting window, paste the below text into the location bar, click the arrow to open that         |
 |                                                                                                               |
 |     location, and then click **Select Folder**.                                                               |
 |                                                                                                               |
 | .. code-block:: bash                                                                                          |
 |    c:\Users\labuser\appworld-f5xc-automation\Terraform                                                        |
-+---------------------------------------------------------------------------------------------------------------+
-| |lab3-Terraform_VSC|                                                                                          |
-|                                                                                                               |
-| |lab3-Terraform_VSC_Folder|                                                                                   |
 |                                                                                                               |
 | |lab3-Terraform_VSC_Folder_Select|                                                                            |
 +---------------------------------------------------------------------------------------------------------------+
 
 +---------------------------------------------------------------------------------------------------------------+
-| 16. From the EXPLORER frame, click the new file icon next to the TERRAFORM folder, and then enter the name    |
+| 16. To create a tfvars file to specify your environment specific variables; from the **EXPLORER** frame,      |
 |                                                                                                               |
-|     **terraform.tfvars** for the new file that is created and press **Enter**.                                |
+|     click the new file icon next to the TERRAFORM folder, and then enter the name **terraform.tfvars** for    | 
 |                                                                                                               |
+|     the new file that is created and press **Enter**.                                                         |
+|                                                                                                               |
+| |lab3-Terraform_VSC_Tfvars|                                                                                   |
++---------------------------------------------------------------------------------------------------------------+
 | 17. This will open the **terraform.tfvars** file in the right frame of Visual Studio Code, enter the following|
 |                                                                                                               |
 |     values into the file:                                                                                     |
@@ -124,11 +128,9 @@ This lab will begin back in the Windows 10 client deployed as part of the UDF.
 |    tenant_name = "f5-xc-lab-app"                                                                              |
 |    namespace   = "<namespace>"                                                                                |
 |                                                                                                               |
-| 18. Click **File** and **Save** to save the changes you made to the file.                                     |
-+---------------------------------------------------------------------------------------------------------------+
-| |lab3-Terraform_VSC_Tfvars|                                                                                   |
-|                                                                                                               |
 | |lab3-Terraform_VSC_Tfvars_Values|                                                                            |
++---------------------------------------------------------------------------------------------------------------+
+| 18. Click **File** and **Save** to save the changes you made to the file.                                     |
 |                                                                                                               |
 | |lab3-Terraform_VSC_Tfvars_Save|                                                                              |
 +---------------------------------------------------------------------------------------------------------------+

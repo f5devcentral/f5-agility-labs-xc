@@ -26,6 +26,8 @@ The following steps will allow you to create an API Token and query the Distribu
 utilizing the Developer Portal.  
 
 +---------------------------------------------------------------------------------------------------------------+
+| **Create API Token from the Distributed Cloud Console**                                                       |
++===============================================================================================================+
 | 1. Following the **Introduction** section  instructions, you should now be in the **Multi-Cloud App Connect** |
 |                                                                                                               |
 |    configuration window. If for some reason you are not in the **Multi-Cloud App Connect** window, use the    |
