@@ -9,4 +9,3 @@ terraform.tfstate*
 *.swp
 .virtualenv
 docs/_build
-docs/2hour
