@@ -3,18 +3,18 @@ Lab 3: Leveraging Terraform
 
 The following lab tasks will guide you through using Terraform to deploy and secure a Web based application.  
 Students will start by creating an authentication certificate within Distributed Cloud that Terraform utilizes
-for authenticating the API calls.  Next a Tfvars file is created to customize the deployment to match the 
-students environment. Terraform will then be used to deploy a HTTP Health Check, Origin Pool, and HTTP Load 
+for authenticating the API calls.  Next, a Tfvars file is created to customize the deployment to match the 
+student's environment. Terraform will then be used to deploy an HTTP Health Check, Origin Pool, and HTTP Load 
 Balancer. Students will then modify and apply the Terraform configuration to add a Web Application Firewall 
-to their existing HTTP Load Balancer. Finally Terraform will be used to tear down everything it created in 
+to their existing HTTP Load Balancer. Finally, Terraform will be used to tear down everything it created in 
 this lab.
 
 **Expected Lab Time: 20 minutes**
 
 Task 1: Deploy a Web Application with Terraform  
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-In this task you will create an API Certificate for Terraform to authneticate to the Distributed Cloud API.  Next 
-you will create a Tfvars file to specify variable values unique to your environment.  After the Tfvars file is 
+In this task, you will create an API Certificate for Terraform to authneticate to the Distributed Cloud API.  Next, 
+you will create a Tfvars file to specify environment variables unique to your environment.  After the Tfvars file is 
 created, you will intialize Terraform and then deploy an HTTP Health Check, Origin Pool, and HTTP Load Balancer. 
 
 This lab will begin back in the Windows 10 client deployed as part of the UDF.
@@ -50,7 +50,7 @@ This lab will begin back in the Windows 10 client deployed as part of the UDF.
 |                                                                                                               |
 | |lab1-Add_Credentials|                                                                                        |
 +---------------------------------------------------------------------------------------------------------------+
-| 7. Fill in the resulting form with the following values                                                       |
+| 7. Fill in the resulting form with the following values:                                                       |
 |                                                                                                               |
 |    * **Credential Name ID:**  *<namespace>-api-cert*                                                          |
 |    * **Credential Type: Select:** *API Certificate*                                                           |
@@ -83,7 +83,7 @@ This lab will begin back in the Windows 10 client deployed as part of the UDF.
 |                                                                                                               |
 | |lab3-Terraform_Cert_Copy|                                                                                    |
 +---------------------------------------------------------------------------------------------------------------+
-| 11. Set an environment variable for the API certificate password with the followind command:                  |
+| 11. Set an environment variable for the API certificate password with the following command:                  |
 |                                                                                                               |
 | .. code-block:: bash                                                                                          |
 |    setx VES_P12_PASSWORD "<some_password>"                                                                    |
@@ -117,7 +117,7 @@ This lab will begin back in the Windows 10 client deployed as part of the UDF.
 +---------------------------------------------------------------------------------------------------------------+
 | **Create a tfvars File for Specifying Environment Specific Variables**                                        |
 +===============================================================================================================+
-| 16. From the **EXPLORER** frame, lick the new file icon next to the TERRAFORM folder, and then enter the name |
+| 16. From the **EXPLORER** frame, click the new file icon next to the TERRAFORM folder, and then enter the name|
 |                                                                                                               |
 |     **terraform.tfvars** for the new file that is created and press **Enter**.                                | 
 |                                                                                                               |
@@ -146,7 +146,7 @@ This lab will begin back in the Windows 10 client deployed as part of the UDF.
 |                                                                                                               |
 | |lab3-Terraform_VSC_Terminal|                                                                                 |
 +---------------------------------------------------------------------------------------------------------------+
-| 20. In the Terminal at the bottom of Visual Studio Code, enter the following command and press enter:         |
+| 20. In the Terminal at the bottom of Visual Studio Code, enter the following command and press Enter:         |
 |                                                                                                               |
 | .. code-block:: bash                                                                                          |
 |    terraform init                                                                                             |
@@ -155,11 +155,11 @@ This lab will begin back in the Windows 10 client deployed as part of the UDF.
 +---------------------------------------------------------------------------------------------------------------+
 | 21. Review the Init Results. You should see a **Terraform has been successfully initialized!** message.       |
 |                                                                                                               |
-|     **DO NOT PROCEED AND ASK A LAB ASSISTNAT FOR HELP IF YOU DON'T SEE THE SUCCESSFULLY INITIALIZED MESSAGE.**|
+|     **DO NOT PROCEED AND ASK A LAB ASSISTANT FOR HELP IF YOU DON'T SEE THE SUCCESSFULLY INITIALIZED MESSAGE.**|
 |                                                                                                               |
 | |lab3-Terraform_VSC_Init_Success|                                                                             |
 +---------------------------------------------------------------------------------------------------------------+
-| 22. In the Terminal enter the following command and press enter:                                              |
+| 22. In the Terminal, enter the following command and press Enter:                                             |
 |                                                                                                               |
 | .. code-block:: bash                                                                                          |
 |    terraform plan                                                                                             |
@@ -170,14 +170,14 @@ This lab will begin back in the Windows 10 client deployed as part of the UDF.
 |                                                                                                               |
 | |lab3-Terraform_VSC_Plan_Results|                                                                             |
 +---------------------------------------------------------------------------------------------------------------+
-| 24. In the Terminal enter the following command and press enter:                                              |
+| 24. In the Terminal, enter the following command and press Enter:                                             |
 |                                                                                                               |
 | .. code-block:: bash                                                                                          |
 |    terraform apply                                                                                            |
 |                                                                                                               |
 | |lab3-Terraform_VSC_Apply|                                                                                    |
 +---------------------------------------------------------------------------------------------------------------+
-| 25. When prompted **Do you want to perform these actions?** type **yes** and press enter.                     |
+| 25. When prompted **Do you want to perform these actions?**, type **yes** and press Enter.                    |
 |                                                                                                               |
 | |lab3-Terraform_VSC_Apply_Yes|                                                                                |
 +---------------------------------------------------------------------------------------------------------------+
@@ -203,7 +203,7 @@ This lab will begin back in the Windows 10 client deployed as part of the UDF.
 
 Task 2: Create & Attach WAF Policy 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-In this task you will modify your Terraform configuration to create and apply an Application Firewall policy with
+In this task, you will modify your Terraform configuration to create and apply an Application Firewall policy with
 the default settings. Since Terraform tracks state, the apply command is used to modify the required existing 
 objects within Distributed Cloud.
 
@@ -262,7 +262,7 @@ objects within Distributed Cloud.
 +---------------------------------------------------------------------------------------------------------------+
 | **Plan and Apply Your New Terraform Code to Create an Application Firewall and Associate It to Your LB**      |
 +===============================================================================================================+
-| 5. In the Terminal enter the following command and press enter:                                               |
+| 5. In the Terminal, enter the following command and press Enter:                                              |
 |                                                                                                               |
 | .. code-block:: bash                                                                                          |
 |    terraform plan                                                                                             |
@@ -273,14 +273,14 @@ objects within Distributed Cloud.
 |                                                                                                               |
 | |lab3-Terraform_VSC_Appfw_Plan_Results|                                                                       |
 +---------------------------------------------------------------------------------------------------------------+
-| 7. In the Terminal enter the following command and press enter:                                               |
+| 7. In the Terminal, enter the following command and press Enter:                                              |
 |                                                                                                               |
 | .. code-block:: bash                                                                                          |
 |    terraform apply                                                                                            |
 |                                                                                                               |
 | |lab3-Terraform_VSC_Appfw_Apply|                                                                              |
 +---------------------------------------------------------------------------------------------------------------+
-| 8. When prompted **Do you want to perform these actions?** type **yes** and press enter.                      |
+| 8. When prompted **Do you want to perform these actions?**, type **yes** and press Enter.                     |
 |                                                                                                               |
 | |lab3-Terraform_VSC_Appfw_Apply_Yes|                                                                          |
 +---------------------------------------------------------------------------------------------------------------+
@@ -294,7 +294,7 @@ objects within Distributed Cloud.
 +===============================================================================================================+
 | 10. Switch back to the Chrome Browser that is connected to the Distributed Cloud Console.                     |
 +---------------------------------------------------------------------------------------------------------------+
-| 11. Within the Distributed Cloud dashboard select the **Multi-Cloud App Connect** tile.                       |
+| 11. Within the Distributed Cloud dashboard, select the **Multi-Cloud App Connect** tile.                      |
 |                                                                                                               |
 | |lab1-XC_App_Connect|                                                                                         |
 +---------------------------------------------------------------------------------------------------------------+
@@ -329,26 +329,26 @@ objects within Distributed Cloud.
 
 Task 3: Destroy the Terraform Objects 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-In this task you will use Terraform to destroy the HTTP Health Check, Origin Pool, HTTP Load Balancer, and Web 
-Application Firewall Policy that was created in Task 1 & 2.
+In this task, you will use Terraform to destroy the HTTP Health Check, Origin Pool, HTTP Load Balancer, and Web 
+Application Firewall Policy that was created in Tasks 1 & 2.
 
 +---------------------------------------------------------------------------------------------------------------+
 | **Delete Distributed Cloud Objects Utilizing Terraform Destroy**                                              |
 +===============================================================================================================+
 | 1. Switch back to the Visual Studio Code application.                                                         |
 +---------------------------------------------------------------------------------------------------------------+
-| 2. In the Visual Studio Code Terminal enter the following command and press enter:                            |
+| 2. In the Visual Studio Code Terminal, enter the following command and press Enter:                           |
 |                                                                                                               |
 | .. code-block:: bash                                                                                          |
 |    terraform destroy                                                                                          |
 |                                                                                                               |
 | |lab3-Terraform_VSC_Destroy|                                                                                  |
 +---------------------------------------------------------------------------------------------------------------+
-| 3. When prompted **Do you really want to destroy all resources?** type **yes** and press enter.               |
+| 3. When prompted **Do you really want to destroy all resources?** type **yes** and press Enter.               |
 |                                                                                                               |
 | |lab3-Terraform_VSC_Destroy_Yes|                                                                              |
 +---------------------------------------------------------------------------------------------------------------+
-| 4. Review the Destroy results. This shows what Terraform created.                                             |
+| 4. Review the Destroy results. This shows what Terraform deleted.                                             |
 |                                                                                                               |
 | |lab3-Terraform_VSC_Destroy_Results|                                                                          |
 +---------------------------------------------------------------------------------------------------------------+
@@ -356,15 +356,15 @@ Application Firewall Policy that was created in Task 1 & 2.
 +---------------------------------------------------------------------------------------------------------------+
 | **End of Lab 3**                                                                                              |
 +===============================================================================================================+
-| This concludes Lab 3. In this lab you learned how to setup Terraform to authenticate to to Distributed Cloud  |
+| This concludes Lab 3. In this lab, you learned how to setup Terraform to authenticate to to Distributed Cloud |
 |                                                                                                               |
-| utilizing an API Certificate. You then created a Tfvars file to customize the deployment to match the your    |
+| utilizing an API Certificate. You then created a Tfvars file to customize the deployment to match your        |
 |                                                                                                               |
-| environment. After that, you used Terraform to deploy a HTTP Health Check, Origin Pool, and HTTP Load         |
+| environment. After that, you used Terraform to deploy an HTTP Health Check, Origin Pool, and HTTP Load        |
 |                                                                                                               |
 | Balancer. The Terraform configuration was then modified to create a Web Application Firewall policy and apply |
 |                                                                                                               |
-| it to the HTTP Load Balancer. Finally Terraform was used to destroy all of the objects created in this lab. A |
+| it to the HTTP Load Balancer. Finally, Terraform was used to destroy all of the objects created in this lab. A|
 |                                                                                                               |
 | brief presentation and demo will be shared prior to the conclusion of this class.                             |
 +---------------------------------------------------------------------------------------------------------------+
