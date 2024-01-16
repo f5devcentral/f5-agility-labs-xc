@@ -86,19 +86,39 @@ The *SuperJumpHost* is pre-configured in your lab environment with permission to
 +---------------------------------------------------------------------------------------------------------------+
 | |lab008|                                                                                                      |
 +---------------------------------------------------------------------------------------------------------------+
-| 4. Set your working directory to */tmp* with this linux command: ``cd /tmp``                                  |
+| 4. Set your working directory to */tmp* with the ``cd /tmp``  linux command.                                  |
+|                                                                                                               |
+|    .. code-block:: bash                                                                                       |
+|                                                                                                               |
+|       cd /tmp                                                                                                 |
 |                                                                                                               |
 | 5. Use the URL copied at step 7 above to download the installer via the command line:                         |
 |    ``wget <...insert URL from aboe Task 1 here...>``                                                          |
 |                                                                                                               |
+|    .. code-block:: bash                                                                                       |
+|                                                                                                               |
+|       wget <...insert URL from aboe Task 1 here...>                                                           |
+|                                                                                                               |
 | 6. After the download completes, rename the file with this linux command:                                     |
 |    ``mv download agent-installer``                                                                            |
+|                                                                                                               |
+|    .. code-block:: bash                                                                                       |
+|                                                                                                               |
+|       mv download agent-installer                                                                             |
 |                                                                                                               |
 | 7. Next, give the installer package execution rights to enable it to run:                                     |
 |    ``chmod +x ./agent-installer``                                                                             |
 |                                                                                                               |
+|    .. code-block:: bash                                                                                       |
+|                                                                                                               |
+|       chmod +x ./agent-installer                                                                              |
+|                                                                                                               |
 | 8. Run the agent installer by using the following command:                                                    |
 |    ``./agent-installer``                                                                                      |
+|                                                                                                               |
+|    .. code-block:: bash                                                                                       |
+|                                                                                                               |
+|       ./agent-installer                                                                                       |
 +---------------------------------------------------------------------------------------------------------------+
 | |lab009|                                                                                                      |
 +---------------------------------------------------------------------------------------------------------------+

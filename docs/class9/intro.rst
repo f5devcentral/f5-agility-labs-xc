@@ -54,23 +54,30 @@ This is a multi-step process that will involve:
 | .. image:: _static/account-activated.png                                                     |
 |    :width: 400px                                                                             |
 +----------------------------------------------------------------------------------------------+
-| Click **Log in to continue** (https://udf.f5.com).                                           |
+| Browse to https://udf.f5.com                                                                 |
 +----------------------------------------------------------------------------------------------+
 | .. image:: _static/udf-login.png                                                             |
 |    :width: 400px                                                                             |
 +----------------------------------------------------------------------------------------------+
 | Click on **Invited Users**.                                                                  |
 |                                                                                              |
-| You will now be prompted to set up MFA access to the lab environment (mandatory).            |
+| You will now be prompted to set up 2-step authentication to the lab environment (mandatory). |
 +----------------------------------------------------------------------------------------------+
 | .. image:: _static/mfa-setup.png                                                             |
 |    :width: 400px                                                                             |
 +----------------------------------------------------------------------------------------------+
-| Click **Finish** to complete the account setup and click **-> LAUNCH** now.                  |
-| (it takes several minutes for the lab virtual machines to deploy and start).                 |
+| Follow the instructions and prompts to complete the account setup.                           |
++----------------------------------------------------------------------------------------------+
+| .. image:: _static/UDFJoinClass.png                                                          |
+|    :width: 800px                                                                             |
++----------------------------------------------------------------------------------------------+
+| On the UDF LOBBY page, click **Join**.                                                       |
+| Click **Continue Anyway** if prompted.                                                       |
 +----------------------------------------------------------------------------------------------+
 | .. image:: _static/launch-course.png                                                         |
 |    :width: 800px                                                                             |
++----------------------------------------------------------------------------------------------+
+| Click **-> LAUNCH** (it takes several minutes for the virtual machines to deploy and start.) |
 +----------------------------------------------------------------------------------------------+
 
 Task 3: Setup new credentials for the F5 Distributed Cloud Console
@@ -95,42 +102,43 @@ F5 Distributed Cloud Console.
 
 +----------------------------------------------------------------------------------------------+
 | Locate the **Update Your Account** email sent to you from                                    |
-| *F5 Distributed Cloud <no-reply@cloud.f5.com>* and click the **Update Password** button/link |
-| in that email to set your credentials.                                                       |
+| *F5 Distributed Cloud <no-reply@cloud.f5.com>*.                                              |
 +----------------------------------------------------------------------------------------------+
 | .. image:: _static/updatepasswdemail.png                                                     |
 |    :width: 800px                                                                             |
++----------------------------------------------------------------------------------------------+
+| Click the **Update Password** button/link in that email to set your credentials.             |
++----------------------------------------------------------------------------------------------+
+| |PSUpdatePassword|                                                                           |
 +----------------------------------------------------------------------------------------------+
 | Ensure you adhere to the password strength restrictions and make a mental note of these      |
 | credentials as you will need them several times throughout this lab today.                   |
 | *For this exercise, feel free to use the same password that was configured for you on*       |
 | *the two BIG-IP appliances of your UDF virtual lab environment* (**Canada123!**).            |
-+----------------------------------------------------------------------------------------------+
-| |PSUpdatePassword|                                                                           |
-+----------------------------------------------------------------------------------------------+
+| Click **Submit**.                                                                            |
 | Once you've set your new password (*including 1 upper, 1 lower and 1 special character*),    |
-| you will be prompted to **Log In** (click the button to login):                              |
+| you will be prompted to **Log In**.                                                          |
 +----------------------------------------------------------------------------------------------+
 | .. image:: _static/PSPasswordUpdated.png                                                     |
 |    :width: 800px                                                                             |
 +----------------------------------------------------------------------------------------------+
-| In the domain field, enter: **f5-xc-lab-mcn**, click **Next** and sign in with your email    |
-| address and password you've just set (i.e, **Canada123!**), and proceed to accepting the     |
-| Terms and Conditions.                                                                        |
+| Click the **Log In** button.                                                                 |
 +----------------------------------------------------------------------------------------------+
 | .. image:: _static/tenantlogin.png                                                           |
 |    :width: 800px                                                                             |
 +----------------------------------------------------------------------------------------------+
-| Put a checmark in the box and click to **Accept and Agree**.                                 |
+| In the domain field, enter: **f5-xc-lab-mcn** and click **Next**.                            |
++----------------------------------------------------------------------------------------------+
+| .. image:: _static/tenantlogin2.png                                                          |
+|    :width: 800px                                                                             |
++----------------------------------------------------------------------------------------------+
+| Sign in with your email address and password you've just set (i.e, **Canada123!**),          |
+| and proceed to accepting the Terms and Conditions page.                                      |
 +----------------------------------------------------------------------------------------------+
 | .. image:: _static/PSTsandCs.png                                                             |
 |    :width: 800px                                                                             |
 +----------------------------------------------------------------------------------------------+
-
-Optional: Logging into the F5 Distributed Cloud Console
--------------------------------------------------------
-
-+----------------------------------------------------------------------------------------------+
+| Put a checmark in the box and click to **Accept and Agree**.                                 |
 | Upon the first successful login, you are prompted to select your *Persona*.                  |
 +----------------------------------------------------------------------------------------------+
 | .. image:: _static/PSPersona.png                                                             |
@@ -147,15 +155,18 @@ Optional: Logging into the F5 Distributed Cloud Console
 | You will be able to access all services, but making use of personas can focus your view on   |
 | particular tasks that are relevant to your role.                                             |
 |                                                                                              |
-| *For informational purposes only:*  You can change these settings at any time.               |
+
+Optional: Logging into the F5 Distributed Cloud Console
+-------------------------------------------------------
+
++----------------------------------------------------------------------------------------------+
+| *For informational purposes only:*  You can change your persona settings at any time.        |
 +----------------------------------------------------------------------------------------------+
 | .. image:: _static/intro1.png                                                                |
 |    :width: 800px                                                                             |
 +----------------------------------------------------------------------------------------------+
 | Click on your *Account* icon in the top right of the screen and then click on                | 
 | **Account Settings**.                                                                        |
-| In the resulting window you can observe the **Work domains and skill level** section and     |
-| other administrative functions.                                                              |
 +----------------------------------------------------------------------------------------------+
 | .. image:: _static/intro2.png                                                                |
 |    :width: 800px                                                                             |
@@ -168,7 +179,7 @@ Optional: Logging into the F5 Distributed Cloud Console
 Task 4: Accessing the F5 **Policy Supervisor** Console
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 The same credentials for the **f5-xc-lab-mcn** tenant in the F5 Distributed Cloud Console can
-be used to access the F5 **Policy Supervisor** console if you don't already have access.
+be used to access the F5 **Policy Supervisor** console.
 
 +----------------------------------------------------------------------------------------------+
 | Browse to https://policysupervisor.io.                                                       |
@@ -179,8 +190,9 @@ be used to access the F5 **Policy Supervisor** console if you don't already have
 +----------------------------------------------------------------------------------------------+
 | |intro011|                                                                                   |
 +----------------------------------------------------------------------------------------------+
-| If prompted, click on **Work or shcool account** and proceed to login with the same          |
-| credentials configured in Task 3 above.                                                      |
+| Follow the prompts to login with a valid Microsoft account.                                  |
+| click **User another account** if your existing account is not listed or if you wish to      |
+| create a new Microsoft account (follow the **Create one!** link) .                           |
 +----------------------------------------------------------------------------------------------+
 | .. image:: _static/image9.png                                                                |
 |    :width: 800px                                                                             |
@@ -214,7 +226,7 @@ be used to access the F5 **Policy Supervisor** console if you don't already have
    :width: 800px
 .. |intro010| image:: _static/PSLoginWindow.png
    :width: 800px
-.. |intro011| image:: _static/AzureADLogin.png
+.. |intro011| image:: _static/PSAzureLoginAddAccount.png
    :width: 800px
 .. |labbgn| image:: _static/labbgn.png
    :width: 800px
