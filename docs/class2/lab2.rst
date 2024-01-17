@@ -90,7 +90,7 @@ Cloud Console.
    run the following command:
 
    .. code:: BASH
-      curl 'http://<namespace>.lab-sec.f5demos.com'
+      curl -v 'http://<namespace>.lab-sec.f5demos.com'
       --user-agent 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.2.1 Safari/605.1.15'
 
    This HTTP request will not show up in the Security Analytics however you
