@@ -1,10 +1,10 @@
 Lab 1: API-First Console
 ========================
 
-This lab will focus on demonstrating the API-First capabilities of the F5 Distribured Cloud
-Console. Students will begin by creating an API token for authenticating to the API. Next,
-students will explore the Distributed Cloud Developer Portal and utilize it to query live 
-configuration. The lab concludes with using Postman to deploy an application.
+This lab will focus on demonstrating the API-first capabilities of the F5 Distributed Cloud
+Console. Students will begin by creating an API token for authenticating to the API, followed 
+by exploring the Distributed Cloud Developer Portal and utilizing it to query a live 
+configuration. Finally, the lab concludes with using Postman to deploy an application.
 
 For the tasks that follow, you should have already noted your individual **namespace**. If you
 failed to note it, return to the **Introduction** section of this lab, follow the instructions
@@ -15,7 +15,7 @@ all lab attendees.
 * **Delegated Domain:** *.lab-app.f5demos.com*
 * **F5 Distributed Cloud Tenant:** https://f5-xc-lab-app.console.ves.volterra.io
 
-Following the tasks in the prior **Introduction** Section, you should now be able to access the
+By following the tasks in the prior **Introduction** Section, you should now be able to access the
 F5 Distributed Cloud Console, having set your Work Domain Roles and Skill levels. If you have
 not done so already, please login to your tenant for this lab and proceed to Task 1.
 
@@ -28,21 +28,21 @@ utilizing the Developer Portal.
 +---------------------------------------------------------------------------------------------------------------+
 | **Create API Token from the Distributed Cloud Console**                                                       |
 +===============================================================================================================+
-| 1. Following the **Introduction** section  instructions, you should now be in the **Multi-Cloud App Connect** |
+| 1. Following the **Introduction** section instructions, you should now be in the **Multi-Cloud App Connect**  |
 |                                                                                                               |
-|    configuration window. If for some reason you are not in the **Multi-Cloud App Connect** window, use the    |
+|    configuration window. If, for some reason, you are not in the **Multi-Cloud App Connect** window, use the  |
 |                                                                                                               |
 |    **Select Service** in the left-hand navigation, and click **Multi-Cloud App Connect** as shown in the      |
 |                                                                                                               |
 |    *Introduction section, Task 2, Step 9*.                                                                    |
 +---------------------------------------------------------------------------------------------------------------+
-| 2. In the top right corner of the Distributed Cloud Console click the **User Icon** dropdown and select       |
+| 2. In the top right corner of the Distributed Cloud Console, click the **User Icon** dropdown and select      |
 |                                                                                                               |
 |    **Account Settings**.                                                                                      |
 |                                                                                                               |
 | |lab1-Account_Settings|                                                                                       |
 +---------------------------------------------------------------------------------------------------------------+
-| 3. In the resulting screen click **Credentials** under the Peronal Management Heading on the left.            |
+| 3. In the resulting screen, click **Credentials** under the Peronal Management Heading on the left.           |
 |                                                                                                               |
 | |lab1-Credentials|                                                                                            |
 +---------------------------------------------------------------------------------------------------------------+
@@ -60,32 +60,32 @@ utilizing the Developer Portal.
 |                                                                                                               |
 | |lab1-Generate_API_Token|                                                                                     |
 +---------------------------------------------------------------------------------------------------------------+
-| 7. On the form that appears copy your API token and save it for use later.  Then click **Done**.              |
+| 7. On the form that appears, copy your API token and save it for use later.  Then click **Done**.             |
 |                                                                                                               |
 | |lab1-API_Token|                                                                                              |
 |                                                                                                               |
 | .. note::                                                                                                     |
 |    *If you don't save your API token or you lose it, you will need to generate a new API token. After an API* |
 |                                                                                                               |
-|    *token is generated, it can not be retrieved again later.*                                                 |
+|    *token is generated, it **cannot be retrieved again later**.*                                                |
 +---------------------------------------------------------------------------------------------------------------+
 
 
 +---------------------------------------------------------------------------------------------------------------+
 | **Access the Distributed Cloud Developer Portal**                                                             |
 +===============================================================================================================+
-| 8. In the top right corner of the Distributed Cloud Console click the **Support** dropdown and select **API** |
+| 8. In the top right corner of the Distributed Cloud Console, click the **Support** dropdown and select **API**|
 |                                                                                                               |
 |    **Documentation**.                                                                                         |
 |                                                                                                               |
 | |lab1-API_Documentation|                                                                                      |
 |                                                                                                               |
 | .. note::                                                                                                     |
-|    *This takes you to the online documentation for the F5 Distributed Cloud Services API.  Here you can*      |
+|    *This takes you to the online documentation for the F5 Distributed Cloud Services API.  Here, you can*     |
 |                                                                                                               |
 |    *review or download the API specification.*                                                                |
 +---------------------------------------------------------------------------------------------------------------+
-| 9. In the resulting screen click the **API Developer Portal** link in the top menu.                           |
+| 9. In the resulting screen, click the **API Developer Portal** link in the top menu.                          |
 |                                                                                                               |
 | |lab1-API_Developer_Portal|                                                                                   |
 +---------------------------------------------------------------------------------------------------------------+
@@ -95,7 +95,7 @@ utilizing the Developer Portal.
 |                                                                                                               |
 | |lab1-Portal_Domain|                                                                                          |
 +---------------------------------------------------------------------------------------------------------------+
-| 11. In the resulting screen click the **Authorize** link in the top right corner.                             |
+| 11. In the resulting screen, click the **Authorize** link in the top right corner.                            |
 |                                                                                                               |
 | |lab1-Portal_Authorize|                                                                                       |
 +---------------------------------------------------------------------------------------------------------------+
@@ -137,10 +137,10 @@ utilizing the Developer Portal.
 Task 2: Create A Proxy Configuration Using Postman
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The following steps will create Health Check, an Origin Pool and Http Load Balancer utilizing Postman to post 
-JSON definitions to the Distributed Cloud API. For this task you will be using a Windows 10 client that is part 
+The following steps will create a Health Check, an Origin Pool and an HTTP Load Balancer utilizing Postman to post 
+JSON definitions to the Distributed Cloud API. For this task, you will be using a Windows 10 client that is part 
 of the UDF deployment. The Windows 10 client has Postman pre-installed to save time in the lab.  To install and 
-utilize postman outside of the lab visit https://www.postman.com/downloads/.
+utilize postman outside of the lab, visit https://www.postman.com/downloads/.
 
 An RDP client is recommended to access the Windows 10 client.  Current versions of Microsoft Windows should 
 include an RDP client pre-installed.  If you are using an operating system other than Windows, below are 
@@ -158,7 +158,7 @@ documentation and download links for installing an RDP client.
 | Linux             | `Remote Desktop Linux`_                                                                   |
 +-------------------+-------------------------------------------------------------------------------------------+
 
-If you are unable to install an RDP client or cannot connect via RDP to the Windows 10 host, you can use the 
+If you are unable to install an RDP client, or cannot connect via RDP to the Windows 10 host, you can use the 
 WebRDP jump host within the UDF environment to access the Windows 10 client via a web browser. Here are 
 instructions for connecting to the Windows 10 client via RDPClient_. Here are instructions for connecting to the
 Windows 10 client via WebRDP_.
@@ -195,7 +195,7 @@ The username and password for the Windows 10 host are:
 +---------------------------------------------------------------------------------------------------------------+
 | 5. Review the results in the **Body** section of Postman. You should see a 200 OK response code and the name  |
 |                                                                                                               |
-|    of you namespace should appear in the **metadata**. These results should match the results from Task 1     |
+|    of your namespace should appear in the **metadata**. These results should match the results from Task 1    |
 |                                                                                                               |
 |    step 16.                                                                                                   |
 |                                                                                                               |
@@ -273,7 +273,7 @@ configuration will then be tested utilizing a web browser to access the web appl
 |                                                                                                               |
 | |lab1-XC_Signin|                                                                                              |
 +---------------------------------------------------------------------------------------------------------------+
-| 4. Within the Distributed Cloud dashboard select the **Multi-Cloud App Connect** tile.                        |
+| 4. Within the Distributed Cloud dashboard, select the **Multi-Cloud App Connect** tile.                       |
 |                                                                                                               |
 | |lab1-XC_App_Connect|                                                                                         |
 +---------------------------------------------------------------------------------------------------------------+
@@ -302,7 +302,7 @@ configuration will then be tested utilizing a web browser to access the web appl
 | .. note::                                                                                                     |
 |    *There may be slight variations in the JSON because you don't need to post default values when calling the*|
 |                                                                                                               |
-|    *API. If you want to automate a task in Distributed Cloud but are unsure of the required JSON, you can*    |
+|    *API. If you want to automate a task in Distributed Cloud, but are unsure of the required JSON, you can*   |
 |                                                                                                               |
 |    *configure a test object via the GUI and then use this JSON tab to get the corresponding JSON config.*     |
 +---------------------------------------------------------------------------------------------------------------+
@@ -333,7 +333,7 @@ configuration will then be tested utilizing a web browser to access the web appl
 | .. note::                                                                                                     |
 |    *There may be slight variations in the JSON because you don't need to post default values when calling the*|
 |                                                                                                               |
-|    *API. If you want to automate a task in Distributed Cloud but are unsure of the required JSON, you can*    |
+|    *API. If you want to automate a task in Distributed Cloud, but are unsure of the required JSON, you can*   |
 |                                                                                                               |
 |    *configure a test object via the GUI and then use this JSON tab to get the corresponding JSON config.*     |
 +---------------------------------------------------------------------------------------------------------------+
@@ -364,7 +364,7 @@ configuration will then be tested utilizing a web browser to access the web appl
 | .. note::                                                                                                     |
 |    *There may be slight variations in the JSON because you don't need to post default values when calling the*|
 |                                                                                                               |
-|    *API. If you want to automate a task in Distributed Cloud but are unsure of the required JSON, you can*    |
+|    *API. If you want to automate a task in Distributed Cloud, but are unsure of the required JSON, you can*   |
 |                                                                                                               |
 |    *configure a test object via the GUI and then use this JSON tab to get the corresponding JSON config.*     |
 +---------------------------------------------------------------------------------------------------------------+
@@ -389,7 +389,7 @@ configuration will then be tested utilizing a web browser to access the web appl
 +---------------------------------------------------------------------------------------------------------------+
 | **End of Lab 1**                                                                                              |
 +===============================================================================================================+
-| This concludes Lab 1. In this lab you learned about the Distributed Cloud Developer Portal and how it can     |
+| This concludes Lab 1. In this lab, you learned about the Distributed Cloud Developer Portal and how it can    |
 |                                                                                                               |
 | help you test API calls. You then expanded upon that knowledge and utilized Postman to deploy a Health Check, |
 |                                                                                                               |

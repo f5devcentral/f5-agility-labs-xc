@@ -33,7 +33,7 @@ malicious user mitigation and actions.
    |lab003|
 
 #. Click the dropdown for **User Identification Policy** and select
-     **Add Item**.
+   **Add Item**.
 
    |lab004|
 
@@ -166,6 +166,7 @@ select **Enable**.
    bottom of the window and click the **Save and Exit** button.
 
    |lab023|
+
    |lab024|
 
 **End of Lab 3:**  This concludes Lab 3, feel free to review and test the

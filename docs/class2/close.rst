@@ -2,7 +2,7 @@ Conclusion
 ==========
 
 Thank you for your participation in the F5 Distributed Cloud Lab.
-This Lab Guide has highlighted how attendees can leverage F5 Distributed 
+This Lab Guide has highlighted how attendees can leverage F5 Distributed
 Cloud security to protect hosted applications and resources.
 
 Appendix
@@ -30,7 +30,7 @@ Appendix
   * **Terraform:** https://registry.terraform.io/providers/volterraedge/volterra/latest
 
 +----------------------------------------------------------------------------------------------+
-| F5 Networks, Inc. \| f5.com                                                                  |
+| F5 Networks, Inc. /| f5.com                                                                  |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+

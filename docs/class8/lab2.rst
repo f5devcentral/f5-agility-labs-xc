@@ -10,7 +10,7 @@ the objects created in Lab 1 and Lab 2 in prepration for Lab 3.
 
 Task 1: Create & Attach WAAP Policy  
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-In this task you will use Postman to create an Application Firewall policy with the default settings. Postman 
+In this task, you will use Postman to create an Application Firewall policy with the default settings. Postman 
 will then be used to attach the Application Firewall to the HTTP Load Balancer created in Lab 1. 
 
 This lab will begin back in the Windows 10 client deployed as part of the UDF.
@@ -18,9 +18,9 @@ This lab will begin back in the Windows 10 client deployed as part of the UDF.
 +---------------------------------------------------------------------------------------------------------------+
 | **Create an Application Firewall and Apply It to Your Application Load Balancer Via Postman**                 |
 +===============================================================================================================+
-| 1. Return to **Postman**, in the workspace pane expand **Appworld - XC Automation** if it isn't already,      |
+| 1. Return to **Postman**. In the workspace pane, expand **Appworld - XC Automation** if it isn't already,     |
 |                                                                                                               |
-|    click on **Create App Firewall**, click on **Body**, and review the raw JSON content.                      |
+|    then click on **Create App Firewall**, and click on **Body** to review the raw JSON content.               |
 |                                                                                                               |
 | |lab2-Postman_AppFW_Body|                                                                                     |
 +---------------------------------------------------------------------------------------------------------------+
@@ -67,7 +67,7 @@ This lab will begin back in the Windows 10 client deployed as part of the UDF.
 |                                                                                                               |
 | |lab1-XC_Signin|                                                                                              |
 +---------------------------------------------------------------------------------------------------------------+
-| 10. Within the Distributed Cloud dashboard select the **Multi-Cloud App Connect** tile.                       |
+| 10. Within the Distributed Cloud dashboard, select the **Multi-Cloud App Connect** tile.                      |
 |                                                                                                               |
 | |lab1-XC_App_Connect|                                                                                         |
 +---------------------------------------------------------------------------------------------------------------+
@@ -96,7 +96,7 @@ This lab will begin back in the Windows 10 client deployed as part of the UDF.
 | .. note::                                                                                                     |
 |    *There may be slight variations in the JSON because you don't need to post default values when calling the*|
 |                                                                                                               |
-|    *API. If you want to automate a task in Distributed Cloud but are unsure of the required JSON, you can*    |
+|    *API. If you want to automate a task in Distributed Cloud, but are unsure of the required JSON, you can*   |
 |                                                                                                               |
 |    *configure a test object via the GUI and then use this JSON tab to get the corresponding JSON config.*     |
 +---------------------------------------------------------------------------------------------------------------+
@@ -106,7 +106,7 @@ This lab will begin back in the Windows 10 client deployed as part of the UDF.
 
 Task 2: Create & Attach a Service Policy  
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-In this task you will use Postman to create a Service Policy that only allows specific contries to access your 
+In this task, you will use Postman to create a Service Policy that only allows specific contries to access your 
 application. Postman will then be used to attach the Service Policy to the HTTP Load Balancer created in Lab 1. 
 
 +---------------------------------------------------------------------------------------------------------------+
@@ -192,7 +192,7 @@ application. Postman will then be used to attach the Service Policy to the HTTP 
 | .. note::                                                                                                     |
 |    *There may be slight variations in the JSON because you don't need to post default values when calling the*|
 |                                                                                                               |
-|    *API. If you want to automate a task in Distributed Cloud but are unsure of the required JSON, you can*    |
+|    *API. If you want to automate a task in Distributed Cloud, but are unsure of the required JSON, you can*   |
 |                                                                                                               |
 |    *configure a test object via the GUI and then use this JSON tab to get the corresponding JSON config.*     |
 +---------------------------------------------------------------------------------------------------------------+
@@ -201,7 +201,7 @@ application. Postman will then be used to attach the Service Policy to the HTTP 
 
 Task 3: Delete the Objects Created with Postman
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-In this task you will use Postman to delete the HTTP Load Balancer, Service Policy, App Firewall, Origin Pool, 
+In this task you, will use Postman to delete the HTTP Load Balancer, Service Policy, App Firewall, Origin Pool, 
 and Health Check.  This demonstrates how to use Postman to delete objects when they are no longer needed, and
 cleans up the environment in prepation for Lab3.
 
@@ -254,13 +254,13 @@ cleans up the environment in prepation for Lab3.
 +---------------------------------------------------------------------------------------------------------------+
 | **End of Lab 2**                                                                                              |
 +===============================================================================================================+
-| This concludes Lab 2. In this lab you learned how to use Postman to create an Web Application Firewall        |
+| This concludes Lab 2. In this lab, you learned how to use Postman to create a Web Application Firewall        |
 |                                                                                                               |
 | policy and Service Policy. You then used Postman to modify the HTTP Load Balancer you created in Lab 1 and    |
 |                                                                                                               |
-| apply the Web Application Firewall and Service policy. Lastly you used Postman to delete all of the           |
+| apply the Web Application Firewall and Service policy. Lastly, you used Postman to delete all of the          |
 |                                                                                                               |
-| configuration from Lab 1 and Lab 2 in preperation for Lab 3. A brief presentation will be shared prior to the |
+| configuration from Lab 1 and Lab 2 in preparation for Lab 3. A brief presentation will be shared prior to the |
 |                                                                                                               |
 | beginning of Lab 3.                                                                                           |
 |                                                                                                               |
