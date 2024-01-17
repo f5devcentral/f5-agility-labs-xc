@@ -95,13 +95,6 @@ Cloud Console.
       curl 'http://<namespace>.lab-sec.f5demos.com'
       --user-agent 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.2.1 Safari/605.1.15'
 
-   .. code:: BASH
-
-      curl -v 'http://<namespace>.lab-sec.f5demos.com/auth.php'
-      -H 'Content-Type: application/x-www-form-urlencoded'
-      --user-agent 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.2.1 Safari/605.1.15'
-      --data-raw 'identity=user%40f5.com&token=password&submit=Submit'
-
    This HTTP request will not show up in the Security Analytics however you
    will find it in Request logging.
 
