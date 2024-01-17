@@ -90,7 +90,7 @@ challenge.
    |lab012|
 
 #. Click the dropdown for **Malicious User Mitigation And Challenges** and
-select **Enable**.
+   select **Enable**.
 
    |lab013|
 
@@ -107,9 +107,9 @@ select **Enable**.
 
    .. note::
 
-      **Using shared namespace Malicious User Mitigation provides the ability
+      *Using shared namespace Malicious User Mitigation provides the ability
       to use API-updated mitigation controls to implement common service
-      security across multiple resources.**
+      security across multiple resources.*
 
 #. Select **Add Item**.
 
