@@ -86,35 +86,55 @@ The *SuperJumpHost* is pre-configured in your lab environment with permission to
 +---------------------------------------------------------------------------------------------------------------+
 | |lab008|                                                                                                      |
 +---------------------------------------------------------------------------------------------------------------+
-| 4. Set your working directory to */tmp* with this linux command: ``cd /tmp``                                  |
+| 4. Set your working directory to */tmp* with the **"cd /tmp"** linux command.                                 |
+|                                                                                                               |
+|    .. code-block:: bash                                                                                       |
+|                                                                                                               |
+|       cd /tmp                                                                                                 |
 |                                                                                                               |
 | 5. Use the URL copied at step 7 above to download the installer via the command line:                         |
-|    ``wget <...insert URL from aboe Task 1 here...>``                                                          |
+|    **"wget <...insert URL from aboe Task 1 here...>"**                                                        |
+|                                                                                                               |
+|    .. code-block:: bash                                                                                       |
+|                                                                                                               |
+|       wget <...insert URL from aboe Task 1 here...>                                                           |
 |                                                                                                               |
 | 6. After the download completes, rename the file with this linux command:                                     |
-|    ``mv download agent-installer``                                                                            |
+|    **"mv download agent-installer"**                                                                          |
+|                                                                                                               |
+|    .. code-block:: bash                                                                                       |
+|                                                                                                               |
+|       mv download agent-installer                                                                             |
 |                                                                                                               |
 | 7. Next, give the installer package execution rights to enable it to run:                                     |
-|    ``chmod +x ./agent-installer``                                                                             |
+|    **"chmod +x ./agent-installer"**                                                                           |
+|                                                                                                               |
+|    .. code-block:: bash                                                                                       |
+|                                                                                                               |
+|       chmod +x ./agent-installer                                                                              |
 |                                                                                                               |
 | 8. Run the agent installer by using the following command:                                                    |
-|    ``./agent-installer``                                                                                      |
+|    **"./agent-installer"**                                                                                    |
+|                                                                                                               |
+|    .. code-block:: bash                                                                                       |
+|                                                                                                               |
+|       ./agent-installer                                                                                       |
 +---------------------------------------------------------------------------------------------------------------+
 | |lab009|                                                                                                      |
 +---------------------------------------------------------------------------------------------------------------+
 | 9. Wait for the prompt and paste the token copied from *Task 1* above.                                        |
 |    *(command-V on a MAC, Ctrl-Shift-V on Windows)*                                                            |
 |                                                                                                               |
-| 10. Enter the name ``udf`` when prompted for the agent name.                                                  |
+| 10. Enter the name **"udf"** when prompted for the agent name.                                                |
 |     Wait for registration to complete successfully (takes a few minutes).                                     |
 +---------------------------------------------------------------------------------------------------------------+
 | |lab010|                                                                                                      |
 +---------------------------------------------------------------------------------------------------------------+
-| 11. Type ``bigip`` when prompted for the secret name.                                                         |
+| 11. Type **"bigip"** when prompted for the secret name.                                                       |
 |                                                                                                               |
-| 12. Type ``admin`` when prompted for the username.                                                            |
+| 12. Type **"admin"** when prompted for the username.                                                          |
 |                                                                                                               |
-| 13. Type ``Canada123!`` when prompted for a password.                                                         |
+| 13. Type **"Canada123!"** when prompted for a password.                                                       |
 |                                                                                                               |
 | 14. Press "**Enter**" when prompted for the *ssh key path* (we're not using one in this demo).                |
 |                                                                                                               |
@@ -129,9 +149,13 @@ Task 3: Finish adding a first *provider* in **Policy Supervisor**
 The configuration of the new *Provider* can be completed now that the *Agent* is ready.
 
 +---------------------------------------------------------------------------------------------------------------+
-| Go to https://policysupervisor.io again and click "Done" (return to the *Add Provider Pane* with *BIG-IP*     |
+| Go to https://policysupervisor.io again and click **Done** (return to the *Add Provider Pane* with *BIG-IP*   |
 | selected for the *Provider Type*).                                                                            |
 |                                                                                                               |
++---------------------------------------------------------------------------------------------------------------+
+| .. image:: _static/PSAddProvider.png                                                                          |
+|    :width: 800px                                                                                              |
++---------------------------------------------------------------------------------------------------------------+
 | Select the new **udf** option that should now be visible on the dropdown list for the *Agent* field           |
 | (the provider that was created in the previous task).                                                         |
 |                                                                                                               |
@@ -140,12 +164,9 @@ The configuration of the new *Provider* can be completed now that the *Agent* is
 |                                                                                                               |
 | The **Provider Name** and **Provider URL** fields will now appear.                                            |
 |                                                                                                               |
-| Type **bigip1** for the **Provider Name** and type **https://10.1.1.6** for the **Provider URL**.             |
+| Type **"bigip1"** for the *Provider Name** and type **"https://10.1.1.6"** for the **Provider URL** as shown  |
+| above.                                                                                                        |
 |                                                                                                               |
-+---------------------------------------------------------------------------------------------------------------+
-| .. image:: _static/PSAddProvider.png                                                                          |
-|    :width: 800px                                                                                              |
-+---------------------------------------------------------------------------------------------------------------+
 | Click the **Test Connection** button and wait for the tests to complete successfully.                         |
 +---------------------------------------------------------------------------------------------------------------+
 | .. image:: _static/PSProviderTestConnection.png                                                               |
@@ -160,7 +181,10 @@ your 2nd BIG-IP because they areconnected to the same management network in your
 
 +---------------------------------------------------------------------------------------------------------------+
 | Click the **Add another Provider** button to add the second BIG-IP appliance in your virtual lab environment. |
-|                                                                                                               |
++---------------------------------------------------------------------------------------------------------------+
+| .. image:: _static/PSAddProvider2.png                                                                         |
+|    :width: 800px                                                                                              |
++---------------------------------------------------------------------------------------------------------------+
 | Select the **BIG-IP** option for the provider type.                                                           |
 |                                                                                                               |
 | Select the **udf** option for **Agent**.                                                                      |
@@ -169,12 +193,10 @@ your 2nd BIG-IP because they areconnected to the same management network in your
 |                                                                                                               |
 | Click **Continue**.                                                                                           |
 |                                                                                                               |
-| Type **bigip2** for the **Provider Name** and type **https://10.1.1.7** for the **Provider URL**.             |
+| The **Provider Name** and **Provider URL** fields will now appear.                                            |
 |                                                                                                               |
-+---------------------------------------------------------------------------------------------------------------+
-| .. image:: _static/PSAddProvider2.png                                                                         |
-|    :width: 800px                                                                                              |
-+---------------------------------------------------------------------------------------------------------------+
+| Type **"bigip2"** for the **Provider Name** and type **"https://10.1.1.7"** for the **Provider URL**.         |
+|                                                                                                               |
 | Click the **Test Connection** button and wait for the tests to complete successfully.                         |
 +---------------------------------------------------------------------------------------------------------------+
 | .. image:: _static/PSProviderTestConnection.png                                                               |
@@ -213,7 +235,7 @@ Let's ingest this WAF policy into **Policy Supervisor**.
 | .. image:: _static/PSIngest2b.png                                                                             |
 |    :width: 800px                                                                                              |
 +---------------------------------------------------------------------------------------------------------------+
-| Type ``Ingest from bigip1`` for the required **commit message**,                                              |
+| Type **"Ingest from bigip1"** for the required **commit message**,                                            |
 | click **Save & Ingest Policy**, then wait for the ingestion to complete successfully.                         |
 +---------------------------------------------------------------------------------------------------------------+
 | .. image:: _static/PSIngest3.png                                                                              |
@@ -235,7 +257,7 @@ Let's ingest this WAF policy into **Policy Supervisor**.
 | .. image:: _static/PSDeploy3.png                                                                              |
 |    :width: 800px                                                                                              |
 +---------------------------------------------------------------------------------------------------------------+
-| Select the **bigip2** option from the **Provider** dropdown, type ``Deploy to bigip2`` in the mandatory commit|
+| Select **bigip2** option from the **Provider** optinos and type **"Deploy to bigip2"** in the mandatory commit|
 | message text box and click the **Conversion Summary** button.                                                 |
 +---------------------------------------------------------------------------------------------------------------+
 | .. image:: _static/PSDeploy4.png                                                                              |
@@ -290,30 +312,32 @@ Task 6: Confirm successful deployment of the WAF policy on BIG-IP2
 | .. image:: _static/UDFTMUI.png                                                                                |
 |    :width: 800px                                                                                              |
 +---------------------------------------------------------------------------------------------------------------+
-| 3. Select **TMUI** to access the **bigip2** machine's GUI management interface in a new browser tab.          |
+| 3. Select the **TMUI** option to opoen **bigip2**'s GUI management interface in a new browser tab.            |
 +---------------------------------------------------------------------------------------------------------------+
 | .. image:: _static/TMUILogin.png                                                                              |
 |    :width: 800px                                                                                              |
 +---------------------------------------------------------------------------------------------------------------+
-| 4. Login with username **admin** and password **Canada123!**, then click to the virtual servers list page.    |
+| 4. Login with username **"admin"** and password **"Canada123!"**.                                             |
 +---------------------------------------------------------------------------------------------------------------+
 | .. image:: _static/TMUIVS.png                                                                                 |
 |    :width: 800px                                                                                              |
-|                                                                                                               |
++---------------------------------------------------------------------------------------------------------------+
+| 5. Browse to the virtual servers list page.                                                                   |
++---------------------------------------------------------------------------------------------------------------+
 | .. image:: _static/TMUIVS2.png                                                                                |
 |    :width: 800px                                                                                              |
 +---------------------------------------------------------------------------------------------------------------+
-| 5. Click on the **web_app** name to view the virtual sever's properties page.                                 |
+| 6. Click on the **web_app** name to view the virtual sever's properties page.                                 |
 +---------------------------------------------------------------------------------------------------------------+
 | .. image:: _static/TMUIVS3.png                                                                                |
 |    :width: 800px                                                                                              |
 +---------------------------------------------------------------------------------------------------------------+
-| 6. Browse to the virtual sever's **Security -> Policies** page.                                               |
+| 7. Browse to the virtual sever's **Security -> Policies** page.                                               |
 +---------------------------------------------------------------------------------------------------------------+
 | .. image:: _static/TMUIVS4.png                                                                                |
 |    :width: 800px                                                                                              |
 +---------------------------------------------------------------------------------------------------------------+
-| 7. Observe that the Application Security Policy (e.g., the WAF policy) is **Enabled**.                        |
+| 8. Observe that the Application Security Policy (e.g., the WAF policy) is **Enabled**.                        |
 +---------------------------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------------------------------+

@@ -13,12 +13,19 @@ Objectives:
 .. image:: _static/00-marketecture.png
     :scale: 25%
 
+Prerequisites:
+--------------
+
+- A workstation (laptop) with Internet connectivity and a modern web browser (Google Chrome recommended).
+- Email from courses@notify.udf.f5.com confirming that you are registered to this UDF Course.
+- Valid Microsoft Azure AD credentials (required for logging in to the **F5 Policy Supervisor** console).
+
 Lab & Tasks:
 ------------
 
 The next page (Introduction) will cover the lab environment, access, and lab variables.
 Launching the virtual lab environment requires an F5 Unified Demo Framework (UDF) account. 
-Login to the F5 **Policy Supervisor** console also requires an active F5 Distributed Cloud account. 
+Login to the F5 **Policy Supervisor** console requires a valid Microsoft account.
 Upon launching this virtual lab, students are provided an ephemeral F5 Distributed Cloud account
 that allows them to login to both F5 Distributed Cloud and F5 **Policy Supervisor** consoles.
 
