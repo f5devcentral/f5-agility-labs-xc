@@ -311,7 +311,7 @@ If you don't already have a tab open to the Diag tool, in your browser go to: ht
 
 Click on **Run Command** and paste in the following:: 
 
-    curl  http://[animal-name]-aws-to-azure-lb.lab-mcn.f5demos.com --resolve [animal-name]-aws-to-azure-lb.lab-mcn.f5demos.com:80:10.0.5.101
+    curl  http://[animal-name]-aws-to-azure-lb.lab-mcn.f5demos.com --resolve [animal-name]-aws-to-azure-lb.lab-mcn.f5demos.com:80:10.0.5.236
 
 |
 
@@ -324,7 +324,7 @@ In just a few moments, you now have full proxy connectivity between IP Overlappe
 
 Let's try that command again but with the shorthand version by using **\-\-head**::
 
-    curl --head  http://[animal-name]-aws-to-azure-lb.lab-mcn.f5demos.com --resolve [animal-name]-aws-to-azure-lb.lab-mcn.f5demos.com:80:10.0.5.101
+    curl --head  http://[animal-name]-aws-to-azure-lb.lab-mcn.f5demos.com --resolve [animal-name]-aws-to-azure-lb.lab-mcn.f5demos.com:80:10.0.5.236
 
 |
 
@@ -443,7 +443,7 @@ If you don't already have a tab open to the Diag tool, in your browser go to: ht
 
 Try your curl command again **without** the **--head** flag.:: 
 
-    curl http://[animal-name]-aws-to-azure-lb.lab-mcn.f5demos.com --resolve [animal-name]-aws-to-azure-lb.lab-mcn.f5demos.com:80:10.0.5.101
+    curl http://[animal-name]-aws-to-azure-lb.lab-mcn.f5demos.com --resolve [animal-name]-aws-to-azure-lb.lab-mcn.f5demos.com:80:10.0.5.236
 
 
 |
@@ -455,7 +455,7 @@ Try your curl command again **without** the **--head** flag.::
 
 Now run the command again but insert the **\-\-head** command.::
 
-    curl --head  http://[animal-name]-aws-to-azure-lb.lab-mcn.f5demos.com --resolve [animal-name]-aws-to-azure-lb.lab-mcn.f5demos.com:80:10.0.5.101
+    curl --head  http://[animal-name]-aws-to-azure-lb.lab-mcn.f5demos.com --resolve [animal-name]-aws-to-azure-lb.lab-mcn.f5demos.com:80:10.0.5.236
 
 |
 
