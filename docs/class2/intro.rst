@@ -114,7 +114,7 @@ proceed to the first step below to access the F5 Distributed Cloud Lab Tenant.
 **Beginning of Lab:**  You are now ready to begin the lab, Enjoy! Ask question
 as needed.
 
-   |labbgn|
+|labbgn|
 
 .. |intro001| image:: _static/intro-001.png
    :width: 800px
