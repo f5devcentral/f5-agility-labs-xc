@@ -10,7 +10,8 @@ protect the previously configured application from advanced Bot threats.
 **Expected Lab Time: 25 minutes**
 
 Task 1: Reviewing Signature-based Bot protection
-------------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 In this task you will review the Bot signature configuration and view
 logged security events. This lab will begin back in the F5 Distributed
 Cloud Console.
@@ -90,8 +91,16 @@ Cloud Console.
    run the following command:
 
    .. code:: BASH
+
       curl 'http://<namespace>.lab-sec.f5demos.com'
       --user-agent 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.2.1 Safari/605.1.15'
+
+   .. code:: BASH
+
+      curl -v 'http://<namespace>.lab-sec.f5demos.com/auth.php'
+      -H 'Content-Type: application/x-www-form-urlencoded'
+      --user-agent 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.2.1 Safari/605.1.15'
+      --data-raw 'identity=user%40f5.com&token=password&submit=Submit'
 
    This HTTP request will not show up in the Security Analytics however you
    will find it in Request logging.
