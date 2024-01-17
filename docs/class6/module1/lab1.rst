@@ -163,15 +163,21 @@ There are two approaches for setting up your Customer Edge deployment both will 
 **Option 1: CLI Site Setup**
 ----------------------
  
-In your browser, you should have a tab open to the UDF course. Under the F5 Distributed Cloud CE, click on **Access >> Console**
+In your browser, you should have a tab open to the UDF course. Under Systems -> Client, click on **Access >> Web Shell**
 
 |
 
-.. image:: ../images/cli-01.png 
+.. image:: ../images/cli-01a.png
 
 |
 
-This should redirect you to the CLI and prompt for authentication. Type in the default username/password:
+This will redirect you to a new browser tab with a shell prompt on the Ubuntu system. From the shell prompt type in the following to SSH to the Customer Edge (CE) Node:
+
+**ssh 10.1.1.5 -l admin**
+
+This will get you connected to the CLI on the CE and prompt for authentication. Type in the default username/password:
+
+Change the password as directed (lowercase, uppercase, number, min 8 characters is the requirement). Remember the new password should you need to log in again. 
 
 ==============================  =====
 Variable                        Value
@@ -182,15 +188,7 @@ Default Password:                **Volterra123**
 
 |
 
-.. image:: ../images/cli-02.png 
-
-|
-
-Change the password as directed. Remember the new password should you need to log in again. 
-
-|
-
-.. image:: ../images/cli-03.png 
+.. image:: ../images/cli-02a.png 
 
 |
 
@@ -251,7 +249,7 @@ Default Password:                **Volterra123**
 
 |
 
-.. image:: ../images/signin.png 
+.. image:: ../images/signin.png
 
 |
 

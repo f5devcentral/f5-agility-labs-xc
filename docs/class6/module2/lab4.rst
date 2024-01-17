@@ -303,7 +303,7 @@ If you search your HTTP Load Balancers for your **animal-name**, you should now 
 Testing AWS to Azure LB
 ------------------------
 
-You now have a load balancer running in AWS on the inside interface of your AWS XC Node. The inside interface IP of the AWS XC Node is **10.0.5.101**. 
+You now have a load balancer running in AWS on the inside interface of your AWS XC Node. The inside interface IP of the AWS XC Node is **10.0.5.236**. 
 
 We will now use the In-Container Diag tool to test connectivity.  
 
