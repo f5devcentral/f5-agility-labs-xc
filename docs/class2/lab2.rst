@@ -10,7 +10,8 @@ protect the previously configured application from advanced Bot threats.
 **Expected Lab Time: 25 minutes**
 
 Task 1: Reviewing Signature-based Bot protection
-------------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 In this task you will review the Bot signature configuration and view
 logged security events. This lab will begin back in the F5 Distributed
 Cloud Console.
@@ -79,7 +80,7 @@ Cloud Console.
 
    |lab009|
 
-#. **Optional Advanced Topic**
+   **Task 1: Optional Advanced Topic**
 
    Signature based Bot detection can be easily bypassed. By simply presenting a
    less suspicious user-agent string, a threat actor can easily bypass the
@@ -89,10 +90,14 @@ Cloud Console.
    user-agent, you will skip signature-based bot detection. For example, if you
    run the following command:
 
-   ``curl http://<namespace>.lab-sec.f5demos.com --user-agent 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.2.1 Safari/605.1.15'``
+   .. code:: BASH
+
+      curl 'http://<namespace>.lab-sec.f5demos.com'
+      --user-agent 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.2.1 Safari/605.1.15'
 
    This HTTP request will not show up in the Security Analytics however you
    will find it in Request logging.
+
 
 Task 2: Enabling F5 Distributed Cloud Bot Defense
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -116,6 +121,7 @@ and understand its implementation.
    - **Token:** **password**
 
    |lab010|
+
    |lab011|
 
 #. In the Developer window, find the **POST** to **auth.php**. **You can also
@@ -125,6 +131,7 @@ and understand its implementation.
    that you only see limited form POST data (identity, token, & submit).
 
    |lab012|
+
    |lab013|
 
    .. warning:: *Make sure to logoff using the menu on the right of the web
@@ -135,10 +142,12 @@ and understand its implementation.
    Let’s explore how an attacker could perform credential stuffing attacks by
    using the curl command:
 
-   ``curl -v 'http://<namespace>.lab-sec.f5demos.com/auth.php'
-   -H 'Content-Type: application/x-www-form-urlencoded'
-   --user-agent 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.2.1 Safari/605.1.15'
-   --data-raw 'identity=user%40f5.com&token=password&submit=Submit'``
+   .. code:: BASH
+
+      curl -v 'http://<namespace>.lab-sec.f5demos.com/auth.php'
+      -H 'Content-Type: application/x-www-form-urlencoded'
+      --user-agent 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.2.1 Safari/605.1.15'
+      --data-raw 'identity=user%40f5.com&token=password&submit=Submit'
 
    For this application, a successful logon will have a 302 response to the
    location ./data.php?page=data
@@ -165,6 +174,7 @@ and understand its implementation.
 #. Click **Edit Configuration** in the top right-hand corner.
 
    |lab014|
+
    |lab015|
 
 #. Click **Bot Protection** in the left-hand navigation.
@@ -182,7 +192,9 @@ and understand its implementation.
 #. In the new **App Endpoint Type** window, click  **Add Item**.
 
    |lab017|
+
    |lab018|
+
    |lab019|
 
 #. In the **Application Endpoint** input the following values in the fields
@@ -198,6 +210,7 @@ and understand its implementation.
 #. Scroll to the bottom and click **Apply**.
 
    |lab020|
+
    |lab021|
 
 #. Click **Apply** on the **App Endpoint Type** window.
@@ -206,6 +219,7 @@ and understand its implementation.
    section of the **Protected App Endpoints** window, then click **Apply**.
 
    |lab022|
+
    |lab023|
 
 #. Observe that the **Bot Defense Policy** is now configured.
@@ -214,6 +228,7 @@ and understand its implementation.
    bottom on the **HTTP Load Balancer** screen, and click **Save and Exit**.
 
    |lab024|
+
    |lab025|
 
 #. Repeat Task 2 Steps 1-6.  Note you many need to close your browser and clear
@@ -231,10 +246,12 @@ and understand its implementation.
    requests and its ability to perform credential stuffing attacks. Let’s find
    out. Re-run our previously successful logon attempt:
 
-   ``curl -v 'http://<namespace>.lab-sec.f5demos.com/auth.php'
-   -H 'Content-Type: application/x-www-form-urlencoded'
-   --user-agent 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.2.1 Safari/605.1.15'
-   --data-raw 'identity=user%40f5.com&token=password&submit=Submit'``
+   .. code:: BASH
+
+      curl -v 'http://<namespace>.lab-sec.f5demos.com/auth.php'
+      -H 'Content-Type: application/x-www-form-urlencoded'
+      --user-agent 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.2.1 Safari/605.1.15'
+      --data-raw 'identity=user%40f5.com&token=password&submit=Submit'
 
    As you can see, instead of signaling to a potential attacker that they have
    a good or bad password, we have prevented the would-be attacker from
