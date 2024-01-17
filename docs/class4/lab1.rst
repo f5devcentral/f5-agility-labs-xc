@@ -149,7 +149,7 @@ version control features.
 
    |lab1-task2-005|
 
-#. **(Extra Credit Steps 9 - 16)** For the next step, use the following link, to download the JSON/OpenAPI spec file
+#. **(Optional Steps 9 - 16)** For the next step, use the following link, to download the JSON/OpenAPI spec file
    **app-api-v2.json** to your local desktop or workspace.
 
    http://petapi.cloud.myf5demo.com/lab/app-api-v2.json
