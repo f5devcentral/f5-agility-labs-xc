@@ -23,14 +23,15 @@ Cloud Services will be configured as a SaaS Edge delivery and security service
 tier to a publicly hosted web application. The key elements lab attendees will
 interact with are as follows:
 
-- F5 Distributed Cloud Console
-- F5 Distributed Cloud Global Network / Application Delivery Network (ADN)
-- Publicly hosted application (Public Cloud)
+* F5 Distributed Cloud Console
+* F5 Distributed Cloud Global Network / Application Delivery Network (ADN)
+* Publicly hosted application (Public Cloud)
 
 |intro001|
 
+
 Task 2: F5 Distributed Cloud Console Login
-==========================================
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The following will guide you through the initial Lab environment access within
 the F5 Distributed Cloud Console.  You should have received an email with an
@@ -67,8 +68,11 @@ proceed to the first step below to access the F5 Distributed Cloud Lab Tenant.
    appear.
 
    |intro002|
+
    |intro003|
+
    |intro004|
+
    |intro005|
 
 
@@ -84,6 +88,7 @@ proceed to the first step below to access the F5 Distributed Cloud Lab Tenant.
       operations. As **some menus will be locked and not visible.*
 
    |intro006|
+
    |intro007|
 
 #. Namespaces, which provide an environment for isolating configured
@@ -109,12 +114,14 @@ proceed to the first step below to access the F5 Distributed Cloud Lab Tenant.
       available.*
 
    |intro008|
+
    |intro009|
 
 **Beginning of Lab:**  You are now ready to begin the lab, Enjoy! Ask question
 as needed.
 
 |labbgn|
+
 
 .. |intro001| image:: _static/intro-001.png
    :width: 800px

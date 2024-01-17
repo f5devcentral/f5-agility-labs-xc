@@ -94,6 +94,7 @@ Cloud Console.
    This HTTP request will not show up in the Security Analytics however you
    will find it in Request logging.
 
+
 Task 2: Enabling F5 Distributed Cloud Bot Defense
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -116,6 +117,7 @@ and understand its implementation.
    - **Token:** **password**
 
    |lab010|
+
    |lab011|
 
 #. In the Developer window, find the **POST** to **auth.php**. **You can also
@@ -125,6 +127,7 @@ and understand its implementation.
    that you only see limited form POST data (identity, token, & submit).
 
    |lab012|
+
    |lab013|
 
    .. warning:: *Make sure to logoff using the menu on the right of the web
@@ -165,6 +168,7 @@ and understand its implementation.
 #. Click **Edit Configuration** in the top right-hand corner.
 
    |lab014|
+
    |lab015|
 
 #. Click **Bot Protection** in the left-hand navigation.
@@ -182,7 +186,9 @@ and understand its implementation.
 #. In the new **App Endpoint Type** window, click  **Add Item**.
 
    |lab017|
+
    |lab018|
+
    |lab019|
 
 #. In the **Application Endpoint** input the following values in the fields
@@ -198,6 +204,7 @@ and understand its implementation.
 #. Scroll to the bottom and click **Apply**.
 
    |lab020|
+
    |lab021|
 
 #. Click **Apply** on the **App Endpoint Type** window.
@@ -206,6 +213,7 @@ and understand its implementation.
    section of the **Protected App Endpoints** window, then click **Apply**.
 
    |lab022|
+
    |lab023|
 
 #. Observe that the **Bot Defense Policy** is now configured.
@@ -214,6 +222,7 @@ and understand its implementation.
    bottom on the **HTTP Load Balancer** screen, and click **Save and Exit**.
 
    |lab024|
+
    |lab025|
 
 #. Repeat Task 2 Steps 1-6.  Note you many need to close your browser and clear

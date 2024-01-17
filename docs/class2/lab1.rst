@@ -30,6 +30,7 @@ tenant for this lab and proceed to Task 1.
 
 **Expected Lab Time: 25 minutes**
 
+
 Task 1: Configure Load Balancer and Origin Pool
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -50,6 +51,7 @@ assign a target as an origin.
    as shown.
 
    |lab001|
+
    |lab002|
 
 .. note::
@@ -69,7 +71,6 @@ assign a target as an origin.
    * **Basic Configuration: HTTP Port:** *80*
 
    |lab003|
-
 
 #. In the current window's left-hand navigation, click **Origins**. In the
    adjacent **Origins** section, under **Origin Pools**, click **Add Item**.
@@ -106,7 +107,9 @@ assign a target as an origin.
    **Apply**.
 
    |lab008|
+
    |lab009|
+
    |lab010|
 
 Task 2: Configure WAF Policy on the Load Balancer
@@ -143,6 +146,7 @@ configuration.
    become available
 
    |lab013|
+
    |lab014|
 
 
@@ -205,8 +209,6 @@ configuration.
 
    |lab020|
 
-
-
 #. Click **Documentation** in the horizontal navigation at the top of the
    screen.
 
@@ -228,7 +230,6 @@ You will now perform basic testing of the Web Application Firewall (WAF)
 Policy. You will also review the generated event data to make additional
 configuration changes.
 
-
 #. Open another tab in your browser (Chrome shown), navigate to the newly
    configured Load
 
@@ -247,7 +248,9 @@ configuration changes.
    (copy and paste to a notepad or note resource).
 
    |lab022|
+
    |lab023|
+
    |lab024|
 
 #. Returning to the F5 Distributed Cloud Console, use the left-hand menu to
@@ -260,7 +263,6 @@ configuration changes.
    .. note::
       *As you have not run many requests, summary analytics may not be
       available in the dashboard view yet.*
-
 
 #. Scroll to the bottom and select your load balancer.
 
@@ -278,13 +280,10 @@ configuration changes.
       *Security Event data may take 15-20 seconds to populate in the Console. Please force a*
       *refresh using the Refresh icon next to the Time Period selection in step 6.*
 
-
 #. Expand one of the requests and note the **Information** tab link. This
    summarizes request details and provides request duration timing.
 
    |lab028|
-
-
 
 #. Click on the **JSON** link to get more data about the request.
 
@@ -318,7 +317,6 @@ configuration changes.
    .. note::
       *Individual forensic categories can be changed using the noted pencil
       icon to surface additional top data details.*
-
 
 #. Using the left-hand navigation, click **Dashboards** and then select
    **Security Dashboard**.
@@ -365,8 +363,6 @@ configuration changes.
 
    |lab039|
 
-
-
 #. Type **req** in the open dialogue window and select **req_id** from the
    dropdown.
 
@@ -381,8 +377,6 @@ configuration changes.
   |lab041|
 
   |lab042|
-
-
 
 #. You should now be filtered to a single "Security Event", as shown with your
    selected filter. You can expand and review the request as desired using the
