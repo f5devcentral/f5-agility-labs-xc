@@ -32,7 +32,7 @@ Task 2: F5 Distributed Cloud Console Login
 
 The following will guide you through the initial Lab environment access within the F5 Distributed
 Cloud Console.  You should have received an email with an invitation to access a F5 Distributed
-Cloud Tenant. The email will come from **no-reply@volterramails.io**.
+Cloud Tenant. The email will come from **no-reply@cloud.f5.com**.
 
 The name of the F5 Distributed Cloud tenant that we will be using for this lab is **f5-xc-lab-sec**.
 Additionally, the following are key configuration elements for this lab and will be used
