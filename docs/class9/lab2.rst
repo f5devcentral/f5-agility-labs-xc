@@ -9,17 +9,24 @@ Please refer to the Tutorial in the GitHub repo (https://github.com/f5devcentral
 
 **Policy Supervisor** provides a graphical interface for visual policy creation, editing and management for traditional SecOps personas.
 
-Task 1: Create a new **Policy Supervisor**  *Provider*
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Task 1: Import an existing BIG-IP WAF policy into **Policy Supervisor**
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-blah
+1- Export a WAF policy from a BIG-IP, then import into **Policy supervisor**.
 
-Task 2: Deploy an existing WAF policy to F5 Distributed Cloud
+
+Task 2: Create a new **Policy Supervisor** *Provider*
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+1- Browse to the **Policy Supervisor** *Providers* page.
+
+2-
+
+
+Task 3: Deploy an existing WAF policy to F5 Distributed Cloud
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-blah blaa
+1- Deploy a WAF policy that was ingested from a BIG-IP.
 
-Task 3: tbd
-~~~~~~~~~~~
+2- Deploy a WAF policy that was imported from a BIG-IP.
 
-blah blah blah

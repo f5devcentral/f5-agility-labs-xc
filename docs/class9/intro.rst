@@ -1,5 +1,5 @@
-Introduction: F5 WAF **Policy Supervisor**
-==========================================
+Introduction and Login
+======================
 
 Welcome to this F5 WAF **Policy Supervisor** Lab. The following tasks will guide you through the initial 
 access requirements for this lab. Lab attendees should have already received an invitation 
@@ -80,8 +80,8 @@ This is a multi-step process that will involve:
 | Click **-> LAUNCH** (it takes several minutes for the virtual machines to deploy and start.) |
 +----------------------------------------------------------------------------------------------+
 
-Task 3: Setup new credentials for the F5 Distributed Cloud Console
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Task 3: Setup your new credentials for the F5 Distributed Cloud Console
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  
 F5 Distributed Cloud Console is a SaaS control-plane for 
 services that provides a UI and API for managing network, security, and compute services. The F5
@@ -92,13 +92,11 @@ The following steps will guide you through the initial Lab environment access wi
 F5 Distributed Cloud Console. 
 
 .. NOTE:: 
-   If you already have access to the F5 Distributed Cloud, try using your existing 
-   credentials for login to the F5 **Policy Supervisor** console.
-   If you do not already have workihg credentails, you must wait for an email from 
+   Please wait for an email from 
    **F5 Distributed Cloud <no-reply@cloud.f5.com>**, which should be delivered to your email
    inbox a few minutes after initial launch of this course in UDF.
 
-.. warning:: If you have not received the email to change your credentials or ran into problems changing your credentials, please stop and get help from one of the Lab Assistants.
+.. warning:: If you have not received the email to change your credentials or ran into problems changing your credentials specifically for *Account name*: **f5-xc-lab-mcn**, please stop and get help from one of the Lab Assistants.
 
 +----------------------------------------------------------------------------------------------+
 | Locate the **Update Your Account** email sent to you from                                    |
@@ -191,8 +189,8 @@ be used to access the F5 **Policy Supervisor** console.
 | |intro011|                                                                                   |
 +----------------------------------------------------------------------------------------------+
 | Follow the prompts to login with a valid Microsoft account.                                  |
-| click **User another account** if your existing account is not listed or if you wish to      |
-| create a new Microsoft account (follow the **Create one!** link) .                           |
+| click **User another account** or **Back** if your existing account is not listed or if you  |
+| wish to create a new Microsoft account (follow the **Create one!** link) .                   |
 +----------------------------------------------------------------------------------------------+
 | .. image:: _static/image9.png                                                                |
 |    :width: 800px                                                                             |
