@@ -11,8 +11,8 @@ Task 1: Attaching API Protection to Load Balancer Object
 In this task's series of steps you will enable the API Discovery & Protection feature on the
 previously built Load Balancer object delivering the targeted application/API.
 
-#. In the left-hand navigation of the **Web App & API Protection** service, click on **Load
-   Balancers** under the **Manage** section.
+#. In the left-hand navigation of the **Web App & API Protection** service, click on **Load Balancers > HTTP Load**
+   **Balancers** under the **Manage** section.
 
    |class4-shared-002|
 
@@ -25,7 +25,7 @@ previously built Load Balancer object delivering the targeted application/API.
 
    |class4-shared-004|
 
-#. In the **API Protection Rules** section, click the **Configure** link.
+#. In the **API Protection > API Protection Rules** section, click the **Configure** link.
 
    |lab2-task1-004|
 
@@ -94,7 +94,7 @@ previously built Load Balancer object delivering the targeted application/API.
    |lab2-task1-014|
 
 #. Select **Security Dashboard** within the XC tab, scroll down and click on the
-   **<namespace>.lab-sec.f5demos.com** load balancer name.
+   **<namespace>-lb** load balancer name.
 
    |class4-shared-005|
 
@@ -118,8 +118,8 @@ Task 2: Attach API Rate Limiting to Load Balancer Object
 In this task's series of steps you will enable the API Rate Limiting feature on the
 previously built Load Balancer object delivering the targeted application/API.
 
-#. In the left-hand navigation of the **Web App & API Protection** service, click on **Load
-   Balancers** under the **Manage** section.
+#. In the left-hand navigation of the **Web App & API Protection** service, click on **Load Balancers > HTTP Load**
+   **Balancers** under the **Manage** section.
 
    |class4-shared-002|
 
