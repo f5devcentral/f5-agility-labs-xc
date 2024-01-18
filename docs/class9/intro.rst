@@ -176,8 +176,7 @@ Optional: Logging into the F5 Distributed Cloud Console
 
 Task 4: Accessing the F5 **Policy Supervisor** Console
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-The same credentials for the **f5-xc-lab-mcn** tenant in the F5 Distributed Cloud Console can
-be used to access the F5 **Policy Supervisor** console.
+**Policy Supervisor** uses the Microsoft Azure AD authentication service for login. You must have a valid Azure AD account to proceed with this lab.
 
 +----------------------------------------------------------------------------------------------+
 | Browse to https://policysupervisor.io.                                                       |

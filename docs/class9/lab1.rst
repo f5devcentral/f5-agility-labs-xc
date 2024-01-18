@@ -36,7 +36,7 @@ When you add a BIG-IP instance as a *provider*, you must first set up an *agent*
 Access the F5 **Policy Supervisor** console at https://policysupervisor.io as instructed in the previous *Introduction* section of this lab guide.
 
 .. note::
-**Policy Supervisor** uses the *F5 Distributed Cloud Console* credentials.
+**Policy Supervisor** uses the Microsoft Azure AD authentication service for login. You must have a valid Azure AD account to proceed with this lab.
 
 +---------------------------------------------------------------------------------------------------------------+
 | 1. On the *Overview > Providers* page, click **Add Provider**. If this is the first provider being added,     |
@@ -56,7 +56,7 @@ Access the F5 **Policy Supervisor** console at https://policysupervisor.io as in
 +---------------------------------------------------------------------------------------------------------------+
 | |lab003|                                                                                                      |
 +---------------------------------------------------------------------------------------------------------------+
-| 4. From within the *Add Agent* pane, find and click the link to go to the **agent-install** page (step 1.).   |
+| 4. From within the *Add Agent* pane, locate and click the link to go to the **agent-install** page (step 1.). |
 |    The corresponding GitLab *repository page* will open.                                                      |
 +---------------------------------------------------------------------------------------------------------------+
 | |lab004|                                                                                                      |
@@ -70,11 +70,12 @@ Task 2: Install a **Policy Supervisor Agent**
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Next, we will use the **token** and the **URL** obtained in task 1 above to install the *Agent* on your UDF virtual lab environment.
-The *Agent* will be installed on your *SuperJumpHost* Linux machine, which is connected to the same management network as your BIG-IP.
+For this lab, the *Agent* must be installed on your *SuperJumpHost* Linux machine, which is connected to the same management network as your BIG-IP.
 The *SuperJumpHost* is pre-configured in your lab environment with permission to communicate with the **Policy Supervisor** across the Internet.
 
 +---------------------------------------------------------------------------------------------------------------+
-| 1. Browse to https://udf.f5.com again and find the **Deployment** tab to see your virtual machines.           |
+| 1. Browse to your lab session at https://udf.f5.com again and find the **Deployment** tab to see your virtual |
+|    machines.                                                                                                  |
 +---------------------------------------------------------------------------------------------------------------+
 | |lab006|                                                                                                      |
 +---------------------------------------------------------------------------------------------------------------+
@@ -83,6 +84,7 @@ The *SuperJumpHost* is pre-configured in your lab environment with permission to
 | |lab007|                                                                                                      |
 +---------------------------------------------------------------------------------------------------------------+
 | 3. Select **Web Sell** to access the **SuperJumpHost** machine's command line interface in a new browser tab. |
+|    *(You will be automatically logged in as root.)*                                                           |
 +---------------------------------------------------------------------------------------------------------------+
 | |lab008|                                                                                                      |
 +---------------------------------------------------------------------------------------------------------------+
@@ -93,7 +95,7 @@ The *SuperJumpHost* is pre-configured in your lab environment with permission to
 |       cd /tmp                                                                                                 |
 |                                                                                                               |
 | 5. Use the URL copied at step 7 above to download the installer via the command line:                         |
-|    **"wget <...insert URL from aboe Task 1 here...>"**                                                        |
+|    **"wget <...insert URL from above Task 1 here...>"**                                                       |
 |                                                                                                               |
 |    .. code-block:: bash                                                                                       |
 |                                                                                                               |
@@ -124,23 +126,31 @@ The *SuperJumpHost* is pre-configured in your lab environment with permission to
 +---------------------------------------------------------------------------------------------------------------+
 | 9. Wait for the prompt and paste the token copied from *Task 1* above.                                        |
 |    *(command-V on a MAC, Ctrl-Shift-V on Windows)*                                                            |
-|                                                                                                               |
-| 10. Enter the name **"udf"** when prompted for the agent name.                                                |
-|     Wait for registration to complete successfully (takes a few minutes).                                     |
++---------------------------------------------------------------------------------------------------------------+
+| .. image:: _static/PSAgentToken.png                                                                           |
+|    :width: 800px                                                                                              |
++---------------------------------------------------------------------------------------------------------------+
+| 10. Paste the value of the Token obtained in Task 1 above.                                                    |
 +---------------------------------------------------------------------------------------------------------------+
 | |lab010|                                                                                                      |
 +---------------------------------------------------------------------------------------------------------------+
-| 11. Type **"bigip"** when prompted for the secret name.                                                       |
-|                                                                                                               |
-| 12. Type **"admin"** when prompted for the username.                                                          |
-|                                                                                                               |
-| 13. Type **"Canada123!"** when prompted for a password.                                                       |
-|                                                                                                               |
-| 14. Press "**Enter**" when prompted for the *ssh key path* (we're not using one in this demo).                |
-|                                                                                                               |
-| 15. Press "**Enter**" when prompted to select an option (choose the default "*Finish*" option).               |
+| 11. Enter the name **"udf"** when prompted for the agent name.                                                |
+|     Wait for registration to complete successfully (takes a few minutes).                                     | 
+|     You will be prompted to "Enter secret name".                                                              |
 +---------------------------------------------------------------------------------------------------------------+
 | |lab011|                                                                                                      |
++---------------------------------------------------------------------------------------------------------------+
+| 12. Select **Add Secret** and/or type **"bigip"** when prompted for the secret name.                          |
+|     *If the secret already exists, you must first select **Remove Secret** and delete it before attempting    |
+|     to add it again.*                                                                                         |
+|                                                                                                               |
+| 13. Type **"admin"** when prompted for the username.                                                          |
+|                                                                                                               |
+| 14. Type **"Canada123!"** when prompted for a password.                                                       |
+|                                                                                                               |
+| 15. Press "**Enter**" when prompted for the *ssh key path* (we're not using one in this demo).                |
+|                                                                                                               |
+| 16. Press "**Enter**" when prompted to select an option (choose the default "*Finish*" option).               |
 +---------------------------------------------------------------------------------------------------------------+
 
 Task 3: Finish adding a first *provider* in **Policy Supervisor**
