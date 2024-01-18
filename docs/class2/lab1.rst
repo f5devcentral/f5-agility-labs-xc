@@ -54,9 +54,9 @@ assign a target as an origin.
 
    |lab002|
 
-.. note::
-   *You have defaulted to your specific namespace as that is the only namespace
-   to which you* *have administrative access.*
+   .. note::
+      *You have defaulted to your specific namespace as that is the only namespace
+      to which you* *have administrative access.*
 
 #. Using the left-hand navigation and in the sections as shown, enter the
    following data. Values where **<namespace>** is required, use the name of
@@ -78,6 +78,7 @@ assign a target as an origin.
    |lab004|
 
 #. In the resulting window, use the drop down as shown and click **Add Item**.
+
    |lab005|
 
 #. In the resulting window, enter **<namespace>-pool** in the **Name** field
@@ -372,11 +373,11 @@ configuration changes.
    IDs** from Task 3, Step 2 as shown.  You can also optionally just paste the
    Support ID in the value field and click **Apply**.
 
-  |lab040|
+   |lab040|
 
-  |lab041|
+   |lab041|
 
-  |lab042|
+   |lab042|
 
 #. You should now be filtered to a single "Security Event", as shown with your
    selected filter. You can expand and review the request as desired using the

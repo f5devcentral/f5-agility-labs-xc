@@ -117,6 +117,9 @@ version control features.
 
    http://petapi.cloud.myf5demo.com/lab/app-api-v1.json
 
+   .. note::
+      *Depending on browser, you may need to copy content and save as **app-api-v1.json***
+
 #. In the left top click the F5 ball and navigate to the **Web App & API Protection** Tile.
 
    |class4-shared-001|
@@ -149,13 +152,14 @@ version control features.
 
    |lab1-task2-005|
 
-#. **(Extra Credit Steps 9 - 16)** For the next step, use the following link, to download the JSON/OpenAPI spec file
+#. **(Optional Steps 9 - 16)** For the next step, use the following link, to download the JSON/OpenAPI spec file
    **app-api-v2.json** to your local desktop or workspace.
 
    http://petapi.cloud.myf5demo.com/lab/app-api-v2.json
 
    .. note::
-      *This is a modified version (v2) of the JSON/OpenAPI spec file you previously downloaded*
+         *Depending on browser, you may need to copy content and save as **app-api-v2.json**.
+         This is a modified version (v2) of the JSON/OpenAPI spec file you previously downloaded*
 
 #. Returning to the **Swagger Files** window you were at previously, click the three dots …
    in the **Action** column.  In the resulting selection menu, select **Update New Version**
