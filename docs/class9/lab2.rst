@@ -9,13 +9,22 @@ Please refer to the Tutorial in the GitHub repo (https://github.com/f5devcentral
 
 **Policy Supervisor** provides a graphical interface for visual policy creation, editing and management for traditional SecOps personas.
 
-Task 1: Import an existing BIG-IP WAF policy into **Policy Supervisor**
+Task 1: Export an existing BIG-IP WAF policy
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Login to a BIG-IP appliance to export a WAF policy and save it to a workstation. 
+
+
+Task 2: Import an existing BIG-IP WAF policy into **Policy Supervisor**
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1- Export a WAF policy from a BIG-IP, then import into **Policy supervisor**.
+In **Policy Supervisor**, F5 WAF policies can be created, ingested from a connected *provider*, or imported in JSON format.
 
+1. Login to **Policy supervisor** and go to the *Policies* page.
 
-Task 2: Create a new **Policy Supervisor** *Provider*
+2. Click the **Import** button.
+
+Task 3: Create a new **Policy Supervisor** *Provider*
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 1- Browse to the **Policy Supervisor** *Providers* page.

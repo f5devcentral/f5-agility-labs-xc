@@ -289,7 +289,117 @@ Let's ingest this WAF policy into **Policy Supervisor**.
 |    :width: 800px                             |
 +----------------------------------------------+
 
-7. Click **Policies Overview**.
+Task 6 (*optional*): Import an existing BIG-IP WAF policy in **Policy Supervisor**
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+F5 WAF policies can be *imported* instead of *ingested*. This option is useful when the installation of 
+a **Policy Supervisor** agent is not possible or when the BIG-IP appliance cannot be configured or managed as a *Provider*.
+
+1. Browse to https://udf.f5.com again and find the **Deployment** tab to see your virtual machines.
+
++----------------------------------------------+
+| |lab006|                                     |
++----------------------------------------------+
+
+2. Find **bigip1** under F5 Products and click its **ACCESS** link to see a list of access options.
+
++----------------------------------------------+
+| .. image:: _static/UDFTMUI.png               |
+|    :width: 800px                             |
++----------------------------------------------+
+
+3. Select the **TMUI** option to opoen **bigip1**'s GUI management interface in a new browser tab.
+
++----------------------------------------------+
+| .. image:: _static/TMUILogin.png             |
+|    :width: 800px                             |
++----------------------------------------------+
+
+4. Login with username **"admin"** and password **"Canada123!"**.
+
++----------------------------------------------+
+| .. image:: _static/TMUIVS.png                |
+|    :width: 800px                             |
++----------------------------------------------+
+
+5. Click to the **"Security -> Application Security -> Security Policies -> Policies List"** page.
+
++----------------------------------------------+
+| .. image:: _static/BIGIPPoliciyList.png      |
+|    :width: 800px                             |
++----------------------------------------------+
+
+6. Click on your policie's name (**My_ASM_Rapid_Deployment_Policy**).
+
++----------------------------------------------+
+| .. image:: _static/BIGIPExport.png           |
+|    :width: 800px                             |
++----------------------------------------------+
+
+7. Click the **EXPORT** button and select the **JSON Format** option.
+
++----------------------------------------------+
+| .. image:: _static/BIGIPExport2.png          |
+|    :width: 800px                             |
++----------------------------------------------+
+
+8. Click the **OK** button and wait a few momemts for the export process to complete.
+
++----------------------------------------------+
+| .. image:: _static/BIGIPExport2.png          |
+|    :width: 800px                             |
++----------------------------------------------+
+
+9. If prompted, click **Allow** to complete the download of the exported policy to your workstation.
+   The resulting JSON file should now be in your *Downloads* folder.
+
+10. Browse back to the **Policy Supervisor** *Policy Overview* page.
+
++----------------------------------------------+
+| .. image:: _static/PSImport1.png             |
+|    :width: 800px                             |
++----------------------------------------------+
+
+11. Click the **Add** button and select the **Import from File** option.
+
++----------------------------------------------+
+| .. image:: _static/PSImport2.png             |
+|    :width: 800px                             |
++----------------------------------------------+
+
+12. Enter a name in the **Policy Name** text box (for example: **bigip1 waf imported policy**).
+
+13. Select the **BIG-IP** option form the *Policy Type* dropdown list.
+
+14. Click the **Upload** button, then locate and select the previously downloaded JSON file.
+
+15. Enter a note in the **Import Notes / Summary** text box.
+
+16. Click the **Import** button.
+
++----------------------------------------------+
+| .. image:: _static/PSImport3.png             |
+|    :width: 800px                             |
++----------------------------------------------+
+
+17. Wait for the import process to complete.
+
++----------------------------------------------+
+| .. image:: _static/PSImport4.png             |
+|    :width: 800px                             |
++----------------------------------------------+
+
+18. Click the **Go to Overview** button.
+
++----------------------------------------------+
+| .. image:: _static/PSImport5.png             |
+|    :width: 800px                             |
++----------------------------------------------+
+
+Task 7: Deploy a WAF policy to a BIG-IP
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+1. In **Policy Supervisor**, browse to the **Policies Overview** page.
 
 +----------------------------------------------+
 | .. image:: _static/PSDeploy1.png             |
@@ -299,7 +409,7 @@ Let's ingest this WAF policy into **Policy Supervisor**.
 |    :width: 800px                             |
 +----------------------------------------------+
 
-8. Select the policy then find and click on the **Deploy** button.
+8. Select a policy then find and click on the **Deploy** button.
 
 +----------------------------------------------+
 | .. image:: _static/PSDeploy3.png             |
@@ -359,7 +469,7 @@ Let's ingest this WAF policy into **Policy Supervisor**.
 |    :width: 800px                             |
 +----------------------------------------------+
 
-Task 6: Confirm successful deployment of the WAF policy on BIG-IP2
+Task 8: Confirm successful deployment of the WAF policy on BIG-IP2
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. NOTE:: The password for the admin account on your BIG-IP appliances is set to **Canada123!**.
