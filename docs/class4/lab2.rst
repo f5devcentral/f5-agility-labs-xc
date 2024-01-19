@@ -106,7 +106,7 @@ previously built Load Balancer object delivering the targeted application/API.
    .. note::
       *Change time to 1 hour, and make sure the page has been refreshed*
 
-   |Lab2_Task2_Step20_response_code_403|
+   |lab2-task1-015|
 
    .. note::
       *Detection information will be near the bottom of the event detail.
@@ -188,7 +188,7 @@ previously built Load Balancer object delivering the targeted application/API.
    .. note::
       *Change time to 1 hour, and make sure the page has been refreshed*
 
-   |Lab2_Task1_Step14_response_code_429|
+   |lab2-task2-011|
 
    .. note::
       *Detection information will be near the bottom of the event detail.
@@ -243,6 +243,8 @@ configuration can also be fully deployed and managed via the F5 Distributed Clou
    :width: 800px
 .. |lab2-task1-014| image:: _static/lab2-task1-014.png
    :width: 500px
+.. |lab2-task1-015| image:: _static/lab2-task1-015.png
+   :width: 800px
 .. |lab2-task2-001| image:: _static/lab2-task2-001.png
    :width: 800px
 .. |lab2-task2-002| image:: _static/lab2-task2-002.png
@@ -263,9 +265,7 @@ configuration can also be fully deployed and managed via the F5 Distributed Clou
    :width: 800px
 .. |lab2-task2-010| image:: _static/lab2-task2-010.png
    :width: 500px
-.. |Lab2_Task1_Step14_response_code_429| image:: _static/Lab2_Task1_Step14_response_code_429.png   
+.. |lab2-task2-011| image:: _static/lab2-task2-011.png
    :width: 800px
-.. |Lab2_Task2_Step20_response_code_403| image:: _static/Lab2_Task2_Step20_response_code_403.png   
-   :width: 800px   
 .. |labend| image:: _static/labend.png
    :width: 800px

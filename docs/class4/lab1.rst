@@ -257,7 +257,7 @@ previously built Load Balancer object delivering the targeted application/API.
 #. Under **Validation**, select **API Inventory** from drop-down then click on
    **Edit Configuration**
 
-   |Task4_Step7_API_Inventory|
+   |lab1-task4-006|
 
 #. Within **All endpoints validation**, update **Request Validation Endforcement Type** to
    **Block**. Click on **Apply** bottom right.
@@ -305,7 +305,7 @@ previously built Load Balancer object delivering the targeted application/API.
    .. note::
       *Change time to 1 hour, and make sure the page has been refreshed*
 
-   |class4-shared-007|
+   |lab1-task4-011|
 
    .. note::
       *Detection information will be near the bottom of the event detail.
@@ -404,7 +404,7 @@ A brief presentation and demo will be shared prior to the beginning of Lab 2.
    :width: 400px
 .. |lab1-task4-010| image:: _static/lab1-task4-010.png
    :width: 600px
-.. |Task4_Step7_API_Inventory| image:: _static/Task4_Step7_API_Inventory.png
+.. |lab1-task4-011| image:: _static/lab1-task4-011.png
    :width: 800px
 .. |labend| image:: _static/labend.png
    :width: 800px
