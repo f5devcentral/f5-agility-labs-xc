@@ -106,7 +106,7 @@ previously built Load Balancer object delivering the targeted application/API.
    .. note::
       *Change time to 1 hour, and make sure the page has been refreshed*
 
-   |Lab#2_Task2_Step20_response_code_403|
+   |Lab2_Task2_Step20_response_code_403|
 
    .. note::
       *Detection information will be near the bottom of the event detail.
@@ -263,5 +263,9 @@ configuration can also be fully deployed and managed via the F5 Distributed Clou
    :width: 800px
 .. |lab2-task2-010| image:: _static/lab2-task2-010.png
    :width: 500px
+.. |Lab2_Task1_Step14_response_code_429| image:: _static/Lab2_Task1_Step14_response_code_429.png   
+   :width: 800px
+.. |Lab2_Task2_Step20_response_code_403| image:: _static/Lab2_Task2_Step20_response_code_403.png   
+   :width: 800px   
 .. |labend| image:: _static/labend.png
    :width: 800px

@@ -404,5 +404,7 @@ A brief presentation and demo will be shared prior to the beginning of Lab 2.
    :width: 400px
 .. |lab1-task4-010| image:: _static/lab1-task4-010.png
    :width: 600px
+.. |Task4_Step7_API_Inventory| image:: _static/Task4_Step7_API_Inventory.png
+   :width: 800px
 .. |labend| image:: _static/labend.png
    :width: 800px
