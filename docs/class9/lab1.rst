@@ -325,7 +325,7 @@ a **Policy Supervisor** agent is not possible or when the BIG-IP appliance canno
 5. Click to the **"Security -> Application Security -> Security Policies -> Policies List"** page.
 
 +----------------------------------------------+
-| .. image:: _static/BIGIPPoliciyList.png      |
+| .. image:: _static/BIGIPPolicyList.png       |
 |    :width: 800px                             |
 +----------------------------------------------+
 
@@ -353,7 +353,7 @@ a **Policy Supervisor** agent is not possible or when the BIG-IP appliance canno
 9. If prompted, click **Allow** to complete the download of the exported policy to your workstation.
    The resulting JSON file should now be in your *Downloads* folder.
 
-10. Browse back to the **Policy Supervisor** *Policy Overview* page.
+10. Browse back to the **Policy Supervisor** *Policy Overview* page (*https://policysupervisor.io/).
 
 +----------------------------------------------+
 | .. image:: _static/PSImport1.png             |
@@ -367,7 +367,7 @@ a **Policy Supervisor** agent is not possible or when the BIG-IP appliance canno
 |    :width: 800px                             |
 +----------------------------------------------+
 
-12. Enter a name in the **Policy Name** text box (for example: **bigip1 waf imported policy**).
+12. Enter a name in the **Policy Name** text box (for example: *bigip1 waf imported policy*).
 
 13. Select the **BIG-IP** option form the *Policy Type* dropdown list.
 
@@ -395,6 +395,9 @@ a **Policy Supervisor** agent is not possible or when the BIG-IP appliance canno
 | .. image:: _static/PSImport5.png             |
 |    :width: 800px                             |
 +----------------------------------------------+
+
+The screenshot above shows two WAF policies: one that was just imported in the steps above
+and the other was previously imported using the *Ingest* method.
 
 Task 7: Deploy a WAF policy to a BIG-IP
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
