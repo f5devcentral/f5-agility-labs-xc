@@ -216,8 +216,8 @@ pointer to imported swagger files you just uploaded.
 #. In the **Swagger Specs** section, click **Add Item** box in the
    **Swagger Specs** column.
 
-#. Select the version 2 of the previously uploaded swagger spec file. It will be in the
-   format **<namespace>/app-api/v2-<current-date>**.
+#. Select the version 1 of the previously uploaded swagger spec file. It will be in the
+   format **<namespace>/app-api/v1-<current-date>**.
 
 #. Once selected, click **Save and Exit** in the bottom-right corner.
 
@@ -229,7 +229,7 @@ Task 4: Enabling API Inventory and Discovery
 In this task's series of steps you will enable the API Inventory and Discovery feature on the
 previously built Load Balancer object delivering the targeted application/API.
 
-#. In the left-hand navigation of the **Web App & API Protection** service, click on **Load**
+#. In the left-hand navigation of the **Web App & API Protection** service, click on **Load Balancers > HTTP Load**
    **Balancers** under the **Manage** section.
 
 #. In the resulting **Load Balancers** window, click on the three dots **...** in the
@@ -254,7 +254,7 @@ previously built Load Balancer object delivering the targeted application/API.
 
    |lab1-task4-005|
 
-#. Under **Validation**, select **All Endpoints** from drop-down then click on
+#. Under **Validation**, select **API Inventory** from drop-down then click on
    **Edit Configuration**
 
    |lab1-task4-006|
@@ -293,7 +293,7 @@ previously built Load Balancer object delivering the targeted application/API.
       parameter type as "integer" for this endpoint.*
 
 #. Select **Security Dashboard** within the XC tab, scroll down and click on the
-   **<namespace>.lab-sec.f5demos.com** load balancer name.
+   **<namespace>-lb** load balancer name.
 
    |class4-shared-005|
 
@@ -305,7 +305,7 @@ previously built Load Balancer object delivering the targeted application/API.
    .. note::
       *Change time to 1 hour, and make sure the page has been refreshed*
 
-   |class4-shared-007|
+   |lab1-task4-011|
 
    .. note::
       *Detection information will be near the bottom of the event detail.
@@ -404,5 +404,7 @@ A brief presentation and demo will be shared prior to the beginning of Lab 2.
    :width: 400px
 .. |lab1-task4-010| image:: _static/lab1-task4-010.png
    :width: 600px
+.. |lab1-task4-011| image:: _static/lab1-task4-011.png
+   :width: 800px
 .. |labend| image:: _static/labend.png
    :width: 800px
