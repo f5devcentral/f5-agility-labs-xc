@@ -106,7 +106,7 @@ previously built Load Balancer object delivering the targeted application/API.
    .. note::
       *Change time to 1 hour, and make sure the page has been refreshed*
 
-   |class4-shared-007|
+   |Lab#2_Task2_Step20_response_code_403|
 
    .. note::
       *Detection information will be near the bottom of the event detail.
@@ -188,7 +188,7 @@ previously built Load Balancer object delivering the targeted application/API.
    .. note::
       *Change time to 1 hour, and make sure the page has been refreshed*
 
-   |class4-shared-007|
+   |Lab2_Task1_Step14_response_code_429|
 
    .. note::
       *Detection information will be near the bottom of the event detail.

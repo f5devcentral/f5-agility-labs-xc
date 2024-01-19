@@ -254,10 +254,10 @@ previously built Load Balancer object delivering the targeted application/API.
 
    |lab1-task4-005|
 
-#. Under **Validation**, select **All Endpoints** from drop-down then click on
+#. Under **Validation**, select **API Inventory** from drop-down then click on
    **Edit Configuration**
 
-   |lab1-task4-006|
+   |Task4_Step7_API_Inventory|
 
 #. Within **All endpoints validation**, update **Request Validation Endforcement Type** to
    **Block**. Click on **Apply** bottom right.
