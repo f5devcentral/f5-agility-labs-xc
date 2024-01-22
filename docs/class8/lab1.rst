@@ -67,7 +67,7 @@ utilizing the Developer Portal.
 | .. note::                                                                                                     |
 |    *If you don't save your API token or you lose it, you will need to generate a new API token. After an API* |
 |                                                                                                               |
-|    *token is generated, it **cannot be retrieved again later**.*                                                |
+|    *token is generated, it **cannot be retrieved again later**.*                                              |
 +---------------------------------------------------------------------------------------------------------------+
 
 

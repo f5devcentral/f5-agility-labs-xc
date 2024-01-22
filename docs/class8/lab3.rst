@@ -50,7 +50,7 @@ This lab will begin back in the Windows 10 client deployed as part of the UDF.
 |                                                                                                               |
 | |lab1-Add_Credentials|                                                                                        |
 +---------------------------------------------------------------------------------------------------------------+
-| 7. Fill in the resulting form with the following values:                                                       |
+| 7. Fill in the resulting form with the following values:                                                      |
 |                                                                                                               |
 |    * **Credential Name ID:**  *<namespace>-api-cert*                                                          |
 |    * **Credential Type: Select:** *API Certificate*                                                           |
@@ -78,6 +78,7 @@ This lab will begin back in the Windows 10 client deployed as part of the UDF.
 | 10. Copy the certificate you downloaded to the labuser home folder using the command:                         |
 |                                                                                                               |
 | .. code-block:: bash                                                                                          |
+|                                                                                                               |   
 |    copy c:\Users\labuser\Downloads\f5-xc-lab-app.console.ves.volterra.io.api-creds.p12                        |
 |    c:\Users\labuser\xc-api-cert.p12                                                                           |
 |                                                                                                               |
@@ -86,6 +87,7 @@ This lab will begin back in the Windows 10 client deployed as part of the UDF.
 | 11. Set an environment variable for the API certificate password with the following command:                  |
 |                                                                                                               |
 | .. code-block:: bash                                                                                          |
+|                                                                                                               |
 |    setx VES_P12_PASSWORD "<some_password>"                                                                    |
 |                                                                                                               |
 | |lab3-Terraform_Cert_Password|                                                                                |
@@ -109,6 +111,7 @@ This lab will begin back in the Windows 10 client deployed as part of the UDF.
 |     location, and then click **Select Folder**.                                                               |
 |                                                                                                               |
 | .. code-block:: bash                                                                                          |
+|                                                                                                               |
 |    c:\Users\labuser\appworld-f5xc-automation\Terraform                                                        |
 |                                                                                                               |
 | |lab3-Terraform_VSC_Folder_Select|                                                                            |
@@ -128,6 +131,7 @@ This lab will begin back in the Windows 10 client deployed as part of the UDF.
 |     values into the file:                                                                                     |
 |                                                                                                               |
 | .. code-block:: bash                                                                                          |
+|                                                                                                               |
 |    api_p12     = "c:/Users/labuser/xc-api-cert.p12"                                                           |
 |    tenant_name = "f5-xc-lab-app"                                                                              |
 |    namespace   = "<namespace>"                                                                                |
@@ -149,6 +153,7 @@ This lab will begin back in the Windows 10 client deployed as part of the UDF.
 | 20. In the Terminal at the bottom of Visual Studio Code, enter the following command and press Enter:         |
 |                                                                                                               |
 | .. code-block:: bash                                                                                          |
+|                                                                                                               |
 |    terraform init                                                                                             |
 |                                                                                                               |
 | |lab3-Terraform_VSC_Init|                                                                                     |
@@ -162,6 +167,7 @@ This lab will begin back in the Windows 10 client deployed as part of the UDF.
 | 22. In the Terminal, enter the following command and press Enter:                                             |
 |                                                                                                               |
 | .. code-block:: bash                                                                                          |
+|                                                                                                               |
 |    terraform plan                                                                                             |
 |                                                                                                               |
 | |lab3-Terraform_VSC_Plan|                                                                                     |
@@ -173,6 +179,7 @@ This lab will begin back in the Windows 10 client deployed as part of the UDF.
 | 24. In the Terminal, enter the following command and press Enter:                                             |
 |                                                                                                               |
 | .. code-block:: bash                                                                                          |
+|                                                                                                               |
 |    terraform apply                                                                                            |
 |                                                                                                               |
 | |lab3-Terraform_VSC_Apply|                                                                                    |
@@ -219,6 +226,7 @@ objects within Distributed Cloud.
 |    Application Firewall policy.                                                                               |
 |                                                                                                               |
 | .. code-block:: bash                                                                                          |
+|                                                                                                               |
 |    # Create WAF Policy                                                                                        |
 |    resource "volterra_app_firewall" "waf" {                                                                   |
 |      name = "${var.namespace}-appfw"                                                                          |
@@ -239,6 +247,7 @@ objects within Distributed Cloud.
 |    line with the following configuration:                                                                     |
 |                                                                                                               |
 | .. code-block:: bash                                                                                          |
+|                                                                                                               |
 |    # WAF Config                                                                                               |
 |    app_firewall {                                                                                             |
 |      name = volterra_app_firewall.waf.name                                                                    |
@@ -265,6 +274,7 @@ objects within Distributed Cloud.
 | 5. In the Terminal, enter the following command and press Enter:                                              |
 |                                                                                                               |
 | .. code-block:: bash                                                                                          |
+|                                                                                                               |
 |    terraform plan                                                                                             |
 |                                                                                                               |
 | |lab3-Terraform_VSC_Appfw_Plan|                                                                               |
@@ -276,6 +286,7 @@ objects within Distributed Cloud.
 | 7. In the Terminal, enter the following command and press Enter:                                              |
 |                                                                                                               |
 | .. code-block:: bash                                                                                          |
+|                                                                                                               |
 |    terraform apply                                                                                            |
 |                                                                                                               |
 | |lab3-Terraform_VSC_Appfw_Apply|                                                                              |
@@ -340,6 +351,7 @@ Application Firewall Policy that was created in Tasks 1 & 2.
 | 2. In the Visual Studio Code Terminal, enter the following command and press Enter:                           |
 |                                                                                                               |
 | .. code-block:: bash                                                                                          |
+|                                                                                                               |
 |    terraform destroy                                                                                          |
 |                                                                                                               |
 | |lab3-Terraform_VSC_Destroy|                                                                                  |
