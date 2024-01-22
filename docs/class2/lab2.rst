@@ -58,8 +58,7 @@ Cloud Console.
       MAC platforms*.
 
 #. Return to the F5 Distributed Cloud Console, within **Web App & API
-   Protection** in the left-hand navigation menu, click on **Dashboards >
-   Security Dashboard**
+   Protection** in the left-hand navigation menu, under **Overview** click on **Security**
 
    |lab007|
 
@@ -200,18 +199,18 @@ and understand its implementation.
 #. In the **Application Endpoint** input the following values in the fields
    identified:
 
-   - **Metadata\\Name:** *auth-bot*
+   - **Name:** *auth-bot*
    - **HTTP Methods:** *POST*
    - **Protocol:** *BOTH*
    - **Path\\Path Match:** *Prefix*
-   - **Prefix:** */auth.php*
-   - **Bot Traffic Mitigation\Select Bot Mitigation Action:** *Block*
-
-#. Scroll to the bottom and click **Apply**.
+   - **Path\\Prefix:** */auth.php*
+   - **Bot Traffic Mitigation\\Select Bot Mitigation Action:** *Block*
 
    |lab020|
 
    |lab021|
+
+#. Scroll to the bottom and click **Apply**.
 
 #. Click **Apply** on the **App Endpoint Type** window.
 
