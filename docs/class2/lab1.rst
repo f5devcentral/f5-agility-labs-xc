@@ -255,7 +255,7 @@ configuration changes.
    |lab024|
 
 #. Returning to the F5 Distributed Cloud Console, use the left-hand menu to
-   select **Overview > Dashboard > Performance Dashboard** section.  This
+   select **Overview > Performance** section.  This
    dashboard will provide a summary view for all of the configured Load
    Balancers.
 
@@ -319,8 +319,8 @@ configuration changes.
       *Individual forensic categories can be changed using the noted pencil
       icon to surface additional top data details.*
 
-#. Using the left-hand navigation, click **Dashboards** and then select
-   **Security Dashboard**.
+#. Using the left-hand navigation, under **Overview** select
+   **Security**.
 
    |lab033|
 
