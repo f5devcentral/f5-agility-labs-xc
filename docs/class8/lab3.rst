@@ -64,7 +64,6 @@ This lab will begin back in the Windows 10 client deployed as part of the UDF.
 |                                                                                                               |
 | .. note::                                                                                                     |
 |    *Use a password that you will remember for the certificate, if you don't remember your API cert password,* |
-|                                                                                                               |
 |    *you will need to generate a new API cert.*                                                                |
 +---------------------------------------------------------------------------------------------------------------+
 
@@ -199,7 +198,6 @@ This lab will begin back in the Windows 10 client deployed as part of the UDF.
 |                                                                                                               |
 | .. note::                                                                                                     |
 |    *This illustrates that you are able to configure the delivery of an application via the Distributed Cloud* |
-|                                                                                                               |
 |    *API utilizing Terraform.*                                                                                 |
 +---------------------------------------------------------------------------------------------------------------+
 | |lab1-Demoshop|                                                                                               |
@@ -257,7 +255,6 @@ objects within Distributed Cloud.
 |                                                                                                               |
 | .. note::                                                                                                     |
 |    *The WAF Config should be indented two spaces under the Load Balancer configuration to maintain nesting*   |
-|                                                                                                               |
 |    *style conventions.*                                                                                       |
 +---------------------------------------------------------------------------------------------------------------+
 | 4. Click **File** and **Save** to save the changes you made to **main.tf**.                                   |

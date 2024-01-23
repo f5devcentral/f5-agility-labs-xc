@@ -66,7 +66,6 @@ utilizing the Developer Portal.
 |                                                                                                               |
 | .. note::                                                                                                     |
 |    *If you don't save your API token or you lose it, you will need to generate a new API token. After an API* |
-|                                                                                                               |
 |    *token is generated, it **cannot be retrieved again later**.*                                              |
 +---------------------------------------------------------------------------------------------------------------+
 
@@ -82,7 +81,6 @@ utilizing the Developer Portal.
 |                                                                                                               |
 | .. note::                                                                                                     |
 |    *This takes you to the online documentation for the F5 Distributed Cloud Services API.  Here, you can*     |
-|                                                                                                               |
 |    *review or download the API specification.*                                                                |
 +---------------------------------------------------------------------------------------------------------------+
 | 9. In the resulting screen, click the **API Developer Portal** link in the top menu.                          |
@@ -129,9 +127,7 @@ utilizing the Developer Portal.
 |                                                                                                               |
 | .. note::                                                                                                     |
 |    *The parameters you entered in the name field were used to execute the API query and limit the returned*   |
-|                                                                                                               |
 |    *values. Parameters can also be used when creating new objects.*                                           |
-|                                                                                                               |
 +---------------------------------------------------------------------------------------------------------------+
 
 Task 2: Create A Proxy Configuration Using Postman
@@ -301,9 +297,7 @@ configuration will then be tested utilizing a web browser to access the web appl
 |                                                                                                               |
 | .. note::                                                                                                     |
 |    *There may be slight variations in the JSON because you don't need to post default values when calling the*|
-|                                                                                                               |
 |    *API. If you want to automate a task in Distributed Cloud, but are unsure of the required JSON, you can*   |
-|                                                                                                               |
 |    *configure a test object via the GUI and then use this JSON tab to get the corresponding JSON config.*     |
 +---------------------------------------------------------------------------------------------------------------+
 | 9. Click **Cancel and Exit** to close out the Health Check configuration.                                     |
@@ -332,9 +326,7 @@ configuration will then be tested utilizing a web browser to access the web appl
 |                                                                                                               |
 | .. note::                                                                                                     |
 |    *There may be slight variations in the JSON because you don't need to post default values when calling the*|
-|                                                                                                               |
 |    *API. If you want to automate a task in Distributed Cloud, but are unsure of the required JSON, you can*   |
-|                                                                                                               |
 |    *configure a test object via the GUI and then use this JSON tab to get the corresponding JSON config.*     |
 +---------------------------------------------------------------------------------------------------------------+
 | 14. Click **Cancel and Exit** to close out the Origin Pool configuration.                                     |
@@ -363,9 +355,7 @@ configuration will then be tested utilizing a web browser to access the web appl
 |                                                                                                               |
 | .. note::                                                                                                     |
 |    *There may be slight variations in the JSON because you don't need to post default values when calling the*|
-|                                                                                                               |
 |    *API. If you want to automate a task in Distributed Cloud, but are unsure of the required JSON, you can*   |
-|                                                                                                               |
 |    *configure a test object via the GUI and then use this JSON tab to get the corresponding JSON config.*     |
 +---------------------------------------------------------------------------------------------------------------+
 | 19. Click **Cancel and Exit** to close out the Load Balancer configuration.                                   |
@@ -382,7 +372,6 @@ configuration will then be tested utilizing a web browser to access the web appl
 |                                                                                                               |
 | .. note::                                                                                                     |
 |    *This illustrates that you are able to configure the delivery of an application via the Distributed Cloud* |
-|                                                                                                               |
 |    *API utilizing Postman.*                                                                                   |
 +---------------------------------------------------------------------------------------------------------------+
 
