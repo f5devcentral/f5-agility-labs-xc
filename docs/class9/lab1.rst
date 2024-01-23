@@ -304,7 +304,7 @@ a **Policy Supervisor** agent is not possible or when the BIG-IP appliance canno
 2. Find **bigip1** under F5 Products and click its **ACCESS** link to see a list of access options.
 
 +----------------------------------------------+
-| .. image:: _static/UDFTMUI.png               |
+| .. image:: _static/UDFTMUI1.png              |
 |    :width: 800px                             |
 +----------------------------------------------+
 
@@ -346,7 +346,7 @@ a **Policy Supervisor** agent is not possible or when the BIG-IP appliance canno
 8. Click the **OK** button and wait a few momemts for the export process to complete.
 
 +----------------------------------------------+
-| .. image:: _static/BIGIPExport2.png          |
+| .. image:: _static/BIGIPExport3.png          |
 |    :width: 800px                             |
 +----------------------------------------------+
 
@@ -396,8 +396,9 @@ a **Policy Supervisor** agent is not possible or when the BIG-IP appliance canno
 |    :width: 800px                             |
 +----------------------------------------------+
 
-The screenshot above shows two WAF policies: one that was just imported in the steps above
-and the other was previously imported using the *Ingest* method.
+The imported WAF policy will be listed on the *Policies Overview* page as shown in
+the screenshot image above, which shows two WAF policies: one that was just imported
+in the steps above and the other was previously imported using the *Ingest* method.
 
 Task 7: Deploy a WAF policy to a BIG-IP
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -412,14 +413,14 @@ Task 7: Deploy a WAF policy to a BIG-IP
 |    :width: 800px                             |
 +----------------------------------------------+
 
-8. Select a policy then find and click on the **Deploy** button.
+2. Select a policy then find and click on the **Deploy** button.
 
 +----------------------------------------------+
 | .. image:: _static/PSDeploy3.png             |
 |    :width: 800px                             |
 +----------------------------------------------+
 
-9. Select **bigip2** option from the **Provider** optinos and type **"Deploy to bigip2"** in the mandatory commit
+3. Select **bigip2** option from the **Provider** options and type **"Deploy to bigip2"** in the mandatory commit
    message text box and click the **Conversion Summary** button.
 
 +----------------------------------------------+
@@ -427,35 +428,35 @@ Task 7: Deploy a WAF policy to a BIG-IP
 |    :width: 800px                             |
 +----------------------------------------------+
 
-10. Wait for the Conversion Summary screen to appear.
+4. Wait for the Conversion Summary screen to appear.
 
 +----------------------------------------------+
 | .. image:: _static/PSDeploy5.png             |
 |    :width: 800px                             |
 +----------------------------------------------+
 
-11. Click the **Save & Continue** button.
+5. Click the **Save & Continue** button.
 
 +----------------------------------------------+
 | .. image:: _static/PSDeploy6.png             |
 |    :width: 800px                             |
 +----------------------------------------------+
 
-12. Click the **Continue Deployment** button on the *Conversion Report* screen that appears.
+6. Click the **Continue Deployment** button on the *Conversion Report* screen that appears.
 
 +----------------------------------------------+
 | .. image:: _static/PSDeploy7.png             |
 |    :width: 800px                             |
 +----------------------------------------------+
 
-13. Select the **web_app** virtual server from the dropdown list and click the **Next** button.
+7. Select the **web_app** virtual server from the dropdown list and click the **Next** button.
 
 +----------------------------------------------+
 | .. image:: _static/PSDeploy7b.png            |
 |    :width: 800px                             |
 +----------------------------------------------+
 
-14. Click the **Deploy** button.
+8. Click the **Deploy** button.
 
 +----------------------------------------------+
 | .. image:: _static/PSDeploy8.png             |
@@ -465,17 +466,17 @@ Task 7: Deploy a WAF policy to a BIG-IP
 |    :width: 800px                             |
 +----------------------------------------------+
 
-15. Wait for the deployment to successfully complete and click the **Back to Overview** button.
+9. Wait for the deployment to successfully complete. and click the **Back to Overview** button.
 
 +----------------------------------------------+
-| .. image:: _static/PSDeploy10.png            |
+| .. image:: _static/PSImport5.png             |
 |    :width: 800px                             |
 +----------------------------------------------+
 
 Task 8: Confirm successful deployment of the WAF policy on BIG-IP2
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. NOTE:: The password for the admin account on your BIG-IP appliances is set to **Canada123!**.
+.. NOTE:: The password for the admin account on your BIG-IP appliances is set to **Canada123!**
 
 
 1. Browse to https://udf.f5.com again and find the **Deployment** tab to see your virtual machines.
@@ -487,7 +488,7 @@ Task 8: Confirm successful deployment of the WAF policy on BIG-IP2
 2. Find **bigip2** under F5 Products and click its **ACCESS** link to see a list of access options.
 
 +----------------------------------------------+
-| .. image:: _static/UDFTMUI.png               |
+| .. image:: _static/UDFTMUI2.png              |
 |    :width: 800px                             |
 +----------------------------------------------+
 
