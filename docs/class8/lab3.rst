@@ -77,10 +77,7 @@ This lab will begin back in the Windows 10 client deployed as part of the UDF.
 +---------------------------------------------------------------------------------------------------------------+
 | 10. Copy the certificate you downloaded to the labuser home folder using the command:                         |
 |                                                                                                               |
-| .. code-block:: bash                                                                                          |
-|                                                                                                               |   
-|    copy c:\Users\labuser\Downloads\f5-xc-lab-app.console.ves.volterra.io.api-creds.p12                        |
-|    c:\Users\labuser\xc-api-cert.p12                                                                           |
+| .. literalinclude:: lab3-copy.txt                                                                             |
 |                                                                                                               |
 | |lab3-Terraform_Cert_Copy|                                                                                    |
 +---------------------------------------------------------------------------------------------------------------+

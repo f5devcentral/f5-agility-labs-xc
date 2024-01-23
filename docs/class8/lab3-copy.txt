@@ -1,0 +1,1 @@
+copy c:\Users\labuser\Downloads\f5-xc-lab-app.console.ves.volterra.io.api-creds.p12 c:\Users\labuser\xc-api-cert.p12
