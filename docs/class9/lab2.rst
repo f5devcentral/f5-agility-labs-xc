@@ -14,9 +14,9 @@ Task 1: Obtain an authentication token for your F5 Distributed Cloud tenant
 
 A valid F5 Distributed Cloud authentication token before it can be added as a provider.
 
-1- Browse to your Distributed Cloud console at **https://f5-xc-lab-mcn.console.ves.volterra.io/**
-and sign in to the **f5-xc-lab-mcn** domain using the ephemeral account credentials, as described
-in the introduction section of this lab guide.
+1- Browse to your Distributed Cloud console at **https://f5-xc-lab-mcn.console.ves.volterra.io**
+and sign as described in the introduction section of this lab guide (the domain is  **f5-xc-lab-mcn**
+and the suggested ephemeral account password is **Canada123!**).
 
 +----------------------------------------------+
 | .. image:: _static/tenantlogin2.png          |
@@ -44,7 +44,8 @@ in the introduction section of this lab guide.
 |    :width: 800px                             |
 +----------------------------------------------+
 
-5- Find and click on **Add Credentials**, fill in the fields as shown in the picture above and click **Generate**
+5- Find and click on **Add Credentials** on the *Credentials* page, then fill in the fields as shown
+in the picture above and click **Generate**.
 
 +----------------------------------------------+
 | .. image:: _static/XCToken3.png              |
@@ -58,49 +59,52 @@ in the introduction section of this lab guide.
 Task 2: Create a new **Policy Supervisor** *Provider*
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1- Browse to the **Policy Supervisor** *Providers* page and login (login instructions can be found in the introduction section of this lab guide).
+1- Browse to the **Policy Supervisor** *Providers* page **http://policysupervisor.io** and
+login if required (*login instructions can be found in the introduction section of this lab guide).
 
 +----------------------------------------------+
 | .. image:: _static/PSProviderList.png        |
 |    :width: 800px                             |
 +----------------------------------------------+
 
-2- Click **Add provider** 
+2- Click **Add provider**.
 
 +----------------------------------------------+
 | .. image:: _static/PSXCProvider1.png         |
 |    :width: 800px                             |
 +----------------------------------------------+
 
-3- Select **Distributed Cloud** for the *Provider Type* and click **+ Add secret**
+3- Select **Distributed Cloud** for the *Provider Type* and click **+ Add secret**.
 
 +----------------------------------------------+
 | .. image:: _static/PSXCProvider2.png         |
 |    :width: 800px                             |
 +----------------------------------------------+
 
-4- Enter a name, paste the value of the Distributed Cloud token obtained in Task 1 above, and click **Create**
+4- Enter a name, paste the value of the Distributed Cloud token obtained in Task 1 above, and click **Create**.
 
 +----------------------------------------------+
 | .. image:: _static/PSXCProvider3.png         |
 |    :width: 800px                             |
 +----------------------------------------------+
 
-5- Select this newly created secret and click **Continue**
+5- Select this newly created secret from the drop-down list and click **Continue**.
 
 +----------------------------------------------+
 | .. image:: _static/PSXCProvider4.png         |
 |    :width: 800px                             |
 +----------------------------------------------+
 
-6- Enter a name for this provider (*for example:* **Distributed Cloud**), type or paste the URL for your Distributed Cloud domain/tenant (for the ephemeral credentails automatically created for this lab: **https://f5-xc-lab-mcn.console.ves.volterra.io**), and click **Test Connection**
+6- Enter a name for this provider (*for example:* **Distributed Cloud**), type or 
+paste the URL for your Distributed Cloud domain/tenant (*if using the ephemeral account
+automatically created for this lab:* **https://f5-xc-lab-mcn.console.ves.volterra.io**) and click **Test Connection**.
 
 +----------------------------------------------+
 | .. image:: _static/PSXCProvider5.png         |
 |    :width: 800px                             |
 +----------------------------------------------+
 
-7- Wait for the test to complete. Click **Go to overview** to return to the Providers Overview page.
+7- Wait for the test to complete, then click **Go to overview** to return to the Providers Overview page.
 
 Task 3: Deploy an existing WAF policy to an existing *F5 Distributed Cloud Load Balancer*
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -119,42 +123,53 @@ The steps to deploy a WAF policy to Distribured Cloud are almost the same as des
 1- In **Policy Supervisor**, browse to the **Policies** page.
 
 +----------------------------------------------+
+|                                              |
+| Option 1:                                    |
+|                                              |
 | .. image:: _static/PSDeploy1.png             |
 |    :width: 800px                             |
+|                                              |
 +----------------------------------------------+
-+----------------------------------------------+
+|                                              |
+| Option 2:                                    |
+|                                              |
 | .. image:: _static/PSDeploy2.png             |
 |    :width: 800px                             |
+|                                              |
 +----------------------------------------------+
 
-2- Locate and click on the **Deploy** button for the policy you wish to deploy.
+2- Locate and click on the **Deploy** button for the policy you wish to deploy. 
 
 +----------------------------------------------+
 | .. image:: _static/PSXCDeploy3.png           |
 |    :width: 800px                             |
 +----------------------------------------------+
 
-3- Select the **Distribured Cloud** *Provider* configured in the previous task, enter the required note in the text box, and click **Conversion Summary**.
-Notice that you can select multiple *Providers* if you wish to *simultaneously* deploy this WAF policy to different platforms.
+3- Select the **Distribured Cloud** *Provider* that was configured in the previous task,
+enter the required note in the text box and click **Conversion Summary**.
+
+Notice that you can select multiple *Providers* if you wish to *simultaneously* deploy
+this WAF policy to multiple F5 platforms (*platform types can be different).
 
 +----------------------------------------------+
 | .. image:: _static/PSXCDeploy4.png           |
 |    :width: 800px                             |
 +----------------------------------------------+
 
-4- Wait for the conversion process to complete and click **Save & Continue** and click **Continue Deployment**.
+4- Wait for the conversion process to complete, then click **Save & Continue** and **Continue Deployment**.
 
 +----------------------------------------------+
 | .. image:: _static/PSXCDeploy5.png           |
 |    :width: 800px                             |
 +----------------------------------------------+
 
-5- Select the Distributed Cloud **Load Balancer** where the policy is to be deployed/attached.
+5- Select the target Distributed Cloud **Load Balancer** where the policy should be deployed/attached.
+
 This *HTTP Load Balancer* must be pre-configured and available in the corresponding tenant.
 
 Task 4: Confirm that the WAF policy was deployed as expected
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1- Browse back to your Distributed Cloud tenant and find the *HTTP Load Balancer* you select in the previous task.
+1- Browse back to your Distributed Cloud tenant and find the *HTTP Load Balancer* you selected in the previous task.
 
-2- Confirm that the WAF security policy is attached as expected.
+2- Confirm that the WAF security policy is attached as expected by inspecting the configuration.
