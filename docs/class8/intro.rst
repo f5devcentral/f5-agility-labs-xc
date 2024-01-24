@@ -36,19 +36,19 @@ The following will guide you through the initial Lab environment access within t
 F5 Distributed Cloud Console.  You should have received an email with an invitation to 
 access a F5 Distributed Cloud Tenant. The email will come from **no-reply@cloud.f5.com**.
 
-The name of the F5 Distributed Cloud tenant that we will be using is **f5-xc-lab-sec**
+The name of the F5 Distributed Cloud tenant that we will be using is **f5-xc-lab-app**
 Additionally, the following are important elements of this lab and will be used throughout the 
 lab tasks that follow.
 
-* F5 Distributed Cloud Console: **https://f5-xc-lab-sec.console.ves.volterra.io/**
-* Delegated Domain: **lab-sec.f5demos.com**
+* F5 Distributed Cloud Console: **https://f5-xc-lab-app.console.ves.volterra.io/**
+* Delegated Domain: **lab-app.f5demos.com**
 
 After following the invitation email's to **Update Password**, proceed to the first step below. 
 
 +----------------------------------------------------------------------------------------------+
 | 1. Please log into F5 Distributed Cloud Lab Tenant with your user ID (email) and password.   |
 |                                                                                              |
-|    **https://f5-xc-lab-sec.console.ves.volterra.io/**                                        |
+|    **https://f5-xc-lab-app.console.ves.volterra.io/**                                        |
 |                                                                                              |
 | 2. When you first login, accept the Lab tenant EULA. Click the check box and the click       |
 |                                                                                              |

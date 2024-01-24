@@ -95,9 +95,7 @@ This lab will begin back in the Windows 10 client deployed as part of the UDF.
 |                                                                                                               |
 | .. note::                                                                                                     |
 |    *There may be slight variations in the JSON because you don't need to post default values when calling the*|
-|                                                                                                               |
 |    *API. If you want to automate a task in Distributed Cloud, but are unsure of the required JSON, you can*   |
-|                                                                                                               |
 |    *configure a test object via the GUI and then use this JSON tab to get the corresponding JSON config.*     |
 +---------------------------------------------------------------------------------------------------------------+
 | 15. Click **Cancel and Exit** to close out the Load Balancer configuration.                                   |
@@ -191,9 +189,7 @@ application. Postman will then be used to attach the Service Policy to the HTTP 
 |                                                                                                               |
 | .. note::                                                                                                     |
 |    *There may be slight variations in the JSON because you don't need to post default values when calling the*|
-|                                                                                                               |
 |    *API. If you want to automate a task in Distributed Cloud, but are unsure of the required JSON, you can*   |
-|                                                                                                               |
 |    *configure a test object via the GUI and then use this JSON tab to get the corresponding JSON config.*     |
 +---------------------------------------------------------------------------------------------------------------+
 | 15. Click **Cancel and Exit** to close out the Load Balancer configuration.                                   |
