@@ -29,7 +29,7 @@ When you add a BIG-IP instance as a *provider*, you must first set up an *agent*
 .. note::
    **Prerequisites:**
 
-   **Policy Supervisor Agent** *requires the following applications to be installed on your Linux machine/VM:*
+   Installation of the **Policy Supervisor Agent** *requires the following applications to be installed on your Linux machine/VM:*
 
    - Docker
    - wget
@@ -55,8 +55,8 @@ Access the F5 **Policy Supervisor** console at https://policysupervisor.io as in
 | |lab002|                                     |
 +----------------------------------------------+
 
-3. Copy & paste (save) the value of the **Token** to a text file or notepad.
-   *(This token will be required in *Task 2* below.)*
+3. *Copy & paste* (save) the value of the **Token** to a text file or notepad.
+   (This token will be required in *Task 2* below.)
 
 +----------------------------------------------+
 | |lab003|                                     |
@@ -70,7 +70,7 @@ Access the F5 **Policy Supervisor** console at https://policysupervisor.io as in
 +----------------------------------------------+
 
 5. At the bottom of the *Package Registry* page, **right-click** on the **agent-installer** file name and
-   select **Copy Link**. *(This URL will be required in *Task 2* below.)*
+   select **Copy Link**. (This URL will be required in *Task 2* below.)
 
 .. note:: *The URL for the agent-installer file changes from time to time when it is updated.*
 

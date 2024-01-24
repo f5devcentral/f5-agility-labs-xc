@@ -14,7 +14,9 @@ Task 1: Obtain an authentication token for your F5 Distributed Cloud tenant
 
 A valid F5 Distributed Cloud authentication token before it can be added as a provider.
 
-1- Browse to your Distributed Cloud console at **https://f5-xc-lab-mcn.console.ves.volterra.io/** and sign in to the **f5-xc-lab-mcn** domain using the ephemeral account credentials, as described in the introduction section of this lab guide.
+1- Browse to your Distributed Cloud console at **https://f5-xc-lab-mcn.console.ves.volterra.io/**
+and sign in to the **f5-xc-lab-mcn** domain using the ephemeral account credentials, as described
+in the introduction section of this lab guide.
 
 +----------------------------------------------+
 | .. image:: _static/tenantlogin2.png          |
@@ -53,12 +55,7 @@ A valid F5 Distributed Cloud authentication token before it can be added as a pr
 
 7- Click **Done**
 
-Task 2: Create a new *Load Balancer* in your Distributed Cloud tenant/domain
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-[insert steps to create a new simple load balancer... Should we use curl/API scripts to make it as easy and quick as possible?]
-
-Task 3: Create a new **Policy Supervisor** *Provider*
+Task 2: Create a new **Policy Supervisor** *Provider*
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 1- Browse to the **Policy Supervisor** *Providers* page and login (login instructions can be found in the introduction section of this lab guide).
@@ -105,10 +102,19 @@ Task 3: Create a new **Policy Supervisor** *Provider*
 
 7- Wait for the test to complete. Click **Go to overview** to return to the Providers Overview page.
 
-Task 4: Deploy an existing WAF policy to an existing *F5 Distributed Cloud Load Balancer*
+Task 3: Deploy an existing WAF policy to an existing *F5 Distributed Cloud Load Balancer*
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Now that Distribured Cloud is configured as a Provider, **Policy Supervisor** can deploy WAF policies to any **Load Balancer** defined in your tenant/domain.
+With a Distribured Cloud Provider configured, **Policy Supervisor** can now deploy WAF policies to any 
+pre-existing **HTTP Load Balancer** in the corresponding Distributed Cloud tenant.
+
+.. note:: 
+   Creating a  Distributed Cloud *HTTP Load Balancer* is out of scope for this lab and
+   the ephemeral accounts that are created in Distributed Clound for students of this lab
+   do not have sufficient priviliges/rights to carry out the following steps.
+   The steps below are therefore provided here for demonstration purposes only.
+
+The steps to deploy a WAF policy to Distribured Cloud are almost the same as described in *Lab 1* for the BIG-IP WAF.
 
 1- In **Policy Supervisor**, browse to the **Policies** page.
 
@@ -129,6 +135,7 @@ Now that Distribured Cloud is configured as a Provider, **Policy Supervisor** ca
 +----------------------------------------------+
 
 3- Select the **Distribured Cloud** *Provider* configured in the previous task, enter the required note in the text box, and click **Conversion Summary**.
+Notice that you can select multiple *Providers* if you wish to *simultaneously* deploy this WAF policy to different platforms.
 
 +----------------------------------------------+
 | .. image:: _static/PSXCDeploy4.png           |
@@ -143,7 +150,11 @@ Now that Distribured Cloud is configured as a Provider, **Policy Supervisor** ca
 +----------------------------------------------+
 
 5- Select the Distributed Cloud **Load Balancer** where the policy is to be deployed/attached.
+This *HTTP Load Balancer* must be pre-configured and available in the corresponding tenant.
 
-Task 5: Confirm that the WAF policy was deployed as expected
+Task 4: Confirm that the WAF policy was deployed as expected
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+1- Browse back to your Distributed Cloud tenant and find the *HTTP Load Balancer* you select in the previous task.
+
+2- Confirm that the WAF security policy is attached as expected.
