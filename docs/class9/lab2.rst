@@ -9,14 +9,18 @@ Please refer to the Tutorial in the GitHub repo (https://github.com/f5devcentral
 
 **Policy Supervisor** provides a graphical interface for visual policy creation, editing and management for traditional SecOps personas.
 
+.. note:: 
+   The ephemeral accounts that are created in Distributed Clound for students of this lab
+   do not have sufficient priviliges/rights to configure **Policy Supervisor** as described in this lab.
+   The steps below are therefore provided here for demonstration purposes only.
+
 Task 1: Obtain an authentication token for your F5 Distributed Cloud tenant
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 A valid F5 Distributed Cloud authentication token before it can be added as a provider.
 
-1- Browse to your Distributed Cloud console at **https://f5-xc-lab-mcn.console.ves.volterra.io**
-and sign as described in the introduction section of this lab guide (the domain is  **f5-xc-lab-mcn**
-and the suggested ephemeral account password is **Canada123!**).
+1- Browse to your Distributed Cloud console (for example: **https://f5-xc-lab-mcn.console.ves.volterra.io**)
+and sign as described in the introduction section of this lab guide.
 
 +----------------------------------------------+
 | .. image:: _static/tenantlogin2.png          |
@@ -59,8 +63,13 @@ in the picture above and click **Generate**.
 Task 2: Create a new **Policy Supervisor** *Provider*
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1- Browse to the **Policy Supervisor** *Providers* page **http://policysupervisor.io** and
-login if required (*login instructions can be found in the introduction section of this lab guide).
+.. note:: 
+   The ephemeral accounts that are created in Distributed Clound for students of this lab
+   do not have sufficient priviliges/rights to configure **Policy Supervisor** as described in this lab.
+   The steps below are therefore provided here for demonstration purposes only.
+
+1- Browse to the **Policy Supervisor** *Providers* page (**http://policysupervisor.io**) and
+login if required *(login instructions can be found in the introduction section of this lab guide).
 
 +----------------------------------------------+
 | .. image:: _static/PSProviderList.png        |
@@ -96,8 +105,7 @@ login if required (*login instructions can be found in the introduction section 
 +----------------------------------------------+
 
 6- Enter a name for this provider (*for example:* **Distributed Cloud**), type or 
-paste the URL for your Distributed Cloud domain/tenant (*if using the ephemeral account
-automatically created for this lab:* **https://f5-xc-lab-mcn.console.ves.volterra.io**) and click **Test Connection**.
+paste the URL for your Distributed Cloud domain/tenant *(for example:* **https://f5-xc-lab-mcn.console.ves.volterra.io**) and click **Test Connection**.
 
 +----------------------------------------------+
 | .. image:: _static/PSXCProvider5.png         |
@@ -109,29 +117,28 @@ automatically created for this lab:* **https://f5-xc-lab-mcn.console.ves.volterr
 Task 3: Deploy an existing WAF policy to an existing *F5 Distributed Cloud Load Balancer*
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-With a Distribured Cloud Provider configured, **Policy Supervisor** can now deploy WAF policies to any 
-pre-existing **HTTP Load Balancer** in the corresponding Distributed Cloud tenant.
+With a Distribured Cloud Provider successfully configured, **Policy Supervisor** can deploy WAF policies to any 
+**pre-existing HTTP Load Balancer** in the corresponding Distributed Cloud tenant.
+
+The steps to deploy a WAF policy to Distribured Cloud are basically the same as those provided in *Lab 1*
+for deploying a WAF policy to a BIG-IP.
 
 .. note:: 
-   Creating a  Distributed Cloud *HTTP Load Balancer* is out of scope for this lab and
-   the ephemeral accounts that are created in Distributed Clound for students of this lab
-   do not have sufficient priviliges/rights to carry out the following steps.
+   Creating Distributed Cloud *HTTP Load Balancer* is out of scope for this lab.
    The steps below are therefore provided here for demonstration purposes only.
 
-The steps to deploy a WAF policy to Distribured Cloud are almost the same as described in *Lab 1* for the BIG-IP WAF.
-
-1- In **Policy Supervisor**, browse to the **Policies** page.
+1- In **Policy Supervisor**, browse to the **Policies** page (**http://policysupervisor.io**).
 
 +----------------------------------------------+
 |                                              |
-| Option 1:                                    |
+| *Option 1:*                                  |
 |                                              |
 | .. image:: _static/PSDeploy1.png             |
 |    :width: 800px                             |
 |                                              |
 +----------------------------------------------+
 |                                              |
-| Option 2:                                    |
+| *Option 2:*                                  |
 |                                              |
 | .. image:: _static/PSDeploy2.png             |
 |    :width: 800px                             |
@@ -148,28 +155,85 @@ The steps to deploy a WAF policy to Distribured Cloud are almost the same as des
 3- Select the **Distribured Cloud** *Provider* that was configured in the previous task,
 enter the required note in the text box and click **Conversion Summary**.
 
-Notice that you can select multiple *Providers* if you wish to *simultaneously* deploy
-this WAF policy to multiple F5 platforms (*platform types can be different).
+You can select multiple different *Providers* if you wish to *simultaneously* deploy
+this WAF policy to multiple different F5 platforms *(platform don't have to be of the same type).
 
 +----------------------------------------------+
 | .. image:: _static/PSXCDeploy4.png           |
 |    :width: 800px                             |
 +----------------------------------------------+
 
-4- Wait for the conversion process to complete, then click **Save & Continue** and **Continue Deployment**.
+4- Wait for the conversion process to complete, then click **Save & Continue**, and click **Continue Deployment**.
 
 +----------------------------------------------+
 | .. image:: _static/PSXCDeploy5.png           |
 |    :width: 800px                             |
 +----------------------------------------------+
 
-5- Select the target Distributed Cloud **Load Balancer** where the policy should be deployed/attached.
+5- Select the target Distributed Cloud **Load Balancer** where you want this policy to be deployed/attached.
 
 This *HTTP Load Balancer* must be pre-configured and available in the corresponding tenant.
+
+.. note:: 
+   Creating Distributed Cloud *HTTP Load Balancer* is out of scope for this lab.
+   The steps below are therefore provided here for demonstration purposes only.
 
 Task 4: Confirm that the WAF policy was deployed as expected
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1- Browse back to your Distributed Cloud tenant and find the *HTTP Load Balancer* you selected in the previous task.
+1- Browse back to your Distributed Cloud tenant *(for example:* **https://f5-xc-lab-mcn.console.ves.volterra.io**)
+and find the *HTTP Load Balancer* that was targeted in the previous task.
 
-2- Confirm that the WAF security policy is attached as expected by inspecting the configuration.
+2- Go to the **Web App & API Protection** tile/service.
+
++----------------------------------------------+
+| .. image:: _static/XCVerifyWAFAttached.png   |
+|    :width: 800px                             |
++----------------------------------------------+
+
+3- Select the corresponding *HTTP Load Balancer* and click the **Manage Configuration** link that can be
+found on the right side of the screen after clicking the three dots **(...)** in the *Actions* colum.
+
++----------------------------------------------+
+| .. image:: _static/XCVerifyWAFAttached2.png  |
+|    :width: 800px                             |
++----------------------------------------------+
+
+4- Scroll down to the **Web Applicaiton Firewall** section and observe that WAF is enabled with the
+correct policy.  
+
++----------------------------------------------+
+| .. image:: _static/XCVerifyWAFAttached3.png  |
+|    :width: 800px                             |
++----------------------------------------------+
+
+5- Optional testing step: Scroll further down to find the *host name* or *IP address* of your HTTP Load Balancer
+and browse to the corresponding URL. 
+
++----------------------------------------------+
+| .. image:: _static/XCVerifyWAFAttached4.png  |
+|    :width: 800px                             |
++----------------------------------------------+
+
+If the WAF policy is correctly applied and configured to be in blocking mode, forefully browsing
+to URI paths that are illegal will result in a blocking page. To validate, add the following path
+to the URL in your browser's address bar for your HTTP Load Balancer's host name
+(this represents a known SQL injection attack with a corresponding matching WAF signature):
+
+.. code:: 
+
+   /rest/products/search?q=qwert%27%29%29%20UNION%20SELECT%20id%2C%20email%2C%20password%2C%20%274%27%2C%20%275%27%2C%20%276%27%2C%20%277%27%2C%20%278%27%2C%20%279%27%20FROM%20Users--
+
++----------------------------------------------+
+| .. image:: _static/XCVerifyWAFAttached5.png  |
+|    :width: 800px                             |
++----------------------------------------------+
+
+The above *rejected* message represents the default F5 WAF blocking page.
+
+**Hint:** If the SQL injection attack is not blocked, go back to verify the configuration
+of the WAF policy in Distributed Cloud and change it to blocking mode!
+
+**WELL DONE!!!**
+
+This concludes the lab.
