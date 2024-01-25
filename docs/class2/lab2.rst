@@ -50,7 +50,11 @@ Cloud Console.
    |lab005|
 
 #. Open a terminal window or DOS prompt on your respective client and issue the
-   following **curl** command: curl -v http://<namespace>.lab-sec.f5demos.com``.
+   following **curl** command.
+
+   .. code:: BASH
+
+      curl -v http://<namespace>.lab-sec.f5demos.com
 
 #. Observe the **User Agent** and response content.
 
