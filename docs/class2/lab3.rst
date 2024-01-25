@@ -27,7 +27,7 @@ malicious user mitigation and actions.
 #. Click **Common Security Controls** in the left-hand navigation and locate
    **User Identification**.
 
-#. Click the drop-down under **User Identification** and select **User
+#. Click the drop-down under **User Identifier** and select **User
    Identification Policy** from the list.
 
    |lab003|
