@@ -136,8 +136,9 @@ F5 Distributed Cloud Console.
 
 .. warning::
    *If you have not received the email to change your credentials or ran into problems changing
-   your credentials specifically for Account name: **f5-xc-lab-mcn**,
-   *please stop and get help from one of the Lab Assistants.
+   your credentials specifically for Account name:* 
+   **f5-xc-lab-mcn**,
+   *please stop and get help from one of the Lab Assistants.*
 
 1. Locate the **Update Your Account** email sent to you from *F5 Distributed Cloud <no-reply@cloud.f5.com>*.
 
@@ -152,8 +153,7 @@ F5 Distributed Cloud Console.
 | |PSUpdatePassword|                                                                           |
 +----------------------------------------------------------------------------------------------+
 
-3.
-Type your *new password*.
+3. Type your *new password*.
 Adhere to the password strength restrictions and make a mental note of these
 credentials as you will need them several times throughout this lab today.
 
