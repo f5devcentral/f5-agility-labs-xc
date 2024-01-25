@@ -172,12 +172,12 @@ configuration.
       Application* *Firewall with new or updated attack signatures be staged
       (monitored) for a period of* *prior to enforcement (blocking).*
 
-#. Returning to the **HTTP Load Balancer** window, scroll to (or click in the
+#. Returning to the **HTTP Load Balancer** window, scroll (or click in the
    left-hand navigation) to the **Other Settings** section and note the **VIP
    Advertisement** setting.
 
 #. Click **Save and Exit** at the bottom of the **HTTP Load Balancer**
-   configuration screen.|
+   configuration screen.
 
    |lab017|
 
@@ -273,13 +273,13 @@ configuration changes.
    click **Requests**.
 
 #. Change the viewable time period from 5 minutes (default) to **1 hour** by
-   selecting the dropdown shown, click **Last 1 hour** then clicking **Apply**.
+   selecting the dropdown shown, click **Last 1 hour** then click **Apply**.
 
    |lab027|
 
    .. note::
-      *Security Event data may take 15-20 seconds to populate in the Console. Please force a*
-      *refresh using the Refresh icon next to the Time Period selection in step 6.*
+      *Security Event data may take 15-20 seconds to populate in the Console. Please force a
+      refresh using the Refresh icon next to the Time Period selection in step 6.*
 
 #. Expand one of the requests and note the **Information** tab link. This
    summarizes request details and provides request duration timing.
@@ -345,7 +345,7 @@ configuration changes.
 
 #. Expand your latest security event as shown.
 
-   |lab036|                                              |
+   |lab036|
 
    .. note::
       *If you lost your 1 Hour Filter, re-apply using Task 3: Step 6*
@@ -403,6 +403,10 @@ configuration changes.
    format should be as shown *YYYY-MM-DD HH:MM:SS+00:00
    (2023-05-30T01:21:00+00:00)*. **HH** must be in 24 hour format (there is no
    AM/PM).
+
+   .. note::
+      *Timestamps are in GMT*
+
 
 #. Click **Apply** when complete.
 
