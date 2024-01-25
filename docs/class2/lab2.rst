@@ -175,7 +175,7 @@ and understand its implementation.
 #. Click **Bot Protection** in the left-hand navigation.
 
 #. In the **Bot Protection** section, use the drop down under **Bot Defense**
-   and select **Enable**.
+   and select **Enable Bot Defense Standard**.
 
    |lab016|
 
