@@ -284,6 +284,9 @@ previously built Load Balancer object delivering the targeted application/API.
 #. Using the same tab, update the URI parameter from **age=5** to **age=five**
    and confirm the request has been blocked.
 
+   .. note::
+      *URI Path matching is case-sensitive. Make sure the exact case format is used as listed.*
+
    **http://<namespace>.lab-sec.f5demos.com/api/CatLookup/GetByAge?age=five**
 
    |lab1-task4-010|
