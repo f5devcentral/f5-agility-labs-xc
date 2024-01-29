@@ -68,8 +68,6 @@ The username and password for the Windows 10 host are:
 
 .. |lab1-RDP_Client_deployment| image:: _static/lab1-RDP_Client_Deployment.png
    :width: 800px
-.. |lab1-RDP_Client_Windows10| image:: _static/lab1-RDP_Client_Windows10.png
-   :width: 800px
 .. |lab1-RDP_Client_Download| image:: _static/lab1-RDP_Client_Download.png
    :width: 800px
 .. |lab1-RDP_Client_Login| image:: _static/lab1-RDP_Client_Login.png
