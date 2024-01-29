@@ -1,4 +1,4 @@
-RDP client
+RDP Client
 ==========
 
 If you don't already have an RDP client installed, you can download the RDP client that corresponds to your
