@@ -70,7 +70,7 @@ This lab will begin back in the Windows 10 client deployed as part of the UDF.
 +---------------------------------------------------------------------------------------------------------------+
 | **Set Windows Environment Variables for Terraform to Utilize**                                                |
 +===============================================================================================================+
-| 9. Minimize the Chrome Browaser and double click the **Command Prompt** icon on the Windows 10 desktop.       |
+| 9. Minimize the Chrome Browser and double click the **Command Prompt** icon on the Windows 10 desktop.        |
 |                                                                                                               |
 | |lab3-Terraform_Cmd_Prompt|                                                                                   |
 +---------------------------------------------------------------------------------------------------------------+
@@ -111,6 +111,10 @@ This lab will begin back in the Windows 10 client deployed as part of the UDF.
 |    c:\Users\labuser\appworld-f5xc-automation\Terraform                                                        |
 |                                                                                                               |
 | |lab3-Terraform_VSC_Folder_Select|                                                                            |
+|                                                                                                               |
+| .. note::                                                                                                     |
+|    *You may see a pop up window that says "Do you trust the authors of the files in this folder?" If you see* |
+|    *this pop up, click "Yes, I trust the authors"*                                                            |
 +---------------------------------------------------------------------------------------------------------------+
 
 +---------------------------------------------------------------------------------------------------------------+
@@ -237,7 +241,7 @@ objects within Distributed Cloud.
 |                                                                                                               |
 | |lab3-Terraform_VSC_Appfw_Create|                                                                             |
 +---------------------------------------------------------------------------------------------------------------+
-| 3. Locate the **Create Load Balancer** configuration within **main.tf** and replace the **diable_waf = true** |
+| 3. Locate the **Create Load Balancer** configuration within **main.tf** and replace the **disable_waf = true**|
 |                                                                                                               |
 |    line with the following configuration:                                                                     |
 |                                                                                                               |

@@ -23,6 +23,7 @@ Task 1: Lab Environment
 | application. Key elements lab attendees will interact with are as follows:                   |
 |                                                                                              |
 | * **F5 Distributed Cloud Console**                                                           |
+| * **F5 Distributed Cloud API**                                                               |
 | * **F5 Distributed Cloud Global Network / Application Delivery Network (ADN)**               |
 | * **Publicly hosted application (Public Cloud)**                                             |
 +----------------------------------------------------------------------------------------------+

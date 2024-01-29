@@ -10,7 +10,7 @@ various aspects of standard F5 Distributed Cloud operations from basic building 
 configurations and controls. Adjacent automation tools will also be explored.
 
 Objectives:
-----------
+-----------
 
 - Gain a deeper understanding of key F5 Distributed Cloud API frameworks and controls.
 - Gain an understanding of the F5 Distributed Cloud API-first framework.
