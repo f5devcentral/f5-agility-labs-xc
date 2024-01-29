@@ -89,6 +89,9 @@ previously built Load Balancer object delivering the targeted application/API.
 #. Using another browser tab, navigate to the the following URL to confirm
    access is denied.
 
+   .. note::
+      *URI Path matching is case-sensitive. Make sure the exact case format is used as listed.*
+
    **http://<namespace>.lab-sec.f5demos.com/api/CatLookup/GetAllCats**
 
    |lab2-task1-014|
@@ -170,6 +173,9 @@ previously built Load Balancer object delivering the targeted application/API.
 
 #. Using another browser tab, navigate to the the following URL to confirm
    rate limiting, by freshing your tab several times.
+
+   .. note::
+      *URI Path matching is case-sensitive. Make sure the exact case format is used as listed.*
 
    **http://<namespace>.lab-sec.f5demos.com/api/DogLookup/GetAllDogs**
 
