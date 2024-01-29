@@ -28,11 +28,11 @@ utilizing the Developer Portal.
 +---------------------------------------------------------------------------------------------------------------+
 | **Create API Token from the Distributed Cloud Console**                                                       |
 +===============================================================================================================+
-| 1. Following the **Introduction** section instructions, you should now be in the **Multi-Cloud App Connect**  |
+| 1. Following the **Introduction** section instructions, you should now be in the **Web App & API Protection** |
 |                                                                                                               |
-|    configuration window. If, for some reason, you are not in the **Multi-Cloud App Connect** window, use the  |
+|    configuration window. If, for some reason, you are not in the **Web App & API Protection** window, use the |
 |                                                                                                               |
-|    **Select Service** in the left-hand navigation, and click **Multi-Cloud App Connect** as shown in the      |
+|    **Select Service** in the left-hand navigation, and click **Web App & API Protection** as shown in the     |
 |                                                                                                               |
 |    *Introduction section, Task 2, Step 9*.                                                                    |
 +---------------------------------------------------------------------------------------------------------------+
@@ -115,9 +115,19 @@ utilizing the Developer Portal.
 |                                                                                                               |
 | |lab1-Portal_Namespaces_Name|                                                                                 |
 +---------------------------------------------------------------------------------------------------------------+
-| 15. Enter your namespace name in the **namespace** field and then click **Execute**.                          |
+| 15. Enter your namespace name in the **name** field and then click **Execute**.                               |
+|                                                                                                               |
+| .. note::                                                                                                     |
+|    *Your namespace name is unique to your deployment. You should have recorded your namespace name in the*    |
+|    *Introduction Lab Task 2 Step 10.  If you don't remember your namespace, please refer back to the*         |
+|    *Introduction Lab.*                                                                                        |
 |                                                                                                               |
 | |lab1-Portal_Namespaces_Name_Execute|                                                                         |
+|                                                                                                               |
+| .. note::                                                                                                     |
+|    *Your namespace is entered in the name field in this instance because you are requesting details on a*     |
+|    *namespace object named <namespace>. If you were querying for an object contained within your namespace*   |
+|    *you would enter the name of the object in the name field and your namespace name in the namespace field.* |
 +---------------------------------------------------------------------------------------------------------------+
 | 16. Review the **Response body** data. You may have to scroll down slightly to show the **Response body** data|
 |                                                                                                               |
@@ -160,11 +170,14 @@ instructions for connecting to the Windows 10 client via RDPClient_. Here are in
 Windows 10 client via WebRDP_.
 
 The username and password for the Windows 10 host are:
-+-----------+------------+
-| Username  | Password   | 
-+===========+============+
-| labuser   | F5L@bUser! |
-+-----------+------------+
+
++----------------------+----------------------+
+| Username             | Password             | 
++======================+======================+
+| .. code-block:: bash | .. code-block:: bash | 
+|                      |                      |
+|  labuser             |  F5L@bUser!          |
++----------------------+----------------------+
 
 +---------------------------------------------------------------------------------------------------------------+
 | **Utilize Postman to Send API Calls to the Distributed Cloud Console**                                        |

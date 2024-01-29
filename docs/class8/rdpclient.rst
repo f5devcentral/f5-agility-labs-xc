@@ -1,8 +1,9 @@
 RDP client
-==========================================================================================
+==========
 
 If you don't already have an RDP client installed, you can download the RDP client that corresponds to your
 operating system by following the links below.
+
 +-------------------+-------------------------------------------------------------------------------------------+
 | Operating System  | Documentation and Download Link                                                           | 
 +===================+===========================================================================================+
@@ -15,40 +16,47 @@ operating system by following the links below.
 | Linux             | `Remote Desktop Linux`_                                                                   |
 +-------------------+-------------------------------------------------------------------------------------------+
 
-Accessing the UDF Windows 10 Client via RDP
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The username and password for the Windows 10 host are:
+
++----------------------+----------------------+
+| Username             | Password             | 
++======================+======================+
+| .. code-block:: bash | .. code-block:: bash | 
+|                      |                      |
+|  labuser             |  F5L@bUser!          |
++----------------------+----------------------+
 
 +---------------------------------------------------------------------------------------------------------------+
-| 1. From the Webrowser tab that you used to login to the UDF environment, select deployment if you aren't      |
+| Accessing the UDF Windows 10 Client via RDP                                                                   |
++===============================================================================================================+
+| 1. From the Webrowser tab that you used to login to the UDF environment, select **Deployment** if you aren't  |
 |                                                                                                               |
 |    already there.                                                                                             |
 |                                                                                                               |
-| 2. Select the Windows 10 Client, and click details.                                                           |
+| |lab1-RDP_Client_Deployment|                                                                                  |
 |                                                                                                               |
-| 3. On the resulting screen click the dropdown arrow next to RDP and choose the screen resolution you would    |
+| 2. On the Deployment screen click the **ACCESS** link under the **Windows 10 Client** and choose the screen   |
 |                                                                                                               |
-|    like to use.  This will start the download of a .rdp file with the RDP connection information.             |
+|    resolution you would like to use under RDP.  This will start the download of a .rdp file with the RDP      |
+|                                                                                                               |
+|    connection information.                                                                                    |
+|                                                                                                               |
+| |lab1-RDP_Client_Download|                                                                                    |
 |                                                                                                               |
 | .. note::                                                                                                     |
 |    *This will start the download of a .rdp file with RDP connection information. Please note where you saved* |
-|                                                                                                               |
 |    *this file.*                                                                                               |
-+---------------------------------------------------------------------------------------------------------------+
-| |lab1-RDP_Client_Deployment|                                                                                  |
 |                                                                                                               |
-| |lab1-RDP_Client_Windows10|                                                                                   |
+| 3. Open the .rdp file you downloaded in step 3. This file should automatically open in your RDP client.       |
 |                                                                                                               |
-| |lab1-RDP_Client_Download|                                                                                    |
-+---------------------------------------------------------------------------------------------------------------+
-
-+---------------------------------------------------------------------------------------------------------------+
-| 4. Open the .rdp file you downloaded in step 3. This file should automatically open in your RDP client.       |
+| 4. Enter **labuser** for the Username and **F5L@bUser!** for the password then click **Continue**.            |
 |                                                                                                               |
-| 5. Enter labuser for the Username and F5L@bUser! for the password then click connect.                         |
-|                                                                                                               |
-| 6. You should now be logged into the Windows 10 client virtual machine.                                       |
-+---------------------------------------------------------------------------------------------------------------+
 | |lab1-RDP_Client_Login|                                                                                       |
+|                                                                                                               |
+| .. note::                                                                                                     |
+|    *Your RDP client may look different depending on the operating system you are using.*                      |
+|                                                                                                               |
+| 5. You should now be logged into the Windows 10 client virtual machine.                                       |
 |                                                                                                               |
 | |lab1-RDP_Windows10_Desktop|                                                                                  |
 +---------------------------------------------------------------------------------------------------------------+
