@@ -4,7 +4,7 @@ F5 Distributed Cloud - WAF Policy Supervisor
 Welcome
 -------
 
-In this lab, attendees will be introduced to the F5 **Policy Supervisor** and will explore the features and functionality, including the ingestion of exting policies and deployment of policies to various F5 WAF endpoints.
+In this lab, attendees will be introduced to the F5 **Policy Supervisor** and will explore the features and functionality, including the ingestion of existing policies and deployment of policies to various F5 WAF endpoints.
 
 Objectives
 ----------
@@ -27,7 +27,7 @@ The next page (Introduction) will cover the lab environment, access, and lab var
 Launching the virtual lab environment requires an F5 Unified Demo Framework (UDF) account. 
 Login to the F5 **Policy Supervisor** console requires a valid Microsoft account.
 Upon launching this virtual lab, students are provided an ephemeral F5 Distributed Cloud account
-that allows them to login to both F5 Distributed Cloud and F5 **Policy Supervisor** consoles.
+that allows them to login to the F5 Distributed Cloud console.
 
 .. note:: *Students who already have an F5 Distributed Cloud account can use their existing credentials to access the F5* **Policy Supervisor** *console*.
 
