@@ -11,7 +11,7 @@ Please refer to the Tutorial in the GitHub repo (https://github.com/f5devcentral
 
 .. note:: 
    The ephemeral accounts that are created in Distributed Clound for students of this lab
-   do not have sufficient priviliges/rights to configure **Policy Supervisor** as described in this lab.
+   do not have sufficient privileges/rights to configure **Policy Supervisor** as described in this lab.
    The steps below are therefore provided here for demonstration purposes only.
 
 Task 1: Obtain an authentication token for your F5 Distributed Cloud tenant
@@ -65,7 +65,7 @@ Task 2: Create a new **Policy Supervisor** *Provider*
 
 .. note:: 
    The ephemeral accounts that are created in Distributed Clound for students of this lab
-   do not have sufficient priviliges/rights to configure **Policy Supervisor** as described in this lab.
+   do not have sufficient privileges/rights to configure **Policy Supervisor** as described in this lab.
    The steps below are therefore provided here for demonstration purposes only.
 
 1- Browse to the **Policy Supervisor** *Providers* page (**http://policysupervisor.io**) and

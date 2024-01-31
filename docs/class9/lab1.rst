@@ -206,7 +206,7 @@ Task 4: Add a 2nd BIG-IP *provider* in **Policy Supervisor**
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 We will re-use the same **udf** *Agent* and **bigip** *Secret* created in Task 2 above to manage the WAF policies on
-your 2nd BIG-IP because they areconnected to the same management network in your UDF virtual lab environment.
+your 2nd BIG-IP because they are connected to the same management network in your UDF virtual lab environment.
 
 1. Click the **Add another Provider** button to add the second BIG-IP appliance in your virtual lab environment.
 
@@ -329,7 +329,7 @@ a **Policy Supervisor** agent is not possible or when the BIG-IP appliance canno
 |    :width: 800px                             |
 +----------------------------------------------+
 
-6. Click on your policie's name (**My_ASM_Rapid_Deployment_Policy**).
+6. Click on your policy's name (**My_ASM_Rapid_Deployment_Policy**).
 
 +----------------------------------------------+
 | .. image:: _static/BIGIPExport.png           |
