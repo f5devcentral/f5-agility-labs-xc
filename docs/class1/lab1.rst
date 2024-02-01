@@ -141,7 +141,7 @@ Network.
 +---------------------------------------------------------------------------------------------------------------+
 | 18. In the **HTTP Load Balancers** window, note the application hostname under the **Domains** column *(This* |
 |                                                                                                               |
-|     *was done in Task1: Step 19)*.                                                                            |
+|     *was done in Task1: Step 11)*.                                                                            |
 |                                                                                                               |
 +---------------------------------------------------------------------------------------------------------------+
 | |lab013|                                                                                                      |
@@ -168,9 +168,9 @@ Performance Monitoring dashboard, and gather request details.
 +---------------------------------------------------------------------------------------------------------------+
 | 3. Returning to the F5 Distributed Cloud Console, use the left-hand navigation to navigate to Multi-Cloud App |
 |                                                                                                               |
-|    Connect section and expand **Virtual Hosts** and then click on **HTTP Load Balancers**                     |
+|    Connect section and click on **Performance**                                                               |
 |                                                                                                               |
-| 4. Click on **Performance Monitoring** link provided for your respective load balancer.                       |
+| 4. Scroll to the **Load Balancers** section of the page and click the link for your respective load balancer. |
 |                                                                                                               |
 +---------------------------------------------------------------------------------------------------------------+
 | |lab016|                                                                                                      |
@@ -224,12 +224,12 @@ Performance Monitoring dashboard, and gather request details.
 | |lab023|                                                                                                      |
 +---------------------------------------------------------------------------------------------------------------+
 
-Task 3: Configure an Application Firewall Policy to Protect the Application
+Task 3: Add an Application Firewall Policy to Protect the Application
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The following steps will guide you through adding a Web Application Firewall (WAF) Policy.
 
-These steps will create a WAF Policy and apply the WAF policy to the load balancer created in Task 1.
+These steps will apply a preconfigured WAF policy to the load balancer created in Task 1.
 
 +---------------------------------------------------------------------------------------------------------------+
 | 1. Following **Task 2**, you should have the **Multi-Cloud App Connect** navigation panel on the left of your |
@@ -239,32 +239,9 @@ These steps will create a WAF Policy and apply the WAF policy to the load balanc
 |    **Select Service** dropdown at the top left, and click **Multi-Cloud App Connect** as shown in the         |
 |                                                                                                               |
 |    *Introduction section, Task 2, Step 9*.                                                                    |
+| 2. In the left-hand navigation expand **Manage** and click **Load Balancers > HTTP Load Balancers**           |
 |                                                                                                               |
-| 2. In the left-hand navigation expand **Security** and click **App Firewall**.                                |
-|                                                                                                               |
-| 3. On the resulting page click **Add App Firewall**                                                           | 
-+---------------------------------------------------------------------------------------------------------------+
-| |lab024|                                                                                                      |
-|                                                                                                               |
-| |lab025|                                                                                                      |
-+---------------------------------------------------------------------------------------------------------------+
-
-+---------------------------------------------------------------------------------------------------------------+
-| 4. In the resulting window's **Metadata** section enter **<namespace>-appfw** for the **Name**.               |
-|                                                                                                               |
-| 5. Under **Enforcement Mode**, change the mode to **Blocking**.                                               |
-|                                                                                                               |
-| 6. Leaving all other values as default, scroll to the bottom and click **Save and Exit**.                     |
-+---------------------------------------------------------------------------------------------------------------+
-| |lab026|                                                                                                      |
-|                                                                                                               |
-| |lab027|                                                                                                      |
-+---------------------------------------------------------------------------------------------------------------+
-
-+---------------------------------------------------------------------------------------------------------------+
-| 7. In the left-hand navigation expand **Manage** and click **Load Balancers > HTTP Load Balancers**           |
-|                                                                                                               |
-| 8. On the resulting page find the HTTP Load Balancer created in **Task 1** *(<namespace>-lb)*.  Click the     |
+| 3. On the resulting page find the HTTP Load Balancer created in **Task 1** *(<namespace>-lb)*.  Click the     |
 |                                                                                                               |
 |    ellipsis under Actions and select **Manage Configuration**.                                                |
 +---------------------------------------------------------------------------------------------------------------+
@@ -274,9 +251,9 @@ These steps will create a WAF Policy and apply the WAF policy to the load balanc
 +---------------------------------------------------------------------------------------------------------------+
 
 +---------------------------------------------------------------------------------------------------------------+
-| 9. On the resulting page click **Edit Configuration**.                                                        |
+| 4. On the resulting page click **Edit Configuration**.                                                        |
 |                                                                                                               |
-| 10. Click **Web Application Firewall** in the left-hand navigation.                                           |  
+| 5. Click **Web Application Firewall** in the left-hand navigation.                                            |  
 +---------------------------------------------------------------------------------------------------------------+
 | |lab030|                                                                                                      |
 |                                                                                                               |
@@ -285,15 +262,15 @@ These steps will create a WAF Policy and apply the WAF policy to the load balanc
 
 
 +---------------------------------------------------------------------------------------------------------------+
-| 11. Under the **Web Application Firewall** section select **Enable** from the **Web Application Firewall**    |
+| 6. Under the **Web Application Firewall** section select **Enable** from the **Web Application Firewall**     |
 |                                                                                                               |
 |     **(WAF)** dropdown.                                                                                       |
 |                                                                                                               |
-| 12. Select the Web Application Firewall name that you created in *Steps 1-6* of this task                     |
+| 7. Select preconfigured the Web Application Firewall                                                          |
 |                                                                                                               |
-|     *(<namespace>-appfw)* from the **Enable** dropdown.                                                       |
+|     *(shared/base-appfw)* from the **Enable** dropdown.                                                       |
 |                                                                                                               |
-| 13. Scroll to the bottom of the page and click **Save and Exit**                                              |
+| 8. Scroll to the bottom of the page and click **Save and Exit**                                               |
 +---------------------------------------------------------------------------------------------------------------+
 | |lab032|                                                                                                      |
 |                                                                                                               |
@@ -331,19 +308,27 @@ Monitoring dashboard, and gather security event details.
 +---------------------------------------------------------------------------------------------------------------+
 | 3. Returning to the F5 Distributed Cloud Console, use the left-hand navigation to navigate to Multi-Cloud App |
 |                                                                                                               |
-|    Connect setion and expand **Virtual Hosts** and click on **HTTP Load Balancers**.                          |
+|    Connect section and click on **Performance**                                                               |
 |                                                                                                               |
-| 4. Click on the **Security Monitoring** link for your respective load balancer.                               |
+| 4. Scroll to the **Load Balancers** section of the page and click the link for your respective load balancer. |
+|                                                                                                               |
 +---------------------------------------------------------------------------------------------------------------+
-| |lab035|                                                                                                      |
+| |lab016|                                                                                                      |
 |                                                                                                               |
-| |lab036|                                                                                                      |
+| |lab017|                                                                                                      |
 +---------------------------------------------------------------------------------------------------------------+
 
 +---------------------------------------------------------------------------------------------------------------+
-| 5. From the **Dashboard** view, using the horizontal navigation, click **Requests**.                          |
+| 5. Click the **Performance Monitoring** dropdown at the top of the page and select **Security Monitoring**    |
++---------------------------------------------------------------------------------------------------------------+
+| |lab035|                                                                                                      |
 |                                                                                                               |
-| 6. Note the **Chart** shows a graphical representation of all of the response codes for the selected time     |
++---------------------------------------------------------------------------------------------------------------+
+
++---------------------------------------------------------------------------------------------------------------+
+| 7. From the **Dashboard** view, using the horizontal navigation, click **Security Analytics**.                |
+|                                                                                                               |
+| 8. Note the **Chart** shows a graphical representation of all of the response codes for the selected time     |
 |                                                                                                               |
 |    frame.                                                                                                     |
 |                                                                                                               |
@@ -356,15 +341,15 @@ Monitoring dashboard, and gather security event details.
 +---------------------------------------------------------------------------------------------------------------+
 
 +---------------------------------------------------------------------------------------------------------------+
-| 7. Click the **Hide Chart** link to free up space in the browser window.                                      |
+| 9. Click the **Hide Chart** link to free up space in the browser window.                                      |
 |                                                                                                               |
-| 8. Expand your latest security event as shown.                                                                |
+| 10. Expand your latest security event as shown.                                                               |
 |                                                                                                               |
-| 9. Note the summary detail provided in the **Information** link.  The **req_id** which is synonymous with     |
+| 11. Note the summary detail provided in the **Information** link.  The **req_id** which is synonymous with    |
 |                                                                                                               |
 |    **Support ID** (filterable) from the block page.                                                           |
 |                                                                                                               |
-| 10. Scroll to the bottom of the information screen to see specific signatures detected and actions taken      |
+| 12. Scroll to the bottom of the information screen to see specific signatures detected and actions taken      |
 |                                                                                                               |
 |     during the security event.                                                                                |
 |                                                                                                               |
@@ -387,9 +372,8 @@ Monitoring dashboard, and gather security event details.
 |                                                                                                               |
 | Console was then used to review telemetry data gathered for the application.  Next an Application Firewall    |
 |                                                                                                               |
-| policy was created and assigned to protect the application.  Finally a sample attack was run against the      |
-|                                                                                                               |
-| application and the security event data was reviewed within the Distributed Cloud Console.                    |
+| policy was assigned to protect the application.  Finally a sample attack was run against the application and  |
+| the security event data was reviewed within the Distributed Cloud Console.                                    |
 |                                                                                                               |
 | A brief presentation will be shared prior to the beginning of Lab 2.                                          |
 +---------------------------------------------------------------------------------------------------------------+

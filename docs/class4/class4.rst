@@ -1,23 +1,43 @@
-F5 Distributed Cloud - Intro to Multi-Cloud Networking
-==========================================================
+F5 Distributed Cloud: API Discovery & Protection
+================================================
 
-This hands-on lab environment highlights some of the basic concepts of F5 Distributed Cloud Multi-cloud Networking.
+Welcome
+-------
 
-**Narrative:** 
-During the lab you will be playing the role of an Engineer at ACME Corp who responds to new business requirements quickly by implementing F5's Network and App connect solutions. 
+In this lab, participants will explore the depths of F5 Web Application
+and API Protection (WAAP) within F5 Distributed Cloud. Dive headfirst into
+the cutting-edge world of API Discovery, uncovering what’s within, Sensitive Data
+and Authentication State detection. Get hands-on experience as you unleash
+the power of API Protection and API Rate Limiting.
 
-**Goal:**
-Demonstrate and understand when to use F5 Distributed Cloud Network Connect or App Connect to securely extend connectivity between disparate environments. 
+Objective:
+----------
 
-.. image:: ./images/intro.png
+-  Gain a deeper understanding of key F5 Distributed Cloud security functions and controls
 
-.. Caution:: Please be aware that there is a waiting period after Lab 1, while provisioning occurs. If you are an instructor, please have students proceed with Lab 1 prior to any presentation, to give ample time for processes to complete. 
+-  Explore building API Discovery and Protection within F5 Distributed Cloud
 
-This Lab uses the **[Agility] F5XC Introduction into MCN** UDF Blueprint. 
+   -  **API Discovery**: Provided via machine-based learning processes, enables visualization of the API Framework,
+      assesses use of end-points, discovers new end-points based on flows, identifies use of sensitive information,
+      and enables swagger file export.
+
+   -  **API Protection**: Encompasses a set of definitions and controls to protect and secure the functions, use and
+      endpoints of the delivered API's framework.
+
+Lab & Tasks:
+------------
+
+-  All Lab requirements will be noted in the tasks that follow
+
+-  Estimated completion time: 2 Labs approximately 15-20 minutes each
+
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
+   :caption: Labs:
    :glob:
 
-   intro
-   module*/module*
+   intro*
+   lab*
+   close*
+
