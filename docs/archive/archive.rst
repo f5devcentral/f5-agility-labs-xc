@@ -13,4 +13,5 @@ value in each of the use cases for concepts and specific solution scenarios.
    :caption: Contents:
    :glob:
 
-   class*/class*
+   2022/class*
+   2023/class*
