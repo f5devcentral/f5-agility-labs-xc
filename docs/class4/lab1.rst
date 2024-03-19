@@ -126,10 +126,9 @@ version control features.
 
 #. In the left-hand navigation, click on **Files** under the **Manage** section.
 
-#. Click **Add Swagger File** in the main window area as shown. Alternatively, the link near
-   the top of the window can also be used.
+#. Click the **Add Swagger File** link near the top of the window.
 
-   |lab1-task2-002|
+   |lab1-task2-002-alt|
 
 #. In the resulting **New Swagger File** window, input **app-api** for the **Name** under
    the **Metadata** section.
@@ -362,6 +361,8 @@ A brief presentation and demo will be shared prior to the beginning of Lab 2.
 .. |lab1-task2-001| image:: _static/lab1-task2-001.png
    :width: 800px
 .. |lab1-task2-002| image:: _static/lab1-task2-002.png
+   :width: 800px
+.. |lab1-task2-002-alt| image:: _static/lab1-task2-002-alt.png
    :width: 800px
 .. |lab1-task2-003| image:: _static/lab1-task2-003.png
    :width: 800px
