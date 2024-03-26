@@ -84,7 +84,7 @@ Health Checks                   See Below
 
 In the dropdown keep:  **Public DNS Name of Origin Server** and type: **public.lab.f5demos.com** and click **Apply**. 
 
-**Health Checks:** Under "Health Check object" click the **Select Item*** dropdown and click **Add Item**. 
+**Health Checks:** Under "Health Check object" click the **Select Item** dropdown and click **Add Item**. 
 
 For the Name use: **[animal-name]-http** and take the rest as defaults. 
 
