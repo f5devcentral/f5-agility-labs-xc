@@ -368,7 +368,7 @@ Next, push the keyboard "up arrow " and run the same command but targeted at por
 
 |
 
-.. Important:: If you are not getting a **"200 OK"** repsponse, please see a lab assistant before moving on. 
+.. Important:: If you are not getting a **"200 OK"** response, please see a lab assistant before moving on. 
 
 
 
