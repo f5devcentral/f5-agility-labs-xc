@@ -84,7 +84,7 @@ Health Checks                   See Below
 
 In the dropdown keep:  **Public DNS Name of Origin Server** and type: **public.lab.f5demos.com** and click **Apply**. 
 
-**Health Checks:** Under "Health Check object" click the **Select Item*** dropdown and click **Add Item**. 
+**Health Checks:** Under "Health Check object" click the **Select Item** dropdown and click **Add Item**. 
 
 For the Name use: **[animal-name]-http** and take the rest as defaults. 
 
@@ -394,13 +394,15 @@ You can also see the load balancer name and the Origin Servers to the right. If 
 
 Click the **Origin Servers Tab** in the top menu and change your time-frame to **1 hour**. At the bottom left, change your setting to **50** items per page. 
 
-Why do you think there are so many Origin Servers showing for the AWS EC2 workload DNS name?
+Q: Why do you think there are so many Origin Servers showing for the AWS EC2 workload DNS name?
 
 |
 
 .. image:: ../images/originserve.png
 
 |
+
+A: The AWS site was defined in the pool using (FQDN) public DNS. Each Regional Edge is a proxy from the XC network to the public IP that the FQDN resolves to, thus each Regional Edge must know the availability of any given IP from its perspective. 
 
 Click the **Requests Tab** in the top menu and change your time-frame to **1 hour**. At the bottom left, change your setting to **50** items per page. 
 

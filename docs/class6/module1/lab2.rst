@@ -47,6 +47,7 @@ From this Dashboard you can note the current **Site Admin State, Provider, SW ve
 
 
 Instead, **Click** on the three dots under the **Actions** column at the far right of the screen of **"your animal"**  Site and click on **Manage Configuration**. In this screenshot I was **busy-goblin**.
+
 .. NOTE:: You may need to scroll horizontally inside the table to see the three dots at the righthand side. Alternately, you can zoom out (Ctrl -) on the page to see them.
 
 |
@@ -367,7 +368,7 @@ Next, push the keyboard "up arrow " and run the same command but targeted at por
 
 |
 
-.. Important:: If you are not getting a **"200 OK"** repsponse, please see a lab assistant before moving on. 
+.. Important:: If you are not getting a **"200 OK"** response, please see a lab assistant before moving on. 
 
 
 
