@@ -181,9 +181,11 @@ previously built Load Balancer object delivering the targeted API.
 #. In the resulting configuration window, select **/api/DogLookup/GetAllDogs** for **API
    Endpoint** input.
 
-#. Select **ANY** for **Method** input and then click the **Apply** button.
+#. Select **ANY** for **Method** input.
 
-   .. image:: _static/lab2-task2-006.png
+#. Under **Rate Limiter Values** set **Duration** to **Minute** and then click the **Apply** button.
+
+   .. image:: _static/lab2-task2-006UPDATE.png
       :width: 800px
 
 #. Review the API Endpoint rate limiting rule and click, the **Apply** button.
