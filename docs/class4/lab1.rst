@@ -143,20 +143,20 @@ version control features.
 
 #. In the left-hand navigation, click on **Files** under the **Manage** section.
 
-#. Click **Add Swagger File** in the main window area as shown. Alternatively, the link near
+#. Click **Add OpenAPI File** in the main window area as shown. Alternatively, the link near
    the top of the window can also be used.
 
    .. note::
-      *If you receive an error when clicking on "Add Swagger File" located at the center
-      of the window, click "Add Swagger File" at the top of the same window.*
+      *If you receive an error when clicking on "Add OpenAPI File" located at the center
+      of the window, click "Add OpenAPI File" at the top of the same window.*
 
-   .. image:: _static/lab1-task2-002.png
+   .. image:: _static/lab1-task2-002.UPDATE.png
       :width: 800px
 
-#. In the resulting **New Swagger File** window, input **app-api** for the **Name** under
+#. In the resulting **New OpenAPI File** window, input **app-api** for the **Name** under
    the **Metadata** section.
 
-#. In the **Upload Swagger File** section, click the **Upload File** button. Select the file
+#. In the **Upload OpenAPI File** section, click the **Upload File** button. Select the file
    downloaded in Step 1 above and click **Open**.
 
    .. image:: _static/lab1-task2-003.png
@@ -167,7 +167,7 @@ version control features.
    .. image:: _static/lab1-task2-004.png
       :width: 800px
 
-#. In the resulting **Swagger Files** window, you will see the upload file with additional
+#. In the resulting **OpenAPI Files** window, you will see the upload file with additional
    metadata.
 
    .. note::
@@ -177,11 +177,11 @@ version control features.
    .. image:: _static/lab1-task2-005.png
       :width: 800px
 
-Task 3: Swagger Definition
+Task 3: API Definition
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In this task's series of steps you will establish the Swagger Definition which serves as an object
-pointer to imported swagger files you just uploaded.
+In this task's series of steps you will establish the API Definition which serves as an object
+pointer to imported OpenAPI files you just uploaded.
 
 #. In the left-hand navigation of the **Web App & API Protection** service, click on **API**
    **Management** under the **Manage** section and then click **API Definition**.
@@ -198,10 +198,10 @@ pointer to imported swagger files you just uploaded.
 #. In the resulting **New API Definition** window, input **app-api-spec**
    for the **Name** under the **Metadata** section.
 
-#. In the **Swagger Specs** section, click **Add Item** box in the
-   **Swagger Specs** column.
+#. In the **OpenAPI Specs** section, click **Add Item** box in the
+   **OpenAPI Specs** column.
 
-#. Select the version 1 of the previously uploaded swagger spec file. It will be in the
+#. Select the version 1 of the previously uploaded OpenAPI spec file. It will be in the
    format **<namespace>/app-api/v1-<current-date>**.
 
 #. Once selected, click **Save and Exit** in the bottom-right corner.
