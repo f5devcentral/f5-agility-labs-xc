@@ -2,10 +2,7 @@ Introduction: Accessing F5 Distributed Cloud Console
 ====================================================
 
 Welcome to this F5 Distributed Cloud Lab. The following tasks will guide you through the initial 
-access requirements for this multi-part lab.  Lab attendees should have received an invitation 
-email to the lab environment based on the submitted registration email.  Please check email and
-spam folders if it has not been received.  If you have not received an email, please contact a 
-member of the lab team.
+access requirements for this multi-part lab.  
  
 F5 Distributed Cloud Console where this lab will be conducted, is a SaaS control-plane for 
 services that provides a UI and API for managing network, security, and compute services. The F5
@@ -33,8 +30,11 @@ Task 2: F5 Distributed Cloud Console Login
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The following will guide you through the initial Lab environment access within the 
-F5 Distributed Cloud Console.  You should have received an email with an invitation to 
-access a F5 Distributed Cloud Tenant. The email will come from **no-reply@cloud.f5.com**.
+F5 Distributed Cloud Console.  
+
+When you deploy and start a lab, you will receive a message: "Update Your Account" from F5 Distributed Cloud <no-reply@cloud.f5.com>. This message provides the XC domain we will use, incorrectly labeled "Account name."
+
+|volterra-lab-update-account-message-has-incorrect-descriptor| 
 
 The name of the F5 Distributed Cloud tenant that we will be using is **f5-xc-lab-sec**
 Additionally, the following are important elements of this lab and will be used throughout the 
