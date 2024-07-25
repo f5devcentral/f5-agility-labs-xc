@@ -21,13 +21,9 @@ Appendix
   * **Intro**: https://www.f5.com/cloud/products/bot-defense
   * **How to**: https://docs.cloud.f5.com/docs/how-to/advanced-security/bot-defense
 
-**F5 Distributed Cloud Client Side Defense**:
-  * **Intro**: https://www.f5.com/cloud/products/client-side-defense
-  * **How to**: https://docs.cloud.f5.com/docs/how-to/advanced-security/csd
-
-**F5 Distributed Cloud Application Traffic Insight**:
-  * **Intro**: https://www.f5.com/cloud/products/application-traffic-insight
-  * **How to**: https://docs.cloud.f5.com/docs/how-to/advanced-security/ati
+**F5 Distributed Service Policies**:
+  * **How to**: https://docs.cloud.f5.com/docs/how-to/app-security/service-policy
+  * **How to**: https://docs.cloud.f5.com/docs/how-to/advanced-security/configure-ip-reputation
 
 **Automation/Orchestration**:
   * **API:** https://docs.cloud.f5.com/docs/api

@@ -1,14 +1,34 @@
-F5 Distributed Cloud - AppStack CaaS & K8s Delivery Options
-===========================================================
+F5 Distributed Cloud - Advanced Bot Security
+============================================
 
-This Lab environment highlights some of the basic concepts of F5 Distributed Cloud (XC) AppStack.
+Welcome
+-------
 
-During the lab you will be emulating a customer that needs to deploy applications closer to the user. The goal is to understand the steps and requirements to place workloads in the F5 Distributed Cloud virtual Kubernetes implementation.
+In this lab, attendees will review and explore more advanced services within F5 Distributed Cloud platform.
+Lab tasks will focus on providing a deeper review & understanding of AI-driven BotDefense security, integration of Client-Side 
+Defense (CSD), and enablement of additional visibility through Application Traffic Insight (ATI).
 
-This class has 4 modules, each with at least 1 required lab. Some modules contain optional labs which are clearly denoted. We're simply doing this to show the standard structure of a class/module/lab.
+Objectives:
+----------
+
+-  Gain a deeper understanding of key F5 Distributed Cloud security functions and controls
+
+-  Gain an understanding of BotDefense, Client-Side Defense and Application Traffic Insight.
+
+Lab & Tasks:
+------------
+
+-  All Lab requirements will be noted in the tasks that follow
+
+-  Estimated completion time: 4 Labs of varying lengths
+
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
+   :caption: Labs:
    :glob:
-
-   module*/module*
+   
+   intro*
+   lab*
+   close*
+   
