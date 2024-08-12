@@ -102,15 +102,16 @@ From the **Select service** menu, click on **Web App & API Protection**.
 |
 
 In the **Web App & API Protection Security Dashboard** configuration screen **observe** the browser URL. In the URI path, locate the **<adjective-animal>** namespace that you have
-been assigned. It will be located in the portion of the URI path between */namespaces/* and */overview/* as shown in this example: **…/namespaces/<namespace>/overview/**. 
+been assigned. It will be located in the portion of the URI path between */namespaces/* and */overview/* as shown in this example: **…/namespaces/<namespace>/overview/**. Another 
+way to find your namespace is by clicking system namespace, below you will see the application namepsace. Please access this namespaace by clicking on it. 
    
 **Note your namespace as it will be used throughout the labs today.**
 
-.. warning:: If you have problems locating your namespace, please see a lab assistance.
+.. warning:: If you have problems locating your namespace, please see a lab assistant.
 
 |
 
-.. image:: ../images/namespace1.png
+.. image:: ../images/namespace1replacement.png
 
 |
 
