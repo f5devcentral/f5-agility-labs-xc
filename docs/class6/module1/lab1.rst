@@ -144,7 +144,7 @@ In your production environment you will need to create your own Site Token to re
 
 |
 
-.. image:: ../images/sitetokenscreen.png
+.. image:: ../images/sitetokensscreen.png
 
 |
 
