@@ -1,4 +1,4 @@
-F5 Distributed Cloud Automation - NetOps, DevOps, SecOps and Beyond
+F5 Distributed Cloud: Automating Build & Operations
 ===================================================================
 
 Welcome
