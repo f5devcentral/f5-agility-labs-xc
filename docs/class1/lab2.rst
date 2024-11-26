@@ -5,6 +5,7 @@ The application development team is hard at work at your company and recently de
 They have come to you and asked if you could configure customer access to this application with no exposure 
 to the Internet. You have been tasked to design and build this connectivity. You have chosen to leverage the 
 Distributed Cloud Customer Edge deployment model to provide secure reliable access to the AWS hosted application. 
+
 Your design includes the following workflow Client -> CE -> Protected application resource.  Let's get started!
 
 .. image:: _static/lab3-appworld2025-topology-diagram.png
@@ -74,9 +75,9 @@ We will first create an Origin Pool that refers to the "Private Endpoint" site i
    Site                              system/student-awsnet
    ================================= =====
     
-  .. image:: _static/lab3-appworld2025-task1-originserver.png
+.. image:: _static/lab3-appworld2025-task1-originserver.png
 
-   Click on "Apply" to return to the previous screen.
+Click on "Apply" to return to the previous screen.
 
 #. Below the "Origin Servers" section fill in the Port information
 
@@ -128,7 +129,7 @@ We’ll next configure the “Origin Servers”.
 
 #. Click the Apply button to exit the “Origin Pool with Weight and Priority” dialogue.
 
-   .. image:: _static/lab3-appworld2025-task3-origin-pool.png
+.. image:: _static/lab3-appworld2025-task3-origin-pool.png
    
 
 #. Click on "Edit Configuration" in the upper right of the screen (after your *<namespace>-lb* Load Balancer is loaded).
