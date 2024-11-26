@@ -1,29 +1,16 @@
-Lab 2: Protecting a Private Endpoint
+Lab 3: Protecting a Private Endpoint
 ====================================
 
-In the previous lab you learned how to protect a resource that is already on the Public Internet.
+The application development team is hard at work at your company and recently deployed an application in AWS.  
+They have come to you and asked if you could configure customer access to this application with no exposure 
+to the Internet. You have been tasked to design and build this connectivity. You have chosen to leverage the 
+Distributed Cloud Customer Edge deployment model to provide secure reliable access to the AWS hosted application. 
+Your design includes the following workflow Client -> CE -> Protected application resource.  Let's get started!
 
-In this next lab we will look at two additional topologies of how you can use a Customer Edge node
-to secure traffic that is going to an endpoint that is not directly exposed to the Internet.
-
-In this lab we will protect an application that is hosted in AWS but not directly exposed to the Internet.
+|lab3-appworld2025-topology-diagram.png|
 
 F5 Distributed Cloud AWS VPC Site
 ---------------------------------
-
-In addition to protecting resources using F5 Distributed Cloud WAF/WAAP enforcement at an F5 Regional Edge (RE),
-you can also deploy a Customer Edge (CE) that may or may not be exposed to the public Internet. CE nodes may be 
-deployed in physical data centers and/or public cloud environments.
- 
-Once a CE has been deployed, it unlocks two additional topologies.
-
-1. Client -> RE -> CE -> Protected resource  
-
-Leveraging F5 Distributed Cloud REs to provide WAF and other services upstream, 
-then proxying the clean traffic to the protected resource via the CE.  It is recommended that a firewall rule be placed at the site with the CE
-to only allow traffic from an RE.  This ensures that all traffic is scrubbed upstream before entering the site.
-
-2. Client -> CE -> Protected resource  
 
 In this scenario, the CE advertises the services directly.  While this topology sacrifices some functionality such as 
 volumetric DDoS protection and anycast availability from the Distributed Cloud global network, there are some use cases where it can be beneficial.  
@@ -42,6 +29,14 @@ This lab has auto deployed an AWS site with a Customer Edge node for you. You ma
 https://simulator.f5.com/s/cloud2cloud_via_sites_brownfield/nav/aws/005/0
 
 Continue with the steps below to allow secure connectivity to the AWS hosted application. 
+
+1. Client -> RE -> CE -> Protected resource  
+
+Leveraging F5 Distributed Cloud REs to provide WAF and other services upstream, 
+then proxying the clean traffic to the protected resource via the CE.  It is recommended that a firewall rule be placed at the site with the CE
+to only allow traffic from an RE.  This ensures that all traffic is scrubbed upstream before entering the site.
+
+2. Client -> CE -> Protected resource  
 
 
 Task 1. Create Origin Pools
@@ -79,7 +74,7 @@ We will first create an Origin Pool that refers to the "Private Endpoint" site i
    Site                              system/student-awsnet
    ================================= =====
     
-   |op-pool-basic|
+   |lab3-appworld2025-task1-originserver.png|
 
    Click on "Apply" to return to the previous screen.
 
@@ -116,20 +111,24 @@ We will first create an Origin Pool that refers to the "Private Endpoint" site i
 Task 2. Update HTTP Load Balancer on F5 Distributed Cloud Regional Edge
 -----------------------------------------------------------------------
 
-We will now update the HTTP load balancer that we previously created to connect to
-the "Private Endpoint" via the AppMesh node that is deployed in the AWS lab environment.
+In the previous lab exercises we were connecting to a F5 Distributed Cloud Load Balancer that was deployed in a Regional Edge.
+Now we will deploy a Load Balancer on the CE Mesh node that was deployed in the AWS VPC (Customer Edge location).
 
+|lab3-appworld2025-task2-lb.png|
 .. image:: _static/testdrive-volterra-waf-hybrid-vip.png
 
-Exercise 1: HTTP Load Balancer Configuration
+Exercise 3: Configure Default Origin Server
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-#. Start in F5 Distributed Cloud Console and switch to the **Multi-Cloud App Connect** context. [You should already be here from previous lab]
+We’ll next configure the “Origin Servers”.
 
-#. Navigate the menu to go to "Manage"->"HTTP Load Balancers" and look for the Load Balancer named *<namespace>-lb* that you previously created.
+#.	Click on the Add Item button in the the Origin Pools section.
 
-#. Click on the three dots "..." to the right of the name of your *<namespace>-lb* Load Balancer and select the "Manage Configuration" option.
+#. The “Select Origin Pool Method” will be set to “Origin Pool”. Under the “Origin Pool” dropdown menu select the “private” pool you created earlier.
 
+#. Click the Apply button to exit the “Origin Pool with Weight and Priority” dialogue.
+
+|lab3-appworld2025-task3-origin-pool.png|
    .. image:: _static/screenshot-global-vip-actions-manage.png
 
 #. Click on "Edit Configuration" in the upper right of the screen (after your *<namespace>-lb* Load Balancer is loaded).
@@ -209,25 +208,30 @@ We'll next configure the "Origin Servers".
  
 #. Click the *Apply* button to exit the "Origin Pool with Weight and Priority" dialogue.
 
-Exercise 3: Configure Local VIP
+Exercise 4: Adjut VIP Advertisement
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Previously we configured a VIP that was advertised on F5's Regional Edge (PoP) locations.
-We will modify this configuration to expose the service on the "Outside" interface of the AppMesh
-node that is deployed in AWS.  This will allow us to access the VIP via the Public IP Address (AWS Elastic IP)
-that is attached to that interface.  If we wished to only have the service available within the AWS VPC
-we could opt to use the "Inside" interface that does not have an AWS EIP attached.
+Previously we configured a VIP that was advertised on F5’s Regional Edge (PoP) locations. We will modify this configuration to expose the service on the 
+“Outside” interface of the CE Mesh node that is deployed in AWS. This will allow us to access the VIP via the Public IP Address (AWS Elastic IP) that 
+is attached to that interface. If we wished to only have the service available within the AWS VPC we could opt to use the “Inside” interface that does
+not have an AWS EIP attached.   For reference you can refer to the topology diagram at the beginning of this lab..
 
-#. Under "Other Settings" set "VIP Advertisement" to "Custom"
-
+#. Under "Other Settings" set "VIP Advertisement" to "Custom" and then click "Configure"
+ 
+ |lab3-appworld2025-task4-vip-advertise-custom.png|
    .. image:: _static/screenshot-local-vip-advertise-custom.png
       :width: 50%
 
-#. Click on "Configure" under "Custom"
+
 #. In "List of Sites to Advertise", click on "Add Item"
+
+|lab3-appworld2025-task4-vip-advertise.png|
+
 #. For "Site Network" click on "Outside Network" 
+
 #. For "Site Reference" select `system/student-awsnet`
 
+ |lab3-appworld2025-task4-vip-where-to-advertise.png|
    .. image:: _static/lb-local-vip-advertise.png
       :width: 60%
 
@@ -288,6 +292,8 @@ You can verify that you are connecting directly to AWS by comparing the DNS of t
    Name:	student001.aws.lab.f5demos.com
    Address: 52.4.72.136
 
+Exercise 7: Verify WAF Protection
+^^^^^^^^^^^^^^^^^^^^^^
 
 In this topology we are sending traffic to the AWS EIP that's attached to the AppMesh node in the AWS VPC.
 
@@ -297,7 +303,12 @@ We then connect to the AWS resource via it's Private IP address.
 
 Try adding the following to the URL "/cart?search=aaa’><script>prompt(‘Please+enter+your+password’);</script>"
 
-You should see a block page.  This is similar behavior to what we saw in the previous lab,
+You should see a block page.
+
+|lab3-appworld2025-waf-block-message.png|
+
+
+This is similar behavior to what we saw in the previous lab,
 but in this case the enforcement of the WAF policy is occurring on the AppMesh node
 that is deployed in the AWS Lab Environment and not in the F5 Distributed Cloud Regional Edge.
 
