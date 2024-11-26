@@ -7,7 +7,7 @@ to the Internet. You have been tasked to design and build this connectivity. You
 Distributed Cloud Customer Edge deployment model to provide secure reliable access to the AWS hosted application. 
 Your design includes the following workflow Client -> CE -> Protected application resource.  Let's get started!
 
-|lab3-appworld2025-topology-diagram.png|
+.. image:: _static/lab3-appworld2025-topology-diagram.png
 
 F5 Distributed Cloud AWS VPC Site
 ---------------------------------
@@ -74,7 +74,7 @@ We will first create an Origin Pool that refers to the "Private Endpoint" site i
    Site                              system/student-awsnet
    ================================= =====
     
-   |lab3-appworld2025-task1-originserver.png|
+  .. image:: _static/lab3-appworld2025-task1-originserver.png
 
    Click on "Apply" to return to the previous screen.
 
@@ -114,8 +114,8 @@ Task 2. Update HTTP Load Balancer on F5 Distributed Cloud Regional Edge
 In the previous lab exercises we were connecting to a F5 Distributed Cloud Load Balancer that was deployed in a Regional Edge.
 Now we will deploy a Load Balancer on the CE Mesh node that was deployed in the AWS VPC (Customer Edge location).
 
-|lab3-appworld2025-task2-lb.png|
-.. image:: _static/testdrive-volterra-waf-hybrid-vip.png
+.. image:: _static/lab3-appworld2025-task2-lb.png
+
 
 Exercise 3: Configure Default Origin Server
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -128,8 +128,8 @@ We’ll next configure the “Origin Servers”.
 
 #. Click the Apply button to exit the “Origin Pool with Weight and Priority” dialogue.
 
-|lab3-appworld2025-task3-origin-pool.png|
-   .. image:: _static/screenshot-global-vip-actions-manage.png
+   .. image:: _static/lab3-appworld2025-task3-origin-pool.png
+   
 
 #. Click on "Edit Configuration" in the upper right of the screen (after your *<namespace>-lb* Load Balancer is loaded).
 
@@ -218,21 +218,19 @@ not have an AWS EIP attached.   For reference you can refer to the topology diag
 
 #. Under "Other Settings" set "VIP Advertisement" to "Custom" and then click "Configure"
  
- |lab3-appworld2025-task4-vip-advertise-custom.png|
-   .. image:: _static/screenshot-local-vip-advertise-custom.png
+   .. image:: _static/lab3-appworld2025-task4-vip-advertise-custom.png
       :width: 50%
 
 
 #. In "List of Sites to Advertise", click on "Add Item"
 
-|lab3-appworld2025-task4-vip-advertise.png|
+   .. image:: _static/lab3-appworld2025-task4-vip-advertise.png
 
 #. For "Site Network" click on "Outside Network" 
 
 #. For "Site Reference" select `system/student-awsnet`
 
- |lab3-appworld2025-task4-vip-where-to-advertise.png|
-   .. image:: _static/lb-local-vip-advertise.png
+   .. image:: _static/lab3-appworld2025-task4-vip-where-to-advertise.png
       :width: 60%
 
 #. Click on "Apply" 
@@ -305,7 +303,7 @@ Try adding the following to the URL "/cart?search=aaa’><script>prompt(‘Pleas
 
 You should see a block page.
 
-|lab3-appworld2025-waf-block-message.png|
+   .. image:: _static/lab3-appworld2025-waf-block-message.png
 
 
 This is similar behavior to what we saw in the previous lab,
