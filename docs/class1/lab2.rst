@@ -187,13 +187,13 @@ Excercise 3: Configure WAF Policy
    Select App Firewall             shared/base-appfw
    =============================== =================================
 
-#. Click "Save and Exit" to create the HTTP Load Balancer.
+#.  Click "Save and Exit" to create the HTTP Load Balancer.
 
 Once the HTTP Load Balancer has been deployed, you should now be able to go to the DNS name that you entered 
 previously in a web browser.  The FQDN we used in our example is http://[NAMESPACE].aws.lab.f5demos.com.  
 This is a wildcard DNS entry that points to the Public IP (AWS Elastic IP) that is attached to the AppMesh node.
 
-#. Click on *"Save and Exit"* to complete the Load Balancer configuration
+#.  Click on *"Save and Exit"* to complete the Load Balancer configuration
 
 
 Excercise 4: Verify Configuration
