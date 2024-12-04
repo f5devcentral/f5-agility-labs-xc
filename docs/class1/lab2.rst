@@ -163,6 +163,8 @@ Now we will deploy a Load Balancer on the CE Mesh node that was deployed in the 
 
 #. In the List of Sites to Advertise", Click on *"Add Item"*
 
+.. image:: _static/lab3-appworld2025-list-sites-advertise.png
+
 #. For *"Site Network"* select *"Outside Network"*
 
 #. For *"Site Reference"* select **system/student-awsnet**
