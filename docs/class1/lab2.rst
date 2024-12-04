@@ -13,6 +13,18 @@ Your design includes the following workflow Client -> CE -> Protected applicatio
 F5 Distributed Cloud AWS VPC Site
 ---------------------------------
 
+In addition to protecting resources using F5 Distributed Cloud WAF/WAAP enforcement at an F5 Regional Edge (RE), you can also deploy a
+Customer Edge (CE) that may or may not be exposed to the public Internet. CE nodes may be deployed in physical data centers and/or public 
+cloud environments.
+
+Once a CE has been deployed, it unlocks two additional topologies.
+
+**1. Client -> RE -> CE -> Protected resource**
+
+Leveraging F5 Distributed Cloud REs to provide WAF and other services upstream, then proxying the clean traffic to the protected resource via the CE. It is recommended that a firewall rule be placed at the site with the CE to only allow traffic from an RE. This ensures that all traffic is scrubbed upstream before entering the site.
+
+**2. Client -> CE -> Protected resource**
+
 In this scenario, the CE advertises the services directly.  While this topology sacrifices some functionality such as 
 volumetric DDoS protection and anycast availability from the Distributed Cloud global network, there are some use cases where it can be beneficial.  
 One such example is when clients and protected resources are both local to each other without having to traverse the Internet.
@@ -31,23 +43,13 @@ https://simulator.f5.com/s/cloud2cloud_via_sites_brownfield/nav/aws/005/0
 
 Continue with the steps below to allow secure connectivity to the AWS hosted application. 
 
-1. Client -> RE -> CE -> Protected resource  
 
-Leveraging F5 Distributed Cloud REs to provide WAF and other services upstream, 
-then proxying the clean traffic to the protected resource via the CE.  It is recommended that a firewall rule be placed at the site with the CE
-to only allow traffic from an RE.  This ensures that all traffic is scrubbed upstream before entering the site.
-
-2. Client -> CE -> Protected resource  
-
-
-Task 1. Create Origin Pools
+Task 1. Create Private Origin Pools
 ---------------------------
 
 Previously we created an origin pool that was accessible via the Public Internet.
 The next lab exercise will create an origin pool that will provide internal resources discovered with local DNS by the AppMesh node that is deployed in our lab AWS environment. 
 
-Exercise 1: Create Private Origin Pool
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 We will first create an Origin Pool that refers to the "Private Endpoint" site in our lab environment.
 
@@ -60,7 +62,7 @@ We will first create an Origin Pool that refers to the "Private Endpoint" site i
    ================================= =====
    Variable                          Value
    ================================= =====
-   Name                              private
+   Name                               [NAMESPACE]-private-pool
    ================================= =====
 
 #. Click on "Add Item" under the section "Origin Servers"
@@ -74,12 +76,18 @@ We will first create an Origin Pool that refers to the "Private Endpoint" site i
    DNS Name                          private.lab.f5demos.internal
    Site                              system/student-awsnet
    ================================= =====
-    
+
+
+**Your Origin Server configuration should look similar to the configuration below**
+  
 .. image:: _static/lab3-appworld2025-task1-originserver.png
+
 
 Click on "Apply" to return to the previous screen.
 
-#. Below the "Origin Servers" section fill in the Port information
+
+
+#. Below the "Origin Servers" section fill in the Origin Server Port information
 
    ================================= =====
    Variable                          Value
@@ -109,47 +117,69 @@ Click on "Apply" to return to the previous screen.
 .. |op-spa-check| image:: _static/op-spa-check.png
 .. |op-tshoot| image:: _static/op-tshoot.png
 
-Task 2. Update HTTP Load Balancer on F5 Distributed Cloud Regional Edge
------------------------------------------------------------------------
+
+Task 2. Create and Deploy a HTTP Load Balancer on F5 Distributed Cloud Customer Edge 
+---------------------------------------------------------------------------
 
 In the previous lab exercises we were connecting to a F5 Distributed Cloud Load Balancer that was deployed in a Regional Edge.
 Now we will deploy a Load Balancer on the CE Mesh node that was deployed in the AWS VPC (Customer Edge location).
 
+#. Start in F5 Distributed Cloud Console and switch back to the **Multi-Cloud App Connect** context.
+
+#. Navigate the menu to go to "Manage"->"Load Balancers"-> "HTTP Loabalancers".  Click on *Add HTTP Loadbalancer*.
+
+#. Enter the following variables:
+
+   ================================= =====
+   Variable                          Value
+   ================================= =====
+   Name                              [NAMESPACE]-private-lb
+   Domains                           [NAMESPACE].aws.lab.f5demos.com
+   Select type of Load Balancer      HTTP
+   Automatically Manage DNS Records  No/Unchecked 
+   ================================= =====
+
+
 .. image:: _static/lab3-appworld2025-task2-lb.png
 
+#.  Under Origin Pools Click "Add Item"
 
-Exercise 3: Configure Default Origin Server
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. image:: _static/lab3-appworld2025-task2-lb-add-origin-pool.png    
 
-We’ll next configure the “Origin Servers”.
+#. Select the recently created [NAMESPACE]-private-pool under Origin pool and then click "Apply"
 
-#.	Click on the Add Item button in the the Origin Pools section.
+.. image:: _static/lab3-appworld2025-task2-lb-add-origin-pool2.png
 
-#. The “Select Origin Pool Method” will be set to “Origin Pool”. Under the “Origin Pool” dropdown menu select the “private” pool you created earlier.
+#. Now you can see your Origin Pool has been added to the HTTP Loadbalancer Configuration
 
-#. Click the Apply button to exit the “Origin Pool with Weight and Priority” dialogue.
+.. image:: _static/lab3-appworld2025-task2-lb-origin-pool-added.png
 
-.. image:: _static/lab3-appworld2025-task3-origin-pool.png
-   
+#.  Now we want to control how this Load Balancer is advertised, we will select the "Other Settings" on the left hand side.  This will 
+    auto-scroll the configuations towards the bottom of the Load Balancer configuration section labled "Other Settings". 
 
-#. Click on "Edit Configuration" in the upper right of the screen (after your *<namespace>-lb* Load Balancer is loaded).
+.. image:: _static/lab3-appworld2025-task2-lb-other-settings.png
 
-   .. image:: _static/screenshot-global-vip-edit-config.png
+#. Click on "Configure" under "Custom"
 
-#. Under "Origins" find your previous "<namespace>-pool" Origin pool and click on the three dots "..." to the right under "Actions" and select "Edit"
+.. image:: _static/lab3-appworld2025-task2-lb-change-vip-advertisement.png
 
-   .. image:: _static/screenshot-global-vip-edit-config-pools.png
+#. In the List of Sites to Advertise", clikc on "Add Item"
 
-#. Change the selection of "Origin Pool" from "<namespace>-pool" to "private" and click "Apply"
+#. For "Site Network" select "Outside Network"
 
-   .. image:: _static/screenshot-global-vip-edit-config-pools-select.png
+#. For "Site Reference" select system/student-awsnet
 
-#. Click "*Save and Exit* to update the HTTP Load Balancer.
+.. image:: _static/lab3-appworld2025-task2-lb-site-change.png
 
-You should now be able to go to the DNS name that you entered 
-previously in a web browser.  The FQDN we used in our example is http://worthy-gecko.lab-sec.f5demos.com/.  
+#. Click on "Apply"
 
-Exercise 2: Verify Configuration
+#. Click on "Save and Exit" to complete the Load Balancer configuration
+
+
+You should now be able to go to the DNS name that you created in this Load Balancer configuration.  
+The FQDN we used in our example is http://[NAMESPACE].aws.lab.f5demos.com/.  
+
+Task 3: Verify Configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The private demo app should look like the following:
@@ -159,8 +189,8 @@ The private demo app should look like the following:
 
 In this topology we are sending traffic to an AnyCast IP that is hosted in F5 Distributed Cloud's Regional Edge.
 
-We then connect to the AWS resource via the AppMesh node that is deployed in the same VPC as the "Private Endpoint".  
-The AppMesh is only being used for network connectivity to the Private Endpoint; enforcement of the WAF policy is still
+We then connect to the AWS resource via the Customer Edge node that is deployed in the same VPC as the "Private Endpoint".  
+The Customer Edge node is only being used for network connectivity to the Private Endpoint; enforcement of the WAF policy is still
 being applied in the Regional Edge.
 
 In the next exercise we will look at a third topology of deploying a WAF policy that will be enforced within the AWS VPC
@@ -171,10 +201,12 @@ on the AppMesh node (in the Customer Edge).
    <iframe width="560" height="315" src="https://www.youtube.com/embed/s-BHH0Qayfc?start=366" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
-Task 3. Creating HTTP Load Balancer on F5 Distributed Cloud Customer Edge
+Task 3. Update HTTP Load Balancer on F5 Distributed Cloud Customer Edge
 -------------------------------------------------------------------------
 
-In the previous lab exercises we were connecting to a F5 Distributed Cloud Load Balancer that was deployed in a Regional Edge.
+In the previous lab exercises we were connecting to a F5 Distributed Cloud Load Balancer that was deployed in a Regional Edge.  We will
+now update the HTTP Load Balancer that we previously created to connect to the "Private Endpoint" via the Customer Edge Node that is deployedin the 
+AWS lab environment.
 
 In the next lab exercise we will deploy a Load Balancer on the AppMesh node that was deployed in the AWS VPC (Customer Edge location).
 
@@ -209,13 +241,19 @@ We'll next configure the "Origin Servers".
  
 #. Click the *Apply* button to exit the "Origin Pool with Weight and Priority" dialogue.
 
-Exercise 4: Adjut VIP Advertisement
+Exercise 3: Adjust VIP Advertisement
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Previously we configured a VIP that was advertised on F5’s Regional Edge (PoP) locations. We will modify this configuration to expose the service on the 
 “Outside” interface of the CE Mesh node that is deployed in AWS. This will allow us to access the VIP via the Public IP Address (AWS Elastic IP) that 
 is attached to that interface. If we wished to only have the service available within the AWS VPC we could opt to use the “Inside” interface that does
 not have an AWS EIP attached.   For reference you can refer to the topology diagram at the beginning of this lab..
+
+#. In the left-hand navigation expand **Manage** and click **Load Balancers > HTTP Load** **Balancers**. 
+
+#. Locate the Load Balancer that your previosuly created, it should follow the following format ** *<namespace>.lab-sec.f5demos.com* 
+   To right of this click the 3 dots and select 
+
 
 #. Under "Other Settings" set "VIP Advertisement" to "Custom" and then click "Configure"
  
