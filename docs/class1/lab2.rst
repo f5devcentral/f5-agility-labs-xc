@@ -53,11 +53,11 @@ The next lab exercise will create an origin pool that will provide internal reso
 
 We will first create an Origin Pool that refers to the "Private Endpoint" site in our lab environment.
 
-#. Start in F5 Distributed Cloud Console and switch back to the **Multi-Cloud App Connect** context.
+1. Start in F5 Distributed Cloud Console and switch back to the **Multi-Cloud App Connect** context.
 
-#. Navigate the menu to go to **"Manage"->"Load Balancers"->"Origin Pools"**. Click on *Add Origin Pool*.
+2. Navigate the menu to go to **"Manage"->"Load Balancers"->"Origin Pools"**. Click on *Add Origin Pool*.
 
-#. Enter the following variables:
+3. Enter the following variables:
 
    ================================= =====
    Variable                          Value
@@ -65,7 +65,7 @@ We will first create an Origin Pool that refers to the "Private Endpoint" site i
    Name                               [NAMESPACE]-private-pool
    ================================= =====
 
-#. Click on "Add Item" under the section "Origin Servers"
+4. Click on "Add Item" under the section "Origin Servers"
 
    Enter the following variables: 
 
@@ -85,7 +85,7 @@ We will first create an Origin Pool that refers to the "Private Endpoint" site i
 
   Click on **"Apply"** to return to the previous screen.
 
-#. Below the "Origin Servers" section fill in the Origin Server Port information
+5. Below the "Origin Servers" section fill in the Origin Server Port information
 
    ================================= =====
    Variable                          Value
@@ -95,7 +95,7 @@ We will first create an Origin Pool that refers to the "Private Endpoint" site i
 
 
 
-#. Click **Save and Exit**.        
+6. Click **Save and Exit**.        
 
 .. |app-context| image:: _static/app-context.png
 .. |origin_pools_menu| image:: _static/origin_pools_menu.png
@@ -122,11 +122,11 @@ Excercise 2. Create and Deploy a HTTP Load Balancer on F5 Distributed Cloud Cust
 In the previous lab exercises we were connecting to a F5 Distributed Cloud Load Balancer that was deployed in a Regional Edge.
 Now we will deploy a Load Balancer on the CE Mesh node that was deployed in the AWS VPC (Customer Edge location).
 
-#. Start in F5 Distributed Cloud Console and switch back to the **Multi-Cloud App Connect** context.
+1. Start in F5 Distributed Cloud Console and switch back to the **Multi-Cloud App Connect** context.
 
-#. Navigate the menu to go to **"Manage"->"Load Balancers"-> "HTTP Loabalancers"**.  Click on *Add HTTP Loadbalancer*.
+2. Navigate the menu to go to **"Manage"->"Load Balancers"-> "HTTP Loabalancers"**.  Click on *Add HTTP Loadbalancer*.
 
-#. Enter the following variables:
+3. Enter the following variables:
 
    ================================= =====
    Variable                          Value
@@ -140,38 +140,38 @@ Now we will deploy a Load Balancer on the CE Mesh node that was deployed in the 
 
 .. image:: _static/lab3-appworld2025-task2-lb-updated.png
 
-#. Under Origin Pools Click *"Add Item"*
+4. Under Origin Pools Click *"Add Item"*
 
 .. image:: _static/lab3-appworld2025-task2-lb-add-origin-pool.png    
 
-#. Select the recently created **[NAMESPACE]-private-pool** under Origin pool and then click *"Apply"*
+5. Select the recently created **[NAMESPACE]-private-pool** under Origin pool and then click *"Apply"*
 
 .. image:: _static/lab3-appworld2025-task2-lb-add-origin-pool2.png
 
-#. Now you can see your Origin Pool has been added to the HTTP Loadbalancer Configuration
+6. Now you can see your Origin Pool has been added to the HTTP Loadbalancer Configuration
 
 .. image:: _static/lab3-appworld2025-task2-lb-origin-pool-added.png
 
-#. Now we want to control how this Load Balancer is advertised, we will select the "Other Settings" on the left hand side.  This will 
+7. Now we want to control how this Load Balancer is advertised, we will select the "Other Settings" on the left hand side.  This will 
    auto-scroll the configuations towards the bottom of the Load Balancer configuration section labled "Other Settings". 
 
 .. image:: _static/lab3-appworld2025-task2-lb-other-settings.png
 
-#. Under *VIP Advertisement* Change it to "Custom"  then select **Configure**
+8. Under *VIP Advertisement* Change it to "Custom"  then select **Configure**
 
 .. image:: _static/lab3-appworld2025-task2-lb-change-vip-advertisement.png
 
-#. In the List of Sites to Advertise", Click on *"Add Item"*
+9. In the List of Sites to Advertise", Click on *"Add Item"*
 
 .. image:: _static/lab3-appworld2025-list-sites-advertise.png
 
-#. For *"Site Network"* select *"Outside Network"*
+10. For *"Site Network"* select *"Outside Network"*
 
-#. For *"Site Reference"* select **system/student-awsnet**
+11. For *"Site Reference"* select **system/student-awsnet**
 
 .. image:: _static/lab3-appworld2025-task2-lb-site-change.png
 
-#. Click on *"Apply"*
+12. Click on *"Apply"*
 
 Excercise 3: Configure WAF Policy
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
