@@ -44,7 +44,7 @@ https://simulator.f5.com/s/cloud2cloud_via_sites_brownfield/nav/aws/005/0
 Continue with the steps below to allow secure connectivity to the AWS hosted application. 
 
 
-Task 1. Create Private Origin Pools
+Task 1. Create Private Origin Pool
 ---------------------------
 
 Previously we created an origin pool that was accessible via the Public Internet.
@@ -55,7 +55,7 @@ We will first create an Origin Pool that refers to the "Private Endpoint" site i
 
 #. Start in F5 Distributed Cloud Console and switch back to the **Multi-Cloud App Connect** context.
 
-#. Navigate the menu to go to "Manage"->"Load Balancers"->"Origin Pools". Click on *Add Origin Pool*.
+#. Navigate the menu to go to **"Manage"->"Load Balancers"->"Origin Pools"**. Click on *Add Origin Pool*.
 
 #. Enter the following variables:
 
@@ -83,9 +83,7 @@ We will first create an Origin Pool that refers to the "Private Endpoint" site i
 .. image:: _static/lab3-appworld2025-task1-originserver.png
 
 
-Click on "Apply" to return to the previous screen.
-
-
+  Click on **"Apply"** to return to the previous screen.
 
 #. Below the "Origin Servers" section fill in the Origin Server Port information
 
@@ -126,7 +124,7 @@ Now we will deploy a Load Balancer on the CE Mesh node that was deployed in the 
 
 #. Start in F5 Distributed Cloud Console and switch back to the **Multi-Cloud App Connect** context.
 
-#. Navigate the menu to go to "Manage"->"Load Balancers"-> "HTTP Loabalancers".  Click on *Add HTTP Loadbalancer*.
+#. Navigate the menu to go to **"Manage"->"Load Balancers"-> "HTTP Loabalancers"**.  Click on *Add HTTP Loadbalancer*.
 
 #. Enter the following variables:
 
@@ -140,7 +138,7 @@ Now we will deploy a Load Balancer on the CE Mesh node that was deployed in the 
    ================================= =====
 
 
-.. image:: _static/lab3-appworld2025-task2-lb.png
+.. image:: _static/lab3-appworld2025-task2-lb-updated.png
 
 #.  Under Origin Pools Click "Add Item"
 
