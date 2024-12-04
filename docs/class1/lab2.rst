@@ -215,16 +215,6 @@ The private demo app should look like the following:
    <iframe width="560" height="315" src="https://www.youtube.com/embed/s-BHH0Qayfc?start=366" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
-
-Exercise 5: Verify Configuration
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-The private demo app should look like the following:
-
-.. image:: _static/screenshot-local-vip-private.png
-   :width: 50%
-
-
 Exercise 6: Verify DNS
 ^^^^^^^^^^^^^^^^^^^^^^
 
