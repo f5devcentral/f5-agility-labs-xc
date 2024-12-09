@@ -188,8 +188,6 @@ utilizing the Developer Portal.
 | 4. Review the **Response body** data. If everything worked correctly you should have received a 200 response  |
 |                                                                                                               |                                                                                                              |
 |    code along with a response body.                                                                           |
-|                                                                                                               |
-| |lab1-Portal_Firewall_Post_JSON|                                                                              |
 +---------------------------------------------------------------------------------------------------------------+
 
 +---------------------------------------------------------------------------------------------------------------+
