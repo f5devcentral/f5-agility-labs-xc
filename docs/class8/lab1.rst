@@ -157,6 +157,8 @@ utilizing the Developer Portal.
 |                                                                                                               |
 | |lab1-Portal_Firewall_Post|                                                                                   |
 +---------------------------------------------------------------------------------------------------------------+
+
++---------------------------------------------------------------------------------------------------------------+
 | 3. Enter your namespace name in the **metadata.namespace** field and in the body object field paste the       |
 |                                                                                                               |
 |    following content.                                                                                         |
