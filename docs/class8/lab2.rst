@@ -261,7 +261,7 @@ objects within Distributed Cloud.
 +---------------------------------------------------------------------------------------------------------------+
 | 2. Review the Plan results. This shows what Terraform is planning to create.                                  |
 |                                                                                                               |
-| |lab3-Terraform_AppFw_Plan_Results|                                                                           |
+| |lab2-Terraform_AppFw_Plan_Results|                                                                           |
 +---------------------------------------------------------------------------------------------------------------+
 | 3. In the Terminal, enter the following command and press Enter:                                              |
 |                                                                                                               |
@@ -385,6 +385,14 @@ objects within Distributed Cloud.
 .. |lab2-Terraform_AppFw_LB| image:: _static/lab2-Terraform_AppFw_LB.png
    :width: 800px   
 .. |lab2-Terraform_AppFw_Plan| image:: _static/lab2-Terraform_AppFw_Plan.png
+   :width: 800px
+.. |lab2-Terraform_AppFw_Plan_Results| image:: _static/lab2-Terraform_AppFw_Plan_Results.png
+   :width: 800px
+.. |lab2-Terraform_AppFw_Apply| image:: _static/lab2-Terraform_AppFw_Apply.png
+   :width: 800px
+.. |lab2-Terraform_AppFw_Apply_Yes| image:: _static/lab2-Terraform_AppFw_Apply_Yes.png
+   :width: 800px
+.. |lab2-Terraform_AppFw_Apply_Results| image:: _static/lab2-Terraform_AppFw_Apply_Results.png
    :width: 800px
 .. |lab2-Terraform_Console_Web| image:: _static/lab2-Terraform_Console_Web.png
    :width: 800px
