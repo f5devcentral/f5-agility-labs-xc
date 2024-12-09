@@ -183,6 +183,8 @@ utilizing the Developer Portal.
 |                                                                                                               |
 | |lab1-Portal_Firewall_Post_Execute|                                                                           |
 +---------------------------------------------------------------------------------------------------------------+
+
++---------------------------------------------------------------------------------------------------------------+
 | 4. Review the **Response body** data. If everything worked correctly you should have received a 200 response  |
 |                                                                                                               |                                                                                                              |
 |    code along with a response body.                                                                           |
@@ -193,9 +195,9 @@ utilizing the Developer Portal.
 +---------------------------------------------------------------------------------------------------------------+
 | 5. Open the Distribute Cloud Console tab in your web browser to validate the App Firewall was created.  You   |  
 |                                                                                                               |
-|    still be in the **My Account** configuration window.  From here use the **Select Workspace dropdown in the |
+|    still be in the **My Account** configuration window.  From here use the **Select Workspace** dropdown in   |
 |                                                                                                               |
-|    in the left\-hand navigation, and click **Web App & API Protection**.                                      |
+|    the in the left\-hand navigation, and click **Web App & API Protection**.                                  |
 |                                                                                                               |
 | |lab1-Portal_Console_WebApp|                                                                                  |
 +---------------------------------------------------------------------------------------------------------------+
