@@ -103,19 +103,24 @@ utilizing the Developer Portal.
 |                                                                                                               |
 | |lab1-Portal_Set_Token|                                                                                       |
 +---------------------------------------------------------------------------------------------------------------+
-| 13. In the Dev Portal, scroll through the APIs on the left until you find **Namespace** and then click        |
+
+
++---------------------------------------------------------------------------------------------------------------+
+| **Use the Distributed Cloud Developer Portal to Query Data**                                                  |
++===============================================================================================================+
+| 1. In the Dev Portal, scroll through the APIs on the left until you find **Namespace** and then click         |
 |                                                                                                               |
 |     **Namespace**.                                                                                            |
 |                                                                                                               |
 | |lab1-Portal_Namespace|                                                                                       |
 +---------------------------------------------------------------------------------------------------------------+
-| 14. Under the **default** section in schemes, scroll down through the **Namespace** APIs until you find       |
+| 2. Under the **default** section in schemes, scroll down through the **Namespace** APIs until you find        |
 |                                                                                                               |
 |     **GET /api/web/namespaces/{name}** and click the arrow to expand this API and then click **Try it out**.  |
 |                                                                                                               |
 | |lab1-Portal_Namespaces_Name|                                                                                 |
 +---------------------------------------------------------------------------------------------------------------+
-| 15. Enter your namespace name in the **name** field and then click **Execute**.                               |
+| 3. Enter your namespace name in the **name** field and then click **Execute**.                                |
 |                                                                                                               |
 | .. note::                                                                                                     |
 |    *Your namespace name is unique to your deployment. You should have recorded your namespace name in the*    |
@@ -123,13 +128,8 @@ utilizing the Developer Portal.
 |    *Introduction Lab.*                                                                                        |
 |                                                                                                               |
 | |lab1-Portal_Namespaces_Name_Execute|                                                                         |
-|                                                                                                               |
-| .. note::                                                                                                     |
-|    *Your namespace is entered in the name field in this instance because you are requesting details on a*     |
-|    *namespace object named <namespace>. If you were querying for an object contained within your namespace*   |
-|    *you would enter the name of the object in the name field and your namespace name in the namespace field.* |
 +---------------------------------------------------------------------------------------------------------------+
-| 16. Review the **Response body** data. You may have to scroll down slightly to show the **Response body** data|
+| 4. Review the **Response body** data. You may have to scroll down slightly to show the **Response body** data |
 |                                                                                                               |
 |     depending on your screen resolution.                                                                      |
 |                                                                                                               |
@@ -140,252 +140,73 @@ utilizing the Developer Portal.
 |    *values. Parameters can also be used when creating new objects.*                                           |
 +---------------------------------------------------------------------------------------------------------------+
 
-Task 2: Create A Proxy Configuration Using Postman
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-The following steps will create a Health Check, an Origin Pool and an HTTP Load Balancer utilizing Postman to post 
-JSON definitions to the Distributed Cloud API. For this task, you will be using a Windows 10 client that is part 
-of the UDF deployment. The Windows 10 client has Postman pre-installed to save time in the lab.  To install and 
-utilize postman outside of the lab, visit https://www.postman.com/downloads/.
-
-An RDP client is recommended to access the Windows 10 client.  Current versions of Microsoft Windows should 
-include an RDP client pre-installed.  If you are using an operating system other than Windows, below are 
-documentation and download links for installing an RDP client.
-
-+-------------------+-------------------------------------------------------------------------------------------+
-| Operating System  | Documentation and Download Link                                                           | 
-+===================+===========================================================================================+
-| macOS             | `Remote Desktop Mac`_                                                                     |
-+-------------------+-------------------------------------------------------------------------------------------+
-| iOS/iPadOS        | `Remote Desktop iOS`_                                                                     |
-+-------------------+-------------------------------------------------------------------------------------------+
-| Android/Chrome OS | `Remote Desktop Android`_                                                                 |
-+-------------------+-------------------------------------------------------------------------------------------+
-| Linux             | `Remote Desktop Linux`_                                                                   |
-+-------------------+-------------------------------------------------------------------------------------------+
-
-If you are unable to install an RDP client, or cannot connect via RDP to the Windows 10 host, you can use the 
-WebRDP jump host within the UDF environment to access the Windows 10 client via a web browser. Here are 
-instructions for connecting to the Windows 10 client via RDPClient_. Here are instructions for connecting to the
-Windows 10 client via WebRDP_.
-
-The username and password for the Windows 10 host are:
-
-+----------------------+----------------------+
-| Username             | Password             | 
-+======================+======================+
-| .. code-block:: bash | .. code-block:: bash | 
-|                      |                      |
-|  labuser             |  F5L@bUser!          |
-+----------------------+----------------------+
-
 +---------------------------------------------------------------------------------------------------------------+
-| **Utilize Postman to Send API Calls to the Distributed Cloud Console**                                        |
+| **Use the Distributed Cloud Developer Portal to Create an Object**                                            |
 +===============================================================================================================+
-| 1. From the Windows 10 client deployed as part of the UDF, open Postman.                                      |
+| 1. In the Dev Portal, scroll through the APIs on the left until you find **Application Firewall** and then    |
 |                                                                                                               |
-| |lab1-Postman|                                                                                                |
+|    click **Application Firewall**.                                                                            |
+|                                                                                                               |
+| |lab1-Portal_Firewall|                                                                                        |
 +---------------------------------------------------------------------------------------------------------------+
-| 2. Click on **Environments** on the left side of Postman and then select **Appworld - XC Automation**.        |
+| 2. Under the **default** section in schemes, find the                                                         |
 |                                                                                                               |
-| 3. Fill in the variables with the corresponding values for your lab environment and then click **Save**.      |
+|     **POST /api/config/namespaces/{metadata.namespace}/app_firewalls** and click the arrow to expand this API |
 |                                                                                                               |
-|    * **api-token:**  *<api-token>*                                                                            |
-|    * **tenant:**  *f5-xc-lab-app*                                                                             |
-|    * **namespace:**  *<namespace>*                                                                            |
+|     and then click **Try it out**.                                                                            |
 |                                                                                                               |
-| |lab1-Postman_Variables|                                                                                      |
+| |lab1-Portal_Firewall_Post|                                                                                   |
 +---------------------------------------------------------------------------------------------------------------+
-| 4. Select **Collections** from the left side of Postman and then expand **Appworld - XC Automation** and      |
+| 3. Enter your namespace name in the **metadata.namespace** field and in the body object field paste the       |
 |                                                                                                               |
-|    select **Get My Namespace** and click **Send**.                                                            |
+|    following content.                                                                                         |
 |                                                                                                               |
-| |lab1-Postman_Namespace|                                                                                      |
-+---------------------------------------------------------------------------------------------------------------+
-| 5. Review the results in the **Body** section of Postman. You should see a 200 OK response code and the name  |
+| .. code-bloc:: bash                                                                                           |
 |                                                                                                               |
-|    of your namespace should appear in the **metadata**. These results should match the results from Task 1    |
-|                                                                                                               |
-|    step 16.                                                                                                   |
-|                                                                                                               |
-| |lab1-Postman_Namespace_Results|                                                                              |
-+---------------------------------------------------------------------------------------------------------------+
-| 6. Select **Create Health Check** under the Appworld - XC Automation collection and select **Body**.          |
-|                                                                                                               |
-| 7. Review the JSON in the **Body** section. This data is what is sent to the Distributed Cloud API to create  |
-|                                                                                                               |
-|    a new Health Check.                                                                                        |
-|                                                                                                               |
-| |lab1-Postman_HC_Body|                                                                                        |
-+---------------------------------------------------------------------------------------------------------------+
-| 8. Click **Send** to create the Health Check.                                                                 |
-|                                                                                                               |
-| |lab1-Postman_HC_Send|                                                                                        |
-+---------------------------------------------------------------------------------------------------------------+
-| 9. Review the results in the **Body** section of Postman. You should see a 200 OK response code.              |
-|                                                                                                               |
-| |lab1-Postman_HC_Results|                                                                                     |
-+---------------------------------------------------------------------------------------------------------------+
-| 10. Select **Create Origin Pool** under the Appworld - XC Automation collection and select **Body**.          |
-|                                                                                                               |
-| 11. Review the JSON in the **Body** section. This data is what is sent to the Distributed Cloud API to create |
-|                                                                                                               |
-|     a new Origin Pool.                                                                                        |
-|                                                                                                               |
-| |lab1-Postman_Pool_Body|                                                                                      |
-+---------------------------------------------------------------------------------------------------------------+
-| 12. Click **Send** to create the Origin Pool.                                                                 |
-|                                                                                                               |
-| |lab1-Postman_Pool_Send|                                                                                      |
-+---------------------------------------------------------------------------------------------------------------+
-| 13. Review the results in the **Body** section of Postman. You should see a 200 OK response code.             |
-|                                                                                                               |
-| |lab1-Postman_Pool_Results|                                                                                   |
-+---------------------------------------------------------------------------------------------------------------+
-| 14. Select **Create HTTP Load Balancer** under the Appworld - XC Automation collection and select **Body**.   |
-|                                                                                                               |
-| 15. Review the JSON in the **Body** section. This data is what is sent to the Distributed Cloud API to create |
-|                                                                                                               |
-|     a new HTTP Load Balancer.                                                                                 |
-|                                                                                                               |
-| |lab1-Postman_LB_Body|                                                                                        |
-+---------------------------------------------------------------------------------------------------------------+
-| 16. Click **Send** to create the HTTP Load Balancer.                                                          |
-|                                                                                                               |
-| |lab1-Postman_LB_Send|                                                                                        |
-+---------------------------------------------------------------------------------------------------------------+
-| 17. Review the results in the **Body** section of Postman. You should see a 200 OK response code.             |
-|                                                                                                               |
-| |lab1-Postman_LB_Results|                                                                                     |
-+---------------------------------------------------------------------------------------------------------------+
-
-Task 3: Review & Test Proxy Configuration
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-The following steps will review the configuations created using Postman in the Distributed Cloud Console.  The
-configuration will then be tested utilizing a web browser to access the web appliaction.
-
-+---------------------------------------------------------------------------------------------------------------+
-| **Verify the Objects Created with Postman**                                                                   |
-+===============================================================================================================+
-| 1. From the Windows 10 client deployed as part of the UDF, open Chrome.                                       |
-|                                                                                                               |
-| |lab1-Chrome|                                                                                                 |
-+---------------------------------------------------------------------------------------------------------------+
-| 2. Click on the **XC Console** bookmark to be taken to the XC Console login.                                  |
-|                                                                                                               |
-| |lab1-XC_Bookmark|                                                                                            |
-+---------------------------------------------------------------------------------------------------------------+
-| 3. Enter your e-mail address in the **Email** form and password in the **Password** form and click **Sign**   |
-|                                                                                                               |
-|    **In**.                                                                                                    |
-|                                                                                                               |
-| |lab1-XC_Signin|                                                                                              |
-+---------------------------------------------------------------------------------------------------------------+
-| 4. Within the Distributed Cloud dashboard, select the **Multi-Cloud App Connect** tile.                       |
-|                                                                                                               |
-| |lab1-XC_App_Connect|                                                                                         |
-+---------------------------------------------------------------------------------------------------------------+
-| 5. In the resulting screen, expand the **Manage** menu and click **Load Balancers** and then select           |
-|                                                                                                               |
-|    *Health Checks**.                                                                                          |
-|                                                                                                               |
-| |lab1-XC_HC|                                                                                                  |
-+---------------------------------------------------------------------------------------------------------------+
-| 6. From the Health Checks page, locate the Health Check that you created via Postman.  Click the **ellipsis** |
-|                                                                                                               |
-|    under **Actions** and select **Manage Configuration**.                                                     |
-|                                                                                                               |
-| |lab1-XC_HC_Manage|                                                                                           |
-+---------------------------------------------------------------------------------------------------------------+
-| 7. From the resulting screen, review the Health Check configuration data and then click **JSON**.             |
-|                                                                                                               |
-| |lab1-XC_HC_JSON|                                                                                             |
-+---------------------------------------------------------------------------------------------------------------+
-| 8. Review the resulting JSON data.  This JSON matches JSON from the body section of Postman request that      |
-|                                                                                                               |
-|    created the Health Check.                                                                                  |
-|                                                                                                               |
-| |lab1-XC_HC_JSON_Data|                                                                                        |
+|    {                                                                                                          |
+|        "metadata": {                                                                                          |
+|           "name": "non-standard",                                                                             |
+|           "namespace": "<namespace>"                                                                          |
+|        },                                                                                                     |
+|        "spec": {                                                                                              |
+|           "blocking": null,                                                                                   |
+|           "default_detection_settings": null,                                                                 |
+|           "default_bot_setting": null,                                                                        |
+|           "allow_all_response_codes": null,                                                                   |
+|           "default_anonymization": null,                                                                      |
+|           "use_default_blocking_page": null                                                                   |
+|        }                                                                                                      |
+|    }                                                                                                          |
 |                                                                                                               |
 | .. note::                                                                                                     |
-|    *There may be slight variations in the JSON because you don't need to post default values when calling the*|
-|    *API. If you want to automate a task in Distributed Cloud, but are unsure of the required JSON, you can*   |
-|    *configure a test object via the GUI and then use this JSON tab to get the corresponding JSON config.*     |
+|    *Be sure to change the **<namespace>** value in the above JSON block to match your namespace.*             |
+|                                                                                                               |
+| |lab1-Portal_Firewall_Post_Execute|                                                                           |
 +---------------------------------------------------------------------------------------------------------------+
-| 9. Click **Cancel and Exit** to close out the Health Check configuration.                                     |
+| 4. Review the **Response body** data. If everything worked correctly you should have received a 200 response  |
+|                                                                                                               |                                                                                                              |
+|    code along with a response body.                                                                           |
+|                                                                                                               |
+| |lab1-Portal_Firewall_Post_JSON|                                                                              |
 +---------------------------------------------------------------------------------------------------------------+
-| 10. Under the Multi-Cloud App Connect Manage menu, select **Load Balancers** and then click on **Origin**     |
+| 5. Open the Distribute Cloud Console tab in your web browser to validate the App Firewall was created.  You   |  
 |                                                                                                               |
-|     **Pools**.                                                                                                |
+|    still be in the **My Account** configuration window.  From here use the **Select Workspace dropdown in the |
 |                                                                                                               |
-| |lab1-XC_Pool|                                                                                                |
+|    in the left-hand navigation, and click **Web App & API Protection**.                                       |
+|                                                                                                               |
+| |lab1-Portal_Console_WebApp|                                                                                  |
 +---------------------------------------------------------------------------------------------------------------+
-| 11. From the Origin Pools page, locate the Origin Pool that you created via Postman.  Click the **ellipsis**  |
+| 6. From the left navigation sidebar click **Manage** and click **App Firewall**.  You should see an App       |
 |                                                                                                               |
-|     under **Actions** and select **Manage Configuration**.                                                    |
+|    Firewall named **non-standard**.                                                                           |
 |                                                                                                               |
-| |lab1-XC_Pool_Manage|                                                                                         |
-+---------------------------------------------------------------------------------------------------------------+
-| 12. From the resulting screen, review the Origin Pool configuration data and then click **JSON**.             |
-|                                                                                                               |
-| |lab1-XC_Pool_JSON|                                                                                           |
-+---------------------------------------------------------------------------------------------------------------+
-| 13. Review the resulting JSON data.  This JSON matches JSON from the body section of Postman request that     |
-|                                                                                                               |
-|     created the Origin Pool.                                                                                  |
-|                                                                                                               |
-| |lab1-XC_Pool_JSON_Data|                                                                                      |
+| |lab1-Portal_Console_WebApp_Firewall|                                                                         |
 |                                                                                                               |
 | .. note::                                                                                                     |
-|    *There may be slight variations in the JSON because you don't need to post default values when calling the*|
-|    *API. If you want to automate a task in Distributed Cloud, but are unsure of the required JSON, you can*   |
-|    *configure a test object via the GUI and then use this JSON tab to get the corresponding JSON config.*     |
-+---------------------------------------------------------------------------------------------------------------+
-| 14. Click **Cancel and Exit** to close out the Origin Pool configuration.                                     |
-+---------------------------------------------------------------------------------------------------------------+
-| 15. Under the Multi-Cloud App Connect Manage menu, select **Load Balancers** and then click on **HTTP**       |
-|                                                                                                               |
-|     **Load Balancers**.                                                                                       |
-|                                                                                                               |
-| |lab1-XC_LB|                                                                                                  |
-+---------------------------------------------------------------------------------------------------------------+
-| 16. From the HTTP Load Balancers page, locate the HTTP Load Balancer that you created via Postman.  Click the |
-|                                                                                                               |
-|     **ellipsis** under **Actions** and select **Manage Configuration**.                                       |
-|                                                                                                               |
-| |lab1-XC_LB_Manage|                                                                                           |
-+---------------------------------------------------------------------------------------------------------------+
-| 17. From the resulting screen, review the HTTP Load Balancer configuration data and then click **JSON**.      |
-|                                                                                                               |
-| |lab1-XC_LB_JSON|                                                                                             |
-+---------------------------------------------------------------------------------------------------------------+
-| 18. Review the resulting JSON data.  This JSON matches JSON from the body section of Postman request that     |
-|                                                                                                               |
-|     created the HTTP Load Balancer.                                                                           |
-|                                                                                                               |
-| |lab1-XC_LB_JSON_Data|                                                                                        |
-|                                                                                                               |
-| .. note::                                                                                                     |
-|    *There may be slight variations in the JSON because you don't need to post default values when calling the*|
-|    *API. If you want to automate a task in Distributed Cloud, but are unsure of the required JSON, you can*   |
-|    *configure a test object via the GUI and then use this JSON tab to get the corresponding JSON config.*     |
-+---------------------------------------------------------------------------------------------------------------+
-| 19. Click **Cancel and Exit** to close out the Load Balancer configuration.                                   |
-+---------------------------------------------------------------------------------------------------------------+
-
-+---------------------------------------------------------------------------------------------------------------+
-| **Verify the Demo Shop App is Accessible Via a Web Browser**                                                  |
-+===============================================================================================================+
-| 20. Open a new tab in your Chrome browser and enter the following URL                                         |
-|                                                                                                               |
-|     **http://<namespace>-demoshop.lab-app.f5demos.com**                                                       |
-|                                                                                                               |
-| |lab1-Demoshop|                                                                                               |
-|                                                                                                               |
-| .. note::                                                                                                     |
-|    *This illustrates that you are able to configure the delivery of an application via the Distributed Cloud* |
-|    *API utilizing Postman.*                                                                                   |
+|    *The firewall you create in this section of the lab will be used in future labs.  If you don't see the*    |
+|    * App Firewall named non-standard please verify and repeat the steps in this section.  If you are still*   |
+|    * not seeing the non-standard App Firewall please ask a lab assistant for help.*                           |
 +---------------------------------------------------------------------------------------------------------------+
 
 +---------------------------------------------------------------------------------------------------------------+
@@ -393,13 +214,7 @@ configuration will then be tested utilizing a web browser to access the web appl
 +===============================================================================================================+
 | This concludes Lab 1. In this lab, you learned about the Distributed Cloud Developer Portal and how it can    |
 |                                                                                                               |
-| help you test API calls. You then expanded upon that knowledge and utilized Postman to deploy a Health Check, |
-|                                                                                                               |
-| Origin Pool, and HTTP Load Balancer. Next, you verified the configuration that was pushed to the Distributed  |
-|                                                                                                               |
-| Console. Finally, you verified the application you published was available from a web browser. A brief        |
-|                                                                                                               |
-| presentation will be shared prior to the beginning of Lab 2.                                                  |
+| help you test API calls.                                                                                      |
 |                                                                                                               |
 | |labend|                                                                                                      |
 +---------------------------------------------------------------------------------------------------------------+
@@ -432,72 +247,19 @@ configuration will then be tested utilizing a web browser to access the web appl
    :width: 800px
 .. |lab1-Portal_Namespaces_Name_JSON| image:: _static/lab1-Portal_Namespaces_Name_JSON.png
    :width: 800px
-.. |lab1-Postman| image:: _static/lab1-Postman.png
+.. |lab1-Portal_Firewall| image:: _static/lab1-Portal_Firewall.png
    :width: 800px
-.. |lab1-Postman_Variables| image:: _static/lab1-Postman_Variables.png
+.. |lab1-Portal_Firewall_Post| image:: _static/lab1-Portal_Firewall_Post.png
    :width: 800px
-.. |lab1-Postman_Namespace| image:: _static/lab1-Postman_Namespace.png
+.. |lab1-Portal_Firewall_Post_Execute| image:: _static/lab1-Portal_Firewall_Post_Execute.png
    :width: 800px
-.. |lab1-Postman_Namespace_Results| image:: _static/lab1-Postman_Namespace_Results.png
+.. |lab1-Portal_Firewall_Post_JSON| image:: _static/lab1-Portal_Firewall_Post_JSON.png
    :width: 800px
-.. |lab1-Postman_HC_Body| image:: _static/lab1-Postman_HC_Body.png
+.. |lab1-Portal_Console_WebApp| image:: _static/lab1-Portal_Console_WebApp.png
    :width: 800px
-.. |lab1-Postman_HC_Send| image:: _static/lab1-Postman_HC_Send.png
-   :width: 800px
-.. |lab1-Postman_HC_Results| image:: _static/lab1-Postman_HC_Results.png
-   :width: 800px
-.. |lab1-Postman_Pool_Body| image:: _static/lab1-Postman_Pool_Body.png
-   :width: 800px
-.. |lab1-Postman_Pool_Send| image:: _static/lab1-Postman_Pool_Send.png
-   :width: 800px
-.. |lab1-Postman_Pool_Results| image:: _static/lab1-Postman_Pool_Results.png
-   :width: 800px
-.. |lab1-Postman_LB_Body| image:: _static/lab1-Postman_LB_Body.png
-   :width: 800px
-.. |lab1-Postman_LB_Send| image:: _static/lab1-Postman_LB_Send.png
-   :width: 800px
-.. |lab1-Postman_LB_Results| image:: _static/lab1-Postman_LB_Results.png
-   :width: 800px
-.. |lab1-Chrome| image:: _static/lab1-Chrome.png
-   :width: 800px
-.. |lab1-XC_Bookmark| image:: _static/lab1-XC_Bookmark.png
-   :width: 800px
-.. |lab1-XC_Signin| image:: _static/lab1-XC_Signin.png
-   :width: 800px
-.. |lab1-XC_App_Connect| image:: _static/lab1-XC_App_Connect.png
-   :width: 800px
-.. |lab1-XC_HC| image:: _static/lab1-XC_HC.png
-   :width: 800px
-.. |lab1-XC_HC_Manage| image:: _static/lab1-XC_HC_Manage.png
-   :width: 800px
-.. |lab1-XC_HC_JSON| image:: _static/lab1-XC_HC_JSON.png
-   :width: 800px
-.. |lab1-XC_HC_JSON_Data| image:: _static/lab1-XC_HC_JSON_Data.png
-   :width: 800px
-.. |lab1-XC_Pool| image:: _static/lab1-XC_Pool.png
-   :width: 800px
-.. |lab1-XC_Pool_Manage| image:: _static/lab1-XC_Pool_Manage.png
-   :width: 800px
-.. |lab1-XC_Pool_JSON| image:: _static/lab1-XC_Pool_JSON.png
-   :width: 800px
-.. |lab1-XC_Pool_JSON_Data| image:: _static/lab1-XC_Pool_JSON_Data.png
-   :width: 800px
-.. |lab1-XC_LB| image:: _static/lab1-XC_LB.png
-   :width: 800px
-.. |lab1-XC_LB_Manage| image:: _static/lab1-XC_LB_Manage.png
-   :width: 800px
-.. |lab1-XC_LB_JSON| image:: _static/lab1-XC_LB_JSON.png
-   :width: 800px
-.. |lab1-XC_LB_JSON_Data| image:: _static/lab1-XC_LB_JSON_Data.png
-   :width: 800px
-.. |lab1-Demoshop| image:: _static/lab1-Demoshop.png
+.. |lab1-Portal_Console_WebApp_Firewall| image:: _static/lab1-Portal_Console_WebApp.png
    :width: 800px
 .. |labend| image:: _static/labend.png
    :width: 800px
 
-.. _Remote Desktop Mac: https://learn.microsoft.com/en-us/windows-server/remote/remote-desktop-services/clients/remote-desktop-mac/
-.. _Remote Desktop iOS: https://learn.microsoft.com/en-us/windows-server/remote/remote-desktop-services/clients/remote-desktop-ios/
-.. _Remote Desktop Android: https://learn.microsoft.com/en-us/windows-server/remote/remote-desktop-services/clients/remote-desktop-android/
-.. _Remote Desktop Linux: https://remmina.org/ 
-.. _RDPClient:  /docs/class8/rdpclient.rst
-.. _WebRDP: /docs/class8/webrdp.rst
+
