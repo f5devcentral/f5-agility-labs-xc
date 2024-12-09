@@ -187,7 +187,7 @@ created, you will intialize Terraform and then deploy an HTTP Health Check, Orig
 +===============================================================================================================+
 | 1. Open a new tab in your Chrome browser and enter the following URL                                          |
 |                                                                                                               |
-|     **http://<namespace>-demoshop.lab-app.f5demos.com**                                                       |
+|    **http://<namespace>-demoshop.lab-app.f5demos.com**                                                        |
 |                                                                                                               |
 | .. note::                                                                                                     |
 |    *This illustrates that you are able to configure the delivery of an application via the Distributed Cloud* |
@@ -376,10 +376,14 @@ objects within Distributed Cloud.
    :width: 800px
 .. |lab2-Terraform_Deploy_Apply_Results| image:: _static/lab2-Terraform_Deploy_Apply_Results.png
    :width: 800px
+.. |lab1-Demoshop| image:: _static/lab1-Demoshop.png
+   :width: 800px
 .. |lab2-Terraform_AppFw| image:: _static/lab2-Terraform_AppFw.png
    :width: 800px
 .. |lab2-Terraform_AppFw_Create| image:: _static/lab2-Terraform_AppFw_Create.png
    :width: 800px
+.. |lab2-Terraform_AppFw_LB| image:: _static/lab2-Terraform_AppFw_LB.png
+   :width: 800px   
 .. |lab2-Terraform_AppFw_Plan| image:: _static/lab2-Terraform_AppFw_Plan.png
    :width: 800px
 .. |lab2-Terraform_Console_Web| image:: _static/lab2-Terraform_Console_Web.png
