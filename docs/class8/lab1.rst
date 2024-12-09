@@ -183,8 +183,6 @@ utilizing the Developer Portal.
 |                                                                                                               |
 | |lab1-Portal_Firewall_Post_Execute|                                                                           |
 +---------------------------------------------------------------------------------------------------------------+
-
-+---------------------------------------------------------------------------------------------------------------+
 | 4. Review the **Response body** data. If everything worked correctly you should have received a 200 response  |
 |                                                                                                               |                                                                                                              |
 |    code along with a response body.                                                                           |
@@ -197,7 +195,7 @@ utilizing the Developer Portal.
 |                                                                                                               |
 |    still be in the **My Account** configuration window.  From here use the **Select Workspace** dropdown in   |
 |                                                                                                               |
-|    the in the left-hand navigation, and click **Web App & API Protection**.                                  |
+|    the in the left-hand navigation, and click **Web App & API Protection**.                                   |
 |                                                                                                               |
 | |lab1-Portal_Console_WebApp|                                                                                  |
 +---------------------------------------------------------------------------------------------------------------+
@@ -211,8 +209,8 @@ utilizing the Developer Portal.
 |                                                                                                               |
 | .. note::                                                                                                     |
 |    * The firewall you create in this section of the lab will be used in future labs.  If you don't see the    |
-|    * App Firewall named non-standard please verify and repeat the steps in this section.  If you are still    |
-|    * not seeing the non-standard App Firewall please ask a lab assistant for help.                            |
+|      App Firewall named non-standard please verify and repeat the steps in this section.  If you are still    |
+|      not seeing the non-standard App Firewall please ask a lab assistant for help.                            |
 +---------------------------------------------------------------------------------------------------------------+
 
 +---------------------------------------------------------------------------------------------------------------+
