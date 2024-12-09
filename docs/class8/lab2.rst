@@ -85,7 +85,7 @@ created, you will intialize Terraform and then deploy an HTTP Health Check, Orig
 |                                                                                                               |
 | |lab2-Terraform_Auth_Folders_New|                                                                             |
 +---------------------------------------------------------------------------------------------------------------+
-| 3. Copy the certificate you downloaded by dragging it to the **credentials folder you just created.           |
+| 3. Copy the certificate you downloaded by dragging it to the **credentials** folder you just created.         |
 +---------------------------------------------------------------------------------------------------------------+
 | 4. Right click the certificate in VSCode and select **Rename**.  Change the name of the file to               |
 |                                                                                                               |
@@ -357,6 +357,8 @@ objects within Distributed Cloud.
 .. |lab2-Terraform_Auth_Env| image:: _static/lab2-Terraform_Auth_Env.png
    :width: 800px
 .. |lab2-Terraform_Tfvars| image:: _static/lab2-Terraform_Tfvars.png
+   :width: 800px
+.. |lab2-Terraform_Tfvars_Values| image:: _static/lab2-Terraform_Tfvars_Values.png
    :width: 800px
 .. |lab2-Terraform_Deploy_Directory| image:: _static/lab2-Terraform_Deploy_Directory.png
    :width: 800px
