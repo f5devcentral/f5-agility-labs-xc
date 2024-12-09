@@ -179,7 +179,7 @@ utilizing the Developer Portal.
 |    }                                                                                                          |
 |                                                                                                               |
 | .. note::                                                                                                     |
-|    *Be sure to change the <namespace> value in the above JSON block to match your namespace.*                 |
+|    *Be sure to change the \<namespace\> value in the above JSON block to match your namespace.*               |
 |                                                                                                               |
 | |lab1-Portal_Firewall_Post_Execute|                                                                           |
 +---------------------------------------------------------------------------------------------------------------+
