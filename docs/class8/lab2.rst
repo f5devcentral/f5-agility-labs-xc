@@ -85,7 +85,7 @@ created, you will intialize Terraform and then deploy an HTTP Health Check, Orig
 |                                                                                                               |
 | |lab2-Terraform_Auth_Folders_New|                                                                             |
 +---------------------------------------------------------------------------------------------------------------+
-| 3. Copy the certificate you downloaded by dragging it to the **credentials folder you just created.           |
+| 3. Copy the certificate you downloaded by dragging it to the **credentials** folder you just created.         |
 +---------------------------------------------------------------------------------------------------------------+
 | 4. Right click the certificate in VSCode and select **Rename**.  Change the name of the file to               |
 |                                                                                                               |
@@ -187,7 +187,7 @@ created, you will intialize Terraform and then deploy an HTTP Health Check, Orig
 +===============================================================================================================+
 | 1. Open a new tab in your Chrome browser and enter the following URL                                          |
 |                                                                                                               |
-|     **http://<namespace>-demoshop.lab-app.f5demos.com**                                                       |
+|    **http://<namespace>-demoshop.lab-app.f5demos.com**                                                        |
 |                                                                                                               |
 | .. note::                                                                                                     |
 |    *This illustrates that you are able to configure the delivery of an application via the Distributed Cloud* |
@@ -261,7 +261,7 @@ objects within Distributed Cloud.
 +---------------------------------------------------------------------------------------------------------------+
 | 2. Review the Plan results. This shows what Terraform is planning to create.                                  |
 |                                                                                                               |
-| |lab3-Terraform_AppFw_Plan_Results|                                                                           |
+| |lab2-Terraform_AppFw_Plan_Results|                                                                           |
 +---------------------------------------------------------------------------------------------------------------+
 | 3. In the Terminal, enter the following command and press Enter:                                              |
 |                                                                                                               |
@@ -293,29 +293,29 @@ objects within Distributed Cloud.
 +---------------------------------------------------------------------------------------------------------------+
 | 3. In the resulting screen, expand the **Manage** menu and click **Load Balancers** and then select           |
 |                                                                                                               |
-|     **HTTP Load Balancers**.                                                                                  |
+|    **HTTP Load Balancers**.                                                                                   |
 |                                                                                                               |
 | |lab2-Terraform_Console_Manage_LBs|                                                                           |
 +---------------------------------------------------------------------------------------------------------------+
-| 13. From the HTTP Load Balancers page, locate the HTTP Load Balancer that you created via Terraform.  Click   |
+| 4. From the HTTP Load Balancers page, locate the HTTP Load Balancer that you created via Terraform.  Click    |
 |                                                                                                               |
-|     the **ellipsis** under **Actions** and select **Manage Configuration**.                                   |
+|    the **ellipsis** under **Actions** and select **Manage Configuration**.                                    |
 |                                                                                                               |
 | |lab2-Terraform_Console_Manage_LB_Manage|                                                                     |
 +---------------------------------------------------------------------------------------------------------------+
-| 14. From the resulting screen, select **Web Application Firewall** under the HTTP Load Balancer frame to jump |
+| 5. From the resulting screen, select **Web Application Firewall** under the HTTP Load Balancer frame to jump  |
 |                                                                                                               |
-|     to the **Web Application Firewall** configuration section.                                                |
+|    to the **Web Application Firewall** configuration section.                                                 |
 |                                                                                                               |
 | |lab2-Terraform_Console_Manage_LB_WebAppFw|                                                                   |
 +---------------------------------------------------------------------------------------------------------------+
-| 15. Notice that the Web Application Firewall is now Enabled and the policy you created using Terraform is     |
+| 6. Notice that the Web Application Firewall is now Enabled and the policy you created using Terraform is      |
 |                                                                                                               |
-|     applied.                                                                                                  |
+|    applied.                                                                                                   |
 |                                                                                                               |
 | |lab2-Terraform_Console_Manage_LB_WebAppFw_Enable|                                                            |
 +---------------------------------------------------------------------------------------------------------------+
-| 16. Click **Cancel and Exit** to close out of the HTTP Load Balancer configuration.                           |
+| 7. Click **Cancel and Exit** to close out of the HTTP Load Balancer configuration.                            |
 |                                                                                                               |
 | |lab2-Terraform_Console_Manage_LB_Cancel|                                                                     |
 +---------------------------------------------------------------------------------------------------------------+
@@ -358,6 +358,8 @@ objects within Distributed Cloud.
    :width: 800px
 .. |lab2-Terraform_Tfvars| image:: _static/lab2-Terraform_Tfvars.png
    :width: 800px
+.. |lab2-Terraform_Tfvars_Values| image:: _static/lab2-Terraform_Tfvars_Values.png
+   :width: 800px
 .. |lab2-Terraform_Deploy_Directory| image:: _static/lab2-Terraform_Deploy_Directory.png
    :width: 800px
 .. |lab2-Terraform_Deploy_Init| image:: _static/lab2-Terraform_Deploy_Init.png
@@ -366,17 +368,31 @@ objects within Distributed Cloud.
    :width: 800px
 .. |lab2-Terraform_Deploy_Plan| image:: _static/lab2-Terraform_Deploy_Plan.png
    :width: 800px
+.. |lab2-Terraform_Deploy_Plan_Results| image:: _static/lab2-Terraform_Deploy_Plan_Results.png
+   :width: 800px
 .. |lab2-Terraform_Deploy_Apply| image:: _static/lab2-Terraform_Deploy_Apply.png
    :width: 800px
 .. |lab2-Terraform_Deploy_Apply_Yes| image:: _static/lab2-Terraform_Deploy_Apply_Yes.png
    :width: 800px
 .. |lab2-Terraform_Deploy_Apply_Results| image:: _static/lab2-Terraform_Deploy_Apply_Results.png
    :width: 800px
+.. |lab1-Demoshop| image:: _static/lab1-Demoshop.png
+   :width: 800px
 .. |lab2-Terraform_AppFw| image:: _static/lab2-Terraform_AppFw.png
    :width: 800px
 .. |lab2-Terraform_AppFw_Create| image:: _static/lab2-Terraform_AppFw_Create.png
    :width: 800px
+.. |lab2-Terraform_AppFw_LB| image:: _static/lab2-Terraform_AppFw_LB.png
+   :width: 800px   
 .. |lab2-Terraform_AppFw_Plan| image:: _static/lab2-Terraform_AppFw_Plan.png
+   :width: 800px
+.. |lab2-Terraform_AppFw_Plan_Results| image:: _static/lab2-Terraform_AppFw_Plan_Results.png
+   :width: 800px
+.. |lab2-Terraform_AppFw_Apply| image:: _static/lab2-Terraform_AppFw_Apply.png
+   :width: 800px
+.. |lab2-Terraform_AppFw_Apply_Yes| image:: _static/lab2-Terraform_AppFw_Apply_Yes.png
+   :width: 800px
+.. |lab2-Terraform_AppFw_Apply_Results| image:: _static/lab2-Terraform_AppFw_Apply_Results.png
    :width: 800px
 .. |lab2-Terraform_Console_Web| image:: _static/lab2-Terraform_Console_Web.png
    :width: 800px

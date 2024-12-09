@@ -50,30 +50,28 @@ utilizing the Developer Portal.
 |                                                                                                               |
 | |lab1-Add_Credentials|                                                                                        |
 +---------------------------------------------------------------------------------------------------------------+
-| 5. Fill in the resulting form with the following values                                                       |
+| 5. Fill in the resulting form with the following values and then click **Generate**                           |
 |                                                                                                               |
 |    * **Credential Name ID:**  *<namespace>-api-token*                                                         |
 |    * **Credential Type: Select:** *API Token*                                                                 |
 |    * **Expiry Date: Select:** *<date two days in the future of today's date>*                                 |
 |                                                                                                               |
-| 6. Click **Generate**.                                                                                        |
-|                                                                                                               |
 | |lab1-Generate_API_Token|                                                                                     |
 +---------------------------------------------------------------------------------------------------------------+
-| 7. On the form that appears, copy your API token and save it for use later.  Then click **Done**.             |
+| 6. On the form that appears, copy your API token and save it for use later.  Then click **Done**.             |
 |                                                                                                               |
 | |lab1-API_Token|                                                                                              |
 |                                                                                                               |
 | .. note::                                                                                                     |
 |    *If you don't save your API token or you lose it, you will need to generate a new API token. After an API* |
-|    *token is generated, it **cannot be retrieved again later**.*                                              |
+|    *token is generated, it cannot be retrieved again later.*                                                  |
 +---------------------------------------------------------------------------------------------------------------+
 
 
 +---------------------------------------------------------------------------------------------------------------+
 | **Access the Distributed Cloud Developer Portal**                                                             |
 +===============================================================================================================+
-| 8. In the top right corner of the Distributed Cloud Console, click the **Support** dropdown and select **API**|
+| 1. In the top right corner of the Distributed Cloud Console, click the **Support** dropdown and select **API**|
 |                                                                                                               |
 |    **Documentation**.                                                                                         |
 |                                                                                                               |
@@ -83,23 +81,23 @@ utilizing the Developer Portal.
 |    *This takes you to the online documentation for the F5 Distributed Cloud Services API.  Here, you can*     |
 |    *review or download the API specification.*                                                                |
 +---------------------------------------------------------------------------------------------------------------+
-| 9. In the resulting screen, click the **API Developer Portal** link in the top menu.                          |
+| 2. In the resulting screen, click the **API Developer Portal** link in the top menu.                          |
 |                                                                                                               |
 | |lab1-API_Developer_Portal|                                                                                   |
 +---------------------------------------------------------------------------------------------------------------+
-| 10. In the resulting window, enter **f5-xc-lab-app** in the **Please enter your domain** text field and click |
+| 3. In the resulting window, enter **f5-xc-lab-app** in the **Please enter your domain** text field and click  |
 |                                                                                                               |
-|     **Access portal.**                                                                                        |
+|    **Access portal.**                                                                                         |
 |                                                                                                               |
 | |lab1-Portal_Domain|                                                                                          |
 +---------------------------------------------------------------------------------------------------------------+
-| 11. In the resulting screen, click the **Authorize** link in the top right corner.                            |
+| 4. In the resulting screen, click the **Authorize** link in the top right corner.                             |
 |                                                                                                               |
 | |lab1-Portal_Authorize|                                                                                       |
 +---------------------------------------------------------------------------------------------------------------+
-| 12. In the form that appears, enter your API Token in the **Paste your API token** field and click            |
+| 5. In the form that appears, enter your API Token in the **Paste your API token** field and click             |
 |                                                                                                               |
-|     **Authorize**.                                                                                            |
+|    **Authorize**.                                                                                             |
 |                                                                                                               |
 | |lab1-Portal_Set_Token|                                                                                       |
 +---------------------------------------------------------------------------------------------------------------+
@@ -110,13 +108,13 @@ utilizing the Developer Portal.
 +===============================================================================================================+
 | 1. In the Dev Portal, scroll through the APIs on the left until you find **Namespace** and then click         |
 |                                                                                                               |
-|     **Namespace**.                                                                                            |
+|    **Namespace**.                                                                                             |
 |                                                                                                               |
 | |lab1-Portal_Namespace|                                                                                       |
 +---------------------------------------------------------------------------------------------------------------+
 | 2. Under the **default** section in schemes, scroll down through the **Namespace** APIs until you find        |
 |                                                                                                               |
-|     **GET /api/web/namespaces/{name}** and click the arrow to expand this API and then click **Try it out**.  |
+|    **GET /api/web/namespaces/{name}** and click the arrow to expand this API and then click **Try it out**.   |
 |                                                                                                               |
 | |lab1-Portal_Namespaces_Name|                                                                                 |
 +---------------------------------------------------------------------------------------------------------------+
@@ -131,7 +129,7 @@ utilizing the Developer Portal.
 +---------------------------------------------------------------------------------------------------------------+
 | 4. Review the **Response body** data. You may have to scroll down slightly to show the **Response body** data |
 |                                                                                                               |
-|     depending on your screen resolution.                                                                      |
+|    depending on your screen resolution.                                                                       |
 |                                                                                                               |
 | |lab1-Portal_Namespaces_Name_JSON|                                                                            |
 |                                                                                                               |
@@ -151,9 +149,9 @@ utilizing the Developer Portal.
 +---------------------------------------------------------------------------------------------------------------+
 | 2. Under the **default** section in schemes, find the                                                         |
 |                                                                                                               |
-|     **POST /api/config/namespaces/{metadata.namespace}/app_firewalls** and click the arrow to expand this API |
+|    **POST \/api\/config\/namespaces\/{metadata.namespace}\/app_firewalls** and click the arrow to expand this |
 |                                                                                                               |
-|     and then click **Try it out**.                                                                            |
+|    API and then click **Try it out**.                                                                         |
 |                                                                                                               |
 | |lab1-Portal_Firewall_Post|                                                                                   |
 +---------------------------------------------------------------------------------------------------------------+
@@ -161,7 +159,7 @@ utilizing the Developer Portal.
 |                                                                                                               |
 |    following content.                                                                                         |
 |                                                                                                               |
-| .. code-bloc:: bash                                                                                           |
+| .. code-block:: bash                                                                                          |
 |                                                                                                               |
 |    {                                                                                                          |
 |        "metadata": {                                                                                          |
@@ -179,21 +177,21 @@ utilizing the Developer Portal.
 |    }                                                                                                          |
 |                                                                                                               |
 | .. note::                                                                                                     |
-|    *Be sure to change the **<namespace>** value in the above JSON block to match your namespace.*             |
+|    *Be sure to change the <namespace> value in the above JSON block to match your namespace.*                 |
 |                                                                                                               |
 | |lab1-Portal_Firewall_Post_Execute|                                                                           |
 +---------------------------------------------------------------------------------------------------------------+
 | 4. Review the **Response body** data. If everything worked correctly you should have received a 200 response  |
-|                                                                                                               |                                                                                                              |
+|                                                                                                               |
 |    code along with a response body.                                                                           |
 |                                                                                                               |
 | |lab1-Portal_Firewall_Post_JSON|                                                                              |
 +---------------------------------------------------------------------------------------------------------------+
 | 5. Open the Distribute Cloud Console tab in your web browser to validate the App Firewall was created.  You   |  
 |                                                                                                               |
-|    still be in the **My Account** configuration window.  From here use the **Select Workspace dropdown in the |
+|    should still be in the **My Account** configuration window.  From here use the **Select Workspace**        |
 |                                                                                                               |
-|    in the left-hand navigation, and click **Web App & API Protection**.                                       |
+|    dropdown in the left-hand navigation, and click **Web App & API Protection**.                              |
 |                                                                                                               |
 | |lab1-Portal_Console_WebApp|                                                                                  |
 +---------------------------------------------------------------------------------------------------------------+
@@ -205,8 +203,8 @@ utilizing the Developer Portal.
 |                                                                                                               |
 | .. note::                                                                                                     |
 |    *The firewall you create in this section of the lab will be used in future labs.  If you don't see the*    |
-|    * App Firewall named non-standard please verify and repeat the steps in this section.  If you are still*   |
-|    * not seeing the non-standard App Firewall please ask a lab assistant for help.*                           |
+|    *App Firewall named non-standard please verify and repeat the steps in this section.  If you are still*    |
+|    *not seeing the non-standard App Firewall please ask a lab assistant for help.*                            |
 +---------------------------------------------------------------------------------------------------------------+
 
 +---------------------------------------------------------------------------------------------------------------+
@@ -257,7 +255,7 @@ utilizing the Developer Portal.
    :width: 800px
 .. |lab1-Portal_Console_WebApp| image:: _static/lab1-Portal_Console_WebApp.png
    :width: 800px
-.. |lab1-Portal_Console_WebApp_Firewall| image:: _static/lab1-Portal_Console_WebApp.png
+.. |lab1-Portal_Console_WebApp_Firewall| image:: _static/lab1-Portal_Console_WebApp_Firewall.png
    :width: 800px
 .. |labend| image:: _static/labend.png
    :width: 800px
