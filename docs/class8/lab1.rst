@@ -189,9 +189,9 @@ utilizing the Developer Portal.
 +---------------------------------------------------------------------------------------------------------------+
 | 5. Open the Distribute Cloud Console tab in your web browser to validate the App Firewall was created.  You   |  
 |                                                                                                               |
-|    still be in the **My Account** configuration window.  From here use the **Select Workspace** dropdown in   |
+|    should still be in the **My Account** configuration window.  From here use the **Select Workspace**        |
 |                                                                                                               |
-|    the in the left-hand navigation, and click **Web App & API Protection**.                                   |
+|    dropdown in the left-hand navigation, and click **Web App & API Protection**.                              |
 |                                                                                                               |
 | |lab1-Portal_Console_WebApp|                                                                                  |
 +---------------------------------------------------------------------------------------------------------------+
@@ -255,7 +255,7 @@ utilizing the Developer Portal.
    :width: 800px
 .. |lab1-Portal_Console_WebApp| image:: _static/lab1-Portal_Console_WebApp.png
    :width: 800px
-.. |lab1-Portal_Console_WebApp_Firewall| image:: _static/lab1-Portal_Console_WebApp.png
+.. |lab1-Portal_Console_WebApp_Firewall| image:: _static/lab1-Portal_Console_WebApp_Firewall.png
    :width: 800px
 .. |labend| image:: _static/labend.png
    :width: 800px
