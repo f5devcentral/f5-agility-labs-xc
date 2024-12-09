@@ -131,7 +131,7 @@ utilizing the Developer Portal.
 +---------------------------------------------------------------------------------------------------------------+
 | 4. Review the **Response body** data. You may have to scroll down slightly to show the **Response body** data |
 |                                                                                                               |
-|     depending on your screen resolution.                                                                      |
+|    depending on your screen resolution.                                                                       |
 |                                                                                                               |
 | |lab1-Portal_Namespaces_Name_JSON|                                                                            |
 |                                                                                                               |
@@ -179,7 +179,7 @@ utilizing the Developer Portal.
 |    }                                                                                                          |
 |                                                                                                               |
 | .. note::                                                                                                     |
-|    *Be sure to change the <namespace> value in the above JSON block to match your namespace.                 |
+|    *Be sure to change the <namespace> value in the above JSON block to match your namespace.*                 |
 |                                                                                                               |
 | |lab1-Portal_Firewall_Post_Execute|                                                                           |
 +---------------------------------------------------------------------------------------------------------------+
@@ -208,9 +208,9 @@ utilizing the Developer Portal.
 | |lab1-Portal_Console_WebApp_Firewall|                                                                         |
 |                                                                                                               |
 | .. note::                                                                                                     |
-|    * The firewall you create in this section of the lab will be used in future labs.  If you don't see the    |
-|      App Firewall named non-standard please verify and repeat the steps in this section.  If you are still    |
-|      not seeing the non-standard App Firewall please ask a lab assistant for help.                            |
+|    *The firewall you create in this section of the lab will be used in future labs.  If you don't see the*    |
+|    *App Firewall named non-standard please verify and repeat the steps in this section.  If you are still*    |
+|    *not seeing the non-standard App Firewall please ask a lab assistant for help.*                            |
 +---------------------------------------------------------------------------------------------------------------+
 
 +---------------------------------------------------------------------------------------------------------------+
