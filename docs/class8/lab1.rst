@@ -55,7 +55,7 @@ utilizing the Developer Portal.
 |    * **Credential Name ID:**  *<namespace>-api-token*                                                         |
 |    * **Credential Type: Select:** *API Token*                                                                 |
 |    * **Expiry Date: Select:** *<date two days in the future of today's date>*                                 |
-|                                                                                                               |
++---------------------------------------------------------------------------------------------------------------+
 | 6. Click **Generate**.                                                                                        |
 |                                                                                                               |
 | |lab1-Generate_API_Token|                                                                                     |
