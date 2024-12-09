@@ -193,7 +193,7 @@ utilizing the Developer Portal.
 |                                                                                                               |
 |    still be in the **My Account** configuration window.  From here use the **Select Workspace dropdown in the |
 |                                                                                                               |
-|    in the left-hand navigation, and click **Web App & API Protection**.                                       |
+|    in the left\-hand navigation, and click **Web App & API Protection**.                                      |
 |                                                                                                               |
 | |lab1-Portal_Console_WebApp|                                                                                  |
 +---------------------------------------------------------------------------------------------------------------+
