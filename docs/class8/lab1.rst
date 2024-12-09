@@ -73,7 +73,7 @@ utilizing the Developer Portal.
 +---------------------------------------------------------------------------------------------------------------+
 | **Access the Distributed Cloud Developer Portal**                                                             |
 +===============================================================================================================+
-| 8. In the top right corner of the Distributed Cloud Console, click the **Support** dropdown and select **API**|
+| 1. In the top right corner of the Distributed Cloud Console, click the **Support** dropdown and select **API**|
 |                                                                                                               |
 |    **Documentation**.                                                                                         |
 |                                                                                                               |
@@ -83,23 +83,23 @@ utilizing the Developer Portal.
 |    *This takes you to the online documentation for the F5 Distributed Cloud Services API.  Here, you can*     |
 |    *review or download the API specification.*                                                                |
 +---------------------------------------------------------------------------------------------------------------+
-| 9. In the resulting screen, click the **API Developer Portal** link in the top menu.                          |
+| 2. In the resulting screen, click the **API Developer Portal** link in the top menu.                          |
 |                                                                                                               |
 | |lab1-API_Developer_Portal|                                                                                   |
 +---------------------------------------------------------------------------------------------------------------+
-| 10. In the resulting window, enter **f5-xc-lab-app** in the **Please enter your domain** text field and click |
+| 3. In the resulting window, enter **f5-xc-lab-app** in the **Please enter your domain** text field and click  |
 |                                                                                                               |
-|     **Access portal.**                                                                                        |
+|    **Access portal.**                                                                                         |
 |                                                                                                               |
 | |lab1-Portal_Domain|                                                                                          |
 +---------------------------------------------------------------------------------------------------------------+
-| 11. In the resulting screen, click the **Authorize** link in the top right corner.                            |
+| 4. In the resulting screen, click the **Authorize** link in the top right corner.                             |
 |                                                                                                               |
 | |lab1-Portal_Authorize|                                                                                       |
 +---------------------------------------------------------------------------------------------------------------+
-| 12. In the form that appears, enter your API Token in the **Paste your API token** field and click            |
+| 5. In the form that appears, enter your API Token in the **Paste your API token** field and click             |
 |                                                                                                               |
-|     **Authorize**.                                                                                            |
+|    **Authorize**.                                                                                             |
 |                                                                                                               |
 | |lab1-Portal_Set_Token|                                                                                       |
 +---------------------------------------------------------------------------------------------------------------+
@@ -110,13 +110,13 @@ utilizing the Developer Portal.
 +===============================================================================================================+
 | 1. In the Dev Portal, scroll through the APIs on the left until you find **Namespace** and then click         |
 |                                                                                                               |
-|     **Namespace**.                                                                                            |
+|    **Namespace**.                                                                                             |
 |                                                                                                               |
 | |lab1-Portal_Namespace|                                                                                       |
 +---------------------------------------------------------------------------------------------------------------+
 | 2. Under the **default** section in schemes, scroll down through the **Namespace** APIs until you find        |
 |                                                                                                               |
-|     **GET /api/web/namespaces/{name}** and click the arrow to expand this API and then click **Try it out**.  |
+|    **GET /api/web/namespaces/{name}** and click the arrow to expand this API and then click **Try it out**.   |
 |                                                                                                               |
 | |lab1-Portal_Namespaces_Name|                                                                                 |
 +---------------------------------------------------------------------------------------------------------------+
