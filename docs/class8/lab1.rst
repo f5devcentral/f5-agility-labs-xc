@@ -179,15 +179,19 @@ utilizing the Developer Portal.
 |    }                                                                                                          |
 |                                                                                                               |
 | .. note::                                                                                                     |
-|    *Be sure to change the \<namespace\> value in the above JSON block to match your namespace.*               |
+|    *Be sure to change the <namespace> value in the above JSON block to match your namespace.*                 |
 |                                                                                                               |
 | |lab1-Portal_Firewall_Post_Execute|                                                                           |
++---------------------------------------------------------------------------------------------------------------+
+
 +---------------------------------------------------------------------------------------------------------------+
 | 4. Review the **Response body** data. If everything worked correctly you should have received a 200 response  |
 |                                                                                                               |                                                                                                              |
 |    code along with a response body.                                                                           |
 |                                                                                                               |
 | |lab1-Portal_Firewall_Post_JSON|                                                                              |
++---------------------------------------------------------------------------------------------------------------+
+
 +---------------------------------------------------------------------------------------------------------------+
 | 5. Open the Distribute Cloud Console tab in your web browser to validate the App Firewall was created.  You   |  
 |                                                                                                               |
@@ -196,6 +200,8 @@ utilizing the Developer Portal.
 |    the in the left\-hand navigation, and click **Web App & API Protection**.                                  |
 |                                                                                                               |
 | |lab1-Portal_Console_WebApp|                                                                                  |
++---------------------------------------------------------------------------------------------------------------+
+
 +---------------------------------------------------------------------------------------------------------------+
 | 6. From the left navigation sidebar click **Manage** and click **App Firewall**.  You should see an App       |
 |                                                                                                               |
