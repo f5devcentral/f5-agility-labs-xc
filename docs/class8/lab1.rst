@@ -183,6 +183,8 @@ utilizing the Developer Portal.
 |                                                                                                               |
 | |lab1-Portal_Firewall_Post_Execute|                                                                           |
 +---------------------------------------------------------------------------------------------------------------+
+
++---------------------------------------------------------------------------------------------------------------+
 | 4. Review the **Response body** data. If everything worked correctly you should have received a 200 response  |
 |                                                                                                               |                                                                                                              |
 |    code along with a response body.                                                                           |
@@ -198,8 +200,6 @@ utilizing the Developer Portal.
 |    the in the left-hand navigation, and click **Web App & API Protection**.                                   |
 |                                                                                                               |
 | |lab1-Portal_Console_WebApp|                                                                                  |
-+---------------------------------------------------------------------------------------------------------------+
-
 +---------------------------------------------------------------------------------------------------------------+
 | 6. From the left navigation sidebar click **Manage** and click **App Firewall**.  You should see an App       |
 |                                                                                                               |
