@@ -293,29 +293,29 @@ objects within Distributed Cloud.
 +---------------------------------------------------------------------------------------------------------------+
 | 3. In the resulting screen, expand the **Manage** menu and click **Load Balancers** and then select           |
 |                                                                                                               |
-|     **HTTP Load Balancers**.                                                                                  |
+|    **HTTP Load Balancers**.                                                                                   |
 |                                                                                                               |
 | |lab2-Terraform_Console_Manage_LBs|                                                                           |
 +---------------------------------------------------------------------------------------------------------------+
-| 13. From the HTTP Load Balancers page, locate the HTTP Load Balancer that you created via Terraform.  Click   |
+| 4. From the HTTP Load Balancers page, locate the HTTP Load Balancer that you created via Terraform.  Click    |
 |                                                                                                               |
-|     the **ellipsis** under **Actions** and select **Manage Configuration**.                                   |
+|    the **ellipsis** under **Actions** and select **Manage Configuration**.                                    |
 |                                                                                                               |
 | |lab2-Terraform_Console_Manage_LB_Manage|                                                                     |
 +---------------------------------------------------------------------------------------------------------------+
-| 14. From the resulting screen, select **Web Application Firewall** under the HTTP Load Balancer frame to jump |
+| 5. From the resulting screen, select **Web Application Firewall** under the HTTP Load Balancer frame to jump  |
 |                                                                                                               |
-|     to the **Web Application Firewall** configuration section.                                                |
+|    to the **Web Application Firewall** configuration section.                                                 |
 |                                                                                                               |
 | |lab2-Terraform_Console_Manage_LB_WebAppFw|                                                                   |
 +---------------------------------------------------------------------------------------------------------------+
-| 15. Notice that the Web Application Firewall is now Enabled and the policy you created using Terraform is     |
+| 6. Notice that the Web Application Firewall is now Enabled and the policy you created using Terraform is      |
 |                                                                                                               |
-|     applied.                                                                                                  |
+|    applied.                                                                                                   |
 |                                                                                                               |
 | |lab2-Terraform_Console_Manage_LB_WebAppFw_Enable|                                                            |
 +---------------------------------------------------------------------------------------------------------------+
-| 16. Click **Cancel and Exit** to close out of the HTTP Load Balancer configuration.                           |
+| 7. Click **Cancel and Exit** to close out of the HTTP Load Balancer configuration.                            |
 |                                                                                                               |
 | |lab2-Terraform_Console_Manage_LB_Cancel|                                                                     |
 +---------------------------------------------------------------------------------------------------------------+
