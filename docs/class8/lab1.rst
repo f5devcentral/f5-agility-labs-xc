@@ -151,9 +151,9 @@ utilizing the Developer Portal.
 +---------------------------------------------------------------------------------------------------------------+
 | 2. Under the **default** section in schemes, find the                                                         |
 |                                                                                                               |
-|     **POST /api/config/namespaces/{metadata.namespace}/app_firewalls** and click the arrow to expand this API |
+|     **POST \/api\/config\/namespaces\/{metadata.namespace}\/app_firewalls** and click the arrow to expand this|
 |                                                                                                               |
-|     and then click **Try it out**.                                                                            |
+|     API and then click **Try it out**.                                                                        |
 |                                                                                                               |
 | |lab1-Portal_Firewall_Post|                                                                                   |
 +---------------------------------------------------------------------------------------------------------------+
