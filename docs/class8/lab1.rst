@@ -189,6 +189,8 @@ utilizing the Developer Portal.
 |                                                                                                               |
 | |lab1-Portal_Firewall_Post_JSON|                                                                              |
 +---------------------------------------------------------------------------------------------------------------+
+
++---------------------------------------------------------------------------------------------------------------+
 | 5. Open the Distribute Cloud Console tab in your web browser to validate the App Firewall was created.  You   |  
 |                                                                                                               |
 |    still be in the **My Account** configuration window.  From here use the **Select Workspace dropdown in the |
