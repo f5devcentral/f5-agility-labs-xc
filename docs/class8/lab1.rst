@@ -204,7 +204,7 @@ utilizing the Developer Portal.
 | |lab1-Portal_Console_WebApp_Firewall|                                                                         |
 |                                                                                                               |
 | .. note::                                                                                                     |
-|    *The firewall you create in this section of the lab will be used in future labs.  If you don't see the*    |
+|    * The firewall you create in this section of the lab will be used in future labs.  If you don't see the*   |
 |    * App Firewall named non-standard please verify and repeat the steps in this section.  If you are still*   |
 |    * not seeing the non-standard App Firewall please ask a lab assistant for help.*                           |
 +---------------------------------------------------------------------------------------------------------------+
