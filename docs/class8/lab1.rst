@@ -50,17 +50,15 @@ utilizing the Developer Portal.
 |                                                                                                               |
 | |lab1-Add_Credentials|                                                                                        |
 +---------------------------------------------------------------------------------------------------------------+
-| 5. Fill in the resulting form with the following values                                                       |
+| 5. Fill in the resulting form with the following values and then click **Generate**                           |
 |                                                                                                               |
 |    * **Credential Name ID:**  *<namespace>-api-token*                                                         |
 |    * **Credential Type: Select:** *API Token*                                                                 |
 |    * **Expiry Date: Select:** *<date two days in the future of today's date>*                                 |
-+---------------------------------------------------------------------------------------------------------------+
-| 6. Click **Generate**.                                                                                        |
 |                                                                                                               |
 | |lab1-Generate_API_Token|                                                                                     |
 +---------------------------------------------------------------------------------------------------------------+
-| 7. On the form that appears, copy your API token and save it for use later.  Then click **Done**.             |
+| 6. On the form that appears, copy your API token and save it for use later.  Then click **Done**.             |
 |                                                                                                               |
 | |lab1-API_Token|                                                                                              |
 |                                                                                                               |
