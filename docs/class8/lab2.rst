@@ -1,329 +1,413 @@
-Lab 2: Operationalize Security Configurations
-=============================================
+Lab 2: Leveraging Terraform
+===========================
 
-The following lab tasks will guide you through using Postman to modify an existinga HTTP Load Balancer deployment
-to apply a Web Application Firewall and Service Policy configuration. This lab demonstrates the use of the PUT 
-method to modify an existing object in Distributed Cloud.  Students will then use the DELETE method to delete
-the objects created in Lab 1 and Lab 2 in prepration for Lab 3.
+The following lab tasks will guide you through using Terraform to deploy and secure a Web based application.  
+Students will start by creating an authentication certificate within Distributed Cloud. Terraform will be 
+configured to utilize the certificate for authenticating the API calls.  Next, a Tfvars file is created to 
+customize the deployment to match the student's environment. Terraform will then be used to deploy an HTTP 
+Health Check, Origin Pool, and HTTP Load Balancer. Students will then modify and apply the Terraform 
+configuration to add a Web Application Firewall to their existing HTTP Load Balancer. 
 
 **Expected Lab Time: 20 minutes**
 
-Task 1: Create & Attach WAAP Policy  
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-In this task, you will use Postman to create an Application Firewall policy with the default settings. Postman 
-will then be used to attach the Application Firewall to the HTTP Load Balancer created in Lab 1. 
-
-This lab will begin back in the Windows 10 client deployed as part of the UDF.
+Task 1: Deploy a Web Application with Terraform  
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In this task, you will create an API Certificate for Terraform to authneticate to the Distributed Cloud API.  Next, 
+you will create a Tfvars file to specify environment variables unique to your environment.  After the Tfvars file is 
+created, you will intialize Terraform and then deploy an HTTP Health Check, Origin Pool, and HTTP Load Balancer. 
 
 +---------------------------------------------------------------------------------------------------------------+
-| **Create an Application Firewall and Apply It to Your Application Load Balancer Via Postman**                 |
+| **Clone the appworld-f5xc-automation repo**                                                                   |
 +===============================================================================================================+
-| 1. Return to **Postman**. In the workspace pane, expand **Appworld - XC Automation** if it isn't already,     |
-|                                                                                                               |
-|    then click on **Create App Firewall**, and click on **Body** to review the raw JSON content.               |
-|                                                                                                               |
-| |lab2-Postman_AppFW_Body|                                                                                     |
+| 1. Access VSCode server that is part of your UDF deployment.                                                  |
 +---------------------------------------------------------------------------------------------------------------+
-| 2. Click **Send** to POST the JSON to the Distributed Cloud API.                                              |
+| 2. From the VS Code Menu bar select **Terminal** and then **New Terminal**.                                   |
 |                                                                                                               |
-| |lab2-Postman_AppFW_Send|                                                                                     |
+| |lab2-Clone_Terminal|                                                                                         |
 +---------------------------------------------------------------------------------------------------------------+
-| 3. Review the results in the **Body** section of Postman. You should see a 200 OK response code.              |
+| 3. In the resulting terminal window at the bottom of VSCode enter                                             |
 |                                                                                                               |
-| |lab2-Postman_AppFW_Results|                                                                                  |
+| .. code-block:: bash                                                                                          |
+|                                                                                                               |
+|    git clone https://github.com/f5devcentral/appworld-f5xc-automation                                         |
+|                                                                                                               |
+| |lab2-Clone_Repo|                                                                                             |
 +---------------------------------------------------------------------------------------------------------------+
-| 4. From **Postman**, in the workspace pane click on **Add App FW to HTTP Load Balancer**, click on **Body**,  |
-|                                                                                                               |
-|    and review the raw JSON content.                                                                           |
-|                                                                                                               |
-| |lab2-Postman_LB_AppFW_Body|                                                                                  |
+
 +---------------------------------------------------------------------------------------------------------------+
-| 5. Click **Send** to PUT the JSON to the Distributed Cloud API.                                               |
+| **Create API Certificate from the Distributed Cloud Console**                                                 |
++===============================================================================================================+
+| 1. If you don't still have the Distributed Cloud Console open in a browser, access the Console at:            |
 |                                                                                                               |
-| |lab2-Postman_LB_AppFW_Send|                                                                                  |
+|    Console <https://https://f5-xc-lab-app.console.ves.volterra.io/>                                           |
 +---------------------------------------------------------------------------------------------------------------+
-| 6. Review the results in the **Body** section of Postman. You should see a 200 OK response code.              |
+| 2. In the top right corner of the Distributed Cloud Console click the **User Icon** dropdown and select       |
 |                                                                                                               |
-| |lab2-Postman_LB_AppFW_Results|                                                                               |
+|    **Account Settings**.                                                                                      |
+|                                                                                                               |
+| |lab1-Account_Settings|                                                                                       |
++---------------------------------------------------------------------------------------------------------------+
+| 3. In the resulting screen click **Credentials** under the Peronal Management Heading on the left.            |
+|                                                                                                               |
+| |lab1-Credentials|                                                                                            |
++---------------------------------------------------------------------------------------------------------------+
+| 4. Click **Add Credentials**.                                                                                 |
+|                                                                                                               |
+| |lab1-Add_Credentials|                                                                                        |
++---------------------------------------------------------------------------------------------------------------+
+| 5. Fill in the resulting form with the following values:                                                      |
+|                                                                                                               |
+|    * **Credential Name ID:**  *<namespace>-api-cert*                                                          |
+|    * **Credential Type: Select:** *API Certificate*                                                           |
+|    * **Password:** *<some_password>*                                                                          |
+|    * **Confirm Password:** *<some_password>*                                                                  |
+|    * **Expiry Date: Select:** *<date two days in the future of today's date>*                                 |
+|                                                                                                               |
+| 6. Click **Download**.                                                                                       |
+|                                                                                                               |
+| |lab2-Terraform_Download_API_Cert|                                                                            |
 |                                                                                                               |
 | .. note::                                                                                                     |
-|    *Since you are modifying an existing object, you use the PUT method here instead of the POST method.*      |
+|    *Use a password that you will remember for the certificate, if you don't remember your API cert password,* |
+|    *you will need to generate a new API cert.*                                                                |
 +---------------------------------------------------------------------------------------------------------------+
 
 +---------------------------------------------------------------------------------------------------------------+
-| **Verify the Application Firewall Was Created and Applied**                                                   |
+| **Configure Terraform to Authenticate to Distributed Cloud**                                                  |
 +===============================================================================================================+
-| 7. From the Windows 10 client deployed as part of the UDF, open Chrome.                                       |
+| 1. Go back to the VS Code server in your browser and expand the **appworld-f5xc-automation** folder and then  |
 |                                                                                                               |
-| |lab1-Chrome|                                                                                                 |
+|    expand the **Terraform** folder.                                                                           |
+|                                                                                                               |
+| |lab2-Terraform_Auth_Folders|                                                                                 |
 +---------------------------------------------------------------------------------------------------------------+
-| 8. Click on the **XC Console** bookmark to be taken to the XC Console login.                                  |
+| 2. Right click the **Terraform** folder and select new folder.  Type **credentials** in to name the folder.   |
 |                                                                                                               |
-| |lab1-XC_Bookmark|                                                                                            |
+| |lab2-Terraform_Auth_Folders_New|                                                                             |
 +---------------------------------------------------------------------------------------------------------------+
-| 9. Enter your e-mail address in the **Email** form and password in the **Password** form and click **Sign**   |
-|                                                                                                               |
-|    **In**.                                                                                                    |
-|                                                                                                               |
-| |lab1-XC_Signin|                                                                                              |
+| 3. Copy the certificate you downloaded by dragging it to the **credentials** folder you just created.         |
 +---------------------------------------------------------------------------------------------------------------+
-| 10. Within the Distributed Cloud dashboard, select the **Multi-Cloud App Connect** tile.                      |
+| 4. Right click the certificate in VSCode and select **Rename**.  Change the name of the file to               |
 |                                                                                                               |
-| |lab1-XC_App_Connect|                                                                                         |
+|    **xc-api-cert.p12**                                                                                        |
+|                                                                                                               |
+| |lab2-Terraform_Auth_Folders_Cert|                                                                            |
 +---------------------------------------------------------------------------------------------------------------+
-| 11. In the resulting screen, expand the **Manage** menu and click **Load Balancers** and then select          |
+| 5. Set an environment variable for the API certificate password by running the following command in the       |
 |                                                                                                               |
-|     *HTTP Load Balancers**.                                                                                   |
+|    VSCode terminal window:                                                                                    |
 |                                                                                                               |
-| |lab1-XC_LB|                                                                                                  |
+| .. code-block:: bash                                                                                          |
+|                                                                                                               |
+|    export VES_P12_PASSWORD="<some_password>"                                                                  |
+|                                                                                                               |
+| |lab2-Terraform_Auth_Env|                                                                                     |
 +---------------------------------------------------------------------------------------------------------------+
-| 12. From the HTTP Load Balancers page, locate the HTTP Load Balancer that you created via Postman.  Click the |
-|                                                                                                               |
-|     **ellipsis** under **Actions** and select **Manage Configuration**.                                       |
-|                                                                                                               |
-| |lab1-XC_LB_Manage|                                                                                           |
+
 +---------------------------------------------------------------------------------------------------------------+
-| 13. From the resulting screen, review the HTTP Load Balancer configuration data and then click **JSON**.      |
+| **Create a tfvars File for Specifying Environment Specific Variables**                                        |
++===============================================================================================================+
+| 1. From the **EXPLORER** frame, right click the **Terraform** folder, and then select new file. Enter the     |
 |                                                                                                               |
-| |lab1-XC_LB_JSON|                                                                                             |
+|    name **terraform.tfvars** for the new file that is created and press enter.                                | 
+|                                                                                                               |
+| |lab2-Terraform_Tfvars|                                                                                       |
 +---------------------------------------------------------------------------------------------------------------+
-| 14. Review the resulting JSON data.  The **app_firewall** section matches JSON from the body section of       |
+| 2. This will open the **terraform.tfvars** file in the right frame of Visual Studio Code, enter the following |
 |                                                                                                               |
-|     Postman PUT that added the Web Application Firewall to the HTTP Load Balancer.                            |
+|    values into the file:                                                                                      |
 |                                                                                                               |
-| |lab2-XC_LB_AppFW_JSON_Data|                                                                                  |
+| .. code-block:: bash                                                                                          |
+|                                                                                                               |
+|    api_p12     = "./credentials/xc-api-cert.p12"                                                              |
+|    tenant_name = "f5-xc-lab-app"                                                                              |
+|    namespace   = "<namespace>"                                                                                |
+|                                                                                                               |
+| |lab2-Terraform_Tfvars_Values|                                                                                |
++---------------------------------------------------------------------------------------------------------------+
+
++---------------------------------------------------------------------------------------------------------------+
+| **Initialize, Plan, and Apply Your Terraform Code**                                                           |
++===============================================================================================================+
+| 1. In the Terminal at the bottom of Visual Studio Code, change directory into the Terraform folder.:          |
+|                                                                                                               |
+| .. code-block:: bash                                                                                          |
+|                                                                                                               |
+|    cd appworld-f5xc-automation/Terraform                                                                      |
+|                                                                                                               |
+| |lab2-Terraform_Deploy_Directory|                                                                             |
++---------------------------------------------------------------------------------------------------------------+
+| 2. In the Terminal at the bottom of Visual Studio Code, run the following command to initialize the Terraform |
+|                                                                                                               |
+|    environment:                                                                                               |
+|                                                                                                               |
+| .. code-block:: bash                                                                                          |
+|                                                                                                               |
+|    terraform init                                                                                             |
+|                                                                                                               |
+| |lab2-Terraform_Deploy_Init|                                                                                  |
++---------------------------------------------------------------------------------------------------------------+
+| 3. Review the Init Results. You should see a **Terraform has been successfully initialized!** message.        |
+|                                                                                                               |
+|    **DO NOT PROCEED AND ASK A LAB ASSISTANT FOR HELP IF YOU DON'T SEE THE SUCCESSFULLY INITIALIZED MESSAGE.** |
+|                                                                                                               |
+| |lab2-Terraform_Deploy_Init_Success|                                                                          |
++---------------------------------------------------------------------------------------------------------------+
+| 4. In the Terminal, enter the following command and press Enter:                                              |
+|                                                                                                               |
+| .. code-block:: bash                                                                                          |
+|                                                                                                               |
+|    terraform plan                                                                                             |
+|                                                                                                               |
+| |lab2-Terraform_Deploy_Plan|                                                                                  |
++---------------------------------------------------------------------------------------------------------------+
+| 5. Review the Plan results. This shows what Terraform is planning to create.                                  |
+|                                                                                                               |
+| |lab2-Terraform_Deploy_Plan_Results|                                                                          |
++---------------------------------------------------------------------------------------------------------------+
+| 6. In the Terminal, enter the following command and press Enter:                                              |
+|                                                                                                               |
+| .. code-block:: bash                                                                                          |
+|                                                                                                               |
+|    terraform apply                                                                                            |
+|                                                                                                               |
+| |lab2-Terraform_Deploy_Apply|                                                                                 |
++---------------------------------------------------------------------------------------------------------------+
+| 7. When prompted **Do you want to perform these actions?**, type **yes** and press Enter.                     |
+|                                                                                                               |
+| |lab2-Terraform_Deploy_Apply_Yes|                                                                             |
++---------------------------------------------------------------------------------------------------------------+
+| 8. Review the Apply results. This shows what Terraform created.                                               |
+|                                                                                                               |
+| |lab2-Terraform_Deploy_Apply_Results|                                                                         |
++---------------------------------------------------------------------------------------------------------------+
+
++---------------------------------------------------------------------------------------------------------------+
+| **Verify the Demo Shop App is Accessible Via a Web Browser**                                                  |
++===============================================================================================================+
+| 1. Open a new tab in your Chrome browser and enter the following URL                                          |
+|                                                                                                               |
+|    **http://<namespace>-demoshop.lab-app.f5demos.com**                                                        |
 |                                                                                                               |
 | .. note::                                                                                                     |
-|    *There may be slight variations in the JSON because you don't need to post default values when calling the*|
-|    *API. If you want to automate a task in Distributed Cloud, but are unsure of the required JSON, you can*   |
-|    *configure a test object via the GUI and then use this JSON tab to get the corresponding JSON config.*     |
+|    *This illustrates that you are able to configure the delivery of an application via the Distributed Cloud* |
+|    *API utilizing Terraform.*                                                                                 |
 +---------------------------------------------------------------------------------------------------------------+
-| 15. Click **Cancel and Exit** to close out the Load Balancer configuration.                                   |
+| |lab1-Demoshop|                                                                                               |
 +---------------------------------------------------------------------------------------------------------------+
 
-
-Task 2: Create & Attach a Service Policy  
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-In this task, you will use Postman to create a Service Policy that only allows specific contries to access your 
-application. Postman will then be used to attach the Service Policy to the HTTP Load Balancer created in Lab 1. 
+Task 2: Create & Attach WAF Policy 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In this task, you will modify your Terraform configuration to create and apply an Application Firewall policy with
+the default settings. Since Terraform tracks state, the apply command is used to modify the required existing 
+objects within Distributed Cloud.
 
 +---------------------------------------------------------------------------------------------------------------+
-| **Create a Service Policy and Apply It to Your Application Load Balancer Via Postman**                        |
+| **Edit Your Terraform Code to Create an Application Firewall and Add It to the Load Balancer**                |
 +===============================================================================================================+
-| 1. Return to **Postman**, in the workspace pane expand **Appworld - XC Automation** if it isn't already,      |
+| 1. From the Visual Studio Code Explorer frame, click **main.tf**, to open the Terraform configuration.        |
 |                                                                                                               |
-|    click on **Create Service Policy**, click on **Body**, and review the raw JSON content.                    |
-|                                                                                                               |
-| |lab2-Postman_SP_Body|                                                                                        |
+| |lab2-Terraform_AppFw|                                                                                        |
 +---------------------------------------------------------------------------------------------------------------+
-| 2. Click **Send** to POST the JSON to the Distributed Cloud API.                                              |
+| 2. Scroll down to the bottom of the configuration and paste in the following lines to create the Web          |
 |                                                                                                               |
-| |lab2-Postman_SP_Send|                                                                                        |
+|    Application Firewall policy.                                                                               |
+|                                                                                                               |
+| .. code-block:: bash                                                                                          |
+|                                                                                                               |
+|    # Create WAF Policy                                                                                        |
+|    resource "volterra_app_firewall" "waf" {                                                                   |
+|      name = "${var.namespace}-appfw"                                                                          |
+|      namespace = var.namespace                                                                                |
+|      allow_all_response_codes = true                                                                          |
+|      default_anonymization = true                                                                             |
+|      use_default_blocking_page = true                                                                         |
+|      default_bot_setting = true                                                                               |
+|      default_detection_settings = true                                                                        |
+|      blocking = true                                                                                          |
+|    }                                                                                                          |
+|                                                                                                               |
+| |lab2-Terraform_AppFw_Create|                                                                                 |
 +---------------------------------------------------------------------------------------------------------------+
-| 3. Review the results in the **Body** section of Postman. You should see a 200 OK response code.              |
+| 3. Locate the **Create Load Balancer** configuration within **main.tf** and replace the **disable_waf = true**|
 |                                                                                                               |
-| |lab2-Postman_SP_Results|                                                                                     |
-+---------------------------------------------------------------------------------------------------------------+
-
-+---------------------------------------------------------------------------------------------------------------+
-| 4. From **Postman**, in the workspace pane click on **Add Service Policy to HTTP Load Balancer**, click on    |
+|    line with the following configuration:                                                                     |
 |                                                                                                               |
-|    **Body**, and review the raw JSON content.                                                                 |
+| .. code-block:: bash                                                                                          |
 |                                                                                                               |
-| |lab2-Postman_LB_SP_Body|                                                                                     |
-+---------------------------------------------------------------------------------------------------------------+
-| 5. Click **Send** to PUT the JSON to the Distributed Cloud API.                                               |
+|    # WAF Config                                                                                               |
+|    app_firewall {                                                                                             |
+|      name = volterra_app_firewall.waf.name                                                                    |
+|      namespace = var.namespace                                                                                |
+|    }                                                                                                          |
 |                                                                                                               |
-| |lab2-Postman_LB_SP_Send|                                                                                     |
-+---------------------------------------------------------------------------------------------------------------+
-| 6. Review the results in the **Body** section of Postman. You should see a 200 OK response code.              |
-|                                                                                                               |
-| |lab2-Postman_LB_SP_Results|                                                                                  |
+| |lab2-Terraform_AppFw_LB|                                                                                     |
 |                                                                                                               |
 | .. note::                                                                                                     |
-|    *Since you are modifying an existing object, you use the PUT method here instead of the POST method.*      |
+|    *The WAF Config should be indented two spaces under the Load Balancer configuration to maintain nesting*   |
+|    *style conventions.*                                                                                       |
 +---------------------------------------------------------------------------------------------------------------+
 
 +---------------------------------------------------------------------------------------------------------------+
-| **Verify the Service Policy Was Created and Applied**                                                         |
+| **Plan and Apply Your New Terraform Code to Create an Application Firewall and Associate It to Your LB**      |
 +===============================================================================================================+
-| 7. From the Windows 10 client deployed as part of the UDF, open Chrome.                                       |
+| 1. In the Terminal, enter the following command and press Enter:                                              |
 |                                                                                                               |
-| |lab1-Chrome|                                                                                                 |
+| .. code-block:: bash                                                                                          |
+|                                                                                                               |
+|    terraform plan                                                                                             |
+|                                                                                                               |
+| |lab2-Terraform_AppFw_Plan|                                                                                   |
 +---------------------------------------------------------------------------------------------------------------+
-| 8. Click on the **XC Console** bookmark to be taken to the XC Console login.                                  |
+| 2. Review the Plan results. This shows what Terraform is planning to create.                                  |
 |                                                                                                               |
-| |lab1-XC_Bookmark|                                                                                            |
+| |lab2-Terraform_AppFw_Plan_Results|                                                                           |
 +---------------------------------------------------------------------------------------------------------------+
-| 9. Enter your e-mail address in the **Email** form and password in the **Password** form and click **Sign**   |
+| 3. In the Terminal, enter the following command and press Enter:                                              |
 |                                                                                                               |
-|    **In**.                                                                                                    |
+| .. code-block:: bash                                                                                          |
 |                                                                                                               |
-| |lab1-XC_Signin|                                                                                              |
+|    terraform apply                                                                                            |
+|                                                                                                               |
+| |lab2-Terraform_AppFw_Apply|                                                                                  |
 +---------------------------------------------------------------------------------------------------------------+
-| 10. Within the Distributed Cloud dashboard select the **Multi-Cloud App Connect** tile.                       |
+| 4. When prompted **Do you want to perform these actions?**, type **yes** and press Enter.                     |
 |                                                                                                               |
-| |lab1-XC_App_Connect|                                                                                         |
+| |lab2-Terraform_AppFw_Apply_Yes|                                                                              |
 +---------------------------------------------------------------------------------------------------------------+
-| 11. In the resulting screen, expand the **Manage** menu and click **Load Balancers** and then select          |
+| 5. Review the Apply results. This shows what Terraform created.                                               |
 |                                                                                                               |
-|     *HTTP Load Balancers**.                                                                                   |
-|                                                                                                               |
-| |lab1-XC_LB|                                                                                                  |
-+---------------------------------------------------------------------------------------------------------------+
-| 12. From the HTTP Load Balancers page, locate the HTTP Load Balancer that you created via Postman.  Click the |
-|                                                                                                               |
-|     **ellipsis** under **Actions** and select **Manage Configuration**.                                       |
-|                                                                                                               |
-| |lab1-XC_LB_Manage|                                                                                           |
-+---------------------------------------------------------------------------------------------------------------+
-| 13. From the resulting screen, review the HTTP Load Balancer configuration data and then click **JSON**.      |
-|                                                                                                               |
-| |lab1-XC_LB_JSON|                                                                                             |
-+---------------------------------------------------------------------------------------------------------------+
-| 14. Review the resulting JSON data.  The **app_firewall** section matches JSON from the body section of       |
-|                                                                                                               |
-|     Postman PUT that added the Web Application Firewall to the HTTP Load Balancer.                            |
-|                                                                                                               |
-| |lab2-XC_LB_SP_JSON_Data|                                                                                     |
-|                                                                                                               |
-| .. note::                                                                                                     |
-|    *There may be slight variations in the JSON because you don't need to post default values when calling the*|
-|    *API. If you want to automate a task in Distributed Cloud, but are unsure of the required JSON, you can*   |
-|    *configure a test object via the GUI and then use this JSON tab to get the corresponding JSON config.*     |
-+---------------------------------------------------------------------------------------------------------------+
-| 15. Click **Cancel and Exit** to close out the Load Balancer configuration.                                   |
+| |lab2-Terraform_AppFw_Apply_Results|                                                                          |
 +---------------------------------------------------------------------------------------------------------------+
 
-Task 3: Delete the Objects Created with Postman
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-In this task you, will use Postman to delete the HTTP Load Balancer, Service Policy, App Firewall, Origin Pool, 
-and Health Check.  This demonstrates how to use Postman to delete objects when they are no longer needed, and
-cleans up the environment in prepation for Lab3.
-
 +---------------------------------------------------------------------------------------------------------------+
-| **Delete Distributed Cloud Objects Via Postman**                                                              |
+| **Verify the Application Firewall was Created and Applied Within the Distributed Cloud Console**              |
 +===============================================================================================================+
-| 1. Return to **Postman**, in the workspace pane expand **Appworld - XC Automation** if it isn't already,      |
-|                                                                                                               |
-|    click on **Delete HTTP Load Balancer**, click on **Send**.                                                 |
-|                                                                                                               |
-| |lab2-Postman_LB_Delete_Send|                                                                                 |
+| 1. Switch back to your Browser that is connected to the Distributed Cloud Console.                            |
 +---------------------------------------------------------------------------------------------------------------+
-| 2. Review the results in the **Body** section of Postman. You should see a 200 OK response code.              |
+| 2. If you are not already in Web App & API Protection, select **Web App & API Protection** from the **Select**|
 |                                                                                                               |
-| |lab2-Postman_LB_Delete_Results|                                                                              |
+|    **Workspace** drowpown.                                                                                    |
+|                                                                                                               |
+| |lab2-Terraform_Console_Web|                                                                                  |
 +---------------------------------------------------------------------------------------------------------------+
-| 3. From **Postman**, in the workspace pane click on **Delete Service Policy** and click **Send**.             |
+| 3. In the resulting screen, expand the **Manage** menu and click **Load Balancers** and then select           |
 |                                                                                                               |
-| |lab2-Postman_SP_Delete_Send|                                                                                 |
+|    **HTTP Load Balancers**.                                                                                   |
+|                                                                                                               |
+| |lab2-Terraform_Console_Manage_LBs|                                                                           |
 +---------------------------------------------------------------------------------------------------------------+
-| 4. Review the results in the **Body** section of Postman. You should see a 200 OK response code.              |
+| 4. From the HTTP Load Balancers page, locate the HTTP Load Balancer that you created via Terraform.  Click    |
 |                                                                                                               |
-| |lab2-Postman_SP_Delete_Results|                                                                              |
+|    the **ellipsis** under **Actions** and select **Manage Configuration**.                                    |
+|                                                                                                               |
+| |lab2-Terraform_Console_Manage_LB_Manage|                                                                     |
 +---------------------------------------------------------------------------------------------------------------+
-| 5. From **Postman**, in the workspace pane click on **Delete App Firewall** and click **Send**.               |
+| 5. From the resulting screen, select **Web Application Firewall** under the HTTP Load Balancer frame to jump  |
 |                                                                                                               |
-| |lab2-Postman_AppFW_Delete_Send|                                                                              |
+|    to the **Web Application Firewall** configuration section.                                                 |
+|                                                                                                               |
+| |lab2-Terraform_Console_Manage_LB_WebAppFw|                                                                   |
 +---------------------------------------------------------------------------------------------------------------+
-| 6. Review the results in the **Body** section of Postman. You should see a 200 OK response code.              |
+| 6. Notice that the Web Application Firewall is now Enabled and the policy you created using Terraform is      |
 |                                                                                                               |
-| |lab2-Postman_AppFW_Delete_Results|                                                                           |
+|    applied.                                                                                                   |
+|                                                                                                               |
+| |lab2-Terraform_Console_Manage_LB_WebAppFw_Enable|                                                            |
 +---------------------------------------------------------------------------------------------------------------+
-| 7. From **Postman**, in the workspace pane click on **Delete Origin Pool** and click **Send**.                |
+| 7. Click **Cancel and Exit** to close out of the HTTP Load Balancer configuration.                            |
 |                                                                                                               |
-| |lab2-Postman_Pool_Delete_Send|                                                                               |
-+---------------------------------------------------------------------------------------------------------------+
-| 8. Review the results in the **Body** section of Postman. You should see a 200 OK response code.              |
-|                                                                                                               |
-| |lab2-Postman_Pool_Delete_Results|                                                                            |
-+---------------------------------------------------------------------------------------------------------------+
-| 9. From **Postman**, in the workspace pane click on **Delete Health Check** and click **Send**.               |
-|                                                                                                               |
-| |lab2-Postman_HC_Delete_Send|                                                                                 |
-+---------------------------------------------------------------------------------------------------------------+
-| 10. Review the results in the **Body** section of Postman. You should see a 200 OK response code.             |
-|                                                                                                               |
-| |lab2-Postman_HC_Delete_Results|                                                                              |
+| |lab2-Terraform_Console_Manage_LB_Cancel|                                                                     |
 +---------------------------------------------------------------------------------------------------------------+
 
 +---------------------------------------------------------------------------------------------------------------+
 | **End of Lab 2**                                                                                              |
 +===============================================================================================================+
-| This concludes Lab 2. In this lab, you learned how to use Postman to create a Web Application Firewall        |
+| This concludes Lab 2. In this lab, you learned how to setup Terraform to authenticate to to Distributed Cloud |
 |                                                                                                               |
-| policy and Service Policy. You then used Postman to modify the HTTP Load Balancer you created in Lab 1 and    |
+| utilizing an API Certificate. You then created a Tfvars file to customize the deployment to match your        |
 |                                                                                                               |
-| apply the Web Application Firewall and Service policy. Lastly, you used Postman to delete all of the          |
+| environment. After that, you used Terraform to deploy an HTTP Health Check, Origin Pool, and HTTP Load        |
 |                                                                                                               |
-| configuration from Lab 1 and Lab 2 in preparation for Lab 3. A brief presentation will be shared prior to the |
+| Balancer. The Terraform configuration was then modified to create a Web Application Firewall policy and apply |
 |                                                                                                               |
-| beginning of Lab 3.                                                                                           |
-|                                                                                                               |
+| it to the HTTP Load Balancer.                                                                                 |
++---------------------------------------------------------------------------------------------------------------+
 | |labend|                                                                                                      |
 +---------------------------------------------------------------------------------------------------------------+
 
-.. |lab2-Postman_AppFW_Body| image:: _static/lab2-Postman_AppFW_Body.png
+.. |lab2-Clone_Terminal| image:: _static/lab2-Clone_Terminal.png
    :width: 800px
-.. |lab2-Postman_AppFW_Send| image:: _static/lab2-Postman_AppFW_Send.png
+.. |lab2-Clone_Repo| image:: _static/lab2-Clone_Repo.png
    :width: 800px
-.. |lab2-Postman_AppFW_Results| image:: _static/lab2-Postman_AppFW_Results.png
+.. |lab1-Account_Settings| image:: _static/lab1-Account_Settings.png
    :width: 800px
-.. |lab2-Postman_LB_AppFW_Body| image:: _static/lab2-Postman_LB_AppFW_Body.png
+.. |lab1-Credentials| image:: _static/lab1-Credentials.png
    :width: 800px
-.. |lab2-Postman_LB_AppFW_Send| image:: _static/lab2-Postman_LB_AppFW_Send.png
+.. |lab1-Add_Credentials| image:: _static/lab1-Add_Credentials.png
    :width: 800px
-.. |lab2-Postman_LB_AppFW_Results| image:: _static/lab2-Postman_LB_AppFW_Results.png
+.. |lab2-Terraform_Download_API_Cert| image:: _static/lab2-Terraform_Download_API_Cert.png
    :width: 800px
-.. |lab1-Chrome| image:: _static/lab1-Chrome.png
+.. |lab2-Terraform_Auth_Folders| image:: _static/lab2-Terraform_Auth_Folders.png
    :width: 800px
-.. |lab1-XC_Bookmark| image:: _static/lab1-XC_Bookmark.png
+.. |lab2-Terraform_Auth_Folders_New| image:: _static/lab2-Terraform_Auth_Folders_New.png
    :width: 800px
-.. |lab1-XC_Signin| image:: _static/lab1-XC_Signin.png
+.. |lab2-Terraform_Auth_Folders_Cert| image:: _static/lab2-Terraform_Auth_Folders_Cert.png
    :width: 800px
-.. |lab1-XC_App_Connect| image:: _static/lab1-XC_App_Connect.png
+.. |lab2-Terraform_Auth_Env| image:: _static/lab2-Terraform_Auth_Env.png
    :width: 800px
-.. |lab1-XC_LB| image:: _static/lab1-XC_LB.png
+.. |lab2-Terraform_Tfvars| image:: _static/lab2-Terraform_Tfvars.png
    :width: 800px
-.. |lab1-XC_LB_Manage| image:: _static/lab1-XC_LB_Manage.png
+.. |lab2-Terraform_Tfvars_Values| image:: _static/lab2-Terraform_Tfvars_Values.png
    :width: 800px
-.. |lab1-XC_LB_JSON| image:: _static/lab1-XC_LB_JSON.png
+.. |lab2-Terraform_Deploy_Directory| image:: _static/lab2-Terraform_Deploy_Directory.png
    :width: 800px
-.. |lab2-XC_LB_AppFW_JSON_Data| image:: _static/lab2-XC_LB_AppFW_JSON_Data.png
+.. |lab2-Terraform_Deploy_Init| image:: _static/lab2-Terraform_Deploy_Init.png
    :width: 800px
-.. |lab2-Postman_SP_Body| image:: _static/lab2-Postman_SP_Body.png
+.. |lab2-Terraform_Deploy_Init_Success| image:: _static/lab2-Terraform_Deploy_Init_Success.png
    :width: 800px
-.. |lab2-Postman_SP_Send| image:: _static/lab2-Postman_SP_Send.png
+.. |lab2-Terraform_Deploy_Plan| image:: _static/lab2-Terraform_Deploy_Plan.png
    :width: 800px
-.. |lab2-Postman_SP_Results| image:: _static/lab2-Postman_SP_Results.png
+.. |lab2-Terraform_Deploy_Plan_Results| image:: _static/lab2-Terraform_Deploy_Plan_Results.png
    :width: 800px
-.. |lab2-Postman_LB_SP_Body| image:: _static/lab2-Postman_LB_SP_Body.png
+.. |lab2-Terraform_Deploy_Apply| image:: _static/lab2-Terraform_Deploy_Apply.png
    :width: 800px
-.. |lab2-Postman_LB_SP_Send| image:: _static/lab2-Postman_LB_SP_Send.png
+.. |lab2-Terraform_Deploy_Apply_Yes| image:: _static/lab2-Terraform_Deploy_Apply_Yes.png
    :width: 800px
-.. |lab2-Postman_LB_SP_Results| image:: _static/lab2-Postman_LB_SP_Results.png
+.. |lab2-Terraform_Deploy_Apply_Results| image:: _static/lab2-Terraform_Deploy_Apply_Results.png
    :width: 800px
-.. |lab2-XC_LB_SP_JSON_Data| image:: _static/lab2-XC_LB_SP_JSON_Data.png
+.. |lab1-Demoshop| image:: _static/lab1-Demoshop.png
    :width: 800px
-.. |lab2-Postman_LB_Delete_Send| image:: _static/lab2-Postman_LB_Delete_Send.png
+.. |lab2-Terraform_AppFw| image:: _static/lab2-Terraform_AppFw.png
    :width: 800px
-.. |lab2-Postman_LB_Delete_Results| image:: _static/lab2-Postman_LB_Delete_Results.png
+.. |lab2-Terraform_AppFw_Create| image:: _static/lab2-Terraform_AppFw_Create.png
    :width: 800px
-.. |lab2-Postman_SP_Delete_Send| image:: _static/lab2-Postman_SP_Delete_Send.png
+.. |lab2-Terraform_AppFw_LB| image:: _static/lab2-Terraform_AppFw_LB.png
+   :width: 800px   
+.. |lab2-Terraform_AppFw_Plan| image:: _static/lab2-Terraform_AppFw_Plan.png
    :width: 800px
-.. |lab2-Postman_SP_Delete_Results| image:: _static/lab2-Postman_SP_Delete_Results.png
+.. |lab2-Terraform_AppFw_Plan_Results| image:: _static/lab2-Terraform_AppFw_Plan_Results.png
    :width: 800px
-.. |lab2-Postman_AppFW_Delete_Send| image:: _static/lab2-Postman_AppFW_Delete_Send.png
+.. |lab2-Terraform_AppFw_Apply| image:: _static/lab2-Terraform_AppFw_Apply.png
    :width: 800px
-.. |lab2-Postman_AppFW_Delete_Results| image:: _static/lab2-Postman_AppFW_Delete_Results.png
+.. |lab2-Terraform_AppFw_Apply_Yes| image:: _static/lab2-Terraform_AppFw_Apply_Yes.png
    :width: 800px
-.. |lab2-Postman_Pool_Delete_Send| image:: _static/lab2-Postman_Pool_Delete_Send.png
+.. |lab2-Terraform_AppFw_Apply_Results| image:: _static/lab2-Terraform_AppFw_Apply_Results.png
    :width: 800px
-.. |lab2-Postman_Pool_Delete_Results| image:: _static/lab2-Postman_Pool_Delete_Results.png
+.. |lab2-Terraform_Console_Web| image:: _static/lab2-Terraform_Console_Web.png
    :width: 800px
-.. |lab2-Postman_HC_Delete_Send| image:: _static/lab2-Postman_HC_Delete_Send.png
+.. |lab2-Terraform_Console_Manage_LBs| image:: _static/lab2-Terraform_Console_Manage_LBs.png
    :width: 800px
-.. |lab2-Postman_HC_Delete_Results| image:: _static/lab2-Postman_HC_Delete_Results.png
+.. |lab2-Terraform_Console_Manage_LB_Manage| image:: _static/lab2-Terraform_Console_Manage_LB_Manage.png
    :width: 800px
+.. |lab2-Terraform_Console_Manage_LB_WebAppFw| image:: _static/lab2-Terraform_Console_Manage_LB_WebAppFw.png
+   :width: 800px
+.. |lab2-Terraform_Console_Manage_LB_WebAppFw_Enable| image:: _static/lab2-Terraform_Console_Manage_LB_WebAppFw_Enable.png
+   :width: 800px
+.. |lab2-Terraform_Console_Manage_LB_Cancel| image:: _static/lab2-Terraform_Console_Manage_LB_Cancel.png
+   :width: 800px
+
+
+
 .. |labend| image:: _static/labend.png
    :width: 800px

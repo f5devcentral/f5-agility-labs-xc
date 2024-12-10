@@ -16,6 +16,8 @@ all lab attendees.
 * **Delegated Domain:** *.lab-sec.f5demos.com*
 * **F5 Distributed Cloud Tenant:** https://f5-xc-lab-sec.console.ves.volterra.io
 
+|lab000|
+
 Following the tasks in the prior **Introduction** Section, you should now be able to access the
 F5 Distributed Cloud Console, having set your Work Domain Roles and Skill levels. If you have
 not done so already, please login to your tenant for this lab and proceed to Task 1.
@@ -326,9 +328,9 @@ Monitoring dashboard, and gather security event details.
 +---------------------------------------------------------------------------------------------------------------+
 
 +---------------------------------------------------------------------------------------------------------------+
-| 7. From the **Dashboard** view, using the horizontal navigation, click **Security Analytics**.                |
+| 6. From the **Dashboard** view, using the horizontal navigation, click **Security Analytics**.                |
 |                                                                                                               |
-| 8. Note the **Chart** shows a graphical representation of all of the response codes for the selected time     |
+| 7. Note the **Chart** shows a graphical representation of all of the response codes for the selected time     |
 |                                                                                                               |
 |    frame.                                                                                                     |
 |                                                                                                               |
@@ -341,15 +343,15 @@ Monitoring dashboard, and gather security event details.
 +---------------------------------------------------------------------------------------------------------------+
 
 +---------------------------------------------------------------------------------------------------------------+
-| 9. Click the **Hide Chart** link to free up space in the browser window.                                      |
+| 8. Click the **Hide Chart** link to free up space in the browser window.                                      |
 |                                                                                                               |
-| 10. Expand your latest security event as shown.                                                               |
+| 9. Expand your latest security event as shown.                                                               |
 |                                                                                                               |
-| 11. Note the summary detail provided in the **Information** link.  The **req_id** which is synonymous with    |
+| 10. Note the summary detail provided in the **Information** link.  The **req_id** which is synonymous with    |
 |                                                                                                               |
 |    **Support ID** (filterable) from the block page.                                                           |
 |                                                                                                               |
-| 12. Scroll to the bottom of the information screen to see specific signatures detected and actions taken      |
+| 11. Scroll to the bottom of the information screen to see specific signatures detected and actions taken      |
 |                                                                                                               |
 |     during the security event.                                                                                |
 |                                                                                                               |
@@ -380,6 +382,8 @@ Monitoring dashboard, and gather security event details.
 | |labend|                                                                                                      |
 +---------------------------------------------------------------------------------------------------------------+
 
+.. |lab000| image:: _static/lab1-000.png
+   :width: 800px
 .. |lab001| image:: _static/lab1-001.png
    :width: 800px
 .. |lab002| image:: _static/lab1-002.png
