@@ -159,9 +159,8 @@ Copy the UID of the the **student-ce-site** token and paste it somewhere you can
 **Setting up the Customer Edge**
 ----------------------------------
 
-There are two approaches for setting up your Customer Edge deployment both will be reviewed in the sections that follow.  Select the method designated by your lab team instructions
 
-**Option 1: CLI Site Setup**
+**CLI Site Setup**
 ----------------------
  
 In your browser, you should have a tab open to the UDF course. Under Systems -> Client, click on **Access >> Web Shell**
@@ -226,115 +225,6 @@ The response values will then be summarized. Confirm they are correct and type *
 
 We will now go accept the Customer Edge registration in Distributed Cloud console. Proceed to **Registering the Customer Edge**.
 
-**Option 2: Site UI Site Setup**
-----------------------
-
-In your browser, you should have a tab open to the UDF course. Under the F5 Distributed Cloud CE, click on **Access >> Site UI**
-
-|
-
-.. image:: ../images/udf-ce.png 
-
-|
-
-This should prompt you for authentication and then open the Customer Edge Node Admin portal.
-
-Type in the default username/password:
-
-==============================  =====
-Variable                        Value
-==============================  =====
-Default Username:                **admin**
-Default Password:                **Volterra123**
-==============================  =====
-
-|
-
-.. image:: ../images/signin.png
-
-|
-
-You will be prompted to change the password at the initial log in. **Make a mental note of these credentials as you will need them several times throughout the labs today.** 
-
-|
-
-.. image:: ../images/changepwd.png
-
-|
-
-After you set the password, the services will need to restart and then the Customer Edge node will present the Dashboard
-
-.. Note:: You may have to Refresh your browser and log in again. 
-
-|
-
-.. image:: ../images/restart.png 
-
-|
-
-Once all services are up and running you should see the Dashboard which will have various colors and state as shown:
-
-|
-
-.. image:: ../images/dash.png 
-
-|
-
-If you mouse-over each of the icons, the specific services will report their status in addition to the status reflected by the icon.
-
-Mouse over each of the components under VP Manager Status and note the components and their condition.  You can also click on **“Show full status”** and see a JSON report that is used to present the VP Manager Status in detail.
-
-You can also scroll down and see hardware details that describe the platform that the Customer Edge is installed on. 
-
-
-Click the blue **Configure Now** button.
-
-|
-
-.. image:: ../images/ceconf.png 
-
-|
-
-This will take you to the **Customer Edge Device Configuration** page.
-
-Set the following parameters and leave everything else as default:
-
-==============================  =====
-Variable                        Value
-==============================  =====
-Token                           Insert the Site Token UID you collected earlier
-Cluster Name                    Insert your unique namespace <verb-animal>
-Hostname                        Insert your unique namespace <verb-animal> 
-Latitude                        33.812
-Longitude                       -117.91
-==============================  =====
-
-The end result should look like the image below, and then click **Save Configuration.**
-
-|
-
-.. image:: ../images/devconf.png 
-
-|
-
-After you save the configuration, you will be taken back to the Dashboard, notice the status change to **“Approval”** after a few moments. (May need to refresh page)
-
-|
-
-.. image:: ../images/approval.png 
-
-|
-
-**If you encounter it, you can safely ignore this benign timing error due to the UDF lab environment.**
-
-|
-
-.. image:: ../images/error.png 
-
-|
-
-We will now go accept the Customer Edge registration in Distributed Cloud console. Proceed to **Registering the Customer Edge**.
-
 
 **Registering the Customer Edge**
 ----------------------------------
@@ -391,8 +281,8 @@ Scroll down to Site to Site Tunnel Type and click on the drop down arrow
 |
 
 This setting determines the VPN connectivity protocols used between the Customer Edge and the Regional Edges. The XC Node will automatically bring up redundant tunnels to two different RE's. 
-These tunnels are self-healing and can fallback when using the configuration setting of IPSEC or SSL.
-Select **IPSEC or SSL** from the list.  
+These tunnels are self-healing and can fallback when using the configuration setting of IPSEC and SSL.
+Select **IPSEC and SSL** from the list.  
 
 |
 

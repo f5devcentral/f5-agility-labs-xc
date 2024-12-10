@@ -377,7 +377,7 @@ Next, push the keyboard "up arrow " and run the same command but targeted at por
 Enhanced Firewall Policy
 ---------------------------------
 
-You will now configure the F5 Distributed Cloud Enhanced Firewall to provide network security between these sites. Custom Enhanced Firewall policies make it possible to define intent-based rules, such as allowing only traffic to/from sites wit a specific label, like "ves.io/fleet in 'student-fleet'"" in your deployed site above. Additional criteria for rules can include tags belonging to resources that live in public clouds, such as the AWS VPC name or any other discoverable attribute.
+You will now configure the F5 Distributed Cloud Enhanced Firewall to provide network security between these sites. Custom Enhanced Firewall policies make it possible to define intent-based rules, such as allowing only traffic to/from sites with a specific label, like "ves.io/fleet in 'student-fleet'"" in your deployed site above. Additional criteria for rules can include tags belonging to resources that live in public clouds, such as the AWS VPC name or any other discoverable attribute.
 
 .. Note:: Due to lab architecture, we will only be able to configure the policies but not apply. We will show you the final step to apply your policy for reference, but you will not actually be able to apply or test.  
 
