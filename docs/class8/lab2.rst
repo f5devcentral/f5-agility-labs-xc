@@ -105,7 +105,7 @@ created, you will intialize Terraform and then deploy an HTTP Health Check, Orig
 |                                                                                                               |
 | .. note::                                                                                                     |
 |    *Replace <some_password> with the password you entered when creating the API certificate.  You need to*    |
-|    *the password in "".  So if your password is password export VES_P12_PASSWORD="password".*                 |
+|    *wrap the password in "".  So if your password is password type: export VES_P12_PASSWORD="password"*       |
 +---------------------------------------------------------------------------------------------------------------+
 
 +---------------------------------------------------------------------------------------------------------------+
