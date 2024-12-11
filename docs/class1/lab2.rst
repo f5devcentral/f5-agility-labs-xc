@@ -50,46 +50,50 @@ Task 1. Create Private Origin Pool
 Previously we created an origin pool that was accessible via the Public Internet.
 The next lab exercise will create an origin pool that will provide internal resources discovered with local DNS by the AppMesh node that is deployed in our lab AWS environment. 
 
-+------------------------------------------------------------------------------------------------------------+
-| We will first create an Origin Pool that refers to the "Private Endpoint" site in our lab environment.     |
-|                                                                                                            |
-| 1. Start in F5 Distributed Cloud Console and switch back to the **Multi-Cloud App Connect** context.       |
-|                                                                                                            |
-| 2. Navigate the menu to go to **"Manage"->"Load Balancers"->"Origin Pools"**. Click on *Add Origin Pool*.  |
-|                                                                                                            |
-| 3. Enter the following variables:                                                                          |
-|                                                                                                            |
-|                                                                                                            |
-| 4. Click on "Add Item" under the section "Origin Servers"                                                  |
-|																											                            |
-|   Enter the following variables:                                                                           |
-|																											                            |
-|   ================================= =====																	                |
-|   Variable                          Value																	                |
-|   ================================= =====																	                |
-|   Select Type of Origin Server      DNS Name of Origin Server on given Sites								       |
-|   DNS Name                          private.lab.f5demos.internal											          |
-|   Site                              system/student-awsnet													             |
-|   ================================= =====																	                |
-| 																											                            |  
-+------------------------------------------------------------------------------------------------------------+ 																										                               |    
-| |.. image:: _static/lab3-appworld2025-task1-originserver.png|												          |
-+------------------------------------------------------------------------------------------------------------+																											                            |
-|																											                            |
-|  Click on **"Apply"** to return to the previous screen.													             |
-|																											                            |
-| 5. Below the "Origin Servers" section fill in the Origin Server Port information							       |
-|																										                               |
-|   ================================= =====																 	                |													
-|   Variable                          Value																	                |
-|   ================================= =====																	                |
-|    Port                              8080																	                |
-|   ================================= =====																	                |
-|																											                            |
-|																											                            |
-| 6. Click **Save and Exit**.  																				                   |      
-+------------------------------------------------------------------------------------------------------------+   
+We will first create an Origin Pool that refers to the "Private Endpoint" site in our lab environment.
 
++-----------------------------------------------------------------------------------------------------------+
+| 1. Start in F5 Distributed Cloud Console and switch back to the **Multi-Cloud App Connect** context.      |
+|                                                                                                           |
+| 2. Navigate the menu to go to **"Manage"->"Load Balancers"->"Origin Pools"**. Click on *Add Origin Pool*. |
++-----------------------------------------------------------------------------------------------------------+
+2. Enter the following variables:
+
+   ================================= =====
+   Variable                          Value
+   ================================= =====
+   Name                               [NAMESPACE]-private-pool
+   ================================= =====
+
+3. Click on "Add Item" under the section "Origin Servers"
+
+   Enter the following variables: 
+
+   ================================= =====
+   Variable                          Value
+   ================================= =====
+   Select Type of Origin Server      DNS Name of Origin Server on given Sites
+   DNS Name                          private.lab.f5demos.internal
+   Site                              system/student-awsnet
+   ================================= =====
+   
+     
+.. image:: _static/lab3-appworld2025-task1-originserver.png
+
+
+  Click on **"Apply"** to return to the previous screen.
+
+5. Below the "Origin Servers" section fill in the Origin Server Port information
+
+   ================================= =====
+   Variable                          Value
+   ================================= =====
+   Port                              8080
+   ================================= =====
+
+   
+6. Click **Save and Exit**.  
++---------------------------------------------------------------------------------------------------------------+
 
 
 .. |app-context| image:: _static/app-context.png
