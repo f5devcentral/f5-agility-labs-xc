@@ -88,7 +88,7 @@ previously built Load Balancer object delivering the targeted API.
 #. Note the updated configuration for API Rate limiting, Click **Other Settings** on the
    the left, navigation on the bottom right then click on **Save and Exit**
 
-   .. image:: _static/lab2-task2-008.png
+   .. image:: _static/update_image.png
       :width: 800px
 
    .. image:: _static/update_image.png

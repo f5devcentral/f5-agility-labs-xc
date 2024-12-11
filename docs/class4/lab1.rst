@@ -41,7 +41,7 @@ steps will define an application, register its DNS and assign a target as an ori
 #. Click on the arrow to the right of **Namespace**, select your namespace from the list.
 
    .. image:: _static/update_image.png
-      :width: 500px
+      :width: 800px
 
 #. In the left-hand navigation expand **Manage** and click **Load Balancers > HTTP Load**
    **Balancers**

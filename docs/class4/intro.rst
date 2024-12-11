@@ -23,9 +23,9 @@ application. The key elements lab attendees will interact with are as follows:
 * **F5 Distributed Cloud Console**
 * **F5 Distributed Cloud Global Network / Application Delivery Network (ADN)**
 * **Publicly hosted application (Public Cloud)**
-
-   .. image:: _static/update_image.png
-      :width: 800px
+  
+.. image:: _static/update_image.png
+   :width: 800px
 
 Task 2: F5 Distributed Cloud Console Login
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -118,6 +118,6 @@ step below to access the F5 Distributed Cloud Lab Tenant.
 
 **Beginning of Lab:**  You are now ready to begin the lab, Enjoy! Ask questions as needed.
 
-   .. image:: _static/update_image.png
-      :width: 800px
+.. image:: _static/update_image.png
+   :width: 800px
 
