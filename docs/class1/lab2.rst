@@ -52,12 +52,12 @@ The next lab exercise will create an origin pool that will provide internal reso
 
 We will first create an Origin Pool that refers to the "Private Endpoint" site in our lab environment.
 
-+-----------------------------------------------------------------------------------------------------------+
-| 1. Start in F5 Distributed Cloud Console and switch back to the **Multi-Cloud App Connect** context.      |
-|                                                                                                           |
-| 2. Navigate the menu to go to **"Manage"->"Load Balancers"->"Origin Pools"**. Click on *Add Origin Pool*. |
-+-----------------------------------------------------------------------------------------------------------+
-2. Enter the following variables:
++------------------------------------------------------------------------------------------------------------+
+|| 1. Start in F5 Distributed Cloud Console and switch back to the **Multi-Cloud App Connect** context.      |
+||                                                                                                           |
+|| 2. Navigate the menu to go to **"Manage"->"Load Balancers"->"Origin Pools"**. Click on *Add Origin Pool*. |
++------------------------------------------------------------------------------------------------------------+
+1. Enter the following variables:
 
    ================================= =====
    Variable                          Value
@@ -65,7 +65,7 @@ We will first create an Origin Pool that refers to the "Private Endpoint" site i
    Name                               [NAMESPACE]-private-pool
    ================================= =====
 
-3. Click on "Add Item" under the section "Origin Servers"
+2. Click on "Add Item" under the section "Origin Servers"
 
    Enter the following variables: 
 
