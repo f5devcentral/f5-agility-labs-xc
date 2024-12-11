@@ -44,58 +44,53 @@ https://simulator.f5.com/s/cloud2cloud_via_sites_brownfield/nav/aws/005/0
 Continue with the steps below to allow secure connectivity to the AWS hosted application. 
 
 
-Excercise 1. Create Private Origin Pool
+Task 1. Create Private Origin Pool
 ---------------------------
 
 Previously we created an origin pool that was accessible via the Public Internet.
 The next lab exercise will create an origin pool that will provide internal resources discovered with local DNS by the AppMesh node that is deployed in our lab AWS environment. 
 
-
-We will first create an Origin Pool that refers to the "Private Endpoint" site in our lab environment.
-
-1. Start in F5 Distributed Cloud Console and switch back to the **Multi-Cloud App Connect** context.
-
-2. Navigate the menu to go to **"Manage"->"Load Balancers"->"Origin Pools"**. Click on *Add Origin Pool*.
-
-3. Enter the following variables:
-
-   ================================= =====
-   Variable                          Value
-   ================================= =====
-   Name                               [NAMESPACE]-private-pool
-   ================================= =====
-
-4. Click on "Add Item" under the section "Origin Servers"
-
-   Enter the following variables: 
-
-   ================================= =====
-   Variable                          Value
-   ================================= =====
-   Select Type of Origin Server      DNS Name of Origin Server on given Sites
-   DNS Name                          private.lab.f5demos.internal
-   Site                              system/student-awsnet
-   ================================= =====
-
-
-**Your Origin Server configuration should look similar to the configuration below**
-  
-.. image:: _static/lab3-appworld2025-task1-originserver.png
-
-
-  Click on **"Apply"** to return to the previous screen.
-
-5. Below the "Origin Servers" section fill in the Origin Server Port information
-
-   ================================= =====
-   Variable                          Value
-   ================================= =====
-   Port                              8080
-   ================================= =====
++------------------------------------------------------------------------------------------------------------+
+| We will first create an Origin Pool that refers to the "Private Endpoint" site in our lab environment.     |
+|                                                                                                            |
+| 1. Start in F5 Distributed Cloud Console and switch back to the **Multi-Cloud App Connect** context.       |
+|                                                                                                            |
+| 2. Navigate the menu to go to **"Manage"->"Load Balancers"->"Origin Pools"**. Click on *Add Origin Pool*.  |
+|                                                                                                            |
+| 3. Enter the following variables:                                                                          |
+|                                                                                                            |
+|                                                                                                            |
+| 4. Click on "Add Item" under the section "Origin Servers"                                                  |
+|																											                            |
+|   Enter the following variables:                                                                           |
+|																											                            |
+|   ================================= =====																	                |
+|   Variable                          Value																	                |
+|   ================================= =====																	                |
+|   Select Type of Origin Server      DNS Name of Origin Server on given Sites								       |
+|   DNS Name                          private.lab.f5demos.internal											          |
+|   Site                              system/student-awsnet													             |
+|   ================================= =====																	                |
+| 																											                            |  
+| 																										                               |    
+| |.. image:: _static/lab3-appworld2025-task1-originserver.png|												          |
+|																											                            |
+|																											                            |
+|  Click on **"Apply"** to return to the previous screen.													             |
+|																											                            |
+| 5. Below the "Origin Servers" section fill in the Origin Server Port information							       |
+|																										                               |
+|   ================================= =====																 	                |													
+|   Variable                          Value																	                |
+|   ================================= =====																	                |
+|    Port                              8080																	                |
+|   ================================= =====																	                |
+|																											                            |
+|																											                            |
+| 6. Click **Save and Exit**.  																				                   |      
++------------------------------------------------------------------------------------------------------------+   
 
 
-
-6. Click **Save and Exit**.        
 
 .. |app-context| image:: _static/app-context.png
 .. |origin_pools_menu| image:: _static/origin_pools_menu.png
@@ -116,7 +111,7 @@ We will first create an Origin Pool that refers to the "Private Endpoint" site i
 .. |op-tshoot| image:: _static/op-tshoot.png
 
 
-Excercise 2. Create and Deploy a HTTP Load Balancer on F5 Distributed Cloud Customer Edge 
+Task 2. Create and Deploy a HTTP Load Balancer on F5 Distributed Cloud Customer Edge 
 ---------------------------------------------------------------------------
 
 In the previous lab exercises we were connecting to a F5 Distributed Cloud Load Balancer that was deployed in a Regional Edge.
@@ -171,9 +166,9 @@ Now we will deploy a Load Balancer on the CE Mesh node that was deployed in the 
 
 .. image:: _static/lab3-appworld2025-task2-lb-site-change.png
 
-12. Click on *"Apply"*
+12. Click on *"Apply"* and once again *"Apply"* on the next screen.
 
-Excercise 3: Configure WAF Policy
+Task 3: Configure WAF Policy
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 1. Under the *Web Application Firewall* section 
@@ -187,7 +182,7 @@ Excercise 3: Configure WAF Policy
    Select App Firewall             shared/base-appfw
    =============================== =================================
 
-3.  Click "Save and Exit" to create the HTTP Load Balancer.
+3.  Scroll to the botton of the screen and click "Save and Exit" to create the HTTP Load Balancer.
 
 Once the HTTP Load Balancer has been deployed, you should now be able to go to the DNS name that you entered 
 previously in a web browser.  The FQDN we used in our example is http://[NAMESPACE].aws.lab.f5demos.com.  
@@ -196,7 +191,7 @@ This is a wildcard DNS entry that points to the Public IP (AWS Elastic IP) that 
 4.  Click on *"Save and Exit"* to complete the Load Balancer configuration
 
 
-Excercise 4: Verify Configuration
+Task 4: Verify Configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 You should now be able to go to the DNS name that you created in this Load Balancer configuration.  
@@ -215,7 +210,7 @@ The private demo app should look like the following:
    <iframe width="560" height="315" src="https://www.youtube.com/embed/s-BHH0Qayfc?start=366" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
-Exercise 6: Verify DNS
+Task 6: Verify DNS
 ^^^^^^^^^^^^^^^^^^^^^^
 
 You can verify that you are connecting directly to AWS by comparing the DNS of the two hosts.
@@ -239,7 +234,7 @@ You can verify that you are connecting directly to AWS by comparing the DNS of t
    Name:	student001.aws.lab.f5demos.com
    Address: 52.4.72.136
 
-Exercise 7: Verify WAF Protection
+Task 7: Verify WAF Protection
 ^^^^^^^^^^^^^^^^^^^^^^
 
 In this topology we are sending traffic to the AWS EIP that's attached to the AppMesh node in the AWS VPC.
@@ -267,6 +262,5 @@ Video Walkthrough
 Optional Video you can watch if you get stuck
 
 .. raw:: html
-
    <iframe width="560" height="315" src="https://www.youtube.com/embed/s-BHH0Qayfc?start=400" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
