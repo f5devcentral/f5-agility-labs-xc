@@ -105,7 +105,7 @@ created, you will intialize Terraform and then deploy an HTTP Health Check, Orig
 |                                                                                                               |
 | .. note::                                                                                                     |
 |    *Replace <some_password> with the password you entered when creating the API certificate.  You need to*    |
-|    *wrap the password in "".  So if your password is password type: export VES_P12_PASSWORD="password"*       |
+|    *wrap the password in "".  If your password is password, enter: export VES_P12_PASSWORD="password"*        |
 +---------------------------------------------------------------------------------------------------------------+
 
 +---------------------------------------------------------------------------------------------------------------+
@@ -130,8 +130,8 @@ created, you will intialize Terraform and then deploy an HTTP Health Check, Orig
 | |lab2-Terraform_Tfvars_Values|                                                                                |
 |                                                                                                               |
 | .. note::                                                                                                     |
-|    *Replace <namespace> with your assigned namespace. You need to wrap the namespace in "". So if your        |     
-|    *assigned namespace is brave-collie enter: namespace = "brave-collie"*                                     |
+|    *Replace <namespace> with your assigned namespace. You need to wrap the namespace in "". If your assigned* |     
+|    *namespace is brave-collie, enter: namespace = "brave-collie"*                                             |
 +---------------------------------------------------------------------------------------------------------------+
 
 +---------------------------------------------------------------------------------------------------------------+
