@@ -130,7 +130,8 @@ created, you will intialize Terraform and then deploy an HTTP Health Check, Orig
 | |lab2-Terraform_Tfvars_Values|                                                                                |
 |                                                                                                               |
 | .. note::                                                                                                     |
-|    *Replace <namespace> with your assigned namespace.*                                                        |
+|    *Replace <namespace> with your assigned namespace. You need to wrap the namespace in "". So if your        |     
+|    *assigned namespace is brave-collie enter: namespace = "brave-collie"*                                     |
 +---------------------------------------------------------------------------------------------------------------+
 
 +---------------------------------------------------------------------------------------------------------------+
