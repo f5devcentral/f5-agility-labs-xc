@@ -28,13 +28,13 @@ Task 2: OpenAPI File Import
 In this task's series of steps you will import swagger files into the F5 Distributed Cloud tenant and explore
 version control features.
 
-#. For the next series of steps, to download the JSON/OpenAPI spec file **app-api-v1.json**
+#. For the next series of steps, to download the JSON/OpenAPI spec file **demobank-api-v1.json**
    to your local desktop or workspace.
 
-   http://demobankapi.lab-sec.f5demos.com/lab/app-api-v1.json
+   http://demobankapi.lab-sec.f5demos.com/lab/demobank-api-v1.json
 
    .. note::
-      *Depending on browser, you may need to copy content and save as **app-api-v1.json***
+      *Depending on browser, you may need to copy content and save as **demobank-api-v1.json***
 
 #. In the left top click the F5 ball and navigate to the **Web App & API Protection** Tile.
 
@@ -48,7 +48,7 @@ version control features.
    .. image:: _static/update_image.png
       :width: 800px
 
-#. In the resulting **OpenAPI File** window, input **app-api** for the **Name** under
+#. In the resulting **OpenAPI File** window, input **demobank-api** for the **Name** under
    the **Metadata** section.
 
 #. In the **OpenAPI Upload** section, click the **Upload File** button. Select the file
@@ -57,7 +57,7 @@ version control features.
    .. image:: _static/update_image.png
       :width: 800px
 
-#. Observe that the file **app-api-v1**  is present and the click **Save and Exit**
+#. Observe that the file **demobank-api-v1**  is present and the click **Save and Exit**
 
    .. image:: _static/update_image.png
       :width: 800px
@@ -90,13 +90,13 @@ pointer to imported swagger files you just uploaded.
    .. image:: _static/update_image.png
       :width: 800px
 
-#. In the resulting **New API Definition** window, input **app-api-spec**
+#. In the resulting **New API Definition** window, input **demobank-api-spec**
    for the **Name** under the **Metadata** section.
 
 #. In the **OpenAPI Specification Files** section, click **Add Item**.
 
 #. Select the version 1 of the previously uploaded OpenAPI spec file. It will be in the
-   format **<namespace>/app-api/v1-<current-date>**.
+   format **<namespace>/demobank-api/v1-<current-date>**.
 
 #. Once selected, click **Save and Exit** in the bottom-right corner.
 
