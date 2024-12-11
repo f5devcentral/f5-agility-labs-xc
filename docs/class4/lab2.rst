@@ -154,7 +154,7 @@ previously built Load Balancer object delivering the targeted API.
    .. image:: _static/update_image.png
       :width: 800px
 
-#. Update the fields with the below detail, click on **Apply*.
+#. Update the fields with the below detail, click on **Apply**.
 
    * **Name:**  ``<namespace>-shadow``
    * **Action:** ``Block``
@@ -164,7 +164,7 @@ previously built Load Balancer object delivering the targeted API.
    .. image:: _static/update_image.png
       :width: 800px
 
-#. At the  **Custom Fall Through Rule List** and the **API Inventory validation** click **Apply*.
+#. At the  **Custom Fall Through Rule List** and the **API Inventory validation** click **Apply**.
 
 #. Select **Other Settings** on the left then click on **Save and Exit**
    at the bottom right of window.

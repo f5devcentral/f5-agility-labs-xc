@@ -26,22 +26,22 @@ In this task you will follow steps simulating an attack againt an unprotected en
 ``http://<namespace>.lab-sec.f5demos.com/swagger``
 
 #. Within the Swagger page navigate and expand the messageservice/send endpoint, and click
-**Try is out**.
+   **Try is out**.
 
    .. image:: _static/update_image.png
       :width: 800px
 
 #. Copy the following JSON, paste within the Request body. Click on **Execute**.
 
-.. code-block:: json
+   .. code-block:: json
    
-   {
-      "firstName": "Hugo",
-      "lastName": "Weaving",
-      "phoneNumber": "(568) 190-1234",
-      "email": "hugo.weaving@hydra.com",
-      "message": "The revolution has started <script>alert('Hail Hydra');</script>"
-   }
+      {
+         "firstName": "Hugo",
+         "lastName": "Weaving",
+         "phoneNumber": "(568) 190-1234",
+         "email": "hugo.weaving@hydra.com",
+         "message": "The revolution has started <script>alert('Hail Hydra');</script>"
+      }
 
 #. Review the response, notice how the included **<script>** was accepted and included in 
    the reponse body.
@@ -119,22 +119,22 @@ In this task you will follow steps simulating an attack againt a protected endpo
 ``http://<namespace>.lab-sec.f5demos.com/swagger``
 
 #. Within the Swagger page navigate and expand the messageservice/send endpoint, and click
-**Try is out**.
+   **Try is out**.
 
    .. image:: _static/update_image.png
       :width: 800px
 
 #. Copy the following JSON, paste within the Request body. Click on **Execute**.
 
-.. code-block:: json
+   .. code-block:: json
    
-   {
-      "firstName": "Hugo",
-      "lastName": "Weaving",
-      "phoneNumber": "(568) 190-1234",
-      "email": "hugo.weaving@hydra.com",
-      "message": "The revolution has started <script>alert('Hail Hydra');</script>"
-   }
+      {
+         "firstName": "Hugo",
+         "lastName": "Weaving",
+         "phoneNumber": "(568) 190-1234",
+         "email": "hugo.weaving@hydra.com",
+         "message": "The revolution has started <script>alert('Hail Hydra');</script>"
+      }
 
 #. Review the response, notice how a block message was presented within the response.
 
