@@ -63,7 +63,7 @@ created, you will intialize Terraform and then deploy an HTTP Health Check, Orig
 |    * **Confirm Password:** *<some_password>*                                                                  |
 |    * **Expiry Date: Select:** *<date two days in the future of today's date>*                                 |
 |                                                                                                               |
-| 6. Click **Download**.                                                                                       |
+| 6. Click **Download**.                                                                                        |
 |                                                                                                               |
 | |lab2-Terraform_Download_API_Cert|                                                                            |
 |                                                                                                               |
