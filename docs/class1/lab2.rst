@@ -56,14 +56,14 @@ We will first create an Origin Pool that refers to the "Private Endpoint" site i
 || 1. Start in F5 Distributed Cloud Console and switch back to the **Multi-Cloud App Connect** context.      |
 ||                                                                                                           |
 || 2. Navigate the menu to go to **"Manage"->"Load Balancers"->"Origin Pools"**. Click on *Add Origin Pool*. |
-|                                                                                                            |
-|  3. Enter the following variables:                                                                         |
-|                                                                                                            |
-|   ================================= =====                                                                  |
-|   Variable                          Value                                                                  |
-|   ================================= =====                                                                  |
-|   Name                              [NAMESPACE]-private-pool                                               |
-|   ================================= =====                                                                  |
+||                                                                                                           |
+|| 3. Enter the following variables:                                                                         |
+||                                                                                                           |
+|| ================================= =====                                                                   |
+|| Variable Value                                                                                            |
+|| ================================= =====                                                                   |
+|| Name [NAMESPACE]-private-pool                                                                             |
+|| ================================= =====                                                                   |
 +------------------------------------------------------------------------------------------------------------+
 2. Click on "Add Item" under the section "Origin Servers"
 
