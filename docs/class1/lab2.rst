@@ -72,9 +72,9 @@ The next lab exercise will create an origin pool that will provide internal reso
 |   Site                              system/student-awsnet													             |
 |   ================================= =====																	                |
 | 																											                            |  
-| 																										                               |    
++------------------------------------------------------------------------------------------------------------+ 																										                               |    
 | |.. image:: _static/lab3-appworld2025-task1-originserver.png|												          |
-|																											                            |
++------------------------------------------------------------------------------------------------------------+																											                            |
 |																											                            |
 |  Click on **"Apply"** to return to the previous screen.													             |
 |																											                            |
