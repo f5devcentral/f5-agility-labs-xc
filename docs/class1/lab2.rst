@@ -80,7 +80,7 @@ We will first create an Origin Pool that refers to the "Private Endpoint" site i
    ================================= =====
 +------------------------------------------------------------------------------------------------------------+   
 |                                                                                                            |
-| |.. image:: _static/lab3-appworld2025-task1-originserver.png|                                              |
+| |lab301|                                                                                                   | 
 |                                                                                                            |
 |                                                                                                            |
 |  Click on **"Apply"** to return to the previous screen.                                                    |
@@ -272,3 +272,5 @@ Optional Video you can watch if you get stuck
 .. raw:: html
    <iframe width="560" height="315" src="https://www.youtube.com/embed/s-BHH0Qayfc?start=400" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
+.. |lab301| image:: _static/lab3-appworld2025-task1-originserver.png
+   :width: 800px
