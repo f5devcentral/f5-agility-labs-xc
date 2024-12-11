@@ -102,6 +102,9 @@ created, you will intialize Terraform and then deploy an HTTP Health Check, Orig
 |    export VES_P12_PASSWORD="<some_password>"                                                                  |
 |                                                                                                               |
 | |lab2-Terraform_Auth_Env|                                                                                     |
+|                                                                                                               |
+| .. note::                                                                                                     |
+|    *Replace <some_password> with the password you entered when creating the API certificate.*                 |
 +---------------------------------------------------------------------------------------------------------------+
 
 +---------------------------------------------------------------------------------------------------------------+
@@ -124,6 +127,9 @@ created, you will intialize Terraform and then deploy an HTTP Health Check, Orig
 |    namespace   = "<namespace>"                                                                                |
 |                                                                                                               |
 | |lab2-Terraform_Tfvars_Values|                                                                                |
+|                                                                                                               |
+| .. note::                                                                                                     |
+|    *Replace <namespace> with your assigned namespace.*                                                        |
 +---------------------------------------------------------------------------------------------------------------+
 
 +---------------------------------------------------------------------------------------------------------------+
