@@ -134,8 +134,7 @@ steps will define an application, register its DNS and assign a target as an ori
    .. image:: _static/update_image.png
       :width: 800px
 
-**End of Lab 1:**  This concludes Lab 1, feel free to review and test the configuration.
-A brief presentation and demo will be shared prior to the beginning of Lab 2.
+**End of Lab**
 
 .. image:: _static/update_image.png
    :width: 800px
