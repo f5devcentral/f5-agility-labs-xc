@@ -52,25 +52,24 @@ The next lab exercise will create an origin pool that will provide internal reso
 
 We will first create an Origin Pool that refers to the "Private Endpoint" site in our lab environment.
 
-+------------------------------------------------------------------------------------------------------------+-----+
-|| 1. Start in F5 Distributed Cloud Console and switch back to the **Multi-Cloud App Connect** context.      ||    |
-||                                                                                                           ||    |
-|| 2. Navigate the menu to go to **"Manage"->"Load Balancers"->"Origin Pools"**. Click on *Add Origin Pool*. ||    |
-||                                                                                                           ||    |
-|| 3. Enter the following variables:                                                                         ||    |
-||                                                                                                           ||    |
-+------------------------------------------------------------------------------------------------------------+-----+
++-----------------------------------------------------------------------------------------------------------+
+|| 1. Start in F5 Distributed Cloud Console and switch back to the **Multi-Cloud App Connect** context.     |
+||                                                                                                          |
+|| 2. Navigate the menu to go to **"Manage"->"Load Balancers"->"Origin Pools"**. Click on *Add Origin Pool*.|
+||                                                                                                          |
+|| 3. Enter the following variables:                                                                        |
+||                                                                                                          |
++-----------------------------------------------------------------------------------------------------------+
 
    ================================= =====
-   Variable                          Value
+   *Variable*                          *Value*
    ================================= =====
-   Name                              [NAMESPACE]-private-pool
+   Name                             **[NAMESPACE]-private-pool**
    ================================= =====
 
-
-1. Click on "Add Item" under the section "Origin Servers"
-
-   Enter the following variables: 
++-----------------------------------------------------------+
+| 4. Click on "Add Item" under the section "Origin Servers" |
++-----------------------------------------------------------+
 
    ================================= =====
    Variable                          Value
@@ -80,23 +79,25 @@ We will first create an Origin Pool that refers to the "Private Endpoint" site i
    Site                              system/student-awsnet
    ================================= =====
 +------------------------------------------------------------------------------------------------------------+   
-     
-.. image:: _static/lab3-appworld2025-task1-originserver.png
+|                                                                                                            |
+| |.. image:: _static/lab3-appworld2025-task1-originserver.png|                                              |
+|                                                                                                            |
+|                                                                                                            |
+|  Click on **"Apply"** to return to the previous screen.                                                    |
+|                                                                                                            |
+| 5. Below the "Origin Servers" section fill in the Origin Server Port information                           |
++------------------------------------------------------------------------------------------------------------+
 
-
-  Click on **"Apply"** to return to the previous screen.
-
-5. Below the "Origin Servers" section fill in the Origin Server Port information
 
    ================================= =====
-   Variable                          Value
+   *Variable*                          *Value*
    ================================= =====
-   Port                              8080
+   Port                              **8080**
    ================================= =====
 
-   
-6. Click **Save and Exit**.  
-+---------------------------------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------+   
+|6. Click **Save and Exit**.                                                                                 |  
++------------------------------------------------------------------------------------------------------------+
 
 
 .. |app-context| image:: _static/app-context.png
