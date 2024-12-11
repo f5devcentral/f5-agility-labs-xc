@@ -59,11 +59,11 @@ We will first create an Origin Pool that refers to the "Private Endpoint" site i
 ||                                                                                                           |
 || 3. Enter the following variables:                                                                         |
 ||                                                                                                           |
-||                 ================================= =====                                                   |
-||                 Variable                          Value                                                   |
-||                 ================================= =====                                                   |
-||                 Name                              [NAMESPACE]-private-pool                                |
-||                 ================================= =====                                                   |
+|| ================================= =====                                                                   |
+|| Variable Value                                                                                            |
+|| ================================= =====                                                                   |
+|| Name [NAMESPACE]-private-pool                                                                             |
+|| ================================= =====                                                                   |
 +------------------------------------------------------------------------------------------------------------+
 1. Click on "Add Item" under the section "Origin Servers"
 
