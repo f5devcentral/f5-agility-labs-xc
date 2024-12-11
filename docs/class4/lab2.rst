@@ -182,7 +182,7 @@ Add Description
    .. image:: _static/update_image.png
       :width: 800px
 
-**End of Lab 3:**  This concludes Lab 4.
+**End of Lab**
 
 .. image:: _static/update_image.png
    :width: 800px
