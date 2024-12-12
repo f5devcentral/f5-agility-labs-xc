@@ -237,7 +237,7 @@ You can verify that you are connecting directly to AWS by comparing the DNS of t
 |                                                           |
 |   $ nslookup [NAMESPACE].aws.lab.f5demos.com              |
 |                                                           |
-|   Server:	2a01:cb04:765:e00:a6ce:daff:fe11:96ea           |
+|   Server:  2a01:cb04:765:e00:a6ce:daff:fe11:96e           |
 |   Address: 2a01:cb04:765:e00:a6ce:daff:fe11:96ea#53       |
 |                                                           |
 |   Non-authoritative answer:                               |
