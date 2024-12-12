@@ -233,11 +233,11 @@ You can verify that you are connecting directly to AWS by comparing the DNS of t
 |                                                                                                                                   |
 |   $ nslookup [NAMESPACE].aws.lab.f5demos.com                                                                                      |
 |                                                                                                                                   |
-|   Server:		2a01:cb04:765:e00:a6ce:daff:fe11:96ea                                                                                 |
-|   Address:	2a01:cb04:765:e00:a6ce:daff:fe11:96ea#53                                                                              |
+|   Server:		2a01:cb04:765:e00:a6ce:daff:fe11:96ea                                                                                |
+|   Address:	2a01:cb04:765:e00:a6ce:daff:fe11:96ea#53                                                                             |
 |                                                                                                                                   |
 |   Non-authoritative answer:                                                                                                       |
-|   Name:	[NAMESPACE].aws.lab.f5demos.com                                                                                           |
+|   Name:	[NAMESPACE].aws.lab.f5demos.com                                                                                         |
 |   Address: 52.4.72.136                                                                                                            |
 +-----------------------------------------------------------------------------------------------------------------------------------+
 
