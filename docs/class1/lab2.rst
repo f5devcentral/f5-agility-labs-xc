@@ -53,12 +53,12 @@ The next lab exercise will create an origin pool that will provide internal reso
 We will first create an Origin Pool that refers to the "Private Endpoint" site in our lab environment.
 
 +------------------------------------------------------------------------------------------------------------+
-| 1. Start in F5 Distributed Cloud Console and switch back to the **Multi-Cloud App Connect** context.       |
-|                                                                                                            |
-| 2. Navigate the menu to go to **"Manage"->"Load Balancers"->"Origin Pools"**. Click on *Add Origin Pool*.  |
-|                                                                                                            |
-| 3. Enter the following variables:                                                                          |
-|                                                                                                            |
+|| 1. Start in F5 Distributed Cloud Console and switch back to the **Multi-Cloud App Connect** context.      |
+||                                                                                                           |
+|| 2. Navigate the menu to go to **"Manage"->"Load Balancers"->"Origin Pools"**. Click on *Add Origin Pool*. |
+||                                                                                                           |
+|| 3. Enter the following variables:                                                                         |
+||                                                                                                           |
 +------------------------------------------------------------------------------------------------------------+
 |                                                                                                            |
 |   ================================= =====                                                                  |
@@ -68,7 +68,7 @@ We will first create an Origin Pool that refers to the "Private Endpoint" site i
 |   ================================= =====                                                                  |
 |                                                                                                            |
 +------------------------------------------------------------------------------------------------------------+
-| 4. Click on "Add Item" under the section "Origin Servers"                                                  |
+|| 4. Click on "Add Item" under the section "Origin Servers"                                                 |
 +------------------------------------------------------------------------------------------------------------+
 |                                                                                                            |
 |   ================================= =====                                                                  |
@@ -82,10 +82,11 @@ We will first create an Origin Pool that refers to the "Private Endpoint" site i
 |                                                                                                            |
 | |lab301|                                                                                                   | 
 |                                                                                                            |
-|                                                                                                            |
-| 5. Click on **"Apply"** to return to the previous screen.                                                  |
-|                                                                                                            |
-| 6. Below the "Origin Servers" section fill in the Origin Server Port information                           |
+||                                                                                                           |
+|| 5. Click on **"Apply"** to return to the previous screen.                                                 |
+||                                                                                                           |
+|| 6. Below the "Origin Servers" section fill in the Origin Server Port information                          |     
+||                                                                                                           |
 +------------------------------------------------------------------------------------------------------------+
 |                                                                                                            |
 |                                                                                                            |
@@ -96,7 +97,9 @@ We will first create an Origin Pool that refers to the "Private Endpoint" site i
 |   ================================= =====                                                                  |
 |                                                                                                            |
 +------------------------------------------------------------------------------------------------------------+   
-| 7. Click **Save and Exit**.                                                                                |  
+||                                                                                                           |
+|| 7. Click **Save and Exit**.                                                                               |
+||                                                                                                           |
 +------------------------------------------------------------------------------------------------------------+
 
 
