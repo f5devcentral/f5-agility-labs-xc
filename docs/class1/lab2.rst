@@ -30,7 +30,7 @@ volumetric DDoS protection and anycast availability from the Distributed Cloud g
 One such example is when clients and protected resources are both local to each other without having to traverse the Internet.
 
 With either toplogy, two encrypted tunnels are automatically created between the CE and the two closest REs.  At a minimum these redundant tunnels provide
-control-plane communication the CE. Through the Distributed Cloud Console or via API your configuraton commands traverse these tunnels.
+control-plane communication to the CE. Through the Distributed Cloud Console or via API your configuraton commands traverse these tunnels.
 
 In the event of an Internet outage at a CE site, local survivability will continue to provide data plane services locally for a period of time.  
 During this time, control plane services are suspended and will resume upon Internet connection reestablishment.
@@ -47,8 +47,8 @@ Continue with the steps below to allow secure connectivity to the AWS hosted app
 Task 1. Create Private Origin Pool
 ---------------------------
 
-Previously we created an origin pool that was accessible via the Public Internet.
-The next lab exercise will create an origin pool that will provide internal resources discovered with local DNS by the AppMesh node that is deployed in our lab AWS environment. 
+In Lab #1 we created an origin pool that was accessible via the Public Internet.
+This lab exercise will create an origin pool that will provide internal resources discovered with local DNS by the CE node that is deployed in our lab AWS environment. 
 
 We will first create an Origin Pool that refers to the "Private Endpoint" site in our lab environment.
 
@@ -109,7 +109,7 @@ We will first create an Origin Pool that refers to the "Private Endpoint" site i
 Task 2. Create and Deploy a HTTP Load Balancer on F5 Distributed Cloud CE 
 ---------------------------------------------------------------------------
 
-In the first lab we were connecting to a F5 Distributed Cloud Load Balancer that was deployed in a Regional Edge.
+In the first lab we were connecting to a F5 Distributed Cloud Load Balancer that was deployed in a RE.
 Now we will deploy a Load Balancer on the CE node that was deployed in the AWS VPC (CE location).
 
 +-----------------------------------------------------------------------------------------------------------------------------------+
@@ -174,7 +174,8 @@ Now we will deploy a Load Balancer on the CE node that was deployed in the AWS V
 Task 3: Configure WAF Policy
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Now that we have our load balancer and orign server configured we want to make sure we are protecting the origin server.  Here we   
-easily apply a pre-existing shared WAF policy.  
+are easily applying a pre-existing shared WAF policy to our loadbalancer.  The shared WAF policy is available for all namespaces
+under this tenant.
 
 +-----------------------------------------------------------------------------------------------------------------------------------+
 || 1. Under the *Web Application Firewall* section                                                                                  |
