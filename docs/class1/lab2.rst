@@ -70,14 +70,14 @@ We will first create an Origin Pool that refers to the "Private Endpoint" site i
 +------------------------------------------------------------------------------------------------------------+
 | 4. Click on "Add Item" under the section "Origin Servers"                                                  |
 +------------------------------------------------------------------------------------------------------------+
-
-   ================================= =====
-   Variable                          Value
-   ================================= =====
-   Select Type of Origin Server      DNS Name of Origin Server on given Sites
-   DNS Name                          private.lab.f5demos.internal
-   Site                              system/student-awsnet
-   ================================= =====
+|                                                                                                            |
+|   ================================= =====                                                                  |
+|   Variable                          Value                                                                  |
+|   ================================= =====                                                                  |
+|   Select Type of Origin Server      DNS Name of Origin Server on given Sites                               |
+|   DNS Name                          private.lab.f5demos.internal                                           |
+|   Site                              system/student-awsnet                                                  |
+|   ================================= =====                                                                  |
 +------------------------------------------------------------------------------------------------------------+   
 |                                                                                                            |
 | |lab301|                                                                                                   | 
