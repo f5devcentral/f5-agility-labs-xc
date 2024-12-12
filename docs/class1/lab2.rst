@@ -105,24 +105,6 @@ We will first create an Origin Pool that refers to the "Private Endpoint" site i
 +------------------------------------------------------------------------------------------------------------+
 
 
-.. |app-context| image:: _static/app-context.png
-.. |origin_pools_menu| image:: _static/origin_pools_menu.png
-.. |origin_pools_add| image:: _static/origin_pools_add.png
-.. |origin_pools_config| image:: _static/origin_pools_config.png
-.. |origin_pools_config_api| image:: _static/origin_pools_config_api.png
-.. |origin_pools_config_mongodb| image:: _static/origin_pools_config_mongodb.png
-.. |origin_pools_show_child_objects| image:: _static/origin_pools_show_child_objects.png
-.. |origin_pools_show_child_objects_status| image:: _static/origin_pools_show_child_objects_status.png
-.. |http_lb_origin_pool_health_check| image:: _static/http_lb_origin_pool_health_check.png
-.. |http_lb_origin_pool_health_check2| image:: _static/http_lb_origin_pool_health_check2.png
-
-.. |op-add-pool| image:: _static/op-add-pool.png
-.. |op-api-pool| image:: _static/op-api-pool.png
-.. |op-pool-basic| image:: _static/op-pool-basic-private.png
-  :width: 75% 
-.. |op-spa-check| image:: _static/op-spa-check.png
-.. |op-tshoot| image:: _static/op-tshoot.png
-
 
 Task 2. Create and Deploy a HTTP Load Balancer on F5 Distributed Cloud CE 
 ---------------------------------------------------------------------------
@@ -229,14 +211,10 @@ The FQDN we used in our example is http://[NAMESPACE].aws.lab.f5demos.com/.
 +-----------------------------------------------------------------------------------------------------------------------------------+
 ||  The private demo app should look like the following:                                                                            |
 ||                                                                                                                                  |
-|  |lab312                                                                                                                          |
+|  |lab312|                                                                                                                         |
 |                                                                                                                                   |
 |                                                                                                                                   |
 +-----------------------------------------------------------------------------------------------------------------------------------+
-
-.. raw:: html
-
-   <iframe width="560" height="315" src="https://www.youtube.com/embed/s-BHH0Qayfc?start=366" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
 Task 6: Verify DNS
@@ -244,54 +222,47 @@ Task 6: Verify DNS
 
 You can verify that you are connecting directly to AWS by comparing the DNS of the two hosts.
 
-.. code-block:: 
-
-   $ dig +short student001.aws.lab.f5demos.com
-   52.4.72.136
-
-   $ dig -x 52.4.72.136 +short
-   ec2-52-4-72-136.compute-1.amazonaws.com.
-
-.. code-block:: 
-
-   $ nslookup student001.aws.lab.f5demos.com
-
-   Server:		2a01:cb04:765:e00:a6ce:daff:fe11:96ea
-   Address:	2a01:cb04:765:e00:a6ce:daff:fe11:96ea#53
-
-   Non-authoritative answer:
-   Name:	student001.aws.lab.f5demos.com
-   Address: 52.4.72.136
++-----------------------------------------------------------------------------------------------------------------------------------+
+||  $ dig [NAMESPACE].aws.lab.f5demos.com                                                                                           |
+|   52.4.72.136                                                                                                                     |
+|                                                                                                                                   |
+|   $ dig -x 52.4.72.136 +short                                                                                                     |
+|   ec2-52-4-72-136.compute-1.amazonaws.com.                                                                                        |
+|                                                                                                                                   |
++-----------------------------------------------------------------------------------------------------------------------------------+
+|                                                                                                                                   |
+|   $ nslookup [NAMESPACE].aws.lab.f5demos.com                                                                                      |
+|                                                                                                                                   |
+|   Server:		2a01:cb04:765:e00:a6ce:daff:fe11:96ea                                                                                 |
+|   Address:	2a01:cb04:765:e00:a6ce:daff:fe11:96ea#53                                                                              |
+|                                                                                                                                   |
+|   Non-authoritative answer:                                                                                                       |
+|   Name:	[NAMESPACE].aws.lab.f5demos.com                                                                                           |
+|   Address: 52.4.72.136                                                                                                            |
++-----------------------------------------------------------------------------------------------------------------------------------+
 
 Task 7: Verify WAF Protection
 ^^^^^^^^^^^^^^^^^^^^^^
 
-In this topology we are sending traffic to the AWS EIP that's attached to the AppMesh node in the AWS VPC.
+In this topology we are sending traffic to the AWS EIP that's attached to the CE node in the AWS VPC.
 
 We then connect to the AWS resource via it's Private IP address.  
 
-<! Try adding the following to the URL "?cat%20/etc/passwd".  ###this request hung without providing a blocking page>
-
-Try adding the following to the URL "/cart?search=aaa’><script>prompt(‘Please+enter+your+password’);</script>"
-
-You should see a block page.
-
-   .. image:: _static/lab3-appworld2025-waf-block-message.png
-
++-----------------------------------------------------------------------------------------------------------------------------------+
+| <! Try adding the following to the URL "?cat%20/etc/passwd".  ###this request hung without providing a blocking page>             |
+|                                                                                                                                   |
+| Try adding the following to the URL "/cart?search=aaa’><script>prompt(‘Please+enter+your+password’);</script>"                    |
+|                                                                                                                                   |
+| You should see a block page.                                                                                                      |
+|                                                                                                                                   |
+|   |lab313|                                                                                                                        |                                      
+|                                                                                                                                   |
++-----------------------------------------------------------------------------------------------------------------------------------+
 
 This is similar behavior to what we saw in the previous lab,
-but in this case the enforcement of the WAF policy is occurring on the AppMesh node
+but in this case the enforcement of the WAF policy is occurring on the CE node
 that is deployed in the AWS Lab Environment and not in the F5 Distributed Cloud Regional Edge.
 
-In the next lab we will look at how to customize our WAF policy.
-
-Video Walkthrough 
-^^^^^^^^^^^^^^^^^
-
-Optional Video you can watch if you get stuck
-
-.. raw:: html
-   <iframe width="560" height="315" src="https://www.youtube.com/embed/s-BHH0Qayfc?start=400" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 .. |lab301| image:: _static/lab3-appworld2025-task1-originserver.png
    :width: 800px
