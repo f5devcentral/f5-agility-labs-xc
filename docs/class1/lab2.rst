@@ -1,314 +1,469 @@
-Lab 2: Protecting a Private Endpoint
-====================================
-
-In the previous lab you learned how to protect a resource that is already on the Public Internet.
-
-In this next lab we will look at two additional topologies of how you can use a Customer Edge node
-to secure traffic that is going to an endpoint that is not directly exposed to the Internet.
-
-In this lab we will protect an application that is hosted in AWS but not directly exposed to the Internet.
-
-F5 Distributed Cloud AWS VPC Site
----------------------------------
-
-In addition to protecting resources using F5 Distributed Cloud WAF/WAAP enforcement at an F5 Regional Edge (RE),
-you can also deploy a Customer Edge (CE) that may or may not be exposed to the public Internet. CE nodes may be 
-deployed in physical data centers and/or public cloud environments.
- 
-Once a CE has been deployed, it unlocks two additional topologies.
-
-1. Client -> RE -> CE -> Protected resource  
-
-Leveraging F5 Distributed Cloud REs to provide WAF and other services upstream, 
-then proxying the clean traffic to the protected resource via the CE.  It is recommended that a firewall rule be placed at the site with the CE
-to only allow traffic from an RE.  This ensures that all traffic is scrubbed upstream before entering the site.
-
-2. Client -> CE -> Protected resource  
-
-In this scenario, the CE advertises the services directly.  While this topology sacrifices some functionality such as 
-volumetric DDoS protection and anycast availability from the Distributed Cloud global network, there are some use cases where it can be beneficial.  
-One such example is when clients and protected resources are both local to each other without having to traverse the Internet.
-
-With either toplogy, two encrypted tunnels are automatically created between the CE and the two closest REs.  These redundant tunnels provide
-high availability in the unlikely event of an outage at a specific RE within the Distributed Cloud global network.
-
-In the event of an Internet outage at a CE site, local survivability will continue to provide data plane services locally for a period of time.  
-During this time, control plane services are suspended and will resume upon Internet connection reestablishment.
-
-While a single CE may be adequate for non-production environments, a high-availability cluster of at least 3 CE's is highly recommended for production.
-
-This lab has auto deployed an AWS site with a Customer Edge node for you. You may walk through this process using the F5 Distributed Cloud Simulator if you wish.
-
-https://simulator.f5.com/s/cloud2cloud_via_sites_brownfield/nav/aws/005/0
-
-Continue with the steps below to allow secure connectivity to the AWS hosted application. 
-
-
-Task 1. Create Origin Pools
----------------------------
-
-Previously we created an origin pool that was accessible via the Public Internet.
-The next lab exercise will create an origin pool that will provide internal resources discovered with local DNS by the AppMesh node that is deployed in our lab AWS environment. 
-
-Exercise 1: Create Private Origin Pool
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-We will first create an Origin Pool that refers to the "Private Endpoint" site in our lab environment.
-
-#. Start in F5 Distributed Cloud Console and switch back to the **Multi-Cloud App Connect** context.
-
-#. Navigate the menu to go to "Manage"->"Load Balancers"->"Origin Pools". Click on *Add Origin Pool*.
-
-#. Enter the following variables:
-
-   ================================= =====
-   Variable                          Value
-   ================================= =====
-   Name                              private
-   ================================= =====
-
-#. Click on "Add Item" under the section "Origin Servers"
-
-   Enter the following variables: 
-
-   ================================= =====
-   Variable                          Value
-   ================================= =====
-   Select Type of Origin Server      DNS Name of Origin Server on given Sites
-   DNS Name                          private.lab.f5demos.internal
-   Site                              system/student-awsnet
-   ================================= =====
-    
-   |op-pool-basic|
-
-   Click on "Apply" to return to the previous screen.
-
-#. Below the "Origin Servers" section fill in the Port information
-
-   ================================= =====
-   Variable                          Value
-   ================================= =====
-   Port                              8080
-   ================================= =====
-
-
-
-#. Click **Save and Exit**.        
-
-.. |app-context| image:: _static/app-context.png
-.. |origin_pools_menu| image:: _static/origin_pools_menu.png
-.. |origin_pools_add| image:: _static/origin_pools_add.png
-.. |origin_pools_config| image:: _static/origin_pools_config.png
-.. |origin_pools_config_api| image:: _static/origin_pools_config_api.png
-.. |origin_pools_config_mongodb| image:: _static/origin_pools_config_mongodb.png
-.. |origin_pools_show_child_objects| image:: _static/origin_pools_show_child_objects.png
-.. |origin_pools_show_child_objects_status| image:: _static/origin_pools_show_child_objects_status.png
-.. |http_lb_origin_pool_health_check| image:: _static/http_lb_origin_pool_health_check.png
-.. |http_lb_origin_pool_health_check2| image:: _static/http_lb_origin_pool_health_check2.png
-
-.. |op-add-pool| image:: _static/op-add-pool.png
-.. |op-api-pool| image:: _static/op-api-pool.png
-.. |op-pool-basic| image:: _static/op-pool-basic-private.png
-  :width: 75% 
-.. |op-spa-check| image:: _static/op-spa-check.png
-.. |op-tshoot| image:: _static/op-tshoot.png
-
-Task 2. Update HTTP Load Balancer on F5 Distributed Cloud Regional Edge
------------------------------------------------------------------------
-
-We will now update the HTTP load balancer that we previously created to connect to
-the "Private Endpoint" via the AppMesh node that is deployed in the AWS lab environment.
-
-.. image:: _static/testdrive-volterra-waf-hybrid-vip.png
-
-Exercise 1: HTTP Load Balancer Configuration
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-#. Start in F5 Distributed Cloud Console and switch to the **Multi-Cloud App Connect** context. [You should already be here from previous lab]
-
-#. Navigate the menu to go to "Manage"->"HTTP Load Balancers" and look for the Load Balancer named *<namespace>-lb* that you previously created.
-
-#. Click on the three dots "..." to the right of the name of your *<namespace>-lb* Load Balancer and select the "Manage Configuration" option.
-
-   .. image:: _static/screenshot-global-vip-actions-manage.png
-
-#. Click on "Edit Configuration" in the upper right of the screen (after your *<namespace>-lb* Load Balancer is loaded).
-
-   .. image:: _static/screenshot-global-vip-edit-config.png
-
-#. Under "Origins" find your previous "<namespace>-pool" Origin pool and click on the three dots "..." to the right under "Actions" and select "Edit"
-
-   .. image:: _static/screenshot-global-vip-edit-config-pools.png
-
-#. Change the selection of "Origin Pool" from "<namespace>-pool" to "private" and click "Apply"
-
-   .. image:: _static/screenshot-global-vip-edit-config-pools-select.png
-
-#. Click "*Save and Exit* to update the HTTP Load Balancer.
-
-You should now be able to go to the DNS name that you entered 
-previously in a web browser.  The FQDN we used in our example is http://worthy-gecko.lab-sec.f5demos.com/.  
-
-Exercise 2: Verify Configuration
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-The private demo app should look like the following:
-
-.. image:: _static/screenshot-global-vip-private.png
-   :width: 50%
-
-In this topology we are sending traffic to an AnyCast IP that is hosted in F5 Distributed Cloud's Regional Edge.
-
-We then connect to the AWS resource via the AppMesh node that is deployed in the same VPC as the "Private Endpoint".  
-The AppMesh is only being used for network connectivity to the Private Endpoint; enforcement of the WAF policy is still
-being applied in the Regional Edge.
-
-In the next exercise we will look at a third topology of deploying a WAF policy that will be enforced within the AWS VPC
-on the AppMesh node (in the Customer Edge).
-
-.. raw:: html
-
-   <iframe width="560" height="315" src="https://www.youtube.com/embed/s-BHH0Qayfc?start=366" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-
-Task 3. Creating HTTP Load Balancer on F5 Distributed Cloud Customer Edge
--------------------------------------------------------------------------
-
-In the previous lab exercises we were connecting to a F5 Distributed Cloud Load Balancer that was deployed in a Regional Edge.
-
-In the next lab exercise we will deploy a Load Balancer on the AppMesh node that was deployed in the AWS VPC (Customer Edge location).
-
-.. image:: _static/testdrive-volterra-waf-local-vip.png
-
-Exercise 1: HTTP Load Balancer Configuration
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-#. Start in F5 Distributed Cloud Console and switch to the **Multi-Cloud App Connect** context. [You should already be here from previous lab]
-
-#. Navigate the menu to go to "Manage"->"HTTP Load Balancers" and click on "Add HTTP Load Balancer".
-
-#. Enter the following variables:
-
-   ================================= =====
-   Variable                          Value
-   ================================= =====
-   Name                              local
-   Domains                           [NAMESPACE].aws.lab.f5demos.com
-   Select type of Load Balancer      HTTP
-   Automatically Manage DNS Records  No/Unchecked 
-   ================================= =====
-
-Exercise 2: Configure Default Origin Server
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-We'll next configure the "Origin Servers".   
-    
-#. Click on the *Add Item* button in the the *Origin Pools* section.
-
-#. The "Select Origin Pool Method" will be set to "Origin Pool". Under the "Origin Pool" dropdown menu select the "private" pool you created earlier.
- 
-#. Click the *Apply* button to exit the "Origin Pool with Weight and Priority" dialogue.
-
-Exercise 3: Configure Local VIP
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Previously we configured a VIP that was advertised on F5's Regional Edge (PoP) locations.
-We will modify this configuration to expose the service on the "Outside" interface of the AppMesh
-node that is deployed in AWS.  This will allow us to access the VIP via the Public IP Address (AWS Elastic IP)
-that is attached to that interface.  If we wished to only have the service available within the AWS VPC
-we could opt to use the "Inside" interface that does not have an AWS EIP attached.
-
-#. Under "Other Settings" set "VIP Advertisement" to "Custom"
-
-   .. image:: _static/screenshot-local-vip-advertise-custom.png
-      :width: 50%
-
-#. Click on "Configure" under "Custom"
-#. In "List of Sites to Advertise", click on "Add Item"
-#. For "Site Network" click on "Outside Network" 
-#. For "Site Reference" select `system/student-awsnet`
-
-   .. image:: _static/lb-local-vip-advertise.png
-      :width: 60%
-
-#. Click on "Apply" 
-#. Click on "Apply" to return to previous screen
-
-
-Exercise 4: Configure WAF Policy
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-#. Under the *Web Application Firewall* section 
-
-#. Choose the following options:
-
-   =============================== =================================
-   Variable                        Value
-   =============================== =================================
-   Web Application Firewall (WAF)  Enable
-   Select App Firewall             shared/base-appfw
-   =============================== =================================
-
-#. Click "Save and Exit" to create the HTTP Load Balancer.
-
-Once the HTTP Load Balancer has been deployed, you should now be able to go to the DNS name that you entered 
-previously in a web browser.  The FQDN we used in our example is http://stable-sheep.aws.lab.f5demos.com.  
-This is a wildcard DNS entry that points to the Public IP (AWS Elastic IP) that is attached to the AppMesh node.
-
-Exercise 5: Verify Configuration
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-The private demo app should look like the following:
-
-.. image:: _static/screenshot-local-vip-private.png
-   :width: 50%
-
-
-Exercise 6: Verify DNS
-^^^^^^^^^^^^^^^^^^^^^^
-
-You can verify that you are connecting directly to AWS by comparing the DNS of the two hosts.
-
-.. code-block:: 
-
-   $ dig +short student001.aws.lab.f5demos.com
-   52.4.72.136
-
-   $ dig -x 52.4.72.136 +short
-   ec2-52-4-72-136.compute-1.amazonaws.com.
-
-.. code-block:: 
-
-   $ nslookup student001.aws.lab.f5demos.com
-
-   Server:		2a01:cb04:765:e00:a6ce:daff:fe11:96ea
-   Address:	2a01:cb04:765:e00:a6ce:daff:fe11:96ea#53
-
-   Non-authoritative answer:
-   Name:	student001.aws.lab.f5demos.com
-   Address: 52.4.72.136
-
-
-In this topology we are sending traffic to the AWS EIP that's attached to the AppMesh node in the AWS VPC.
-
-We then connect to the AWS resource via it's Private IP address.  
-
-<! Try adding the following to the URL "?cat%20/etc/passwd".  ###this request hung without providing a blocking page>
-
-Try adding the following to the URL "/cart?search=aaa’><script>prompt(‘Please+enter+your+password’);</script>"
-
-You should see a block page.  This is similar behavior to what we saw in the previous lab,
-but in this case the enforcement of the WAF policy is occurring on the AppMesh node
-that is deployed in the AWS Lab Environment and not in the F5 Distributed Cloud Regional Edge.
-
-In the next lab we will look at how to customize our WAF policy.
-
-Video Walkthrough 
-^^^^^^^^^^^^^^^^^
-
-Optional Video you can watch if you get stuck
-
-.. raw:: html
-
-   <iframe width="560" height="315" src="https://www.youtube.com/embed/s-BHH0Qayfc?start=400" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
+Lab 2: Deploying F5 Distributed Cloud Proxy Services to Securely Deliver a Private Endpoint via Regional Edge
+==========================================================================================
+
+Your company has an application hosted in a private location (currently in AWS). You need to make the application available publically, 
+and you want to use the power of Distributed Cloud's platform for users to connect.  In this hybrid configuration, traffic will flow in 
+via the Regional Edges and it will then be sent to the application in AWS.  There is no direct access to the application; all traffic 
+will only be avaiable via Distributed Cloud.  You will configure access to the application in this lab.
+
+For the tasks that follow, you should have already noted your individual **namespace**. If you
+failed to note it, return to the **Introduction** section of this lab, follow the instructions
+provided and note your **namespace** accordingly. The **Delegated Domain** and the F5
+Distributed Cloud **Tenant** are listed below for your convenience as they will be the same for
+all lab attendees.
+
+* **Delegated Domain:** *.lab-sec.f5demos.com*
+* **F5 Distributed Cloud Tenant:** https://f5-xc-lab-sec.console.ves.volterra.io
+
+|lab000|
+
+Following the tasks in the prior **Introduction** Section, you should now be able to access the
+F5 Distributed Cloud Console, having set your Work Domain Roles and Skill levels. If you have
+not done so already, please login to your tenant for this lab and proceed to Task 1.
+
+Task 1: Configure Load Balancer and Origin Pool
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The following steps will allow you to deploy and advertise a globally available application.
+These steps will create an origin pool, add a health monitor, define an application, register
+its DNS, and advertise the application on the Internet using the F5 Distributed Cloud Global
+Network.
+
++---------------------------------------------------------------------------------------------------------------+
+| 1. Following the **Introduction** section  instructions, you should now be in the **Multi-Cloud App Connect** |
+|                                                                                                               |
+|    configuration window. If for some reason you are not in the **Multi-Cloud App Connect** window, use the    |
+|                                                                                                               |
+|    **Select Service** in the left-hand navigation, and click **Multi-Cloud App Connect** as shown in the      |
+|                                                                                                               |
+|    *Introduction section, Task 2, Step 9*.                                                                    |
+|                                                                                                               |
+| 2. In the left-hand navigation expand **Manage** and click **Load Balancers > Origin Pools**                  |
+|                                                                                                               |
+| 3. In the resulting screen click the **Add Origin Pool** in the graphic as shown.                             |
+|                                                                                                               |
+| .. note::                                                                                                     |
+|    *You have defaulted to your specific namespace as that is the only namespace to which you have             |
+|                                                                                                               |
+|    *administrative access.**                                                                                  |
++---------------------------------------------------------------------------------------------------------------+
+| |lab001|                                                                                                      |
+|                                                                                                               |
+| |lab002|                                                                                                      |
++---------------------------------------------------------------------------------------------------------------+
+
++---------------------------------------------------------------------------------------------------------------+
+| 4. In the resulting window, enter **<namespace>-pool** in the **Name** field and click **Add Item** under     |
+|                                                                                                               |
+|    **Origin Servers**                                                                                         |
++---------------------------------------------------------------------------------------------------------------+
+| |lab003|                                                                                                      |
++---------------------------------------------------------------------------------------------------------------+
+
++---------------------------------------------------------------------------------------------------------------+
+| 5. In the resulting window, **Public DNS Name of Origin Server** should be selected for **Select Type of**    |
+|                                                                                                               |
+|    **Origin Server**.                                                                                         |
+|                                                                                                               |
+| 6. For **DNS Name** enter the following hostname: **demo-app.amer.myedgedemo.com** and then click **Apply**   |
++---------------------------------------------------------------------------------------------------------------+
+| |lab004|                                                                                                      |
++---------------------------------------------------------------------------------------------------------------+
+
++---------------------------------------------------------------------------------------------------------------+
+| 7. After returning to the prior window, change the **Port** under **Origin server Port** to **80**.           |
+|                                                                                                               |
+| 8. Scroll to the bottom and click **Save and Exit**.                                                          |
++---------------------------------------------------------------------------------------------------------------+
+| |lab005|                                                                                                      |
+|                                                                                                               |
+| |lab006|                                                                                                      |
++---------------------------------------------------------------------------------------------------------------+
+
++---------------------------------------------------------------------------------------------------------------+
+| 9. In the left-hand navigation expand **Manage** and click **Load Balancers > HTTP Load** **Balancers**.      |
+|                                                                                                               |
+| 10. In the resulting screen click the **Add HTTP Load Balancer** in the graphic as shown.                     |
++---------------------------------------------------------------------------------------------------------------+
+| |lab007|                                                                                                      |
+|                                                                                                               |
+| |lab008|                                                                                                      |
++---------------------------------------------------------------------------------------------------------------+
+
++---------------------------------------------------------------------------------------------------------------+
+| 11. Using the left-hand navigation and in the sections as shown, enter the following data. Values where       |
+|                                                                                                               |
+|     **<namespace>** is required, use the name of your given namespace.                                        |
+|                                                                                                               |
+|     * **Metadata:Name ID:**  *<namespace>-lb*                                                                 |
+|     * **Domains and LB Type: List of Domains:** *<namespace>.lab-sec.f5demos.com*                             |
+|     * **Domains and LB Type: Select Type of Load Balancer:** *HTTP*                                           |
+|     * **Domains and LB Type: Automatically Manage DNS Records:** *(Check the checkbox)*                       |
+|     * **Domains and LB Type: HTTP Port:** *80*                                                                |
++---------------------------------------------------------------------------------------------------------------+
+| |lab009|                                                                                                      |
++---------------------------------------------------------------------------------------------------------------+
+
++---------------------------------------------------------------------------------------------------------------+
+| 12. In the current window's left-hand navigation, click **Origins**. Next, click **Add Item Pools** section of|
+|                                                                                                               |
+|     **Origins**.                                                                                              |
++---------------------------------------------------------------------------------------------------------------+
+| |lab010|                                                                                                      |
++---------------------------------------------------------------------------------------------------------------+
+
++---------------------------------------------------------------------------------------------------------------+
+| 13. In the resulting window, verify **Origin Pool** is selected for **Select Origin Pool **Method**.          |
+|                                                                                                               |
+| 14. Select the **<namespace>/<namespace>-pool** from the **Origin Pool**  dropdown.                           |
+|                                                                                                               |
+| 15. Click **Apply**                                                                                           |
++---------------------------------------------------------------------------------------------------------------+
+| |lab011|                                                                                                      |
++---------------------------------------------------------------------------------------------------------------+
+
++---------------------------------------------------------------------------------------------------------------+
+| 16. In the resulting **HTTP Load Balancer** window, scroll to the **Other Settings** section and note the     |
+|                                                                                                               |
+|     **VIP Advertisement** setting.                                                                            |
+|                                                                                                               |
+| 17. Click **Save and Exit** at the bottom of the **HTTP Load Balancer** configuration screen.                 |
+|                                                                                                               |
+| .. note::                                                                                                     |
+|    *The VIP Advertisement selection controls how/where the application is advertised. The "Internet" setting* |
+|                                                                                                               |
+|    *means that this application will be advertised globally using the F5 Distributed Cloud Global Network*    |
+|                                                                                                               |
+|    *utilizing Anycast.*                                                                                       |
++---------------------------------------------------------------------------------------------------------------+
+| |lab012|                                                                                                      |
++---------------------------------------------------------------------------------------------------------------+
+
++---------------------------------------------------------------------------------------------------------------+
+| 18. In the **HTTP Load Balancers** window, note the application hostname under the **Domains** column *(This* |
+|                                                                                                               |
+|     *was done in Task1: Step 11)*.                                                                            |
+|                                                                                                               |
++---------------------------------------------------------------------------------------------------------------+
+| |lab013|                                                                                                      |
++---------------------------------------------------------------------------------------------------------------+
+
+Task 2: Testing the Application and Viewing Telemetry Data
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The following steps will validate access to the application via web browser, review the
+Performance Monitoring dashboard, and gather request details.
+
++---------------------------------------------------------------------------------------------------------------+
+| 1. Open another tab in your browser (Chrome shown), navigate to the newly configured Load Balancer            |
+|                                                                                                               |
+|    configuration: **http://<namespace>.lab-sec.f5demos.com**, to confirm it is functional.                    |
+|                                                                                                               |
+| 2. Navigate to the **HEADER** section under **Menu** to generate additional traffic.                          |
++---------------------------------------------------------------------------------------------------------------+
+| |lab014|                                                                                                      |
+|                                                                                                               |
+| |lab015|                                                                                                      |
++---------------------------------------------------------------------------------------------------------------+
+
++---------------------------------------------------------------------------------------------------------------+
+| 3. Returning to the F5 Distributed Cloud Console, use the left-hand navigation to navigate to Multi-Cloud App |
+|                                                                                                               |
+|    Connect section and click on **Performance**                                                               |
+|                                                                                                               |
+| 4. Scroll to the **Load Balancers** section of the page and click the link for your respective load balancer. |
+|                                                                                                               |
++---------------------------------------------------------------------------------------------------------------+
+| |lab016|                                                                                                      |
+|                                                                                                               |
+| |lab017|                                                                                                      |
++---------------------------------------------------------------------------------------------------------------+
+
++---------------------------------------------------------------------------------------------------------------+
+| 5. Change the viewable time period from Last 5 minutes (default) to **1 hour** by selecting the dropdown      |
+|                                                                                                               |
+|    shown, click **Last 1 hour** then clicking **Apply**.                                                      |
+|                                                                                                               |
+| 6. Note the **End to end Latency** tile.  This shows the average latency for all requests to this load        |
+|                                                                                                               |
+|    balancer.                                                                                                  |
+|                                                                                                               |
+| .. note::                                                                                                     |
+|    *As you have not run many requests, summary analytics may not be available in the dashboard view yet.*     |
++---------------------------------------------------------------------------------------------------------------+
+| |lab018|                                                                                                      |
+|                                                                                                               |
+| |lab019|                                                                                                      |
++---------------------------------------------------------------------------------------------------------------+
+
++---------------------------------------------------------------------------------------------------------------+
+| 7. Click the **Requests** link to see detailed information about individual requests.                         |
+|                                                                                                               |
+| 8. Note the **Chart** shows a graphical representation of all of the response codes for the selected time     |
+|                                                                                                               |
+|    frame.                                                                                                     |
+|                                                                                                               |
+| .. note::                                                                                                     |
+|    *This data can be filtered to quickly narrow in on points of interest.*                                    |
++---------------------------------------------------------------------------------------------------------------+
+| |lab020|                                                                                                      |
+|                                                                                                               |
+| |lab021|                                                                                                      |
++---------------------------------------------------------------------------------------------------------------+
+
++---------------------------------------------------------------------------------------------------------------+
+| 9. Click the **Hide Chart** link to free up space in the browser window.                                      |
+|                                                                                                               |
+| 10. Expand one of the individual requests to view additional details about that request.                      |
+|                                                                                                               |
+| 11. Note the **Duration** section.  This shows the latency for this specific request.  These values can be    |
+|                                                                                                               |
+|     compared to the average latency data noted in step 6.                                                     |
++---------------------------------------------------------------------------------------------------------------+
+| |lab022|                                                                                                      |
+|                                                                                                               |
+| |lab023|                                                                                                      |
++---------------------------------------------------------------------------------------------------------------+
+
+Task 3: Add an Application Firewall Policy to Protect the Application
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The following steps will guide you through adding a Web Application Firewall (WAF) Policy.
+
+These steps will apply a preconfigured WAF policy to the load balancer created in Task 1.
+
++---------------------------------------------------------------------------------------------------------------+
+| 1. Following **Task 2**, you should have the **Multi-Cloud App Connect** navigation panel on the left of your |
+|                                                                                                               |
+|    console.  If for some reason you do not see the **Multi-Cloud App Connect** navigation panel, use the      |
+|                                                                                                               |
+|    **Select Service** dropdown at the top left, and click **Multi-Cloud App Connect** as shown in the         |
+|                                                                                                               |
+|    *Introduction section, Task 2, Step 9*.                                                                    |
+| 2. In the left-hand navigation expand **Manage** and click **Load Balancers > HTTP Load Balancers**           |
+|                                                                                                               |
+| 3. On the resulting page find the HTTP Load Balancer created in **Task 1** *(<namespace>-lb)*.  Click the     |
+|                                                                                                               |
+|    ellipsis under Actions and select **Manage Configuration**.                                                |
++---------------------------------------------------------------------------------------------------------------+
+| |lab028|                                                                                                      |
+|                                                                                                               |
+| |lab029|                                                                                                      |
++---------------------------------------------------------------------------------------------------------------+
+
++---------------------------------------------------------------------------------------------------------------+
+| 4. On the resulting page click **Edit Configuration**.                                                        |
+|                                                                                                               |
+| 5. Click **Web Application Firewall** in the left-hand navigation.                                            |  
++---------------------------------------------------------------------------------------------------------------+
+| |lab030|                                                                                                      |
+|                                                                                                               |
+| |lab031|                                                                                                      |
++---------------------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------+
+| 6. Under the **Web Application Firewall** section select **Enable** from the **Web Application Firewall**     |
+|                                                                                                               |
+|     **(WAF)** dropdown.                                                                                       |
+|                                                                                                               |
+| 7. Select preconfigured the Web Application Firewall                                                          |
+|                                                                                                               |
+|     *(shared/base-appfw)* from the **Enable** dropdown.                                                       |
+|                                                                                                               |
+| 8. Scroll to the bottom of the page and click **Save and Exit**                                               |
++---------------------------------------------------------------------------------------------------------------+
+| |lab032|                                                                                                      |
+|                                                                                                               |
+| |lab033|                                                                                                      |
++---------------------------------------------------------------------------------------------------------------+
+
+Task 4. Test the Application Firewall and View Security Events
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The following steps will test and validate the Web Application Firewall, review the Security
+
+Monitoring dashboard, and gather security event details.
+
++---------------------------------------------------------------------------------------------------------------+
+| 1. Open another tab in your browser (Chrome shown), navigate to the newly configured Load Balancer            |
+|                                                                                                               |
+|    configuration: **http://<namespace>.lab-sec.f5demos.com**, to confirm it is functional.                    |
+|                                                                                                               |
+| 2. Using some of the sample attacks below, add the URI path & variables to your application to generate       |
+|                                                                                                               |
+|    security event data.                                                                                       |
+|                                                                                                               |
+|    * /?cmd=cat%20/etc/passwd                                                                                  |
+|    * /product?id=4%20OR%201=1                                                                                 |
+|    * /cart?search=aaa'><script>prompt('Please+enter+your+password');</script>                                 |
+|                                                                                                               |
+| .. note::                                                                                                     |
+|    *The web application firewall is blocking these requests to protect the application. The block page can*   |
+|                                                                                                               |
+|    *be customized to provide additional information.*                                                         |
++---------------------------------------------------------------------------------------------------------------+
+| |lab034|                                                                                                      |
++---------------------------------------------------------------------------------------------------------------+
+
++---------------------------------------------------------------------------------------------------------------+
+| 3. Returning to the F5 Distributed Cloud Console, use the left-hand navigation to navigate to Multi-Cloud App |
+|                                                                                                               |
+|    Connect section and click on **Performance**                                                               |
+|                                                                                                               |
+| 4. Scroll to the **Load Balancers** section of the page and click the link for your respective load balancer. |
+|                                                                                                               |
++---------------------------------------------------------------------------------------------------------------+
+| |lab016|                                                                                                      |
+|                                                                                                               |
+| |lab017|                                                                                                      |
++---------------------------------------------------------------------------------------------------------------+
+
++---------------------------------------------------------------------------------------------------------------+
+| 5. Click the **Performance Monitoring** dropdown at the top of the page and select **Security Monitoring**    |
++---------------------------------------------------------------------------------------------------------------+
+| |lab035|                                                                                                      |
+|                                                                                                               |
++---------------------------------------------------------------------------------------------------------------+
+
++---------------------------------------------------------------------------------------------------------------+
+| 6. From the **Dashboard** view, using the horizontal navigation, click **Security Analytics**.                |
+|                                                                                                               |
+| 7. Note the **Chart** shows a graphical representation of all of the response codes for the selected time     |
+|                                                                                                               |
+|    frame.                                                                                                     |
+|                                                                                                               |
+| .. note::                                                                                                     |
+|    *If you lost your 1 Hour Filter, re-apply using Task 2: Step 5*                                            |
++---------------------------------------------------------------------------------------------------------------+
+| |lab037|                                                                                                      |
+|                                                                                                               |
+| |lab038|                                                                                                      |
++---------------------------------------------------------------------------------------------------------------+
+
++---------------------------------------------------------------------------------------------------------------+
+| 8. Click the **Hide Chart** link to free up space in the browser window.                                      |
+|                                                                                                               |
+| 9. Expand your latest security event as shown.                                                               |
+|                                                                                                               |
+| 10. Note the summary detail provided in the **Information** link.  The **req_id** which is synonymous with    |
+|                                                                                                               |
+|    **Support ID** (filterable) from the block page.                                                           |
+|                                                                                                               |
+| 11. Scroll to the bottom of the information screen to see specific signatures detected and actions taken      |
+|                                                                                                               |
+|     during the security event.                                                                                |
+|                                                                                                               |
+| .. note::                                                                                                     |
+|    *Note that Requests have additional detail in JSON format*                                                 |
++---------------------------------------------------------------------------------------------------------------+
+| |lab039|                                                                                                      |
+|                                                                                                               |
+| |lab040|                                                                                                      |
+|                                                                                                               |
+| |lab041|                                                                                                      |
++---------------------------------------------------------------------------------------------------------------+
+
++---------------------------------------------------------------------------------------------------------------+
+| **End of Lab 1:**  This concludes Lab 1.  In this lab you created an origin pool to connect to the            |
+|                                                                                                               |
+| application, you then created a load balancer and associated the origin pool to the load balancer.  This      |
+|                                                                                                               |
+| allowed the application to be advertised via the F5 Distributed Cloud Global Network.  The Distributed Cloud  |
+|                                                                                                               |
+| Console was then used to review telemetry data gathered for the application.  Next an Application Firewall    |
+|                                                                                                               |
+| policy was assigned to protect the application.  Finally a sample attack was run against the application and  |
+| the security event data was reviewed within the Distributed Cloud Console.                                    |
+|                                                                                                               |
+| A brief presentation will be shared prior to the beginning of Lab 2.                                          |
++---------------------------------------------------------------------------------------------------------------+
+| |labend|                                                                                                      |
++---------------------------------------------------------------------------------------------------------------+
+
+.. |lab000| image:: _static/lab1-000.png
+   :width: 800px
+.. |lab001| image:: _static/lab1-001.png
+   :width: 800px
+.. |lab002| image:: _static/lab1-002.png
+   :width: 800px
+.. |lab003| image:: _static/lab1-003.png
+   :width: 800px
+.. |lab004| image:: _static/lab1-004.png
+   :width: 800px
+.. |lab005| image:: _static/lab1-005.png
+   :width: 800px
+.. |lab006| image:: _static/lab1-006.png
+   :width: 800px
+.. |lab007| image:: _static/lab1-007.png
+   :width: 800px
+.. |lab008| image:: _static/lab1-008.png
+   :width: 800px
+.. |lab009| image:: _static/lab1-009.png
+   :width: 800px
+.. |lab010| image:: _static/lab1-010.png
+   :width: 800px
+.. |lab011| image:: _static/lab1-011.png
+   :width: 800px
+.. |lab012| image:: _static/lab1-012.png
+   :width: 800px
+.. |lab013| image:: _static/lab1-013.png
+   :width: 800px
+.. |lab014| image:: _static/lab1-014.png
+   :width: 800px
+.. |lab015| image:: _static/lab1-015.png
+   :width: 800px
+.. |lab016| image:: _static/lab1-016.png
+   :width: 800px
+.. |lab017| image:: _static/lab1-017.png
+   :width: 800px
+.. |lab018| image:: _static/lab1-018.png
+   :width: 800px
+.. |lab019| image:: _static/lab1-019.png
+   :width: 800px
+.. |lab020| image:: _static/lab1-020.png
+   :width: 800px
+.. |lab021| image:: _static/lab1-021.png
+   :width: 800px
+.. |lab022| image:: _static/lab1-022.png
+   :width: 800px
+.. |lab023| image:: _static/lab1-023.png
+   :width: 800px
+.. |lab024| image:: _static/lab1-024.png
+   :width: 800px
+.. |lab025| image:: _static/lab1-025.png
+   :width: 800px
+.. |lab026| image:: _static/lab1-026.png
+   :width: 800px
+.. |lab027| image:: _static/lab1-027.png
+   :width: 800px
+.. |lab028| image:: _static/lab1-028.png
+   :width: 800px
+.. |lab029| image:: _static/lab1-029.png
+   :width: 800px
+.. |lab030| image:: _static/lab1-030.png
+   :width: 800px
+.. |lab031| image:: _static/lab1-031.png
+   :width: 800px
+.. |lab032| image:: _static/lab1-032.png
+   :width: 800px
+.. |lab033| image:: _static/lab1-033.png
+   :width: 800px
+.. |lab034| image:: _static/lab1-034.png
+   :width: 800px
+.. |lab035| image:: _static/lab1-035.png
+   :width: 800px
+.. |lab036| image:: _static/lab1-036.png
+   :width: 800px
+.. |lab037| image:: _static/lab1-037.png
+   :width: 800px
+.. |lab038| image:: _static/lab1-038.png
+   :width: 800px
+.. |lab039| image:: _static/lab1-039.png
+   :width: 800px
+.. |lab040| image:: _static/lab1-040.png
+   :width: 800px
+.. |lab041| image:: _static/lab1-041.png
+   :width: 800px
+.. |labend| image:: _static/labend.png
+   :width: 800px
