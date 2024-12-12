@@ -83,7 +83,7 @@ We will first create an Origin Pool that refers to the "Private Endpoint" site i
 | |lab301|                                                                                                   | 
 |                                                                                                            |
 |                                                                                                            |
-| 5. Click on **"Apply"** to return to the previous screen.                                                    |
+| 5. Click on **"Apply"** to return to the previous screen.                                                  |
 |                                                                                                            |
 | 6. Below the "Origin Servers" section fill in the Origin Server Port information                           |
 +------------------------------------------------------------------------------------------------------------+
@@ -96,7 +96,7 @@ We will first create an Origin Pool that refers to the "Private Endpoint" site i
 |   ================================= =====                                                                  |
 |                                                                                                            |
 +------------------------------------------------------------------------------------------------------------+   
-|6. Click **Save and Exit**.                                                                                 |  
+| 7. Click **Save and Exit**.                                                                                 |  
 +------------------------------------------------------------------------------------------------------------+
 
 
