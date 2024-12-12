@@ -19,6 +19,8 @@ By following the tasks in the prior **Introduction** Section, you should now be 
 F5 Distributed Cloud Console, having set your Work Domain Roles and Skill levels. If you have
 not done so already, please login to your tenant for this lab and proceed to Task 1.
 
+**Expected Lab Time: 20 minutes**
+
 Task 1: Review Developer Portal
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

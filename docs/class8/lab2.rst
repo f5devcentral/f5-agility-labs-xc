@@ -63,7 +63,7 @@ created, you will intialize Terraform and then deploy an HTTP Health Check, Orig
 |    * **Confirm Password:** *<some_password>*                                                                  |
 |    * **Expiry Date: Select:** *<date two days in the future of today's date>*                                 |
 |                                                                                                               |
-| 6. Click **Download**.                                                                                       |
+| 6. Click **Download**.                                                                                        |
 |                                                                                                               |
 | |lab2-Terraform_Download_API_Cert|                                                                            |
 |                                                                                                               |
@@ -102,6 +102,10 @@ created, you will intialize Terraform and then deploy an HTTP Health Check, Orig
 |    export VES_P12_PASSWORD="<some_password>"                                                                  |
 |                                                                                                               |
 | |lab2-Terraform_Auth_Env|                                                                                     |
+|                                                                                                               |
+| .. note::                                                                                                     |
+|    *Replace <some_password> with the password you entered when creating the API certificate.  You need to*    |
+|    *wrap the password in "".  If your password is password, enter: export VES_P12_PASSWORD="password"*        |
 +---------------------------------------------------------------------------------------------------------------+
 
 +---------------------------------------------------------------------------------------------------------------+
@@ -124,6 +128,10 @@ created, you will intialize Terraform and then deploy an HTTP Health Check, Orig
 |    namespace   = "<namespace>"                                                                                |
 |                                                                                                               |
 | |lab2-Terraform_Tfvars_Values|                                                                                |
+|                                                                                                               |
+| .. note::                                                                                                     |
+|    *Replace <namespace> with your assigned namespace. You need to wrap the namespace in "". If your assigned* |     
+|    *namespace is brave-collie, enter: namespace = "brave-collie"*                                             |
 +---------------------------------------------------------------------------------------------------------------+
 
 +---------------------------------------------------------------------------------------------------------------+
