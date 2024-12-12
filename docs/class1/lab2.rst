@@ -68,7 +68,9 @@ We will first create an Origin Pool that refers to the "Private Endpoint" site i
 |   ================================= =====                                                                  |
 |                                                                                                            |
 +------------------------------------------------------------------------------------------------------------+
+||                                                                                                           |
 || 4. Click on "Add Item" under the section "Origin Servers"                                                 |
+||                                                                                                           |
 +------------------------------------------------------------------------------------------------------------+
 |                                                                                                            |
 |   ================================= =====                                                                  |
@@ -125,7 +127,7 @@ We will first create an Origin Pool that refers to the "Private Endpoint" site i
 Task 2. Create and Deploy a HTTP Load Balancer on F5 Distributed Cloud CE 
 ---------------------------------------------------------------------------
 
-In Lab-1 we were connecting to a F5 Distributed Cloud Load Balancer that was deployed in a Regional Edge.
+In the first lab we were connecting to a F5 Distributed Cloud Load Balancer that was deployed in a Regional Edge.
 Now we will deploy a Load Balancer on the CE node that was deployed in the AWS VPC (CE location).
 
 +-----------------------------------------------------------------------------------------------------------------------------------+
@@ -135,6 +137,9 @@ Now we will deploy a Load Balancer on the CE node that was deployed in the AWS V
 ||                                                                                                                                  |
 || 3. Enter the following variables:                                                                                                |
 ||                                                                                                                                  |
++-----------------------------------------------------------------------------------------------------------------------------------+
+|                                                                                                                                   |
+|                                                                                                                                   |
 |   ================================= =====                                                                                         |
 |   Variable                          Value                                                                                         |
 |   ================================= =====                                                                                         |
@@ -144,9 +149,10 @@ Now we will deploy a Load Balancer on the CE node that was deployed in the AWS V
 |   Automatically Manage DNS Records  No/Unchecked                                                                                  |
 |   ================================= =====                                                                                         |
 |                                                                                                                                   |
++-----------------------------------------------------------------------------------------------------------------------------------+                                                                                       
 |                                                                                                                                   |
 |  |lab311|                                                                                                                         |
-|                                                                                                                                   |
+||                                                                                                                                  |
 || 4. Under Origin Pools Click *"Add Item"*                                                                                         |
 ||                                                                                                                                  |
 |  |lab302|                                                                                                                         |
@@ -154,13 +160,13 @@ Now we will deploy a Load Balancer on the CE node that was deployed in the AWS V
 || 5. Select the recently created **[NAMESPACE]-private-pool** under Origin pool and then click *"Apply"*                           |
 ||                                                                                                                                  |
 |  |lab303|                                                                                                                         |
-|                                                                                                                                   |
+||                                                                                                                                  |
 || 6. Now you can see your Origin Pool has been added to the HTTP Loadbalancer Configuration                                        |
 ||                                                                                                                                  |
 |  |lab304|                                                                                                                         |
 ||                                                                                                                                  |
 || 7. Now we want to control how this Load Balancer is advertised, we will select the "Other Settings" on the left hand side.       |
-||  This will auto-scroll the configuations towards the bottom of the Load Balancer configuration section labled "Other Settings".  |
+||    This will auto-scroll the configuations towards the bottom of the Load Balancer configuration section labled "Other Settings" |
 ||                                                                                                                                  |
 || |lab305|                                                                                                                         |
 ||                                                                                                                                  |
@@ -170,41 +176,49 @@ Now we will deploy a Load Balancer on the CE node that was deployed in the AWS V
 ||                                                                                                                                  |
 || 9. In the List of Sites to Advertise", Click on *"Add Item"*                                                                     |
 ||                                                                                                                                  |
-|| |lab307                                                                                                                          |
+|| |lab307|                                                                                                                         |
 ||                                                                                                                                  |
 || 10. For *"Site Network"* select *"Outside Network"*                                                                              |
 ||                                                                                                                                  |
 || 11. For *"Site Reference"* select **system/student-awsnet**                                                                      |
 ||                                                                                                                                  |
 || |lab308|                                                                                                                         |
-|                                                                                                                                   |
-||12. Click on *"Apply"* and once again *"Apply"* on the next screen.                                                               |
+||                                                                                                                                  |
+|| 12. Click on *"Apply"* and once again *"Apply"* on the next screen.                                                              |
 ||                                                                                                                                  |
 |                                                                                                                                   |       
 +-----------------------------------------------------------------------------------------------------------------------------------+
 
 Task 3: Configure WAF Policy
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Now that we have our load balancer and orign server configured we want to make sure we are protecting the origin server.  Here we   
+easily apply a pre-existing shared WAF policy.  
 
-1. Under the *Web Application Firewall* section 
-
-2. Choose the following options:
-
-   =============================== =================================
-   Variable                        Value
-   =============================== =================================
-   Web Application Firewall (WAF)  Enable
-   Select App Firewall             shared/base-appfw
-   =============================== =================================
-
-3.  Scroll to the botton of the screen and click "Save and Exit" to create the HTTP Load Balancer.
-
-Once the HTTP Load Balancer has been deployed, you should now be able to go to the DNS name that you entered 
-previously in a web browser.  The FQDN we used in our example is http://[NAMESPACE].aws.lab.f5demos.com.  
-This is a wildcard DNS entry that points to the Public IP (AWS Elastic IP) that is attached to the AppMesh node.
-
-4.  Click on *"Save and Exit"* to complete the Load Balancer configuration
-
++-----------------------------------------------------------------------------------------------------------------------------------+
+|| 1. Under the *Web Application Firewall* section                                                                                  |
+||                                                                                                                                  |
+|| 2. Choose the following options:                                                                                                 |
+||                                                                                                                                  | 
++-----------------------------------------------------------------------------------------------------------------------------------+
+|                                                                                                                                   |
+|   =============================== =================================                                                               |
+|   Variable                        Value                                                                                           |
+|   =============================== =================================                                                               |
+|   Web Application Firewall (WAF)  **Enable**                                                                                      |
+|   Select App Firewall             **shared/base-appfw**                                                                           |
+|   =============================== =================================                                                               |
+|                                                                                                                                   |
++-----------------------------------------------------------------------------------------------------------------------------------+
+||                                                                                                                                  |
+|| 3.  Scroll to the botton of the screen and click "Save and Exit" to create the HTTP Load Balancer.                               |
+||                                                                                                                                  |
+|      Once the HTTP Load Balancer has been deployed, you should now be able to go to the DNS name that you entered                 |
+|      previously in a web browser.  The FQDN we used in our example is http://[NAMESPACE].aws.lab.f5demos.com.                     |
+|      This is a wildcard DNS entry that points to the Public IP (AWS Elastic IP) that is attached to the AppMesh node.             |
+||                                                                                                                                  |
+||  4.  Click on *"Save and Exit"* to complete the Load Balancer configuration                                                      |
+||                                                                                                                                  |
++-----------------------------------------------------------------------------------------------------------------------------------+
 
 Task 4: Verify Configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -212,13 +226,13 @@ Task 4: Verify Configuration
 You should now be able to go to the DNS name that you created in this Load Balancer configuration.  
 The FQDN we used in our example is http://[NAMESPACE].aws.lab.f5demos.com/.  
 
-
-The private demo app should look like the following:
-
-.. image:: _static/screenshot-global-vip-private.png
-   :width: 50%
-
-
++-----------------------------------------------------------------------------------------------------------------------------------+
+||  The private demo app should look like the following:                                                                            |
+||                                                                                                                                  |
+|  |lab312                                                                                                                          |
+|                                                                                                                                   |
+|                                                                                                                                   |
++-----------------------------------------------------------------------------------------------------------------------------------+
 
 .. raw:: html
 
@@ -300,4 +314,8 @@ Optional Video you can watch if you get stuck
 .. |lab310| image:: _static/lab3-appworld2025-waf-block-message.png
    :width: 800px
 .. |lab311| image:: _static/lab3-appworld2025-task2-lb-updated.png
+   :width: 800px 
+.. |lab312| image:: _static/screenshot-global-vip-private.png
+   :width: 800px 
+.. |lab313| image:: _static/lab3-appworld2025-waf-block-message.png
    :width: 800px 
