@@ -29,15 +29,15 @@ In this scenario, the CE advertises the services directly.  While this topology 
 volumetric DDoS protection and anycast availability from the Distributed Cloud global network, there are some use cases where it can be beneficial.  
 One such example is when clients and protected resources are both local to each other without having to traverse the Internet.
 
-With either toplogy, two encrypted tunnels are automatically created between the CE and the two closest REs.  These redundant tunnels provide
-high availability in the unlikely event of an outage at a specific RE within the Distributed Cloud global network.
+With either toplogy, two encrypted tunnels are automatically created between the CE and the two closest REs.  At a minimum these redundant tunnels provide
+control-plane communication the CE. Through the Distributed Cloud Console or via API your configuraton commands traverse these tunnels.
 
 In the event of an Internet outage at a CE site, local survivability will continue to provide data plane services locally for a period of time.  
 During this time, control plane services are suspended and will resume upon Internet connection reestablishment.
 
-While a single CE may be adequate for non-production environments, a high-availability cluster of at least 3 CE's is highly recommended for production.
+While a single CE node may be adequate for non-production environments, a high-availability cluster of at least 3 CE's is highly recommended for production.
 
-This lab has auto deployed an AWS site with a Customer Edge node for you. You may walk through this process using the F5 Distributed Cloud Simulator if you wish.
+This lab has auto deployed an AWS site with a CE node for you. You may walk through this process using the F5 Distributed Cloud Simulator if you wish.
 
 https://simulator.f5.com/s/cloud2cloud_via_sites_brownfield/nav/aws/005/0
 
@@ -122,62 +122,66 @@ We will first create an Origin Pool that refers to the "Private Endpoint" site i
 .. |op-tshoot| image:: _static/op-tshoot.png
 
 
-Task 2. Create and Deploy a HTTP Load Balancer on F5 Distributed Cloud Customer Edge 
+Task 2. Create and Deploy a HTTP Load Balancer on F5 Distributed Cloud CE 
 ---------------------------------------------------------------------------
 
-In the previous lab exercises we were connecting to a F5 Distributed Cloud Load Balancer that was deployed in a Regional Edge.
-Now we will deploy a Load Balancer on the CE Mesh node that was deployed in the AWS VPC (Customer Edge location).
+In Lab-1 we were connecting to a F5 Distributed Cloud Load Balancer that was deployed in a Regional Edge.
+Now we will deploy a Load Balancer on the CE node that was deployed in the AWS VPC (CE location).
 
-1. Start in F5 Distributed Cloud Console and switch back to the **Multi-Cloud App Connect** context.
-
-2. Navigate the menu to go to **"Manage"->"Load Balancers"-> "HTTP Loabalancers"**.  Click on *Add HTTP Loadbalancer*.
-
-3. Enter the following variables:
-
-   ================================= =====
-   Variable                          Value
-   ================================= =====
-   Name                              [NAMESPACE]-private-lb
-   Domains                           [NAMESPACE].aws.lab.f5demos.com
-   Select type of Load Balancer      HTTP
-   Automatically Manage DNS Records  No/Unchecked 
-   ================================= =====
-
-
-.. image:: _static/lab3-appworld2025-task2-lb-updated.png
-
-4. Under Origin Pools Click *"Add Item"*
-
-.. image:: _static/lab3-appworld2025-task2-lb-add-origin-pool.png    
-
-5. Select the recently created **[NAMESPACE]-private-pool** under Origin pool and then click *"Apply"*
-
-.. image:: _static/lab3-appworld2025-task2-lb-add-origin-pool2.png
-
-6. Now you can see your Origin Pool has been added to the HTTP Loadbalancer Configuration
-
-.. image:: _static/lab3-appworld2025-task2-lb-origin-pool-added.png
-
-7. Now we want to control how this Load Balancer is advertised, we will select the "Other Settings" on the left hand side.  This will 
-   auto-scroll the configuations towards the bottom of the Load Balancer configuration section labled "Other Settings". 
-
-.. image:: _static/lab3-appworld2025-task2-lb-other-settings.png
-
-8. Under *VIP Advertisement* Change it to "Custom"  then select **Configure**
-
-.. image:: _static/lab3-appworld2025-task2-lb-change-vip-advertisement.png
-
-9. In the List of Sites to Advertise", Click on *"Add Item"*
-
-.. image:: _static/lab3-appworld2025-list-sites-advertise.png
-
-10. For *"Site Network"* select *"Outside Network"*
-
-11. For *"Site Reference"* select **system/student-awsnet**
-
-.. image:: _static/lab3-appworld2025-task2-lb-site-change.png
-
-12. Click on *"Apply"* and once again *"Apply"* on the next screen.
++-----------------------------------------------------------------------------------------------------------------------------------+
+|| 1. Start in F5 Distributed Cloud Console and switch back to the **Multi-Cloud App Connect** context.                             |
+||                                                                                                                                  |
+|| 2. Navigate the menu to go to **"Manage"->"Load Balancers"-> "HTTP Loabalancers"**.  Click on *Add HTTP Loadbalancer*.           |
+||                                                                                                                                  |
+|| 3. Enter the following variables:                                                                                                |
+||                                                                                                                                  |
+|   ================================= =====                                                                                         |
+|   Variable                          Value                                                                                         |
+|   ================================= =====                                                                                         |
+|   Name                              [NAMESPACE]-private-lb                                                                        |
+|   Domains                           [NAMESPACE].aws.lab.f5demos.com                                                               |
+|   Select type of Load Balancer      HTTP                                                                                          |
+|   Automatically Manage DNS Records  No/Unchecked                                                                                  |
+|   ================================= =====                                                                                         |
+|                                                                                                                                   |
+|                                                                                                                                   |
+|  |lab311|                                                                                                                         |
+|                                                                                                                                   |
+|| 4. Under Origin Pools Click *"Add Item"*                                                                                         |
+||                                                                                                                                  |
+|  |lab302|                                                                                                                         |
+||                                                                                                                                  |
+|| 5. Select the recently created **[NAMESPACE]-private-pool** under Origin pool and then click *"Apply"*                           |
+||                                                                                                                                  |
+|  |lab303|                                                                                                                         |
+|                                                                                                                                   |
+|| 6. Now you can see your Origin Pool has been added to the HTTP Loadbalancer Configuration                                        |
+||                                                                                                                                  |
+|  |lab304|                                                                                                                         |
+||                                                                                                                                  |
+|| 7. Now we want to control how this Load Balancer is advertised, we will select the "Other Settings" on the left hand side.       |
+||  This will auto-scroll the configuations towards the bottom of the Load Balancer configuration section labled "Other Settings".  |
+||                                                                                                                                  |
+|| |lab305|                                                                                                                         |
+||                                                                                                                                  |
+|| 8. Under *VIP Advertisement* Change it to "Custom"  then select **Configure**                                                    |
+||                                                                                                                                  |
+|| |lab306|                                                                                                                         |
+||                                                                                                                                  |
+|| 9. In the List of Sites to Advertise", Click on *"Add Item"*                                                                     |
+||                                                                                                                                  |
+|| |lab307                                                                                                                          |
+||                                                                                                                                  |
+|| 10. For *"Site Network"* select *"Outside Network"*                                                                              |
+||                                                                                                                                  |
+|| 11. For *"Site Reference"* select **system/student-awsnet**                                                                      |
+||                                                                                                                                  |
+|| |lab308|                                                                                                                         |
+|                                                                                                                                   |
+||12. Click on *"Apply"* and once again *"Apply"* on the next screen.                                                               |
+||                                                                                                                                  |
+|                                                                                                                                   |       
++-----------------------------------------------------------------------------------------------------------------------------------+
 
 Task 3: Configure WAF Policy
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -277,3 +281,23 @@ Optional Video you can watch if you get stuck
 
 .. |lab301| image:: _static/lab3-appworld2025-task1-originserver.png
    :width: 800px
+.. |lab302| image:: _static/lab3-appworld2025-task2-lb-add-origin-pool.png
+   :width: 800px
+.. |lab303| image:: _static/lab3-appworld2025-task2-lb-add-origin-pool2.png
+   :width: 800px
+.. |lab304| image:: _static/lab3-appworld2025-task2-lb-origin-pool-added.png
+   :width: 800px
+.. |lab305| image:: _static/lab3-appworld2025-task2-lb-other-settings.png
+   :width: 800px
+.. |lab306| image:: _static/lab3-appworld2025-task2-lb-change-vip-advertisement.png
+   :width: 800px
+.. |lab307| image:: _static/lab3-appworld2025-list-sites-advertise.png
+   :width: 800px
+.. |lab308| image:: _static/lab3-appworld2025-task2-lb-site-change.png
+   :width: 800px
+.. |lab309| image:: _static/screenshot-global-vip-private.png
+   :width: 800px
+.. |lab310| image:: _static/lab3-appworld2025-waf-block-message.png
+   :width: 800px
+.. |lab311| image:: _static/lab3-appworld2025-task2-lb-updated.png
+   :width: 800px 
