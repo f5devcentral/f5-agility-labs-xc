@@ -222,24 +222,28 @@ Task 6: Verify DNS
 
 You can verify that you are connecting directly to AWS by comparing the DNS of the two hosts.
 
-+-----------------------------------------------------------------------------------------------------------------------------------+
-||  $ dig [NAMESPACE].aws.lab.f5demos.com                                                                                           |
-|   52.4.72.136                                                                                                                     |
-|                                                                                                                                   |
-|   $ dig -x 52.4.72.136 +short                                                                                                     |
-|   ec2-52-4-72-136.compute-1.amazonaws.com.                                                                                        |
-|                                                                                                                                   |
-+-----------------------------------------------------------------------------------------------------------------------------------+
-|                                                                                                                                   |
-|   $ nslookup [NAMESPACE].aws.lab.f5demos.com                                                                                      |
-|                                                                                                                                   |
-|   Server:		2a01:cb04:765:e00:a6ce:daff:fe11:96ea                                                                                |
-|   Address:	2a01:cb04:765:e00:a6ce:daff:fe11:96ea#53                                                                             |
-|                                                                                                                                   |
-|   Non-authoritative answer:                                                                                                       |
-|   Name:	[NAMESPACE].aws.lab.f5demos.com                                                                                         |
-|   Address: 52.4.72.136                                                                                                            |
-+-----------------------------------------------------------------------------------------------------------------------------------+
++-----------------------------------------------------------+
+| .. code-block::                                           |
+|                                                           |
+|   $ dig +short [NAMESPACE].aws.lab.f5demos.com            |
+|   52.4.72.136                                             |
+|                                                           |
+|   $ dig -x 52.4.72.136 +short                             |
+|   ec2-52-4-72-136.compute-1.amazonaws.com                 |
++-----------------------------------------------------------+
+
++-----------------------------------------------------------+
+| .. code-block::                                           |
+|                                                           |
+|   $ nslookup [NAMESPACE].aws.lab.f5demos.com              |
+|                                                           |
+|   Server:	2a01:cb04:765:e00:a6ce:daff:fe11:96ea           |
+|   Address: 2a01:cb04:765:e00:a6ce:daff:fe11:96ea#53       |
+|                                                           |
+|   Non-authoritative answer:                               |
+|   Name: [NAMESPACE].aws.lab.f5demos.com                   |
+|   Address: 52.4.72.136                                    |
++-----------------------------------------------------------+
 
 Task 7: Verify WAF Protection
 ^^^^^^^^^^^^^^^^^^^^^^
