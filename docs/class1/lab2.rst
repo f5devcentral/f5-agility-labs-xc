@@ -153,12 +153,12 @@ under this tenant.
 |                                                                                                                                   |
 +-----------------------------------------------------------------------------------------------------------------------------------+
 ||                                                                                                                                  |
-|| 3.  Scroll to the botton of the screen and click **"Save and Exit"** to create the HTTP Load Balancer.                               |
+|| 3.  Scroll to the botton of the screen and click **"Save and Exit"** to create the HTTP Load Balancer.                           |
 ||                                                                                                                                  |
 |      Once the HTTP Load Balancer has been deployed, you should now be able to go to the DNS name that you entered                 |
 |      previously in a web browser.  The FQDN we used in our example is http://[NAMESPACE]-2.lab-sec.f5demos.com.                   |
 ||                                                                                                                                  |
-||  4.  Click on **"Save and Exit"** to complete the Load Balancer configuration.                                                     |
+||  4.  Click on **"Save and Exit"** to complete the Load Balancer configuration.                                                   |
 ||                                                                                                                                  |
 +-----------------------------------------------------------------------------------------------------------------------------------+
 
@@ -184,7 +184,7 @@ In this topology we are sending traffic to the application via the public IP adv
 in AWS via the connection to the CE node in AWS.
 
 +-----------------------------------------------------------------------------------------------------------------------------------+
-| Try adding the following to the URL "/?cat%20/etc/passwd"                                                                        |
+| Try adding the following to the URL "/?cat%20/etc/passwd"                                                                         |
 |                                                                                                                                   |
 | You should see a block page.                                                                                                      |
 |                                                                                                                                   |
