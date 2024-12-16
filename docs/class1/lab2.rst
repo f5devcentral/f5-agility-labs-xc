@@ -196,9 +196,13 @@ in AWS via the connection to the CE node in AWS.
 |                                                                                                                                   |
 +-----------------------------------------------------------------------------------------------------------------------------------+
 
-This is similar behavior to what we saw in the previous lab,
-but in this case the enforcement of the WAF policy is occurring on the CE node
-that is deployed in the AWS Lab Environment and not in the F5 Distributed Cloud Regional Edge.
++-----------------------------------------------------------------------------------------------------------------------------------+
+|                                                                                                                                   |
+| This concludes lab 2.  In this lab you configured a global load balancer with a WAF policy on a CE node running in AWS for a      |
+| private end point. That private end point was only accessible via the global load balancer.                                       |
+|                                                                                                                                   |
+|  |labend|                                                                                                                         |
++-----------------------------------------------------------------------------------------------------------------------------------+
 
 .. |lab300| image:: _static/lab3-appworld2025-topology-diagram.png
    :width: 800px
@@ -228,4 +232,5 @@ that is deployed in the AWS Lab Environment and not in the F5 Distributed Cloud 
    :width: 800px 
 .. |lab313| image:: _static/lab3-appworld2025-waf-block-message.png
    :width: 800px 
-
+.. |labend| image:: _static/labend.png
+   :width: 800px
