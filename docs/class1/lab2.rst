@@ -125,7 +125,7 @@ Now we will deploy a Load Balancer on the CE node that was deployed in the AWS V
 ||                                                                                                                                  |
 || 8. Under *VIP Advertisement* Confirm it is set to *Internet*. This will allow *XC* to advertise the Virtual IP address.          |
 ||                                                                                                                                  |
-|| |lab307|                                                                                                                         |
+|| |lab305|                                                                                                                         |
 ||                                                                                                                                  |
 ||                                                                                                                                  |
 |                                                                                                                                   |       
