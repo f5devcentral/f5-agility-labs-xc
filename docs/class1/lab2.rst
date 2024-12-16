@@ -184,7 +184,7 @@ In this topology we are sending traffic to the application via the public IP adv
 in AWS via the connection to the CE node in AWS.
 
 +-----------------------------------------------------------------------------------------------------------------------------------+
-| Try adding the following to the URL "/?cat%20/etc/passwd".                                                                        |
+| Try adding the following to the URL "/?cat%20/etc/passwd"                                                                        |
 |                                                                                                                                   |
 | You should see a block page.                                                                                                      |
 |                                                                                                                                   |
