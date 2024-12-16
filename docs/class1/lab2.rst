@@ -19,9 +19,10 @@ Task 1. Create Private Origin Pool
 ---------------------------
 
 In Lab #1 we created an origin pool that was accessible via the Public Internet.
-This lab exercise will create an origin pool that will provide internal resources discovered with local DNS by the CE node that is deployed in our lab AWS environment. 
+This lab exercise will create an origin pool that is also accessible via the Public Internet; in this case the application is local to the deployed
+CE node in the public cloud. The only way the application can be accessed is vi the RE nodes of Distributed Cloud.
 
-We will first create an Origin Pool that refers to the "Private Endpoint" site in our lab environment.
+First, you will create an Origin Pool that refers to the "Private Endpoint" site in our lab environment.
 
 +------------------------------------------------------------------------------------------------------------+
 || 1. Start in F5 Distributed Cloud Console and switch back to the **Multi-Cloud App Connect** context.      |
@@ -58,7 +59,7 @@ We will first create an Origin Pool that refers to the "Private Endpoint" site i
 ||                                                                                                           |
 || 5. Click on **"Apply"** to return to the previous screen.                                                 |
 ||                                                                                                           |
-|| 6. Below the "Origin Servers" section fill in the Origin Server Port information.                         |     
+|| 6. Below the **"Origin Servers"** section fill in the Origin Server Port information.                     |     
 ||                                                                                                           |
 +------------------------------------------------------------------------------------------------------------+
 |                                                                                                            |
@@ -118,14 +119,13 @@ Now we will deploy a Load Balancer on the CE node that was deployed in the AWS V
 ||                                                                                                                                  |
 |  |lab304|                                                                                                                         |
 ||                                                                                                                                  |
-|| 7. Now we want to confirm how this Load Balancer is advertised, we will select the "Other Settings" on the left hand side.       |
-||    This will auto-scroll the configuations towards the bottom of the Load Balancer configuration section labled "Other Settings".|
-||                                                                                                                                  |
-|| |lab305|                                                                                                                         |
+|| 7. Now we want to confirm how this Load Balancer is advertised, we will select the **"Other Settings"** on the left hand side.   |
+||    This will auto-scroll the configuations towards the bottom of the Load Balancer configuration section labled                  |
+||    **"Other Settings"**.                                                                                                         |
 ||                                                                                                                                  |
 || 8. Under *VIP Advertisement* Confirm it is set to *Internet*. This will allow *XC* to advertise the Virtual IP address.          |
 ||                                                                                                                                  |
-|| |lab306|                                                                                                                         |
+|| |lab3-appworld2025-task2-lb-other-settings|                                                                                      |
 ||                                                                                                                                  |
 ||                                                                                                                                  |
 |                                                                                                                                   |       
@@ -153,12 +153,12 @@ under this tenant.
 |                                                                                                                                   |
 +-----------------------------------------------------------------------------------------------------------------------------------+
 ||                                                                                                                                  |
-|| 3.  Scroll to the botton of the screen and click "Save and Exit" to create the HTTP Load Balancer.                               |
+|| 3.  Scroll to the botton of the screen and click **"Save and Exit"** to create the HTTP Load Balancer.                               |
 ||                                                                                                                                  |
 |      Once the HTTP Load Balancer has been deployed, you should now be able to go to the DNS name that you entered                 |
 |      previously in a web browser.  The FQDN we used in our example is http://[NAMESPACE]-2.lab-sec.f5demos.com.                   |
 ||                                                                                                                                  |
-||  4.  Click on *"Save and Exit"* to complete the Load Balancer configuration.                                                     |
+||  4.  Click on **"Save and Exit"** to complete the Load Balancer configuration.                                                     |
 ||                                                                                                                                  |
 +-----------------------------------------------------------------------------------------------------------------------------------+
 
@@ -184,7 +184,9 @@ In this topology we are sending traffic to the application via the public IP adv
 in AWS via the connection to the CE node in AWS.
 
 +-----------------------------------------------------------------------------------------------------------------------------------+
-| <! Try adding the following to the URL "?cat%20/etc/passwd".  ###this request hung without providing a blocking page>             |
+| Try adding the following to the URL "/?cat%20/etc/passwd".                                                                        |
+|                                                                                                                                   |
+| You should see a block page.                                                                                                      |
 |                                                                                                                                   |
 | Try adding the following to the URL "/cart?search=aaa’><script>prompt(‘Please+enter+your+password’);</script>"                    |
 |                                                                                                                                   |
