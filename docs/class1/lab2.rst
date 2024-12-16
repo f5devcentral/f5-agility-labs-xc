@@ -12,7 +12,7 @@ environment. In this example, the application does not have Internet connectivit
 
 Your design includes the following workflow Client -> RE -> CE -> Protected application resource.  Let's get started!
 
-.. image:: _static/lab3-appworld2025-topology-diagram.png
+.. image:: _static/lab2-appworld2025-topology-diagram.png
 
 
 Task 1. Create Private Origin Pool
