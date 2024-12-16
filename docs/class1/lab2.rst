@@ -40,7 +40,7 @@ We will first create an Origin Pool that refers to the "Private Endpoint" site i
 |                                                                                                            |
 +------------------------------------------------------------------------------------------------------------+
 ||                                                                                                           |
-|| 4. Click on "Add Item" under the section "Origin Servers"                                                 |
+|| 4. Click on "Add Item" under the section "Origin Servers".                                                |
 ||                                                                                                           |
 +------------------------------------------------------------------------------------------------------------+
 |                                                                                                            |
@@ -58,7 +58,7 @@ We will first create an Origin Pool that refers to the "Private Endpoint" site i
 ||                                                                                                           |
 || 5. Click on **"Apply"** to return to the previous screen.                                                 |
 ||                                                                                                           |
-|| 6. Below the "Origin Servers" section fill in the Origin Server Port information                          |     
+|| 6. Below the "Origin Servers" section fill in the Origin Server Port information.                         |     
 ||                                                                                                           |
 +------------------------------------------------------------------------------------------------------------+
 |                                                                                                            |
@@ -71,7 +71,7 @@ We will first create an Origin Pool that refers to the "Private Endpoint" site i
 |                                                                                                            |
 +------------------------------------------------------------------------------------------------------------+   
 ||                                                                                                           |
-|| 7. Click **Save and Exit**.                                                                               |
+|| 7. Click **Save and Exit**                                                                                |
 ||                                                                                                           |
 +------------------------------------------------------------------------------------------------------------+
 
@@ -106,20 +106,20 @@ Now we will deploy a Load Balancer on the CE node that was deployed in the AWS V
 |                                                                                                                                   |
 |  |lab311|                                                                                                                         |
 ||                                                                                                                                  |
-|| 4. Under Origin Pools Click *"Add Item"*                                                                                         |
+|| 4. Under Origin Pools Click *"Add Item"*.                                                                                        |
 ||                                                                                                                                  |
 |  |lab302|                                                                                                                         |
 ||                                                                                                                                  |
-|| 5. Select the recently created **[NAMESPACE]-private-ce-pool** under Origin pool and then click *"Apply"*                        |
+|| 5. Select the recently created **[NAMESPACE]-private-ce-pool** under Origin pool and then click *"Apply"*.                       |
 ||                                                                                                                                  |
 |  |lab303|                                                                                                                         |
 ||                                                                                                                                  |
-|| 6. Now you can see your Origin Pool has been added to the HTTP Loadbalancer Configuration                                        |
+|| 6. Now you can see your Origin Pool has been added to the HTTP Loadbalancer Configuration.                                       |
 ||                                                                                                                                  |
 |  |lab304|                                                                                                                         |
 ||                                                                                                                                  |
 || 7. Now we want to confirm how this Load Balancer is advertised, we will select the "Other Settings" on the left hand side.       |
-||    This will auto-scroll the configuations towards the bottom of the Load Balancer configuration section labled "Other Settings" |
+||    This will auto-scroll the configuations towards the bottom of the Load Balancer configuration section labled "Other Settings".|
 ||                                                                                                                                  |
 || |lab305|                                                                                                                         |
 ||                                                                                                                                  |
@@ -127,7 +127,6 @@ Now we will deploy a Load Balancer on the CE node that was deployed in the AWS V
 ||                                                                                                                                  |
 || |lab306|                                                                                                                         |
 ||                                                                                                                                  |
-|| 0 Click on *"Apply"* and once again *"Apply"* on the next screen.                                                                |
 ||                                                                                                                                  |
 |                                                                                                                                   |       
 +-----------------------------------------------------------------------------------------------------------------------------------+
@@ -139,7 +138,7 @@ are easily applying a pre-existing shared WAF policy to our loadbalancer.  The s
 under this tenant.
 
 +-----------------------------------------------------------------------------------------------------------------------------------+
-|| 1. Under the *Web Application Firewall* section                                                                                  |
+|| 1. Under the *Web Application Firewall* section.                                                                                 |
 ||                                                                                                                                  |
 || 2. Choose the following options:                                                                                                 |
 ||                                                                                                                                  | 
@@ -159,7 +158,7 @@ under this tenant.
 |      Once the HTTP Load Balancer has been deployed, you should now be able to go to the DNS name that you entered                 |
 |      previously in a web browser.  The FQDN we used in our example is http://[NAMESPACE]-2.lab-sec.f5demos.com.                   |
 ||                                                                                                                                  |
-||  4.  Click on *"Save and Exit"* to complete the Load Balancer configuration                                                      |
+||  4.  Click on *"Save and Exit"* to complete the Load Balancer configuration.                                                     |
 ||                                                                                                                                  |
 +-----------------------------------------------------------------------------------------------------------------------------------+
 
