@@ -49,7 +49,7 @@ Task 1. Create Private Origin Pool
 ---------------------------
 
 In Lab #1 we created an origin pool that was accessible via the Public Internet without using a CE deployment.  In Lab #2 we are still leveraging Internet access via the
-RE but now connecting to the origin server throught a CE deployment.  In this topology the CE IPSec tunnels will carry both control-plane and data-planetraffic down to the orgin. 
+RE but now connecting to the origin server throught a CE deployment.  In this topology the CE IPSec tunnels will carry both control-plane and data-plane traffic down to the orgin. 
 Now with Lab# 3 we will create an origin pool that will provide internal resources discovered with local DNS by the CE node that is deployed in our lab AWS environment.
 
 
