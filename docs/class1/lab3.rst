@@ -48,8 +48,10 @@ Continue with the steps below to allow secure connectivity to the AWS hosted app
 Task 1. Create Private Origin Pool
 ---------------------------
 
-In Lab #1 we created an origin pool that was accessible via the Public Internet.
-This lab exercise will create an origin pool that will provide internal resources discovered with local DNS by the CE node that is deployed in our lab AWS environment. 
+In Lab #1 we created an origin pool that was accessible via the Public Internet without using a CE deployment.  In Lab #2 we are still leveraging Internet access via the
+RE but now connecting to the origin server throught a CE deployment.  In this topology the CE IPSec tunnels will carry both control-plane and data-planetraffic down to the orgin. 
+Now with Lab# 3 we will create an origin pool that will provide internal resources discovered with local DNS by the CE node that is deployed in our lab AWS environment.
+
 
 We will first create an Origin Pool that refers to the "Private Endpoint" site in our lab environment.
 
@@ -219,7 +221,7 @@ The FQDN we used in our example is http://[NAMESPACE].aws.lab.f5demos.com/.
 +-----------------------------------------------------------------------------------------------------------------------------------+
 
 
-Task 6: Verify DNS
+Task 5: Verify DNS
 ^^^^^^^^^^^^^^^^^^^^^^
 
 You can verify that you are connecting directly to AWS by comparing the DNS of the two hosts.
@@ -247,7 +249,7 @@ You can verify that you are connecting directly to AWS by comparing the DNS of t
 |   Address: 52.4.72.136                                    |
 +-----------------------------------------------------------+
 
-Task 7: Verify WAF Protection
+Task 6: Verify WAF Protection
 ^^^^^^^^^^^^^^^^^^^^^^
 
 In this topology we are sending traffic to the AWS EIP that's attached to the CE node in the AWS VPC.
@@ -265,9 +267,10 @@ We then connect to the AWS resource via it's Private IP address.
 |                                                                                                                                   |
 +-----------------------------------------------------------------------------------------------------------------------------------+
 
-This is similar behavior to what we saw in the previous lab,
-but in this case the enforcement of the WAF policy is occurring on the CE node
-that is deployed in the AWS Lab Environment and not in the F5 Distributed Cloud Regional Edge.
+This is similar behavior to what we saw in the previous lab,but in this case the enforcement of the WAF policy is occurring on the 
+CE nodethat is deployed in the AWS Lab Environment and not in the F5 Distributed Cloud Regional Edge.
+
+Congratulations you have successfully configured and secured application access within AWS! This marks the end of this lab.
 
 .. |lab300| image:: _static/lab3-appworld2025-topology-diagram.png
    :width: 800px
