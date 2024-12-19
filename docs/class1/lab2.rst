@@ -16,7 +16,7 @@ Your design includes the following workflow Client -> RE -> CE -> Protected appl
 
 
 Task 1. Create Private Origin Pool
----------------------------
+----------------------------------
 
 In Lab #1 we created an origin pool that was accessible via the Public Internet.
 This lab exercise will create an origin pool that is also accessible via the Public Internet; in this case the application is local to the deployed
@@ -132,7 +132,7 @@ Now we will deploy a Load Balancer on the CE node that was deployed in the AWS V
 +-----------------------------------------------------------------------------------------------------------------------------------+
 
 Task 3: Configure WAF Policy
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+----------------------------
 Now that we have our load balancer and orign server configured we want to make sure we are protecting the origin server.  Here we   
 are easily applying a pre-existing shared WAF policy to our loadbalancer.  The shared WAF policy is available for all namespaces
 under this tenant.
@@ -163,7 +163,7 @@ under this tenant.
 +-----------------------------------------------------------------------------------------------------------------------------------+
 
 Task 4: Verify Configuration
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+-----------------------------
 
 You should now be able to go to the DNS name that you created in this Load Balancer configuration.  
 The FQDN we used in our example is http://[NAMESPACE]-2.lab-sec.f5demos.com/.  
@@ -178,7 +178,7 @@ The FQDN we used in our example is http://[NAMESPACE]-2.lab-sec.f5demos.com/.
 
 
 Task 5: Verify WAF Protection
-^^^^^^^^^^^^^^^^^^^^^^
+------------------------------
 
 In this topology we are sending traffic to the application via the public IP advertised on *XC*, which then sends to the application
 in AWS via the connection to the CE node in AWS.
@@ -197,8 +197,7 @@ in AWS via the connection to the CE node in AWS.
 +-----------------------------------------------------------------------------------------------------------------------------------+
 
 +-----------------------------------------------------------------------------------------------------------------------------------+
-|                                                                                                                                   |
-| This concludes lab 2.  In this lab you configured a global load balancer with a WAF policy on a CE node running in AWS for a      |
+| **End of Lab 2**.  In this lab you configured a global load balancer with a WAF policy on a CE node running in AWS for a          |
 | private end point. That private end point was only accessible via the global load balancer.                                       |
 |                                                                                                                                   |
 |  |labend|                                                                                                                         |
@@ -226,7 +225,7 @@ in AWS via the connection to the CE node in AWS.
    :width: 800px
 .. |lab310| image:: _static/lab3-appworld2025-waf-block-message.png
    :width: 800px
-.. |lab311| image:: _static/lab3-appworld2025-task2-lb-updated.png
+.. |lab311| image:: _static/lab2-appworld2025-task2-lb.png
    :width: 800px 
 .. |lab312| image:: _static/screenshot-global-vip-private.png
    :width: 800px 
