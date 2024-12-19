@@ -379,7 +379,6 @@ Monitoring dashboard, and gather security event details.
 | policy was assigned to protect the application.  Finally a sample attack was run against the application and  |
 | the security event data was reviewed within the Distributed Cloud Console.                                    |
 |                                                                                                               |
-| A brief presentation will be shared prior to the beginning of Lab 2.                                          |
 +---------------------------------------------------------------------------------------------------------------+
 | |labend|                                                                                                      |
 +---------------------------------------------------------------------------------------------------------------+
