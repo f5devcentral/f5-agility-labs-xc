@@ -3,7 +3,7 @@ Lab 2: Leveraging Terraform
 
 The following lab tasks will guide you through using Terraform to deploy and secure a Web based application.  
 Students will start by creating an authentication certificate within Distributed Cloud. Terraform will be 
-configured to utilize the certificate for authenticating the API calls.  Next, a Tfvars file is created to 
+configured to utilize the certificate for authenticating the API calls.  Next, a **tfvars** file is created to 
 customize the deployment to match the student's environment. Terraform will then be used to deploy an HTTP 
 Health Check, Origin Pool, and HTTP Load Balancer. Students will then modify and apply the Terraform 
 configuration to add a Web Application Firewall to their existing HTTP Load Balancer. 
@@ -12,42 +12,44 @@ configuration to add a Web Application Firewall to their existing HTTP Load Bala
 
 Task 1: Deploy a Web Application with Terraform  
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-In this task, you will create an API Certificate for Terraform to authneticate to the Distributed Cloud API.  Next, 
-you will create a Tfvars file to specify environment variables unique to your environment.  After the Tfvars file is 
+In this task, you will create an API Certificate for Terraform to authenticate to the Distributed Cloud API.  Next, 
+you will create a **tfvars** file to specify environment variables unique to your environment.  After the **tfvars** file is 
 created, you will intialize Terraform and then deploy an HTTP Health Check, Origin Pool, and HTTP Load Balancer. 
 
-+---------------------------------------------------------------------------------------------------------------+
-| **Clone the appworld-f5xc-automation repo**                                                                   |
-+===============================================================================================================+
-| 1. Access VSCode server that is part of your UDF deployment.                                                  |
-+---------------------------------------------------------------------------------------------------------------+
-| 2. From the VS Code Menu bar select **Terminal** and then **New Terminal**.                                   |
-|                                                                                                               |
-| |lab2-Clone_Terminal|                                                                                         |
-+---------------------------------------------------------------------------------------------------------------+
-| 3. In the resulting terminal window at the bottom of VSCode enter                                             |
-|                                                                                                               |
-| .. code-block:: bash                                                                                          |
-|                                                                                                               |
-|    git clone https://github.com/f5devcentral/appworld-f5xc-automation                                         |
-|                                                                                                               |
-| |lab2-Clone_Repo|                                                                                             |
-+---------------------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------+
+| **Clone the appworld-f5xc-automation repo**                                                              |
++==========================================================================================================+
+| 1. In your UDF deployment, click on the **VS CODE** Access method under the **Client** system. This will |
+|                                                                                                          |
+|    launch a tab in your web browser.                                                                     |
++----------------------------------------------------------------------------------------------------------+
+|| 2. From the VS Code Menu bar select **Terminal** and then **New Terminal**.                             |
+||                                                                                                         |
+||                                                                                                         |
++----------------------------------------------------------------------------------------------------------+
+|| 3. In the resulting terminal window at the bottom of VSCode enter                                       |
+||                                                                                                         |
+|| .. code-block:: bash                                                                                    |
+||                                                                                                         |
+|| git clone https://github.com/f5devcentral/appworld-f5xc-automation                                      |
+||                                                                                                         |
+||                                                                                                         |
++----------------------------------------------------------------------------------------------------------+
 
 +---------------------------------------------------------------------------------------------------------------+
 | **Create API Certificate from the Distributed Cloud Console**                                                 |
 +===============================================================================================================+
 | 1. If you don't still have the Distributed Cloud Console open in a browser, access the Console at:            |
 |                                                                                                               |
-|    Console <https://https://f5-xc-lab-app.console.ves.volterra.io/>                                           |
+|    https://f5-xc-lab-app.console.ves.volterra.io/                                                             |
 +---------------------------------------------------------------------------------------------------------------+
-| 2. In the top right corner of the Distributed Cloud Console click the **User Icon** dropdown and select       |
+| 2. In the top right corner of the Distributed Cloud Console, click the **User Icon** dropdown and select       |
 |                                                                                                               |
 |    **Account Settings**.                                                                                      |
 |                                                                                                               |
 | |lab1-Account_Settings|                                                                                       |
 +---------------------------------------------------------------------------------------------------------------+
-| 3. In the resulting screen click **Credentials** under the Peronal Management Heading on the left.            |
+| 3. In the resulting screen, click **Credentials** under the **Personal Management** heading on the left.            |
 |                                                                                                               |
 | |lab1-Credentials|                                                                                            |
 +---------------------------------------------------------------------------------------------------------------+
@@ -107,13 +109,13 @@ created, you will intialize Terraform and then deploy an HTTP Health Check, Orig
 +---------------------------------------------------------------------------------------------------------------+
 | **Create a tfvars File for Specifying Environment Specific Variables**                                        |
 +===============================================================================================================+
-| 1. From the **EXPLORER** frame, right click the **Terraform** folder, and then select new file. Enter the     |
+| 1. From the **EXPLORER** panel, right click the **Terraform** folder, and then select new file. Enter the     |
 |                                                                                                               |
 |    name **terraform.tfvars** for the new file that is created and press enter.                                | 
 |                                                                                                               |
 | |lab2-Terraform_Tfvars|                                                                                       |
 +---------------------------------------------------------------------------------------------------------------+
-| 2. This will open the **terraform.tfvars** file in the right frame of Visual Studio Code, enter the following |
+| 2. This will open the **terraform.tfvars** file in the right panel of Visual Studio Code, enter the following |
 |                                                                                                               |
 |    values into the file:                                                                                      |
 |                                                                                                               |
@@ -205,7 +207,7 @@ objects within Distributed Cloud.
 +---------------------------------------------------------------------------------------------------------------+
 | **Edit Your Terraform Code to Create an Application Firewall and Add It to the Load Balancer**                |
 +===============================================================================================================+
-| 1. From the Visual Studio Code Explorer frame, click **main.tf**, to open the Terraform configuration.        |
+| 1. From the Visual Studio Code Explorer panel, click **main.tf**, to open the Terraform configuration.        |
 |                                                                                                               |
 | |lab2-Terraform_AppFw|                                                                                        |
 +---------------------------------------------------------------------------------------------------------------+
@@ -323,9 +325,9 @@ objects within Distributed Cloud.
 +---------------------------------------------------------------------------------------------------------------+
 | **End of Lab 2**                                                                                              |
 +===============================================================================================================+
-| This concludes Lab 2. In this lab, you learned how to setup Terraform to authenticate to to Distributed Cloud |
+| This concludes Lab 2. In this lab, you learned how to set up Terraform to authenticate to the F5 Distributed  |
 |                                                                                                               |
-| utilizing an API Certificate. You then created a Tfvars file to customize the deployment to match your        |
+| API with an API Certificate. You then created a **tfvars** file to customize the deployment to match your     |
 |                                                                                                               |
 | environment. After that, you used Terraform to deploy an HTTP Health Check, Origin Pool, and HTTP Load        |
 |                                                                                                               |
