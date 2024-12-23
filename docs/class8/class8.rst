@@ -6,13 +6,14 @@ Welcome
 
 This lab explores F5 Distributed Cloud's (XC) API-first framework and the automation of operational controls. The following
 key concepts will be covered:​
+
 - Leveraging the Developer Portal
 - Leveraging Terraform
 - Standardizing and Operationalizing delivery controls
 - Standardizing and Operationalizing security controls
 - Audit and Standard compliance
 
-Outcomes:
+Outcomes
 -----------
 
 - Understanding of API-first framework
@@ -20,7 +21,7 @@ Outcomes:
 - Operationalizing (day-to-day controls) configuration management
 
 
-Lab & Tasks:
+Lab & Tasks
 ------------
 
 The next page (Introduction) will cover the lab environment, access, and lab variables. The lab utilizes the Distributed Cloud
