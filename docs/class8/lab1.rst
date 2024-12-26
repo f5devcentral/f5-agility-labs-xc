@@ -44,7 +44,7 @@ utilizing the Developer Portal.
 |                                                                                                               |
 | |lab1-Account_Settings|                                                                                       |
 +---------------------------------------------------------------------------------------------------------------+
-| 3. In the resulting screen, click **Credentials** under the Peronal Management Heading on the left.           |
+| 3. In the resulting screen, click **Credentials** under the **Personal Management** Heading on the left.      |
 |                                                                                                               |
 | |lab1-Credentials|                                                                                            |
 +---------------------------------------------------------------------------------------------------------------+
