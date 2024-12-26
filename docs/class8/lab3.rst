@@ -1,139 +1,79 @@
-Lab 2: Leveraging Terraform
-===========================
+Lab 3: Utilize Automation to Audit XC Configurations
+====================================================
 
-The following lab tasks will guide you through using Terraform to deploy and secure a Web based application.  
-Students will start by creating an authentication certificate within Distributed Cloud. Terraform will be 
-configured to utilize the certificate for authenticating the API calls.  Next, a **tfvars** file is created to 
-customize the deployment to match the student's environment. Terraform will then be used to deploy an HTTP 
-Health Check, Origin Pool, and HTTP Load Balancer. Students will then modify and apply the Terraform 
-configuration to add a Web Application Firewall to their existing HTTP Load Balancer. 
+The following lab tasks will guide you through using automation to audit deployed configurations within
+Distributed Cloud.  Terraform will be utilized to deploy multiple HTTP Load balancers so that their 
+configurations can be compared against a desired configuration state. A custom python API backend with a 
+web front end will then be utilized to compare the HTTP Load balancer states.
 
-**Expected Lab Time: 20 minutes**
+**Expected Lab Time: 30 minutes**
 
-Task 1: Deploy a Web Application with Terraform  
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-In this task, you will create an API Certificate for Terraform to authenticate to the Distributed Cloud API.  
-Next, you will create a **tfvars** file to specify environment variables unique to your environment.  After the 
-**tfvars** file is created, you will **intialize** Terraform environment.  You use the **initialize** command to
-setup the local Terraform environment and download the correct version of any required modules.  After the 
-environment is initialized, the **plan** command is used to perform a dry run of the terraform configuration.
-Planning does not create any objects.  Planning allows you to verify your syntax.  The last step is to use 
-**apply** to actually create an HTTP Health Check, Origin Pool, and HTTP Load Balancer. 
-
-+---------------------------------------------------------------------------------------------------------------+
-| **Clone the appworld-f5xc-automation repo**                                                                   |
-+===============================================================================================================+
-| 1. In your UDF deployment, click on the **VS CODE** Access method under the **Client** system. This will      |
-|                                                                                                               |
-|    launch a tab in your web browser.                                                                          |      
-+---------------------------------------------------------------------------------------------------------------+
-| 2. From the VS Code Menu bar select **Terminal** and then **New Terminal**.                                   |
-|                                                                                                               |
-| |lab2-Clone_Terminal|                                                                                         |
-+---------------------------------------------------------------------------------------------------------------+
-| 3. In the resulting terminal window at the bottom of VSCode enter                                             |
-|                                                                                                               |
-| .. code-block:: bash                                                                                          |
-|                                                                                                               |
-|    git clone https://github.com/f5devcentral/appworld-f5xc-automation                                         |
-|                                                                                                               |
-| |lab2-Clone_Repo|                                                                                             |
-+---------------------------------------------------------------------------------------------------------------+
-
-+---------------------------------------------------------------------------------------------------------------+
-| **Create API Certificate from the Distributed Cloud Console**                                                 |
-+===============================================================================================================+
-| 1. If you don't still have the Distributed Cloud Console open in a browser, access the Console at:            |
-|                                                                                                               |
-|    Console <https://https://f5-xc-lab-app.console.ves.volterra.io/>                                           |
-+---------------------------------------------------------------------------------------------------------------+
-| 2. In the top right corner of the Distributed Cloud Console, click the **User Icon** dropdown and select      |
-|                                                                                                               |
-|    **Account Settings**.                                                                                      |
-|                                                                                                               |
-| |lab1-Account_Settings|                                                                                       |
-+---------------------------------------------------------------------------------------------------------------+
-| 3. In the resulting screen click **Credentials** under the **Personal Management** Heading on the left.       |
-|                                                                                                               |
-| |lab1-Credentials|                                                                                            |
-+---------------------------------------------------------------------------------------------------------------+
-| 4. Click **Add Credentials**.                                                                                 |
-|                                                                                                               |
-| |lab1-Add_Credentials|                                                                                        |
-+---------------------------------------------------------------------------------------------------------------+
-| 5. Fill in the resulting form with the following values:                                                      |
-|                                                                                                               |
-|    * **Credential Name ID:**  *<namespace>-api-cert*                                                          |
-|    * **Credential Type: Select:** *API Certificate*                                                           |
-|    * **Password:** *<some_password>*                                                                          |
-|    * **Confirm Password:** *<some_password>*                                                                  |
-|    * **Expiry Date: Select:** *<date two days in the future of today's date>*                                 |
-|                                                                                                               |
-| 6. Click **Download**.                                                                                        |
-|                                                                                                               |
-| |lab2-Terraform_Download_API_Cert|                                                                            |
-|                                                                                                               |
-| .. note::                                                                                                     |
-|    *Use a password that you will remember for the certificate, if you don't remember your API cert password,* |
-|    *you will need to generate a new API cert.*                                                                |
-+---------------------------------------------------------------------------------------------------------------+
-
-+---------------------------------------------------------------------------------------------------------------+
-| **Configure Terraform to Authenticate to Distributed Cloud**                                                  |
-+===============================================================================================================+
-| 1. Go back to the VS Code server in your browser and expand the **appworld-f5xc-automation** folder and then  |
-|                                                                                                               |
-|    expand the **Terraform** folder.                                                                           |
-|                                                                                                               |
-| |lab2-Terraform_Auth_Folders|                                                                                 |
-+---------------------------------------------------------------------------------------------------------------+
-| 2. Right click the **Terraform** folder and select new folder.  Type **credentials** in to name the folder.   |
-|                                                                                                               |
-| |lab2-Terraform_Auth_Folders_New|                                                                             |
-+---------------------------------------------------------------------------------------------------------------+
-| 3. Copy the certificate you downloaded by dragging it to the **credentials** folder you just created.         |
-+---------------------------------------------------------------------------------------------------------------+
-| 4. Right click the certificate in VSCode and select **Rename**.  Change the name of the file to               |
-|                                                                                                               |
-|    **xc-api-cert.p12**                                                                                        |
-|                                                                                                               |
-| |lab2-Terraform_Auth_Folders_Cert|                                                                            |
-+---------------------------------------------------------------------------------------------------------------+
-| 5. Set an environment variable for the API certificate password by running the following command in the       |
-|                                                                                                               |
-|    VSCode terminal window:                                                                                    |
-|                                                                                                               |
-| .. code-block:: bash                                                                                          |
-|                                                                                                               |
-|    export VES_P12_PASSWORD="<some_password>"                                                                  |
-|                                                                                                               |
-| |lab2-Terraform_Auth_Env|                                                                                     |
-|                                                                                                               |
-| .. note::                                                                                                     |
-|    *Replace <some_password> with the password you entered when creating the API certificate.  You need to*    |
-|    *wrap the password in "".  If your password is password, enter: export VES_P12_PASSWORD="password"*        |
-+---------------------------------------------------------------------------------------------------------------+
+Task 1: Deploy multiple HTTP load balanceres with Terraform  
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In this task, you will create a **tfvars** file to specify environment variables unique to your environment.
+This **tfvars** file is slightly more advanced than the file used in **Lab 2**.  This **tfvars** file utilizes a
+list object to specify mulitple key value pairs for each load balancer you want to create.  The list object is 
+utilized within a **for** expression within the Terraform **resource** to loop through each item in the list.
+This allows Terraform to create multiple objects using a single resource definition.  After the **tfvars** file
+is created, you will **intialize**, **plan**, and **apply** your Terraform configuration to create multiple HTTP 
+load balancers within your namespace. 
 
 +---------------------------------------------------------------------------------------------------------------+
 | **Create a tfvars File for Specifying Environment Specific Variables**                                        |
 +===============================================================================================================+
-| 1. From the **EXPLORER** panel, right click the **Terraform** folder, and then select new file. Enter the     |
+| 1. If you aren't already in the **Visual Studio Code** browser tab, select that tab.  If you closed the tab   |
 |                                                                                                               |
-|    name **terraform.tfvars** for the new file that is created and press enter.                                | 
+|    you can re-open **Visual Studio Code** by opening your UDF deployment and clicking  on the **VS CODE**     |
 |                                                                                                               |
-| |lab2-Terraform_Tfvars|                                                                                       |
+|    Access method under the **Client** system.                                                                 |
 +---------------------------------------------------------------------------------------------------------------+
-| 2. This will open the **terraform.tfvars** file in the right panel of Visual Studio Code, enter the following |
+| 2. From the **EXPLORER** panel within Visual Studio Code, right click the **MultipleLB** folder, and then     |
+|                                                                                                               |
+|    select new file. Enter the name **terraform.tfvars** for the new file that is created and press enter.     |
+|                                                                                                               |
+| |lab3-Terraform_Tfvars|                                                                                       |
+|                                                                                                               |
+| .. note::                                                                                                     |
+|    *Make sure you are right clicking on the MultipLB folder.  We want to create this terraform.tfvars file    |     
+|    *within that directory so it only applies to the configuration within that same directory.*                |
++---------------------------------------------------------------------------------------------------------------+
+| 3. This will open the **terraform.tfvars** file in the right panel of Visual Studio Code, enter the following |
 |                                                                                                               |
 |    values into the file:                                                                                      |
 |                                                                                                               |
 | .. code-block:: bash                                                                                          |
 |                                                                                                               |
-|    api_p12     = "./credentials/xc-api-cert.p12"                                                              |
+|    api_p12     = "../credentials/xc-api-cert.p12"                                                             |
 |    tenant_name = "f5-xc-lab-app"                                                                              |
 |    namespace   = "<namespace>"                                                                                |
+|    loadbalancers = [                                                                                          |
+|      {                                                                                                        |
+|         advertise_public = false                                                                              |
+|         dns_managed      = false                                                                              |
+|         hostname         = "lb1"                                                                              |
+|         name             = "lb1"                                                                              |
+|         port             = 80                                                                                 |
+|         waf_name         = "waf1"                                                                             |
+|      },                                                                                                       |
+|      {                                                                                                        |
+|         advertise_public = false                                                                              |
+|         dns_managed      = false                                                                              |
+|         hostname         = "lb2"                                                                              |
+|         name             = "lb2"                                                                              |
+|         port             = 80                                                                                 |
+|         waf_name         = "waf1"                                                                             |
+|      },                                                                                                       |
+|      {                                                                                                        |
+|         advertise_public = false                                                                              |
+|         dns_managed      = false                                                                              |
+|         hostname         = "lb3"                                                                              |
+|         name             = "lb3"                                                                              |
+|         port             = 80                                                                                 |
+|         waf_name         = "waf1"                                                                             |
+|      }                                                                                                        |
+|    ]                                                                                                          |
 |                                                                                                               |
-| |lab2-Terraform_Tfvars_Values|                                                                                |
+| |lab3-Terraform_Tfvars_Values|                                                                                |
 |                                                                                                               |
 | .. note::                                                                                                     |
 |    *Replace <namespace> with your assigned namespace. You need to wrap the namespace in "". If your assigned* |     
