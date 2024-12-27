@@ -312,7 +312,7 @@ In this task, you will remove the load balancers you created using the Terraform
    :width: 800px
 .. |lab3-Terraform_Deploy_Apply_Results| image:: _static/lab3-Terraform_Deploy_Apply_Results.png
    :width: 800px
-.. |llab3-XcAudit_Firefox_Url| image:: _static/lab3-XcAudit_Firefox_Url.png
+.. |lab3-XcAudit_Firefox_Url| image:: _static/lab3-XcAudit_Firefox_Url.png
    :width: 800px
 .. |lab3-XcAudit_Token| image:: _static/lab3-XcAudit_Token.png
    :width: 800px
