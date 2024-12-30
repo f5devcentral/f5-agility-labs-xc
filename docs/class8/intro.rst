@@ -20,7 +20,7 @@ Task 1: Lab Environment
 |                                                                                              |
 | will be configured as a SaaS Edge delivery and security service tier to a publicly hosted web|
 |                                                                                              |
-| application. Key elements lab attendees will interact with are as follows:                   |
+| application. The key elements that lab attendees will interact with are as follows:          |
 |                                                                                              |
 | * **F5 Distributed Cloud Console**                                                           |
 | * **F5 Distributed Cloud API**                                                               |
@@ -37,14 +37,15 @@ The following will guide you through the initial Lab environment access within t
 F5 Distributed Cloud Console.  You should have received an email with an invitation to 
 access a F5 Distributed Cloud Tenant. The email will come from **no-reply@cloud.f5.com**.
 
-The name of the F5 Distributed Cloud tenant that we will be using is **f5-xc-lab-app**
+The name of the F5 Distributed Cloud tenant that we will be using is **f5-xc-lab-app**.
 Additionally, the following are important elements of this lab and will be used throughout the 
-lab tasks that follow.
+lab tasks that follow:
 
 * F5 Distributed Cloud Console: **https://f5-xc-lab-app.console.ves.volterra.io/**
 * Delegated Domain: **lab-app.f5demos.com**
 
-After following the invitation email's to **Update Password**, proceed to the first step below. 
+After following the invitation email's to **Update Password** link, proceed to the first step 
+below. 
 
 +----------------------------------------------------------------------------------------------+
 | 1. Please log into F5 Distributed Cloud Lab Tenant with your user ID (email) and password.   |
@@ -84,7 +85,7 @@ After following the invitation email's to **Update Password**, proceed to the fi
 |    other administrative functions.                                                           |
 |                                                                                              |
 | .. note::                                                                                    |
-|    *For the purposes of this lab, permissions have been restricted to lab operations.  As a* |
+|    *For the purposes of this lab, permissions have been restricted to lab operations.  As*   |
 |                                                                                              |
 |    *some menus will be locked and not visible.*                                              |
 +----------------------------------------------------------------------------------------------+
@@ -100,7 +101,7 @@ After following the invitation email's to **Update Password**, proceed to the fi
 |                                                                                              |
 |    Console.  For the purposes of this lab, each lab attendee has been provided a unique      |
 |                                                                                              |
-|    **namespace** which you will defaulted to (in terms of GUI navigation) for all tasks      |
+|    **namespace** which you will be defaulted to (in terms of GUI navigation) for all tasks   |
 |                                                                                              |
 |    performed through the course of this lab.                                                 |
 |                                                                                              |
@@ -108,7 +109,7 @@ After following the invitation email's to **Update Password**, proceed to the fi
 |                                                                                              |
 |    navigation, click **Web App & API Protection**.                                           |
 |                                                                                              |
-| 10. In the **Web App & API Protection** configuration screen observe the URL. In the URI     |
+| 10. In the **Web App & API Protection** configuration screen, observe the URL. In the URI    |
 |                                                                                              |
 |     path, locate the **<adjective-animal>** namespace that you have been assigned. It will be|
 |                                                                                              |
