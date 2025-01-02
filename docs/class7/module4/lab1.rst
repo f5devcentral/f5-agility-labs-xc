@@ -1,9 +1,9 @@
-Lab 3 - Configure your local kubectl to access your virtual K8s (Optional)
---------------------------------------------------------------------------
+Lab 3 - Configure your local kubectl to access your virtual K8s
+===============================================================
 
 In this lab, we will learn the following:
 
-•  Download the kubeconfig file to access your virtual k8s
+•  Download the kubeconfig, and then upload the kubeconfig file to the jumpbox to allow for access your virtual k8s using native kubectl commands.
 
 **Exercise 1 - Log into F5 Distributed Cloud Console**
 
