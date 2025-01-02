@@ -43,8 +43,8 @@ Network.
 | 3. In the resulting screen click the **Add Origin Pool** in the graphic as shown.                             |
 |                                                                                                               |
 | .. note::                                                                                                     |
-| *You have been defaulted to your specific namespace as this is the only namespace to which you have*          |
-| *administrative access.*                                                                                      |
+|    *You have been defaulted to your specific namespace as this is the only namespace to which you have*       |
+|    *administrative access.*                                                                                   |
 +---------------------------------------------------------------------------------------------------------------+
 | |lab001|                                                                                                      |
 |                                                                                                               |
