@@ -33,22 +33,18 @@ its DNS, and advertise the application on the Internet using the F5 Distributed 
 Network.
 
 +---------------------------------------------------------------------------------------------------------------+
-| 1. Following the **Introduction** section  instructions, you should now be in the **Multi-Cloud App Connect** |
-|                                                                                                               |
-|    configuration window. If for some reason you are not in the **Multi-Cloud App Connect** window, use the    |
-|                                                                                                               |
-|    **Select Service** in the left-hand navigation, and click **Multi-Cloud App Connect** as shown in the      |
-|                                                                                                               |
-|    *Introduction section, Task 2, Step 9*.                                                                    |
+| 1. Following the **Introduction** section instructions, you should now be in the **Multi-Cloud App Connect**  |
+| workspace. If for some reason you are not in **Multi-Cloud App Connect**, use **Select Workspace**            |
+| in the left-hand navigation, and choose **Multi-Cloud App Connect** as shown in the                           |
+| *Introduction section, Task 2, Step 9*.                                                                       |
 |                                                                                                               |
 | 2. In the left-hand navigation expand **Manage** and click **Load Balancers > Origin Pools**                  |
 |                                                                                                               |
 | 3. In the resulting screen click the **Add Origin Pool** in the graphic as shown.                             |
 |                                                                                                               |
 | .. note::                                                                                                     |
-|    *You have defaulted to your specific namespace as that is the only namespace to which you have             |
-|                                                                                                               |
-|    *administrative access.**                                                                                  |
+| *You have been defaulted to your specific namespace as this is the only namespace to which you have*          |
+| *administrative access.*                                                                                      |
 +---------------------------------------------------------------------------------------------------------------+
 | |lab001|                                                                                                      |
 |                                                                                                               |
@@ -57,7 +53,6 @@ Network.
 
 +---------------------------------------------------------------------------------------------------------------+
 | 4. In the resulting window, enter **<namespace>-pool** in the **Name** field and click **Add Item** under     |
-|                                                                                                               |
 |    **Origin Servers**                                                                                         |
 +---------------------------------------------------------------------------------------------------------------+
 | |lab003|                                                                                                      |
@@ -65,7 +60,6 @@ Network.
 
 +---------------------------------------------------------------------------------------------------------------+
 | 5. In the resulting window, **Public DNS Name of Origin Server** should be selected for **Select Type of**    |
-|                                                                                                               |
 |    **Origin Server**.                                                                                         |
 |                                                                                                               |
 | 6. For **DNS Name** enter the following hostname: **demo-app.amer.myedgedemo.com** and then click **Apply**   |
@@ -95,7 +89,6 @@ Network.
 
 +---------------------------------------------------------------------------------------------------------------+
 | 11. Using the left-hand navigation and in the sections as shown, enter the following data. Values where       |
-|                                                                                                               |
 |     **<namespace>** is required, use the name of your given namespace.                                        |
 |                                                                                                               |
 |     * **Metadata:Name ID:**  *<namespace>-lb*                                                                 |
@@ -109,7 +102,6 @@ Network.
 
 +---------------------------------------------------------------------------------------------------------------+
 | 12. In the current window's left-hand navigation, click **Origins**. Next, click **Add Item Pools** section of|
-|                                                                                                               |
 |     **Origins**.                                                                                              |
 +---------------------------------------------------------------------------------------------------------------+
 | |lab010|                                                                                                      |
@@ -127,16 +119,13 @@ Network.
 
 +---------------------------------------------------------------------------------------------------------------+
 | 16. In the resulting **HTTP Load Balancer** window, scroll to the **Other Settings** section and note the     |
-|                                                                                                               |
 |     **VIP Advertisement** setting.                                                                            |
 |                                                                                                               |
 | 17. Click **Save and Exit** at the bottom of the **HTTP Load Balancer** configuration screen.                 |
 |                                                                                                               |
 | .. note::                                                                                                     |
 |    *The VIP Advertisement selection controls how/where the application is advertised. The "Internet" setting* |
-|                                                                                                               |
 |    *means that this application will be advertised globally using the F5 Distributed Cloud Global Network*    |
-|                                                                                                               |
 |    *utilizing Anycast.*                                                                                       |
 +---------------------------------------------------------------------------------------------------------------+
 | |lab012|                                                                                                      |
@@ -144,9 +133,7 @@ Network.
 
 +---------------------------------------------------------------------------------------------------------------+
 | 18. In the **HTTP Load Balancers** window, note the application hostname under the **Domains** column *(This* |
-|                                                                                                               |
 |     *was done in Task1: Step 11)*.                                                                            |
-|                                                                                                               |
 +---------------------------------------------------------------------------------------------------------------+
 | |lab013|                                                                                                      |
 +---------------------------------------------------------------------------------------------------------------+
@@ -159,7 +146,6 @@ Performance Monitoring dashboard, and gather request details.
 
 +---------------------------------------------------------------------------------------------------------------+
 | 1. Open another tab in your browser (Chrome shown), navigate to the newly configured Load Balancer            |
-|                                                                                                               |
 |    configuration: **http://<namespace>.lab-sec.f5demos.com**, to confirm it is functional.                    |
 |                                                                                                               |
 | 2. Navigate to the **HEADER** section under **Menu** to generate additional traffic.                          |
@@ -171,11 +157,9 @@ Performance Monitoring dashboard, and gather request details.
 
 +---------------------------------------------------------------------------------------------------------------+
 | 3. Returning to the F5 Distributed Cloud Console, use the left-hand navigation to navigate to Multi-Cloud App |
-|                                                                                                               |
 |    Connect section and click on **Performance**                                                               |
 |                                                                                                               |
 | 4. Scroll to the **Load Balancers** section of the page and click the link for your respective load balancer. |
-|                                                                                                               |
 +---------------------------------------------------------------------------------------------------------------+
 | |lab016|                                                                                                      |
 |                                                                                                               |
@@ -184,11 +168,9 @@ Performance Monitoring dashboard, and gather request details.
 
 +---------------------------------------------------------------------------------------------------------------+
 | 5. Change the viewable time period from Last 5 minutes (default) to **1 hour** by selecting the dropdown      |
-|                                                                                                               |
 |    shown, click **Last 1 hour** then clicking **Apply**.                                                      |
 |                                                                                                               |
 | 6. Note the **End to end Latency** tile.  This shows the average latency for all requests to this load        |
-|                                                                                                               |
 |    balancer.                                                                                                  |
 |                                                                                                               |
 | .. note::                                                                                                     |
@@ -203,7 +185,6 @@ Performance Monitoring dashboard, and gather request details.
 | 7. Click the **Requests** link to see detailed information about individual requests.                         |
 |                                                                                                               |
 | 8. Note the **Chart** shows a graphical representation of all of the response codes for the selected time     |
-|                                                                                                               |
 |    frame.                                                                                                     |
 |                                                                                                               |
 | .. note::                                                                                                     |
@@ -220,7 +201,6 @@ Performance Monitoring dashboard, and gather request details.
 | 10. Expand one of the individual requests to view additional details about that request.                      |
 |                                                                                                               |
 | 11. Note the **Duration** section.  This shows the latency for this specific request.  These values can be    |
-|                                                                                                               |
 |     compared to the average latency data noted in step 6.                                                     |
 +---------------------------------------------------------------------------------------------------------------+
 | |lab022|                                                                                                      |
@@ -237,16 +217,13 @@ These steps will apply a preconfigured WAF policy to the load balancer created i
 
 +---------------------------------------------------------------------------------------------------------------+
 | 1. Following **Task 2**, you should have the **Multi-Cloud App Connect** navigation panel on the left of your |
-|                                                                                                               |
 |    console.  If for some reason you do not see the **Multi-Cloud App Connect** navigation panel, use the      |
-|                                                                                                               |
-|    **Select Service** dropdown at the top left, and click **Multi-Cloud App Connect** as shown in the         |
-|                                                                                                               |
+|    **Select Workspace** dropdown at the top left, and click **Multi-Cloud App Connect** as shown in the       |
 |    *Introduction section, Task 2, Step 9*.                                                                    |
+|                                                                                                               |
 | 2. In the left-hand navigation expand **Manage** and click **Load Balancers > HTTP Load Balancers**           |
 |                                                                                                               |
 | 3. On the resulting page find the HTTP Load Balancer created in **Task 1** *(<namespace>-lb)*.  Click the     |
-|                                                                                                               |
 |    ellipsis under Actions and select **Manage Configuration**.                                                |
 +---------------------------------------------------------------------------------------------------------------+
 | |lab028|                                                                                                      |
@@ -267,11 +244,9 @@ These steps will apply a preconfigured WAF policy to the load balancer created i
 
 +---------------------------------------------------------------------------------------------------------------+
 | 6. Under the **Web Application Firewall** section select **Enable** from the **Web Application Firewall**     |
-|                                                                                                               |
 |     **(WAF)** dropdown.                                                                                       |
 |                                                                                                               |
 | 7. Select preconfigured the Web Application Firewall                                                          |
-|                                                                                                               |
 |     *(shared/base-appfw)* from the **Enable** dropdown.                                                       |
 |                                                                                                               |
 | 8. Scroll to the bottom of the page and click **Save and Exit**                                               |
@@ -290,11 +265,9 @@ Monitoring dashboard, and gather security event details.
 
 +---------------------------------------------------------------------------------------------------------------+
 | 1. Open another tab in your browser (Chrome shown), navigate to the newly configured Load Balancer            |
-|                                                                                                               |
 |    configuration: **http://<namespace>.lab-sec.f5demos.com**, to confirm it is functional.                    |
 |                                                                                                               |
 | 2. Using some of the sample attacks below, add the URI path & variables to your application to generate       |
-|                                                                                                               |
 |    security event data.                                                                                       |
 |                                                                                                               |
 |    * /?cmd=cat%20/etc/passwd                                                                                  |
@@ -303,7 +276,6 @@ Monitoring dashboard, and gather security event details.
 |                                                                                                               |
 | .. note::                                                                                                     |
 |    *The web application firewall is blocking these requests to protect the application. The block page can*   |
-|                                                                                                               |
 |    *be customized to provide additional information.*                                                         |
 +---------------------------------------------------------------------------------------------------------------+
 | |lab034|                                                                                                      |
@@ -311,11 +283,9 @@ Monitoring dashboard, and gather security event details.
 
 +---------------------------------------------------------------------------------------------------------------+
 | 3. Returning to the F5 Distributed Cloud Console, use the left-hand navigation to navigate to Multi-Cloud App |
-|                                                                                                               |
 |    Connect section and click on **Performance**                                                               |
 |                                                                                                               |
 | 4. Scroll to the **Load Balancers** section of the page and click the link for your respective load balancer. |
-|                                                                                                               |
 +---------------------------------------------------------------------------------------------------------------+
 | |lab016|                                                                                                      |
 |                                                                                                               |
@@ -326,14 +296,12 @@ Monitoring dashboard, and gather security event details.
 | 5. Click the **Performance Monitoring** dropdown at the top of the page and select **Security Monitoring**    |
 +---------------------------------------------------------------------------------------------------------------+
 | |lab035|                                                                                                      |
-|                                                                                                               |
 +---------------------------------------------------------------------------------------------------------------+
 
 +---------------------------------------------------------------------------------------------------------------+
 | 6. From the **Dashboard** view, using the horizontal navigation, click **Security Analytics**.                |
 |                                                                                                               |
 | 7. Note the **Chart** shows a graphical representation of all of the response codes for the selected time     |
-|                                                                                                               |
 |    frame.                                                                                                     |
 |                                                                                                               |
 | .. note::                                                                                                     |
@@ -347,14 +315,12 @@ Monitoring dashboard, and gather security event details.
 +---------------------------------------------------------------------------------------------------------------+
 | 8. Click the **Hide Chart** link to free up space in the browser window.                                      |
 |                                                                                                               |
-| 9. Expand your latest security event as shown.                                                               |
+| 9. Expand your latest security event as shown.                                                                |
 |                                                                                                               |
 | 10. Note the summary detail provided in the **Information** link.  The **req_id** which is synonymous with    |
-|                                                                                                               |
 |    **Support ID** (filterable) from the block page.                                                           |
 |                                                                                                               |
 | 11. Scroll to the bottom of the information screen to see specific signatures detected and actions taken      |
-|                                                                                                               |
 |     during the security event.                                                                                |
 |                                                                                                               |
 | .. note::                                                                                                     |
@@ -369,16 +335,11 @@ Monitoring dashboard, and gather security event details.
 
 +---------------------------------------------------------------------------------------------------------------+
 | **End of Lab 1:**  This concludes Lab 1.  In this lab you created an origin pool to connect to the            |
-|                                                                                                               |
 | application, you then created a load balancer and associated the origin pool to the load balancer.  This      |
-|                                                                                                               |
 | allowed the application to be advertised via the F5 Distributed Cloud Global Network.  The Distributed Cloud  |
-|                                                                                                               |
 | Console was then used to review telemetry data gathered for the application.  Next an Application Firewall    |
-|                                                                                                               |
 | policy was assigned to protect the application.  Finally a sample attack was run against the application and  |
 | the security event data was reviewed within the Distributed Cloud Console.                                    |
-|                                                                                                               |
 +---------------------------------------------------------------------------------------------------------------+
 | |labend|                                                                                                      |
 +---------------------------------------------------------------------------------------------------------------+
