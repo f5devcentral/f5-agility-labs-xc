@@ -1,4 +1,4 @@
-Lab 1 - Deploy Containers on vK8s and Build Grafana Dashboard
+Lab 2 - Deploy Containers on vK8s and Build Grafana Dashboard
 =============================================================
 
 **Steps**
@@ -13,6 +13,8 @@ Environment Setup:
 
   ### Enter your own namespace value
   export NAMESPACE=<namespace>
+
+
 
 **Deploy MQQT Broker**
 
