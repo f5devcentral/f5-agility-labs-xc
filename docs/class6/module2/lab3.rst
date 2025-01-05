@@ -131,7 +131,7 @@ Variable                        Value
 ==============================  =====
 IP                              10.0.3.253 (Note: this is not a typo. The CSP workloads have IP overlap)
 Site or Virtual Site            Site
-Site:                           **system/student-azurenet**
+Site:                           **system/student-azurenet2**
 Select Network on the site      Inside Network
 ==============================  =====
 
