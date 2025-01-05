@@ -1,249 +1,188 @@
-Lab 2: API Protection & Rate Limiting
+Lab 2: API Discovery
 =====================================
 
-Lab 2 you will enable API Protection and Rate Limiting on select Endpoint.
+add description.
 
-This lab's tasks will walk through the configuration steps and note additional configurations available.
+**Scenario**
 
-**Expected Lab Time: 25 minutes**
+It is common for an update to an application to be made and deployed to production without
+review. This means API endpoints are made available without approval.  
 
-Task 1: Attaching API Protection to Load Balancer Object
+Find a way to proactively limit exposed endpoints to a approved list.
+
+**Expected Lab Time: ?? minutes**
+
+Task 1: Simulate...
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In this task's series of steps you will enable the API Protection feature on the
+Add Description
+
+#. Add more steps.
+
+   .. image:: _static/update_image.png
+      :width: 800px
+
+Task 2: OpenAPI File Import
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+In this task's series of steps you will import swagger files into the F5 Distributed Cloud tenant and explore
+version control features.
+
+#. For the next series of steps, to download the JSON/OpenAPI spec file **demobank-api-v1.json**
+   to your local desktop or workspace.
+
+   http://demobankapi.lab-sec.f5demos.com/lab/demobank-api-v1.json
+
+   .. note::
+      *Depending on browser, you may need to copy content and save as **demobank-api-v1.json***
+
+#. In the left top click the F5 ball and navigate to the **Web App & API Protection** Tile.
+
+   .. image:: _static/update_image.png
+      :width: 800px
+
+#. In the left-hand navigation, click on **Files** then **OpenAPI Files** under the **Manage** section.
+
+#. Click **Add OpenAPI File** located in the center of the window.
+
+   .. image:: _static/update_image.png
+      :width: 800px
+
+#. In the resulting **OpenAPI File** window, input **demobank-api** for the **Name** under
+   the **Metadata** section.
+
+#. In the **OpenAPI Upload** section, click the **Upload File** button. Select the file
+   downloaded in Step 1 above and click **Open**.
+
+   .. image:: _static/update_image.png
+      :width: 800px
+
+#. Observe that the file **demobank-api-v1**  is present and the click **Save and Exit**
+
+   .. image:: _static/update_image.png
+      :width: 800px
+
+#. In the resulting **OpenAPI File** window, you will see the upload file with additional
+   metadata.
+
+   .. note::
+      *You will also see a dialogue box, in the bottom left of your screen indicating the file*
+      has been successfully added.*
+
+   .. image:: _static/update_image.png
+      :width: 800px
+
+Task 3: API Definition
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+In this task's series of steps you will establish the Swagger Definition which serves as an object
+pointer to imported swagger files you just uploaded.
+
+#. In the left-hand navigation of the **Web App & API Protection** service, click on **API**
+   **Management** under the **Manage** section and then click **API Definition**.
+
+   .. image:: _static/update_image.png
+      :width: 800px
+
+#. In the resulting **API Definition** window, click **Add API Definition** in the main
+   window area as shown.
+
+   .. image:: _static/update_image.png
+      :width: 800px
+
+#. In the resulting **New API Definition** window, input **demobank-api-spec**
+   for the **Name** under the **Metadata** section.
+
+#. In the **OpenAPI Specification Files** section, click **Add Item**.
+
+#. Select the version 1 of the previously uploaded OpenAPI spec file. It will be in the
+   format **<namespace>/demobank-api/v1-<current-date>**.
+
+#. Once selected, click **Save and Exit** in the bottom-right corner.
+
+   .. image:: _static/update_image.png
+      :width: 800px
+
+Task 4: Enabling API Inventory
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+In this task's series of steps you will enable the API Inventory and Discovery feature on the
 previously built Load Balancer object delivering the targeted API.
 
 #. In the left-hand navigation of the **Web App & API Protection** service, click on **Load Balancers > HTTP Load**
    **Balancers** under the **Manage** section.
 
-   .. image:: _static/shared-002.png
-      :width: 800px
-
 #. In the resulting **Load Balancers** window, click on the three dots **...** in the
    **Action** column, and the select **Manage Configuration**.
 
-   .. image:: _static/shared-003.png
+   .. image:: _static/update_image.png
       :width: 800px
 
 #. Click **Edit Configuration** in the top-right corner.
 
-   .. image:: _static/shared-004.png
+   .. image:: _static/update_image.png
       :width: 800px
 
-#. In the **API Protection > API Protection Rules** section, click the **Configure** link.
+#. Click **API Protection** in the left-hand navigation.
 
-   .. image:: _static/lab2-task1-004.png
+#. In the **API Protection** section, click the drop-down arrow next to **API Definition**
+   and select **Enable**.
+
+   .. image:: _static/update_image.png
       :width: 800px
 
-#. In the resulting **API Protection Rules** window, click **Configure** in the
-   **API Endpoints** section.
+#. In the second **API Definition** section, click the drop-down arrow and select the
+   previously created API Definition **<namespace>/app-api-spec**.
 
-   .. image:: _static/lab2-task1-005.png
+   .. image:: _static/update_image.png
       :width: 800px
 
-#. Click **Add Item** in the **API Endpoints** window.
+#. Under **Validation**, select **API Inventory** from drop-down then click on
+   **View Configuration**
 
-   .. image:: _static/lab2-task1-006.png
+   .. image:: _static/update_image.png
       :width: 800px
 
-#. In the resulting window, input **block-endpoint** in the **Name** field of the
-   **Metadata** section.
+#. Within **API Inventory validation**, under **Fall Through Mode** update the drop-down
+   to **Custom** and click **Editi Configuration**.
 
-#. In the **Action** area, click the drop-down arrow indicated and select **Deny**.
-
-   .. image:: _static/lab2-task1-007.png
+   .. image:: _static/update_image.png
       :width: 800px
 
-#. In the **API Endpoint** section, click on the **API Endpoint** input field as indicated.
+#. In the **Custom Fall Through Rule List** section, click on **Add Item**.
 
-#. Select the **See Suggestions** link.
-
-   .. image:: _static/lab2-task1-008.png
+   .. image:: _static/update_image.png
       :width: 800px
 
-#. Select **/api/CatLookup/GetAllCats** from the available options provided.
+#. Update the fields with the below detail, click on **Apply**.
 
-   .. note::
-      *The available endpoints are provided by the swagger previously imported,
-      or identified by API Discovery*
+   * **Name:**  ``<namespace>-shadow``
+   * **Action:** ``Block``
+   * **Type:** ``Base Path``
+   * **Base Path:** ``/``
 
-#. In the **HTTP Methods** area, click in the **Method List** input field.
-
-   .. image:: _static/lab2-task1-009.png
+   .. image:: _static/update_image.png
       :width: 800px
 
-#. Select **Any** from the available methods provided.
-
-   .. note::
-      *Multiple methods can be selected if needed*
-
-   .. image:: _static/lab2-task1-010.png
-      :width: 800px
-
-#. Review the configuration and click, the **Apply** button.
-
-   .. image:: _static/lab2-task1-011.png
-      :width: 800px
-
-#. Review the API Endpoint deny rule and click, the **Apply** button.
-
-   .. image:: _static/lab2-task1-012.png
-      :width: 800px
-
-#. Note that API Protection Rules are configure for the API Endpoints and click, the
-   **Apply** button.
-
-   .. image:: _static/lab2-task1-013.png
-      :width: 800px
+#. At the  **Custom Fall Through Rule List** and the **API Inventory validation** click **Apply**.
 
 #. Select **Other Settings** on the left then click on **Save and Exit**
    at the bottom right of window.
 
-   .. image:: _static/lab2-task2-009.png
+   .. image:: _static/update_image.png
       :width: 800px
 
-#. Using another browser tab, navigate to the the following URL to confirm
-   access is denied.
-
-   .. note::
-      *Path/URI matching is case-sensitive. Make sure the exact case format is used as listed.
-      Copy and paste the following Path/URI to ensure matching.*
-
-   ``http://<namespace>.lab-sec.f5demos.com/api/CatLookup/GetAllCats``
-
-   .. image:: _static/lab2-task1-014.png
-      :width: 500px
-
-#. Select **Security Dashboard** within the XC tab, scroll down and click on the
-   **<namespace>-lb** load balancer name.
-
-   .. image:: _static/shared-005.png
-      :width: 800px
-
-   .. image:: _static/shared-006.png
-      :width: 800px
-
-#. Click on **Security Analytics**, observe the event. Expand event details by clicking on the **right arrow**.
-   Events with the response code of **403** will be present.
-
-   .. note::
-      *Change time to 1 hour, and make sure the page has been refreshed*
-
-   .. image:: _static/lab2-task1-015.png
-      :width: 800px
-
-   .. note::
-      *Detection information will be near the bottom of the event detail.
-      api_sec_event will be listed with details regarding "api protection."*
-
-Task 2: Attach API Rate Limiting to Load Balancer Object
+Task 3: Simulate...
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In this task's series of steps you will enable the API Rate Limiting feature on the
-previously built Load Balancer object delivering the targeted API.
+Add Description
 
-#. In the left-hand navigation of the **Web App & API Protection** service, click on **Load Balancers > HTTP Load**
-   **Balancers** under the **Manage** section.
+#. Add more steps.
 
-   .. image:: _static/shared-002.png
+   .. image:: _static/update_image.png
       :width: 800px
 
-#. In the resulting **Load Balancers** window, click on the three dots **...** in the
-   **Action** column, and the select **Manage Configuration**.
+**End of Lab**
 
-   .. image:: _static/shared-003.png
-      :width: 800px
-
-#. Click **Edit Configuration** in the top-right corner.
-
-   .. image:: _static/shared-004.png
-      :width: 800px
-
-#. Using the left-hand navigation, click the **Common Security Controls** link.
-
-   .. image:: _static/lab2-task2-001.png
-      :width: 800px
-
-#. Locate the **Rate Limiting** area of the **Common Security Controls** and use the
-   drop-down to select **API Rate Limit**.
-
-   .. image:: _static/lab2-task2-003.png
-      :width: 800px
-
-#. In the expanded menu under **Rate Limiting**, click **Configure** in the **API
-   Endpoints** area.
-
-#. In the resulting window **API Endpoints** window, click **Add Item**.
-
-   .. image:: _static/lab2-task2-005.png
-      :width: 800px
-
-#. In the resulting configuration window, update the following fields then click **Apply**.
-
-   * **API Endpoint:**  ``/api/DogLookup/GetAllDogs``
-   * **Method List:** ``ANY``
-   * **Threshold:** ``3``
-   * **Duration:** ``Minute``
-
-
-   .. note::
-      *This will rate limit a client after making 3 requests within 1 minute.*
-
-   .. image:: _static/lab2-task2-006-alt.png
-      :width: 800px
-
-#. Review the API Endpoint rate limiting rule and click, the **Apply** button.
-
-   .. image:: _static/lab2-task2-007-alt.png
-      :width: 800px
-
-#. Note the updated configuration for API Rate limiting, Click **Other Settings** on the
-   the left, navigation on the bottom right then click on **Save and Exit**
-
-   .. image:: _static/lab2-task2-008.png
-      :width: 800px
-
-   .. image:: _static/lab2-task2-009.png
-      :width: 800px
-
-#. Using another browser tab, navigate to the the following URL to confirm
-   rate limiting, by freshing your tab several times.
-
-   .. note::
-      *Path/URI matching is case-sensitive. Make sure the exact case format is used as listed.
-      Copy and paste the following Path/URI to ensure matching.*
-
-   ``http://<namespace>.lab-sec.f5demos.com/api/DogLookup/GetAllDogs``
-
-   .. image:: _static/lab2-task2-010.png
-      :width: 500px
-
-#. Select **Security Dashboard** within the XC tab, scroll down and click on the
-   **<namespace>.lab-sec.f5demos.com** load balancer name.
-
-   .. image:: _static/shared-005.png
-      :width: 800px
-
-   .. image:: _static/shared-006.png
-      :width: 800px
-
-#. Click on **Security Analytics**, observe the event. Expand event details by clicking on the **right arrow**.
-   Events with the response code of **429** will be present.
-
-   .. note::
-      *Change time to 1 hour, and make sure the page has been refreshed*
-
-   .. image:: _static/lab2-task2-011.png
-      :width: 800px
-
-   .. note::
-      *Detection information will be near the bottom of the event detail.
-      api_sec_event will be listed with details regarding "rate limiting."*
-
-This configuration highlights the elements needed to deploy API Discovery & Protection. This
-configuration can also be fully deployed and managed via the F5 Distributed Cloud API.
-
-**End of Lab 2:**  This concludes Lab 2. A Q&A session will begin shortly after conclusion of the overall lab.
-
-.. image:: _static/labend.png
+.. image:: _static/update_image.png
    :width: 800px

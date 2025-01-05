@@ -3,7 +3,7 @@ Lab 2: Leveraging Terraform
 
 The following lab tasks will guide you through using Terraform to deploy and secure a Web based application.  
 Students will start by creating an authentication certificate within Distributed Cloud. Terraform will be 
-configured to utilize the certificate for authenticating the API calls.  Next, a Tfvars file is created to 
+configured to utilize the certificate for authenticating the API calls.  Next, a **tfvars** file is created to 
 customize the deployment to match the student's environment. Terraform will then be used to deploy an HTTP 
 Health Check, Origin Pool, and HTTP Load Balancer. Students will then modify and apply the Terraform 
 configuration to add a Web Application Firewall to their existing HTTP Load Balancer. 
@@ -12,14 +12,20 @@ configuration to add a Web Application Firewall to their existing HTTP Load Bala
 
 Task 1: Deploy a Web Application with Terraform  
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-In this task, you will create an API Certificate for Terraform to authneticate to the Distributed Cloud API.  Next, 
-you will create a Tfvars file to specify environment variables unique to your environment.  After the Tfvars file is 
-created, you will intialize Terraform and then deploy an HTTP Health Check, Origin Pool, and HTTP Load Balancer. 
+In this task, you will create an API Certificate for Terraform to authenticate to the Distributed Cloud API.  
+Next, you will create a **tfvars** file to specify environment variables unique to your environment.  After the 
+**tfvars** file is created, you will **intialize** Terraform environment.  You use the **initialize** command to
+setup the local Terraform environment and download the correct version of any required modules.  After the 
+environment is initialized, the **plan** command is used to perform a dry run of the terraform configuration.
+Planning does not create any objects.  Planning allows you to verify your syntax.  The last step is to use 
+**apply** to actually create an HTTP Health Check, Origin Pool, and HTTP Load Balancer. 
 
 +---------------------------------------------------------------------------------------------------------------+
 | **Clone the appworld-f5xc-automation repo**                                                                   |
 +===============================================================================================================+
-| 1. Access VSCode server that is part of your UDF deployment.                                                  |
+| 1. In your UDF deployment, click on the **VS CODE** Access method under the **Client** system. This will      |
+|                                                                                                               |
+|    launch a tab in your web browser.                                                                          |      
 +---------------------------------------------------------------------------------------------------------------+
 | 2. From the VS Code Menu bar select **Terminal** and then **New Terminal**.                                   |
 |                                                                                                               |
@@ -41,13 +47,13 @@ created, you will intialize Terraform and then deploy an HTTP Health Check, Orig
 |                                                                                                               |
 |    Console <https://https://f5-xc-lab-app.console.ves.volterra.io/>                                           |
 +---------------------------------------------------------------------------------------------------------------+
-| 2. In the top right corner of the Distributed Cloud Console click the **User Icon** dropdown and select       |
+| 2. In the top right corner of the Distributed Cloud Console, click the **User Icon** dropdown and select      |
 |                                                                                                               |
 |    **Account Settings**.                                                                                      |
 |                                                                                                               |
 | |lab1-Account_Settings|                                                                                       |
 +---------------------------------------------------------------------------------------------------------------+
-| 3. In the resulting screen click **Credentials** under the Peronal Management Heading on the left.            |
+| 3. In the resulting screen click **Credentials** under the **Personal Management** Heading on the left.       |
 |                                                                                                               |
 | |lab1-Credentials|                                                                                            |
 +---------------------------------------------------------------------------------------------------------------+
@@ -63,7 +69,7 @@ created, you will intialize Terraform and then deploy an HTTP Health Check, Orig
 |    * **Confirm Password:** *<some_password>*                                                                  |
 |    * **Expiry Date: Select:** *<date two days in the future of today's date>*                                 |
 |                                                                                                               |
-| 6. Click **Download**.                                                                                       |
+| 6. Click **Download**.                                                                                        |
 |                                                                                                               |
 | |lab2-Terraform_Download_API_Cert|                                                                            |
 |                                                                                                               |
@@ -85,7 +91,7 @@ created, you will intialize Terraform and then deploy an HTTP Health Check, Orig
 |                                                                                                               |
 | |lab2-Terraform_Auth_Folders_New|                                                                             |
 +---------------------------------------------------------------------------------------------------------------+
-| 3. Copy the certificate you downloaded by dragging it to the **credentials folder you just created.           |
+| 3. Copy the certificate you downloaded by dragging it to the **credentials** folder you just created.         |
 +---------------------------------------------------------------------------------------------------------------+
 | 4. Right click the certificate in VSCode and select **Rename**.  Change the name of the file to               |
 |                                                                                                               |
@@ -102,18 +108,22 @@ created, you will intialize Terraform and then deploy an HTTP Health Check, Orig
 |    export VES_P12_PASSWORD="<some_password>"                                                                  |
 |                                                                                                               |
 | |lab2-Terraform_Auth_Env|                                                                                     |
+|                                                                                                               |
+| .. note::                                                                                                     |
+|    *Replace <some_password> with the password you entered when creating the API certificate.  You need to*    |
+|    *wrap the password in "".  If your password is password, enter: export VES_P12_PASSWORD="password"*        |
 +---------------------------------------------------------------------------------------------------------------+
 
 +---------------------------------------------------------------------------------------------------------------+
 | **Create a tfvars File for Specifying Environment Specific Variables**                                        |
 +===============================================================================================================+
-| 1. From the **EXPLORER** frame, right click the **Terraform** folder, and then select new file. Enter the     |
+| 1. From the **EXPLORER** panel, right click the **Terraform** folder, and then select new file. Enter the     |
 |                                                                                                               |
 |    name **terraform.tfvars** for the new file that is created and press enter.                                | 
 |                                                                                                               |
 | |lab2-Terraform_Tfvars|                                                                                       |
 +---------------------------------------------------------------------------------------------------------------+
-| 2. This will open the **terraform.tfvars** file in the right frame of Visual Studio Code, enter the following |
+| 2. This will open the **terraform.tfvars** file in the right panel of Visual Studio Code, enter the following |
 |                                                                                                               |
 |    values into the file:                                                                                      |
 |                                                                                                               |
@@ -124,6 +134,10 @@ created, you will intialize Terraform and then deploy an HTTP Health Check, Orig
 |    namespace   = "<namespace>"                                                                                |
 |                                                                                                               |
 | |lab2-Terraform_Tfvars_Values|                                                                                |
+|                                                                                                               |
+| .. note::                                                                                                     |
+|    *Replace <namespace> with your assigned namespace. You need to wrap the namespace in "". If your assigned* |     
+|    *namespace is brave-collie, enter: namespace = "brave-collie"*                                             |
 +---------------------------------------------------------------------------------------------------------------+
 
 +---------------------------------------------------------------------------------------------------------------+
@@ -187,7 +201,7 @@ created, you will intialize Terraform and then deploy an HTTP Health Check, Orig
 +===============================================================================================================+
 | 1. Open a new tab in your Chrome browser and enter the following URL                                          |
 |                                                                                                               |
-|     **http://<namespace>-demoshop.lab-app.f5demos.com**                                                       |
+|    **http://<namespace>-demoshop.lab-app.f5demos.com**                                                        |
 |                                                                                                               |
 | .. note::                                                                                                     |
 |    *This illustrates that you are able to configure the delivery of an application via the Distributed Cloud* |
@@ -205,7 +219,7 @@ objects within Distributed Cloud.
 +---------------------------------------------------------------------------------------------------------------+
 | **Edit Your Terraform Code to Create an Application Firewall and Add It to the Load Balancer**                |
 +===============================================================================================================+
-| 1. From the Visual Studio Code Explorer frame, click **main.tf**, to open the Terraform configuration.        |
+| 1. From the Visual Studio Code Explorer panel, click **main.tf**, to open the Terraform configuration.        |
 |                                                                                                               |
 | |lab2-Terraform_AppFw|                                                                                        |
 +---------------------------------------------------------------------------------------------------------------+
@@ -261,7 +275,7 @@ objects within Distributed Cloud.
 +---------------------------------------------------------------------------------------------------------------+
 | 2. Review the Plan results. This shows what Terraform is planning to create.                                  |
 |                                                                                                               |
-| |lab3-Terraform_AppFw_Plan_Results|                                                                           |
+| |lab2-Terraform_AppFw_Plan_Results|                                                                           |
 +---------------------------------------------------------------------------------------------------------------+
 | 3. In the Terminal, enter the following command and press Enter:                                              |
 |                                                                                                               |
@@ -293,29 +307,29 @@ objects within Distributed Cloud.
 +---------------------------------------------------------------------------------------------------------------+
 | 3. In the resulting screen, expand the **Manage** menu and click **Load Balancers** and then select           |
 |                                                                                                               |
-|     **HTTP Load Balancers**.                                                                                  |
+|    **HTTP Load Balancers**.                                                                                   |
 |                                                                                                               |
 | |lab2-Terraform_Console_Manage_LBs|                                                                           |
 +---------------------------------------------------------------------------------------------------------------+
-| 13. From the HTTP Load Balancers page, locate the HTTP Load Balancer that you created via Terraform.  Click   |
+| 4. From the HTTP Load Balancers page, locate the HTTP Load Balancer that you created via Terraform.  Click    |
 |                                                                                                               |
-|     the **ellipsis** under **Actions** and select **Manage Configuration**.                                   |
+|    the **ellipsis** under **Actions** and select **Manage Configuration**.                                    |
 |                                                                                                               |
 | |lab2-Terraform_Console_Manage_LB_Manage|                                                                     |
 +---------------------------------------------------------------------------------------------------------------+
-| 14. From the resulting screen, select **Web Application Firewall** under the HTTP Load Balancer frame to jump |
+| 5. From the resulting screen, select **Web Application Firewall** under the HTTP Load Balancer frame to jump  |
 |                                                                                                               |
-|     to the **Web Application Firewall** configuration section.                                                |
+|    to the **Web Application Firewall** configuration section.                                                 |
 |                                                                                                               |
 | |lab2-Terraform_Console_Manage_LB_WebAppFw|                                                                   |
 +---------------------------------------------------------------------------------------------------------------+
-| 15. Notice that the Web Application Firewall is now Enabled and the policy you created using Terraform is     |
+| 6. Notice that the Web Application Firewall is now Enabled and the policy you created using Terraform is      |
 |                                                                                                               |
-|     applied.                                                                                                  |
+|    applied.                                                                                                   |
 |                                                                                                               |
 | |lab2-Terraform_Console_Manage_LB_WebAppFw_Enable|                                                            |
 +---------------------------------------------------------------------------------------------------------------+
-| 16. Click **Cancel and Exit** to close out of the HTTP Load Balancer configuration.                           |
+| 7. Click **Cancel and Exit** to close out of the HTTP Load Balancer configuration.                            |
 |                                                                                                               |
 | |lab2-Terraform_Console_Manage_LB_Cancel|                                                                     |
 +---------------------------------------------------------------------------------------------------------------+
@@ -323,11 +337,11 @@ objects within Distributed Cloud.
 +---------------------------------------------------------------------------------------------------------------+
 | **End of Lab 2**                                                                                              |
 +===============================================================================================================+
-| This concludes Lab 2. In this lab, you learned how to setup Terraform to authenticate to to Distributed Cloud |
+| This concludes Lab 2. In this lab, you learned how to set up Terraform to authenticate to the F5 Distributed  |
 |                                                                                                               |
-| utilizing an API Certificate. You then created a Tfvars file to customize the deployment to match your        |
+| Cloud API with an API Certificate. You then created a **tfvars** file to customize the deployment to match    |
 |                                                                                                               |
-| environment. After that, you used Terraform to deploy an HTTP Health Check, Origin Pool, and HTTP Load        |
+| your environment. After that, you used Terraform to deploy an HTTP Health Check, Origin Pool, and HTTP Load   |
 |                                                                                                               |
 | Balancer. The Terraform configuration was then modified to create a Web Application Firewall policy and apply |
 |                                                                                                               |
@@ -358,6 +372,8 @@ objects within Distributed Cloud.
    :width: 800px
 .. |lab2-Terraform_Tfvars| image:: _static/lab2-Terraform_Tfvars.png
    :width: 800px
+.. |lab2-Terraform_Tfvars_Values| image:: _static/lab2-Terraform_Tfvars_Values.png
+   :width: 800px
 .. |lab2-Terraform_Deploy_Directory| image:: _static/lab2-Terraform_Deploy_Directory.png
    :width: 800px
 .. |lab2-Terraform_Deploy_Init| image:: _static/lab2-Terraform_Deploy_Init.png
@@ -366,17 +382,31 @@ objects within Distributed Cloud.
    :width: 800px
 .. |lab2-Terraform_Deploy_Plan| image:: _static/lab2-Terraform_Deploy_Plan.png
    :width: 800px
+.. |lab2-Terraform_Deploy_Plan_Results| image:: _static/lab2-Terraform_Deploy_Plan_Results.png
+   :width: 800px
 .. |lab2-Terraform_Deploy_Apply| image:: _static/lab2-Terraform_Deploy_Apply.png
    :width: 800px
 .. |lab2-Terraform_Deploy_Apply_Yes| image:: _static/lab2-Terraform_Deploy_Apply_Yes.png
    :width: 800px
 .. |lab2-Terraform_Deploy_Apply_Results| image:: _static/lab2-Terraform_Deploy_Apply_Results.png
    :width: 800px
+.. |lab1-Demoshop| image:: _static/lab1-Demoshop.png
+   :width: 800px
 .. |lab2-Terraform_AppFw| image:: _static/lab2-Terraform_AppFw.png
    :width: 800px
 .. |lab2-Terraform_AppFw_Create| image:: _static/lab2-Terraform_AppFw_Create.png
    :width: 800px
+.. |lab2-Terraform_AppFw_LB| image:: _static/lab2-Terraform_AppFw_LB.png
+   :width: 800px   
 .. |lab2-Terraform_AppFw_Plan| image:: _static/lab2-Terraform_AppFw_Plan.png
+   :width: 800px
+.. |lab2-Terraform_AppFw_Plan_Results| image:: _static/lab2-Terraform_AppFw_Plan_Results.png
+   :width: 800px
+.. |lab2-Terraform_AppFw_Apply| image:: _static/lab2-Terraform_AppFw_Apply.png
+   :width: 800px
+.. |lab2-Terraform_AppFw_Apply_Yes| image:: _static/lab2-Terraform_AppFw_Apply_Yes.png
+   :width: 800px
+.. |lab2-Terraform_AppFw_Apply_Results| image:: _static/lab2-Terraform_AppFw_Apply_Results.png
    :width: 800px
 .. |lab2-Terraform_Console_Web| image:: _static/lab2-Terraform_Console_Web.png
    :width: 800px

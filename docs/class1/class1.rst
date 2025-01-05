@@ -1,4 +1,4 @@
-F5 Distributed Cloud - Introduction to Deployment Models and Services
+F5 Distributed Cloud - Foundations of Delivery & Security
 =========================================================================
 
 Welcome
@@ -13,8 +13,6 @@ Objectives:
 - Gain an understanding of deploying proxy services to securely deliver an application with a public endpoint
 - Gain an understanding of viewing telemetry data and utilizing it to tune WAAP policies
 - Gain an understanding of how to deploy a site for providing connectivity to a private endpoint
-- Gain an understanding of DNS, Observability, and CDN
-- Gain an understanding of Multi-Cloud Networking (MCN) connectivity features (i.e. AWS, Azure, and Google)
 
 Lab & Tasks:
 ------------
