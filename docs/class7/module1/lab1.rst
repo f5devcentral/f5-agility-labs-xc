@@ -139,4 +139,4 @@ In this lab, we will learn the following:
       - Your namespace name should captured/written down as it will be referenced later in the labs
       - A namespace is a Kubernetes construct. For more Kubernetes concepts, please review `Kubernetes Documentation <https://kubernetes.io/docs/concepts/>`_
       - The delegated Domain Name should be captured/written down, as it will be leveraged later in the lab.
-
+      - Sam Park added this line.      
