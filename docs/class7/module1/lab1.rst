@@ -1,6 +1,6 @@
 Lab 1 - Explore F5 Distributed Cloud Console
 --------------------------------------------
-#Russ
+
 Welcome to F5 Distributed Cloud Application 301.
 
 The following Exercises will guide you through the initial
