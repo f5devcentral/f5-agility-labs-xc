@@ -1,5 +1,5 @@
-Lab 3 - Configure your local kubectl to access your virtual K8s
-===============================================================
+Lab 1 - Configure your Jumpbox to access your virtual K8s
+=========================================================
 
 F5 Distributed Cloud App Stack provides the ability to manage your vK8s namespace via command line with `kubectl`
 
@@ -47,9 +47,9 @@ In this lab, we will learn perform the following:
 
 #. If you have kubectl available on your computer, you would be able to interact with your vK8s cluster using the downloaded kubeconfig file.
 
-For the purposes of this lab, we will use the jumpbox to interact with the vK8s cluster. Before we can do that, we need to upload the kubeconfig file to the jumpbox.
+   For the purposes of this lab, we will use the jumpbox to interact with the vK8s cluster. Before we can do that, we need to upload the kubeconfig file to the jumpbox.
 
-From the lab components view, find the jumpbox and click the *Access* button. From the access list, select **File Browser**.
+   From the lab components view, find the jumpbox and click the *Access* button. From the access list, select **File Browser**.
 
 .. image:: ../images/filebrowser-launch.png
    :width: 650pt
