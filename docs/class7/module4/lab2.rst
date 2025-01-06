@@ -8,15 +8,19 @@ Environment Setup:
 - Ensure that the NAMESPACE environment variable is set.
 - Deploy Grafana using docker compose which will be procongigured to match your namespace name for each of the 3 regions.
 
+#. Returning back to the Lab Components view, click the jumpbox and then click the *Access* button. From the access list, select **Web Shell**.
+
+.. image:: ../images/webshell-launch.png
+   :width: 650pt
+
+From Web Shell, run the following commands to set the NAMESPACE environment variable:
 
 .. code-block:: bash
 
   ### Enter your own namespace value
   export NAMESPACE=<namespace>
 
-
-
-**Deploy MQQT Broker**
+Next, we'll configure you environment to access the vK8s cluster using the kubeconfig file that you downloaded in the previous lab.
 
 .. code-block:: bash
 
@@ -24,6 +28,8 @@ Environment Setup:
 
   #Let's review again to confirm that we can reach the cluster:
   kubectl config view
+
+Now we can deploy the containers into the vK8s cluster.
 
 **Deploy Manifests**
 
