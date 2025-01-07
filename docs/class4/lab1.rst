@@ -78,13 +78,13 @@ steps will define an application, register its DNS and assign a target as an ori
 
 #. In the resulting window, use the drop down as shown and click **Add Item**.
 
-   .. image:: _static/update_image.png
+   .. image:: _static/lab1-task1-005.png
       :width: 800px
 
 #. In the resulting window, enter **<namespace>-pool** in the **Name** field and click
    **Add Item** under **Origin Servers** as shown.
 
-   .. image:: _static/update_image.png
+   .. image:: _static/lab1-task1-006.png
       :width: 800px
 
 #. In the resulting window, **Public DNS Name of Origin Server** should be selected for
