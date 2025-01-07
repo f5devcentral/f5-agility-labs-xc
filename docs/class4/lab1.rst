@@ -131,10 +131,10 @@ steps will define an application, register its DNS and assign a target as an ori
 
    ``http://<namespace>.lab-sec.f5demos.com/swagger``
 
-   .. image:: _static/update_image.png
+   .. image:: _static/lab1-task1-013.png
       :width: 800px
 
 **End of Lab**
 
-.. image:: _static/update_image.png
+.. image:: _static/labend.png
    :width: 800px
