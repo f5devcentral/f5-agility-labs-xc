@@ -25,7 +25,7 @@ done so already, please login to your tenant for this lab and proceed to Task 1.
 
 In this lab you will create a Application Load Balancer, attach and Origin Pool and enabled Malisddius User Detection.
 
-**Expected Lab Time: ?? minutes**
+**Expected Lab Time: 10 minutes**
 
 Task 1: Configure Load Balancer and Origin Pool
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
