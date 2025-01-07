@@ -32,34 +32,34 @@ previously built Load Balancer object delivering the targeted API.
 #. In the left-hand navigation of the **Web App & API Protection** service, click on **Load Balancers > HTTP Load**
    **Balancers** under the **Manage** section.
 
-   .. image:: _static/update_image.png
+   .. image:: _static/lab3-task2-001.png
       :width: 800px
 
 #. In the resulting **Load Balancers** window, click on the three dots **...** in the
    **Action** column, and the select **Manage Configuration**.
 
-   .. image:: _static/update_image.png
+   .. image:: _static/lab3-task2-002.png
       :width: 800px
 
 #. Click **Edit Configuration** in the top-right corner.
 
-   .. image:: _static/update_image.png
+   .. image:: _static/lab3-task2-003.png
       :width: 800px
 
 #. In the **API Protection > API Protection Rules** section, click the **Configure** link.
 
-   .. image:: _static/update_image.png
+   .. image:: _static/lab3-task2-004.png
       :width: 800px
 
 #. In the resulting **API Protection Rules** window, click **Configure** in the
    **API Endpoints** section.
 
-   .. image:: _static/update_image.png
+   .. image:: _static/lab3-task2-005.png
       :width: 800px
 
 #. Click **Add Item** in the **API Endpoints** window.
 
-   .. image:: _static/update_image.png
+   .. image:: _static/lab3-task2-006.png
       :width: 800px
 
 #. In the resulting window, input **block-endpoint** in the **Name** field of the
@@ -67,17 +67,19 @@ previously built Load Balancer object delivering the targeted API.
 
 #. In the **Action** area, click the drop-down arrow indicated and select **Deny**.
 
-   .. image:: _static/update_image.png
+   .. image:: _static/lab3-task2-007.png
       :width: 800px
 
 #. In the **API Endpoint** section, click on the **API Endpoint** input field as indicated.
 
 #. Select the **See Suggestions** link.
 
-   .. image:: _static/update_image.png
+   .. image:: _static/lab3-task2-008.png
       :width: 800px
 
 #. Select **/api/customerlookup/getbydob** from the available options provided.
+   .. image:: _static/lab3-task2-009.png
+      :width: 800px
 
    .. note::
       *The available endpoints are provided by the swagger previously imported,
@@ -85,7 +87,7 @@ previously built Load Balancer object delivering the targeted API.
 
 #. In the **HTTP Methods** area, click in the **Method List** input field.
 
-   .. image:: _static/update_image.png
+   .. image:: _static/lab3-task2-010.png
       :width: 800px
 
 #. Select **Any** from the available methods provided.
@@ -93,29 +95,29 @@ previously built Load Balancer object delivering the targeted API.
    .. note::
       *Multiple methods can be selected if needed*
 
-   .. image:: _static/update_image.png
+   .. image:: _static/lab3-task2-011.png
       :width: 800px
 
 #. Review the configuration and click, the **Apply** button.
 
-   .. image:: _static/update_image.png
+   .. image:: _static/lab3-task2-012.png
       :width: 800px
 
 #. Review the API Endpoint deny rule and click, the **Apply** button.
 
-   .. image:: _static/update_image.png
+   .. image:: _static/lab3-task2-013.png
       :width: 800px
 
 #. Note that API Protection Rules are configure for the API Endpoints and click, the
    **Apply** button.
 
-   .. image:: _static/update_image.png
+   .. image:: _static/lab3-task2-014.png
       :width: 800px
 
 #. Select **Other Settings** on the left then click on **Save and Exit**
    at the bottom right of window.
 
-   .. image:: _static/update_image.png
+   .. image:: _static/lab3-task2-015.png
       :width: 800px
 
 Task 3: Simulate...
@@ -130,5 +132,5 @@ Add Description
 
 **End of Lab**
 
-.. image:: _static/update_image.png
+.. image:: _static/labend.png
    :width: 800px
