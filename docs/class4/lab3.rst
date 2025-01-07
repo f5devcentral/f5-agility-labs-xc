@@ -78,6 +78,7 @@ previously built Load Balancer object delivering the targeted API.
       :width: 800px
 
 #. Select **/api/customerlookup/getbydob** from the available options provided.
+
    .. image:: _static/lab3-task2-009.png
       :width: 800px
 
