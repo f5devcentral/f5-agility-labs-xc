@@ -5,6 +5,22 @@ add description.
 
 **Scenario**
 
+Guardex Technologies, a fast-growing digital banking startup, frequently deploys updates to its SafeBank application 
+without thorough review. This practice often results in:
+
+Exposed Sensitive Endpoints
+Shadow APIs
+Regulatory Risks
+
+To address these issues, the company must:
+
+Discover APIs: Identify all live endpoints.
+Enforce Policies: Restrict exposure to approved endpoints only.
+Monitor and Alert: Detect unauthorized changes and flag non-compliance.
+Remediate: Quickly fix unauthorized or risky endpoints.
+
+The goal is to ensure secure, compliant, and efficient API management for SafeBank.
+
 It is common for an update to an application to be made and deployed to production without
 review. This means API endpoints are made available without approval.  
 
@@ -17,7 +33,25 @@ Task 1: Simulate...
 
 Add Description
 
-#. Add more steps.
+#. Using another browser tab, navigate to the the following URL.
+
+   ``http://<namespace>.lab-sec.f5demos.com/swagger``
+
+   .. image:: _static/lab2-task1-001.png
+      :width: 800px
+
+#. In the Demo Bank API app, navigate to the /api/customerlookup/getallcustomers endpoint, expand it, and click Try it
+ out.
+
+   .. image:: _static/update_image.png
+      :width: 800px
+
+#. Click Execute.
+
+   .. image:: _static/update_image.png
+      :width: 800px
+
+#. Review the response body. It returns all customer information.
 
    .. image:: _static/update_image.png
       :width: 800px
@@ -38,28 +72,29 @@ version control features.
 
 #. In the left top click the F5 ball and navigate to the **Web App & API Protection** Tile.
 
-   .. image:: _static/update_image.png
+   .. image:: _static/lab2-task2-001.png
       :width: 800px
 
 #. In the left-hand navigation, click on **Files** then **OpenAPI Files** under the **Manage** section.
 
 #. Click **Add OpenAPI File** located in the center of the window.
 
-   .. image:: _static/update_image.png
+   .. image:: _static/lab2-task2-002.png
       :width: 800px
 
 #. In the resulting **OpenAPI File** window, input **demobank-api** for the **Name** under
    the **Metadata** section.
-
+   .. image:: _static/lab2-task2-003.png
+      :width: 800px
 #. In the **OpenAPI Upload** section, click the **Upload File** button. Select the file
    downloaded in Step 1 above and click **Open**.
 
-   .. image:: _static/update_image.png
+   .. image:: _static/lab2-task2-004.png
       :width: 800px
 
 #. Observe that the file **demobank-api-v1**  is present and the click **Save and Exit**
 
-   .. image:: _static/update_image.png
+   .. image:: _static/lab2-task2-005.png
       :width: 800px
 
 #. In the resulting **OpenAPI File** window, you will see the upload file with additional
@@ -69,7 +104,7 @@ version control features.
       *You will also see a dialogue box, in the bottom left of your screen indicating the file*
       has been successfully added.*
 
-   .. image:: _static/update_image.png
+   .. image:: _static/lab2-task2-006.png
       :width: 800px
 
 Task 3: API Definition
@@ -81,13 +116,13 @@ pointer to imported swagger files you just uploaded.
 #. In the left-hand navigation of the **Web App & API Protection** service, click on **API**
    **Management** under the **Manage** section and then click **API Definition**.
 
-   .. image:: _static/update_image.png
+   .. image:: _static/lab2-task3-001.png
       :width: 800px
 
 #. In the resulting **API Definition** window, click **Add API Definition** in the main
    window area as shown.
 
-   .. image:: _static/update_image.png
+   .. image:: _static/lab2-task3-002.png
       :width: 800px
 
 #. In the resulting **New API Definition** window, input **demobank-api-spec**
@@ -100,7 +135,7 @@ pointer to imported swagger files you just uploaded.
 
 #. Once selected, click **Save and Exit** in the bottom-right corner.
 
-   .. image:: _static/update_image.png
+   .. image:: _static/lab2-task3-003.png
       :width: 800px
 
 Task 4: Enabling API Inventory
@@ -115,12 +150,12 @@ previously built Load Balancer object delivering the targeted API.
 #. In the resulting **Load Balancers** window, click on the three dots **...** in the
    **Action** column, and the select **Manage Configuration**.
 
-   .. image:: _static/update_image.png
+   .. image:: _static/lab2-task4-001.png
       :width: 800px
 
 #. Click **Edit Configuration** in the top-right corner.
 
-   .. image:: _static/update_image.png
+   .. image:: _static/lab2-task4-002.png
       :width: 800px
 
 #. Click **API Protection** in the left-hand navigation.
@@ -128,30 +163,35 @@ previously built Load Balancer object delivering the targeted API.
 #. In the **API Protection** section, click the drop-down arrow next to **API Definition**
    and select **Enable**.
 
-   .. image:: _static/update_image.png
+   .. image:: _static/lab2-task4-003.png
       :width: 800px
 
 #. In the second **API Definition** section, click the drop-down arrow and select the
    previously created API Definition **<namespace>/app-api-spec**.
 
-   .. image:: _static/update_image.png
+   .. image:: _static/lab2-task4-004.png
       :width: 800px
 
 #. Under **Validation**, select **API Inventory** from drop-down then click on
    **View Configuration**
 
-   .. image:: _static/update_image.png
+   .. image:: _static/lab2-task4-005.png
       :width: 800px
 
 #. Within **API Inventory validation**, under **Fall Through Mode** update the drop-down
-   to **Custom** and click **Editi Configuration**.
+   to **Custom** .
 
-   .. image:: _static/update_image.png
+   .. image:: _static/lab2-task4-006.png
       :width: 800px
 
-#. In the **Custom Fall Through Rule List** section, click on **Add Item**.
+#. Within **Custom Fall Through Rule List** , click on **Configure**.
 
-   .. image:: _static/update_image.png
+   .. image:: _static/lab2-task4-007.png
+      :width: 800px
+
+#. In the **Custom Fall Through Rule List** section, click on **Add item**.
+
+   .. image:: _static/lab2-task4-008.png
       :width: 800px
 
 #. Update the fields with the below detail, click on **Apply**.
@@ -161,15 +201,21 @@ previously built Load Balancer object delivering the targeted API.
    * **Type:** ``Base Path``
    * **Base Path:** ``/``
 
-   .. image:: _static/update_image.png
+   .. image:: _static/lab2-task4-009.png
       :width: 800px
 
 #. At the  **Custom Fall Through Rule List** and the **API Inventory validation** click **Apply**.
 
+    .. image:: _static/lab2-task4-010.png
+      :width: 800px
+
+
+    .. image:: _static/lab2-task4-011.png
+      :width: 800px
 #. Select **Other Settings** on the left then click on **Save and Exit**
    at the bottom right of window.
 
-   .. image:: _static/update_image.png
+   .. image:: _static/lab2-task4-012.png
       :width: 800px
 
 Task 3: Simulate...
@@ -184,5 +230,5 @@ Add Description
 
 **End of Lab**
 
-.. image:: _static/update_image.png
+.. image:: _static/labend.png
    :width: 800px
