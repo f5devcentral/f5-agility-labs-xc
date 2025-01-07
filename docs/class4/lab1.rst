@@ -93,7 +93,7 @@ steps will define an application, register its DNS and assign a target as an ori
 #. In the **DNS Name** field enter the following hostname:
    **demobankapi.lab-sec.f5demos.com** and then click **Apply**
 
-   .. image:: _static/update_image.png
+   .. image:: _static/lab1-task1-007.png
       :width: 800px
 
 #. After returning to the prior window, make sure **Port:** within the **Origin Servers**
@@ -103,19 +103,19 @@ steps will define an application, register its DNS and assign a target as an ori
 
 #. After returning to the next window and confirming the content, click **Apply**.
 
-   .. image:: _static/update_image.png
+   .. image:: _static/lab1-task1-008.png
       :width: 800px
 
-   .. image:: _static/update_image.png
+   .. image:: _static/lab1-task1-009.png
       :width: 800px
 
-   .. image:: _static/update_image.png
+   .. image:: _static/lab1-task1-010.png
       :width: 800px
 
 #. After returning to the HTTP Load Balancer window, select **Common Security Controls** on the left,
    find **Malicious User Detection** and select **Enable** from the drop-down.
 
-   .. image:: _static/update_image.png
+   .. image:: _static/lab1-task1-011.png
       :width: 800px
 
    .. note::
@@ -123,7 +123,7 @@ steps will define an application, register its DNS and assign a target as an ori
 
 #. Scroll to the bottom of the window, click on **Save and Exit**.
 
-   .. image:: _static/update_image.png
+   .. image:: _static/lab1-task1-012.png
       :width: 800px
 
 #. Using another browser tab, navigate to the the following URL to confirm the Load Balancer
