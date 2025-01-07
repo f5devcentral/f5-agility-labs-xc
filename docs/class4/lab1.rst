@@ -35,12 +35,12 @@ steps will define an application, register its DNS and assign a target as an ori
 
 #. In the left top click the F5 ball and navigate to the **Web App & API Protection** Tile.
 
-   .. image:: _static/update_image.png
+   .. image:: _static/shared-001.png
       :width: 800px
 
 #. Click on the arrow to the right of **Namespace**, select your namespace from the list.
 
-   .. image:: _static/update_image.png
+   .. image:: _static/shared-001a.png
       :width: 800px
 
 #. In the left-hand navigation expand **Manage** and click **Load Balancers > HTTP Load**
@@ -48,10 +48,10 @@ steps will define an application, register its DNS and assign a target as an ori
 
 #. In the resulting screen click the **Add HTTP Load Balancer** in the graphic as shown.
 
-   .. image:: _static/update_image.png
+   .. image:: _static/shared-002.png
       :width: 800px
 
-   .. image:: _static/update_image.png
+   .. image:: _static/lab1-task1-002.png
       :width: 800px
 
    .. note::
@@ -67,13 +67,13 @@ steps will define an application, register its DNS and assign a target as an ori
    * **Basic Configuration: Automatically Manage DNS Records:** ``(Check the checkbox)``
    * **Basic Configuration: HTTP Port:** ``80``
 
-   .. image:: _static/update_image.png
+   .. image:: _static/lab1-task1-003.png
       :width: 800px
 
 #. In the current window's left-hand navigation, click **Origins**. In the adjacent
    **Origins** section, under **Origin Pools**, click **Add Item**.
 
-   .. image:: _static/update_image.png
+   .. image:: _static/lab1-task1-004.png
       :width: 800px
 
 #. In the resulting window, use the drop down as shown and click **Add Item**.
