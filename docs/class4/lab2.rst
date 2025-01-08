@@ -86,7 +86,7 @@ version control features.
 
    .. image:: _static/lab2-task2-003.png
       :width: 800px
-      
+
 #. In the **OpenAPI Upload** section, click the **Upload File** button. Select the file
    downloaded in Step 1 above and click **Open**.
 
@@ -250,7 +250,7 @@ Task 5: Simulate access to a Shadow API - you should now be blocked
    .. image:: _static/lab2-task5-001.png
       :width: 800px
 
-   You should now be blocked from accessing the 'getbylastname' endpoint, as it is a shadow API—an undocumented and unapproved endpoint.
+   You should now be blocked from accessing the 'getbylastname' API endpoint, as it is a shadow API—an undocumented and unapproved endpoint.
 **End of Lab**
 
 .. image:: _static/labend.png

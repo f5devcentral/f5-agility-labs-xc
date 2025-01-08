@@ -41,7 +41,7 @@ Task 1: Simulate Access to Sensitive Data via getbydob Endpoint
    .. image:: _static/lab3-task1-004.png
       :width: 800px
 
-#. In the next steps, we will fix this misconfiguration by blocking access to the "getbydob" endpoint. 
+   In the next steps, we will fix this misconfiguration by blocking access to the 'getbydob' endpoint. 
 
 Task 2: Attaching API Protection to Load Balancer
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
