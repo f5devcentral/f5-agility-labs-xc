@@ -27,7 +27,7 @@ First, you will create an Origin Pool that refers to the "Private Endpoint" site
 +------------------------------------------------------------------------------------------------------------+
 || 1. Start in F5 Distributed Cloud Console and switch back to the **Multi-Cloud App Connect** context.      |
 ||                                                                                                           |
-|| 2. Navigate the menu to go to **Manage->Load Balancers->Origin Pools**. Click on *Add Origin Pool*.       |
+|| 2. Navigate the menu to go to **Manage->Load Balancers->Origin Pools**. Click on **Add Origin Pool**.     |
 ||                                                                                                           |
 || 3. Enter the following variables:                                                                         |
 ||                                                                                                           |
@@ -88,7 +88,7 @@ Now we will deploy a Load Balancer on the CE node that was deployed in the AWS V
 +-----------------------------------------------------------------------------------------------------------------------------------+
 || 1. Start in F5 Distributed Cloud Console and switch back to the **Multi-Cloud App Connect** context.                             |
 ||                                                                                                                                  |
-|| 2. Navigate the menu to go to **Manage->Load Balancers-> HTTP Load Balancers**.  Click on *Add HTTP Load Balancer*.              |
+|| 2. Navigate the menu to go to **Manage->Load Balancers-> HTTP Load Balancers**.  Click on **Add HTTP Load Balancer**.            |
 ||                                                                                                                                  |
 || 3. Enter the following variables:                                                                                                |
 ||                                                                                                                                  |
@@ -112,11 +112,11 @@ Now we will deploy a Load Balancer on the CE node that was deployed in the AWS V
 ||                                                                                                                                  |
 |  |lab302|                                                                                                                         |
 ||                                                                                                                                  |
-|| 5. Select the recently created **[NAMESPACE]-private-ce-pool** under Origin pool and then click *Apply*.                         |
+|| 5. Select the recently created **[NAMESPACE]-private-ce-pool** under Origin pool and then click **Apply**.                       |
 ||                                                                                                                                  |
 |  |lab303|                                                                                                                         |
 ||                                                                                                                                  |
-|| 6. Now you can see your Origin Pool has been added to the HTTP load balancer configuration.                                       |
+|| 6. Now you can see your Origin Pool has been added to the HTTP load balancer configuration.                                      |
 ||                                                                                                                                  |
 |  |lab304|                                                                                                                         |
 ||                                                                                                                                  |
@@ -124,7 +124,7 @@ Now we will deploy a Load Balancer on the CE node that was deployed in the AWS V
 ||    This will auto-scroll the configuation towards the bottom of the Load Balancer configuration section labeled                  |
 ||    **Other Settings**.                                                                                                           |
 ||                                                                                                                                  |
-|| 8. Under *VIP Advertisement* Confirm it is set to *Internet*. This will allow *XC* to advertise the Virtual IP address.          |
+|| 8. Under **VIP Advertisement** Confirm it is set to **Internet**. This will allow *XC* to advertise the Virtual IP address.      |
 ||                                                                                                                                  |
 || |lab305|                                                                                                                         |
 ||                                                                                                                                  |
@@ -139,7 +139,7 @@ can easily applying a pre-existing shared WAF policy to our load balancer.  The 
 under this tenant.
 
 +-----------------------------------------------------------------------------------------------------------------------------------+
-|| 1. Under the *Web Application Firewall* section.                                                                                 |
+|| 1. Under the **Web Application Firewall** section.                                                                               |
 ||                                                                                                                                  |
 || 2. Choose the following options:                                                                                                 |
 ||                                                                                                                                  | 
@@ -154,7 +154,7 @@ under this tenant.
 |                                                                                                                                   |
 +-----------------------------------------------------------------------------------------------------------------------------------+
 ||                                                                                                                                  |
-|| 3.  Scroll to the botton of the screen and click **"Save and Exit"** to create the HTTP Load Balancer.                           |
+|| 3.  Scroll to the botton of the screen and click **Save and Exit** to create the HTTP Load Balancer.                           |
 ||                                                                                                                                  |
 ||                                                                                                                                  |
 +-----------------------------------------------------------------------------------------------------------------------------------+
@@ -181,13 +181,14 @@ In this topology we are sending traffic to the application via the public IP adv
 in AWS via the connection to the CE node in AWS.
 
 +-----------------------------------------------------------------------------------------------------------------------------------+
-| Try adding the following to the URL "/?cat%20/etc/passwd"                                                                         |
+| Using some of the sample attacks below, add the URI path & variables to your application to generate                              |
+|    security event data.                                                                                                           |
 |                                                                                                                                   |
-| You should see a block page.                                                                                                      |
+|    * /?cmd=cat%20/etc/passwd                                                                                                      |
+|    * /product?id=4%20OR%201=1                                                                                                     |
+|    * /cart?search=aaa'><script>prompt('Please+enter+your+password');</script>                                                     |
 |                                                                                                                                   |
-| Try adding the following to the URL "/cart?search=aaa’><script>prompt(‘Please+enter+your+password’);</script>"                    |
-|                                                                                                                                   |
-| You should see a block page.                                                                                                      |
+| Just like in Lab 1, you should see a block page when adding the attacks to the URL.                                               |
 |                                                                                                                                   |
 |   |lab313|                                                                                                                        |                                      
 |                                                                                                                                   |
