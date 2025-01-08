@@ -35,10 +35,9 @@ Task 1: Simulate access to a Shadow API
    .. image:: _static/lab2-task0-001.png
       :width: 800px
 
-   
-The 'getbylastname' is a shadow API endpoint that is not approved for use.
-
-A shadow API refers to an undocumented or unintended API endpoint that exists alongside officially supported APIs, often posing security or operational risks due to lack of visibility or management.
+ .. note::
+      *The 'getbylastname' is a shadow API endpoint that is not approved for use. 
+      A shadow API refers to an undocumented or unintended API endpoint that exists alongside officially supported APIs, often posing security or operational risks due to lack of visibility or management.
 
 
 #. Enter 'Stark' in the "lastname" field..
@@ -55,7 +54,8 @@ A shadow API refers to an undocumented or unintended API endpoint that exists al
 
    .. image:: _static/lab2-task0-004.png
       :width: 800px
-   #. In the next steps, we will address this issue by blocking access to the shadow API endpoints. 
+      
+#. In the next steps, we will address this issue by blocking access to the shadow API endpoints. 
 
 Task 2: OpenAPI File Import
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
