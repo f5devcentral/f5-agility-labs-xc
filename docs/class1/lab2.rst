@@ -181,6 +181,7 @@ In this topology we are sending traffic to the application via the public IP adv
 in AWS via the connection to the CE node in AWS.
 
 +-----------------------------------------------------------------------------------------------------------------------------------+
+|                                                                                                                                   |
 | Using some of the sample attacks below, add the URI path & variables to your application to generate                              |
 |    security event data.                                                                                                           |
 |                                                                                                                                   |
