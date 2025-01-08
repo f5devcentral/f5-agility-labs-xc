@@ -19,7 +19,7 @@ The goal is to ensure secure, compliant, and efficient API management for the ba
 
 **Expected Lab Time: 20 minutes**
 
-Task 1: Simulate...
+Task 1: Simulate access to a Shadow API
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
@@ -30,21 +30,32 @@ Task 1: Simulate...
    .. image:: _static/lab2-task1-001.png
       :width: 800px
 
-#. In the Demo Bank API app, navigate to the /api/customerlookup/getallcustomers endpoint, expand it, and click Try it
+#. In the Demo Bank API app, navigate to the /api/customerlookup/getbylastname endpoint, expand it, and click Try it
  out.
 
-   .. image:: _static/update_image.png
+   .. image:: _static/lab2-task0-001.png
+      :width: 800px
+
+   The 'getbylastname' is a shadow API endpoint that is not approved for use.
+
+   A shadow API refers to an undocumented or unintended API endpoint that exists alongside officially supported APIs, often posing security or operational risks due to lack of visibility or management.
+
+
+#. Enter 'Stark' in the "lastname" field..
+
+   .. image:: _static/lab2-task0-002.png
       :width: 800px
 
 #. Click Execute.
 
-   .. image:: _static/update_image.png
+   .. image:: _static/lab2-task0-003.png
       :width: 800px
 
-#. Review the response body. It returns all customer information.
+#. Review the response body. It returns the customer information.
 
-   .. image:: _static/update_image.png
+   .. image:: _static/lab2-task0-004.png
       :width: 800px
+   #. In the next steps, we will address this issue by blocking access to the shadow API endpoints. 
 
 Task 2: OpenAPI File Import
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -208,16 +219,44 @@ previously built Load Balancer object delivering the targeted API.
    .. image:: _static/lab2-task4-012.png
       :width: 800px
 
-Task 3: Simulate...
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Task 5: Simulate access to a Shadow API - you should now be blocked
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Add Description
 
-#. Add more steps.
+#. Using another browser tab, navigate to the the following URL.
 
-   .. image:: _static/update_image.png
+   ``http://<namespace>.lab-sec.f5demos.com/swagger``
+
+   .. image:: _static/lab2-task1-001.png
       :width: 800px
 
+#. In the Demo Bank API app, navigate to the /api/customerlookup/getbylastname endpoint, expand it, and click Try it
+ out.
+
+   .. image:: _static/lab2-task0-001.png
+      :width: 800px
+
+   The 'getbylastname' is a shadow API endpoint that is not approved for use.
+
+   A shadow API refers to an undocumented or unintended API endpoint that exists alongside officially supported APIs, often posing security or operational risks due to lack of visibility or management.
+   
+
+#. Enter 'Stark' in the "lastname" field..
+
+   .. image:: _static/lab2-task0-002.png
+      :width: 800px
+
+#. Click Execute.
+
+   .. image:: _static/lab2-task0-003.png
+      :width: 800px
+
+#. Review the response body. 
+
+   .. image:: _static/lab2-task5-001.png
+      :width: 800px
+
+   You should now be blocked from accessing the 'getbylastname' endpoint, as it is a shadow API—an undocumented and unapproved endpoint.
 **End of Lab**
 
 .. image:: _static/labend.png

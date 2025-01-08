@@ -26,7 +26,7 @@ Task 1: Simulate Access to Sensitive Data via getbydob Endpoint
    .. image:: _static/lab3-task1-001.png
       :width: 800px
 
-#. Enter '05/29/1970' in the DOB field.
+#. Enter '05/29/1970' in the "DOB" field.
 
    .. image:: _static/lab3-task1-002.png
       :width: 800px
@@ -171,7 +171,7 @@ Task : Simulate Access to Sensitive Data via getbydob Endpoint - you should now 
    .. image:: _static/lab3-task3-001.png
       :width: 800px
 
-   You should now be blocked from accessing the getbydob endpoint, preventing access to sensitive data such as the SSN.
+   You should now be blocked from accessing the 'getbydob' endpoint, preventing access to sensitive data such as the SSN.
 
 **End of Lab**
 
