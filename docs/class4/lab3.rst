@@ -21,8 +21,7 @@ Task 1: Simulate Access to Sensitive Data via getbydob Endpoint
    .. image:: _static/lab2-task1-001.png
       :width: 800px
 
-#. In the Demo Bank API app, navigate to the /api/customerlookup/getbydob endpoint, expand it, and click Try it
- out.
+#. In the Demo Bank API app, navigate to the /api/customerlookup/getbydob endpoint, expand it, and click Try it out.
 
    .. image:: _static/lab3-task1-001.png
       :width: 800px
@@ -34,7 +33,7 @@ Task 1: Simulate Access to Sensitive Data via getbydob Endpoint
 
 #. Click Execute.
 
-   .. image:: _static/lab3-task1-004.png
+   .. image:: _static/lab3-task1-003.png
       :width: 800px
 
 #. Review the response body. It returns customer information for the Date of Birth '05/29/1970' and also includes the SSN.
