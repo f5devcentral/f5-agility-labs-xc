@@ -118,6 +118,6 @@ step below to access the F5 Distributed Cloud Lab Tenant.
 
 **Beginning of Lab:**  You are now ready to begin the lab, Enjoy! Ask questions as needed.
 
-.. image:: _static/update_image.png
+.. image:: _static/labbgn.png
    :width: 800px
 
