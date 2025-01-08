@@ -61,16 +61,16 @@ step below to access the F5 Distributed Cloud Lab Tenant.
 
 #. Several **Guidance ToolTips** will appear, you can safely close these as they appear.
 
-   .. image:: _static/update_image.png
+   .. image:: _static/intro-002.png
       :width: 800px
 
-   .. image:: _static/update_image.png
+   .. image:: _static/intro-003.png
       :width: 800px
 
-   .. image:: _static/update_image.png
+   .. image:: _static/intro-004.png
       :width: 800px
 
-   .. image:: _static/update_image.png
+   .. image:: _static/intro-005.png
       :width: 800px
 
 
@@ -85,10 +85,10 @@ step below to access the F5 Distributed Cloud Lab Tenant.
       *For the purposes of this lab, permissions have been restricted to lab operations.  As
       some menus will be locked and not visible.*
 
-   .. image:: _static/update_image.png
+   .. image:: _static/intro-006.png
       :width: 800px
 
-   .. image:: _static/update_image.png
+   .. image:: _static/intro-007.png
       :width: 800px
 
 #. Namespaces, which provide an environment for isolating configured applications or
