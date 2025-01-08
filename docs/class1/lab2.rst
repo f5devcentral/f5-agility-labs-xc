@@ -10,7 +10,7 @@ you will configure the deployment in Distributed Cloud where application traffic
 your application running in the public cloud.  You will use a CE node that has already been deployed in the public cloud
 environment. In this example, the application does not have Internet connectivity via the public cloud.
 
-Your design includes the following workflow Client -> RE -> CE -> Protected application resource.  Let's get started!
+Your design includes the following workflow **Client -> RE -> CE -> Protected application resource**.  Let's get started!
 
 .. image:: _static/lab2-appworld2025-topology-diagram.png
 
@@ -108,7 +108,7 @@ Now we will deploy a Load Balancer on the CE node that was deployed in the AWS V
 |                                                                                                                                   |
 |  |lab311|                                                                                                                         |
 ||                                                                                                                                  |
-|| 4. Under Origin Pools Click *Add Item*.                                                                                          |
+|| 4. Under **Origin Pools** Click **Add Item**.                                                                                    |
 ||                                                                                                                                  |
 |  |lab302|                                                                                                                         |
 ||                                                                                                                                  |
@@ -183,7 +183,7 @@ in AWS via the connection to the CE node in AWS.
 +-----------------------------------------------------------------------------------------------------------------------------------+
 |                                                                                                                                   |
 | Using some of the sample attacks below, add the URI path & variables to your application to generate                              |
-|    security event data.                                                                                                           |
+| security event data.                                                                                                              |
 |                                                                                                                                   |
 |    * /?cmd=cat%20/etc/passwd                                                                                                      |
 |    * /product?id=4%20OR%201=1                                                                                                     |
