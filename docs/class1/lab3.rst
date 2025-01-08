@@ -138,11 +138,11 @@ Now we will deploy a Load Balancer on the CE node that was deployed in the AWS V
 |                                                                                                                                   |
 |  |lab311|                                                                                                                         |
 ||                                                                                                                                  |
-|| 4. Under Origin Pools Click **Add Item**                                                                                         |
+|| 4. Under **Origin Pools** Click **Add Item**                                                                                     |
 ||                                                                                                                                  |
 |  |lab302|                                                                                                                         |
 ||                                                                                                                                  |
-|| 5. Select the recently created **[NAMESPACE]-private-pool** under Origin pool and then click **Apply**                           |
+|| 5. Select the recently created **[NAMESPACE]-private-pool** under **Origin pool** and then click **Apply**                       |
 ||                                                                                                                                  |
 |  |lab303|                                                                                                                         |
 ||                                                                                                                                  |
@@ -197,7 +197,7 @@ under this tenant.
 |                                                                                                                                   |
 +-----------------------------------------------------------------------------------------------------------------------------------+
 ||                                                                                                                                  |
-|| 3.  Scroll to the botton of the screen and click "Save and Exit" to create the HTTP Load Balancer.                               |
+|| 3.  Scroll to the botton of the screen and click **Save and Exit** to create the HTTP Load Balancer.                             |
 ||                                                                                                                                  |
 +-----------------------------------------------------------------------------------------------------------------------------------+
 
@@ -260,15 +260,13 @@ We then connect to the AWS resource via it's Private IP address.
 |    * /product?id=4%20OR%201=1                                                                                                     |
 |    * /cart?search=aaa'><script>prompt('Please+enter+your+password');</script>                                                     |
 |                                                                                                                                   |
-| Just like in Lab 1, you should see a block page when adding the attacks to the URL.                                               |
+| Just like in Lab 1, you should see a block page when adding the attacks to the URL.  The difference in this case is that the      |
+| enforcement of the WAF policy is occurring on the load balancer on the CE node that is deployed in the AWS lab environment        |
+| instead of the Regional Edge in Distributed Cloud.                                                                                |
 |                                                                                                                                   |
 |   |lab313|                                                                                                                        |                                      
 |                                                                                                                                   |
 +-----------------------------------------------------------------------------------------------------------------------------------+
-
-This is similar behavior to what we saw in the previous lab, but in this case the enforcement of the WAF policy is occurring on the 
-CE node that is deployed in the AWS lab environment and not in the F5 Distributed Cloud Regional Edge.
-
 
 +-----------------------------------------------------------------------------------------------------------------------------------+
 | **End of Lab 3**.  Congratulations you have successfully configured and secured application access within AWS! This marks the     |
@@ -305,3 +303,5 @@ CE node that is deployed in the AWS lab environment and not in the F5 Distribute
    :width: 800px 
 .. |lab313| image:: _static/lab3-appworld2025-waf-block-message.png
    :width: 800px 
+.. |labend| image:: _static/labend.png
+   :width: 800px
