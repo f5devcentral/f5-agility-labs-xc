@@ -1,8 +1,6 @@
 Lab 3: API Protection
 =====================================
 
-add description.
-
 **Scenario**
 
 A Social Security Number (SSN) has been detected within the response body of the "getbydob"
@@ -11,17 +9,40 @@ on its Data Classification.
 
 Take action to block usage of the "getbydob" endpoint until misconfiguration is resolved. 
 
-**Expected Lab Time: ?? minutes**
+**Expected Lab Time: 20 minutes**
 
-Task 1: Simulate...
+Task 1: Simulate Access to Sensitive Data via getbydob Endpoint
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Add Description
+#. Using another browser tab, navigate to the the following URL.
 
-#. Add more steps.
+   ``http://<namespace>.lab-sec.f5demos.com/swagger``
 
-   .. image:: _static/update_image.png
+   .. image:: _static/lab2-task1-001.png
       :width: 800px
+
+#. In the Demo Bank API app, navigate to the /api/customerlookup/getbydob endpoint, expand it, and click Try it
+ out.
+
+   .. image:: _static/lab3-task1-001.png
+      :width: 800px
+
+#. Enter '05/29/1970' in the DOB field.
+
+   .. image:: _static/lab3-task1-002.png
+      :width: 800px
+
+#. Click Execute.
+
+   .. image:: _static/lab3-task1-004.png
+      :width: 800px
+
+#. Review the response body. It returns customer information for the Date of Birth '05/29/1970' and also includes the SSN.
+
+   .. image:: _static/lab3-task1-004.png
+      :width: 800px
+
+#. In the next steps, we will fix this misconfiguration by blocking access to the "getbydob" endpoint. 
 
 Task 2: Attaching API Protection to Load Balancer
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

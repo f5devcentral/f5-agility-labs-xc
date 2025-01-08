@@ -1,37 +1,27 @@
 Lab 2: API Discovery
 =====================================
 
-add description.
-
 **Scenario**
 
-Guardex Technologies, a fast-growing digital banking startup, frequently deploys updates to its SafeBank application 
+A fast-growing digital banking startup, frequently deploys updates to its banking application 
 without thorough review. This practice often results in:
 
-Exposed Sensitive Endpoints
-Shadow APIs
+Exposed Sensitive API Endpoints
 Regulatory Risks
 
 To address these issues, the company must:
 
 Discover APIs: Identify all live endpoints.
 Enforce Policies: Restrict exposure to approved endpoints only.
-Monitor and Alert: Detect unauthorized changes and flag non-compliance.
-Remediate: Quickly fix unauthorized or risky endpoints.
 
-The goal is to ensure secure, compliant, and efficient API management for SafeBank.
+The goal is to ensure secure, compliant, and efficient API management for the banking application.
 
-It is common for an update to an application to be made and deployed to production without
-review. This means API endpoints are made available without approval.  
 
-Find a way to proactively limit exposed endpoints to a approved list.
-
-**Expected Lab Time: ?? minutes**
+**Expected Lab Time: 20 minutes**
 
 Task 1: Simulate...
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Add Description
 
 #. Using another browser tab, navigate to the the following URL.
 
