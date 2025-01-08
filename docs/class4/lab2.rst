@@ -82,10 +82,11 @@ version control features.
    .. image:: _static/lab2-task2-002.png
       :width: 800px
 
-#. In the resulting **OpenAPI File** window, input **demobank-api** for the **Name** under
-   the **Metadata** section.
+#. In the resulting **OpenAPI File** window, input **demobank-api** for the **Name** under the **Metadata** section.
+
    .. image:: _static/lab2-task2-003.png
       :width: 800px
+      
 #. In the **OpenAPI Upload** section, click the **Upload File** button. Select the file
    downloaded in Step 1 above and click **Open**.
 
