@@ -7,7 +7,7 @@ They have come to you and asked if you could configure customer access to this a
 to the Internet. You have been tasked to design and build this connectivity. You have chosen to leverage the 
 Distributed Cloud Customer Edge deployment model to provide secure reliable access to the AWS hosted application. 
 
-Your design includes the following workflow Client -> CE -> Protected application resource.  Let's get started!
+Your design includes the following workflow **Client -> CE -> Protected application resource**.  Let's get started!
 
 .. image:: _static/lab3-appworld2025-topology-diagram.png
 
