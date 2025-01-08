@@ -36,7 +36,6 @@ Task 1: Simulate access to a Shadow API
       :width: 800px
 
    The 'getbylastname' is a shadow API endpoint that is not approved for use. 
-   
    A shadow API refers to an undocumented or unintended API endpoint that exists alongside officially supported APIs, often posing security or operational risks due to lack of visibility or management.
 
 
@@ -207,11 +206,11 @@ previously built Load Balancer object delivering the targeted API.
 
 #. At the  **Custom Fall Through Rule List** and the **API Inventory validation** click **Apply**.
 
-    .. image:: _static/lab2-task4-010.png
+   .. image:: _static/lab2-task4-010.png
       :width: 800px
 
 
-    .. image:: _static/lab2-task4-011.png
+   .. image:: _static/lab2-task4-011.png
       :width: 800px
 #. Select **Other Settings** on the left then click on **Save and Exit**
    at the bottom right of window.
@@ -230,16 +229,10 @@ Task 5: Simulate access to a Shadow API - you should now be blocked
    .. image:: _static/lab2-task1-001.png
       :width: 800px
 
-#. In the Demo Bank API app, navigate to the /api/customerlookup/getbylastname endpoint, expand it, and click Try it
- out.
+#. In the Demo Bank API app, navigate to the /api/customerlookup/getbylastname endpoint, expand it, and click Try it out.
 
    .. image:: _static/lab2-task0-001.png
       :width: 800px
-
-   The 'getbylastname' is a shadow API endpoint that is not approved for use.
-
-   A shadow API refers to an undocumented or unintended API endpoint that exists alongside officially supported APIs, often posing security or operational risks due to lack of visibility or management.
-   
 
 #. Enter 'Stark' in the "lastname" field..
 
