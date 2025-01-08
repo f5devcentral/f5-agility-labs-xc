@@ -141,15 +141,37 @@ previously built Load Balancer object delivering the targeted API.
    .. image:: _static/lab3-task2-015.png
       :width: 800px
 
-Task 3: Simulate...
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Task : Simulate Access to Sensitive Data via getbydob Endpoint - you should now be blocked.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Add Description
+#. Using another browser tab, navigate to the the following URL.
 
-#. Add more steps.
+   ``http://<namespace>.lab-sec.f5demos.com/swagger``
 
-   .. image:: _static/update_image.png
+   .. image:: _static/lab2-task1-001.png
       :width: 800px
+
+#. In the Demo Bank API app, navigate to the /api/customerlookup/getbydob endpoint, expand it, and click Try it out.
+
+   .. image:: _static/lab3-task1-001.png
+      :width: 800px
+
+#. Enter '05/29/1970' in the DOB field.
+
+   .. image:: _static/lab3-task1-002.png
+      :width: 800px
+
+#. Click Execute.
+
+   .. image:: _static/lab3-task1-003.png
+      :width: 800px
+
+#. Review the response body. You should now be blocked from accessing the getbydob endpoint, preventing access to sensitive data such as the SSN.
+
+   .. image:: _static/lab3-task3-001.png
+      :width: 800px
+
+ 
 
 **End of Lab**
 
