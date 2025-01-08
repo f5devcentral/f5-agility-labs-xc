@@ -110,10 +110,10 @@ step below to access the F5 Distributed Cloud Lab Tenant.
       *Administratively, there are other ways to find namespaces. Due to access and permission
       restrictions for this particular lab, those menus are not available.*
 
-   .. image:: _static/update_image.png
+   .. image:: _static/intro-008.png
       :width: 800px
 
-   .. image:: _static/update_image.png
+   .. image:: _static/intro-009.png
       :width: 800px
 
 **Beginning of Lab:**  You are now ready to begin the lab, Enjoy! Ask questions as needed.
