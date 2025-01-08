@@ -166,12 +166,12 @@ Task : Simulate Access to Sensitive Data via getbydob Endpoint - you should now 
    .. image:: _static/lab3-task1-003.png
       :width: 800px
 
-#. Review the response body. You should now be blocked from accessing the getbydob endpoint, preventing access to sensitive data such as the SSN.
+#. Review the response body. 
 
    .. image:: _static/lab3-task3-001.png
       :width: 800px
 
- 
+ You should now be blocked from accessing the getbydob endpoint, preventing access to sensitive data such as the SSN.
 
 **End of Lab**
 
