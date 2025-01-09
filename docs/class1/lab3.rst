@@ -269,11 +269,12 @@ We then connect to the AWS resource via it's Private IP address.
 +-----------------------------------------------------------------------------------------------------------------------------------+
 
 +-----------------------------------------------------------------------------------------------------------------------------------+
-| **End of Lab 3**.  Congratulations you have successfully configured and secured application access within AWS! This marks the     |
-|    end of this lab.                                                                                                               |
+| **End of Lab 3*.  Congratulations, you have successfully configured and secured application access within AWS!  This marks       |
+| the end of the lab.                                                                                                               |
 |                                                                                                                                   |
 |  |labend|                                                                                                                         |
 +-----------------------------------------------------------------------------------------------------------------------------------+
+
 
 .. |lab300| image:: _static/lab3-appworld2025-topology-diagram.png
    :width: 800px
