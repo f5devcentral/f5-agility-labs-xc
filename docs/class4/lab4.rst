@@ -155,12 +155,15 @@ In this task you will follow steps simulating an attack againt a protected endpo
          "message": "The revolution has started <script>alert('Hail Hydra');</script>"
       }
 
+   .. image:: _static/lab4-image002.png
+      :width: 800px
+
 #. Review the Server Response; notice how a block message was presented within the Server Response body.
 
    .. image:: _static/lab4-image014.png
       :width: 800px
 
-Task 5 [Optional]: Explore the Distributed Cloud Console to find Security Event
+Task 5 [Optional]: Explore the Distributed Cloud Console to find this Security Event
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 #. Using the Server Response body request ID, try and discover this Security Event within your Distributed Cloud Console.
