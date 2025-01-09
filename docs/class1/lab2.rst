@@ -154,7 +154,7 @@ under this tenant.
 |                                                                                                                                   |
 +-----------------------------------------------------------------------------------------------------------------------------------+
 ||                                                                                                                                  |
-|| 3.  Scroll to the botton of the screen and click **Save and Exit** to create the HTTP Load Balancer.                           |
+|| 3.  Scroll to the botton of the screen and click **Save and Exit** to create the HTTP Load Balancer.                             |
 ||                                                                                                                                  |
 ||                                                                                                                                  |
 +-----------------------------------------------------------------------------------------------------------------------------------+

@@ -142,7 +142,7 @@ Now we will deploy a Load Balancer on the CE node that was deployed in the AWS V
 ||                                                                                                                                  |
 |  |lab302|                                                                                                                         |
 ||                                                                                                                                  |
-|| 5. Select the recently created **[NAMESPACE]-private-pool** under **Origin pool** and then click **Apply**                       |
+|| 5. Select the recently created **[NAMESPACE]-private-pool** under **Origin Pool** and then click **Apply**                       |
 ||                                                                                                                                  |
 |  |lab303|                                                                                                                         |
 ||                                                                                                                                  |
@@ -156,7 +156,7 @@ Now we will deploy a Load Balancer on the CE node that was deployed in the AWS V
 ||                                                                                                                                  |
 || |lab305|                                                                                                                         |
 ||                                                                                                                                  |
-|| 8. Under **VIP Advertisement** Change it to **Custom**  then select **Configure**                                                |
+|| 8. Under **VIP Advertisement**, change it to **Custom**  then select **Configure**                                                |
 ||                                                                                                                                  |
 || |lab306|                                                                                                                         |
 ||                                                                                                                                  |
