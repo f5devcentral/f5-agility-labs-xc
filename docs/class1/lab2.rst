@@ -198,7 +198,7 @@ in AWS via the connection to the CE node in AWS.
 +-----------------------------------------------------------------------------------------------------------------------------------+
 | **End of Lab 2**.  In this lab you configured a global load balancer with a WAF policy on a CE node running in AWS for a          |
 | private end point. That private end point was only accessible via the global load balancer.                                       |
-|                                                                                                                                   |
++-----------------------------------------------------------------------------------------------------------------------------------+
 |  |labend|                                                                                                                         |
 +-----------------------------------------------------------------------------------------------------------------------------------+
 
