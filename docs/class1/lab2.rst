@@ -154,7 +154,7 @@ under this tenant.
 |                                                                                                                                   |
 +-----------------------------------------------------------------------------------------------------------------------------------+
 ||                                                                                                                                  |
-|| 3.  Scroll to the botton of the screen and click **Save and Exit** to create the HTTP Load Balancer.                           |
+|| 3.  Scroll to the botton of the screen and click **Save and Exit** to create the HTTP Load Balancer.                             |
 ||                                                                                                                                  |
 ||                                                                                                                                  |
 +-----------------------------------------------------------------------------------------------------------------------------------+
@@ -198,7 +198,7 @@ in AWS via the connection to the CE node in AWS.
 +-----------------------------------------------------------------------------------------------------------------------------------+
 | **End of Lab 2**.  In this lab you configured a global load balancer with a WAF policy on a CE node running in AWS for a          |
 | private end point. That private end point was only accessible via the global load balancer.                                       |
-|                                                                                                                                   |
++-----------------------------------------------------------------------------------------------------------------------------------+
 |  |labend|                                                                                                                         |
 +-----------------------------------------------------------------------------------------------------------------------------------+
 
