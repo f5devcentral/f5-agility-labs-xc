@@ -91,11 +91,21 @@ Network.
 | 11. Using the left-hand navigation and in the sections as shown, enter the following data. Values where       |
 |     **<namespace>** is required, use the name of your given namespace.                                        |
 |                                                                                                               |
-|     * **Metadata:Name ID:**  *<namespace>-lb*                                                                 |
-|     * **Domains and LB Type: List of Domains:** *<namespace>.lab-sec.f5demos.com*                             |
-|     * **Domains and LB Type: Select Type of Load Balancer:** *HTTP*                                           |
-|     * **Domains and LB Type: Automatically Manage DNS Records:** *(Check the checkbox)*                       |
-|     * **Domains and LB Type: HTTP Port:** *80*                                                                |
+|     * **Metadata**                                                                                            |
+|                                                                                                               |
+|         **Name**: *<namespace>-lb*                                                                            |
+|                                                                                                               |
+|     * **Domains and LB Type**                                                                                 |
+|                                                                                                               |
+|         **Domains**: *<namespace>.lab-sec.f5demos.com*                                                        |
+|                                                                                                               |
+|         **Load Balancer Type**: *HTTP*                                                                        |
+|                                                                                                               |
+|         **Automatically Manage DNS Records:** [X] *(Check the checkbox)*                                      |
+|                                                                                                               |
+|         **HTTP Listen Port Choice**: *HTTP Listen Port*                                                       |
+|                                                                                                               |
+|         **HTTP Listen Port**: *80*                                                                            |
 +---------------------------------------------------------------------------------------------------------------+
 | |lab009|                                                                                                      |
 +---------------------------------------------------------------------------------------------------------------+
@@ -108,7 +118,7 @@ Network.
 +---------------------------------------------------------------------------------------------------------------+
 
 +---------------------------------------------------------------------------------------------------------------+
-| 13. In the resulting window, verify **Origin Pool** is selected for **Select Origin Pool **Method**.          |
+| 13. In the resulting window, verify **Origin Pool** is selected for **Select Origin Pool Method**.            |
 |                                                                                                               |
 | 14. Select the **<namespace>/<namespace>-pool** from the **Origin Pool**  dropdown.                           |
 |                                                                                                               |
