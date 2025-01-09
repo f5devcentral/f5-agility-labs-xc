@@ -155,12 +155,21 @@ In this task you will follow steps simulating an attack againt a protected endpo
          "message": "The revolution has started <script>alert('Hail Hydra');</script>"
       }
 
-#. Review the response, notice how a block message was presented within the response.
+#. Review the Server Response; notice how a block message was presented within the Server Response body.
 
    .. image:: _static/lab4-image014.png
       :width: 800px
 
-#. Click on the Distributed Cloud tab within your browser.
+Task 5 [Optional]: Explore the Distributed Cloud Console to find Security Event
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#. Using the Server Response body request ID, try and discover this Security Event within your Distributed Cloud Console.
+
+#. How many signatures did this request trigger?
+
+#. What signature sets did this request trigger?
+
+#. Now, navigate back to the "Home" screen of your Distributed Cloud Console to prepare for the next lab.
 
 **End of Lab**
 
