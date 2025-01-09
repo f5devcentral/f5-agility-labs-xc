@@ -27,5 +27,5 @@ Add Description
 
 **End of Lab**
 
-.. image:: _static/update_image.png
+.. image:: _static/labend.png
    :width: 800px

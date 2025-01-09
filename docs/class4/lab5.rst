@@ -1,31 +1,56 @@
 Lab 5: Rate Limiting
 =====================================
 
-add description
+APIs are open by design, meaning they intentially allow access and interaction with its inteface via a
+defined set of rules and protocols. This "open design" provides a large "risk surface" that organizations must secure.
+As such, protecting these APIs are critical to ensure security efficacy. An API should define
+specific parameters for allowed access (i.e. authentication, rate-limiting, method enfocement, etc.). In this lab, we will explore
+how F5's XC can provide layers of protection for APIs.
+
 
 **Scenario**
 
-An internal application at times gets stuck in a temporary loop, replaying requests again a
+An internal application at times gets stuck in a temporary loop, replaying requests many times against a
 single endpoint. This impacts the performance of the endpoint for others clients, at times making
-it unusable.  
+the API unusable.
 
 Find a way to limit the number of requests the endpoint will accept from a given client
 (source) within a window of time. 
 
-**Expected Lab Time: ?? minutes**
+**Expected Lab Time: 20 minutes**
 
-Task 1: Simulate...
+Task 1: Simulate Excessive Queries to an Endpoint
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Add Description
+Currently, our Banking Application does not implement, or enforce, rate-limiting to a specific endpoint.
 
-#. Add more steps.
+In this task, you will follow steps to send multiple requests witin 30 seconds to the /getallcustomers endpoint.
 
-   .. image:: _static/update_image.png
+#. Using another browser tab, navigate to the the following URL.
+
+``http://<namespace>.lab-sec.f5demos.com/swagger``
+
+#. Within the Swagger page, navigate and expand the customerlookup/getallcustomers endpoint, and click
+   **Try it out**.
+
+   .. image:: _static/lab4-image015.png
       :width: 800px
 
 
-Task 2: Attach API Rate Limiting to Load Balancer Object
+#. Click the <b>Execute</b> button, and observe the Response Body (200 OK):
+
+   .. image:: _static/lab4-image016.png
+      :width: 800px
+
+#. Click the <b>Execute</b> button 10 times within 30 seconds, and observe the Response Body; each 
+request should be allowed.
+
+   .. image:: _static/lab4-image017.png
+      :width: 800px
+
+
+
+Task 2: Attach API Rate-Limiting to Load Balancer Object
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In this task's series of steps you will enable the API Rate Limiting feature on the
@@ -106,5 +131,5 @@ Add Description
 
 **End of Lab**
 
-.. image:: _static/update_image.png
+.. image:: _static/labend.png
    :width: 800px
