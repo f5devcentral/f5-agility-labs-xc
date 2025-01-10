@@ -60,7 +60,7 @@ previously built HTTP Load Balancer object delivering the targeted API.
    **Balancers** under the **Manage** section.
 
    .. image:: _static/lab4-image018.png
-      :width: 800px
+      :width: 400px
 
 #. In the resulting **Load Balancers** window, click on the three dots **...** in the
    **Action** column, and the select **Manage Configuration**.
@@ -76,7 +76,7 @@ previously built HTTP Load Balancer object delivering the targeted API.
 #. Using the left-hand navigation, click the **Common Security Controls** link.
 
    .. image:: _static/lab4-image021.png
-      :width: 800px
+      :width: 400px
 
 #. Locate the **Rate Limiting** area of the **Common Security Controls** and use the
    drop-down to select **API Rate Limit**.
@@ -87,12 +87,12 @@ previously built HTTP Load Balancer object delivering the targeted API.
 #. In the expanded menu under **API Rate Limit**, click **View Configuration**
 
    .. image:: _static/lab4-image023.png
-      :width: 800px
+      :width: 400px
 
 #. In the resulting window, under **API Endpoints**, click **Configure**.
 
    .. image:: _static/lab4-image024.png
-      :width: 800px
+      :width: 400px
 
 #. In the resulting window, under **API Endpoints**, click **Add Item**.
 

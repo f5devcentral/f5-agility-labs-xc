@@ -19,7 +19,7 @@ In this task, you will explore the Security Analytics Dashboard within Distribut
 #. From the **Web App & API Protection** menu, navigate to **Overview**, then click **Security**
 
    .. image:: _static/lab4-image032.png
-      :width: 800px
+      :width: 400px
 
 #. With the **Dashboard** view, scroll down to the bottom to the **Application Delivery** tile to find your HTTP Load Balancer object; click this LB object.
 
@@ -55,7 +55,7 @@ In this task, you will explore the Security Analytics Dashboard within Distribut
 #. From the **Web App & API Protection** menu, navigate to **Overview**, then click **Security**
 
    .. image:: _static/lab4-image032.png
-      :width: 800px
+      :width: 400px
 
 #. With the **Dashboard** view, scroll down to the bottom to the **Application Delivery** tile to find your HTTP Load Balancer object; click this LB object.
 
@@ -95,7 +95,7 @@ In this task, we will enable Malicious User Detection on HTTP Load Balancer
    **Balancers** under the **Manage** section.
 
    .. image:: _static/lab4-image018.png
-      :width: 800px
+      :width: 400px
 
 #. In the resulting **Load Balancers** window, click on the three dots **...** in the
    **Action** column, and the select **Manage Configuration**.
@@ -111,7 +111,7 @@ In this task, we will enable Malicious User Detection on HTTP Load Balancer
 #. Using the left-hand navigation, click the **Common Security Controls** link.
 
    .. image:: _static/lab4-image021.png
-      :width: 800px
+      :width: 400px
 
 #. Locate the **Malicious User Detection** and **Malicious User Mitigation And Challenges** area of the **Common Security Controls** and use the
    drop-down to **Enable** each setting. We will use **Default** settings:
