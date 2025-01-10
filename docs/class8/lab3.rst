@@ -8,7 +8,7 @@ web front end will then be utilized to compare the HTTP Load balancer states.
 
 **Expected Lab Time: 40 minutes**
 
-Task 1: Deploy multiple HTTP load balanceres with Terraform  
+Task 1: Deploy multiple HTTP load balancers with Terraform  
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 In this task, you will create a **tfvars** file to specify environment variables unique to your environment.
 This **tfvars** file is slightly more advanced than the file used in **Lab 2**.  This **tfvars** file utilizes a
