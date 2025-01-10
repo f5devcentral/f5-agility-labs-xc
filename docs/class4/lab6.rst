@@ -86,7 +86,7 @@ to drill-down further into specific traffic.
 Task 3: Configure Malicious User Detection
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Malicious User Detection uses Machine Learning (ML) to detect certain identifiers to classify a source.  This allows the XC platform to detect and track specific user traffic. These identifiers
+Malicious User Detection uses Machine Learning (ML) to detect certain identifiers to classify source traffic.  This allows the XC platform to detect and track specific user traffic. These identifiers
 can be used to make decisions to allow or block specific users.
 
 In this task, we will enable Malicious User Detection on HTTP Load Balancer
@@ -127,6 +127,37 @@ In this task, we will enable Malicious User Detection on HTTP Load Balancer
 
    .. image:: _static/lab4-image044.png
       :width: 800px
+
+Task 4: Review Malicious User Detection
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+In this task, you will explore the Malicious Users section of the Security Analytics Dashboard within Distributed Cloud (XC).
+
+#. From the **Web App & API Protection** menu, navigate to **Overview**, then click **Security**
+
+   .. image:: _static/lab4-image032.png
+      :width: 400px
+
+#. With the **Dashboard** view, scroll down to the bottom to the **Application Delivery** tile to find your HTTP Load Balancer object; click this LB object.
+
+   .. image:: _static/lab4-image033.png
+      :width: 800px
+
+#. Within the **Dashboard** view, click the **Malicious Users** tab:
+
+   .. image:: _static/lab4-image047.png
+      :width: 800px
+
+#. On the right-hand side, expand the time window to **Last 24 hour** and click the **Refresh** button; this should provide details of your requests you made during this lab.
+
+   .. image:: _static/lab4-image048.png
+      :width: 800px
+
+#. Review and explore the related malicious user events.
+
+   .. image:: _static/lab4-image049.png
+      :width: 800px
+
 
 #. **Left off here . . . need more content / testing examples **
 
