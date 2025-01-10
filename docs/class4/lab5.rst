@@ -24,7 +24,7 @@ Task 1: Simulate Excessive Queries to an Endpoint
 
 Currently, our Banking Application does not implement, or enforce, rate-limiting to a specific endpoint.
 
-In this task, you will follow steps to send multiple requests witin 30 seconds to the /getallcustomers endpoint.
+In this task, you will follow steps to send multiple requests witin 1 minute to the /getallcustomers endpoint.
 
 #. Using another browser tab, navigate to the the following URL.
 
@@ -37,12 +37,12 @@ In this task, you will follow steps to send multiple requests witin 30 seconds t
       :width: 800px
 
 
-#. Click the <b>Execute</b> button, and observe the Response Body (200 OK):
+#. Click the **Execute** button, and observe the Response Body (200 OK):
 
    .. image:: _static/lab4-image016.png
       :width: 800px
 
-#. Click the **Execute** button 10 times within 30 seconds, and observe the Response Body; each 
+#. Click the **Execute** button 10 times within 1 minute, and observe the Response Body; each 
 request should be allowed.
 
    .. image:: _static/lab4-image017.png
@@ -107,7 +107,7 @@ previously built HTTP Load Balancer object delivering the targeted API.
    * **Duration:** ``Minute``
 
    .. note::
-      *This will rate limit a client after making 3 requests within 1 minute.*
+      *This will rate limit a client after making 10 requests within 1 minute.*
 
    .. image:: _static/lab4-image027.png
       :width: 800px
@@ -128,15 +128,37 @@ previously built HTTP Load Balancer object delivering the targeted API.
    .. image:: _static/lab4-image030.png
       :width: 800px
 
-Task 3: Simulate...
+Task 3: Simulate Exceeding the Defined Rate-Limit to trigger Block
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Add Description
+In this task, you will send more than 10 requests within a Minute
 
-#. Add more steps.
+#. Using another browser tab, navigate to the the following URL.
 
-   .. image:: _static/update_image.png
+``http://<namespace>.lab-sec.f5demos.com/swagger``
+
+#. Within the Swagger page, navigate and expand the customerlookup/getallcustomers endpoint, and click
+   **Try it out**.
+
+   .. image:: _static/lab4-image015.png
       :width: 800px
+
+#. Click the **Execute** button more than 10 times within 1 minutes, and observe the Response Body; each 
+request, through the 10th, should be allowed/accepted.  Observe the Response Body once you exceed this threshold.
+
+   .. image:: _static/lab4-image031.png
+      :width: 800px
+
+Task 4 [Optional]: Explore the Distributed Cloud Console to find this Security Event
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#. Using the Server Response body request ID, try and discover this Security Event within your Distributed Cloud Console.
+
+#. What was the server response code?
+
+#. What detection mechanism was used to block this request?
+
+#. Now, navigate back to the "Home" screen of your Distributed Cloud Console to prepare for the next lab.
 
 **End of Lab**
 
