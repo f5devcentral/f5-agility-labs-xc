@@ -123,7 +123,7 @@ steps will define an application, register its DNS and assign a target as an ori
 
 #. Scroll to the bottom of the window, click on **Save and Exit**.
 
-   .. image:: _static/lab1-task1-012.png
+   .. image:: _static/lab1-task1-014.png
       :width: 800px
 
 #. Using another browser tab, navigate to the the following URL to confirm the Load Balancer
@@ -131,7 +131,7 @@ steps will define an application, register its DNS and assign a target as an ori
 
    ``http://<namespace>.lab-sec.f5demos.com/swagger``
 
-   .. image:: _static/lab1-task1-014.png
+   .. image:: _static/lab1-task1-013.png
       :width: 800px
 
 **End of Lab**
