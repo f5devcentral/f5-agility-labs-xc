@@ -111,7 +111,7 @@ version control features.
       *You will also see a dialogue box, in the bottom left of your screen indicating the file*
       has been successfully added.*
 
-   .. image:: _static/lab2-task2-006.png
+   .. image:: _static/lab2-task2-007.png
       :width: 800px
 
 Task 3: API Definition
