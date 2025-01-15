@@ -48,7 +48,7 @@ steps will define an application, register its DNS and assign a target as an ori
 
 #. In the resulting screen click the **Add HTTP Load Balancer** in the graphic as shown.
 
-   .. image:: _static/shared-002.png
+   .. image:: _static/shared-003.png
       :width: 800px
 
    .. image:: _static/lab1-task1-002.png
