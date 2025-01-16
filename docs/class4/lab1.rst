@@ -51,9 +51,6 @@ steps will define an application, register its DNS and assign a target as an ori
    .. image:: _static/shared-003.png
       :width: 800px
 
-   .. image:: _static/lab1-task1-002.png
-      :width: 800px
-
    .. note::
       *You have defaulted to your specific namespace as that is the only namespace to which you
       have administrative access.*
