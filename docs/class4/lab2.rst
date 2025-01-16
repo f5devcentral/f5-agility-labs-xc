@@ -101,8 +101,6 @@ version control features.
    .. image:: _static/lab2-task2-005.png
       :width: 800px
 
-   .. image:: _static/lab2-task2-005b.png
-      :width: 800px
 
 #. In the resulting **OpenAPI File** window, you will see the upload file with additional
    metadata.
