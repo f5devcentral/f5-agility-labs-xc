@@ -97,7 +97,7 @@ step below to access the F5 Distributed Cloud Lab Tenant.
    **namespace** which you will be defaulted to (in terms of GUI navigation) for all tasks
    performed through the course of this lab.
 
-#. Click on the **Select Service** in the left-hand navigation. In the resulting fly out
+#. Click on the **Select Service/workspace** in the left-hand navigation. In the resulting fly out
    navigation, click **Web App & API Protection**.
 
 #. In the **Web App & API Protection** configuration screen observe the URL. In the URI
