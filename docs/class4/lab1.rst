@@ -106,8 +106,6 @@ steps will define an application, register its DNS and assign a target as an ori
    .. image:: _static/lab1-task1-009.png
       :width: 800px
 
-   .. image:: _static/lab1-task1-010.png
-      :width: 800px
 
 #. After returning to the HTTP Load Balancer window, select **Common Security Controls** on the left,
    find **Malicious User Detection** and select **Enable** from the drop-down.
