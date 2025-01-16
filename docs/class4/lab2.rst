@@ -82,8 +82,6 @@ version control features.
    .. image:: _static/lab2-task2-002.png
       :width: 800px
    
-   .. image:: _static/lab2-task2-002b.png
-      :width: 800px
 
 #. In the resulting **OpenAPI File** window, input **demobank-api** for the **Name** under the **Metadata** section.
 
@@ -234,12 +232,12 @@ Task 5: Simulate access to a Shadow API - you should now be blocked
    .. image:: _static/lab2-task1-001.png
       :width: 800px
 
-#. In the Demo Bank API app, navigate to the /api/customerlookup/getbylastname endpoint, expand it, and click Try it out.
+#. In the Demo Bank API app, navigate to the /api/customerlookup/getbyheroname endpoint, expand it, and click Try it out.
 
    .. image:: _static/lab2-task0-001.png
       :width: 800px
 
-#. Enter 'Stark' in the "lastname" field..
+#. Enter 'Iron Man' in the "heroname" field..
 
    .. image:: _static/lab2-task0-002.png
       :width: 800px
@@ -254,7 +252,7 @@ Task 5: Simulate access to a Shadow API - you should now be blocked
    .. image:: _static/lab2-task5-001.png
       :width: 800px
 
-   You should now be blocked from accessing the 'getbylastname' API endpoint, as it is a shadow API—an undocumented and unapproved endpoint.
+   You should now be blocked from accessing the 'getbyheroname' API endpoint, as it is a shadow API—an undocumented and unapproved endpoint.
 **End of Lab**
 
 .. image:: _static/labend.png
