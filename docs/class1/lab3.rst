@@ -155,7 +155,7 @@ Now we will deploy a Load Balancer on the CE node that was deployed in the AWS V
 ||                                                                                                                                  |
 || |lab305|                                                                                                                         |
 ||                                                                                                                                  |
-|| 8. Under **VIP Advertisement**, change it to **Custom**  then select **Configure**                                                |
+|| 8. Under **VIP Advertisement**, change it to **Custom**  then select **Configure**                                               |
 ||                                                                                                                                  |
 || |lab306|                                                                                                                         |
 ||                                                                                                                                  |
