@@ -56,12 +56,15 @@ In this task, you will follow steps simulating an attack against an unprotected 
       If this endpoint was consumed by an actual ticket management system, the "<script>"
       could have been rendered in the user's browser.
 
-#. Now, return to your Distributed Cloud (XC) tab within your browser to perform the next Task.
+#. Now, return to your Distributed Cloud (XC) portal within your browser by clicking the **F5 ball icon**  in the upper-left corner, and navigate to the **Web App & API Protection** tile.
 
-Task 2: Create a WAF policy Object
+   .. image:: _static/shared-001.png
+      :width: 800px
+
+Task 2: Apply a Shared WAF policy Object to your HTTP Load Balancer
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In this task, you will perform steps to create a WAF policy object, and apply this to your HTTP Load Balancer.
+In this task, you will perform steps to add a shared WAF policy object, and apply this to your HTTP Load Balancer.
 
 #. In the left-hand navigation of the **Web App & API Protection** service, click on **App Firewall**
    under the **Manage** section.
@@ -69,24 +72,20 @@ In this task, you will perform steps to create a WAF policy object, and apply th
    .. image:: _static/lab4-image004.png
       :width: 400px
 
-#. In the resulting **App Firewall** window, click on **Add App Firewall** at the
-   top left or middle of the window.
+#. In the resulting **App Firewall** window, observe the **Shared** FW object named **api-lab-af**:
 
-   .. image:: _static/lab4-image005.png
-      :width: 400px
-
-#. Within the App Firewall object, configure the following.  Values where **<namespace>** is required, use the name of your given namespace.
-
-   * **Metadata:Name:**  ``<namespace>-waf``
-   * **Enforcement Mode:** ``Blocking``
-
-   Leave all other settings at default.  Click **Save and Exit** button.
-
-   .. image:: _static/lab4-image006.png
+   .. image:: _static/lab4-image050.png
       :width: 800px
 
+   .. note::
+      This is a previously defined shared object. You cannot edit this config. However, you can expand the object's JSON data to view the settings. 
+      Click/expand line 33 **get_spec** to view config. 
+      We will apply this to our HTTP LB object in the next Task.
 
-Task 3: Attach WAF policy to API Load Balancer
+   .. image:: _static/lab4-image051.png
+      :width: 800px
+
+Task 3: Attach WAF policy to HTTP Load Balancer
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In this task, you will follow steps to attach a WAF policy to your Load Balancer.
@@ -118,15 +117,15 @@ In this task, you will follow steps to attach a WAF policy to your Load Balancer
    .. image:: _static/lab4-image011.png
       :width: 600px
 
-#. Under the **Enable** menu drop-down, select your <namespace>-waf object you just created.
+#. Under the **Enable** menu drop-down, select the shared WAF object **shared/api-lab-af**.
 
-   .. image:: _static/lab4-image012.png
+   .. image:: _static/lab4-image052.png
       :width: 600px
 
-#. Scroll to the bottom of the HTTP Load Balancer configuration page, and select **Save and Exit** 
+#. Click **Other Settings** on the left navigation, then click **Save and Exit**
 
-   .. image:: _static/lab4-image013.png
-      :width: 400px
+   .. image:: _static/lab4-image053.png
+      :width: 800px
 
 Task 4: Simulate Cross Site Scripting Attack (XXS) with Web Application Firewall
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -135,7 +134,7 @@ In this task you will follow steps simulating an attack againt a protected endpo
 
 #. Using another browser tab, navigate to the the following URL.
 
-``http://<namespace>.lab-sec.f5demos.com/swagger``
+   ``http://<namespace>.lab-sec.f5demos.com/swagger``
 
 #. Within the Swagger page navigate and expand the messageservice/send endpoint, and click
    **Try it out**.
@@ -172,7 +171,10 @@ Task 5 [Optional]: Explore the Distributed Cloud Console to find this Security E
 
 #. What signature sets did this request trigger?
 
-#. Now, navigate back to the "Home" screen of your Distributed Cloud Console to prepare for the next lab.
+#. Now, click the **F5 ball** in the upper-left corner to navigate back to the "Home" screen of your Distributed Cloud Console to prepare for the next lab.
+
+   .. image:: _static/lab4-image054.png
+      :width: 800px
 
 **End of Lab**
 
