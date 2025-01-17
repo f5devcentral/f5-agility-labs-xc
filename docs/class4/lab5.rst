@@ -101,7 +101,7 @@ previously built HTTP Load Balancer object delivering the targeted API.
 
 #. In the suggestion results, use the drop-down and select the **/getallcustomers** endpoint.
 
-   .. image:: _static/lab4-image025.png
+   .. image:: _static/lab4-image026.png
       :width: 800px
 
 #. In the resulting configuration window, update the following fields then click **Apply**.
