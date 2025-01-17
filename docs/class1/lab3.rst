@@ -116,6 +116,11 @@ In the first lab we were connecting to a F5 Distributed Cloud Load Balancer that
 Now we will deploy a Load Balancer on the CE node that was deployed in the AWS VPC (CE location).
 
 +-----------------------------------------------------------------------------------------------------------------------------------+
+|| 1. Start in F5 Distributed Cloud Console and switch back to the **Multi-Cloud App Connect** context.                            ||
+||                                                                                                                                 ||
++-----------------------------------------------------------------------------------------------------------------------------------+
+
++-----------------------------------------------------------------------------------------------------------------------------------+
 || 1. Start in F5 Distributed Cloud Console and switch back to the **Multi-Cloud App Connect** context.                             |
 ||                                                                                                                                  |
 || 2. Navigate the menu to go to **Manage->Load Balancers-> HTTP Load Balancers**.  Click on **Add HTTP Load Balancer**.            |
