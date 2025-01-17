@@ -24,7 +24,7 @@ application. The key elements lab attendees will interact with are as follows:
 * **F5 Distributed Cloud Global Network / Application Delivery Network (ADN)**
 * **Publicly hosted application (Public Cloud)**
   
-.. image:: _static/update_image.png
+.. image:: _static/intro-001.png
    :width: 800px
 
 Task 2: F5 Distributed Cloud Console Login
@@ -61,16 +61,16 @@ step below to access the F5 Distributed Cloud Lab Tenant.
 
 #. Several **Guidance ToolTips** will appear, you can safely close these as they appear.
 
-   .. image:: _static/update_image.png
+   .. image:: _static/intro-002.png
       :width: 800px
 
-   .. image:: _static/update_image.png
+   .. image:: _static/intro-003.png
       :width: 800px
 
-   .. image:: _static/update_image.png
+   .. image:: _static/intro-004.png
       :width: 800px
 
-   .. image:: _static/update_image.png
+   .. image:: _static/intro-005.png
       :width: 800px
 
 
@@ -85,10 +85,10 @@ step below to access the F5 Distributed Cloud Lab Tenant.
       *For the purposes of this lab, permissions have been restricted to lab operations.  As
       some menus will be locked and not visible.*
 
-   .. image:: _static/update_image.png
+   .. image:: _static/intro-006.png
       :width: 800px
 
-   .. image:: _static/update_image.png
+   .. image:: _static/intro-007.png
       :width: 800px
 
 #. Namespaces, which provide an environment for isolating configured applications or
@@ -97,7 +97,7 @@ step below to access the F5 Distributed Cloud Lab Tenant.
    **namespace** which you will be defaulted to (in terms of GUI navigation) for all tasks
    performed through the course of this lab.
 
-#. Click on the **Select Service** in the left-hand navigation. In the resulting fly out
+#. Click on the **Select Service/workspace** in the left-hand navigation. In the resulting fly out
    navigation, click **Web App & API Protection**.
 
 #. In the **Web App & API Protection** configuration screen observe the URL. In the URI
@@ -110,14 +110,14 @@ step below to access the F5 Distributed Cloud Lab Tenant.
       *Administratively, there are other ways to find namespaces. Due to access and permission
       restrictions for this particular lab, those menus are not available.*
 
-   .. image:: _static/update_image.png
+   .. image:: _static/intro-008.png
       :width: 800px
 
-   .. image:: _static/update_image.png
+   .. image:: _static/intro-009.png
       :width: 800px
 
 **Beginning of Lab:**  You are now ready to begin the lab, Enjoy! Ask questions as needed.
 
-.. image:: _static/update_image.png
+.. image:: _static/labbgn.png
    :width: 800px
 
