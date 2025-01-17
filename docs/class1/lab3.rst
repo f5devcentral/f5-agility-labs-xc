@@ -132,7 +132,7 @@ Now we will deploy a Load Balancer on the CE node that was deployed in the AWS V
 |   Domains                           **[NAMESPACE].aws.lab.f5demos.com**                                                           |
 |   Select type of Load Balancer      **HTTP**                                                                                      |
 |   Automatically Manage DNS Records  **No/Unchecked**                                                                              |
-|   ================================= =====                                                                                         |
+|   ================================= =======                                                                                       |
 |                                                                                                                                   |
 +-----------------------------------------------------------------------------------------------------------------------------------+                                                                                       
 |                                                                                                                                   |
