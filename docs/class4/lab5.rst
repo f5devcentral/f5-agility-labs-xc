@@ -28,7 +28,7 @@ In this task, you will follow steps to send multiple requests witin 1 minute to 
 
 #. Using another browser tab, navigate to the the following URL.
 
-``http://<namespace>.lab-sec.f5demos.com/swagger``
+   ``http://<namespace>.lab-sec.f5demos.com/swagger``
 
 #. Within the Swagger page, navigate and expand the customerlookup/getallcustomers endpoint, and click
    **Try it out**.

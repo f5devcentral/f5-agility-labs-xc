@@ -134,7 +134,7 @@ In this task you will follow steps simulating an attack againt a protected endpo
 
 #. Using another browser tab, navigate to the the following URL.
 
-``http://<namespace>.lab-sec.f5demos.com/swagger``
+   ``http://<namespace>.lab-sec.f5demos.com/swagger``
 
 #. Within the Swagger page navigate and expand the messageservice/send endpoint, and click
    **Try it out**.
