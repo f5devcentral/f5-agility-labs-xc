@@ -43,7 +43,7 @@ In this task, you will follow steps to send multiple requests witin 1 minute to 
       :width: 800px
 
 #. Click the **Execute** button 10 times within 1 minute, and observe the Response Body; each 
-request should be allowed.
+   request should be allowed.
 
    .. image:: _static/lab4-image017.png
       :width: 800px
@@ -94,14 +94,18 @@ previously built HTTP Load Balancer object delivering the targeted API.
    .. image:: _static/lab4-image024.png
       :width: 400px
 
-#. In the resulting window, under **API Endpoints**, click **Add Item**.
+#. In the resulting window, use the drop-down under **API Endpoint**, and click **See Suggestions**.
+
+   .. image:: _static/lab4-image055.png
+      :width: 800px
+
+#. In the suggestion results, use the drop-down and select the **/getallcustomers** endpoint.
 
    .. image:: _static/lab4-image025.png
       :width: 800px
 
 #. In the resulting configuration window, update the following fields then click **Apply**.
 
-   * **API Endpoint:**  ``/api/customerlookup/getallcustomers``
    * **Method List:** ``ANY``
    * **Threshold:** ``10``
    * **Duration:** ``Minute``
@@ -143,8 +147,8 @@ In this task, you will send more than 10 requests within a Minute
    .. image:: _static/lab4-image015.png
       :width: 800px
 
-#. Click the **Execute** button more than 10 times within 1 minutes, and observe the Response Body; each 
-request, through the 10th, should be allowed/accepted.  Observe the Response Body once you exceed this threshold.
+#. Click the **Execute** button more than 10 times within 1 minutes, and observe the Response Body; each request, through the 10th, should be allowed/accepted.  
+   Observe the Response Body once you exceed this threshold.
 
    .. image:: _static/lab4-image031.png
       :width: 800px
@@ -158,7 +162,10 @@ Task 4 [Optional]: Explore the Distributed Cloud Console to find this Security E
 
 #. What detection mechanism was used to block this request?
 
-#. Now, navigate back to the "Home" screen of your Distributed Cloud Console to prepare for the next lab.
+#. Now, click the **F5 ball** in the upper-left corner to navigate back to the "Home" screen of your Distributed Cloud Console to prepare for the next lab.
+
+   .. image:: _static/lab4-image054.png
+      :width: 800px
 
 **End of Lab**
 
