@@ -102,7 +102,7 @@ Now we will deploy a Load Balancer on the CE node that was deployed in the AWS V
 |   Domains                           **[NAMESPACE]-2.lab-sec.f5demos.com**                                                         |
 |   Select type of Load Balancer      **HTTP**                                                                                      |
 |   Automatically Manage DNS Records  **No/Unchecked**                                                                              |
-|   ================================= =====                                                                                         |
+|   ================================= =======                                                                                       |
 |                                                                                                                                   |
 +-----------------------------------------------------------------------------------------------------------------------------------+                                                                                       
 |                                                                                                                                   |
@@ -114,7 +114,7 @@ Now we will deploy a Load Balancer on the CE node that was deployed in the AWS V
 ||                                                                                                                                  |
 || 5. Select the recently created **[NAMESPACE]-private-ce-pool** under Origin pool and then click **Apply**.                       |
 ||                                                                                                                                  |
-|  |lab303|                                                                                                                         |
+|  |lab314|                                                                                                                         |
 ||                                                                                                                                  |
 || 6. Now you can see your Origin Pool has been added to the HTTP load balancer configuration.                                      |
 ||                                                                                                                                  |
@@ -230,5 +230,7 @@ in AWS via the connection to the CE node in AWS.
    :width: 800px 
 .. |lab313| image:: _static/lab3-appworld2025-waf-block-message.png
    :width: 800px 
+.. |lab314| image:: _static/lab2-private-ce-pool.png
+   :width: 800px
 .. |labend| image:: _static/labend.png
    :width: 800px

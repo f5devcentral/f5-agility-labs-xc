@@ -132,7 +132,7 @@ Now we will deploy a Load Balancer on the CE node that was deployed in the AWS V
 |   Domains                           **[NAMESPACE].aws.lab.f5demos.com**                                                           |
 |   Select type of Load Balancer      **HTTP**                                                                                      |
 |   Automatically Manage DNS Records  **No/Unchecked**                                                                              |
-|   ================================= =====                                                                                         |
+|   ================================= =======                                                                                       |
 |                                                                                                                                   |
 +-----------------------------------------------------------------------------------------------------------------------------------+                                                                                       
 |                                                                                                                                   |
@@ -156,7 +156,7 @@ Now we will deploy a Load Balancer on the CE node that was deployed in the AWS V
 ||                                                                                                                                  |
 || |lab305|                                                                                                                         |
 ||                                                                                                                                  |
-|| 8. Under **VIP Advertisement**, change it to **Custom**  then select **Configure**                                                |
+|| 8. Under **VIP Advertisement**, change it to **Custom**  then select **Configure**                                               |
 ||                                                                                                                                  |
 || |lab306|                                                                                                                         |
 ||                                                                                                                                  |
