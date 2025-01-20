@@ -35,7 +35,7 @@ This Load Balancer will be used throughout the course.
 
 .. note ::
 
-   Refer to `Lab 1 Advanced <adv_lab1.rst>`_ for additional steps on how to create a Load Balancer and Origin Pool.
+   Refer to `Lab 1 Advanced <adv_lab1.html>`_ for additional steps on how to create a Load Balancer and Origin Pool.
 
 #. In the left top click the F5 ball and navigate to the **Web App & API Protection** Tile.
 
@@ -58,6 +58,7 @@ This Load Balancer will be used throughout the course.
    * **HTTP Port:** ``80``
    * **VIP Advertisement:** ``Internet``
 
+
    **Origin Pool**
 
    * **Name:**  ``<namespace>-pool``
@@ -66,12 +67,12 @@ This Load Balancer will be used throughout the course.
    * **Port:** ``80``
 
 #. [**Optional Review Steps : 4-7**] Within your namespace, mouse over HTTP Load Balancers > click on HTTP Load Balancers.
-   Review what's in orange, then click on the three dots under **Action** (***), click on **Manage Configuration** within the dropdown.
+   Review what's in orange, then click on the three dots under **Action**, click on **Manage Configuration** within the dropdown.
 
    .. image:: _static/lab1-task1-101.png
       :width: 800px
 
-#. Review domain, port, etc... in orange, click on **Origin Pool**. Click on **Edit Configuation** to view confguration.
+#. Review domain, port, etc... in orange, click on **Origin Pool**.
 
    .. image:: _static/lab1-task1-102.png
       :width: 800px
