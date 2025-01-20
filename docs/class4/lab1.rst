@@ -35,7 +35,7 @@ This Load Balancer will be used throughout the course.
 
 .. note ::
 
-   Refer to `Lab 1 Advanced <adv.lab1.rst>`_ for additional steps on how to create a Load Balancer and Origin Pool.
+   Refer to `Lab 1 Advanced <adv_lab1.rst>`_ for additional steps on how to create a Load Balancer and Origin Pool.
 
 #. In the left top click the F5 ball and navigate to the **Web App & API Protection** Tile.
 
@@ -65,7 +65,7 @@ This Load Balancer will be used throughout the course.
    * **Name/IP:** ``demobankapi.lab-sec.f5demos.com``
    * **Port:** ``80``
 
-#. (**Optional Review Steps : 4-7**). Within your namespace, mouse over HTTP Load Balancers > click on HTTP Load Balancers.
+#. [**Optional Review Steps : 4-7**] Within your namespace, mouse over HTTP Load Balancers > click on HTTP Load Balancers.
    Review what's in orange, then click on the three dots under **Action** (***), click on **Manage Configuration** within the dropdown.
 
    .. image:: _static/lab1-task1-101.png
@@ -89,13 +89,13 @@ This Load Balancer will be used throughout the course.
 #. The load balancer's **VIP Advertisement** is **Internet** which allows for public consumption through the F5 Distributed Cloud
    Application Delivery Network via a Regional Edge.
 
-   .. image:: _static/lab1-task1-106.png
+   .. image:: _static/lab1-task1-105.png
       :width: 600px
 
 #. **Malicious User Detection** is also Enabled on the load balancer which will be reviewed in a later lab.
    
-   .. image:: _static/lab1-task1-105.png
-      :width: 700px
+   .. image:: _static/lab1-task1-106.png
+      :width: 500px
 
 Task 2: Load Balancer Validation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
