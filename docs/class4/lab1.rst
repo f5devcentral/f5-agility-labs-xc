@@ -30,8 +30,12 @@ In this lab you will create a Application Load Balancer, attach and Origin Pool 
 Task 1: Load Balancer and Origin Pool Review
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The following steps will allow you to deploy and advertise a globally available API.  These
-steps will define an application, register its DNS and assign a target as an origin.
+The following steps are a review of a Load Balancer and Origin Pool aready configured within your namespace. 
+This Load Balancer will be used throughout the course.
+
+.. note ::
+
+   Refer to `Lab 1 Advanced <adv.lab1.rst>`_ for additional steps on how to create a Load Balancer and Origin Pool.
 
 #. In the left top click the F5 ball and navigate to the **Web App & API Protection** Tile.
 
@@ -46,6 +50,7 @@ steps will define an application, register its DNS and assign a target as an ori
 #. A HTTP Load Balancer and attached Origin Pool has already been created with the following configuration.
 
    **Load Balancer**
+
    * **Name:**  ``<namespace>-lb``
    * **Domains:** ``<namespace>.lab-sec.f5demos.com``
    * **Type of Load Balancer:** ``HTTP``
@@ -54,13 +59,14 @@ steps will define an application, register its DNS and assign a target as an ori
    * **VIP Advertisement:** ``Internet``
 
    **Origin Pool**
+
    * **Name:**  ``<namespace>-pool``
    * **Type:** ``Public DNS``
    * **Name/IP:** ``demobankapi.lab-sec.f5demos.com``
    * **Port:** ``80``
 
-#. Let's review. Within your namespace, mouse over HTTP Load Balancers > click on HTTP Load Balancers. Review what's in orange,
-   then click on the three dots under **Action** (***), click on **Manage Configuration** within the dropdown.
+#. (**Optional Review Steps : 4-7**). Within your namespace, mouse over HTTP Load Balancers > click on HTTP Load Balancers.
+   Review what's in orange, then click on the three dots under **Action** (***), click on **Manage Configuration** within the dropdown.
 
    .. image:: _static/lab1-task1-101.png
       :width: 800px
@@ -68,7 +74,7 @@ steps will define an application, register its DNS and assign a target as an ori
 #. Review domain, port, etc... in orange, click on **Origin Pool**. Click on **Edit Configuation** to view confguration.
 
    .. image:: _static/lab1-task1-102.png
-      :width: 700px
+      :width: 800px
 
 #. Click on **Edit Configuation** to navigate to the **Origin Pool** configuration.
 
@@ -78,13 +84,13 @@ steps will define an application, register its DNS and assign a target as an ori
 #. Review the type, DNS name and port in orange. Click **Cancel and Exit** to close out the configuration.
 
    .. image:: _static/lab1-task1-104.png
-      :width: 700px
+      :width: 800px
 
 #. The load balancer's **VIP Advertisement** is **Internet** which allows for public consumption through the F5 Distributed Cloud
    Application Delivery Network via a Regional Edge.
 
    .. image:: _static/lab1-task1-106.png
-      :width: 700px
+      :width: 600px
 
 #. **Malicious User Detection** is also Enabled on the load balancer which will be reviewed in a later lab.
    
