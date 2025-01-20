@@ -36,12 +36,12 @@ steps will define an application, register its DNS and assign a target as an ori
 #. In the left top click the F5 ball and navigate to the **Web App & API Protection** Tile.
 
    .. image:: _static/shared-001.png
-      :width: 800px
+      :width: 500px
 
 #. Click on the arrow to the right of **Namespace**, select your namespace from the list.
 
    .. image:: _static/shared-002.png
-      :width: 800px
+      :width: 400px
 
 #. In the left-hand navigation expand **Manage** and click **Load Balancers > HTTP Load**
    **Balancers**
@@ -49,7 +49,7 @@ steps will define an application, register its DNS and assign a target as an ori
 #. In the resulting screen click the **Add HTTP Load Balancer** in the graphic as shown.
 
    .. image:: _static/shared-003.png
-      :width: 800px
+      :width: 600px
 
    .. note::
       *You have defaulted to your specific namespace as that is the only namespace to which you
