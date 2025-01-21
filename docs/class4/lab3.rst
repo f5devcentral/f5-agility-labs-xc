@@ -26,7 +26,7 @@ Task 1: Simulate Access to Sensitive Data via getbydob Endpoint
    .. image:: _static/lab3-task1-001.png
       :width: 800px
 
-#. Enter '05/29/1970' in the "DOB" field.
+#. Enter '1970/05/29' in the "DOB" field.
 
    .. image:: _static/lab3-task1-002.png
       :width: 800px
@@ -36,7 +36,7 @@ Task 1: Simulate Access to Sensitive Data via getbydob Endpoint
    .. image:: _static/lab3-task1-003.png
       :width: 800px
 
-#. Review the response body. It returns customer information for the Date of Birth '05/29/1970' and also includes the SSN.
+#. Review the response body. It returns customer information for the Date of Birth '1970/05/29' and also includes the SSN.
 
    .. image:: _static/lab3-task1-004.png
       :width: 800px
@@ -141,7 +141,7 @@ previously built Load Balancer object delivering the targeted API.
    .. image:: _static/lab3-task2-015.png
       :width: 800px
 
-Task : Simulate Access to Sensitive Data via getbydob Endpoint - you should now be blocked.
+Task 3 : Simulate Access to Sensitive Data via getbydob Endpoint - you should now be blocked.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 #. Using another browser tab, navigate to the the following URL.
@@ -156,7 +156,7 @@ Task : Simulate Access to Sensitive Data via getbydob Endpoint - you should now 
    .. image:: _static/lab3-task1-001.png
       :width: 800px
 
-#. Enter '05/29/1970' in the DOB field.
+#. Enter '1970/05/29' in the DOB field.
 
    .. image:: _static/lab3-task1-002.png
       :width: 800px
