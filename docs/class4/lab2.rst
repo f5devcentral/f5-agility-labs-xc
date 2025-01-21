@@ -92,13 +92,10 @@ pointer to imported swagger files you just uploaded.
 #. In the left-hand navigation of the **Web App & API Protection** service, click on **API**
    **Management** under the **Manage** section and then click **API Definition**.
 
-   .. image:: _static/lab2-task3-001.png
-      :width: 800px
-
 #. You will see "api-lab-def" file. This step has been preconfigured for your convenience, referencing the previously created OpenAPI file (api-lab-swagger) in the API definition file (api-lab-def).
 
 
-   .. image:: _static/lab2-task3-002.png
+   .. image:: _static/lab2-task3-001.png
       :width: 800px
 
 
