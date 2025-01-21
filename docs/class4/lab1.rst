@@ -49,25 +49,25 @@ This Load Balancer will be used throughout the course.
 
 #. A HTTP Load Balancer and attached Origin Pool has already been created with the following configuration.
 
-   ========================== ===============================
+   ========================== ==========================
    **Load Balancer**          **Configuration**
-   -------------------------- -------------------------------
+   -------------------------- --------------------------
    Name                       ``<namespace>-lb``
    Domains                    ``<namespace>.lab-sec.f5demos.com``
-   Type of Load Balancer      ``HTTP``
-   Automatically Manage DNS   ``Checked``
-   HTTP Port                  ``80``
-   VIP Advertisement          ``Internet``
-   ========================== ===============================
+   Type                       ``HTTP``
+   Manage DNS                 ``Enabled``
+   Port                       ``80``
+   Advertisement              ``Internet``
+   ========================== ==========================
 
-   ========================== ===============================
+   ========================== ==========================
    **Origin Pool**            **Configuration**
-   -------------------------- -------------------------------
+   -------------------------- --------------------------
    Name                       ``<namespace>-pool``
    Type                       ``Public DNS``
    Name/IP                    ``demobankapi.lab-sec.f5demos.com``
    Port                       ``80``
-   ========================== ===============================
+   ========================== ==========================
 
 #. [**Optional Review Steps : 4-7**] Within your namespace, mouse over HTTP Load Balancers > click on HTTP Load Balancers.
    Review what's in orange, then click on the three dots under **Action**, click on **Manage Configuration** within the dropdown.
