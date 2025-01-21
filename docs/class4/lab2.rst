@@ -128,7 +128,7 @@ previously built Load Balancer object delivering the targeted API.
       :width: 800px
 
 #. In the second **API Definition** section, click the drop-down arrow and select the
-   previously created API Definition **shared/api/lab/def**.
+   previously created API Definition **shared/api-lab-def**.
 
    .. image:: _static/lab2-task4-004.png
       :width: 800px
