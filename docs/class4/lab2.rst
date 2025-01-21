@@ -77,7 +77,7 @@ version control features.
 
 #. In the left-hand navigation, click on **Files** then **OpenAPI Files** under the **Manage** section.
 
-#. You will see "api-lab-swagger" file. This step has been preconfigured for your convenience, with the OpenAPI (Swagger) file already uploaded.
+#. You will see "api-lab-swagger" file. This step has been pre-configured for your convenience, with the OpenAPI (Swagger) file already uploaded.
 
 
    .. image:: _static/lab2-task2-002.png
@@ -92,7 +92,7 @@ pointer to imported swagger files you just uploaded.
 #. In the left-hand navigation of the **Web App & API Protection** service, click on **API**
    **Management** under the **Manage** section and then click **API Definition**.
 
-#. You will see "api-lab-def" file. This step has been preconfigured for your convenience, referencing the pre-created OpenAPI file (api-lab-swagger) in the API definition file (api-lab-def).
+#. You will see "api-lab-def" file. This step has been pre-configured for your convenience, referencing the pre-created OpenAPI file (api-lab-swagger) in the API definition file (api-lab-def).
 
 
    .. image:: _static/lab2-task3-001.png
@@ -128,7 +128,7 @@ previously built Load Balancer object delivering the targeted API.
       :width: 800px
 
 #. In the second **API Definition** section, click the drop-down arrow and select the
-   previously created API Definition **shared/api-lab-def**.
+   pre-created API Definition **shared/api-lab-def**.
 
    .. image:: _static/lab2-task4-004.png
       :width: 800px
