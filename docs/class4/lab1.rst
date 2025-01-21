@@ -52,21 +52,21 @@ This Load Balancer will be used throughout the course.
    ========================== ==========================
    **Load Balancer**          **Configuration**
    -------------------------- --------------------------
-   Name                       ``<namespace>-lb``
-   Domains                    ``<namespace>.lab-sec.f5demos.com``
-   Type                       ``HTTP``
-   Manage DNS                 ``Enabled``
-   Port                       ``80``
-   Advertisement              ``Internet``
+   Name                       <namespace>-lb
+   Domains                    <namespace>.lab-sec.f5demos.com
+   Type                       HTTP
+   Manage DNS                 Enabled
+   Port                       80
+   Advertisement              Internet
    ========================== ==========================
 
    ========================== ==========================
    **Origin Pool**            **Configuration**
    -------------------------- --------------------------
-   Name                       ``<namespace>-pool``
-   Type                       ``Public DNS``
-   Name/IP                    ``demobankapi.lab-sec.f5demos.com``
-   Port                       ``80``
+   Name                       <namespace>-pool
+   Type                       Public DNS
+   Name/IP                    demobankapi.lab-sec.f5demos.com
+   Port                       80
    ========================== ==========================
 
 #. [**Optional Review Steps : 4-7**] Within your namespace, mouse over HTTP Load Balancers > click on HTTP Load Balancers.
