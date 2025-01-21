@@ -77,37 +77,10 @@ version control features.
 
 #. In the left-hand navigation, click on **Files** then **OpenAPI Files** under the **Manage** section.
 
-#. Click **Add OpenAPI File** located in the center of the window.
+#. You will see "api-lab-swagger" file. This step has been pre-configured for your convenience, with the OpenAPI (Swagger) file already uploaded.
+
 
    .. image:: _static/lab2-task2-002.png
-      :width: 800px
-   
-
-#. In the resulting **OpenAPI File** window, input **demobank-api** for the **Name** under the **Metadata** section.
-
-   .. image:: _static/lab2-task2-003.png
-      :width: 800px
-
-#. In the **OpenAPI Upload** section, click the **Upload File** button. Select the file
-   downloaded in Step 1 above and click **Open**.
-
-   .. image:: _static/lab2-task2-004.png
-      :width: 800px
-
-#. Observe that the file **demobank-api-v1**  is present and the click **Save and Exit**
-
-   .. image:: _static/lab2-task2-005.png
-      :width: 800px
-
-
-#. In the resulting **OpenAPI File** window, you will see the upload file with additional
-   metadata.
-
-   .. note::
-      *You will also see a dialogue box, in the bottom left of your screen indicating the file*
-      has been successfully added.*
-
-   .. image:: _static/lab2-task2-007.png
       :width: 800px
 
 Task 3: API Definition
@@ -119,27 +92,12 @@ pointer to imported swagger files you just uploaded.
 #. In the left-hand navigation of the **Web App & API Protection** service, click on **API**
    **Management** under the **Manage** section and then click **API Definition**.
 
+#. You will see "api-lab-def" file. This step has been pre-configured for your convenience, referencing the pre-created OpenAPI file (api-lab-swagger) in the API definition file (api-lab-def).
+
+
    .. image:: _static/lab2-task3-001.png
       :width: 800px
 
-#. In the resulting **API Definition** window, click **Add API Definition** in the main
-   window area as shown.
-
-   .. image:: _static/lab2-task3-002.png
-      :width: 800px
-
-#. In the resulting **New API Definition** window, input **demobank-api-spec**
-   for the **Name** under the **Metadata** section.
-
-#. In the **OpenAPI Specification Files** section, click **Add Item**.
-
-#. Select the version 1 of the previously uploaded OpenAPI spec file. It will be in the
-   format **<namespace>/demobank-api/v1-<current-date>**.
-
-#. Once selected, click **Save and Exit** in the bottom-right corner.
-
-   .. image:: _static/lab2-task3-003.png
-      :width: 800px
 
 Task 4: Enabling API Inventory
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -170,7 +128,7 @@ previously built Load Balancer object delivering the targeted API.
       :width: 800px
 
 #. In the second **API Definition** section, click the drop-down arrow and select the
-   previously created API Definition **<namespace>/app-api-spec**.
+   pre-created API Definition **shared/api-lab-def**.
 
    .. image:: _static/lab2-task4-004.png
       :width: 800px
@@ -202,7 +160,7 @@ previously built Load Balancer object delivering the targeted API.
    * **Name:**  ``<namespace>-shadow``
    * **Action:** ``Block``
    * **Type:** ``Base Path``
-   * **Base Path:** ``/``
+   * **Base Path:** ``/api``
 
    .. image:: _static/lab2-task4-009.png
       :width: 800px
