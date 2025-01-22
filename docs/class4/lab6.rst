@@ -21,7 +21,7 @@ In this task, you will explore the Security Analytics Dashboard within Distribut
 #. With the **Dashboard** view, scroll down to the bottom to the **Application Delivery** tile to find your HTTP Load Balancer object; click this LB object.
 
    .. image:: _static/lab6-101.png
-      :width: 400px
+      :width: 800px
 
 #. Within the **Dashboard** view, click the **Requests** tab:
 
@@ -47,7 +47,7 @@ In this task, you will explore the Security Analytics Dashboard within Distribut
 #. With the **Dashboard** view, scroll down to the bottom to the **Application Delivery** tile to find your HTTP Load Balancer object; click this LB object.
 
    .. image:: _static/lab6-101.png
-      :width: 400px
+      :width: 800px
 
 #. Within the **Dashboard** view, click the **Security Analytics** tab:
 
@@ -59,9 +59,11 @@ In this task, you will explore the Security Analytics Dashboard within Distribut
 #. Review and explore the related security events. Expand various requests to understand why they were allowed/blocked.
 
    .. image:: _static/lab6-security-102.png
+      :width: 800px
 
-#. Continue to explore various filters, events, etc. within the **Security Analytics** dashboard to review and explore the related events.  Try using the **Forensics** filter
-to drill-down further into specific traffic.
+
+#. Continue to explore various filters, events, etc. within the **Security Analytics** dashboard to review and explore the related events.  
+   Try using the **Forensics** filter to drill-down further into specific traffic.
 
    .. image:: _static/lab6-security-103.png
       :width: 800px
