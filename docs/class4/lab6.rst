@@ -78,7 +78,7 @@ In this task, you will explore the Malicious Users section of the Security Analy
 #. With the **Dashboard** view, scroll down to the bottom to the **Application Delivery** tile to find your HTTP Load Balancer object; click this LB object.
 
    .. image:: _static/lab6-101.png
-      :width: 400px
+      :width: 800px
 
 
 #. Within the **Dashboard** view, click the **Malicious Users** tab:
@@ -90,12 +90,12 @@ In this task, you will explore the Malicious Users section of the Security Analy
 
 #. Review and explore the related malicious user events.
 
+   .. image:: _static/lab6-mud-103.png
+      :width: 800px
+
    .. note ::
 
       Malicious User Detection also includes migitation, which was not enabled for this lab. As the user score increases action can be taken, including a temporary block.
-
-   .. image:: _static/lab6-mud-103.png
-      :width: 800px
 
 **End of Lab**
 
