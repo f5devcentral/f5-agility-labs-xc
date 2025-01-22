@@ -73,7 +73,7 @@ previously built HTTP Load Balancer object delivering the targeted API.
 #. Using the left-hand navigation, click the **Common Security Controls** link.
 
    .. image:: _static/lab4-image021.png
-      :width: 400px
+      :width: 300px
 
 #. Locate the **Rate Limiting** area of the **Common Security Controls** and use the
    drop-down to select **API Rate Limit**.
@@ -99,7 +99,7 @@ previously built HTTP Load Balancer object delivering the targeted API.
 #. In the suggestion results, use the drop-down and select the **/getallcustomers** endpoint.
 
    .. image:: _static/lab4-image026.png
-      :width: 600px
+      :width: 500px
 
 #. In the resulting configuration window, update the following fields then click **Apply**.
 
@@ -162,7 +162,7 @@ Task 4 [Optional]: Explore the Distributed Cloud Console to find this Security E
 #. Now, click the **F5 ball** in the upper-left corner to navigate back to the "Home" screen of your Distributed Cloud Console to prepare for the next lab.
 
    .. image:: _static/shared-004.png
-      :width: 800px
+      :width: 400px
 
 **End of Lab**
 
