@@ -59,7 +59,7 @@ In this task, you will follow steps simulating an attack against an unprotected 
 #. Now, return to your Distributed Cloud (XC) portal within your browser by clicking the **F5 ball icon**  in the upper-left corner, and navigate to the **Web App & API Protection** tile.
 
    .. image:: _static/shared-001.png
-      :width: 800px
+      :width: 600px
 
 Task 2: Apply a Shared WAF policy Object to your HTTP Load Balancer
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -70,7 +70,7 @@ In this task, you will perform steps to add a shared WAF policy object, and appl
    under the **Manage** section.
 
    .. image:: _static/lab4-image004.png
-      :width: 350px
+      :width: 300px
 
 #. In the resulting **App Firewall** window, observe the **Shared** FW object named **api-lab-af**:
 
@@ -102,7 +102,7 @@ In this task, you will follow steps to attach a WAF policy to your Load Balancer
 #. Click **Edit Configuration** in the top-right corner.
 
    .. image:: _static/shared-104.png
-      :width: 500px
+      :width: 800px
 
 #. Using the left-hand navigation, click the **Web Application Firewall** link.
 
@@ -112,7 +112,7 @@ In this task, you will follow steps to attach a WAF policy to your Load Balancer
 #. Under the **Web Application Firewall (WAF)** drop-down, Select **Enable**
 
    .. image:: _static/lab4-image011.png
-      :width: 600px
+      :width: 550px
 
 #. Under the **Enable** menu drop-down, select the shared WAF object **shared/api-lab-af**.
 
