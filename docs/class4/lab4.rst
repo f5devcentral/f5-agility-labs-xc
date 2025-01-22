@@ -70,7 +70,7 @@ In this task, you will perform steps to add a shared WAF policy object, and appl
    under the **Manage** section.
 
    .. image:: _static/lab4-image004.png
-      :width: 400px
+      :width: 350px
 
 #. In the resulting **App Firewall** window, observe the **Shared** FW object named **api-lab-af**:
 
@@ -102,7 +102,7 @@ In this task, you will follow steps to attach a WAF policy to your Load Balancer
 #. Click **Edit Configuration** in the top-right corner.
 
    .. image:: _static/shared-104.png
-      :width: 400px
+      :width: 500px
 
 #. Using the left-hand navigation, click the **Web Application Firewall** link.
 
@@ -171,7 +171,7 @@ Task 5 [Optional]: Explore the Distributed Cloud Console to find this Security E
 #. Now, click the **F5 ball** in the upper-left corner to navigate back to the "Home" screen of your Distributed Cloud Console to prepare for the next lab.
 
    .. image:: _static/shared-004.png
-      :width: 800px
+      :width: 400px
 
 **End of Lab**
 
