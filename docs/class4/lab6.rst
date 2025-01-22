@@ -11,158 +11,91 @@ detected users.
 
 **Expected Lab Time: 20 minutes**
 
-Task 1: Review the Security Anatlyics Dashboard for Triggered Events
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Task 1: Review the Requests Dashboard
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In this task, you will explore the Security Analytics Dashboard within Distributed Cloud (XC) for security events.
 
 #. From the **Web App & API Protection** menu, navigate to **Overview**, then click **Security**
 
-   .. image:: _static/lab4-image032.png
-      :width: 400px
-
 #. With the **Dashboard** view, scroll down to the bottom to the **Application Delivery** tile to find your HTTP Load Balancer object; click this LB object.
 
-   .. image:: _static/lab4-image033.png
-      :width: 800px
-
-#. Within the **Dashboard** view, click the **Security Analytics** tab:
-
-   .. image:: _static/lab4-image034.png
-      :width: 800px
-
-#. On the right-hand side, expand the time window to **Last 24 hour** and click the **Refresh** button; this should provide details of your requests you made during this lab.
-
-   .. image:: _static/lab4-image035.png
-      :width: 800px
-
-#. Review and explore the related security events. Expand various requests to understand why they were allowed/blocked.
-
-   .. image:: _static/lab4-image036.png
-      :width: 800px
-
-#. Continue to explore various filters, events, etc. within the **Security Analytics** dashboard to review and explore the related events.  Try using the **Forensics** filter
-to drill-down further into specific traffic.
-
-   .. image:: _static/lab4-image037.png
-      :width: 800px
-
-Task 2: Review the Requests in the Security Dashboard
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-In this task, you will explore the Security Analytics Dashboard within Distributed Cloud (XC) for security events.
-
-#. From the **Web App & API Protection** menu, navigate to **Overview**, then click **Security**
-
-   .. image:: _static/lab4-image032.png
-      :width: 400px
-
-#. With the **Dashboard** view, scroll down to the bottom to the **Application Delivery** tile to find your HTTP Load Balancer object; click this LB object.
-
-   .. image:: _static/lab4-image033.png
+   .. image:: _static/lab6-101.png
       :width: 800px
 
 #. Within the **Dashboard** view, click the **Requests** tab:
 
-   .. image:: _static/lab4-image039.png
+   .. image:: _static/lab6-request-102.png
       :width: 800px
 
 #. On the right-hand side, expand the time window to **Last 24 hour** and click the **Refresh** button; this should provide details of your requests you made during this lab.
 
-   .. image:: _static/lab4-image040.png
-      :width: 800px
-
 #. Review and explore the related request events. Expand various requests to understand if they were successful or denied.
 
-   .. image:: _static/lab4-image041.png
+   .. image:: _static/lab6-request-103.png
       :width: 800px
 
-#. Continue to explore various filters, events, etc. within the **Requests** dashboard to review and explore the related events.  Try using the **Forensics** filter
-to drill-down further into specific traffic.
+#. Continue to explore various filters, events, etc. within the **Requests** dashboard to review and explore the related events.
 
-   .. image:: _static/lab4-image042.png
+Task 2: Review the Security Anatlyics Dashboard
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+In this task, you will explore the Security Analytics Dashboard within Distributed Cloud (XC) for security events.
+
+#. From the **Web App & API Protection** menu, navigate to **Overview**, then click **Security**
+
+#. With the **Dashboard** view, scroll down to the bottom to the **Application Delivery** tile to find your HTTP Load Balancer object; click this LB object.
+
+   .. image:: _static/lab6-101.png
       :width: 800px
 
-Task 3: Configure Malicious User Detection
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#. Within the **Dashboard** view, click the **Security Analytics** tab:
 
-Malicious User Detection uses Machine Learning (ML) to detect certain identifiers to classify source traffic.  This allows the XC platform to detect and track specific user traffic. These identifiers
-can be used to make decisions to allow or block specific users.
-
-In this task, we will enable Malicious User Detection on HTTP Load Balancer
-
-#. In the left-hand navigation of the **Web App & API Protection** service, click on **Load Balancers > HTTP Load**
-   **Balancers** under the **Manage** section.
-
-   .. image:: _static/lab4-image018.png
-      :width: 400px
-
-#. In the resulting **Load Balancers** window, click on the three dots **...** in the
-   **Action** column, and the select **Manage Configuration**.
-
-   .. image:: _static/lab4-image019.png
+   .. image:: _static/lab6-security-102.png
       :width: 800px
 
-#. Click **Edit Configuration** in the top-right corner.
+#. On the right-hand side, expand the time window to **Last 24 hour** and click the **Refresh** button; this should provide details of your requests you made during this lab.
 
-   .. image:: _static/lab4-image020.png
+#. Review and explore the related security events. Expand various requests to understand why they were allowed/blocked.
+
+   .. image:: _static/lab6-security-102.png
       :width: 800px
 
-#. Using the left-hand navigation, click the **Common Security Controls** link.
 
-   .. image:: _static/lab4-image021.png
-      :width: 400px
+#. Continue to explore various filters, events, etc. within the **Security Analytics** dashboard to review and explore the related events.  
+   Try using the **Forensics** filter to drill-down further into specific traffic.
 
-#. Locate the **Malicious User Detection** and **Malicious User Mitigation And Challenges** area of the **Common Security Controls** and use the
-   drop-down to **Enable** each setting. We will use **Default** settings:
-
-   .. image:: _static/lab4-image045.png
+   .. image:: _static/lab6-security-103.png
       :width: 800px
 
-   .. image:: _static/lab4-image046.png
-      :width: 800px
-
-#. Select **Other Settings** on the left then click on **Save and Exit**
-   at the bottom right of window.
-
-   .. image:: _static/lab4-image044.png
-      :width: 800px
-
-Task 4: Review Malicious User Detection
+Task 3: Review Malicious User Detection
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In this task, you will explore the Malicious Users section of the Security Analytics Dashboard within Distributed Cloud (XC).
 
 #. From the **Web App & API Protection** menu, navigate to **Overview**, then click **Security**
 
-   .. image:: _static/lab4-image032.png
-      :width: 400px
-
 #. With the **Dashboard** view, scroll down to the bottom to the **Application Delivery** tile to find your HTTP Load Balancer object; click this LB object.
 
-   .. image:: _static/lab4-image033.png
+   .. image:: _static/lab6-101.png
       :width: 800px
+
 
 #. Within the **Dashboard** view, click the **Malicious Users** tab:
 
-   .. image:: _static/lab4-image047.png
+   .. image:: _static/lab6-mud-102.png
       :width: 800px
 
 #. On the right-hand side, expand the time window to **Last 24 hour** and click the **Refresh** button; this should provide details of your requests you made during this lab.
 
-   .. image:: _static/lab4-image048.png
-      :width: 800px
-
 #. Review and explore the related malicious user events.
 
-   .. image:: _static/lab4-image049.png
+   .. image:: _static/lab6-mud-103.png
       :width: 800px
 
+   .. note ::
 
-#. **Left off here . . . need more content / testing examples **
-
-   .. image:: _static/update_image.png
-      :width: 800px
+      Malicious User Detection also includes migitation, which was not enabled for this lab. As the user score increases action can be taken, including a temporary block.
 
 **End of Lab**
 
