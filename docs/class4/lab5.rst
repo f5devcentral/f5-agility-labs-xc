@@ -59,24 +59,21 @@ previously built HTTP Load Balancer object delivering the targeted API.
 #. In the left-hand navigation of the **Web App & API Protection** service, click on **Load Balancers > HTTP Load**
    **Balancers** under the **Manage** section.
 
-   .. image:: _static/lab4-image018.png
-      :width: 400px
-
 #. In the resulting **Load Balancers** window, click on the three dots **...** in the
    **Action** column, and the select **Manage Configuration**.
 
-   .. image:: _static/lab4-image019.png
+   .. image:: _static/shared-103.png
       :width: 800px
 
 #. Click **Edit Configuration** in the top-right corner.
 
-   .. image:: _static/lab4-image020.png
+   .. image:: _static/shared-104.png
       :width: 800px
 
 #. Using the left-hand navigation, click the **Common Security Controls** link.
 
    .. image:: _static/lab4-image021.png
-      :width: 400px
+      :width: 300px
 
 #. Locate the **Rate Limiting** area of the **Common Security Controls** and use the
    drop-down to select **API Rate Limit**.
@@ -102,7 +99,7 @@ previously built HTTP Load Balancer object delivering the targeted API.
 #. In the suggestion results, use the drop-down and select the **/getallcustomers** endpoint.
 
    .. image:: _static/lab4-image026.png
-      :width: 600px
+      :width: 500px
 
 #. In the resulting configuration window, update the following fields then click **Apply**.
 
@@ -164,8 +161,8 @@ Task 4 [Optional]: Explore the Distributed Cloud Console to find this Security E
 
 #. Now, click the **F5 ball** in the upper-left corner to navigate back to the "Home" screen of your Distributed Cloud Console to prepare for the next lab.
 
-   .. image:: _static/lab4-image054.png
-      :width: 800px
+   .. image:: _static/shared-004.png
+      :width: 400px
 
 **End of Lab**
 
