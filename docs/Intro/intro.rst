@@ -51,7 +51,7 @@ Accessing UDF (F5 Unified Demo Framework)
 
 +----------------------------------------------------------------------------------------------+
 | Attendees will be prompted to enter their UDF account, password and complete MFA as shown.   |
-| MFA must be completed by either selecting ** Send Push** or **Enter Code**.                  |
+| MFA must be completed by either selecting **Send Push** or **Enter Code**.                   |
 |                                                                                              |
 | .. note::                                                                                    |
 |    *MFA process will very based on the MFA integration selected for the UDF Account. OKTA*   |
@@ -85,7 +85,7 @@ Accessing UDF (F5 Unified Demo Framework)
 | **green arrow** (running) icon and attendees will proceed to the next section of steps.      |
 |                                                                                              |
 | .. note::                                                                                    |
-|    *Your specific lab environment may vary from the graphics shown below. The **Client** *   |
+|    *Your specific lab environment may vary from the graphics shown below. The **Client***    |
 |    *will, however, be consistent.*                                                           |
 +----------------------------------------------------------------------------------------------+
 | |intro008|                                                                                   |
@@ -168,17 +168,17 @@ Accessing F5 Distributed Cloud
    :width: 800px
 .. |intro009| image:: _static/intro-09.png
    :width: 800px
-.. |intro009| image:: _static/intro-10.png
+.. |intro010| image:: _static/intro-10.png
    :width: 800px
-.. |intro009| image:: _static/intro-11.png
+.. |intro011| image:: _static/intro-11.png
    :width: 800px
-.. |intro009| image:: _static/intro-12.png
+.. |intro012| image:: _static/intro-12.png
    :width: 800px
-.. |intro009| image:: _static/intro-13.png
+.. |intro013| image:: _static/intro-13.png
    :width: 800px
-.. |intro009| image:: _static/intro-14.png
+.. |intro014| image:: _static/intro-14.png
    :width: 800px
-.. |intro009| image:: _static/intro-15.png
+.. |intro015| image:: _static/intro-15.png
    :width: 800px
 .. |labbgn| image:: _static/labbgn.png
    :width: 800px
