@@ -86,13 +86,13 @@ version control features.
 #. In the resulting **OpenAPI File** window, input **demobank-api** for the **Name** under the **Metadata** section.
 
    .. image:: _static/lab2-task2-003.png
-      :width: 800px
+      :width: 600px
 
 #. In the **OpenAPI Upload** section, click the **Upload File** button. Select the file
    downloaded in Step 1 above and click **Open**.
 
    .. image:: _static/lab2-task2-004.png
-      :width: 800px
+      :width: 600px
 
 #. Observe that the file **demobank-api-v1**  is present and the click **Save and Exit**
 
@@ -120,13 +120,13 @@ pointer to imported swagger files you just uploaded.
    **Management** under the **Manage** section and then click **API Definition**.
 
    .. image:: _static/lab2-task3-001.png
-      :width: 800px
+      :width: 700px
 
 #. In the resulting **API Definition** window, click **Add API Definition** in the main
    window area as shown.
 
    .. image:: _static/lab2-task3-002.png
-      :width: 800px
+      :width: 650px
 
 #. In the resulting **New API Definition** window, input **demobank-api-spec**
    for the **Name** under the **Metadata** section.
