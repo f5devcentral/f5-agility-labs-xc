@@ -153,12 +153,12 @@ previously built Load Balancer object delivering the targeted API.
 #. In the resulting **Load Balancers** window, click on the three dots **...** in the
    **Action** column, and the select **Manage Configuration**.
 
-   .. image:: _static/lab2-task4-001.png
+   .. image:: _static/shared-103.png
       :width: 800px
 
 #. Click **Edit Configuration** in the top-right corner.
 
-   .. image:: _static/lab2-task4-002.png
+   .. image:: _static/shared-104.png
       :width: 800px
 
 #. Click **API Protection** in the left-hand navigation.
@@ -202,7 +202,7 @@ previously built Load Balancer object delivering the targeted API.
    * **Name:**  ``<namespace>-shadow``
    * **Action:** ``Block``
    * **Type:** ``Base Path``
-   * **Base Path:** ``/``
+   * **Base Path:** ``/api``
 
    .. image:: _static/lab2-task4-009.png
       :width: 800px
