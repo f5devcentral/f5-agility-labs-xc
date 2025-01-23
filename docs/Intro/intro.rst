@@ -127,8 +127,8 @@ Accessing F5 Distributed Cloud
 | to begin. You can change this setting after logging in as well.                              |
 |                                                                                              |
 | .. note::                                                                                    |
-|    *Several **Guidance ToolTips** or **Notices** may appear.  Attendees can safely close*    |
-|    *these out in order to begin the lab.*                                                    |
+|    *Several Guidance ToolTips or Notices may appear.  Attendees can safely close these out*  |
+|    *in order to begin the lab.*                                                              |
 +----------------------------------------------------------------------------------------------+
 | |intro012|                                                                                   |
 |                                                                                              |
@@ -138,7 +138,7 @@ Accessing F5 Distributed Cloud
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| Attendees will now be presented the **Home* page of the F% Distributed Cloud Console with all|
+| Attendees will now be presented the Home page of the F% Distributed Cloud Console with all   |
 | the workspaces, features and services available.                                             |
 +----------------------------------------------------------------------------------------------+
 | |intro015|                                                                                   |
