@@ -20,5 +20,6 @@ Welcome to the |classbold| for F5 Appworld |year|
    :glob:
 
    class*/class*
+   into/intro*
    archive*/archive*
    2hour*/2hour*
