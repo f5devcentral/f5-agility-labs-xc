@@ -24,12 +24,8 @@ Course/Lab Invitation
 | is selected.  Use either the first or second link position (indicated by arrows) based on    |
 | the attendee's F5 UDF (Unified Demo Framework) Account Status.                               |
 |                                                                                              |
-| # **New UDF Users**                                                                          |
-| # **Returning UDF Users going directly to Course**                                           |
-|                                                                                              |
-| .. note::                                                                                    |
-|    *Note The steps for new UDF Users or the steps for resetting UDF User account passwords*  |
-|    *are not shown. Please contact a member of the lab team if further assistance is needed.* |
+| #. **New UDF Users**                                                                         |
+| #. **Returning UDF Users going directly to Course**                                          |
 +----------------------------------------------------------------------------------------------+
 | |intro001|                                                                                   |
 +----------------------------------------------------------------------------------------------+
@@ -43,8 +39,8 @@ Accessing UDF (F5 Unified Demo Framework)
 | to login at  https://udf.f5.com                                                              |
 |                                                                                              |
 | .. note::                                                                                    |
-|    *Note The steps for new UDF Users or the steps for resetting UDF User account passwords*  |
-|    *are not shown. Please contact a member of the lab team if further assistance is needed.* |
+|    *The steps for new UDF Users or the steps for resetting UDF User account passwords are*   |
+|    *not shown. Please contact a member of the lab team if further assistance is needed.*     |
 +----------------------------------------------------------------------------------------------+
 | |intro002|                                                                                   |
 +----------------------------------------------------------------------------------------------+
