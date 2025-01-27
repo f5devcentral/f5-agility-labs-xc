@@ -138,7 +138,7 @@ Accessing F5 Distributed Cloud
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| Attendees will now be presented the Home page of the F% Distributed Cloud Console with all   |
+| Attendees will now be presented the Home page of the F5 Distributed Cloud Console with all   |
 | the workspaces, features and services available.                                             |
 +----------------------------------------------------------------------------------------------+
 | |intro015|                                                                                   |
