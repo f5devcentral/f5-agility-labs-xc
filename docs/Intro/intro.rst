@@ -103,7 +103,7 @@ Accessing F5 Distributed Cloud
 |                                                                                              |
 | .. warning::                                                                                 |
 |    *Attendess should not attempt access to F5 Distributed Cloud tenant prior to receiving*   |
-|    *email.*                                                                                  |
+|    *email. Lab permissions may need to be re-applied.*                                       |
 +----------------------------------------------------------------------------------------------+
 | |intro010|                                                                                   |
 +----------------------------------------------------------------------------------------------+
