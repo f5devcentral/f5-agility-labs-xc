@@ -98,12 +98,16 @@ Accessing F5 Distributed Cloud
 
 +----------------------------------------------------------------------------------------------+
 | Following the state change of the **Client System** to a **green arrow** (running) icon,     |
-| attendees will receive a second email as shown below.  Click the **Accept invitation**       |
-| button.                                                                                      |
+| attendees will receive a second email.  This email will come from no-reply@cloud.f5.com.     |
+| Click the **Accept invitation** with in the email.                                           |
 |                                                                                              |
 | .. note::                                                                                    |
-|    *Alternatively, attendees can also access the F5 Distributed Cloud Tenant directly via a* |
-|    *URL provided by the lab team as needed.*                                                 |
+|    *This link should be accessed in the same browser session as UDF was accessed for*        |
+|    *seamless experience.*                                                                    |
+|                                                                                              |
+| .. warning::                                                                                 |
+|    *Attendess should not attempt access to F5 Distributed Cloud tenant prior to receiving*   |
+|    *email.*                                                                                  |
 +----------------------------------------------------------------------------------------------+
 | |intro010|                                                                                   |
 +----------------------------------------------------------------------------------------------+
