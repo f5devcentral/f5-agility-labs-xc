@@ -31,29 +31,23 @@ utilizing the Developer Portal.
 +---------------------------------------------------------------------------------------------------------------+
 | **Create API Token from the Distributed Cloud Console**                                                       |
 +===============================================================================================================+
-| 1. Following the **Introduction** section instructions, you should now be in the **Web App & API Protection** |
+| 1. Following the **Introduction** section instructions, you should now be in the **My Namespaces** mangagement|
 |                                                                                                               |
-|    configuration window. If, for some reason, you are not in the **Web App & API Protection** window, use the |
+|    window. If, for some reason, you are not in the **My Namespaces** management window, In the top right      |
 |                                                                                                               |
-|    **Select Service** in the left-hand navigation, and click **Web App & API Protection** as shown in the     |
-|                                                                                                               |
-|    *Introduction section, Task 2, Step 9*.                                                                    |
-+---------------------------------------------------------------------------------------------------------------+
-| 2. In the top right corner of the Distributed Cloud Console, click the **User Icon** dropdown and select      |
-|                                                                                                               |
-|    **Account Settings**.                                                                                      |
+|    corner of the Distributed Cloud Console, click the **User Icon** dropdown and select **Account Settings**. |
 |                                                                                                               |
 | |lab1-Account_Settings|                                                                                       |
 +---------------------------------------------------------------------------------------------------------------+
-| 3. In the resulting screen, click **Credentials** under the **Personal Management** Heading on the left.      |
+| 2. In the resulting screen, click **Credentials** under the **Personal Management** Heading on the left.      |
 |                                                                                                               |
 | |lab1-Credentials|                                                                                            |
 +---------------------------------------------------------------------------------------------------------------+
-| 4. Click **Add Credentials**.                                                                                 |
+| 3. Click **Add Credentials**.                                                                                 |
 |                                                                                                               |
 | |lab1-Add_Credentials|                                                                                        |
 +---------------------------------------------------------------------------------------------------------------+
-| 5. Fill in the resulting form with the following values and then click **Generate**                           |
+| 4. Fill in the resulting form with the following values and then click **Generate**                           |
 |                                                                                                               |
 |    * **Credential Name ID:**  *<namespace>-api-token*                                                         |
 |    * **Credential Type: Select:** *API Token*                                                                 |
@@ -61,7 +55,7 @@ utilizing the Developer Portal.
 |                                                                                                               |
 | |lab1-Generate_API_Token|                                                                                     |
 +---------------------------------------------------------------------------------------------------------------+
-| 6. On the form that appears, copy your API token and save it for use later.  Then click **Done**.             |
+| 5. On the form that appears, copy your API token and save it for use later.  Then click **Done**.             |
 |                                                                                                               |
 | |lab1-API_Token|                                                                                              |
 |                                                                                                               |
@@ -197,6 +191,10 @@ utilizing the Developer Portal.
 |    dropdown in the left-hand navigation, and click **Web App & API Protection**.                              |
 |                                                                                                               |
 | |lab1-Portal_Console_WebApp|                                                                                  |
+|                                                                                                               |
+| .. note::                                                                                                     |
+|    *If you recieve a message that You cannot access this feature with your current role, select your*         |
+|    *namespace from the namespace dropdown in the top left under Web App & API Protection.*                    |
 +---------------------------------------------------------------------------------------------------------------+
 | 6. From the left navigation sidebar click **Manage** and click **App Firewall**.  You should see an App       |
 |                                                                                                               |
