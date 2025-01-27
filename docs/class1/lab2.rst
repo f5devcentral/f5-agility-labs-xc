@@ -10,7 +10,7 @@ you will configure the deployment in Distributed Cloud where application traffic
 your application running in the public cloud.  You will use a CE node that has already been deployed in the public cloud
 environment. In this example, the application does not have Internet connectivity via the public cloud.
 
-Your design includes the following workflow Client -> RE -> CE -> Protected application resource.  Let's get started!
+Your design includes the following workflow **Client -> RE -> CE -> Protected application resource**.  Let's get started!
 
 .. image:: _static/lab2-appworld2025-topology-diagram.png
 
@@ -27,48 +27,49 @@ First, you will create an Origin Pool that refers to the "Private Endpoint" site
 +------------------------------------------------------------------------------------------------------------+
 || 1. Start in F5 Distributed Cloud Console and switch back to the **Multi-Cloud App Connect** context.      |
 ||                                                                                                           |
-|| 2. Navigate the menu to go to **"Manage"->"Load Balancers"->"Origin Pools"**. Click on *Add Origin Pool*. |
+|| 2. Navigate the menu to go to **Manage->Load Balancers->Origin Pools**. Click on **Add Origin Pool**.     |
 ||                                                                                                           |
 || 3. Enter the following variables:                                                                         |
 ||                                                                                                           |
 +------------------------------------------------------------------------------------------------------------+
 |                                                                                                            |
-|   ================================= =====                                                                  |
+|   ================================= =======                                                                |
 |   *Variable*                        *Value*                                                                |
-|   ================================= =====                                                                  |
+|   ================================= =======                                                                |
 |   Name                              **[NAMESPACE]-private-ce-pool**                                        |
-|   ================================= =====                                                                  |
+|   ================================= =======                                                                |
 |                                                                                                            |
 +------------------------------------------------------------------------------------------------------------+
 ||                                                                                                           |
-|| 4. Click on "Add Item" under the section "Origin Servers".                                                |
+|| 4. Click on **Add Item** under the **Origin Servers**.                                                    |
 ||                                                                                                           |
 +------------------------------------------------------------------------------------------------------------+
 |                                                                                                            |
-|   ================================= =====                                                                  |
-|   Variable                          Value                                                                  |
-|   ================================= =====                                                                  |
-|   Select Type of Origin Server      DNS Name of Origin Server on given Sites                               |
-|   DNS Name                          private.lab.f5demos.internal                                           |
-|   Site                              system/student-awsnet                                                  |
-|   ================================= =====                                                                  |
+|   ================================= =======                                                                |
+|   *Variable*                        *Value*                                                                |
+|   ================================= =======                                                                |
+|   Select Type of Origin Server      **DNS Name of Origin Server on given Sites**                           |
+|   DNS Name                          **private.lab.f5demos.internal**                                       |
+|   Site                              **system/student-awsnet**                                              |
+|   Select Network on the Site        **Inside Network**                                                     |
+|   ================================= =======                                                                |
 +------------------------------------------------------------------------------------------------------------+   
 |                                                                                                            |
 | |lab301|                                                                                                   | 
 |                                                                                                            |
 ||                                                                                                           |
-|| 5. Click on **"Apply"** to return to the previous screen.                                                 |
+|| 5. Click on **Apply** to return to the previous screen.                                                   |
 ||                                                                                                           |
-|| 6. Below the **"Origin Servers"** section fill in the Origin Server Port information.                     |     
+|| 6. Below the **Origin Servers** section fill in the Origin Server Port information.                       |     
 ||                                                                                                           |
 +------------------------------------------------------------------------------------------------------------+
 |                                                                                                            |
 |                                                                                                            |
-|   ================================= =====                                                                  |
-|   *Variable*                          *Value*                                                              |
-|   ================================= =====                                                                  |
+|   ================================= ========                                                               |
+|   *Variable*                        *Value*                                                                |
+|   ================================= ========                                                               |
 |   Port                              **8080**                                                               |
-|   ================================= =====                                                                  |
+|   ================================= ========                                                               |
 |                                                                                                            |
 +------------------------------------------------------------------------------------------------------------+   
 ||                                                                                                           |
@@ -87,43 +88,43 @@ Now we will deploy a Load Balancer on the CE node that was deployed in the AWS V
 +-----------------------------------------------------------------------------------------------------------------------------------+
 || 1. Start in F5 Distributed Cloud Console and switch back to the **Multi-Cloud App Connect** context.                             |
 ||                                                                                                                                  |
-|| 2. Navigate the menu to go to **"Manage"->"Load Balancers"-> "HTTP Loabalancers"**.  Click on *Add HTTP Loadbalancer*.           |
+|| 2. Navigate the menu to go to **Manage->Load Balancers-> HTTP Load Balancers**.  Click on **Add HTTP Load Balancer**.            |
 ||                                                                                                                                  |
 || 3. Enter the following variables:                                                                                                |
 ||                                                                                                                                  |
 +-----------------------------------------------------------------------------------------------------------------------------------+
 |                                                                                                                                   |
 |                                                                                                                                   |
-|   ================================= =====                                                                                         |
-|   Variable                          Value                                                                                         |
-|   ================================= =====                                                                                         |
-|   Name                              [NAMESPACE]-private-ce-lb                                                                     |
-|   Domains                           [NAMESPACE]-2.lab-sec.f5demos.com                                                             |
-|   Select type of Load Balancer      HTTP                                                                                          |
-|   Automatically Manage DNS Records  No/Unchecked                                                                                  |
-|   ================================= =====                                                                                         |
+|   ================================= =======                                                                                       |
+|   *Variable*                        *Value*                                                                                       |
+|   ================================= =======                                                                                       |
+|   Name                              **[NAMESPACE]-private-ce-lb**                                                                 |
+|   Domains                           **[NAMESPACE]-2.lab-sec.f5demos.com**                                                         |
+|   Select type of Load Balancer      **HTTP**                                                                                      |
+|   Automatically Manage DNS Records  **No/Unchecked**                                                                              |
+|   ================================= =======                                                                                       |
 |                                                                                                                                   |
 +-----------------------------------------------------------------------------------------------------------------------------------+                                                                                       
 |                                                                                                                                   |
 |  |lab311|                                                                                                                         |
 ||                                                                                                                                  |
-|| 4. Under Origin Pools Click *"Add Item"*.                                                                                        |
+|| 4. Under **Origin Pools** Click **Add Item**.                                                                                    |
 ||                                                                                                                                  |
 |  |lab302|                                                                                                                         |
 ||                                                                                                                                  |
-|| 5. Select the recently created **[NAMESPACE]-private-ce-pool** under Origin pool and then click *"Apply"*.                       |
+|| 5. Select the recently created **[NAMESPACE]-private-ce-pool** under Origin pool and then click **Apply**.                       |
 ||                                                                                                                                  |
-|  |lab303|                                                                                                                         |
+|  |lab314|                                                                                                                         |
 ||                                                                                                                                  |
-|| 6. Now you can see your Origin Pool has been added to the HTTP Loadbalancer Configuration.                                       |
+|| 6. Now you can see your Origin Pool has been added to the HTTP load balancer configuration.                                      |
 ||                                                                                                                                  |
 |  |lab304|                                                                                                                         |
 ||                                                                                                                                  |
-|| 7. Now we want to confirm how this Load Balancer is advertised, we will select the **"Other Settings"** on the left hand side.   |
-||    This will auto-scroll the configuations towards the bottom of the Load Balancer configuration section labled                  |
-||    **"Other Settings"**.                                                                                                         |
+|| 7. Now we want to confirm how this Load Balancer is advertised, we will select the **Other Settings** on the left hand side.     |
+||    This will auto-scroll the configuation towards the bottom of the Load Balancer configuration section labeled                  |
+||    **Other Settings**.                                                                                                           |
 ||                                                                                                                                  |
-|| 8. Under *VIP Advertisement* Confirm it is set to *Internet*. This will allow *XC* to advertise the Virtual IP address.          |
+|| 8. Under **VIP Advertisement** Confirm it is set to **Internet**. This will allow *XC* to advertise the Virtual IP address.      |
 ||                                                                                                                                  |
 || |lab305|                                                                                                                         |
 ||                                                                                                                                  |
@@ -133,19 +134,19 @@ Now we will deploy a Load Balancer on the CE node that was deployed in the AWS V
 
 Task 3: Configure WAF Policy
 ----------------------------
-Now that we have our load balancer and orign server configured we want to make sure we are protecting the origin server.  Here we   
-are easily applying a pre-existing shared WAF policy to our loadbalancer.  The shared WAF policy is available for all namespaces
+Now that we have our load balancer and orign server configured we want to make sure we are protecting the origin server.  Here you
+can easily applying a pre-existing shared WAF policy to our load balancer.  The shared WAF policy is available for all namespaces
 under this tenant.
 
 +-----------------------------------------------------------------------------------------------------------------------------------+
-|| 1. Under the *Web Application Firewall* section.                                                                                 |
+|| 1. Under the **Web Application Firewall** section.                                                                               |
 ||                                                                                                                                  |
 || 2. Choose the following options:                                                                                                 |
 ||                                                                                                                                  | 
 +-----------------------------------------------------------------------------------------------------------------------------------+
 |                                                                                                                                   |
 |   =============================== =================================                                                               |
-|   Variable                        Value                                                                                           |
+|   *Variable*                      *Value*                                                                                         |
 |   =============================== =================================                                                               |
 |   Web Application Firewall (WAF)  **Enable**                                                                                      |
 |   Select App Firewall             **shared/base-appfw**                                                                           |
@@ -153,12 +154,8 @@ under this tenant.
 |                                                                                                                                   |
 +-----------------------------------------------------------------------------------------------------------------------------------+
 ||                                                                                                                                  |
-|| 3.  Scroll to the botton of the screen and click **"Save and Exit"** to create the HTTP Load Balancer.                           |
+|| 3.  Scroll to the botton of the screen and click **Save and Exit** to create the HTTP Load Balancer.                             |
 ||                                                                                                                                  |
-|      Once the HTTP Load Balancer has been deployed, you should now be able to go to the DNS name that you entered                 |
-|      previously in a web browser.  The FQDN we used in our example is http://[NAMESPACE]-2.lab-sec.f5demos.com.                   |
-||                                                                                                                                  |
-||  4.  Click on **"Save and Exit"** to complete the Load Balancer configuration.                                                   |
 ||                                                                                                                                  |
 +-----------------------------------------------------------------------------------------------------------------------------------+
 
@@ -184,13 +181,15 @@ In this topology we are sending traffic to the application via the public IP adv
 in AWS via the connection to the CE node in AWS.
 
 +-----------------------------------------------------------------------------------------------------------------------------------+
-| Try adding the following to the URL "/?cat%20/etc/passwd"                                                                         |
 |                                                                                                                                   |
-| You should see a block page.                                                                                                      |
+| Using some of the sample attacks below, add the URI path & variables to your application to generate                              |
+| security event data.                                                                                                              |
 |                                                                                                                                   |
-| Try adding the following to the URL "/cart?search=aaa’><script>prompt(‘Please+enter+your+password’);</script>"                    |
+|    * /?cmd=cat%20/etc/passwd                                                                                                      |
+|    * /product?id=4%20OR%201=1                                                                                                     |
+|    * /cart?search=aaa'><script>prompt('Please+enter+your+password');</script>                                                     |
 |                                                                                                                                   |
-| You should see a block page.                                                                                                      |
+| Just like in Lab 1, you should see a block page when adding the attacks to the URL.                                               |
 |                                                                                                                                   |
 |   |lab313|                                                                                                                        |                                      
 |                                                                                                                                   |
@@ -199,7 +198,7 @@ in AWS via the connection to the CE node in AWS.
 +-----------------------------------------------------------------------------------------------------------------------------------+
 | **End of Lab 2**.  In this lab you configured a global load balancer with a WAF policy on a CE node running in AWS for a          |
 | private end point. That private end point was only accessible via the global load balancer.                                       |
-|                                                                                                                                   |
++-----------------------------------------------------------------------------------------------------------------------------------+
 |  |labend|                                                                                                                         |
 +-----------------------------------------------------------------------------------------------------------------------------------+
 
@@ -231,5 +230,7 @@ in AWS via the connection to the CE node in AWS.
    :width: 800px 
 .. |lab313| image:: _static/lab3-appworld2025-waf-block-message.png
    :width: 800px 
+.. |lab314| image:: _static/lab2-private-ce-pool.png
+   :width: 800px
 .. |labend| image:: _static/labend.png
    :width: 800px

@@ -4,7 +4,8 @@ Lab 1: API-First Console
 This lab will focus on demonstrating the API-first capabilities of the F5 Distributed Cloud
 Console. Students will begin by creating an API token for authenticating to the API, followed 
 by exploring the Distributed Cloud Developer Portal and utilizing it to query a live 
-configuration. Finally, the lab concludes with using Postman to deploy an application.
+configuration. Finally, the lab concludes with using the Distributed Cloud Developer Portal
+to create an Application Firewall.
 
 For the tasks that follow, you should have already noted your individual **namespace**. If you
 failed to note it, return to the **Introduction** section of this lab, follow the instructions
