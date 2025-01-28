@@ -25,7 +25,7 @@ CE node in the public cloud. The only way the application can be accessed is via
 First, you will create an Origin Pool that refers to the "Private Endpoint" site in our lab environment.
 
 +------------------------------------------------------------------------------------------------------------+
-|| 1. Start in F5 Distributed Cloud Console and switch back to the **Multi-Cloud App Connect** context.      |
+|| 1. Start in F5 Distributed Cloud Console and switch back to the **Multi-Cloud App Connect** workspace.    |
 ||                                                                                                           |
 || 2. Navigate the menu to go to **Manage->Load Balancers->Origin Pools**. Click on **Add Origin Pool**.     |
 ||                                                                                                           |
@@ -50,7 +50,7 @@ First, you will create an Origin Pool that refers to the "Private Endpoint" site
 |   ================================= =======                                                                |
 |   Select Type of Origin Server      **DNS Name of Origin Server on given Sites**                           |
 |   DNS Name                          **private.lab.f5demos.internal**                                       |
-|   Site                              **system/student-awsnet**                                              |
+|   Site                              **system/appworld-awsnet**                                             |
 |   Select Network on the Site        **Inside Network**                                                     |
 |   ================================= =======                                                                |
 +------------------------------------------------------------------------------------------------------------+   
@@ -204,7 +204,7 @@ in AWS via the connection to the CE node in AWS.
 
 .. |lab300| image:: _static/lab3-appworld2025-topology-diagram.png
    :width: 800px
-.. |lab301| image:: _static/lab3-appworld2025-task1-originserver.png
+.. |lab301| image:: _static/lab3-appworld2025-task1-originserverr.png
    :width: 800px
 .. |lab302| image:: _static/lab3-appworld2025-task2-lb-add-origin-pool.png
    :width: 800px
