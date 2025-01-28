@@ -111,7 +111,7 @@ Network.
 +---------------------------------------------------------------------------------------------------------------+
 
 +---------------------------------------------------------------------------------------------------------------+
-| 12. In the current window's left-hand navigation, click **Origins**. Next, click **Add Item Pools** section of|
+| 12. In the current window's left-hand navigation, click **Origins**. Next, click **Add Item** section of      |
 |     **Origins**.                                                                                              |
 +---------------------------------------------------------------------------------------------------------------+
 | |lab010|                                                                                                      |
@@ -131,12 +131,13 @@ Network.
 | 16. In the resulting **HTTP Load Balancer** window, scroll to the **Other Settings** section and note the     |
 |     **VIP Advertisement** setting.                                                                            |
 |                                                                                                               |
-| 17. Click **Save and Exit** at the bottom of the **HTTP Load Balancer** configuration screen.                 |
-|                                                                                                               |
 | .. note::                                                                                                     |
 |    *The VIP Advertisement selection controls how/where the application is advertised. The "Internet" setting* |
 |    *means that this application will be advertised globally using the F5 Distributed Cloud Global Network*    |
 |    *utilizing Anycast.*                                                                                       |
+|                                                                                                               |
+| 17. Click **Save and Exit** at the bottom of the **HTTP Load Balancer** configuration screen.                 |
+|                                                                                                               |
 +---------------------------------------------------------------------------------------------------------------+
 | |lab012|                                                                                                      |
 +---------------------------------------------------------------------------------------------------------------+
