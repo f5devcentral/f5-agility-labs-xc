@@ -1,3 +1,5 @@
+.. _adv-lab1:
+
 Lab 1: Advanced Load Balancer and Origin
 =====================================
 
