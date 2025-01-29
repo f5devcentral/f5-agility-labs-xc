@@ -35,7 +35,7 @@ This Load Balancer will be used throughout the course.
 
 .. note ::
 
-   Refer to `Lab 1 Advanced <adv_lab1.html>`_ for additional steps on how to create a Load Balancer and Origin Pool.
+   Refer to `Lab 1 Advanced <adv_lab1>`_ for additional steps on how to create a Load Balancer and Origin Pool.
 
 #. In the left top click the F5 ball and navigate to the **Web App & API Protection** Tile.
 
