@@ -20,6 +20,11 @@ Task 1: Simulate Cross Site Scripting Attack (XXS) without Web Application Firew
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In this task, you will follow steps simulating an attack against an unprotected endpoint.
+The Distributed Cloud (XC) WAF object is pre-built for the next Task, but please review how to create this object via the Advanced Lab 4.
+
+.. note ::
+
+   Refer to `Lab 4 Advanced <adv_lab4.html>`_ for additional steps on how to create a WAF object.
 
 #. Using another browser tab, navigate to the the following URL.
 
