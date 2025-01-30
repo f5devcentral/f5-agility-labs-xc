@@ -4,24 +4,24 @@ Lab 2: Advanced API Inventory - Shadow
 **Scenario**
 
 A fast-growing digital banking startup, frequently deploys updates to its banking application 
-without thorough review. This practice often results in:
+without thorough review. 
 
-Exposed Sensitive API Endpoints
-Regulatory Risks
+This practice often results in:
+
+- Exposed Sensitive API Endpoints
+- Regulatory Risks
 
 To address these issues, the company must:
 
-Discover APIs: Identify all live endpoints.
-Enforce Policies: Restrict exposure to approved endpoints only.
+- Discover APIs: Identify all live endpoints.
+- Enforce Policies: Restrict exposure to approved endpoints only.
 
 The goal is to ensure secure, compliant, and efficient API management for the banking application.
-
 
 **Expected Lab Time: 20 minutes**
 
 Task 1: Simulate access to a Shadow API
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 
 #. Using another browser tab, navigate to the the following URL.
 
@@ -30,7 +30,7 @@ Task 1: Simulate access to a Shadow API
    .. image:: _static/shared-swagger-intro.png
       :width: 800px
 
-#. In the Demo Bank API app, navigate to the /api/customerlookup/getbyheroname endpoint, expand it, and click Try it out.
+#. In the Demo Bank API app, navigate to the **/api/customerlookup/getbyheroname** endpoint, expand it, and click Try it out.
 
    .. image:: _static/lab2-swagger-try.png
       :width: 800px
@@ -245,7 +245,6 @@ previously built Load Balancer.
 Task 5: Simulate access to a Shadow API
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-
 #. Using another browser tab, navigate to the the following URL.
 
    ``http://<namespace>.lab-sec.f5demos.com/swagger``
@@ -253,7 +252,7 @@ Task 5: Simulate access to a Shadow API
    .. image:: _static/shared-swagger-intro.png
       :width: 800px
 
-#. In the Demo Bank API app, navigate to the /api/customerlookup/getbyheroname endpoint, expand it, and click Try it out.
+#. In the Demo Bank API app, navigate to the **/api/customerlookup/getbyheroname** endpoint, expand it, and click Try it out.
 
    .. image:: _static/lab2-swagger-try.png
       :width: 800px
