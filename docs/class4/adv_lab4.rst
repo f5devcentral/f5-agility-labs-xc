@@ -42,12 +42,12 @@ In this task, you will follow steps to attach a WAF policy to your Load Balancer
 #. In the resulting **Load Balancers** window, click on the three dots **...** in the
    **Action** column, and the select **Manage Configuration**.
 
-   .. image:: _static/lab4-image008v2.png
+   .. image:: _static/shared-103.png
       :width: 800px
 
 #. Click **Edit Configuration** in the top-right corner.
 
-   .. image:: _static/lab4-image009.png
+   .. image:: _static/shared-104.png
       :width: 400px
 
 #. Using the left-hand navigation, click the **Web Application Firewall** link.
