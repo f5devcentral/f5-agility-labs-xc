@@ -1,5 +1,5 @@
-Lab 2: API Inventory - Shadow
-=============================
+Lab 2: Advanced API Inventory - Shadow
+======================================
 
 **Scenario**
 
@@ -18,7 +18,7 @@ To address these issues, the company must:
 
 The goal is to ensure secure, compliant, and efficient API management for the banking application.
 
-**Expected Lab Time: 15 minutes**
+**Expected Lab Time: 20 minutes**
 
 Task 1: Simulate Allowed Access to a Shadow API
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -55,19 +55,21 @@ Task 1: Simulate Allowed Access to a Shadow API
 
       In the next steps, we will address this issue by blocking access to the shadow API endpoints. 
 
-Task 2: Enabling API Inventory
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Task 2: OpenAPI File Import
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In this task's series of steps you will enable the API Inventory feature on the
-previously built Load Balancer.
+In this task's series of steps you will download and upload a swagger file.
 
-.. note ::
+#. Open a new broswer tab and navigiate to the following URL. Download the **demobank-api-v1.json** as a file,
+   note the saved location.
 
-   Refer to `Lab 2 Advanced <adv_lab2.html>`_ for additional step on how to download and upload a swagger 
-   file and create a API Definition using the newly created OpenAPI file.
+   http://demobankapi.lab-sec.f5demos.com/lab/demobank-api-v1.json
 
-#. As review, an **API Definition** has already been created with an uploaded API File for your convenience. 
-   The swagger file doesn't include the **customerlookup/getbyheroname** endpoint.
+   .. note::
+
+      *Depending on browser, you may need to copy content and save as **demobank-api-v1.json. "Pretty-print" will need to be checked within Chrome.*
+
+#. Review the downloaded swagger. You will notice the **customerlookup/getbyheroname** is not present.
 
    .. image:: _static/lab2-swagger-example.png
       :width: 800px
@@ -75,6 +77,91 @@ previously built Load Balancer.
    .. note ::
 
       The swagger in this use is akind to an endpoint allow list.
+
+#. Click the left top click the F5 ball and navigate to the **Web App & API Protection** Tile in your browser.
+
+   .. image:: _static/lab2-task2-001.png
+      :width: 800px
+
+#. Under Manage, mouse over **File** and click on **OpenAPI Files** from the slide out.
+
+
+   .. image:: _static/lab2-openapi-files.png
+      :width: 800px
+
+#. Click on **Add OpenAPI File** top left of the OpenAPI Files page.
+
+   .. image:: _static/lab2-openapi-add.png
+      :width: 800px
+   
+
+#. In the resulting OpenAPI File window, input **demobank-api-swagger** for the Name then click **Upload File**.
+
+   .. image:: _static/lab2-openapi-upload.png
+      :width: 600px
+
+#. Navigate to the previously downloaded **demobank-api-v1.json** file, select and click on **Open**
+
+   .. image:: _static/lab2-openapi-open.png
+      :width: 700px
+
+#. Observe that the file **demobank-api-v1**  is present and the click **Save and Exit**
+
+   .. image:: _static/lab2-openapi-save.png
+      :width: 800px
+
+
+#. In the resulting OpenAPI File window, you will see the upload file with additional
+   metadata.
+
+   .. image:: _static/lab2-openapi-review.png
+      :width: 800px
+
+   .. note::
+      *You will also see a dialogue box, in the bottom left of your screen indicating the file*
+      has been successfully added.*
+
+Task 3: API Definition
+~~~~~~~~~~~~~~~~~~~~~~
+
+In this task's series of steps you will create a API Definition using the created OpenAPI object.
+
+#. In the left-hand navigation of the **Web App & API Protection** service under **Manage**, mouse over **API Management** and click on **API Definition** from the slide out.
+
+   .. image:: _static/lab2-def-apidef.png
+      :width: 700px
+
+#. In the resulting **API Definition** window, click **Add API Definition** in the main
+   window area as shown.
+
+   .. image:: _static/lab2-def-add.png
+      :width: 650px
+
+#. In the resulting **New API Definition** window, input **demobank-api-def**
+   for the **Name** under the **Metadata** section.
+
+#. In the **OpenAPI Specification Files** section, click **Add Item**.
+
+
+   .. image:: _static/lab2-def-additem.png
+      :width: 800px
+
+#. Select the version 1 of the previously uploaded OpenAPI spec file. It will be in the
+   format **<namespace>/demobank-api/v1-<current-date>**.
+
+   .. image:: _static/lab2-def-select.png
+      :width: 800px
+
+#. Once selected, click **Save and Exit** in the bottom-right corner.
+
+   .. image:: _static/lab2-def-save.png
+      :width: 800px
+
+Task 4: Enabling API Inventory
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+In this task's series of steps you will enable the API Inventory and Discovery feature on the
+previously built Load Balancer.
 
 #. In the left-hand navigation of the **Web App & API Protection** service, click on **Load Balancers > HTTP Load**
    **Balancers** under the **Manage** section.
@@ -99,15 +186,15 @@ previously built Load Balancer.
       :width: 800px
 
 #. In the second **API Definition** section, click the drop-down arrow and select the
-   pre-created API Definition **shared/api-lab-def**.
+   pre-created API Definition **<namespace>/demobank-api-def**.
 
-   .. image:: _static/lab2-lb-def-select-shared.png
+   .. image:: _static/lab2-lb-def-select.png
       :width: 800px
 
 #. Under **Validation**, select **API Inventory** from drop-down then click on
    **View Configuration**
 
-   .. image:: _static/lab2-lb-def-validation-shared.png
+   .. image:: _static/lab2-lb-def-validation.png
       :width: 800px
 
    .. image:: _static/lab2-lb-def-validation-config.png
@@ -155,7 +242,7 @@ previously built Load Balancer.
    .. image:: _static/shared-lb-save.png
       :width: 800px
 
-Task 3: Simulate Blocked Access to a Shadow API
+Task 5: Simulate Blocked Access to a Shadow API
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 #. Using another browser tab, navigate to the the following URL.

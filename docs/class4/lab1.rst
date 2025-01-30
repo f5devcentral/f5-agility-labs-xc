@@ -28,7 +28,7 @@ In this lab you will create a Application Load Balancer, attach and Origin Pool 
 **Expected Lab Time: 5 minutes**
 
 Task 1: Load Balancer and Origin Pool Review
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The following steps are a review of a Load Balancer and Origin Pool aready configured within your namespace. 
 This Load Balancer will be used throughout the course.
@@ -102,14 +102,14 @@ This Load Balancer will be used throughout the course.
       :width: 500px
 
 Task 2: Load Balancer Validation
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 #. Using another browser tab, navigate to the the following URL to confirm the Load Balancer
    has been configured properly.
 
    ``http://<namespace>.lab-sec.f5demos.com/swagger``
 
-   .. image:: _static/lab1-task1-013.png
+   .. image:: _static/shared-swagger-intro.png
       :width: 800px
 
 **End of Lab**
