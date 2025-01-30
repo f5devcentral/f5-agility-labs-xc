@@ -108,7 +108,7 @@ previously built Load Balancer object delivering the targeted API.
    .. image:: _static/shared-lb-save.png
       :width: 800px
 
-Task 3 : Simulate Blocked Access to Sensitive Data API
+Task 3: Simulate Blocked Access to Sensitive Data API
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 #. Using another browser tab, navigate to the the following URL.
