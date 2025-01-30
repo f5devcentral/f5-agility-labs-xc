@@ -155,6 +155,20 @@ In this task you will follow steps simulating an attack againt a protected endpo
    .. image:: _static/lab4-image014.png
       :width: 800px
 
+Task 5 [Optional]: Explore the Distributed Cloud Console to find this Security Event
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#. Using the Server Response body request ID, try and discover this Security Event within your Distributed Cloud Console.
+
+#. How many signatures did this request trigger?
+
+#. What signature sets did this request trigger?
+
+#. Now, click the **F5 ball** in the upper-left corner to navigate back to the "Home" screen of your Distributed Cloud Console to prepare for the next lab.
+
+   .. image:: _static/shared-004.png
+      :width: 400px
+
 **End of Lab**
 
 .. image:: _static/labend.png

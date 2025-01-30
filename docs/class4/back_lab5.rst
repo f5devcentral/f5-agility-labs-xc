@@ -156,6 +156,20 @@ In this task, you will send more than 10 requests within a Minute
    .. image:: _static/lab4-image031.png
       :width: 800px
 
+Task 4 [Optional]: Explore the Distributed Cloud Console to find this Security Event
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#. Using the Server Response body request ID, try and discover this Security Event within your Distributed Cloud Console.
+
+#. What was the server response code?
+
+#. What detection mechanism was used to block this request?
+
+#. Now, click the **F5 ball** in the upper-left corner to navigate back to the "Home" screen of your Distributed Cloud Console to prepare for the next lab.
+
+   .. image:: _static/shared-004.png
+      :width: 400px
+
 **End of Lab**
 
 .. image:: _static/labend.png
