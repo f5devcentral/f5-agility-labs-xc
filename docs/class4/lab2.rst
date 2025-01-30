@@ -8,20 +8,20 @@ without thorough review.
 
 This practice often results in:
 
-- Exposed Sensitive API Endpoints
-- Regulatory Risks
+* Exposed Sensitive API Endpoints
+* Regulatory Risks
 
 To address these issues, the company must:
 
-- Discover APIs: Identify all live endpoints.
-- Enforce Policies: Restrict exposure to approved endpoints only.
+* Discover APIs: Identify all live endpoints.
+* Enforce Policies: Restrict exposure to approved endpoints only.
 
 The goal is to ensure secure, compliant, and efficient API management for the banking application.
 
 **Expected Lab Time: 15 minutes**
 
-Task 1: Simulate access to a Shadow API
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Task 1: Simulate Allowed Access to a Shadow API
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 #. Using another browser tab, navigate to the the following URL.
 
@@ -30,7 +30,7 @@ Task 1: Simulate access to a Shadow API
    .. image:: _static/shared-swagger-intro.png
       :width: 800px
 
-#. In the Demo Bank API app, navigate to the **/api/customerlookup/getbyheroname** endpoint, expand it, and click Try it out.
+#. In the Demo Bank API app, navigate to the **/api/customerlookup/getbyheroname** endpoint, expand it, and click **Try it out**.
 
    .. image:: _static/lab2-swagger-try.png
       :width: 800px
@@ -41,7 +41,7 @@ Task 1: Simulate access to a Shadow API
       A shadow API refers to an undocumented or unintended API endpoint that exists alongside officially supported APIs, often posing security or operational risks due to lack of visibility or management.
 
 
-#. Enter 'Iron Man ' in the "heroname" field.. Click Execute.
+#. Enter 'Iron Man' in the "heroname" field.. Click **Execute**.
 
    .. image:: _static/lab2-swagger-execute.png
       :width: 800px
@@ -55,7 +55,7 @@ Task 1: Simulate access to a Shadow API
 
       In the next steps, we will address this issue by blocking access to the shadow API endpoints. 
 
-Task 2 : Enabling API Inventory
+Task 2: Enabling API Inventory
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In this task's series of steps you will enable the API Inventory feature on the
@@ -155,8 +155,8 @@ previously built Load Balancer.
    .. image:: _static/shared-lb-save.png
       :width: 800px
 
-Task 3: Simulate access to a Shadow API
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Task 3: Simulate Blocked Access to a Shadow API
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 #. Using another browser tab, navigate to the the following URL.
 
@@ -165,12 +165,12 @@ Task 3: Simulate access to a Shadow API
    .. image:: _static/shared-swagger-intro.png
       :width: 800px
 
-#. In the Demo Bank API app, navigate to the **/api/customerlookup/getbyheroname** endpoint, expand it, and click Try it out.
+#. In the Demo Bank API app, navigate to the **/api/customerlookup/getbyheroname** endpoint, expand it, and click **Try it out**.
 
    .. image:: _static/lab2-swagger-try.png
       :width: 800px
 
-#. Enter 'Iron Man' in the "heroname" field.. Click Execute.
+#. Enter 'Iron Man' in the "heroname" field.. Click **Execute**.
 
    .. image:: _static/lab2-swagger-execute.png
       :width: 800px
@@ -182,7 +182,7 @@ Task 3: Simulate access to a Shadow API
 
    .. note ::
 
-      You should now be blocked from accessing the 'getbyheroname' API endpoint, as it is a shadow API—an undocumented and unapproved endpoint.
+      You should now be blocked from accessing the 'getbyheroname' API endpoint, as it is a shadow API, an undocumented and unapproved endpoint.
 
 **End of Lab**
 
