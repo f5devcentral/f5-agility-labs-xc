@@ -167,8 +167,8 @@ The FQDN we used in our example is http://[NAMESPACE]-2.lab-sec.f5demos.com/.
 
 +-----------------------------------------------------------------------------------------------------------------------------------+
 | .. note::                                                                                                                         |
-|    *It can take a minute or so before the configuration is pushed to the CE node, **appworld-awsnet**.  If the verify does not*   |
-|    *work, please try again after waiting for a minute.*                                                                           |
+|    *It can take a minute or so before the configuration is pushed to the CE node, appworld-awsnet.  If the verify does not*       |
+|    *work on first attempt, please try again after waiting for a minute.*                                                          |
 |                                                                                                                                   |
 ||  The private demo app should look like the following:                                                                            |
 ||                                                                                                                                  |
@@ -197,7 +197,7 @@ in AWS via the connection to the CE node in AWS.
 |                                                                                                                                   |
 | .. note::                                                                                                                         |
 |    *Try using the AI Assistant to get a detailed explanation on the attacks that are blocked.  You can view that by selecting*    |
-|    *the event in the Security Dashboard, then selecting **Explain with AI** for the event, which is located under **Actions**.*   |
+|    *the event in the Security Dashboard, then selecting "Explain with AI" for the event, which is located under "Actions".*       |
 |                                                                                                                                   |
 |   |lab313|                                                                                                                        |                                      
 |                                                                                                                                   |
