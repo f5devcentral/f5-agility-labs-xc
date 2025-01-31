@@ -138,10 +138,52 @@ Accessing F5 Distributed Cloud
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| Attendees will now be presented the Home page of the F% Distributed Cloud Console with all   |
+| Attendees will now be presented the Home page of the F5 Distributed Cloud Console with all   |
 | the workspaces, features and services available.                                             |
 +----------------------------------------------------------------------------------------------+
 | |intro015|                                                                                   |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| You can adjust your work domains and skill level (not required) by clicking on the           |
+| **Account** icon in the top right of the screen and then clicking on **Account Settings**.   |
+|                                                                                              |
+| In the resulting window you can observe the **Work domains and skill level** section and     |
+| other administrative functions.                                                              |
+|                                                                                              |
+| .. note::                                                                                    |
+|    *For the purposes of this lab, permissions have been restricted to lab operations.  As*   |
+|    *some menus will be locked and not visible.*                                              |
++----------------------------------------------------------------------------------------------+
+| |intro050|                                                                                   |
+|                                                                                              |
+| |intro051|                                                                                   |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| Namespaces, which provide an environment for isolating configured applications or            |
+| enforcing role-based access controls, are leveraged within the F5 Distributed Cloud          |
+| Console.  For the purposes of this lab, each lab attendee has been provided a unique         |
+| **namespace** which you should be defaulted to (in terms of GUI navigation) for all tasks    |
+| performed through the course of this lab.                                                    |
+|                                                                                              |
+| Click on the **Select Workspace** in the left-hand navigation. In the resulting fly out      |
+| navigation, click **Web App & API Protection**.                                              |
+|                                                                                              |
+| In the **Web App & API Protection** workspace screen observe the URL. In the lefthand        |
+| menu, confirm that your unique namespace is selected, if not, choose it, and then look       |
+| at the URL path, locate the **<adjective-animal>** namespace that you have been              |
+| assigned. It will be located in the portion of the URL path between */namespaces/* and       |
+| */overview/* as shown in this example **…/namespaces/<your-namespace>/overview/…**. Note     |
+| this namespace as it will be used throughout the lab tasks that follow.                      |
+|                                                                                              |
+| .. note::                                                                                    |
+|    *Administratively, there are other ways to find namespaces. Due to access and permission* |
+|    *restrictions for this particular lab, those menus are not available.*                    |
++----------------------------------------------------------------------------------------------+
+| |intro052|                                                                                   |
+|                                                                                              |
+| |intro053|                                                                                   |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
@@ -179,6 +221,14 @@ Accessing F5 Distributed Cloud
 .. |intro014| image:: _static/intro-14.png
    :width: 800px
 .. |intro015| image:: _static/intro-15.png
+   :width: 800px
+.. |intro050| image:: _static/intro-50.png
+   :width: 800px
+.. |intro051| image:: _static/intro-51.png
+   :width: 800px
+.. |intro052| image:: _static/intro-52.png
+   :width: 800px
+.. |intro053| image:: _static/intro-53.png
    :width: 800px
 .. |labbgn| image:: _static/labbgn.png
    :width: 800px

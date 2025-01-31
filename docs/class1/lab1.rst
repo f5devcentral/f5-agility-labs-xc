@@ -345,6 +345,17 @@ Monitoring dashboard, and gather security event details.
 +---------------------------------------------------------------------------------------------------------------+
 
 +---------------------------------------------------------------------------------------------------------------+
+| 12. Scroll back to the top and on the right-hand size under Actions click "...". Now click "Explain with AI". |
+|     F5 Distributed Cloud AI Assistant will provide additional information about the security event including  |
+|     an analysis of the event, recommended follow-up actions, and more detection details should you need to    |
+|     investigate further.                                                                                      |
++---------------------------------------------------------------------------------------------------------------+
+| |lab042|                                                                                                      |
+|                                                                                                               |
+| |lab043|                                                                                                      |
++---------------------------------------------------------------------------------------------------------------+
+
++---------------------------------------------------------------------------------------------------------------+
 | **End of Lab 1:**  This concludes Lab 1.  In this lab you created an origin pool to connect to the            |
 | application, you then created a load balancer and associated the origin pool to the load balancer.  This      |
 | allowed the application to be advertised via the F5 Distributed Cloud Global Network.  The Distributed Cloud  |
@@ -438,6 +449,10 @@ Monitoring dashboard, and gather security event details.
 .. |lab040| image:: _static/lab1-040.png
    :width: 800px
 .. |lab041| image:: _static/lab1-041.png
+   :width: 800px
+.. |lab042| image:: _static/lab1-042.png
+   :width: 800px
+.. |lab043| image:: _static/lab1-043.png
    :width: 800px
 .. |labend| image:: _static/labend.png
    :width: 800px
