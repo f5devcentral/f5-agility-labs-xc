@@ -26,7 +26,7 @@ If you are not already logged into the console, please do so now by opening the 
 
 https://f5-xc-lab-mcn.console.ves.volterra.io/
 
-From the **Select service** menu, click on **Multi-Cloud Network Connect** and then click on **Sites,**
+From the **Select service** menu, click on **Multi-Cloud Network Connect** and then click on **Infrastructure/Sites,**
 
 Your XC Node should have registered successfully and will appear green with a Health Score of 100. You may need to click **Refresh** in the top right corner
 if you do not see your animal name. In this example I was assigned and filtered for **busy-goblin**.
@@ -147,7 +147,7 @@ Global Virtual Network
 
 To connect two or more Distributed Cloud node environments together across the Distributed Cloud network we will need to connect the sites through a Global Virtual Network.  
 
-Confirm you are still in the **Multi-Cloud Network Connect** Console under **Sites**. If not, click on the **Select Service** in the left-hand navigation and click on **Multi-Cloud Network Connect**.
+Confirm you are still in the **Multi-Cloud Network Connect** Console under **Infrastructure/Sites**. If not, click on the **Select Service** in the left-hand navigation and click on **Multi-Cloud Network Connect**.
 
 On the left side menu, navigate to  **Manage >> Networking >> Virtual Networks**. 
 
@@ -274,7 +274,7 @@ Type **ping -O 10.0.3.253** and hit **Enter**. You **WILL NOT** get a response. 
 
 .. image:: ../images/pingO.png
 
-Back in the XC Console, navigate to **Multi-Cloud Network Connect >> Sites** and find your **"animal-name"**
+Back in the XC Console, navigate to **Multi-Cloud Network Connect >> Infrastructure/Sites** and find your **"animal-name"**
 Click the **3 buttons** under the **Action Menu** under **"your animal name"** and select **Manage Configuration**. 
 
 In the top right click **Edit Configuration**. 
@@ -316,7 +316,7 @@ Check back on your web shell tab with the ping going. Success!!
 .. important:: If you want to tear down this connectivity it is as easy as removing the label. 
 
 
-In XC Console, navigate to **Multi-Cloud Network Connect** >> **Sites** and click directly on your **"animal-name"** and finally click on the **Tools** menu on the top, far right. 
+In XC Console, navigate to **Multi-Cloud Network Connect** >> **Infrastructure/Sites** and click directly on your **"animal-name"** and finally click on the **Tools** menu on the top, far right. 
 
 .. note:: If you do not see the Tools menu there should be a right chevron ">" that will allow you to access additional menu items.
 
