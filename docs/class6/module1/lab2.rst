@@ -541,7 +541,7 @@ Click **Cancel and Exit**.
 
 You can now feel free to explore the **Multi-Cloud Network Connect** Site menus while everyone is getting caught up. 
 
-Navigate to **Overview > Sites** and then to the tab view of **Site Map** to see an overview with the health of all deployed sites. For site security, navigate to **Overview > Security > Firewall Events** to review the firewall logs, and finally, go to the **Service Info** section at the bottom of the left-hand frame, and click on **About** to learn more about Network Connect.
+Navigate to **Overview > Infrastructure/Sites** and then to the tab view of **Site Map** to see an overview with the health of all deployed sites. For site security, navigate to **Overview > Security > Firewall Events** to review the firewall logs, and finally, go to the **Service Info** section at the bottom of the left-hand frame, and click on **About** to learn more about Network Connect.
 
 
 Sanity Check
