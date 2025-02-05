@@ -25,7 +25,7 @@ CE node in the public cloud. The only way the application can be accessed is via
 First, you will create an Origin Pool that refers to the "Private Endpoint" site in our lab environment.
 
 +------------------------------------------------------------------------------------------------------------+
-|| 1. Start in F5 Distributed Cloud Console and switch back to the **Multi-Cloud App Connect** context.      |
+|| 1. Start in F5 Distributed Cloud Console and switch back to the **Multi-Cloud App Connect** workspace.    |
 ||                                                                                                           |
 || 2. Navigate the menu to go to **Manage->Load Balancers->Origin Pools**. Click on **Add Origin Pool**.     |
 ||                                                                                                           |
@@ -50,7 +50,7 @@ First, you will create an Origin Pool that refers to the "Private Endpoint" site
 |   ================================= =======                                                                |
 |   Select Type of Origin Server      **DNS Name of Origin Server on given Sites**                           |
 |   DNS Name                          **private.lab.f5demos.internal**                                       |
-|   Site                              **system/student-awsnet**                                              |
+|   Site                              **system/appworld-awsnet**                                             |
 |   Select Network on the Site        **Inside Network**                                                     |
 |   ================================= =======                                                                |
 +------------------------------------------------------------------------------------------------------------+   
@@ -166,6 +166,10 @@ You should now be able to go to the DNS name that you created in this Load Balan
 The FQDN we used in our example is http://[NAMESPACE]-2.lab-sec.f5demos.com/.  
 
 +-----------------------------------------------------------------------------------------------------------------------------------+
+| .. note::                                                                                                                         |
+|    *It can take a minute or so before the configuration is pushed to the CE node, appworld-awsnet.  If the verify does not*       |
+|    *work on first attempt, please try again after waiting for a minute.*                                                          |
+|                                                                                                                                   |
 ||  The private demo app should look like the following:                                                                            |
 ||                                                                                                                                  |
 |  |lab312|                                                                                                                         |
@@ -191,6 +195,10 @@ in AWS via the connection to the CE node in AWS.
 |                                                                                                                                   |
 | Just like in Lab 1, you should see a block page when adding the attacks to the URL.                                               |
 |                                                                                                                                   |
+| .. note::                                                                                                                         |
+|    *Try using the AI Assistant to get a detailed explanation on the attacks that are blocked.  You can view that by selecting*    |
+|    *the event in the Security Dashboard, then selecting "Explain with AI" for the event, which is located under "Actions".*       |
+|                                                                                                                                   |
 |   |lab313|                                                                                                                        |                                      
 |                                                                                                                                   |
 +-----------------------------------------------------------------------------------------------------------------------------------+
@@ -204,7 +212,7 @@ in AWS via the connection to the CE node in AWS.
 
 .. |lab300| image:: _static/lab3-appworld2025-topology-diagram.png
    :width: 800px
-.. |lab301| image:: _static/lab3-appworld2025-task1-originserver.png
+.. |lab301| image:: _static/lab3-appworld2025-task1-originserverr.png
    :width: 800px
 .. |lab302| image:: _static/lab3-appworld2025-task2-lb-add-origin-pool.png
    :width: 800px
