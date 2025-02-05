@@ -209,6 +209,10 @@ You should now be able to go to the DNS name that you created in this Load Balan
 The FQDN we used in our example is http://[NAMESPACE].aws.lab.f5demos.com/.  
 
 +-----------------------------------------------------------------------------------------------------------------------------------+
+| .. note::                                                                                                                         |
+|    *It can take a minute or so before the configuration is pushed to the CE node, appworld-awsnet.  If the verify does not*       |
+|    *work on first attempt, please try again after waiting for a minute.*                                                          |
+|                                                                                                                                   |
 ||  The private demo app should look like the following:                                                                            |
 ||                                                                                                                                  |
 |  |lab312|                                                                                                                         |
