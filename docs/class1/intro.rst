@@ -26,10 +26,6 @@ Course/Lab Invitation
 |                                                                                              |
 | #. **New UDF Users**                                                                         |
 | #. **Returning UDF Users going directly to Course**                                          |
-|                                                                                              |
-| .. note::                                                                                    |
-|    *The steps for new UDF Users or the steps for resetting UDF User account passwords are*   |
-|    *not shown. Please contact a member of the lab team if further assistance is needed.*     |
 +----------------------------------------------------------------------------------------------+
 | |intro001|                                                                                   |
 +----------------------------------------------------------------------------------------------+
