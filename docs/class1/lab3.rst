@@ -56,7 +56,7 @@ Now with Lab# 3 we will create an origin pool that will provide internal resourc
 We will first create an Origin Pool that refers to the "Private Endpoint" site in our lab environment.
 
 +------------------------------------------------------------------------------------------------------------+
-|| 1. Start in F5 Distributed Cloud Console and switch back to the **Multi-Cloud App Connect** context.      |
+|| 1. Start in F5 Distributed Cloud Console and switch back to the **Multi-Cloud App Connect** workspace.    |
 ||                                                                                                           |
 || 2. Navigate the menu to go to **Manage->Load Balancers->Origin Pools**. Click on **Add Origin Pool**.     |
 ||                                                                                                           |
@@ -76,13 +76,14 @@ We will first create an Origin Pool that refers to the "Private Endpoint" site i
 ||                                                                                                           |
 +------------------------------------------------------------------------------------------------------------+
 |                                                                                                            |
-|   ================================= =======                                                                |
+|   ================================= ============================================                           |
 |   *Variable*                        *Value*                                                                |
-|   ================================= =======                                                                |
+|   ================================= ============================================                           |
 |   Select Type of Origin Server      **DNS Name of Origin Server on given Sites**                           |
 |   DNS Name                          **private.lab.f5demos.internal**                                       |
-|   Site                              **system/student-awsnet**                                              |
-|   ================================= =====                                                                  |
+|   Site                              **system/appworld-awsnet**                                             |
+|   ================================= ============================================                           |
+|                                                                                                            |
 +------------------------------------------------------------------------------------------------------------+   
 |                                                                                                            |
 | |lab301|                                                                                                   | 
@@ -166,7 +167,7 @@ Now we will deploy a Load Balancer on the CE node that was deployed in the AWS V
 ||                                                                                                                                  |
 || 10. For **Site Network** select **Outside Network**                                                                              |
 ||                                                                                                                                  |
-|| 11. For **Site Reference** select **system/student-awsnet**                                                                      |
+|| 11. For **Site Reference** select **system/appworld-awsnet**                                                                     |
 ||                                                                                                                                  |
 || |lab308|                                                                                                                         |
 ||                                                                                                                                  |
@@ -278,7 +279,7 @@ We then connect to the AWS resource via it's Private IP address.
 
 .. |lab300| image:: _static/lab3-appworld2025-topology-diagram.png
    :width: 800px
-.. |lab301| image:: _static/lab3-appworld2025-task1-originserver.png
+.. |lab301| image:: _static/lab3-appworld2025-task1-originserverr.png
    :width: 800px
 .. |lab302| image:: _static/lab3-appworld2025-task2-lb-add-origin-pool.png
    :width: 800px
@@ -292,7 +293,7 @@ We then connect to the AWS resource via it's Private IP address.
    :width: 800px
 .. |lab307| image:: _static/lab3-appworld2025-list-sites-advertise.png
    :width: 800px
-.. |lab308| image:: _static/lab3-appworld2025-task2-lb-site-change.png
+.. |lab308| image:: _static/lab3-appworld2025-task2-lb-site-changee.png
    :width: 800px
 .. |lab309| image:: _static/screenshot-global-vip-private.png
    :width: 800px
