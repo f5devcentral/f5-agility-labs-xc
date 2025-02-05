@@ -28,7 +28,7 @@ Now, Lab 1 starts right after you have loaded the downloadable XC Node OVA on to
 **Prerequisite**
 ------------------
 
-.. NOTE:: You should have received an email from F5 Distributed Cloud User Management <no-reply@volterratmails.io> with the content as follows:
+.. NOTE:: You should have received an email from F5 Distributed Cloud User Management <no-reply@cloud.f5.com> with the content as follows:
 
 |
 
