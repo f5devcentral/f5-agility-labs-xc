@@ -111,7 +111,7 @@ Network.
 +---------------------------------------------------------------------------------------------------------------+
 
 +---------------------------------------------------------------------------------------------------------------+
-| 12. In the current window's left-hand navigation, click **Origins**. Next, click **Add Item Pools** section of|
+| 12. In the current window's left-hand navigation, click **Origins**. Next, click **Add Item** section of      |
 |     **Origins**.                                                                                              |
 +---------------------------------------------------------------------------------------------------------------+
 | |lab010|                                                                                                      |
@@ -131,12 +131,13 @@ Network.
 | 16. In the resulting **HTTP Load Balancer** window, scroll to the **Other Settings** section and note the     |
 |     **VIP Advertisement** setting.                                                                            |
 |                                                                                                               |
-| 17. Click **Save and Exit** at the bottom of the **HTTP Load Balancer** configuration screen.                 |
-|                                                                                                               |
 | .. note::                                                                                                     |
 |    *The VIP Advertisement selection controls how/where the application is advertised. The "Internet" setting* |
 |    *means that this application will be advertised globally using the F5 Distributed Cloud Global Network*    |
 |    *utilizing Anycast.*                                                                                       |
+|                                                                                                               |
+| 17. Click **Save and Exit** at the bottom of the **HTTP Load Balancer** configuration screen.                 |
+|                                                                                                               |
 +---------------------------------------------------------------------------------------------------------------+
 | |lab012|                                                                                                      |
 +---------------------------------------------------------------------------------------------------------------+
@@ -344,6 +345,17 @@ Monitoring dashboard, and gather security event details.
 +---------------------------------------------------------------------------------------------------------------+
 
 +---------------------------------------------------------------------------------------------------------------+
+| 12. Scroll back to the top and on the right-hand size under Actions click "...". Now click "Explain with AI". |
+|     F5 Distributed Cloud AI Assistant will provide additional information about the security event including  |
+|     an analysis of the event, recommended follow-up actions, and more detection details should you need to    |
+|     investigate further.                                                                                      |
++---------------------------------------------------------------------------------------------------------------+
+| |lab042|                                                                                                      |
+|                                                                                                               |
+| |lab043|                                                                                                      |
++---------------------------------------------------------------------------------------------------------------+
+
++---------------------------------------------------------------------------------------------------------------+
 | **End of Lab 1:**  This concludes Lab 1.  In this lab you created an origin pool to connect to the            |
 | application, you then created a load balancer and associated the origin pool to the load balancer.  This      |
 | allowed the application to be advertised via the F5 Distributed Cloud Global Network.  The Distributed Cloud  |
@@ -437,6 +449,10 @@ Monitoring dashboard, and gather security event details.
 .. |lab040| image:: _static/lab1-040.png
    :width: 800px
 .. |lab041| image:: _static/lab1-041.png
+   :width: 800px
+.. |lab042| image:: _static/lab1-042.png
+   :width: 800px
+.. |lab043| image:: _static/lab1-043.png
    :width: 800px
 .. |labend| image:: _static/labend.png
    :width: 800px
