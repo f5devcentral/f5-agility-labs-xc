@@ -1,28 +1,30 @@
-F5 Distributed Cloud: Application Firewall & Services
-================================================
+F5 Distributed Cloud: Web Application Security & Scanning
+=========================================================
 
 Welcome
 -------
 
-In this lab, participants will embark on a journey through Web Application 
-and API Protection (WAAP) within F5 Distributed Cloud. Get ready to be hands-on, 
-deploying and managing a Web Application Firewall, while gaining experience 
-with F5 Distributed Cloud Bot Defense and Malicious Users.
+This hands-on lab environment highlights the concepts and capabilties of F5 Distributed Cloud Web Application 
+and API Protection (WAAP).
 
-Objective:
-----------
+**Narrative:** 
+During the lab you will be playing the role of an Engineer at ACME Corp who responds to new business requirements quickly by implementing F5's Web Application and API security solutions. 
 
--  Gain a deeper understanding of key F5 Distributed Cloud security functions and controls
+**Goal:**
+Implement and operate an application security environment utilizing F5 SaaS-Powered Distributed Cloud core security tooling. 
+- Full walkthrough of XC WAF leveraging WAF policy creation, use, and management ​
 
--  Explore WAAP Policies, BotDefense configuration, and behavior based Malicious User
+- Understanding of security event searching, navigation, filtering and tooling with forensics and AI assistant
 
-Lab & Tasks:
-------------
+- Utilize Signature-based Bot protections
 
--  All Lab requirements will be noted in the tasks that follow
+- Explore functionality and purpose of Malicious User 
 
--  Estimated completion time: 3 Labs approximately 15-20 minutes each
+- Deploy Web Application Scanning as a continual security assessment​
 
+|intro000a|
+
+This Lab uses the **[AppWorld] F5XC Security** UDF Blueprint. 
 
 .. toctree::
    :maxdepth: 2
@@ -33,3 +35,5 @@ Lab & Tasks:
    lab*
    close*
    
+.. |intro000a| image:: _static/intro000a.png
+   :width: 800px
