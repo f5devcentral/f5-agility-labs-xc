@@ -1,11 +1,27 @@
 Lab 2: Reviewing Signature-based Bot Strategies and enabling F5 Distributed Cloud Bot Defense
 =============================================================================================
 
-The following lab tasks will guide you through a review of signature-based
-Bot protections already available via the Web Application Firewall
-configuration. The security configuration will then be extended through F5
-Distributed Bot Defense, an AI-driven, behavioral security feature set to
-protect the previously configured application from advanced Bot threats.
+**Objective:**
+
+* Review the F5 Distributed Cloud (XC) Load Balancer Standard Bot Protection capabilities
+  
+* Build policies to protect against credential stuffing attacks
+
+**Narrative:** 
+
+Following your succssful Web Application Firewall deployment, you have been alerted
+by your application team that there are concerns about credential stuffing attacks
+and malicious bots.  The application owners are concerned that the credential credential stuffing 
+could lead to issues with attackers taking over accounts and leading to fraud and loss
+revenue.  Credential stuffing attacks are usually executed by attackers with automation
+so that the bad actors can quickly identify a vulnerable application and pass many compromised
+identities. These attackers use bots to launch and orchestrate credential stuffing campaigns with 
+many of these bots designed to be point-and-click tools.  With tools like these, attackers can 
+create an army of bots to do their work for them.  So your first goal is to identify these malicious
+bots and block them.  
+
+https://www.f5.com/glossary/credential-stuffing-attack
+
 
 **Expected Lab Time: 25 minutes**
 
@@ -28,8 +44,8 @@ Cloud Console.
 
    |lab002|
 
-#. Using the left-hand navigation, click **Detection Settings**.  In the
-   **Detection** **Settings** section, click the **Signature-Based Bot
+#. Using the left-hand navigation, click **Security Policy Settings**.  In the
+   **Security Policy** section, click the **Signature-Based Bot
    Protection** dropdown menu.
 
 #. From the **Signature-Based Bot Protection** dropdown menu, select **Custom**
@@ -54,7 +70,7 @@ Cloud Console.
 
    .. code:: BASH
 
-      curl -v http://<namespace>.lab-sec.f5demos.com
+      curl -v https://<namespace>.lab-sec.f5demos.com
 
 #. Observe the **User Agent** and response content.
 
@@ -78,9 +94,6 @@ Cloud Console.
    the "Suspicious" Bot reporting. Remember the setting for Suspicious Bot was
    set to *Report* from Step 6 above.
 
-   .. note:: *You can review the steps of Lab1, Task 3, Step 8 to locate the
-      information detail*.
-
    |lab009|
 
    **Task 1: Optional Advanced Topic**
@@ -95,10 +108,22 @@ Cloud Console.
 
    .. code:: BASH
 
-      curl -v http://<namespace>.lab-sec.f5demos.com --user-agent "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.2.1 Safari/605.1.15"
+      curl -v https://<namespace>.lab-sec.f5demos.com --user-agent "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.2.1 Safari/605.1.15"
 
    This HTTP request will not show up in the Security Analytics however you
    will find it in Request logging.
+
+   |lab009a|
+
+
+
+Narrative Check
+-----------------
+
+Now that you are familiar with bot detection capabilities, you can work with the 
+application team to determine if suspicious bots should be blocked or kept in reporting
+mode. You are now ready to tackle credential stuffing attacks from attacking the 
+login page of the application.  
 
 
 Task 2: Enabling F5 Distributed Cloud Bot Defense
@@ -109,7 +134,7 @@ and understand its implementation.
 
 #. Open another tab in your browser (Chrome shown), navigate to your
    application/Load Balancer configuration:
-   **http://<namespace>.lab-sec.f5demos.com**.
+   **https://<namespace>.lab-sec.f5demos.com**.  This will follow the adjective-animal format.
 
 #. Enable developer tools (Chrome shown (use F12)) and click on the **Network**
    tab.
@@ -146,7 +171,7 @@ and understand its implementation.
 
    .. code:: BASH
 
-      curl -v http://<namespace>.lab-sec.f5demos.com/auth.php -H "Content-Type: application/x-www-form-urlencoded" --user-agent "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.2.1 Safari/605.1.15" --data-raw "identity=user%40f5.com&token=password&submit=Submit"
+      curl -v https://<namespace>.lab-sec.f5demos.com/auth.php -H "Content-Type: application/x-www-form-urlencoded" --user-agent "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.2.1 Safari/605.1.15" --data-raw "identity=user%40f5.com&token=password&submit=Submit"
 
    For this application, a successful logon will have a 302 response to the
    location ./data.php?page=data
@@ -201,6 +226,7 @@ and understand its implementation.
 
    - **Name:** *auth-bot*
    - **HTTP Methods:** *POST*
+   - **Endpoint Label:** *Undefined*
    - **Protocol:** *BOTH*
    - **Path\\Path Match:** *Prefix*
    - **Path\\Prefix:** */auth.php*
@@ -231,18 +257,18 @@ and understand its implementation.
    |lab025|
 
 #. Repeat Task 2 Steps 1-6.  Note you many need to close your browser and clear
-   cookies
+   cookies or go into Incognito mode.
 
 #. Observe now that there is additional telemetry being passed in the POST
    request. This telemetry will be used to determine if the connecting client
    is an Automated Bot.
 
-   |lab027|
+   |lab026|
 
    **Task 2: Optional Advanced Topics - Part 2**
 
    Will F5 Distributed Cloud Bot Defense will prevent curl initiated logon
-   requests and its ability to perform credential stuffing attacks. Let’s find
+   requests and its ability to perform credential stuffing attacks? Let’s find
    out. Re-run our previously successful logon attempt:
 
    .. code:: BASH
@@ -256,7 +282,13 @@ and understand its implementation.
    F5 Distributed Cloud Bot Defense can protect against basic attacks performed
    with commands like curl to the most advanced attacks.
 
-   |lab027a|
+   |lab027|
+
+
+Narrative Check
+---------------
+You have now enabled F5 Distributed Cloud security policies to protect against potential attackers from probing
+ACME Corp's application and deter credenital stuffing attacks.  
 
 **End of Lab 2:**  This concludes Lab 2, feel free to review and test the
 configuration. A brief presentation will be shared prior to the beginning of
@@ -281,6 +313,8 @@ Lab 3.
 .. |lab008| image:: _static/lab2-008.png
    :width: 800px
 .. |lab009| image:: _static/lab2-009.png
+   :width: 800px
+.. |lab009a| image:: _static/lab2-009a.png
    :width: 800px
 .. |lab010| image:: _static/lab2-010.png
    :width: 800px
@@ -321,8 +355,6 @@ Lab 3.
 .. |lab026| image:: _static/lab2-026.png
    :width: 800px
 .. |lab027| image:: _static/lab2-027.png
-   :width: 800px
-.. |lab027a| image:: _static/lab2-027a.png
    :width: 800px
 .. |labend| image:: _static/labend.png
    :width: 800px

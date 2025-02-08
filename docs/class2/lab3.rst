@@ -1,8 +1,24 @@
 Lab 3: Malicious Users
 ======================
 
-The following lab tasks will guide you the configuration of the Malicious User
-Configuration which can be used to implement a variety of security controls.
+**Objective:**
+
+* Leverage User Identification Policies to isolate individual users
+  
+* Utilize F5 Distributed Cloud's native AI technologies to block malicious users
+
+**Narrative:** 
+
+A recent security request came into your queue where multiple WAF violations and 403 http reqsponse codes 
+were originating from the same public IP address.  ACME's security incedent response team has asked you 
+to block all requests coming from that public IP address as they are concerned about potential attackers 
+successfully accessing the application and then trying to move laterally to access sensitive portions of the 
+application without authorization.  Before blocking the public IP, a conversation with the application team 
+uncovered that the public IP address maps the headquarters of a ACME's largest sand supplier.  Since not 
+all of the requests coming from that public IP address are attacks, your goal is to leverage F5 Distributed 
+Cloud to identify only the specific attackers and stop their probing activities but still maintain a 
+low-friction experience for the rest of the valid users.  
+
 
 **Expected Lab Time: 15 minutes**
 
@@ -51,7 +67,7 @@ malicious user mitigation and actions.
 #. In the **User Identification Rule** window click the drop-down for
    **Identifier Type**.
 
-   Select **TLS Fingerprint** and click **Apply**.
+   Select **JA4 TLS Fingerprint** and click **Apply**.
 
    |lab007|
 
@@ -75,6 +91,14 @@ malicious user mitigation and actions.
 
    |lab011|
 
+Narrative Check
+---------------
+
+With User Identification Rules, F5 Distributed Cloud can pull in multiple data points
+as unique indicators to identify an individual user.  In addition to the IP address and
+TLS fingerprint of the browser, Cookies and HTTP Headers can also be leveraged to specifically
+build policies around the individual users.  Now that the users are more specifically identified,
+let's move on to how to block malicious users.  
 
 Task 2: Enable Malicious User Detection and Mitigation Actions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -99,7 +123,7 @@ challenge.
 
    |lab014|
 
-#. Click the dropdown for **Custom**. Observe the two other policies.
+#. Click the dropdown for **Custom**. Observe the existing other shared policies.
 
    **shared/lab-sec-user-mitigation**
 
@@ -168,6 +192,18 @@ challenge.
    |lab023|
 
    |lab024|
+
+Narrative Check
+-----------------
+
+With a combination of user identification and malicious user policies, ACME Corp
+can now detect malicious activities and apply mitigation steps. The mitigation steps include 
+issuing JavaScript Challenge or Captcha Challenge or temporary blocking of the user. Malicious 
+User capabilities from F5 Distributed Cloud leverages AI/ML techniques to correlate multiple suspicious
+user actions together in order to build a risk score around the user.  As the risk score goes up,
+users who are violating the ACME's security policies can be stopped from accessing the site while other 
+users who are coming from the same public IP can still access the site without issue.  
+
 
 **End of Lab 3:**  This concludes Lab 3, feel free to review and test the
 configuration.
