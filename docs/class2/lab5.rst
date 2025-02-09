@@ -11,8 +11,9 @@ Lab 5: AI Assistant and Security Operations
 As ACME corp has continued to protect their web applications, leaders within the organization 
 has made requests for summaries of how ACME's security investments are proctecting the environment.
 ACME corp has made investments in SIEM technologies and F5 Distributed Cloud can export logs to external
-SIEMs.  After speaking with ACME corp's F5 SE, F5 Distributed Console has an AI assistant that can 
-quickly provide answers without having to build complex queries.   
+SIEMs.  However not everyone in the ACME orgnaization has experience building dashboards and running complex queries.
+After speaking with ACME corp's F5 SE, F5 Distributed Console has an AI assistant in the SaaS console that can 
+provide answers quickly using natural language.   
 
 
 **Expected Lab Time: 5 minutes**
@@ -26,12 +27,15 @@ capabilities to simplify management and security of apps and APIs using a natura
 * Real-time insights: Promote application security and site health with up-to-the-minute visibility of hybrid, multicloud
 sites, ensuring security and networking practitioners can quickly detect and respond to emerging threats, maintaining
 a robust security posture.
+
 * Summarization: Leverage advanced summarization capabilities to distill large volumes of data into clear, concise
 reports. This allows teams to better understand complex information and advanced security events to make more
 informed decisions without sifting through overwhelming amounts of data.
+
 * Actionable recommendations: Deliver actionable recommendations, enabling users to swiftly address identified
 threats, performance issues, network health status, and vulnerabilities. By guiding users through necessary steps, the
 AI assistant helps enhance overall security and streamline incident response operations.
+
 * Improved operations and efficiency: Automate and simplify complex security and networking tasks to significantly
 improve operational efficiency. This allows SecOps and NetOps teams to focus on strategic initiatives, reducing workload 
 and optimizing resource allocation. 
@@ -59,9 +63,10 @@ and optimizing resource allocation.
 #. Lets start with getting a total number of the security events in your namespace for your application.  
 
    .. code:: BASH
+
       Show requests with WAF security events for the last 24 hours for load balancer [lb-name] in namespace [ns-name]
    
-   Be sure to replace the [lb-name] with your adjective-animal-lb and [namespace] with adjective-animal of your lab
+   .. NOTE:: Be sure to replace the [lb-name] with your adjective-animal-lb and [namespace] with adjective-animal of your lab
    
 #. In this example the AI Assistant has notified us that there are 42 security events that were detected for our application.
    The AI Assistant also provides us a link to go directly to the Security Analytics Dashboard page. 
@@ -71,9 +76,10 @@ and optimizing resource allocation.
 #. You can also query the AI Assistant for specific types of attacks like SQL injections.
 
    .. code:: BASH
+
       Show SQL injection and directory traversal attacks in the last 24 days for load balancer [lb-name] in namespace [ns-name].
    
-   Be sure to replace the [lb-name] with your adjective-animal-lb and [namespace] with adjective-animal of your lab
+   .. NOTE:: Be sure to replace the [lb-name] with your adjective-animal-lb and [namespace] with adjective-animal of your lab
 
 #. In this example the AI Assistant has notified us that there was 1 security event that was a SQL injection or Path traversal
    type of attack. Click on the link to go directly to the Security Analytics. 
@@ -83,12 +89,11 @@ and optimizing resource allocation.
 #. The AI Assistant will take you directly to the event and build the filters directly for you.  This reduces the manual operations 
    that were done in Lab 1.  Note: You may need to minimize the AI Assistant by clicking the Hide button in the upper-right hand corner.
 
+   |lab007|
+
 #. In the actions button of the security event, select **Explain with AI**.  This button will generate a query for you and the
    AI Assistant will give you a detailed summary of the attack along with suggested Follow-up actions.  You can gather
    more information by clicking on **Detection Details**.
-
-
-   |lab007|
 
    |lab008|
 

@@ -7,12 +7,13 @@ Lab 4: Web App Scanning
   
 **Narrative:** 
 
-Following the successful rollout of the F5 Web Application Security policies,
-there is a request to setup OWASP Top 10 Scanning of the application and measure
-the security posture of the application over time.  Internally, there is also a requirement
-to run the scan from a specifically allowed known IP addresses so the security team can setup specific rules
-to identify and allow the scans to come in from the the internet.  
-After reviewing this requirement, ACME decides to leverage F5 Distributed Cloud Web App Scanning.
+Following the successful rollout of the F5 Web Application Security policies, there is a request to setup 
+OWASP Top 10 Web Vulnerability Scanning of the application and measure the security posture of the application 
+over time.  Currently ACME Corp does a penetration test every six months which requires an external vendor and 
+lots of effort. ACME Corp would like to move to weekly scans with more automation and less effort.  
+There is also a requirementto run the scan from a specifically allowed known IP addresses so the security team 
+can setup specific rules to identify and allow the scans to come in from the the internet.  
+After reviewing this requirement, ACME decides to evaluate F5 Distributed Cloud Web App Scanning.
 
 F5 Distributed Cloud Web App Scanning is an offering that lets you discover exposed assets 
 and run automated penetration tests of your web applications and APIs. 
@@ -63,7 +64,7 @@ to report on OWASP Top 10 for Web Applications.  Below are some of the tests con
   from the vulnerable server to other internal systems.
 
 
-#. Within the homepage in the F5 Distributed Cloud Console, click
+#. Within the Home page in the F5 Distributed Cloud Console, click
    **Web App Scanning** and then click **Visit Service**. 
 
    |lab001|
@@ -78,7 +79,7 @@ to report on OWASP Top 10 for Web Applications.  Below are some of the tests con
 
    |lab004|
 
-#. Add a name for the application.  
+#. Add a name for the application.  *ACME Corp Web App*
 
 #. Add the Web Address of the application that was built as part of this lab.  It will match your namespace 
    following the pattern https://adjective-animal.lab-sec.f5demos.com.  Ensure to replace the adjective-animal
@@ -142,7 +143,8 @@ to report on OWASP Top 10 for Web Applications.  Below are some of the tests con
    Click on Scan that just completed.  From the Report page, review the which OWASP Top 10 vulnerabilities were uncovered.
    There is also a video that replays the penetration testing scan interacting with the website.  Note the different colors
    as they relate to vulnerabilities uncovered and which portion of the application had the issue.  While watching the video,
-   note if you can identify the custom block page you configured earlier in the lab.  This video can be downloaded as well a PDF of the test results.  
+   note if you can identify the custom block page you configured earlier in the lab.  This video can be downloaded as well 
+   a PDF of the test results.  
 
    |lab020|
 

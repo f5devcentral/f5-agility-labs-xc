@@ -16,7 +16,7 @@ the traditional methods of deploying and managing your native WAFs in the Data C
 GCP but quickly realize that learning and managing multiple WAF technologies would be time-consuming 
 and difficult to operate.
 
-You recently saw a post on LinkedIn about a SaaS product that F5 has, claiming to solve multi-cloud 
+You recently saw a post on LinkedIn about a F5 SaaS product claiming to solve multi-cloud 
 appplication security complexities. Given your current timeline and industry knowledge of F5 being a 
 leader for decades, you decide to check it out and end up in the chair you are sitting in today: 
 Taking a first-hand look at how F5 makes WAAP (Web Application and API Protection) simple, quick to deploy,

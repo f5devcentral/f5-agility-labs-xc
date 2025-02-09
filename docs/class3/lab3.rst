@@ -1,40 +1,51 @@
-Lab 3: Exploring Rate Limiting & Routes
-=======================================
+Lab 3: Zero Day Exploit Response with Rate Limiting and Custom Service Policies
+===============================================================================
 
-The following lab tasks will guide you through the configuration of Rate Limiting feature sets.
-Rate Limiting can be used to implement a variety of L7 security controls; assisting in L7 DDoS, 
-protecting heavy URLs (service process impactful) or mitigating impacts to other controlled endpoints.  
+**Objective:**
 
-Routes in F5 XC can be utilized to accomplish L7 routing based on URI to multiple origin pools. 
+* Protect against a Zero Day Exploit using Rate Limiting
 
-**Expected Lab Time: 20 minutes**
+* Build Custom Service Policies
+
+**Narrative:** 
+
+You've been called into an all-hands war room conference call.  There is a zero-day exploit specifically
+targeting ACME Corp's application.  The attacks are coming from multiple IP addresses so a simple IP shun 
+will not be effective.  The attacks are compomising the application as valid users are getting poor performance
+as your application infrastructure is being overloaded.  ACME Corp's security response team has identified 
+that the zero-day can be mitigated by blocking curl agents and creating a custom web vulnerability signature.  
+
+After reviewing the data, you've decided to leverage Rate Limiting and Service Policies to help ACME Corp
+restore service to users and stop the attack.
+
+
+**Expected Lab Time: 30 minutes**
 
 
 Task 1: Establishing a Baseline
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In this task you will access a test website/webpage to experience access without a Rate Limiting Policy
-engaged.  Following completion of Task1, you will build a Rate Limit Policy (Task2) and then test the 
-Rate Limited experience (Task3).
+engaged.  This will demonstrate that any user can request data from the application without limits.  
 
-+----------------------------------------------------------------------------------------------+
-| 1. In your local web browser access the following link, replacing namespace with your own:   |
-|                                                                                              |
-|    **http://<namespace>.lab-sec.f5demos.com/ratelimit.php**                                  |
-|                                                                                              |
-| 2. Refresh the page multiple times and notice you do not receive any errors nor blocked      |
-|                                                                                              |
-|    messages. You can also open your browser's developers to observe requests receiving 200Ks.|
-|                                                                                              |
-|    Let's change that behavior.                                                               |
-+----------------------------------------------------------------------------------------------+
-| |lab000|                                                                                     |
-+----------------------------------------------------------------------------------------------+
+#. In your web browser, enable Developer Tools and browse to the ACME Corp application.  
+   Chrome is shown in this example (F12)  
+
+   **http://<namespace>.lab-sec.f5demos.com/ratelimit.php**  
+
+#. Refresh the page multiple times and notice you do not receive any errors nor blocked messages.  
+   The browser's developer tool will display multiple HTTP 200 OK messages.  Let's change that behavior.
+
+   |lab000|
 
 Task 2: Creating a Rate Limiting Policy 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In this task you will add a Rate Limiting Policy to the application Load Balancer previously created.
+Rate Limiting can be used to implement a variety of L7 security controls; assisting in L7 DDoS, 
+protecting heavy URLs (service process impactful) or mitigating impacts to other controlled endpoints.  
+This will help alleviate the strain on the application infrastructure by limiting the number of requests
+each client can make.
 
 +----------------------------------------------------------------------------------------------+
 | 1. Return to the **Web App & API Protection** configuration window. In the left-hand         |
@@ -325,7 +336,7 @@ Now we will retest access to our website and see if our experience has indeed ch
 |                                                                                              |
 | .. note::                                                                                    |
 |                                                                                              |
-|    *Review Lab2/Task4 to find Security Events. You can copy you support ID to search with!*  |
+|    *Review the Lab 1 to find Security Events. You can copy you support ID to search with!*   |
 +----------------------------------------------------------------------------------------------+
 | |lab035|                                                                                     |
 |                                                                                              |
@@ -333,128 +344,264 @@ Now we will retest access to our website and see if our experience has indeed ch
 +----------------------------------------------------------------------------------------------+
 
 
+Narrative Check
+-----------------
+You have now configured rate limiting on the ACME Corp application.  This will slow down the attackers
+from making multiple requests to your application.  Let's focus on building that custom policy to 
+close the vulnerability that the attackers are using.
 
-Task 4: Observing Route Configurations
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Task 4: Create, assign and test a Custom Service Policy
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In this task you will add a Custom Policy and assign it to your Load Balancer. Custom Service 
+Policies provide the flexibility to build **Positive** or **Negative** security models and custom
+rules or controls.
 
-The following steps will enable you to attach Service Policies to your configured Load Balancer.
-It will also help you understand additional approaches for Service Policies.
+This Custom Service Policy will be focused on limiting CURL access as logs are indicating that 
+the attackers are using CURL to access the application.  The Custom policy will also focus on protecting
+a specific page of the application that is vulnerable to close the Zero Day exploit.
 
 +----------------------------------------------------------------------------------------------+
-| 1. Within **Web App & API Protection** in the F5 Distributed Cloud Console, **Manage >**     |
+| 1. Before beginning this task, re-evaluate your access from your client to the following:    |
 |                                                                                              |
-|    **Load Balancer > HTTP Load Balancers** and use the **Action Dots** and click **Manage**  |
+|    * **Browser**: http://<namespace>.lab-sec.f5demos.com/index.php?page=header               |
+|    * **cURL**: http://<namespace>.lab-sec.f5demos.com/                                       |
+|    * **cURL**: http://<namespace>.lab-sec.f5demos.com/index.php?page=header                  |
 |                                                                                              |
-|    **Configuration**.                                                                        |
-|                                                                                              |
-| 2. Click **Edit Configuration** in the top right-hand corner.                                |
+|    The expectation is that all are successful based on the current Service Policies.         |
+| .. note::                                                                                    |
+|    *cURL is supported on Windows, Mac & Linux platforms*.                                    |
 +----------------------------------------------------------------------------------------------+
+| |lab038|                                                                                     |
+|                                                                                              |
+| |lab039|                                                                                     |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 2. Returning to **Web App & API Protection**, in the left-hand navigation menu, expand the   |
+|                                                                                              |
+|    **Manage** section and click **Service Policies**. In the flyout menu, click the          |
+|                                                                                              |
+|    **Service Policies** link.                                                                |
+|                                                                                              |
+| 3. Observe the existing Service Policies and note that some are sourced from the **shared**  |
+|                                                                                              |
+|    namespace which means they could be used within any other namespace.                      |
+|                                                                                              |
+| 4. Click **Add Service Policy** in the top left area as shown.                               |
++----------------------------------------------------------------------------------------------+
+| |lab040|                                                                                     |
+|                                                                                              |
+| |lab041|                                                                                     |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 5. In the **Metadata** section enter **custom-deny** for the **Name** and then click         |
+|                                                                                              |
+|    **Rules** in the left-hand navigation.                                                    |
+|                                                                                              |
+| 6. Then select **Custom Rule List** from the dropdown for **Select Policy Rules**.           |
+|                                                                                              |
+|    Locate **Rules** configuration section and click **Configure**.                           |
++----------------------------------------------------------------------------------------------+
+| |lab042|                                                                                     |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 7. In the **Rules** window, click **Add Item**.                                              |
+|                                                                                              |
+| 8. In the **Metadata** section **Name** field input **curl-deny** and toggle the             |
+|                                                                                              |
+|    **Show Advanced Fields** to see extra configuration options in **Action** section.        |
+|                                                                                              |
+| 9. In the **Action** section, select **Deny** for the **Action** and then in the left-hand   |
+|                                                                                              |
+|    navigation click **Request Match**.                                                       |
++----------------------------------------------------------------------------------------------+
+| |lab043|                                                                                     |
+|                                                                                              |
+| |lab044|                                                                                     |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 10. In the **HTTP Method** section, use the **Method List** dropdown to select **GET**.      |
+|                                                                                              |
+| 11. In the **HTTP Headers** section click **Add Item**.                                      |
++----------------------------------------------------------------------------------------------+
+| |lab045|                                                                                     |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 12. In the **Header Matcher** window, input **user-agent** for **Header Name** as shown.     |
+|                                                                                              |
+| 13. Click **Add Item** under the **Regex Values** area and input **(?i)^.*curl.*$** then     |
+|                                                                                              |
+|     click **Apply**                                                                          |
++----------------------------------------------------------------------------------------------+
+| |lab046|                                                                                     |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 14. Scroll down to the bottom of the **Rule Configuration** and click **Apply**.             |
++----------------------------------------------------------------------------------------------+
+| |lab047|                                                                                     |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 15. In the **custom-deny** Service Policy Rule window, click **Add Item** to add another rule|
+|                                                                                              |
+| .. note::                                                                                    |
+|    *Multiple Rules can be added to a single Service Policy*.                                 |
++----------------------------------------------------------------------------------------------+
+| |lab048|                                                                                     |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 16. In the **Metadata** section **Name** field input **header-page-deny** and then click     |
+|                                                                                              |
+|     **Request Match** in the left-hand navigation.                                           |
++----------------------------------------------------------------------------------------------+
+| |lab049|                                                                                     |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 17. In the **Request Match** section under **HTTP Methods**, add **GET** to the method list. |
+|                                                                                              |
+| 18. In the **HTTP Path** area, click the **Configure** link.                                 |
++----------------------------------------------------------------------------------------------+
+| |lab050|                                                                                     |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 19. Click **Add Item** in **Prefix Values** area and in the input field type "/index.php"    |
+|                                                                                              |
+|     and then click **Apply**.                                                                |
++----------------------------------------------------------------------------------------------+
+| |lab051|                                                                                     |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 20. Observe that the **HTTP Path** is now **Configured**.                                    |
+|                                                                                              |
+| 21. In section **HTTP Query Parameters** click **Add Item**                                  |
++----------------------------------------------------------------------------------------------+
+| |lab052|                                                                                     |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 22. In **Query Parameter Matcher** window, in the **Query Parameter Name** field, enter      |
+|                                                                                              |
+|     **page**.                                                                                |
+|                                                                                              |
+| 23. In **Match Options** section, ensure **Match Values** is selected and then click **Add** |
+|                                                                                              |
+|     **Item** in the area with **Exact Values** as shown.                                     |
+|                                                                                              |
+| 24. Input **header** into the **Exact Values** input field as shown and then click **Apply**.|
++----------------------------------------------------------------------------------------------+
+| |lab053|                                                                                     |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 25. Observe that the **HTTP Query Parameters** has the value we configured and scroll to the |
+|                                                                                              |
+|     bottom of the rule configuration and click **Apply**                                     |
++----------------------------------------------------------------------------------------------+
+| |lab054|                                                                                     |
+|                                                                                              |
+| |lab055|                                                                                     |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 26. Observe that both configured rules are present and then click **Apply**.                 |
+|                                                                                              |
+| .. note::                                                                                    |
+|    *Rules within the Service Policy can placed in order as needed*.                          |
++----------------------------------------------------------------------------------------------+
+| |lab056|                                                                                     |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 27. Observe that the Custom Rule is now configured for **custom-deny** Service Policy and    |
+|                                                                                              |
+|     click **Apply**.                                                                         |
++----------------------------------------------------------------------------------------------+
+| |lab057|                                                                                     |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 28. The **custom-deny** Service Policy is now listed among all Service Policies and has a    |
+|                                                                                              |
+|     **Rule Count** of **2**.                                                                 |
+|                                                                                              |
+| .. note::                                                                                    |
+|    *This window also show the Service Policy "Hits" when validating usage*.                  |
++----------------------------------------------------------------------------------------------+
+| |lab058|                                                                                     |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 29. Return to **Web App & API Protection** in the F5 Distributed Cloud Console, **Manage >** |
+|                                                                                              |
+|     **Load Balancer > HTTP Load Balancers** and use the **Action Dots** and click **Manage** |
+|                                                                                              |
+|     **Configuration**.                                                                       |
+|                                                                                              |
+| 30. Click **Edit Configuration** in the top right-hand corner.                               |
++----------------------------------------------------------------------------------------------+
+| |lab059|                                                                                     |
+|                                                                                              |
+| |lab060|                                                                                     |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 31. Click **Common Security Controls** in the left-hand navigation.                          |
+|                                                                                              |
+| 32. From the **Service Policies** section, click **Edit Configuration**.                     |
++----------------------------------------------------------------------------------------------+
+| |lab061|                                                                                     |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 33. Observe the order of the previously created Service Policies (geo-filter,allowed-ip) and |
+|                                                                                              |
+|     click **Add Item**.  Use the drop-down as shown and select **<namespace>/custom-deny**   |
+|                                                                                              |
+|     from the available Service Policy list.                                                  |
+|                                                                                              |
+| 34. Click the six squares icon to drag **<namespace>/custom-deny** into the second position  |
+|                                                                                              |
+|     in policy order as shown then click **Apply**.                                           |
++----------------------------------------------------------------------------------------------+
+| |lab062|                                                                                     |
+|                                                                                              |
 | |lab063|                                                                                     |
-|                                                                                              |
-| |lab064|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 3. Click **Routes** in the left-hand navigation and the click **Configure** as shown.        |
+| 35. Observe the configured state on Services Polices then click **Other Settings** or scroll |
 |                                                                                              |
-| 4. In **Routes** window, click the **Add Item** link.                                        |
+|     to the bottom of the HTTP Load Balancer configuration and click **Save & Exit**.         |
 +----------------------------------------------------------------------------------------------+
-| |lab065|                                                                                     |
+| |lab064|                                                                                     |
 |                                                                                              |
+| |lab065|                                                                                     |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 36. Time to reassess your access. Now test the following from your client:                   |
+|                                                                                              |
+|    * **Browser**: http://<namespace>.lab-sec.f5demos.com/index.php?page=header               |
+|    * **cURL**: http://<namespace>.lab-sec.f5demos.com/                                       |
+|    * **cURL**: http://<namespace>.lab-sec.f5demos.com/index.php?page=header                  |
+|                                                                                              |
+| 37. What where your results?  Copy the support id for further investigation in the next task |
++----------------------------------------------------------------------------------------------+
 | |lab066|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
-+----------------------------------------------------------------------------------------------+
-| 5. Observe the various route types and matching criteria controls that can be leveraged to   |
-|                                                                                              |
-|    securely control application flow, perform pool targeting, make path responses or develop |
-|                                                                                              |
-|    custom control to secure protected applications.                                          |
-|                                                                                              |
-| 6. An example walkthrough of **Simple Route** is shown but feel free to look at all the      |
-|                                                                                              |
-|    route types: .                                                                            |
-|                                                                                              |
-|    * **Simple Route:** Matches on path and/or HTTP method and forward traffic to the         |
-|                        associated pool.                                                      |
-|    * **Redirect Route:** Matches on path and/or HTTP method and redirects matching traffic   |
-|                        to a different URL.                                                   |
-|    * **Direct Response Route:** Matches on path and/or HTTP method and responds directly to  |
-|                        matching traffic.                                                     |
-|    * **Custom Route Object:** Leverages a reference route object created outside this view.  |
-|                                                                                              |
-+----------------------------------------------------------------------------------------------+
-| |lab067|                                                                                     |
-|                                                                                              |
-| |lab068|                                                                                     |
-|                                                                                              |
-+----------------------------------------------------------------------------------------------+
-|                                                                                              |
-| 7. To build an example L7 routing rule, select **Simple Route.**                            |
-|                                                                                              |
-| 8. Select **ANY** as the HTTP method.                                                        |
-|                                                                                              |
-| 9. Under Path Match, add **/cart** as the prefix.                                            |
-|                                                                                              |
-| 10. Click **Add Item** to add a different origin pool, so clients will be redirected         |
-|                                                                                              |
-|     to a different set of back-end servers when accessing /cart.                             |
-|                                                                                              |
-+----------------------------------------------------------------------------------------------+ 
-| |lab070|                                                                                     |
-|                                                                                              |
-+----------------------------------------------------------------------------------------------+ 
-|                                                                                              |
-| 12. Click **Add Item** to add a new origin pool.                                             |
-|                                                                                              |
-| 13. Enter **demoshop-pool** in the Name field under the Metadata section.                    |
-|                                                                                              |
-| 14. Cllck **Add Item** to define the origin servers.                                         |
-|                                                                                              |
-+----------------------------------------------------------------------------------------------+
-| |lab071|                                                                                     |
-|                                                                                              |
-| |lab072|                                                                                     |
-|                                                                                              |
-+----------------------------------------------------------------------------------------------+
-|                                                                                              |
-| 15. Enter **shop.sales-demo.f5demos.com** as the Public DNS Name of the Origin server        |
-|                                                                                              |
-| 16.  Click **Apply**                                                                         |
-|                                                                                              |
-| 17.  Set the Origin server Port to **80**                                                    |
-|                                                                                              |
-| 18.  Scroll down to the **TLS** section and ensure the TLS setting is set to **Disable**     |
-|                                                                                              |
-| 19.  Click **Continue**                                                                      |
-|                                                                                              |
-| 20.  Click **Apply** to save the Origin Pool configuration.                                  |
-|                                                                                              |
-| 21.  Click **Apply** to save the Route Type for this /cart URI.                              |
-|                                                                                              |
-| 22.  Click **Apply** to save the overall Routes configuration. Note you can have multiple    |
-|                                                                                              |
-|     route configurations per load balancer.                                                  |
-|                                                                                              |
-| 23.  Click **Save and Exit** to complete the configurations on the Load Balancer.            |
-|                                                                                              |
-| 24. In your local web browser access the following link, replacing namespace with your own:  |
-|                                                                                              |
-|    **http://<namespace>.lab-sec.f5demos.com/cart** Note you are now at the new application.  |
-+----------------------------------------------------------------------------------------------+
-| |lab073|                                                                                     |
-|                                                                                              |
-| |lab074|                                                                                     |
-|                                                                                              |
-| |lab075|                                                                                     |
-|                                                                                              |
-| |lab076|                                                                                     |
-|                                                                                              |
-| |lab077|                                                                                     |
-|                                                                                              |
-| |lab078|                                                                                     |
-+----------------------------------------------------------------------------------------------+
-
+Service Policies provide a powerful framework to implement both positive and negative security models
+and you matching criteria from client requests (headers, parameters, paths, request body payload) to 
+effectively control the access to protected applications and APIs.
 
 
 

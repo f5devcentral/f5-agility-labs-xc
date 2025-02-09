@@ -96,9 +96,7 @@ Cloud Console.
 
    |lab009|
 
-   **Task 1: Optional Advanced Topic**
-
-   Signature based Bot detection can be easily bypassed. By simply presenting a
+#. Signature based Bot detection can be easily bypassed. By simply presenting a
    less suspicious user-agent string, a threat actor can easily bypass the
    signature-based detection algorithm.
 
@@ -122,7 +120,7 @@ Narrative Check
 
 Now that you are familiar with bot detection capabilities, you can work with the 
 application team to determine if suspicious bots should be blocked or kept in reporting
-mode. You are now ready to tackle credential stuffing attacks from attacking the 
+mode. You are now ready to tackle preventing credential stuffing attacks from attacking the 
 login page of the application.  
 
 
@@ -181,7 +179,9 @@ and understand its implementation.
    ./index.php?page=access&err=02
 
    With this knowledge, we could use curl to perform a credential stuffing
-   attack and potentially avoid detection.
+   attack and potentially avoid detection.  Attackers obtaining a list of compromised
+   user credentials can then launch automated attacks at scale using the information returned
+   from the web page about whether a password was good or bad.  
 
    |lab013a|
 

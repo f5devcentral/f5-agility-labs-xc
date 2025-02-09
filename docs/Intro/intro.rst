@@ -20,7 +20,7 @@ Course/Lab Invitation
 | Course/Lab Attendees will receive an email similar to the graphic displayed in this section. |
 | The email will come from courses@notify.udf.f5.com.                                          |
 |                                                                                              |
-| As attendees maybe registered for several lab/courses, ensure the corrcetly identified course|
+| As attendees maybe registered for several lab/courses, ensure the correctly identified course|
 | is selected.  Use either the first or second link position (indicated by arrows) based on    |
 | the attendee's F5 UDF (Unified Demo Framework) Account Status.                               |
 |                                                                                              |
