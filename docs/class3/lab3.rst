@@ -292,9 +292,9 @@ a specific page of the application that is vulnerable to close the Zero Day expl
 
 #. Before beginning this task, re-evaluate your access from your client to the following: 
   
-   * **Browser**: https://<namespace>.lab-sec.f5demos.com/index.php?page=header 
-   * **cURL**: https://<namespace>.lab-sec.f5demos.com/
-   * **cURL**: https://<namespace>.lab-sec.f5demos.com/index.php?page=header 
+   * **Browser**: *https://<namespace>.lab-sec.f5demos.com/index.php?page=header*
+   * **cURL**: *https://<namespace>.lab-sec.f5demos.com/*
+   * **cURL**: *https://<namespace>.lab-sec.f5demos.com/index.php?page=header* 
 
    The expectation is that all are successful based on the current Service Policies.
 
@@ -452,9 +452,9 @@ a specific page of the application that is vulnerable to close the Zero Day expl
 
 #. Time to test to see if the web vulenrability is patched. Now test the following from your client:
 
-   * **Browser**: https://<namespace>.lab-sec.f5demos.com/index.php?page=header 
-   * **cURL**: https://<namespace>.lab-sec.f5demos.com/
-   * **cURL**: https://<namespace>.lab-sec.f5demos.com/index.php?page=header 
+   * **Browser**: *https://<namespace>.lab-sec.f5demos.com/index.php?page=header*
+   * **cURL**: *https://<namespace>.lab-sec.f5demos.com/*
+   * **cURL**: *https://<namespace>.lab-sec.f5demos.com/index.php?page=header*
   
 
    |lab066|
@@ -466,7 +466,7 @@ a specific page of the application that is vulnerable to close the Zero Day expl
 
 #. Finally, let's make sure access via the Browser is still valid for normal traffic.
 
-   * **Browser**: https://<namespace>.lab-sec.f5demos.com/ 
+   * **Browser**: *https://<namespace>.lab-sec.f5demos.com/* 
 
 Narrative Check
 -----------------
@@ -480,8 +480,6 @@ effectively control the access to protected applications and APIs.
 Service Policies can be a foundational part of an organizations security program by extending zero-trust segmentation
 capabilities beyond a company's traditional network  utilizng F5's Regional Edges and Application Delivery Network.
 Service Policies can also be a key part of security incident response to quickly stop zero-day attacks.
-
-
 
 +----------------------------------------------------------------------------------------------+
 | **End of Lab 3:**  This concludes Lab 3, feel free to review and test the configuration.     |
@@ -593,7 +591,42 @@ Service Policies can also be a key part of security incident response to quickly
    :width: 800px
 .. |lab049| image:: _static/lab3-049.png
    :width: 800px
-
+.. |lab050| image:: _static/lab3-050.png
+   :width: 800px
+.. |lab051| image:: _static/lab3-051.png
+   :width: 800px
+.. |lab052| image:: _static/lab3-052.png
+   :width: 800px
+.. |lab053| image:: _static/lab3-053.png
+   :width: 800px
+.. |lab054| image:: _static/lab3-054.png
+   :width: 800px
+.. |lab055| image:: _static/lab3-055.png
+   :width: 800px
+.. |lab056| image:: _static/lab3-056.png
+   :width: 800px
+.. |lab057| image:: _static/lab3-057.png
+   :width: 800px
+.. |lab058| image:: _static/lab3-058.png
+   :width: 800px
+.. |lab059| image:: _static/lab3-059.png
+   :width: 800px
+.. |lab060| image:: _static/lab3-060.png
+   :width: 800px
+.. |lab061| image:: _static/lab3-061.png
+   :width: 800px
+.. |lab062| image:: _static/lab3-062.png
+   :width: 800px
+.. |lab063| image:: _static/lab3-063.png
+   :width: 800px
+.. |lab064| image:: _static/lab3-064.png
+   :width: 800px
+.. |lab065| image:: _static/lab3-065.png
+   :width: 800px
+.. |lab066| image:: _static/lab3-066.png
+   :width: 800px
+.. |lab067| image:: _static/lab3-067.png
+   :width: 800px
 
 
 
