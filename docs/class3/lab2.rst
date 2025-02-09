@@ -180,7 +180,7 @@ service policies can also be used to allow based on IP addresses, BGP ASNs, user
 +----------------------------------------------------------------------------------------------+
 | **End of Lab 2:**  This concludes Lab 2, feel free to review and test the configuration.     |
 |                                                                                              |
-| A Q&A session will begin shortly to conclude the overall lab.                                |
+| A brief presentation will be shared prior to the beginning of Lab 3.                         |
 +----------------------------------------------------------------------------------------------+
 | |labend|                                                                                     |
 +----------------------------------------------------------------------------------------------+

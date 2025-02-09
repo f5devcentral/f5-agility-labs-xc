@@ -106,10 +106,9 @@ By leveraging AI Assistant, network security operators can quickly investigate s
 provide summary details natively in platform without requiring a third party visibility platform as observability is native
 to Distributed Cloud.  
 
-**End of Lab 5:**  This concludes Lab 5, feel free to review and test the
-configuration.
-
+**End of Lab 5:**  This concludes Lab 5, feel free to review and the following video for more information about AI Assistant.
 https://www.youtube.com/watch?v=vaGygSkQOso 
+
 A Q&A session will begin shortly to conclude the overall lab.
 
 |labend|

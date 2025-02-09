@@ -291,8 +291,7 @@ You have now enabled F5 Distributed Cloud security policies to protect against p
 ACME Corp's application and deter credenital stuffing attacks.  
 
 **End of Lab 2:**  This concludes Lab 2, feel free to review and test the
-configuration. A brief presentation will be shared prior to the beginning of
-Lab 3.
+configuration. A brief presentation will be shared prior to the beginning of Lab 3.
 
 |labend|
 

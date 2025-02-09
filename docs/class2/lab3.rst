@@ -206,9 +206,8 @@ users who are coming from the same public IP can still access the site without i
 
 
 **End of Lab 3:**  This concludes Lab 3, feel free to review and test the
-configuration.
+configuration.  A brief presentation will be shared prior to the beginning of Lab 4.
 
-A Q&A session will begin shortly to conclude the overall lab.
 
 |labend|
 
