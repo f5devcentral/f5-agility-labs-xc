@@ -19,8 +19,8 @@ Find a way to limit the number of requests the endpoint will accept from a given
 
 **Expected Lab Time: 20 minutes**
 
-Task 1: Simulate Excessive Queries to an Endpoint
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Task 1: Simulate Unmitigated Excessive Requests against API
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Currently, our Banking Application does not implement, or enforce, rate-limiting to a specific endpoint.
 
@@ -29,6 +29,9 @@ In this task, you will follow steps to send multiple requests witin 1 minute to 
 #. Using another browser tab, navigate to the the following URL.
 
    ``http://<namespace>.lab-sec.f5demos.com/swagger``
+
+   .. image:: _static/shared-swagger-intro.png
+      :width: 800px
 
 #. Within the Swagger page, navigate and expand the customerlookup/getallcustomers endpoint, and click
    **Try it out**.
@@ -51,7 +54,7 @@ In this task, you will follow steps to send multiple requests witin 1 minute to 
 
 
 Task 2: Attach API Rate-Limiting to HTTP Load Balancer Object
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In this task's series of steps, you will enable the API Rate-Limiting feature on the
 previously built HTTP Load Balancer object delivering the targeted API.
@@ -129,14 +132,17 @@ previously built HTTP Load Balancer object delivering the targeted API.
    .. image:: _static/lab4-image030.png
       :width: 800px
 
-Task 3: Simulate Exceeding the Defined Rate-Limit to trigger Block
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Task 3: Simulate Mitigated Excessive Requests against API
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In this task, you will send more than 10 requests within a Minute
 
 #. Using another browser tab, navigate to the the following URL.
 
-``http://<namespace>.lab-sec.f5demos.com/swagger``
+   ``http://<namespace>.lab-sec.f5demos.com/swagger``
+
+   .. image:: _static/shared-swagger-intro.png
+      :width: 800px
 
 #. Within the Swagger page, navigate and expand the customerlookup/getallcustomers endpoint, and click
    **Try it out**.
@@ -149,20 +155,6 @@ In this task, you will send more than 10 requests within a Minute
 
    .. image:: _static/lab4-image031.png
       :width: 800px
-
-Task 4 [Optional]: Explore the Distributed Cloud Console to find this Security Event
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-#. Using the Server Response body request ID, try and discover this Security Event within your Distributed Cloud Console.
-
-#. What was the server response code?
-
-#. What detection mechanism was used to block this request?
-
-#. Now, click the **F5 ball** in the upper-left corner to navigate back to the "Home" screen of your Distributed Cloud Console to prepare for the next lab.
-
-   .. image:: _static/shared-004.png
-      :width: 400px
 
 **End of Lab**
 

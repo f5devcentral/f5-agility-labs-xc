@@ -16,14 +16,22 @@ Find a way to protect the endpoint, and overall all APIs, from dynamic attacks.
 
 **Expected Lab Time: 25 minutes**
 
-Task 1: Simulate Cross Site Scripting Attack (XXS) without Web Application Firewall (WAF):
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. note ::
+
+   This lab will use a pre-build shared WAF object. Refer to `Lab 4 Advanced <adv_lab4.html>`_ for additional steps on how to create a WAF object.
+
+Task 1: Simulate a Unmitigated Attack against API
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In this task, you will follow steps simulating an attack against an unprotected endpoint.
+The Distributed Cloud (XC) WAF object is pre-built for the next Task, but please review how to create this object via the Advanced Lab 4.
 
 #. Using another browser tab, navigate to the the following URL.
 
-``http://<namespace>.lab-sec.f5demos.com/swagger``
+   ``http://<namespace>.lab-sec.f5demos.com/swagger``
+
+   .. image:: _static/shared-swagger-intro.png
+      :width: 800px
 
 #. Within the Swagger page navigate and expand the messageservice/send endpoint, and click
    **Try it out**.
@@ -56,36 +64,7 @@ In this task, you will follow steps simulating an attack against an unprotected 
       If this endpoint was consumed by an actual ticket management system, the "<script>"
       could have been rendered in the user's browser.
 
-#. Now, return to your Distributed Cloud (XC) portal within your browser by clicking the **F5 ball icon**  in the upper-left corner, and navigate to the **Web App & API Protection** tile.
-
-   .. image:: _static/shared-001.png
-      :width: 600px
-
-Task 2: Apply a Shared WAF policy Object to your HTTP Load Balancer
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-In this task, you will perform steps to add a shared WAF policy object, and apply this to your HTTP Load Balancer.
-
-#. In the left-hand navigation of the **Web App & API Protection** service, click on **App Firewall**
-   under the **Manage** section.
-
-   .. image:: _static/lab4-image004.png
-      :width: 300px
-
-#. In the resulting **App Firewall** window, observe the **Shared** FW object named **api-lab-af**:
-
-   .. image:: _static/lab4-image050.png
-      :width: 800px
-
-   .. note::
-      This is a previously defined shared object. You cannot edit this config. However, you can expand the object's JSON data to view the settings. 
-      Click/expand line 33 **get_spec** to view config. 
-      We will apply this to our HTTP LB object in the next Task.
-
-   .. image:: _static/lab4-image051.png
-      :width: 800px
-
-Task 3: Attach WAF policy to HTTP Load Balancer
+Task 2: Attach WAF policy to HTTP Load Balancer
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In this task, you will follow steps to attach a WAF policy to your Load Balancer.
@@ -119,19 +98,36 @@ In this task, you will follow steps to attach a WAF policy to your Load Balancer
    .. image:: _static/lab4-image052.png
       :width: 600px
 
+#. Click on **View Configuration** next to the attached WAF object.
+
+   .. image:: _static/lab4-af-review.png
+      :width: 700px
+
+#. Review the WAF Policy configration, click **Back** at the bottom left of the page.
+
+   .. image:: _static/lab4-af-back.png
+      :width: 800px
+
+.. note ::
+
+   Suspicious and Good Bot is set to ignore to reduce false positives from request made in this lab via 'curl'.
+
 #. Click **Other Settings** on the left navigation, then click **Save and Exit**
 
    .. image:: _static/lab4-image053.png
       :width: 800px
 
-Task 4: Simulate Cross Site Scripting Attack (XXS) with Web Application Firewall
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Task 3: Simulate a Mitigated Attack against API
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In this task you will follow steps simulating an attack againt a protected endpoint.
 
 #. Using another browser tab, navigate to the the following URL.
 
    ``http://<namespace>.lab-sec.f5demos.com/swagger``
+
+   .. image:: _static/shared-swagger-intro.png
+      :width: 800px
 
 #. Within the Swagger page navigate and expand the messageservice/send endpoint, and click
    **Try it out**.
@@ -158,20 +154,6 @@ In this task you will follow steps simulating an attack againt a protected endpo
 
    .. image:: _static/lab4-image014.png
       :width: 800px
-
-Task 5 [Optional]: Explore the Distributed Cloud Console to find this Security Event
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-#. Using the Server Response body request ID, try and discover this Security Event within your Distributed Cloud Console.
-
-#. How many signatures did this request trigger?
-
-#. What signature sets did this request trigger?
-
-#. Now, click the **F5 ball** in the upper-left corner to navigate back to the "Home" screen of your Distributed Cloud Console to prepare for the next lab.
-
-   .. image:: _static/shared-004.png
-      :width: 400px
 
 **End of Lab**
 

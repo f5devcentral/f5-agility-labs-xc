@@ -9,24 +9,24 @@ Appendix
 ========
 **F5 Distributed Cloud Platform**:
   * **Overview**: https://www.f5.com/cloud/products/platform-overview
-  * **Documentation Portal**: https://docs.cloud.f5.com/docs/
-  * **Services**: https://docs.cloud.f5.com/docs/services
-  * **Concepts**: https://docs.cloud.f5.com/docs/ves-concepts
+  * **Documentation Portal**: https://docs.cloud.f5.com/docs-v2
+  * **Services**: https://docs.cloud.f5.com/docs-v2/platform/services
+  * **Concepts**: https://docs.cloud.f5.com/docs-v2/platform/concepts
 
 **F5 Distributed Cloud Web Application Firewall (WAF)**:
-  * **Intro**: https://www.f5.com/cloud/products/distributed-cloud-waf
-  * **How to**: https://docs.cloud.f5.com/docs/how-to/app-security/web-app-firewall
+  * **Intro**: https://www.f5.com/products/distributed-cloud-services/distributed-cloud-waf
+  * **How to**: https://docs.cloud.f5.com/docs-v2/web-app-and-api-protection/how-to/app-security/application-firewall
 
 **F5 Distributed Cloud BotDefense**:
-  * **Intro**: https://www.f5.com/cloud/products/bot-defense
-  * **How to**: https://docs.cloud.f5.com/docs/how-to/advanced-security/bot-defense
+  * **Intro**: https://www.f5.com/products/distributed-cloud-services/bot-defense
+  * **How to**: https://docs.cloud.f5.com/docs-v2/bot-defense/how-tos/configure-bot-defense
 
 **F5 Distributed Service Policies**:
-  * **How to**: https://docs.cloud.f5.com/docs/how-to/app-security/service-policy
-  * **How to**: https://docs.cloud.f5.com/docs/how-to/advanced-security/configure-ip-reputation
+  * **How to**: https://docs.cloud.f5.com/docs-v2/multi-cloud-app-connect/how-to/app-security/service-policy
+  * **How to**: https://docs.cloud.f5.com/docs-v2/web-app-and-api-protection/how-to/adv-security/configure-ip-reputation
 
 **Automation/Orchestration**:
-  * **API:** https://docs.cloud.f5.com/docs/api
+  * **API:** https://docs.cloud.f5.com/docs-v2/api
   * **Terraform:** https://registry.terraform.io/providers/volterraedge/volterra/latest
 
 

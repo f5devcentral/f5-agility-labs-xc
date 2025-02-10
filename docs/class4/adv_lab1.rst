@@ -1,5 +1,5 @@
 Lab 1: Advanced Load Balancer and Origin
-=====================================
+========================================
 
 Task 1: Configure Load Balancer and Origin Pool
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -100,7 +100,7 @@ steps will define an application, register its DNS and assign a target as an ori
 
    ``http://<namespace>.lab-sec.f5demos.com/swagger``
 
-   .. image:: _static/lab1-task1-013.png
+   .. image:: _static/shared-swagger-intro.png
       :width: 800px
 
 **End of Lab**
