@@ -1,7 +1,7 @@
 Lab Optional - Use kubectl to view vK8s Output
 ==============================================
 
-F5 Distributed Cloud App Stack provides the ability to manage your vK8s namespace via command line with kubectl 
+F5 Distributed Cloud App Stack provides the ability to manage your vK8s namespace via command line with kubectl
 
 In this lab, we will learn perform the following:
 
@@ -24,38 +24,38 @@ In this lab, we will learn perform the following:
 
    *View Nodes*
       `kubectl get nodes`
-   
+
       `kubectl get nodes -o wide`
-   
+
    *View pods*
       `kubectl get pods`
-   
+
       `kubectl get pods -o wide`
-   
+
       `kubectl describe pod <podname>`
-   
+
    *View deployment and service*
       `kubectl get deployment <user>-workload`
-   
+
       `kubectl get svc <user>-workload`
 
    *View all resources in your namespace*
       `kubectl get all`
-   
+
    *View output of the pod in yaml format*
       `kubectl get pods <podname> -o yaml`
- 
+
    *View output of the deployment in yaml format*
       `kubectl get deployment <user>-workload -o yaml`
 
    *View output of the service in yaml format*
       `kubectl get svc <user>-workload -o yaml`
-   
+
    *Save the output of the deployment in yaml format*
       `kubectl get deployment <username>-workload -o yaml > agility.yaml`
 
    *View the saved yaml deployment*
       `find the file in the current directory:
       ls -larth`
-   
+
       `view the file: cat agility.yaml`
