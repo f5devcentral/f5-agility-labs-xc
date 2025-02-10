@@ -26,10 +26,10 @@ If you are not already logged into the console, please do so now by opening the 
 
 https://f5-xc-lab-mcn.console.ves.volterra.io/
 
-From the **Select service** menu, click on **Multi-Cloud Network Connect** and then click on **Infrastructure/Sites,**
+From the **Select service** menu, click on **Multi-Cloud Network Connect** and then click on **Infrastructure/Sites.**
 
 Your XC Node should have registered successfully and will appear green with a Health Score of 100. You may need to click **Refresh** in the top right corner
-if you do not see your animal name. In this example I was assigned and filtered for **busy-goblin**.
+if you do not see your animal name. In this example I was assigned and filtered for **pro-joey**.
 
 |
 
@@ -46,7 +46,7 @@ From this Dashboard you can note the current **Site Admin State, Provider, SW ve
 **Please DO NOT click "Upgrade" on any of the Sites!**
 
 
-Instead, **Click** on the three dots under the **Actions** column at the far right of the screen of **"your animal"**  Site and click on **Manage Configuration**. In this screenshot I was **busy-goblin**.
+Instead, **Click** on the three dots under the **Actions** column at the far right of the screen of **"your animal"**  Site and click on **Manage Configuration**. In this screenshot I was **pro-joey**.
 
 .. NOTE:: You may need to scroll horizontally inside the table to see the three dots at the righthand side. Alternately, you can zoom out (Ctrl -) on the page to see them.
 

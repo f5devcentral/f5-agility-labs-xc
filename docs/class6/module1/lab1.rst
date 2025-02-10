@@ -302,7 +302,7 @@ Once the registration completes, you can see the cluster in the “Other Registr
 |
 
 The Customer Edge Node Admin portal will also reflect some changes in its status, although the node still requires some additional configuration.
-From the menu on the left click on **Sites** and observe your Nodes (animal-name). Hint: You may have to hit **Refresh**  in the upper right corner. 
+From the menu on the left click on **Infrastructure/Sites** and observe your Nodes (animal-name). Hint: You may have to hit **Refresh**  in the upper right corner. 
 
 |
 
