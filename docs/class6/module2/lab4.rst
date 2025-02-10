@@ -311,7 +311,7 @@ Nagivate to the **Infrastructure** tab, and note the IP address of the inside in
 
 |
 
-.. image:: .. image:: ../images/4lbs.png
+.. image:: ../images/student-awsnet.png
 
 |
 
