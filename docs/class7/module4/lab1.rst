@@ -1,11 +1,11 @@
-Lab 1 - Configure your Jumpbox to access your virtual K8s
-=========================================================
+Lab 1 - Configure your jumphost to access your virtual K8s
+==========================================================
 
 F5 Distributed Cloud App Stack provides the ability to manage your vK8s namespace via command line with `kubectl`
 
-In this lab, we will learn perform the following:
+In this lab, we will learn about and perform the following:
 
--  Download the kubeconfig, and then upload the kubeconfig file to the jumpbox to allow for access your virtual k8s using native kubectl commands.
+-  Download the **kubeconfig**, and then upload the **kubeconfig** file to the jumphost to allow for access your virtual k8s using native kubectl commands.
 
 **Core Concepts**
 
@@ -22,45 +22,50 @@ In this lab, we will learn perform the following:
 #. Click the distributed apps tile on the F5 Distributed Cloud Services home page.
 
    .. image:: ../images/distributedappclick-updated.png
-      :width: 400pt
+      :width: 500pt
 
 #. Click virtual K8s under the applications section.
 
    .. image:: ../images/distributedappclickvirtualk8s.png
-      :width: 180pt
+      :height: 300pt
+
 
 #. Click the three dots under the "Action" column and then click **Kubeconfig**.
 
    .. image:: ../images/distributedappclickvirtualk8kubeconfig-updated.png
-      :width: 650pt
+      :width: 500pt
 
 #. When prompted to select an expiration date, pick a future date that will give you adequate time to complete the lab.
 
    .. image:: ../images/kubeconfigexpirydate.png
-      :width: 650pt
+      :width: 500pt
 
-#. If your browser prompts you for a location to download the file, select a directory you prefer and click **Save**.
+   |
 
-#. Click the config kubeconfig is downloaded, and follow the Kubernetes documentation to configure your local kubctl tool.
+   Click **Download Credential**. If your browser prompts you for a location to download the file, select a directory you prefer and click **Save**.
 
-    `Organizing Cluster Access Using kubeconfig Files <https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/>`_
+#.    From the *Lab Deployments* view, find the Jumphost and click the *Access* button. From the access list, select **File Browser**.
 
-#. If you have kubectl available on your computer, you would be able to interact with your vK8s cluster using the downloaded kubeconfig file.
+      .. image:: ../images/M4-L1-filebrowser-launch2.png
+         :width: 500pt
 
-   For the purposes of this lab, we will use the jumpbox to interact with the vK8s cluster. Before we can do that, we need to upload the kubeconfig file to the jumpbox.
+      .. note::
+         If you have kubectl available on your computer, you would be able to interact with your vK8s cluster using the downloaded kubeconfig file.
+         For the purposes of this lab, we will use the Jumphost to interact with the vK8s cluster. Before we can do that, we need to upload the kubeconfig file to the Jumphost.
 
-   From the lab components view, find the jumpbox and click the *Access* button. From the access list, select **File Browser**.
+#. Login with *admin/admin* credentials.
 
-.. image:: ../images/filebrowser-launch.png
-   :width: 650pt
+   .. image:: ../images/M4-L1-filebrowser-login.png
+      :height: 250pt
 
-Login with *admin/admin* credentials.
+#. Within File Browser, click the **Upload** upload icon, `Choose File` and then select the **kubeconfig** file you downloaded. Select this file and complete the upload.
 
-.. image:: ../images/filebrowser-login.png
-   :width: 350pt
+   .. image:: ../images/M4-L1-filebrowser-upload.png
+      :height: 150pt
 
-Within File Browser, click the **Upload** upload icon, `Choose File` and then select the kubeconfig file you downloaded. Select this file and complete the upload.
+   Make sure the **kubeconfig** file appears in File Browser.
 
-.. image:: ../images/filebrowser-upload.png
-   :width: 300pt
+   .. image:: ../images/M4-L1-filebrowser-file.png
+      :width: 500pt
 
+Proceed to the next Lab where you'll deploy the MQTT containers to your vk8s cluster and run Grafana on the Jumphost.
