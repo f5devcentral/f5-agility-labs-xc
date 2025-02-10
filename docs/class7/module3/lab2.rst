@@ -7,13 +7,12 @@ Lab 2 - Publish to the Internet
 
     |add_HTTP_menu|
     |add_HTTP|
-   
+
 #. In the **HTTP Load Balancer** Configuration Section make the following changes:
 
-    - **Name**: User <your namespace>-lb 
+    - **Name**: User <your namespace>-lb
     - **List of Domains**: Use <your namespace>.lab-app.f5demos.com
     - **Select Type of Load Balancer**: HTTP
-    - **Automatically Manage DNS Records**: Make sure this is checked
 
     |http_basic|
 
@@ -28,7 +27,7 @@ Lab 2 - Publish to the Internet
 #. In the Common Security Controls section change the **Service Policies** to *Do Not Apply Service Policies* then click **Save and Exit** at the bottom of the page.
 
     |security_configuration|
-   
+
 #. After a few moments you should see a screen like the following:
 
     |http_status|
@@ -38,17 +37,17 @@ Lab 2 - Publish to the Internet
 
 Now we are ready to test!
 
-Open a browser tab and navigate to the domain you entered. 
+Open a browser tab and navigate to the domain you entered.
 
-In the example below it is *grand-marten.lab-app.f5demos.com*
+In the example below it is *keen-duck.lab-app.f5demos.com*
 
 Success will render a page like the following:
 
     |http_page|
 
-Please note the country name. 
+Please note the country name.
 
-Refresh your browser a few times and notice what happens to the country name. 
+Refresh your browser a few times and notice what happens to the country name.
 
 Why?
 
