@@ -1,13 +1,6 @@
 Lab 5: Rate Limiting
 =====================================
 
-APIs are open by design, meaning they intentially allow access and interaction with its inteface via a
-defined set of rules and protocols. This "open design" provides a large "risk surface" that organizations must secure.
-As such, protecting these APIs are critical to ensure security efficacy. An API should define
-specific parameters for allowed access (i.e. authentication, rate-limiting, method enfocement, etc.). In this lab, we will explore
-how F5's XC can provide layers of protection for APIs.
-
-
 **Scenario**
 
 An internal application at times gets stuck in a temporary loop, replaying requests many times against a
@@ -17,7 +10,7 @@ the API unusable.
 Find a way to limit the number of requests the endpoint will accept from a given client
 (source) within a window of time. 
 
-**Expected Lab Time: 20 minutes**
+**Expected Lab Time: 10 minutes**
 
 Task 1: Simulate Unmitigated Excessive Requests against API
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
