@@ -11,8 +11,9 @@ and API Protection (WAAP).
 During the lab you will be playing the role of an Engineer at ACME Corp who responds to new business requirements quickly by implementing F5's Web Application and API security solutions. 
 
 **Goal:**
-Implement and operate an application security environment utilizing F5 SaaS-Powered Distributed Cloud core security tooling. 
-- Full walkthrough of XC WAF leveraging WAF policy creation, use, and management ​
+Implement and operate an application security environment utilizing F5 SaaS-Powered Distributed Cloud core security tooling.
+
+- Full walkthrough of F5 Distributed Cloud WAF leveraging policy creation, use, and management ​
 
 - Understanding of security event searching, navigation, filtering and tooling with forensics and AI assistant
 
@@ -22,9 +23,9 @@ Implement and operate an application security environment utilizing F5 SaaS-Powe
 
 - Deploy Web Application Scanning as a continual security assessment​
 
-|intro000a|
+|intro000c|
 
-This Lab uses the **[AppWorld] F5XC Security** UDF Blueprint. 
+This Lab uses the **[AppWorld] F5XC Security Base Lab** UDF Blueprint. 
 
 .. toctree::
    :maxdepth: 2
@@ -35,5 +36,5 @@ This Lab uses the **[AppWorld] F5XC Security** UDF Blueprint.
    lab*
    close*
    
-.. |intro000a| image:: _static/intro000a.png
+.. |intro000c| image:: _static/intro-000c.png
    :width: 800px

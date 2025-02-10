@@ -49,11 +49,12 @@ configured as the origin.
    that was configured for you via automation.  Select **Web App & API Protection**. 
 
 #. On the **Web App & API Protection** page, note the identifier of your namespace.  The namespace
-   will be follow a format of adjective-animal.  In this guide, the namespace is pet-walrus is an 
+   will be follow a format of *adjective-animal*.  In this guide, the namespace is pet-walrus is an 
    example.  Your namespace will be different.  In the left-hand navigation expand **Manage** and 
    click **Load Balancers >  Origin Pools**
 
    |lab001| 
+
    |lab002| 
 
 #. In the resulting screen expand the Actions Menu and click **Manage Configuration** for 
@@ -63,6 +64,7 @@ configured as the origin.
    to the Origin Pools page since you will not need to make any updates to the configuration.
 
    |lab003| 
+
    |lab004|
 
 #. Using your browser, visit this application directly utilizing its public FQDN. Select the 
@@ -72,8 +74,11 @@ configured as the origin.
    that it matches by looking up your IP address at https://ipinfo.io/.  
 
    |lab005|
+
    |lab006|
+
    |lab007|
+
    |lab008|
 
 
@@ -83,14 +88,15 @@ configured as the origin.
 #. In the resulting screen expand the Actions Menu and click **Manage Configuration** for 
    the load balancer configured in your namespace. The graphic below is an example.  Your environment 
    will have a different load balancer name but it should follow a similar naming convention 
-   *adjective-animal*
+   *adjective-animal*.
 
    |lab009|
+
    |lab010|
 
 
 #. Using the left-hand navigation and in the sections as shown, review the
-   following data. Values where **<namespace>** is represented, the configuration
+   following data. Values where **<namespace>** *adjective-animal* is represented, the configuration
    will be the name of your provisioned namespace.  Note the FQDN of the F5 XC load balancer.  
 
 
@@ -109,10 +115,12 @@ configured as the origin.
 #. Using your web browser, access the application via the F5 XC FQDN.  Click on **Menu > Header**
 
 #. Note that the Remote Address has changed as well as the presence of a new X-Forwarded-For header.  
-   The client information should have changed as you are now connecting through the F5 ADN Regional Edge.
-   X-Forwarded-For details should match your client IP address.  
+   The client information should have changed as you are now connecting first through the F5 ADN Regional Edge 
+   before being proxied the the application running the ACME Corp Azure environment.  X-Forwarded-For details should 
+   match your client IP address.  
 
    |lab012| 
+
    |lab013| 
 
 
@@ -128,7 +136,7 @@ configuration.
    in the upper right hand corner select **Edit Configuration** and then in the left hand 
    menu click on the **Web Application Firewall (WAF)** drop down and select **Enable**.
 
-   |lab014| 
+   |lab014| ''
    |lab015| 
 
 #. In the resulting **Enable** field drop down, select **Add Item**.
@@ -178,9 +186,7 @@ configuration.
       (monitored) for a period of* *prior to enforcement (blocking).*
 
 #. Returning to the **HTTP Load Balancer** window, scroll to the bottom and click
-
-#. Click **Save and Exit** at the bottom of the **HTTP Load Balancer**
-   configuration screen.
+   click **Save and Exit** at the bottom of the **HTTP Load Balancer** configuration screen.
 
    |lab021|
 
@@ -188,7 +194,7 @@ Narrative Check
 ---------------
 
 You've built your first WAF policy on F5 Distributed Cloud.  This WAF policy can be applied
-to any additional load balancers deployed in this namespace.  The F5 XC load balancer can be 
+to any additional load balancers deployed in this namespace.  The F5 XC WAAP suite can be 
 configured to protect applications across your on-prem data center, Azure, AWS, GCP and SAAS 
 environments.  This allows your team to uniformly manage application security across all of your 
 public, private and SAAS applications.  Now that you are familiar with how to build WAF policies 
@@ -300,7 +306,7 @@ The ACME Azure application is now being successfully protected by F5 Distributed
    |lab033|
 
 #. Review the **Security Dashboard** display (you may have limited data). NOTE: you may need
-   variable time period
+   to update the variable time period
 
    |lab034|
 
@@ -334,15 +340,16 @@ The ACME Azure application is now being successfully protected by F5 Distributed
 #. Scroll to the bottom of the information screen to see specific signatures
    detected and actions taken during the security event.
 
+   |lab039|
+
 #. Next, click on the **Add Filter** link just under the **Security
    Analytics** title near the top of the **Security Analytics** window.
-   
-   |lab039|
    
 #. Type **req** in the open dialogue window and select **req_id** from the
    dropdown.
 
    |lab039a|
+
    |lab039b|
 #. Next, select **In** from the **Select Operator** dropdown.
 
@@ -357,9 +364,9 @@ The ACME Azure application is now being successfully protected by F5 Distributed
 Narrative Check
 -----------------
 
-Upon foresnic review, your application team has told you that the request from 
-**Support IDs** from Task 3, Step 2 as shown is actually a valid request.  You will
-need to create an exception for this so that traffic can successfully pass.  This task
+Upon foresnic review, your application team has told you that last request from 
+**Support IDs** from the testing performed in Task 3, Step 2 as shown is actually a valid request. 
+You will need to create an exception for this so that traffic can successfully pass.  This task
 can be quickly accomplished in the XC console.  
 
 #. In the XC console, you should now be filtered to a single "Security Event", as shown 
@@ -400,7 +407,7 @@ can be quickly accomplished in the XC console.
    |lab045|
    
    .. note::
-      If you get an error, you may need to add a Path RegEx -  ^/$
+      If you get an error, you may need to add a Path RegEx **^/$**
 
 #. Click **Apply** on the **WAF Exclusion Rules** summary screen.
 
