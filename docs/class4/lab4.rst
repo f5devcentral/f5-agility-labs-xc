@@ -1,11 +1,6 @@
 Lab 4: Web Application Firewall (WAF)
 =====================================
 
-In this lab, you will create and attach a Web Application Firewall (WAF) to your HTTP Load Balancer.
-
-This lab's tasks will walkthrough the configuration steps, and note additional
-configurations available.
-
 **Scenario**
 
 The “send” API endpoint for the Message Service has a finding indicating it is susceptible
@@ -14,7 +9,7 @@ the message window, which will be visible by the Customer Service team; this is 
 
 Find a way to protect the endpoint, and overall all APIs, from dynamic attacks.
 
-**Expected Lab Time: 25 minutes**
+**Expected Lab Time: 15 minutes**
 
 .. note ::
 
