@@ -4,7 +4,7 @@ Lab 6: Security Analytics and Malicious User Detection
 **Scenario**
 
 A recent review highlighted the need for greater visibility into API performance and security events. 
-This includes identifying bad actors and clients attempting to misuse or attack the API.
+This includes identifying bad actors (clients) attempting to misuse or attack the API.
 
 Investigate request and security events, and establish a method for detecting malicious users.
 
@@ -13,7 +13,7 @@ Investigate request and security events, and establish a method for detecting ma
 Task 1: Review the Requests Dashboard
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In this task, you will explore the Security Analytics Dashboard within Distributed Cloud "XC" for security events.
+In this task, you will explore the Security Analytics Dashboard within Distributed Cloud (XC) for security events.
 
 #. From the **Web App & API Protection** menu, navigate to **Overview**, then click **Security**
 
@@ -39,7 +39,7 @@ In this task, you will explore the Security Analytics Dashboard within Distribut
 Task 2: Review the Security Anatlyics Dashboard
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In this task, you will explore the Security Analytics Dashboard within Distributed Cloud "XC" for security events.
+In this task, you will explore the Security Analytics Dashboard within Distributed Cloud (XC) for security events.
 
 #. From the **Web App & API Protection** menu, navigate to **Overview**, then click **Security**
 
@@ -70,7 +70,7 @@ In this task, you will explore the Security Analytics Dashboard within Distribut
 Task 3: Review Malicious User Detection
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In this task, you will explore the Malicious Users section of the Security Analytics Dashboard within Distributed Cloud "XC".
+In this task, you will explore the Malicious Users section of the Security Analytics Dashboard within Distributed Cloud (XC).
 
 #. From the **Web App & API Protection** menu, navigate to **Overview**, then click **Security**
 
