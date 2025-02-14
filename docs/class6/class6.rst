@@ -20,4 +20,5 @@ This Lab uses the **[Agility] F5XC Introduction into MCN** UDF Blueprint.
    :glob:
 
    intro
+   narrative
    module*/module*
