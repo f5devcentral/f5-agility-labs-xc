@@ -1,5 +1,5 @@
-F5 Distributed Cloud: API Discovery & Protection
-================================================
+F5 Distributed Cloud: Discovering & Securing API's
+==================================================
 
 Welcome
 -------
@@ -35,8 +35,7 @@ Lab & Tasks:
 
 -  All Lab requirements will be noted in the tasks that follow
 
--  Estimated completion time: 2 Labs approximately 15-20 minutes each
-
+-  Estimated completion time: 6 Labs approximately 15-20 minutes each
 
 .. toctree::
    :maxdepth: 2

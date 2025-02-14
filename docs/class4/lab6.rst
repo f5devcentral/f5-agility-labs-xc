@@ -1,18 +1,19 @@
 Lab 6: Security Analytics and Malicious User Detection
-=====================================
+======================================================
 
 **Scenario**
 
-A malicious user has been targeting your application over time, attempting to discovery & exploit vulnerabilities to access and use your application in unintended ways.
+A recent review highlighted the need for greater visibility into API performance and security events.
+ This includes identifying bad actors and clients attempting to misuse or attack the API.
 
-Find a way to discover this malicious user traffic, and use the XC platform to mitigate this user.
+Investigate request and security events, and establish a method for detecting malicious users.
 
-**Expected Lab Time: 10 minutes**
+**Expected Lab Time: 8 minutes**
 
 Task 1: Review the Requests Dashboard
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In this task, you will explore the Security Analytics Dashboard within Distributed Cloud (XC) for security events.
+In this task, you will explore the Security Analytics Dashboard within Distributed Cloud "XC" for security events.
 
 #. From the **Web App & API Protection** menu, navigate to **Overview**, then click **Security**
 
@@ -38,7 +39,7 @@ In this task, you will explore the Security Analytics Dashboard within Distribut
 Task 2: Review the Security Anatlyics Dashboard
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In this task, you will explore the Security Analytics Dashboard within Distributed Cloud (XC) for security events.
+In this task, you will explore the Security Analytics Dashboard within Distributed Cloud "XC" for security events.
 
 #. From the **Web App & API Protection** menu, navigate to **Overview**, then click **Security**
 
@@ -67,9 +68,9 @@ In this task, you will explore the Security Analytics Dashboard within Distribut
       :width: 800px
 
 Task 3: Review Malicious User Detection
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In this task, you will explore the Malicious Users section of the Security Analytics Dashboard within Distributed Cloud (XC).
+In this task, you will explore the Malicious Users section of the Security Analytics Dashboard within Distributed Cloud "XC".
 
 #. From the **Web App & API Protection** menu, navigate to **Overview**, then click **Security**
 
