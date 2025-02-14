@@ -1,464 +1,485 @@
-Lab 3: Exploring Rate Limiting & Routes
-=======================================
+Lab 3: Zero Day Exploit Response with Rate Limiting and Custom Service Policies
+===============================================================================
 
-The following lab tasks will guide you through the configuration of Rate Limiting feature sets.
-Rate Limiting can be used to implement a variety of L7 security controls; assisting in L7 DDoS, 
-protecting heavy URLs (service process impactful) or mitigating impacts to other controlled endpoints.  
+**Objective:**
 
-Routes in F5 XC can be utilized to accomplish L7 routing based on URI to multiple origin pools. 
+* Protect against a Zero Day Exploit using Rate Limiting
 
-**Expected Lab Time: 20 minutes**
+* Build Custom Service Policies
+
+**Narrative:** 
+
+You've been called into an all-hands incident response conference call.  There is a zero-day exploit specifically
+targeting one of ACME Corp's application.  The attacks are coming from multiple IP addresses so a simple IP shun 
+will not be effective.  The attacks are compomising the application as valid users are getting poor performance
+as your application infrastructure is being overloaded.  
+
+After reviewing the data, the application team has asked if you can deploy Rate Limiting to help ACME Corp limit 
+the load that each individual user can request.  Based on the discoveries made, there are two rate limiting rules 
+that need to configured.  
+  * HTTP POST requests to the login page 
+  * HTTP GET requests to the rate-limit page. 
+The application team would like all other requests to be allowed without any rate-limiting.  You leave the all-hands 
+call to focus on the F5 Distributed Cloud configurations while the team members investigate the underlying nature 
+of the exploit.
+
+
+**Expected Lab Time: 30 minutes**
 
 
 Task 1: Establishing a Baseline
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In this task you will access a test website/webpage to experience access without a Rate Limiting Policy
-engaged.  Following completion of Task1, you will build a Rate Limit Policy (Task2) and then test the 
-Rate Limited experience (Task3).
+engaged.  This will demonstrate that any user can request data from the application without limits.  
 
-+----------------------------------------------------------------------------------------------+
-| 1. In your local web browser access the following link, replacing namespace with your own:   |
-|                                                                                              |
-|    **http://<namespace>.lab-sec.f5demos.com/ratelimit.php**                                  |
-|                                                                                              |
-| 2. Refresh the page multiple times and notice you do not receive any errors nor blocked      |
-|                                                                                              |
-|    messages. You can also open your browser's developers to observe requests receiving 200Ks.|
-|                                                                                              |
-|    Let's change that behavior.                                                               |
-+----------------------------------------------------------------------------------------------+
-| |lab000|                                                                                     |
-+----------------------------------------------------------------------------------------------+
+#. In your web browser, enable Developer Tools and browse to the ACME Corp application.  
+   Chrome is shown in this example (F12)  
+
+   **http://<namespace>.lab-sec.f5demos.com/ratelimit.php**  
+
+#. Refresh the page multiple times and notice you do not receive any errors nor blocked messages.  
+   The browser's developer tool will display multiple HTTP 200 OK responses.  Let's change that behavior.
+
+   |lab000|
 
 Task 2: Creating a Rate Limiting Policy 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In this task you will add a Rate Limiting Policy to the application Load Balancer previously created.
+Rate Limiting can be used to implement a variety of L7 security controls; assisting in L7 DDoS, 
+protecting heavy URLs (service process impactful) or mitigating impacts to other controlled endpoints.  
+This will help alleviate the strain on the application infrastructure by limiting the number of requests
+each client can make while ACME corp works to protect itself from the zero-day.
 
-+----------------------------------------------------------------------------------------------+
-| 1. Return to the **Web App & API Protection** configuration window. In the left-hand         |
-|                                                                                              |
-|    navigation, expand **Manage** and click **Load Balancers > HTTP Load Balancers**.         |
-|                                                                                              |
-| 2. Use the **Action Dots** and click **Manage Configuration**                                |
-|                                                                                              |
-| 3. Click **Edit Configuration** in the top right-hand corner.                                |
-+----------------------------------------------------------------------------------------------+
-| |lab001|                                                                                     |
-|                                                                                              |
-| |lab002|                                                                                     |
-+----------------------------------------------------------------------------------------------+
 
-+----------------------------------------------------------------------------------------------+
-| 4. Click **Common Security Controls** in the left-hand navigation & locate **Rate Limiting**.|
-|                                                                                              |
-| 5. Click the dropdown for **Rate Limiting** and select **Custom Rate Limiting Parameters**.  |
-+----------------------------------------------------------------------------------------------+
-| |lab003|                                                                                     |
-+----------------------------------------------------------------------------------------------+
 
-+----------------------------------------------------------------------------------------------+
-| 6. In the expanded **Custom Rate Limiting Parameters** click the **View Configuration** Link.|
-+----------------------------------------------------------------------------------------------+
-| |lab004|                                                                                     |
-+----------------------------------------------------------------------------------------------+
+#. Return to the **Web App & API Protection** configuration window. In the left-hand 
+   navigation, expand **Manage** and click **Load Balancers > HTTP Load Balancers**.
 
-+----------------------------------------------------------------------------------------------+
-| 7. In the resulting **Rate Limit Configuration** window, in the **Request Rate Limiter**     |
-|                                                                                              |
-|    section set the following values as shown:                                                |
-|                                                                                              |
-|    * **Number:** 2                                                                           |
-|    * **Per Period:** Minute                                                                  |
-|    * **Burst Multiplier:** 1                                                                 |
-|                                                                                              |
-| 8. Click the drop-down for **Rate Limiter Policies** and select **Rate Limiter Policies**.   |
-+----------------------------------------------------------------------------------------------+
-| |lab005|                                                                                     |
-+----------------------------------------------------------------------------------------------+
+#. Use the **Action Dots** and click **Manage Configuration**
 
-+----------------------------------------------------------------------------------------------+
-| 9. In the new row for **Rate Limiter Policies**, click the dropdown an then select **Add**   |
-|                                                                                              |
-|    **Item** from the list as shown.                                                          |
-+----------------------------------------------------------------------------------------------+
-| |lab006|                                                                                     |
-+----------------------------------------------------------------------------------------------+
+#. Click **Common Security Controls** in the left-hand menu and **Edit Configuration** in the top 
+   right-hand corner.
 
-+----------------------------------------------------------------------------------------------+
-| 10. In the **Rate Limiter Policy** window, enter **rate-limit** in the **Name** field in     |
-|                                                                                              |
-|     **Metadata** section and then click **Configure** within the **Rules** section.          |
-|                                                                                              |
-| 11. In the resulting **Rules** window, click **Add Item**.                                   |
-+----------------------------------------------------------------------------------------------+
-| |lab007|                                                                                     |
-|                                                                                              |
-| |lab008|                                                                                     |
-+----------------------------------------------------------------------------------------------+
+   |lab001|
 
-+----------------------------------------------------------------------------------------------+
-| 12. In the **Rate Limiter Policy** window within the **Metadata** section input              |
-|                                                                                              |
-|     **rate-limit-auth** into the **Name** field.                                             |
-|                                                                                              |
-| 13. Using the **Actions** drop-down select, **Apply Rate Limiter**.                          |
-|                                                                                              |
-| 14. In the left-hand navigation, click on **Request Match**.                                 |
-+----------------------------------------------------------------------------------------------+
-| |lab009|                                                                                     |
-+----------------------------------------------------------------------------------------------+
+   |lab002|
 
-+----------------------------------------------------------------------------------------------+
-| 15. In the **Request Match** section and select the **Configure** link in the **HTTP Method**|
-|                                                                                              |
-|     section as shown.                                                                        |
-|                                                                                              |
-| 16. In the resulting **HTTP Method** window under **Method List**, select **POST** then      |
-|                                                                                              |
-|     click **Apply**.                                                                         |
-+----------------------------------------------------------------------------------------------+
-| |lab010|                                                                                     |
-|                                                                                              |
-| |lab011|                                                                                     |
-+----------------------------------------------------------------------------------------------+
+#. Click the dropdown for **Rate Limiting** and select **Custom Rate Limiting Parameters**.
 
-+----------------------------------------------------------------------------------------------+
-| 17. Observe that **HTTP Method** now appears **Configured**.                                 |
-|                                                                                              |
-| 18. Further down in the **Request Match** section, select the **Configure** link in the      |
-|                                                                                              |
-|     **HTTP Path** section as shown.                                                          |
-|                                                                                              |
-| 19. Observe the various Path definition options, click **Add Item** in the **Prefix Values** |
-|                                                                                              |
-|     section the input **/auth.php** as shown and then click **Apply**.                       |
-|                                                                                              |
-+----------------------------------------------------------------------------------------------+
-| |lab012|                                                                                     |
-|                                                                                              |
-| |lab013|                                                                                     |
-+----------------------------------------------------------------------------------------------+
+#. In the expanded **Custom Rate Limiting Parameters** click the **View Configuration** Link.
 
-+----------------------------------------------------------------------------------------------+
-| 20. Observe that **HTTP Path** now also appears **Configured**. Click **Apply** on the       |
-|                                                                                              |
-|     **Rate Limiter Policy** window.                                                          |
-|                                                                                              |
-| 21. Observe the rate limit rule just created and click **Add Item** to build another rule.   |
-+----------------------------------------------------------------------------------------------+
-| |lab014|                                                                                     |
-|                                                                                              |
-| |lab015|                                                                                     |
-+----------------------------------------------------------------------------------------------+
+   |lab003|
 
-+----------------------------------------------------------------------------------------------+
-| 22. In the **Rate Limiter Policy** window within the **Metadata** section input              |
-|                                                                                              |
-|     **rate-limit-page** into the **Name** field.                                             |
-|                                                                                              |
-| 23. Using the **Actions** drop-down select, **Apply Rate Limiter**.                          |
-|                                                                                              |
-| 24. In the left-hand navigation, click on **Request Match**.                                 |
-+----------------------------------------------------------------------------------------------+
-| |lab016|                                                                                     |
-+----------------------------------------------------------------------------------------------+
+   |lab004|
 
-+----------------------------------------------------------------------------------------------+
-| 25. In the **Request Match** section and select the **Configure** link in the **HTTP Method**|
-|                                                                                              |
-|     section as shown.                                                                        |
-|                                                                                              |
-| 26. In the resulting **HTTP Method** window under **Method List**, select **GET** then       |
-|                                                                                              |
-|     click **Apply**.                                                                         |
-+----------------------------------------------------------------------------------------------+
-| |lab017|                                                                                     |
-|                                                                                              |
-| |lab018|                                                                                     |
-+----------------------------------------------------------------------------------------------+
+#. In the resulting **Rate Limit Configuration** window, in the **Request Rate Limiter**
+   section set the following values as shown:
 
-+----------------------------------------------------------------------------------------------+
-| 27. Observe that **HTTP Method** now appears **Configured**.                                 |
-|                                                                                              |
-| 28. Further down in the **Request Match** section, select the **Configure** link in the      |
-|                                                                                              |
-|     **HTTP Path** section as shown.                                                          |
-|                                                                                              |
-| 29. Observe the various Path definition options, click **Add Item** in the **Prefix Values** |
-|                                                                                              |
-|     section the input **/ratelimit.php** as shown and then click **Apply**.                  |
-+----------------------------------------------------------------------------------------------+
-| |lab019|                                                                                     |
-|                                                                                              |
-| |lab020|                                                                                     |
-+----------------------------------------------------------------------------------------------+
+   * **Number:** 3 
+   * **Per Period:** Minute 
+   * **Burst Multiplier:** 1 
+  
+#. Click the drop-down for **Rate Limiter Policies** and select **Rate Limiter Policies**.
 
-+----------------------------------------------------------------------------------------------+
-| 30. Observe that **HTTP Path** now also appears **Configured**. Click **Apply** on the       |
-|                                                                                              |
-|     **Rate Limiter Policy** window.                                                          |
-|                                                                                              |
-| 31. Observe the added rate limit rule and click **Add Item** to build another rule.          |
-+----------------------------------------------------------------------------------------------+
-| |lab021|                                                                                     |
-|                                                                                              |
-| |lab022|                                                                                     |
-+----------------------------------------------------------------------------------------------+
+   |lab005|
 
-+----------------------------------------------------------------------------------------------+
-| 32. In the **Rate Limiter Policy** window within the **Metadata** section input              |
-|                                                                                              |
-|     **bypass** into the **Name** field.                                                      |
-|                                                                                              |
-| 33. Using the **Actions** drop-down, select **Bypass Rate Limiter**.                         |
-|                                                                                              |
-| 34. In the left-hand navigation, click on **Request Match**.                                 |
-+----------------------------------------------------------------------------------------------+
-| |lab023|                                                                                     |
-+----------------------------------------------------------------------------------------------+
+#. In the new row for **Rate Limiter Policies**, click the dropdown an then select **Add Item**
+   from the list as shown.
 
-+----------------------------------------------------------------------------------------------+
-| 35. In the **Request Match** section, select the **Configure** link in the **HTTP Method**   |
-|                                                                                              |
-|     section as shown.                                                                        |
-|                                                                                              |
-| 36. In the resulting **HTTP Method** window under **Method List**, select **ANY** then       |
-|                                                                                              |
-|     click **Apply**.                                                                         |
-+----------------------------------------------------------------------------------------------+
-| |lab024|                                                                                     |
-|                                                                                              |
-| |lab025|                                                                                     |
-+----------------------------------------------------------------------------------------------+
+   |lab006| 
 
-+----------------------------------------------------------------------------------------------+
-| 37. Observe that **HTTP Method** now appears **Configured**.                                 |
-|                                                                                              |
-| 38. Further down in the **Request Match** section, select the **Configure** link in the      |
-|                                                                                              |
-|     **HTTP Path** section as shown.                                                          |
-|                                                                                              |
-| 39. Observe the various Path definition options, click **Add Item** in the **Prefix Values** |
-|                                                                                              |
-|     section the input **/** as shown and then click **Apply**.                               |
-+----------------------------------------------------------------------------------------------+
-| |lab026|                                                                                     |
-|                                                                                              |
-| |lab027|                                                                                     |
-+----------------------------------------------------------------------------------------------+
+#. In the **Rate Limiter Policy** window, enter **rate-limit** in the **Name** field in
+   **Metadata** section and then click **Configure** within the **Rules** section.
 
-+----------------------------------------------------------------------------------------------+
-| 40. Observe that **HTTP Path** now also appears **Configured**. Click **Apply** on the       |
-|                                                                                              |
-|     **Rate Limiter Policy** window.                                                          |
-|                                                                                              |
-| 41. Observe the three created rate limit rules and click **Apply**.                          |
-+----------------------------------------------------------------------------------------------+
-| |lab028|                                                                                     |
-|                                                                                              |
-| |lab029|                                                                                     |
-+----------------------------------------------------------------------------------------------+
+#. In the resulting **Rules** window, click **Add Item**.
 
-+----------------------------------------------------------------------------------------------+
-| 42. Observe that rules are now **Configured**. Complete the custom **Rate Limiter Policy** by|
-|                                                                                              |
-|     clicking **Continue**.                                                                   |
-+----------------------------------------------------------------------------------------------+
-| |lab030|                                                                                     |
-+----------------------------------------------------------------------------------------------+
+   |lab007|
 
-+----------------------------------------------------------------------------------------------+
-| 43. Observe the **Request Rate Limiter** options for number of requests, the Per Period      |
-|                                                                                              |
-|     interval and the Burst Multiplier.                                                       |
-|                                                                                              |
-| 44. Also observe that IPs can be allowed without Rate Limiting policies being applied        |
-|                                                                                              |
-| 45. Click **Apply** to add the **Rate Limit Configuration** to the application Load Balancer.|
-|                                                                                              |
-| .. note::                                                                                    |
-|                                                                                              |
-|    *Although only one policy is being added, multiple Rate Limit policies can be attached.*  |
-+----------------------------------------------------------------------------------------------+
-| |lab031|                                                                                     |
-+----------------------------------------------------------------------------------------------+
+   |lab008|
 
-+----------------------------------------------------------------------------------------------+
-| 46. Observe that the **Custom Rate Limiting Parameters** now show **Configured** and then    |
-|                                                                                              |
-|     click on **Other Settings** in the left-hand navigation.                                 |
-|                                                                                              |
-| 47. Once at the bottom of the **HTTP Load Balancer** configuration, click **Save and Exit**. |
-+----------------------------------------------------------------------------------------------+
-| |lab032|                                                                                     |
-|                                                                                              |
-| |lab033|                                                                                     |
-+----------------------------------------------------------------------------------------------+
+#. In the **Rate Limiter Policy** window within the **Metadata** section input **rate-limit-auth** 
+   into the **Name** field. 
+
+#. Using the **Actions** drop-down select, **Apply Rate Limiter**.
+
+#. In the left-hand navigation, click on **Request Match**.
+
+   |lab009|
+
+#. In the **Request Match** section and select the **Configure** link in the **HTTP Method**
+   section as shown. 
+
+#. In the resulting **HTTP Method** window under **Method List**, select **POST** then click **Apply**.
+
+   |lab010|
+
+   |lab011|
+
+#. Observe that **HTTP Method** now appears **Configured**. 
+
+#. Further down in the **Request Match** section, select the **Configure** link in the **HTTP Path** 
+   section as shown.
+
+#. Observe the various Path definition options, click **Add Item** in the **Prefix Values**
+   section the input **/auth.php** as shown and then click **Apply**.
+
+   |lab012|
+
+   |lab013|
+   
+#. Observe that **HTTP Path** now also appears **Configured**. Click **Apply** on the
+   **Rate Limiter Policy** window.
+
+#. Observe the rate limit rule just created and click **Add Item** to build another rule.
+
+   |lab014|
+
+   |lab015|
+
+#. In the **Rate Limiter Policy** window within the **Metadata** section input **rate-limit-page** 
+   into the **Name** field. 
+
+#. Using the **Actions** drop-down select, **Apply Rate Limiter**.
+
+#. In the left-hand navigation, click on **Request Match**. 
+
+   |lab016|
+
+#. In the **Request Match** section and select the **Configure** link in the **HTTP Method** 
+   section as shown. 
+
+#. In the resulting **HTTP Method** window under **Method List**, select **GET** then click **Apply**. 
+
+   |lab017|
+
+   |lab018|
+
+#. Observe that **HTTP Method** now appears **Configured**. 
+
+#. Further down in the **Request Match** section, select the **Configure** link in the **HTTP Path** 
+   section as shown.
+
+#. Observe the various Path definition options, click **Add Item** in the **Prefix Values** 
+   section the input **/ratelimit.php** as shown and then click **Apply**.
+
+   |lab019|
+
+   |lab020|
+
+#. Observe that **HTTP Path** now also appears **Configured**. Click **Apply** on the 
+   **Rate Limiter Policy** window. 
+
+#. Observe the added rate limit rule and click **Add Item** to build another rule.
+
+   |lab021|
+
+   |lab022|
+
+#. In the **Rate Limiter Policy** window within the **Metadata** section input **bypass** into 
+   the **Name** field
+
+#. Using the **Actions** drop-down, select **Bypass Rate Limiter**. 
+
+#. In the left-hand navigation, click on **Request Match**.
+
+   |lab023|
+
+#. In the **Request Match** section, select the **Configure** link in the **HTTP Method** 
+   section as shown.
+
+#. In the resulting **HTTP Method** window under **Method List**, select **ANY** then click **Apply**.
+
+   |lab024|
+
+   |lab025|
+
+#. Observe that **HTTP Method** now appears **Configured**. 
+
+#. Further down in the **Request Match** section, select the **Configure** link in the 
+   **HTTP Path** section as shown.
+
+#. Observe the various Path definition options, click **Add Item** in the **Prefix Values**
+   section the input **/** as shown and then click **Apply**.
+
+   |lab026|
+
+   |lab027|
+
+#. Observe that **HTTP Path** now also appears **Configured**. Click **Apply** on the 
+   **Rate Limiter Policy** window.
+
+#. Observe the three created rate limit rules and click **Apply**. 
+
+   |lab028|
+
+   |lab029|
+
+#. Observe that rules are now **Configured**. Complete the custom **Rate Limiter Policy** by
+   clicking **Continue**.
+
+   |lab030|
+
+#. Observe the **Request Rate Limiter** options for number of requests, the Per Period interval 
+   and the Burst Multiplier.
+
+#. Also observe that IPs can be allowed without Rate Limiting policies being applied.
+
+#. Click **Apply** to add the **Rate Limit Configuration** to the application Load Balancer.
+
+   .. note::
+      *Although only one policy is being added, multiple Rate Limit policies can be attached.* 
+
+   |lab031|
+
+#. Observe that the **Custom Rate Limiting Parameters** now show **Configured** and then 
+   click on **Other Settings** in the left-hand navigation.                                 
+                                                                                            
+#. Once at the bottom of the **HTTP Load Balancer** configuration, click **Save and Exit**. 
+
+   |lab032|
+   |lab033|
 
 Task 3: Testing Rate Limiting
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Now we will retest access to our website and see if our experience has indeed changed.
 
-+----------------------------------------------------------------------------------------------+
-| 1. In your local web browser access the following link, replacing namespace with your own:   |
-|                                                                                              |
-|    **http://<namespace>.lab-sec.f5demos.com/ratelimit.php**                                  |
-|                                                                                              |
-| 2. Refresh the page multiple times and quickly... did you experience a different result?     |
-|                                                                                              |
-|    Rate Limited responses receive **429** response codes and block pages as shown in the     |
-|                                                                                              |
-|    image below.                                                                              |
-+----------------------------------------------------------------------------------------------+
-| |lab034|                                                                                     |
-+----------------------------------------------------------------------------------------------+
+#. In your local web browser access the following link, replacing namespace with your own:
+    **https://<namespace>.lab-sec.f5demos.com/ratelimit.php** 
 
-+----------------------------------------------------------------------------------------------+
-| 3. Rate Limited requests can also be seen in **Security Events** as Service Policy blocks.   |
-|                                                                                              |
-| 4. Review your Security Events by navigating back to the Security Dashboard to see the 429   |
-|                                                                                              |
-|    blocks.                                                                                   |
-|                                                                                              |
-| .. note::                                                                                    |
-|                                                                                              |
-|    *Review Lab2/Task4 to find Security Events. You can copy you support ID to search with!*  |
-+----------------------------------------------------------------------------------------------+
-| |lab035|                                                                                     |
-|                                                                                              |
-| |lab036|                                                                                     |
-+----------------------------------------------------------------------------------------------+
+#. Refresh the page multiple times and quickly... did you experience a different result? 
+   Rate Limited responses receive **429** response codes and block pages as shown.
 
+   |lab034|
 
+#. Rate Limited requests can also be seen in **Security Analytics** as Service Policy blocks.
 
-Task 4: Observing Route Configurations
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#. Review your Security Events by navigating back to the Security Dashboard to see the 429 blocks.
+   You can also use the AI Assistant to investigate the support ID. 
 
-The following steps will enable you to attach Service Policies to your configured Load Balancer.
-It will also help you understand additional approaches for Service Policies.
+   .. note::
+      *Review the Lab 1 to find Security Events. You can copy you support ID to search with!* 
+   
+   |lab035|
 
-+----------------------------------------------------------------------------------------------+
-| 1. Within **Web App & API Protection** in the F5 Distributed Cloud Console, **Manage >**     |
-|                                                                                              |
-|    **Load Balancer > HTTP Load Balancers** and use the **Action Dots** and click **Manage**  |
-|                                                                                              |
-|    **Configuration**.                                                                        |
-|                                                                                              |
-| 2. Click **Edit Configuration** in the top right-hand corner.                                |
-+----------------------------------------------------------------------------------------------+
-| |lab063|                                                                                     |
-|                                                                                              |
-| |lab064|                                                                                     |
-+----------------------------------------------------------------------------------------------+
+   |lab036|
 
-+----------------------------------------------------------------------------------------------+
-| 3. Click **Routes** in the left-hand navigation and the click **Configure** as shown.        |
-|                                                                                              |
-| 4. In **Routes** window, click the **Add Item** link.                                        |
-+----------------------------------------------------------------------------------------------+
-| |lab065|                                                                                     |
-|                                                                                              |
-| |lab066|                                                                                     |
-+----------------------------------------------------------------------------------------------+
+   |lab037|
 
-+----------------------------------------------------------------------------------------------+
-| 5. Observe the various route types and matching criteria controls that can be leveraged to   |
-|                                                                                              |
-|    securely control application flow, perform pool targeting, make path responses or develop |
-|                                                                                              |
-|    custom control to secure protected applications.                                          |
-|                                                                                              |
-| 6. An example walkthrough of **Simple Route** is shown but feel free to look at all the      |
-|                                                                                              |
-|    route types: .                                                                            |
-|                                                                                              |
-|    * **Simple Route:** Matches on path and/or HTTP method and forward traffic to the         |
-|                        associated pool.                                                      |
-|    * **Redirect Route:** Matches on path and/or HTTP method and redirects matching traffic   |
-|                        to a different URL.                                                   |
-|    * **Direct Response Route:** Matches on path and/or HTTP method and responds directly to  |
-|                        matching traffic.                                                     |
-|    * **Custom Route Object:** Leverages a reference route object created outside this view.  |
-|                                                                                              |
-+----------------------------------------------------------------------------------------------+
-| |lab067|                                                                                     |
-|                                                                                              |
-| |lab068|                                                                                     |
-|                                                                                              |
-+----------------------------------------------------------------------------------------------+
-|                                                                                              |
-| 7. To build an example L7 routing rule, select **Simple Route.**                            |
-|                                                                                              |
-| 8. Select **ANY** as the HTTP method.                                                        |
-|                                                                                              |
-| 9. Under Path Match, add **/cart** as the prefix.                                            |
-|                                                                                              |
-| 10. Click **Add Item** to add a different origin pool, so clients will be redirected         |
-|                                                                                              |
-|     to a different set of back-end servers when accessing /cart.                             |
-|                                                                                              |
-+----------------------------------------------------------------------------------------------+ 
-| |lab070|                                                                                     |
-|                                                                                              |
-+----------------------------------------------------------------------------------------------+ 
-|                                                                                              |
-| 12. Click **Add Item** to add a new origin pool.                                             |
-|                                                                                              |
-| 13. Enter **demoshop-pool** in the Name field under the Metadata section.                    |
-|                                                                                              |
-| 14. Cllck **Add Item** to define the origin servers.                                         |
-|                                                                                              |
-+----------------------------------------------------------------------------------------------+
-| |lab071|                                                                                     |
-|                                                                                              |
-| |lab072|                                                                                     |
-|                                                                                              |
-+----------------------------------------------------------------------------------------------+
-|                                                                                              |
-| 15. Enter **shop.sales-demo.f5demos.com** as the Public DNS Name of the Origin server        |
-|                                                                                              |
-| 16.  Click **Apply**                                                                         |
-|                                                                                              |
-| 17.  Set the Origin server Port to **80**                                                    |
-|                                                                                              |
-| 18.  Scroll down to the **TLS** section and ensure the TLS setting is set to **Disable**     |
-|                                                                                              |
-| 19.  Click **Continue**                                                                      |
-|                                                                                              |
-| 20.  Click **Apply** to save the Origin Pool configuration.                                  |
-|                                                                                              |
-| 21.  Click **Apply** to save the Route Type for this /cart URI.                              |
-|                                                                                              |
-| 22.  Click **Apply** to save the overall Routes configuration. Note you can have multiple    |
-|                                                                                              |
-|     route configurations per load balancer.                                                  |
-|                                                                                              |
-| 23.  Click **Save and Exit** to complete the configurations on the Load Balancer.            |
-|                                                                                              |
-| 24. In your local web browser access the following link, replacing namespace with your own:  |
-|                                                                                              |
-|    **http://<namespace>.lab-sec.f5demos.com/cart** Note you are now at the new application.  |
-+----------------------------------------------------------------------------------------------+
-| |lab073|                                                                                     |
-|                                                                                              |
-| |lab074|                                                                                     |
-|                                                                                              |
-| |lab075|                                                                                     |
-|                                                                                              |
-| |lab076|                                                                                     |
-|                                                                                              |
-| |lab077|                                                                                     |
-|                                                                                              |
-| |lab078|                                                                                     |
-+----------------------------------------------------------------------------------------------+
+Narrative Check
+-----------------
+You have now configured rate limiting on the ACME Corp application.  This will slow down the attackers
+from making multiple requests to your application.  
+
+Following your rate limiting deployment, you hop back on the all-hands call and find out that the 
+security and application team have uncovered the attack methodology by reviewing applicaiton logs.  
+First the attackers are using CURL to launch their attacks.  
+
+Let's focus on building that custom policy to close the vulnerability that the attackers are using.  
+
+Task 4: Create, assign and test a Custom Service Policy
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In this task you will add a Custom Policy and assign it to your Load Balancer. Custom Service 
+Policies provide the flexibility to build **Positive** or **Negative** security models and custom
+rules or controls.
+
+This Custom Service Policy will be focused on limiting CURL access as logs are indicating that 
+the attackers are using CURL to access the application.  The Custom policy will also focus on protecting
+a specific page of the application that is vulnerable to close the Zero Day exploit.
 
 
+#. Before beginning this task, re-evaluate your access from your client to the following: 
+  
+   * **Browser**: *https://<namespace>.lab-sec.f5demos.com/index.php?page=header*
+   * **cURL**: *https://<namespace>.lab-sec.f5demos.com/*
+   * **cURL**: *https://<namespace>.lab-sec.f5demos.com/index.php?page=header* 
 
+   The expectation is that all are successful based on the current Service Policies.
 
+   .. note:: 
+      cURL is supported on Windows, Mac & Linux platforms.
 
+   |lab038|
+
+   |lab039|
+
+   |lab039a|
+
+#. Returning to **Web App & API Protection**, in the left-hand navigation menu, expand the **Manage** 
+   section and click **Service Policies**. In the flyout menu, click the **Service Policies** link.
+
+#. Observe the existing Service Policies and note that some are sourced from the **shared** namespace 
+   which means they could be used within any other namespace. 
+
+#. Click **Add Service Policy** in the top left area as shown
+
+   |lab040|
+
+   |lab041|
+
+#. In the **Metadata** section enter **custom-deny** for the **Name** and then click **Rules** in the 
+   left-hand navigation.
+
+#. Then select **Custom Rule List** from the dropdown for **Select Policy Rules**.  Locate **Rules** 
+   configuration section and click **Configure**.
+
+   |lab042|
+
+#. In the **Rules** window, click **Add Item**.
+
+#. In the **Metadata** section **Name** field input **curl-deny** and toggle the **Show Advanced Fields** 
+   to see extra configuration options in **Action** section.
+
+#. In the **Action** section, select **Deny** for the **Action** and then in the left-hand navigation 
+   click **Request Match**.
+
+   |lab043|
+
+   |lab044|
+
+#. In the **HTTP Method** section, use the **Method List** dropdown to select **GET**.
+
+#. In the **HTTP Headers** section click **Add Item**. 
+
+   |lab045|
+
+#. In the **Header Matcher** window, input **user-agent** for **Header Name** as shown.
+
+#. Click **Add Item** under the **Regex Values** area and input **(?i)^.*curl.*$** then click **Apply**.
+
+   |lab046|
+
+#. Scroll down to the bottom of the **Rule Configuration** and click **Apply**. 
+
+   |lab047|
+
+#. In the **custom-deny** Service Policy Rule window, click **Add Item** to add another rule.
+
+   .. note:: 
+      *Multiple Rules can be added to a single Service Policy*. 
+
+   |lab048|
+
+#. In the **Metadata** section **Name** field input **header-page-deny** and then click 
+   **Request Match** in the left-hand navigation.
+
+   |lab049|
+
+#. In the **Request Match** section under **HTTP Methods**, add **GET** to the method list.
+
+#. In the **HTTP Path** area, click the **Configure** link. 
+
+   |lab050|
+
+#. Click **Add Item** in **Prefix Values** area and in the input field type **/index.php**.
+   Click **Apply**.
+
+   |lab051|
+
+#. Observe that the **HTTP Path** is now **Configured**.
+
+#. In section **HTTP Query Parameters** click **Add Item**. 
+
+   |lab052|
+
+#. In **Query Parameter Matcher** window, in the **Query Parameter Name** field, enter **page**.
+
+#. In **Match Options** section, ensure **Match Values** is selected and then click **Add Item** 
+   in the area with **Exact Values** as shown. 
+
+#. Input **header** into the **Exact Values** input field as shown and then click **Apply**.
+
+   |lab053|
+
+#. Observe that the **HTTP Query Parameters** has the value we configured and scroll to the
+   bottom of the rule configuration and click **Apply**. 
+
+   |lab054|
+
+   |lab055|
+
+#. Observe that both configured rules are present and then click **Apply**.  
+
+   .. note::
+      *Rules within the Service Policy can placed in order as needed*.
+
+   |lab056|
+
+#. Observe that the Custom Rule is now configured for **custom-deny** Service Policy and click **Apply**. 
+
+   |lab057|
+
+#. The **custom-deny** Service Policy is now listed among all Service Policies and has a **Rule Count** of **2**. 
+
+   .. note::
+      *This window also show the Service Policy "Hits" when validating usage*.
+
+   |lab058|
+
+#. Return to **Web App & API Protection** in the F5 Distributed Cloud Console, **Manage > Load Balancer >**
+   **HTTP Load Balancers** and use the **Action Dots** and click **Manage**.
+
+#. Click **Edit Configuration** in the top right-hand corner.
+
+   |lab059|
+
+   |lab060|
+
+#. Click **Common Security Controls** in the left-hand navigation.
+
+#. From the **Service Policies** section, click **Edit Configuration**. 
+
+   |lab061|
+
+#. Observe the order of the previously created Service Policies (allow-geo,deny-all) and click **Add Item**.
+
+#. Use the drop-down as shown and select **<namespace>/custom-deny** from the available Service Policy list.
+
+#. Click the six squares icon to drag **<namespace>/custom-deny** into the first position in policy order as 
+   shown then click **Apply**. 
+
+   |lab062|
+
+   |lab063|
+
+   |lab064|
+
+#. Scroll to the bottom and click **Save & Exit**.
+
+   |lab065|
+
+#. Time to test to see if the web vulenrability is patched. Now test the following from your client:
+
+   * **Browser**: *https://<namespace>.lab-sec.f5demos.com/index.php?page=header*
+   * **cURL**: *https://<namespace>.lab-sec.f5demos.com/*
+   * **cURL**: *https://<namespace>.lab-sec.f5demos.com/index.php?page=header*
+  
+
+   |lab066|
+
+#. What where your results?  The zero-day vulnerability should be closed.  Check the Security Dashboard or 
+   AI Assistant to confirm that the **custom-deny** policy is blocking the request.
+
+   |lab067|
+
+#. Finally, let's make sure access via the Browser is still valid for normal traffic.
+
+   * **Browser**: *https://<namespace>.lab-sec.f5demos.com/* 
+
+Narrative Check
+-----------------
+You have now configured a "custom web application vulnerability signature" for the ACME Corp application using 
+Service Policies. 
+
+Service Policies provide a powerful framework to implement both positive and negative security models
+and you matching criteria from client requests (headers, parameters, paths, request body payload) to 
+effectively control the access to protected applications and APIs.
+
+Service Policies can be a foundational part of an organizations security program by extending zero-trust segmentation
+capabilities beyond a company's traditional network  utilizng F5's Regional Edges and Application Delivery Network.
+Service Policies can also be a key part of security incident response to quickly stop zero-day attacks.
 
 +----------------------------------------------------------------------------------------------+
 | **End of Lab 3:**  This concludes Lab 3, feel free to review and test the configuration.     |
@@ -542,40 +563,74 @@ It will also help you understand additional approaches for Service Policies.
    :width: 800px
 .. |lab036| image:: _static/lab3-036.png
    :width: 800px
-.. |labend| image:: _static/labend.png
+.. |lab037| image:: _static/lab3-037.png
+   :width: 800px
+.. |lab038| image:: _static/lab3-038.png
+   :width: 800px
+.. |lab039| image:: _static/lab3-039.png
+   :width: 800px
+.. |lab039a| image:: _static/lab3-039a.png
+   :width: 800px
+.. |lab040| image:: _static/lab3-040.png
+   :width: 800px
+.. |lab041| image:: _static/lab3-041.png
+   :width: 800px
+.. |lab042| image:: _static/lab3-042.png
+   :width: 800px
+.. |lab043| image:: _static/lab3-043.png
+   :width: 800px
+.. |lab044| image:: _static/lab3-044.png
+   :width: 800px
+.. |lab045| image:: _static/lab3-045.png
+   :width: 800px
+.. |lab046| image:: _static/lab3-046.png
+   :width: 800px
+.. |lab047| image:: _static/lab3-047.png
+   :width: 800px
+.. |lab048| image:: _static/lab3-048.png
+   :width: 800px
+.. |lab049| image:: _static/lab3-049.png
+   :width: 800px
+.. |lab050| image:: _static/lab3-050.png
+   :width: 800px
+.. |lab051| image:: _static/lab3-051.png
+   :width: 800px
+.. |lab052| image:: _static/lab3-052.png
+   :width: 800px
+.. |lab053| image:: _static/lab3-053.png
+   :width: 800px
+.. |lab054| image:: _static/lab3-054.png
+   :width: 800px
+.. |lab055| image:: _static/lab3-055.png
+   :width: 800px
+.. |lab056| image:: _static/lab3-056.png
+   :width: 800px
+.. |lab057| image:: _static/lab3-057.png
+   :width: 800px
+.. |lab058| image:: _static/lab3-058.png
+   :width: 800px
+.. |lab059| image:: _static/lab3-059.png
+   :width: 800px
+.. |lab060| image:: _static/lab3-060.png
+   :width: 800px
+.. |lab061| image:: _static/lab3-061.png
+   :width: 800px
+.. |lab062| image:: _static/lab3-062.png
    :width: 800px
 .. |lab063| image:: _static/lab3-063.png
-   :width: 800px   
+   :width: 800px
 .. |lab064| image:: _static/lab3-064.png
-   :width: 800px   
+   :width: 800px
 .. |lab065| image:: _static/lab3-065.png
-   :width: 800px   
+   :width: 800px
 .. |lab066| image:: _static/lab3-066.png
-   :width: 800px   
+   :width: 800px
 .. |lab067| image:: _static/lab3-067.png
-   :width: 800px   
-.. |lab068| image:: _static/lab3-068.png
-   :width: 800px   
-.. |lab069| image:: _static/lab3-069.png
-   :width: 800px   
-.. |lab070| image:: _static/lab3-070.png
-   :width: 800px  
-.. |lab071| image:: _static/lab3-071.png
-   :width: 800px    
-.. |lab072| image:: _static/lab3-072.png
-   :width: 800px    
-.. |lab073| image:: _static/lab3-073.png
-   :width: 800px   
-.. |lab074| image:: _static/lab3-074.png
-   :width: 800px   
-.. |lab075| image:: _static/lab3-075.png
-   :width: 800px   
-.. |lab076| image:: _static/lab3-076.png
-   :width: 800px   
-.. |lab077| image:: _static/lab3-077.png
-   :width: 800px   
-.. |lab078| image:: _static/lab3-078.png
-   :width: 800px   
+   :width: 800px
+
+
+
+
 .. |labend| image:: _static/labend.png
    :width: 800px
       

@@ -1,117 +1,129 @@
 Lab 1: Deploying and Managing F5 Distributed Cloud Web Application Firewall Configuration
 =========================================================================================
 
+**Objective:**
+
+* Explore and become familiar with the Distributed Cloud Console
+
+* Review the F5 Distributed Cloud (XC) Load Balancer that has been provisioned
+
+* Create a Web Application Firewall policy and attach to the F5 XC Load Balancer
+
+**Narrative:** 
+
+After consulting with your trusty F5 Solutions Engineer, you decide to adopt security services from 
+F5 Distributed Cloud Web Application and API Protection (WAAP) suite. The lab provisioned for you 
+has already deployed a F5 XC load balancer and been setup to route to your Azure application.  The 
+F5 Distributed Cloud Application Delivery Network (ADN) will provide network connectivity for clients 
+to first route to F5's nearest Regional Edge(RE) location on the ADN utilizing IP Anycast.  Once 
+the client is connected to the their nearest F5 RE, security controls can now be applied so that 
+malicous traffic can be dropped at the F5 RE and valid traffic can than be passed to ACME Azure environment.  
+This lab will be deployed in a SaaS only configuration with no on-premises (public or private cloud) elements. 
+
+.. NOTE:: You will not have direct access to the Azure environment where the application is hosted.
+
 .. warning :: If you are using multiple labs in one course, understand that
    some steps below may be redundant depending on labs deployed. To gain full
    benefits from this lab, please delete any objects created in your prior lab
    and continue with this lab as all necessary objects will be recreated.
 
-Lab 1 will focus on the deployment and security of an existing hosted
-application using F5 Distributed Cloud Platform and Services. This lab will be
-deployed in a SaaS only configuration with no on-premises (public or private
-cloud) elements.  All configurations will be made via the F5 Distributed Cloud
-Console and within the F5 Distributed Cloud Global Network services
-architecture.
-
-For the tasks that follow, you should have already noted your individual
-**namespace**. If you failed to note it, return to the **Introduction** section
-of this lab, follow the instructions provided and note your **namespace**
-accordingly. The **Delegated Domain** and the F5 Distributed Cloud **Tenant**
-are listed below for your convenience as they will be the same for all lab
-attendees.
-
-* **Delegated Domain:** *.lab-sec.f5demos.com*
-* **F5 Distributed Cloud Tenant:** https://f5-xc-lab-sec.console.ves.volterra.io
-
 Following the tasks in the prior **Introduction** Section, you should now be
 able to access the F5 Distributed Cloud Console, having set your Work Domain
 Roles and Skill levels. If you have not done so already, please login to your
-tenant for this lab and proceed to Task 1.
+tenant for this lab using the **Accept Inivitation** link from your second email 
+and proceed to Task 1.
 
 **Expected Lab Time: 25 minutes**
 
 
-Task 1: Configure Load Balancer and Origin Pool
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Task 1: Exploring the F5 Distributed Console
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The following steps will allow you to deploy and advertise a globally available
-application. These steps will define an application, register its DNS and
-assign a target as an origin.
+The following steps will allow you to review the XC Load Balancer that was 
+deployed and is currently advertising a globally available application. These steps 
+will allow you to review the application, its DNS entry and the Azure target that is 
+configured as the origin.
 
-#. Following the **Introduction** section instructions, you should now be in
-   the **Web** **App & API Protection** configuration window. If for some
-   reason you are not in the **Web App & API Protection** window, use the
-   **Select Service** in the left-hand navigation, and click **Web App & API
-   Protection** as shown in the *Introduction Section*
+#. Following the **Introduction** section instructions, you should now be the Home page
+   of the F5 Distributed Cloud Console.  Let's first review the F5 Distributed Load Balancer
+   that was configured for you via automation.  Select **Web App & API Protection**. 
 
-#. In the left-hand navigation expand **Manage** and click **Load Balancers >
-   HTTP Load** **Balancers**
+#. On the **Web App & API Protection** page, note the identifier of your namespace.  The namespace
+   will be follow a format of *adjective-animal*.  In this guide, the namespace is pet-walrus is an 
+   example.  Your namespace will be different.  In the left-hand navigation expand **Manage** and 
+   click **Load Balancers >  Origin Pools**
 
-#. In the resulting screen click the **Add HTTP Load Balancer** in the graphic
-   as shown.
+   |lab001| 
 
-   |lab001|
+   |lab002| 
 
-   |lab002|
+#. In the resulting screen expand the Actions Menu and click **Manage Configuration** for 
+   the origin pool configured in your namespace. Here you will see the origin server public
+   FQDN of the application running in ACME's Azure environment.  Copy the domain name so you 
+   can visit the site directly from your web browser.  Click  **Cancel and Exit** to return 
+   to the Origin Pools page since you will not need to make any updates to the configuration.
 
-   .. note::
-      *You have defaulted to your specific namespace as that is the only namespace
-      to which you* *have administrative access.*
-
-#. Using the left-hand navigation and in the sections as shown, enter the
-   following data. Values where **<namespace>** is required, use the name of
-   your given namespace.
-
-   * **Metadata:Name ID:**  *<namespace>-lb*
-   * **Basic Configuration: List of Domains:**
-     *<namespace>.lab-sec.f5demos.com*
-   * **Basic Configuration: Select Type of Load Balancer:** *HTTP*
-   * **Basic Configuration: Automatically Manage DNS Records:** *(Check the
-     * checkbox)*
-   * **Basic Configuration: HTTP Port:** *80*
-
-   |lab003|
-
-#. In the current window's left-hand navigation, click **Origins**. In the
-   adjacent **Origins** section, under **Origin Pools**, click **Add Item**.
+   |lab003| 
 
    |lab004|
 
-#. In the resulting window, use the drop down as shown and click **Add Item**.
+#. Using your browser, visit this application directly utilizing its public FQDN. Select the 
+   **Menu** on the top right-hand side and select **Header**.  
+   
+#. Note the Remote Address field. This will match the IP address of your endpoint.  You can verify 
+   that it matches by looking up your IP address at https://ipinfo.io/.  
 
    |lab005|
 
-#. In the resulting window, enter **<namespace>-pool** in the **Name** field
-   and click
-
-   **Add Item** under **Origin Servers** as shown.
-
    |lab006|
-
-#. In the resulting window, **Public DNS Name of Origin Server** should be
-   selected for **Select Type of Origin Server**.
-
-#. In the **DNS Name** field enter the following hostname:
-
-   **demo-app.amer.myedgedemo.com** and then click **Apply**
 
    |lab007|
 
-#. After returning to the prior window, make sure **Port:** within the
-   **Origin Servers** section, under **Origin Server Port** is configured for
-   **80**.
-
-#. Leave all other values as shown while scrolling to the bottom and click,
-   **Continue**.
-
-#. After returning to the next window and confirming the content, click
-   **Apply**.
-
    |lab008|
+
+
+#. Next, let's return to the F5 Distributed Cloud console and take a look at the F5 XC load balancer 
+   configured for you. In the left-hand navigation expand **Manage** and click **Load Balancers > HTTP Load Balancers**
+
+#. In the resulting screen expand the Actions Menu and click **Manage Configuration** for 
+   the load balancer configured in your namespace. The graphic below is an example.  Your environment 
+   will have a different load balancer name but it should follow a similar naming convention 
+   *adjective-animal*.
 
    |lab009|
 
    |lab010|
+
+
+#. Using the left-hand navigation and in the sections as shown, review the
+   following data. Values where **<namespace>** *adjective-animal* is represented, the configuration
+   will be the name of your provisioned namespace.  Note the FQDN of the F5 XC load balancer.  
+
+
+   * **Metadata**  *<namespace>-lb*
+   * **Domains and LB Type**  *<namespace>.lab-sec.f5demos.com*
+   * **Other Settings** VIP Advertisement
+
+   .. note::
+      *The VIP Advertisement selection controls how/where the application is advertised. The "Internet"*
+      *setting means that this application will be advertised globally from the F5*
+      *Distributed Cloud Global Network utilizing Anycast.*
+
+   |lab011| 
+  
+
+#. Using your web browser, access the application via the F5 XC FQDN.  Click on **Menu > Header**
+
+#. Note that the Remote Address has changed as well as the presence of a new X-Forwarded-For header.  
+   The client information should have changed as you are now connecting first through the F5 ADN Regional Edge 
+   before being proxied the the application running the ACME Corp Azure environment.  X-Forwarded-For details should 
+   match your client IP address.  
+
+   |lab012| 
+
+   |lab013| 
+
+
 
 Task 2: Configure WAF Policy on the Load Balancer
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -120,15 +132,16 @@ The following steps will guide you through adding a Web Application Firewall
 (WAF) Policy. These steps will demonstrate various aspects of the
 configuration.
 
-#. Continuing in the **HTTP Load Balancer** section, on the left-hand menu
-   click on the **Web Application Firewall (WAF)** drop down and select
-   **Enable**.
+#. Returning back to the F5 XC console and continuing in the **HTTP Load Balancer** section, 
+   in the upper right hand corner select **Edit Configuration** and then in the left hand 
+   menu click on the **Web Application Firewall (WAF)** drop down and select **Enable**.
 
-   |lab011|
+   |lab014| ''
+   |lab015| 
 
 #. In the resulting **Enable** field drop down, select **Add Item**.
 
-   |lab012|
+   |lab016|
 
    .. note::
       *The "shared/base-appfw" policy is in the "shared namespace" which can be
@@ -146,21 +159,21 @@ configuration.
 #. Select **Custom** from the dropdown menu. Additional configurations will
    become available
 
-   |lab013|
+   |lab017|
 
-   |lab014|
+   |lab018|
 
 
 #. In the expanded configuration, in the **Attack Signatures** section use the
    dropdown for **Signature Selection by Accuracy** and select **High, Medium,
    and Low**.
 
-   |lab015|
+   |lab019|
 
 #. Leaving all other values as default, scroll to the bottom and click
    **Continue**.
 
-   |lab016|
+   |lab020|
 
    .. note::
       *Automatic Attack Signatures Tuning is enabled which engages an automatic
@@ -172,56 +185,21 @@ configuration.
       Application* *Firewall with new or updated attack signatures be staged
       (monitored) for a period of* *prior to enforcement (blocking).*
 
-#. Returning to the **HTTP Load Balancer** window, scroll (or click in the
-   left-hand navigation) to the **Other Settings** section and note the **VIP
-   Advertisement** setting.
-
-#. Click **Save and Exit** at the bottom of the **HTTP Load Balancer**
-   configuration screen.
-
-   |lab017|
-
-   .. note::
-      *The above selection controls how/where the application is advertised. The "Internet"*
-      *setting means that this application will be advertised globally from the F5*
-      *Distributed Cloud Global Network utilizing Anycast.*
-
-#. In the **HTTP Load Balancers** window, note the application hostname under
-   the **Domains** column *(This was done in Task1: Step 4)*.
-
-#. Click the **Action** dots, and then in the subsequent menu **Manage
-   Configuration**.
-
-   |lab018|
-
-#. Click **DNS Information** in the left-hand navigation.
-
-   The value for a CNAME is listed under **Host Name**. The associated
-   "Default/Tenant IP" is also shown under **IP Address**. The "Default/Tenant
-   IP" is uniquely assigned to each F5 Distributed Cloud Tenant. Additional
-   Public IPs can be added to the Tenant.
-
-   |lab019|
-
-#. Click **JSON** in the horizontal navigation at the top-left of the screen.
-   The JSON payload (or YAML format, from dropdown) provides for the entire
-   Load Balancer configuration. This can be used for backup or subsequent
-   CI/CD automation operations.
-
-   |lab020|
-
-#. Click **Documentation** in the horizontal navigation at the top of the
-   screen.
-
-   The Documentation screen provides details on the F5 Distributed Cloud
-   Console API.
-
-   All operations in the F5 Distributed Cloud Platform are API-first. This
-   includes all GUI actions and associated audit logging.
-
-#. Click **Cancel and Exit** to return to the **HTTP Load Balancers** screen.
+#. Returning to the **HTTP Load Balancer** window, scroll to the bottom and click
+   click **Save and Exit** at the bottom of the **HTTP Load Balancer** configuration screen.
 
    |lab021|
+
+Narrative Check
+---------------
+
+You've built your first WAF policy on F5 Distributed Cloud.  This WAF policy can be applied
+to any additional load balancers deployed in this namespace.  The F5 XC WAAP suite can be 
+configured to protect applications across your on-prem data center, Azure, AWS, GCP and SAAS 
+environments.  This allows your team to uniformly manage application security across all of your 
+public, private and SAAS applications.  Now that you are familiar with how to build WAF policies 
+on F5 Distributed Cloud, we can start getting our hands dirty with testing to ensure the ACME 
+Azure application is protected.  
 
 
 Task 3: Testing the WAF Policy & Reviewing Event Data
@@ -232,9 +210,7 @@ Policy. You will also review the generated event data to make additional
 configuration changes.
 
 #. Open another tab in your browser (Chrome shown), navigate to the newly
-   configured Load
-
-   Balancer configuration: **http://<namespace>.lab-sec.f5demos.com**, to confirm
+   configured Load  Balancer configuration: **http://<namespace>.lab-sec.f5demos.com**, to confirm
    it is functional.
 
 #. Using some of the sample attacks below, add the URI path & variables to your
@@ -243,6 +219,7 @@ configuration changes.
    * ``/?cmd=cat%20/etc/passwd``
    * ``/product?id=4%20OR%201=1``
    * ``/../../../../etc/shadow``
+   * ``/product?code=echo%20shell_exec(%27/sbin/ifconfig%20eth0%27);``
    * ``/cart?search=aaa'><script>prompt('Please+enter+your+password');</script>``
 
 #. In the resulting block screens, note the **URL** and the **Support ID**.
@@ -254,10 +231,14 @@ configuration changes.
 
    |lab024|
 
+Narrative Check
+-----------------
+
+The ACME Azure application is now being successfully protected by F5 Distributed Cloud.
+
 #. Returning to the F5 Distributed Cloud Console, use the left-hand menu to
-   select **Overview > Performance** section.  This
-   dashboard will provide a summary view for all of the configured Load
-   Balancers.
+   select **Overview > Performance** section.  This dashboard will provide a summary 
+   view for all of the configured Load Balancers.
 
    |lab025|
 
@@ -324,12 +305,12 @@ configuration changes.
 
    |lab033|
 
-#. Review the **Security Dashboard** display (you may have limited data).
+#. Review the **Security Dashboard** display (you may have limited data). NOTE: you may need
+   to update the variable time period
 
    |lab034|
 
-#. Scroll to **Load Balancers** section and click the **<namespace>-lb**
-   object.
+#. Scroll to **Load Balancers** section and click the **<namespace>-lb**  object.
 
    |lab035|
 
@@ -345,10 +326,10 @@ configuration changes.
 
 #. Expand your latest security event as shown.
 
-   |lab036|
+   |lab037|
 
    .. note::
-      *If you lost your 1 Hour Filter, re-apply using Task 3: Step 6*
+      *If you lost your 1 Hour Filter, re-apply using following the method described in the earlier task*
 
 #. Note the summary detail provided **Information** link and identify the
    **Request ID** which is synonymous with **Support ID** (filterable) from the
@@ -359,28 +340,37 @@ configuration changes.
 #. Scroll to the bottom of the information screen to see specific signatures
    detected and actions taken during the security event.
 
-#. Next, click on the **Add Filter** link just under the **Security
-   Analytics** title near the top of the **Security Analytics** window.
-
    |lab039|
 
+#. Next, click on the **Add Filter** link just under the **Security
+   Analytics** title near the top of the **Security Analytics** window.
+   
 #. Type **req** in the open dialogue window and select **req_id** from the
    dropdown.
 
+   |lab039a|
+
+   |lab039b|
 #. Next, select **In** from the **Select Operator** dropdown.
 
 #. Finally, select/assign a value that matches one of your copied **Support
-   IDs** from Task 3, Step 2 as shown.  You can also optionally just paste the
+   IDs** from Task 3, Step 3 as shown.  You can also optionally just paste the
    Support ID in the value field and click **Apply**.
 
    |lab040|
 
    |lab041|
 
-   |lab042|
+Narrative Check
+-----------------
 
-#. You should now be filtered to a single "Security Event", as shown with your
-   selected filter. You can expand and review the request as desired using the
+Upon foresnic review, your application team has told you that last request from 
+**Support IDs** from the testing performed in Task 3, Step 2 as shown is actually a valid request. 
+You will need to create an exception for this so that traffic can successfully pass.  This task
+can be quickly accomplished in the XC console.  
+
+#. In the XC console, you should now be filtered to a single "Security Event", as shown 
+   with your selected filter. You can expand and review the request as desired using the
    **arrow** icon.
 
 #. Under the **Actions** column, click on the three Action dots (Scroll to
@@ -388,7 +378,7 @@ configuration changes.
 
 #. Select **Create WAF Exclusion rule** from the dropdown that appears.
 
-   |lab043|
+   |lab042|
 
    .. note::
       *Adding requestor/client to "Blocked or Trusted Clients" is also available.*
@@ -398,10 +388,10 @@ configuration changes.
    auto-populated based on the selected event to be excluded. Note the various
    sections and possible controls.
 
-#. In the **Expiration  Timestamp** field enter a timestamp 10 minutes from now
+#. In the **Expiration Timestamp** field enter a timestamp 10 minutes from now
    at which the exclusion should expire. (helpful when testing/validating). the
    format should be as shown *YYYY-MM-DD HH:MM:SS+00:00
-   (2023-05-30T01:21:00+00:00)*. **HH** must be in 24 hour format (there is no
+   (2025-02-06T11:21:00+00:00)*. **HH** must be in 24 hour format (there is no
    AM/PM).
 
    .. note::
@@ -410,15 +400,20 @@ configuration changes.
 
 #. Click **Apply** when complete.
 
+   |lab043|
+
    |lab044|
 
    |lab045|
-
-   |lab046|
+   
+   .. note::
+      If you get an error, you may need to add a Path RegEx **^/$**
 
 #. Click **Apply** on the **WAF Exclusion Rules** summary screen.
 
-#. Click on **Security Configuration** in the left-hand navigation and note the
+   |lab046|
+
+#. Scroll in the HTTP Load Balancer Configuration and note the
    added **WAF Exclusion Rules** configuration.
 
 #. Scroll to the bottom of the **HTTP Load Balancer** configuration window and
@@ -431,19 +426,18 @@ configuration changes.
 
    |lab048|
 
-   |lab049|
 
 Task 4: Understanding Exclusions and Customizing WAF Policy
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In this task you will come to understand how exclusions are applied. You will
-also further customize the WAF policy just built.
+also further customize the WAF policy just built to add a custom block response page.
 
 #. In the **HTTP Load Balancers** window **(Manage > Load Balancers > HTTP Load
    Balancers)** Click on the three action dots in the **Actions** column then
    **Manage Configuration** from the dropdown menu.
 
-   |lab050|
+   |lab049|
 
 #. Click on the **JSON** tab in the horizontal navigation as shown and scroll
    to find the **waf_exclusion_rule** section. Observe that the exclusion rule
@@ -454,36 +448,36 @@ also further customize the WAF policy just built.
 
 #. Click on the **Cancel and Exit** to return to the prior window.
 
-   |lab051|
+   |lab050|
 
-#. In the left-hand navigation menu, navigate  to **Manage** section and click
+#. In the left-hand navigation menu, navigate to **Manage** section and click
    the **App Firewall** link.
 
 #. On your App Firewall policy **<namespace>-appfw**, click the three dots
    in the **Actions** column and then click **Manage Configuration**.
 
-   |lab052|
+   |lab051|
 
 #. Click **Edit Configuration** in the top right corner.
 
-#. Use the left-hand navigation and click on **Advanced Configuration**.
+   |lab052|
 
-   |lab053|
+#. Use the left-hand navigation and click on **Advanced Configuration**.
 
 #. Click the drop down menu for **Blocking Response Page** in the **Advanced
    Configuration** section.
 
-   |lab054|
+   |lab053|
 
 #. Click the dropdown on **Blocking Response Page** and select **Custom** from
    the dropdown.
 
-   |lab055|
+   |lab054|
 
 #. In the **Blocking Response Page Body** replace the existing text with the
    text provided below. Click **Save and Exit** when completed.
 
-   |lab056|
+   |lab055|
 
    Sample Blocking Response Page to be copied:
 
@@ -508,10 +502,17 @@ also further customize the WAF policy just built.
       <div style="background-color: #222222; position: fixed; bottom: 0px; height: 40px; width: 100%; text-align: center;"></div>
       </body></html>
 
-#. You can rerun an attack from Task 3: Step 2 to see the new custom block
+#. You can rerun an attack that was not excluded from Task 3: Step 2 to see the new custom block
    page.
 
-   |lab057|
+   |lab056|
+
+Narrative Check
+-----------------
+You have now completed your first WAF policy deployment on F5 XC.  This policy can be re-used for
+other applications in the ACME environment and the exclusions you configured are only applied to this specific 
+Azure application.  New applications that utilize the WAF policy configured will not have these exclusions
+allowing you to quickly scale and manage exlusions on a per application basis while the policy can stay the same.
 
 **End of Lab 1:**  This concludes Lab 1, feel free to review and test the
 configuration.
@@ -599,6 +600,10 @@ A brief presentation will be shared prior to the beginning of Lab 2.
    :width: 800px
 .. |lab039| image:: _static/lab1-039.png
    :width: 800px
+.. |lab039a| image:: _static/lab1-039a.png
+   :width: 800px
+.. |lab039b| image:: _static/lab1-039b.png
+   :width: 800px
 .. |lab040| image:: _static/lab1-040.png
    :width: 800px
 .. |lab041| image:: _static/lab1-041.png
@@ -632,8 +637,6 @@ A brief presentation will be shared prior to the beginning of Lab 2.
 .. |lab055| image:: _static/lab1-055.png
    :width: 800px
 .. |lab056| image:: _static/lab1-056.png
-   :width: 800px
-.. |lab057| image:: _static/lab1-057.png
    :width: 800px
 .. |labend| image:: _static/labend.png
    :width: 800px

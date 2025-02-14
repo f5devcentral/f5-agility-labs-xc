@@ -24,12 +24,8 @@ Course/Lab Invitation
 | is selected.  Use either the first or second link position (indicated by arrows) based on    |
 | the attendee's F5 UDF (Unified Demo Framework) Account Status.                               |
 |                                                                                              |
-| # **New UDF Users**                                                                          |
-| # **Returning UDF Users going directly to Course**                                           |
-|                                                                                              |
-| .. note::                                                                                    |
-|    *Note The steps for new UDF Users or the steps for resetting UDF User account passwords*  |
-|    *are not shown. Please contact a member of the lab team if further assistance is needed.* |
+| #. **New UDF Users**                                                                         |
+| #. **Returning UDF Users going directly to Course**                                          |
 +----------------------------------------------------------------------------------------------+
 | |intro001|                                                                                   |
 +----------------------------------------------------------------------------------------------+
@@ -43,8 +39,8 @@ Accessing UDF (F5 Unified Demo Framework)
 | to login at  https://udf.f5.com                                                              |
 |                                                                                              |
 | .. note::                                                                                    |
-|    *Note The steps for new UDF Users or the steps for resetting UDF User account passwords*  |
-|    *are not shown. Please contact a member of the lab team if further assistance is needed.* |
+|    *The steps for new UDF Users or the steps for resetting UDF User account passwords are*   |
+|    *not shown. Please contact a member of the lab team if further assistance is needed.*     |
 +----------------------------------------------------------------------------------------------+
 | |intro002|                                                                                   |
 +----------------------------------------------------------------------------------------------+
@@ -98,12 +94,16 @@ Accessing F5 Distributed Cloud
 
 +----------------------------------------------------------------------------------------------+
 | Following the state change of the **Client System** to a **green arrow** (running) icon,     |
-| attendees will receive a second email as shown below.  Click the **Accept invitation**       |
-| button.                                                                                      |
+| attendees will receive a second email.  This email will come from no-reply@cloud.f5.com.     |
+| Click the **Accept invitation** with in the email.                                           |
 |                                                                                              |
 | .. note::                                                                                    |
-|    *Alternatively, attendees can also access the F5 Distributed Cloud Tenant directly via a* |
-|    *URL provided by the lab team as needed.*                                                 |
+|    *This link should be accessed in the same browser session as UDF was accessed for*        |
+|    *seamless experience.*                                                                    |
+|                                                                                              |
+| .. warning::                                                                                 |
+|    *Attendess should not attempt access to F5 Distributed Cloud tenant prior to receiving*   |
+|    *email. Lab permissions may need to be re-applied.*                                       |
 +----------------------------------------------------------------------------------------------+
 | |intro010|                                                                                   |
 +----------------------------------------------------------------------------------------------+
