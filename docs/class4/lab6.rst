@@ -3,8 +3,8 @@ Lab 6: Security Analytics and Malicious User Detection
 
 **Scenario**
 
-A recent review highlighted the need for greater visibility into API performance and security events.
- This includes identifying bad actors and clients attempting to misuse or attack the API.
+A recent review highlighted the need for greater visibility into API performance and security events. 
+This includes identifying bad actors and clients attempting to misuse or attack the API.
 
 Investigate request and security events, and establish a method for detecting malicious users.
 
