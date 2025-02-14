@@ -28,7 +28,7 @@ Now, Lab 1 starts right after you have loaded the downloadable XC Node OVA on to
 **Prerequisite**
 ------------------
 
-.. NOTE:: You should have received an email from F5 Distributed Cloud User Management <no-reply@volterratmails.io> with the content as follows:
+.. NOTE:: You should have received an email from F5 Distributed Cloud User Management <no-reply@cloud.f5.com> with the content as follows:
 
 |
 
@@ -302,7 +302,7 @@ Once the registration completes, you can see the cluster in the “Other Registr
 |
 
 The Customer Edge Node Admin portal will also reflect some changes in its status, although the node still requires some additional configuration.
-From the menu on the left click on **Sites** and observe your Nodes (animal-name). Hint: You may have to hit **Refresh**  in the upper right corner. 
+From the menu on the left click on **Infrastructure/Sites** and observe your Nodes (animal-name). Hint: You may have to hit **Refresh**  in the upper right corner. 
 
 |
 

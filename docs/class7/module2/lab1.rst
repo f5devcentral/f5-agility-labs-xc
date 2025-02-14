@@ -38,7 +38,7 @@ In this lab, we will learn the following:
    .. image:: ../images/2access_applications_vk8s-udpated.png
       :width: 600pt
 
-#. Review **Sites** on the vK8s dashboard - there should be 3.  These 3 customer edge sites will be were our workloads will be deployed to. 
+#. Review **Sites** on the vK8s dashboard - there should be 3.  These 3 customer edge sites will be were our workloads will be deployed to.
 
    .. image:: ../images/3review_vk8s_dashboard_sites-updated.png
       :width: 600pt
@@ -65,9 +65,9 @@ In this lab, we will learn the following:
 #. Complete the **Container Configuration** section by providing a **Name** and details for which **Image to Use**
 
     - **Name**: f5xcdemoapp
-    - **Image Name**: colemaneast.azurecr.io/f5xcdemoapp 
-    - **Container Registry**: Private Registry 
-    - **Private Registry**: shared/azure-registry 
+    - **Image Name**: colemaneast.azurecr.io/f5xcdemoapp
+    - **Container Registry**: Private Registry
+    - **Private Registry**: shared/azure-registry
 
    .. image:: ../images/7container_config-updated.png
       :width: 600pt
@@ -76,12 +76,12 @@ In this lab, we will learn the following:
 
 **Exercise 3 - Configure vK8s Workload Deployment Options**
 
-#. Within the **Deploy Options** section, set **Where to Deploy the Workload** to *Customer Virtual Sites*, then click the **Configure** link within the **Customer Virtual Sites** section. 
+#. Within the **Deploy Options** section, set **Where to Deploy the Workload** to *Customer Virtual Sites*, then click the **Configure** link within the **Customer Virtual Sites** section.
 
    .. image:: ../images/8deploy_options-updated.png
       :width: 600pt
 
-#. Select the agility-k8s-vsite vK8s site name from **List of Customer Virtual Sites to Deploy**, then **Apply**. 
+#. Select the appworld2025-k8s-vsite vK8s site name from **List of Customer Virtual Sites to Deploy**, then **Apply**.
 
    .. image:: ../images/9select_customer_site-updated.png
       :width: 600pt
