@@ -1,11 +1,11 @@
-F5 Distributed Cloud - Introduction to Deployment Models and Services
+F5 Distributed Cloud - Foundations of Delivery & Security
 =========================================================================
 
 Welcome
 -------
 
 In this lab, attendees will be introduced to the F5 Distributed Cloud Services platform.  Attendees will create proxy services for publishing and securing
-applications that are served by both public and private endpoints. Attendees will also be introduced to the DNS, Observability, and CDN capabilities of the platform.
+applications that are served by both public and private endpoints.
 
 Objectives:
 ----------
@@ -13,8 +13,6 @@ Objectives:
 - Gain an understanding of deploying proxy services to securely deliver an application with a public endpoint
 - Gain an understanding of viewing telemetry data and utilizing it to tune WAAP policies
 - Gain an understanding of how to deploy a site for providing connectivity to a private endpoint
-- Gain an understanding of DNS, Observability, and CDN
-- Gain an understanding of Multi-Cloud Networking (MCN) connectivity features (i.e. AWS, Azure, and Google)
 
 Lab & Tasks:
 ------------

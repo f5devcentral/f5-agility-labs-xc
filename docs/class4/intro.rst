@@ -1,135 +1,185 @@
 Introduction: Accessing F5 Distributed Cloud Console
 ====================================================
 
-Welcome to this F5 Distributed Cloud Lab. The following tasks will guide you through the initial
-access requirements for this multi-part lab.  Lab attendees should have received an invitation
-(which requests you update your password for access) email to the lab environment. Please check
-the email address used for course registration and its associated spam folders to see if the
-invitation email has been received.  If you have not received an email, please contact a member
-of the lab team.
-
-The F5 Distributed Cloud Console, where a majority of all lab tasks will be conducted, is a SaaS
-based control-plane for services which provides a GUI and API for managing network, security, and
-compute services. The F5 Distributed Cloud Console can manage "sites" in existing on-premises,
-private data centers and sites within AWS, Azure, and GCP public cloud environments.
-
-Task 1: Lab Environment
-~~~~~~~~~~~~~~~~~~~~~~~
-
-The image below represents an overview of the lab environment. F5 Distributed Cloud Services
-will be configured as a SaaS Edge delivery and security service tier to a publicly hosted web
-application. The key elements lab attendees will interact with are as follows:
-
-* **F5 Distributed Cloud Console**
-* **F5 Distributed Cloud Global Network / Application Delivery Network (ADN)**
-* **Publicly hosted application (Public Cloud)**
-
-|intro001|
+Welcome to this F5 Distributed Cloud Lab. The following tasks will guide you through the initial 
+access requirements for the associated lab environment.  Lab attendees should have received an 
+invitation email to the lab environment based on the submitted registration email.  Please check 
+email and spam folders if it has not been received.  If you have not received an email, please 
+contact a member of the lab team.
+ 
+F5 Distributed Cloud Console, where this lab will be conducted, is a SaaS control-plane for 
+services that provides a UI and API for managing network, security, and compute services. The F5
+Distributed Cloud Console can manage "sites" in existing on-premises data centers and sites in
+AWS, Azure, and GCP cloud environments.
 
 
-Task 2: F5 Distributed Cloud Console Login
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Course/Lab Invitation
+~~~~~~~~~~~~~~~~~~~~~
 
-The following will guide you through the initial Lab environment access within the F5 Distributed
-Cloud Console.  You should have received an email with an invitation to access a F5 Distributed
-Cloud Tenant. The email will come from **no-reply@cloud.f5.com**.
++----------------------------------------------------------------------------------------------+
+| Course/Lab Attendees will receive an email similar to the graphic displayed in this section. |
+| The email will come from courses@notify.udf.f5.com.                                          |
+|                                                                                              |
+| As attendees maybe registered for several lab/courses, ensure the corrcetly identified course|
+| is selected.  Use either the first or second link position (indicated by arrows) based on    |
+| the attendee's F5 UDF (Unified Demo Framework) Account Status.                               |
+|                                                                                              |
+| #. **New UDF Users**                                                                         |
+| #. **Returning UDF Users going directly to Course**                                          |
++----------------------------------------------------------------------------------------------+
+| |intro001|                                                                                   |
++----------------------------------------------------------------------------------------------+
 
-The name of the F5 Distributed Cloud tenant that we will be using for this lab is **f5-xc-lab-sec**.
-Additionally, the following are key configuration elements for this lab and will be used
-throughout the lab tasks that follow.
+Accessing UDF (F5 Unified Demo Framework)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-* F5 Distributed Cloud Console: https://f5-xc-lab-sec.console.ves.volterra.io/
-* Delegated Domain: **lab-sec.f5demos.com**
++----------------------------------------------------------------------------------------------+
+| The following will guide attendees through the initial Lab environment access within F5 UDF. |
+| Following the instructions from the Course/Lab invitation above, attendees will be prompted  |
+| to login at  https://udf.f5.com                                                              |
+|                                                                                              |
+| .. note::                                                                                    |
+|    *The steps for new UDF Users or the steps for resetting UDF User account passwords are*   |
+|    *not shown. Please contact a member of the lab team if further assistance is needed.*     |
++----------------------------------------------------------------------------------------------+
+| |intro002|                                                                                   |
++----------------------------------------------------------------------------------------------+
 
-After following the invitation email's instructions to **Update Password**, proceed to the first
-step below to access the F5 Distributed Cloud Lab Tenant.
++----------------------------------------------------------------------------------------------+
+| Attendees will be prompted to enter their UDF account, password and complete MFA as shown.   |
+| MFA must be completed by either selecting **Send Push** or **Enter Code**.                   |
+|                                                                                              |
+| .. note::                                                                                    |
+|    *MFA process will very based on the MFA integration selected for the UDF Account. OKTA*   |
+|    *Verify is shown.*                                                                        |
++----------------------------------------------------------------------------------------------+
+| |intro003|                                                                                   |
+|                                                                                              |
+| |intro004|                                                                                   |
+|                                                                                              |
+| |intro005|                                                                                   |
++----------------------------------------------------------------------------------------------+
 
++----------------------------------------------------------------------------------------------+
+| Attendees will then be presented their scheduled course sessions. Locate the course/lab with |
+| the appropriate **Date**, **Time** and **Name** and then click **Launch**.                   |
++----------------------------------------------------------------------------------------------+
+| |intro006|                                                                                   |
++----------------------------------------------------------------------------------------------+
 
-#. Please log into the F5 Distributed Cloud Lab Tenant with your user ID (email) & password.
++----------------------------------------------------------------------------------------------+
+| Once redirected to the selected Course/Lab, click the **Join** button.                       |
++----------------------------------------------------------------------------------------------+
+| |intro007|                                                                                   |
++----------------------------------------------------------------------------------------------+
 
-   https://f5-xc-lab-sec.console.ves.volterra.io/
++----------------------------------------------------------------------------------------------+
+| The Lab environment window will now be displayed.  Click on the **Documentation** tab in the |
+| horizontal navigation links.  Locate and observe the state of **Client** system.             |
+|                                                                                              |
+| In approximately 5-7 minutes the associated **yellow gear** starting icon will change to a   |
+| **green arrow** (running) icon and attendees will proceed to the next section of steps.      |
+|                                                                                              |
+| .. note::                                                                                    |
+|    *Your specific lab environment may vary from the graphics shown below. The **Client***    |
+|    *will, however, be consistent.*                                                           |
++----------------------------------------------------------------------------------------------+
+| |intro008|                                                                                   |
+|                                                                                              |
+| |intro009|                                                                                   |
++----------------------------------------------------------------------------------------------+
 
-#. When you first login, accept the Lab tenant EULA. Click the check box and then click
-   **Accept and Agree**.
+Accessing F5 Distributed Cloud
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-#. Select all work domain roles and click **Next** to see various configuration options.
++----------------------------------------------------------------------------------------------+
+| Following the state change of the **Client System** to a **green arrow** (running) icon,     |
+| attendees will receive a second email.  This email will come from no-reply@cloud.f5.com.     |
+| Click the **Accept invitation** with in the email.                                           |
+|                                                                                              |
+| .. note::                                                                                    |
+|    *This link should be accessed in the same browser session as UDF was accessed for*        |
+|    *seamless experience.*                                                                    |
+|                                                                                              |
+| .. warning::                                                                                 |
+|    *Attendess should not attempt access to F5 Distributed Cloud tenant prior to receiving*   |
+|    *email. Lab permissions may need to be re-applied.*                                       |
++----------------------------------------------------------------------------------------------+
+| |intro010|                                                                                   |
++----------------------------------------------------------------------------------------------+
 
-   Roles can be changed any time later if desired.
++----------------------------------------------------------------------------------------------+
+| The initial logon prompt will be presented.  Click **Sign on with Okta** to proceed.  SSO    |
+| will process and onboarding to the tenant will proceed.                                      |
++----------------------------------------------------------------------------------------------+
+| |intro011|                                                                                   |
++----------------------------------------------------------------------------------------------+
 
-#. Click the **Advanced** skill level to expose more menu options and then click **Get
-   Started** to begin. You can change this setting after logging in as well.
++----------------------------------------------------------------------------------------------+
+| Next the **Terms of Service and Privacy Policy** will display, check the box and then click  |
+| **Accept and Agree**.                                                                        |
+|                                                                                              |
+| In the following screen, Select all persona roles and click **Next**. This allows attendees  |
+| to see all the various configurations. Personas can be changed anytime later within the      |
+| console if desired.                                                                          |
+|                                                                                              |
+| In the next screen, click **Advanced** to expose more menu options and then **Get Started**  |
+| to begin. You can change this setting after logging in as well.                              |
+|                                                                                              |
+| .. note::                                                                                    |
+|    *Several Guidance ToolTips or Notices may appear.  Attendees can safely close these out*  |
+|    *in order to begin the lab.*                                                              |
++----------------------------------------------------------------------------------------------+
+| |intro012|                                                                                   |
+|                                                                                              |
+| |intro013|                                                                                   |
+|                                                                                              |
+| |intro014|                                                                                   |
++----------------------------------------------------------------------------------------------+
 
-#. Several **Guidance ToolTips** will appear, you can safely close these as they appear.
++----------------------------------------------------------------------------------------------+
+| Attendees will now be presented the Home page of the F5 Distributed Cloud Console with all   |
+| the workspaces, features and services available.                                             |
++----------------------------------------------------------------------------------------------+
+| |intro015|                                                                                   |
++----------------------------------------------------------------------------------------------+
 
-   |intro002|
++----------------------------------------------------------------------------------------------+
+| **Beginning of Lab:**  You are now ready to begin the lab, Enjoy! Ask questions as needed.   |
++----------------------------------------------------------------------------------------------+
+| |labbgn|                                                                                     |
++----------------------------------------------------------------------------------------------+
 
-   |intro003|
-
-   |intro004|
-
-   |intro005|
-
-
-
-#. You can adjust your work domains and skill level (not required) by clicking on the
-   **Account** icon in the top right of the screen and then clicking on **Account Settings**.
-
-#. In the resulting window you can observe the **Work domains and skill level** section and
-   other administrative functions.
-
-   .. note::
-      *For the purposes of this lab, permissions have been restricted to lab operations.  As
-      some menus will be locked and not visible.*
-
-   |intro006|
-
-   |intro007|
-
-#. Namespaces, which provide an environment for isolating configured applications or
-   enforcing role-based access controls, are leveraged within the F5 Distributed Cloud
-   Console.  For the purposes of this lab, each lab attendee has been provided a unique
-   **namespace** which you will be defaulted to (in terms of GUI navigation) for all tasks
-   performed through the course of this lab.
-
-#. Click on the **Select Service** in the left-hand navigation. In the resulting fly out
-   navigation, click **Web App & API Protection**.
-
-#. In the **Web App & API Protection** configuration screen observe the URL. In the URI
-   path, locate the **<adjective-animal>** namespace that you have been assigned. It will be
-   located in the portion of the URI path between */namespaces/* and */overview/* as shown
-   in this example **…/namespaces/<namespace>/overview/…**. Note the namespace as it will
-   be used throughout the lab tasks that follow.
-
-   .. note::
-      *Administratively, there are other ways to find namespaces. Due to access and permission
-      restrictions for this particular lab, those menus are not available.*
-
-   |intro008|
-
-   |intro009|
-
-**Beginning of Lab:**  You are now ready to begin the lab, Enjoy! Ask questions as needed.
-
-|labbgn|
-
-
-.. |intro001| image:: _static/intro-001.png
+.. |intro001| image:: _static/intro-01.png
    :width: 800px
-.. |intro002| image:: _static/intro-002.png
+.. |intro002| image:: _static/intro-02.png
    :width: 800px
-.. |intro003| image:: _static/intro-003.png
+.. |intro003| image:: _static/intro-03.png
    :width: 800px
-.. |intro004| image:: _static/intro-004.png
+.. |intro004| image:: _static/intro-04.png
    :width: 800px
-.. |intro005| image:: _static/intro-005.png
+.. |intro005| image:: _static/intro-05.png
    :width: 800px
-.. |intro006| image:: _static/intro-006.png
+.. |intro006| image:: _static/intro-06.png
    :width: 800px
-.. |intro007| image:: _static/intro-007.png
+.. |intro007| image:: _static/intro-07.png
    :width: 800px
-.. |intro008| image:: _static/intro-008.png
+.. |intro008| image:: _static/intro-08.png
    :width: 800px
-.. |intro009| image:: _static/intro-009.png
+.. |intro009| image:: _static/intro-09.png
+   :width: 800px
+.. |intro010| image:: _static/intro-10.png
+   :width: 800px
+.. |intro011| image:: _static/intro-11.png
+   :width: 800px
+.. |intro012| image:: _static/intro-12.png
+   :width: 800px
+.. |intro013| image:: _static/intro-13.png
+   :width: 800px
+.. |intro014| image:: _static/intro-14.png
+   :width: 800px
+.. |intro015| image:: _static/intro-15.png
    :width: 800px
 .. |labbgn| image:: _static/labbgn.png
    :width: 800px
+

@@ -26,10 +26,10 @@ If you are not already logged into the console, please do so now by opening the 
 
 https://f5-xc-lab-mcn.console.ves.volterra.io/
 
-From the **Select service** menu, click on **Multi-Cloud Network Connect** and then click on **Sites,**
+From the **Select service** menu, click on **Multi-Cloud Network Connect** and then click on **Infrastructure/Sites.**
 
 Your XC Node should have registered successfully and will appear green with a Health Score of 100. You may need to click **Refresh** in the top right corner
-if you do not see your animal name. In this example I was assigned and filtered for **busy-goblin**.
+if you do not see your animal name. In this example I was assigned and filtered for **pro-joey**.
 
 |
 
@@ -46,7 +46,7 @@ From this Dashboard you can note the current **Site Admin State, Provider, SW ve
 **Please DO NOT click "Upgrade" on any of the Sites!**
 
 
-Instead, **Click** on the three dots under the **Actions** column at the far right of the screen of **"your animal"**  Site and click on **Manage Configuration**. In this screenshot I was **busy-goblin**.
+Instead, **Click** on the three dots under the **Actions** column at the far right of the screen of **"your animal"**  Site and click on **Manage Configuration**. In this screenshot I was **pro-joey**.
 
 .. NOTE:: You may need to scroll horizontally inside the table to see the three dots at the righthand side. Alternately, you can zoom out (Ctrl -) on the page to see them.
 
@@ -147,7 +147,7 @@ Global Virtual Network
 
 To connect two or more Distributed Cloud node environments together across the Distributed Cloud network we will need to connect the sites through a Global Virtual Network.  
 
-Confirm you are still in the **Multi-Cloud Network Connect** Console under **Sites**. If not, click on the **Select Service** in the left-hand navigation and click on **Multi-Cloud Network Connect**.
+Confirm you are still in the **Multi-Cloud Network Connect** Console under **Infrastructure/Sites**. If not, click on the **Select Service** in the left-hand navigation and click on **Multi-Cloud Network Connect**.
 
 On the left side menu, navigate to  **Manage >> Networking >> Virtual Networks**. 
 
@@ -274,7 +274,7 @@ Type **ping -O 10.0.3.253** and hit **Enter**. You **WILL NOT** get a response. 
 
 .. image:: ../images/pingO.png
 
-Back in the XC Console, navigate to **Multi-Cloud Network Connect >> Sites** and find your **"animal-name"**
+Back in the XC Console, navigate to **Multi-Cloud Network Connect >> Infrastructure/Sites** and find your **"animal-name"**
 Click the **3 buttons** under the **Action Menu** under **"your animal name"** and select **Manage Configuration**. 
 
 In the top right click **Edit Configuration**. 
@@ -316,7 +316,7 @@ Check back on your web shell tab with the ping going. Success!!
 .. important:: If you want to tear down this connectivity it is as easy as removing the label. 
 
 
-In XC Console, navigate to **Multi-Cloud Network Connect** >> **Sites** and click directly on your **"animal-name"** and finally click on the **Tools** menu on the top, far right. 
+In XC Console, navigate to **Multi-Cloud Network Connect** >> **Infrastructure/Sites** and click directly on your **"animal-name"** and finally click on the **Tools** menu on the top, far right. 
 
 .. note:: If you do not see the Tools menu there should be a right chevron ">" that will allow you to access additional menu items.
 
@@ -377,7 +377,7 @@ Next, push the keyboard "up arrow " and run the same command but targeted at por
 Enhanced Firewall Policy
 ---------------------------------
 
-You will now configure the F5 Distributed Cloud Enhanced Firewall to provide network security between these sites. Custom Enhanced Firewall policies make it possible to define intent-based rules, such as allowing only traffic to/from sites wit a specific label, like "ves.io/fleet in 'student-fleet'"" in your deployed site above. Additional criteria for rules can include tags belonging to resources that live in public clouds, such as the AWS VPC name or any other discoverable attribute.
+You will now configure the F5 Distributed Cloud Enhanced Firewall to provide network security between these sites. Custom Enhanced Firewall policies make it possible to define intent-based rules, such as allowing only traffic to/from sites with a specific label, like "ves.io/fleet in 'student-fleet'"" in your deployed site above. Additional criteria for rules can include tags belonging to resources that live in public clouds, such as the AWS VPC name or any other discoverable attribute.
 
 .. Note:: Due to lab architecture, we will only be able to configure the policies but not apply. We will show you the final step to apply your policy for reference, but you will not actually be able to apply or test.  
 
@@ -541,7 +541,7 @@ Click **Cancel and Exit**.
 
 You can now feel free to explore the **Multi-Cloud Network Connect** Site menus while everyone is getting caught up. 
 
-Navigate to **Overview > Sites** and then to the tab view of **Site Map** to see an overview with the health of all deployed sites. For site security, navigate to **Overview > Security > Firewall Events** to review the firewall logs, and finally, go to the **Service Info** section at the bottom of the left-hand frame, and click on **About** to learn more about Network Connect.
+Navigate to **Overview > Infrastructure/Sites** and then to the tab view of **Site Map** to see an overview with the health of all deployed sites. For site security, navigate to **Overview > Security > Firewall Events** to review the firewall logs, and finally, go to the **Service Info** section at the bottom of the left-hand frame, and click on **About** to learn more about Network Connect.
 
 
 Sanity Check

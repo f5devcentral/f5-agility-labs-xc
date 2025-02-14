@@ -303,7 +303,17 @@ If you search your HTTP Load Balancers for your **animal-name**, you should now 
 Testing AWS to Azure LB
 ------------------------
 
-You now have a load balancer running in AWS on the inside interface of your AWS XC Node. The inside interface IP of the AWS XC Node is **10.0.5.236**. 
+You now have a load balancer running in AWS on the inside interface of your AWS XC Node. In my example, the inside interface IP of the AWS XC Node is **10.0.5.15**. 
+
+To verify the inside interface IP for your deployment, navigate to **Side menu** under **Manage** click on **Stie Management** >> **AWS VPC Sites** and click the **student-awsnet.**. 
+
+Nagivate to the **Infrastructure** tab, and note the IP address of the inside interface.
+
+|
+
+.. image:: ../images/student-awsnet.png
+
+|
 
 We will now use the In-Container Diag tool to test connectivity.  
 
@@ -311,7 +321,7 @@ If you don't already have a tab open to the Diag tool, in your browser go to: ht
 
 Click on **Run Command** and paste in the following:: 
 
-    curl  http://[animal-name]-aws-to-azure-lb.lab-mcn.f5demos.com --resolve [animal-name]-aws-to-azure-lb.lab-mcn.f5demos.com:80:10.0.5.236
+    curl  http://[animal-name]-aws-to-azure-lb.lab-mcn.f5demos.com --resolve [animal-name]-aws-to-azure-lb.lab-mcn.f5demos.com:80:10.0.5.15
 
 |
 
@@ -324,7 +334,7 @@ In just a few moments, you now have full proxy connectivity between IP Overlappe
 
 Let's try that command again but with the shorthand version by using **\-\-head**::
 
-    curl --head  http://[animal-name]-aws-to-azure-lb.lab-mcn.f5demos.com --resolve [animal-name]-aws-to-azure-lb.lab-mcn.f5demos.com:80:10.0.5.236
+    curl --head  http://[animal-name]-aws-to-azure-lb.lab-mcn.f5demos.com --resolve [animal-name]-aws-to-azure-lb.lab-mcn.f5demos.com:80:10.0.5.15
 
 |
 

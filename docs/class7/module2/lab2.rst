@@ -38,7 +38,7 @@ In this lab, we will learn the following:
 
 **Exercise 2 - Review Scaled vK8s Deployment**
 
-#. It may take a few moments, but on the vK8s cluster dashboard, number of **Running Pods** should increase to 9. Upon refreshing the list, you may notice the number of **Sites with Error** gradually decrease as **Running Pods** increases.  
+#. It may take a few moments, but on the vK8s cluster dashboard, number of **Running Pods** should increase to 9. Upon refreshing the list, you may notice the number of **Sites with Error** gradually decrease as **Running Pods** increases.
 
    .. image:: ../images/16review_scaled_deployment-updated.png
       :width: 600pt
@@ -54,4 +54,4 @@ In this lab, we will learn the following:
    .. image:: ../images/18review_pods_information.png
       :width: 600pt
 
-This concludes Module 2: Deploy and Scale Virtual K8s Workload. Thank you for taking the time to complete these exercises! Please continue on to module 3 for a look at how to publish your application for users to consume.  
+This concludes Module 2: Deploy and Scale Virtual K8s Workload. Thank you for taking the time to complete these exercises! Please continue on to module 3 for a look at how to publish your application for users to consume.
