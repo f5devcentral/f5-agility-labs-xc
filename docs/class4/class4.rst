@@ -1,5 +1,5 @@
-F5 Distributed Cloud: API Discovery & Protection
-================================================
+F5 Distributed Cloud: Discovering & Securing API's
+==================================================
 
 Welcome
 -------
@@ -24,19 +24,18 @@ Objective:
    -  **API Protection**: Encompasses a set of definitions and controls to protect and secure the functions, use and
       endpoints of the delivered API's framework.
 
-   -  **Web Applcation Firewall**: WAF description.
+   -  **Web Applcation Firewall**: Behaves as an intermediate proxy to inspect app requests and responses to block and mitigate a broad spectrum of risks via signatures and robust behavioral-based threat detection to protect applications wherever they are deployed.
 
-   -  **Rate Limting**: Rate Limiting description.
+   -  **Rate Limting**:  Defines parameters that can be used for fine-grained control over requests for a HTTP load-balancer that are subjected to rate-limiting using AI/ML learning engine to uniquely discover API endpoints used during service-to-service communication.
 
-   -  **Malicious User Detection**: MUD description.
+   -  **Malicious User Detection**: Provided via machine-based learning processes, enables malicious user behavior tracking by categorizing users into varying threat levels, allowing automatic or manual mitigation.
 
 Lab & Tasks:
 ------------
 
 -  All Lab requirements will be noted in the tasks that follow
 
--  Estimated completion time: 2 Labs approximately 15-20 minutes each
-
+-  Estimated completion time: 6 Labs approximately 8-10 minutes each
 
 .. toctree::
    :maxdepth: 2

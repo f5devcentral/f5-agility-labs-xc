@@ -4,10 +4,9 @@ Lab 3: API Protection
 **Scenario**
 
 A Social Security Number (SSN) has been detected within the response body of the "getbydob"
-endpoint. This is a misconfiguration in the API, which isn’t approved for this Data Type based
-on its Data Classification. 
+endpoint. This is a misconfiguration, as the API is not approved to handle this data type based on its Data Classification. 
 
-Take action to block usage of the "getbydob" endpoint until misconfiguration is resolved. 
+Take action to block usage of the "getbydob" endpoint until misconfiguration is resolved.
 
 **Expected Lab Time: 10 minutes**
 

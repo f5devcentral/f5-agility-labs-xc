@@ -1,20 +1,16 @@
 Lab 4: Web Application Firewall (WAF)
 =====================================
 
-In this lab, you will create and attach a Web Application Firewall (WAF) to your HTTP Load Balancer.
-
-This lab's tasks will walkthrough the configuration steps, and note additional
-configurations available.
-
 **Scenario**
 
-The “send” API endpoint for the Message Service has a finding indicating it is susceptible
-to dynamic attacks like Cross Site Scripting (XSS). This allows a script to be rendered within
-the message window, which will be visible by the Customer Service team; this is not desirable.
+A security finding indicates that the "send" API endpoint in the Message controller is 
+susceptible to dynamic attacks, such as Cross-Site Scripting (XSS). This vulnerability allows 
+scripts to be rendered within the message window, making them visible to the 
+Customer Service team, an unacceptable security risk.
 
-Find a way to protect the endpoint, and overall all APIs, from dynamic attacks.
+Implement measures to protect this endpoint, and ensure all APIs are safeguarded against dynamic attacks.
 
-**Expected Lab Time: 25 minutes**
+**Expected Lab Time: 8 minutes**
 
 .. note ::
 

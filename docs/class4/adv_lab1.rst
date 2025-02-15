@@ -1,11 +1,15 @@
 Lab 1: Advanced Load Balancer and Origin
 ========================================
 
+In this lab you will create a Application (API) Load Balancer, attach an Origin Pool and enabled Malicious User Detection.
+
+**Expected Lab Time: 12 minutes**
+
 Task 1: Configure Load Balancer and Origin Pool
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The following steps will allow you to deploy and advertise a globally available API.  These
-steps will define an application, register its DNS and assign a target as an origin.
+The following steps provide instruction on how to create a Load Balancer, and Origin Pool configured within your namespace. 
+This Load Balancer will be used throughout the course.
 
 #. In the left top click the F5 ball and navigate to the **Web App & API Protection** Tile.
 
@@ -52,7 +56,7 @@ steps will define an application, register its DNS and assign a target as an ori
    .. image:: _static/lab1-task1-005.png
       :width: 800px
 
-#. In the resulting window, enter **<namespace>-pool** in the **Name** field and click
+#. In the resulting window, enter **<namespace>-origin** in the **Name** field and click
    **Add Item** under **Origin Servers** as shown.
 
    .. image:: _static/lab1-task1-006.png
