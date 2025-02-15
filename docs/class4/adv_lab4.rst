@@ -1,5 +1,16 @@
 Lab 4: Advanced Load Balancer WAF Object Creation
-=====================================
+=================================================
+
+**Scenario**
+
+A security finding indicates that the "send" API endpoint in the Message controller is 
+susceptible to dynamic attacks, such as Cross-Site Scripting (XSS). This vulnerability allows 
+scripts to be rendered within the message window, making them visible to the 
+Customer Service team, an unacceptable security risk.
+
+Implement measures to protect this endpoint, and ensure all APIs are safeguarded against dynamic attacks.
+
+**Expected Lab Time: 12 minutes**
 
 Task 1: Create a WAF policy Object
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

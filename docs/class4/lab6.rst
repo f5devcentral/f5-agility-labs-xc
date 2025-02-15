@@ -1,15 +1,14 @@
 Lab 6: Security Analytics and Malicious User Detection
-=====================================
+======================================================
 
-The Distributed Cloud (XC) platform has extensive logging and analytics capabilities.  Throughout this lab, we tested various
-scenarios to explore how XC can protect and secure API endpoints. These requests and events are logged throughout the XC platform.
-In this lab, we will explore the XC Analytics data observed from your scenarios. In addtion, we will explore Malicious User Detection & Mitigation.
+**Scenario**
 
-F5 XC has the capability of indentifying and tracking user-sessions based on different parameters, such as: Client IP, TLS Fingerprint, Cookie value, 
-HTTP Header value and many others.  These identifiers can track user behavior, allowing us to take action & make decision to block or challenge these
-detected users.
+A recent review highlighted the need for greater visibility into API performance and security events. 
+This includes identifying bad actors (clients) attempting to misuse or attack the API.
 
-**Expected Lab Time: 20 minutes**
+Investigate request and security events, and establish a method for detecting malicious users.
+
+**Expected Lab Time: 8 minutes**
 
 Task 1: Review the Requests Dashboard
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -69,7 +68,7 @@ In this task, you will explore the Security Analytics Dashboard within Distribut
       :width: 800px
 
 Task 3: Review Malicious User Detection
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In this task, you will explore the Malicious Users section of the Security Analytics Dashboard within Distributed Cloud (XC).
 
