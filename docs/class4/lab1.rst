@@ -1,5 +1,5 @@
 Lab 1: Load Balancer and Origin
-=========================================================================================
+===============================
 
 .. warning :: If you are using multiple labs in one course, understand that some steps below
    may be redundant depending on labs deployed. To gain full benefits from this lab, please
@@ -23,9 +23,9 @@ Following the tasks in the prior **Introduction** Section, you should now be abl
 F5 Distributed Cloud Console, having set your Work Domain Roles and Skill levels. If you have not
 done so already, please login to your tenant for this lab and proceed to Task 1.
 
-In this lab you will create a Application Load Balancer, attach and Origin Pool and enabled Malisddius User Detection.
+In this lab you will review an already created Application (API) Load Balancer and Origin Pool with Malicious User Detection enabled.
 
-**Expected Lab Time: 5 minutes**
+**Expected Lab Time: 8 minutes**
 
 .. note ::
 

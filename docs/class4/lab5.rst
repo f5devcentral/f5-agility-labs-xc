@@ -1,16 +1,15 @@
 Lab 5: Rate Limiting
-=====================================
+====================
 
 **Scenario**
 
-An internal application at times gets stuck in a temporary loop, replaying requests many times against a
-single endpoint. This impacts the performance of the endpoint for others clients, at times making
-the API unusable.
+An internal application occasionally enters a temporary loop, repeatedly sending requests to a 
+single endpoint. This degrades performance for other clients and, at times, renders the API unusable.
 
-Find a way to limit the number of requests the endpoint will accept from a given client
-(source) within a window of time. 
+Implement a solution to limit the number of requests an endpoint will accept from a given 
+client "source" within a specific time window to prevent excessive load. 
 
-**Expected Lab Time: 10 minutes**
+**Expected Lab Time: 8 minutes**
 
 Task 1: Simulate Unmitigated Excessive Requests against API
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
