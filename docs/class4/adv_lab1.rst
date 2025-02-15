@@ -56,7 +56,7 @@ This Load Balancer will be used throughout the course.
    .. image:: _static/lab1-task1-005.png
       :width: 800px
 
-#. In the resulting window, enter **<namespace>-pool** in the **Name** field and click
+#. In the resulting window, enter **<namespace>-origin** in the **Name** field and click
    **Add Item** under **Origin Servers** as shown.
 
    .. image:: _static/lab1-task1-006.png
