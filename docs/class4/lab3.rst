@@ -1,5 +1,5 @@
 Lab 3: API Protection
-=====================================
+=====================
 
 **Scenario**
 
@@ -10,8 +10,8 @@ Take action to block usage of the "getbydob" endpoint until misconfiguration is 
 
 **Expected Lab Time: 10 minutes**
 
-Task 1: Simulate Allowed Access to Sensitive Data API
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Task 1: Simulate Allowed Access to Misconfigured API
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 #. Using another browser tab, navigate to the the following URL.
 
@@ -107,8 +107,8 @@ previously built Load Balancer object delivering the targeted API.
    .. image:: _static/shared-lb-save.png
       :width: 800px
 
-Task 3: Simulate Blocked Access to Sensitive Data API
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Task 3: Simulate Blocked Access to Misconfigured API
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 #. Using another browser tab, navigate to the the following URL.
 
