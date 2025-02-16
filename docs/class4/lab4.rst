@@ -16,8 +16,8 @@ Implement measures to protect this endpoint, and ensure all APIs are safeguarded
 
    This lab will use a pre-build shared WAF object. Refer to `Lab 4 Advanced <adv_lab4.html>`_ for additional steps on how to create a WAF object.
 
-Task 1: Simulate a Unmitigated Attack against API
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Task 1: Simulate a Unmitigated Attack
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In this task, you will follow steps simulating an attack against an unprotected endpoint.
 The Distributed Cloud (XC) WAF object is pre-built for the next Task, but please review how to create this object via the Advanced Lab 4.
@@ -60,8 +60,8 @@ The Distributed Cloud (XC) WAF object is pre-built for the next Task, but please
       If this endpoint was consumed by an actual ticket management system, the "<script>"
       could have been rendered in the user's browser.
 
-Task 2: Attach WAF policy to HTTP Load Balancer
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Task 2: Enabled a WAF Policy
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In this task, you will follow steps to attach a WAF policy to your Load Balancer.
 
@@ -113,8 +113,8 @@ In this task, you will follow steps to attach a WAF policy to your Load Balancer
    .. image:: _static/lab4-image053.png
       :width: 800px
 
-Task 3: Simulate a Mitigated Attack against API
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Task 3: Simulate a Mitigated Attack
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In this task you will follow steps simulating an attack againt a protected endpoint.
 

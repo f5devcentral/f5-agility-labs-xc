@@ -11,8 +11,8 @@ client "source" within a specific time window to prevent excessive load.
 
 **Expected Lab Time: 8 minutes**
 
-Task 1: Simulate Unmitigated Excessive Requests against API
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Task 1: Simulate Unmitigated Excessive Requests
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Currently, our Banking Application does not implement, or enforce, rate-limiting to a specific endpoint.
 
@@ -45,8 +45,8 @@ In this task, you will follow steps to send multiple requests witin 1 minute to 
 
 
 
-Task 2: Attach API Rate-Limiting to HTTP Load Balancer Object
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Task 2: Enabled API Rate-Limiting
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In this task's series of steps, you will enable the API Rate-Limiting feature on the
 previously built HTTP Load Balancer object delivering the targeted API.
@@ -124,8 +124,8 @@ previously built HTTP Load Balancer object delivering the targeted API.
    .. image:: _static/lab4-image030.png
       :width: 800px
 
-Task 3: Simulate Mitigated Excessive Requests against API
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Task 3: Simulate Mitigated Excessive Requests
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In this task, you will send more than 10 requests within a Minute
 
