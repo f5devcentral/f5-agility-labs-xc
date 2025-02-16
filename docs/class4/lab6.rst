@@ -10,8 +10,8 @@ Investigate request and security events, and establish a method for detecting ma
 
 **Expected Lab Time: 8 minutes**
 
-Task 1: Review the Requests Dashboard
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Task 1: Review Requests Dashboard
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In this task, you will explore the Security Analytics Dashboard within Distributed Cloud (XC) for security events.
 
@@ -36,8 +36,8 @@ In this task, you will explore the Security Analytics Dashboard within Distribut
 
 #. Continue to explore various filters, events, etc. within the **Requests** dashboard to review and explore the related events.
 
-Task 2: Review the Security Anatlyics Dashboard
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Task 2: Review Security Anatlyics Dashboard
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In this task, you will explore the Security Analytics Dashboard within Distributed Cloud (XC) for security events.
 
