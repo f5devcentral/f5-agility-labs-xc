@@ -31,7 +31,7 @@ In this lab you will review an already created Application (API) Load Balancer a
 
    This lab reviews a pre-build Load Balancer and Origin Pool. Refer to `Lab 1 Advanced <adv_lab1.html>`_ for additional steps on how to create a Load Balancer and Origin Pool.
 
-Task 1: Load Balancer and Origin Pool Review
+Task 1: Review Load Balancer and Origin Pool
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The following steps are a review of a Load Balancer and Origin Pool aready configured within your namespace. 
@@ -101,8 +101,8 @@ This Load Balancer will be used throughout the course.
    .. image:: _static/lab1-task1-106.png
       :width: 500px
 
-Task 2: Load Balancer Validation
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Task 2: Validate Load Balancer 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 #. Using another browser tab, navigate to the the following URL to confirm the Load Balancer
    has been configured properly.
