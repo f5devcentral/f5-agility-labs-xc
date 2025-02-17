@@ -305,7 +305,7 @@ Testing AWS to Azure LB
 
 You now have a load balancer running in AWS on the inside interface of your AWS XC Node. In my example, the inside interface IP of the AWS XC Node is **10.0.5.15**. 
 
-To verify the inside interface IP for your deployment, navigate to **Side menu** under **Manage** click on **Stie Management** >> **AWS VPC Sites** and click the **student-awsnet.**. 
+To verify the inside interface IP for your deployment, navigate to **Multi-Cloud Network** Connect then in the **Side menu** under **Manage** click on **Stie Management** >> **AWS VPC Sites** and click the **student-awsnet.**. 
 
 Nagivate to the **Infrastructure** tab, and note the IP address of the inside interface.
 
