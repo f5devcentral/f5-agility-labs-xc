@@ -10,6 +10,11 @@ We need to ensure that unapproved endpoints cannot be consumed, both now and in 
 
 **Expected Lab Time: 15 minutes**
 
+.. note ::
+
+   This lab uses a pre-build shared API Definition. Refer to `Lab 2 Advanced <adv_lab2.html>`_ for additional step on how to download and upload a swagger 
+   file and create a API Definition using the newly created OpenAPI file.
+
 Task 1: Simulate Allowed Access to a Shadow API
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
