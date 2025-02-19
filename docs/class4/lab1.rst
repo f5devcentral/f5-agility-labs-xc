@@ -65,7 +65,7 @@ This Load Balancer will be used throughout the course.
    -------------------------- --------------------------
    Name                       <namespace>-pool
    Type                       Public DNS
-   Name/IP                    demobankapi.lab-sec.f5demos.com
+   Name/IP                    bankapi.lab-sec.f5demos.com
    Port                       80
    ========================== ==========================
 
