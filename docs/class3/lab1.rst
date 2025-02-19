@@ -38,7 +38,7 @@ and proceed to Task 1.
 Task 1: Exploring the F5 Distributed Console
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The following steps will allow you to review the XC Load Balancer that was 
+The following steps will allow you to review the F5 Distributed Cloud Load Balancer that was 
 deployed and is currently advertising a globally available application. These steps 
 will allow you to review the application, its DNS entry and the Azure target that is 
 configured as the origin.
@@ -48,8 +48,8 @@ configured as the origin.
    that was configured for you via automation.  Select **Web App & API Protection**. 
 
 #. On the **Web App & API Protection** page, note the identifier of your namespace.  The namespace
-   will be follow a format of *adjective-animal*.  In this guide, the namespace is pet-walrus is an 
-   example.  Your namespace will be different.  In the left-hand navigation expand **Manage** and 
+   will be follow a format of *adjective-animal*.  The example in this guide uses the namespace 'pet-walrus'.  
+   Your namespace will be different.  In the left-hand navigation expand **Manage** and 
    click **Load Balancers >  Origin Pools**
 
    |lab001| 
@@ -81,7 +81,7 @@ configured as the origin.
    |lab008|
 
 
-#. Next, let's return to the F5 Distributed Cloud console and take a look at the F5 XC load balancer 
+#. Next, let's return to the F5 Distributed Cloud console and take a look at the F5 Distributed Cloud Load Balancer 
    configured for you. In the left-hand navigation expand **Manage** and click **Load Balancers > HTTP Load Balancers**
 
 #. In the resulting screen expand the Actions Menu and click **Manage Configuration** for 
@@ -96,7 +96,7 @@ configured as the origin.
 
 #. Using the left-hand navigation and in the sections as shown, review the
    following data. Values where **<namespace>** *adjective-animal* is represented, the configuration
-   will be the name of your provisioned namespace.  Note the FQDN of the F5 XC load balancer.  
+   will be the name of your provisioned namespace.  Note the FQDN of the F5 Distributed Cloud load balancer.  
 
 
    * **Metadata**  *<namespace>-lb*
@@ -111,7 +111,7 @@ configured as the origin.
    |lab011| 
   
 
-#. Using your web browser, access the application via the F5 XC FQDN.  Click on **Menu > Header**
+#. Using your web browser, access the application via the F5 Distributed Cloud FQDN.  Click on **Menu > Header**
 
 #. Note that the Remote Address has changed as well as the presence of a new X-Forwarded-For header.  
    The client information should have changed as you are now connecting first through the F5 ADN Regional Edge 
@@ -134,10 +134,9 @@ would also like to block known bad IP address coming from TOR Networks and Spam 
 
 Task 2: Negative Enforcement  
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-The following lab tasks will guide you through the configuration of various The following lab tasks will guide you the 
-configuration of various Service Policies which can be used to implement a variety of security controls. The goals of 
-this section of the lab will be to create specific policies to enforce negative enforcement rules based on geo-location, 
-IP addresses, and known bad IP ranges.
+The following lab tasks will guide you through the configuration of various Service Policies which can be used to implement a variety 
+of security controls. The goals of this section of the lab will be to create specific policies to enforce negative enforcement rules 
+based on geo-location, IP addresses, and known bad IP ranges.
 
 #. Returning to the F5 Distributed Cloud Console, you will edit the F5 HTTP Load Balancer for your application.  From the
    **Web App & API Protection** workspace, Click **Load Balancers > HTTP Load Balancers**.
@@ -155,7 +154,7 @@ IP addresses, and known bad IP ranges.
 
 #. Click the dropdown for **IP Reputation** and select **Enable**.
 
-#. From the IP Threat Categories, select **Spam Sources** and **Tor Proxy**.  
+#. From the List of IP Threat Categories to choose, select **Spam Sources** and **Tor Proxy**.  
 
    |lab016|
 
@@ -180,12 +179,6 @@ IP addresses, and known bad IP ranges.
    |lab019|
  
    |lab020|
-
-Narrative Check
----------------
-
-ACME Corps' application is now protected against known bad IPs based on threat categories and also with F5 Distributed 
-Cloud Threat Mesh solution.  Your task will now be to proceed to block traffic coming from Fiji.
 
 #. Within Web App & API Protection, under the Manage section in the left-hand navigation menu, click Service Policies. 
    In the flyout menu, click the Service Policies link.
@@ -239,6 +232,12 @@ Cloud Threat Mesh solution.  Your task will now be to proceed to block traffic c
    all other traffic is denied producing the 403.  Let's review F5 Distributed Cloud to review the observability capabilities.
 
    |lab024|
+
+Narrative Check
+---------------
+
+ACME Corps' application is now protected against known bad IPs based on threat categories and also with F5 Distributed 
+Cloud Threat Mesh solution.  Your task will now be to proceed to block traffic coming from Fiji.
 
 Task 3: Observability  
 ~~~~~~~~~~~~~~~~~~~~~
@@ -315,11 +314,11 @@ You will review the performance and security observability capabilities of the F
    |lab033|
 
 #. Review the **Security Dashboard** display (you may have limited data) and identify that Service Policy events have increased.
-   NOTE: you may need to update the variable time period,
+   NOTE: You may need to update the variable time period.
 
    |lab034|
 
-#. Scroll to **Load Balancers** section and click the **<namespace>-lb**  object.
+#. Scroll to **Application Delivery** section and click the **<namespace>-lb**  object.
 
    |lab035|
 
@@ -386,7 +385,7 @@ You will review the performance and security observability capabilities of the F
 
 Narrative Check
 -----------------
-You have now completed your first service policy deployment on F5 XC.  This policy can be re-used for
+You have now completed your first service policy deployment on F5 Distributed Cloud.  This policy can be re-used for
 other applications in the ACME environment as all new load balancers deployed in this namespace will by default be 
 blocking traffic to Fiji. IP address blocking performed based on categories or from the F5 ThreatMesh database 
 can be configured on a per application basis.  You also interacted with the F5 Distributed Cloud AI Assistant to help 
