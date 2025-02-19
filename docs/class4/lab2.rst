@@ -1,4 +1,4 @@
-Lab 2: Advanced API Inventory
+Lab 2: API Inventory
 =============================
 
 **Scenario**
