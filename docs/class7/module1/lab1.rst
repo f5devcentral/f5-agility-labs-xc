@@ -1,4 +1,4 @@
-Lab 2 - Accessing F5 Distributed Cloud Console
+Lab 1 - Accessing F5 Distributed Cloud Console
 ==============================================
 
 Welcome to this F5 Distributed Cloud Lab. The following tasks will guide you through the initial
