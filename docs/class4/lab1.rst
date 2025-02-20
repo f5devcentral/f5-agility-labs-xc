@@ -54,16 +54,15 @@ This Load Balancer will be used throughout the course.
    -------------------------- --------------------------
    Name                       <namespace>-lb
    Domains                    <namespace>.lab-sec.f5demos.com
-   Type                       HTTP
-   Manage DNS                 Enabled
-   Port                       80
+   Type                       HTTPS
+   Port                       443
    Advertisement              Internet
    ========================== ==========================
 
    ========================== ==========================
    **Origin Pool**            **Configuration**
    -------------------------- --------------------------
-   Name                       <namespace>-pool
+   Name                       <namespace>-origin
    Type                       Public DNS
    Name/IP                    bankapi.lab-sec.f5demos.com
    Port                       80
