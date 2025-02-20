@@ -25,16 +25,19 @@ In this lab, we will learn the following:
 
    .. image:: ../images/13validate_vK8s_dashboard-updated.png
       :width: 600pt
+      :class: no-scaled-link
 
 #. Select **Deployments**, then select the menu under **Actions** for your deployment, then **Edit**
 
    .. image:: ../images/14edit_deployment-updated.png
       :width: 600pt
+      :class: no-scaled-link
 
 #. Ensure **Edit** mode is enabled, expand the **spec** section, and modify **replicas** from *1* to *3* and select **Save**
 
    .. image:: ../images/15modify_deployment_spec-updated.png
       :width: 600pt
+      :class: no-scaled-link
 
 **Exercise 2 - Review Scaled vK8s Deployment**
 
@@ -42,16 +45,19 @@ In this lab, we will learn the following:
 
    .. image:: ../images/16review_scaled_deployment-updated.png
       :width: 600pt
+      :class: no-scaled-link
 
 #. The F5 XC platform can also provide more information on the specific pods directly from the web console.  Click on **Pods** in the top menu.
 
 
    .. image:: ../images/17review_scaled_pods.png
       :width: 600pt
+      :class: no-scaled-link
 
 #. In this view, you can see the specific pod information such as resource consumption, site deployment and node location, message status.  (you may need to click the "Refresh" button)
 
    .. image:: ../images/18review_pods_information.png
       :width: 600pt
+      :class: no-scaled-link
 
-This concludes Module 2: Deploy and Scale Virtual K8s Workload. Thank you for taking the time to complete these exercises! Please continue on to module 3 for a look at how to publish your application for users to consume.
+So far, we've deployed and scaled our Virtual K8s Workload. Please continue on to module 3 for a look at how to publish your application for users to consume.
