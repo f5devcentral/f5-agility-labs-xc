@@ -6,7 +6,7 @@ Lab 4: Defend Against an Ongoing Attack
 In this lab, you will put your newfound Distributed Cloud security skills to test by defending 
 against a persistent web-scraping attack. This lab is purposefully lean in screenshots and step by 
 step directions as it requires you to use what you have learned for the shot at winning a gift card
-if you are the first to mitigate the attack (for AppWorld 2025 live event only)
+if you are the first to mitigate the attack (for AppWorld Las Vegas 2025 live event only)
 
 
 The F5 Air web application has a flight search feature that is being targeted by a nefarious 

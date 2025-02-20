@@ -306,7 +306,9 @@ credential stuffing traffic.
 
 
 +----------------------------------------------------------------------------------------------+
-| **Lab 1 Summary**  Since the bot requests in this lab are not violating any HTTP protocols   |
+| **Lab 1 Summary**                                                                            |
+|                                                                                              |
+|    Since the bot requests in this lab are not violating any HTTP protocols                   |
 |                                                                                              |
 |   or attack vectors, a WAF policy has no impact on mitigating traffic.  In order to detect   |
 |                                                                                              |

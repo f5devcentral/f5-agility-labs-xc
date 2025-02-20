@@ -153,7 +153,9 @@ Task 2 : Review the Request Logs
 
 
 +----------------------------------------------------------------------------------------------+
-| **Lab 3 Summary**  This lab shows how Distributed Cloud's machine learning capabilities      |
+| **Lab 3 Summary**                                                                            |
+|                                                                                              |
+|   This lab shows how Distributed Cloud's machine learning capabilities                       | 
 |                                                                                              |
 |   leverage telemetry in a browser request to identify a bot even if it is capable of         |
 |                                                                                              |
