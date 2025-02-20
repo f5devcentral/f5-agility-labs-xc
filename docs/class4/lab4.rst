@@ -133,6 +133,10 @@ In this task you will follow steps simulating an attack againt a protected endpo
 
 #. Copy the following JSON, paste within the Request body. Click on **Execute**.
 
+   .. note ::
+
+      Press **Execute** a couple extra times to create more events which will be reviewed in a later lab.
+
    .. code-block:: json
    
       {
