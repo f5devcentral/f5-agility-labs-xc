@@ -2,6 +2,7 @@ Lab 2 - Deploy Containers on vK8s and Build Grafana Dashboard
 =============================================================
 
 **Exercise 1 - Setup Jumphost to connect to the vk8 cluster**
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **Environment Setup**
 To complete this lab section, we'll need to complete the following steps:
@@ -13,7 +14,8 @@ To complete this lab section, we'll need to complete the following steps:
 #. Returning back to the Lab Components view, click the jumphost and then click the *Access* button. From the access list, select **Web Shell**.
 
    .. image:: ../images/M4-L2-webshell-launch.png
-      :width: 400pt
+      :width: 500pt
+      :class: no-scaled-link
 
 #. From Web Shell, run the following commands:
 
@@ -37,11 +39,11 @@ To complete this lab section, we'll need to complete the following steps:
       .. code-block:: bash
 
         ls /srv/filebrowser/
-         ### Your kubeconfig file you uploaded should be listed here:
+         ### Your kubeconfig YAML file you uploaded in tne previous Lab should be listed here:
          ### ves_kind-python_asmith-vk8.yaml
 
 
-   In the example above, the **NAMESPACE** is **kind-python** and the **Virtual K8s** is **asmith-vk8**.
+      In this example, the **NAMESPACE** is **kind-python** and the **Virtual K8s** is **asmith-vk8**.
 
 #. From Web Shell, modify and run the following command to set the NAMESPACE environment variable:
 
@@ -56,25 +58,39 @@ To complete this lab section, we'll need to complete the following steps:
      ### Replace <namespace> your own namespace value
      export NAMESPACE=<namespace>
 
-#. Next, we'll configure you environment to access the vK8s cluster using the kubeconfig file we uploaded to the Jumphost.
+#. Next, we'll configure your environment to access the vK8s cluster using the kubeconfig file we uploaded.  Choose one of the following methods:
+
+      Option 1: Use the 'cat' command to configure the kubernetes **'config'** file.
+
+         .. code-block:: bash
+
+            ### Assuming you only have one kubeconfig file in the /srv/filebrowser run:
+            cat /srv/filebrowser/* > ~/.kube/config
+
+      Option 2: Use the 'export' to set the **KUBECONFIG** environment variable.
+
+         .. code-block:: bash
+
+            ### Otherwise, modify and run:
+            export KUBECONFIG=/srv/filebrowser/<the uploaded file>
+
+   Now, let's view the kubeconfig of the jumphost, again.
 
    .. code-block:: bash
 
-      #Assuming you only have one kubeconfig file in the /srv/filebrowser run:
-      cat /srv/filebrowser/* > ~/.kube/config
+         kubectl config view
 
-      #Otherwise, modify and run:
-      #export KUBECONFIG=/path/to/kubeconfig/file
-
-      # Let's review again to confirm that we can reach the cluster:
-      kubectl config view
-
-   The output should look like this:
+   The output should look like this, showing your vk8s cluster.
 
    .. image:: ../images/M4-L2-exp-kubeconfig.png
       :width: 400pt
+      :class: no-scaled-link
+
+|
+|
 
 **Exercise 2 - Deploy Containers on vK8s and Add Origin Pool and Load Balancer**
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **Deploy Containers on vK8s**
 
@@ -94,6 +110,9 @@ To complete this lab section, we'll need to complete the following steps:
 
    .. image:: ../images/M4-L2-cluster-configs.png
       :width: 650pt
+      :class: no-scaled-link
+
+|
 
    **Questions:**
 
@@ -102,6 +121,7 @@ To complete this lab section, we'll need to complete the following steps:
       Why isn't there a Workload configured for these Pods?
 
 **Exercise 3 - Review the Origin Pool and the TCP Load Balancer Configuration**
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 #. On the Distributed Cloud console and in the **Multi-Cloud App Connect** workspace, under **Manage**, hover over **Load Balancers**, then click **Origin Pools**.
 
@@ -109,6 +129,7 @@ To complete this lab section, we'll need to complete the following steps:
 
    .. image:: ../images/M4-L2-originpool.png
       :width: 400pt
+      :class: no-scaled-link
 
    Note that this origin pool is referencing a K8s service called **mosquitto.adjective-animal**, and is associated with the Virtual Site **appworld2025-k8s-vsite**.
 
@@ -132,6 +153,7 @@ To complete this lab section, we'll need to complete the following steps:
 
    .. image:: ../images/M4-L2-tcplb-1.png
       :width: 400pt
+      :class: no-scaled-link
 
 |
 
@@ -139,14 +161,17 @@ To complete this lab section, we'll need to complete the following steps:
 
    .. image:: ../images/M4-L2-tcplb-2.png
       :width: 400pt
+      :class: no-scaled-link
 
 |
 
    .. image:: ../images/M4-L2-tcplb-3.png
       :width: 400pt
+      :class: no-scaled-link
 
 
 **Exercise 4 - Deploy Grafana**
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In this section, we will deploy Grafana using docker compose. The Grafana dashboard will be preconfigured to match your namespace name for each of the 3 regions.
 

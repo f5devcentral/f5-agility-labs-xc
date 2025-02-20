@@ -47,9 +47,9 @@ Success will render a page like the following:
 
 Please note the country name.
 
-Refresh your browser a few times and notice what happens to the country name.
+Refresh your browser a few times and notice the changes to the Server Details.
 
-Why?
+Why is this happening?
 
 This ends the lab.
 
