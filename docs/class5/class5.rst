@@ -1,5 +1,5 @@
-F5 Distributed Cloud - Advanced Bot Security
-============================================
+F5 Distributed Cloud: Advanced Threat & Fraud Security
+======================================================
 
 Welcome
 -------
