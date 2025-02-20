@@ -45,7 +45,7 @@ is a pre-requisite for all other tasks.
 | |lab1-task1-01|                                                                              |
 |                                                                                              |
 +----------------------------------------------------------------------------------------------+
-| 3. Click on **Manage > Load Balancersa > HTTP Load Balancers**.  You will see a              |
+| 3. Click on **Manage > Load Balancers > HTTP Load Balancers**.  You will see a               |
 |                                                                                              |
 |    a pre-configured HTTP Loadbalancer in the format of **<namespace>-lb**                    |
 |                                                                                              |
@@ -84,7 +84,7 @@ current state.
 |                                                                                              |
 |     **Edit Configuration** Note that we are simply using a public DNS host for the backend.  |
 |                                                                                              |
-|     The application is directly accessbile to us which we will explore later.                |
+|     The application is directly accessibile to us which we will explore later.               |
 +----------------------------------------------------------------------------------------------+
 | |lab1-task2-02|                                                                              |
 |                                                                                              |
@@ -124,7 +124,7 @@ perform a credential stuffing attack.
 |                                                                                              |
 |     **Password is located in your UDF Course browser page in the**                           |
 |                                                                                              |
-|     **Deployment Tab > JumpHost > Click Details and find Credentials**                       |
+|     **Deployment Tab > Jump Host > Click Details and find Credentials**                       |
 |                                                                                              |
 +----------------------------------------------------------------------------------------------+                                                                                             
 |  2. On the home screen double-click the OpenBullet 2 shortcut                                |
@@ -178,7 +178,7 @@ perform a credential stuffing attack.
 |                                                                                              |
 |     *Please note it may take a minute or two to complete and also show up in the logs*       |
 |                                                                                              |
-|     *If you do not see the indicator progreess ask a Lab Assistant for help*                 |
+|     *If you do not see the indicator progress ask a Lab Assistant for help*                  |
 |                                                                                              |
 +----------------------------------------------------------------------------------------------+
 | |lab1-task3-16|                                                                              |
@@ -209,7 +209,7 @@ For this exercise you will work on filtering and identifying requests.
 +----------------------------------------------------------------------------------------------+
 | |lab1-task4-02|                                                                              |
 +----------------------------------------------------------------------------------------------+
-| 3. Click the **Requests** tab at the top and review the POST requets in the log.  You can    |
+| 3. Click the **Requests** tab at the top and review the POST request in the log.  You can    |
 |                                                                                              |
 |    expand individual request details by clicking the down button as shown below.  Also, you  |
 |                                                                                              |
@@ -254,7 +254,7 @@ simulate more test traffic with OpenBullet.
 |    Now click **Other Settings** from the left hand side then finally **Save and Exit**.      |
 |                                                                                              |
 +----------------------------------------------------------------------------------------------+
-| 4. We will Re-run our credential sttack from the Windows Jump Host.  Click on **OpenBullet** |
+| 4. We will Re-run our credential stack from the Windows Jump Host.  Click on **OpenBullet**  |
 |                                                                                              |
 |    then **Jobs** and the pencil/edit icon to the right.                                      |
 |                                                                                              |
@@ -314,7 +314,7 @@ credential stuffing traffic.
 |                                                                                              |
 |   known as Bot Protection in Distributed Cloud.  A brief presentation will be shared prior   |
 |                                                                                              |
-|   to begginning Lab 2.                                                                       |
+|   to beginning Lab 2.                                                                        |
 +----------------------------------------------------------------------------------------------+
 | |labend|                                                                                     |
 +----------------------------------------------------------------------------------------------+

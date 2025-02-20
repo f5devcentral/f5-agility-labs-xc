@@ -3,7 +3,7 @@ Lab 4: Defend Against an Ongoing Attack
 
 **Scenario Lab 4**
 
-In this lab, you will put your new found Distributed Cloud security skills to test by defending 
+In this lab, you will put your newfound Distributed Cloud security skills to test by defending 
 against a persistent web-scraping attack. This lab is purposefully lean in screenshots and step by 
 step directions as it requires you to use what you have learned for the shot at winning a gift card
 if you are the first to mitigate the attack (for AppWorld 2025 live event only)

@@ -4,7 +4,7 @@ Lab 3: Human-Simulated Stuffing Attack
 **Scenario Lab 3**
 
 In this lab, you will configure Openbullet to simulate human input on a selenium-controlled browser. 
-Since a browser is being used as the client, the POST will contain javascript containing telemetry about 
+Since a browser is being used as the client, the POST will contain JavaScript containing telemetry about 
 the client. Note: Telemetry allows the engine to assign a risk factor to a threat. For some attacks, 
 like a slow-moving “human” stuffing attack, the engine needs to see enough data to positively identify 
 it as a bot. Therefore, for this attack, you may see some of the initial requests are logged as Human 
@@ -134,7 +134,7 @@ Task 2 : Review the Request Logs
 |                                                                                              |
 |    If you are one of the first students to run the attack, you may see it take up to 10      |
 |                                                                                              |         
-|    requests before positive bot idenfitication                                               |
+|    requests before positive bot identification                                               |
 |                                                                                              |
 +----------------------------------------------------------------------------------------------+
 | 3. Let's go review the Bot Defense Dashboard. We access this by clicking **Bot Defense**     |
@@ -143,7 +143,7 @@ Task 2 : Review the Request Logs
 |                                                                                              |
 |    Notice now we see **Telemetry Client** show up in the *Traffic Types*. This indicates     |
 |                                                                                              |
-|    javascript telemetry within the client browser identified the bot.                        |
+|    JavaScript telemetry within the client browser identified the bot.                        |
 +----------------------------------------------------------------------------------------------+
 | |lab3-task2-02|                                                                              |
 |                                                                                              |

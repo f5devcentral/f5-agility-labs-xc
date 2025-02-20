@@ -6,7 +6,7 @@ Lab 2: Adding a Bot Protection Profile and Testing
 
 In the prior lab we discovered our airline application lacked proper security protections and was vulnerable.
 The following lab tasks will strengthen our security posture and address the increase in Bot activity towards
-your companies airline application.  We will leverage our Bot testing tool to validate our Bot protection policies 
+your company's airline application.  We will leverage our Bot testing tool to validate our Bot protection policies 
 and utilize security analytics to examine various requests.  
   
 
@@ -15,9 +15,9 @@ and utilize security analytics to examine various requests.
 Task 1: Create a Bot Protection Profile  
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In this task you will view recent request's and filter out specific requests from our test tool.  You will then work
-on configuring a Bot Defense profle to protect our airline application Sign-In page.  We will initiate a Basic 
-Credential Stuffing attack and observe related events using security analytics and make any necessary adjustments needed. 
+In this task you will view recent requests and filter out specific requests from our test tool.  You will then work
+on configuring a Bot Defense profile to protect our airline application Sign-In page.  We will initiate a Basic 
+Credential Stuffing attack and observe related events using security analytics and making any necessary adjustments needed. 
 
 +----------------------------------------------------------------------------------------------+
 | 1. In the Distributed Cloud (XC) Console go to **Web App and API Protection** then click on  |
@@ -166,7 +166,7 @@ Task 2: Compare requests with and without Bot Defense
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 For this task you will inspect the airline applications signin page all while attempting various 
-failed login attempts.  We will learn the telemetry gleaned from this scoping excercise. Please 
+failed login attempts.  We will learn the telemetry gleaned from this scoping exercise. Please 
 ensure these tasks are run from the **Jump Host**
 
  
@@ -213,13 +213,13 @@ ensure these tasks are run from the **Jump Host**
 |                                                                                              |
 |    among other things. If we see a violation being categorized as "Bad Bot" that means       | 
 |                                                                                              |
-|    the risk engine detected a bot based on signature informaton. Something about the request | 
+|    the risk engine detected a bot based on signature information. Something about the request| 
 |                                                                                              |
 |    was flagged by a matching condition in the signature, no telemetry was required. This was |                                                                             
 |                                                                                              |
 |    the case with the basic credential stuffing attach.  The client for that attack can not   |
 |                                                                                              |
-|    render Javascript, and is making direct HTTP requests, similar to using curl.             |
+|    render JavaScript, and is making direct HTTP requests, similar to using curl.             |
 |                                                                                              |
 +----------------------------------------------------------------------------------------------+
 | |lab2-task2-05|                                                                              |
