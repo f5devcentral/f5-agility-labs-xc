@@ -266,7 +266,7 @@ ensure these tasks are run from the **Jump Host**
    :width: 800px
 .. |lab2-task1-08| image:: _static/lab2-task1-08.png
    :width: 800px
-.. |lab2-task1-09| image:: _static/lab2-task1-08.png
+.. |lab2-task1-09| image:: _static/lab2-task1-09.png
    :width: 800px
 .. |lab2-task1-10| image:: _static/lab2-task1-10.png
    :width: 800px
