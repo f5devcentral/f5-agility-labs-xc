@@ -86,6 +86,11 @@ previously built HTTP Load Balancer object delivering the targeted API.
    .. image:: _static/lab4-image024.png
       :width: 400px
 
+#. Select **Add Item**, within **API Endpoints**.
+
+   .. image:: _static/lab5-api-endpoint-add.png
+      :width: 800px
+
 #. In the resulting window, use the drop-down under **API Endpoint**, and click **See Suggestions**.
 
    .. image:: _static/lab4-image055.png

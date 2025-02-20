@@ -1,19 +1,13 @@
-Lab 1: Deploying Load Balancer, Configuring F5 Distributed Cloud BotDefense
-===========================================================================
+Lab 1: Explore Load Balancer and Review Traffic Dashboards
+=========================================================
 
 Lab 1 will focus on the deployment and security of an existing hosted application using F5 
 Distributed Cloud Platform and Services. This lab will be deployed in a SaaS only configuration 
 with no on-premises (public or private cloud) elements.  All configurations will be made via 
 the F5 Distributed Cloud Console and within the F5 Distributed Cloud Global Network services architecture.
 
-The overall goal of this set of labs is to showcase how easy it is for F5 Distributed Cloud BotDefense
-to be enabled. This lab will also act as a quick refresher of how web-based login forms work and how easily
-they can be exploited by credential stuffing attacks. Once this initial lab is complete, we will expand
-on the concepts of attacks and security by utilizing the automation toolkit known as OpenBullet.
-
-For the tasks that follow, you should have already noted your individual **namespace**. If you 
-failed to note it, return to the **Introduction** section of this lab, follow the instructions
-provided and note your **namespace** accordingly. The **Delegated Domain** and the F5 Distributed Cloud 
+For the tasks that follow, please note your individual **namespace**. Follow the instructions below 
+which will guide you to locate your **namespace**. The **Delegated Domain** and the F5 Distributed Cloud 
 **Tenant** are listed below for your convenience as they will be the same for all lab attendees.
 
 * **Delegated Domain:** *.lab-sec.f5demos.com* 
@@ -23,262 +17,379 @@ Following the tasks in the prior **Introduction** Section, you should now be abl
 F5 Distributed Cloud Console, having set your Work Domain Roles and Skill levels. If you have not
 done so already, please login to your tenant for this lab and proceed to Task 1.
 
-Task 1: Configure Load Balancer, Origin Pool, WAF and BotDefense
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**Scenario Lab 1**
 
+Your company recently noticed an increase in credential stuffing and bot activity on it's F5 Airlines app. 
+You are a SecOps engineer tasked with providing a security solution to address this threat.  In the following 
+labs, you will learn how to use F5's Distributed Cloud to quickly enable an application and bot security 
+profile to address the threat while also exploring some attack tools of your own!
 
-+----------------------------------------------------------------------------------------------+
-| 1. Following the **Introduction** section instructions, you should now be in the **Web**     |
-|                                                                                              |
-|    **App & API Protection** configuration window. If for some reason you are not in the      |
-|                                                                                              |
-|    **Web App & API Protection** window, use the **Select Service** in the left-hand          |
-|                                                                                              |
-|    navigation, and click **Web App & API Protection** as shown in the *Introduction Section* | 
-|                                                                                              |
-| 2. In the left-hand navigation expand **Manage** and click **Load Balancers > HTTP Load**    |
-|                                                                                              |
-|    **Balancers**                                                                             |
-|                                                                                              |
-| 3. In the resulting screen click the **Add HTTP Load Balancer** in the graphic as shown.     |
-+----------------------------------------------------------------------------------------------+
-| |lab001|                                                                                     |
-|                                                                                              |
-| |lab002|                                                                                     |
-+----------------------------------------------------------------------------------------------+
+**Expected Lab Time: 15 minutes**
+
+Task 1: Review your assigned Namespace and Verify the Application is Up
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+For this objective you will explore the Distributed Cloud Console and identify your namespace.
+Additionally you will ensure the F5 Air application is functioning.  Application availability 
+is a pre-requisite for all other tasks.
 
 +----------------------------------------------------------------------------------------------+
-| 4. Using the left-hand navigation and in the sections as shown, enter the following          |
+| 1. From the Distributed Cloud (XC) Home Screen click **Web App & API Protection**, this will | 
 |                                                                                              |
-|    data. Values where **<namespace>** is required, use the name of your given namespace.     |
+|    bring you into your name space.                                                           |
 |                                                                                              |
-|    * **Metadata:Name ID:**  *<namespace>-lb*                                                 |
-|    * **Basic Configuration: List of Domains:** *<namespace>.lab-sec.f5demos.com*             |
-|    * **Basic Configuration: Select Type of Load Balancer:** *HTTP*                           |
-|    * **Basic Configuration: Automatically Manage DNS Records:** *(Check the checkbox)*       |
-|    * **Basic Configuration: HTTP Port:** *80*                                                |
-+----------------------------------------------------------------------------------------------+
-| |lab003|                                                                                     |
-+----------------------------------------------------------------------------------------------+
-
-+----------------------------------------------------------------------------------------------+
-| 5. In the current window's left-hand navigation, click **Origins**. Next,                    |
+| 2. In the upper left hand portion of the screen, note your unique **Namespace**, it will be  |
 |                                                                                              |
-|    click **Add Item** within the **Origin Pools** section of **Origins**.                    |
+|    used throughout this lab.                                                                 |
 +----------------------------------------------------------------------------------------------+
-| |lab004|                                                                                     |
-+----------------------------------------------------------------------------------------------+
-
-+----------------------------------------------------------------------------------------------+
-| 6. In the resulting window, use the drop down as shown and click **Add Item**.               |
-+----------------------------------------------------------------------------------------------+
-| |lab005|                                                                                     |
-+----------------------------------------------------------------------------------------------+
-
-+----------------------------------------------------------------------------------------------+
-| 7. In the resulting window, enter **<namespace>-pool** in the **Name** field and click       |
+| |lab1-task1-01|                                                                              |
 |                                                                                              |
-|    **Add Item** under **Origin Servers**                                                     |
 +----------------------------------------------------------------------------------------------+
-| |lab006|                                                                                     |
-+----------------------------------------------------------------------------------------------+
-
-+----------------------------------------------------------------------------------------------+
-| 8. In the resulting window, **Public DNS Name of Origin Server** should be selected for      |
+| 3. Click on **Manage > Load Balancersa > HTTP Load Balancers**.  You will see a              |
 |                                                                                              |
-|    **Select Type of Origin Server**.                                                         |
+|    a pre-configured HTTP Loadbalancer in the format of **<namespace>-lb**                    |
 |                                                                                              |
-| 9. For **DNS Name** enter the following hostname:                                            |
+| 4. On the right side, under Domains you should see a FQDN **namespace.lab-sec.f5demos.com**  |
 |                                                                                              |
-|    **airline-backend.f5se.com** and then click **Apply**                                     |
-+----------------------------------------------------------------------------------------------+
-| |lab007|                                                                                     |
-+----------------------------------------------------------------------------------------------+
-
-+----------------------------------------------------------------------------------------------+
-| 10. After returning to the prior window, make sure **Port:** under **Basic Configuration**   |
 |                                                                                              |
-|     is configured for **80**.                                                                |
++----------------------------------------------------------------------------------------------+
+| |lab1-task1-02|                                                                              |
++----------------------------------------------------------------------------------------------+
 |                                                                                              |
-| 11. Leave all other values as shown while scrolling to the bottom and click, **Continue**.   |
+| 5. Open a browser window and navigate to **http://namespace.lab-sec.f5demos.com** to         |
 |                                                                                              |
-| 12. After returning to the next window and confirming the content, click **Apply**.          |
+|    verify the application is up.  You should see the F5 Airlines logo!                       |
 +----------------------------------------------------------------------------------------------+
-| |lab008|                                                                                     |
 |                                                                                              |
-| |lab009|                                                                                     |
+| |lab1-task1-03|                                                                              |
++----------------------------------------------------------------------------------------------+
+
+
+Task 2: Review the HTTP Load Balancer
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+For this task you will review the Load Balancer configuration and the origin pool for the backend
+application. You will verify other security features that are tied to the Load Balancer and their
+current state.  
+
++----------------------------------------------------------------------------------------------+
+|  1. In the Distributed Cloud (XC) Console, under HTTP Loadbalancers click the three dots     |
 |                                                                                              |
-| |lab010|                                                                                     |
+|     under the **Action** column and select **Manage Configuration**                          |
 +----------------------------------------------------------------------------------------------+
-
-+----------------------------------------------------------------------------------------------+
-| 13. Continuing in the **HTTP Load Balancer** section, on the left-hand menu click on the     |
+| |lab1-task2-01|                                                                              |
 |                                                                                              |
-|    **Web Application Firewall (WAF)** and select **Enable**.                                 |
 +----------------------------------------------------------------------------------------------+
-| |lab012|                                                                                     |
-+----------------------------------------------------------------------------------------------+
-
-+----------------------------------------------------------------------------------------------+
-| 14. In the resulting **App Firewall** drop down select **Add Item**.                         |
+|  2. Explore the **Backend App** by selecting **Origins** and **Origin Pool** followed by     | 
 |                                                                                              |
-| .. note::                                                                                    |
-|    *The "shared/base-appfw" policy is in the "shared namespace" which can be applied to*     |
+|     **Edit Configuration** Note that we are simply using a public DNS host for the backend.  |
 |                                                                                              |
-|    *multiple Load Balancer configurations across namespaces, reducing policy sprawl.*        |
+|     The application is directly accessbile to us which we will explore later.                |
 +----------------------------------------------------------------------------------------------+
-| |lab014|                                                                                     |
-+----------------------------------------------------------------------------------------------+
-
-+----------------------------------------------------------------------------------------------+
-| 15. In the resulting window's **Metadata** field enter **<namespace>-appfw** for the **Name**|
+| |lab1-task2-02|                                                                              |
 |                                                                                              |
-| 16. Leaving all other values as default, scroll to the bottom and click **Continue**.        | 
-+----------------------------------------------------------------------------------------------+
-| |lab015|                                                                                     |
-+----------------------------------------------------------------------------------------------+
-
-+----------------------------------------------------------------------------------------------+
-| 17. In the left-hand navigation, click **Bot Protection**. In the **Bot Protection** Section,|
+| |lab1-task2-03|                                                                              |
+|                                                                                              |                             
+| |lab1-task2-04|                                                                              |          
 |                                                                                              |
-|     Change the **Bot Defense** dropdown to **Enable**.                                       |
 +----------------------------------------------------------------------------------------------+
-| |lab016|                                                                                     |
-+----------------------------------------------------------------------------------------------+
-
-+----------------------------------------------------------------------------------------------+
-| 18. In the resulting **Bot Defense Policy** section, click the **Configure** link.           |
-+----------------------------------------------------------------------------------------------+
-| |lab017|                                                                                     |
-+----------------------------------------------------------------------------------------------+
-
-+----------------------------------------------------------------------------------------------+
-| 19. In the **Protected App Endpoints** window, click the **Configure** link under **App**    |
 |                                                                                              |
-|     **Endpoint Type**.                                                                       | 
+|  3. Click the back button at the bottom of the page, two times, and then review the Web      |               
 |                                                                                              |
-| 20. In the resulting window, click the **Add Item** in the **App Endpoint Type** section.    |
-+----------------------------------------------------------------------------------------------+
-| |lab018|                                                                                     |
+|     Application Firewall and Bot Protection status. Notice both the Web Application Firewall |
 |                                                                                              |
-| |lab019|                                                                                     |
-+----------------------------------------------------------------------------------------------+
-
-+----------------------------------------------------------------------------------------------+
-| 21. In the resulting **App Endpoint Type** window, input the following values as shown:      |
+|     and Bot Protection are disabled.  Click the **Cancel** and **Exit** buttons when         |
 |                                                                                              |
-| * **Metadata:Name:** *auth-bot*                                                              | 
-| * **HTTP Methods:** *POST*                                                                   |
-| * **Protocol:** *BOTH*                                                                       |
-| * **Path:Path Match:** *Prefix*                                                              |
-| * **Prefix:** */user/vipsignin*                                                              |
-| * **Bot Traffic Mitigation:Select Bot Mitigation Action:** *Flag*                            |
-| * **Bot Traffic Mitigation:Include Mitigation Headers:** *Append Headers**                   |
-| * **Inference Header Name** and **Automation Type Header Name** as defaults (unchanged).     |
+|     finished.  Well it's no wonder your being attacked!  Lets dig into this...               |
 |                                                                                              |
-| 22. Scroll to the bottom and click **Apply**                                                 |
 +----------------------------------------------------------------------------------------------+
-| |lab020|                                                                                     |
+| |lab1-task2-05|                                                                              |
 |                                                                                              |
-| |lab021|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
+
+Task 3: Generate Attack Traffic with OpenBullet Automated Attack Tool
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+In this task, you will simulate your attacker’s behavior by using the Openbullet utility to 
+perform a credential stuffing attack.
+  
+
 +----------------------------------------------------------------------------------------------+
-| 23. Then click **Apply** on the **App Endpoint Type** screen                                 |
+|  Note:  Because each student is assigned a unique namespace, there is no way to pre-stage    |
+|  traffic generation.  Because of that, we will play the role of an attacker and generate     |                                                                                            
+|  some interesting traffic.  Before we begin we need to configure the tool                    |
 |                                                                                              |
-| 24. Then click **Apply** on the **Protected App Endpoints** screen                           |
+|  1. RDP or Console into the Windows Jump Host, you can locate the password here:             |
 |                                                                                              |
-| 25. Observe the **Bot Defense Policy** is now configured.                                    |
-+----------------------------------------------------------------------------------------------+
-| |lab022|                                                                                     |
+|     **Password is located in your UDF Course browser page in the**                           |
 |                                                                                              |
-| |lab023|                                                                                     |
+|     **Deployment Tab > JumpHost > Click Details and find Credentials**                       |
 |                                                                                              |
-| |lab024|                                                                                     |
++----------------------------------------------------------------------------------------------+                                                                                             
+|  2. On the home screen double-click the OpenBullet 2 shortcut                                |
 +----------------------------------------------------------------------------------------------+
-
-+----------------------------------------------------------------------------------------------+
-| 26. Use the left-hand navigation and click **Other Settings** or scroll to the bottom on the |
+| |lab1-task3-02|                                                                              |
++----------------------------------------------------------------------------------------------+                             
+|  3. Click on **Configs** and double-click **"Basic"** - this is our credential stuffing      |
 |                                                                                              |
-|     **HTTP Load Balancer** screen, and click **Save and Exit**.                              |
+|     attack configuration that will simulate a basic Bot.                                     |
 +----------------------------------------------------------------------------------------------+
-| |lab025|                                                                                     |
-+----------------------------------------------------------------------------------------------+
-
-.. note::                                                                                    
-   *The above selection controls how/where the application is advertised. The "Internet"*
-   
-   *setting means that this application will be advertised globally using the F5 Distributed*
-   
-   *Cloud Global Network utilizing Anycast.*
-
-+----------------------------------------------------------------------------------------------+
-| 27. Note the indicated hostname (copy to notepad or note tool) as this will be used in the   |
+| |lab1-task3-03|                                                                              |
++----------------------------------------------------------------------------------------------+ 
+|  4. Notice there are two blocks called **"HTTP Request"**. Click on each one and update the  |
 |                                                                                              |
-|     exercises that follow.                                                                   |
+|     URL by replacing the **<namespace>** with your assigned namespace and then **Save**      |
 +----------------------------------------------------------------------------------------------+
-| |lab026|                                                                                     |
+| |lab1-task3-04|                                                                              |
+|                                                                                              |
+| |lab1-task3-05|                                                                              |
 +----------------------------------------------------------------------------------------------+
- 
-Task 2: Curl - Direct
-~~~~~~~~~~~~~~~~~~~~~
+|                                                                                              |
++----------------------------------------------------------------------------------------------+
+|  5. Click on **Jobs** and then **+ New** and then select **Multi-Run**                       |
+|                                                                                              |
++----------------------------------------------------------------------------------------------+
+| |lab1-task3-08|                                                                              |
++----------------------------------------------------------------------------------------------+
+| 6. In the new window, on the top left, click **"Select Config"** and then **Basic**          |
+|                                                                                              |
+|    finally **Accept** at the bottom.                                                         |
++----------------------------------------------------------------------------------------------+
+| |lab1-task3-09|                                                                              |
+|                                                                                              |
+| |lab1-task3-10|                                                                              |
++----------------------------------------------------------------------------------------------+
+| 7. On the top right, click **Select Wordlist** and then **Credentials-Basic** and finally    |
+|                                                                                              |
+|    **Accept** at the bottom.                                                                 |
++----------------------------------------------------------------------------------------------+
+| |lab1-task3-11|                                                                              |
+|                                                                                              |
+| |lab1-task3-12|                                                                              |
++----------------------------------------------------------------------------------------------+
+| 8.   Change the **Skip** value to 0 (zero) either by typing it or using the **minus** button |
+|                                                                                              |
+|      finally clicking **Accept** at the bottom.  Now with the **Skip** value changed to "0"  |
+|                                                                                              |
+|      you can click **Start** to run the job.                                                 |
+|                                                                                              |
+|      **The job progress indicator bar will update as it cycles through the credentials.**    |
+|                                                                                              |
+|     *Please note it may take a minute or two to complete and also show up in the logs*       |
+|                                                                                              |
+|     *If you do not see the indicator progreess ask a Lab Assistant for help*                 |
+|                                                                                              |
++----------------------------------------------------------------------------------------------+
+| |lab1-task3-16|                                                                              |
+|                                                                                              |
+| |lab1-task3-17|                                                                              |
+|                                                                                              |
++----------------------------------------------------------------------------------------------+
+| 9.  Were any credentials successful ?  You should see one successful login attempt on the    |
+|                                                                                              |
+|     right-side Openbullet panel                                                              |
++----------------------------------------------------------------------------------------------+
 
-**Run this lab from the JUMPHOST**
 
-1. Launch the Chrome Browser and navigate to https://airline-backend.f5se.com/user/vipsignin
 
-2. Once loaded right click on the page and choose **Inspect** then navigate to the **Network** tab on the new right hand side window.  This will allow you to monitor what content is loaded and submitted during interactions with the site.
-
-|lab029|
-
-3. On the login prompt enter the following testing username: **john.smith@nobody.com** password: **test123** and then click **Confirm**
-
-4. This should log you into the account but more important look on the right side panel finding the **vipsignin** POST request.  Clicking on this entry and you will see the POST request that was created for your login.
-
-5. Switch to the **payload** tab and we can see the exact data that was submitted.  The Username and Password are expected but we also see a tracking token (though not used here)
-
-|lab030|
-
-6. Right click on the **vipsignin** entry choose **Copy** and **Copy as cURL (BASH)** open **Notepad** from the windows start menu and paste the contents in.  This will allow you to inspect the query in greater detail.
-
-|lab031|
-
-7. Click the **Ubuntu** icon on the desktop to open a bash prompt.  Once open you can paste the same curl data into the bash prompt to execute the query.  This example shows just how easy it is as a basic level it is to execute credential stuffing style attacks.
-
-8. Using any scripting language (python, perl, bash) it becomes trivial to be able to test large amounts of username and password combinations.
-
-|lab032|
-
-Task 3: Compare Via Bot Defense
+Task 4: Review the Request Logs
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**Run this lab from the JUMPHOST**
+For this exercise you will work on filtering and identifying requests.
 
-1. Launch the Chrome Browser and navigate to **http://namespace.lab-sec.f5demos.com/user/vipsignin** (note: HTTP not HTTPS)
++----------------------------------------------------------------------------------------------+
+| 1. In the Distributed Cloud (XC) Console go to **Web App and API Protection** then click on  |
+|                                                                                              |
+|    **Overview** and finally **Security**                                                     |
++----------------------------------------------------------------------------------------------+
+| |lab1-task4-01|                                                                              |
++----------------------------------------------------------------------------------------------+
+| 2. Scroll to the bottom and click on your HTTP Load Balancer                                 |
++----------------------------------------------------------------------------------------------+
+| |lab1-task4-02|                                                                              |
++----------------------------------------------------------------------------------------------+
+| 3. Click the **Requests** tab at the top and review the POST requets in the log.  You can    |
+|                                                                                              |
+|    expand individual request details by clicking the down button as shown below.  Also, you  |
+|                                                                                              |
+|    can expand the time interval to longer if needed.                                         |   
+|                                                                                              |
++----------------------------------------------------------------------------------------------+
+| |lab1-task4-03|                                                                              |
++----------------------------------------------------------------------------------------------+
 
-2. Once loaded right click on the page and choose **Inspect** then navigate to the **Network** tab on the new right hand side window.  This will allow you to monitor what content is loaded and submitted during interactions with the site.
 
-|lab029|
+Task 5: Assign a Web Application Firewall Policy and Re-Test
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-3. On the login prompt enter the following testing username: **john.smith@nobody.com** password: **test123** and then click **Confirm**
+For this initiative you will assign a Web Application Firewall to the Load Balancer.  Finally you
+simulate more test traffic with OpenBullet.  
 
-4. This should log you into the account but more important look on the right side panel finding the **vipsignin** POST request.  Clicking on this entry and you will see the POST request that was created for your login.
++----------------------------------------------------------------------------------------------+
+| 1. In the Distributed Cloud (XC) Console, under HTTP Loadbalancers click the three dots      |
+|                                                                                              |
+|    under the **Action** column and select **Manage Configuration**                           |
++----------------------------------------------------------------------------------------------+
+| |lab1-task2-01|                                                                              |
+|                                                                                              |
++----------------------------------------------------------------------------------------------+
+| 2. At the top right click **Edit Configuration** then look to the left side settings         |
+|                                                                                              |
+|    and click **Web Application Firewall**                                                    |
+|                                                                                              |
++----------------------------------------------------------------------------------------------+
+| |lab1-task5-01|                                                                              |
+|                                                                                              |
++----------------------------------------------------------------------------------------------+
+| 3. On the right side toggle **Enable** for the Web Application Firewall. Next, click         |
+|                                                                                              |
+|    **Select Item** a drop down list of pre-configured App Firewall policies will appear.     |
+|                                                                                              |
+|    Select **"shared/base-appfw"**.                                                           |
++----------------------------------------------------------------------------------------------+
+| |lab1-task5-02|                                                                              |
+|                                                                                              |
++----------------------------------------------------------------------------------------------+
+|    Now click **Other Settings** from the left hand side then finally **Save and Exit**.      |
+|                                                                                              |
++----------------------------------------------------------------------------------------------+
+| 4. We will Re-run our credential sttack from the Windows Jump Host.  Click on **OpenBullet** |
+|                                                                                              |
+|    then **Jobs** and the pencil/edit icon to the right.                                      |
+|                                                                                              |
++----------------------------------------------------------------------------------------------+
+| |lab1-task5-03|                                                                              |
++----------------------------------------------------------------------------------------------+
+| 5. In the **Skip** counter, highlight the current number and type 0 (zero).  You can also    |
+|                                                                                              |
+|    press and hold the minus button next to the **Skip** field.  Click **Accept** when done.  |
++----------------------------------------------------------------------------------------------+
+| |lab1-task5-04|                                                                              |
++----------------------------------------------------------------------------------------------+                                                                                              
+| 6. Once again click on the **Job** and hit **Start**, the tool will iterate through the      |
+|                                                                                              |
+|    Credentials-Basic list and when done will be in a ready state for another test.           |
++----------------------------------------------------------------------------------------------+
+| |lab1-task5-05|                                                                              |
+|                                                                                              |
+| |lab1-task5-06|                                                                              |
++----------------------------------------------------------------------------------------------+
 
-5. Switch to the **payload** tab and we can see the exact data that was submitted.
 
-6. We can see several additional payload entries.  The hardened Javascript silently interrogates the browser and watches as users interact with the page capturing telemetry which is encrypted and sent along with the POST.
+Task 6: Analyze the Request Logs after WAF Policy Enablement
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-|lab033|
+For this objective you will want see what difference the Web Application Firewall has on the 
+credential stuffing traffic.  
 
-**End of Lab 1:**  This concludes Lab 1, feel free to review and test the configuration.
- 
-|labend|
++----------------------------------------------------------------------------------------------+
+| 1. In the Distributed Cloud (XC) Console go to **Web App and API Protection** then click on  |
+|                                                                                              |
+|    **Overview** and finally **Security**                                                     |
++----------------------------------------------------------------------------------------------+
+| |lab1-task4-01|                                                                              |
++----------------------------------------------------------------------------------------------+
+| 2. Scroll to the bottom and click on your HTTP Load Balancer                                 |
++----------------------------------------------------------------------------------------------+
+| |lab1-task4-02|                                                                              |
++----------------------------------------------------------------------------------------------+
+| 3. Let's review the requests,  Is anything being flagged as a violation?  Why or Why Not?    |
+|                                                                                              |
+|    **Hint:** Click **Requests** and if needed change the time interval to a longer time slot |
+|                                                                                              |
+|    and click **Apply**.  You can also expand Request details by click the down button below  |
++----------------------------------------------------------------------------------------------+
+| |lab1-task4-03|                                                                              |
++----------------------------------------------------------------------------------------------+
+
+
+
++----------------------------------------------------------------------------------------------+
+| **Lab 1 Summary**  Since the bot requests in this lab are not violating any HTTP protocols   |
+|                                                                                              |
+|   or attack vectors, a WAF policy has no impact on mitigating traffic.  In order to detect   |
+|                                                                                              |
+|   and mitigate bots that do not violate HTTP security, we need a very specialized service    |
+|                                                                                              |
+|   known as Bot Protection in Distributed Cloud.  A brief presentation will be shared prior   |
+|                                                                                              |
+|   to begginning Lab 2.                                                                       |
++----------------------------------------------------------------------------------------------+
+| |labend|                                                                                     |
++----------------------------------------------------------------------------------------------+
 
 .. |lab001| image:: _static/lab1-001.png
    :width: 800px
 .. |lab002| image:: _static/lab1-002.png
    :width: 800px
 .. |lab003| image:: _static/lab1-003.png
+   :width: 800px
+.. |lab1-task1-01| image:: _static/lab1-task1-01.png
+   :width: 800px
+.. |lab1-task1-02| image:: _static/lab1-task1-02.png
+   :width: 800px
+.. |lab1-task1-03| image:: _static/lab1-task1-03.png
+   :width: 800px
+.. |lab1-task2-01| image:: _static/lab1-task2-01.png
+   :width: 800px
+.. |lab1-task2-02| image:: _static/lab1-task2-02.png
+   :width: 800px
+.. |lab1-task2-03| image:: _static/lab1-task2-03.png
+   :width: 800px
+.. |lab1-task2-04| image:: _static/lab1-task2-04.png
+   :width: 800px
+.. |lab1-task2-05| image:: _static/lab1-task2-05.png
+   :width: 800px
+.. |lab1-task3-02| image:: _static/lab1-task3-02.png
+   :width: 800px
+.. |lab1-task3-03| image:: _static/lab1-task3-03.png
+   :width: 800px
+.. |lab1-task3-04| image:: _static/lab1-task3-04.png
+   :width: 800px
+.. |lab1-task3-05| image:: _static/lab1-task3-05.png
+   :width: 800px
+.. |lab1-task3-06| image:: _static/lab1-task3-06.png
+   :width: 800px
+.. |lab1-task3-07| image:: _static/lab1-task3-07.png
+   :width: 800px
+.. |lab1-task3-08| image:: _static/lab1-task3-08.png
+   :width: 800px 
+.. |lab1-task3-09| image:: _static/lab1-task3-09.png
+   :width: 800px 
+.. |lab1-task3-10| image:: _static/lab1-task3-10.png
+   :width: 800px 
+.. |lab1-task3-11| image:: _static/lab1-task3-11.png
+   :width: 800px 
+.. |lab1-task3-12| image:: _static/lab1-task3-12.png
+   :width: 800px 
+.. |lab1-task3-13| image:: _static/lab1-task3-13.png
+   :width: 800px
+.. |lab1-task3-14| image:: _static/lab1-task3-14.png
+   :width: 800px
+.. |lab1-task3-15| image:: _static/lab1-task3-15.png
+   :width: 800px
+.. |lab1-task3-16| image:: _static/lab1-task3-16.png
+   :width: 800px
+.. |lab1-task3-17| image:: _static/lab1-task3-17.png
+   :width: 800px
+.. |lab1-task4-01| image:: _static/lab1-task4-01.png
+   :width: 800px
+.. |lab1-task4-02| image:: _static/lab1-task4-02.png
+   :width: 800px
+.. |lab1-task4-03| image:: _static/lab1-task4-03.png
+   :width: 800px
+.. |lab1-task5-01| image:: _static/lab1-task5-01.png
+   :width: 800px
+.. |lab1-task5-02| image:: _static/lab1-task5-02.png
+   :width: 800px
+.. |lab1-task5-03| image:: _static/lab1-task5-03.png
+   :width: 800px
+.. |lab1-task5-04| image:: _static/lab1-task5-04.png
+   :width: 800px
+.. |lab1-task5-05| image:: _static/lab1-task5-05.png
+   :width: 800px
+.. |lab1-task5-06| image:: _static/lab1-task5-06.png
    :width: 800px
 .. |lab004| image:: _static/lab1-004.png
    :width: 800px
@@ -293,6 +404,8 @@ Task 3: Compare Via Bot Defense
 .. |lab009| image:: _static/lab1-009.png
    :width: 800px
 .. |lab010| image:: _static/lab1-010.png
+   :width: 800px
+.. |lab011| image:: _static/lab1-011.png
    :width: 800px
 .. |lab012| image:: _static/lab1-012.png
    :width: 800px
@@ -324,15 +437,67 @@ Task 3: Compare Via Bot Defense
    :width: 800px
 .. |lab026| image:: _static/lab1-026.png
    :width: 800px
-.. |lab029| image:: _static/Slide1.png
+.. |lab027| image:: _static/lab1-027.png
    :width: 800px
-.. |lab030| image:: _static/Slide2.png
+.. |lab028| image:: _static/lab1-028.png
    :width: 800px
-.. |lab031| image:: _static/Slide3.png
+.. |lab029| image:: _static/lab1-029.png
    :width: 800px
-.. |lab032| image:: _static/Slide4.png
+.. |lab030| image:: _static/lab1-030.png
    :width: 800px
-.. |lab033| image:: _static/Slide5.png
+.. |lab031| image:: _static/lab1-031.png
+   :width: 800px
+.. |lab032| image:: _static/lab1-032.png
+   :width: 800px
+.. |lab033| image:: _static/lab1-033.png
+   :width: 800px
+.. |lab034| image:: _static/lab1-034.png
+   :width: 800px
+.. |lab035| image:: _static/lab1-035.png
+   :width: 800px
+.. |lab036| image:: _static/lab1-036.png
+   :width: 800px
+.. |lab037| image:: _static/lab1-037.png
+   :width: 800px
+.. |lab038| image:: _static/lab1-038.png
+   :width: 800px
+.. |lab039| image:: _static/lab1-039.png
+   :width: 800px
+.. |lab040| image:: _static/lab1-040.png
+   :width: 800px
+.. |lab041| image:: _static/lab1-041.png
+   :width: 800px
+.. |lab042| image:: _static/lab1-042.png
+   :width: 800px
+.. |lab043| image:: _static/lab1-043.png
+   :width: 800px
+.. |lab044| image:: _static/lab1-044.png
+   :width: 800px
+.. |lab045| image:: _static/lab1-045.png
+   :width: 800px
+.. |lab046| image:: _static/lab1-046.png
+   :width: 800px
+.. |lab047| image:: _static/lab1-047.png
+   :width: 800px
+.. |lab048| image:: _static/lab1-048.png
+   :width: 800px
+.. |lab049| image:: _static/lab1-049.png
+   :width: 800px
+.. |lab050| image:: _static/lab1-050.png
+   :width: 800px
+.. |lab051| image:: _static/lab1-051.png
+   :width: 800px
+.. |lab052| image:: _static/lab1-052.png
+   :width: 800px
+.. |lab053| image:: _static/lab1-053.png
+   :width: 800px
+.. |lab054| image:: _static/lab1-054.png
+   :width: 800px
+.. |lab055| image:: _static/lab1-055.png
+   :width: 800px
+.. |lab056| image:: _static/lab1-056.png
+   :width: 800px
+.. |lab057| image:: _static/lab1-057.png
    :width: 800px
 .. |labend| image:: _static/labend.png
    :width: 800px

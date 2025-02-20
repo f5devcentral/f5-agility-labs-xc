@@ -10,9 +10,9 @@ Lab 3: Zero Day Exploit Response with Rate Limiting and Custom Service Policies
 **Narrative:** 
 
 You've been called into an all-hands incident response conference call.  There is a zero-day exploit specifically
-targeting one of ACME Corp's application.  The attacks are coming from multiple IP addresses so a simple IP shun 
-will not be effective.  The attacks are compomising the application as valid users are getting poor performance
-as your application infrastructure is being overloaded.  
+targeting one of ACME Corp's application.  The attacks are coming from multiple IP addresses that are dynamically 
+changin so a simple IP shun will not be effective.  The attacks are compomising the application as valid users 
+are getting poor performance as your application infrastructure is being overloaded.  
 
 After reviewing the data, the application team has asked if you can deploy Rate Limiting to help ACME Corp limit 
 the load that each individual user can request.  Based on the discoveries made, there are two rate limiting rules 
@@ -36,7 +36,7 @@ engaged.  This will demonstrate that any user can request data from the applicat
 #. In your web browser, enable Developer Tools and browse to the ACME Corp application.  
    Chrome is shown in this example (F12)  
 
-   **http://<namespace>.lab-sec.f5demos.com/ratelimit.php**  
+   **https://<namespace>.lab-sec.f5demos.com/ratelimit.php**  
 
 #. Refresh the page multiple times and notice you do not receive any errors nor blocked messages.  
    The browser's developer tool will display multiple HTTP 200 OK responses.  Let's change that behavior.
@@ -171,11 +171,11 @@ each client can make while ACME corp works to protect itself from the zero-day.
 #. Observe that **HTTP Path** now also appears **Configured**. Click **Apply** on the 
    **Rate Limiter Policy** window. 
 
-#. Observe the added rate limit rule and click **Add Item** to build another rule.
-
    |lab021|
 
    |lab022|
+
+#. Observe the added rate limit rule and click **Add Item** to build another rule.
 
 #. In the **Rate Limiter Policy** window within the **Metadata** section input **bypass** into 
    the **Name** field
@@ -224,7 +224,8 @@ each client can make while ACME corp works to protect itself from the zero-day.
 #. Observe the **Request Rate Limiter** options for number of requests, the Per Period interval 
    and the Burst Multiplier.
 
-#. Also observe that IPs can be allowed without Rate Limiting policies being applied.
+#. Also observe that IPs can be allowed without Rate Limiting policies being applied.  In the lab "No IP Allowed" is selected.
+   This ensures that rate limiting will be applied to all IP addresses that make requests.
 
 #. Click **Apply** to add the **Rate Limit Configuration** to the application Load Balancer.
 
@@ -239,6 +240,7 @@ each client can make while ACME corp works to protect itself from the zero-day.
 #. Once at the bottom of the **HTTP Load Balancer** configuration, click **Save and Exit**. 
 
    |lab032|
+   
    |lab033|
 
 Task 3: Testing Rate Limiting
@@ -247,6 +249,7 @@ Task 3: Testing Rate Limiting
 Now we will retest access to our website and see if our experience has indeed changed.
 
 #. In your local web browser access the following link, replacing namespace with your own:
+
     **https://<namespace>.lab-sec.f5demos.com/ratelimit.php** 
 
 #. Refresh the page multiple times and quickly... did you experience a different result? 
@@ -274,7 +277,7 @@ You have now configured rate limiting on the ACME Corp application.  This will s
 from making multiple requests to your application.  
 
 Following your rate limiting deployment, you hop back on the all-hands call and find out that the 
-security and application team have uncovered the attack methodology by reviewing applicaiton logs.  
+security and application team have uncovered the attack methodology by reviewing application logs.  
 First the attackers are using CURL to launch their attacks.  
 
 Let's focus on building that custom policy to close the vulnerability that the attackers are using.  
@@ -437,11 +440,11 @@ a specific page of the application that is vulnerable to close the Zero Day expl
 
 #. Use the drop-down as shown and select **<namespace>/custom-deny** from the available Service Policy list.
 
-#. Click the six squares icon to drag **<namespace>/custom-deny** into the first position in policy order as 
-   shown then click **Apply**. 
-
    |lab062|
 
+#. Click the six squares icon to drag **<namespace>/custom-deny** into the first position in policy order as 
+   shown then click **Apply**. 
+   
    |lab063|
 
    |lab064|
