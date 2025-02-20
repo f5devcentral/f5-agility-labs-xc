@@ -187,6 +187,10 @@ Task 4: Simulate Blocked Access to a Shadow API
 
 #. Enter 'Iron Man' in the "heroname" field.. Click **Execute**.
 
+   .. note ::
+
+      Press **Execute** a couple extra times to create more events which will be reviewed in a later lab.
+
    .. image:: _static/lab2-swagger-execute.png
       :width: 800px
 
