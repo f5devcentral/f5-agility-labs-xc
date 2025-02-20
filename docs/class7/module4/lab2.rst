@@ -2,7 +2,6 @@ Lab 2 - Deploy Containers on vK8s and Build Grafana Dashboard
 =============================================================
 
 **Exercise 1 - Setup Jumphost to connect to the vk8 cluster**
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **Environment Setup**
 To complete this lab section, we'll need to complete the following steps:
@@ -90,7 +89,6 @@ To complete this lab section, we'll need to complete the following steps:
 |
 
 **Exercise 2 - Deploy Containers on vK8s and Add Origin Pool and Load Balancer**
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **Deploy Containers on vK8s**
 
@@ -121,7 +119,6 @@ To complete this lab section, we'll need to complete the following steps:
       Why isn't there a Workload configured for these Pods?
 
 **Exercise 3 - Review the Origin Pool and the TCP Load Balancer Configuration**
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 #. On the Distributed Cloud console and in the **Multi-Cloud App Connect** workspace, under **Manage**, hover over **Load Balancers**, then click **Origin Pools**.
 
@@ -171,7 +168,6 @@ To complete this lab section, we'll need to complete the following steps:
 
 
 **Exercise 4 - Deploy Grafana**
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In this section, we will deploy Grafana using docker compose. The Grafana dashboard will be preconfigured to match your namespace name for each of the 3 regions.
 
