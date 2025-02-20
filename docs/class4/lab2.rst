@@ -1,22 +1,12 @@
-Lab 2: API Inventory - Shadow
+Lab 2: API Inventory
 =============================
 
 **Scenario**
 
-A fast-growing digital banking startup, frequently deploys updates to its banking application 
-without thorough review. 
+There was an update to Customer Lookup controller, a new endpoint "getbyheroname" was added, allowing the lookup 
+of a customer's secret identify. However, this endpoint was not intended for release and was not approved for production.
 
-This practice often results in:
-
-* Exposed Sensitive API Endpoints
-* Regulatory Risks
-
-To address these issues, the company must:
-
-* Discover APIs: Identify all live endpoints.
-* Enforce Policies: Restrict exposure to approved endpoints only.
-
-The goal is to ensure secure, compliant, and efficient API management for the banking application.
+We need to ensure that unapproved endpoints cannot be consumed, both now and in the future.
 
 **Expected Lab Time: 15 minutes**
 
@@ -60,21 +50,46 @@ Task 1: Simulate Allowed Access to a Shadow API
 
       In the next steps, we will address this issue by blocking access to the shadow API endpoints. 
 
-Task 2: Enabling API Inventory
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Task 2: API Definition
+~~~~~~~~~~~~~~~~~~~~~~
 
-In this task's series of steps you will enable the API Inventory feature on the
-previously built Load Balancer.
+In this task's series of steps you will create a API Definition using a shared OpenAPI object.
 
-#. As review, an **API Definition** has already been created with an uploaded API File for your convenience. 
-   The swagger file doesn't include the **customerlookup/getbyheroname** endpoint.
+#. In the left-hand navigation of the **Web App & API Protection** service under **Manage**, mouse over **API Management** and click on **API Definition** from the slide out.
 
-   .. image:: _static/lab2-swagger-example.png
+   .. image:: _static/lab2-def-apidef.png
+      :width: 700px
+
+#. In the resulting **API Definition** window, click **Add API Definition** in the main
+   window area as shown.
+
+   .. image:: _static/lab2-def-add.png
+      :width: 650px
+
+#. In the resulting **New API Definition** window, input **demobank-api-def**
+   for the **Name** under the **Metadata** section.
+
+#. In the **OpenAPI Specification Files** section, click **Add Item**.
+
+
+   .. image:: _static/lab2-def-additem.png
       :width: 800px
 
-   .. note ::
+#. Select a Shared OpenAPI file. It will be in the format **shared/api-lab-swagger/v1-25-01-31**.
 
-      The swagger in this use is akind to an endpoint allow list.
+   .. image:: _static/lab2-def-select-shared.png
+      :width: 800px
+
+#. Once selected, click **Save and Exit** in the bottom-right corner.
+
+   .. image:: _static/lab2-def-save-shared.png
+      :width: 800px
+
+Task 3: Enabling API Inventory
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+In this task's series of steps you will enable the API Inventory and Discovery feature on the
+previously built Load Balancer.
 
 #. In the left-hand navigation of the **Web App & API Protection** service, click on **Load Balancers > HTTP Load**
    **Balancers** under the **Manage** section.
@@ -99,15 +114,15 @@ previously built Load Balancer.
       :width: 800px
 
 #. In the second **API Definition** section, click the drop-down arrow and select the
-   pre-created API Definition **shared/api-lab-def**.
+   pre-created API Definition **<namespace>/demobank-api-def**.
 
-   .. image:: _static/lab2-lb-def-select-shared.png
+   .. image:: _static/lab2-lb-def-select.png
       :width: 800px
 
 #. Under **Validation**, select **API Inventory** from drop-down then click on
    **View Configuration**
 
-   .. image:: _static/lab2-lb-def-validation-shared.png
+   .. image:: _static/lab2-lb-def-validation.png
       :width: 800px
 
    .. image:: _static/lab2-lb-def-validation-config.png
@@ -155,7 +170,7 @@ previously built Load Balancer.
    .. image:: _static/shared-lb-save.png
       :width: 800px
 
-Task 3: Simulate Blocked Access to a Shadow API
+Task 4: Simulate Blocked Access to a Shadow API
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 #. Using another browser tab, navigate to the the following URL.
@@ -171,6 +186,10 @@ Task 3: Simulate Blocked Access to a Shadow API
       :width: 800px
 
 #. Enter 'Iron Man' in the "heroname" field.. Click **Execute**.
+
+   .. note ::
+
+      Press **Execute** a couple extra times to create more events which will be reviewed in a later lab.
 
    .. image:: _static/lab2-swagger-execute.png
       :width: 800px

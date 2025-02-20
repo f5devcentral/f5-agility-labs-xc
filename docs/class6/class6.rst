@@ -1,5 +1,5 @@
-F5 Distributed Cloud - Intro to Multi-Cloud Networking
-==========================================================
+F5 Distributed Cloud: Multi-Cloud Networking & Beyond
+=====================================================
 
 This hands-on lab environment highlights some of the basic concepts of F5 Distributed Cloud Multi-cloud Networking.
 

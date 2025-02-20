@@ -1,5 +1,5 @@
 Lab 1: Load Balancer and Origin
-=========================================================================================
+===============================
 
 .. warning :: If you are using multiple labs in one course, understand that some steps below
    may be redundant depending on labs deployed. To gain full benefits from this lab, please
@@ -23,15 +23,15 @@ Following the tasks in the prior **Introduction** Section, you should now be abl
 F5 Distributed Cloud Console, having set your Work Domain Roles and Skill levels. If you have not
 done so already, please login to your tenant for this lab and proceed to Task 1.
 
-In this lab you will create a Application Load Balancer, attach and Origin Pool and enabled Malisddius User Detection.
+In this lab you will review an already created Application (API) Load Balancer and Origin Pool with Malicious User Detection enabled.
 
-**Expected Lab Time: 5 minutes**
+**Expected Lab Time: 8 minutes**
 
 .. note ::
 
    This lab reviews a pre-build Load Balancer and Origin Pool. Refer to `Lab 1 Advanced <adv_lab1.html>`_ for additional steps on how to create a Load Balancer and Origin Pool.
 
-Task 1: Load Balancer and Origin Pool Review
+Task 1: Review Load Balancer and Origin Pool
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The following steps are a review of a Load Balancer and Origin Pool aready configured within your namespace. 
@@ -54,18 +54,17 @@ This Load Balancer will be used throughout the course.
    -------------------------- --------------------------
    Name                       <namespace>-lb
    Domains                    <namespace>.lab-sec.f5demos.com
-   Type                       HTTP
-   Manage DNS                 Enabled
-   Port                       80
+   Type                       HTTPS
+   Port                       443
    Advertisement              Internet
    ========================== ==========================
 
    ========================== ==========================
    **Origin Pool**            **Configuration**
    -------------------------- --------------------------
-   Name                       <namespace>-pool
+   Name                       <namespace>-origin
    Type                       Public DNS
-   Name/IP                    demobankapi.lab-sec.f5demos.com
+   Name/IP                    bankapi.lab-sec.f5demos.com
    Port                       80
    ========================== ==========================
 
@@ -101,8 +100,8 @@ This Load Balancer will be used throughout the course.
    .. image:: _static/lab1-task1-106.png
       :width: 500px
 
-Task 2: Load Balancer Validation
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Task 2: Validate Load Balancer 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 #. Using another browser tab, navigate to the the following URL to confirm the Load Balancer
    has been configured properly.

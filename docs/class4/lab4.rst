@@ -1,27 +1,23 @@
 Lab 4: Web Application Firewall (WAF)
 =====================================
 
-In this lab, you will create and attach a Web Application Firewall (WAF) to your HTTP Load Balancer.
-
-This lab's tasks will walkthrough the configuration steps, and note additional
-configurations available.
-
 **Scenario**
 
-The “send” API endpoint for the Message Service has a finding indicating it is susceptible
-to dynamic attacks like Cross Site Scripting (XSS). This allows a script to be rendered within
-the message window, which will be visible by the Customer Service team; this is not desirable.
+A security finding indicates that the "send" API endpoint in the Message controller is 
+susceptible to dynamic attacks, such as Cross-Site Scripting (XSS). This vulnerability allows 
+scripts to be rendered within the message window, making them visible to the 
+Customer Service team, an unacceptable security risk.
 
-Find a way to protect the endpoint, and overall all APIs, from dynamic attacks.
+Implement measures to protect this endpoint, and ensure all APIs are safeguarded against dynamic attacks.
 
-**Expected Lab Time: 25 minutes**
+**Expected Lab Time: 8 minutes**
 
 .. note ::
 
    This lab will use a pre-build shared WAF object. Refer to `Lab 4 Advanced <adv_lab4.html>`_ for additional steps on how to create a WAF object.
 
-Task 1: Simulate a Unmitigated Attack against API
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Task 1: Simulate a Unmitigated Attack
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In this task, you will follow steps simulating an attack against an unprotected endpoint.
 The Distributed Cloud (XC) WAF object is pre-built for the next Task, but please review how to create this object via the Advanced Lab 4.
@@ -64,8 +60,8 @@ The Distributed Cloud (XC) WAF object is pre-built for the next Task, but please
       If this endpoint was consumed by an actual ticket management system, the "<script>"
       could have been rendered in the user's browser.
 
-Task 2: Attach WAF policy to HTTP Load Balancer
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Task 2: Enabled a WAF Policy
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In this task, you will follow steps to attach a WAF policy to your Load Balancer.
 
@@ -117,8 +113,8 @@ In this task, you will follow steps to attach a WAF policy to your Load Balancer
    .. image:: _static/lab4-image053.png
       :width: 800px
 
-Task 3: Simulate a Mitigated Attack against API
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Task 3: Simulate a Mitigated Attack
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In this task you will follow steps simulating an attack againt a protected endpoint.
 
@@ -136,6 +132,10 @@ In this task you will follow steps simulating an attack againt a protected endpo
       :width: 800px
 
 #. Copy the following JSON, paste within the Request body. Click on **Execute**.
+
+   .. note ::
+
+      Press **Execute** a couple extra times to create more events which will be reviewed in a later lab.
 
    .. code-block:: json
    

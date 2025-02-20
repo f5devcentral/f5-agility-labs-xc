@@ -1,24 +1,14 @@
-Lab 2: Advanced API Inventory - Shadow
-======================================
+Lab 2: Advanced API Inventory
+=============================
 
 **Scenario**
 
-A fast-growing digital banking startup, frequently deploys updates to its banking application 
-without thorough review. 
+There was an update to Customer Lookup controller, a new endpoint "getbyheroname" was added, allowing the lookup 
+of a customer's secret identify. However, this endpoint was not intended for release and was not approved for production.
 
-This practice often results in:
+We need to ensure that unapproved endpoints cannot be consumed, both now and in the future.
 
-* Exposed Sensitive API Endpoints
-* Regulatory Risks
-
-To address these issues, the company must:
-
-* Discover APIs: Identify all live endpoints.
-* Enforce Policies: Restrict exposure to approved endpoints only.
-
-The goal is to ensure secure, compliant, and efficient API management for the banking application.
-
-**Expected Lab Time: 20 minutes**
+**Expected Lab Time: 15 minutes**
 
 Task 1: Simulate Allowed Access to a Shadow API
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

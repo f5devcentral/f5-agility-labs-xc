@@ -1,5 +1,5 @@
-F5 Distributed Cloud - AppStack CaaS & K8s Delivery Options
-===========================================================
+F5 Distributed Cloud: Container as a Service
+============================================
 
 This Lab environment highlights some of the basic concepts of F5 Distributed Cloud (XC) AppStack.
 
