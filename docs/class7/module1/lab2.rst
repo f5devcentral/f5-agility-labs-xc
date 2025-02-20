@@ -69,7 +69,7 @@ In this lab, we will learn the following:
 
    Now click on **appworld2025-vpc-site-one** on the map for some quick details and metrics about this customer edge site, shown on a right-hand flyout panel.
 
-   .. image:: ../images/distributedappclickvpcsiteoneexploresite-updated.png
+   .. image:: ../images/M1-L2-site-one-flyout-click.png
       :width: 400pt
       :class: no-scaled-link
 
