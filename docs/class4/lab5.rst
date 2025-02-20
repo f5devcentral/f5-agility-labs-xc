@@ -1,26 +1,18 @@
 Lab 5: Rate Limiting
-=====================================
-
-APIs are open by design, meaning they intentially allow access and interaction with its inteface via a
-defined set of rules and protocols. This "open design" provides a large "risk surface" that organizations must secure.
-As such, protecting these APIs are critical to ensure security efficacy. An API should define
-specific parameters for allowed access (i.e. authentication, rate-limiting, method enfocement, etc.). In this lab, we will explore
-how F5's XC can provide layers of protection for APIs.
-
+====================
 
 **Scenario**
 
-An internal application at times gets stuck in a temporary loop, replaying requests many times against a
-single endpoint. This impacts the performance of the endpoint for others clients, at times making
-the API unusable.
+An internal application occasionally enters a temporary loop, repeatedly sending requests to a 
+single endpoint. This degrades performance for other clients and, at times, renders the API unusable.
 
-Find a way to limit the number of requests the endpoint will accept from a given client
-(source) within a window of time. 
+Implement a solution to limit the number of requests an endpoint will accept from a given 
+client "source" within a specific time window to prevent excessive load. 
 
-**Expected Lab Time: 20 minutes**
+**Expected Lab Time: 8 minutes**
 
-Task 1: Simulate Unmitigated Excessive Requests against API
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Task 1: Simulate Unmitigated Excessive Requests
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Currently, our Banking Application does not implement, or enforce, rate-limiting to a specific endpoint.
 
@@ -53,8 +45,8 @@ In this task, you will follow steps to send multiple requests witin 1 minute to 
 
 
 
-Task 2: Attach API Rate-Limiting to HTTP Load Balancer Object
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Task 2: Enabled API Rate-Limiting
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In this task's series of steps, you will enable the API Rate-Limiting feature on the
 previously built HTTP Load Balancer object delivering the targeted API.
@@ -132,8 +124,8 @@ previously built HTTP Load Balancer object delivering the targeted API.
    .. image:: _static/lab4-image030.png
       :width: 800px
 
-Task 3: Simulate Mitigated Excessive Requests against API
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Task 3: Simulate Mitigated Excessive Requests
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In this task, you will send more than 10 requests within a Minute
 
