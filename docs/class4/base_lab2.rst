@@ -1,5 +1,5 @@
 Lab 2: API Inventory
-=============================
+====================
 
 **Scenario**
 
@@ -8,7 +8,7 @@ of a customer's secret identify. However, this endpoint was not intended for rel
 
 We need to ensure that unapproved endpoints cannot be consumed, both now and in the future.
 
-**Expected Lab Time: 15 minutes**
+**Expected Lab Time: 8 minutes**
 
 .. note ::
 
@@ -50,46 +50,21 @@ Task 1: Simulate Allowed Access to a Shadow API
 
       In the next steps, we will address this issue by blocking access to the shadow API endpoints. 
 
-Task 2: API Definition
-~~~~~~~~~~~~~~~~~~~~~~
+Task 2: Enabling API Inventory
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In this task's series of steps you will create a API Definition using a shared OpenAPI object.
-
-#. In the left-hand navigation of the **Web App & API Protection** service under **Manage**, mouse over **API Management** and click on **API Definition** from the slide out.
-
-   .. image:: _static/lab2-def-apidef.png
-      :width: 700px
-
-#. In the resulting **API Definition** window, click **Add API Definition** in the main
-   window area as shown.
-
-   .. image:: _static/lab2-def-add.png
-      :width: 650px
-
-#. In the resulting **New API Definition** window, input **demobank-api-def**
-   for the **Name** under the **Metadata** section.
-
-#. In the **OpenAPI Specification Files** section, click **Add Item**.
-
-
-   .. image:: _static/lab2-def-additem.png
-      :width: 800px
-
-#. Select a Shared OpenAPI file. It will be in the format **shared/api-lab-swagger/v1-25-01-31**.
-
-   .. image:: _static/lab2-def-select-shared.png
-      :width: 800px
-
-#. Once selected, click **Save and Exit** in the bottom-right corner.
-
-   .. image:: _static/lab2-def-save-shared.png
-      :width: 800px
-
-Task 3: Enabling API Inventory
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-In this task's series of steps you will enable the API Inventory and Discovery feature on the
+In this task's series of steps you will enable the API Inventory feature on the
 previously built Load Balancer.
+
+#. As review, an **API Definition** has already been created with an uploaded API File for your convenience. 
+   The swagger file doesn't include the **customerlookup/getbyheroname** endpoint.
+
+   .. image:: _static/lab2-swagger-example.png
+      :width: 800px
+
+   .. note ::
+
+      The swagger in this use is akind to an endpoint allow list.
 
 #. In the left-hand navigation of the **Web App & API Protection** service, click on **Load Balancers > HTTP Load**
    **Balancers** under the **Manage** section.
@@ -114,15 +89,15 @@ previously built Load Balancer.
       :width: 800px
 
 #. In the second **API Definition** section, click the drop-down arrow and select the
-   pre-created API Definition **<namespace>/demobank-api-def**.
+   pre-created API Definition **shared/api-lab-def**.
 
-   .. image:: _static/lab2-lb-def-select.png
+   .. image:: _static/lab2-lb-def-select-shared.png
       :width: 800px
 
 #. Under **Validation**, select **API Inventory** from drop-down then click on
    **View Configuration**
 
-   .. image:: _static/lab2-lb-def-validation.png
+   .. image:: _static/lab2-lb-def-validation-shared.png
       :width: 800px
 
    .. image:: _static/lab2-lb-def-validation-config.png
@@ -170,7 +145,7 @@ previously built Load Balancer.
    .. image:: _static/shared-lb-save.png
       :width: 800px
 
-Task 4: Simulate Blocked Access to a Shadow API
+Task 3: Simulate Blocked Access to a Shadow API
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 #. Using another browser tab, navigate to the the following URL.
@@ -186,10 +161,6 @@ Task 4: Simulate Blocked Access to a Shadow API
       :width: 800px
 
 #. Enter 'Iron Man' in the "heroname" field.. Click **Execute**.
-
-   .. note ::
-
-      Press **Execute** a couple extra times to create more events which will be reviewed in a later lab.
 
    .. image:: _static/lab2-swagger-execute.png
       :width: 800px
