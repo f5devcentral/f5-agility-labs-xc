@@ -75,7 +75,7 @@ In this task's series of steps you will create a API Definition using a shared O
    .. image:: _static/lab2-def-additem.png
       :width: 800px
 
-#. Select a Shared OpenAPI file. It will be in the format **shared/api-lab-swagger/v1-<date>**.
+#. Select a Shared OpenAPI file. It will be in the format **shared/api-lab-swagger/v1-25-01-31**.
 
    .. image:: _static/lab2-def-select-shared.png
       :width: 800px
