@@ -30,30 +30,40 @@ In this lab, we will learn the following:
 
 #. Access **Distributed Apps** on the F5XC Console
 
-   .. image:: ../images/1access_distributed_apps_service_menu-updated.png
+   .. image:: ../images/M2-L1-select-dist-app-tile.png
       :width: 600pt
 
-#. Select **Applications -> Virtual K8s**, then your Virtual K8s cluster from the list
+#. Under **Applications** select **Virtual K8s**, then select your Virtual K8s cluster from the list
 
    .. image:: ../images/2access_applications_vk8s-udpated.png
       :width: 600pt
+      :class: no-scaled-link
 
 #. Review **Sites** on the vK8s dashboard - there should be 3.  These 3 customer edge sites will be were our workloads will be deployed to.
 
    .. image:: ../images/3review_vk8s_dashboard_sites-updated.png
       :width: 600pt
+      :class: no-scaled-link
 
 **Exercise 2 - Configure vK8s Workload Container**
 
-#. Select **Workloads** -> **Add vK8s workload**
+#. From the **Workloads** tab, click on **Add vK8s workload**
 
    .. image:: ../images/4add_vk8s_workload-updated.png
       :width: 600pt
+      :class: no-scaled-link
 
-#. Complete the **Metadata** section by using your Firstname initial and Lastname altogether and append “-workload” at the end. Ex: For Andrew Smith, the site name will be “asmith-workload” (without the quotes!) Use this value for **Name** and **Description**, then select **Service** from the **Select Type of Workload** list.
+#. Complete the **Metadata** section by using your Firstname initial and Lastname altogether and append “-workload” at the end.
+
+   As an example: for Andrew Smith, the workload name will be **asmith-workload**.
+
+   Use this value for **Name** and **Description**, then select **Service** from the **Select Type of Workload** list.
+
+   .. important:: Follow this naming convention as it will be used later in the lab.
 
    .. image:: ../images/5workload_metadata_and_service-updated.png
       :width: 600pt
+      :class: no-scaled-link
 
 #. Next, click the **Configure** link within the **Service** sub-section.
 
@@ -61,6 +71,7 @@ In this lab, we will learn the following:
 
    .. image:: ../images/6add_container-updated.png
       :width: 600pt
+      :class: no-scaled-link
 
 #. Complete the **Container Configuration** section by providing a **Name** and details for which **Image to Use**
 
@@ -71,6 +82,7 @@ In this lab, we will learn the following:
 
    .. image:: ../images/7container_config-updated.png
       :width: 600pt
+      :class: no-scaled-link
 
 #. Click **Apply**
 
@@ -80,11 +92,13 @@ In this lab, we will learn the following:
 
    .. image:: ../images/8deploy_options-updated.png
       :width: 600pt
+      :class: no-scaled-link
 
 #. Select the appworld2025-k8s-vsite vK8s site name from **List of Customer Virtual Sites to Deploy**, then **Apply**.
 
    .. image:: ../images/9select_customer_site-updated.png
       :width: 600pt
+      :class: no-scaled-link
 
 **Exercise 4 - Configure vK8s Workload Advertisement Options**
 
@@ -92,6 +106,7 @@ In this lab, we will learn the following:
 
    .. image:: ../images/10select_advertise_options-updated.png
       :width: 600pt
+      :class: no-scaled-link
 
 #. Within the **Select Port to Advertise** section, set **Select Port to Advertise** to *3000*, set **Application Protocol** to *HTTP*.  Finally click **Apply**.  This will set the clusterIP port to 3000.
 
@@ -100,19 +115,29 @@ In this lab, we will learn the following:
 
    .. image:: ../images/11set_advertise_port-updated.png
       :width: 600pt
+      :class: no-scaled-link
 
 #. With the vk8s workload configuration now completed, Click **Apply** again, then **Save and Exit** from the vK8s Workload configuration page
 
    .. image:: ../images/11_b_vk8s_apply_complete_config.png
       :width: 600pt
+      :class: no-scaled-link
 
    .. image:: ../images/11_c_vk8s_saveandexit_complete_config.png
       :width: 600pt
+      :class: no-scaled-link
 
-#. In less than a minute, you should see the workload added with 3 total sites and 3 total pods (you may need to click the "Refresh" button)
+#. In less than a minute, you should see the workload added with 3 total sites and 3 total pods
+
+   .. NOTE::
+      You may need to click another tab; for instance **Dashboard**, and then click back to **Workloads** to see the changes to the workload you just deployed.
 
    .. image:: ../images/12_a_verify_3_workload_sites_pods_pending.png
       :width: 600pt
+      :class: no-scaled-link
+
+   After a few minutes, three pods should be up and running.
 
    .. image:: ../images/12b_verify_3_workload_sites_pods-updated.png
       :width: 600pt
+      :class: no-scaled-link

@@ -1,102 +1,211 @@
-Lab 3: Human Like Automation 
-==============================
+Lab 3: Human-Simulated Stuffing Attack
+=======================================
 
-**Run this lab from the JUMPHOST**
+**Scenario Lab 3**
 
-In this test we will replicate a more "human like" automation that fully renders the page by remotely controlling the Chrome browser.   
+In this lab, you will configure Openbullet to simulate human input on a selenium-controlled browser. 
+Since a browser is being used as the client, the POST will contain JavaScript containing telemetry about 
+the client. Note: Telemetry allows the engine to assign a risk factor to a threat. For some attacks, 
+like a slow-moving “human” stuffing attack, the engine needs to see enough data to positively identify 
+it as a bot. Therefore, for this attack, you may see some of the initial requests are logged as Human 
+but quickly the bot will be flagged.
 
-1. Launch OpenBullet from the desktop.
 
-2. Navigate to **Configs -> Manager -> New**  Give it a name "*Human Credential Stuffing*" and Accept.  Double click to edit this item.
+To run this attack, the workflow is the same as the Basic stuffing attack except you will use the Human 
+config and Human credentials wordlist.
 
-|lab001|
- 
-3. Add a new **BROWSER ACTION** block. The default action of OPEN is all we need.
+**Expected Lab Time: 30 minutes**
 
-|lab002|
+Task 1: Execute a Human Credential Stuffing Attack
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-4. Add a new **NAVIGATE** block. Configure URL as **http://namespace.lab-sec.f5demos.com/user/vipsignin**
+For this task you will create a Human credential stuffing attack with our test tool.  The workflow 
+is the same as the Basic stuffing attack except you will use the Human config and Human credentials wordlist. 
+We will end by reviewing the security requests logs as well as the Bot Defense dashboard for greater insights.
 
-|lab003|
 
-5. Now we will add find the Username and Password fields and inject the text into them.  The field ID's or Names can be found in the HTML of the site but are provided 
++----------------------------------------------------------------------------------------------+
+|  1. RDP or Console into the Windows Jump Host, you can locate the password here:             |
+|                                                                                              |
+|     **(Password is located in the UDF Course Screen->Components->Jump Host->Details)**       |
+|                                                                                              |
+|  2. On the home screen double-click the OpenBullet 2 shortcut                                |
++----------------------------------------------------------------------------------------------+
+| |lab1-task3-02|                                                                              |
++----------------------------------------------------------------------------------------------+                             
+|  3. Click on **Configs** and double-click **"Human"** - this is our credential stuffing      |
+|                                                                                              |
+|     attack configuration that will simulate a basic Bot.                                     |
++----------------------------------------------------------------------------------------------+
+| |lab3-task1-01|                                                                              |
+|                                                                                              |
++----------------------------------------------------------------------------------------------+
+| 4. Click the **Navigate to App** block and update the URL field with your load balancer      |
+|                                                                                              |
+|    namespace.  Click **Save** at the bottom when finished.                                   |
++----------------------------------------------------------------------------------------------+
+| |lab3-task1-02|                                                                              |
+|                                                                                              |
+| |lab3-task1-03|                                                                              |
++----------------------------------------------------------------------------------------------+
+| 5. From within the same window click **Jobs** then **New+** and finally **Multi-Run**        |
+|                                                                                              |             
++----------------------------------------------------------------------------------------------+
+| |lab3-task1-04|                                                                              |
+|                                                                                              |
+| |lab3-task1-05|                                                                              |
+|                                                                                              |
++----------------------------------------------------------------------------------------------+
 
-4. Add a new **ELEMENT ACTION** block. Under Find Element Element By ID = **email**  (case sensitive).  For Action choose **SENDKEYSHUMAN** and for the INPUT put in **<USERNAME>**
++----------------------------------------------------------------------------------------------+
+| 6. In the new window, on the top left, click **"Select Config"** and then **Human**          |
+|                                                                                              |
+|    finally **Accept** at the bottom.                                                         |
++----------------------------------------------------------------------------------------------+
+| |lab3-task1-06|                                                                              |
+|                                                                                              |
+| |lab3-task1-07|                                                                              |
++----------------------------------------------------------------------------------------------+
+| 7. On the top right, click **Select Wordlist** and then **Credentials-Human** and finally    |
+|                                                                                              |
+|    **Accept** at the bottom.                                                                 |
++----------------------------------------------------------------------------------------------+
+| |lab3-task1-08|                                                                              |
+|                                                                                              |
+| |lab3-task1-09|                                                                              |
++----------------------------------------------------------------------------------------------+
+| 8. Now that we have added the **Human** Configuration along with the **Credentials-Human**   |
+|                                                                                              |
+|    we can finally click **Accept** at the bottom, this will save the Multi-Run Job setup     |
++----------------------------------------------------------------------------------------------+
+| |lab3-task1-10|                                                                              |
++----------------------------------------------------------------------------------------------+
+| 9. You should now see a second job titled **#[1-9]** **[Idle]**.  Hover over this second job |
+|                                                                                              |
+|    until a small hand appears then click.  A new window will open if you see **Skip: 11**    | 
+|                                                                                              |
+|    you will need to change this value. Over to the right click  **Options**.                 |
+|                                                                                              |
++----------------------------------------------------------------------------------------------+
+| |lab3-task1-11|                                                                              |
+|                                                                                              |
+| |lab3-task1-12|                                                                              |
+|                                                                                              |
++----------------------------------------------------------------------------------------------+
+| 10. Change the **Skip** value to 0 (zero) either by typing it or using the **minus** button  |
+|                                                                                              |
+|     finally clicking **Accept** at the bottom.  Now with the **Skip** value changed to "0"   |
+|                                                                                              |
+|     you can click **Start** to run the job.                                                  |
++----------------------------------------------------------------------------------------------+
+| |lab3-task1-13|                                                                              |
+|                                                                                              |
+| |lab3-task1-14|                                                                              |
+|                                                                                              |
++----------------------------------------------------------------------------------------------+
 
-|lab004|
 
-5. Add a new **ELEMENT ACTION** block. Under Find Element Element By ID = **password**  (case sensitive).  For Action choose **SENDKEYSHUMAN** and for the INPUT put in **<PASSWORD>**
+Task 2 : Review the Request Logs
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-|lab005|
 
-6. Add a new **ELEMENT ACTION** block. Under Find Element Element By ID = **password**  (case sensitive).  For Action choose **SUBMIT**
++----------------------------------------------------------------------------------------------+
+| 1. Let's review our load balancer request logs - Go to **Web App and API Protection**        |
+|                                                                                              |
+|    then **Overview** and finally **Security**  (Adjust the time filter as needed)            |
+|                                                                                              |    
++----------------------------------------------------------------------------------------------+
+| |lab1-task4-01|                                                                              |     
++----------------------------------------------------------------------------------------------+
+|   Scroll to the bottom and click on your HTTP Load Balancer then at the top **Requests**     |    
++----------------------------------------------------------------------------------------------+
+| |lab1-task4-02|                                                                              |
++----------------------------------------------------------------------------------------------+
+|   Add a filter for **Human** Bot requests. Click **Add Filter** and enter the following      |
+|                                                                                              |
+|   syntax **bot_defense.insight** **In** **HUMAN**. As you type each word click on the        |
+|                                                                                              |
+|   syntax match that will appear in the dialogue box.                                         |
++----------------------------------------------------------------------------------------------+
+| |lab3-task2-01|                                                                              |
+|                                                                                              |
++----------------------------------------------------------------------------------------------+
+| 2. What were the results? How many POST requests were flagged as Human?                      |
+|                                                                                              |
+|    If you are one of the first students to run the attack, you may see it take up to 10      |
+|                                                                                              |         
+|    requests before positive bot identification                                               |
+|                                                                                              |
++----------------------------------------------------------------------------------------------+
+| 3. Let's go review the Bot Defense Dashboard. We access this by clicking **Bot Defense**     |
+|                                                                                              |
+|    at the top of the screen (Next to Requests)                                               |
+|                                                                                              |
+|    Notice now we see **Telemetry Client** show up in the *Traffic Types*. This indicates     |
+|                                                                                              |
+|    JavaScript telemetry within the client browser identified the bot.                        |
++----------------------------------------------------------------------------------------------+
+| |lab3-task2-02|                                                                              |
+|                                                                                              |
+| |lab3-task2-03|                                                                              |                                     
++----------------------------------------------------------------------------------------------+
 
-|lab006|
 
-7. Add a new **BROWSER ACTION** block. For the Action choose **DOMtoSOURCE**.  This will copy the page source code from the browser to the local <SOURCE> variable
 
-|lab007|
++----------------------------------------------------------------------------------------------+
+| **Lab 3 Summary**                                                                            |
+|                                                                                              |
+|   This lab shows how Distributed Cloud's machine learning capabilities                       | 
+|                                                                                              |
+|   leverage telemetry in a browser request to identify a bot even if it is capable of         |
+|                                                                                              |
+|   simulating human activity.  This concludes Lab 3, feel free to review the configuration.   |
+|                                                                                              |
++----------------------------------------------------------------------------------------------+
+| |labend|                                                                                     |
++----------------------------------------------------------------------------------------------+
 
-8. Next we want to ensure we identify when the login was successful and to capture the secret word.
 
-9. Add a new **KEY CHECK** block. Click the Keychain + button twice.  Now in the first entry this will be to determine success we will look in the page source for the follow string. Click the Key + button once for each new Keychain and enter **Login Successful** in the indicated field.  For the second block we will use this for failure.  Change the type to **FAILURE** and enter **Incorrect Details** into the indicated field.
-
-|lab008|
-
-10. Add a new **PARSE** block.  Configure **Var/Cap Name** as "*SECRET*" and click "*IS CAPTURE*".  Then for the **Left String** we use **SECRET !!!** and Right String we use **!!!**   This will capture and save the value to the log during an attack.  Ensure your configuration is *SAVED*.
-
-|lab009|
-
-11. Lets test our configuration.  Now fill in the credentials **john.smith@nobody.com:test123** in the **DATA** field and ensure **Credentials** is the method selected.  Now hit **Start**.  A new Chrome window should open and we can watch the bot work its magic.  Close the browser manually once it completes.
-
-|lab010|
-
-12. Now its time to run a large credential stuffing attack!
-
-13. Swith to the *RUNNER* menu.  Choose *NEW* and click on the entry to edit it.
-
-14. Click *SELECT CFG* and choose the configuration we just created *Human Credential Stuffing*, click *SELECT LIST* and choose *LAB2* and lastly hit *START* and watch the attack begin. Leave the number of bots set to 1 as multiple browser may make the system slow.  If you need to rerun the test you need to reset the start count to 1 (Used if you have a very long credential list)
-
-|lab011|
-
-15. Now you can see the attack running in realtime on the left hand side and on the right hand side it will show any of the successful attempts.  This will also bring up the chrome window to watch.  (Chrome could be run in headless mode if desired)
-
-|lab012|
-
-16. Additionally we can go to the distributed cloud dashboard  outside of the RDP Jumphost.  Click on *Web App & API Protection* then *Dashboards* and then *Security Dashboard*. Scroll down and select <namespace>-lb under *Load Balancers* and explore using the *Bot Defense* tab at the top right of the dashboard.
-
-|lab013|
-
-**End of Lab 3:**  This concludes the overall lab, feel free to review and test the configuration. Closing presentation and remarks will begin shortly.
-
-|labend|
-
-.. |lab001| image:: _static/Slide6.png
+.. |lab1-task4-01| image:: _static/lab1-task4-01.png
    :width: 800px
-.. |lab002| image:: _static/Slide19.png
+.. |lab1-task4-02| image:: _static/lab1-task4-02.png
    :width: 800px
-.. |lab003| image:: _static/Slide20.png
+.. |lab1-task3-02| image:: _static/lab1-task3-02.png
    :width: 800px
-.. |lab004| image:: _static/Slide21.png
+.. |lab3-task1-01| image:: _static/lab3-task1-01.png
    :width: 800px
-.. |lab005| image:: _static/Slide22.png
+.. |lab3-task1-02| image:: _static/lab3-task1-02.png
    :width: 800px
-.. |lab006| image:: _static/Slide23.png
+.. |lab3-task1-03| image:: _static/lab3-task1-03.png
    :width: 800px
-.. |lab007| image:: _static/Slide24.png
+.. |lab3-task1-04| image:: _static/lab3-task1-04.png
    :width: 800px
-.. |lab008| image:: _static/Slide25.png
+.. |lab3-task1-05| image:: _static/lab3-task1-05.png
    :width: 800px
-.. |lab009| image:: _static/Slide26.png
+.. |lab3-task1-06| image:: _static/lab3-task1-06.png
    :width: 800px
-.. |lab010| image:: _static/Slide27.png
+.. |lab3-task1-07| image:: _static/lab3-task1-07.png
    :width: 800px
-.. |lab011| image:: _static/Slide28.png
+.. |lab3-task1-08| image:: _static/lab3-task1-08.png
    :width: 800px
-.. |lab012| image:: _static/Slide29.png
+.. |lab3-task1-09| image:: _static/lab3-task1-09.png
    :width: 800px
-.. |lab013| image:: _static/Slide30.png
+.. |lab3-task1-10| image:: _static/lab3-task1-10.png
+   :width: 800px
+.. |lab3-task1-11| image:: _static/lab3-task1-11.png
+   :width: 800px
+.. |lab3-task1-12| image:: _static/lab3-task1-12.png
+   :width: 800px
+.. |lab3-task1-13| image:: _static/lab3-task1-13.png
+   :width: 800px
+.. |lab3-task1-14| image:: _static/lab3-task1-14.png
+   :width: 800px
+.. |lab3-task2-01| image:: _static/lab3-task2-01.png
+   :width: 800px
+.. |lab3-task2-02| image:: _static/lab3-task2-02.png
+   :width: 800px
+.. |lab3-task2-03| image:: _static/lab3-task2-03.png
    :width: 800px
 .. |labend| image:: _static/labend.png
    :width: 800px
-
+      
