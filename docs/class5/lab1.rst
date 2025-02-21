@@ -124,7 +124,7 @@ perform a credential stuffing attack.
 |                                                                                              |
 |     **Password is located in your UDF Course browser page in the**                           |
 |                                                                                              |
-|     **Deployment Tab > Jump Host > Click Details and find Credentials**                       |
+|     **Deployment Tab > Jump Host > Click Details and find Credentials**                      |
 |                                                                                              |
 +----------------------------------------------------------------------------------------------+                                                                                             
 |  2. On the home screen double-click the OpenBullet 2 shortcut                                |
