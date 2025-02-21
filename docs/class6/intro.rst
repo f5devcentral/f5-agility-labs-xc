@@ -129,13 +129,6 @@ step below to access the F5 Distributed Cloud Lab Tenant.
 | |intro009|                                                                                   |
 +----------------------------------------------------------------------------------------------+
 
-                                                    |
-|       **DO NOT CLICK STOP**. If you do so you will have to wait till it stops then restart   |
-|                                                                                              |
-|       your JumpHost for this lab.                                                            |
-+----------------------------------------------------------------------------------------------+
-| |intro011|                                                                                   |
-+------------------------------------------
 
 .. |intro001| image:: _static/intro-001.png
    :width: 800px
