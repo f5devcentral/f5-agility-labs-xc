@@ -28,17 +28,20 @@ In this lab, we will learn about and perform the following:
 
    .. image:: ../images/distributedappclickvirtualk8s.png
       :height: 300pt
+      :class: no-scaled-link
 
 
 #. Click the three dots under the "Action" column and then click **Kubeconfig**.
 
    .. image:: ../images/distributedappclickvirtualk8kubeconfig-updated.png
       :width: 500pt
+      :class: no-scaled-link
 
 #. When prompted to select an expiration date, pick a future date that will give you adequate time to complete the lab.
 
    .. image:: ../images/kubeconfigexpirydate.png
       :width: 500pt
+      :class: no-scaled-link
 
    |
 
@@ -48,6 +51,7 @@ In this lab, we will learn about and perform the following:
 
       .. image:: ../images/M4-L1-filebrowser-launch2.png
          :width: 500pt
+         :class: no-scaled-link
 
       .. note::
          If you have kubectl available on your computer, you would be able to interact with your vK8s cluster using the downloaded kubeconfig file.
@@ -57,15 +61,18 @@ In this lab, we will learn about and perform the following:
 
    .. image:: ../images/M4-L1-filebrowser-login.png
       :height: 250pt
+      :class: no-scaled-link
 
 #. Within File Browser, click the **Upload** upload icon, `Choose File` and then select the **kubeconfig** file you downloaded. Select this file and complete the upload.
 
    .. image:: ../images/M4-L1-filebrowser-upload.png
       :height: 150pt
+      :class: no-scaled-link
 
    Make sure the **kubeconfig** file appears in File Browser.
 
    .. image:: ../images/M4-L1-filebrowser-file.png
       :width: 500pt
+      :class: no-scaled-link
 
 Proceed to the next Lab where you'll deploy the MQTT containers to your vk8s cluster and run Grafana on the Jumphost.

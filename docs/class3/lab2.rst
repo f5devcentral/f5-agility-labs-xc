@@ -22,6 +22,8 @@ Task 1: Reviewing Current Access Trends
 #. Return to the F5 Distributed Cloud Console - **Web Application & API Protection > Overview > Performance** 
    Dashboard.
 
+#. Scroll down and select the load balancer.
+
 #. Update the variable time filter. 
 
 #. Using the horizontal navigation, click **Requests**.  
@@ -83,7 +85,7 @@ In this task you will modify the HTTP load balancer to utilize a new set of serv
    |lab013|
 
 #. Let's use the F5 Distributed Cloud AI Assistant to determine if it matched the correct policy.  Return to the F5 Distributed 
-   Cloud SAAS console.  Click the AI Assistant icon in the upper-right hand corner. 
+   Cloud console.  Click the AI Assistant icon in the upper-right hand corner. 
 
    |lab014|
 
@@ -93,6 +95,7 @@ In this task you will modify the HTTP load balancer to utilize a new set of serv
 #. Be sure to edit the prompt with the support ID from your block page.  The support ID is equivalent to the request id.
 
 #. The AI Assistant will confirm that we did match the **deny-all** rule and denied our request.  Minimize the AI Assistant
+   
    |lab015|
 
    |lab016|
@@ -143,7 +146,8 @@ Task 3: Create specific rules define allowed traffic for positive enforcement
 
    |lab027|
 
-#. Browse to the ACME Corp application at *<namespace>.lab-sec.f5demos.com*.  Why are you seeing a 403 error?
+#. Browse to the ACME Corp application at *<namespace>.lab-sec.f5demos.com*.  Why are you seeing a 403 error?  Service Policies are enforced based on 
+   the order of their rules.  
 
 #. Lets return to the specific Service Policy applied to the HTTP load balancer.  Note the order of the Service Policies.  The deny-all policy is
    listed first.   Service Policies must be ordered correctly in a order to process traffic as intended.

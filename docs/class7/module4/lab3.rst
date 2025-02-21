@@ -13,6 +13,7 @@ Lab 3 - Review Results
 
    .. image:: ../images/M4-L3-launchgrafana.png
       :width: 400pt
+      :class: no-scaled-link
 
 #. Once logged in, navigate to **Dashboards** --> **Services** --> **Distributed Host Stats via MQTT**
 
@@ -22,6 +23,7 @@ Lab 3 - Review Results
 
 .. image:: ../images/grafana-dashboard-empty.png
    :width: 650pt
+   :class: no-scaled-link
 
 |
 |
@@ -43,6 +45,7 @@ In a couple minutes your Web Shell will look like this:
 
 .. image:: ../images/systemstats2mqtt.png
    :width: 650pt
+   :class: no-scaled-link
 
 |
 |
@@ -53,6 +56,7 @@ Navigate back to the Grafana dashboard and you should see data populating the ch
 
 .. image:: ../images/grafana-dashboard-populated.png
    :width: 650pt
+   :class: no-scaled-link
 
 |
 |

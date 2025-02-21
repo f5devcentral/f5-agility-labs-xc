@@ -125,7 +125,7 @@ Attendees will now be presented the Home page of the F5 Distributed Cloud Consol
 
 #. You can adjust your work domains and skill level (not required) by clicking on the **Account** icon in the top right of the screen and then clicking on **Account Settings**.
 
-   .. image:: ../images/xclogonaccountsettings.png
+   .. image:: ../images/M1-L1-account.png
       :width: 400pt
 
 #. In the resulting window you can observe the **Work domains and skill level** section and other administrative functions.
@@ -135,27 +135,28 @@ Attendees will now be presented the Home page of the F5 Distributed Cloud Consol
    each lab attendee has been provided a unique **namespace** which you will defaulted to (in terms of GUI navigation)
    for all tasks performed through the course of this lab.
 
-#. Click on the **Select Service** in the left-hand navigation. In the resulting fly out navigation, click **Multi-Cloud App Connect**.
+#. Click on the **Select Workspace** in the left-hand navigation. In the resulting fly out navigation, click **Multi-Cloud App Connect**.
 
-   .. image:: ../images/intro-008-updated.png
+   .. image:: ../images/M1-L1-multi-cloud-dist-apps.png
       :width: 400pt
 
-#. In the **Multi-Cloud App Connect** configuration screen observe the URL. In the URI path, locate the **<adjective-animal>**
+#. In the **Multi-Cloud App Connect** configuration screen observe the URL in your address bar. In the URI path, locate the **<adjective-animal>**
    namespace that you have been assigned. It will be located in the portion of the URI path
-   between */namespaces/* and */sites/* as shown in this example **…/namespaces/<namespace>/sites/…**.
-   Note the namespace as it will be used throughout the lab tasks that follow.
+   between */namespaces/* and */sites/* as shown in this example below.
 
-   .. image:: ../images/intro-009-updated.png
+   Write down or copy off your unique namespace as it will be used throughout the lab exercises that follow.
+
+   .. image:: ../images/M1-L1-mcac-namespace.png
       :width: 400pt
 
-#. Click on the **Select Service** navigation menu, then click the **DNS Management** tile.
+#. Click on the **Select Workspace** navigation menu, then click the **DNS Management** tile.
 
-   .. image:: ../images/xcconsoleclickdns-updated.png
+   .. image:: ../images/M1-L1-dns-management.png
       :width: 400pt
 
-#. Please note the delegated domain name
+#. Select **DNS Zone Management** under **Manage**, and note the delegated domain name, **lab-app.f5demos.com**.
 
-   .. image:: ../images/xcconsoleclickdomain-updated.png
+   .. image:: ../images/M1-L1-dns-zone-dlg-domn.png
       :width: 400pt
 
    .. NOTE::
@@ -169,33 +170,50 @@ Attendees will now be presented the Home page of the F5 Distributed Cloud Consol
 
 .. |intro001| image:: ../images/intro-01.png
    :width: 800px
+   :class: no-scaled-link
 .. |intro002| image:: ../images/intro-02.png
    :width: 800px
+   :class: no-scaled-link
 .. |intro003| image:: ../images/intro-03.png
    :width: 800px
+   :class: no-scaled-link
+
 .. |intro004| image:: ../images/intro-04.png
    :width: 800px
+   :class: no-scaled-link
 .. |intro005| image:: ../images/intro-05.png
    :width: 800px
+   :class: no-scaled-link
 .. |intro006| image:: ../images/intro-06.png
    :width: 800px
+   :class: no-scaled-link
 .. |intro007| image:: ../images/intro-07.png
    :width: 800px
+   :class: no-scaled-link
 .. |intro008| image:: ../images/intro-08.png
    :width: 800px
+   :class: no-scaled-link
 .. |intro009| image:: ../images/intro-09.png
    :width: 800px
+   :class: no-scaled-link
 .. |intro010| image:: ../images/intro-10.png
    :width: 800px
+   :class: no-scaled-link
 .. |intro011| image:: ../images/intro-11.png
    :width: 800px
+   :class: no-scaled-link
 .. |intro012| image:: ../images/intro-12.png
    :width: 800px
+   :class: no-scaled-link
 .. |intro013| image:: ../images/intro-13.png
    :width: 800px
+   :class: no-scaled-link
 .. |intro014| image:: ../images/intro-14.png
    :width: 800px
+   :class: no-scaled-link
 .. |intro015| image:: ../images/intro-15.png
    :width: 800px
+   :class: no-scaled-link
 .. |labbgn| image:: ../images/labbgn.png
    :width: 800px
+   :class: no-scaled-link

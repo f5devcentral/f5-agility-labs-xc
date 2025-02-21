@@ -1,5 +1,5 @@
-F5 Distributed Cloud - Foundations of Delivery & Security
-=========================================================================
+F5 Distributed Cloud: Foundations of Delivery & Security
+========================================================
 
 Welcome
 -------
