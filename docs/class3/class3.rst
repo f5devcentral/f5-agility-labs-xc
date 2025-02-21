@@ -1,5 +1,5 @@
-F5 Distributed Cloud - Security Automation & Zero Day Mitigation
-================================================================
+F5 Distributed Cloud: Security Automation & Zero Day Mitigation
+===============================================================
 
 Welcome
 -------
