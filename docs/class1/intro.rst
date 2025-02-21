@@ -74,7 +74,7 @@ Accessing UDF (F5 Unified Demo Framework)
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| The Lab environment window will now be displayed.  Click on the **Documentation** tab in the |
+| The Lab environment window will now be displayed.  Click on the **Deployment** tab in the |
 | horizontal navigation links.  Locate and observe the state of **Client** system.             |
 |                                                                                              |
 | In approximately 5-7 minutes the associated **yellow gear** starting icon will change to a   |
