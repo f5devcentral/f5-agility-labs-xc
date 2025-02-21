@@ -11,9 +11,9 @@ more prevalant, the ACME's Risk and Compliance organization has mandated that We
 Application Firewalls be deployed across all public facing applications within the next 30 days.  
 
 As the Network Security Engineer, you are tasked with evaluating how to securely 
-deploy a WAF across your entire public application environment. At first you consider 
+deploy a WAF across your entire public application environment. At first, you consider 
 the traditional methods of deploying and managing your native WAFs in the Data Center, AWS, Azure, 
-GCP but quickly realize that learning and managing multiple WAF technologies would be time-consuming 
+GCP, but quickly realize that learning and managing multiple WAF technologies would be time-consuming 
 and difficult to operate.
 
 You recently saw a post on LinkedIn about a F5 SaaS product claiming to solve multi-cloud 
