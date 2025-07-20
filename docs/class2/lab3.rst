@@ -69,7 +69,7 @@ malicious user mitigation and actions.
 #. Review the two **User Identification Rules** and click **Apply**.
 
 #. Returning to the **User Identification** window, note that **User
-   Identification Rules** are now **Configured** and click **Continue**.
+   Identification Rules** are now **Configured** and click **Apply**, then **Save User Identification**.
 
    |lab010|
 
@@ -157,13 +157,13 @@ challenge.
 
    |lab021|
 
-#. Observe the three Rules created and select **Continue**.
+#. Observe the three Rules created and select **Add Malicious User Mitigation**.
 
    |lab022|
 
 #. Note the updated **Malicious User Mitigation and Challenges** section and
    click on **Other Settings** in the left-hand navigation or scroll to the
-   bottom of the window and click the **Save and Exit** button.
+   bottom of the window and click the **Save HTTP Load Balancer** button.
 
    |lab023|
 
