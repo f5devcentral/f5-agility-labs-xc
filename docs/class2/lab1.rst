@@ -140,7 +140,7 @@ configuration.
 
 #. Under **Enforcement Mode**, change the mode to **Blocking**.
 
-#. In the **Detection Settings** section, click the **Security Policy**
+#. In the **Security Policy Settings** section, click the **Security Policy**
    dropdown.
 
 #. Select **Custom** from the dropdown menu. Additional configurations will
@@ -158,7 +158,7 @@ configuration.
    |lab015|
 
 #. Leaving all other values as default, scroll to the bottom and click
-   **Continue**.
+   **Add App Firewall**.
 
    |lab016|
 
@@ -176,7 +176,7 @@ configuration.
    left-hand navigation) to the **Other Settings** section and note the **VIP
    Advertisement** setting.
 
-#. Click **Save and Exit** at the bottom of the **HTTP Load Balancer**
+#. Click **Save HTTP Load Balancer** at the bottom of the **HTTP Load Balancer**
    configuration screen.
 
    |lab017|
@@ -343,7 +343,7 @@ configuration changes.
 
    |lab036|
 
-#. Expand your latest security event as shown.
+#. Expand your latest security event by clicking **Events** (might appear as just an **E**) in the upper-left.
 
    |lab036|
 
@@ -452,7 +452,7 @@ also further customize the WAF policy just built.
    .. note::
       *This allows for policy reuse and reduces the need for specific application WAF Policies*.
 
-#. Click on the **Cancel and Exit** to return to the prior window.
+#. Click on the **Close** to return to the prior window.
 
    |lab051|
 
