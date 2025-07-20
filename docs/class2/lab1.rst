@@ -343,7 +343,7 @@ configuration changes.
 
    |lab036|
 
-#. Expand your latest security event by clicking **Events** (might appear as just an **E**) in the upper-left.
+#. Expand your latest security event by clicking **Events** (may appear as just an **E**) in the upper-left.
 
    |lab036|
 
@@ -452,7 +452,7 @@ also further customize the WAF policy just built.
    .. note::
       *This allows for policy reuse and reduces the need for specific application WAF Policies*.
 
-#. Click on the **Close** to return to the prior window.
+#. Click on **Close** to return to the prior window.
 
    |lab051|
 
