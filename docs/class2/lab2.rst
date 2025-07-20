@@ -74,6 +74,10 @@ Cloud Console.
 #. Select **Security Analytics** from the horizontal navigation.
 
 #. Locate the most recent security event, which should be your curl request.
+
+   .. note:: *This request could take up to 5 minutes to show up in this page.
+      If you still don’t see it after that, run the curl command again.*
+
    Expand the security event as you have done in prior exercises to observe
    the "Suspicious" Bot reporting. Remember the setting for Suspicious Bot was
    set to *Report* from Step 6 above.
@@ -114,7 +118,7 @@ and understand its implementation.
 #. Enable developer tools (Chrome shown (use F12)) and click on the **Network**
    tab.
 
-#. Using the 3 bars/menu icon (top right), navigate to **Access** link.
+#. In the application window, under the 3 bars/menu icon (top right), navigate to **Access** link.
 
 #. In the resulting login screen use the following values to login and click
    **Submit**
@@ -129,7 +133,7 @@ and understand its implementation.
 #. In the Developer window, find the **POST** to **auth.php**. **You can also
    use the filter** to find **auth.php**. Select the respective line as shown.
 
-#. Select the **Request** tab in the payload window that appears and observe
+#. Select the **Payload** tab in the window that appears and observe
    that you only see limited form POST data (identity, token, & submit).
 
    |lab012|
@@ -224,7 +228,7 @@ and understand its implementation.
 #. Observe that the **Bot Defense Policy** is now configured.
 
 #. Click **Other Settings** in the left-hand navigation or scroll to the
-   bottom on the **HTTP Load Balancer** screen, and click **Save and Exit**.
+   bottom on the **HTTP Load Balancer** screen, and click **Save HTTP Load Balancer**.
 
    |lab024|
 
