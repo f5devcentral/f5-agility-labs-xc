@@ -17,7 +17,7 @@ has already deployed a F5 XC load balancer and been setup to route to your Azure
 F5 Distributed Cloud Application Delivery Network (ADN) will provide network connectivity for clients 
 to first route to F5's nearest Regional Edge(RE) location on the ADN utilizing IP Anycast.  Once 
 the client is connected to the their nearest F5 RE, security controls can now be applied so that 
-malicous traffic can be dropped at the F5 RE and valid traffic can than be passed to ACME Azure environment.  
+malicious traffic can be dropped at the F5 RE and valid traffic can than be passed to ACME Azure environment.  
 This lab will be deployed in a SaaS only configuration with no on-premises (public or private cloud) elements. 
 
 .. NOTE:: You will not have direct access to the Azure environment where the application is hosted.
@@ -30,7 +30,7 @@ This lab will be deployed in a SaaS only configuration with no on-premises (publ
 Following the tasks in the prior **Introduction** Section, you should now be
 able to access the F5 Distributed Cloud Console, having set your Work Domain
 Roles and Skill levels. If you have not done so already, please login to your
-tenant for this lab using the **Accept Inivitation** link from your second email 
+tenant for this lab using the **Accept Invitation** link from your second email 
 and proceed to Task 1.
 
 **Expected Lab Time: 25 minutes**
@@ -364,7 +364,7 @@ The ACME Azure application is now being successfully protected by F5 Distributed
 Narrative Check
 -----------------
 
-Upon foresnic review, your application team has told you that last request from 
+Upon forensic review, your application team has told you that last request from 
 **Support IDs** from the testing performed in Task 3, Step 2 as shown is actually a valid request. 
 You will need to create an exception for this so that traffic can successfully pass.  This task
 can be quickly accomplished in the XC console.  
@@ -512,7 +512,7 @@ Narrative Check
 You have now completed your first WAF policy deployment on F5 XC.  This policy can be re-used for
 other applications in the ACME environment and the exclusions you configured are only applied to this specific 
 Azure application.  New applications that utilize the WAF policy configured will not have these exclusions
-allowing you to quickly scale and manage exlusions on a per application basis while the policy can stay the same.
+allowing you to quickly scale and manage exclusions on a per application basis while the policy can stay the same.
 
 **End of Lab 1:**  This concludes Lab 1, feel free to review and test the
 configuration.

@@ -9,9 +9,9 @@ Lab 5: AI Assistant and Security Operations
 **Narrative:** 
 
 As ACME corp has continued to protect their web applications, leaders within the organization 
-has made requests for summaries of how ACME's security investments are proctecting the environment.
+has made requests for summaries of how ACME's security investments are protecting the environment.
 ACME corp has made investments in SIEM technologies and F5 Distributed Cloud can export logs to external
-SIEMs.  However not everyone in the ACME orgnaization has experience building dashboards and running complex queries.
+SIEMs.  However not everyone in the ACME organization has experience building dashboards and running complex queries.
 After speaking with ACME corp's F5 SE, F5 Distributed Console has an AI assistant in the SaaS console that can 
 provide answers quickly using natural language.   
 
@@ -45,8 +45,8 @@ and optimizing resource allocation.
 #. From the F5 Distributed Cloud Home Page, click the AI Assistant icon in the top right hand corner.
    |lab001|
 
-#. The AI Assistant can help adminstrators start their security investigation be suggesting some queries.
-   Click into the promt field and a list of suggested queries will pop up.  Select **How to investigate security events**. 
+#. The AI Assistant can help administrators start their security investigation be suggesting some queries.
+   Click into the prompt field and a list of suggested queries will pop up.  Select **How to investigate security events**. 
    Select **Enter** to proceed.
 
    |lab002|

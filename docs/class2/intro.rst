@@ -7,7 +7,7 @@ Congratulations! You are a Network Security Engineer at ACME Corp.
 
 ACME has an Application Team that supports internally developed traditional and 
 modern apps, vendor provided and SaaS applications. As security threats are becoming 
-more prevalant, the ACME's Risk and Compliance organization has mandated that Web 
+more prevalent, the ACME's Risk and Compliance organization has mandated that Web 
 Application Firewalls be deployed across all public facing applications within the next 30 days.  
 
 As the Network Security Engineer, you are tasked with evaluating how to securely 
@@ -17,7 +17,7 @@ GCP, but quickly realize that learning and managing multiple WAF technologies wo
 and difficult to operate.
 
 You recently saw a post on LinkedIn about a F5 SaaS product claiming to solve multi-cloud 
-appplication security complexities. Given your current timeline and industry knowledge of F5 being a 
+application security complexities. Given your current timeline and industry knowledge of F5 being a 
 leader for decades, you decide to check it out and end up in the chair you are sitting in today: 
 Taking a first-hand look at how F5 makes WAAP (Web Application and API Protection) simple, quick to deploy,
 and secure. 

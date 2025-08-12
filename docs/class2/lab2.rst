@@ -9,7 +9,7 @@ Lab 2: Reviewing Signature-based Bot Strategies and enabling F5 Distributed Clou
 
 **Narrative:** 
 
-Following your succssful Web Application Firewall deployment, you have been alerted
+Following your successful Web Application Firewall deployment, you have been alerted
 by your application team that there are concerns about credential stuffing attacks
 and malicious bots.  The application owners are concerned that the credential credential stuffing 
 could lead to issues with attackers taking over accounts and leading to fraud and loss
