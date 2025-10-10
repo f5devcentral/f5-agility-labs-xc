@@ -7,20 +7,21 @@ Congratulations! You are a Network Security Engineer at ACME Corp.
 
 ACME has an Application Team that supports internally developed traditional and 
 modern apps, vendor provided and SaaS applications. As security threats are becoming 
-more prevalant, the ACME's Risk and Compliance organization has mandated that Web 
-Application Firewalls be deployed across all public facing applications within the next 30 days.  
+more prevalant, the ACME's Risk and Compliance organization has mandated that a segmentation program
+be configured as part of the organizations larger zero-trust program.  ACME Corp would like to implement
+segmentation strategies to reduce their attack surface and enable faster response against zero-day attacks. 
 
 As the Network Security Engineer, you are tasked with evaluating how to securely 
-deploy a WAF across your entire public application environment. At first you consider 
-the traditional methods of deploying and managing your native WAFs in the Data Center, AWS, Azure, 
-GCP but quickly realize that learning and managing multiple WAF technologies would be time-consuming 
+extend segmentation controls out to the internet edge. At first you consider 
+the traditional methods of deploying and managing your native ACLs and geo-blocks in the Data Center, AWS, Azure, 
+GCP but quickly realize that learning and managing multiple segmentation technologies would be time-consuming 
 and difficult to operate.
 
 You recently saw a post on LinkedIn about a F5 SaaS product claiming to solve multi-cloud 
 appplication security complexities. Given your current timeline and industry knowledge of F5 being a 
 leader for decades, you decide to check it out and end up in the chair you are sitting in today: 
-Taking a first-hand look at how F5 makes WAAP (Web Application and API Protection) simple, quick to deploy,
-and secure. 
+Taking a first-hand look at how F5 makes automating security controls for segmentation and zero-day attacks 
+simple, quick to deploy, and secure. 
 
 
 
