@@ -55,7 +55,7 @@ Task 2: API Definition
 
 In this task's series of steps you will create a API Definition using a shared OpenAPI object.
 
-#. In the left-hand navigation of the **Web App & API Protection** service under **Manage**, mouse over **API Management** and click on **API Definition** from the slide out.
+#. In the left-hand navigation of the **Web App & API Protection** service under **Manage**, mouse over **API Security** and click on **API Definition** from the slide out.
 
    .. image:: _static/lab2-def-apidef.png
       :width: 700px
