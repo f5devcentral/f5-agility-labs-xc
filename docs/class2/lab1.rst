@@ -161,19 +161,15 @@ configuration.
 
    |lab017|
 
-   |lab018|
-
 
 #. In the expanded configuration, in the **Attack Signatures** section use the
    dropdown for **Signature Selection by Accuracy** and select **High, Medium,
    and Low**.
 
-   |lab019|
-
 #. Leaving all other values as default, scroll to the bottom and click
    **Add App Firewall**.
 
-   |lab020|
+   |lab019|
 
    .. note::
       *Automatic Attack Signatures Tuning is enabled which engages an automatic
@@ -185,8 +181,9 @@ configuration.
       Application* *Firewall with new or updated attack signatures be staged
       (monitored) for a period of* *prior to enforcement (blocking).*
 
-#. Returning to the **HTTP Load Balancer** window, scroll to the bottom and click
-   click **Save HTTP Load Balancer** at the bottom of the **HTTP Load Balancer** configuration screen.
+#. Returning to the **HTTP Load Balancer** window and click **Save HTTP Load Balancer**
+    at the bottom of the **HTTP Load Balancer** configuration screen.
+
 
    |lab021|
 
@@ -412,13 +409,13 @@ can be quickly accomplished in the XC console.
 #. Scroll in the HTTP Load Balancer Configuration and note the
    added **WAF Exclusion Rules** configuration.
 
-#. Scroll to the bottom of the **HTTP Load Balancer** configuration window and
-   click the **Save and Exit** button.
+#. At the bottom of the **HTTP Load Balancer** configuration window
+   click the **Save HTTP Load Balancer** button.
 
    .. note::
       *Rerunning the attack you just excluded, you will see that it is no longer blocked*.
 
-   |lab048|
+   |lab021|
 
 
 Task 4: Understanding Exclusions and Customizing WAF Policy
@@ -469,7 +466,7 @@ also further customize the WAF policy just built to add a custom block response 
    |lab054|
 
 #. In the **Blocking Response Page Body** replace the existing text with the
-   text provided below. Click **Save and Exit** when completed.
+   text provided below. Click **Save App Firewall** when completed.
 
    |lab055|
 
