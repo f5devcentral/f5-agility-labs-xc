@@ -16,8 +16,8 @@ F5 Distributed Cloud Web Application and API Protection (WAAP) suite. The lab pr
 has already deployed a F5 XC load balancer and been setup to route to your Azure application.  The 
 F5 Distributed Cloud Application Delivery Network (ADN) will provide network connectivity for clients 
 to first route to F5's nearest Regional Edge(RE) location on the ADN utilizing IP Anycast.  Once 
-the client is connected to the their nearest F5 RE, security controls can now be applied so that 
-malicous traffic can be dropped at the F5 RE and valid traffic can than be passed to ACME Azure environment.  
+the client is connected to their nearest F5 RE, security controls can now be applied so that 
+malicous traffic can be dropped at the F5 RE and valid traffic can then be passed to the ACME Azure environment.  
 This lab will be deployed in a SaaS only configuration with no on-premises (public or private cloud) elements. 
 
 .. NOTE:: You will not have direct access to the Azure environment where the application is hosted.
@@ -44,13 +44,13 @@ deployed and is currently advertising a globally available application. These st
 will allow you to review the application, its DNS entry and the Azure target that is 
 configured as the origin.
 
-#. Following the **Introduction** section instructions, you should now be the Home page
+#. Following the **Introduction** section instructions, you should now be on the Home page
    of the F5 Distributed Cloud Console.  Let's first review the F5 Distributed Load Balancer
    that was configured for you via automation.  Select **Web App & API Protection**. 
 
-#. On the **Web App & API Protection** page, note the identifier of your namespace.  The namespace
-   will be follow a format of *adjective-animal*.  In this guide, the namespace is pet-walrus is an 
-   example.  Your namespace will be different.  In the left-hand navigation expand **Manage** and 
+#. On the **Web App & API Protection** page, note the identifier of your namespace (top left area of
+   the page).  The namespace will follow a format of *adjective-animal*.  In this guide, the namespace
+   is pet-walrus. Your namespace will be different.  In the left-hand navigation expand **Manage** and 
    click **Load Balancers >  Origin Pools**
 
    |lab001| 
