@@ -70,7 +70,7 @@ configured as the origin.
 #. Using your browser, visit this application directly utilizing its public FQDN. Select the 
    **Menu** on the top right-hand side and select **Header**.  
    
-#. Note the Remote Address field. This will match the IP address of your endpoint.  You can verify 
+#. Note the Remote Address field. This will match the IP address of your workstation.  You can verify 
    that it matches by looking up your IP address at https://ipinfo.io/.  
 
    |lab005|
@@ -116,8 +116,8 @@ configured as the origin.
 
 #. Note that the Remote Address has changed as well as the presence of a new X-Forwarded-For header.  
    The client information should have changed as you are now connecting first through the F5 ADN Regional Edge 
-   before being proxied the the application running the ACME Corp Azure environment.  X-Forwarded-For details should 
-   match your client IP address.  
+   before being proxied to the application running the ACME Corp Azure environment.  X-Forwarded-For details should 
+   match your workstation's IP address.  
 
    |lab012| 
 
