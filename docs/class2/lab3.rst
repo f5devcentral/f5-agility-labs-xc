@@ -186,8 +186,7 @@ challenge.
    |lab022|
 
 #. Note the updated **Malicious User Mitigation and Challenges** section and
-   click on **Other Settings** in the left-hand navigation or scroll to the
-   bottom of the window and click the **Save and Exit** button.
+   at the bottom of the window click the **Save HTTP Load Balancer** button.
 
    |lab023|
 

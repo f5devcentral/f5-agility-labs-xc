@@ -16,8 +16,8 @@ F5 Distributed Cloud Web Application and API Protection (WAAP) suite. The lab pr
 has already deployed a F5 XC load balancer and been setup to route to your Azure application.  The 
 F5 Distributed Cloud Application Delivery Network (ADN) will provide network connectivity for clients 
 to first route to F5's nearest Regional Edge(RE) location on the ADN utilizing IP Anycast.  Once 
-the client is connected to the their nearest F5 RE, security controls can now be applied so that 
-malicous traffic can be dropped at the F5 RE and valid traffic can than be passed to ACME Azure environment.  
+the client is connected to their nearest F5 RE, security controls can now be applied so that 
+malicous traffic can be dropped at the F5 RE and valid traffic can then be passed to the ACME Azure environment.  
 This lab will be deployed in a SaaS only configuration with no on-premises (public or private cloud) elements. 
 
 .. NOTE:: You will not have direct access to the Azure environment where the application is hosted.
@@ -44,13 +44,13 @@ deployed and is currently advertising a globally available application. These st
 will allow you to review the application, its DNS entry and the Azure target that is 
 configured as the origin.
 
-#. Following the **Introduction** section instructions, you should now be the Home page
+#. Following the **Introduction** section instructions, you should now be on the Home page
    of the F5 Distributed Cloud Console.  Let's first review the F5 Distributed Load Balancer
    that was configured for you via automation.  Select **Web App & API Protection**. 
 
-#. On the **Web App & API Protection** page, note the identifier of your namespace.  The namespace
-   will be follow a format of *adjective-animal*.  In this guide, the namespace is pet-walrus is an 
-   example.  Your namespace will be different.  In the left-hand navigation expand **Manage** and 
+#. On the **Web App & API Protection** page, note the identifier of your namespace (top left area of
+   the page).  The namespace will follow a format of *adjective-animal*.  In this guide, the namespace
+   is pet-walrus. Your namespace will be different.  In the left-hand navigation expand **Manage** and 
    click **Load Balancers >  Origin Pools**
 
    |lab001| 
@@ -70,7 +70,7 @@ configured as the origin.
 #. Using your browser, visit this application directly utilizing its public FQDN. Select the 
    **Menu** on the top right-hand side and select **Header**.  
    
-#. Note the Remote Address field. This will match the IP address of your endpoint.  You can verify 
+#. Note the Remote Address field. This will match the IP address of your workstation.  You can verify 
    that it matches by looking up your IP address at https://ipinfo.io/.  
 
    |lab005|
@@ -116,8 +116,8 @@ configured as the origin.
 
 #. Note that the Remote Address has changed as well as the presence of a new X-Forwarded-For header.  
    The client information should have changed as you are now connecting first through the F5 ADN Regional Edge 
-   before being proxied the the application running the ACME Corp Azure environment.  X-Forwarded-For details should 
-   match your client IP address.  
+   before being proxied to the application running the ACME Corp Azure environment.  X-Forwarded-For details should 
+   match your workstation's IP address.  
 
    |lab012| 
 
@@ -161,19 +161,15 @@ configuration.
 
    |lab017|
 
-   |lab018|
-
 
 #. In the expanded configuration, in the **Attack Signatures** section use the
    dropdown for **Signature Selection by Accuracy** and select **High, Medium,
    and Low**.
 
-   |lab019|
-
 #. Leaving all other values as default, scroll to the bottom and click
    **Add App Firewall**.
 
-   |lab020|
+   |lab019|
 
    .. note::
       *Automatic Attack Signatures Tuning is enabled which engages an automatic
@@ -185,8 +181,9 @@ configuration.
       Application* *Firewall with new or updated attack signatures be staged
       (monitored) for a period of* *prior to enforcement (blocking).*
 
-#. Returning to the **HTTP Load Balancer** window, scroll to the bottom and click
-   click **Save HTTP Load Balancer** at the bottom of the **HTTP Load Balancer** configuration screen.
+#. Returning to the **HTTP Load Balancer** window and click **Save HTTP Load Balancer**
+    at the bottom of the **HTTP Load Balancer** configuration screen.
+
 
    |lab021|
 
@@ -412,13 +409,13 @@ can be quickly accomplished in the XC console.
 #. Scroll in the HTTP Load Balancer Configuration and note the
    added **WAF Exclusion Rules** configuration.
 
-#. Scroll to the bottom of the **HTTP Load Balancer** configuration window and
-   click the **Save and Exit** button.
+#. At the bottom of the **HTTP Load Balancer** configuration window
+   click the **Save HTTP Load Balancer** button.
 
    .. note::
       *Rerunning the attack you just excluded, you will see that it is no longer blocked*.
 
-   |lab048|
+   |lab021|
 
 
 Task 4: Understanding Exclusions and Customizing WAF Policy
@@ -469,7 +466,7 @@ also further customize the WAF policy just built to add a custom block response 
    |lab054|
 
 #. In the **Blocking Response Page Body** replace the existing text with the
-   text provided below. Click **Save and Exit** when completed.
+   text provided below. Click **Save App Firewall** when completed.
 
    |lab055|
 
