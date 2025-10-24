@@ -153,7 +153,7 @@ configuration.
 
 #. Under **Enforcement Mode**, change the mode to **Blocking**.
 
-#. In the **Detection Settings** section, click the **Security Policy**
+#. In the **Security Policy Settings** section, click the **Security Policy**
    dropdown.
 
 #. Select **Custom** from the dropdown menu. Additional configurations will
@@ -171,7 +171,7 @@ configuration.
    |lab019|
 
 #. Leaving all other values as default, scroll to the bottom and click
-   **Continue**.
+   **Add App Firewall**.
 
    |lab020|
 
@@ -186,7 +186,7 @@ configuration.
       (monitored) for a period of* *prior to enforcement (blocking).*
 
 #. Returning to the **HTTP Load Balancer** window, scroll to the bottom and click
-   click **Save and Exit** at the bottom of the **HTTP Load Balancer** configuration screen.
+   click **Save HTTP Load Balancer** at the bottom of the **HTTP Load Balancer** configuration screen.
 
    |lab021|
 
@@ -221,6 +221,9 @@ configuration changes.
    * ``/../../../../etc/shadow``
    * ``/product?code=echo%20shell_exec(%27/sbin/ifconfig%20eth0%27);``
    * ``/cart?search=aaa'><script>prompt('Please+enter+your+password');</script>``
+
+   .. note::
+      *Copy these paths for use later*
 
 #. In the resulting block screens, note the **URL** and the **Support ID**.
    (copy and paste to a notepad or note resource).
@@ -388,15 +391,8 @@ can be quickly accomplished in the XC console.
    auto-populated based on the selected event to be excluded. Note the various
    sections and possible controls.
 
-#. In the **Expiration Timestamp** field enter a timestamp 10 minutes from now
-   at which the exclusion should expire. (helpful when testing/validating). the
-   format should be as shown *YYYY-MM-DD HH:MM:SS+00:00
-   (2025-02-06T11:21:00+00:00)*. **HH** must be in 24 hour format (there is no
-   AM/PM).
-
-   .. note::
-      *Timestamps are in GMT*
-
+#. Take note, within the **Expiration Timestamp** field a time stamp can be entered forcing
+   the created exception to expire.
 
 #. Click **Apply** when complete.
 
@@ -421,8 +417,6 @@ can be quickly accomplished in the XC console.
 
    .. note::
       *Rerunning the attack you just excluded, you will see that it is no longer blocked*.
-
-   |lab047|
 
    |lab048|
 
@@ -506,6 +500,9 @@ also further customize the WAF policy just built to add a custom block response 
    page.
 
    |lab056|
+
+   .. note::
+      *If updated reponse doesn't show, clear cache or use a private tab*.
 
 Narrative Check
 -----------------
