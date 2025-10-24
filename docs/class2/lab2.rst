@@ -59,11 +59,9 @@ Cloud Console.
    **Block, Ignore**, and **Report** which can be reviewed by selecting
    one of the dropdowns.
 
-#. Click **Cancel and Exit** to leave this window.
+#. Click **Cancel All** to leave this window.
 
    |lab004|
-
-   |lab005|
 
 #. Open a terminal window or DOS prompt on your respective client and issue the
    following **curl** command.
@@ -249,12 +247,9 @@ and understand its implementation.
 
 #. Observe that the **Bot Defense Policy** is now configured.
 
-#. Click **Other Settings** in the left-hand navigation or scroll to the
-   bottom on the **HTTP Load Balancer** screen, and click **Save and Exit**.
+#. At the bottom of the **HTTP Load Balancer** screen click **Save HTTP Load Balancer**.
 
    |lab024|
-
-   |lab025|
 
 #. Repeat Task 2 Steps 1-6.  Note you many need to close your browser and clear
    cookies or go into Incognito mode.
