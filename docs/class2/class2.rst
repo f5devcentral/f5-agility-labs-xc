@@ -4,7 +4,7 @@ F5 Distributed Cloud: Web Application Security & Scanning
 Welcome
 -------
 
-This hands-on lab environment highlights the concepts and capabilties of F5 Distributed Cloud Web Application 
+This hands-on lab environment highlights the concepts and capabilities of F5 Distributed Cloud Web Application 
 and API Protection (WAAP).
 
 **Narrative:** 

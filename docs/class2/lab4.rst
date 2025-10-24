@@ -11,7 +11,7 @@ Following the successful rollout of the F5 Web Application Security policies, th
 OWASP Top 10 Web Vulnerability Scanning of the application and measure the security posture of the application 
 over time.  Currently ACME Corp does a penetration test every six months which requires an external vendor and 
 lots of effort. ACME Corp would like to move to weekly scans with more automation and less effort.  
-There is also a requirementto run the scan from a specifically allowed known IP addresses so the security team 
+There is also a requirement to run the scan from a specifically allowed known IP addresses so the security team 
 can setup specific rules to identify and allow the scans to come in from the the internet.  
 After reviewing this requirement, ACME decides to evaluate F5 Distributed Cloud Web App Scanning.
 

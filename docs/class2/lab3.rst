@@ -9,12 +9,12 @@ Lab 3: Malicious Users
 
 **Narrative:** 
 
-A recent security request came into your queue where multiple WAF violations and 403 http reqsponse codes 
-were originating from the same public IP address.  ACME's security incedent response team has asked you 
+A recent security request came into your queue where multiple WAF violations and 403 http response codes 
+were originating from the same public IP address.  ACME's security incident response team has asked you 
 to block all requests coming from that public IP address as they are concerned about potential attackers 
 successfully accessing the application and then trying to move laterally to access sensitive portions of the 
 application without authorization.  Before blocking the public IP, a conversation with the application team 
-uncovered that the public IP address maps the headquarters of a ACME's largest sand supplier.  Since not 
+uncovered that the public IP address maps the headquarters of ACME's largest sand supplier.  Since not 
 all of the requests coming from that public IP address are attacks, your goal is to leverage F5 Distributed 
 Cloud to identify only the specific attackers and stop their probing activities but still maintain a 
 low-friction experience for the rest of the valid users.  
