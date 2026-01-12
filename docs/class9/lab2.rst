@@ -184,6 +184,7 @@ a response header. This configuration can be used to set or remove headers that 
 | **End of Lab 2**                                                                                                                                 |
 +==================================================================================================================================================+
 | This concludes Lab 2. In this lab, you learned how to:                                                                                           |
+|                                                                                                                                                  |
 | - Configure a HTTP Load Balancer to route traffic based on HTTP header values.  This configuration can be useful for canary testing.             |
 |                                                                                                                                                  |
 | - Configure a HTTP Load Balancer to apply WAF policy based on URL path.  This configuration can be used to apply different security measures     |
