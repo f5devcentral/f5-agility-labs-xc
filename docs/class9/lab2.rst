@@ -60,7 +60,7 @@ directed default origin pool for the load balancer.
 |                                                                                                                                    |
 | .. note::                                                                                                                          |
 |    *Notice the different responses that are received based on if the header value is set in the curl command*                      |
-|    *with the -H option.                                                                                                            |
+|    *with the -H option.*                                                                                                           |
 +------------------------------------------------------------------------------------------------------------------------------------+
 
 Task 2: Deploy and apply WAF policy at the route level
