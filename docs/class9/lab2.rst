@@ -1,72 +1,67 @@
 Lab 2: Load Balancer Routes
 ===========================
 
-The following lab tasks will guide you through using the Distributed Cloud Console to configure routes within
-a HTTP Load Balancer. Students will start by creating a route to steer traffic based on a specified HTTP header
-containded within the client request.  Next, students will apply a WAF policy at the route level.  The last 
-task within this lab is to deploy routes to modify application responses in transit.
+The following lab tasks will guide you through using the Distributed Cloud Console to configure routes within a HTTP Load Balancer. 
+Students will start by creating a route to steer traffic based on a specified HTTP header containded within the client request.  Next, students
+will apply a WAF policy at the route level. The last task within this lab is to deploy routes to modify application responses in transit.
 
 **Expected Lab Time: 20 minutes**
 
 Task 1: Deploy a Header Route to Steer Traffic for Canary Testing
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-In this task, you will create a header route that directs traffic to different origin pools based off a 
-specified HTTP header. This configuration can be useful for Canary testing. Traffic matching a specified heard 
-will be directed to a specified origin pool, while all other traffic will be directed default origin pool for the
-load balancer.
+In this task, you will create a header route that directs traffic to different origin pools based off a specified HTTP header. This configuration
+can be useful for Canary testing. Traffic matching a specified heard will be directed to a specified origin pool, while all other traffic will be
+directed default origin pool for the load balancer.
 
-+---------------------------------------------------------------------------------------------------------------+
-| **Configure a Header Route**                                                                                  |
-+===============================================================================================================+
-| 1. If you are not still logged into the Distributed Cloud Console, logon at:                                  |
-|                                                                                                               |
-|    https://f5-xc-lab-app.console.ves.volterra.io/                                                             |
-+---------------------------------------------------------------------------------------------------------------+
-| 2. From the top navigation bar, select the **Web App & API Protection** workspace.                            |
-+---------------------------------------------------------------------------------------------------------------+
-| 3. In the navigation sidebar on the left, expand **Manage** and click **Load Balancers**.                     |
-+---------------------------------------------------------------------------------------------------------------+
-| 4. Locate your HTTP Load Balancer in the list and click the ellipsis (three dots) under the **Actions**       |
-|                                                                                                               |
-|    column. Select **Manage Configuration**.                                                                   |
-+---------------------------------------------------------------------------------------------------------------+
-| 5. In the Load Balancer configuration page, scroll to the **Route Configuration** section.                    |
-+---------------------------------------------------------------------------------------------------------------+
-| 6. Click **Add Route Policy**.                                                                                |
-+---------------------------------------------------------------------------------------------------------------+
-| 7. In the resulting form, configure the route policy:                                                         |
-|                                                                                                               |
-|    - **Match Condition**:                                                                                     |
-|                                                                                                               |
-|       - Select **HTTP Header** as the match type.                                                             |
-|                                                                                                               |
-|       - Enter the header name (e.g., `X-App-Version`).                                                        |
-|                                                                                                               |
-|       - Specify the value the header should match (e.g., `v1`).                                               |
-|                                                                                                               |
-|     - **Action**:                                                                                             |
-|                                                                                                               |
-|       - Choose **Forward** as the action.                                                                     |
-|                                                                                                               |
-|       - Select the backend pool or origin associated with this route.                                         |
-+---------------------------------------------------------------------------------------------------------------+
-| 8. Click **Apply** to save the route policy configuration.                                                    |
-+---------------------------------------------------------------------------------------------------------------+
-|  **Test and Verify:**                                                                                         |
-+---------------------------------------------------------------------------------------------------------------+
-| 9. Use `curl` to send HTTP requests to your Load Balancer endpoint with the relevant HTTP header defined in   |
-|                                                                                                               |
-|    the route policy:                                                                                          |
-|                                                                                                               |
-| .. code-block:: bash                                                                                          |
-|                                                                                                               |
-|    curl http://your-load-balancer-url.com                                                                     |
-|    curl -H "X-App-Version: v1" http://your-load-balancer-url.com                                              |
-|                                                                                                               |
-| .. note::                                                                                                     |
-|    *Notice the different responses that are received based on if the header value is set in the curl command* |
-|    *with the -H option.                                                                                       |
-+---------------------------------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------+
+| **Configure a Header Route**                                                                                                                   |
++================================================================================================================================================+
+| 1. If you are not still logged into the Distributed Cloud Console, logon at:                                                                   |
+|                                                                                                                                                |
+|    https://f5-xc-lab-app.console.ves.volterra.io/                                                                                              |
++------------------------------------------------------------------------------------------------------------------------------------------------+
+| 2. From the top navigation bar, select the **Web App & API Protection** workspace.                                                             |
++------------------------------------------------------------------------------------------------------------------------------------------------+
+| 3. In the navigation sidebar on the left, expand **Manage** and click **Load Balancers**.                                                      |
++------------------------------------------------------------------------------------------------------------------------------------------------+
+| 4. Locate your HTTP Load Balancer in the list and click the ellipsis (three dots) under the **Actions** column. Select **Manage**              |
+|                                                                                                                                                |
+|    **Configuration**.                                                                                                                          |
++------------------------------------------------------------------------------------------------------------------------------------------------+
+| 5. In the Load Balancer configuration page, scroll to the **Route Configuration** section.                                                     |
++------------------------------------------------------------------------------------------------------------------------------------------------+
+| 6. Click **Add Route Policy**.                                                                                                                 |
++------------------------------------------------------------------------------------------------------------------------------------------------+
+| 7. In the resulting form, configure the route policy:                                                                                          |
+|                                                                                                                                                |
+|    - **Match Condition**:                                                                                                                      |
+|       - Select **HTTP Header** as the match type.                                                                                              |
+|                                                                                                                                                |
+|       - Enter the header name (e.g., `X-App-Version`).                                                                                         |
+|                                                                                                                                                |
+|       - Specify the value the header should match (e.g., `v1`).                                                                                |
+|                                                                                                                                                |
+|    - **Action**:                                                                                                                               |
+|                                                                                                                                                |
+|       - Choose **Forward** as the action.                                                                                                      |
+|                                                                                                                                                |
+|       - Select the backend pool or origin associated with this route.                                                                          |
++------------------------------------------------------------------------------------------------------------------------------------------------+
+| 8. Click **Apply** to save the route policy configuration.                                                                                     |
++------------------------------------------------------------------------------------------------------------------------------------------------+
+|  **Test and Verify:**                                                                                                                          |
++------------------------------------------------------------------------------------------------------------------------------------------------+
+| 9. Use `curl` to send HTTP requests to your Load Balancer endpoint with the relevant HTTP header defined in the route policy:                  |
+|                                                                                                                                                |
+| .. code-block:: bash                                                                                                                           |
+|                                                                                                                                                |
+|    curl http://your-load-balancer-url.com                                                                                                      |
+|    curl -H "X-App-Version: v1" http://your-load-balancer-url.com                                                                               |
+|                                                                                                                                                |
+| .. note::                                                                                                                                      |
+|    *Notice the different responses that are received based on if the header value is set in the curl command*                                  |
+|    *with the -H option.                                                                                                                        |
++------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Task 2: Deploy and apply WAF policy at the route level
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
