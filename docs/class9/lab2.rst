@@ -191,6 +191,9 @@ a response header. This configuration can be used to set or remove headers that 
 |                                                                                                                                    |
 |   measures based on URL path.                                                                                                      |
 |                                                                                                                                    |
+| - Configure a HTTP Load Balancer route to manipulare request or response parameters. This configuration can be used to apply or    |
+|                                                                                                                                    |
+|   remove values that are utilized by the backend application or infrastructure.                                                    |
 +------------------------------------------------------------------------------------------------------------------------------------+
 | |labend|                                                                                                                           |
 +------------------------------------------------------------------------------------------------------------------------------------+
