@@ -15,11 +15,11 @@ which will guide you to locate your **namespace**. The **Delegated Domain** and 
 
 Following the tasks in the prior **Introduction** Section, you should now be able to access the
 F5 Distributed Cloud Console, having set your Work Domain Roles and Skill levels. If you have not
-done so already, please login to your tenant for this lab and proceed to Task 1.
+done so already, please login to your tenant for this lab before proceeding to Task 1.
 
 **Scenario Lab 1**
 
-Your company recently noticed an increase in credential stuffing and bot activity on it's F5 Airlines app. 
+Your company recently noticed an increase in credential stuffing and bot activity on its F5 Airlines app. 
 You are a SecOps engineer tasked with providing a security solution to address this threat.  In the following 
 labs, you will learn how to use F5's Distributed Cloud to quickly enable an application and bot security 
 profile to address the threat while also exploring some attack tools of your own!
@@ -64,9 +64,9 @@ is a pre-requisite for all other tasks.
 Task 2: Review the HTTP Load Balancer
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-For this task you will review the Load Balancer configuration and the origin pool for the backend
-application. You will verify other security features that are tied to the Load Balancer and their
-current state.  
+For this task you will review the pre-configured Load Balancer configuration and the origin pool
+for the backend application. You will verify other security features that are tied to the 
+Load Balancer and their current state.  
 
 +----------------------------------------------------------------------------------------------+
 |  1. In the Distributed Cloud (XC) Console, under HTTP Loadbalancers click the three dots     |
@@ -78,9 +78,10 @@ current state.
 +----------------------------------------------------------------------------------------------+
 |  2. Explore the **Backend App** by selecting **Origins** and **Origin Pool** followed by     | 
 |                                                                                              |
-|     **Edit Configuration** Note that we are simply using a public DNS host for the backend.  |
+|     **Edit Configuration**.  You will see the backend origin pool configuration.             |
+|     *Note*: we are simply using a public DNS host for the backend.                           |
 |                                                                                              |
-|     The application is directly accessibile to us which we will explore later.               |
+|     The application is directly accessibile to us, which we will explore later.              |
 +----------------------------------------------------------------------------------------------+
 | |lab1-task2-02|                                                                              |
 |                                                                                              |
@@ -96,7 +97,7 @@ current state.
 |                                                                                              |
 |     are **disabled**. Click the **Close** button when                                        |
 |                                                                                              |
-|     finished.  Well it's no wonder your being attacked!  Lets dig into this...               |
+|     finished.  Well... No wonder you're being attacked!  Lets dig into this...               |
 |                                                                                              |
 +----------------------------------------------------------------------------------------------+
 | |lab1-task2-05|                                                                              |
@@ -114,27 +115,29 @@ perform a credential stuffing attack.
 +----------------------------------------------------------------------------------------------+
 |  Note:  Because each student is assigned a unique namespace, there is no way to pre-stage    |
 |  traffic generation.  Because of that, we will play the role of an attacker and generate     |                                                                                            
-|  some interesting traffic.  Before we begin we need to configure the tool                    |
+|  some interesting traffic.  Before we begin, we need to configure the tool.                  |
 |                                                                                              |
-|  1. RDP or Console into the Windows Jump Host, you can locate the username and password here:|
+|  1. Go back to your UDF Deployment page to initiate an *RDP* or *Console* connection into    | 
+|     your Windows *JumpHost*.  The username is "User" and the password is "user".             |
 |                                                                                              |
-|     **Password is located in your UDF Course browser page!**                                 |
+|     Click on **Deployment Tab > JumpHost > ACCESS**                                          |
 |                                                                                              |
-|     **Deployment Tab > JumpHost > Details** (look for the *Administrator* password under**   |
-|     **Credentials** on the *General* tab.                                                    |
-+----------------------------------------------------------------------------------------------+                                                                                             
+|     |lab1-task3-01a|                                                                         |
+|                                                                                              |
+|     |lab1-task3-01|                                                                          |
+|                                                                                              |
+|     |lab1-task3-01b|                                                                         |
++----------------------------------------------------------------------------------------------+
 |  2. On the home screen double-click the OpenBullet 2 shortcut                                |
 +----------------------------------------------------------------------------------------------+
 | |lab1-task3-02|                                                                              |
 +----------------------------------------------------------------------------------------------+                             
 |  3. Click on **Configs** and double-click **"Basic"** - this is our credential stuffing      |
-|                                                                                              |
 |     attack configuration that will simulate a basic Bot.                                     |
 +----------------------------------------------------------------------------------------------+
 | |lab1-task3-03|                                                                              |
 +----------------------------------------------------------------------------------------------+ 
 |  4. Notice there are two blocks called **"HTTP Request"**. Click on each one and update the  |
-|                                                                                              |
 |     URL by replacing the **<namespace>** with your assigned namespace and then **Save**      |
 |     and **OK**.                                                                              |
 +----------------------------------------------------------------------------------------------+
@@ -151,31 +154,28 @@ perform a credential stuffing attack.
 +----------------------------------------------------------------------------------------------+
 | 6. In the new window, on the top left, click **"Select Config"** and then **Basic**          |
 |                                                                                              |
-|    Click **Accept** once to return to the *Edit job* screen.                                 |
+|    Click **Accept** once to return to the *Create Multi Run Job*(*Edit job*) screen.         |
 +----------------------------------------------------------------------------------------------+
 | |lab1-task3-09|                                                                              |
 |                                                                                              |
 | |lab1-task3-10|                                                                              |
 +----------------------------------------------------------------------------------------------+
-| 7. On the top right, click **Select Wordlist** and then **Credentials-Basic** and then click |
-|                                                                                              |
-|    **Accept** once to return to the *Edit job* screen.                                       |
+| 7. On the top right, click **Select Wordlist**, select **Credentials-Basic** and then click  |
+|    **Accept** once to return to the *Create Multi Run Job*(*Edit job*) screen.               |
 +----------------------------------------------------------------------------------------------+
 | |lab1-task3-11|                                                                              |
 |                                                                                              |
 | |lab1-task3-12|                                                                              |
 +----------------------------------------------------------------------------------------------+
 | 8.   Change the **Skip** value to 0 (zero) either by typing it or using the **minus** button |
-|                                                                                              |
 |      finally clicking **Accept** at the bottom.  Now with the **Skip** value changed to "0"  |
-|                                                                                              |
 |      you can click **Start** to run the job.                                                 |
 |                                                                                              |
 |      **The job progress indicator bar will update as it cycles through the credentials.**    |
 |                                                                                              |
-|     *Please note it may take a minute or two to complete and also show up in the logs*       |
+|     *Please be patient... It may take a minute or two for the job to start.*                 |
 |                                                                                              |
-|     *If you do not see the indicator progress ask a Lab Assistant for help*                  |
+|     *If you do not see the indicator progress bar moving, ask a Lab Assistant for help*      |
 |                                                                                              |
 +----------------------------------------------------------------------------------------------+
 | |lab1-task3-16|                                                                              |
@@ -198,9 +198,8 @@ Task 4: Review the Request Logs
 For this exercise you will work on filtering and identifying requests.
 
 +----------------------------------------------------------------------------------------------+
-| 1. In the Distributed Cloud (XC) Console go to **Web App and API Protection** then click on  |
-|                                                                                              |
-|    **Overview** and finally **Security**                                                     |
+| 1. Go back to the **Web App and API Protection** page in your Distributed Cloud (XC) Console |
+|    then click on **Overview** and finally **Security**.                                      |
 +----------------------------------------------------------------------------------------------+
 | |lab1-task4-01|                                                                              |
 +----------------------------------------------------------------------------------------------+
@@ -208,11 +207,10 @@ For this exercise you will work on filtering and identifying requests.
 +----------------------------------------------------------------------------------------------+
 | |lab1-task4-02|                                                                              |
 +----------------------------------------------------------------------------------------------+
-| 3. Click the **Requests** tab at the top and review the POST request in the log.  You can    |
+| 3. Click the **Requests** tab at the top and review the POST request in the log. Click the   |
+|    chevron (>) icon to expand a request to see its details as shown below.                   |
 |                                                                                              |
-|    expand individual request details by clicking the down button as shown below.  Also, you  |
-|                                                                                              |
-|    can expand the time interval to longer if needed.                                         |   
+|    **Hint**: If no requests are shown, change time interval.                                 |   
 |                                                                                              |
 +----------------------------------------------------------------------------------------------+
 | |lab1-task4-03|                                                                              |
@@ -226,15 +224,14 @@ For this initiative you will assign a Web Application Firewall to the Load Balan
 simulate more test traffic with OpenBullet.  
 
 +----------------------------------------------------------------------------------------------+
-| 1. In the Distributed Cloud (XC) Console, under HTTP Loadbalancers click the three dots      |
-|                                                                                              |
-|    under the **Action** column and select **Manage Configuration**                           |
+| 1. In the Distributed Cloud (XC) Console, go back to **Manage** *> Load Balancers >*         |
+|     *HTTP Loadbalancers*, then click the three dots under the **Action** column for your     |
+|     load balancer object and select **Manage Configuration**.                                |
 +----------------------------------------------------------------------------------------------+
 | |lab1-task2-01|                                                                              |
 |                                                                                              |
 +----------------------------------------------------------------------------------------------+
 | 2. At the top right click **Edit Configuration** then look to the left side settings         |
-|                                                                                              |
 |    and click **Web Application Firewall**                                                    |
 |                                                                                              |
 +----------------------------------------------------------------------------------------------+
@@ -242,7 +239,6 @@ simulate more test traffic with OpenBullet.
 |                                                                                              |
 +----------------------------------------------------------------------------------------------+
 | 3. On the right side toggle **Enable** for the Web Application Firewall. Next, click         |
-|                                                                                              |
 |    **Select Item** a drop down list of pre-configured App Firewall policies will appear.     |
 |                                                                                              |
 |    Select **"shared/base-appfw"**.                                                           |
@@ -250,24 +246,25 @@ simulate more test traffic with OpenBullet.
 | |lab1-task5-02|                                                                              |
 |                                                                                              |
 +----------------------------------------------------------------------------------------------+
-|    Now click **Other Settings** from the left hand side then finally **Save and Exit**.      |
+|    Finally click **Save HTTP Load Balancer** at the bottom of the screen.                    |
 |                                                                                              |
 +----------------------------------------------------------------------------------------------+
-| 4. We will Re-run our credential stack from the Windows Jump Host.  Click on **OpenBullet**  |
+| |lab1-task5-02b|                                                                             |
 |                                                                                              |
-|    then **Jobs** and the pencil/edit icon to the right.                                      |
++----------------------------------------------------------------------------------------------+
+| 4. We will Re-run our credential stack from the Windows Jump Host. Go back to **OpenBullet** |
+|    and click on **Jobs** to find the job previously created and them click the pencil/edit   |
+|    icon to the right.                                                                        |
 |                                                                                              |
 +----------------------------------------------------------------------------------------------+
 | |lab1-task5-03|                                                                              |
 +----------------------------------------------------------------------------------------------+
 | 5. In the **Skip** counter, highlight the current number and type 0 (zero).  You can also    |
-|                                                                                              |
 |    press and hold the minus button next to the **Skip** field.  Click **Accept** when done.  |
 +----------------------------------------------------------------------------------------------+
 | |lab1-task5-04|                                                                              |
 +----------------------------------------------------------------------------------------------+                                                                                              
 | 6. Once again click on the **Job** and hit **Start**, the tool will iterate through the      |
-|                                                                                              |
 |    Credentials-Basic list and when done will be in a ready state for another test.           |
 +----------------------------------------------------------------------------------------------+
 | |lab1-task5-05|                                                                              |
@@ -284,7 +281,6 @@ credential stuffing traffic.
 
 +----------------------------------------------------------------------------------------------+
 | 1. In the Distributed Cloud (XC) Console go to **Web App and API Protection** then click on  |
-|                                                                                              |
 |    **Overview** and finally **Security**                                                     |
 +----------------------------------------------------------------------------------------------+
 | |lab1-task4-01|                                                                              |
@@ -296,7 +292,6 @@ credential stuffing traffic.
 | 3. Let's review the requests,  Is anything being flagged as a violation?  Why or Why Not?    |
 |                                                                                              |
 |    **Hint:** Click **Requests** and if needed change the time interval to a longer time slot |
-|                                                                                              |
 |    and click **Apply**.  You can also expand Request details by click the down button below  |
 +----------------------------------------------------------------------------------------------+
 | |lab1-task4-03|                                                                              |
@@ -308,13 +303,9 @@ credential stuffing traffic.
 | **Lab 1 Summary**                                                                            |
 |                                                                                              |
 |   Since the bot requests in this lab are not violating any HTTP protocols                    |
-|                                                                                              |
 |   or attack vectors, a WAF policy has no impact on mitigating traffic.  In order to detect   |
-|                                                                                              |
 |   and mitigate bots that do not violate HTTP security, we need a very specialized service    |
-|                                                                                              |
 |   known as Bot Protection in Distributed Cloud.  A brief presentation will be shared prior   |
-|                                                                                              |
 |   to beginning Lab 2.                                                                        |
 +----------------------------------------------------------------------------------------------+
 | |labend|                                                                                     |
@@ -335,6 +326,12 @@ credential stuffing traffic.
 .. |lab1-task2-04| image:: _static/lab1-task2-04.png
    :width: 800px
 .. |lab1-task2-05| image:: _static/lab1-task2-05.png
+   :width: 800px
+.. |lab1-task3-01| image:: _static/lab1-task3-01.png
+   :width: 800px
+.. |lab1-task3-01a| image:: _static/lab1-task3-01a.png
+   :width: 800px
+.. |lab1-task3-01b| image:: _static/lab1-task3-01b.png
    :width: 800px
 .. |lab1-task3-02| image:: _static/lab1-task3-02.png
    :width: 800px
@@ -379,6 +376,8 @@ credential stuffing traffic.
 .. |lab1-task5-01| image:: _static/lab1-task5-01.png
    :width: 800px
 .. |lab1-task5-02| image:: _static/lab1-task5-02.png
+   :width: 800px
+.. |lab1-task5-02b| image:: _static/lab1-task5-02b.png
    :width: 800px
 .. |lab1-task5-03| image:: _static/lab1-task5-03.png
    :width: 800px

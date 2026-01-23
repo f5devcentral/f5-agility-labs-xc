@@ -16,12 +16,11 @@ Task 1: Create a Bot Protection Profile
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In this task you will view recent requests and filter out specific requests from our test tool.  You will then work
-on configuring a Bot Defense profile to protect our airline application Sign-In page.  We will initiate a Basic 
+on configuring a Bot Defense profile to protect our airline application's *Sign-In* page.  We will initiate a Basic 
 Credential Stuffing attack and observe related events using security analytics and making any necessary adjustments needed. 
 
 +----------------------------------------------------------------------------------------------+
 | 1. In the Distributed Cloud (XC) Console go to **Web App and API Protection** then click on  |
-|                                                                                              |
 |    **Overview** and finally **Security** (You may have to adjust the time filter as needed)  |                                                  
 +----------------------------------------------------------------------------------------------+
 | |lab1-task4-01|                                                                              |
@@ -31,13 +30,12 @@ Credential Stuffing attack and observe related events using security analytics a
 | |lab1-task4-02|                                                                              |
 +----------------------------------------------------------------------------------------------+
 | 2. Now we are going to Click **Add Filter** and enter the following filter syntax            | 
-|                                                                                              |
-|    **Method In Post**.  As you type each word click on the syntax match that will appear     |
-|                                                                                              |
+|    "**Method In Post**". As you type each word click on the syntax match that will appear    |
 |    in the dialogue box.                                                                      |
 |                                                                                              |
-|    See the example below on how your filter will appear as your create it                    |
+|    See the example below on how your filter will appear as your create it.                   |
 +----------------------------------------------------------------------------------------------+
+| |lab2-task4-02b|                                                                             |
 | |lab2-task1-01a|                                                                             |
 |                                                                                              |
 +----------------------------------------------------------------------------------------------+
@@ -49,18 +47,19 @@ Credential Stuffing attack and observe related events using security analytics a
 |                                                                                              |
 +----------------------------------------------------------------------------------------------+
 |    As you examine these **POST** requests can you see what endpoint is being targeted ?      |
+|                                                                                              |
+|    **Hint:** *Request Path*                                                                  |
 +----------------------------------------------------------------------------------------------+
 | |lab2-task1-03|                                                                              |
 +----------------------------------------------------------------------------------------------+
-| 3. In the Distributed Cloud (XC) Console, under HTTP Loadbalancers click the three dots      |
-|                                                                                              |
-|    under the **Action** column and select **Manage Configuration**                           |
+| 3. In the Distributed Cloud (XC) Console, go back to **Manage** > *Load Balancers >*         |
+|    HTTP Loadbalancers, click the three dots.                                                 |
+|    under the **Action** column and select **Manage Configuration**.                          |
 +----------------------------------------------------------------------------------------------+
 | |lab1-task2-01|                                                                              |
 |                                                                                              |
 +----------------------------------------------------------------------------------------------+
 | 4. At the top right click **Edit Configuration** then Click **Bot Protection**. Now click    |
-|                                                                                              |
 |    on *Disable* and select **Enable Bot Defense Standard**                                   |
 +----------------------------------------------------------------------------------------------+
 | |lab2-task1-04|                                                                              |
@@ -70,7 +69,6 @@ Credential Stuffing attack and observe related events using security analytics a
 | |lab2-task1-05|                                                                              |
 +----------------------------------------------------------------------------------------------+
 | 6. In the **Protected App Endpoints** window, click the **Configure** link under             |  
-|                                                                                              |
 |    **App Endpoint Type**                                                                     |
 +----------------------------------------------------------------------------------------------+
 | |lab2-task1-06|                                                                              |
@@ -81,7 +79,7 @@ Credential Stuffing attack and observe related events using security analytics a
 +----------------------------------------------------------------------------------------------+
 | 8. In the resulting **App Endpoint Type** window, input the following values as shown:       |
 |                                                                                              |
-|    - **Metadata: Name:** *auth-bot*                                                          |
+|    - **Name:** *auth-bot*                                                                    |
 |    - **HTTP Methods:** *POST*                                                                |
 |    - **Endpoint Label** *Undefined*                                                          |
 |    - **Protocol:** *BOTH*                                                                    |
@@ -116,40 +114,36 @@ Credential Stuffing attack and observe related events using security analytics a
 | |lab2-task1-12|                                                                              |
 |                                                                                              |
 +----------------------------------------------------------------------------------------------+
-| 12. Use the left-hand navigation and click **Other Settings** or scroll to the bottom on the |
-|                                                                                              |
-|     **HTTP Load Balancer** screen, and click **Save and Exit.**                              |
+| 12. Click **Save HTTP Load Balancer** at the bottom of the page.                             |
 +----------------------------------------------------------------------------------------------+
 | |lab2-task1-13|                                                                              |
 |                                                                                              |
 +----------------------------------------------------------------------------------------------+
 | 13. Now that we have a Bot Policy applied lets re-run the Basic Credential stuffing attack.  |
-|                                                                                              |
 |     From Windows Jump Host.  Click on **OpenBullet** then **Jobs** and the pencil/edit icon  |
-|                                                                                              |
 |     to the right.  We need to edit the *Skip** counter by highlighting the current number    |
-|                                                                                              |
-|     and type 0 (zero). Click **Accept** when done.                                           |
+|     and type 0 (zero). Click **Accept** when done and Finally click **Start**.               |
 +----------------------------------------------------------------------------------------------+
 | |lab1-task5-03|                                                                              |
 +----------------------------------------------------------------------------------------------+
 | 14. Check review the request logs.  Was anything flagged as a violation? Why or Why not ?    |
 |                                                                                              |
-| 15. Let's inspect the Security Analytics dashboard and any captured events.  Here we can     |  
+|    **Hint:** *Are HTTP requests violating any HTTP protocol definitions/standards?*          |
 |                                                                                              |
-|     make policy changes by clicking on the three dots on the right-side of these events.     | 
+| 15. Let's inspect the **Security Analytics** dashboard and any captured events.              |  
 |                                                                                              |
 +----------------------------------------------------------------------------------------------+
 | |lab2-task1-14|                                                                              |
 +----------------------------------------------------------------------------------------------+
-| 16. We can easily take action from the dashboard add the source IP to the Blocked Client List|
-+----------------------------------------------------------------------------------------------+
-| |lab2-task1-15|                                                                              |
+| This dashboard provides an easy option to quickly take actions such as adding the            |
+| source IP address of the bad actor to the Blocked Client List of our WAF policy.             |
 |                                                                                              |
+| **Note**: *The following images are for example only.*                                       |
++----------------------------------------------------------------------------------------------+
+| |lab2-task1-15|                                                                              | 
 | |lab2-task1-16|                                                                              |
 +----------------------------------------------------------------------------------------------+
 | 17. By clicking on **Bot Defense** then **View in Bot Defense** we gain greater visibility   |
-|                                                                                              |
 |     on the various traffic types. Notice these requests are defined as **Bad Bot**           |
 |                                                                                              |
 +----------------------------------------------------------------------------------------------+
@@ -171,28 +165,27 @@ ensure these tasks are run from the **Jump Host**
 
  
 +----------------------------------------------------------------------------------------------+
-| 1. From the Jump Host launch the Chrome Browser and click on the F5 Air bookmark             |
+| 1. From the JumpHost, launch the Chrome Browser, click on the F5 Airlines bookmark and click |
+|    on the **Sign In** button.                                                                |
 |                                                                                              |
 |    Optionally you can type **http://airline-backend.f5se.com/user/vipsignin**                |
 |                                                                                              |
 | 2. Once loaded right click on the page and choose **Inspect** then navigate to the           |
-|                                                                                              |
 |    **Network** tab on the new right-hand side window. This will allow you to monitor what    |
-|                                                                                              |
 |    content is loaded and submitted during the interactions with the airline website.         |
 |                                                                                              |
 +----------------------------------------------------------------------------------------------+
 | |lab2-task2-01|                                                                              |
 +----------------------------------------------------------------------------------------------+
-| 3. On the login prompt enter the following testing username: **john.smith@nobody.com**       |
+| 3. On the login prompt enter the following then click **Confirm**:                           |
 |                                                                                              |
-|    password: **test123** and then click **Confirm**.                                         |
+|    username: **john.smith@nobody.com**                                                       |
+|                                                                                              |
+|    password: **test123**                                                                     |
 |                                                                                              |
 | 4. This should log you into the account but more important look on the right side panel      |
-|                                                                                              |
-|    finding the **vipsignin** POST request.  Clicking on this entry and you will see the POST |
-|                                                                                              |
-|    request that was created for your login.                                                  |
+|    finding the **vipsignin** (or **signin**) POST request.  Select this entry and you will   |
+|    see the POST request that was created for your login.                                     |
 |                                                                                              |
 | 5. Switch to the **Payload** tab and we can see the exact data that was submitted.           |
 |                                                                                              |
@@ -202,23 +195,17 @@ ensure these tasks are run from the **Jump Host**
 |                                                                                              |
 +----------------------------------------------------------------------------------------------+
 | 6. Open a new tab in Chrome and navigate to the frontend airline application website         |
+|    ** http://namespace.lab-sec.f5demos.com** and repeat steps 2-5.                           |
+|    This time, requests for additional JavaScript code can be seen.                           |
 |                                                                                              |
-|    ** http://namespace.lab-sec.f5demos.com** and repeat steps 2-5, except the form data      |
-|                                                                                              |
-|    will appear differently.                                                                  |
-|                                                                                              |
-| 7. Refreshing the Bot Defense (Security Analytics Screen) we can see extra details.          | 
-|                                                                                              |
-|    This is telemetry data about the request that helps to identify human vs bot behavior,    |    
-|                                                                                              |
+| 7. Refresh the Bot Defense dashboard (**Bot Defense** *> Overview > Monitor*, or             |
+|    **Web App and API Protection** *> Overview > Security >* ***[YOUR LOAD BALANCER]*** >*    |
+|    Bot Defense*) and you will notice additional *Telemetry Client* details.                  |
+|    This is telemetry data about the request that helps to identify human vs bot behavior,    |
 |    among other things. If we see a violation being categorized as "Bad Bot" that means       | 
-|                                                                                              |
 |    the risk engine detected a bot based on signature information. Something about the request| 
-|                                                                                              |
-|    was flagged by a matching condition in the signature, no telemetry was required. This was |                                                                             
-|                                                                                              |
+|    was flagged by a matching condition in the signature, no telemetry was required. This was |
 |    the case with the basic credential stuffing attach.  The client for that attack can not   |
-|                                                                                              |
 |    render JavaScript, and is making direct HTTP requests, similar to using curl.             |
 |                                                                                              |
 +----------------------------------------------------------------------------------------------+
@@ -226,8 +213,6 @@ ensure these tasks are run from the **Jump Host**
 |                                                                                              |
 | |lab2-task2-06|                                                                              |
 +----------------------------------------------------------------------------------------------+
-
-
 
 
 +----------------------------------------------------------------------------------------------+
@@ -241,6 +226,8 @@ ensure these tasks are run from the **Jump Host**
 .. |lab1-task4-01| image:: _static/lab1-task4-01.png
    :width: 800px
 .. |lab1-task4-02| image:: _static/lab1-task4-02.png
+   :width: 800px
+.. |lab2-task4-02b| image:: _static/lab2-task4-02b.png
    :width: 800px
 .. |lab1-task4-03| image:: _static/lab1-task4-03.png
    :width: 800px

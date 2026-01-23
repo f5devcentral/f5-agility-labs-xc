@@ -25,30 +25,36 @@ We will end by reviewing the security requests logs as well as the Bot Defense d
 
 
 +----------------------------------------------------------------------------------------------+
-|  1. RDP or Console into the Windows Jump Host, you can locate the password here:             |
+|  1. RDP or Console into the Windows Jump Host.                                               |
+|     Go back to your UDF Deployment page to initiate an *RDP* or *Console* connection into    | 
+|     your Windows *JumpHost*.  The username is "user" and the password is "user".             |
 |                                                                                              |
-|     **(Password is located in the UDF Course Screen->Components->Jump Host->Details)**       |
+|     Click on **Deployment Tab > JumpHost > ACCESS**                                          |
+|                                                                                              |
+|     |lab1-task3-01a|                                                                         |
+|                                                                                              |
+|     |lab1-task3-01|                                                                          |
+|                                                                                              |
+|     |lab1-task3-01b|                                                                         |
 |                                                                                              |
 |  2. On the home screen double-click the OpenBullet 2 shortcut                                |
 +----------------------------------------------------------------------------------------------+
 | |lab1-task3-02|                                                                              |
 +----------------------------------------------------------------------------------------------+                             
 |  3. Click on **Configs** and double-click **"Human"** - this is our credential stuffing      |
-|                                                                                              |
 |     attack configuration that will simulate a basic Bot.                                     |
 +----------------------------------------------------------------------------------------------+
 | |lab3-task1-01|                                                                              |
 |                                                                                              |
 +----------------------------------------------------------------------------------------------+
 | 4. Click the **Navigate to App** block and update the URL field with your load balancer      |
-|                                                                                              |
-|    namespace.  Click **Save** at the bottom when finished.                                   |
+|    namespace.  Click **Save** and **Ok** at the bottom when finished.                        |
 +----------------------------------------------------------------------------------------------+
 | |lab3-task1-02|                                                                              |
 |                                                                                              |
 | |lab3-task1-03|                                                                              |
 +----------------------------------------------------------------------------------------------+
-| 5. From within the same window click **Jobs** then **New+** and finally **Multi-Run**        |
+| 5. From within the same window click **Jobs** then **+New** and finally **Multi-Run**.       |
 |                                                                                              |             
 +----------------------------------------------------------------------------------------------+
 | |lab3-task1-04|                                                                              |
@@ -58,32 +64,27 @@ We will end by reviewing the security requests logs as well as the Bot Defense d
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 6. In the new window, on the top left, click **"Select Config"** and then **Human**          |
-|                                                                                              |
+| 6. In the new window, on the top left, click **"Select Config"**, then **Human** and         |
 |    finally **Accept** at the bottom.                                                         |
 +----------------------------------------------------------------------------------------------+
 | |lab3-task1-06|                                                                              |
 |                                                                                              |
 | |lab3-task1-07|                                                                              |
 +----------------------------------------------------------------------------------------------+
-| 7. On the top right, click **Select Wordlist** and then **Credentials-Human** and finally    |
-|                                                                                              |
-|    **Accept** at the bottom.                                                                 |
+| 7. On the top right, click **Select Wordlist**, then select **Credentials-Human** and finally|
+|    click **Accept** at the bottom.                                                           |
 +----------------------------------------------------------------------------------------------+
 | |lab3-task1-08|                                                                              |
 |                                                                                              |
 | |lab3-task1-09|                                                                              |
 +----------------------------------------------------------------------------------------------+
 | 8. Now that we have added the **Human** Configuration along with the **Credentials-Human**   |
-|                                                                                              |
-|    we can finally click **Accept** at the bottom, this will save the Multi-Run Job setup     |
+|    we can finally click **Accept** at the bottom, this will save the Multi-Run Job setup.    |
 +----------------------------------------------------------------------------------------------+
 | |lab3-task1-10|                                                                              |
 +----------------------------------------------------------------------------------------------+
-| 9. You should now see a second job titled **#[1-9]** **[Idle]**.  Hover over this second job |
-|                                                                                              |
+| 9. You should now see a second job titled **#[X]** **[Idle]**.  Hover over this second job   |
 |    until a small hand appears then click.  A new window will open if you see **Skip: 11**    | 
-|                                                                                              |
 |    you will need to change this value. Over to the right click  **Options**.                 |
 |                                                                                              |
 +----------------------------------------------------------------------------------------------+
@@ -93,9 +94,7 @@ We will end by reviewing the security requests logs as well as the Bot Defense d
 |                                                                                              |
 +----------------------------------------------------------------------------------------------+
 | 10. Change the **Skip** value to 0 (zero) either by typing it or using the **minus** button  |
-|                                                                                              |
 |     finally clicking **Accept** at the bottom.  Now with the **Skip** value changed to "0"   |
-|                                                                                              |
 |     you can click **Start** to run the job.                                                  |
 +----------------------------------------------------------------------------------------------+
 | |lab3-task1-13|                                                                              |
@@ -111,7 +110,6 @@ Task 2 : Review the Request Logs
 
 +----------------------------------------------------------------------------------------------+
 | 1. Let's review our load balancer request logs - Go to **Web App and API Protection**        |
-|                                                                                              |
 |    then **Overview** and finally **Security**  (Adjust the time filter as needed)            |
 |                                                                                              |    
 +----------------------------------------------------------------------------------------------+
@@ -122,27 +120,21 @@ Task 2 : Review the Request Logs
 | |lab1-task4-02|                                                                              |
 +----------------------------------------------------------------------------------------------+
 |   Add a filter for **Human** Bot requests. Click **Add Filter** and enter the following      |
-|                                                                                              |
 |   syntax **bot_defense.insight** **In** **HUMAN**. As you type each word click on the        |
-|                                                                                              |
 |   syntax match that will appear in the dialogue box.                                         |
 +----------------------------------------------------------------------------------------------+
 | |lab3-task2-01|                                                                              |
 |                                                                                              |
 +----------------------------------------------------------------------------------------------+
 | 2. What were the results? How many POST requests were flagged as Human?                      |
-|                                                                                              |
 |    If you are one of the first students to run the attack, you may see it take up to 10      |
-|                                                                                              |         
-|    requests before positive bot identification                                               |
+|    requests before positive bot identification.                                              |
 |                                                                                              |
 +----------------------------------------------------------------------------------------------+
 | 3. Let's go review the Bot Defense Dashboard. We access this by clicking **Bot Defense**     |
-|                                                                                              |
-|    at the top of the screen (Next to Requests)                                               |
+|    at the top of the screen (Next to Requests).                                              |
 |                                                                                              |
 |    Notice now we see **Telemetry Client** show up in the *Traffic Types*. This indicates     |
-|                                                                                              |
 |    JavaScript telemetry within the client browser identified the bot.                        |
 +----------------------------------------------------------------------------------------------+
 | |lab3-task2-02|                                                                              |
@@ -156,9 +148,7 @@ Task 2 : Review the Request Logs
 | **Lab 3 Summary**                                                                            |
 |                                                                                              |
 |   This lab shows how Distributed Cloud's machine learning capabilities                       | 
-|                                                                                              |
 |   leverage telemetry in a browser request to identify a bot even if it is capable of         |
-|                                                                                              |
 |   simulating human activity.  This concludes Lab 3, feel free to review the configuration.   |
 |                                                                                              |
 +----------------------------------------------------------------------------------------------+
@@ -166,6 +156,12 @@ Task 2 : Review the Request Logs
 +----------------------------------------------------------------------------------------------+
 
 
+.. |lab1-task3-01| image:: _static/lab1-task3-01.png
+   :width: 800px
+.. |lab1-task3-01a| image:: _static/lab1-task3-01a.png
+   :width: 800px
+.. |lab1-task3-01b| image:: _static/lab1-task3-01b.png
+   :width: 800px
 .. |lab1-task4-01| image:: _static/lab1-task4-01.png
    :width: 800px
 .. |lab1-task4-02| image:: _static/lab1-task4-02.png

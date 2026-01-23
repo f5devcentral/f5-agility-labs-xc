@@ -1,7 +1,9 @@
 Introduction: Accessing F5 Distributed Cloud Console
 ====================================================
 
-Welcome to this F5 Distributed Cloud Lab. The following tasks will guide you through the initial 
+Welcome to this F5 Distributed Cloud Lab.
+
+The following tasks will guide you through the initial 
 access requirements for the associated lab environment.  Lab attendees should have received an 
 invitation email to the lab environment based on the submitted registration email.  Please check 
 email and spam folders if it has not been received.  If you have not received an email, please 
@@ -56,18 +58,21 @@ Accessing UDF (F5 Unified Demo Framework)
 |                                                                                              |
 | .. note::                                                                                    |
 |    *The steps for new UDF Users or the steps for resetting UDF User account passwords are*   |
-|    *not shown. Please contact a member of the lab team if further assistance is needed.*     |
+|    *not shown.*                                                                              |
+|                                                                                              |
+|    *Please contact a member of the lab team if further assistance is needed.*                |
 +----------------------------------------------------------------------------------------------+
 | |intro002|                                                                                   |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
 | Attendees will be prompted to enter their email address, password and complete MFA as shown. |
-| MFA must be completed by selecting one of the available methods.                             |
+| MFA must be completed by selecting one of the available options.                             |
 |                                                                                              |
 | .. note::                                                                                    |
-|    *MFA process will vary based on the MFA configuration for your UDF Account.*              |
-|    *Email Verification is shown.*                                                            |
+|    *If you choose the email verification option as shown below, make sure you have access*   |
+|    *to your UDF email account when starting this class*                                      |
+|    *(to retrieve your one-time MFA verification code.)*                                      |
 +----------------------------------------------------------------------------------------------+
 | |intro003|                                                                                   |
 |                                                                                              |
@@ -101,8 +106,9 @@ Accessing UDF (F5 Unified Demo Framework)
 +----------------------------------------------------------------------------------------------+
 | |intro008|                                                                                   |
 +----------------------------------------------------------------------------------------------+
-| In approximately 5-7 minutes the associated **yellow gear** starting icon will change to a   |
-| **green arrow** (running) icon and attendees will proceed to the next section of steps.      |
+| It will take at least 5 minutes for the systems to start. The **yellow gear** icons will     |
+| change to **green arrow** icons. Wait for all systems to be running (green) before           |
+| proceeding to the next section.                                                              |
 +----------------------------------------------------------------------------------------------+
 | |intro009|                                                                                   |
 +----------------------------------------------------------------------------------------------+
@@ -127,8 +133,10 @@ Accessing F5 Distributed Cloud
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| The initial logon prompt will be presented.  Click **Sign on with Okta** to proceed.  SSO    |
-| will process and onboarding to the tenant will proceed.                                      |
+| The initial XC logon prompt will be presented. Click **Sign on with Okta** to continue.      |
+| In the interest of time, SSO has been pre-configured and lab attendees will be automatically | 
+| logged in (with their UDF credentials). Each student is assigned a new dedicated name-space  |
+| that was pre-configured with various components.                                             |
 +----------------------------------------------------------------------------------------------+
 | |intro011|                                                                                   |
 +----------------------------------------------------------------------------------------------+
@@ -143,7 +151,7 @@ Accessing F5 Distributed Cloud
 +----------------------------------------------------------------------------------------------+
 | |intro012|                                                                                   |
 +----------------------------------------------------------------------------------------------+
-| In the following screen, Select all persona roles and click **Next**. This allows attendees  |
+| In the following screen, select all persona roles and click **Next**. This allows attendees  |
 | to see all the various configurations. Personas can be changed anytime later within the      |
 | console if desired.                                                                          |
 +----------------------------------------------------------------------------------------------+
