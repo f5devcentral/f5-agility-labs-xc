@@ -10,10 +10,6 @@ like a slow-moving “human” stuffing attack, the engine needs to see enough d
 it as a bot. Therefore, for this attack, you may see some of the initial requests are logged as Human 
 but quickly the bot will be flagged.
 
-
-To run this attack, the workflow is the same as the Basic stuffing attack except you will use the Human 
-config and Human credentials wordlist.
-
 **Expected Lab Time: 30 minutes**
 
 Task 1: Execute a Human Credential Stuffing Attack
@@ -80,13 +76,13 @@ We will end by reviewing the security requests logs as well as the Bot Defense d
 +----------------------------------------------------------------------------------------------+
 | 8. Now that we have added the **Human** Configuration along with the **Credentials-Human**   |
 |    we can finally click **Accept** at the bottom, this will save the Multi-Run Job setup.    |
+|                                                                                              |
+|    **Note:** *Scroll down to find the* **Accept** *button if the screen is too small...*     |
 +----------------------------------------------------------------------------------------------+
 | |lab3-task1-10|                                                                              |
 +----------------------------------------------------------------------------------------------+
-| 9. You should now see a second job titled **#[X]** **[Idle]**.  Hover over this second job   |
-|    until a small hand appears then click.  A new window will open if you see **Skip: 11**    | 
-|    you will need to change this value. Over to the right click  **Options**.                 |
-|                                                                                              |
+| 9. You should now see a second job titled **#[X]** **[Idle]**.  Click the **Options** icon   |
+|    to edit the job.  A new window will open.                                                 |
 +----------------------------------------------------------------------------------------------+
 | |lab3-task1-11|                                                                              |
 |                                                                                              |
@@ -94,12 +90,14 @@ We will end by reviewing the security requests logs as well as the Bot Defense d
 |                                                                                              |
 +----------------------------------------------------------------------------------------------+
 | 10. Change the **Skip** value to 0 (zero) either by typing it or using the **minus** button  |
-|     finally clicking **Accept** at the bottom.  Now with the **Skip** value changed to "0"   |
-|     you can click **Start** to run the job.                                                  |
+|     finally clicking **Accept** at the bottom.                                               |
 +----------------------------------------------------------------------------------------------+
-| |lab3-task1-13|                                                                              |
+|     |lab3-task1-13|                                                                          |
 |                                                                                              |
-| |lab3-task1-14|                                                                              |
+| 11. Now with the **Skip** value changed to "0"                                               |
+|     you can click **Start** to run the job.                                                  |
+|                                                                                              |
+|    |lab3-task1-14|                                                                           |
 |                                                                                              |
 +----------------------------------------------------------------------------------------------+
 
