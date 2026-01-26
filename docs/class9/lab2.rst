@@ -26,11 +26,17 @@ directed default origin pool for the load balancer.
 +------------------------------------------------------------------------------------------------------------------------------------+
 | 4. Locate your HTTP Load Balancer in the list and click the ellipsis (three dots) under the **Actions** column. Select **Manage**  |
 |                                                                                                                                    |
-|    **Configuration**.                                                                                                              |
+|    **Configuration**.  Your Load Balancer for this lab is named <name-space>-https-routing-lb.                                     |
 +------------------------------------------------------------------------------------------------------------------------------------+
-| 5. In the Load Balancer configuration page, scroll to the **Route Configuration** section.                                         |
+| 5. In the Load Balancer Configuration page, click **Edit Configuration** in the top right.                                         |
 +------------------------------------------------------------------------------------------------------------------------------------+
-| 6. Click **Add Route Policy**.                                                                                                     |
+| 6. In the Load Balancer Edit Configuration page, scroll to the **Routes** section or click **Routes** in the left menu to jump to  |
+|                                                                                                                                    |
+|    the routes section.                                                                                                             |
++------------------------------------------------------------------------------------------------------------------------------------+
+| 7. Click **Configure** in the Routes configuration section.                                                                        |
++------------------------------------------------------------------------------------------------------------------------------------+
+| 8. Click **Add Item** to add a route.                                                                                              |
 +------------------------------------------------------------------------------------------------------------------------------------+
 | 7. In the resulting form, configure the route policy:                                                                              |
 |                                                                                                                                    |
