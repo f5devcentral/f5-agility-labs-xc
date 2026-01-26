@@ -221,7 +221,7 @@ The **Network Connectors** are configured as:
 
 **student-snat-connector**
 
-*Network Connector Type: SNAT, Site Local Inside to Site Local Outside
+* Network Connector Type: SNAT, Site Local Inside to Site Local Outside
 
 * Routing Mode: Default Gateway
 

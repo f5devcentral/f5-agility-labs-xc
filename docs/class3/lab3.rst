@@ -17,8 +17,10 @@ are getting poor performance as your application infrastructure is being overloa
 After reviewing the data, the application team has asked if you can deploy Rate Limiting to help ACME Corp limit 
 the load that each individual user can request.  Based on the discoveries made, there are two rate limiting rules 
 that need to configured.  
-  * HTTP POST requests to the login page 
-  * HTTP GET requests to the rate-limit page. 
+
+* HTTP POST requests to the login page 
+* HTTP GET requests to the rate-limit page.
+
 The application team would like all other requests to be allowed without any rate-limiting.  You leave the all-hands 
 call to focus on the F5 Distributed Cloud configurations while the team members investigate the underlying nature 
 of the exploit.

@@ -25,21 +25,20 @@ In this task you will utilize the AI assistant to explore security events.  The 
 capabilities to simplify management and security of apps and APIs using a natural language interface, including:
 
 * Real-time insights: Promote application security and site health with up-to-the-minute visibility of hybrid, multicloud
-sites, ensuring security and networking practitioners can quickly detect and respond to emerging threats, maintaining
-a robust security posture.
+  sites, ensuring security and networking practitioners can quickly detect and respond to emerging threats, maintaining
+  a robust security posture.
 
 * Summarization: Leverage advanced summarization capabilities to distill large volumes of data into clear, concise
-reports. This allows teams to better understand complex information and advanced security events to make more
-informed decisions without sifting through overwhelming amounts of data.
+  reports. This allows teams to better understand complex information and advanced security events to make more
+  informed decisions without sifting through overwhelming amounts of data.
 
 * Actionable recommendations: Deliver actionable recommendations, enabling users to swiftly address identified
-threats, performance issues, network health status, and vulnerabilities. By guiding users through necessary steps, the
-AI assistant helps enhance overall security and streamline incident response operations.
+  threats, performance issues, network health status, and vulnerabilities. By guiding users through necessary steps, the
+  AI assistant helps enhance overall security and streamline incident response operations.
 
 * Improved operations and efficiency: Automate and simplify complex security and networking tasks to significantly
-improve operational efficiency. This allows SecOps and NetOps teams to focus on strategic initiatives, reducing workload 
-and optimizing resource allocation. 
-
+  improve operational efficiency. This allows SecOps and NetOps teams to focus on strategic initiatives, reducing workload 
+  and optimizing resource allocation. 
 
 
 #. From the F5 Distributed Cloud Home Page, click the AI Assistant icon in the top right hand corner.
@@ -130,28 +129,6 @@ A Q&A session will begin shortly to conclude the overall lab.
 .. |lab008| image:: _static/lab5-008.png
    :width: 800px
 .. |lab009| image:: _static/lab5-009.png
-   :width: 800px
-.. |lab010| image:: _static/lab5-010.png
-   :width: 800px
-.. |lab011| image:: _static/lab5-011.png
-   :width: 800px
-.. |lab012| image:: _static/lab5-012.png
-   :width: 800px
-.. |lab013| image:: _static/lab5-013.png
-   :width: 800px
-.. |lab014| image:: _static/lab5-014.png
-   :width: 800px
-.. |lab015| image:: _static/lab5-015.png
-   :width: 800px
-.. |lab016| image:: _static/lab5-016.png
-   :width: 800px
-.. |lab017| image:: _static/lab5-017.png
-   :width: 800px
-.. |lab018| image:: _static/lab5-018.png
-   :width: 800px
-.. |lab019| image:: _static/lab5-019.png
-   :width: 800px
-.. |lab020| image:: _static/lab5-020.png
    :width: 800px
 .. |labend| image:: _static/labend.png
    :width: 800px

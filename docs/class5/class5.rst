@@ -19,7 +19,7 @@ Lab & Tasks:
 
 -  All Lab requirements will be noted in the tasks that follow
 
--  Estimated completion time: 4 Labs of varying lengths
+-  Estimated completion time: 2 hours (4 Labs of varying lengths)
 
 
 .. toctree::

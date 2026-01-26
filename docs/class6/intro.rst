@@ -160,5 +160,3 @@ step below to access the F5 Distributed Cloud Lab Tenant.
    :width: 800px
 .. |labbgn| image:: _static/labbgn.png
    :width: 800px
-.. |labend| image:: _static/labend.png
-   :width: 800px

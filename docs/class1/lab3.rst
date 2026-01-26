@@ -56,12 +56,12 @@ Now with Lab# 3 we will create an origin pool that will provide internal resourc
 We will first create an Origin Pool that refers to the "Private Endpoint" site in our lab environment.
 
 +------------------------------------------------------------------------------------------------------------+
-|| 1. Start in F5 Distributed Cloud Console and switch back to the **Multi-Cloud App Connect** workspace.    |
-||                                                                                                           |
-|| 2. Navigate the menu to go to **Manage->Load Balancers->Origin Pools**. Click on **Add Origin Pool**.     |
-||                                                                                                           |
-|| 3. Enter the following variables:                                                                         |
-||                                                                                                           |
+|  1. Start in F5 Distributed Cloud Console and switch back to the **Multi-Cloud App Connect** workspace.    |
+|                                                                                                            |
+|  2. Navigate the menu to go to **Manage->Load Balancers->Origin Pools**. Click on **Add Origin Pool**.     |
+|                                                                                                            |
+|  3. Enter the following variables:                                                                         |
+|                                                                                                            |
 +------------------------------------------------------------------------------------------------------------+
 |                                                                                                            |
 |   ================================= ======                                                                 |
@@ -71,9 +71,9 @@ We will first create an Origin Pool that refers to the "Private Endpoint" site i
 |   ================================= ======                                                                 |
 |                                                                                                            |
 +------------------------------------------------------------------------------------------------------------+
-||                                                                                                           |
-|| 4. Click on **Add Item** under the section **Origin Servers**                                             |
-||                                                                                                           |
+|                                                                                                            |
+|  4. Click on **Add Item** under the section **Origin Servers**                                             |
+|                                                                                                            |
 +------------------------------------------------------------------------------------------------------------+
 |                                                                                                            |
 |   ================================= ============================================                           |
@@ -88,11 +88,11 @@ We will first create an Origin Pool that refers to the "Private Endpoint" site i
 |                                                                                                            |
 | |lab301|                                                                                                   | 
 |                                                                                                            |
-||                                                                                                           |
-|| 5. Click on **Apply** to return to the previous screen.                                                   |
-||                                                                                                           |
-|| 6. Below the **Origin Servers** section fill in the Origin Server Port information                        |     
-||                                                                                                           |
+|                                                                                                            |
+|  5. Click on **Apply** to return to the previous screen.                                                   |
+|                                                                                                            |
+|  6. Below the **Origin Servers** section fill in the Origin Server Port information                        |     
+|                                                                                                            |
 +------------------------------------------------------------------------------------------------------------+
 |                                                                                                            |
 |                                                                                                            |
@@ -103,9 +103,9 @@ We will first create an Origin Pool that refers to the "Private Endpoint" site i
 |   ================================= =======                                                                |
 |                                                                                                            |
 +------------------------------------------------------------------------------------------------------------+   
-||                                                                                                           |
-|| 7. Click **Save and Exit**.                                                                               |
-||                                                                                                           |
+|                                                                                                            |
+|  7. Click **Save and Exit**.                                                                               |
+|                                                                                                            |
 +------------------------------------------------------------------------------------------------------------+
 
 
@@ -117,12 +117,12 @@ In the first lab we were connecting to a F5 Distributed Cloud Load Balancer that
 Now we will deploy a Load Balancer on the CE node that was deployed in the AWS VPC (CE location).
 
 +-----------------------------------------------------------------------------------------------------------------------------------+
-|| 1. Start in F5 Distributed Cloud Console and switch back to the **Multi-Cloud App Connect** context.                             |
-||                                                                                                                                  |
-|| 2. Navigate the menu to go to **Manage->Load Balancers-> HTTP Load Balancers**.  Click on **Add HTTP Load Balancer**.            |
-||                                                                                                                                  |
-|| 3. Enter the following variables:                                                                                                |
-||                                                                                                                                  |
+|  1. Start in F5 Distributed Cloud Console and switch back to the **Multi-Cloud App Connect** context.                             |
+|                                                                                                                                   |
+|  2. Navigate the menu to go to **Manage->Load Balancers-> HTTP Load Balancers**.  Click on **Add HTTP Load Balancer**.            |
+|                                                                                                                                   |
+|  3. Enter the following variables:                                                                                                |
+|                                                                                                                                   |
 +-----------------------------------------------------------------------------------------------------------------------------------+
 |                                                                                                                                   |
 |                                                                                                                                   |
@@ -138,41 +138,41 @@ Now we will deploy a Load Balancer on the CE node that was deployed in the AWS V
 +-----------------------------------------------------------------------------------------------------------------------------------+                                                                                       
 |                                                                                                                                   |
 |  |lab311|                                                                                                                         |
-||                                                                                                                                  |
-|| 4. Under **Origin Pools** Click **Add Item**                                                                                     |
-||                                                                                                                                  |
+|                                                                                                                                   |
+|  4. Under **Origin Pools** Click **Add Item**                                                                                     |
+|                                                                                                                                   |
 |  |lab302|                                                                                                                         |
-||                                                                                                                                  |
-|| 5. Select the recently created **[NAMESPACE]-private-pool** under **Origin Pool** and then click **Apply**                       |
-||                                                                                                                                  |
+|                                                                                                                                   |
+|  5. Select the recently created **[NAMESPACE]-private-pool** under **Origin Pool** and then click **Apply**                       |
+|                                                                                                                                   |
 |  |lab303|                                                                                                                         |
-||                                                                                                                                  |
-|| 6. Now you can see your Origin Pool has been added to the HTTP Load balancer configuration                                       |
-||                                                                                                                                  |
+|                                                                                                                                   |
+|  6. Now you can see your Origin Pool has been added to the HTTP Load balancer configuration                                       |
+|                                                                                                                                   |
 |  |lab304|                                                                                                                         |
-||                                                                                                                                  |
-|| 7. Now we want to control how this Load Balancer is advertised, we will select the **Other Settings** on the left hand side.     |
-||    This will auto-scroll the configuations towards the bottom of the Load Balancer configuration section labeled                 |
-||    **Other Settings**                                                                                                            |
-||                                                                                                                                  |
-|| |lab305|                                                                                                                         |
-||                                                                                                                                  |
-|| 8. Under **VIP Advertisement**, change it to **Custom**  then select **Configure**                                               |
-||                                                                                                                                  |
-|| |lab306|                                                                                                                         |
-||                                                                                                                                  |
-|| 9. In the **List of Sites to Advertise**, Click on **Add Item**                                                                  |
-||                                                                                                                                  |
-|| |lab307|                                                                                                                         |
-||                                                                                                                                  |
-|| 10. For **Site Network** select **Outside Network**                                                                              |
-||                                                                                                                                  |
-|| 11. For **Site Reference** select **system/appworld-awsnet**                                                                     |
-||                                                                                                                                  |
-|| |lab308|                                                                                                                         |
-||                                                                                                                                  |
-|| 12. Click on **Apply** and once again **Apply** on the next screen.                                                              |
-||                                                                                                                                  |
+|                                                                                                                                   |
+|  7. Now we want to control how this Load Balancer is advertised, we will select the **Other Settings** on the left hand side.     |
+|     This will auto-scroll the configuations towards the bottom of the Load Balancer configuration section labeled                 |
+|     **Other Settings**                                                                                                            |
+|                                                                                                                                   |
+|  |lab305|                                                                                                                         |
+|                                                                                                                                   |
+|  8. Under **VIP Advertisement**, change it to **Custom**  then select **Configure**                                               |
+|                                                                                                                                   |
+|  |lab306|                                                                                                                         |
+|                                                                                                                                   |
+|  9. In the **List of Sites to Advertise**, Click on **Add Item**                                                                  |
+|                                                                                                                                   |
+|  |lab307|                                                                                                                         |
+|                                                                                                                                   |
+|  10. For **Site Network** select **Outside Network**                                                                              |
+|                                                                                                                                   |
+|  11. For **Site Reference** select **system/appworld-awsnet**                                                                     |
+|                                                                                                                                   |
+|  |lab308|                                                                                                                         |
+|                                                                                                                                   |
+|  12. Click on **Apply** and once again **Apply** on the next screen.                                                              |
+|                                                                                                                                   |
 |                                                                                                                                   |       
 +-----------------------------------------------------------------------------------------------------------------------------------+
 
@@ -183,10 +183,10 @@ are easily applying a pre-existing shared WAF policy to our loadbalancer.  The s
 under this tenant.
 
 +-----------------------------------------------------------------------------------------------------------------------------------+
-|| 1. Under the **Web Application Firewall** section                                                                                |
-||                                                                                                                                  |
-|| 2. Choose the following options:                                                                                                 |
-||                                                                                                                                  | 
+|  1. Under the **Web Application Firewall** section                                                                                |
+|                                                                                                                                   |
+|  2. Choose the following options:                                                                                                 |
+|                                                                                                                                   | 
 +-----------------------------------------------------------------------------------------------------------------------------------+
 |                                                                                                                                   |
 |   =============================== =================================                                                               |
@@ -197,9 +197,9 @@ under this tenant.
 |   =============================== =================================                                                               |
 |                                                                                                                                   |
 +-----------------------------------------------------------------------------------------------------------------------------------+
-||                                                                                                                                  |
-|| 3.  Scroll to the botton of the screen and click **Save and Exit** to create the HTTP Load Balancer.                             |
-||                                                                                                                                  |
+|                                                                                                                                   |
+|  3.  Scroll to the botton of the screen and click **Save and Exit** to create the HTTP Load Balancer.                             |
+|                                                                                                                                   |
 +-----------------------------------------------------------------------------------------------------------------------------------+
 
 Task 4: Verify Configuration
@@ -213,8 +213,8 @@ The FQDN we used in our example is http://[NAMESPACE].aws.lab.f5demos.com/.
 |    *It can take a minute or so before the configuration is pushed to the CE node, appworld-awsnet.  If the verify does not*       |
 |    *work on first attempt, please try again after waiting for a minute.*                                                          |
 |                                                                                                                                   |
-||  The private demo app should look like the following:                                                                            |
-||                                                                                                                                  |
+|   The private demo app should look like the following:                                                                            |
+|                                                                                                                                   |
 |  |lab312|                                                                                                                         |
 |                                                                                                                                   |
 |                                                                                                                                   |

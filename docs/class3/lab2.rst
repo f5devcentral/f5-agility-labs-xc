@@ -17,7 +17,7 @@ in the F5 Distributed Cloud Tenant.
 **Expected Lab Time: 20 minutes**
 
 Task 1: Reviewing Current Access Trends  
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 #. Return to the F5 Distributed Cloud Console - **Web Application & API Protection > Overview > Performance** 
    Dashboard.

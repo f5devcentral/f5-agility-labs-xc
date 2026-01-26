@@ -1,6 +1,6 @@
 
 Lab 2: Deploying F5 Distributed Cloud Proxy Services to Securely Deliver a Private Endpoint via Regional Edges
-====================================
+==============================================================================================================
 
 Your company is about to launch a new application that resides in a public cloud environment.  To avoid having to learn 
 yet another public cloud environment for publishing an application, you will use F5 Distributed Cloud for publishing the 
@@ -107,28 +107,28 @@ Now we will deploy a Load Balancer on the CE node that was deployed in the AWS V
 +-----------------------------------------------------------------------------------------------------------------------------------+                                                                                       
 |                                                                                                                                   |
 |  |lab311|                                                                                                                         |
-||                                                                                                                                  |
-|| 4. Under **Origin Pools** Click **Add Item**.                                                                                    |
-||                                                                                                                                  |
+|                                                                                                                                   |
+|  4. Under **Origin Pools** Click **Add Item**.                                                                                    |
+|                                                                                                                                   |
 |  |lab302|                                                                                                                         |
-||                                                                                                                                  |
-|| 5. Select the recently created **[NAMESPACE]-private-ce-pool** under Origin pool and then click **Apply**.                       |
-||                                                                                                                                  |
+|                                                                                                                                   |
+|  5. Select the recently created **[NAMESPACE]-private-ce-pool** under Origin pool and then click **Apply**.                       |
+|                                                                                                                                   |
 |  |lab314|                                                                                                                         |
-||                                                                                                                                  |
-|| 6. Now you can see your Origin Pool has been added to the HTTP load balancer configuration.                                      |
-||                                                                                                                                  |
+|                                                                                                                                   |
+|  6. Now you can see your Origin Pool has been added to the HTTP load balancer configuration.                                      |
+|                                                                                                                                   |
 |  |lab304|                                                                                                                         |
-||                                                                                                                                  |
-|| 7. Now we want to confirm how this Load Balancer is advertised, we will select the **Other Settings** on the left hand side.     |
-||    This will auto-scroll the configuation towards the bottom of the Load Balancer configuration section labeled                  |
-||    **Other Settings**.                                                                                                           |
-||                                                                                                                                  |
-|| 8. Under **VIP Advertisement** Confirm it is set to **Internet**. This will allow *XC* to advertise the Virtual IP address.      |
-||                                                                                                                                  |
-|| |lab305|                                                                                                                         |
-||                                                                                                                                  |
-||                                                                                                                                  |
+|                                                                                                                                   |
+|  7. Now we want to confirm how this Load Balancer is advertised, we will select the **Other Settings** on the left hand side.     |
+|     This will auto-scroll the configuation towards the bottom of the Load Balancer configuration section labeled                  |
+|     **Other Settings**.                                                                                                           |
+|                                                                                                                                   |
+|  8. Under **VIP Advertisement** Confirm it is set to **Internet**. This will allow *XC* to advertise the Virtual IP address.      |
+|                                                                                                                                   |
+|  |lab305|                                                                                                                         |
+|                                                                                                                                   |
+|                                                                                                                                   |
 |                                                                                                                                   |       
 +-----------------------------------------------------------------------------------------------------------------------------------+
 

@@ -612,8 +612,6 @@ A brief presentation will be shared prior to the beginning of Lab 2.
    :width: 800px
 .. |lab046| image:: _static/lab1-046.png
    :width: 800px
-.. |lab047| image:: _static/lab1-047.png
-   :width: 800px
 .. |lab048| image:: _static/lab1-048.png
    :width: 800px
 .. |lab049| image:: _static/lab1-049.png

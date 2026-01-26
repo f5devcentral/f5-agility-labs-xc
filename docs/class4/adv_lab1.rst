@@ -6,7 +6,7 @@ In this lab you will create a Application (API) Load Balancer, attach an Origin 
 **Expected Lab Time: 12 minutes**
 
 Task 1: Configure a Load Balancer and Origin Pool
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The following steps provide instruction on how to create a Load Balancer, and Origin Pool configured within your namespace. 
 This Load Balancer will be used throughout the course.

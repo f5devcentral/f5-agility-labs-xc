@@ -8,7 +8,7 @@ In this lab, attendees will be introduced to the F5 Distributed Cloud Services p
 applications that are served by both public and private endpoints.
 
 Objectives:
-----------
+-----------
 
 - Gain an understanding of deploying proxy services to securely deliver an application with a public endpoint
 - Gain an understanding of viewing telemetry data and utilizing it to tune WAAP policies

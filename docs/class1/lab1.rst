@@ -329,7 +329,7 @@ Monitoring dashboard, and gather security event details.
 | 9. Expand your latest security event as shown.                                                                |
 |                                                                                                               |
 | 10. Note the summary detail provided in the **Information** link.  The **req_id** which is synonymous with    |
-|    **Support ID** (filterable) from the block page.                                                           |
+|     **Support ID** (filterable) from the block page.                                                          |
 |                                                                                                               |
 | 11. Scroll to the bottom of the information screen to see specific signatures detected and actions taken      |
 |     during the security event.                                                                                |
