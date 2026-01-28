@@ -52,8 +52,8 @@ Credential Stuffing attack and observe related events using security analytics a
 +----------------------------------------------------------------------------------------------+
 | |lab2-task1-03|                                                                              |
 +----------------------------------------------------------------------------------------------+
-| 3. In the Distributed Cloud (XC) Console, go back to **Manage** > *Load Balancers >*         |
-|    HTTP Loadbalancers, click the three dots.                                                 |
+| 3. In the Distributed Cloud (XC) Console, go back to ***Manage > Load Balancers >***         |
+|    ***HTTP Loadbalancers***, click the three dots.                                           |
 |    under the **Action** column and select **Manage Configuration**.                          |
 +----------------------------------------------------------------------------------------------+
 | |lab1-task2-01|                                                                              |
@@ -198,11 +198,11 @@ ensure these tasks are run from the **Jump Host**
 |    ** http://namespace.lab-sec.f5demos.com** and repeat steps 2-5.                           |
 |    This time, requests for additional JavaScript code can be seen.                           |
 |                                                                                              |
-| 7. Refresh the Bot Defense dashboard (**Bot Defense** *> Overview > Monitor*, or             |
-|    **Web App and API Protection** *> Overview > Security >* ***[YOUR LOAD BALANCER]*** >*    |
-|    Bot Defense*) and you will notice additional *Telemetry Client* details.                  |
+| 7. Refresh the Bot Defense dashboard (***Bot Defense** > Overview > Monitor***, or           |
+|    ***Web App and API Protection > Overview > Security > [YOUR LOAD BALANCER] >***           |
+|    ***Bot Defense***) and you will notice additional **Telemetry Client** details.           |
 |    This is telemetry data about the request that helps to identify human vs bot behavior,    |
-|    among other things. If we see a violation being categorized as "Bad Bot" that means       | 
+|    among other things. If we see a violation being categorized as "***Bad Bot***" that means | 
 |    the risk engine detected a bot based on signature information. Something about the request| 
 |    was flagged by a matching condition in the signature, no telemetry was required. This was |
 |    the case with the basic credential stuffing attach.  The client for that attack can not   |
