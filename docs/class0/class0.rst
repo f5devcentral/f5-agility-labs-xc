@@ -1,4 +1,4 @@
-Introdution
+F5 Distributed Cloud: Dynamic Name Validation
 ===========
 
 Welcome to this F5 Distributed Cloud course.
