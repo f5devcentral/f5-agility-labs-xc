@@ -2,27 +2,30 @@ function setNamespace() {
   const ns = document.getElementById("namespaceInput").value.trim();
   if (!ns) return;
 
-  // Save in localStorage
+  // Save namespace
   localStorage.setItem("namespace", ns);
 
   updateNamespace();
 }
 
 function updateNamespace() {
-  const ns = localStorage.getItem("namespace") || "<namespace>";
+  // Get stored namespace (null if not set)
+  const ns = localStorage.getItem("namespace");
 
-  // Update currentNamespace placeholder
+  // Update namespace display
   const nsDisplay = document.getElementById("currentNamespace");
-  if (nsDisplay) nsDisplay.innerText = ns;
+  if (nsDisplay) {
+    nsDisplay.innerText = ns || "<namespace>";
+  }
 
-  // Replace placeholders across page
+  // Do nothing if namespace is not set
+  if (!ns) return;
+
+  // Replace placeholders across the page
   document.querySelectorAll("code, pre, td, p, span").forEach(el => {
-    if (el.innerHTML.includes("&lt;namespace&gt;")) {
-      el.innerHTML = el.innerHTML.replace(/&lt;namespace&gt;/g, ns);
-    }
-    if (el.innerHTML.includes("<namespace>")) {
-      el.innerHTML = el.innerHTML.replace(/<namespace>/g, ns);
-    }
+    el.innerHTML = el.innerHTML
+      .replace(/&lt;namespace&gt;/g, ns)
+      .replace(/<namespace>/g, ns);
   });
 }
 
