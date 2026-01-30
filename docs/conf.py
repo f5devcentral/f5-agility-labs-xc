@@ -205,7 +205,7 @@ html_static_path = ["_static"]
 # -- Custom Java Script --------------------------------------------------
 # Register a custom JavaScript file for all Sphinx HTML pages.
 def setup(app):
-    app.add_js_file('custom.js')
+    app.add_js_file('xc-ns-store.js')
 
 
 # -- Options for HTMLHelp output ------------------------------------------
