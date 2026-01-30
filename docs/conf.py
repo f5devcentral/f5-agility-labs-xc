@@ -202,6 +202,11 @@ extlinks = {"issues": (("%s/issues/%%s" % github_repo), "issue ")}
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ["_static"]
 
+# -- Custom Java Script --------------------------------------------------
+# Register a custom JavaScript file for all Sphinx HTML pages.
+def setup(app):
+    app.add_js_file('custom.js')
+
 
 # -- Options for HTMLHelp output ------------------------------------------
 
