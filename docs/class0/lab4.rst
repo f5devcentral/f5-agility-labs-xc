@@ -22,20 +22,20 @@ Open a new browser tab, navigate to the following URL.
 
 .. code-block:: text
     
-   https://<namespace>.lab-sec.f5demos.com/waf
+   https://<your-namespace>.lab-sec.f5demos.com/waf
 
 Exercise 1: Create a Route
 --------------------------
 
 **Quick Reference**
 
-+-------------------+----------------------+
-| Name              | .. code-block:: text |
-|                   |                      |
-|                   |    <namespace>-af    |
-+-------------------+----------------------+
-| Enforcement Mode  | Blocking             |
-+-------------------+----------------------+
++-------------------+-----------------------+
+| Name              | .. code-block:: text  |
+|                   |                       |
+|                   |    <your-namespace>-af|
++-------------------+-----------------------+
+| Enforcement Mode  | Blocking              |
++-------------------+-----------------------+
 
 
 Exercise 2: Attach Route to HTTP Load Balancer
@@ -43,11 +43,11 @@ Exercise 2: Attach Route to HTTP Load Balancer
 
 **Quick Reference**
 
-+-------------------------------+-------------------+
-| Web Application Firewall (WAF)| Enable            |
-+-------------------------------+-------------------+
-| Enable (WAF object)           | <namespace>-af    |
-+-------------------------------+-------------------+
++-------------------------------+--------------------+
+| Web Application Firewall (WAF)| Enable             |
++-------------------------------+--------------------+
+| Enable (WAF object)           | <your-namespace>-af|
++-------------------------------+--------------------+
 
 Validation
 ----------
@@ -56,4 +56,4 @@ Navigate to the following URL.
 
 .. code-block:: text
     
-   https://<namespace>.lab-sec.f5demos.com/waf
+   https://<your-namespace>.lab-sec.f5demos.com/waf

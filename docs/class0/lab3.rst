@@ -21,7 +21,7 @@ Open a new browser tab, navigate to the following URL.
 
 .. code-block:: text
     
-   https://<namespace>.lab-sec.f5demos.com/member/login
+   https://<your-namespace>.lab-sec.f5demos.com/member/login
 
 Exercise 1: Configure a Route on HTTP Load Balancer
 ---------------------------------------------------
@@ -41,7 +41,7 @@ Exercise 1: Configure a Route on HTTP Load Balancer
 +----------------+------------------------------------------+
 | Host           | .. code-block:: text                     |
 |                |                                          |
-|                |    <namespace>.lab-sec.f5demos.com       |
+|                |    <your-namespace>.lab-sec.f5demos.com  |
 +----------------+------------------------------------------+
 | Redirect Path  | .. code-block:: text                     |
 |                |                                          |
@@ -55,4 +55,4 @@ Navigate to the following URL.
 
 .. code-block:: text
     
-   https://<namespace>.lab-sec.f5demos.com/member/login
+   https://<your-namespace>.lab-sec.f5demos.com/member/login

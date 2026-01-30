@@ -20,17 +20,17 @@ Exercise 1: Create a Service Policy
 
 **Quick Reference**
 
-+--------------------+----------------------------+
-| Name               | .. code-block:: text       | 
-|                    |                            | 
-|                    |    <namespace>-ipdeny-sp   |
-+--------------------+----------------------------+
-| Rule               | Denied Sources             |
-+--------------------+----------------------------+
-| IPv4 Prefix List   | IP will be provided        |
-+--------------------+----------------------------+
-| Default Action     | Next Policy                |
-+--------------------+----------------------------+
++--------------------+---------------------------------+
+| Name               | .. code-block:: text            | 
+|                    |                                 | 
+|                    |    <your-namespace>-ipdeny-sp   |
++--------------------+---------------------------------+
+| Rule               | Denied Sources                  |
++--------------------+---------------------------------+
+| IPv4 Prefix List   | IP will be provided             |
++--------------------+---------------------------------+
+| Default Action     | Next Policy                     |
++--------------------+---------------------------------+
 
 
 Exercise 2: Attach Service Policy to a HTTP Load Balancer
@@ -41,7 +41,7 @@ Exercise 2: Attach Service Policy to a HTTP Load Balancer
 +-------------------+---------------------------------------+
 | Service Policies  | Apply Specified Service Polices       |
 +-------------------+---------------------------------------+
-| Order 1           | <namespace>-ipdeny-sp                 |
+| Order 1           | <your-namespace>-ipdeny-sp            |
 +-------------------+---------------------------------------+
 | Order 2           | ves-io-shared/ves-io-allow-all        |
 +-------------------+---------------------------------------+
