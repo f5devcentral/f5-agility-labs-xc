@@ -3,24 +3,11 @@ Introduction to the Lab
 
 **Narrative:**
 
-Congratulations! You are a Network Security Engineer at ACME Corp. 
+You are a **Network Security Engineer** at **ACME Corp** tasked with rapidly improving the security of the company's public-facing applications and APIs. ACME’s Application Team manages a mix of traditional web apps, modern microservices, and third-party SaaS integrations. Recently, a routine **web application vulnerability scan** revealed several serious issues in one of ACME’s customer-facing web applications – including multiple OWASP Top 10 findings. At the same time, ACME’s Risk and Compliance organization has mandated that a **Web Application Firewall (WAF)** be deployed across **all public-facing applications and APIs** within 30 days to address the rising threat landscape. This combination of a looming deadline and newly discovered vulnerabilities has put you in the hot seat to strengthen ACME’s security posture quickly and comprehensively.
 
-ACME has an Application Team that supports internally developed traditional and 
-modern apps, vendor provided and SaaS applications. As security threats are becoming 
-more prevalant, the ACME's Risk and Compliance organization has mandated that Web 
-Application Firewalls be deployed across all public facing applications within the next 30 days.  
+Initially, you consider the traditional approach of deploying WAF appliances or cloud-native WAF services separately in each environment (on-premises data center, AWS, Azure, GCP). However, managing multiple WAF technologies in parallel would be time-consuming and complex, especially under a tight deadline. Fortunately, you recall seeing a post on LinkedIn about an F5 SaaS-based solution aimed at simplifying multi‑cloud application security. Given F5’s decades-long reputation as an application security leader, you decide to evaluate the **F5 Distributed Cloud Web Application and API Protection (WAAP)** platform – which brings unified **WAF, bot protection, and API security** as a service. This brings you to the lab environment you’re in today, ready to get first-hand experience with how F5’s Distributed Cloud services make WAAP **simple, quick to deploy, and effective.**
 
-As the Network Security Engineer, you are tasked with evaluating how to securely 
-deploy a WAF across your entire public application environment. At first, you consider 
-the traditional methods of deploying and managing your native WAFs in the Data Center, AWS, Azure, 
-GCP, but quickly realize that learning and managing multiple WAF technologies would be time-consuming 
-and difficult to operate.
-
-You recently saw a post on LinkedIn about a F5 SaaS product claiming to solve multi-cloud 
-appplication security complexities. Given your current timeline and industry knowledge of F5 being a 
-leader for decades, you decide to check it out and end up in the chair you are sitting in today: 
-Taking a first-hand look at how F5 makes WAAP (Web Application and API Protection) simple, quick to deploy,
-and secure. 
+In this lab, you will not only deploy **WAF** and other security controls to protect a vulnerable web application, but also leverage F5’s **Web App Scanning** service to continuously assess the application’s security. By introducing a deliberately vulnerable application (the ACME Corp web app) and scanning it, you’ll identify its weaknesses upfront. You will then implement **layered security controls** using F5 Distributed Cloud – including a tailored WAF policy, **bot defense** against automated attacks, and **malicious user detection** to isolate bad actors. Once these protections are in place (Labs 1–3), you will run a follow-up **web application scan** (Lab 4) to see how the security posture has improved, with far fewer vulnerabilities now exposed. Finally, you’ll explore the platform’s **AI-assisted analytics** (Lab 5) to quickly summarize security events and verify that the implemented protections are actively defending the application. This end-to-end approach demonstrates how ACME Corp can **address known vulnerabilities and threats, verify the effectiveness of defenses through continuous scanning, and maintain ongoing visibility** into their application security – all through a unified F5 Distributed Cloud solution.
 
 |intro000a|
 
