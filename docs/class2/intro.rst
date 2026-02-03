@@ -3,11 +3,13 @@ Introduction to the Lab
 
 **Narrative:**
 
-You are a **Network Security Engineer** at **ACME Corp** tasked with rapidly improving the security of the company's public-facing applications and APIs. ACME’s Application Team manages a mix of traditional web apps, modern microservices, and third-party SaaS integrations. Recently, a routine **web application vulnerability scan** revealed several serious issues in one of ACME’s customer-facing web applications – including multiple OWASP Top 10 findings. At the same time, ACME’s Risk and Compliance organization has mandated that a **Web Application Firewall (WAF)** be deployed across **all public-facing applications and APIs** within 30 days to address the rising threat landscape. This combination of a looming deadline and newly discovered vulnerabilities has put you in the hot seat to strengthen ACME’s security posture quickly and comprehensively.
+You are a **Network Security Engineer at ACME Corp**, responsible for securing the company’s public-facing web applications and APIs. A recent **web application vulnerability** scan uncovered multiple **OWASP Top 10** issues in a customer-facing application, raising concerns from both the application team and the risk and compliance organization. In response, ACME has mandated that all internet-facing applications and APIs be protected by a Web Application Firewall (WAF) within a short timeframe.
 
-Initially, you consider the traditional approach of deploying WAF appliances or cloud-native WAF services separately in each environment (on-premises data center, AWS, Azure, GCP). However, managing multiple WAF technologies in parallel would be time-consuming and complex, especially under a tight deadline. Fortunately, you recall seeing a post on LinkedIn about an F5 SaaS-based solution aimed at simplifying multi‑cloud application security. Given F5’s decades-long reputation as an application security leader, you decide to evaluate the **F5 Distributed Cloud Web Application and API Protection (WAAP)** platform – which brings unified **WAF, bot protection, and API security** as a service. This brings you to the lab environment you’re in today, ready to get first-hand experience with how F5’s Distributed Cloud services make WAAP **simple, quick to deploy, and effective.**
+Rather than deploying and managing separate security solutions across on-premises and multiple cloud environments, you decide to evaluate **F5 Distributed Cloud Web Application and API Protection (WAAP)**. As a SaaS-based platform, F5 Distributed Cloud provides **WAF, Bot Defense, and Malicious User Mitigation**, through a unified control plane, enabling rapid deployment and consistent protection across environments.
 
-In this lab, you will not only deploy **WAF** and other security controls to protect a vulnerable web application, but also leverage F5’s **Web App Scanning** service to continuously assess the application’s security. By introducing a deliberately vulnerable application (the ACME Corp web app) and scanning it, you’ll identify its weaknesses upfront. You will then implement **layered security controls** using F5 Distributed Cloud – including a tailored WAF policy, **bot defense** against automated attacks, and **malicious user detection** to isolate bad actors. Once these protections are in place (Labs 1–3), you will run a follow-up **web application scan** (Lab 4) to see how the security posture has improved, with far fewer vulnerabilities now exposed. Finally, you’ll explore the platform’s **AI-assisted analytics** (Lab 5) to quickly summarize security events and verify that the implemented protections are actively defending the application. This end-to-end approach demonstrates how ACME Corp can **address known vulnerabilities and threats, verify the effectiveness of defenses through continuous scanning, and maintain ongoing visibility** into their application security – all through a unified F5 Distributed Cloud solution.
+In this lab, you will work with a deliberately vulnerable web application that was **identified through web application scanning**. You will first apply layered security controls using F5 Distributed Cloud, including **WAF Policies, Bot Mitigation, and Malicious User Detection** (Labs 1–3). You will then configure Web App Scanning (Lab 4) to reassess the application after protections are in place, demonstrating how F5 security controls significantly reduce the application’s exposed vulnerabilities. Finally, you will use **AI-assisted analytics** (Lab 5) to validate security events and gain operational insight into how the application is being protected.
+
+This end-to-end workflow highlights how organizations can **discover vulnerabilities, deploy protection quickly, and continuously validate security posture** using F5 Distributed Cloud.
 
 |intro000a|
 
@@ -25,7 +27,7 @@ is deployed in Azure. The key elements you will interact with are as follows:
 * Publicly hosted application (Azure Public Cloud)
 
 |intro000b|
-
+Test 
 
 
 Task 2: Accessing F5 Distributed Cloud Console
