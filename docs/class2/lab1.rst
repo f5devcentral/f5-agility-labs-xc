@@ -35,6 +35,7 @@ and proceed to Task 1.
 
 **Expected Lab Time: 25 minutes**
 
+**Lab 1 Summary--WAF Deployment:** Deploy and configure an F5 Distributed Cloud Web Application Firewall policy on the application’s HTTP Load Balancer. You’ll see how to create a custom WAF policy, apply it to protect the web app, and test it with attack traffic (e.g. an attempted SQL injection) to confirm that malicious requests are detected and blocked. This establishes an immediate security baseline for the vulnerable application.
 
 Task 1: Exploring the F5 Distributed Console
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

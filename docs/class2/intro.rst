@@ -27,7 +27,6 @@ is deployed in Azure. The key elements you will interact with are as follows:
 * Publicly hosted application (Azure Public Cloud)
 
 |intro000b|
-Test 
 
 
 Task 2: Accessing F5 Distributed Cloud Console

@@ -25,6 +25,8 @@ https://www.f5.com/glossary/credential-stuffing-attack
 
 **Expected Lab Time: 25 minutes**
 
+**Lab 2 Summary–-Bot Defense**: Review the system’s built-in signature-based bot detection capabilities and then enable F5 Distributed Cloud Bot Defense for the application. By doing so, you’ll protect the site from automated threats such as web scrapers, credential stuffing bots, and other malicious automation. The lab demonstrates how the platform distinguishes human traffic from bots and stops unwanted bot activity without manual rule tuning.
+
 Task 1: Reviewing Signature-based Bot protection
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

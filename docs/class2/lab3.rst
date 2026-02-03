@@ -22,6 +22,8 @@ low-friction experience for the rest of the valid users.
 
 **Expected Lab Time: 15 minutes**
 
+**Lab 3 Summary-–Malicious User Mitigation**: Configure Malicious User identification and mitigation. In this scenario, multiple attacks were coming from the same source IP, which also carries legitimate users. Instead of blocking the entire IP (which could impact legitimate traffic), you will leverage F5’s user identification policies (using client-side signals like TLS fingerprint and IP) to pinpoint individual malicious users. You’ll then enable malicious user detection powered by ML/AI and set up mitigation actions (like blocking or challenging those users). This lab highlights how to surgically block determined attackers while maintaining a seamless experience for legitimate users.
+
 Task 1: Creating a User Identification Policy
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
