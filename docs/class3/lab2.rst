@@ -42,6 +42,8 @@ directed default origin pool for the load balancer.
 |                                                                                                                                    |
 |    **Configuration**.  Your Load Balancer for this lab is named <name-space>-routing-https-lb.                                     |
 |    |Manage-LB-Config|                                                                                                              |
+| .. note::                                                                                                                          |
+|    *If you don't see a HTTP Load Balancer, make sure you are in the correct namespace.                                             |
 +------------------------------------------------------------------------------------------------------------------------------------+
 | 5. In the Load Balancer Configuration page, click **Edit Configuration** in the top right.                                         |
 |    |Edit-LB-Config|                                                                                                                |
@@ -49,12 +51,15 @@ directed default origin pool for the load balancer.
 | 6. In the Load Balancer Edit Configuration page, scroll to the **Routes** section or click **Routes** in the left menu to jump to  |
 |                                                                                                                                    |
 |    the routes section.                                                                                                             |
+|                                                                                                                                    |
 |    |Routes-Section|                                                                                                                |
 +------------------------------------------------------------------------------------------------------------------------------------+
 | 7. Click **Configure** in the Routes configuration section.                                                                        |
+|                                                                                                                                    |
 |    |Routes-Config|                                                                                                                 |
 +------------------------------------------------------------------------------------------------------------------------------------+
 | 8. Click **Add Item** to add a route.                                                                                              |
+|                                                                                                                                    |
 |    |Route-Add|                                                                                                                     |
 +------------------------------------------------------------------------------------------------------------------------------------+
 | 9. In the resulting form, configure the route policy:                                                                              |
@@ -69,6 +74,7 @@ directed default origin pool for the load balancer.
 |       - Headers                                                                                                                    |
 |                                                                                                                                    |
 |          - Click **Add Item**                                                                                                      |
+|                                                                                                                                    |
 |    |Header-Add|                                                                                                                    |
 +------------------------------------------------------------------------------------------------------------------------------------+
 | 10. In the Header to Match Form, fill in the following values:                                                                     |
@@ -80,11 +86,13 @@ directed default origin pool for the load balancer.
 |       - Exact: **green**                                                                                                           |
 |                                                                                                                                    |
 |     Click **Apply**                                                                                                                |
+|                                                                                                                                    |
 |     |Header-Match|                                                                                                                 |
 +------------------------------------------------------------------------------------------------------------------------------------+
 | 11. You should now be back in the route add form that you started filling out in Step 9. In the Origin Pools section, click **Add**|
 |                                                                                                                                    |
 |     **Item**                                                                                                                       |
+|                                                                                                                                    |
 |     |Origin-Add|                                                                                                                   |
 +------------------------------------------------------------------------------------------------------------------------------------+
 | 12. In the Origin Pool with Weight and Priority form, add the green origin pool for your name-space.  The origin pool should be    |
@@ -92,24 +100,29 @@ directed default origin pool for the load balancer.
 |     named <name-space>/<name-space>-green-pool.                                                                                    |
 |                                                                                                                                    |
 |     Click **Apply**                                                                                                                |
+|                                                                                                                                    |
 |     |Green-Pool|                                                                                                                   |
 +------------------------------------------------------------------------------------------------------------------------------------+
 | 13. Click **Apply** to save the route                                                                                              |
+|                                                                                                                                    |
 |     |Route-Apply|                                                                                                                  |
 +------------------------------------------------------------------------------------------------------------------------------------+
-| 14. Click **Apply to apply the routes to the LB.                                                                                   |
+| 14. Click **Apply** to apply the routes to the LB.                                                                                 |
+|                                                                                                                                    |
 |     |Routes-Apply|                                                                                                                 |
 +------------------------------------------------------------------------------------------------------------------------------------+
 | 15. Click **Save HTTP Load Balancer** to save the LB config.                                                                       |
+|                                                                                                                                    |
 |     |LB-Save|                                                                                                                      |
 +------------------------------------------------------------------------------------------------------------------------------------+
 |  **Test and Verify:**                                                                                                              |
 +------------------------------------------------------------------------------------------------------------------------------------+
-| 16. Go back to your UDF Web Browser tab.  Find the **student jump host** component and excpand ACCESS and select FIREFOX.          |
+| 16. Go back to your UDF Web Browser tab.  Find the **student jump host** component and expand ACCESS and select FIREFOX.           |
 +------------------------------------------------------------------------------------------------------------------------------------+
 | 17. This will open Firefox running inside a browser window.  In the Firefox location bar, enter your LB domin name.  The name      |
 |                                                                                                                                    |
 |     format is https://<name-space>.lab-app.f5demos.com                                                                             |
+|                                                                                                                                    |
 |     |Blue-App|                                                                                                                     |
 |                                                                                                                                    |
 | .. note::                                                                                                                          |
@@ -118,14 +131,17 @@ directed default origin pool for the load balancer.
 | 18. To test routing via HTTP headers, a browser extension has been installed to modify the request headers.  Click the Header      |
 |                                                                                                                                    |
 |     Editor icon.                                                                                                                   |
+|                                                                                                                                    |
 |     |Header-Editor|                                                                                                                |
 +------------------------------------------------------------------------------------------------------------------------------------+
 | 19. Click the Manage icon.                                                                                                         |
+|                                                                                                                                    |
 |     |Header-Manage|                                                                                                                |
 +------------------------------------------------------------------------------------------------------------------------------------+
 | 20. Expand the **Green** Rule list and move the slider to enable the Green rule.  This rule adds a request header named            |
 |                                                                                                                                    |
 |     X-App-Version with a value of green to any request going to a domain that ends in lab-app.f5demos.com.                         |
+|                                                                                                                                    |
 |     |Green-Rule|                                                                                                                   |
 |                                                                                                                                    |
 | .. note::                                                                                                                          |
@@ -134,7 +150,10 @@ directed default origin pool for the load balancer.
 | 21. Go back to the Firefox browser tab that has the Blue application in it.  Click the refresh button in Firefox to reload the web |
 |                                                                                                                                    |
 |     page.  You should now see the Green version of the application.                                                                |
+|                                                                                                                                    |
 |     |Refresh|                                                                                                                      |
+|                                                                                                                                    |
+|     |Green-App|                                                                                                                    |
 |                                                                                                                                    |
 | .. note::                                                                                                                          |
 |    *Make sure you are clicking the refresh button for the Firefox browser and not the parent browser that the Firefox browser is*  |
@@ -292,7 +311,7 @@ a response header. This configuration can be used to set or remove headers that 
    :width: 800px
 .. |Routes-Config| image:: _static/Routes-Config.png
    :width: 800px
-.. |Routes-Add| image:: _static/Routes-Add.png
+.. |Route-Add| image:: _static/Route-Add.png
    :width: 800px
 .. |Header-Add| image:: _static/Header-Add.png
    :width: 800px
@@ -312,9 +331,13 @@ a response header. This configuration can be used to set or remove headers that 
    :width: 800px
 .. |Header-Editor| image:: _static/Header-Editor.png
    :width: 800px
+.. |Header-Manage| image:: _static/Header-Manage.png
+   :width: 800px
 .. |Green-Rule| image:: _static/Green-Rule.png
    :width: 800px
 .. |Refresh| image:: _static/Refresh.png
+   :width: 800px
+.. |Green-App| image:: _static/Green-App.png
    :width: 800px
 .. |labend| image:: _static/labend.png
    :width: 800px
