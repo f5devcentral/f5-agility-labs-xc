@@ -24,6 +24,32 @@ https://docs.cloud.f5.com/docs-v2/web-app-scanning/concepts/web-app-scanning/web
 
 **Lab 4 Summary-–Web App Scanning**: Configure continuous web application scanning for the ACME Corp web application using F5’s Web App Scanning service. You will first review a baseline vulnerability scan with no security protections in place, highlighting multiple OWASP Top 10 findings. Next, you will outline and configure an automated scan (scope, schedule, and scanner IPs) without waiting for the scan to complete. Pre-generated before-and-after scan reports are provided to demonstrate the impact of F5 Distributed Cloud security controls. After applying WAF, bot defense, and malicious user protections, the post-scan report shows a significant reduction in exposed vulnerabilities, validating the effectiveness of the deployed protections.
 
+
+**View Existing Scan**
+
+In this lab, you will evaluate the security posture of the ACME Corp web application using F5 Distributed Cloud Web App Scanning. Before configuring or running a new scan, you will first review a pre-existing vulnerability scan that was performed before any F5 Distributed Cloud security controls were applied. This baseline report represents the application in its original, vulnerable state and highlights multiple security findings.
+
+After reviewing the baseline scan, you will proceed through the lab as normal by configuring web application scanning. At the conclusion of the lab, you will review a second pre-existing scan report that was generated after WAF, bot defense, and malicious user protections were enabled, demonstrating a significantly improved security posture.
+
+This approach allows you to clearly see the before-and-after impact of F5 Distributed Cloud WAAP without waiting for long-running scans to complete during the lab.
+
+Steps to Locate the Baseline Scan Report
+
+1. Log in to the F5 Distributed Cloud Console.
+2. From the left-hand navigation menu, select Security.
+3. Click Web App Scanning.
+4. Navigate to Scans (or Scan Results, depending on UI version).
+5. In the list of available scans, locate and select:
+   AppWorld – Baseline Vulnerability Scan
+6. Review the scan results, noting:
+   -High and critical OWASP Top 10 findings
+   -Injection, XSS, or misconfiguration issues
+   -Overall risk score and severity distribution
+**********************************************
+
+
+
+
 Task 1: Configure a Web Application Scan
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
