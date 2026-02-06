@@ -24,7 +24,6 @@ https://docs.cloud.f5.com/docs-v2/web-app-scanning/concepts/web-app-scanning/web
 
 **Lab 4 Summary-–Web App Scanning**: Configure continuous web application scanning for the ACME Corp web application using F5’s Web App Scanning service. You will first review a baseline vulnerability scan with no security protections in place, highlighting multiple OWASP Top 10 findings. Next, you will outline and configure an automated scan (scope, schedule, and scanner IPs) without waiting for the scan to complete. Pre-generated before-and-after scan reports are provided to demonstrate the impact of F5 Distributed Cloud security controls. After applying WAF, bot defense, and malicious user protections, the post-scan report shows a significant reduction in exposed vulnerabilities, validating the effectiveness of the deployed protections.
 
-
 **View Existing Scan**
 
 In this lab, you will evaluate the security posture of the ACME Corp web application using F5 Distributed Cloud Web App Scanning. Before configuring or running a new scan, you will first review a pre-existing vulnerability scan that was performed before any F5 Distributed Cloud security controls were applied. This baseline report represents the application in its original, vulnerable state and highlights multiple security findings.
@@ -36,19 +35,17 @@ This approach allows you to clearly see the before-and-after impact of F5 Distri
 Steps to Locate the Baseline Scan Report
 
 1. Log in to the F5 Distributed Cloud Console.
-2. From the left-hand navigation menu, select Security.
-3. Click Web App Scanning.
-4. Navigate to Scans (or Scan Results, depending on UI version).
+2. From the navigation tiles, select Web App Scanning.
+3. Click 'View Service'
+4. In the left-hand menu, under 'Scans', select 'Applications'
 5. In the list of available scans, locate and select:
-   AppWorld – Baseline Vulnerability Scan
+   **AppWorld – Baseline Vulnerability Scan**
 6. Review the scan results, noting:
+
    -High and critical OWASP Top 10 findings
    -Injection, XSS, or misconfiguration issues
    -Overall risk score and severity distribution
 **********************************************
-
-
-
 
 Task 1: Configure a Web Application Scan
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -182,6 +179,25 @@ to report on OWASP Top 10 for Web Applications.  Below are some of the tests con
 
 
 
+
+**View Post Lab Scan**
+
+teps to Locate the Protected Scan Report
+
+1. Log in to the F5 Distributed Cloud Console.
+2. From the navigation tiles, select Web App Scanning.
+3. Click 'View Service'
+4. In the left-hand menu, under 'Scans', select 'Applications'
+5. In the list of available scans, locate or search for the following scan name:
+   **AppWorld – XC Protected Vulnerability Scan**
+6. Review the scan results, noting:
+   -Security Score + High, Medium and Low Severity issues (Select each one)
+   -Notice the vulnerability type and associated CVSS 3.0 Score
+   -Back to the main Application Scan dashboard, select a report under 'Latest Test Reports'
+   -Under the 'Issues' screen, notice all the vulnerabilities that were uncovered in the baseline scan are now gone. This demonstraters the effectiveness of F5 Distributed Cloud security controls.  
+   -Select one of the issues that were uncovered to view the vulerability details, including description, when it was originally discovered, reocurrances, type, etc. 
+   -Under the review menu, you can add notes and accept, reject, or mark as resolved, dpending on the status or nature of the issue.
+**********************************************
 
 Narrative Check
 ---------------
