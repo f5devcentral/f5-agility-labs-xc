@@ -10,7 +10,9 @@ Next, students will apply a Web Application Firewall (WAF) policy at the route l
 security teams to apply more prescriptive WAF policies to the different components of the web application.  For example, you may 
 want to apply additional WAF rules for the logon portion of the application.
 
-The last task within this lab is to deploy routes to modify application responses in transit.
+The last task within this lab is to deploy routes to modify application responses in transit. This task demonstrates Distributed Cloud's
+ability to modify Requests and/or Responses.  This can be used to add/remove headers used by the backend application, rewrite path
+prefixes and modify cookies.
 
 **Expected Lab Time: 20 minutes**
 
@@ -43,7 +45,7 @@ directed default origin pool for the load balancer.
 |    **Configuration**.  Your Load Balancer for this lab is named <name-space>-routing-https-lb.                                     |
 |    |Manage-LB-Config|                                                                                                              |
 | .. note::                                                                                                                          |
-|    *If you don't see a HTTP Load Balancer, make sure you are in the correct namespace.                                             |
+|    *If you don't see a HTTP Load Balancer, make sure you are in the correct namespace.*                                            |
 +------------------------------------------------------------------------------------------------------------------------------------+
 | 5. In the Load Balancer Configuration page, click **Edit Configuration** in the top right.                                         |
 |    |Edit-LB-Config|                                                                                                                |
@@ -121,7 +123,7 @@ directed default origin pool for the load balancer.
 +------------------------------------------------------------------------------------------------------------------------------------+
 | 17. This will open Firefox running inside a browser window.  In the Firefox location bar, enter your LB domin name.  The name      |
 |                                                                                                                                    |
-|     format is https://<name-space>.lab-app.f5demos.com                                                                             |
+|     format is https://<name-space>.lab-app.f5demos.com/                                                                            |
 |                                                                                                                                    |
 |     |Blue-App|                                                                                                                     |
 |                                                                                                                                    |
@@ -145,7 +147,7 @@ directed default origin pool for the load balancer.
 |     |Green-Rule|                                                                                                                   |
 |                                                                                                                                    |
 | .. note::                                                                                                                          |
-|    *To view the rule click the magnifying glass icon*                                                                              |
+|    *To view the rule click the magnifying glass icon.*                                                                             |
 +------------------------------------------------------------------------------------------------------------------------------------+
 | 21. Go back to the Firefox browser tab that has the Blue application in it.  Click the refresh button in Firefox to reload the web |
 |                                                                                                                                    |
@@ -219,8 +221,8 @@ path that require additional protection. For example a path that could contain c
 
 Task 3: Deploy routes to modify application responses in transit
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-This task guides you through configuring a route for an F5 Distributed Cloud Load Balancer that makes routing decisions based on the URL path, adds
-a response header. This configuration can be used to set or remove headers that are utilized by the backend application.
+This task guides you through configuring a route for an F5 Distributed Cloud Load Balancer that makes routing decisions based on the URL path and
+adds a response header. This configuration can be used to set or remove headers that are utilized by the backend application.
 
 +------------------------------------------------------------------------------------------------------------------------------------+
 | **Configure a Path Route and Adds a Response Header**                                                                              |
