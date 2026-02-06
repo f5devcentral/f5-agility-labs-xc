@@ -18,7 +18,8 @@ After reviewing this requirement, ACME decides to evaluate F5 Distributed Cloud 
 F5 Distributed Cloud Web App Scanning is an offering that lets you discover exposed assets 
 and run automated penetration tests of your web applications and APIs. 
 
-https://docs.cloud.f5.com/docs-v2/web-app-scanning/concepts/web-app-scanning/web-app-scanning-overview
+.. note::
+      *Official documentation found here: https://docs.cloud.f5.com/docs-v2/web-app-scanning/concepts/web-app-scanning/web-app-scanning-overview*
 
 **Expected Lab Time: 15 minutes**
 
