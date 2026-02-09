@@ -160,6 +160,20 @@ To allow GitLab and Terraform to interact with F5 Distributed Cloud programmatic
    - The certificate enables secure API authentication.
    - GitLab and Terraform will use it to deploy and manage F5XC objects.
 
+TEMP - Create a Virtual K8- cluster in your NAME SPACE
+=======================================================
+***This a Temporary step***
+
+    Navigate to:
+
+    ::
+
+       Dsitributed Apps → Virtual K8 → Clieck "Add Virtual K8"
+
+   Name: vk8
+   Site: Select virtual site "shared/appworld-k8s-vsite"
+
+
 Wrap-Up
 ~~~~~~~
 
