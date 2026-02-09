@@ -23,9 +23,205 @@ Extend the Application with User-Facing Pages
    - A login page
    - A contact page
 
+   .. code-block:: text
+
+      SYSTEM / ROLE
+      You are an AI software engineer using Cline with Gemini 3 Flash in the AppWorld 2026 lab.
+      You MUST follow the repository guardrails defined in the .clinerules file for Modules 2 and 3.
+      This prompt highlights only what is CRITICAL for this task and for CI/CD success.
+      Do NOT restate or reimplement rules already enforced by .clinerules.
+
+      ====================================================================
+      MODULE 3 – TASK 2
+      Add Login + Contact Pages (Bot Protection Enablement)
+      ====================================================================
+
+      You are now working on **Module 3 – Task 2**.
+
+      The API work and `openapi/openapi.json` file were completed in the previous task.
+      **CRITICAL CI/CD NOTE**:
+      - `openapi/openapi.json` MUST remain present and valid JSON.
+      - Do NOT rename, delete, move, or regenerate this file.
+      - The CI/CD pipeline explicitly checks for this file when API Discovery is enabled.
+
+      This task focuses ONLY on:
+      - Login page
+      - Contact page
+      - Navigation updates required to expose them
+
+      Nothing else.
+
+      ====================================================================
+      CI/CD FEATURE DETECTION (DO NOT BREAK)
+      ====================================================================
+      The pipeline will FAIL if these files do not exist at the exact paths:
+
+      - app/templates/login.html
+      - app/templates/contact.html
+
+      Do NOT rename these files.
+      Do NOT move them.
+      Do NOT gate them behind conditionals.
+
+      They must exist in the repository after this change.
+
+      ====================================================================
+      SCOPE (STRICT)
+      ====================================================================
+      You MAY:
+      - Add Flask routes for:
+      - GET /login
+      - POST /login
+      - GET /contact
+      - POST /contact
+      - Create the two templates listed above
+      - Update the top navigation to include Login and Contact
+      - Add minimal demo-only logic to support form submission
+
+      You MUST NOT:
+      - Modify existing API endpoints
+      - Modify `openapi/openapi.json`
+      - Refactor unrelated Module 2 or Module 3 code
+      - Add databases, auth frameworks, OAuth, or external services
+
+      This is a **lab-only demo app**.
+
+      ====================================================================
+      LOGIN PAGE – UX + BEHAVIOR
+      ====================================================================
+      Design the login page to visually match the provided reference image:
+
+      Visual characteristics:
+      - Centered login card
+      - F5 logo at the top
+      - Title text similar to:
+      “Sign in to your account”
+      - Subtext indicating:
+      “LAB ENVIRONMENT – MODULE 3”
+      - Username and password fields
+      - “Remember me” checkbox (UI only)
+      - “Forgot your password?” link (non-functional)
+      - Primary red “Sign In” button
+      - Demo credentials visible at the bottom:
+      f5user / f5password
+
+      Functional requirements:
+      - Route:
+      - GET /login → render page
+      - POST /login → validate credentials
+      - Authentication:
+      - Single demo user:
+         - username: f5user
+         - password: f5password
+      - Password MUST be stored as a hash (not plaintext)
+      - Use a simple flat file for credentials
+      - On success:
+      - Show a logged-in state (e.g., “Welcome, f5user”)
+      - Use Flask sessions only (demo-only)
+
+      Security constraints:
+      - No rate limiting
+      - No CAPTCHA
+      - No MFA
+      These characteristics are intentional for Bot Protection demonstrations.
+
+      ====================================================================
+      CONTACT PAGE – UX + BEHAVIOR
+      ====================================================================
+      Design the contact page to visually match the provided reference image:
+
+      Layout requirements:
+      - Two-column card layout
+      - Left panel (dark):
+      - “Contact Us” header
+      - Supporting text about AppWorld 2026 lab
+      - Email: lab-support@f5.com
+      - Location: Las Vegas, NV (AppWorld 2026)
+      - Right panel (light):
+      - First Name
+      - Last Name
+      - Email Address
+      - Message textarea
+      - Red “Send Message” button
+
+      Functional requirements:
+      - Route:
+      - GET /contact → render page
+      - POST /contact → accept submission
+      - Validation:
+      - Required fields present
+      - Email loosely validated (simple check)
+      - Handling:
+      - Log submission to stdout OR store in memory
+      - Return a friendly confirmation message
+      - No email sending
+      - No database
+      - No file uploads
+
+      ====================================================================
+      NAVIGATION UPDATES (BASE TEMPLATE)
+      ====================================================================
+      Update the top navigation to include:
+      - “Contact” link (next to Docs)
+      - Links to GET /contact
+      - “Login” button on the right
+      - Links to GET /login
+      - Styled as a primary red CTA
+
+      Navigation must appear consistently across pages using the base template.
+
+      ====================================================================
+      TESTING (REQUIRED FOR CI)
+      ====================================================================
+      Update or add pytest tests to validate:
+      - GET /login returns HTTP 200
+      - GET /contact returns HTTP 200
+      - POST /login with valid credentials succeeds
+      - POST /contact returns confirmation
+
+      All tests MUST pass.
+      Do NOT weaken assertions or skip tests.
+
+      ====================================================================
+      DOCUMENTATION UPDATES
+      ====================================================================
+      Update README.md:
+      - Add Module 3 section:
+      - Login page (demo-only)
+      - Contact page (demo-only)
+      - Document demo credentials:
+      - f5user / f5password
+      - Clearly state credentials are lab-only and hashed
+
+      Update CHANGELOG.md:
+      - Add a Module 3 entry noting:
+      “Added login and contact pages for Bot Protection demo”
+
+      ====================================================================
+      REMINDERS
+      ====================================================================
+      - Minimal changes
+      - Predictable behavior
+      - CI/CD compliance is more important than polish
+      - This task exists to enable **F5 Bot Protection visibility**
+
+      Proceed with implementation now.
+
+   Make sure your Client is on "Plan" mode
+
+   |module3-vscode-cline-api-prompt|
+
    *What happens automatically:*
    
    - Gemini generates new frontend templates and supporting logic.
+   - Cline will run **pytest** to validate the new routes and form behavior.
+
+   .. note::
+      *Let Cline work through the pytest loop. If tests fail, it will update the code and re-run pytest until it passes (or exits after repeated failures).*
+
+   |module3-vscode-cline-pytest-failed.png|
+
+   |module3-vscode-cline-pytest-passed.png|
 
 3. Verify that the required template files were created.
 
@@ -41,6 +237,9 @@ Extend the Application with User-Facing Pages
    - These pages represent high-risk bot interaction points.
    - The CI/CD pipeline **requires these files** when Bot Defense is enabled.
    - Missing files will cause the pipeline to fail.
+
+
+   |module3-task2-vscode-login-contact-html.png|
 
 Enable Bot Defense Using Policy-as-Code
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -91,7 +290,7 @@ Observe the CI/CD Pipeline
 
 8. Navigate to the pipeline in GitLab.
 
-   In Firefox, follow this path:
+   In Jump Host click **Access** and click **FIREFOX**, then navigate to:
 
    ::
 
@@ -99,12 +298,14 @@ Observe the CI/CD Pipeline
 
 9. Open the most recent pipeline run.
 
+   |module3-task2-gitlab-bot-pipeline.png|
+
    *What to notice as it progresses:*
    
-   - The ``policy_gate`` stage validates that Bot Defense is enabled **and** required templates exist.
-   - The ``test`` stage runs as before.
+   - The ``policy_gate`` stage validates that Bot Defense is enabled **and** that the required templates exist.
+   - The ``test`` stage runs and validates login/contact routes.
    - The ``build`` stage creates a new image version (v1.2) and pushes it to the container registry.
-   - The ``deploy`` stage applies updated F5XC configuration.
+   - The ``deploy`` stage applies updated F5XC configuration for Bot Defense Standard on the ``/login`` and ``/contact`` paths.
 
 10. Confirm that all stages complete successfully.
 
@@ -114,20 +315,93 @@ Observe the CI/CD Pipeline
    - Bot Defense is configured on the HTTPS Load Balancer.
    - Login and contact pages are now protected from automated abuse.
 
+
+Test Bot Defense in Browser vs curl (Why Results Differ)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+11. Open the login page in a browser and observe the bot protection behavior.
+
+   When Bot Defense is enabled, the browser experience may include an injected JavaScript challenge (or additional client-side signals).
+
+   After The CI/CD pipeline updates the app and F5XC. Navigate to he login or contact page in you application. This will trigger the JavaScript injection.
+   
+   |module3-task2-browser-login-test.png|
+
+   |module3-task2-browser-bot-telemetry-1.png|
+
+   |module3-task2-browser-bot-telemetry-2.png|
+
+   |module3-task2-browser-bot-telemetry-3.png|
+
+
+   **What this means:**
+   - Real browsers can execute JavaScript and provide client signals.
+   - Bot Defense uses these signals to distinguish browsers from automation.
+   - This is why browser access can be allowed while scripted clients are blocked.
+
+12. Generate simulated bot traffic using curl (expected to be blocked).
+
+   Now send non-browser, automated POST requests to protected pages.
+
+   .. note::
+      *Update the URLs below with your namespace.*
+
+   **Login Page Test**
+
+   .. code-block:: bash
+
+      curl -s https://<NAMESPACE>-lb.lab-app.f5demos.com/login \
+        -d "username=test&password=test" \
+      | sed -n 's/.*<body>\(.*\)<br>.*/\1/p'
+
+   **Contact Page Test**
+
+   .. code-block:: bash
+
+      curl -s https://<NAMESAPCE>-lb.lab-app.f5demos.com/contact \
+        -d "name=test&email=test@test.com&message=hello" \
+      | sed -n 's/.*<body>\(.*\)<br>.*/\1/p'
+
+   |module3-task2-curl-commands-test.png|
+
+   *What to notice:*
+   - curl does not execute JavaScript or provide browser telemetry.
+   - The request is classified as automation and is blocked.
+   - The response shows a block outcome (or block message).
+
+
+
 Review Bot Defense in F5 Distributed Cloud
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-11. Open the F5 Distributed Cloud console and navigate to your application.
+13.  Open the F5 Distributed Cloud console and navigate to the WAAP security view.
 
-   Locate the HTTPS Load Balancer associated with your namespace.
+   Return to the Security dashboards and review bot-related events after generating traffic.
 
-12. Review Bot Defense configuration and signals.
+   Navigate to:
+
+   ::
+
+      Web App & API Protection → Overview → Security
+
+   Then scroll down and click your application Load Balancer to view app-specific dashboards.
+
+   |module3-f5xc-waap-tile.png|
+
+14.  Open the Bot Defense dashboard.
+
+   In the Security view, select the **Bot Defense** dashboard to review bot-specific signals.
+
+   |module3-task2-waap-security-bot-dashboard.png|
 
    *What to notice:*
    
    - Bot Defense is enabled for the application.
    - Login and contact pages are identified as protected endpoints.
-   - Bot-related signals will now appear in Security Events as traffic is generated.
+   - Events appear for ``/login`` and ``/contact``.
+   - You can correlate browser activity vs curl-based automation.
+   - Bot Defense provides visibility into classification and enforcement.
+
 
 Wrap-Up
 ~~~~~~~
@@ -137,6 +411,44 @@ You have successfully:
 - Added user-facing pages using AI-assisted coding
 - Enabled Bot Defense through policy-as-code
 - Triggered automated deployment via CI/CD
-- Applied advanced runtime protection without manual configuration
+- Observed runtime enforcement differences between browser traffic and scripted traffic
 
-In the next module, you will generate traffic and review Bot Defense and API security signals—continuing the **Code. Secure. Repeat.** workflow.
+In the next module, you will step back from building and enforcing controls and focus on **validation**.
+
+You’ll review **F5 Web Application Scanning (WAS)** results as a DAST tool to compare:
+- The application *before* security controls
+- The application *after* WAF, API Discovery, and Bot Defense are enabled
+
+This closes the loop by answering the most important question in DevSecOps:
+
+**Did our security controls actually make the application safer?**
+
+That final comparison brings the lab to its conclusion—and reinforces the full **Code. Secure. Repeat.** workflow.
+
+
+.. |module3-f5xc-waap-tile.png| image:: ../images/module3/module3-f5xc-waap-tile.png
+   :width: 400px
+.. |module3-vscode-cline-api-prompt| image:: ../images/module3/module3-fvscode-cline-api-prompt.png
+   :width: 400px
+.. |module3-vscode-cline-pytest-failed-2.png| image:: ../images/module3/module3-vscode-cline-pytest-failed-2.png
+   :width: 400px
+.. |module3-vscode-cline-pytest-failed.png| image:: ../images/module3/module3-vscode-cline-pytest-failed.png
+   :width: 400px
+.. |module3-vscode-cline-pytest-passed.png| image:: ../images/module3/module3-vscode-cline-pytest-passed.png
+   :width: 400px
+.. |module3-task2-waap-security-bot-dashboard.png| image:: ../images/module3/module3-task2-waap-security-bot-dashboard.png
+   :width: 800px
+.. |module3-task2-vscode-login-contact-html.png| image:: ../images/module3/module3-task2-vscode-login-contact-html.png
+   :width: 400px
+.. |module3-task2-gitlab-bot-pipeline.png| image:: ../images/module3/module3-task2-gitlab-bot-pipeline.png
+   :width: 800px
+.. |module3-task2-browser-login-test.png| image:: ../images/module3/module3-task2-browser-login-test.png
+   :width: 400px
+.. |module3-task2-curl-commands-test.png| image:: ../images/module3/module3-task2-curl-commands-test.png
+   :width: 800px
+.. |module3-task2-browser-bot-telemetry-1.png| image:: ../images/module3/module3-task2-browser-bot-telemetry-1.png
+   :width: 800px
+.. |module3-task2-browser-bot-telemetry-2.png| image:: ../images/module3/module3-task2-browser-bot-telemetry-2.png
+   :width: 400px
+.. |module3-task2-browser-bot-telemetry-3.png| image:: ../images/module3/module3-task2-browser-bot-telemetry-3.png
+   :width: 800px

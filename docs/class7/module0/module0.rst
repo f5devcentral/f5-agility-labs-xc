@@ -57,7 +57,7 @@ This mirrors how platform teams onboard engineers today:
 No one starts with security turned **off**—they start with it **invisible**.
 
 Module 0 Tasks:
---------------
+---------------
 
 .. toctree::
    :maxdepth: 1

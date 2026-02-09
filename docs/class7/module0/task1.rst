@@ -7,7 +7,7 @@ This lab is designed to mirror a **real-world DevSecOps workflow**—just compre
 This task is about **orientation**, not configuration. The goal is to understand *what each component does* and *how they work together* before you touch anything.
 
 VS Code Server and Cline Extension
----------------------------------
+----------------------------------
 
 This is your primary workspace throughout the lab.
 

@@ -7,7 +7,7 @@ This commit intentionally triggers the CI/CD pipeline so you can observe how sec
 For the best experience, keep **VS Code Server** and **GitLab (opened using Firefox)** visible side by side.
 
 Access the GitLab Repository
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 1. Log in to GitLab Community Edition using Firefox.
 
@@ -42,7 +42,7 @@ Access the GitLab Repository
    |module2-gitlab-student-project-2|
 
 Open the Module 2 Workspace in VS Code
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 1. Open the Module 2 workspace folder in VS Code Server.
 
@@ -103,7 +103,7 @@ Create the Security Policy File
    At this point, **everything is disabled on purpose**.
 
 Commit and Trigger the Pipeline (First Run)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 6. Commit and push the new policy file to GitLab.
 
@@ -182,7 +182,7 @@ Observe the Pipeline Failure
    This is intentional—and your first real DevSecOps enforcement moment.
 
 Fix the Policy and Re-run the Pipeline
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 1. Update the security policy to enable WAF.
 

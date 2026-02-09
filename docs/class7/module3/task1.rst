@@ -160,7 +160,7 @@ Extend the Application Using Cline
 
    Make sure the Cline toggle is set to **Plan** mode before submitting the prompt.
 
-   |module3-fvscode-cline-api-prompt.png|
+   |module3-vscode-cline-api-prompt|
 
    Clean up, close all open files.
 
@@ -380,7 +380,7 @@ In the next task, you will build on this foundation by enabling **Bot Defense** 
    :width: 800px
 .. |module3-f5xc-waap-tile.png| image:: ../images/module3/module3-f5xc-waap-tile.png
    :width: 800px
-.. |module3-fvscode-cline-api-prompt.png| image:: ../images/module3/module3-fvscode-cline-api-prompt.png
+.. |module3-vscode-cline-api-prompt| image:: ../images/module3/module3-fvscode-cline-api-prompt.png
    :width: 400px
 .. |module3-gitlab-api-pipeline.png| image:: ../images/module3/module3-gitlab-api-pipeline.png
    :width: 800px

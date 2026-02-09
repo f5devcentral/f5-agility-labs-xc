@@ -56,7 +56,7 @@ Visual Studio Code Server Access
    - Extensions and settings are preloaded for the lab.
 
 Configure VS Code Cline Extension
---------------------------------
+---------------------------------
 
 The Cline extension enables AI-assisted coding using Gemini.  
 In this step, you will connect Cline to the preconfigured Gemini backend.
