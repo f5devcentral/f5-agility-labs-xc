@@ -30,24 +30,30 @@ directed default origin pool for the load balancer.
 |    https://f5-xc-lab-app.console.ves.volterra.io/                                                                                  |
 +------------------------------------------------------------------------------------------------------------------------------------+
 | 2. If you are at the home landing page, select the **Web App & API Protection** tile.                                              |
+|                                                                                                                                    |
 |    |Web-App-Tile|                                                                                                                  |
 |                                                                                                                                    |
 |    If you are already in a workspace you can get to the **Web APP & API Protection** workspace from the top navigation bar,  by    |
 |                                                                                                                                    |
 |    selecting the **Web App & API Protection** workspace from the dropdown menu.                                                    |
+|                                                                                                                                    |
 |    |Web-App-Dropdown|                                                                                                              |
 +------------------------------------------------------------------------------------------------------------------------------------+
 | 3. In the navigation sidebar on the left, expand **Manage**, expand **Load Balancers**, and select **HTTP Load Balancers**.        |
+|                                                                                                                                    |
 |    |Manage-HTTP-LB|                                                                                                                |
 +------------------------------------------------------------------------------------------------------------------------------------+
 | 4. Locate your HTTP Load Balancer in the list and click the ellipsis (three dots) under the **Actions** column. Select **Manage**  |
 |                                                                                                                                    |
 |    **Configuration**.  Your Load Balancer for this lab is named <name-space>-routing-https-lb.                                     |
+|                                                                                                                                    |
 |    |Manage-LB-Config|                                                                                                              |
+|                                                                                                                                    |
 | .. note::                                                                                                                          |
 |    *If you don't see a HTTP Load Balancer, make sure you are in the correct namespace.*                                            |
 +------------------------------------------------------------------------------------------------------------------------------------+
 | 5. In the Load Balancer Configuration page, click **Edit Configuration** in the top right.                                         |
+|                                                                                                                                    |
 |    |Edit-LB-Config|                                                                                                                |
 +------------------------------------------------------------------------------------------------------------------------------------+
 | 6. In the Load Balancer Edit Configuration page, scroll to the **Routes** section or click **Routes** in the left menu to jump to  |
@@ -176,9 +182,6 @@ directed default origin pool for the load balancer.
 |     X-App-Version with a value of green to any request going to a domain that ends in lab-app.f5demos.com.                         |
 |                                                                                                                                    |
 |     |Green-Rule-Disable|                                                                                                           |
-|                                                                                                                                    |
-| .. note::                                                                                                                          |
-|    *To view the rule click the magnifying glass icon.*                                                                             |
 +------------------------------------------------------------------------------------------------------------------------------------+
 
 
@@ -200,16 +203,20 @@ paths that require additional protection. For example a path that could contain 
 |    |Web-App-Dropdown|                                                                                                              |
 +------------------------------------------------------------------------------------------------------------------------------------+
 | 3. In the navigation sidebar on the left, expand **Manage**, expand **Load Balancers**, and select **HTTP Load Balancers**.        |
+|                                                                                                                                    |
 |    |Manage-HTTP-LB|                                                                                                                |
 +------------------------------------------------------------------------------------------------------------------------------------+
 | 4. Locate your HTTP Load Balancer in the list and click the ellipsis (three dots) under the **Actions** column. Select **Manage**  |
 |                                                                                                                                    |
 |    **Configuration**.  Your Load Balancer for this lab is named <name-space>-routing-https-lb.                                     |
+|                                                                                                                                    |
 |    |Manage-LB-Config|                                                                                                              |
+|                                                                                                                                    |
 | .. note::                                                                                                                          |
 |    *If you don't see a HTTP Load Balancer, make sure you are in the correct namespace.*                                            |
 +------------------------------------------------------------------------------------------------------------------------------------+
 | 5. In the Load Balancer Configuration page, click **Edit Configuration** in the top right.                                         |
+|                                                                                                                                    |
 |    |Edit-LB-Config|                                                                                                                |
 +------------------------------------------------------------------------------------------------------------------------------------+
 | 6. In the Load Balancer Edit Configuration page, scroll to the **Routes** section or click **Routes** in the left menu to jump to  |
@@ -336,16 +343,20 @@ adds a response header. This configuration can be used to set or remove headers 
 |    |Web-App-Dropdown|                                                                                                              |
 +------------------------------------------------------------------------------------------------------------------------------------+
 | 3. In the navigation sidebar on the left, expand **Manage**, expand **Load Balancers**, and select **HTTP Load Balancers**.        |
+|                                                                                                                                    |
 |    |Manage-HTTP-LB|                                                                                                                |
 +------------------------------------------------------------------------------------------------------------------------------------+
 | 4. Locate your HTTP Load Balancer in the list and click the ellipsis (three dots) under the **Actions** column. Select **Manage**  |
 |                                                                                                                                    |
 |    **Configuration**.  Your Load Balancer for this lab is named <name-space>-routing-https-lb.                                     |
+|                                                                                                                                    |
 |    |Manage-LB-Config|                                                                                                              |
+|                                                                                                                                    |
 | .. note::                                                                                                                          |
 |    *If you don't see a HTTP Load Balancer, make sure you are in the correct namespace.*                                            |
 +------------------------------------------------------------------------------------------------------------------------------------+
 | 5. In the Load Balancer Configuration page, click **Edit Configuration** in the top right.                                         |
+|                                                                                                                                    |
 |    |Edit-LB-Config|                                                                                                                |
 +------------------------------------------------------------------------------------------------------------------------------------+
 | 6. In the Load Balancer Edit Configuration page, scroll to the **Routes** section or click **Routes** in the left menu to jump to  |
@@ -496,6 +507,8 @@ adds a response header. This configuration can be used to set or remove headers 
    :width: 800px
 .. |Route-Add2| image:: _static/Route-Add2.png
    :width: 800px
+.. |Login-Prefix| image:: _static/Login-Prefix.png
+   :width: 800px
 .. |Advanced-Options| image:: _static/Advanced-Options.png
    :width: 800px
 .. |Rewrite| image:: _static/Rewrite.png
@@ -531,6 +544,8 @@ adds a response header. This configuration can be used to set or remove headers 
 .. |Advanced-Apply| image:: _static/Advanced-Apply.png
    :width: 800px
 .. |More-Tools| image:: _static/More-Tools.png
+   :width: 800px
+.. |Web-Dev| image:: _static/Web-Dev.png
    :width: 800px
 .. |Network-Reload| image:: _static/Network-Reload.png
    :width: 800px
