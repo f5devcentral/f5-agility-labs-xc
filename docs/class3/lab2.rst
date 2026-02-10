@@ -198,7 +198,7 @@ paths that require additional protection. For example a path that could contain 
 +------------------------------------------------------------------------------------------------------------------------------------+
 | 2. If you are not already in the **Web App & API Protection** workspace, from the top navigation bar, select the **Web App & API** |
 |                                                                                                                                    |
-|    ** Protection** workspace.                                                                                                      |
+|    **Protection** workspace.                                                                                                       |
 |                                                                                                                                    |
 |    |Web-App-Dropdown|                                                                                                              |
 +------------------------------------------------------------------------------------------------------------------------------------+
@@ -300,7 +300,9 @@ paths that require additional protection. For example a path that could contain 
 |                                                                                                                                    |
 |     |Green-App-Login|                                                                                                              |
 +------------------------------------------------------------------------------------------------------------------------------------+
-| 20. Verify the WAF policy was applied by adding **?cmd=cat /etc/passwd** to end of the URL.  You should now see a page saying The  |
+| 20. Verify the WAF policy was applied by adding **?cmd=cat /etc/passwd** to end of the URL.  The full URL should look like:        |
+|                                                                                                                                    |
+|     https://<name-space>.lab-app.f5demos.com/login/?cmd=cat /etc/passwd. When you hit enter you should now see a page saying The   |
 |                                                                                                                                    |
 |     requested URL was rejected along with a support ID.                                                                            |
 |                                                                                                                                    |
@@ -338,7 +340,7 @@ adds a response header. This configuration can be used to set or remove headers 
 +------------------------------------------------------------------------------------------------------------------------------------+
 | 2. If you are not already in the **Web App & API Protection** workspace, from the top navigation bar, select the **Web App & API** |
 |                                                                                                                                    |
-|    ** Protection** workspace.                                                                                                      |
+|    **Protection** workspace.                                                                                                       |
 |                                                                                                                                    |
 |    |Web-App-Dropdown|                                                                                                              |
 +------------------------------------------------------------------------------------------------------------------------------------+
