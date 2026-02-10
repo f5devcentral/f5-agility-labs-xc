@@ -383,7 +383,7 @@ adds a response header. This configuration can be used to set or remove headers 
 |     |Response-Header|                                                                                                              |
 |                                                                                                                                    |
 | ..note::                                                                                                                           |
-|   *XC has predefined header variables that you can use to insert dynamic content. `Header-URL`__*                                    |
+|   *XC has predefined header variables that you can use to insert dynamic content. `Header-URL`__*                                  |
 +------------------------------------------------------------------------------------------------------------------------------------+
 | 12. Click **Apply**.                                                                                                               |
 |                                                                                                                                    |
@@ -419,7 +419,7 @@ adds a response header. This configuration can be used to set or remove headers 
 |                                                                                                                                    |
 |     |Web-Dev|.                                                                                                                     |
 +------------------------------------------------------------------------------------------------------------------------------------+
-| 18. 
+
 
 
 +------------------------------------------------------------------------------------------------------------------------------------+
