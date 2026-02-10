@@ -383,7 +383,7 @@ adds a response header. This configuration can be used to set or remove headers 
 |     |Response-Header|                                                                                                              |
 |                                                                                                                                    |
 | .. note::                                                                                                                          |
-|   *XC has predefined header variables that you can use to insert dynamic content. `Header-URL`__*                                  |
+|   *XC has predefined header variables that you can use to insert dynamic content. `XC-Header-Variables`_.*                         |
 +------------------------------------------------------------------------------------------------------------------------------------+
 | 12. Click **Apply**.                                                                                                               |
 |                                                                                                                                    |
@@ -493,4 +493,4 @@ adds a response header. This configuration can be used to set or remove headers 
    :width: 800px
 .. |labend| image:: _static/labend.png
    :width: 800px
-.. Header-URL https://docs.cloud.f5.com/docs-v2/multi-cloud-app-connect/how-to/adv-security/configure-http-header-processing#predefined-header-variables "Header-Variables"
+.. _XC-Header-Variables: https://docs.cloud.f5.com/docs-v2/multi-cloud-app-connect/how-to/adv-security/configure-http-header-processing#predefined-header-variables
