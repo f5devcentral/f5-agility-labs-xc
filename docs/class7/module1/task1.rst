@@ -34,16 +34,6 @@ Cline may create new files and folders automatically.
 
 Always skim new files before deleting or modifying anything.
 
-*What to notice:*
-- New files may appear without prompting you.
-- Folder structures may evolve quickly.
-- Some files may be incomplete or redundant.
-
-*What happened behind the scenes:*
-- Gemini inferred supporting files were needed.
-- Cline created them to satisfy the prompt.
-- No validation or security review happens automatically.
-
 Command Execution
 -----------------
 
@@ -71,11 +61,6 @@ VS Code will frequently prompt you to save files.
 * This happens often during AI-generated changes.
 * Save early and save often.
 * Unsaved files lead to confusion later.
-
-*What to notice:*
-- Multiple files may be modified at once.
-- Unsaved indicators accumulate quickly.
-- It’s easy to lose track of what changed.
 
 Clean Up as You Go
 ------------------

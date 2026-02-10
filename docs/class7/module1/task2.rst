@@ -24,8 +24,6 @@ Build a Simple Flask Web Application
    .. note::
       *Make sure the Cline toggle under the chat window is set to **Plan** mode.*
 
-   
-
    .. code-block:: text
 
       You are building a LAB-ONLY demo application for AppWorld 2026.
@@ -147,15 +145,10 @@ Build a Simple Flask Web Application
 
    |module1-cline-demo-app-act-3-task-completed|
 
-   *What to notice:*
-   - The app is functional but intentionally simple.
-   - No security controls are present yet.
-   - This is *exactly* what we want at this stage.
-
 Run and Test the Application
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-6. Run the Flask application.
+1. Run the Flask application.
 
    On a new terminal window within VS Code serve start the application using the command below.
 
@@ -165,13 +158,13 @@ Run and Test the Application
 
    |module1-cline-demo-app-act-3-flask-command|
 
-7. Verify the application is running.
+2. Verify the application is running.
 
    Confirm that the Flask server starts successfully and listens on the specified host and port.
 
    |module1-cline-demo-app-terminal-4-flask-running|
 
-8. Access the application.
+3. Access the application.
 
    Access the application using the Firefox container running on the Jump Host.
 
@@ -184,7 +177,7 @@ Run and Test the Application
 
    |module1-cline-demo-app-terminal-4-firefox-module1-bookmark|
 
-9. Stop the application and clean up.
+4. Stop the application and clean up.
 
    Press ``Ctrl+C`` in the terminal to stop the Flask server. Or on another terminal, you can run the command below.
 
