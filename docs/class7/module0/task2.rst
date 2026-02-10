@@ -19,26 +19,10 @@ Accessing F5 Distributed Cloud
       *You can also access the tenant directly at:*  
       *https://f5-xc-lab-app.console.ves.volterra.io/*
 
-   *What to notice:*
-   - Each attendee receives a unique invitation.
-   - This invitation links your user identity to the lab tenant.
-
-   *What happened behind the scenes:*
-   - Your user account was pre-provisioned in the F5XC tenant.
-   - Access is scoped specifically for this lab environment.
-
 2. Authenticate using Single Sign-On (SSO).
 
    When prompted, click **Sign on with Okta**.  
    SSO authentication will complete automatically and onboarding will continue.
-
-   *What to notice:*
-   - No local credentials are created.
-   - Identity is federated and centrally managed.
-
-   *What happened behind the scenes:*
-   - Okta validates your identity.
-   - F5XC maps your identity to tenant-level permissions.
 
 3. Accept the Terms of Service and Privacy Policy.
 
@@ -66,30 +50,26 @@ Accessing F5 Distributed Cloud
    - The console exposes advanced features immediately.
    - You have visibility across all required objects for the lab.
 
-   *What happened behind the scenes:*
-   - Role-based access controls were applied.
-   - Your account was granted permissions scoped to your namespace.
-
 Assigned Namespace
 ~~~~~~~~~~~~~~~~~~
 
 Namespaces are used in F5 Distributed Cloud to isolate applications, configurations, and access.  
 Each lab attendee has been assigned a **unique namespace** that will be used throughout the lab.
 
-6. Locate your assigned namespace.
+1. Locate your assigned namespace.
 
    - Click the account icon in the top-left corner.
    - Select **Account Settings**.
 
    |f5xc-console-account-settings|
 
-7. View your namespaces.
+2. View your namespaces.
 
    - In the left-hand menu, select **My Namespaces** under **Personal Management**.
 
    |f5xc-console-account-settings-namespaces|
 
-8. Identify your assigned namespace.
+3. Identify your assigned namespace.
 
    Under **My Namespaces**, you should see:
    - ``system``
@@ -104,12 +84,10 @@ Each lab attendee has been assigned a **unique namespace** that will be used thr
    *What to notice:*
    - You only deploy applications into your assigned namespace.
    - Namespaces prevent collisions between lab attendees.
-
-   *What happened behind the scenes:*
    - Namespaces were pre-created before the lab.
    - CI/CD pipelines reference your namespace dynamically.
 
-9. Save your assigned namespace.
+4. Save your assigned namespace.
 
    You will need this value in multiple upcoming tasks, including CI/CD and Terraform-driven deployments.
 
@@ -155,9 +133,6 @@ To allow GitLab and Terraform to interact with F5 Distributed Cloud programmatic
    *What to notice:*
    - The file is in P12 format.
    - This certificate will be reused by automation.
-
-   *What happened behind the scenes:*
-   - The certificate enables secure API authentication.
    - GitLab and Terraform will use it to deploy and manage F5XC objects.
 
 TEMP - Create a Virtual K8- cluster in your NAME SPACE
