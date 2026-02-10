@@ -16,22 +16,14 @@ Explore the Deployed Application
 
    You should see the AI-generated web application load successfully.
 
-   *What you’re seeing:*
-   
-   - Your request is being processed by the F5 Distributed Cloud HTTPS Load Balancer and forwarded to your application running in vK8s.
-
 2. Browse the application normally.
 
-   Click around the application and load a few pages.
-
-   *What this does:*
-   
-   - This generates **baseline traffic**, which helps populate logs and provides a clean reference before launching attacks.
+   Click around the application and load a few pages to generates **baseline traffic**.
 
 Explore F5 Distributed Cloud Configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-3. Review the HTTPS Load Balancer configuration in F5 Distributed Cloud.
+1. Review the HTTPS Load Balancer configuration in F5 Distributed Cloud.
 
    In the F5 Distributed Cloud console, locate the HTTPS Load Balancer associated with your namespace.
 
@@ -51,7 +43,7 @@ Explore F5 Distributed Cloud Configuration
    - WAAP is attached to the load balancer.
    - Traffic is routed to an origin configured for vK8s.
 
-4. Review the origin pool and vK8s workload.
+2. Review the origin pool and vK8s workload.
 
    Navigate to the origin pool and inspect the associated vK8s workload.
 
@@ -79,7 +71,7 @@ Explore F5 Distributed Cloud Configuration
    - The workload was created automatically by the CI/CD pipeline.
    - No manual deployment was required.
 
-5. Review the WAF policy attached to the application.
+3. Review the WAF policy attached to the application.
 
    Open the WAF configuration associated with the HTTPS Load Balancer.
 
@@ -93,16 +85,10 @@ Explore F5 Distributed Cloud Configuration
 
    |module2-f5xc-waap-lb-waf-config|
 
-   *What to notice:*
-
-   - Web Application Firewall (WAF) is enabled.
-   - Baseline protections are active.
-   - Security enforcement happens at runtime, not just during scans.
-
 Generate Attack Traffic
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-6. Launch a simple injection attempt using your browser.
+1. Launch a simple injection attempt using your browser.
 
    Modify the application URL to include a basic script injection pattern:
 
@@ -110,11 +96,8 @@ Generate Attack Traffic
 
       https://<NAMESPACE>-lb.lab-app.f5demos.com/<script>alert(1)</script>
 
-   *What’s happening:*
-   
-   - The request is inspected and blocked by WAAP before it can reach the application.
 
-7. Try a few additional variations.
+2. Try a few additional variations.
 
    Optionally, test other simple patterns such as:
    
