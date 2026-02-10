@@ -417,9 +417,18 @@ adds a response header. This configuration can be used to set or remove headers 
 +------------------------------------------------------------------------------------------------------------------------------------+
 | 18. Click **Web Developer Tools**                                                                                                  |
 |                                                                                                                                    |
-|     |Web-Dev|.                                                                                                                     |
+|     |Web-Dev|                                                                                                                      |
 +------------------------------------------------------------------------------------------------------------------------------------+
-
+| 19. Click the **Network** tab and then click the **Reload** icon.                                                                  |
+|                                                                                                                                    |
+|     |Network-Reload|                                                                                                               |
++------------------------------------------------------------------------------------------------------------------------------------+
+| 20. Click on the GET request for the login file and then select **Headers** from the right tabs.  Scroll through the Response      |
+|                                                                                                                                    |
+|     Headers until you see the xc-namespace header.  Notice that the value matches your namespace.                                  |
+|                                                                                                                                    |
+|     |Firefox-Header|                                                                                                               |
++------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +------------------------------------------------------------------------------------------------------------------------------------+
@@ -490,6 +499,42 @@ adds a response header. This configuration can be used to set or remove headers 
 .. |Advanced-Options| image:: _static/Advanced-Options.png
    :width: 800px
 .. |Rewrite| image:: _static/Rewrite.png
+   :width: 800px
+.. |WAF| image:: _static/WAF.png
+   :width: 800px
+.. |Apply-WAF-Route| image:: _static/Apply-WAF-Route.png
+   :width: 800px
+.. |Routes-Apply2| image:: _static/Routes-Apply2.png
+   :width: 800px
+.. |Green-App-Login| image:: _static/Green-App-Login.png
+   :width: 800px
+.. |WAF-Block| image:: _static/WAF-Block.png
+   :width: 800px
+.. |Support-ID| image:: _static/Support-ID.png
+   :width: 800px
+.. |AI-Assistant| image:: _static/AI-Assistant.png
+   :width: 800px
+.. |Explain-Event| image:: _static/Explain-Event.png
+   :width: 800px
+.. |Event-Analysis| image:: _static/Event-Analysis.png
+   :width: 800px
+.. |Routes-Edit-Config| image:: _static/Routes-Edit-Config.png
+   :width: 800px
+.. |Edit-Path| image:: _static/Edit-Path.png
+   :width: 800px
+.. |Advanced-Edit| image:: _static/Advanced-Edit.png
+   :width: 800px
+.. |Add-Response| image:: _static/Add-Response.png
+   :width: 800px
+.. |Response-Header| image:: _static/Response-Header.png
+   :width: 800px
+.. |Advanced-Apply| image:: _static/Advanced-Apply.png
+   :width: 800px
+.. |More-Tools| image:: _static/More-Tools.png
+   :width: 800px
+.. |Network-Reload| image:: _static/Network-Reload.png
+   :width: 800px
+.. |Firefox-Header| image:: _static/Firefox-Header.png
    :width: 800px
 .. |labend| image:: _static/labend.png
    :width: 800px
