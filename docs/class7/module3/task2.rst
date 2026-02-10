@@ -13,10 +13,6 @@ Extend the Application with User-Facing Pages
 
    Ensure you are working in the ``module2-app`` folder and that the previous pipeline from Module 3 Task 1 completed successfully.
 
-   *What to notice:*
-   
-   - You are modifying a **live, protected application** that already has WAF and API Discovery enabled.
-
 2. Use the provided pre-canned prompt to generate a login page and contact page.
 
    Using the **Cline extension**, run the instructor-provided prompt to add:
@@ -211,11 +207,6 @@ Extend the Application with User-Facing Pages
 
    |module3-vscode-cline-api-prompt|
 
-   *What happens automatically:*
-   
-   - Gemini generates new frontend templates and supporting logic.
-   - Cline will run **pytest** to validate the new routes and form behavior.
-
    .. note::
       *Let Cline work through the pytest loop. If tests fail, it will update the code and re-run pytest until it passes (or exits after repeated failures).*
 
@@ -264,14 +255,11 @@ Enable Bot Defense Using Policy-as-Code
          rate_limiting:
             enabled: false
 
-   *What this does:*
-   
-   - You are declaring that Bot Defense must be enforced on the application and that required user-facing pages must exist.
 
 Commit and Push the Changes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-6. Save your changes and commit them to GitLab.
+1. Save your changes and commit them to GitLab.
 
    Use the Source Control panel in VS Code Server and commit your changes with a message similar to:
 
@@ -279,16 +267,12 @@ Commit and Push the Changes
 
       Commit Module 3 Task2 – Enable Bot Defense
 
-7. Push the commit to GitLab.
-
-   *What happens automatically:*
-   
-   - GitLab CI/CD detects the changes and starts a new pipeline run.
+2. Push the commit the changes. GitLab CI/CD detects the changes and starts a new pipeline run.
 
 Observe the CI/CD Pipeline
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-8. Navigate to the pipeline in GitLab.
+1. Navigate to the pipeline in GitLab.
 
    In Jump Host click **Access** and click **FIREFOX**, then navigate to:
 
@@ -296,7 +280,7 @@ Observe the CI/CD Pipeline
 
       GitLab → Projects → appworld2026 / module2-app → Build → Pipelines
 
-9. Open the most recent pipeline run.
+2. Open the most recent pipeline run.
 
    |module3-task2-gitlab-bot-pipeline.png|
 
@@ -307,7 +291,7 @@ Observe the CI/CD Pipeline
    - The ``build`` stage creates a new image version (v1.2) and pushes it to the container registry.
    - The ``deploy`` stage applies updated F5XC configuration for Bot Defense Standard on the ``/login`` and ``/contact`` paths.
 
-10. Confirm that all stages complete successfully.
+3.  Confirm that all stages complete successfully.
 
    *What this means:*
    
@@ -368,8 +352,6 @@ Test Bot Defense in Browser vs curl (Why Results Differ)
    - curl does not execute JavaScript or provide browser telemetry.
    - The request is classified as automation and is blocked.
    - The response shows a block outcome (or block message).
-
-
 
 Review Bot Defense in F5 Distributed Cloud
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

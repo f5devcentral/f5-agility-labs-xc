@@ -13,10 +13,6 @@ Extend the Application Using Cline
 
    Make sure you are working in the ``module2-app`` folder and that your previous pipeline completed successfully.
 
-   *What you’re seeing:*
-   
-   - You are modifying the same application that is already deployed and protected by WAAP.
-
 2. Use the provided pre-canned prompt to add new API endpoints.
 
    Using the **Cline extension**, run the pre-canned prompt provided by the instructor to extend the application with additional API endpoints.
@@ -173,10 +169,6 @@ Vibe Coding Experience in VS Code (What You’ll See)
 
    |module3-vscode-cline-plan-response.png|
 
-   *What to notice:*
-   - No files are changed yet.
-   - This is your best moment to catch scope drift (extra files, extra features, etc.).
-
 2. Switch to **Act** mode to allow Cline to implement changes.
 
    Toggle Cline from **Plan** to **Act** mode to begin file creation and code changes.
@@ -189,11 +181,7 @@ Vibe Coding Experience in VS Code (What You’ll See)
 
    |module3-vscode-cline-save-file.png|
 
-   *What to notice:*
-   - Save prompts happen frequently during vibe coding.
-   - Unsaved files can cause Cline to “think” something was done when it wasn’t.
-
-4. Cline command execution reuqets and Pytest tests.
+4. Cline command execution requets and Pytest tests.
 
    During implementation, Cline may run commands and execute pytest to validate the work.
 
@@ -202,7 +190,6 @@ Vibe Coding Experience in VS Code (What You’ll See)
    Cline will also run Pytesr as described on Module 0:
 
    |module3-vscode-cline-pytest-failed.png|
-   |module3-vscode-cline-pytest-failed-2.png|
 
    If tests pass, you’ll see a successful run:
 
@@ -319,17 +306,12 @@ Generate Traffic to Exercise the New API Endpoints
 
    You should receive **JSON responses** from each endpoint.
 
-   *What’s happening behind the scenes:*
-   - Traffic flows through the F5 Distributed Cloud HTTPS Load Balancer.
-   - Requests are evaluated against the OpenAPI specification.
-   - API Discovery has started but it will take several hours to fully observe and correlate runtime behavior with the defined schema.
-
-   This traffic is critical—it gives F5 Distributed Cloud visibility into **actual API usage**, which will surface in API Discovery dashboards and security events.
+   This traffic is critical. It gives F5 Distributed Cloud visibility into **actual API usage**, which will surface in API Discovery dashboards and security events.
 
 Review API Endpoints in F5 Distributed Cloud
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-18. Open the F5 Distributed Cloud console and navigate to your application **Security Dashboard**.
+1.  Open the F5 Distributed Cloud console and navigate to your application **Security Dashboard**.
 
    Navigate to:
 
@@ -341,7 +323,7 @@ Review API Endpoints in F5 Distributed Cloud
 
    |module3-f5xc-waap-security-dashboard.png|
 
-19. Review API Endpoints configuration and schema.
+2.  Review API Endpoints configuration and schema.
 
    Click on the **API Endpoints** tab to see discovered API endpoints and their correlation with the OpenAPI specification.
 
