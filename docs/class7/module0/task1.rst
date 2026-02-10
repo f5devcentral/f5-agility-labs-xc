@@ -21,11 +21,6 @@ This is your primary workspace throughout the lab.
 - Cline may open and use its **own terminal**, identifiable by the Cline icon.
 - You are always working inside a real Git repository.
 
-*What happened behind the scenes:*
-- VS Code Server is hosted inside the lab environment.
-- Cline is preconfigured to communicate with Gemini.
-- Your workspace is already connected to GitLab.
-
 GitLab Server
 -------------
 
@@ -41,11 +36,6 @@ GitLab is the backbone of the CI/CD workflow in this lab.
 - Each stage has a clear purpose (policy, test, build, deploy).
 - Failures are expected and intentional in this lab.
 
-*What happened behind the scenes:*
-- GitLab runners are already registered and configured.
-- Required secrets and tokens are preloaded.
-- Terraform state and deployment logic are fully automated.
-
 F5 Distributed Cloud vK8s
 -------------------------
 
@@ -59,11 +49,6 @@ This is where your application actually runs.
 - You never log into Kubernetes directly.
 - Deployments are driven entirely by CI/CD.
 - Application updates only occur after pipeline success.
-
-*What happened behind the scenes:*
-- F5 Distributed Cloud provisions and manages the Kubernetes environment.
-- Workloads are created dynamically by the pipeline.
-- Scaling and availability are handled by the platform.
 
 F5 Distributed Cloud Load Balancer, WAAP, Bot Defense, and API Discovery
 ------------------------------------------------------------------------
@@ -79,11 +64,7 @@ This is the runtime security layer in front of your application.
 - All application traffic flows through this layer.
 - Security controls are attached to the load balancer.
 - Features are enabled or blocked based on policy-as-code.
-
-*What happened behind the scenes:*
 - These controls are configured automatically using Terraform.
-- Security settings are driven by Git commits.
-- No manual configuration in the F5 console is required.
 
 Lab Architecture at a Glance
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
