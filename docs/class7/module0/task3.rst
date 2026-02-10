@@ -150,9 +150,9 @@ GitLab is now fully prepared to drive automated builds, deployments, and securit
 Next, you will begin committing code and observing how CI/CD enforces security controls.
 
 .. |code-server-access-1| image:: ../images/module0/code-server-access-1.png
-    :width: 800px
+    :width: 400px
 .. |firefox-access| image:: ../images/module0/firefox-access.png
-    :width: 200px
+    :width: 100px
 .. |firefox-landing| image:: ../images/module0/firefox-landing.png
    :width: 800px
 .. |gitlab-landing| image:: ../images/module0/gitlab-landing.png
@@ -162,12 +162,12 @@ Next, you will begin committing code and observing how CI/CD enforces security c
 .. |gitlab-project-variables| image:: ../images/module0/gitlab-project-variables.png
    :width: 800px
 .. |gitlab-project-variables-namespace| image:: ../images/module0/gitlab-project-variables-namespace.png
-   :width: 200px
+   :width: 400px
 .. |filebrowser-login| image:: ../images/module0/filebrowser-login.png
    :width: 400px
 .. |filebrowser-landing| image:: ../images/module0/filebrowser-landing.png
    :width: 800px
 .. |filebrowser-upload| image:: ../images/module0/filebrowser-upload.png
-   :width: 200px
+   :width: 400px
 .. |filebrowser-file-logout| image:: ../images/module0/filebrowser-file-logout.png
    :width: 400px
