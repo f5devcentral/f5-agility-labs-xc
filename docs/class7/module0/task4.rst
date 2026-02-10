@@ -45,35 +45,25 @@ Visual Studio Code Server Access
 
    |chrome-pop-ups|
 
-   *What to notice:*
-   - VS Code runs entirely in your browser.
-   - A workspace is already open and ready to use.
-   - You did not need to install anything locally.
-
-   *What happened behind the scenes:*
-   - VS Code Server is running on the Jump Host.
-   - Your workspace is pre-mounted and persistent.
-   - Extensions and settings are preloaded for the lab.
-
 Configure VS Code Cline Extension
 ---------------------------------
 
 The Cline extension enables AI-assisted coding using Gemini.  
 In this step, you will connect Cline to the preconfigured Gemini backend.
 
-5. Open the Cline extension.
+1. Open the Cline extension.
 
    In VS Code, locate the **Cline** icon on the left activity bar and click it.
 
    |cline-icon|
 
-6. Choose to bring your own API key.
+2. Choose to bring your own API key.
 
    In the Cline extension setup screen, select **Bring my own API key**, then click **Continue**.
 
    |cline-config-1|
 
-7. Configure the Gemini provider.
+3. Configure the Gemini provider.
 
    In the **Configure the provider** screen, enter the following values:
 
@@ -86,7 +76,7 @@ In this step, you will connect Cline to the preconfigured Gemini backend.
 
    |cline-config-2|
 
-8. Close the Cline configuration popup.
+4. Close the Cline configuration popup.
 
    Once configuration is complete, close the popup window.
 
@@ -97,15 +87,10 @@ In this step, you will connect Cline to the preconfigured Gemini backend.
    - The provider and model are explicitly defined.
    - Cline is now ready to interact with Gemini.
 
-   *What happened behind the scenes:*
-   - Cline is authenticated against Vertex AI.
-   - Requests are routed through the lab’s preconfigured GCP project.
-   - Model selection is enforced for consistency across attendees.
-
 Validate Gemini Connectivity
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-9. Test the connection to Gemini.
+1. Test the connection to Gemini.
 
    In the Cline chat window:
 
@@ -118,7 +103,7 @@ Validate Gemini Connectivity
 
    |gemini-hello-prompt|
 
-10. Verify the response from Gemini.
+2.  Verify the response from Gemini.
 
     If everything is configured correctly, you should receive a response similar to the one shown below.
 
@@ -128,11 +113,6 @@ Validate Gemini Connectivity
     - Gemini responds immediately.
     - The interaction happens inside VS Code.
     - No code changes occur in Plan mode.
-
-    *What happened behind the scenes:*
-    - The prompt was sent to Gemini via Vertex AI.
-    - Cline received and rendered the response.
-    - Your environment is now ready for AI-assisted development.
 
 Wrap-Up
 ~~~~~~~

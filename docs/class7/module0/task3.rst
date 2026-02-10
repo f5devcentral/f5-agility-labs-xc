@@ -45,22 +45,19 @@ GitLab Server Access
    *What to notice:*
    - You are logged in as a pre-created lab user.
    - The GitLab UI is fully accessible.
-
-   *What happened behind the scenes:*
    - The GitLab server was preconfigured with users, projects, and runners.
-   - Authentication and permissions are scoped for lab use.
 
 Configure GitLab Project Variables
 ----------------------------------
 
 CI/CD variables are how GitLab securely passes secrets and environment-specific values into pipelines.
 
-6. Open the Module 2 project.
+1. Open the Module 2 project.
 
    - Click **Projects** in the left navigation menu.
    - Select **appworld2026 / module2-app** from the project list.
 
-7. Navigate to CI/CD variables.
+2. Navigate to CI/CD variables.
 
    - Hover over **Settings** in the left navigation menu.
    - Click **CI/CD**.
@@ -75,15 +72,7 @@ CI/CD variables are how GitLab securely passes secrets and environment-specific 
       *If you used a different password, you must update this variable.*
       *F5XC_NAMESPACE is not preconfigured and must be set manually.*
 
-   *What to notice:*
-   - Variables are masked and protected.
-   - Some values are inherited from the group level.
-
-   *What happened behind the scenes:*
-   - Sensitive values are injected into pipeline jobs securely.
-   - Terraform and Python scripts rely on these variables at runtime.
-
-8. Set the F5XC namespace variable.
+3. Set the F5XC namespace variable.
 
    - Click the **Edit** (pencil) icon next to **F5XC_NAMESPACE**.
    - Enter your assigned F5 Distributed Cloud namespace.
@@ -92,7 +81,7 @@ CI/CD variables are how GitLab securely passes secrets and environment-specific 
 
    |gitlab-project-variables-namespace|
 
-9. Return to the project main page.
+4. Return to the project main page.
 
    Click the project name **module2-app** in the left navigation menu.
 
@@ -146,10 +135,6 @@ This certificate must be uploaded to the GitLab server.
    *What to notice:*
    - The certificate file is stored on the GitLab server.
    - The filename and password must match pipeline expectations.
-
-   *What happened behind the scenes:*
-   - The pipeline will load this file at runtime for API authentication.
-   - Terraform and Python scripts use it to create and manage F5XC resources.
 
 Wrap-Up
 ~~~~~~~
