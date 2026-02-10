@@ -4,7 +4,6 @@ import time
 import re
 import pkgutil
 import string
-import sphinx
 import f5_sphinx_theme
 
 # -*- coding: utf-8 -*-
@@ -110,20 +109,20 @@ blockdiag_html_image_format = nwdiag_html_image_format = diag_html_image_format
 blockdiag_latex_image_format = nwdiag_latex_image_format = diag_latex_image_format
 blockdiag_antialias = nwdiag_antialias = diag_antialias
 
-#eggs_loader = pkgutil.find_loader("sphinxcontrib.spelling")
-#found = eggs_loader is not None
+eggs_loader = pkgutil.find_loader("sphinxcontrib.spelling")
+found = eggs_loader is not None
 
-# if found:
-#     extensions += ["sphinxcontrib.spelling"]
-#     spelling_lang = "en_US"
-#     spelling_word_list_filename = "../wordlist"
-#     spelling_show_suggestions = True
-#     spelling_ignore_pypi_package_names = False
-#     spelling_ignore_wiki_words = True
-#     spelling_ignore_acronyms = True
-#     spelling_ignore_python_builtins = True
-#     spelling_ignore_importable_modules = True
-#     spelling_filters = []
+if found:
+    extensions += ["sphinxcontrib.spelling"]
+    spelling_lang = "en_US"
+    spelling_word_list_filename = "../wordlist"
+    spelling_show_suggestions = True
+    spelling_ignore_pypi_package_names = False
+    spelling_ignore_wiki_words = True
+    spelling_ignore_acronyms = True
+    spelling_ignore_python_builtins = True
+    spelling_ignore_importable_modules = True
+    spelling_filters = []
 
 source_parsers = {
     ".md": "recommonmark.parser.CommonMarkParser",
@@ -159,7 +158,7 @@ release = ""
 #
 # This is also used if you do content translation via gettext catalogs.
 # Usually you set "language" from the command line for these cases.
-language = None
+language = "en"
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
@@ -203,6 +202,11 @@ extlinks = {"issues": (("%s/issues/%%s" % github_repo), "issue ")}
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ["_static"]
 
+# -- Custom Java Script --------------------------------------------------
+# Register a custom JavaScript file for all Sphinx HTML pages.
+def setup(app):
+    app.add_js_file('xc-ns-store.js')
+
 
 # -- Options for HTMLHelp output ------------------------------------------
 
@@ -211,55 +215,55 @@ cleanname = re.sub("\\W+", "", classname)
 # Output file base name for HTML help builder.
 htmlhelp_basename = cleanname + "doc"
 
-# # -- Options for LaTeX output ---------------------------------------------
+# -- Options for LaTeX output ---------------------------------------------
 
-# front_cover_image = "front_cover"
-# back_cover_image = "back_cover"
+front_cover_image = "front_cover"
+back_cover_image = "back_cover"
 
-# front_cover_image_path = os.path.join("_static", front_cover_image + ".png")
-# back_cover_image_path = os.path.join("_static", back_cover_image + ".png")
+front_cover_image_path = os.path.join("_static", front_cover_image + ".png")
+back_cover_image_path = os.path.join("_static", back_cover_image + ".png")
 
-# latex_additional_files = [front_cover_image_path, back_cover_image_path]
+latex_additional_files = [front_cover_image_path, back_cover_image_path]
 
-# template = string.Template(open("preamble.tex").read())
+template = string.Template(open("preamble.tex").read())
 
-# latex_contents = r"""
-# \frontcoverpage
-# \contentspage
-# """
+latex_contents = r"""
+\frontcoverpage
+\contentspage
+"""
 
-# backcover_latex_contents = r"""
-# \backcoverpage
-# """
+backcover_latex_contents = r"""
+\backcoverpage
+"""
 
-# latex_elements = {
-#     "papersize": "letterpaper",
-#     "pointsize": "10pt",
-#     "fncychap": r"\usepackage[Bjornstrup]{fncychap}",
-#     "preamble": template.substitute(
-#         eventname=eventname,
-#         project=project,
-#         author=author,
-#         frontcoverimage=front_cover_image,
-#         backcoverimage=back_cover_image,
-#     ),
-#     "tableofcontents": latex_contents,
-#     "printindex": backcover_latex_contents,
-# }
+latex_elements = {
+    "papersize": "letterpaper",
+    "pointsize": "10pt",
+    "fncychap": r"\usepackage[Bjornstrup]{fncychap}",
+    "preamble": template.substitute(
+        eventname=eventname,
+        project=project,
+        author=author,
+        frontcoverimage=front_cover_image,
+        backcoverimage=back_cover_image,
+    ),
+    "tableofcontents": latex_contents,
+    "printindex": backcover_latex_contents,
+}
 
-# # Grouping the document tree into LaTeX files. List of tuples
-# # (source start file, target name, title,
-# #  author, documentclass [howto, manual, or own class]).
-# latex_documents = [
-#     (
-#         master_doc,
-#         "%s.tex" % cleanname,
-#         "%s Documentation" % classname,
-#         "F5 Networks, Inc.",
-#         "manual",
-#         True,
-#     ),
-# ]
+# Grouping the document tree into LaTeX files. List of tuples
+# (source start file, target name, title,
+#  author, documentclass [howto, manual, or own class]).
+latex_documents = [
+    (
+        master_doc,
+        "%s.tex" % cleanname,
+        "%s Documentation" % classname,
+        "F5 Networks, Inc.",
+        "manual",
+        True,
+    ),
+]
 
 # -- Options for manual page output ---------------------------------------
 

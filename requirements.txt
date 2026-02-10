@@ -1,8 +1,7 @@
 f5_sphinx_theme
 pre-commit
 recommonmark
-esbonio==0.16.5
-sphinx==8.2.3
+sphinx
 sphinx-copybutton
 sphinxcontrib-blockdiag
 sphinxcontrib-nwdiag
