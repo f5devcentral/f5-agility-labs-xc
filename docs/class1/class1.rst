@@ -4,7 +4,7 @@ F5 Distributed Cloud: Foundations of Delivery & Security
 Welcome
 -------
 
-In this lab, attendees will be introduced to the F5 Distributed Cloud Services platform.  Attendees will create proxy services for publishing and securing
+In this lab, attendees will be introduced to the F5 Distributed Cloud Services platform. Attendees will create proxy services for publishing and securing
 applications that are served by both public and private endpoints.
 
 Objectives:
