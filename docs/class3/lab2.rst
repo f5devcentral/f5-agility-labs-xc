@@ -19,7 +19,7 @@ prefixes and modify cookies.
 Task 1: Deploy a Header Route to Steer Traffic for Canary Testing
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 In this task, you will create a header route that directs traffic to different origin pools based off a specified HTTP header. This configuration
-can be useful for Canary testing. Traffic matching a specified heard will be directed to a specified origin pool, while all other traffic will be
+can be useful for Canary testing. Traffic matching a specified header will be directed to a specified origin pool, while all other traffic will be
 directed default origin pool for the load balancer.
 
 +------------------------------------------------------------------------------------------------------------------------------------+
