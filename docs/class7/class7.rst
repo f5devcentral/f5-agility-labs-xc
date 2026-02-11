@@ -44,7 +44,7 @@ Access to the lab environment is provided via an invitation email sent to the re
 |    *Note The steps for new UDF Users or the steps for resetting UDF User account passwords*  |
 |    *are not shown. Please contact a member of the lab team if further assistance is needed.* |
 +----------------------------------------------------------------------------------------------+
-| |intro001|                                                                                   |
+| |intro-01|                                                                                   |
 +----------------------------------------------------------------------------------------------+
 
 Accessing UDF (F5 Unified Demo Framework)
@@ -59,7 +59,7 @@ Accessing UDF (F5 Unified Demo Framework)
 |    *Note The steps for new UDF Users or the steps for resetting UDF User account passwords*  |
 |    *are not shown. Please contact a member of the lab team if further assistance is needed.* |
 +----------------------------------------------------------------------------------------------+
-| |intro002|                                                                                   |
+| |intro-02|                                                                                   |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
@@ -70,24 +70,24 @@ Accessing UDF (F5 Unified Demo Framework)
 |    *MFA process will very based on the MFA integration selected for the UDF Account. OKTA*   |
 |    *Verify is shown.*                                                                        |
 +----------------------------------------------------------------------------------------------+
-| |intro003|                                                                                   |
+| |intro-03|                                                                                   |
 |                                                                                              |
-| |intro004|                                                                                   |
+| |intro-04|                                                                                   |
 |                                                                                              |
-| |intro005|                                                                                   |
+| |intro-05|                                                                                   |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
 | Attendees will then be presented their scheduled course sessions. Locate the course/lab with |
 | the appropriate **Date**, **Time** and **Name** and then click **Launch**.                   |
 +----------------------------------------------------------------------------------------------+
-| |intro006|                                                                                   |
+| |intro-06|                                                                                   |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
 | Once redirected to the selected Course/Lab, click the **Join** button.                       |
 +----------------------------------------------------------------------------------------------+
-| |intro007|                                                                                   |
+| |intro-07|                                                                                   |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
@@ -101,9 +101,9 @@ Accessing UDF (F5 Unified Demo Framework)
 |    *Your specific lab environment may vary from the graphics shown below. The **Client***    |
 |    *will, however, be consistent.*                                                           |
 +----------------------------------------------------------------------------------------------+
-| |intro008|                                                                                   |
+| |intro-08|                                                                                   |
 |                                                                                              |
-| |intro009|                                                                                   |
+| |intro-09|                                                                                   |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
@@ -125,23 +125,23 @@ Lab Modules
    module3/module*
    module4/module*
 
-.. |intro001| image:: images/intro/intro-01.png
+.. |intro-01| image:: images/intro/intro-01.png
    :width: 800px
-.. |intro002| image:: images/intro/intro-02.png
+.. |intro-02| image:: images/intro/intro-02.png
    :width: 800px
-.. |intro003| image:: images/intro/intro-03.png
+.. |intro-03| image:: images/intro/intro-03.png
    :width: 800px
-.. |intro004| image:: images/intro/intro-04.png
+.. |intro-04| image:: images/intro/intro-04.png
    :width: 800px
-.. |intro005| image:: images/intro/intro-05.png
+.. |intro-05| image:: images/intro/intro-05.png
    :width: 800px
-.. |intro006| image:: images/intro/intro-06.png
+.. |intro-06| image:: images/intro/intro-06.png
    :width: 800px
-.. |intro007| image:: images/intro/intro-07.png
+.. |intro-07| image:: images/intro/intro-07.png
    :width: 800px
-.. |intro008| image:: images/intro/intro-08.png
+.. |intro-08| image:: images/intro/intro-08.png
    :width: 800px
-.. |intro009| image:: images/intro/intro-09.png
+.. |intro-09| image:: images/intro/intro-09.png
    :width: 800px
 .. |labbgn| image:: images/intro/labbgn.png
    :width: 800px

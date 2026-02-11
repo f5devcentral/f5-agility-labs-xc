@@ -1,5 +1,5 @@
 Task 2 – Let’s Vibe Code!
-========================
+==========================
 
 In this task, you will use **Cline** to generate a simple Flask application using AI-assisted “vibe coding.”  
 The goal is not to build a perfect app—it’s to experience the **speed**, **workflow**, and **tradeoffs** of AI-generated code before we secure it in later modules.
@@ -154,7 +154,7 @@ Run and Test the Application
 
    .. code-block:: bash
 
-      python3 app/app.py
+      python3 app.py
 
    |module1-cline-demo-app-act-3-flask-command|
 
@@ -183,7 +183,7 @@ Run and Test the Application
 
    .. code-block:: bash
 
-      pkill -f "python3 app/app.py"
+      pkill -f "python3 app.py"
 
    |module1-cline-demo-app-terminal-ctrlc-close|
 
