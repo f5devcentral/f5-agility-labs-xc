@@ -1,5 +1,5 @@
 Task 1 – Lab Environment Overview
-================================
+==================================
 
 Before we start building and breaking things, let’s do a quick tour of the lab environment.  
 This lab is designed to mirror a **real-world DevSecOps workflow**—just compressed into a couple of hours and fully pre-wired so you can focus on outcomes, not setup.

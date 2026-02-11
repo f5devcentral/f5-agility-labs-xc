@@ -1,5 +1,5 @@
 Task 3 – Configure GitLab Server
-===============================
+=================================
 
 In this task, you will access the GitLab Server, verify connectivity, configure required CI/CD variables, and upload the F5XC API certificate used by automation later in the lab.
 
@@ -108,6 +108,12 @@ This certificate must be uploaded to the GitLab server.
 
     After logging in, you should see the Filebrowser landing page.  
     Click the **Upload** button in the top-right corner.
+
+   .. note::
+      The filename MUST be "f5-xc-lab-app.console.ves.volterra.io.api-creds.p12". 
+      If you have an old file with the same name, please delete the old file and rename the new one. 
+      The pipeline expects the filename to be "f5-xc-lab-app.console.ves.volterra.io.api-creds.p12" 
+
 
     |filebrowser-landing|
 

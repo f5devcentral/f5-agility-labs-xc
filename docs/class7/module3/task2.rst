@@ -1,5 +1,5 @@
 Task 2 – Enable F5 Bot Protection on Login and Contact Pages
-===========================================================
+=============================================================
 
 In this task, you will extend the application with user-facing pages and enable **Bot Defense** using policy-as-code.  
 This demonstrates how CI/CD can enforce *behavioral protections*—not just vulnerability protections—without manual security configuration.
@@ -274,11 +274,34 @@ Observe the CI/CD Pipeline
 
 1. Navigate to the pipeline in GitLab.
 
-   In Jump Host click **Access** and click **FIREFOX**, then navigate to:
 
-   ::
+    If you are not already logged in:
 
-      GitLab → Projects → appworld2026 / module2-app → Build → Pipelines
+   - From your deployment, locate the **Jump Host** tile and click **Access**
+   - Click **FIREFOX**
+
+   |module2-firefox-access|
+
+   - Click the GitLab bookmark in Firefox
+
+   When prompted, enter the following credentials:
+
+   - **Username:** student
+   - **Password:** @ppW0rld2026!
+
+   |module2-gitlab-login|
+
+   In the left navigation menu, click **Projects**
+  
+   |module2-gitlab-student-dashboard|
+
+   Click on project **appworld2026 / module2-app**
+
+   |module2-gitlab-student-project-1|
+
+   Then In the left navigation menu, hover over **Build** and then click **Pipeline**
+
+   |module3-gitlab-build-pipeline| 
 
 2. Open the most recent pipeline run.
 
@@ -358,23 +381,25 @@ Review Bot Defense in F5 Distributed Cloud
 
 13.  Open the F5 Distributed Cloud console and navigate to the WAAP security view.
 
-   Return to the Security dashboards and review bot-related events after generating traffic.
+   Return to the Security dashboards and review bot-related events after generating traffic. To go back to the main F5XC home page, click the F5 logo, then:
 
-   Navigate to:
+   Click on the Web App & API Protection tile
 
-   ::
+   |module3-f5xc-waap-tile|
 
-      Web App & API Protection → Overview → Security
+   Under the "Overview" section, make sure you are the Security Dashboard
 
-   Then scroll down and click your application Load Balancer to view app-specific dashboards.
+   |module3-f5xc-waap-security|
 
-   |module3-f5xc-waap-tile.png|
+   Then Scroll all the way down and click in your load balancer to go to the Security Dashboard for your application.
+
+   |module3-f5xc-waap-security-dashboard.png|
 
 14.  Open the Bot Defense dashboard.
 
    In the Security view, select the **Bot Defense** dashboard to review bot-specific signals.
 
-   |module3-task2-waap-security-bot-dashboard.png|
+   |module3-task2-waap-security-bot-dashboard|
 
    *What to notice:*
    
@@ -407,9 +432,20 @@ This closes the loop by answering the most important question in DevSecOps:
 
 That final comparison brings the lab to its conclusion—and reinforces the full **Code. Secure. Repeat.** workflow.
 
-
-.. |module3-f5xc-waap-tile.png| image:: ../images/module3/module3-f5xc-waap-tile.png
+.. |module2-firefox-access| image:: ../images/module2/module2-firefox-access.png
    :width: 400px
+.. |module2-gitlab-login| image:: ../images/module2/module2-gitlab-login.png
+   :width: 400px
+.. |module2-gitlab-student-dashboard| image:: ../images/module2/module2-gitlab-student-dashboard.png
+   :width: 800px
+.. |module2-gitlab-student-project-1| image:: ../images/module2/module2-gitlab-student-project-1.png
+   :width: 800px
+.. |module2-gitlab-student-project-2| image:: ../images/module2/module2-gitlab-student-project-2.png
+   :width: 800px
+.. |module3-f5xc-waap-tile| image:: ../images/module3/module3-f5xc-waap-tile.png
+   :width: 800px
+.. |module3-f5xc-waap-security| image:: ../images/module3/module3-f5xc-waap-security.png
+   :width: 200px
 .. |module3-vscode-cline-api-prompt| image:: ../images/module3/module3-fvscode-cline-api-prompt.png
    :width: 400px
 .. |module3-vscode-cline-pytest-failed-2.png| image:: ../images/module3/module3-vscode-cline-pytest-failed-2.png
@@ -418,7 +454,7 @@ That final comparison brings the lab to its conclusion—and reinforces the full
    :width: 400px
 .. |module3-vscode-cline-pytest-passed.png| image:: ../images/module3/module3-vscode-cline-pytest-passed.png
    :width: 400px
-.. |module3-task2-waap-security-bot-dashboard.png| image:: ../images/module3/module3-task2-waap-security-bot-dashboard.png
+.. |module3-f5xc-waap-security-dashboard.png| image:: ../images/module3/module3-f5xc-waap-security-dashboard.png
    :width: 800px
 .. |module3-task2-vscode-login-contact-html.png| image:: ../images/module3/module3-task2-vscode-login-contact-html.png
    :width: 400px
@@ -433,4 +469,8 @@ That final comparison brings the lab to its conclusion—and reinforces the full
 .. |module3-task2-browser-bot-telemetry-2.png| image:: ../images/module3/module3-task2-browser-bot-telemetry-2.png
    :width: 400px
 .. |module3-task2-browser-bot-telemetry-3.png| image:: ../images/module3/module3-task2-browser-bot-telemetry-3.png
+   :width: 800px
+.. |module3-task2-waap-security-bot-dashboard| image:: ../images/module3/module3-task2-waap-security-bot-dashboard.png
+   :width: 800px
+.. |module3-gitlab-build-pipeline| image:: ../images/module3/module3-gitlab-build-pipeline.png
    :width: 800px

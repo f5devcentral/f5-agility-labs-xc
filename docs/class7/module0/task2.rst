@@ -1,5 +1,5 @@
 Task 2 – Accessing F5 Distributed Cloud
-======================================
+========================================
 
 In this task, you will access the F5 Distributed Cloud (F5XC) tenant assigned to you for the lab, identify your unique namespace, and generate the API certificate required for automation later in the lab.
 

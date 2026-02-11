@@ -1,5 +1,5 @@
 Task 4 – Configure VS Code Server
-================================
+==================================
 
 In this task, you will access the browser-based VS Code Server and configure the **Cline extension** to use Gemini.  
 This step prepares your development environment for AI-assisted coding used throughout the rest of the lab.
