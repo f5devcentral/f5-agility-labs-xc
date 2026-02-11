@@ -1,5 +1,5 @@
 Task 2 – Lab Conclusion
-======================
+========================
 
 This task brings the lab to a close by tying together the technical outcomes with the bigger DevSecOps picture.
 

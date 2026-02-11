@@ -1,49 +1,55 @@
 Task 2 - Explore F5 AI-generated Application & Runtime Security
-===============================================================
+=================================================================
 
 In this task, you will explore the F5 Distributed Cloud configuration that was deployed by the CI/CD pipeline, then generate traffic and intentionally trigger security events. The goal is to **see runtime protection in action**, not to break anything.
 
 Explore the Deployed Application
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1. Open the application URL in your browser.
 
-   Navigate to the following URL, replacing ``<NAMESPACE>`` with your assigned namespace:
+1. Browse the application normally. Click around the application and load a few pages to generates **baseline traffic**.
 
    ::
 
       https://<NAMESPACE>-lb.lab-app.f5demos.com
 
-   You should see the AI-generated web application load successfully.
-
-2. Browse the application normally.
-
-   Click around the application and load a few pages to generates **baseline traffic**.
-
+   
 Explore F5 Distributed Cloud Configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 1. Review the HTTPS Load Balancer configuration in F5 Distributed Cloud.
 
-   In the F5 Distributed Cloud console, locate the HTTPS Load Balancer associated with your namespace.
+   In the F5 Distributed Cloud console, Click on the Web App & API Protection tile.
 
-   Navigate to:
+   |module3-f5xc-waap-tile|
 
-   ::
+   Under the "Manage" section, hover over "Load Balancers" and clock "HTTP Load Balancers". You should the LB object created for your application
 
-     Web App & API Protection → Manage → Load Balancers → HTTP Load Balancers
-
-   Click the "..." symbol under the Actions column to explore your load balancer configuration.
+   .. note::
+      If you want to explor the HTTP LB configuration, click the "..." symbol under the Actions column and clicl "Manage configuration".
 
    |module2-f5xc-waap-lb-config|
 
-   *What to notice:*
 
-   - The public DNS name matches your application URL.
-   - WAAP is attached to the load balancer.
-   - Traffic is routed to an origin configured for vK8s.
+2. Review the WAF policy attached to the application.
 
-2. Review the origin pool and vK8s workload.
+   On same Web App & API Protection page. Click on the "App Firewall"
+
+   Open the WAF configuration associated with the HTTPS Load Balancer.
+
+   Navigate to:
+
+   .. note::
+      If you wna to explore your WAF policy., click the "..." symbol under the Actions column and clicl "View Configuration".
+
+   |module2-f5xc-waap-lb-waf-config|
+
+
+3. Review the vK8s workload on the Distributed App Section .
+
+   To Return to the main F5XC home page, click the F5 logo. Then, Click on the "Distributed App" tile.
+
+   |module2-f5xc-apps-tile|
 
    Navigate to the origin pool and inspect the associated vK8s workload.
 
@@ -51,19 +57,9 @@ Explore F5 Distributed Cloud Configuration
 
    ::
 
-      Web App & API Protection → Manage → Load Balancers → Origin Pools
-
-   Click the "..." symbol under the Actions column to explore the origin pool configuration.
-
-   |module2-f5xc-waap-lb-origin-config|
-
-   Navigate to:
-
-   ::
-
       Distributed Apps → Applications → Virtual K8s → "Click on your vk8" → Dashboard
 
-   |module2-f5xc-distapp-vk8-workload.png|
+   |module2-f5xc-distapp-vk8-workload|
 
    *What you’re seeing:*
 
@@ -71,19 +67,6 @@ Explore F5 Distributed Cloud Configuration
    - The workload was created automatically by the CI/CD pipeline.
    - No manual deployment was required.
 
-3. Review the WAF policy attached to the application.
-
-   Open the WAF configuration associated with the HTTPS Load Balancer.
-
-   Navigate to:
-
-   ::
-
-      Web App & API Protection → Manage → Load Balancers → Origin Pools
-
-   Click the "..." symbol under the Actions column to explore your WAF policy.
-
-   |module2-f5xc-waap-lb-waf-config|
 
 Generate Attack Traffic
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -140,7 +123,7 @@ Review Security Events
    - The level of context provided for each request.
    - Explore the "Explain with AI" feature to see how AI can enhance event details.
 
-   |module2-f5xc-waap-security-lb-sec-events.png|
+   |module2-f5xc-waap-security-lb-sec-events|
 
    Click on "Explain with AI".
 
@@ -161,6 +144,11 @@ At this point, you have confirmed that:
 
 In the next module, you will expand the application and enable additional security controls—continuing the **Code. Secure. Repeat.** workflow.
 
+   
+.. |module2-f5xc-apps-tile| image:: ../images/module2/module2-f5xc-apps-tile.png
+   :width: 800px
+.. |module3-f5xc-waap-tile| image:: ../images/module3/module3-f5xc-waap-tile.png
+   :width: 800px
 .. |module2-f5xc-waap-lb-config| image:: ../images/module2/module2-f5xc-waap-lb-config.png
    :width: 800px
 .. |module2-f5xc-waap-lb-origin-config| image:: ../images/module2/module2-f5xc-waap-lb-origin-config.png
@@ -169,11 +157,11 @@ In the next module, you will expand the application and enable additional securi
    :width: 800px
 .. |module2-f5xc-waap-security-dashboard| image:: ../images/module2/module2-f5xc-waap-security-dashboard.png
    :width: 800px
-.. |module2-f5xc-waap-security-lb-sec-events.png| image:: ../images/module2/module2-f5xc-waap-security-lb-sec-events.png
+.. |module2-f5xc-waap-security-lb-sec-events| image:: ../images/module2/module2-f5xc-waap-security-lb-sec-events.png
    :width: 800px
 .. |module2-f5xc-waap-security-lb-sec-events-details| image:: ../images/module2/module2-f5xc-waap-security-lb-sec-events-details.png
    :width: 800px
 .. |module2-f5xc-waap-security-lb-sec-events-details-ai| image:: ../images/module2/module2-f5xc-waap-security-lb-sec-events-details-ai.png
    :width: 800px
-.. |module2-f5xc-distapp-vk8-workload.png| image:: ../images/module2/module2-f5xc-distapp-vk8-workload.png
+.. |module2-f5xc-distapp-vk8-workload| image:: ../images/module2/module2-f5xc-distapp-vk8-workload.png
    :width: 800px

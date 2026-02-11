@@ -1,5 +1,5 @@
 Task 1 – F5 Web Application Scanning (WAS) as a DAST Tool
-========================================================
+===========================================================
 
 In this task, you will review how **F5 Web Application Scanning (WAS)** fits into a modern DevSecOps workflow as a **Dynamic Application Security Testing (DAST)** tool.
 

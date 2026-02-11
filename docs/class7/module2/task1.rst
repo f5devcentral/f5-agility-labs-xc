@@ -1,5 +1,5 @@
 Task 1 - Deploy F5 AI-generated Application
-===========================================
+=============================================
 
 In this task, you will review the pre-created F5 AI-generated application, introduce a security policy using *policy-as-code*, and commit your changes to GitLab.  
 This commit intentionally triggers the CI/CD pipeline so you can observe how security controls influence whether an application is deployed.
@@ -79,6 +79,9 @@ Create the Security Policy File
    - Name the file ``security-controls.yaml``
 
    |module2-vscode-cretate-security-control-2|
+
+   .. note::
+      Please make sure the file is created on the root foler of the application repo. If it is created somewhere else, the CI/CD pipeline will failed
 
 5. Add the initial security policy.
 
@@ -277,7 +280,7 @@ In the next task, you will explore the deployed F5XC configuration and intention
 .. |module2-vscode-cretate-security-control-4-source-control| image:: ../images/module2/module2-vscode-cretate-security-control-4-source-control.png
    :width: 200px
 .. |module2-vscode-cretate-security-control-git-username| image:: ../images/module2/module2-vscode-cretate-security-control-git-username.png
-   :width: 400px
+   :width: 800px
 .. |module2-vscode-cretate-security-control-4-commit| image:: ../images/module2/module2-vscode-cretate-security-control-4-commit.png
    :width: 400px
 .. |module2-vscode-cretate-security-control-4-commit-warning| image:: ../images/module2/module2-vscode-cretate-security-control-4-commit-warning.png
@@ -298,5 +301,5 @@ In the next task, you will explore the deployed F5XC configuration and intention
    :width: 800px
 .. |module2-gitlab-pipeline-2-running-details| image:: ../images/module2/module2-gitlab-pipeline-2-running-details.png
    :width: 800px
-.. |module2-gitlab-pipeline-2-running-details-success| image:: ../images/module2/module2-gitlab-pipeline-2-running-details-success .png
+.. |module2-gitlab-pipeline-2-running-details-success| image:: ../images/module2/module2-gitlab-pipeline-2-running-details-success.png
    :width: 800px

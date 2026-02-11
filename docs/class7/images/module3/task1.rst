@@ -167,33 +167,33 @@ Vibe Coding Experience in VS Code (What You’ll See)
 
    After you paste the API prompt, Cline will respond with an implementation plan.
 
-   |module3-vscode-cline-plan-response|
+   |module3-vscode-cline-plan-response.png|
 
 2. Switch to **Act** mode to allow Cline to implement changes.
 
    Toggle Cline from **Plan** to **Act** mode to begin file creation and code changes.
 
-   |module3-vscode-cline-switch-to-act|
+   |module3-vscode-cline-switch-to-act.png|
 
 3. Save files as Cline generates them.
 
    As Cline completes each file update, VS Code will prompt you to save before it continues.
 
-   |module3-vscode-cline-save-file|
+   |module3-vscode-cline-save-file.png|
 
 4. Cline command execution requets and Pytest tests.
 
    During implementation, Cline may run commands and execute pytest to validate the work.
 
-   |module3-vscode-cline-run-command|
+   |module3-vscode-cline-run-command.png|
 
    Cline will also run Pytesr as described on Module 0:
 
-   |module3-vscode-cline-pytest-failed|
+   |module3-vscode-cline-pytest-failed.png|
 
    If tests pass, you’ll see a successful run:
 
-   |module3-vscode-cline-pytest-passed|
+   |module3-vscode-cline-pytest-passed.png|
 
    *What to notice:*
    - Cline uses the test output as feedback to fix issues.
@@ -203,7 +203,7 @@ Vibe Coding Experience in VS Code (What You’ll See)
 
    When finished, Cline will mark the task as completed.
 
-   |module3-vscode-cline-completed-task|
+   |module3-vscode-cline-completed-task.png|
 
 6. Verify that an OpenAPI specification was created.
 
@@ -242,7 +242,7 @@ Enable API Discovery Using Policy-as-Code
          rate_limiting:
             enabled: false
 
-   |module3-vscode-security-controls|
+   |module3-vscode-security-controls.png|
 
 Commit and Push the Changes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -255,13 +255,13 @@ Commit and Push the Changes
 
       Commit Module 3 Task1 – Enable API Discovery
 
-   |module3-vscode-source-control-commit|
+   |module3-vscode-source-control-commit.png|
 
 2.  Push the commit to GitLab.
 
    Sync your changes to push them to the remote repository.
 
-   |module3-vscode-source-control-sync-changes|
+   |module3-vscode-source-control-sync-changes.png|
 
    *What happens next:*
    
@@ -302,9 +302,9 @@ Observe the CI/CD Pipeline
 
 15. Open the most recent pipeline run.
 
-   |module3-gitlab-api-pipeline|
+   |module3-gitlab-api-pipeline.png|
 
-   |module3-gitlab-api-run|
+   |module3-gitlab-api-run.png|
 
 16. Confirm that all stages complete successfully.
 
@@ -348,13 +348,13 @@ Review API Endpoints in F5 Distributed Cloud
 
    Then Scroll all the way down and click in your load balancer to go to the Security Dashboard for your application.
 
-   |module3-f5xc-waap-security-dashboard|
+   |module3-f5xc-waap-security-dashboard.png|
 
 2.  Review API Endpoints configuration and schema.
 
    Click on the **API Endpoints** tab to see discovered API endpoints and their correlation with the OpenAPI specification.
 
-   |module3-f5xc-waap-security-api-endpoints-traffic|
+   |module3-f5xc-waap-security-api-endpoints-traffic.png|
 
    *What to notice:*
    
@@ -374,66 +374,55 @@ You have successfully:
 
 In the next task, you will build on this foundation by enabling **Bot Defense** and protecting user-facing flows such as login and contact pages—continuing the **Code. Secure. Repeat.** cycle.
 
-
-.. |module2-firefox-access| image:: ../images/module2/module2-firefox-access.png
-   :width: 400px
-.. |module2-gitlab-login| image:: ../images/module2/module2-gitlab-login.png
-   :width: 400px
-.. |module2-gitlab-student-dashboard| image:: ../images/module2/module2-gitlab-student-dashboard.png
-   :width: 800px
-.. |module2-gitlab-student-project-1| image:: ../images/module2/module2-gitlab-student-project-1.png
-   :width: 800px
-.. |module2-gitlab-student-project-2| image:: ../images/module2/module2-gitlab-student-project-2.png
-   :width: 800px
 .. |module3-gitlab-build-pipeline| image:: ../images/module3/module3-gitlab-build-pipeline.png
    :width: 800px
 .. |module3-f5xc-waap-tile| image:: ../images/module3/module3-f5xc-waap-tile.png
    :width: 800px
 .. |module3-f5xc-waap-security| image:: ../images/module3/module3-f5xc-waap-security.png
    :width: 200px
-.. |module3-browser-api-ai-asisted-coding| image:: ../images/module3/module3-browser-api-ai-asisted-coding.png
+.. |module3-browser-api-ai-asisted-coding.png| image:: ../images/module3/module3-browser-api-ai-asisted-coding.png
    :width: 800px
-.. |module3-browser-api-status| image:: ../images/module3/module3-browser-api-status.png
+.. |module3-browser-api-status.png| image:: ../images/module3/module3-browser-api-status.png
    :width: 800px
-.. |module3-browser-api-vibe-coding| image:: ../images/module3/module3-browser-api-vibe-coding.png
+.. |module3-browser-api-vibe-coding.png| image:: ../images/module3/module3-browser-api-vibe-coding.png
    :width: 800px
-.. |module3-f5xc-waap-security-api-endpoints-traffic| image:: ../images/module3/module3-f5xc-waap-security-api-endpoints-traffic.png
+.. |module3-f5xc-waap-security-api-endpoints-traffic.png| image:: ../images/module3/module3-f5xc-waap-security-api-endpoints-traffic.png
    :width: 800px
-.. |module3-f5xc-waap-security-api-endpoints| image:: ../images/module3/module3-f5xc-waap-security-api-endpoints.png
+.. |module3-f5xc-waap-security-api-endpoints.png| image:: ../images/module3/module3-f5xc-waap-security-api-endpoints.png
    :width: 800px
-.. |module3-f5xc-waap-security-dashboard| image:: ../images/module3/module3-f5xc-waap-security-dashboard.png
+.. |module3-f5xc-waap-security-dashboard.png| image:: ../images/module3/module3-f5xc-waap-security-dashboard.png
    :width: 800px
-.. |module3-f5xc-waap-tile-extra| image:: ../images/module3/module3-f5xc-waap-tile.png
+.. |module3-f5xc-waap-tile.png| image:: ../images/module3/module3-f5xc-waap-tile.png
    :width: 800px
 .. |module3-vscode-cline-api-prompt| image:: ../images/module3/module3-fvscode-cline-api-prompt.png
    :width: 400px
-.. |module3-gitlab-api-pipeline| image:: ../images/module3/module3-gitlab-api-pipeline.png
+.. |module3-gitlab-api-pipeline.png| image:: ../images/module3/module3-gitlab-api-pipeline.png
    :width: 800px
-.. |module3-gitlab-api-run| image:: ../images/module3/module3-gitlab-api-run.png
+.. |module3-gitlab-api-run.png| image:: ../images/module3/module3-gitlab-api-run.png
    :width: 800px
-.. |module3-vscode-cline-completed-task| image:: ../images/module3/module3-vscode-cline-completed-task.png
+.. |module3-vscode-cline-completed-task.png| image:: ../images/module3/module3-vscode-cline-completed-task.png
    :width: 800px
-.. |module3-vscode-cline-pending-task| image:: ../images/module3/module3-vscode-cline-pending-task.png
+.. |module3-vscode-cline-pending-task.png| image:: ../images/module3/module3-vscode-cline-pending-task.png
    :width: 800px
-.. |module3-vscode-cline-plan-response| image:: ../images/module3/module3-vscode-cline-plan-response.png
+.. |module3-vscode-cline-plan-response.png| image:: ../images/module3/module3-vscode-cline-plan-response.png
    :width: 800px
-.. |module3-vscode-cline-pytest-failed-2| image:: ../images/module3/module3-vscode-cline-pytest-failed-2.png
+.. |module3-vscode-cline-pytest-failed-2.png| image:: ../images/module3/module3-vscode-cline-pytest-failed-2.png
+   :width: 800px
+.. |module3-vscode-cline-pytest-failed.png| image:: ../images/module3/module3-vscode-cline-pytest-failed.png
+   :width: 800px
+.. |module3-vscode-cline-pytest-passed.png| image:: ../images/module3/module3-vscode-cline-pytest-passed.png
+   :width: 800px
+.. |module3-vscode-cline-run-command.png| image:: ../images/module3/module3-vscode-cline-run-command.png
+   :width: 800px
+.. |module3-vscode-cline-save-file.png| image:: ../images/module3/module3-vscode-cline-save-file.png
+   :width: 800px
+.. |module3-vscode-cline-start-new-task.png| image:: ../images/module3/module3-vscode-cline-start-new-task.png
    :width: 400px
-.. |module3-vscode-cline-pytest-failed| image:: ../images/module3/module3-vscode-cline-pytest-failed.png
-   :width: 400px
-.. |module3-vscode-cline-pytest-passed| image:: ../images/module3/module3-vscode-cline-pytest-passed.png
-   :width: 400px
-.. |module3-vscode-cline-run-command| image:: ../images/module3/module3-vscode-cline-run-command.png
+.. |module3-vscode-cline-switch-to-act.png| image:: ../images/module3/module3-vscode-cline-switch-to-act.png
    :width: 800px
-.. |module3-vscode-cline-save-file| image:: ../images/module3/module3-vscode-cline-save-file.png
-   :width: 800px
-.. |module3-vscode-cline-start-new-task| image:: ../images/module3/module3-vscode-cline-start-new-task.png
+.. |module3-vscode-security-controls.png| image:: ../images/module3/module3-vscode-security-controls.png
    :width: 400px
-.. |module3-vscode-cline-switch-to-act| image:: ../images/module3/module3-vscode-cline-switch-to-act.png
+.. |module3-vscode-source-control-commit.png| image:: ../images/module3/module3-vscode-source-control-commit.png
    :width: 800px
-.. |module3-vscode-security-controls| image:: ../images/module3/module3-vscode-security-controls.png
-   :width: 400px
-.. |module3-vscode-source-control-commit| image:: ../images/module3/module3-vscode-source-control-commit.png
-   :width: 800px
-.. |module3-vscode-source-control-sync-changes| image:: ../images/module3/module3-vscode-source-control-sync-changes.png
+.. |module3-vscode-source-control-sync-changes.png| image:: ../images/module3/module3-vscode-source-control-sync-changes.png
    :width: 800px
