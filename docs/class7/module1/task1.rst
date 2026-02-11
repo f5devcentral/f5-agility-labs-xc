@@ -1,5 +1,5 @@
 Task 1 – Understanding Vibe Coding with Cline Extension
-======================================================
+========================================================
 
 This task introduces **AI-assisted “Vibe Coding”**—how it works, why it’s powerful, and where it can go wrong.  
 You will not write production-perfect code here. Instead, you’ll learn how AI accelerates development *and* why guardrails and review still matter.
