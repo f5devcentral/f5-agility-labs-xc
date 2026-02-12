@@ -46,7 +46,7 @@ Steps to Locate the Baseline Scan Report
 4. You will be presented with the Web App Scanning Dashboard to view a summary of all application scans.
 5. In the left-hand menu, under 'Scans', select 'Applications'
 6. In the list of available scans, locate and select:
-   **AppWorld – Baseline Vulnerability Scan**
+   **AppWorld 2026 – Baseline Vulnerability Scan**
 7. Review the scan results, noting:
 
    -High and critical OWASP Top 10 findings
