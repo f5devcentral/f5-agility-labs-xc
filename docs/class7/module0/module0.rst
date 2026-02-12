@@ -22,16 +22,16 @@ Narrative
 |   automatically, not rely on heroics.*                                                       |
 |                                                                                              |
 | * **Victor (Platform Engineer / DevSecOps)**                                                 |
-|   *Victor's job is to make speed and security stop fighting each other!!.*                   |
+|   *Victor's job is to make speed and security stop fighting each other.*                     |
 |                                                                                              |
 | This lab is their story.                                                                     |
 |                                                                                              |
 | Alex just joined BlueJet and is onboarding. Instead of a 40-page wiki, you hand them a       |
 | browser-based dev environment, a Git repo, and access to the security platform.              |
 |                                                                                              |
-| **Alex:** *No installs. No “works on my laptop.” Everything already feels… modern!!*         |
+| **Alex:** *No installs. No “works on my laptop.” Everything already feels… modern!*          |
 |                                                                                              |
-| **Riley:** *I am happy too! because the environment is **controlled**, **ephemeral**, and*   |
+| **Riley:** *I am happy too because the environment is **controlled**, **ephemeral**, and*     |
 | ***observable**.*                                                                            |
 |                                                                                              |
 | |Module_0_story|                                                                             |
