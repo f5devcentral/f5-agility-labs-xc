@@ -119,7 +119,7 @@ in the left-hand navigation, and choose **Web App & API Protection** as shown in
    *means that this application will be advertised globally using the F5 Distributed Cloud Global Network*
    *utilizing Anycast.*
 
-17. Click **Save and Exit** at the bottom of the **HTTP Load Balancer** configuration screen.
+17. Click **Save HTTP Load Balancer** at the bottom of the **HTTP Load Balancer** configuration screen.
 
 |lab012|
 
@@ -135,7 +135,7 @@ Performance Monitoring dashboard, and gather request details.
 1. Open another tab in your browser (Chrome shown), navigate to the newly configured Load Balancer
    configuration: `http://\<your-namespace\>.lab-sec.f5demos.com/ <http://\<your-namespace\>.lab-sec.f5demos.com/>`_, to confirm it is functional.
 
-1. Navigate to the **HEADER** section under **Menu** to generate additional traffic.
+2. Navigate to the **HEADER** section under **Menu** to generate additional traffic.
 
 |lab014|
 
@@ -146,8 +146,6 @@ Performance Monitoring dashboard, and gather request details.
 4. Scroll to the **Load Balancers** section of the page and click the link for your respective load balancer.
 
 |lab016|
-
-|lab017|
 
 5. Change the viewable time period from Last 5 minutes (default) to **1 hour** by selecting the dropdown
    shown, click **Last 1 hour** then clicking **Apply**.
@@ -161,6 +159,7 @@ Performance Monitoring dashboard, and gather request details.
 |lab018|
 
 |lab019|
+
 7. Click the **Requests** link to see detailed information about individual requests.
 
 8. Note the **Chart** shows a graphical representation of all of the response codes for the selected time
@@ -219,10 +218,8 @@ These steps will apply a preconfigured WAF policy to the load balancer created i
     *(shared/base-appfw)* from the **Enable** dropdown.
 
 8. Scroll to the bottom of the page and click **Save and Exit**
-9.
-|lab032|
 
-|lab033|
+|lab032|
 
 Task 4. Test the Application Firewall and View Security Events
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -241,7 +238,11 @@ Monitoring dashboard, and gather security event details.
    * `http://\<your-namespace\>.lab-sec.f5demos.com/product?id=4%20OR%201=1 <http://\<your-namespace\>.lab-sec.f5demos.com/product?id=4%20OR%201=1>`_
    * `http://\<your-namespace\>.lab-sec.f5demos.com/cart?search=aaa%E2%80%99%3E%3Cscript%3Eprompt%28%E2%80%98Please%2Benter%2Byour%2Bpassword%E2%80%99%29%3B%3C%2Fscript%3E <http://\<your-namespace\>.lab-sec.f5demos.com/cart?search=aaa%E2%80%99%3E%3Cscript%3Eprompt%28%E2%80%98Please%2Benter%2Byour%2Bpassword%E2%80%99%29%3B%3C%2Fscript%3E>`_
 
-  The last attack pattern is URL encoded, and when decoded it looks like this: `http://\<your-namespace\>.lab-sec.f5demos.com/cart?search=aaa%E2%80%99%3E%3Cscript%3Eprompt%28%E2%80%98Please%2Benter%2Byour%2Bpassword%E2%80%99%29%3B%3C%2Fscript%3E`
+  The last attack pattern is URL encoded, and when decoded it looks like this:
+
+.. code-block:: html
+
+   http://\<your-namespace\>.lab-sec.f5demos.com/cart?search=aaa'><script>prompt('Please+enter+your+password');</script>
 
 .. note::
    *The web application firewall is blocking these requests to protect the application. The block page can*
@@ -249,27 +250,23 @@ Monitoring dashboard, and gather security event details.
 
 |lab034|
 
-1. Returning to the F5 Distributed Cloud Console, use the left-hand navigation to navigate to Web App & API Protection section and click on **Performance**
+1. Returning to the F5 Distributed Cloud Console, use the left-hand navigation to navigate to Web App & API Protection section and click on **Security**
 
 2. Scroll to the **Load Balancers** section of the page and click the link for your respective load balancer.
 
-|lab016|
-
 |lab017|
-
-1. Click the **Performance Monitoring** dropdown at the top of the page and select **Security Monitoring**
 
 |lab035|
 
-1. From the **Dashboard** view, using the horizontal navigation, click **Security Analytics**.
+3. From the **Dashboard** view, using the horizontal navigation, click **Security Analytics**.
 
-2. Note the **Chart** shows a graphical representation of all of the response codes for the selected time
+|lab037|
+
+4. Note the **Chart** shows a graphical representation of all of the response codes for the selected time
    frame.
 
 .. note::
    *If you lost your 1 Hour Filter, re-apply using Task 2: Step 5*
-
-|lab037|
 
 |lab038|
 
