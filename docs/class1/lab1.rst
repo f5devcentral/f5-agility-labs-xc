@@ -41,41 +41,41 @@ in the left-hand navigation, and choose **Web App & API Protection** as shown in
 
 3. In the resulting screen click the **Add Origin Pool** in the graphic as shown.
 
-.. note::
-   *You have been defaulted to your specific namespace as this is the only namespace to which you have*
-   *administrative access.*
+   .. note::
+      *You have been defaulted to your specific namespace as this is the only namespace to which you have*
+      *administrative access.*
 
-|lab001|
+   |lab001|
 
-|lab002|
+   |lab002|
 
 4. In the resulting window, enter **<your-namespace>-pool** in the **Name** field and click **Add Item** under
    **Origin Servers**
 
-|lab003|
+   |lab003|
 
 5. In the resulting window, **Public DNS Name of Origin Server** should be selected for **Select Type of**
    **Origin Server**.
 
 6. For **DNS Name** enter the following hostname: **demo-app.amer.myedgedemo.com** and then click **Apply**
 
-|lab004|
+   |lab004|
 
 7. After returning to the prior window, change the **Port** under **Origin server Port** to **80**.
 
 8. Scroll to the bottom and click **Save and Exit**.
 
-|lab005|
+   |lab005|
 
-|lab006|
+   |lab006|
 
 9. In the left-hand navigation expand **Manage** and click **Load Balancers > HTTP Load** **Balancers**.
 
+   |lab007|
+
 10. In the resulting screen click the **Add HTTP Load Balancer** in the graphic as shown.
 
-|lab007|
-
-|lab008|
+   |lab008|
 
 11. Using the left-hand navigation and in the sections as shown, enter the following data. Values where
     **<your-namespace>** is required, use the name of your given namespace.
@@ -96,12 +96,12 @@ in the left-hand navigation, and choose **Web App & API Protection** as shown in
 
         **HTTP Listen Port**: *80*
 
-|lab009|
+   |lab009|
 
 12. In the current window's left-hand navigation, click **Origins**. Next, click **Add Item** section of
     **Origins**.
 
-|lab010|
+   |lab010|
 
 13. In the resulting window, verify **Origin Pool** is selected for **Select Origin Pool Method**.
 
@@ -109,19 +109,19 @@ in the left-hand navigation, and choose **Web App & API Protection** as shown in
 
 15. Click **Apply**
 
-|lab011|
+   |lab011|
 
 16. In the resulting **HTTP Load Balancer** window, scroll to the **Other Settings** section and note the
     **VIP Advertisement** setting.
 
-.. note::
-   *The VIP Advertisement selection controls how/where the application is advertised. The "Internet" setting*
-   *means that this application will be advertised globally using the F5 Distributed Cloud Global Network*
-   *utilizing Anycast.*
+   .. note::
+      *The VIP Advertisement selection controls how/where the application is advertised. The "Internet" setting*
+      *means that this application will be advertised globally using the F5 Distributed Cloud Global Network*
+      *utilizing Anycast.*
 
 17. Click **Save HTTP Load Balancer** at the bottom of the **HTTP Load Balancer** configuration screen.
 
-|lab012|
+   |lab012|
 
 18. In the **HTTP Load Balancers** window, note the application hostname under the **Domains** column *(This*
     *was done in Task1: Step 11)*.
@@ -135,17 +135,17 @@ Performance Monitoring dashboard, and gather request details.
 1. Open another tab in your browser (Chrome shown), navigate to the newly configured Load Balancer
    configuration: `http://\<your-namespace\>.lab-sec.f5demos.com/ <http://\<your-namespace\>.lab-sec.f5demos.com/>`_, to confirm it is functional.
 
+   |lab014|
+
 2. Navigate to the **HEADER** section under **Menu** to generate additional traffic.
 
-|lab014|
-
-|lab015|
+   |lab015|
 
 3. Returning to the F5 Distributed Cloud Console, use the left-hand navigation to navigate to Web App & API Protection section and click on **Performance**
 
 4. Scroll to the **Load Balancers** section of the page and click the link for your respective load balancer.
 
-|lab016|
+   |lab016|
 
 5. Change the viewable time period from Last 5 minutes (default) to **1 hour** by selecting the dropdown
    shown, click **Last 1 hour** then clicking **Apply**.
@@ -153,24 +153,24 @@ Performance Monitoring dashboard, and gather request details.
 6. Note the **End to end Latency** tile. This shows the average latency for all requests to this load
    balancer.
 
-.. note::
-   *As you have not run many requests, summary analytics may not be available in the dashboard view yet.*
+   .. note::
+      *As you have not run many requests, summary analytics may not be available in the dashboard view yet.*
 
-|lab018|
+   |lab018|
 
-|lab019|
+   |lab019|
 
 7. Click the **Requests** link to see detailed information about individual requests.
 
 8. Note the **Chart** shows a graphical representation of all of the response codes for the selected time
    frame.
 
-.. note::
-   *This data can be filtered to quickly narrow in on points of interest.*
+   .. note::
+      *This data can be filtered to quickly narrow in on points of interest.*
 
-|lab020|
+   |lab020|
 
-|lab021|
+   |lab021|
 
 9. Click the **Hide Chart** link to free up space in the browser window.
 
@@ -179,9 +179,9 @@ Performance Monitoring dashboard, and gather request details.
 11. Note the **Duration** section. This shows the latency for this specific request. These values can be
     compared to the average latency data noted in step 6.
 
-|lab022|
+   |lab022|
 
-|lab023|
+   |lab023|
 
 Task 3: Add an Application Firewall Policy to Protect the Application
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -200,16 +200,17 @@ These steps will apply a preconfigured WAF policy to the load balancer created i
 3. On the resulting page find the HTTP Load Balancer created in **Task 1** *(<your-namespace>-lb)*. Click the
    ellipsis under Actions and select **Manage Configuration**.
 
-|lab028|
+   |lab028|
 
-|lab029|
+   |lab029|
 
 4. On the resulting page click **Edit Configuration**.
 
 5. Click **Web Application Firewall** in the left-hand navigation.
-|lab030|
 
-|lab031|
+   |lab030|
+
+   |lab031|
 
 6. Under the **Web Application Firewall** section select **Enable** from the **Web Application Firewall**
     **(WAF)** dropdown.
@@ -219,7 +220,7 @@ These steps will apply a preconfigured WAF policy to the load balancer created i
 
 8. Scroll to the bottom of the page and click **Save and Exit**
 
-|lab032|
+   |lab032|
 
 Task 4. Test the Application Firewall and View Security Events
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -240,62 +241,62 @@ Monitoring dashboard, and gather security event details.
 
   The last attack pattern is URL encoded, and when decoded it looks like this:
 
-.. code-block:: html
+.. code-block:: text
 
-   http://\<your-namespace\>.lab-sec.f5demos.com/cart?search=aaa'><script>prompt('Please+enter+your+password');</script>
+   http://<your-namespace>.lab-sec.f5demos.com/cart?search=aaa'><script>prompt('Please+enter+your+password');</script>
 
 .. note::
    *The web application firewall is blocking these requests to protect the application. The block page can*
    *be customized to provide additional information.*
 
-|lab034|
+   |lab034|
 
-1. Returning to the F5 Distributed Cloud Console, use the left-hand navigation to navigate to Web App & API Protection section and click on **Security**
+3. Returning to the F5 Distributed Cloud Console, use the left-hand navigation to navigate to Web App & API Protection section and click on **Security**
 
-2. Scroll to the **Load Balancers** section of the page and click the link for your respective load balancer.
+4. Scroll to the **Load Balancers** section of the page and click the link for your respective load balancer.
 
-|lab017|
+   |lab017|
 
-|lab035|
+   |lab035|
 
-3. From the **Dashboard** view, using the horizontal navigation, click **Security Analytics**.
+5. From the **Dashboard** view, using the horizontal navigation, click **Security Analytics**.
 
-|lab037|
+   |lab037|
 
-4. Note the **Chart** shows a graphical representation of all of the response codes for the selected time
+6. Note the **Chart** shows a graphical representation of all of the response codes for the selected time
    frame.
 
-.. note::
-   *If you lost your 1 Hour Filter, re-apply using Task 2: Step 5*
+   .. note::
+      *If you lost your 1 Hour Filter, re-apply using Task 2: Step 5*
 
-|lab038|
+   |lab038|
 
-8. Click the **Hide Chart** link to free up space in the browser window.
+7. Click the **Hide Chart** link to free up space in the browser window.
 
-9. Expand your latest security event as shown.
+8. Expand your latest security event as shown.
 
-10. Note the summary detail provided in the **Information** link. The **req_id** which is synonymous with **Support ID** (filterable) from the block page.
+9. Note the summary detail provided in the **Information** link. The **req_id** which is synonymous with **Support ID** (filterable) from the block page.
 
-11. Scroll to the bottom of the information screen to see specific signatures detected and actions taken
+10. Scroll to the bottom of the information screen to see specific signatures detected and actions taken
     during the security event.
 
-.. note::
-   *Note that Requests have additional detail in JSON format*
+   .. note::
+      *Note that Requests have additional detail in JSON format*
 
-|lab039|
+   |lab039|
 
-|lab040|
+   |lab040|
 
-|lab041|
+   |lab041|
 
-12. Scroll back to the top and on the right-hand size under Actions click "...". Now click "Explain with AI".
+11. Scroll back to the top and on the right-hand size under Actions click "...". Now click "Explain with AI".
     F5 Distributed Cloud AI Assistant will provide additional information about the security event including
     an analysis of the event, recommended follow-up actions, and more detection details should you need to
     investigate further.
 
-|lab042|
+   |lab042|
 
-|lab043|
+   |lab043|
 
 **End of Lab 1:**  This concludes Lab 1. In this lab you created an origin pool to connect to the
 application, you then created a load balancer and associated the origin pool to the load balancer. This
@@ -304,8 +305,7 @@ Console was then used to review telemetry data gathered for the application. Nex
 policy was assigned to protect the application. Finally a sample attack was run against the application and
 the security event data was reviewed within the Distributed Cloud Console.
 
-|labend|
-
+   |labend|
 
 .. |lab000| image:: _static/lab1-000.png
    :width: 800px
