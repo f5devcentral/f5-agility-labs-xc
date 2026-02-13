@@ -74,14 +74,14 @@ Create the Security Policy File
 
    - Click the **New File** (+) icon in the Explorer panel
 
-   |module2-vscode-cretate-security-control-1|
+   |module2-vscode-create-security-control-1|
 
    - Name the file ``security-controls.yaml``
 
-   |module2-vscode-cretate-security-control-2|
+   |module2-vscode-create-security-control-2|
 
    .. note::
-      Please make sure the file is created on the root foler of the application repo. If it is created somewhere else, the CI/CD pipeline will failed
+      Please make sure the file is created on the root folder of the application repo. If it is created somewhere else, the CI/CD pipeline will fail
 
 5. Add the initial security policy.
 
@@ -99,7 +99,7 @@ Create the Security Policy File
          rate_limiting:
             enabled: false
 
-   |module2-vscode-cretate-security-control-3|
+   |module2-vscode-create-security-control-3|
 
    *What this does:*  
    You are explicitly declaring which runtime security controls should be enabled.  
@@ -112,19 +112,19 @@ Commit and Trigger the Pipeline (First Run)
 
    - Click the **Source Control** icon in VS Code
 
-   |module2-vscode-cretate-security-control-4-source-control|
+   |module2-vscode-create-security-control-4-source-control|
 
    - Click the checkmark icon to commit
    - Use the commit message: **Commit Module 2 Task1 Run 1**
 
-   |module2-vscode-cretate-security-control-4-commit|
+   |module2-vscode-create-security-control-4-commit|
 
    If prompted for credentials:
 
    - **Username:** student
    - **Password:** glpat-U7a042D1cs3JdOgTuRKvD286MQp1OjQH.01.0w14lnkqb
 
-   |module2-vscode-cretate-security-control-git-username|
+   |module2-vscode-create-security-control-git-username|
 
    .. note::
       This password is a GitLab Personal Access Token.  
@@ -136,15 +136,15 @@ Commit and Trigger the Pipeline (First Run)
 
    - If a warning appears about staged changes, click **Always** and then sync again.
 
-   |module2-vscode-cretate-security-control-4-commit-warning|
+   |module2-vscode-create-security-control-4-commit-warning|
    
    - Click **Sync Changes**
    
-   |module2-vscode-cretate-security-control-4-sync|
+   |module2-vscode-create-security-control-4-sync|
 
    - If a warning appears about pull and push commits, click **OK**.
 
-   |module2-vscode-cretate-security-control-4-sync-warning|
+   |module2-vscode-create-security-control-4-sync-warning|
 
 Observe the Pipeline Failure
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -271,23 +271,23 @@ In the next task, you will explore the deployed F5XC configuration and intention
    :width: 800px
 .. |module2-gitlab-student-project-2| image:: ../images/module2/module2-gitlab-student-project-2.png
    :width: 800px
-.. |module2-vscode-cretate-security-control-1| image:: ../images/module2/module2-vscode-cretate-security-control-1.png
+.. |module2-vscode-create-security-control-1| image:: ../images/module2/module2-vscode-create-security-control-1.png
    :width: 400px
-.. |module2-vscode-cretate-security-control-2| image:: ../images/module2/module2-vscode-cretate-security-control-2.png
+.. |module2-vscode-create-security-control-2| image:: ../images/module2/module2-vscode-create-security-control-2.png
    :width: 400px
-.. |module2-vscode-cretate-security-control-3| image:: ../images/module2/module2-vscode-cretate-security-control-3.png
+.. |module2-vscode-create-security-control-3| image:: ../images/module2/module2-vscode-create-security-control-3.png
    :width: 400px
-.. |module2-vscode-cretate-security-control-4-source-control| image:: ../images/module2/module2-vscode-cretate-security-control-4-source-control.png
+.. |module2-vscode-create-security-control-4-source-control| image:: ../images/module2/module2-vscode-create-security-control-4-source-control.png
    :width: 200px
-.. |module2-vscode-cretate-security-control-git-username| image:: ../images/module2/module2-vscode-cretate-security-control-git-username.png
+.. |module2-vscode-create-security-control-git-username| image:: ../images/module2/module2-vscode-create-security-control-git-username.png
    :width: 800px
-.. |module2-vscode-cretate-security-control-4-commit| image:: ../images/module2/module2-vscode-cretate-security-control-4-commit.png
+.. |module2-vscode-create-security-control-4-commit| image:: ../images/module2/module2-vscode-create-security-control-4-commit.png
    :width: 400px
-.. |module2-vscode-cretate-security-control-4-commit-warning| image:: ../images/module2/module2-vscode-cretate-security-control-4-commit-warning.png
+.. |module2-vscode-create-security-control-4-commit-warning| image:: ../images/module2/module2-vscode-create-security-control-4-commit-warning.png
    :width: 400px
-.. |module2-vscode-cretate-security-control-4-sync| image:: ../images/module2/module2-vscode-cretate-security-control-4-sync.png
+.. |module2-vscode-create-security-control-4-sync| image:: ../images/module2/module2-vscode-create-security-control-4-sync.png
    :width: 400px
-.. |module2-vscode-cretate-security-control-4-sync-warning| image:: ../images/module2/module2-vscode-cretate-security-control-4-sync-warning.png
+.. |module2-vscode-create-security-control-4-sync-warning| image:: ../images/module2/module2-vscode-create-security-control-4-sync-warning.png
    :width: 400px
 .. |module2-app-home-page| image:: ../images/module2/module2-app-home-page.png
    :width: 800px

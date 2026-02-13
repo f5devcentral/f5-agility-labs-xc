@@ -181,13 +181,13 @@ Vibe Coding Experience in VS Code (What You’ll See)
 
    |module3-vscode-cline-save-file|
 
-4. Cline command execution requets and Pytest tests.
+4. Cline command execution requests and Pytest tests.
 
    During implementation, Cline may run commands and execute pytest to validate the work.
 
    |module3-vscode-cline-run-command|
 
-   Cline will also run Pytesr as described on Module 0:
+   Cline will also run Pytest as described in Module 0:
 
    |module3-vscode-cline-pytest-failed|
 
@@ -391,7 +391,7 @@ In the next task, you will build on this foundation by enabling **Bot Defense** 
    :width: 800px
 .. |module3-f5xc-waap-security| image:: ../images/module3/module3-f5xc-waap-security.png
    :width: 200px
-.. |module3-browser-api-ai-asisted-coding| image:: ../images/module3/module3-browser-api-ai-asisted-coding.png
+.. |module3-browser-api-ai-assisted-coding| image:: ../images/module3/module3-browser-api-ai-assisted-coding.png
    :width: 800px
 .. |module3-browser-api-status| image:: ../images/module3/module3-browser-api-status.png
    :width: 800px

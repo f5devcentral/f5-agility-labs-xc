@@ -23,10 +23,10 @@ Explore F5 Distributed Cloud Configuration
 
    |module3-f5xc-waap-tile|
 
-   Under the "Manage" section, hover over "Load Balancers" and clock "HTTP Load Balancers". You should the LB object created for your application
+   Under the "Manage" section, hover over "Load Balancers" and click "HTTP Load Balancers". You should see the LB object created for your application
 
    .. note::
-      If you want to explor the HTTP LB configuration, click the "..." symbol under the Actions column and clicl "Manage configuration".
+      If you want to explore the HTTP LB configuration, click the "..." symbol under the Actions column and click "Manage configuration".
 
    |module2-f5xc-waap-lb-config|
 
@@ -40,7 +40,7 @@ Explore F5 Distributed Cloud Configuration
    Navigate to:
 
    .. note::
-      If you wna to explore your WAF policy., click the "..." symbol under the Actions column and clicl "View Configuration".
+      If you want to explore your WAF policy, click the "..." symbol under the Actions column and click "View Configuration".
 
    |module2-f5xc-waap-lb-waf-config|
 
