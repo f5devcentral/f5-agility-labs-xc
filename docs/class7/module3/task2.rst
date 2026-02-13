@@ -203,18 +203,34 @@ Extend the Application with User-Facing Pages
 
       Proceed with implementation now.
 
-   Make sure your Client is on "Plan" mode
+   Make sure **Cline** is on **Plan** mode
 
    |module3-vscode-cline-api-prompt|
 
    .. note::
       *Let Cline work through the pytest loop. If tests fail, it will update the code and re-run pytest until it passes (or exits after repeated failures).*
 
+3. Switch to **Act** mode to allow Cline to implement changes.
+
+   Toggle Cline from **Plan** to **Act** mode to begin file creation and code changes.
+
+   |module3-vscode-cline-switch-to-act|
+
+4. Save files as Cline generates them.
+
+   As Cline completes each file update, VS Code will prompt you to save before it continues.
+
+   |module3-vscode-cline-save-file|
+
+   Cline will run Pytest again as described in Module 0:
+
    |module3-vscode-cline-pytest-failed.png|
+
+   If tests pass, you’ll see a successful run:
 
    |module3-vscode-cline-pytest-passed.png|
 
-3. Verify that the required template files were created.
+5. Verify that the required template files were created.
 
    In the VS Code Explorer, confirm the following files exist:
 
@@ -235,11 +251,11 @@ Extend the Application with User-Facing Pages
 Enable Bot Defense Using Policy-as-Code
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-4. Open the ``security-controls.yaml`` file.
+6. Open the ``security-controls.yaml`` file.
 
    This is the same policy file used to enable WAF and API Discovery.
 
-5. Enable Bot Defense in the security policy.
+7. Enable Bot Defense in the security policy.
 
    Update the file so it looks like this:
 
@@ -259,7 +275,7 @@ Enable Bot Defense Using Policy-as-Code
 Commit and Push the Changes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1. Save your changes and commit them to GitLab.
+8. Save your changes and commit them to GitLab.
 
    Use the Source Control panel in VS Code Server and commit your changes with a message similar to:
 
@@ -267,12 +283,12 @@ Commit and Push the Changes
 
       Commit Module 3 Task2 – Enable Bot Defense
 
-2. Push the commit the changes. GitLab CI/CD detects the changes and starts a new pipeline run.
+9. Push the commit the changes. GitLab CI/CD detects the changes and starts a new pipeline run.
 
 Observe the CI/CD Pipeline
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1. Navigate to the pipeline in GitLab.
+10. Navigate to the pipeline in GitLab.
 
 
     If you are not already logged in:
@@ -303,7 +319,7 @@ Observe the CI/CD Pipeline
 
    |module3-gitlab-build-pipeline| 
 
-2. Open the most recent pipeline run.
+11. Open the most recent pipeline run.
 
    |module3-task2-gitlab-bot-pipeline.png|
 
@@ -314,7 +330,7 @@ Observe the CI/CD Pipeline
    - The ``build`` stage creates a new image version (v1.2) and pushes it to the container registry.
    - The ``deploy`` stage applies updated F5XC configuration for Bot Defense Standard on the ``/login`` and ``/contact`` paths.
 
-3.  Confirm that all stages complete successfully.
+12.  Confirm that all stages complete successfully.
 
    *What this means:*
    
@@ -326,7 +342,7 @@ Observe the CI/CD Pipeline
 Test Bot Defense in Browser vs curl (Why Results Differ)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-11. Open the login page in a browser and observe the bot protection behavior.
+13. Open the login page in a browser and observe the bot protection behavior.
 
    When Bot Defense is enabled, the browser experience may include an injected JavaScript challenge (or additional client-side signals).
 
@@ -346,7 +362,7 @@ Test Bot Defense in Browser vs curl (Why Results Differ)
    - Bot Defense uses these signals to distinguish browsers from automation.
    - This is why browser access can be allowed while scripted clients are blocked.
 
-12. Generate simulated bot traffic using curl (expected to be blocked).
+14. Generate simulated bot traffic using curl (expected to be blocked).
 
    Now send non-browser, automated POST requests to protected pages.
 
@@ -379,7 +395,7 @@ Test Bot Defense in Browser vs curl (Why Results Differ)
 Review Bot Defense in F5 Distributed Cloud
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-13.  Open the F5 Distributed Cloud console and navigate to the WAAP security view.
+15.  Open the F5 Distributed Cloud console and navigate to the WAAP security view.
 
    Return to the Security dashboards and review bot-related events after generating traffic. To go back to the main F5XC home page, click the F5 logo, then:
 
@@ -395,7 +411,7 @@ Review Bot Defense in F5 Distributed Cloud
 
    |module3-f5xc-waap-security-dashboard.png|
 
-14.  Open the Bot Defense dashboard.
+16.  Open the Bot Defense dashboard.
 
    In the Security view, select the **Bot Defense** dashboard to review bot-specific signals.
 

@@ -107,7 +107,7 @@ Build a Simple Flask Web Application
       - Ensure Flask runs without errors
       - Keep everything simple and readable
 
-   Make Clien is on **Plan** mode and before you submit the prompt.
+   Ensure **Cline** is in **Plan** mode before you submit the prompt.
 
    |module1-cline-demo-app-plan|
 
@@ -150,7 +150,7 @@ Run and Test the Application
 
 1. Run the Flask application.
 
-   On a new terminal window within VS Code serve start the application using the command below.
+   On a new terminal window within VS Code server start the application using the command below.
 
    .. code-block:: bash
 

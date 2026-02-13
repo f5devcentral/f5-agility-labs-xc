@@ -33,7 +33,7 @@ Access to the lab environment is provided via an invitation email sent to the re
 | Course/Lab Attendees will receive an email similar to the graphic displayed in this section. |
 | The email will come from courses@notify.udf.f5.com.                                          |
 |                                                                                              |
-| As attendees maybe registered for several lab/courses, ensure the corrcetly identified course|
+| As attendees may be registered for several lab/courses, ensure the correctly identified course|
 | is selected.  Use either the first or second link position (indicated by arrows) based on    |
 | the attendee's F5 UDF (Unified Demo Framework) Account Status.                               |
 |                                                                                              |
@@ -67,7 +67,7 @@ Accessing UDF (F5 Unified Demo Framework)
 | MFA must be completed by either selecting **Send Push** or **Enter Code**.                   |
 |                                                                                              |
 | .. note::                                                                                    |
-|    *MFA process will very based on the MFA integration selected for the UDF Account. OKTA*   |
+|    *MFA process will vary based on the MFA integration selected for the UDF Account. OKTA*   |
 |    *Verify is shown.*                                                                        |
 +----------------------------------------------------------------------------------------------+
 | |intro-03|                                                                                   |
