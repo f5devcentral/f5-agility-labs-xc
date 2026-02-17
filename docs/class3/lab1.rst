@@ -29,6 +29,9 @@ Lab:
 by default blue pool is active, we will see this when we go to add a new origin pool.
 
 .. image:: _static/multi-app-conn.png
+   :scale: 30%
+   :alt: multi app conn
+   :align: center
 
 You'll now navigate to review the lb configuration as shown below.
 
