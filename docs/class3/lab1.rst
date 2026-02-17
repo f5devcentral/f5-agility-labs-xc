@@ -131,8 +131,8 @@ action to **Allow**.
    :alt: appworld
    :align: center 
 
-Now scroll down or use the link on left to navigate to the *RequestMatch* section. This is where you will define the actual criteria 
-that will be used to match our custom header/value.
+Now scroll down or use the link on left to navigate to the *Request Match* section. This is where you will define the actual criteria 
+that will be used to match our custom header/value. Click **Add Item** under the HTTP Headers section. 
 
 .. image:: _static/svc-req-match.png
    :scale: 30%
@@ -154,12 +154,21 @@ step to make sure that the value is not easily guessable.
    :alt: header
    :align: center
 
-apply; apply; add service policy  
+Now to save all your work. On the bottom right, click **Apply**, then **Apply**, and finally **Add Service Policy**.
+
+Congratulations, you have now built your first service policy. However, it is not active yet, so let's make it active so that it can 
+start enforcing the rules. To make the service policy active, navigate back to *Security* > *Service Policies* > *Active Service Policies*
 
 .. image:: _static/add-to-active.png
    :scale: 30%
    :alt: active
    :align: center
+
+From this page, you can select service policies that have been created and make them active. You can have multiple active service policies at a time, 
+and they will be enforced in the order that they are in the list. 
+
+You can also have different active service policies for different server selections, such as specific host headers or tags. For this lab, 
+we will be applying the service policy to *Any Server*.
 
 .. image:: _static/sel-active.png
    :scale: 30%
@@ -167,7 +176,7 @@ apply; apply; add service policy
    :align: center 
 
 
-Add the previously created service policy to the active policies and make sure to click the bottom right **Add Select Active Service Policies **
+Click **Add Item** to add the previously created service policy, from dropdown, to the active policies and make sure to click the bottom right **Add Select Active Service Policies**
 
 .. image:: _static/act-custom-header.png
    :scale: 30%
@@ -175,7 +184,7 @@ Add the previously created service policy to the active policies and make sure t
    :align: center 
 
 Now try to navigate to your domain again, you should now see a 403 error. This is because the service policy is blocking all 
-traffic that does not have the header of *x-app-world: f5*.
+traffic that does not have the header/value of *x-f5-appworld: RjUtQXBwd29ybGQ=*
 
 .. image:: _static/403-error.png
    :scale: 30%
@@ -183,9 +192,10 @@ traffic that does not have the header of *x-app-world: f5*.
    :align: center
 
 
-You should now also see this reflected in the analytics for the load balancer. You can navigate to the analytics by clicking on the load balancer name from the main load balancer page, and then clicking on the *Analytics* tab at the top.
+You should now also see this reflected in the analytics for the load balancer. You can navigate to the analytics by clicking on the 
+load balancer name from the main load balancer page, and then clicking on the *Analytics* tab at the top.
 
-.. image::_static/observe.png
+.. image:: _static/observe.png
    :scale: 30%
    :alt: observe
    :align: center
@@ -209,8 +219,6 @@ You should now also see this reflected in the analytics for the load balancer. Y
    :scale: 30%
    :alt: post curl
    :align: center
-
-Ending
 
 We will now remove the service polices that have been built. 
 
