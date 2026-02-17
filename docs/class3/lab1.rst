@@ -36,15 +36,24 @@ by default blue pool is active, we will see this when we go to add a new origin 
 You'll now navigate to review the lb configuration as shown below.
 
 .. image:: _static/lb-manage-conf.png
+   :scale: 30%
+   :alt: multi app conn
+   :align: center
 
 Make note of the name of the load balancer for your deployment as it will be different than the one shown below. It should be in the format
 of *<adjective-animal>>*-routing-https-lb. 
 
 .. image:: _static/lb-name.png
+   :scale: 30%
+   :alt: lb name
+   :align: center
 
 And verify that the blue pool is is your active pool.
 
 .. image:: _static/lb-blue-pool.png 
+   :scale: 30%
+   :alt: blue pool
+   :align: center
 
 And scroll down to *Common Security Controls* section and notice the section below:
 
