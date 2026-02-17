@@ -123,29 +123,33 @@ multiple rule sets to be applied.
    :align: center
 
 Time to start building the **real** rule. You can title the specific rule whatever you like, but for this lab we will call it *appworld-header*. 
-Please make sure to toggle *Show Advanced Fields* to the right so that you can see all of the options available to you. 
+Please make sure to toggle *Show Advanced Fields* to the right so that you can see all of the options available to you. You'll set the 
+action to **Allow**.
 
 .. image:: _static/custom-rule-appworld.png
    :scale: 30%
    :alt: appworld
    :align: center 
 
-In this step you'll configure the actual header and value that you want to require for traffic to be allowed to the app. 
-For this lab, we will be creating a rule that only allows traffic that contains the header of:
-
- header = *x-f5-appworld*
-
- value  = *RjUtQXBwd29ybGQ=*.
-
-How did we get this value? If you decode the value from base64, you will see that it decodes to *F5-Appworld*. This is just an extra 
-step to make sure that the value is not easily guessable.
+Now scroll down or use the link on left to navigate to the *RequestMatch* section. This is where you will define the actual criteria 
+that will be used to match our custom header/value.
 
 .. image:: _static/svc-req-match.png
    :scale: 30%
    :alt: match
    :align: center
 
-.. image:: _static/svc-header-match.png
+In this step you'll configure the actual header and value that you want to require for traffic to be allowed to the app. 
+For this lab, we will be creating a rule that only allows traffic that contains the header of:
+
+ header = *x-f5-appworld*
+
+ value  = *RjUtQXBwd29ybGQ=*
+
+How did we get this value? If you decode the value from base64, you will see that it decodes to *F5-Appworld*. This is just an extra 
+step to make sure that the value is not easily guessable.
+
+.. image:: _static/svc-header-matcher.png
    :scale: 30%
    :alt: header
    :align: center
