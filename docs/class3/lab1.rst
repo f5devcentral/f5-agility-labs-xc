@@ -99,7 +99,7 @@ and in a namespace you do not control so you cannot remove them.  Let's build ou
    :align: center
 
 Please name the service policy *custom-header*, take note of the Server Selections. You can make a policies based on all servers, host headers, or tags.
-Notice the options in the dropdown. (add link for options) We will select *Custom Rule List*
+Notice the options in the dropdown, but for the lab you will use **Server Name**. Please add your unique load balancer name.We will select *Custom Rule List*
 
 .. image:: _static/svc-pol-custom.png
    :scale: 30%
@@ -167,8 +167,7 @@ start enforcing the rules. To make the service policy active, navigate back to *
 From this page, you can select service policies that have been created and make them active. You can have multiple active service policies at a time, 
 and they will be enforced in the order that they are in the list. 
 
-You can also have different active service policies for different server selections, such as specific host headers or tags. For this lab, 
-we will be applying the service policy to *Any Server*.
+You can also have different active service policies for different server selections, such as specific host headers or tags.
 
 .. image:: _static/sel-active.png
    :scale: 30%
