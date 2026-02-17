@@ -19,7 +19,7 @@ Common use cases:
 - Geo blocking
 
 
-List features of service policies in relation to ui 
+For this lab, we will following use case
 
 For the scope of this lab, we will apply service policies to *Any Server* in the namespace. You *could* however, strategically apply 
 service policies to specific applications by host header or label selectors.
@@ -192,23 +192,33 @@ traffic that does not have the header/value of *x-f5-appworld: RjUtQXBwd29ybGQ=*
    :align: center
 
 
-You should now also see this reflected in the analytics for the load balancer. You can navigate to the analytics by clicking on the 
-load balancer name from the main load balancer page, and then clicking on the *Analytics* tab at the top.
+You should now also see this reflected in the analytics for the load balancer. You can navigate to the analytics by clicking:
+
+Overview > Performance ; then scroll down to the name of your load balancer and click on it. 
 
 .. image:: _static/observe.png
    :scale: 30%
    :alt: observe
    :align: center
 
+You are now at the *Dashboard* view. Here you can see various statistics about the traffic to your load balancer. But to see our custom
+header in action, click on the *Requests* tab. You may also need to adjust the time frame to see your traffic and refresh.
+
+At the bottom of the page, you should now see your 403 error request. You can click on the down arrow to see more details about the request 
+and see that it is being blocked by the service policy we just created.
+
 .. image:: _static/obs-req.png
    :scale: 30%
    :alt: observe req
    :align: center
 
+If you scroll down just a little, you can see the *Policy Hits* section. 
+
 .. image:: _static/obs-hit.png
    :scale: 30%
    :alt: observe hit
    :align: center 
+
 
 .. image:: _static/test-curl.png
    :scale: 30%
