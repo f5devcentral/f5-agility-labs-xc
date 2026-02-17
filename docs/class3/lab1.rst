@@ -83,14 +83,14 @@ as you'll need this for further configuration in the next steps.
    :alt: blue app
    :align: center
 
-Now we will create our first service policy. On the left navigation menu, click on *Service Policies*
+Now we will create our first service policy. On the left navigation menu, click on *Security* > *Service Policies* > *Service Policies*
 
 .. image:: _static/svc-pol-create.png 
    :scale: 30%
    :alt: pol create
    :align: center
 
-Now you will click on *Add Service Policy*, Notice the two existing policies that are already in place. These are applied by Distributed Cloud
+Click on *Add Service Policy*, notice the two existing policies that are already in place. These are applied by Distributed Cloud
 and in a namespace you do not control so you cannot remove them.  Let's build our first service policy:
 
 .. image:: _static/add-svc-pol.png
@@ -98,7 +98,7 @@ and in a namespace you do not control so you cannot remove them.  Let's build ou
    :alt: add
    :align: center
 
-Please name the service policy *custom-header*, take note of the Server options. You can make a policies based on all servers, host headers, or tags.
+Please name the service policy *custom-header*, take note of the Server Selections. You can make a policies based on all servers, host headers, or tags.
 Notice the options in the dropdown. (add link for options) We will select *Custom Rule List*
 
 .. image:: _static/svc-pol-custom.png
@@ -106,24 +106,39 @@ Notice the options in the dropdown. (add link for options) We will select *Custo
    :alt: custom
    :align: center 
 
+After selecting *Custom Rule List* (default) you will next click on *Configure* which will take you to where we will build and add rules.
 
 .. image:: _static/svc-pol-custom-conf.png
    :scale: 30%
    :alt: conf
    :align: center
 
-Click on *Add Item* 
+Click on *Add Item*, once you click this you will see the options for the different types of rules you can create. For this lab, 
+we will be creating a simple rule that only allows traffic to the app if it contains a specific header with a specific value. You can build 
+multiple rule sets to be applied.
 
 .. image:: _static/svc-pol-custom-add-rule.png
    :scale: 30%
    :alt: add rule
    :align: center
 
+Time to start building the **real** rule. You can title the specific rule whatever you like, but for this lab we will call it *appworld-header*. 
+Please make sure to toggle *Show Advanced Fields* to the right so that you can see all of the options available to you. 
 
 .. image:: _static/custom-rule-appworld.png
    :scale: 30%
    :alt: appworld
    :align: center 
+
+In this step you'll configure the actual header and value that you want to require for traffic to be allowed to the app. 
+For this lab, we will be creating a rule that only allows traffic that contains the header of:
+
+ header = *x-f5-appworld*
+
+ value  = *RjUtQXBwd29ybGQ=*.
+
+How did we get this value? If you decode the value from base64, you will see that it decodes to *F5-Appworld*. This is just an extra 
+step to make sure that the value is not easily guessable.
 
 .. image:: _static/svc-req-match.png
    :scale: 30%
