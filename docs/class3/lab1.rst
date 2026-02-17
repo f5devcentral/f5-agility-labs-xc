@@ -240,6 +240,8 @@ You shold see similar results to below.
    :alt: curl test
    :align: center
 
+You can now see the results of the curl commands in the analytics dashboard.
+
 .. image:: _static/post-curl.png
    :scale: 30%
    :alt: post curl
