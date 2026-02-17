@@ -4,7 +4,7 @@ Lab 1 Service Policy
 In this lab, you will implement a simple service policy for a web application. The service policy will define how the application 
 should handle incoming requests based on certain criteria, such as the user's role or the time of day.
 
-F5 Distributed Cloud Service Policies are part of a unified, SaaS-based security framework that allows, denies, or rate-limits traffic to
+F5 Distributed Cloud Service Policies are part of a unified, SaaS-based security framework that allows, denies, or rate-limits traffic to
 applications across multi-cloud, edge, and on-premises environments. These policies offer granular control (via headers, IP, TLSfingerprint,or path) and
 are enforced through a central console to protect against Layer 7 attacks, WAF, bot threats, and API misuse.
 
@@ -28,7 +28,7 @@ Lab:
 
 by default blue pool is active, we will see this when we go to add a new origin pool.
 
-.. image:: _static/multi-app-connect.png
+.. image:: _static/multi-app-conn.png
 
 You'll now navigate to review the lb configuration as shown below.
 
