@@ -51,7 +51,7 @@ of *<adjective-animal>>*-routing-https-lb.
 And verify that the blue pool is is your active pool.
 
 .. image:: _static/lb-blue-pool.png 
-   :scale: 30%
+   :scale: 20%
    :alt: blue pool
    :align: center
 
