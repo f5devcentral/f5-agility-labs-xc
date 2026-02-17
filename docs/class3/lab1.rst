@@ -219,6 +219,21 @@ If you scroll down just a little, you can see the *Policy Hits* section.
    :alt: observe hit
    :align: center 
 
+Let's now run a couple of tests from the command line to see the service policy in action. First, let's run a curl command without the 
+header to see that it is being blocked. And then we will run a curl command with the header to see that it is being allowed. Make sure 
+to replace the domain name in the command with your own.
+
+.. code-block:: bash
+
+   curl -I https://simple-mule.lab-app.f5demos.com/
+
+
+.. code-block:: bash
+
+   curl -I https://simple-mule.lab-app.f5demos.com/ -H "x-f5-appworld: RjUtQXBwd29ybGQ="
+
+
+You shold see similar results to below.     
 
 .. image:: _static/test-curl.png
    :scale: 30%
