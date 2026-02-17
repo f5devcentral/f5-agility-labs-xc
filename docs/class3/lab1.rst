@@ -58,6 +58,9 @@ And verify that the blue pool is is your active pool.
 And scroll down to *Common Security Controls* section and notice the section below:
 
 .. image:: _static/lb-csc.png
+   :scale: 30%
+   :alt: csc
+   :align: center
 
 This means that any service policy we create **AND** make active in the namespace will be applied to this load balancer.
 
@@ -68,68 +71,125 @@ You should now be back to the main page for load balancers. Please make note of 
 will need this to access the app. It should be in the format of *<adjective-animal>>*-lab-app.f5demos.com. Like below:
 
 .. image:: _static/lb-domain.png 
+   :scale: 30%
+   :alt: domain
+   :align: center
 
 You should now see the blue app when navigating to the domain name from your browser. Plese make note of the domain or leave a tab open
 as you'll need this for further configuration in the next steps.
 
 .. image:: _static/blue-app.png
+   :scale: 30%
+   :alt: blue app
+   :align: center
 
 Now we will create our first service policy. On the left navigation menu, click on *Service Policies*
 
 .. image:: _static/svc-pol-create.png 
+   :scale: 30%
+   :alt: pol create
+   :align: center
 
 Now you will click on *Add Service Policy*, Notice the two existing policies that are already in place. These are applied by Distributed Cloud
 and in a namespace you do not control so you cannot remove them.  Let's build our first service policy:
 
 .. image:: _static/add-svc-pol.png
+   :scale: 30%
+   :alt: add
+   :align: center
 
 Please name the service policy *custom-header*, take note of the Server options. You can make a policies based on all servers, host headers, or tags.
 Notice the options in the dropdown. (add link for options) We will select *Custom Rule List*
 
-.. image:: _static/svc-pol-custom.png 
+.. image:: _static/svc-pol-custom.png
+   :scale: 30%
+   :alt: custom
+   :align: center 
 
 
 .. image:: _static/svc-pol-custom-conf.png
+   :scale: 30%
+   :alt: conf
+   :align: center
 
 Click on *Add Item* 
 
 .. image:: _static/svc-pol-custom-add-rule.png
+   :scale: 30%
+   :alt: add rule
+   :align: center
 
 
-.. image:: _static/custom-rule-appworld.png 
+.. image:: _static/custom-rule-appworld.png
+   :scale: 30%
+   :alt: appworld
+   :align: center 
 
 .. image:: _static/svc-req-match.png
+   :scale: 30%
+   :alt: match
+   :align: center
 
 .. image:: _static/svc-header-match.png
+   :scale: 30%
+   :alt: header
+   :align: center
 
 apply; apply; add service policy  
 
-.. image:: _static/add-to-active.png 
+.. image:: _static/add-to-active.png
+   :scale: 30%
+   :alt: active
+   :align: center
 
-.. image:: _static/sel-active.png 
+.. image:: _static/sel-active.png
+   :scale: 30%
+   :alt: select
+   :align: center 
 
 
 Add the previously created service policy to the active policies and make sure to click the bottom right **Add Select Active Service Policies **
 
-.. image:: _static/act-custom-header.png 
+.. image:: _static/act-custom-header.png
+   :scale: 30%
+   :alt: active header
+   :align: center 
 
 Now try to navigate to your domain again, you should now see a 403 error. This is because the service policy is blocking all 
 traffic that does not have the header of *x-app-world: f5*.
 
 .. image:: _static/403-error.png
+   :scale: 30%
+   :alt: 403 error
+   :align: center
 
 
 You should now also see this reflected in the analytics for the load balancer. You can navigate to the analytics by clicking on the load balancer name from the main load balancer page, and then clicking on the *Analytics* tab at the top.
 
 .. image::_static/observe.png
+   :scale: 30%
+   :alt: observe
+   :align: center
 
 .. image:: _static/obs-req.png
+   :scale: 30%
+   :alt: observe req
+   :align: center
 
-.. image:: _static/obs-hit.png 
+.. image:: _static/obs-hit.png
+   :scale: 30%
+   :alt: observe hit
+   :align: center 
 
 .. image:: _static/test-curl.png
+   :scale: 30%
+   :alt: curl test
+   :align: center
 
 .. image:: _static/post-curl.png
+   :scale: 30%
+   :alt: post curl
+   :align: center
 
 Ending
 
@@ -138,4 +198,7 @@ We will now remove the service polices that have been built.
 When deleting the active service policy, make sure after you delete it to click the bottom right **Add Select Active Service Policies** to 
 update the active policies for the load balancer.
 
-_static/del-custom-header.png 
+.. image:: _static/del-custom-header.png
+   :scale: 30%
+   :alt: delete custom header
+   :align: center
