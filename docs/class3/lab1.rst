@@ -28,14 +28,14 @@ Lab:
 
 by default blue pool is active, we will see this when we go to add a new origin pool.
 
-.. image:: _static/multi-app-conn.png
+.. image:: _static/lab1/multi-app-conn.png
    :scale: 30%
    :alt: multi app conn
    :align: center
 
 You'll now navigate to review the lb configuration as shown below.
 
-.. image:: _static/lb-manage-conf.png
+.. image:: _static/lab1/lb-manage-conf.png
    :scale: 30%
    :alt: multi app conn
    :align: center
@@ -43,21 +43,21 @@ You'll now navigate to review the lb configuration as shown below.
 Make note of the name of the load balancer for your deployment as it will be different than the one shown below. It should be in the format
 of *<adjective-animal>>*-routing-https-lb. 
 
-.. image:: _static/lb-name.png
+.. image:: _static/lab1/lb-name.png
    :scale: 30%
    :alt: lb name
    :align: center
 
 And verify that the blue pool is is your active pool.
 
-.. image:: _static/lb-blue-pool.png 
+.. image:: _static/lab1/lb-blue-pool.png 
    :scale: 20%
    :alt: blue pool
    :align: center
 
 And scroll down to *Common Security Controls* section and notice the section below:
 
-.. image:: _static/lb-csc.png
+.. image:: _static/lab1/lb-csc.png
    :scale: 30%
    :alt: csc
    :align: center
@@ -70,7 +70,7 @@ Your review of the load balancer configuration is now complete. Please click *Cl
 You should now be back to the main page for load balancers. Please make note of the domain name for your load balancer as you 
 will need this to access the app. It should be in the format of *<adjective-animal>>*-lab-app.f5demos.com. Like below:
 
-.. image:: _static/lb-domain.png 
+.. image:: _static/lab1/lb-domain.png 
    :scale: 30%
    :alt: domain
    :align: center
@@ -78,14 +78,14 @@ will need this to access the app. It should be in the format of *<adjective-anim
 You should now see the blue app when navigating to the domain name from your browser. Plese make note of the domain or leave a tab open
 as you'll need this for further configuration in the next steps.
 
-.. image:: _static/blue-app.png
+.. image:: _static/lab1/blue-app.png
    :scale: 30%
    :alt: blue app
    :align: center
 
 Now we will create our first service policy. On the left navigation menu, click on *Security* > *Service Policies* > *Service Policies*
 
-.. image:: _static/svc-pol-create.png 
+.. image:: _static/lab1/svc-pol-create.png 
    :scale: 30%
    :alt: pol create
    :align: center
@@ -93,7 +93,7 @@ Now we will create our first service policy. On the left navigation menu, click 
 Click on *Add Service Policy*, notice the two existing policies that are already in place. These are applied by Distributed Cloud
 and in a namespace you do not control so you cannot remove them.  Let's build our first service policy:
 
-.. image:: _static/add-svc-pol.png
+.. image:: _static/lab1/add-svc-pol.png
    :scale: 30%
    :alt: add
    :align: center
@@ -101,14 +101,14 @@ and in a namespace you do not control so you cannot remove them.  Let's build ou
 Please name the service policy *custom-header*, take note of the Server Selections. You can make a policies based on all servers, host headers, or tags.
 Notice the options in the dropdown, but for the lab you will use **Server Name**. Please add your unique load balancer name.We will select *Custom Rule List*
 
-.. image:: _static/svc-pol-custom.png
+.. image:: _static/lab1/svc-pol-custom.png
    :scale: 30%
    :alt: custom
    :align: center 
 
 After selecting *Custom Rule List* (default) you will next click on *Configure* which will take you to where we will build and add rules.
 
-.. image:: _static/svc-pol-custom-conf.png
+.. image:: _static/lab1/svc-pol-custom-conf.png
    :scale: 30%
    :alt: conf
    :align: center
@@ -117,7 +117,7 @@ Click on *Add Item*, once you click this you will see the options for the differ
 we will be creating a simple rule that only allows traffic to the app if it contains a specific header with a specific value. You can build 
 multiple rule sets to be applied.
 
-.. image:: _static/svc-pol-custom-add-rule.png
+.. image:: _static/lab1/svc-pol-custom-add-rule.png
    :scale: 30%
    :alt: add rule
    :align: center
@@ -126,7 +126,7 @@ Time to start building the **real** rule. You can title the specific rule whatev
 Please make sure to toggle *Show Advanced Fields* to the right so that you can see all of the options available to you. You'll set the 
 action to **Allow**.
 
-.. image:: _static/custom-rule-appworld.png
+.. image:: _static/lab1/custom-rule-appworld.png
    :scale: 30%
    :alt: appworld
    :align: center 
@@ -134,7 +134,7 @@ action to **Allow**.
 Now scroll down or use the link on left to navigate to the *Request Match* section. This is where you will define the actual criteria 
 that will be used to match our custom header/value. Click **Add Item** under the HTTP Headers section. 
 
-.. image:: _static/svc-req-match.png
+.. image:: _static/lab1/svc-req-match.png
    :scale: 30%
    :alt: match
    :align: center
@@ -149,7 +149,7 @@ For this lab, we will be creating a rule that only allows traffic that contains 
 How did we get this value? If you decode the value from base64, you will see that it decodes to *F5-Appworld*. This is just an extra 
 step to make sure that the value is not easily guessable.
 
-.. image:: _static/svc-header-matcher.png
+.. image:: _static/lab1/svc-header-matcher.png
    :scale: 30%
    :alt: header
    :align: center
@@ -159,7 +159,7 @@ Now to save all your work. On the bottom right, click **Apply**, then **Apply**,
 Congratulations, you have now built your first service policy. However, it is not active yet, so let's make it active so that it can 
 start enforcing the rules. To make the service policy active, navigate back to *Security* > *Service Policies* > *Active Service Policies*
 
-.. image:: _static/add-to-active.png
+.. image:: _static/lab1/add-to-active.png
    :scale: 30%
    :alt: active
    :align: center
@@ -169,7 +169,7 @@ and they will be enforced in the order that they are in the list.
 
 You can also have different active service policies for different server selections, such as specific host headers or tags.
 
-.. image:: _static/sel-active.png
+.. image:: _static/lab1/sel-active.png
    :scale: 30%
    :alt: select
    :align: center 
@@ -177,7 +177,7 @@ You can also have different active service policies for different server selecti
 
 Click **Add Item** to add the previously created service policy, from dropdown, to the active policies and make sure to click the bottom right **Add Select Active Service Policies**
 
-.. image:: _static/act-custom-header.png
+.. image:: _static/lab1/act-custom-header.png
    :scale: 30%
    :alt: active header
    :align: center 
@@ -185,7 +185,7 @@ Click **Add Item** to add the previously created service policy, from dropdown, 
 Now try to navigate to your domain again, you should now see a 403 error. This is because the service policy is blocking all 
 traffic that does not have the header/value of *x-f5-appworld: RjUtQXBwd29ybGQ=*
 
-.. image:: _static/403-error.png
+.. image:: _static/lab1/403-error.png
    :scale: 30%
    :alt: 403 error
    :align: center
@@ -195,7 +195,7 @@ You should now also see this reflected in the analytics for the load balancer. Y
 
 Overview > Performance ; then scroll down to the name of your load balancer and click on it. 
 
-.. image:: _static/observe.png
+.. image:: _static/lab1/observe.png
    :scale: 30%
    :alt: observe
    :align: center
@@ -206,14 +206,14 @@ header in action, click on the *Requests* tab. You may also need to adjust the t
 At the bottom of the page, you should now see your 403 error request. You can click on the down arrow to see more details about the request 
 and see that it is being blocked by the service policy we just created.
 
-.. image:: _static/obs-req.png
+.. image:: _static/lab1/obs-req.png
    :scale: 30%
    :alt: observe req
    :align: center
 
 If you scroll down just a little, you can see the *Policy Hits* section. 
 
-.. image:: _static/obs-hit.png
+.. image:: _static/lab1/obs-hit.png
    :scale: 30%
    :alt: observe hit
    :align: center 
@@ -234,14 +234,14 @@ to replace the domain name in the command with your own.
 
 You shold see similar results to below.     
 
-.. image:: _static/test-curl.png
+.. image:: _static/lab1/test-curl.png
    :scale: 30%
    :alt: curl test
    :align: center
 
 You can now see the results of the curl commands in the analytics dashboard.
 
-.. image:: _static/post-curl.png
+.. image:: _static/lab1/post-curl.png
    :scale: 30%
    :alt: post curl
    :align: center
@@ -251,7 +251,7 @@ We will now remove the service polices that have been built.
 When deleting the active service policy, make sure after you delete it to click the bottom right **Add Select Active Service Policies** to 
 update the active policies for the load balancer.
 
-.. image:: _static/del-custom-header.png
+.. image:: _static/lab1/del-custom-header.png
    :scale: 30%
    :alt: delete custom header
    :align: center
