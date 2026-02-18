@@ -3,7 +3,7 @@ Lab 4: Web App Scanning
 
 **Objective:**
 
-* Setup continuous web application security testing
+* Analyze a baseline scan, configure web app scanning, and compare results with a post-protection scan to demonstrate the effectiveness of F5 Distributed Cloud.
   
 **Narrative:** 
 
@@ -11,7 +11,7 @@ Following the successful rollout of the F5 Web Application Security policies, th
 OWASP Top 10 Web Vulnerability Scanning of the application and measure the security posture of the application 
 over time.  Currently ACME Corp does a penetration test every six months which requires an external vendor and 
 lots of effort. ACME Corp would like to move to weekly scans with more automation and less effort.  
-There is also a requirementto run the scan from a specifically allowed known IP addresses so the security team 
+There is also a requirement to run the scan from a specifically allowed known IP addresses so the security team 
 can setup specific rules to identify and allow the scans to come in from the the internet.  
 After reviewing this requirement, ACME decides to evaluate F5 Distributed Cloud Web App Scanning.
 
@@ -32,11 +32,12 @@ and run automated penetration tests of your web applications and APIs.
 **View Existing Scan**
 **********************************************
 
-In this lab, you will evaluate the security posture of the ACME Corp web application using F5 Distributed Cloud Web App Scanning. Before configuring or running a new scan, you will first review a pre-existing vulnerability scan that was performed before any F5 Distributed Cloud security controls were applied. This baseline report represents the application in its original, vulnerable state and highlights multiple security findings.
+In this lab, you will evaluate the security posture of the ACME Corp web application using F5 Distributed Cloud Web App Scanning. Before configuring a new scan, you will first review a pre-existing vulnerability scan that was performed before any F5 Distributed Cloud security controls were applied. This baseline report represents the application in its original, vulnerable state and highlights multiple security findings.
 
 After reviewing the baseline scan, you will proceed through the lab as normal by configuring web application scanning. At the conclusion of the lab, you will review a second pre-existing scan report that was generated after WAF, bot defense, and malicious user protections were enabled, demonstrating a significantly improved security posture.
 
-This approach allows you to clearly see the before-and-after impact of F5 Distributed Cloud WAAP without waiting for long-running scans to complete during the lab.
+.. note::
+   This approach allows you to clearly see the before-and-after impact of F5 Distributed Cloud without waiting for long-running scans to complete during the lab.
 
 Steps to Locate the Baseline Scan Report
 
@@ -47,18 +48,23 @@ Steps to Locate the Baseline Scan Report
 5. In the left-hand menu, under 'Scans', select 'Applications'
 6. In the list of available scans, locate and select:
    **AppWorld 2026 – Baseline Vulnerability Scan**
-7. Review the scan results, noting:
 
-   -High and critical OWASP Top 10 findings
-   -Injection, XSS, or misconfiguration issues
-   -Overall risk score and severity distribution
-**********************************************
+   .. note::
+      In the upper right-hand corner, select the 'Filter by tags...' drop-down menu and enable the 'AppWorld2026' entry. Alternatively, you can search for the scan by name using the Search by Name field by typing in 'AppWorld'
+7. Select 'AppWorld 2026 - Baseline Vulnerability Scan' to review the scan results, noting:
+
+   -Overall Security Score
+   High, Medium, and Low Severity Issues
+8. Select the report under 'Latest Test Reports' to note: 
+   -OWASP Top 10 findings
+   -Issues: Cross Site Scripting, Sensitive Data Exposure, and misconfiguration issues
+   -You can select 'Play Video' to view the end-to-end vulnerabiity assessemtn procedures performed. 
+****************************************
 
 Task 1: Configure a Web Application Scan
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In this task, you will setup a penetration test of your internet facing application
-to report on OWASP Top 10 for Web Applications.  Below are some of the tests conducted by the Scan:
+Now that you had a chance to review the Baseline Scan report in this next task, you will setup a penetration test of your internet facing application to report on OWASP Top 10 for Web Applications.  Below are some of the tests conducted by the Scan:
 
 * Broken Access Control: Tests for issues related to the violation of the principle of least privilege, 
   bypassing access control checks, accessing/editing other users' data, and more.
