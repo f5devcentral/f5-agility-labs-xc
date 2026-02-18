@@ -237,6 +237,7 @@ to replace the domain name in the command with your own.
 
    curl -I https://simple-mule.lab-app.f5demos.com/ -H "x-f5-appworld: RjUtQXBwd29ybGQ="
 
+Please alternate these commands serveral times to populate your dashboard.
 
 You should see similar results to below.     
 
