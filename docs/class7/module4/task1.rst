@@ -3,7 +3,7 @@ Task 1 – F5 Web Application Scanning (WAS) as a DAST Tool
 
 In this task, you will review how **F5 Web Application Scanning (WAS)** fits into a modern DevSecOps workflow as a **Dynamic Application Security Testing (DAST)** tool.
 
-Unlike earlier modules, this task is **instructor-led**. The focus is on understanding *why* DAST matters, *where* it fits, and *how* it validates runtime security controls deployed earlier in the lab.
+The focus n this module is on understanding *why* DAST matters, *where* it fits, and *how* it validates runtime security controls deployed earlier in the lab.
 
 What is F5 Web Application Scanning (WAS)?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -32,10 +32,10 @@ WAS answers the final question:
 
 **“Did all of this actually make the app more secure?”**
 
-Instructor Review: Pre-Scan vs Post-Scan
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Review: Pre-Scan vs Post-Scan
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The instructor will walk through two pre-generated scan reports:
+Walk through two pre-generated scan reports:
 
 1. **Pre-Scan: AI-Generated App (No WAAP)**
    
@@ -75,7 +75,7 @@ While WAS scans were not executed live in this lab (due to scan duration), in re
   - Validate WAF and API policies
 
 *Important idea:*  
-WAS is not about blocking releases—it’s about **proving outcomes**.
+F5 WAS is not about blocking releases—it’s about **proving outcomes**.
 
 What This Task Reinforces
 ~~~~~~~~~~~~~~~~~~~~~~~~~

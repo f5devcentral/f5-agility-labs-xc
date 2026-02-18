@@ -416,7 +416,7 @@ In the next task, you will build on this foundation by enabling **Bot Defense** 
 .. |module3-vscode-cline-pending-task| image:: ../images/module3/module3-vscode-cline-pending-task.png
    :width: 800px
 .. |module3-vscode-cline-plan-response| image:: ../images/module3/module3-vscode-cline-plan-response.png
-   :width: 800px
+   :width: 400px
 .. |module3-vscode-cline-pytest-failed-2| image:: ../images/module3/module3-vscode-cline-pytest-failed-2.png
    :width: 400px
 .. |module3-vscode-cline-pytest-failed| image:: ../images/module3/module3-vscode-cline-pytest-failed.png
@@ -434,6 +434,6 @@ In the next task, you will build on this foundation by enabling **Bot Defense** 
 .. |module3-vscode-security-controls| image:: ../images/module3/module3-vscode-security-controls.png
    :width: 400px
 .. |module3-vscode-source-control-commit| image:: ../images/module3/module3-vscode-source-control-commit.png
-   :width: 800px
+   :width: 400px
 .. |module3-vscode-source-control-sync-changes| image:: ../images/module3/module3-vscode-source-control-sync-changes.png
    :width: 800px

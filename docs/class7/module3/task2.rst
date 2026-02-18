@@ -490,3 +490,7 @@ That final comparison brings the lab to its conclusion—and reinforces the full
    :width: 800px
 .. |module3-gitlab-build-pipeline| image:: ../images/module3/module3-gitlab-build-pipeline.png
    :width: 800px
+.. |module3-vscode-cline-switch-to-act| image:: ../images/module3/module3-vscode-cline-switch-to-act.png
+   :width: 800px
+.. |module3-vscode-cline-save-file| image:: ../images/module3/module3-vscode-cline-save-file.png
+   :width: 800px
