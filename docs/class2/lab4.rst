@@ -19,18 +19,15 @@ F5 Distributed Cloud Web App Scanning is an offering that lets you discover expo
 and run automated penetration tests of your web applications and APIs. 
 
 .. note::
-      *Official documentation found here: https://docs.cloud.f5.com/docs-v2/web-app-scanning/concepts/web-app-scanning/web-app-scanning-overview*
-
-**Expected Lab Time: 15 minutes**
+      * Official documentation found here: https://docs.cloud.f5.com/docs-v2/web-app-scanning/concepts/web-app-scanning/web-app-scanning-overview*
 
 **********************************************
+**Expected Lab Time: 15 minutes**
 **********************************************
 
 **Lab 4 Summary-–Web App Scanning**: Configure continuous web application scanning for the ACME Corp web application using F5’s Web App Scanning service. You will first review a baseline vulnerability scan with no security protections in place, highlighting multiple OWASP Top 10 findings. Next, you will outline and configure an automated scan (scope, schedule, and scanner IPs) without waiting for the scan to complete. Pre-generated before-and-after scan reports are provided to demonstrate the impact of F5 Distributed Cloud security controls. After applying WAF, bot defense, and malicious user protections, the post-scan report shows a significant reduction in exposed vulnerabilities, validating the effectiveness of the deployed protections.
 
-**********************************************
 **View Existing Scan**
-**********************************************
 
 In this lab, you will evaluate the security posture of the ACME Corp web application using F5 Distributed Cloud Web App Scanning. Before configuring a new scan, you will first review a pre-existing vulnerability scan that was performed before any F5 Distributed Cloud security controls were applied. This baseline report represents the application in its original, vulnerable state and highlights multiple security findings.
 
@@ -53,6 +50,7 @@ Steps to Locate the Baseline Scan Report
       In the upper right-hand corner, select the 'Filter by tags...' drop-down menu and enable the 'AppWorld2026' entry. Alternatively, you can search for the scan by name using the Search by Name field by typing in 'AppWorld'
 
        |lab4-a|
+
 7. Select 'AppWorld 2026 - Baseline Vulnerability Scan' to review the scan results, noting:
 
    -Overall Security Score
