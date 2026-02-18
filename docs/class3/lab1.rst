@@ -21,7 +21,9 @@ Common use cases:
 * Ja4+ fingerprinting
 
 
-For this lab, we will following use case
+In this lab, we will following the first use case allowing the app team to deploy a new application with public certs and DNS, but only 
+allow traffic that includes a specific header and value. This is a common use case for app teams that want to have the flexibility to 
+manage their own applications, but still want to have some control over the security of their applications.
 
 For the scope of this lab, we will apply service policies to *Any Server* in the namespace. You *could* however, strategically apply 
 service policies to specific applications by host header or label selectors.
