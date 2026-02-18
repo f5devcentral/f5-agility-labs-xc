@@ -81,7 +81,7 @@ will need this to access the app. It should be in the format of *<adjective-anim
    :alt: domain
    :align: center
 
-You should now see the blue app when navigating to the domain name from your browser. Plese make note of the domain or leave a tab open
+You should now see the blue app when navigating to the domain name from your browser. Please make note of the domain or leave a tab open
 as you'll need this for further configuration in the next steps.
 
 .. image:: _static/lab1/blue-app.png
@@ -105,7 +105,7 @@ and in a namespace you do not control so you cannot remove them.  Let's build ou
    :align: center
 
 Please name the service policy *custom-header*, take note of the Server Selections. You can make a policies based on all servers, host headers, or tags.
-Notice the options in the dropdown, but for the lab you will use **Server Name**. Please add your unique load balancer name.We will select *Custom Rule List*
+Notice the options in the drop down, but for the lab you will use **Server Name**. Please add your unique load balancer name.We will select *Custom Rule List*
 
 .. image:: _static/lab1/svc-pol-custom.png
    :scale: 30%
@@ -181,7 +181,7 @@ You can also have different active service policies for different server selecti
    :align: center 
 
 
-Click **Add Item** to add the previously created service policy, from dropdown, to the active policies and make sure to click the bottom right **Add Select Active Service Policies**
+Click **Add Item** to add the previously created service policy, from drop down, to the active policies and make sure to click the bottom right **Add Select Active Service Policies**
 
 .. image:: _static/lab1/act-custom-header.png
    :scale: 30%
@@ -238,7 +238,7 @@ to replace the domain name in the command with your own.
    curl -I https://simple-mule.lab-app.f5demos.com/ -H "x-f5-appworld: RjUtQXBwd29ybGQ="
 
 
-You shold see similar results to below.     
+You should see similar results to below.     
 
 .. image:: _static/lab1/test-curl.png
    :scale: 30%
