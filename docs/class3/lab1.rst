@@ -25,12 +25,14 @@ In this lab, we will following the first use case allowing the app team to deplo
 allow traffic that includes a specific header and value. This is a common use case for app teams that want to have the flexibility to 
 manage their own applications, but still want to have some control over the security of their applications.
 
-For the scope of this lab, we will apply service policies to *Any Server* in the namespace. You *could* however, strategically apply 
+For the scope of this lab, we will apply service policies to a specific server in the namespace. You *could* however, strategically apply 
 service policies to specific applications by host header or label selectors.
 
-Lab:
+Lab Environment:
 
-by default blue pool is active, we will see this when we go to add a new origin pool.
+Your lab environment should already be deployed. In the steps below you'll navigate user interface to discover the load balancer and assigned
+origin pool. 
+
 
 .. image:: _static/lab1/multi-app-conn.png
    :scale: 30%
