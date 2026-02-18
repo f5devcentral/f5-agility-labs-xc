@@ -3,13 +3,17 @@ Introduction to the Lab
 
 **Narrative:**
 
-You are a **Network Security Engineer at ACME Corp**, responsible for securing the company’s public-facing web applications and APIs. A recent **web application vulnerability** scan uncovered multiple **OWASP Top 10** issues in a customer-facing application, raising concerns from both the application team and the risk and compliance organization. In response, ACME has mandated that all internet-facing applications and APIs be protected by a Web Application Firewall (WAF) within a short timeframe.
+Congratulations! You are a **Network Security Engineer at ACME Corp**! You are responsible for securing your company’s public-facing web applications and APIs. A recent **web application vulnerability** scan uncovered multiple **OWASP Top 10** vulnerabilities in a customer-facing application, raising concerns from both the application team and the risk and compliance organization. In response, ACME has mandated that all internet-facing applications and APIs be protected by a Web Application Firewall (WAF) within a short timeframe.
 
-Rather than deploying and managing separate security solutions across on-premises and multiple cloud environments, you decide to evaluate **F5 Distributed Cloud Web Application and API Protection (WAAP)**. As a SaaS-based platform, F5 Distributed Cloud provides **WAF, Bot Defense, and Malicious User Mitigation**, through a unified control plane, enabling rapid deployment and consistent protection across environments.
+Rather than deploying and managing separate security solutions across on-premises and multiple cloud environments, you decide to evaluate **F5 Distributed Cloud Web Application and API Protection (WAAP)**. As a SaaS-based platform, F5 Distributed Cloud provides a wide ranges of security services, such as WAF, Bot Defense, and Malicious User Mitigation, through a unified control plane, enabling rapid deployment and consistent protection across environments.
 
-In this lab, you will work with a deliberately vulnerable web application that was **identified through web application scanning**. You will first apply layered security controls using F5 Distributed Cloud, including **WAF Policies, Bot Mitigation, and Malicious User Detection** (Labs 1–3). You will then configure Web App Scanning (Lab 4) to reassess the application after protections are in place, demonstrating how F5 security controls significantly reduce the application’s exposed vulnerabilities. Finally, you will use **AI-assisted analytics** (Lab 5) to validate security events and gain operational insight into how the application is being protected.
+------------
 
-This end-to-end workflow highlights how organizations can **discover vulnerabilities, deploy protection quickly, and continuously validate security posture** using F5 Distributed Cloud.
+In this lab, you will work with a deliberately vulnerable web application called DVWA (Damn Vulnerable Web Application) that was **identified through web application scanning**. You will first apply layered security controls using F5 Distributed Cloud, including **WAF Policies, Bot Mitigation, and Malicious User Detection** (Labs 1–3). Given that web application scans can take an unpredictable amount of time--Sometimes up to an hour--You will begin by examining a pre-existing 'Baseline Vulnerability Scan' completed before any F5 Distributed Cloud protections were applied. You will then configure Web App Scanning (Lab 4) to reassess the application after protections are in place. Upon completing Lab 4, you will examine a second pre-generated report—-“XC Protected Vulnerability Scan”—-to validate how F5 Distributed Cloud security services significantly reduced the risk/exposure by mitigating previously identified vulnerabilities. Finally, you will use **AI-Assisted Analytics** (Lab 5) to validate security events and gain operational insight into how the application is being protected.
+
+This end-to-end workflow highlights how organizations can **discover vulnerabilities, deploy protection quickly, and continuously improve security posture** using F5 Distributed Cloud.
+
+------------
 
 |intro000a|
 

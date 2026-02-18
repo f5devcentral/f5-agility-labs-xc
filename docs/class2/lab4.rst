@@ -186,7 +186,7 @@ to report on OWASP Top 10 for Web Applications.  Below are some of the tests con
 
 **View Post Lab Scan**
 
-teps to Locate the Protected Scan Report
+Steps to Locate the Protected Scan Report
 
 1. Log in to the F5 Distributed Cloud Console.
 2. From the navigation tiles, select Web App Scanning.
