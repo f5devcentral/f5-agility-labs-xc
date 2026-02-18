@@ -51,6 +51,8 @@ Steps to Locate the Baseline Scan Report
 
    .. note::
       In the upper right-hand corner, select the 'Filter by tags...' drop-down menu and enable the 'AppWorld2026' entry. Alternatively, you can search for the scan by name using the Search by Name field by typing in 'AppWorld'
+
+       |lab4-a|
 7. Select 'AppWorld 2026 - Baseline Vulnerability Scan' to review the scan results, noting:
 
    -Overall Security Score
