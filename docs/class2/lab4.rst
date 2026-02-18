@@ -53,12 +53,12 @@ Steps to Locate the Baseline Scan Report
 
 7. Select 'AppWorld 2026 - Baseline Vulnerability Scan' to review the scan results, noting:
 
-   -Security Score + High, Medium and Low Severity issues (Select each one)
-   -Notice the vulnerability type and associated CVSS 3.0 Score
+   * Security Score + High, Medium and Low Severity issues (Select each one)
+   * Notice the vulnerability type and associated CVSS 3.0 Score
 8. Select the report under 'Latest Test Reports' to note: 
-   -OWASP Top 10 findings
-   -Issues: Cross Site Scripting, Sensitive Data Exposure, and misconfiguration issues
-   -You can select 'Play Video' to view the end-to-end vulnerabiity assessemtn procedures performed. 
+   * OWASP Top 10 findings
+   * Issues: Cross Site Scripting, Sensitive Data Exposure, and misconfiguration issues
+   * You can select 'Play Video' to view the end-to-end vulnerabiity assessemtn procedures performed. 
 ****************************************
 
 Task 1: Configure a Web Application Scan
@@ -206,16 +206,16 @@ Steps to Locate the Protected Scan Report
       In the upper right-hand corner, select the 'Filter by tags...' drop-down menu and enable the 'AppWorld2026' entry. Alternatively, you can search for the scan by name using the Search by Name field by typing in 'AppWorld'
 
        |lab4-a|
-7. Select 'AppWorld 2026 - XC Protected Vulnerability Scan' to review the scan results, noting:
 
-   -Security Score + High, Medium and Low Severity issues (Select each one)
-   -Notice the vulnerability type and associated CVSS 3.0 Score
+7. Select 'AppWorld 2026 - XC Protected Vulnerability Scan' to review the scan results, noting:
+   * Security Score + High, Medium and Low Severity issues (Select each one)
+   * Notice the vulnerability type and associated CVSS 3.0 Score
 8. Select the report under 'Latest Test Reports' to note: 
-   -OWASP Top 10 findings
-   -Issues: Cross Site Scripting, Sensitive Data Exposure, and misconfiguration issues
-   -You can select 'Play Video' to view the end-to-end vulnerabiity assessemtn procedures performed. 
-    -Select one of the issues that were uncovered to view the vulerability details, including description, when it was originally discovered, reocurrances, type, etc. 
-   -Under the review menu, you can add notes and accept, reject, or mark as resolved, dpending on the status or nature of the issue.
+   * OWASP Top 10 findings
+   * Issues: Cross Site Scripting, Sensitive Data Exposure, and misconfiguration issues
+   * You can select 'Play Video' to view the end-to-end vulnerabiity assessemtn procedures performed. 
+   * Select one of the issues that were uncovered to view the vulerability details, including description, when it was originally discovered, reocurrances, type, etc. 
+   * Under the review menu, you can add notes and accept, reject, or mark as resolved, dpending on the status or nature of the issue.
 ****************************************
 
 Narrative Check
@@ -233,7 +233,7 @@ results and playback the recorded video.
 |labend|
 
 .. |lab4-a| image:: _static/lab4-a.png
-   :width: 800px
+   :width: 400px
 .. |lab001| image:: _static/lab4-001.png
    :width: 800px
 .. |lab002| image:: _static/lab4-002.png
