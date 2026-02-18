@@ -8,15 +8,17 @@ F5 Distributed Cloud Service Policies are part of a unified, SaaS-based security
 applications across multi-cloud, edge, and on-premises environments. These policies offer granular control (via headers, IP, TLSfingerprint,or path) and
 are enforced through a central console to protect against Layer 7 attacks, WAF, bot threats, and API misuse.
 
-comparason to traffic policies from BIG-IP 
+These service policies, are the "iRules" of the Distributed Cloud world, and they are what allow you to create custom security policies that fit your specific use case.
 
 Common use cases:
 
-- Allow for public certs, DNS to be established for the app, but only allow traffic from certain IPs, or that include specific headers and values.
+* Allow for public certs, DNS to be established for the app, but only allow traffic from certain IPs, or that include specific headers and values.
 
-- Allow for traffic to bypass WAF
+* Allow for traffic to bypass WAF
 
-- Geo blocking
+* Geo blocking
+
+* Ja4+ fingerprinting
 
 
 For this lab, we will following use case
