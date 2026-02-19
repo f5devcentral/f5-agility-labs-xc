@@ -43,6 +43,7 @@ GitLab Server Access
    |gitlab-home-page|
 
    *What to notice:*
+
    - You are logged in as a pre-created lab user.
    - The GitLab UI is fully accessible.
    - The GitLab server was preconfigured with users, projects, and runners.
@@ -139,6 +140,7 @@ This certificate must be uploaded to the GitLab server.
     |filebrowser-file-logout|
 
    *What to notice:*
+
    - The certificate file is stored on the GitLab server.
    - The filename and password must match pipeline expectations.
 

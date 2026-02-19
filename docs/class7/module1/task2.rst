@@ -14,6 +14,7 @@ Build a Simple Flask Web Application
    |module1-cline-start-new-task|
 
    *What to notice:*
+
    - Cline opens its own chat panel inside VS Code.
    - You are still working inside your real workspace.
 
@@ -118,6 +119,7 @@ Build a Simple Flask Web Application
    |module1-cline-demo-app-plan-response|
 
    *What to notice:*
+
    - No files are created yet.
    - This is your chance to sanity-check the approach.
 

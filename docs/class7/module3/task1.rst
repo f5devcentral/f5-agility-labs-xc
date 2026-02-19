@@ -131,6 +131,7 @@ Extend the Application Using Cline
       ====================================================================
       Provide changes as:
       - Minimal diffs OR full updated files for:
+
       - app/app.py
       - openapi/openapi.json (new)
       - app/tests/test_app.py
@@ -196,6 +197,7 @@ Vibe Coding Experience in VS Code (What You’ll See)
    |module3-vscode-cline-pytest-passed|
 
    *What to notice:*
+
    - Cline uses the test output as feedback to fix issues.
    - If the same failure repeats several times, Cline may stop the task.
 

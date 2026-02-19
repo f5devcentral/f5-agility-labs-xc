@@ -66,6 +66,7 @@ Extend the Application with User-Facing Pages
       ====================================================================
       You MAY:
       - Add Flask routes for:
+
       - GET /login
       - POST /login
       - GET /contact
@@ -388,6 +389,7 @@ Test Bot Defense in Browser vs curl (Why Results Differ)
    |module3-task2-curl-commands-test.png|
 
    *What to notice:*
+
    - curl does not execute JavaScript or provide browser telemetry.
    - The request is classified as automation and is blocked.
    - The response shows a block outcome (or block message).

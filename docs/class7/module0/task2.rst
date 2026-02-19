@@ -16,8 +16,7 @@ Accessing F5 Distributed Cloud
    |f5xc-email-invitation|
 
    .. note::
-      *You can also access the tenant directly at:*  
-      *https://f5-xc-lab-app.console.ves.volterra.io/*
+      You can also access the tenant directly at: `https://f5-xc-lab-app.console.ves.volterra.io/ <https://f5-xc-lab-app.console.ves.volterra.io/>`_
 
 2. Authenticate using Single Sign-On (SSO).
 
@@ -37,6 +36,7 @@ Accessing F5 Distributed Cloud
 5. Select your user preferences.
 
    Choose the following options when prompted:
+
    - **Role:** Super User
    - **Experience Level:** Advanced
 
@@ -46,9 +46,6 @@ Accessing F5 Distributed Cloud
    .. note::
       *Guidance tooltips or welcome notices may appear. These can be safely dismissed.*
 
-   *What to notice:*
-   - The console exposes advanced features immediately.
-   - You have visibility across all required objects for the lab.
 
 Assigned Namespace
 ~~~~~~~~~~~~~~~~~~
@@ -72,6 +69,7 @@ Each lab attendee has been assigned a **unique namespace** that will be used thr
 3. Identify your assigned namespace.
 
    Under **My Namespaces**, you should see:
+
    - ``system``
    - Your assigned namespace
 
@@ -82,12 +80,13 @@ Each lab attendee has been assigned a **unique namespace** that will be used thr
       *ready-skink).*
 
    *What to notice:*
+
    - You only deploy applications into your assigned namespace.
    - Namespaces prevent collisions between lab attendees.
    - Namespaces were pre-created before the lab.
    - CI/CD pipelines reference your namespace dynamically.
 
-4. Save your assigned namespace.
+4. Save your assigned namespace on a notedpad.
 
    You will need this value in multiple upcoming tasks, including CI/CD and Terraform-driven deployments.
 
@@ -111,7 +110,7 @@ To allow GitLab and Terraform to interact with F5 Distributed Cloud programmatic
 
     Fill in the following fields:
 
-    - **Credential Name:** ``<namespace>-api-cert``  
+    - **Credential Name:** ``<namespace>-api-cert``
       *(Example: ready-skink-api-cert)*
     - **Credential Type:** API Certificate
     - **Password:** ``@ppW0rld2026!``
@@ -131,12 +130,13 @@ To allow GitLab and Terraform to interact with F5 Distributed Cloud programmatic
        *The GitLab server is preconfigured to expect this exact filename and password.*
 
    *What to notice:*
+
    - The file is in P12 format.
    - This certificate will be reused by automation.
    - GitLab and Terraform will use it to deploy and manage F5XC objects.
 
 TEMP - Create a Virtual K8- cluster in your NAME SPACE
-=======================================================
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ***This a Temporary step***
 
     Navigate to:
