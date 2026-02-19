@@ -25,7 +25,7 @@ and run automated penetration tests of your web applications and APIs.
 **Expected Lab Time: 15 minutes**
 **********************************************
 
-**Lab 4 Summary-–Web App Scanning**: Configure continuous web application scanning for the ACME Corp web application using F5’s Web App Scanning service. You will first review a baseline vulnerability scan with no security protections in place, highlighting multiple OWASP Top 10 findings. Next, you will outline and configure an automated scan (scope, schedule, and scanner IPs) without waiting for the scan to complete. Pre-generated before-and-after scan reports are provided to demonstrate the impact of F5 Distributed Cloud security controls. After applying WAF, bot defense, and malicious user protections, the post-scan report shows a significant reduction in exposed vulnerabilities, validating the effectiveness of the deployed protections.
+**Lab 4 Summary-Web App Scanning**: Configure continuous web application scanning for the ACME Corp web application using F5’s Web App Scanning service. You will first review a baseline vulnerability scan with no security protections in place, highlighting multiple OWASP Top 10 findings. Next, you will outline and configure an automated scan (scope, schedule, and scanner IPs) without waiting for the scan to complete. Pre-generated before-and-after scan reports are provided to demonstrate the impact of F5 Distributed Cloud security controls. After applying WAF, bot defense, and malicious user protections, the post-scan report shows a significant reduction in exposed vulnerabilities, validating the effectiveness of the deployed protections.
 
 **View Existing Scan**
 
@@ -44,7 +44,7 @@ Steps to Locate the Baseline Scan Report
 4. You will be presented with the Web App Scanning Dashboard to view a summary of all application scans.
 5. In the left-hand menu, under 'Scans', select 'Applications'.
 6. In the list of available scans, locate and select:
-   **AppWorld 2026 – Baseline Vulnerability Scan**
+   **AppWorld 2026 Baseline Vulnerability Scan**
 
    .. note::
       In the upper right-hand corner, select the 'Filter by tags...' drop-down menu and enable the 'AppWorld2026' entry. Alternatively, you can search for the scan by name using the Search by Name field by typing in 'AppWorld'
