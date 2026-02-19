@@ -1,4 +1,3 @@
-setuptools
 f5_sphinx_theme
 pre-commit
 recommonmark
