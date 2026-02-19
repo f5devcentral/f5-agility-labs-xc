@@ -42,12 +42,6 @@ GitLab Server Access
 
    |gitlab-home-page|
 
-   *What to notice:*
-
-   - You are logged in as a pre-created lab user.
-   - The GitLab UI is fully accessible.
-   - The GitLab server was preconfigured with users, projects, and runners.
-
 Configure GitLab Project Variables
 ----------------------------------
 
@@ -94,9 +88,9 @@ This certificate must be uploaded to the GitLab server.
 
 10. Access the Filebrowser service.
 
-    In your UDF deployment, locate the **GitLab Server** tile and click **Access**.
+    In your UDF deployment, locate the **GitLab Server** tile and click **Access**. Click on **FILEBROWSER**.
 
-11. Open **FILEBROWSER**.
+   |gitlab-tile-access-fliebrowser|
 
     On the Filebrowser login page, enter the following credentials:
 
@@ -105,7 +99,7 @@ This certificate must be uploaded to the GitLab server.
 
     |filebrowser-login|
 
-12. Open the upload interface.
+11. Open the upload interface.
 
     After logging in, you should see the Filebrowser landing page.  
     Click the **Upload** button in the top-right corner.
@@ -178,4 +172,6 @@ Next, you will begin committing code and observing how CI/CD enforces security c
 .. |filebrowser-upload| image:: ../images/module0/filebrowser-upload.png
    :width: 400px
 .. |filebrowser-file-logout| image:: ../images/module0/filebrowser-file-logout.png
+   :width: 400px
+.. |gitlab-tile-access-fliebrowser| image:: ../images/module0/gitlab-tile-access-fliebrowser.png
    :width: 400px

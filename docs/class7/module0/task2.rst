@@ -95,18 +95,15 @@ Generate F5XC API Certificate
 
 To allow GitLab and Terraform to interact with F5 Distributed Cloud programmatically, you must generate an **API certificate**.
 
-10. Navigate to API credential settings.
-
-    In the F5XC console, go to:
+10. In the same **Account Settings** page navigate to API credential settings.
 
     ::
 
        Account Settings → Credentials → Add Credentials
 
     |f5xc-console-account-settings-credentials|
-    |f5xc-console-account-settings-credentials-cert-1|
 
-11. Create a new API certificate.
+11. Cick "Add Credentials" and create a new one with the following settings.
 
     Fill in the following fields:
 
@@ -115,6 +112,13 @@ To allow GitLab and Terraform to interact with F5 Distributed Cloud programmatic
     - **Credential Type:** API Certificate
     - **Password:** ``@ppW0rld2026!``
     - **Expiry Date:** 2 days
+
+
+    .. note::
+       *Do NOT change the password.*  
+       *The GitLab server is preconfigured to expect this exact password.*
+
+    |f5xc-console-account-settings-credentials-cert-1|
 
 12. Download the API certificate.
 
@@ -126,8 +130,8 @@ To allow GitLab and Terraform to interact with F5 Distributed Cloud programmatic
        f5-xc-lab-app.console.ves.volterra.io.api-creds.p12
 
     .. note::
-       *Do NOT rename this file and do NOT change the password.*  
-       *The GitLab server is preconfigured to expect this exact filename and password.*
+       *Do NOT rename this file*  
+       *The GitLab server is preconfigured to expect this exact filename.*
 
    *What to notice:*
 

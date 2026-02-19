@@ -46,9 +46,10 @@ Visual Studio Code Server Access
    |chrome-pop-ups|
 
 VS Code Quick Orientation (For Beginners) - OPTIONAL
------------------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If you are new to VS Code, here is a quick tour of the interface you’re looking at:
+If you are new to VS Code, here is a quick tour of the interface you’re looking at. If you are 
+familiar with the VScode applicaiton you can safely skip thi step
 
 **Left Panel – Activity Bar & Explorer**
    - The vertical icon bar on the far left is the **Activity Bar**.
@@ -56,6 +57,8 @@ If you are new to VS Code, here is a quick tour of the interface you’re lookin
    - The branch icon opens **Source Control** (used for Git commits).
    - The Cline icon opens the **Cline AI chat**.
    - Think of this panel as your navigation center.
+
+   |task4-vscode-left-bar| 
 
 **Center Panel – Code Editor**
    - This is where files open.
@@ -68,7 +71,7 @@ If you are new to VS Code, here is a quick tour of the interface you’re lookin
    - You can resize this panel by dragging its top border.
 
 Opening a New Terminal
-~~~~~~~~~~~~~~~~~~~~~~
+-----------------------
 
 To open a new terminal manually:
 
@@ -83,7 +86,7 @@ You can open multiple terminals if needed.
 |task4-vscode-new-terminal|
 
 Accessing Source Control
-~~~~~~~~~~~~~~~~~~~~~~~~
+--------------------------
 
 To commit changes to GitLab:
 
@@ -97,7 +100,7 @@ To commit changes to GitLab:
 
 
 Accessing Cline
-~~~~~~~~~~~~~~~
+-----------------
 
 To open Cline:
 
@@ -114,8 +117,9 @@ To open Cline:
 - You control when code is committed.
 - You are always in charge of what gets executed.
 
+
 Configure VS Code Cline Extension
----------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The Cline extension enables AI-assisted coding using Gemini.  
 In this step, you will connect Cline to the preconfigured Gemini backend.
@@ -225,11 +229,10 @@ Next, you will begin using Cline to generate and modify application code—putti
 .. |task4-vscode-cline| image:: ../images/module0/task4-vscode-cline.png
    :width: 400px
 .. |task4-vscode-left-bar| image:: ../images/module0/task4-vscode-left-bar.png
-   :width: 400px
+   :width: 40px
 .. |task4-vscode-open-terminal| image:: ../images/module0/task4-vscode-open-terminal.png
    :width: 400px
 .. |task4-vscode-new-terminal| image:: ../images/module0/task4-vscode-new-terminal.png
    :width: 400px
 .. |task4-vscode-source-control| image:: ../images/module0/task4-vscode-source-control.png
    :width: 400px
-
