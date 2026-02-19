@@ -18,8 +18,8 @@ F5XC WAS is a DAST solution that evaluates a *running* application from the outs
 SAST inspects code.  
 DAST tests reality.
 
-Why WAS Matters in This Lab
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Why F5XC WAS Matters in This Lab
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Throughout this lab, you have:
 
@@ -28,16 +28,18 @@ Throughout this lab, you have:
 - Deployed runtime protections using F5 Distributed Cloud
 - Observed live security events (WAF, API, Bot Defense)
 
-WAS answers the final question:
+F5XC WAS answers the final question:
 
 **“Did all of this actually make the app more secure?”**
 
 Review: Pre-Scan vs Post-Scan WAF Reports
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Review the Pre-Scan and Post-Scan reports performed using F5XC Web Application Scanning to the live version of the 
+Review the Pre-Scan and Post-Scan reports performed using **F5XC Web Application Scanning** to a live version of the 
 
-`F5 AI Generated Application <https://f5-ai-generated-app.xc.hvf5lab.com/reports>`_
+Open a new tab in your browser and navigate to:
+
+`F5 AI Generated Application <https://f5-ai-generated-app.xc.hvf5lab.com/reports>`_ - https://f5-ai-generated-app.xc.hvf5lab.com/reports
 
 The reports include:
 
