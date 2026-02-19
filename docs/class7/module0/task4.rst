@@ -183,11 +183,6 @@ Validate Gemini Connectivity
 
    |gemini-hello-response|
 
-   *What to notice:*
-
-   - Gemini responds immediately.
-   - The interaction happens inside VS Code.
-   - No code changes occur in Plan mode.
 
 Wrap-Up
 ~~~~~~~
