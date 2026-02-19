@@ -81,7 +81,7 @@ Create the Security Policy File
    |module2-vscode-create-security-control-2|
 
    .. note::
-      Please make sure the file is created on the root folder of the application repo. If it is created somewhere else, the CI/CD pipeline will fail
+      Please make sure the file is created on the root folder of the application repo. If it is created somewhere else, the CI/CD pipeline will fail. Aslo make sure you are using the exact same filename and extension
 
 5. Add the initial security policy.
 
@@ -151,7 +151,7 @@ Observe the Pipeline Failure
 
 1. Watch the CI/CD pipeline start in GitLab.
 
-   Navigate to:
+   Navigate back to the Gitlab appworld2026 / module2-app project. Then hover over **Build** and click **Pipelines**
 
    ::
 
@@ -237,6 +237,10 @@ Access the Application
     ::
 
        https://<NAMESPACE>-lb.lab-app.f5demos.com
+
+   .. note::
+      Replace <NAMESPACE> with your F5 Distributed Cloud namespace assigned at the beggining of the lab
+
 
     |module2-app-home-page|
 
