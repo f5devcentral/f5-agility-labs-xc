@@ -42,8 +42,8 @@ GitLab Server Access
 
    |gitlab-home-page|
 
-Configure GitLab Project Variables
-----------------------------------
+Configure GitLab Module 2 Project Variables
+--------------------------------------------
 
 CI/CD variables are how GitLab securely passes secrets and environment-specific values into pipelines.
 
