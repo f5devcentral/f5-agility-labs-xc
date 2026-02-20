@@ -16,8 +16,7 @@ Accessing F5 Distributed Cloud
    |f5xc-email-invitation|
 
    .. note::
-      *You can also access the tenant directly at:*  
-      *https://f5-xc-lab-app.console.ves.volterra.io/*
+      You can also access the tenant directly at: `https://f5-xc-lab-app.console.ves.volterra.io/ <https://f5-xc-lab-app.console.ves.volterra.io/>`_
 
 2. Authenticate using Single Sign-On (SSO).
 
@@ -37,6 +36,7 @@ Accessing F5 Distributed Cloud
 5. Select your user preferences.
 
    Choose the following options when prompted:
+
    - **Role:** Super User
    - **Experience Level:** Advanced
 
@@ -46,9 +46,6 @@ Accessing F5 Distributed Cloud
    .. note::
       *Guidance tooltips or welcome notices may appear. These can be safely dismissed.*
 
-   *What to notice:*
-   - The console exposes advanced features immediately.
-   - You have visibility across all required objects for the lab.
 
 Assigned Namespace
 ~~~~~~~~~~~~~~~~~~
@@ -72,6 +69,7 @@ Each lab attendee has been assigned a **unique namespace** that will be used thr
 3. Identify your assigned namespace.
 
    Under **My Namespaces**, you should see:
+
    - ``system``
    - Your assigned namespace
 
@@ -82,12 +80,13 @@ Each lab attendee has been assigned a **unique namespace** that will be used thr
       *ready-skink).*
 
    *What to notice:*
+
    - You only deploy applications into your assigned namespace.
    - Namespaces prevent collisions between lab attendees.
    - Namespaces were pre-created before the lab.
    - CI/CD pipelines reference your namespace dynamically.
 
-4. Save your assigned namespace.
+4. Save your assigned namespace on a notedpad.
 
    You will need this value in multiple upcoming tasks, including CI/CD and Terraform-driven deployments.
 
@@ -96,26 +95,30 @@ Generate F5XC API Certificate
 
 To allow GitLab and Terraform to interact with F5 Distributed Cloud programmatically, you must generate an **API certificate**.
 
-10. Navigate to API credential settings.
-
-    In the F5XC console, go to:
+10. In the same **Account Settings** page navigate to API credential settings.
 
     ::
 
        Account Settings → Credentials → Add Credentials
 
     |f5xc-console-account-settings-credentials|
-    |f5xc-console-account-settings-credentials-cert-1|
 
-11. Create a new API certificate.
+11. Cick "Add Credentials" and create a new one with the following settings.
 
     Fill in the following fields:
 
-    - **Credential Name:** ``<namespace>-api-cert``  
+    - **Credential Name:** ``<namespace>-api-cert``
       *(Example: ready-skink-api-cert)*
     - **Credential Type:** API Certificate
     - **Password:** ``@ppW0rld2026!``
     - **Expiry Date:** 2 days
+
+
+    .. note::
+       *Do NOT change the password.*  
+       *The GitLab server is preconfigured to expect this exact password.*
+
+    |f5xc-console-account-settings-credentials-cert-1|
 
 12. Download the API certificate.
 
@@ -127,16 +130,17 @@ To allow GitLab and Terraform to interact with F5 Distributed Cloud programmatic
        f5-xc-lab-app.console.ves.volterra.io.api-creds.p12
 
     .. note::
-       *Do NOT rename this file and do NOT change the password.*  
-       *The GitLab server is preconfigured to expect this exact filename and password.*
+       *Do NOT rename this file*  
+       *The GitLab server is preconfigured to expect this exact filename.*
 
    *What to notice:*
+
    - The file is in P12 format.
    - This certificate will be reused by automation.
    - GitLab and Terraform will use it to deploy and manage F5XC objects.
 
 TEMP - Create a Virtual K8- cluster in your NAME SPACE
-=======================================================
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ***This a Temporary step***
 
     Navigate to:

@@ -13,9 +13,11 @@ Extend the Application with User-Facing Pages
 
    Ensure you are working in the ``module2-app`` folder and that the previous pipeline from Module 3 Task 1 completed successfully.
 
-2. Use the provided pre-canned prompt to generate a login page and contact page.
+2. Start a new task with Cline and use the provided pre-canned prompt to generate a login page and contact page.
 
-   Using the **Cline extension**, run the instructor-provided prompt to add:
+   |module3-vscode-cline-start-new-task|
+
+   Using the **Cline extension**, copy the instructor-provided prompt to add:
    - A login page
    - A contact page
 
@@ -66,6 +68,7 @@ Extend the Application with User-Facing Pages
       ====================================================================
       You MAY:
       - Add Flask routes for:
+
       - GET /login
       - POST /login
       - GET /contact
@@ -283,6 +286,8 @@ Commit and Push the Changes
 
       Commit Module 3 Task2 – Enable Bot Defense
 
+   |module3-vscode-source-control-commit|
+
 9. Push the commit the changes. GitLab CI/CD detects the changes and starts a new pipeline run.
 
 Observe the CI/CD Pipeline
@@ -344,11 +349,21 @@ Test Bot Defense in Browser vs curl (Why Results Differ)
 
 13. Open the login page in a browser and observe the bot protection behavior.
 
-   When Bot Defense is enabled, the browser experience may include an injected JavaScript challenge (or additional client-side signals).
+   ::
 
-   After The CI/CD pipeline updates the app and F5XC. Navigate to he login or contact page in you application. This will trigger the JavaScript injection.
+      https://<NAMESPACE>-lb.lab-app.f5demos.com/login
+
+   .. note::
+      Replace <NAMESPACE> with your F5 Distributed Cloud namespace assigned at the beggining of the lab
+
+
+   When F5XC Bot Defense is enabled, the browser experience will include an injected JavaScript challenge (or additional client-side signals).
+
+   After The CI/CD pipeline updates the app and F5XC. Navigate to the login or contact page in you application. This will trigger the JavaScript injection.
    
    |module3-task2-browser-login-test.png|
+
+   Depending on your Browse, please open the developemnt tools to explorer the JavaScript injection. **This step is OPTIONAL**
 
    |module3-task2-browser-bot-telemetry-1.png|
 
@@ -358,6 +373,7 @@ Test Bot Defense in Browser vs curl (Why Results Differ)
 
 
    **What this means:**
+
    - Real browsers can execute JavaScript and provide client signals.
    - Bot Defense uses these signals to distinguish browsers from automation.
    - This is why browser access can be allowed while scripted clients are blocked.
@@ -387,7 +403,8 @@ Test Bot Defense in Browser vs curl (Why Results Differ)
 
    |module3-task2-curl-commands-test.png|
 
-   *What to notice:*
+   **What this means:**
+
    - curl does not execute JavaScript or provide browser telemetry.
    - The request is classified as automation and is blocked.
    - The response shows a block outcome (or block message).
@@ -465,11 +482,11 @@ That final comparison brings the lab to its conclusion—and reinforces the full
 .. |module3-vscode-cline-api-prompt| image:: ../images/module3/module3-fvscode-cline-api-prompt.png
    :width: 400px
 .. |module3-vscode-cline-pytest-failed-2.png| image:: ../images/module3/module3-vscode-cline-pytest-failed-2.png
-   :width: 400px
+   :width: 800px
 .. |module3-vscode-cline-pytest-failed.png| image:: ../images/module3/module3-vscode-cline-pytest-failed.png
-   :width: 400px
+   :width: 800px
 .. |module3-vscode-cline-pytest-passed.png| image:: ../images/module3/module3-vscode-cline-pytest-passed.png
-   :width: 400px
+   :width: 800px
 .. |module3-f5xc-waap-security-dashboard.png| image:: ../images/module3/module3-f5xc-waap-security-dashboard.png
    :width: 800px
 .. |module3-task2-vscode-login-contact-html.png| image:: ../images/module3/module3-task2-vscode-login-contact-html.png
@@ -494,3 +511,7 @@ That final comparison brings the lab to its conclusion—and reinforces the full
    :width: 800px
 .. |module3-vscode-cline-save-file| image:: ../images/module3/module3-vscode-cline-save-file.png
    :width: 800px
+.. |module3-vscode-cline-start-new-task| image:: ../images/module3/module3-vscode-cline-start-new-task.png
+   :width: 400px
+.. |module3-vscode-source-control-commit| image:: ../images/module3/module3-vscode-source-control-commit.png
+   :width: 400px

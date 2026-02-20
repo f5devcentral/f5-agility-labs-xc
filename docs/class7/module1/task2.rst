@@ -13,9 +13,6 @@ Build a Simple Flask Web Application
 
    |module1-cline-start-new-task|
 
-   *What to notice:*
-   - Cline opens its own chat panel inside VS Code.
-   - You are still working inside your real workspace.
 
 2. Generate the application request (Plan mode).
 
@@ -118,6 +115,7 @@ Build a Simple Flask Web Application
    |module1-cline-demo-app-plan-response|
 
    *What to notice:*
+
    - No files are created yet.
    - This is your chance to sanity-check the approach.
 
@@ -135,6 +133,7 @@ Build a Simple Flask Web Application
       *After generating each file, Cline will prompt you to save it before continuing.*
 
    *What happened behind the scenes:*
+
    - Gemini generates code for each file.
    - Cline writes the files directly into your workspace.
    - VS Code prompts you to save changes as they occur.
@@ -175,6 +174,8 @@ Run and Test the Application
     .. note::
        *Flask must be running for the home page to be accessible.*
 
+   Your application will look similar to this
+
    |module1-cline-demo-app-terminal-4-firefox-module1-bookmark|
 
 4. Stop the application and clean up.
@@ -187,7 +188,7 @@ Run and Test the Application
 
    |module1-cline-demo-app-terminal-ctrlc-close|
 
-   Clean up any files you no longer need.
+   Close the files created by cline as you no longer need edit them.
 
    |module1-cline-demo-app-cleanup|
 

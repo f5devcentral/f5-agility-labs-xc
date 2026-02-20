@@ -55,24 +55,6 @@ Check out this visual of how it all flows together. It's basically a never-endin
 Key insight:  
 Security is not a phase. It’s a **feedback loop**.
 
-Why This Matters in the Real World
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-In real environments:
-
-- AI will keep accelerating development
-- Attackers will keep automating abuse
-- Manual security will not scale
-
-What *does* scale is:
-
-- Policy-as-code
-- CI/CD enforcement
-- Runtime protection
-- Continuous validation
-
-That’s what you just experienced.
-
 Final Takeaway
 ~~~~~~~~~~~~~~
 
