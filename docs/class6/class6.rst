@@ -1,7 +1,7 @@
 F5 Distributed Cloud: Multi-Cloud Networking & Beyond
 =====================================================
 
-This hands-on lab environment highlights some of the basic concepts of F5 Distributed Cloud Multi-cloud Networking.
+This hands-on lab environment highlights some of the introductory concepts of F5 Distributed Cloud Multi-cloud Networking.
 
 **Narrative:** 
 During the lab you will be playing the role of an Engineer at ACME Corp who responds to new business requirements quickly by implementing F5's Network and App connect solutions. 
@@ -9,11 +9,11 @@ During the lab you will be playing the role of an Engineer at ACME Corp who resp
 **Goal:**
 Demonstrate and understand when to use F5 Distributed Cloud Network Connect or App Connect to securely extend connectivity between disparate environments. 
 
-.. image:: ./images/intro.png
+|intro001|
 
 .. Caution:: Please be aware that there is a waiting period after Lab 1, while provisioning occurs. If you are an instructor, please have students proceed with Lab 1 prior to any presentation, to give ample time for processes to complete. 
 
-This Lab uses the **[Agility] F5XC Introduction into MCN** UDF Blueprint. 
+This Lab uses the **[F5XC MCN] Appworld SMSv2** UDF Blueprint. 
 
 .. toctree::
    :maxdepth: 1
@@ -22,3 +22,6 @@ This Lab uses the **[Agility] F5XC Introduction into MCN** UDF Blueprint.
    intro
    narrative
    module*/module*
+
+.. |intro001| image:: ./images/intro.png
+   :width: 800px

@@ -5,7 +5,6 @@ Introduction to the Lab
 
 Congratulations! You are a Network Engineer at ACME Corp. 
 
-
 ACME has an Application Team that supports internally developed traditional and modern apps, vendor provided and SaaS applications. 
 They have started utilizing some public cloud (AWS) IaaS for several applications and have come to you with a new requirement that an on-prem backend server must be able to securely communicate
 with the AWS workloads over a secure connection. For lab simplicity, the backend server in the "Data Center" is a pretend security device in this exercise, and needs to scan the AWS workload on port 80. 
@@ -15,22 +14,19 @@ As the Network Engineer, you are tasked with evaluating how to securely connect 
 At first you consider the classic methods of deploying and managing your own IPSec solution but realize that this will be complex and costly.
 
 You recently saw a post on LinkedIn about a SaaS product that F5 has, claiming to solve multi-cloud network complexities. 
-Given your current predicament and industry knowledge of F5 being a leader for decades, you decide to check it out and end up in the chair you are sitting in today: Taking a first-hand look at how F5 makes Multi-Cloud Networking (MCN) simple and secure. 
+Given your current predicament and industry knowledge of F5, you decide to check it out and end up in the chair you are sitting in today: Taking a first-hand look at how F5 makes Multi-Cloud Networking (MCN) simple and secure. 
 
 .. Note:: The requirements start out easy enough but will get progressively more "Real World" as the labs progress.
 
 **Before Cloud Migration - "The Good Ol' Days"**
 
-.. image:: ./images/pre-migration.png
-
+|narr001| 
 
 **After Cloud Migration - "Current State"**
 
-.. image:: ./images/post-migration.png
-
+|narr002| 
 
 **Your job, should you choose to accept it, and avoid demotion to the help desk, is to figure out the best way for the backend workload to privately communicate with the frontend workload.**
-
 
 Lab Environment
 ---------------
@@ -47,3 +43,7 @@ The Azure cloud environment contains a prebuilt XC Node and a workload hosting a
    :maxdepth: 1
    :glob:
 
+.. |narr001| .. image:: ./images/pre-migration.png
+   :width: 800px
+.. |narr002| .. image:: ./images/post-migration.png
+   :width: 800px
