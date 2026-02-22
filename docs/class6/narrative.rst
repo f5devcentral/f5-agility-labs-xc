@@ -24,8 +24,7 @@ Given your current predicament and industry knowledge of F5, you decide to check
 
 **After Cloud Migration - "Current State"**
 
-|
-narr002| 
+|narr002| 
 
 **Your job, should you choose to accept it, and avoid demotion to the help desk, is to figure out the best way for the backend workload to privately communicate with the frontend workload.**
 
