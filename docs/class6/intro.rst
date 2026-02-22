@@ -120,7 +120,7 @@ throughout the lab tasks that follow.
 |                                                                                              |
 | 10. Click on the **Select Service** in the left-hand navigation. In the resulting fly out    |
 |                                                                                              |
-|    navigation, click **Web App & API Protection**.                                           |
+|     navigation, click **Web App & API Protection**.                                          |
 |                                                                                              |
 | 11. In the **Web App & API Protection** configuration screen observe the left navigation     |
 |                                                                                              |
