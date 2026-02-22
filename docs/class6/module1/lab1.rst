@@ -53,7 +53,7 @@ There will be several SMSv2 sites deployed in the list. Your CE will be names fo
 
 
 
-.. raw:: html <span style="color:red">THIS LAB GUIDE iS CURRENTLY BEING EDITTED FROM THIS POINT FORWARD.  MORE UPDATES SHOULD OCCUR 2/22</span>
+.. attention:: THIS LAB GUIDE iS CURRENTLY BEING EDITTED FROM THIS POINT FORWARD.  MORE UPDATES SHOULD OCCUR 2/22.
 
 
 
