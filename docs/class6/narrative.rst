@@ -24,7 +24,8 @@ Given your current predicament and industry knowledge of F5, you decide to check
 
 **After Cloud Migration - "Current State"**
 
-|narr002| 
+|
+narr002| 
 
 **Your job, should you choose to accept it, and avoid demotion to the help desk, is to figure out the best way for the backend workload to privately communicate with the frontend workload.**
 
@@ -43,7 +44,7 @@ The Azure cloud environment contains a prebuilt XC Node and a workload hosting a
    :maxdepth: 1
    :glob:
 
-.. |narr001| .. image:: ./images/pre-migration.png
+.. |narr001| image:: ./images/pre-migration.png
    :width: 800px
-.. |narr002| .. image:: ./images/post-migration.png
+.. |narr002| image:: ./images/post-migration.png
    :width: 800px
