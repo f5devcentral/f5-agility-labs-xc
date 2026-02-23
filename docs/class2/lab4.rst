@@ -70,6 +70,8 @@ Task 1: View Existing Scan
 |* Security Score + High, Medium and Low Severity issues (Select each one).                    |
 |* Notice the vulnerability type and associated CVSS 3.0 Score.                                |
 |                                                                                              |
+||lab4-c|                                                                                      |
+|                                                                                              |
 |8. Select the report under 'Latest Test Reports' to note:                                     |
 |                                                                                              |
 |* OWASP Top 10 findings.                                                                      |
@@ -267,6 +269,8 @@ results and playback the recorded video.
 .. |lab4-a| image:: _static/lab4-a.png
    :width: 300px
 .. |lab4-b| image:: _static/lab4-b.png
+   :width: 800px
+.. |lab4-c| image:: _static/lab4-c.png
    :width: 800px
 .. |lab001| image:: _static/lab4-001.png
    :width: 800px
