@@ -54,9 +54,9 @@ Task 1: Exploring the F5 Distributed Console
 |   guide, the namespace is pet-walrus. Your namespace will be different.  In the left-hand    |
 |   navigation expand **Manage** and click **Load Balancers >  Origin Pools**                  |
 |                                                                                              |
-|  |lab001|                                                                                    |
+||lab001|                                                                                      |
 |                                                                                              |
-|   |lab002|                                                                                   |
+||lab002|                                                                                      |
 |                                                                                              |
 |#. In the resulting screen expand the Actions Menu and click **Manage Configuration** for     |
 |   the origin pool configured in your namespace. Here you will see the origin server public   |
