@@ -44,11 +44,11 @@ Task 2: Accessing F5 Distributed Cloud Console
 
 +----------------------------------------------------------------------------------------------+
 |The following tasks will guide you through the initial access requirements for the associated |
-| lab environment. Lab attendees should have received an invitation email to the lab           |
-| environment based on the submitted registration email.  Please check email and spam folders  |
-| if it has not been received.  If you have not received an email, please contact a member of  |
-| the lab team.                                                                                |
-|                                                                                              |
+|lab environment. Lab attendees should have received an invitation email to the lab            |
+|environment based on the submitted registration email.  Please check email and spam folders   |
+|if it has not been received.  If you have not received an email, please contact a member of   |
+|the lab team.                                                                                 |
++----------------------------------------------------------------------------------------------+
 |F5 Distributed Cloud Console, where this lab will be conducted, is a SaaS control-plane for   |
 |services that provides a UI and API for managing network, security, and compute services.     |
 |The F5 Distributed Cloud Console can manage "sites" in existing on-premises data centers and  |
