@@ -18,17 +18,14 @@ After reviewing this requirement, ACME decides to evaluate F5 Distributed Cloud 
 F5 Distributed Cloud Web App Scanning is an offering that lets you discover exposed assets 
 and run automated penetration tests of your web applications and APIs. 
 
-.. note::
-      Official documentation found here: https://docs.cloud.f5.com/docs-v2/web-app-scanning/concepts/web-app-scanning/web-app-scanning-overview
-
 **Expected Lab Time: 15 minutes**
 
 **Lab 4 Summary--Web App Scanning**: Configure continuous web application scanning for the ACME Corp web application using F5’s Web App Scanning service. You will first review a baseline vulnerability scan with no security protections in place, highlighting multiple OWASP Top 10 findings. Next, you will outline and configure an automated scan (scope, schedule, and scanner IPs) without waiting for the scan to complete. Pre-generated before-and-after scan reports are provided to demonstrate the impact of F5 Distributed Cloud security controls. After applying WAF, bot defense, and malicious user protections, the post-scan report shows a significant reduction in exposed vulnerabilities, validating the effectiveness of the deployed protections.
 
-
 ~~~~~~~~~~
 
-View Existing Scan
+Task 1: View Existing Scan
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +----------------------------------------------------------------------------------------------+
 |In this lab, you will evaluate the security posture of the ACME Corp web application using    |
@@ -77,7 +74,7 @@ View Existing Scan
 |                                                                                              |
 +----------------------------------------------------------------------------------------------+
 
-Task 1: Configure a Web Application Scan
+Task 2: Configure a Web Application Scan
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Now that you had a chance to review the Baseline Scan report in this next task, you will setup a penetration test of your internet facing application to report on OWASP Top 10 for Web Applications.  Below are some of the tests conducted by the Scan:
@@ -206,7 +203,8 @@ Now that you had a chance to review the Baseline Scan report in this next task, 
    
    |lab022|
 
-**View Post Lab Scan**
+Task 3: View Post Lab Scan
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Steps to Locate the Protected Scan Report
 
