@@ -25,7 +25,7 @@ Implement and operate an application security environment utilizing F5 SaaS-Powe
 
 - Use AI-Assisted Analytics to validate security events and gain operational insights. 
 
-|intro000adsp|
+|intro-000adsp|
 
 This Lab uses the **[AppWorld] F5XC Security Base Lab** UDF Blueprint. 
 
@@ -38,5 +38,5 @@ This Lab uses the **[AppWorld] F5XC Security Base Lab** UDF Blueprint.
    lab*
    close*
    
-.. |intro000adsp| image:: _static/intro-000adsp.png
+.. |intro-000adsp| image:: _static/intro-000adsp.png
    :width: 800px
