@@ -116,8 +116,8 @@ Accessing UDF (F5 Unified Demo Framework)
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| The Lab environment window will now be displayed.  Click on the **Documentation** tab in the |
-| horizontal navigation links.  Locate and observe the state of **Client** system.             |
+| The Lab environment window will now be displayed. Click on the **Documentation** tab in the  |
+| horizontal navigation links. Locate and observe the state of **Client** system.             |
 |                                                                                              |
 | In approximately 5-7 minutes the associated **yellow gear** starting icon will change to a   |
 | **green arrow** (running) icon and attendees will proceed to the next section of steps.      |
@@ -151,7 +151,7 @@ Accessing F5 Distributed Cloud
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| The initial logon prompt will be presented.  Click **Sign on with Okta** to proceed.  SSO    |
+| The initial logon prompt will be presented.  Click **Sign on with Okta** to proceed. SSO     |
 | will process and onboarding to the tenant will proceed.                                      |
 +----------------------------------------------------------------------------------------------+
 | |intro011|                                                                                   |
@@ -197,7 +197,7 @@ Accessing F5 Distributed Cloud
 .. |intro000b| image:: _static/intro-000b.png
    :width: 800px
 .. |intro001| image:: _static/intro-01.png
-   :width: 800px
+   :width: 600px
 .. |intro002| image:: _static/intro-02.png
    :width: 800px
 .. |intro003| image:: _static/intro-03.png
@@ -215,9 +215,9 @@ Accessing F5 Distributed Cloud
 .. |intro009| image:: _static/intro-09.png
    :width: 800px
 .. |intro010| image:: _static/intro-10.png
-   :width: 800px
+   :width: 600px
 .. |intro011| image:: _static/intro-11.png
-   :width: 800px
+   :width: 6In00px
 .. |intro012| image:: _static/intro-12.png
    :width: 800px
 .. |intro013| image:: _static/intro-13.png
