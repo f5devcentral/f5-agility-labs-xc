@@ -54,10 +54,10 @@ Task 1: View Existing Scan
 |6. In the list of available scans, locate and select:                                         |
 |   **AppWorld 2026 Baseline Vulnerability Scan**                                              |
 |                                                                                              |
-|.. note::                                                                                     |
-|In the upper right-hand corner, select the 'Filter by tags...' drop-down menu and enable      |
-|the 'AppWorld2026' entry. Alternatively, you can |search for the scan by name using the       |
-|Search by Name field by typing in 'AppWorld'                                                  |
+|  .. note::                                                                                   |
+|     In the upper right-hand corner, select the 'Filter by tags...' drop-down menu and enable |
+|     the 'AppWorld2026' entry. Alternatively, you can search for the scan by name using the   |
+|     Search by Name field by typing in 'AppWorld'                               test              |
 |                                                                                              |
 ||lab4-a|                                                                                      |
 |                                                                                              |
