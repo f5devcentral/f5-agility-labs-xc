@@ -43,11 +43,11 @@ Task 1: View Existing Scan
 |This approach allows you to clearly see the before-and-after impact of F5 Distributed Cloud   |
 |without waiting for long-running scans to complete during the lab.                            |             
 |                                                                                              |
-|Steps to Locate the Baseline Scan Report                                                      |
+|Steps to Locate the Baseline Scan Report:                                                     |
 |                                                                                              |
 |1. Log in to the F5 Distributed Cloud Console.                                                |
 |2. From the navigation tiles, select Web App Scanning.                                        |
-|3. Click 'View Service'                                                                       |
+|3. Click 'View Service'.                                                                      |
 |4. You will be presented with the Web App Scanning Dashboard to view a summary of all         |
 |   application scans.                                                                         |
 |5. In the left-hand menu, under 'Scans', select 'Applications'.                               |
@@ -60,6 +60,7 @@ Task 1: View Existing Scan
 |   Search by Name field by typing in 'AppWorld'.                                              |
 |                                                                                              |
 ||lab4-a|                                                                                      |
+||lab4-b|                                                                                      |
 |                                                                                              |
 |7. Select 'AppWorld 2026 - Baseline Vulnerability Scan' to review the scan results, noting:   |
 |                                                                                              |
@@ -248,6 +249,8 @@ results and playback the recorded video.
 
 .. |lab4-a| image:: _static/lab4-a.png
    :width: 300px
+.. |lab4-b| image:: _static/lab4-b.png
+   :width: 400px
 .. |lab001| image:: _static/lab4-001.png
    :width: 800px
 .. |lab002| image:: _static/lab4-002.png
