@@ -61,6 +61,8 @@ Task 1: View Existing Scan
 |                                                                                              |
 ||lab4-a|                                                                                      |
 |                                                                                              |
+|Here are the results after searching for the appropriate scan report:                         |
+|                                                                                              |
 ||lab4-b|                                                                                      |
 |                                                                                              |
 |7. Select 'AppWorld 2026 - Baseline Vulnerability Scan' to review the scan results, noting:   |
