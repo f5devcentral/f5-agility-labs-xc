@@ -13,11 +13,11 @@ Lab 1: Deploying and Managing F5 Distributed Cloud Web Application Firewall Conf
 
 After consulting with your trusty F5 Solutions Engineer, you decide to adopt security services from 
 F5 Distributed Cloud Web Application and API Protection (WAAP) suite. The lab provisioned for you 
-has already deployed a F5 XC load balancer and been setup to route to your Azure application.  The 
+has already deployed a F5 XC load balancer and been setup to route to your public cloud application. The 
 F5 Distributed Cloud Application Delivery Network (ADN) will provide network connectivity for clients 
-to first route to F5's nearest Regional Edge(RE) location on the ADN utilizing IP Anycast.  Once 
+to first route to F5's nearest Regional Edge (RE) location on the ADN utilizing IP Anycast.  Once 
 the client is connected to their nearest F5 RE, security controls can now be applied so that 
-malicous traffic can be dropped at the F5 RE and valid traffic can then be passed to the ACME Azure environment.  
+malicous traffic can be dropped at the F5 RE and valid traffic can then be passed to the ACME environment.  
 This lab will be deployed in a SaaS only configuration with no on-premises (public or private cloud) elements. 
 
 .. warning :: If you are using multiple labs in one course, understand that
@@ -40,92 +40,92 @@ and proceed to Task 1.
 
 Task 1: Exploring the F5 Distributed Console
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-The following steps will allow you to review the XC Load Balancer that was 
-deployed and is currently advertising a globally available application. These steps 
-will allow you to review the application, its DNS entry and the Azure target that is 
-configured as the origin.
-
-#. Following the **Introduction** section instructions, you should now be on the Home page
-   of the F5 Distributed Cloud Console.  Let's first review the F5 Distributed Load Balancer
-   that was configured for you via automation.  Select **Web App & API Protection**. 
-
-#. On the **Web App & API Protection** page, note the identifier of your namespace (top left area of
-   the page).  The namespace will follow a format of *adjective-animal*.  In this guide, the namespace
-   is pet-walrus. Your namespace will be different.  In the left-hand navigation expand **Manage** and 
-   click **Load Balancers >  Origin Pools**
-
-   |lab001| 
-
-   |lab002| 
-
-#. In the resulting screen expand the Actions Menu and click **Manage Configuration** for 
-   the origin pool configured in your namespace. Here you will see the origin server public
-   FQDN of the application running in ACME's Azure environment.  Copy the domain name so you 
-   can visit the site directly from your web browser.  Click  **Cancel and Exit** to return 
-   to the Origin Pools page since you will not need to make any updates to the configuration.
-
-   |lab003| 
-
-   |lab004|
-
-#. Using your browser, visit this application directly utilizing its public FQDN. Select the 
-   **Menu** on the top right-hand side and select **Header**.  
-   
-#. Note the Remote Address field. This will match the IP address of your workstation.  You can verify 
-   that it matches by looking up your IP address at https://ipinfo.io/.  
-
-   |lab005|
-
-   |lab006|
-
-   |lab007|
-
-   |lab008|
-
-
-#. Next, let's return to the F5 Distributed Cloud console and take a look at the F5 XC load balancer 
-   configured for you. In the left-hand navigation expand **Manage** and click **Load Balancers > HTTP Load Balancers**
-
-#. In the resulting screen expand the Actions Menu and click **Manage Configuration** for 
-   the load balancer configured in your namespace. The graphic below is an example.  Your environment 
-   will have a different load balancer name but it should follow a similar naming convention 
-   *adjective-animal*.
-
-   |lab009|
-
-   |lab010|
-
-
-#. Using the left-hand navigation and in the sections as shown, review the
-   following data. Values where **<namespace>** *adjective-animal* is represented, the configuration
-   will be the name of your provisioned namespace.  Note the FQDN of the F5 XC load balancer.  
-
-
-   * **Metadata**  *<namespace>-lb*
-   * **Domains and LB Type**  *<namespace>.lab-sec.f5demos.com*
-   * **Other Settings** VIP Advertisement
-
-   .. note::
-      *The VIP Advertisement selection controls how/where the application is advertised. The "Internet"*
-      *setting means that this application will be advertised globally from the F5*
-      *Distributed Cloud Global Network utilizing Anycast.*
-
-   |lab011| 
-  
-
-#. Using your web browser, access the application via the F5 XC FQDN.  Click on **Menu > Header**
-
-#. Note that the Remote Address has changed as well as the presence of a new X-Forwarded-For header.  
-   The client information should have changed as you are now connecting first through the F5 ADN Regional Edge 
-   before being proxied to the application running the ACME Corp Azure environment.  X-Forwarded-For details should 
-   match your workstation's IP address.  
-
-   |lab012| 
-
-   |lab013| 
-
-
++----------------------------------------------------------------------------------------------+
+|The following steps will allow you to review the XC Load Balancer that was deployed and is    |
+|currently advertising a globally available application. These steps will allow you to review  |
+|the application, its DNS entry and the application target that is configured as the origin.   |
+|                                                                                              |
+|#. Following the **Introduction** section instructions, you should now be on the Home page.   |
+|   of the F5 Distributed Cloud Console.  Let's first review the F5 Distributed Load Balancer  |
+|   that was configured for you via automation.  Select **Web App & API Protection**.          |
+|                                                                                              |
+|#. On the **Web App & API Protection** page, note the identifier of your namespace (top left  |
+|   area of the page). The namespace will follow a format of *adjective-animal*. In this       |
+|   guide, the namespace is pet-walrus. Your namespace will be different.  In the left-hand    |
+|   navigation expand **Manage** and click **Load Balancers >  Origin Pools**                  |
+|                                                                                              |
+|  |lab001|                                                                                    |
+|                                                                                              |
+|   |lab002|                                                                                   |
+|                                                                                              |
+|#. In the resulting screen expand the Actions Menu and click **Manage Configuration** for     |
+|   the origin pool configured in your namespace. Here you will see the origin server public   |
+|   FQDN of the application running in ACME's Azure environment.  Copy the domain name so you  |
+|   can visit the site directly from your web browser.  Click  **Cancel and Exit** to return   |
+|   to the Origin Pools page since you will not need to make any updates to the configuration. |
+|                                                                                              |
+|   |lab003|                                                                                   |
+|                                                                                              |
+|   |lab004|                                                                                   |
+|                                                                                              |
+|#. Using your browser, visit this application directly utilizing its public FQDN. Select the  |
+|   **Menu** on the top right-hand side and select **Header**.                                 |   
+|                                                                                              |
+|#. Note the Remote Address field. This will match the IP address of your workstation. You can |
+| verify that it matches by looking up your IP address at https://ipinfo.io/.                  |
+|                                                                                              |
+|   |lab005|                                                                                   |
+|                                                                                              |
+|   |lab006|                                                                                   |
+|                                                                                              |
+|   |lab007|                                                                                   |
+|                                                                                              |
+|   |lab008|                                                                                   |
+|                                                                                              |
+|                                                                                              |
+|#. Next, let's return to the F5 Distributed Cloud console and take a look at the F5 XC load   |
+|balancer configured for you. In the left-hand navigation expand **Manage** and click          |
+|**Load Balancers > HTTP Load Balancers**                                                      |
+|                                                                                              |
+|#. In the resulting screen expand the Actions Menu and click **Manage Configuration** for     |
+|   the load balancer configured in your namespace. The graphic below is an example. Your      |
+|   environment will have a different load balancer name but it should follow a similar naming |
+| convention *adjective-animal*.                                                               |
+|                                                                                              |
+|   |lab009|                                                                                   |
+|                                                                                              |
+|   |lab010|                                                                                   |
+|                                                                                              |
+|                                                                                              |
+|#. Using the left-hand navigation and in the sections as shown, review the following data.    |
+|   Values where **<namespace>** *adjective-animal* is represented, the configuration will be  |
+|   the name of your provisioned namespace.  Note the FQDN of the F5 XC load balancer.         |
+|                                                                                              |          
+|                                                                                              |
+|   * **Metadata**  *<namespace>-lb*                                                           |
+|   * **Domains and LB Type**  *<namespace>.lab-sec.f5demos.com*                               |
+|   * **Other Settings** VIP Advertisement                                                     |
+|                                                                                              |
+|   .. note::                                                                                  |
+|      *The VIP Advertisement selection controls how/where the application is advertised.      |
+|      The "Internet"* *setting means that this application will be advertised globally from   |
+|      the F5 Distributed Cloud Global Network utilizing Anycast.*                             |
+|                                                                                              |
+|   |lab011|                                                                                   |
+|                                                                                              |
+|                                                                                              |
+|#. Using your web browser, access the application via the F5 XC FQDN. Click on                |
+|   **Menu > Header**                                                                          |
+|#. Note that the Remote Address has changed as well as the presence of a new X-Forwarded-For  |
+|   header. The client information should have changed as you are now connecting first through |
+|   the F5 ADN Regional Edge before being proxied to the application running the ACME Corp.    |
+| environment. X-Forwarded-For details should match your workstation's IP address.             |
+|                                                                                              |
+|   |lab012|                                                                                   |
+|                                                                                              |
+|   |lab013|                                                                                   |
+|                                                                                              |
++----------------------------------------------------------------------------------------------+
 
 Task 2: Configure WAF Policy on the Load Balancer
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
