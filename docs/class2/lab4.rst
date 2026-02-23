@@ -84,8 +84,8 @@ Task 2: Configure a Web Application Scan
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 +----------------------------------------------------------------------------------------------+
 |Now that you had a chance to review the Baseline Scan report in this next task, you will setup|
-|a penetration test of your internet facing application to report on OWASP Top 10 for          |
-|Web Applications.  Below are some of the tests conducted by the Scan:                         |
+| a penetration test of your internet facing application to report on OWASP Top 10 for         |
+|Web Applications. Below are some of the tests conducted by the Scan:                          |
 |                                                                                              |
 |* Broken Access Control: Tests for issues related to the violation of the principle of least  |
 |  privilege, bypassing access control checks, accessing/editing other users' data, and more.  |
@@ -94,11 +94,11 @@ Task 2: Configure a Web Application Scan
 |  the app and actively attempts to break it to find vulnerabilities associated with the logic |
 |  and rules defined in the app.                                                               |
 |                                                                                              |
-|* SQL Injection (incl. Blind SQL Injection): Intelligent testing for a wide variety of        |
-|  SQL injection issues.                                                                       |
+|* SQL Injection (incl. Blind SQL Injection): Intelligent testing for a wide variety of SQL    |
+|  injection issues.                                                                           |
 |                                                                                              | 
 |* Cross-Site Request Forgery (CSRF): This is an attack that forces an end user to execute     |
-|   unwanted actions on a web application in which they're currently authenticated.            |
+|  unwanted actions on a web application in which they're currently authenticated.             |
 |                                                                                              |   
 |* Cross-Site Scripting (XSS) (Stored, Reflected, DOM-based): Comprehensive tests for HTML     |
 |  rendering/execution of JavaScript.                                                          |
