@@ -82,21 +82,20 @@ Task 1: View Existing Scan
 
 Task 2: Configure a Web Application Scan
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 +----------------------------------------------------------------------------------------------+
 |Now that you had a chance to review the Baseline Scan report in this next task, you will setup|
 |a penetration test of your internet facing application to report on OWASP Top 10 for          |
 |Web Applications.  Below are some of the tests conducted by the Scan:                         |
 |                                                                                              |
 |* Broken Access Control: Tests for issues related to the violation of the principle of least  |
-|privilege, bypassing access control checks, accessing/editing other users' data, and more.    |
+|  privilege, bypassing access control checks, accessing/editing other users' data, and more.  |
 |                                                                                              |
 |* Business Logic Attacks: Leverages multiple test users and AI to learn the functionality of  |
-|the app and actively attempts to break it to find vulnerabilities associated with the logic   |
-|and rules defined in the app.                                                                 |
+|  the app and actively attempts to break it to find vulnerabilities associated with the logic |
+|  and rules defined in the app.                                                               |
 |                                                                                              |
 |* SQL Injection (incl. Blind SQL Injection): Intelligent testing for a wide variety of        |
-|SQL injection issues.                                                                         |
+|  SQL injection issues.                                                                       |
 |                                                                                              | 
 |* Cross-Site Request Forgery (CSRF): This is an attack that forces an end user to execute     |
 |   unwanted actions on a web application in which they're currently authenticated.            |
@@ -105,7 +104,7 @@ Task 2: Configure a Web Application Scan
 |  rendering/execution of JavaScript.                                                          |
 |                                                                                              |
 |* Insecure Direct Object References (IDOR): This is when an application exposes a reference to|
-|an internal implementation object, such as a file, directory, or database key.                |
+|  an internal implementation object, such as a file, directory, or database key.              |
 |                                                                                              |
 |* Security Misconfiguration: This is a general term for when applications and systems are     |
 |  not properly configured for security.                                                       |
@@ -117,7 +116,7 @@ Task 2: Configure a Web Application Scan
 |  properly identify and authenticate users.                                                   |
 |                                                                                              |
 |* Software and Data Integrity Failures: This is when applications and systems fail to protect |
-|the integrity of software and data.                                                           |
+|  the integrity of software and data.                                                         |
 |                                                                                              |
 |* Security Logging and Monitoring Failures: This is when applications and systems fail to     |
 |  properly log and monitor security events.                                                   |
@@ -143,9 +142,9 @@ Task 2: Configure a Web Application Scan
 |                                                                                              |
 |#. Add a name for the application.  *ACME Corp Web App*                                       |
 |                                                                                              |
-|#. Add the Web Address of the application that was built as part of this lab.  It will match  |
+|#. Add the Web Address of the application that was built as part of this lab. It will match   |
 |   your namespace following the pattern https://adjective-animal.lab-sec.f5demos.com.         |
-|Ensure to replace the adjective-animal to match your environment.                             |
+|  Ensure to replace the adjective-animal to match your environment.                           |
 |                                                                                              |
 ||lab005|                                                                                      |
 |                                                                                              |
