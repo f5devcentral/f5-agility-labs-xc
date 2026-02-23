@@ -65,7 +65,7 @@ Task 1: View Existing Scan
 |                                                                                              |
 ||lab4-b|                                                                                      |
 |                                                                                              |
-|7. Select **AppWorld 2026 - Baseline Vulnerability Scan** to review the scan results, noting:   |
+|7. Select **AppWorld 2026 - Baseline Vulnerability Scan** to review the scan results, noting: |
 |                                                                                              |
 |   * Security Score + High, Medium and Low Severity issues (Select each one).                 |
 |   * Notice the vulnerability type and associated CVSS 3.0 Score.                             |
