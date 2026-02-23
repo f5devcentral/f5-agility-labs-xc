@@ -71,10 +71,10 @@ Task 1: View Existing Scan
 |   * Notice the vulnerability type and associated CVSS 3.0 Score.                             |
 |                                                                                              |
 |8. Select the report under 'Latest Test Reports' to note:                                     |
-|* OWASP Top 10 findings.                                                                      |
-|* Issues: Cross-Site-Scripting, Sensitive Data Exposure, and misconfiguration issues.         |
-|* You can select 'Play Video' to view the end-to-end vulnerabiity assessment procedures       |
-|  performed.                                                                                  |
+|   * OWASP Top 10 findings.                                                                   |
+|   * Issues: Cross-Site-Scripting, Sensitive Data Exposure, and misconfiguration issues.      |
+|   * You can select 'Play Video' to view the end-to-end vulnerabiity assessment procedures    |
+|     performed.                                                                          G     |
 |                                                                                              |
 +----------------------------------------------------------------------------------------------+
 
