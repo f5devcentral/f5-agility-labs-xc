@@ -36,8 +36,7 @@ Task 1: Lab Environment
 | * **F5 Distributed Cloud Global Network & Application Delivery Network (ADN)**               |
 | * **Publicly hosted application (Public Cloud)**                                             |
 +----------------------------------------------------------------------------------------------+
-+----------------------------------------------------------------------------------------------+
-| |intro001b|                                                                                   |
+| |intro001b|                                                                                  |
 +----------------------------------------------------------------------------------------------+
 
 Task 2: Accessing F5 Distributed Cloud Console
