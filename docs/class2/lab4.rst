@@ -25,42 +25,57 @@ and run automated penetration tests of your web applications and APIs.
 
 **Lab 4 Summary--Web App Scanning**: Configure continuous web application scanning for the ACME Corp web application using F5’s Web App Scanning service. You will first review a baseline vulnerability scan with no security protections in place, highlighting multiple OWASP Top 10 findings. Next, you will outline and configure an automated scan (scope, schedule, and scanner IPs) without waiting for the scan to complete. Pre-generated before-and-after scan reports are provided to demonstrate the impact of F5 Distributed Cloud security controls. After applying WAF, bot defense, and malicious user protections, the post-scan report shows a significant reduction in exposed vulnerabilities, validating the effectiveness of the deployed protections.
 
-**View Existing Scan**
 
 ~~~~~~~~~~
 
-In this lab, you will evaluate the security posture of the ACME Corp web application using F5 Distributed Cloud Web App Scanning. Before configuring a new scan, you will first review a pre-existing vulnerability scan that was performed before any F5 Distributed Cloud security controls were applied. This baseline report represents the application in its original, vulnerable state and highlights multiple security findings.
+View Existing Scan
 
-After reviewing the baseline scan, you will proceed through the lab as normal by configuring web application scanning. At the conclusion of the lab, you will review a second pre-existing scan report that was generated after WAF, bot defense, and malicious user protections were enabled, demonstrating a significantly improved security posture.
-
-.. note::
-   This approach allows you to clearly see the before-and-after impact of F5 Distributed Cloud without waiting for long-running scans to complete during the lab.
-
-Steps to Locate the Baseline Scan Report
-
-1. Log in to the F5 Distributed Cloud Console.
-2. From the navigation tiles, select Web App Scanning.
-3. Click 'View Service'
-4. You will be presented with the Web App Scanning Dashboard to view a summary of all application scans.
-5. In the left-hand menu, under 'Scans', select 'Applications'.
-6. In the list of available scans, locate and select:
-   **AppWorld 2026 Baseline Vulnerability Scan**
-
-   .. note::
-      In the upper right-hand corner, select the 'Filter by tags...' drop-down menu and enable the 'AppWorld2026' entry. Alternatively, you can search for the scan by name using the Search by Name field by typing in 'AppWorld'
-
-       |lab4-a|
-
-7. Select 'AppWorld 2026 - Baseline Vulnerability Scan' to review the scan results, noting:
-
-   * Security Score + High, Medium and Low Severity issues (Select each one).
-   * Notice the vulnerability type and associated CVSS 3.0 Score.
-
-8. Select the report under 'Latest Test Reports' to note: 
-   * OWASP Top 10 findings.
-   * Issues: Cross-Site-Scripting, Sensitive Data Exposure, and misconfiguration issues.
-   * You can select 'Play Video' to view the end-to-end vulnerabiity assessment procedures performed. 
-
++----------------------------------------------------------------------------------------------+
+|In this lab, you will evaluate the security posture of the ACME Corp web application using    |
+|F5 Distributed Cloud Web App Scanning. Before configuring a new scan, you will first review   |
+|a pre-existing vulnerability scan that was performed before any F5 Distributed Cloud security |
+|controls were applied. This baseline report represents the application in its original,       |
+|vulnerable state and highlights multiple security findings.                                   |
+|                                                                                              |
+|After reviewing the baseline scan, you will proceed through the lab as normal by configuring  |
+|web application scanning. At the conclusion of the lab, you will review a second pre-existing |
+|scan report that was generated after WAF, bot defense, and malicious user protections were    |
+|enabled, demonstrating a significantly improved security posture.                             |
+|                                                                                              |      
+|.. note::                                                                                     |
+|   This approach allows you to clearly see the before-and-after impact of F5 Distributed Cloud|
+|   without waiting for long-running scans to complete during the lab.                         |             
+|                                                                                              |
+|Steps to Locate the Baseline Scan Report                                                      |
+|                                                                                              |
+|1. Log in to the F5 Distributed Cloud Console.                                                |
+|2. From the navigation tiles, select Web App Scanning.                                        |
+|3. Click 'View Service'                                                                       |
+|4. You will be presented with the Web App Scanning Dashboard to view a summary of all         |
+|   application scans.                                                                         |
+|5. In the left-hand menu, under 'Scans', select 'Applications'.                               |
+|6. In the list of available scans, locate and select:                                         |
+|   **AppWorld 2026 Baseline Vulnerability Scan**                                              |
+|                                                                                              |
+|.. note::                                                                                     |
+|   In the upper right-hand corner, select the 'Filter by tags...' drop-down menu and enable   |
+|    the 'AppWorld2026' entry. Alternatively, you can |search for the scan by name using the   |
+|    Search by Name field by typing in 'AppWorld'                                              |
+|                                                                                              |
+||lab4-a|                                                                                      |
+|                                                                                              |
+|7. Select 'AppWorld 2026 - Baseline Vulnerability Scan' to review the scan results, noting:   |
+|                                                                                              |
+|   * Security Score + High, Medium and Low Severity issues (Select each one).                 |
+|   * Notice the vulnerability type and associated CVSS 3.0 Score.                             |
+|                                                                                              |
+|8. Select the report under 'Latest Test Reports' to note:                                     |
+|   * OWASP Top 10 findings.                                                                   |
+|   * Issues: Cross-Site-Scripting, Sensitive Data Exposure, and misconfiguration issues.      |
+|   * You can select 'Play Video' to view the end-to-end vulnerabiity assessment procedures    |
+|     performed.                                                                               |
+|                                                                                              |
++----------------------------------------------------------------------------------------------+
 
 Task 1: Configure a Web Application Scan
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -234,7 +249,7 @@ results and playback the recorded video.
 |labend|
 
 .. |lab4-a| image:: _static/lab4-a.png
-   :width: 400px
+   :width: 3up00px
 .. |lab001| image:: _static/lab4-001.png
    :width: 800px
 .. |lab002| image:: _static/lab4-002.png
