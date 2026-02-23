@@ -41,8 +41,8 @@ Task 1: View Existing Scan
 |enabled, demonstrating a significantly improved security posture.                             |
 |                                                                                              |      
 |.. note::                                                                                     |
-|   This approach allows you to clearly see the before-and-after impact of F5 Distributed Cloud|
-|   without waiting for long-running scans to complete during the lab.                         |             
+|This approach allows you to clearly see the before-and-after impact of F5 Distributed Cloud   |
+|without waiting for long-running scans to complete during the lab.                            |             
 |                                                                                              |
 |Steps to Locate the Baseline Scan Report                                                      |
 |                                                                                              |
@@ -248,7 +248,7 @@ results and playback the recorded video.
 |labend|
 
 .. |lab4-a| image:: _static/lab4-a.png
-   :width: 3up00px
+   :width: 300px
 .. |lab001| image:: _static/lab4-001.png
    :width: 800px
 .. |lab002| image:: _static/lab4-002.png
