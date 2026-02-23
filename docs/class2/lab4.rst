@@ -67,13 +67,13 @@ Task 1: View Existing Scan
 |                                                                                              |
 |7. Select **AppWorld 2026 - Baseline Vulnerability Scan** to review the scan results, noting: |
 |                                                                                              |
-|   1. Security Score + High, Medium and Low Severity issues (Select each one).                |
-|   2. Notice the vulnerability type and associated CVSS 3.0 Score.                            |
+|* Security Score + High, Medium and Low Severity issues (Select each one).                    |
+|* Notice the vulnerability type and associated CVSS 3.0 Score.                                |
 |                                                                                              |
 |8. Select the report under 'Latest Test Reports' to note:                                     |
-|   1. OWASP Top 10 findings.                                                                  |
-|   2. Issues: Cross-Site-Scripting, Sensitive Data Exposure, and misconfiguration issues.     |
-|   3. Select 'Play Video' to view the end-to-end vulnerabiity assessment procedures performed.|
+|* OWASP Top 10 findings.                                                                      |
+|* Issues: Cross-Site-Scripting, Sensitive Data Exposure, and misconfiguration issues.         |
+|* Select 'Play Video' to view the end-to-end vulnerabiity assessment procedures performed.    |
 |                                                                                              |
 +----------------------------------------------------------------------------------------------+
 
