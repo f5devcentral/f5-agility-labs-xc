@@ -74,7 +74,7 @@ Task 1: View Existing Scan
 |* OWASP Top 10 findings.                                                                      |
 |* Issues: Cross-Site-Scripting, Sensitive Data Exposure, and misconfiguration issues.         |
 |* You can select 'Play Video' to view the end-to-end vulnerabiity assessment procedures       |
-|     performed.                                                                               |
+|  performed.                                                                                  |
 |                                                                                              |
 +----------------------------------------------------------------------------------------------+
 
