@@ -251,7 +251,7 @@ results and playback the recorded video.
 .. |lab4-a| image:: _static/lab4-a.png
    :width: 300px
 .. |lab4-b| image:: _static/lab4-b.png
-   :width: 400px
+   :width: 800px
 .. |lab001| image:: _static/lab4-001.png
    :width: 800px
 .. |lab002| image:: _static/lab4-002.png
