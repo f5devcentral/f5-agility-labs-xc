@@ -130,64 +130,66 @@ Task 1: Exploring the F5 Distributed Console
 Task 2: Configure WAF Policy on the Load Balancer
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The following steps will guide you through adding a Web Application Firewall
-(WAF) Policy. These steps will demonstrate various aspects of the
-configuration.
-
-#. Returning back to the F5 XC console and continuing in the **HTTP Load Balancer** section, 
-   in the upper right hand corner select **Edit Configuration** and then in the left hand 
-   menu click on the **Web Application Firewall (WAF)** drop down and select **Enable**.
-
-   |lab014| ''
-   |lab015| 
-
-#. In the resulting **Enable** field drop down, select **Add Item**.
-
-   |lab016|
-
-   .. note::
-      *The "shared/base-appfw" policy is in the "shared namespace" which can be
-      applied to* *multiple Load Balancer configurations across namespaces,
-      reducing policy sprawl.*
-
-#. In the new window's **Metadata** section enter **<namespace>-appfw** for the
-   **Name**.
-
-#. Under **Enforcement Mode**, change the mode to **Blocking**.
-
-#. In the **Security Policy Settings** section, click the **Security Policy**
-   dropdown.
-
-#. Select **Custom** from the dropdown menu. Additional configurations will
-   become available
-
-   |lab017|
-
-
-#. In the expanded configuration, in the **Attack Signatures** section use the
-   dropdown for **Signature Selection by Accuracy** and select **High, Medium,
-   and Low**.
-
-#. Leaving all other values as default, scroll to the bottom and click
-   **Add App Firewall**.
-
-   |lab019|
-
-   .. note::
-      *Automatic Attack Signatures Tuning is enabled which engages an automatic
-      False Positive* *suppression engine.  Any suppressed events are logged
-      within Security Events.*
-
-   .. note::
-      *Attack Signatures Staging is disabled.  This can be enabled should an
-      Application* *Firewall with new or updated attack signatures be staged
-      (monitored) for a period of* *prior to enforcement (blocking).*
-
-#. Returning to the **HTTP Load Balancer** window and click **Save HTTP Load Balancer**
-    at the bottom of the **HTTP Load Balancer** configuration screen.
-
-
-   |lab021|
++----------------------------------------------------------------------------------------------+
+|The following steps will guide you through adding a Web Application Firewall (WAF) Policy.    |
+|These steps will demonstrate various aspects of the configuration.                            |
+|                                                                                              |
+|#. Returning back to the F5 XC console and continuing in the **HTTP Load Balancer** section,  |
+|   in the upper right hand corner select **Edit Configuration** and then in the left hand     |
+|   menu click on the **Web Application Firewall (WAF)** drop down and select **Enable**.      |
+|                                                                                              |
+||lab014|                                                                                      |
+||lab015|                                                                                      |
+|                                                                                              |
+|#. In the resulting **Enable** field drop down, select **Add Item**.                          |
+|                                                                                              |
+||lab016|                                                                                      |
+|                                                                                              |
+|   .. note::                                                                                  |
+|      *The "shared/base-appfw" policy is in the "shared namespace" which can be               |
+|      applied to* *multiple Load Balancer configurations across namespaces,                   |
+|      reducing policy sprawl.*                                                                |
+|                                                                                              |
+|#. In the new window's **Metadata** section enter **<namespace>-appfw** for the               |
+|   **Name**.                                                                                  |
+|                                                                                              |
+|#. Under **Enforcement Mode**, change the mode to **Blocking**.                               |
+|                                                                                              |
+|#. In the **Security Policy Settings** section, click the **Security Policy**                 |
+|   dropdown.                                                                                  |
+|                                                                                              |
+|#. Select **Custom** from the dropdown menu. Additional configurations will                   |
+|   become available                                                                           |
+|                                                                                              |
+||lab017|                                                                                      |
+|                                                                                              |
+|                                                                                              |
+|#. In the expanded configuration, in the **Attack Signatures** section use the                |
+|   dropdown for **Signature Selection by Accuracy** and select **High, Medium,                |
+|   and Low**.                                                                                 |   
+|                                                                                              |
+|#. Leaving all other values as default, scroll to the bottom and click                        |
+|   **Add App Firewall**.                                                                      |
+|                                                                                              |
+||lab019|                                                                                      |
+|                                                                                              |
+|   .. note::                                                                                  |
+|      *Automatic Attack Signatures Tuning is enabled which engages an automatic               |
+|      False Positive* *suppression engine.  Any suppressed events are logged                  |
+|      within Security Events.*                                                                |
+|                                                                                              |
+|   .. note::                                                                                  |
+|      *Attack Signatures Staging is disabled.  This can be enabled should an                  |
+|      Application* *Firewall with new or updated attack signatures be staged                  |
+|      (monitored) for a period of* *prior to enforcement (blocking).*                         |
+|                                                                                              |
+|#. Returning to the **HTTP Load Balancer** window and click **Save HTTP Load Balancer**       |
+|    at the bottom of the **HTTP Load Balancer** configuration screen.                         |
+|                                                                                              |
+|                                                                                              |
+||lab021|                                                                                      |
+|                                                                                              |
++----------------------------------------------------------------------------------------------+
 
 Narrative Check
 ---------------
