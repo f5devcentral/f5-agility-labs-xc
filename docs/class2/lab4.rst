@@ -78,13 +78,11 @@ Task 1: View Existing Scan
 |                                                                                              |
 +----------------------------------------------------------------------------------------------+
 
-~~~~~~~~~~
-
 Task 2: Configure a Web Application Scan
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +----------------------------------------------------------------------------------------------+
-|Now that you had a chance to review the Baseline Scan report in this next task, you will   wha   |
+|Now that you had a chance to review the Baseline Scan report in this next task, you will      |
 |setup a penetration test of your internet facing application to report on OWASP Top 10 for    |
 |Web Applications. Below are some of the tests conducted by the Scan:                          |
 |                                                                                              |
