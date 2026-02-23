@@ -65,7 +65,7 @@ Task 1: View Existing Scan
 |                                                                                              |
 ||lab4-b|                                                                                      |
 |                                                                                              |
-|7. Select 'AppWorld 2026 - Baseline Vulnerability Scan' to review the scan results, noting:   |
+|7. Select **AppWorld 2026 - Baseline Vulnerability Scan** to review the scan results, noting:   |
 |                                                                                              |
 |   * Security Score + High, Medium and Low Severity issues (Select each one).                 |
 |   * Notice the vulnerability type and associated CVSS 3.0 Score.                             |
@@ -81,131 +81,143 @@ Task 1: View Existing Scan
 Task 2: Configure a Web Application Scan
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Now that you had a chance to review the Baseline Scan report in this next task, you will setup a penetration test of your internet facing application to report on OWASP Top 10 for Web Applications.  Below are some of the tests conducted by the Scan:
-
-* Broken Access Control: Tests for issues related to the violation of the principle of least privilege, 
-  bypassing access control checks, accessing/editing other users' data, and more.
-
-* Business Logic Attacks: Leverages multiple test users and AI to learn the functionality of the app and 
-  actively attempts to break it to find vulnerabilities associated with the logic and rules defined in the app.
-
-* SQL Injection (incl. Blind SQL Injection): Intelligent testing for a wide variety of SQL injection issues.
-  
-* Cross-Site Request Forgery (CSRF): This is an attack that forces an end user to execute unwanted actions 
-  on a web application in which they're currently authenticated.
-
-* Cross-Site Scripting (XSS) (Stored, Reflected, DOM-based): Comprehensive tests for HTML rendering/execution 
-  of JavaScript.
-
-* Insecure Direct Object References (IDOR): This is when an application exposes a reference to an internal 
-  implementation object, such as a file, directory, or database key.
-
-* Security Misconfiguration: This is a general term for when applications and systems are not properly 
-  configured for security.
-
-* Vulnerable and Outdated Components: This is when applications and systems use components with known 
-  vulnerabilities.
-
-* Identification and Authentication Failures: This is when applications and systems fail to properly 
-  identify and authenticate users.
-
-* Software and Data Integrity Failures: This is when applications and systems fail to protect the 
-  integrity of software and data.
-
-* Security Logging and Monitoring Failures: This is when applications and systems fail to properly log 
-  and monitor security events.
-
-* Server-Side Request Forgery (SSRF): This is an attack that allows an attacker to send crafted requests 
-  from the vulnerable server to other internal systems.
-
-
-#. Within the Home page in the F5 Distributed Cloud Console, click
-   **Web App Scanning** and then click **Visit Service**. 
-
-   |lab001|
-
-   |lab002|
-
-#. From the Web App Scanning page, click on **Applications** in the top left-hand corner.
-
-#. Click on **New Web Application**.  
-
-   |lab003|
-
-   |lab004|
-
-#. Add a name for the application.  *ACME Corp Web App*
-
-#. Add the Web Address of the application that was built as part of this lab.  It will match your namespace 
-   following the pattern https://adjective-animal.lab-sec.f5demos.com.  Ensure to replace the adjective-animal
-   to match your environment. 
-
-   |lab005|
-
-#. Once the application has been added, the scan can be configured to add additional options.  In this lab, you
-   will be modifying the scan profile and setting up a schedule. Click on **Manage** to access the configuration 
-   options.
-   
-   |lab006|
-
-#. Select **Profiles** and click **New** to add a new scanning profile that will be customized for ACME corp's need.
-   Name the profile **Acme Corp Scan** and Click **Submit**. 
-
-   |lab007|
-
-   |lab008|
-
-#. On the new profile page, additional settings can be configured such as changing the User Agent of the scan, adding 
-   basic authentication with username password as an encoded value in the *Authorization* header of the HTTP requests of 
-   the scans.  To meet the requirement of ensuring that the penetration tests come from pre-approved ip addresses, select
-   the scan settings to restrict scans to originate from only a subset of IPs.  *NOTE* F5 recommends not using a known IP, 
-   in order to more closely simulate attackers coming from unknown IPs.
-
-   |lab009|
-   
-#. Return to the ACME Corp Web App by clicking on **Applications** on selecting the **ACME Corp Web App**.  Next click
-   **Manage** then **Scheduling** then **New**.   
-
-   |lab010|
-
-   |lab011|
-
-   |lab012|
-
-   |lab013|
-
-#. Lets set up a new Recurring Test. Select the **Acme Corp Scan** and **Recurring Test**.  Define a schedule (Daily, 
-   Weekly, and Monthly) and set the start time for the scan.  Click **Submit** when finished.
-
-   |lab014|
-
-   |lab015|
-
-#. In additional to scheduled scans, Web App Scanning allows for on demand testing. Return back to the ACME Corp Web App.
-   Click **Start** to begin an ad-hoc test.  Select **Acme Corp Scan** as the scanning profile. Click **Start Test**.  
-   You can click on the test while it's running to see data being populated live during the test.  
-
-   |lab016|
-
-   |lab017|
-
-   |lab018|
-
-   |lab019|
-
-#. After the Scan completes, results will be displayed on the homepage dashboard and also the page of the individual 
-   application.  Click on **Applications - Acme Corp Web App**.  Review the data from the latest scan at a high level.
-   Click on Scan that just completed.  From the Report page, review the which OWASP Top 10 vulnerabilities were uncovered.
-   There is also a video that replays the penetration testing scan interacting with the website.  Note the different colors
-   as they relate to vulnerabilities uncovered and which portion of the application had the issue.  While watching the video,
-   note if you can identify the custom block page you configured earlier in the lab.  This video can be downloaded as well 
-   a PDF of the test results.  
-
-   |lab020|
-
-   |lab021|
-   
-   |lab022|
++----------------------------------------------------------------------------------------------+
+|Now that you had a chance to review the Baseline Scan report in this next task, you will setup|
+|a penetration test of your internet facing application to report on OWASP Top 10 for          |
+|Web Applications.  Below are some of the tests conducted by the Scan:                         |
+|                                                                                              |
+|* Broken Access Control: Tests for issues related to the violation of the principle of least  |
+|privilege, bypassing access control checks, accessing/editing other users' data, and more.    |
+|                                                                                              |
+|* Business Logic Attacks: Leverages multiple test users and AI to learn the functionality of  |
+|the app and actively attempts to break it to find vulnerabilities associated with the logic   |
+|and rules defined in the app.                                                                 |
+|                                                                                              |
+|* SQL Injection (incl. Blind SQL Injection): Intelligent testing for a wide variety of        |
+|SQL injection issues.                                                                         |
+|                                                                                              | 
+|* Cross-Site Request Forgery (CSRF): This is an attack that forces an end user to execute     |
+|   unwanted actions on a web application in which they're currently authenticated.            |
+|                                                                                              |   
+|* Cross-Site Scripting (XSS) (Stored, Reflected, DOM-based): Comprehensive tests for HTML     |
+|  rendering/execution of JavaScript.                                                          |
+|                                                                                              |
+|* Insecure Direct Object References (IDOR): This is when an application exposes a reference to|
+|an internal implementation object, such as a file, directory, or database key.                |
+|                                                                                              |
+|* Security Misconfiguration: This is a general term for when applications and systems are     |
+|  not properly configured for security.                                                       |
+|                                                                                              |
+|* Vulnerable and Outdated Components: This is when applications and systems use components    |
+|  with known vulnerabilities.                                                                 |
+|                                                                                              |
+|* Identification and Authentication Failures: This is when applications and systems fail to   |
+|  properly identify and authenticate users.                                                   |
+|                                                                                              |
+|* Software and Data Integrity Failures: This is when applications and systems fail to protect |
+|the integrity of software and data.                                                           |
+|                                                                                              |
+|* Security Logging and Monitoring Failures: This is when applications and systems fail to     |
+|  properly log and monitor security events.                                                   |
+|                                                                                              |
+|* Server-Side Request Forgery (SSRF): This is an attack that allows an attacker to send       |
+|  crafted requests from the vulnerable server to other internal systems.                      |
+|                                                                                              |
+|                                                                                              |
+|#. Within the Home page in the F5 Distributed Cloud Console, click                            |
+|   **Web App Scanning** and then click **Visit Service**.                                     |
+|                                                                                              |
+||lab001|                                                                                      |                  
+|                                                                                              |
+||lab002|                                                                                      |
+|                                                                                              |
+|#. From the Web App Scanning page, click on **Applications** in the top left-hand corner.     |
+|                                                                                              |
+|#. Click on **New Web Application**.                                                          |  
+|                                                                                              |
+||lab003|                                                                                      |
+|                                                                                              |
+||lab004|                                                                                      |
+|                                                                                              |
+|#. Add a name for the application.  *ACME Corp Web App*                                       |
+|                                                                                              |
+|#. Add the Web Address of the application that was built as part of this lab.  It will match  |
+|   your namespace following the pattern https://adjective-animal.lab-sec.f5demos.com.         |
+|Ensure to replace the adjective-animal to match your environment.                             |
+|                                                                                              |
+||lab005|                                                                                      |
+|                                                                                              |
+|#. Once the application has been added, the scan can be configured to add additional options. |
+|   In this lab, you will be modifying the scan profile and setting up a schedule. Click on    |
+|   **Manage** to access the configuration options.                                            |
+|                                                                                              |
+||lab006|                                                                                      |
+|                                                                                              |
+|#. Select **Profiles** and click **New** to add a new scanning profile that will be customized|
+|   for ACME corp's need. Name the profile **Acme Corp Scan** and Click **Submit**.            |
+|                                                                                              |
+||lab007|                                                                                      |
+|                                                                                              |
+||lab008|                                                                                      |
+|                                                                                              |
+|#. On the new profile page, additional settings can be configured such as changing the User   |
+|   Agent of the scan, adding basic authentication with username password as an encoded value  |
+|   in the *Authorization* header of the HTTP requests of the scans.  To meet the requirement  |
+|   of ensuring that the penetration tests come from pre-approved ip addresses, select the scan|
+|   settings to restrict scans to originate from only a subset of IPs.  *NOTE* F5 recommends   |
+|   not using a known IP, in order to more closely simulate attackers coming from unknown IPs. |
+|                                                                                              |
+||lab009|                                                                                      |
+|                                                                                              |
+|#. Return to the ACME Corp Web App by clicking on **Applications** on selecting the **ACME    |
+|   Corp Web App**. Next click **Manage** then **Scheduling** then **New**.                    |  
+|                                                                                              |
+||lab010|                                                                                      |
+|                                                                                              |
+||lab011|                                                                                      |
+|                                                                                              |
+||lab012|                                                                                      |
+|                                                                                              |
+||lab013|                                                                                      |
+|                                                                                              |
+|#. Lets set up a new Recurring Test. Select the **Acme Corp Scan** and **Recurring Test**.    |
+|   Define a schedule (Daily, Weekly, and Monthly) and set the start time for the scan. Click  |
+|   **Submit** when finished.                                                                  |
+|                                                                                              |
+||lab014|                                                                                      |
+|                                                                                              |
+||lab015|                                                                                      |
+|                                                                                              |
+|#. In additional to scheduled scans, Web App Scanning allows for on demand testing. Return    |
+|   back to the ACME Corp Web App. Click **Start** to begin an ad-hoc test.  Select **Acme     |
+|   Corp Scan** as the scanning profile. Click **Start Test**. You can click on the test while |
+|   it's running to see data being populated live during the test.                             |
+|                                                                                              |
+||lab016|                                                                                      |
+|                                                                                              |
+||lab017|                                                                                      |
+|                                                                                              |
+||lab018|                                                                                      |
+|                                                                                              |
+||lab019|                                                                                      |
+|                                                                                              |
+|#. After the Scan completes, results will be displayed on the homepage dashboard and also the |
+|   page of the individual application.  Click on **Applications - Acme Corp Web App**.  Review|
+|   the data from the latest scan at a high level. Click on Scan that just completed.  From the|
+|   Report page, review the which OWASP Top 10 vulnerabilities were uncovered. There is also a |
+|   video that replays the penetration testing scan interacting with the website.  Note the    |
+|   different colors as they relate to vulnerabilities uncovered and which portion of the      |
+|   application had the issue. While watching the video, note if you can identify the custom   |
+|   block page you configured earlier in the lab.  This video can be downloaded as well a PDF  |
+|   of the test results.                                                                       |
+|                                                                                              |
+||lab020|                                                                                      |
+|                                                                                              |
+||lab021|                                                                                      |
+|                                                                                              |
+||lab022|                                                                                      |
+|                                                                                              |
++----------------------------------------------------------------------------------------------+
 
 Task 3: View Post Lab Scan
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
