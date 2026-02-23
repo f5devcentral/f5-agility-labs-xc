@@ -60,6 +60,7 @@ Task 1: View Existing Scan
 |   Search by Name field by typing in 'AppWorld'.                                              |
 |                                                                                              |
 ||lab4-a|                                                                                      |
+|                                                                                              |
 ||lab4-b|                                                                                      |
 |                                                                                              |
 |7. Select 'AppWorld 2026 - Baseline Vulnerability Scan' to review the scan results, noting:   |
