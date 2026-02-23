@@ -51,13 +51,12 @@ Task 1: View Existing Scan
 |4. You will be presented with the Web App Scanning Dashboard to view a summary of all         |
 |   application scans.                                                                         |
 |5. In the left-hand menu, under 'Scans', select 'Applications'.                               |
-|6. In the list of available scans, locate and select:                                         |
-|   **AppWorld 2026 Baseline Vulnerability Scan**                                              |
-|                                                                                              |
-|  .. note::                                                                                   |
-|     In the upper right-hand corner, select the 'Filter by tags...' drop-down menu and enable |
-|     the 'AppWorld2026' entry. Alternatively, you can search for the scan by name using the   |
-|     Search by Name field by typing in 'AppWorld'                               test              |
+|6. In the list of available scans, locate & select: **AppWorld 2026 Baseline Vulnerability    |
+|Scan**.                                                                                       |
+| .. note::                                                                                    |
+|    In the upper right-hand corner, select the 'Filter by tags...' drop-down menu and enable  |
+|    the 'AppWorld2026' entry. Alternatively, you can search for the scan by name using the    |
+|    Search by Name field by typing in 'AppWorld'                                              |
 |                                                                                              |
 ||lab4-a|                                                                                      |
 |                                                                                              |
