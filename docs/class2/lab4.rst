@@ -226,32 +226,50 @@ Task 2: Configure a Web Application Scan
 Task 3: View Post Lab Scan
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Steps to Locate the Protected Scan Report
++----------------------------------------------------------------------------------------------+
+|Steps to Locate the Protected Scan Report                                                     |
+|                                                                                              |
+|1. Log in to the F5 Distributed Cloud Console.                                                |
+|2. From the navigation tiles, select Web App Scanning.                                        |
+|3. Click 'View Service'.                                                                      |
+|4. You will be presented with the Web App Scanning Dashboard to view a summary of all         |
+|   application scans.                                                                         |
+|5. In the left-hand menu, under 'Scans', select 'Applications'.                               |
+||6. In the list of available scans, locate & select: **AppWorld 2026 Baseline Vulnerability   |
+|Scan**.                                                                                       |
+|                                                                                              |
+|.. note::                                                                                     |
+|   In the upper right-hand corner, select the 'Filter by tags...' drop-down menu and enable   |
+|   the 'AppWorld2026' entry. Alternatively, you can search for the scan by name using the     |
+|   Search by Name field by typing in 'AppWorld'.                                              |
+|                                                                                              |
+||lab4-a|                                                                                      |
+|                                                                                              |
+|Here are the results after searching for the appropriate scan report:                         |
+|                                                                                              |
+||lab4-b|                                                                                      |
+|                                                                                              |
+|7. Select **AppWorld 2026 - XC Protected Vulnerability Scan** to review the scan results,     |
+|noting:                                                                                       |
+|                                                                                              |
+|* Security Score + High, Medium and Low Severity issues (Select each one).                    |
+|* Notice the vulnerability type and associated CVSS 3.0 Score.                                |
+|                                                                                              |
+||lab4-d|                                                                                      |
+|                                                                                              |
+|8. Select the report under 'Latest Test Reports' to note:                                     |
+|   * OWASP Top 10 findings.                                                                   |
+|   * Issues: Cross-Site-Scripting, Sensitive Data Exposure, and misconfiguration issues.      |
+|   * You can select 'Play Video' to view the end-to-end vulnerability assessment procedures   |
+|     performed.                                                                               |
+|   * Select one of the issues that were uncovered to view the vulnerability details, including|
+|     description, when it was originally discovered, reocurrances, type, etc.                 |
+|   * Under the review menu, you can add notes and accept, reject, or mark as resolved,        |
+|     depending on the status or nature of the issue.                                          |
+|                                                                                              |
++----------------------------------------------------------------------------------------------+
 
-1. Log in to the F5 Distributed Cloud Console.
-2. From the navigation tiles, select Web App Scanning.
-3. Click 'View Service'
-4. You will be presented with the Web App Scanning Dashboard to view a summary of all application scans.
-5. In the left-hand menu, under 'Scans', select 'Applications'
-6. In the list of available scans, locate and select:
-   **AppWorld 2026 – XC Protected Vulnerability Scan**
-
-   .. note::
-      In the upper right-hand corner, select the 'Filter by tags...' drop-down menu and enable the 'AppWorld2026' entry. Alternatively, you can search for the scan by name using the Search by Name field by typing in 'AppWorld'
-
-       |lab4-a|
-
-7. Select 'AppWorld 2026 - XC Protected Vulnerability Scan' to review the scan results, noting:
-   * Security Score + High, Medium and Low Severity issues (Select each one).
-   * Notice the vulnerability type and associated CVSS 3.0 Score.
-
-8. Select the report under 'Latest Test Reports' to note: 
-   * OWASP Top 10 findings.
-   * Issues: Cross-Site-Scripting, Sensitive Data Exposure, and misconfiguration issues.
-   * You can select 'Play Video' to view the end-to-end vulnerability assessment procedures performed. 
-   * Select one of the issues that were uncovered to view the vulnerability details, including description, when it was originally discovered, reocurrances, type, etc. 
-   * Under the review menu, you can add notes and accept, reject, or mark as resolved, depending on the status or nature of the issue.
-
+~~~~~~~~~~
 Narrative Check
 ---------------
 
