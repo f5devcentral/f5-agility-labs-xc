@@ -38,5 +38,5 @@ This Lab uses the **[AppWorld] F5XC Security Base Lab** UDF Blueprint.
    lab*
    close*
    
-.. |intro000c| image:: _static/intro-000adsp.png
+.. |intro000adsp| image:: _static/intro-000adsp.png
    :width: 800px
