@@ -249,9 +249,9 @@ The ACME Azure application is now being successfully protected by F5 Distributed
 |                                                                                              |
 ||lab025|                                                                                      |
 |                                                                                              |
-|   .. note::                                                                                  |
-|      *As you have not run many requests, summary analytics may not be                        |
-|      available in the dashboard view yet.*                                                   |
+|.. note::                                                                                     |
+|   *As you have not run many requests, summary analytics may not be                           |
+|   available in the dashboard view yet.*                                                      |
 |                                                                                              |
 |2. Scroll to the bottom and select your load balancer.                                        |
 |                                                                                              |
@@ -265,9 +265,9 @@ The ACME Azure application is now being successfully protected by F5 Distributed
 |                                                                                              |
 ||lab027|                                                                                      |
 |                                                                                              |
-|   .. note::                                                                                  |
-|      *Security Event data may take 15-20 seconds to populate in the Console. Please force a  |
-|      refresh using the Refresh icon next to the Time Period selection in step 6.*            |
+|.. note::                                                                                     |
+|   *Security Event data may take 15-20 seconds to populate in the Console. Please force a     |
+|   refresh using the Refresh icon next to the Time Period selection in step 6.*               |
 |                                                                                              |
 |5. Expand one of the requests and note the **Information** tab link. This summarizes request  |
 |   details and provides request duration timing.                                              |
@@ -285,9 +285,9 @@ The ACME Azure application is now being successfully protected by F5 Distributed
 |                                                                                              |
 ||lab030|                                                                                      |
 |                                                                                              |
-|   .. note::                                                                                  |
-|      *The available Key list to search is dynamically updated based on the requests in the*  |
-|      *selected time view.*                                                                   |
+|.. note::                                                                                     |
+|   *The available Key list to search is dynamically updated based on the requests in the*     |
+|   *selected time view.*                                                                      |
 |                                                                                              |
 |9. Closing the filters view, note the available **Quick Filters** for Response                |
 |   Codes which allows quickly filtering the requests by toggling **on** or                    |
@@ -303,9 +303,9 @@ The ACME Azure application is now being successfully protected by F5 Distributed
 |                                                                                              |
 ||lab032|                                                                                      |
 |                                                                                              |
-|   .. note::                                                                                  |
-|      *Individual forensic categories can be changed using the noted pencil icon to surface   |
-|      additional top data details.*                                                           |
+|.. note::                                                                                     |
+|   *Individual forensic categories can be changed using the noted pencil icon to surface      |
+|   additional top data details.*                                                              |
 |                                                                                              |
 |12. Using the left-hand navigation, under **Overview** select **Security**.                   |
 |                                                                                              |
@@ -320,10 +320,10 @@ The ACME Azure application is now being successfully protected by F5 Distributed
 |                                                                                              |
 ||lab035|                                                                                      |
 |                                                                                              |
-|   .. note::                                                                                  |
-|      *This is a multi-application view. Here you could get the summary security status of*   |
-|      *each application (iw Threat Level, WAF Mode, etc)* and then click into one for more*   |
-|      *specific details.*                                                                     |
+|.. note::                                                                                     |
+|   *This is a multi-application view. Here you could get the summary security status of*      |
+|   *each application (iw Threat Level, WAF Mode, etc)* and then click into one for more*      |
+|   *specific details.*                                                                        |
 |                                                                                              |
 |15. From the **Security Dashboard** view, using the horizontal navigation, click              |
 |   **Security Analytics**.                                                                    |
@@ -334,9 +334,9 @@ The ACME Azure application is now being successfully protected by F5 Distributed
 |                                                                                              |
 ||lab037|                                                                                      |
 |                                                                                              |
-|   .. note::                                                                                  |
-|      *If you lost your 1 Hour Filter, re-apply using following the method described in the   |
-|      earlier task*                                                                           |
+|.. note::                                                                                     |
+|   *If you lost your 1 Hour Filter, re-apply using following the method described in the      |
+|   earlier task*                                                                              |
 |                                                                                              |
 |17. Note the summary detail provided **Information** link and identify the                    |
 |   **Request ID** which is synonymous with **Support ID** (filterable) from the               |
