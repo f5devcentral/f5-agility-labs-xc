@@ -221,8 +221,6 @@ Task 2: Configure a Web Application Scan
 |                                                                                              |
 +----------------------------------------------------------------------------------------------+
 
-~~~~~~~~~~
-
 Task 3: View Post Lab Scan
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -258,14 +256,14 @@ Task 3: View Post Lab Scan
 ||lab4-d|                                                                                      |
 |                                                                                              |
 |8. Select the report under 'Latest Test Reports' to note:                                     |
-|   * OWASP Top 10 findings.                                                                   |
-|   * Issues: Cross-Site-Scripting, Sensitive Data Exposure, and misconfiguration issues.      |
-|   * You can select 'Play Video' to view the end-to-end vulnerability assessment procedures   |
-|     performed.                                                                               |
-|   * Select one of the issues that were uncovered to view the vulnerability details, including|
-|     description, when it was originally discovered, reocurrances, type, etc.                 |
-|   * Under the review menu, you can add notes and accept, reject, or mark as resolved,        |
-|     depending on the status or nature of the issue.                                          |
+|* OWASP Top 10 findings.                                                                      |
+|* Issues: Cross-Site-Scripting, Sensitive Data Exposure, and misconfiguration issues.         |
+|* You can select 'Play Video' to view the end-to-end vulnerability assessment procedures      |
+|  performed.                                                                                  |
+|* Select one of the issues that were uncovered to view the vulnerability details, including   |
+|  description, when it was originally discovered, reocurrances, type, etc.                    |
+|* Under the review menu, you can add notes and accept, reject, or mark as resolved,           |
+| depending on the status or nature of the issue.                                              |
 |                                                                                              |
 +----------------------------------------------------------------------------------------------+
 
