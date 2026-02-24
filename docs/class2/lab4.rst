@@ -262,12 +262,11 @@ Task 3: View Post Lab Scan
 |* Select 'Play Video' to view the end-to-end vulnerability assessment procedur performed.     |
 |* Select one of the issues that were uncovered to view the vulnerability details, including   |
 |  description, when it was originally discovered, reocurrances, type, etc.                    |
-|* Under the review menu, you can add notes and accept, reject, or mark as resolved,           |
-| depending on the status or nature of the issue.                                              |
+|* Under the review menu, you can add notes and accept, reject, or mark as resolved, depending |
+|  on the status or nature of the issue.                                                       |
 |                                                                                              |
 +----------------------------------------------------------------------------------------------+
 
-~~~~~~~~~~
 Narrative Check
 ---------------
 
