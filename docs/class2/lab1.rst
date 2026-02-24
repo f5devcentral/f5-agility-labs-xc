@@ -113,11 +113,12 @@ Task 1: Exploring the F5 Distributed Console
 ||lab011|                                                                                      |
 |                                                                                              |
 |9. Using your web browser, access the application via the F5 XC FQDN. Click on                |
-|   **Menu > Header**                                                                          |
+|   **Menu > Header**                                                                          |  
+|                                                                                              |
 |10. Note that the Remote Address has changed as well as the presence of a new X-Forwarded-For |
-|   header. The client information should have changed as you are now connecting first through |
-|   the F5 ADN Regional Edge before being proxied to the application running the ACME Corp.    |
-|   environment. X-Forwarded-For details should match your workstation's IP address.           |
+|    header. The client information should have changed as you are now connecting first through|
+|    the F5 ADN Regional Edge before being proxied to the application running the ACME Corp.   |
+|    environment. X-Forwarded-For details should match your workstation's IP address.          |
 |                                                                                              |
 ||lab012|                                                                                      |
 |                                                                                              |
