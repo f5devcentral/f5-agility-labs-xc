@@ -217,7 +217,7 @@ Accessing F5 Distributed Cloud
 .. |intro010| image:: _static/intro-10.png
    :width: 600px
 .. |intro011| image:: _static/intro-11.png
-   :width: 6In00px
+   :width: 600px
 .. |intro012| image:: _static/intro-12.png
    :width: 800px
 .. |intro013| image:: _static/intro-13.png
