@@ -435,6 +435,7 @@ In this task you will come to understand how exclusions are applied. You will
 also further customize the WAF policy just built to add a custom block response page.
 
 +----------------------------------------------------------------------------------------------+
+|                                                                                              |
 |1. In the **HTTP Load Balancers** window **(Manage > Load Balancers > HTTP Load               |
 |   Balancers)** Click on the three action dots in the **Actions** column then                 |
 |   **Manage Configuration** from the dropdown menu.                                           |
@@ -478,9 +479,11 @@ also further customize the WAF policy just built to add a custom block response 
 |10. In the **Blocking Response Page Body** replace the existing text with the text provided   |
 |    below. Click **Save App Firewall** when completed.                                        |
 |                                                                                              |
++----------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------+
 ||lab055|                                                                                      |
 |                                                                                              |
-|Sample Blocking Response Page to be copied:                                                   |
+|   Sample Blocking Response Page to be copied:                                                |
 |                                                                                              |
 |  .. code:: HTML                                                                              |
 |                                                                                              |
