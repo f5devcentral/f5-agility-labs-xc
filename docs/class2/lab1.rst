@@ -44,20 +44,20 @@ Task 1: Exploring the F5 Distributed Console
 |currently advertising a globally available application. These steps will allow you to review  |
 |the application, its DNS entry and the application target that is configured as the origin.   |
 |                                                                                              |
-|#. Following the **Introduction** section instructions, you should now be on the Home page.   |
+| #. Following the **Introduction** section instructions, you should now be on the Home page.   |
 |   of the F5 Distributed Cloud Console.  Let's first review the F5 Distributed Load Balancer  |
 |   that was configured for you via automation.  Select **Web App & API Protection**.          |
 |                                                                                              |
-|#. On the **Web App & API Protection** page, note the identifier of your namespace (top left  |
+| #. On the **Web App & API Protection** page, note the identifier of your namespace (top left  |
 |   area of the page). The namespace will follow a format of *adjective-animal*. In this       |
 |   guide, the namespace is pet-walrus. Your namespace will be different.  In the left-hand    |
 |   navigation expand **Manage** and click **Load Balancers > Origin Pools**                   |
 |                                                                                              |
-| |lab001|                                                                                     |
+||lab001|                                                                                      |
 |                                                                                              |
-| |lab002|                                                                                     |
+||lab002|                                                                                      |
 |                                                                                              |
-|#. In the resulting screen expand the Actions Menu and click **Manage Configuration** for     |
+| #. In the resulting screen expand the Actions Menu and click **Manage Configuration** for     |
 |   the origin pool configured in your namespace. Here you will see the origin server public   |
 |   FQDN of the application running in ACME's Azure environment.  Copy the domain name so you  |
 |   can visit the site directly from your web browser.  Click  **Cancel and Exit** to return   |
@@ -67,7 +67,7 @@ Task 1: Exploring the F5 Distributed Console
 |                                                                                              |
 | |lab004|                                                                                     |
 |                                                                                              |
-|#. Using your browser, visit this application directly utilizing its public FQDN. Select the  |
+| W#. Using your browser, visit this application directly utilizing its public FQDN. Select the  |
 |   **Menu** on the top right-hand side and select **Header**.                                 |   
 |                                                                                              |
 |#. Note the Remote Address field. This will match the IP address of your workstation. You can |
