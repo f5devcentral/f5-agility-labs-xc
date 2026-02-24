@@ -63,7 +63,7 @@ in the left-hand navigation, and choose **Web App & API Protection** as shown in
 
 7. After returning to the prior window, change the **Port** under **Origin server Port** to **80**.
 
-8. Scroll to the bottom and click **Save and Exit**.
+8. Scroll to the bottom and click **Add Origin Pool**.
 
    |lab005|
 
@@ -119,7 +119,7 @@ in the left-hand navigation, and choose **Web App & API Protection** as shown in
       *means that this application will be advertised globally using the F5 Distributed Cloud Global Network*
       *utilizing Anycast.*
 
-17. Click **Save HTTP Load Balancer** at the bottom of the **HTTP Load Balancer** configuration screen.
+17. Click **Add HTTP Load Balancer** at the bottom of the **HTTP Load Balancer** configuration screen.
 
    |lab012|
 
@@ -218,7 +218,7 @@ These steps will apply a preconfigured WAF policy to the load balancer created i
 7. Select preconfigured the Web Application Firewall
     *(shared/base-appfw)* from the **Enable** dropdown.
 
-8. Scroll to the bottom of the page and click **Save and Exit**
+8. Scroll to the bottom of the page and click **Save HTTP Load Balancer**
 
    |lab032|
 

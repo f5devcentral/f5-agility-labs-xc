@@ -60,7 +60,7 @@ First, you will create an Origin Pool that refers to the "Private Endpoint" site
  Port                              **8080**
  ================================= ========
 
-7. Click **Save and Exit**
+7. Click **Add Origin Pool**
 
 Task 2. Create and Deploy a HTTP Load Balancer on F5 Distributed Cloud CE
 ---------------------------------------------------------------------------
@@ -131,7 +131,7 @@ under this tenant.
 
 -------------------------------------------------------------------------------------------------------------------------------
 
-3. Scroll to the botton of the screen and click **Save and Exit** to create the HTTP Load Balancer.
+3. Scroll to the botton of the screen and click **Add HTTP Load Balancer** to create the HTTP Load Balancer.
 
 
 Task 4: Verify Configuration

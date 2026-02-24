@@ -88,7 +88,7 @@ We will first create an Origin Pool that refers to the "Private Endpoint" site i
  Port                              **8080**
  ================================= =======
 
-7. Click **Save and Exit**.
+7. Click **Add Origin Pool**.
 
 Task 2. Create and Deploy a HTTP Load Balancer on F5 Distributed Cloud CE
 ---------------------------------------------------------------------------
@@ -172,7 +172,7 @@ under this tenant.
 
 -------------------------------------------------------------------------------------------------------------------------------
 
-3. Scroll to the botton of the screen and click **Save and Exit** to create the HTTP Load Balancer.
+3. Scroll to the botton of the screen and click **Add HTTP Load Balancer** to create the HTTP Load Balancer.
 
 Task 4: Verify Configuration
 -----------------------------
@@ -193,6 +193,8 @@ Task 5: Verify DNS
 
 You can verify that you are connecting directly to AWS by comparing the DNS of the two hosts.
 
+For Linux, MacOS, or WSL:
+
 .. code-block::
 
   $ dig +short <your-namespace>.aws.lab.f5demos.com
@@ -200,6 +202,8 @@ You can verify that you are connecting directly to AWS by comparing the DNS of t
 
   $ dig -x 52.4.72.136 +short
   ec2-52-4-72-136.compute-1.amazonaws.com
+
+For Windows:
 
 .. code-block::
 
@@ -224,9 +228,9 @@ security event data.
 
    .. admonition:: Sample WAF Attack URLs
 
-     * `http://\<your-namespace\>.lab-sec.f5demos.com/?cmd=cat%20/etc/passwd <http://\<your-namespace\>.lab-sec.f5demos.com/?cmd=cat%20/etc/passwd>`_
-     * `http://\<your-namespace\>.lab-sec.f5demos.com/?4d4ad2dbdb=MzsvKiBhICovIERFQ0xBUkUgQGMgdmFyY2hhcigyNTUpOy8qIGIgKi9TRUxFQ1QgQGM9J3BpbmcgJyttYXN0ZXIuc3lzLmZuX3ZhcmJpbnRvaGV4c3RyKGNvbnZlcnQodmFyYmluYXJ5LFNZU1RFTV9VU0VSKSkrJy4wMDAuYnVycGNvbCcrJ2xhYm9yYXRvci5uZXQnOy8qeHgqLyBFWEVDIE1hc3Rlci5kYm8ueHBfY21kc2hlbGwgQGM7Lyp4eHgqLyBFWEVDIHNwX1NZU19Qcm90b09wIEBpZD0z <http://\<your-namespace\>.lab-sec.f5demos.com//?4d4ad2dbdb=MzsvKiBhICovIERFQ0xBUkUgQGMgdmFyY2hhcigyNTUpOy8qIGIgKi9TRUxFQ1QgQGM9J3BpbmcgJyttYXN0ZXIuc3lzLmZuX3ZhcmJpbnRvaGV4c3RyKGNvbnZlcnQodmFyYmluYXJ5LFNZU1RFTV9VU0VSKSkrJy4wMDAuYnVycGNvbCcrJ2xhYm9yYXRvci5uZXQnOy8qeHgqLyBFWEVDIE1hc3Rlci5kYm8ueHBfY21kc2hlbGwgQGM7Lyp4eHgqLyBFWEVDIHNwX1NZU19Qcm90b09wIEBpZD0z>`_
-     * `http://\<your-namespace\>.lab-sec.f5demos.com/cart?search=aaa%E2%80%99%3E%3Cscript%3Eprompt%28%E2%80%98Please%2Benter%2Byour%2Bpassword%E2%80%99%29%3B%3C%2Fscript%3E <http://\<your-namespace\>.lab-sec.f5demos.com/cart?search=aaa%E2%80%99%3E%3Cscript%3Eprompt%28%E2%80%98Please%2Benter%2Byour%2Bpassword%E2%80%99%29%3B%3C%2Fscript%3E>`_
+     * `http://\<your-namespace\>.aws.lab-sec.f5demos.com/?cmd=cat%20/etc/passwd <http://\<your-namespace\>.lab-sec.f5demos.com/?cmd=cat%20/etc/passwd>`_
+     * `http://\<your-namespace\>.aws.lab-sec.f5demos.com/?4d4ad2dbdb=MzsvKiBhICovIERFQ0xBUkUgQGMgdmFyY2hhcigyNTUpOy8qIGIgKi9TRUxFQ1QgQGM9J3BpbmcgJyttYXN0ZXIuc3lzLmZuX3ZhcmJpbnRvaGV4c3RyKGNvbnZlcnQodmFyYmluYXJ5LFNZU1RFTV9VU0VSKSkrJy4wMDAuYnVycGNvbCcrJ2xhYm9yYXRvci5uZXQnOy8qeHgqLyBFWEVDIE1hc3Rlci5kYm8ueHBfY21kc2hlbGwgQGM7Lyp4eHgqLyBFWEVDIHNwX1NZU19Qcm90b09wIEBpZD0z <http://\<your-namespace\>.aws.lab-sec.f5demos.com//?4d4ad2dbdb=MzsvKiBhICovIERFQ0xBUkUgQGMgdmFyY2hhcigyNTUpOy8qIGIgKi9TRUxFQ1QgQGM9J3BpbmcgJyttYXN0ZXIuc3lzLmZuX3ZhcmJpbnRvaGV4c3RyKGNvbnZlcnQodmFyYmluYXJ5LFNZU1RFTV9VU0VSKSkrJy4wMDAuYnVycGNvbCcrJ2xhYm9yYXRvci5uZXQnOy8qeHgqLyBFWEVDIE1hc3Rlci5kYm8ueHBfY21kc2hlbGwgQGM7Lyp4eHgqLyBFWEVDIHNwX1NZU19Qcm90b09wIEBpZD0z>`_
+     * `http://\<your-namespace\>.aws.lab-sec.f5demos.com/cart?search=aaa%E2%80%99%3E%3Cscript%3Eprompt%28%E2%80%98Please%2Benter%2Byour%2Bpassword%E2%80%99%29%3B%3C%2Fscript%3E <http://\<your-namespace\>.lab-sec.f5demos.com/cart?search=aaa%E2%80%99%3E%3Cscript%3Eprompt%28%E2%80%98Please%2Benter%2Byour%2Bpassword%E2%80%99%29%3B%3C%2Fscript%3E>`_
 
 Just like in Lab 1, you should see a block page when adding the attacks to the URL. The difference in this case is that the
 enforcement of the WAF policy is occurring on the load balancer on the CE node that is deployed in the AWS lab environment
