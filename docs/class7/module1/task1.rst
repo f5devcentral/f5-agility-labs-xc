@@ -71,6 +71,18 @@ Keep your workspace tidy as you work:
 * Fewer open tabs = less confusion.
 * Delete or refactor obvious duplicates early.
 
+
+Cline Errors
+------------
+
+You may occasionally see error messages. In most cases, these can be safely ignored.
+
+Cline runs in a restricted lab environment and may try actions that are not allowed. When that happens, it automatically adjusts and retries using a different approach.
+
+This is normal behavior and partly due to the non-deterministic nature of LLMs.
+
+|module1-task1-cline-path-error|
+
 Wrap-Up
 ~~~~~~~
 
@@ -84,3 +96,7 @@ Throughout this lab, you’ll see how **CI/CD pipelines and runtime security** c
 
 You’re still in control.  
 Cline just moves fast.
+
+
+.. |module1-task1-cline-path-error| image:: ../images/module1/module1-task1-cline-path-error.png
+   :width: 400px

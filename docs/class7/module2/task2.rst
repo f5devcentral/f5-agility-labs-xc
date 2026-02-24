@@ -13,13 +13,19 @@ Explore the Deployed Application
 
       https://<NAMESPACE>-lb.lab-app.f5demos.com
 
-   
+   .. note::
+      Replace <NAMESPACE> with your F5 Distributed Cloud namespace assigned at the beggining of the lab
+
+
 Explore F5 Distributed Cloud Configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 1. Review the HTTPS Load Balancer configuration in F5 Distributed Cloud.
 
    In the F5 Distributed Cloud console, Click on the Web App & API Protection tile.
+
+   .. note::
+      You can also access the tenant directly at: `https://f5-xc-lab-app.console.ves.volterra.io/ <https://f5-xc-lab-app.console.ves.volterra.io/>`_
 
    |module3-f5xc-waap-tile|
 
@@ -35,10 +41,6 @@ Explore F5 Distributed Cloud Configuration
 
    On same Web App & API Protection page. Click on the "App Firewall"
 
-   Open the WAF configuration associated with the HTTPS Load Balancer.
-
-   Navigate to:
-
    .. note::
       If you want to explore your WAF policy, click the "..." symbol under the Actions column and click "View Configuration".
 
@@ -51,13 +53,9 @@ Explore F5 Distributed Cloud Configuration
 
    |module2-f5xc-apps-tile|
 
-   Navigate to the origin pool and inspect the associated vK8s workload.
+   Once on the Distributed Apps page, click **Virtual K8s** and then click on you Virtual K8s instance.
 
-   Navigate to:
-
-   ::
-
-      Distributed Apps → Applications → Virtual K8s → "Click on your vk8" → Dashboard
+   This will take to the you Virtual K8s Dashboard
 
    |module2-f5xc-distapp-vk8-workload|
 
@@ -95,7 +93,11 @@ Review Security Events
 
 8. Open the security events view in F5 Distributed Cloud.
 
-   In the F5 Distributed Cloud console, navigate to the **Security Events** section for your application.
+   In the F5 Distributed Cloud console, go back the Web App & API Protection page (Click on F5 logo)
+
+   |module3-f5xc-waap-tile|
+   
+   Once on Web App & API Protection page navigate to the **Security Events** section for your application.
 
    Navigate to:
 

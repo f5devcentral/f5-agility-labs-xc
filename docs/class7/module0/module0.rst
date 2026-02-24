@@ -31,7 +31,7 @@ Narrative
 |                                                                                              |
 | **Alex:** *No installs. No “works on my laptop.” Everything already feels… modern!*          |
 |                                                                                              |
-| **Riley:** *I am happy too because the environment is **controlled**, **ephemeral**, and*     |
+| **Riley:** *I am happy too because the environment is **controlled**, **ephemeral**, and*    |
 | ***observable**.*                                                                            |
 |                                                                                              |
 | |Module_0_story|                                                                             |
@@ -43,7 +43,10 @@ Narrative
 * Setting expectations: this is an **end-to-end system**, not a bunch of tools
 * Understanding the loop you’ll repeat all lab long:
                                   
-**Code → Commit → Scan → Protect → Learn → Repeat**
+
+::
+
+   Code → Commit → Scan → Protect → Observe → Improve → Repeat
 
 **Real-world parallel**
 -----------------------

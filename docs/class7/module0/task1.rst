@@ -17,6 +17,7 @@ This is your primary workspace throughout the lab.
 - This is where “vibe coding” happens—fast iteration, fast results.
 
 *What to notice:*
+
 - New files may be created automatically by Cline.
 - Cline may open and use its **own terminal**, identifiable by the Cline icon.
 - You are always working inside a real Git repository.
@@ -32,6 +33,7 @@ GitLab is the backbone of the CI/CD workflow in this lab.
 - It provides visibility into *why* something passed or failed.
 
 *What to notice:*
+
 - Pipelines trigger automatically when you push code.
 - Each stage has a clear purpose (policy, test, build, deploy).
 - Failures are expected and intentional in this lab.
@@ -46,6 +48,7 @@ This is where your application actually runs.
 - GitLab pipelines deploy your containerized application into vK8s.
 
 *What to notice:*
+
 - You never log into Kubernetes directly.
 - Deployments are driven entirely by CI/CD.
 - Application updates only occur after pipeline success.
@@ -61,6 +64,7 @@ This is the runtime security layer in front of your application.
 - **Bot Defense** protects sensitive user-facing flows from automated abuse.
 
 *What to notice:*
+
 - All application traffic flows through this layer.
 - Security controls are attached to the load balancer.
 - Features are enabled or blocked based on policy-as-code.

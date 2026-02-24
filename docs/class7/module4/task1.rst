@@ -1,14 +1,14 @@
-Task 1 – F5 Web Application Scanning (WAS) as a DAST Tool
+Task 1 – F5XC Web Application Scanning (WAS) as a DAST Tool
 ===========================================================
 
-In this task, you will review how **F5 Web Application Scanning (WAS)** fits into a modern DevSecOps workflow as a **Dynamic Application Security Testing (DAST)** tool.
+In this task, you will review how **F5XC Web Application Scanning (WAS)** fits into a modern DevSecOps workflow as a **Dynamic Application Security Testing (DAST)** tool.
 
-Unlike earlier modules, this task is **instructor-led**. The focus is on understanding *why* DAST matters, *where* it fits, and *how* it validates runtime security controls deployed earlier in the lab.
+The focus in this module is on understanding *why* DAST matters, *where* it fits, and *how* it validates runtime security controls deployed earlier in the lab.
 
-What is F5 Web Application Scanning (WAS)?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+What is F5XC Web Application Scanning (F5XC WAS)?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-F5 WAS is a DAST solution that evaluates a *running* application from the outside—just like an attacker would.
+F5XC WAS is a DAST solution that evaluates a *running* application from the outside—just like an attacker would.
 
 * It sends real HTTP requests to the live application
 * It looks for exploitable behaviors, not just code patterns
@@ -18,8 +18,8 @@ F5 WAS is a DAST solution that evaluates a *running* application from the outsid
 SAST inspects code.  
 DAST tests reality.
 
-Why WAS Matters in This Lab
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Why F5XC WAS Matters in This Lab
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Throughout this lab, you have:
 
@@ -28,44 +28,36 @@ Throughout this lab, you have:
 - Deployed runtime protections using F5 Distributed Cloud
 - Observed live security events (WAF, API, Bot Defense)
 
-WAS answers the final question:
+F5XC WAS answers the final question:
 
 **“Did all of this actually make the app more secure?”**
 
-Instructor Review: Pre-Scan vs Post-Scan
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Review: Pre-Scan vs Post-Scan WAF Reports
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The instructor will walk through two pre-generated scan reports:
+Review the Pre-Scan and Post-Scan reports performed using **F5XC Web Application Scanning** to a live version of the 
 
-1. **Pre-Scan: AI-Generated App (No WAAP)**
-   
-   *What to notice:*
-   - High-severity findings
-   - Injection flaws
-   - Missing input validation
-   - Insecure endpoints
-   - API weaknesses
+Open a new tab in your browser and navigate to:
 
-   *Key takeaway:*  
-   AI-generated code ships fast—but it ships risk.
+`F5 AI Generated Application <https://f5-ai-generated-app.xc.hvf5lab.com/reports>`_ - https://f5-ai-generated-app.xc.hvf5lab.com/reports
 
-2. **Post-Scan: Same App with F5XC Security Enabled**
-   
-   *What to notice:*
-   - Reduced exploitability
-   - Attacks blocked or mitigated
-   - API behavior constrained by specification
-   - Bot-sensitive flows protected
+The reports include:
 
-   *Key takeaway:*  
-   Same code. Same app. **Very different risk profile.**
+- Full PDF pre and post WAF reports
+- Videos of each scan that shows how F5XC Web Application Scanning performs the scan and test the application.
+- Summary of the issues found on each scan
 
-How WAS Fits into CI/CD (Conceptually)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Walk through both reports:
 
-While WAS scans were not executed live in this lab (due to scan duration), in real-world pipelines:
+- **Pre-Scan: F5 AI-Generated App PRE-SCAN (WAF OFF)**
+- **Post-Scan: Same App POS-SCAN (WAF ON)**
 
-- WAS can be triggered:
+How F5XC WAS Fits into CI/CD (Conceptually)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+While F5XC WAS scans were not executed live in this lab (due to scan duration), in real-world pipelines:
+
+- A F5XC WAS can be triggered:
   - After deployment
   - On a schedule
   - Before major releases
@@ -75,7 +67,7 @@ While WAS scans were not executed live in this lab (due to scan duration), in re
   - Validate WAF and API policies
 
 *Important idea:*  
-WAS is not about blocking releases—it’s about **proving outcomes**.
+F5XC WAS is not about blocking releases—it’s about **proving outcomes**.
 
 What This Task Reinforces
 ~~~~~~~~~~~~~~~~~~~~~~~~~

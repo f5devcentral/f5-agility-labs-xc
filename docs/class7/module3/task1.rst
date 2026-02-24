@@ -131,6 +131,7 @@ Extend the Application Using Cline
       ====================================================================
       Provide changes as:
       - Minimal diffs OR full updated files for:
+
       - app/app.py
       - openapi/openapi.json (new)
       - app/tests/test_app.py
@@ -196,6 +197,7 @@ Vibe Coding Experience in VS Code (What You’ll See)
    |module3-vscode-cline-pytest-passed|
 
    *What to notice:*
+
    - Cline uses the test output as feedback to fix issues.
    - If the same failure repeats several times, Cline may stop the task.
 
@@ -222,11 +224,11 @@ Vibe Coding Experience in VS Code (What You’ll See)
 Enable API Discovery Using Policy-as-Code
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-10. Open the ``security-controls.yaml` file in VS Code.
+10. Open the `security-controls.yaml` file in VS Code.
 
    This is the same policy file you used in Module 2 to enable WAF.
 
-11. Enable API Discovery in the security policy.
+11. Enable API Discovery in the security policy file and save it.
 
    Update the file so it looks like this:
 
@@ -319,7 +321,10 @@ Generate Traffic to Exercise the New API Endpoints
 
 1.  Generate traffic to the newly added API endpoints.
 
-   Once the pipeline has completed successfully and the application is deployed, open a browser and access the following URLs (replace the namespace if needed):
+   Once the pipeline has completed successfully and the application is deployed, open a browser and access the following URLs:
+
+   .. note::
+      Replace <NAMESPACE> with your F5 Distributed Cloud namespace assigned at the beggining of the lab
 
    ::
 
@@ -416,13 +421,13 @@ In the next task, you will build on this foundation by enabling **Bot Defense** 
 .. |module3-vscode-cline-pending-task| image:: ../images/module3/module3-vscode-cline-pending-task.png
    :width: 800px
 .. |module3-vscode-cline-plan-response| image:: ../images/module3/module3-vscode-cline-plan-response.png
-   :width: 800px
+   :width: 400px
 .. |module3-vscode-cline-pytest-failed-2| image:: ../images/module3/module3-vscode-cline-pytest-failed-2.png
-   :width: 400px
+   :width: 800px
 .. |module3-vscode-cline-pytest-failed| image:: ../images/module3/module3-vscode-cline-pytest-failed.png
-   :width: 400px
+   :width: 800px
 .. |module3-vscode-cline-pytest-passed| image:: ../images/module3/module3-vscode-cline-pytest-passed.png
-   :width: 400px
+   :width: 800px
 .. |module3-vscode-cline-run-command| image:: ../images/module3/module3-vscode-cline-run-command.png
    :width: 800px
 .. |module3-vscode-cline-save-file| image:: ../images/module3/module3-vscode-cline-save-file.png
@@ -434,6 +439,6 @@ In the next task, you will build on this foundation by enabling **Bot Defense** 
 .. |module3-vscode-security-controls| image:: ../images/module3/module3-vscode-security-controls.png
    :width: 400px
 .. |module3-vscode-source-control-commit| image:: ../images/module3/module3-vscode-source-control-commit.png
-   :width: 800px
+   :width: 400px
 .. |module3-vscode-source-control-sync-changes| image:: ../images/module3/module3-vscode-source-control-sync-changes.png
    :width: 800px
