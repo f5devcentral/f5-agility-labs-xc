@@ -144,10 +144,10 @@ Task 2: Configure WAF Policy on the Load Balancer
 |                                                                                              |
 ||lab016|                                                                                      |
 |                                                                                              |
-|   .. note::                                                                                  |
-|      *The "shared/base-appfw" policy is in the "shared namespace" which can be               |
-|      applied to* *multiple Load Balancer configurations across namespaces,                   |
-|      reducing policy sprawl.*                                                                |
+|.. note::                                                                                     |
+|   *The "shared/base-appfw" policy is in the "shared namespace" which can be                  |
+|   applied to* *multiple Load Balancer configurations across namespaces,                      |
+|   reducing policy sprawl.*                                                                   |
 |                                                                                              |
 |3. In the new window's **Metadata** section enter **<namespace>-appfw** for the               |
 |   **Name**.                                                                                  |
