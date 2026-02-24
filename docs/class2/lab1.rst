@@ -241,131 +241,132 @@ Narrative Check
 
 The ACME Azure application is now being successfully protected by F5 Distributed Cloud.
 
-#. Returning to the F5 Distributed Cloud Console, use the left-hand menu to
-   select **Overview > Performance** section.  This dashboard will provide a summary 
-   view for all of the configured Load Balancers.
-
-   |lab025|
-
-   .. note::
-      *As you have not run many requests, summary analytics may not be
-      available in the dashboard view yet.*
-
-#. Scroll to the bottom and select your load balancer.
-
-   |lab026|
-
-#. From the **Performance Dashboard** view, using the horizontal navigation,
-   click **Requests**.
-
-#. Change the viewable time period from 5 minutes (default) to **1 hour** by
-   selecting the dropdown shown, click **Last 1 hour** then click **Apply**.
-
-   |lab027|
-
-   .. note::
-      *Security Event data may take 15-20 seconds to populate in the Console. Please force a
-      refresh using the Refresh icon next to the Time Period selection in step 6.*
-
-#. Expand one of the requests and note the **Information** tab link. This
-   summarizes request details and provides request duration timing.
-
-   |lab028|
-
-#. Click on the **JSON** link to get more data about the request.
-
-#. Click **Add Filter** as shown to see how you can filter by key identifiers.
-
-   |lab029|
-
-#. The resulting **Search** input field and listed **Keys**, can be used to
-   filter requests in this view.
-
-   |lab030|
-
-   .. note::
-      *The available Key list to search is dynamically updated based on the requests in the*
-      *selected time view.*
-
-#. Closing the filters view, note the available **Quick Filters** for Response
-   Codes which allows quickly filtering the requests by toggling **on** or
-   **off** each response code category.
-
-#. Click the **Forensics** tab on the right side of the view as shown.
-
-   |lab031|
-
-#. The *Forensics* Filter  provides summarized top categories which provides
-   quicker analysis of the request log data.  Collapse the **Forensics** view
-   when done using the indicated arrow.
-
-   |lab032|
-
-   .. note::
-      *Individual forensic categories can be changed using the noted pencil
-      icon to surface additional top data details.*
-
-#. Using the left-hand navigation, under **Overview** select
-   **Security**.
-
-   |lab033|
-
-#. Review the **Security Dashboard** display (you may have limited data). NOTE: you may need
-   to update the variable time period
-
-   |lab034|
-
-#. Scroll to **Load Balancers** section and click the **<namespace>-lb**  object.
-
-   |lab035|
-
-   .. note::
-      *This is a multi-application view. Here you could get the summary security status of*
-      *each application (iw Threat Level, WAF Mode, etc)* and then click into one for more*
-      *specific details.*
-
-#. From the **Security Dashboard** view, using the horizontal navigation, click
-   **Security Analytics**.
-
-   |lab036|
-
-#. Expand your latest security event as shown.
-
-   |lab037|
-
-   .. note::
-      *If you lost your 1 Hour Filter, re-apply using following the method described in the earlier task*
-
-#. Note the summary detail provided **Information** link and identify the
-   **Request ID** which is synonymous with **Support ID** (filterable) from the
-   Security Event Block Page.
-
-   |lab038|
-
-#. Scroll to the bottom of the information screen to see specific signatures
-   detected and actions taken during the security event.
-
-   |lab039|
-
-#. Next, click on the **Add Filter** link just under the **Security
-   Analytics** title near the top of the **Security Analytics** window.
-   
-#. Type **req** in the open dialogue window and select **req_id** from the
-   dropdown.
-
-   |lab039a|
-
-   |lab039b|
-#. Next, select **In** from the **Select Operator** dropdown.
-
-#. Finally, select/assign a value that matches one of your copied **Support
-   IDs** from Task 3, Step 3 as shown.  You can also optionally just paste the
-   Support ID in the value field and click **Apply**.
-
-   |lab040|
-
-   |lab041|
-
++----------------------------------------------------------------------------------------------+
+|1. Returning to the F5 Distributed Cloud Console, use the left-hand menu to                   |
+|   select **Overview > Performance** section.  This dashboard will provide a summary          |
+|   view for all of the configured Load Balancers.                                             |
+|                                                                                              |
+||lab025|                                                                                      |
+|                                                                                              |
+|   .. note::                                                                                  |
+|      *As you have not run many requests, summary analytics may not be                        |
+|      available in the dashboard view yet.*                                                   |
+|                                                                                              |
+|2. Scroll to the bottom and select your load balancer.                                        |
+|                                                                                              |
+||lab026|                                                                                      |  
+|                                                                                              |
+|3. From the **Performance Dashboard** view, using the horizontal navigation,                  |
+|   click **Requests**.                                                                        |
+|                                                                                              |
+|4. Change the viewable time period from 5 minutes (default) to **1 hour** by                  |
+|   selecting the dropdown shown, click **Last 1 hour** then click **Apply**.                  |
+|                                                                                              |
+||lab027|                                                                                      |
+|                                                                                              |
+|   .. note::                                                                                  |
+|      *Security Event data may take 15-20 seconds to populate in the Console. Please force a  |
+|      refresh using the Refresh icon next to the Time Period selection in step 6.*            |
+|                                                                                              |
+|5. Expand one of the requests and note the **Information** tab link. This summarizes request  |
+|   details and provides request duration timing.                                              |
+|                                                                                              |
+||lab028|                                                                                      |
+|                                                                                              |
+|6. Click on the **JSON** link to get more data about the request.                             |
+|                                                                                              |
+|7. Click **Add Filter** as shown to see how you can filter by key identifiers.                |
+|                                                                                              |
+||lab029|                                                                                      |
+|                                                                                              |
+|8. The resulting **Search** input field and listed **Keys**, can be used to filter requests   |
+|   in this view.                                                                              |
+|                                                                                              |
+||lab030|                                                                                      |
+|                                                                                              |
+|   .. note::                                                                                  |
+|      *The available Key list to search is dynamically updated based on the requests in the*  |
+|      *selected time view.*                                                                   |
+|                                                                                              |
+|9. Closing the filters view, note the available **Quick Filters** for Response                |
+|   Codes which allows quickly filtering the requests by toggling **on** or                    |
+|   **off** each response code category.                                                       |
+|                                                                                              |
+|10. Click the **Forensics** tab on the right side of the view as shown.                       |
+|                                                                                              |
+||lab031|                                                                                      |
+|                                                                                              |
+|11. The *Forensics* Filter  provides summarized top categories which provides quicker analysis|
+|    of the request log data.  Collapse the **Forensics** view when done using the indicated   |
+|    arrow.                                                                                    | 
+|                                                                                              |
+||lab032|                                                                                      |
+|                                                                                              |
+|   .. note::                                                                                  |
+|      *Individual forensic categories can be changed using the noted pencil icon to surface   |
+|      additional top data details.*                                                           |
+|                                                                                              |
+|12. Using the left-hand navigation, under **Overview** select **Security**.                   |
+|                                                                                              |
+||lab033|                                                                                      |
+|                                                                                              |
+|13. Review the **Security Dashboard** display (you may have limited data). NOTE: you may need |
+|   to update the variable time period.                                                        |
+|                                                                                              |
+||lab034|                                                                                      |
+|                                                                                              |
+|14. Scroll to **Load Balancers** section and click the **<namespace>-lb** object.             |
+|                                                                                              |
+||lab035|                                                                                      |
+|                                                                                              |
+|   .. note::                                                                                  |
+|      *This is a multi-application view. Here you could get the summary security status of*   |
+|      *each application (iw Threat Level, WAF Mode, etc)* and then click into one for more*   |
+|      *specific details.*                                                                     |
+|                                                                                              |
+|15. From the **Security Dashboard** view, using the horizontal navigation, click              |
+|   **Security Analytics**.                                                                    |
+|                                                                                              |
+||lab036|                                                                                      |
+|                                                                                              |
+|16. Expand your latest security event as shown.                                               |
+|                                                                                              |
+||lab037|                                                                                      |
+|                                                                                              |
+|   .. note::                                                                                  |
+|      *If you lost your 1 Hour Filter, re-apply using following the method described in the   |
+|      earlier task*                                                                           |
+|                                                                                              |
+|17. Note the summary detail provided **Information** link and identify the                    |
+|   **Request ID** which is synonymous with **Support ID** (filterable) from the               |
+|   Security Event Block Page.                                                                 |
+|                                                                                              |
+||lab038|                                                                                      |
+|                                                                                              |
+|18. Scroll to the bottom of the information screen to see specific signatures                 |
+|   detected and actions taken during the security event.                                      |
+|                                                                                              |
+||lab039|                                                                                      |
+|                                                                                              |
+|19. Next, click on the **Add Filter** link just under the **Security                          |
+|   Analytics** title near the top of the **Security Analytics** window.                       |
+|                                                                                              |
+|20. Type **req** in the open dialogue window and select **req_id** from the dropdown.         |
+|                                                                                              |
+||lab039a|                                                                                     |
+|                                                                                              |
+||lab039b|                                                                                     |
+|21. Next, select **In** from the **Select Operator** dropdown.                                |
+|                                                                                              |
+|22. Finally, select/assign a value that matches one of your copied **Support IDs** from       |
+|    Task 3, Step 3 as shown.  You can also optionally just paste the Support ID in the value  |
+|    field and click **Apply**.                                                                |
+|                                                                                              |
+||lab040|                                                                                      |
+|                                                                                              |
+||lab041|                                                                                      |
+|                                                                                              |
++----------------------------------------------------------------------------------------------+
 Narrative Check
 -----------------
 
