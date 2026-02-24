@@ -31,7 +31,8 @@ Roles and Skill levels. If you have not done so already, please login to your
 tenant for this lab using the **Accept Inivitation** link from your second email 
 and proceed to Task 1.
 
-*Expected Lab Time: 25 minutes*
+.. note::                                                                                  
+   **Expected Lab Time: 25 minutes**
 
 **Lab 1 Summary--WAF Deployment:** Deploy and configure an F5 Distributed Cloud Web Application Firewall policy on the application’s HTTP Load Balancer. You’ll see how to create a custom WAF policy, apply it to protect the web app, and test it with attack traffic (e.g. an attempted SQL injection) to confirm that malicious requests are detected and blocked. This establishes an immediate security baseline for the vulnerable application.
 
@@ -207,30 +208,33 @@ You will now perform basic testing of the Web Application Firewall (WAF)
 Policy. You will also review the generated event data to make additional
 configuration changes.
 
-#. Open another tab in your browser (Chrome shown), navigate to the newly
-   configured Load  Balancer configuration: **http://<namespace>.lab-sec.f5demos.com**, to confirm
-   it is functional.
-
-#. Using some of the sample attacks below, add the URI path & variables to your
-   application to generate security event data.
-
-   * ``/?cmd=cat%20/etc/passwd``
-   * ``/product?id=4%20OR%201=1``
-   * ``/../../../../etc/shadow``
-   * ``/product?code=echo%20shell_exec(%27/sbin/ifconfig%20eth0%27);``
-   * ``/cart?search=aaa'><script>prompt('Please+enter+your+password');</script>``
-
-   .. note::
-      *Copy these paths for use later*
-
-#. In the resulting block screens, note the **URL** and the **Support ID**.
-   (copy and paste to a notepad or note resource).
-
-   |lab022|
-
-   |lab023|
-
-   |lab024|
++----------------------------------------------------------------------------------------------+
+|1. Open another tab in your browser (Chrome shown), navigate to the newly                     |
+|   configured Load  Balancer configuration: **http://<namespace>.lab-sec.f5demos.com**, to    |
+|   confirm it is functional.                                                                  |
+|                                                                                              |
+|2. Using some of the sample attacks below, add the URI path & variables to your               |
+|   application to generate security event data.                                               |
+|                                                                                              |
+|   * ``/?cmd=cat%20/etc/passwd``                                                              |
+|   * ``/product?id=4%20OR%201=1``                                                             |
+|   * ``/../../../../etc/shadow``                                                              |
+|   * ``/product?code=echo%20shell_exec(%27/sbin/ifconfig%20eth0%27);``                        |
+|   * ``/cart?search=aaa'><script>prompt('Please+enter+your+password');</script>``             |
+|                                                                                              |
+|   .. note::                                                                                  |
+|      *Copy these paths for use later*                                                        |
+|                                                                                              |
+|3. In the resulting block screens, note the **URL** and the **Support ID**.                   |
+|   (copy and paste to a notepad or note resource).                                            |
+|                                                                                              |
+||lab022|                                                                                      |
+|                                                                                              |
+||lab023|                                                                                      |
+|                                                                                              |
+||lab024|                                                                                      |
+|                                                                                              |
++----------------------------------------------------------------------------------------------+
 
 Narrative Check
 -----------------
