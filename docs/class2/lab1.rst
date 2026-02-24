@@ -172,15 +172,15 @@ Task 2: Configure WAF Policy on the Load Balancer
 |                                                                                              |
 ||lab019|                                                                                      |
 |                                                                                              |
-|   .. note::                                                                                  |
-|      *Automatic Attack Signatures Tuning is enabled which engages an automatic               |
-|      False Positive* *suppression engine.  Any suppressed events are logged                  |
-|      within Security Events.*                                                                |
+|.. note::                                                                                     |
+|   *Automatic Attack Signatures Tuning is enabled which engages an automatic                  |
+|   False Positive* *suppression engine.  Any suppressed events are logged                     |
+|   within Security Events.*                                                                   |
 |                                                                                              |
-|   .. note::                                                                                  |
-|      *Attack Signatures Staging is disabled.  This can be enabled should an                  |
-|      Application* *Firewall with new or updated attack signatures be staged                  |
-|      (monitored) for a period of* *prior to enforcement (blocking).*                         |
+|.. note::                                                                                     |
+|   *Attack Signatures Staging is disabled.  This can be enabled should an                     |
+|   Application* *Firewall with new or updated attack signatures be staged                     |
+|   (monitored) for a period of* *prior to enforcement (blocking).*                            |
 |                                                                                              |
 |9. Returning to the **HTTP Load Balancer** window and click **Save HTTP Load Balancer**       |
 |    at the bottom of the **HTTP Load Balancer** configuration screen.                         |
