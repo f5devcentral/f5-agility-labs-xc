@@ -44,11 +44,11 @@ Task 1: Exploring the F5 Distributed Console
 |currently advertising a globally available application. These steps will allow you to review  |
 |the application, its DNS entry and the application target that is configured as the origin.   |
 |                                                                                              |
-| #. Following the **Introduction** section instructions, you should now be on the Home page.   |
+|1. Following the **Introduction** section instructions, you should now be on the Home page.   |
 |   of the F5 Distributed Cloud Console.  Let's first review the F5 Distributed Load Balancer  |
 |   that was configured for you via automation.  Select **Web App & API Protection**.          |
 |                                                                                              |
-| #. On the **Web App & API Protection** page, note the identifier of your namespace (top left  |
+|2. On the **Web App & API Protection** page, note the identifier of your namespace (top left  |
 |   area of the page). The namespace will follow a format of *adjective-animal*. In this       |
 |   guide, the namespace is pet-walrus. Your namespace will be different.  In the left-hand    |
 |   navigation expand **Manage** and click **Load Balancers > Origin Pools**                   |
@@ -57,46 +57,46 @@ Task 1: Exploring the F5 Distributed Console
 |                                                                                              |
 ||lab002|                                                                                      |
 |                                                                                              |
-| #. In the resulting screen expand the Actions Menu and click **Manage Configuration** for     |
+|3. In the resulting screen expand the Actions Menu and click **Manage Configuration** for     |
 |   the origin pool configured in your namespace. Here you will see the origin server public   |
 |   FQDN of the application running in ACME's Azure environment.  Copy the domain name so you  |
 |   can visit the site directly from your web browser.  Click  **Cancel and Exit** to return   |
 |   to the Origin Pools page since you will not need to make any updates to the configuration. |
 |                                                                                              |
-| |lab003|                                                                                     |
+||lab003|                                                                                     |
 |                                                                                              |
-| |lab004|                                                                                     |
+||lab004|                                                                                     |
 |                                                                                              |
-| W#. Using your browser, visit this application directly utilizing its public FQDN. Select the  |
+|4#. Using your browser, visit this application directly utilizing its public FQDN. Select the  |
 |   **Menu** on the top right-hand side and select **Header**.                                 |   
 |                                                                                              |
-|#. Note the Remote Address field. This will match the IP address of your workstation. You can |
+|5. Note the Remote Address field. This will match the IP address of your workstation. You can |
 | verify that it matches by looking up your IP address at https://ipinfo.io/.                  |
 |                                                                                              |
-| |lab005|                                                                                     |
+||lab005|                                                                                     |
 |                                                                                              |
-| |lab006|                                                                                     |
+||lab006|                                                                                     |
 |                                                                                              |
-| |lab007|                                                                                     |
+||lab007|                                                                                     |
 |                                                                                              |
-| |lab008|                                                                                     |
+||lab008|                                                                                     |
 |                                                                                              |
 |                                                                                              |
-|#. Next, let's return to the F5 Distributed Cloud console and take a look at the F5 XC load   |
+|6. Next, let's return to the F5 Distributed Cloud console and take a look at the F5 XC load   |
 |balancer configured for you. In the left-hand navigation expand **Manage** and click          |
 |**Load Balancers > HTTP Load Balancers**                                                      |
 |                                                                                              |
-|#. In the resulting screen expand the Actions Menu and click **Manage Configuration** for     |
+|7. In the resulting screen expand the Actions Menu and click **Manage Configuration** for     |
 |   the load balancer configured in your namespace. The graphic below is an example. Your      |
 |   environment will have a different load balancer name but it should follow a similar naming |
 | convention *adjective-animal*.                                                               |
 |                                                                                              |
-| |lab009|                                                                                     |
+||lab009|                                                                                     |
 |                                                                                              |
-| |lab010|                                                                                     |
+||lab010|                                                                                     |
 |                                                                                              |
 |                                                                                              |
-|#. Using the left-hand navigation and in the sections as shown, review the following data.    |
+|8. Using the left-hand navigation and in the sections as shown, review the following data.    |
 |   Values where **<namespace>** *adjective-animal* is represented, the configuration will be  |
 |   the name of your provisioned namespace.  Note the FQDN of the F5 XC load balancer.         |
 |                                                                                              |          
@@ -110,19 +110,19 @@ Task 1: Exploring the F5 Distributed Console
 |      The "Internet"* *setting means that this application will be advertised globally from   |
 |      the F5 Distributed Cloud Global Network utilizing Anycast.*                             |
 |                                                                                              |
-| |lab011|                                                                                     |
+||lab011|                                                                                     |
 |                                                                                              |
 |                                                                                              |
-|#. Using your web browser, access the application via the F5 XC FQDN. Click on                |
+|9. Using your web browser, access the application via the F5 XC FQDN. Click on                |
 |   **Menu > Header**                                                                          |
-|#. Note that the Remote Address has changed as well as the presence of a new X-Forwarded-For  |
+|10. Note that the Remote Address has changed as well as the presence of a new X-Forwarded-For  |
 |   header. The client information should have changed as you are now connecting first through |
 |   the F5 ADN Regional Edge before being proxied to the application running the ACME Corp.    |
 | environment. X-Forwarded-For details should match your workstation's IP address.             |
 |                                                                                              |
-| |lab012|                                                                                     |
+||lab012|                                                                                     |
 |                                                                                              |
-| |lab013|                                                                                     |
+||lab013|                                                                                     |
 |                                                                                              |
 +----------------------------------------------------------------------------------------------+
 
@@ -133,14 +133,14 @@ Task 2: Configure WAF Policy on the Load Balancer
 |The following steps will guide you through adding a Web Application Firewall (WAF) Policy.    |
 |These steps will demonstrate various aspects of the configuration.                            |
 |                                                                                              |
-|#. Returning back to the F5 XC console and continuing in the **HTTP Load Balancer** section,  |
+|1. Returning back to the F5 XC console and continuing in the **HTTP Load Balancer** section,  |
 |   in the upper right hand corner select **Edit Configuration** and then in the left hand     |
 |   menu click on the **Web Application Firewall (WAF)** drop down and select **Enable**.      |
 |                                                                                              |
 ||lab014|                                                                                      |
 ||lab015|                                                                                      |
 |                                                                                              |
-|#. In the resulting **Enable** field drop down, select **Add Item**.                          |
+|2. In the resulting **Enable** field drop down, select **Add Item**.                          |
 |                                                                                              |
 ||lab016|                                                                                      |
 |                                                                                              |
@@ -149,25 +149,25 @@ Task 2: Configure WAF Policy on the Load Balancer
 |      applied to* *multiple Load Balancer configurations across namespaces,                   |
 |      reducing policy sprawl.*                                                                |
 |                                                                                              |
-|#. In the new window's **Metadata** section enter **<namespace>-appfw** for the               |
+|3. In the new window's **Metadata** section enter **<namespace>-appfw** for the               |
 |   **Name**.                                                                                  |
 |                                                                                              |
-|#. Under **Enforcement Mode**, change the mode to **Blocking**.                               |
+|4. Under **Enforcement Mode**, change the mode to **Blocking**.                               |
 |                                                                                              |
-|#. In the **Security Policy Settings** section, click the **Security Policy**                 |
+|5. In the **Security Policy Settings** section, click the **Security Policy**                 |
 |   dropdown.                                                                                  |
 |                                                                                              |
-|#. Select **Custom** from the dropdown menu. Additional configurations will                   |
+|6. Select **Custom** from the dropdown menu. Additional configurations will                   |
 |   become available                                                                           |
 |                                                                                              |
 ||lab017|                                                                                      |
 |                                                                                              |
 |                                                                                              |
-|#. In the expanded configuration, in the **Attack Signatures** section use the                |
+|7. In the expanded configuration, in the **Attack Signatures** section use the                |
 |   dropdown for **Signature Selection by Accuracy** and select **High, Medium,                |
 |   and Low**.                                                                                 |   
 |                                                                                              |
-|#. Leaving all other values as default, scroll to the bottom and click                        |
+|8. Leaving all other values as default, scroll to the bottom and click                        |
 |   **Add App Firewall**.                                                                      |
 |                                                                                              |
 ||lab019|                                                                                      |
@@ -182,7 +182,7 @@ Task 2: Configure WAF Policy on the Load Balancer
 |      Application* *Firewall with new or updated attack signatures be staged                  |
 |      (monitored) for a period of* *prior to enforcement (blocking).*                         |
 |                                                                                              |
-|#. Returning to the **HTTP Load Balancer** window and click **Save HTTP Load Balancer**       |
+|9. Returning to the **HTTP Load Balancer** window and click **Save HTTP Load Balancer**       |
 |    at the bottom of the **HTTP Load Balancer** configuration screen.                         |
 |                                                                                              |
 |                                                                                              |
