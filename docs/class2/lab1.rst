@@ -392,15 +392,15 @@ can be quickly accomplished in the XC console.
 |.. note::                                                                                     |                                 
 |   *Adding requestor/client to "Blocked or Trusted Clients" is also available.*               |
 |                                                                                              |
-|#. In the subsequent **Simple WAF Exclusion Rule** window, review the settings                |
+|4. In the subsequent **Simple WAF Exclusion Rule** window, review the settings                |
 |   (which are editable) by scrolling through the window.  The values have been                |
 |   auto-populated based on the selected event to be excluded. Note the various sections and   |
-| possible controls.                                                                           |
+|   possible controls.                                                                         |
 |                                                                                              |
-|#. Take note, within the **Expiration Timestamp** field a time stamp can be entered forcing   |
+|5. Take note, within the **Expiration Timestamp** field a time stamp can be entered forcing   |
 |   the created exception to expire.                                                           |
 |                                                                                              |
-|#. Click **Apply** when complete.                                                             |
+|6. Click **Apply** when complete.                                                             |
 |                                                                                              |
 ||lab043|                                                                                      |
 |                                                                                              |
@@ -411,14 +411,14 @@ can be quickly accomplished in the XC console.
 |.. note::                                                                                     |
 |   If you get an error, you may need to add a Path RegEx **^/$**                              |
 |                                                                                              |
-|#. Click **Apply** on the **WAF Exclusion Rules** summary screen.                             |
+|7. Click **Apply** on the **WAF Exclusion Rules** summary screen.                             |
 |                                                                                              |
 ||lab046|                                                                                      |
 |                                                                                              |
-|#. Scroll in the HTTP Load Balancer Configuration and note the added **WAF Exclusion Rules**  |
+|8. Scroll in the HTTP Load Balancer Configuration and note the added **WAF Exclusion Rules**  |
 |   configuration.                                                                             |
 |                                                                                              |
-|#. At the bottom of the **HTTP Load Balancer** configuration window click the **Save HTTP Load|
+|9. At the bottom of the **HTTP Load Balancer** configuration window click the **Save HTTP Load|
 |   Balancer** button.                                                                         |
 |                                                                                              |
 |.. note::                                                                                     |
@@ -434,86 +434,89 @@ Task 4: Understanding Exclusions and Customizing WAF Policy
 In this task you will come to understand how exclusions are applied. You will
 also further customize the WAF policy just built to add a custom block response page.
 
-#. In the **HTTP Load Balancers** window **(Manage > Load Balancers > HTTP Load
-   Balancers)** Click on the three action dots in the **Actions** column then
-   **Manage Configuration** from the dropdown menu.
-
-   |lab049|
-
-#. Click on the **JSON** tab in the horizontal navigation as shown and scroll
-   to find the **waf_exclusion_rule** section. Observe that the exclusion rule
-   is associated with the Load Balancer configuration and not the WAF Policy.
-
-   .. note::
-      *This allows for policy reuse and reduces the need for specific application WAF Policies*.
-
-#. Click on the **Cancel and Exit** to return to the prior window.
-
-   |lab050|
-
-#. In the left-hand navigation menu, navigate to **Manage** section and click
-   the **App Firewall** link.
-
-#. On your App Firewall policy **<namespace>-appfw**, click the three dots
-   in the **Actions** column and then click **Manage Configuration**.
-
-   |lab051|
-
-#. Click **Edit Configuration** in the top right corner.
-
-   |lab052|
-
-#. Use the left-hand navigation and click on **Advanced Configuration**.
-
-#. Click the drop down menu for **Blocking Response Page** in the **Advanced
-   Configuration** section.
-
-   |lab053|
-
-#. Click the dropdown on **Blocking Response Page** and select **Custom** from
-   the dropdown.
-
-   |lab054|
-
-#. In the **Blocking Response Page Body** replace the existing text with the
-   text provided below. Click **Save App Firewall** when completed.
-
-   |lab055|
-
-   Sample Blocking Response Page to be copied:
-
-   .. code:: HTML
-
-      <style>body { font-family: Source Sans Pro, sans-serif; }</style>
-      <html style="margin: 0;"><head><title>Rejected Request</title></head>
-      <body style="margin : 0;">
-      <div style="background-color: #046b99; height: 40px; width: 100%;"></div>
-      <div style="min-height: 100px; background-color: white; text-align: center;"></div>
-      <div style="background-color: #fdb81e; height: 5px; width: 100%;"></div>
-      <div id="main-content" style="width: 100%; ">
-      <table width="100%"><tr><td style="text-align: center;">
-      <div style="margin-left: 50px;">
-      <div style="margin-bottom: 35px;"><br/>
-      <span style="font-size: 40pt; color: #046b99;">Rejected Request</span>
-      </div><div style="font-size: 14pt;">
-      <p>The requested URL was rejected. Please consult with your administrator.</p>
-      <p>Your Support ID is: <span style="color:red; font-weight:bold">{{request_id}}</span></p>
-      <p><a href="javascript:history.back()">[Go Back]</a></p>
-      </div></div></td></tr></table></div>
-      <div style="background-color: #222222; position: fixed; bottom: 0px; height: 40px; width: 100%; text-align: center;"></div>
-      </body></html>
-
-#. You can rerun an attack that was not excluded from Task 3: Step 2 to see the new custom block
-   page.
-
-   |lab056|
-
-   .. note::
-      *If updated reponse doesn't show, clear cache or use a private tab*.
++----------------------------------------------------------------------------------------------+
+|1. In the **HTTP Load Balancers** window **(Manage > Load Balancers > HTTP Load               |
+|   Balancers)** Click on the three action dots in the **Actions** column then                 |
+|   **Manage Configuration** from the dropdown menu.                                           |
+|                                                                                              |
+||lab049|                                                                                      |
+|                                                                                              |
+|2. Click on the **JSON** tab in the horizontal navigation as shown and scroll to find the     |
+|   **waf_exclusion_rule** section. Observe that the exclusion rule is associated with the     |
+|   Load Balancer configuration and not the WAF Policy.                                        |
+|                                                                                              |
+|.. note::                                                                                     |
+|   *This allows for policy reuse and reduces the need for specific application WAF Policies*. |
+|                                                                                              |
+|3. Click on the **Cancel and Exit** to return to the prior window.                            |
+|                                                                                              |
+||lab050|                                                                                      |
+|                                                                                              |
+|4. In the left-hand navigation menu, navigate to **Manage** section and click                 |
+|   the **App Firewall** link.                                                                 |
+|                                                                                              |
+|5. On your App Firewall policy **<namespace>-appfw**, click the three dots n the **Actions**  |
+|   column and then click **Manage Configuration**.                                            |
+|                                                                                              |
+||lab051|                                                                                      |
+|                                                                                              |
+|6. Click **Edit Configuration** in the top right corner.                                      |
+|                                                                                              |
+||lab052|                                                                                      |
+|                                                                                              |
+|7. Use the left-hand navigation and click on **Advanced Configuration**.                      |
+|                                                                                              |
+|8. Click the drop down menu for **Blocking Response Page** in the **Advanced                  |
+|   Configuration** section.                                                                   |
+|                                                                                              |
+||lab053|                                                                                      |
+|                                                                                              |
+|9. Click the dropdown on **Blocking Response Page** and select **Custom** from the dropdown.  |
+|                                                                                              |
+||lab054|                                                                                      |
+|                                                                                              |
+|10. In the **Blocking Response Page Body** replace the existing text with the text provided   |
+|    below. Click **Save App Firewall** when completed.                                        |
+|                                                                                              |
+||lab055|                                                                                      |
+|                                                                                              |
+|Sample Blocking Response Page to be copied:                                                   |
+|                                                                                              |
+|.. code:: HTML                                                                                |
+|                                                                                              |
+|   <style>body { font-family: Source Sans Pro, sans-serif; }</style>                          |
+|   <html style="margin: 0;"><head><title>Rejected Request</title></head>                      |
+|   <body style="margin : 0;">                                                                 |
+|   <div style="background-color: #046b99; height: 40px; width: 100%;"></div>                |
+|   <div style="min-height: 100px; background-color: white; text-align: center;"></div>        |
+|   <div style="background-color: #fdb81e; height: 5px; width: 100%;"></div>                 |
+|   <div id="main-content" style="width: 100%; ">                                              |
+|   <table width="100%"><tr><td style="text-align: center;">                                   |
+|   <div style="margin-left: 50px;">                                                           |
+|   <div style="margin-bottom: 35px;"><br/>                                                    |
+|   <span style="font-size: 40pt; color: #046b99;">Rejected Request</span>                   |
+|   </div><div style="font-size: 14pt;">                                                       |
+|   <p>The requested URL was rejected. Please consult with your administrator.</p>             |
+|   <p>Your Support ID is: <span style="color:red; font-weight:bold">{{request_id}}</span></p> |
+|   <p><a href="javascript:history.back()">[Go Back]</a></p>                                   |
+|   </div></div></td></tr></table></div>                                                       |
+|   <div style="background-color: #222222; position: fixed; bottom: 0px; height: 40px;       |
+|   width: 100%; text-align: center;"></div>                                                   |
+|   </body></html>                                                                             |
+|                                                                                              |
+|11. You can rerun an attack that was not excluded from Task 3: Step 2 to see the new custom   |
+|    block page.                                                                               |
+|                                                                                              |
+||lab056|                                                                                      |
+|                                                                                              |
+|.. note::                                                                                     |
+|   *If updated reponse doesn't show, clear cache or use a private tab*.                       |
+|                                                                                              |
++----------------------------------------------------------------------------------------------+
 
 Narrative Check
 -----------------
-You have now completed your first WAF policy deployment on F5 XC.  This policy can be re-used for
+You have now completed your first WAF policy deployment on F5 XC. This policy can be re-used for
 other applications in the ACME environment and the exclusions you configured are only applied to this specific 
 Azure application.  New applications that utilize the WAF policy configured will not have these exclusions
 allowing you to quickly scale and manage exlusions on a per application basis while the policy can stay the same.
