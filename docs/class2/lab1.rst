@@ -312,7 +312,7 @@ The ACME Azure application is now being successfully protected by F5 Distributed
 ||lab033|                                                                                      |
 |                                                                                              |
 |13. Review the **Security Dashboard** display (you may have limited data). NOTE: you may need |
-|   to update the variable time period.                                                        |
+|    to update the variable time period.                                                       |
 |                                                                                              |
 ||lab034|                                                                                      |
 |                                                                                              |
@@ -326,7 +326,7 @@ The ACME Azure application is now being successfully protected by F5 Distributed
 |   *specific details.*                                                                        |
 |                                                                                              |
 |15. From the **Security Dashboard** view, using the horizontal navigation, click              |
-|   **Security Analytics**.                                                                    |
+|    **Security Analytics**.                                                                   |
 |                                                                                              |
 ||lab036|                                                                                      |
 |                                                                                              |
@@ -339,24 +339,25 @@ The ACME Azure application is now being successfully protected by F5 Distributed
 |   earlier task*                                                                              |
 |                                                                                              |
 |17. Note the summary detail provided **Information** link and identify the                    |
-|   **Request ID** which is synonymous with **Support ID** (filterable) from the               |
-|   Security Event Block Page.                                                                 |
+|    **Request ID** which is synonymous with **Support ID** (filterable) from the              |
+|    Security Event Block Page.                                                                |
 |                                                                                              |
 ||lab038|                                                                                      |
 |                                                                                              |
 |18. Scroll to the bottom of the information screen to see specific signatures                 |
-|   detected and actions taken during the security event.                                      |
+|    detected and actions taken during the security event.                                     |
 |                                                                                              |
 ||lab039|                                                                                      |
 |                                                                                              |
 |19. Next, click on the **Add Filter** link just under the **Security                          |
-|   Analytics** title near the top of the **Security Analytics** window.                       |
+|    Analytics** title near the top of the **Security Analytics** window.                      |
 |                                                                                              |
 |20. Type **req** in the open dialogue window and select **req_id** from the dropdown.         |
 |                                                                                              |
 ||lab039a|                                                                                     |
 |                                                                                              |
-||lab039b|                                                                                     |
+||lab039b|                                                                                     |   
+|                                                                                              |
 |21. Next, select **In** from the **Select Operator** dropdown.                                |
 |                                                                                              |
 |22. Finally, select/assign a value that matches one of your copied **Support IDs** from       |
