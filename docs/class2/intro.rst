@@ -11,9 +11,9 @@ Rather than deploying and managing separate security solutions across on-premise
 
 ------------
 
-In this lab, you will work with a deliberately vulnerable web application called DVWA (Damn Vulnerable Web Application) that was **identified through web application scanning**. You will first apply layered security controls using F5 Distributed Cloud, including **WAF Policies, Bot Mitigation, and Malicious User Detection** (Labs 1–3). 
+In this lab, you will apply layered security controls using F5 Distributed Cloud, including **WAF Policies, Bot Mitigation, and Malicious User Detection** (Labs 1–3) to the Acme AppWorld application. 
 
-Given that web application scans can take an unpredictable amount of time--sometimes up to an hour--You will begin by examining a pre-existing **Baseline Vulnerability Scan** completed before any F5 Distributed Cloud protections were applied. You will then configure Web App Scanning (Lab 4) to reassess the application after protections are in place. Upon completing Lab 4, you will examine a second pre-generated report **XC Protected Vulnerability Scan** to validate how F5 Distributed Cloud security services significantly reduced the risk/exposure by mitigating previously identified vulnerabilities. 
+Given that web application scans can take an unpredictable amount of time--sometimes up to an hour--You will begin by examining a pre-existing **Baseline Vulnerability Scan** completed before any F5 Distributed Cloud protections were applied. Upon completing Lab 4, you will examine a second pre-generated report **XC Protected Vulnerability Scan** to validate how F5 Distributed Cloud security services significantly reduced the risk/exposure by mitigating previously identified vulnerabilities. 
 
 Finally, you will use **AI-Assisted Analytics** (Lab 5) to validate security events and gain operational insight into how the application is being protected.
 
