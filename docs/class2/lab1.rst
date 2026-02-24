@@ -376,54 +376,56 @@ Upon foresnic review, your application team has told you that last request from
 You will need to create an exception for this so that traffic can successfully pass.  This task
 can be quickly accomplished in the XC console.  
 
-#. In the XC console, you should now be filtered to a single "Security Event", as shown 
-   with your selected filter. You can expand and review the request as desired using the
-   **arrow** icon.
-
-#. Under the **Actions** column, click on the three Action dots (Scroll to
-   right).
-
-#. Select **Create WAF Exclusion rule** from the dropdown that appears.
-
-   |lab042|
-
-   .. note::
-      *Adding requestor/client to "Blocked or Trusted Clients" is also available.*
-
-#. In the subsequent **Simple WAF Exclusion Rule** window, review the settings
-   (which are editable) by scrolling through the window.  The values have been
-   auto-populated based on the selected event to be excluded. Note the various
-   sections and possible controls.
-
-#. Take note, within the **Expiration Timestamp** field a time stamp can be entered forcing
-   the created exception to expire.
-
-#. Click **Apply** when complete.
-
-   |lab043|
-
-   |lab044|
-
-   |lab045|
-   
-   .. note::
-      If you get an error, you may need to add a Path RegEx **^/$**
-
-#. Click **Apply** on the **WAF Exclusion Rules** summary screen.
-
-   |lab046|
-
-#. Scroll in the HTTP Load Balancer Configuration and note the
-   added **WAF Exclusion Rules** configuration.
-
-#. At the bottom of the **HTTP Load Balancer** configuration window
-   click the **Save HTTP Load Balancer** button.
-
-   .. note::
-      *Rerunning the attack you just excluded, you will see that it is no longer blocked*.
-
-   |lab021|
-
++----------------------------------------------------------------------------------------------+
+|                                                                                              |
+|1. In the XC console, you should now be filtered to a single "Security Event", as shown       |
+|   with your selected filter. You can expand and review the request as desired using the      |
+|   **arrow** icon.                                                                            |
+|                                                                                              |
+|2. Under the **Actions** column, click on the three Action dots (Scroll to right).            |
+|                                                                                              |
+|3. Select **Create WAF Exclusion rule** from the dropdown that appears.                       |
+|                                                                                              |
+||lab042|                                                                                      |
+|                                                                                              |
+|.. note::                                                                                     |                                 
+|   *Adding requestor/client to "Blocked or Trusted Clients" is also available.*               |
+|                                                                                              |
+|#. In the subsequent **Simple WAF Exclusion Rule** window, review the settings                |
+|   (which are editable) by scrolling through the window.  The values have been                |
+|   auto-populated based on the selected event to be excluded. Note the various sections and   |
+| possible controls.                                                                           |
+|                                                                                              |
+|#. Take note, within the **Expiration Timestamp** field a time stamp can be entered forcing   |
+|   the created exception to expire.                                                           |
+|                                                                                              |
+|#. Click **Apply** when complete.                                                             |
+|                                                                                              |
+||lab043|                                                                                      |
+|                                                                                              |
+||lab044|                                                                                      |
+|                                                                                              |
+||lab045|                                                                                      |
+|                                                                                              | 
+|.. note::                                                                                     |
+|   If you get an error, you may need to add a Path RegEx **^/$**                              |
+|                                                                                              |
+|#. Click **Apply** on the **WAF Exclusion Rules** summary screen.                             |
+|                                                                                              |
+||lab046|                                                                                      |
+|                                                                                              |
+|#. Scroll in the HTTP Load Balancer Configuration and note the added **WAF Exclusion Rules**  |
+|   configuration.                                                                             |
+|                                                                                              |
+|#. At the bottom of the **HTTP Load Balancer** configuration window click the **Save HTTP Load|
+|   Balancer** button.                                                                         |
+|                                                                                              |
+|.. note::                                                                                     |
+|   *Rerunning the attack you just excluded, you will see that it is no longer blocked*.       |
+|                                                                                              |
+||lab021|                                                                                      |
+|                                                                                              |
++----------------------------------------------------------------------------------------------+
 
 Task 4: Understanding Exclusions and Customizing WAF Policy
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
