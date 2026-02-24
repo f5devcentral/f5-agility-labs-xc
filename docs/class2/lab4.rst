@@ -235,7 +235,7 @@ Task 3: View Post Lab Scan
 |4. You will be presented with the Web App Scanning Dashboard to view a summary of all         |
 |   application scans.                                                                         |
 |5. In the left-hand menu, under 'Scans', select 'Applications'.                               |
-||6. In the list of available scans, locate & select: **AppWorld 2026 Baseline Vulnerability   |
+|6. In the list of available scans, locate & select: **AppWorld 2026 XC Protected Vulnerability|
 |Scan**.                                                                                       |
 |                                                                                              |
 |.. note::                                                                                     |
