@@ -63,23 +63,23 @@ Task 1: Exploring the F5 Distributed Console
 |   can visit the site directly from your web browser.  Click  **Cancel and Exit** to return   |
 |   to the Origin Pools page since you will not need to make any updates to the configuration. |
 |                                                                                              |
-||lab003|                                                                                     |
+||lab003|                                                                                      |
 |                                                                                              |
-||lab004|                                                                                     |
+||lab004|                                                                                      |
 |                                                                                              |
-|4#. Using your browser, visit this application directly utilizing its public FQDN. Select the  |
+|4#. Using your browser, visit this application directly utilizing its public FQDN. Select the |
 |   **Menu** on the top right-hand side and select **Header**.                                 |   
 |                                                                                              |
 |5. Note the Remote Address field. This will match the IP address of your workstation. You can |
 | verify that it matches by looking up your IP address at https://ipinfo.io/.                  |
 |                                                                                              |
-||lab005|                                                                                     |
+||lab005|                                                                                      |
 |                                                                                              |
-||lab006|                                                                                     |
+||lab006|                                                                                      |
 |                                                                                              |
-||lab007|                                                                                     |
+||lab007|                                                                                      |
 |                                                                                              |
-||lab008|                                                                                     |
+||lab008|                                                                                      |
 |                                                                                              |
 |                                                                                              |
 |6. Next, let's return to the F5 Distributed Cloud console and take a look at the F5 XC load   |
@@ -91,9 +91,9 @@ Task 1: Exploring the F5 Distributed Console
 |   environment will have a different load balancer name but it should follow a similar naming |
 | convention *adjective-animal*.                                                               |
 |                                                                                              |
-||lab009|                                                                                     |
+||lab009|                                                                                      |
 |                                                                                              |
-||lab010|                                                                                     |
+||lab010|                                                                                      |
 |                                                                                              |
 |                                                                                              |
 |8. Using the left-hand navigation and in the sections as shown, review the following data.    |
@@ -110,19 +110,19 @@ Task 1: Exploring the F5 Distributed Console
 |      The "Internet"* *setting means that this application will be advertised globally from   |
 |      the F5 Distributed Cloud Global Network utilizing Anycast.*                             |
 |                                                                                              |
-||lab011|                                                                                     |
+||lab011|                                                                                      |
 |                                                                                              |
 |                                                                                              |
 |9. Using your web browser, access the application via the F5 XC FQDN. Click on                |
 |   **Menu > Header**                                                                          |
-|10. Note that the Remote Address has changed as well as the presence of a new X-Forwarded-For  |
+|10. Note that the Remote Address has changed as well as the presence of a new X-Forwarded-For |
 |   header. The client information should have changed as you are now connecting first through |
 |   the F5 ADN Regional Edge before being proxied to the application running the ACME Corp.    |
 | environment. X-Forwarded-For details should match your workstation's IP address.             |
 |                                                                                              |
-||lab012|                                                                                     |
+||lab012|                                                                                      |
 |                                                                                              |
-||lab013|                                                                                     |
+||lab013|                                                                                      |
 |                                                                                              |
 +----------------------------------------------------------------------------------------------+
 
