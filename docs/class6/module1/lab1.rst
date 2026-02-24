@@ -152,7 +152,7 @@ these sites.
 
 .. |lab001| image:: ../images/temp/lab1/placeholder_pics.jpg
    :width: 800px
-.. |lab002| image:: ../images/temp/lab1/lab002 Multi Cloud Network Connect.png
+.. |lab002| image:: ../images/temp/lab1/lab002 Multi Cloud Network Connect
    :width: 800px
 .. |lab003| image:: ../images/temp/lab1/lab003 Multi Cloud Network Connect.png
    :width: 800px
