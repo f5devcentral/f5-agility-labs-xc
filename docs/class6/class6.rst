@@ -1,19 +1,23 @@
-F5 Distributed Cloud: Multi-Cloud Networking & Beyond
+F5 Distributed Cloud: Policy Optimization in a Multicloud World
 =====================================================
 
 This hands-on lab environment highlights some of the introductory concepts of F5 Distributed Cloud Multi-cloud Networking.
 
-**Narrative:** 
-During the lab you will be playing the role of an Engineer at ACME Corp who responds to new business requirements quickly by implementing F5's Network and App connect solutions. 
+**Your Role:** 
+You are an engineer at ACME Corp tasked with connecting applications and services across multiple cloud environments. 
 
-**Goal:**
-Demonstrate and understand when to use F5 Distributed Cloud Network Connect or App Connect to securely extend connectivity between disparate environments. 
+**Lab Objectives:**
+Learn when and how to use F5 Distributed Cloud solutions to securely connect distributed environments:
+* **Network Connect** - Layer 3/4 network connectivity and routing
+* **App Connect** - Layer 7 application-level connectivity
 
 |intro001|
 
-.. Caution:: Please be aware that there is a waiting period after Lab 1, while provisioning occurs. If you are an instructor, please have students proceed with Lab 1 prior to any presentation, to give ample time for processes to complete. 
+**Lab Environment:**
+This lab uses the **[F5XC MCN] Base Lab w/SMSv2** UDF Blueprint. Your lab environment has been pre-configured with the necessary infrastructure, allowing you to focus on learning F5 Distributed Cloud capabilities.
 
-This Lab uses the **[F5XC MCN] Appworld SMSv2** UDF Blueprint. 
+.. note:: The lab environment is automatically provisioned when you start the lab. All required Customer Edge (CE) nodes and infrastructure are built for you.
+
 
 .. toctree::
    :maxdepth: 1

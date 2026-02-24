@@ -1,32 +1,27 @@
 Introduction: Accessing Lab Resources
 =====================================
 
-Welcome to this F5 Distributed Cloud Lab. The following tasks will guide you through the initial 
-access requirements for this multi-part lab.  Lab attendees should have received an invitation 
-email to the lab environment. Please check the email address used for course registration and its
-associated spam folders to see if the invitation email has been received.  If you have not received
-an email, please contact a member of the lab team.
- 
-The F5 Distributed Cloud Console, where a majority of all lab tasks will be conducted, is a SaaS
-based control-plane for services which provides a GUI and API for managing network, security, and
-compute services. The F5 Distributed Cloud Console can manage deployable software known as "Customer 
-Edge (CE) node configured in "sites" in existing on-premises, private data centers and/or sites 
-within AWS, Azure, and GCP public cloud environments. The following labs will demonstrate concepts
-and use cases using CE's in the scenarios presented in this lab.
+Welcome to this F5 Distributed Cloud Lab. The following tasks will guide you through the initial
+access requirements for this lab. Lab attendees should have received an invitation email from 
+F5 Distributed Cloud (no-reply@cloud.f5.com) to access the lab environment. Please check the email address used for course registration and its 
+spam folder. If you have not received an email, please contact a member of the lab team.
+
+The F5 Distributed Cloud Console is a SaaS-based control plane that provides a GUI and API for 
+managing network, security, and compute services across on-premises data centers and public cloud 
+environments (AWS, Azure, and GCP).
 
 Task 1: Lab Environment
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 +----------------------------------------------------------------------------------------------+
-| The image below represents an overview of the lab environment. F5 Distributed Cloud Services |
+| Your lab environment has been pre-configured and includes the following key components:      |
 |                                                                                              |
-| will be configured as a SaaS Edge delivery and security service tier to a publicly hosted web|
+| * **F5 Distributed Cloud Console** - SaaS-based management interface                         |
+| * **F5 Distributed Cloud Global Network** - Globally distributed application delivery        |
+| * **Customer Edge (CE) Node** - Pre-deployed in your lab environment (onsite UDF, Azure, AWS)|
+| * **Cloud-hosted Applications** - Sample applications for testing connectivity               |
 |                                                                                              |
-| application. The key elements lab attendees will interact with are as follows:               |
-|                                                                                              |
-| * **F5 Distributed Cloud Console**                                                           |
-| * **F5 Distributed Cloud Global Network / Application Delivery Network (ADN)**               |
-| * **Publicly hosted application (Public Cloud)**                                             |
+| The diagram below shows how these components work together:                                  |
 +----------------------------------------------------------------------------------------------+
 | |intro001|                                                                                   |
 +----------------------------------------------------------------------------------------------+
@@ -34,11 +29,8 @@ Task 1: Lab Environment
 Task 2: F5 Distributed Cloud Console Login
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The following will guide you through the initial Lab environment access within the F5 Distributed
-Cloud Console.  After joining the course, lab will ask you to monitor your course to insure all 
-componets are running (are green).  Once all components are runnning you should receive an email
-with an invitation to access a F5 Distributed Cloud Tenant. The email will come from 
-**no-reply@volterramails.io**. Access will be accomplised through the OKTA SSO login option.
+After joining the course, you should have received an invitation email from 
+**F5 Distributed Cloud** (no-reply@cloud.f5.com) where you can accept the invitation then log in to the F5 Distributed Cloud Console.
 
 |intro010|
 

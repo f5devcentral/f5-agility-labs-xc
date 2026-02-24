@@ -1,233 +1,172 @@
-Lab 1: Building an XC Node (CE)
-==================================
+Lab 1: Exploring Your Pre-Configured Customer Edge (CE) Node
+=============================================================
 
 **Objective:**
 
-* Get familiar with the UDF Lab Environment. 
+* Navigate the F5 Distributed Cloud Console
+* Explore the pre-configured UDF Lab Environment
+* Review your deployed Customer Edge (CE) Node configuration
+* Understand CE Node deployment architecture
 
-* Review the Customer Edge (CE) Node to within the UDF Data Center.
+For this lab, your Customer Edge (CE) Nodes have been pre-deployed in AWS, Azure and
+your on-premises data center (UDF environment). This allows you to focus on understanding the
+architecture and configuration rather than spending time on initial deployment.
 
-* Explore and become familiar with the Distributed Cloud Console.
-
-**Narrative:** 
-
-After consulting with your trusty F5 Solutions Engineer, you decide to setup F5 Distributed Cloud, Network Connect. This will allow for privately routed network connectivity between two disparate networks. 
-You also found out that you can use the F5 Distributed Cloud, Enhanced Firewall to provide network security between Sites. 
-We already did a Customer Edge (CE) Node deployment in the ACME AWS VPC, which only took a few moments. 
-
-Now, Lab 1 starts right after you have downloaded the CE Node OVA and deployed into your Data Center's local hypervisor (VMWARE, KVM or Promox etc.). For the purposes of accelerating the lab, the UDF CE node has been deployed and we will be reviewing it as a part of this lab.
-
-.. NOTE:: Your Data Center environment in these labs is the F5 UDF platform, which uses KVM as it's underlying virtualization technology. The OVA has already been imported for you. We also have hardware and container deployment options for Production XC Nodes. 
+.. note::
+   In a production environment, you would download the CE Node image (OVA, QCOW2, or ISO)
+   and deploy it on your chosen platform (VMware, KVM, Azure, AWS, etc.).
 
 |lab001|
 
 **Prerequisite**
-------------------
+----------------
 
-.. NOTE:: You should aleady be logged into your lab's Ditributed CLoud Tenant.  If not, review the course introduction to review the SSO process. The steps that follow will be executed in the tenant.
+.. note::
+   You should already be logged into your lab's Distributed Cloud Tenant. If not, review the
+   course introduction for the login process.
 
-.. warning:: If you are expirencing SSOing into the Distributed Cloud Tenant, please alert one of the Lab Assistants. 
+.. warning::
+   If you are experiencing issues accessing the Distributed Cloud Tenant, please alert one of
+   the Lab Assistants.
 
-**Reviewing the Customer Edge (CE) Node**
------------------------------------------
+Task 1: Navigate to Multi-Cloud Network Connect
+------------------------------------------------
 
-As noted previously, your Customer Edge (CE) node in the UDF environment has already been provisioned for you. In the steps that follow we will review its various configurations and their purpose.
+Your Customer Edge (CE) node has been fully deployed and registered in your lab environment.
+In this task, you'll explore the Multi-Cloud Network Connect workspace to understand your
+deployment.
 
-Navigate to the **Home** screen and click on the **Multi-Cloud Network Connect** workspace. 
+1. From the F5 Distributed Cloud Console **Home** screen, click on the **Multi-Cloud Network Connect** tile.
 
-|lab002|
- 
-Entering the **Multi-Cloud Network Connect** workspace, you wil be presented with the overview dashbaord.  This view provides general overview to all Customer Edge (CE) deployments.
+   |lab002|
 
-There are various aspects of the Dashboard which you can review.  We will be coming back to this screen frequently so several of the key aspects will be reviewed throughout the course of the lab.
+2. You will be presented with the **Multi-Cloud Network Connect** overview dashboard. This view
+   provides a high-level summary of all Customer Edge deployments across your organization.
 
-|lab003|
+   |lab003|
 
-Using the left-hand naigation,  find and expand the **Manage** section, click on **Site Management** and then click on **Secure Mesh Sites v2**
+Task 2: Locate Your Customer Edge Node
+---------------------------------------
+
+Each lab attendee has been assigned a unique Customer Edge node following the **<adjective-animal>**
+naming convention identified in the lab introduction. You can find your assigned namespace by 
+clicking on the account on the top right corner.
 
 |lab004|
 
-There will be several SMSv2 sites deployed in the list. Your CE will be names following the **<adjective-animal>** pnuemonic indentified for your in the introduction. Use the **Search** to filter the list then click on the hyperlinked site.
+3. Using the left-hand navigation, from the **Manage** section, click on **Site Management**, 
+   then select **Secure Mesh Sites v2**.
 
-|lab005|
+   |lab005|
 
+4. You will see all Secure Mesh Sites v2 (SMSv2) in the list that are in this tenant. Use the 
+   **Search** box to filter by your namespace name (**<adjective-animal>**).
 
+   |lab006|
 
-.. attention:: THIS LAB GUIDE iS CURRENTLY BEING EDITTED FROM THIS POINT FORWARD.  MORE UPDATES SHOULD OCCUR 2/22.
+5. Click on your site name to view detailed information about your CE node.
 
+   |lab007|
 
+Task 3: Review Your Customer Edge Configuration
+------------------------------------------------
 
-**Setting up the Customer Edge**
-----------------------------------
+Now let's examine the configuration that was automatically deployed for your CE node.
 
-**CLI Site Setup**
-----------------------
- 
-In your browser, you should have a tab open to the UDF course. Under Systems -> Client, click on **Access >> Web Shell**
+6. Verify your CE node status:
 
-|lab011|
+   **Dashboard:**
+   
+   * **Site Health:** Should be 100% (green)
+   * **Site Status:** Both Data Plane and Control Plane should be **Online**
+   * **Nodes:** You should have 1 Control Node and it should be up
+   
+   .. note::
+      If your node is not yet online, give it a few minutes to finish provisioning.
+      You can check the progress from the lab deployment status (access from ubuntu server 
+      in your UDF deployment).
+   
+   |lab008|
+   
+   |lab009|
+   
+   .. note::
+      In production environments, the best practice is to deploy a 3-node cluster for high
+      availability. For this lab, a single-node deployment is sufficient.
+   
+   .. important::
+      Your CE node must be fully provisioned and **Online** before proceeding to Lab 2.
+      If the health score is not 100% or the state is not "Online", please alert a Lab Assistant.
 
-This will redirect you to a new browser tab with a shell prompt on the Ubuntu system. From the shell prompt type in the following to SSH to the Customer Edge (CE) Node:
+Task 4: What Happens During CE Deployment
+------------------------------------------
 
-**ssh 10.1.1.5 -l admin**
+Let's review what was automatically configured in your lab environment:
 
-This will get you connected to the CLI on the CE and prompt for authentication. Type in the default username/password:
+**What Happens During CE Deployment (FYI):**
 
-Change the password as directed (lowercase, uppercase, number, min 8 characters is the requirement). Remember the new password should you need to log in again. 
+While you didn't perform these steps in this lab, here's what occurs during a typical CE deployment:
 
-==============================  =====
-Variable                        Value
-==============================  =====
-Default Username:                **admin**
-Default Password:                **Volterra123**
-==============================  =====
+1. **Download & Deploy:** Download the CE image then deployed on your chosen platform
+2. **Create Secure Mesh Site:** Create a secure mesh site in F5 Distributed Cloud Console
+3. **Registration:** Node registers with F5 Distributed Cloud
+4. **Provisioning:** Node downloads its configuration and establishes connectivity
+5. **Activation:** Site becomes active and ready for traffic
 
-|lab012|
+.. tip::
+   In a real-world deployment, the initial setup takes approximately 10-15 minutes after
+   registration. The automation in this lab has completed all these steps for you.
 
-At the **>>>** type the word **configure** and then enter. 
+Task 5: Review Network Topology
+--------------------------------
 
-|lab013|
+This topology represents your distributed network infrastructure that will be used in subsequent
+labs to demonstrate Network Connect and App Connect capabilities.
 
-Use the following response values to complete the prompts:
+|lab010|
 
-================================  ====================================================
-Question                          Response Value
-================================  ====================================================
-What is your token?               Insert the Site Token UID you collected earlier
-What is your site name?           Insert your unique namespace <verb-animal>
-What is your hostname?            Insert your unique namespace <verb-animal> 
-What is your latitude?            33.812
-What is your longitude?           -117.91
-What is your default fleet name?  Enter (This selects the default of **optional**)
-Select your certified hardware?   Enter (This selects the default of **kvm-voltmesh**)
-Select your primary outside NIC?  Enter (This selects the default of **eth0**)
-================================  ==================================================== 
+Lab Summary
+-----------
 
-The response values will then be summarized. Confirm they are correct and type **y** for **yes**. If not, answer **n** and correct any values. 
+**What You've Learned:**
 
-|lab014|
+* How to navigate the F5 Distributed Cloud Console
+* Where to view Customer Edge node status and health
+* What happens during a CE node deployment (conceptually)
 
-We will now go accept the Customer Edge registration in Distributed Cloud console. Proceed to **Registering the Customer Edge**.
+**Your Environment:**
 
-**Registering the Customer Edge**
-----------------------------------
+You now have a fully operational multi-cloud network infrastructure with CE nodes deployed in:
 
-Go back to the Distributed Cloud console.  If the session timed out, you will need to log back into the console using the following URL or refreshing your browser:
+* **On-Premises:** UDF data center (your "corporate" location)
+* **AWS Cloud:** AWS (your "cloud" location)
+* **Azure Cloud:** Azure (your "cloud" location)
 
-https://f5-xc-lab-mcn.console.ves.volterra.io/
+In the next lab, you'll configure Network Connect to establish secure connectivity between
+these sites.
 
-From the **Select service** menu, click on **Multi-Cloud Network Connect**.
-
-On the side menu go down to **Manage >> Site Management >> Registrations.**
-
-|lab015|
-
-The Customer Edge node you configured from the previous step should appear on this list, if not give it a couple moments and refresh the screen by clicking the **Refresh button** at the top right-hand corner.  
-
-|lab016|
-
-.. Tip:: This process can take a few minutes for the node to register with Distributed Cloud. 
-
-Once the Node appears in the Registration list, accept the registration by clicking on the blue check mark.
-
-**Click the blue check mark** to accept the registration. 
-
-.. Note::  If you DO NOT see a blue check mark, it's likely your browser width is NOT wide enough.  Simply increase the width of the browser and you should see the blue checkmark to approve the registration.
-
-Once you have clicked the checkmark, the console will bring up the Registration Acceptance menu which shows all the settings of the Customer Edge node.  Note the parameters you’ve entered from the previous exercise are populated into the appropriate fields. 
-
-.. Important:: Look at the Cluster Size parameter and notice this is set to 1.  In this lab, we will only deploy a single-node-cluster and thus leave this setting as 1.  In a production environment, the best practice is to deploy a 3-node-cluster minimum.  In that case, the Cluster Size parameter would be set to 3 so an appropriately sized cluster can be formed.
-
-**Leave the cluster size set to 1**
-
-|lab017|
-
-Scroll down to Site to Site Tunnel Type and click on the drop down arrow
-
-|lab018|
-
-This setting determines the VPN connectivity protocols used between the Customer Edge and the Regional Edges. The XC Node will automatically bring up redundant tunnels to two different RE's. 
-These tunnels are self-healing and can fallback when using the configuration setting of IPSEC and SSL.
-Select **IPSEC and SSL** from the list.  
-
-|lab019|
-
-Click **Save and Exit**. 
-
-Once the registration completes, you can see the cluster in the “Other Registrations” tab and the current state will be ADMITTED.
-
-|lab020|
-
-The Customer Edge Node Admin portal will also reflect some changes in its status, although the node still requires some additional configuration.
-From the menu on the left click on **Infrastructure/Sites** and observe your Nodes (animal-name). Hint: You may have to hit **Refresh**  in the upper right corner. 
-
-|lab021|
-
-You should see the CE you just deployed on this list go through several phases of provisioning and you can observe the  **Site Admin State, Health Score, and Software Version and OS version.**
-You may also observe the Health score going up and down as services are spun up and restarted. 
-
-.. Note:: This step takes about 10 -15 minutes to complete and will finish up while we start our presentation and lecture. 
-
-The end result should look something like the following screen where the node is green at 100 percent health and has the latest software version. 
-
-.. Important:: Do not move on to Lab 2 until the CE is fully provisioned and **Online**. 
-
-|lab022|
-
-Sanity Check
--------------
-**This is what you just deployed.**
-
-|lab023|
-
-**We hope you enjoyed this lab!**
+.. important::
+   Verify your CE node shows **100% health** and **Online** status before proceeding to Lab 2.
 
 **End of Lab 1**
 
-.. |lab001| image:: ../images/lab1intro.png
+.. |lab001| image:: ../images/temp/lab1/placeholder_pics.jpg
    :width: 800px
-.. |lab002| image:: ../images/mcn-home.png
+.. |lab002| image:: ../images/temp/lab1/lab002 Multi Cloud Network Connect.png
    :width: 800px
-.. |lab003| image:: ../images/mcn-dash1.png 
+.. |lab003| image:: ../images/temp/lab1/lab003 Multi Cloud Network Connect.png
    :width: 800px
-.. |lab004| image:: ../images/mcn-dash2.png 
+.. |lab004| image:: ../images/temp/lab1/lab004 namespace.png
    :width: 800px
-.. |lab005| image:: ../images/mcn-dash3.png 
+.. |lab005| image:: ../images/temp/lab1/lab005 Site Management.png
    :width: 800px
-.. |lab006| image:: ../images/findnamespace.png 
+.. |lab006| image:: ../images/temp/lab1/lab006 search for site.png
    :width: 800px
-.. |lab007| image:: ../images/namespace1replacement.png
+.. |lab007| image:: ../images/temp/lab1/lab007 site dashboard.png
    :width: 800px
-.. |lab008| image:: ../images/sitetoke.png 
+.. |lab008| image:: ../images/temp/lab1/lab008 udf lab status.png
    :width: 800px
-.. |lab009| image:: ../images/sitetokensscreen.png
+.. |lab009| image:: ../images/temp/lab1/lab009 udf lab status.png
    :width: 800px
-.. |lab010| image:: ../images/copytoke.png 
+.. |lab010| image:: ../images/temp/lab1/placeholder_pics.jpg
    :width: 800px
-.. |lab011| image:: ../images/cli-01a.png
-   :width: 800px
-.. |lab012| image:: ../images/cli-02a.png 
-   :width: 800px
-.. |lab013| image:: ../images/cli-04.png 
-   :width: 800px
-.. |lab014| image:: ../images/cli-05.png 
-   :width: 800px
-.. |lab015| image:: ../images/sitemgt.png 
-   :width: 800px
-.. |lab016| image:: ../images/sitereg.png
-   :width: 800px
-.. |lab017| image:: ../images/clustersize.png
-   :width: 800px
-.. |lab018| image:: ../images/s2sarrow.png
-   :width: 800px
-.. |lab019| image:: ../images/iporssl.png
-   :width: 800px
-.. |lab020| image:: ../images/otherregs.png
-   :width: 800px
-.. |lab021| image:: ../images/provisioning.png
-   :width: 800px
-.. |lab022| image:: ../images/prov2.png
-   :width: 800px
-.. |lab023| image:: ../images/lab1fini.png
-   :width: 800px
-
