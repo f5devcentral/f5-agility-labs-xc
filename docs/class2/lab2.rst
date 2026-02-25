@@ -34,86 +34,83 @@ In this task you will review the Bot signature configuration and view
 logged security events. This lab will begin back in the F5 Distributed
 Cloud Console.
 
-#. Return to **Web App & API Protection**, in the left-hand navigation menu,
-   click on **App Firewall**, under **Manage**.
-
-#. On your App Firewall policy **<namespace>-appfw**, click the three dots in
-   the **Actions** column and then click **Manage Configuration**.
-
-#. Click **Edit Configuration** in the top right corner.
-
-   |lab001|
-
-   |lab002|
-
-#. Using the left-hand navigation, click **Security Policy Settings**.  In the
-   **Security Policy** section, click the **Signature-Based Bot
-   Protection** dropdown menu.
-
-#. From the **Signature-Based Bot Protection** dropdown menu, select **Custom**
-
-   |lab003|
-
-#. In the expanded configuration window, observe the three Bot signature
-   categories:
-
-   **Malicious, Suspicious,** and **Good**. Also observe the actions
-   **Block, Ignore**, and **Report** which can be reviewed by selecting
-   one of the dropdowns.
-
-#. Click **Cancel All** to leave this window.
-
-   |lab004|
-
-#. Open a terminal window or DOS prompt on your respective client and issue the
-   following **curl** command.
-
-   .. code:: BASH
-
-      curl -v https://<namespace>.lab-sec.f5demos.com
-
-#. Observe the **User Agent** and response content.
-
-   .. note:: *curl is installed on Windows10+, and is available on most Linux or
-      MAC platforms*.
-
-#. Return to the F5 Distributed Cloud Console, within **Web App & API
-   Protection** in the left-hand navigation menu, under **Overview** click on **Security**
-
-   |lab007|
-
-#. Within the **Security** dashboard, scroll down to the **Load Balancer**
-   section and click the configured Load Balancer **<namespace>-lb**.
-
-   |lab008|
-
-#. Select **Security Analytics** from the horizontal navigation.
-
-#. Locate the most recent security event, which should be your curl request.
-   Expand the security event as you have done in prior exercises to observe
-   the "Suspicious" Bot reporting. Remember the setting for Suspicious Bot was
-   set to *Report* from Step 6 above.
-
-   |lab009|
-
-#. Signature based Bot detection can be easily bypassed. By simply presenting a
-   less suspicious user-agent string, a threat actor can easily bypass the
-   signature-based detection algorithm.
-
-   For example, if you repeat the curl request and with a less suspicious
-   user-agent, you will skip signature-based bot detection. For example, if you
-   run the following command:
-
-   .. code:: BASH
-
-      curl -v https://<namespace>.lab-sec.f5demos.com --user-agent "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.2.1 Safari/605.1.15"
-
-   This HTTP request will not show up in the Security Analytics however you
-   will find it in Request logging.
-
-   |lab009a|
-
-
++----------------------------------------------------------------------------------------------+
+|                                                                                              |
+|1. Return to **Web App & API Protection**, in the left-hand navigation menu, click on **App   |
+|   Firewall**, under **Manage**.                                                              |
+|                                                                                              |
+|2. On your App Firewall policy **<namespace>-appfw**, click the three dots in the **Actions** |
+|   column and then click **Manage Configuration**.                                            |
+|                                                                                              |
+|3. Click **Edit Configuration** in the top right corner.                                      |
+|                                                                                              |
+||lab001|                                                                                      |
+|                                                                                              |
+||lab002|                                                                                      |   
+|                                                                                              |
+|4. Using the left-hand navigation, click **Security Policy Settings**. In the**Security       |
+|   Policy** section, click the **Signature-Based Bot Protection** dropdown menu.              |
+|                                                                                              |
+|#5 From the **Signature-Based Bot Protection** dropdown menu, select **Custom**.              |
+|                                                                                              |
+||lab003|                                                                                      |
+|                                                                                              |
+|6. In the expanded configuration window, observe the three Bot signature categories:          |
+|                                                                                              |
+|**Malicious, Suspicious,** and **Good**. Also observe the actions.                            |
+|**Block, Ignore**, and **Report** which can be reviewed by selecting one of the dropdowns.    |
+|                                                                                              |
+|7. Click **Cancel All** to leave this window.                                                 |
+|                                                                                              |
+||lab004|                                                                                      |
+|                                                                                              |
+|#8 Open a terminal window or DOS prompt on your respective client and issue the following     |
+|   **curl** command.                                                                          |
+|                                                                                              |
+|.. code:: BASH                                                                                |
+|                                                                                              |
+|   curl -v https://<namespace>.lab-sec.f5demos.com                                            |
+|                                                                                              |
+|8. Observe the **User Agent** and response content.                                           |
+|                                                                                              |
+|.. note:: *curl is installed on Windows10+, and is available on most Linux or MAC platforms*. |
+|                                                                                              |
+|9. Return to the F5 Distributed Cloud Console, within **Web App & API Protection** in the     |
+|   left-hand navigation menu, under **Overview** click on **Security**.                       |
+|                                                                                              |               
+||lab007|                                                                                      |
+|                                                                                              |
+|10. Within the **Security** dashboard, scroll down to the **Load Balancer** section and click |
+|    the configured Load Balancer **<namespace>-lb**.                                          |
+|                                                                                              |
+||lab008|                                                                                      |
+|                                                                                              |
+|11. Select **Security Analytics** from the horizontal navigation.                             |
+|                                                                                              |
+|12. Locate the most recent security event, which should be your curl request. Expand the      |
+|    security event as you have done in prior exercises to observe the "Suspicious" Bot        |
+|    reporting. Remember the setting for Suspicious Bot was set to *Report* from Step 6 above. |
+|                                                                                              |
+||lab009|                                                                                      |
+|                                                                                              |
+|13. Signature based Bot detection can be easily bypassed. By simply presenting a less         |
+|    suspicious user-agent string, a threat actor can easily bypass the signature-based        |
+|    detection algorithm.                                                                      |
+|                                                                                              |
+|   For example, if you repeat the curl request and with a less suspicious user-agent, you will|
+|   skip signature-based bot detection. For example, if you run the following command:         |
+|                                                                                              |
+|.. code:: BASH                                                                                |
+|                                                                                              |
+|   curl -v https://<namespace>.lab-sec.f5demos.com --user-agent "Mozilla/5.0 (Macintosh; Intel|
+|   Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.2.1 Safari/605.1.15" |
+|                                                                                              |
+|   This HTTP request will not show up in the Security Analytics however you will find it in   |
+|   Request logging.                                                                           |
+|                                                                                              |
+||lab009a|                                                                                     |
+|                                                                                              |
++----------------------------------------------------------------------------------------------+
 
 Narrative Check
 -----------------
