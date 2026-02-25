@@ -15,8 +15,8 @@ SIEMs.  However not everyone in the ACME orgnaization has experience building da
 After speaking with ACME corp's F5 SE, F5 Distributed Console has an AI assistant in the SaaS console that can 
 provide answers quickly using natural language.   
 
-
-**Expected Lab Time: 5 minutes**
+.. note::                                                                                  
+   **Expected Lab Time: 10 minutes**
 
 **Lab 5 Summary-–AI Assistant & Security Operations**: Finally, explore the AI Assistant feature in the F5 Distributed Cloud console to streamline security operations. Instead of manually sifting through logs and events, you’ll use natural language queries to have the AI quickly summarize recent security events, answer questions like “how many attacks were blocked in the last 24 hours,” and even explain specific incidents. This lab showcases how AI-driven insights can help validate that your WAF and other protections are working (e.g., how many SQL injection attempts were stopped) and provide management-friendly summaries. It underlines the value of an integrated platform where observability and analytics are built in, making it easier to monitor and communicate the application’s security status.
 
