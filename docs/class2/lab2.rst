@@ -169,13 +169,11 @@ and understand its implementation.
 
 Let’s explore how an attacker could perform credential stuffing attacks by using the curl command:
 
+.. code:: BASH                                                                            
+
+   curl -v https://<namespace>.lab-sec.f5demos.com/auth.php -H "Content-Type: application/x-www-form-urlencoded" --user-agent "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.2.1 Safari/605.1.15" --data-raw "identity=user%40f5.com&token=password&submit=Submit"
+   
 +----------------------------------------------------------------------------------------------+
-|.. code:: BASH                                                                                |
-|                                                                                              |
-|   curl -v https://<namespace>.lab-sec.f5demos.com/auth.php -H "Content-Type:                 |
-|   application/x-www-form-urlencoded" --user-agent "Mozilla/5.0 (Macintosh;                   |
-|   Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.2.1            |
-|   Safari/605.1.15" --data-raw "identity=user%40f5.com&token=password&submit=Submit"          |
 |                                                                                              |
 |For this application, a successful logon will have a 302 response to the                      |
 |location ./data.php?page=data                                                                 |
