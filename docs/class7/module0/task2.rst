@@ -171,11 +171,6 @@ the container image. In this step, you will create a vK8s cluster in your assign
 
    |f5xc-console-distro-app-vk8-5|
 
-
-   Name: vk8
-   Site: Select virtual site "shared/appworld-k8s-vsite"
-
-
 Wrap-Up
 ~~~~~~~
 
@@ -206,7 +201,7 @@ Next, you will configure GitLab and begin deploying applications and security co
 .. |f5xc-console-account-settings-credentials| image:: ../images/module0/f5xc-console-account-settings-credentials.png
    :width: 800px
 .. |f5xc-console-account-settings-credentials-cert-1| image:: ../images/module0/f5xc-console-account-settings-credentials-cert-1.png
-   :width: 800px
+   :width: 400px
 .. |f5xc-console-distro-app| image:: ../images/module0/f5xc-console-distro-app.png
    :width: 800px
 .. |f5xc-console-distro-app-vk8-1| image:: ../images/module0/f5xc-console-distro-app-vk8-1.png
