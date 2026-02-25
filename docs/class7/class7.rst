@@ -2,7 +2,7 @@ F5 Distributed Cloud: Code, Secure, Repeat
 ====================================================
 
 Introduction
-------------
+~~~~~~~~~~~~~
 
 Welcome to the **F5 Distributed Cloud – Code. Secure. Repeat.** lab.
 
@@ -24,8 +24,14 @@ This lab isn’t about memorizing steps—it’s about understanding *why* moder
 
 Let’s get started.
 
+   
+   .. note::  
+
+      * If you have alredy joined the UDF lab environment and your deployment is all green, you can proceed to the Lab Modules section below.  If you have not yet joined the UDF lab environment, please follow the steps in the Course/Lab Invitation and Accessing UDF sections below.*
+
+
 Course/Lab Invitation
----------------------
+~~~~~~~~~~~~~~~~~~~~~~
 
 Access to the lab environment is provided via an invitation email sent to the registration address you submitted. Please check your inbox and spam folder. If you did not receive an invitation, contact a member of the lab team for assistance.
 
@@ -48,7 +54,7 @@ Access to the lab environment is provided via an invitation email sent to the re
 +----------------------------------------------------------------------------------------------+
 
 Accessing UDF (F5 Unified Demo Framework)
------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +----------------------------------------------------------------------------------------------+
 | The following will guide attendees through the initial Lab environment access within F5 UDF. |
