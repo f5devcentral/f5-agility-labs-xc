@@ -51,7 +51,7 @@ Cloud Console.
 |4. Using the left-hand navigation, click **Security Policy Settings**. In the**Security       |
 |   Policy** section, click the **Signature-Based Bot Protection** dropdown menu.              |
 |                                                                                              |
-|#5 From the **Signature-Based Bot Protection** dropdown menu, select **Custom**.              |
+|5. From the **Signature-Based Bot Protection** dropdown menu, select **Custom**.              |
 |                                                                                              |
 ||lab003|                                                                                      |
 |                                                                                              |
@@ -64,36 +64,36 @@ Cloud Console.
 |                                                                                              |
 ||lab004|                                                                                      |
 |                                                                                              |
-|#8 Open a terminal window or DOS prompt on your respective client and issue the following     |
+|8. Open a terminal window or DOS prompt on your respective client and issue the following     |
 |   **curl** command.                                                                          |
 |                                                                                              |
 |.. code:: BASH                                                                                |
 |                                                                                              |
 |   curl -v https://<namespace>.lab-sec.f5demos.com                                            |
 |                                                                                              |
-|8. Observe the **User Agent** and response content.                                           |
+|9. Observe the **User Agent** and response content.                                           |
 |                                                                                              |
 |.. note:: *curl is installed on Windows10+, and is available on most Linux or MAC platforms*. |
 |                                                                                              |
-|9. Return to the F5 Distributed Cloud Console, within **Web App & API Protection** in the     |
+|10. Return to the F5 Distributed Cloud Console, within **Web App & API Protection** in the     |
 |   left-hand navigation menu, under **Overview** click on **Security**.                       |
 |                                                                                              |               
 ||lab007|                                                                                      |
 |                                                                                              |
-|10. Within the **Security** dashboard, scroll down to the **Load Balancer** section and click |
+|11. Within the **Security** dashboard, scroll down to the **Load Balancer** section and click |
 |    the configured Load Balancer **<namespace>-lb**.                                          |
 |                                                                                              |
 ||lab008|                                                                                      |
 |                                                                                              |
-|11. Select **Security Analytics** from the horizontal navigation.                             |
+|12. Select **Security Analytics** from the horizontal navigation.                             |
 |                                                                                              |
-|12. Locate the most recent security event, which should be your curl request. Expand the      |
+|13. Locate the most recent security event, which should be your curl request. Expand the      |
 |    security event as you have done in prior exercises to observe the "Suspicious" Bot        |
 |    reporting. Remember the setting for Suspicious Bot was set to *Report* from Step 6 above. |
 |                                                                                              |
 ||lab009|                                                                                      |
 |                                                                                              |
-|13. Signature based Bot detection can be easily bypassed. By simply presenting a less         |
+|14. Signature based Bot detection can be easily bypassed. By simply presenting a less         |
 |    suspicious user-agent string, a threat actor can easily bypass the signature-based        |
 |    detection algorithm.                                                                      |
 |                                                                                              |
