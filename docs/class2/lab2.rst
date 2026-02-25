@@ -76,7 +76,7 @@ Cloud Console.
 |.. note:: *curl is installed on Windows10+, and is available on most Linux or MAC platforms*. |
 |                                                                                              |
 |10. Return to the F5 Distributed Cloud Console, within **Web App & API Protection** in the    |
-|   left-hand navigation menu, under **Overview** click on **Security**.                       |
+|    left-hand navigation menu, under **Overview** click on **Security**.                      |
 |                                                                                              |               
 ||lab007|                                                                                      |
 |                                                                                              |
