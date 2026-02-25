@@ -161,9 +161,9 @@ and understand its implementation.
 |   accessed*                                                                                  |
 |                                                                                              |
 +----------------------------------------------------------------------------------------------+
-   **Task 2: Optional Advanced Topics - Part 1**
+**Task 2: Optional Advanced Topics - Part 1**
 
-   Let’s explore how an attacker could perform credential stuffing attacks by using the curl command:
+Let’s explore how an attacker could perform credential stuffing attacks by using the curl command:
 
 +----------------------------------------------------------------------------------------------+
 |.. code:: BASH                                                                                |
@@ -173,16 +173,16 @@ and understand its implementation.
 |   Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.2.1            |
 |   Safari/605.1.15" --data-raw "identity=user%40f5.com&token=password&submit=Submit"          |
 |                                                                                              |
-|   For this application, a successful logon will have a 302 response to the                   |
-|   location ./data.php?page=data                                                              |
+|For this application, a successful logon will have a 302 response to the                      |
+|location ./data.php?page=data                                                                 |
 |                                                                                              |
-|   If we try an invalid password (password2 instead of password) for the same request, we     |
-|   will also get a 302 response to the location ./index.php?page=access&err=02                |
+|If we try an invalid password (password2 instead of password) for the same request, we        |
+|will also get a 302 response to the location ./index.php?page=access&err=02                   |
 |                                                                                              |
-|   With this knowledge, we could use curl to perform a credential stuffing attack and         |
-|   potentially avoid detection.  Attackers obtaining a list of compromised user credentials   |
-|   can then launch automated attacks at scale using the information returned from the web page|
-|   about whether a password was good or bad.                                                  |
+|With this knowledge, we could use curl to perform a credential stuffing attack and            |
+|potentially avoid detection.  Attackers obtaining a list of compromised user credentials      |
+|can then launch automated attacks at scale using the information returned from the web page   |
+|about whether a password was good or bad.                                                     |
 |                                                                                              |
 ||lab013a|                                                                                     |
 |                                                                                              |
