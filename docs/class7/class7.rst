@@ -24,10 +24,11 @@ This lab isn’t about memorizing steps—it’s about understanding *why* moder
 
 Let’s get started.
 
-   
-   .. note::  
 
-      * If you have alredy joined the UDF lab environment and your deployment is all green, you can proceed to the Lab Modules section below.  If you have not yet joined the UDF lab environment, please follow the steps in the Course/Lab Invitation and Accessing UDF sections below.*
+.. note::  
+
+   * If you have alredy joined the UDF lab environment and your deployment is all green, you can proceed to the Lab Modules section below.  If you have not yet joined the UDF lab environment, please follow the steps in the Course/Lab Invitation and Accessing UDF sections below.*
+
 
 
 Course/Lab Invitation
