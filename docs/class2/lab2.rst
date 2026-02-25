@@ -60,44 +60,44 @@ Cloud Console.
 |**Malicious, Suspicious,** and **Good**. Also observe the actions.                            |
 |**Block, Ignore**, and **Report** which can be reviewed by selecting one of the dropdowns.    |
 |                                                                                              |
-|7. Set **Malicious Bot** to Block; **Suspicious Bot** to Report; and **Good Bot** to Ignore   |
+|7. Set **Malicious Bot** to Block; **Suspicious Bot** to Report; and **Good Bot** to Ignore.  |
 |                                                                                              |
-|8. Click **Save App Firewall**                                                                |
+|8. Click **Save App Firewall**.                                                               |
 |                                                                                              |
 ||lab003b|                                                                                     |
 |                                                                                              |
 ||lab004|                                                                                      |
 |                                                                                              |
-|8. Open a terminal window or DOS prompt on your respective client and issue the following     |
+|9. Open a terminal window or DOS prompt on your respective client and issue the following     |
 |   **curl** command.                                                                          |
 |                                                                                              |
 |.. code:: BASH                                                                                |
 |                                                                                              |
 |   curl -v https://<namespace>.lab-sec.f5demos.com                                            |
 |                                                                                              |
-|9. Observe the **User Agent** and response content.                                           |
+|10. Observe the **User Agent** and response content.                                          |
 |                                                                                              |
 |.. note:: *curl is installed on Windows10+, and is available on most Linux or MAC platforms*. |
 |                                                                                              |
-|10. Return to the F5 Distributed Cloud Console, within **Web App & API Protection** in the    |
+|11. Return to the F5 Distributed Cloud Console, within **Web App & API Protection** in the    |
 |    left-hand navigation menu, under **Overview** click on **Security**.                      |
 |                                                                                              |               
 ||lab007|                                                                                      |
 |                                                                                              |
-|11. Within the **Security** dashboard, scroll down to the **Load Balancer** section and click |
+|12. Within the **Security** dashboard, scroll down to the **Load Balancer** section and click |
 |    the configured Load Balancer **<namespace>-lb**.                                          |
 |                                                                                              |
 ||lab008|                                                                                      |
 |                                                                                              |
-|12. Select **Security Analytics** from the horizontal navigation.                             |
+|13. Select **Security Analytics** from the horizontal navigation.                             |
 |                                                                                              |
-|13. Locate the most recent security event, which should be your curl request. Expand the      |
+|14. Locate the most recent security event, which should be your curl request. Expand the      |
 |    security event as you have done in prior exercises to observe the "Suspicious" Bot        |
 |    reporting. Remember the setting for Suspicious Bot was set to *Report* from Step 6 above. |
 |                                                                                              |
 ||lab009|                                                                                      |
 |                                                                                              |
-|14. Signature based Bot detection can be easily bypassed. By simply presenting a less         |
+|15. Signature based Bot detection can be easily bypassed. By simply presenting a less         |
 |    suspicious user-agent string, a threat actor can easily bypass the signature-based        |
 |    detection algorithm.                                                                      |
 |                                                                                              |
