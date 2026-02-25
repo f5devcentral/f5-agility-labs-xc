@@ -72,7 +72,8 @@ Task 1: Exploring the F5 Distributed Console
 |   **Menu** on the top right-hand side and select **Header**.                                 |   
 |                                                                                              |
 |5. Note the Remote Address field. This will match the IP address of your workstation. You can |
-|   verify that it matches by looking up your IP address at https://ipinfo.io/.                |
+|   verify that it matches by looking up your IP address at https://ipinfo.io/ or              |
+|   https://ifconfig.co/                                                                       |
 |                                                                                              |
 ||lab005|                                                                                      |
 |                                                                                              |
@@ -193,13 +194,13 @@ Task 2: Configure WAF Policy on the Load Balancer
 Narrative Check
 ---------------
 
-You've built your first WAF policy on F5 Distributed Cloud.  This WAF policy can be applied
-to any additional load balancers deployed in this namespace.  The F5 XC WAAP suite can be 
+You've built your first WAF policy on F5 Distributed Cloud. This WAF policy can be applied
+to any additional load balancers deployed in this namespace. The F5 XC WAAP suite can be 
 configured to protect applications across your on-prem data center, Azure, AWS, GCP and SAAS 
-environments.  This allows your team to uniformly manage application security across all of your 
-public, private and SAAS applications.  Now that you are familiar with how to build WAF policies 
+environments. This allows your team to uniformly manage application security across all of your 
+public, private and SAAS applications. Now that you are familiar with how to build WAF policies 
 on F5 Distributed Cloud, we can start getting our hands dirty with testing to ensure the ACME 
-Azure application is protected.  
+application is protected.  
 
 
 Task 3: Testing the WAF Policy & Reviewing Event Data
@@ -240,7 +241,7 @@ configuration changes.
 Narrative Check
 -----------------
 
-The ACME Azure application is now being successfully protected by F5 Distributed Cloud.
+The ACME application is now being successfully protected by F5 Distributed Cloud.
 
 +----------------------------------------------------------------------------------------------+
 |1. Returning to the F5 Distributed Cloud Console, use the left-hand menu to                   |
@@ -522,7 +523,7 @@ Narrative Check
 -----------------
 You have now completed your first WAF policy deployment on F5 XC. This policy can be re-used for
 other applications in the ACME environment and the exclusions you configured are only applied to this specific 
-Azure application.  New applications that utilize the WAF policy configured will not have these exclusions
+ application.  New applications that utilize the WAF policy configured will not have these exclusions
 allowing you to quickly scale and manage exlusions on a per application basis while the policy can stay the same.
 
 **End of Lab 1:**  This concludes Lab 1, feel free to review and test the
