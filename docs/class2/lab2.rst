@@ -60,7 +60,11 @@ Cloud Console.
 |**Malicious, Suspicious,** and **Good**. Also observe the actions.                            |
 |**Block, Ignore**, and **Report** which can be reviewed by selecting one of the dropdowns.    |
 |                                                                                              |
-|7. Click **Cancel All** to leave this window.                                                 |
+|7. Set **Malicious Bot** to Block; **Suspicious Bot** to Report; and **Good Bot** to Ignore   |
+|                                                                                              |
+|8. Click **Save App Firewall**                                                                |
+|                                                                                              |
+||lab003b|                                                                                     |
 |                                                                                              |
 ||lab004|                                                                                      |
 |                                                                                              |
@@ -85,7 +89,7 @@ Cloud Console.
 |                                                                                              |
 ||lab008|                                                                                      |
 |                                                                                              |
-|12. Select **Events** from the horizontal navigation.                                         |
+|12. Select **Security Analytics** from the horizontal navigation.                             |
 |                                                                                              |
 |13. Locate the most recent security event, which should be your curl request. Expand the      |
 |    security event as you have done in prior exercises to observe the "Suspicious" Bot        |
@@ -303,6 +307,8 @@ configuration. A brief presentation will be shared prior to the beginning of Lab
    :width: 800px
 .. |lab003| image:: _static/lab2-003.png
    :width: 800px
+.. |lab003b| image:: _static/lab2-003b.png
+   :width: 125px
 .. |lab004| image:: _static/lab2-004.png
    :width: 800px
 .. |lab005| image:: _static/lab2-005.png
