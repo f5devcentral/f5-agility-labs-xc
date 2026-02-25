@@ -60,7 +60,7 @@ Cloud Console.
 |**Malicious, Suspicious,** and **Good**. Also observe the actions.                            |
 |**Block, Ignore**, and **Report** which can be reviewed by selecting one of the dropdowns.    |
 |                                                                                              |
-|7. Set **Malicious Bot** to Block; **Suspicious Bot** to Report; and **Good Bot** to Reporta.  |
+|7. Set **Malicious Bot** to Block; **Suspicious Bot** to Report; and **Good Bot** to Report.  |
 |                                                                                              |
 |8. Click **Save App Firewall**.                                                               |
 |                                                                                              |
