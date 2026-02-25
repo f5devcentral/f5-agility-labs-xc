@@ -491,8 +491,8 @@ also further customize the WAF policy just built to add a custom block response 
 |   <html style="margin: 0;"><head><title>Rejected Request</title></head>                      |
 |   <body style="margin : 0;">                                                                 |
 |   <div style="background-color: #046b99; height: 40px; width: 100%;"></div>                  |
-|   <div style="min-height: 100px; background-color: white; text-align: center;"></div>         |
-|   <div style="background-color: #fdb81e; height: 5px; width: 100%;"></div>                  |
+|   <div style="min-height: 100px; background-color: white; text-align: center;"></div>        |
+|   <div style="background-color: #fdb81e; height: 5px; width: 100%;"></div>                   |
 |   <div id="main-content" style="width: 100%; ">                                              |
 |   <table width="100%"><tr><td style="text-align: center;">                                   |
 |   <div style="margin-left: 50px;">                                                           |
