@@ -16,9 +16,8 @@ Task 1: Simulate a Unmitigated Attack
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In this task, you will follow steps simulating an attack against an unprotected endpoint.
-The Distributed Cloud (XC) WAF object is pre-built for the next Task, but please review how to create this object via the Advanced Lab 4.
 
-#. Using another browser tab, navigate to the the following URL.
+#. Using another browser tab, navigate to the following URL.
 
    ``http://<namespace>.lab-sec.f5demos.com/swagger``
 
@@ -47,7 +46,7 @@ The Distributed Cloud (XC) WAF object is pre-built for the next Task, but please
       :width: 800px
 
 #. Review the Response, notice how the included **<script>** was accepted and included in 
-   the Reponse Body.
+   the Response Body.
 
    .. image:: _static/lab4-image003.png
       :width: 800px
@@ -73,7 +72,7 @@ In this task, you will perform steps to create a WAF policy object, and apply th
    .. image:: _static/lab4-image005v2.png
       :width: 400px
 
-#. Within the App Firewall object, configure the following.  Values where **<namespace>** is required, use the name of your given namespace.
+#. Within the App Firewall object, configure the following. Where a value for **<namespace>** is required, use the name of your given namespace.
 
    * **Metadata:Name:**  ``<namespace>-waf``
    * **Enforcement Mode:** ``Blocking``
@@ -86,7 +85,7 @@ In this task, you will perform steps to create a WAF policy object, and apply th
 Task 3: Attach WAF policy to your HTTP Load Balancer
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In this task, you will follow steps to attach a WAF policy to your Load Balancer.
+In this task, you will follow steps to attach a WAF policy to your HTTP Load Balancer.
 
 #. In the left-hand navigation of the **Web App & API Protection** service under the **Manage** section, click on **Load Balancers > HTTP Load**
    **Balancers** under the **Manage** section.
@@ -128,22 +127,22 @@ In this task, you will follow steps to attach a WAF policy to your Load Balancer
 Task 4: Simulate a Mitigated Attack
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In this task you will follow steps simulating an attack againt a protected endpoint.
+In this task you will follow steps simulating an attack against an protected endpoint.
 
-#. Using another browser tab, navigate to the the following URL.
+#. Using another browser tab, navigate to the following URL.
 
    ``http://<namespace>.lab-sec.f5demos.com/swagger``
 
    .. image:: _static/shared-swagger-intro.png
       :width: 800px
 
-#. Within the Swagger page navigate and expand the messageservice/send endpoint, and click
+#. Within the Swagger page navigate and expand the **messageservice/send** endpoint, and click
    **Try it out**.
 
    .. image:: _static/lab4-image001.png
       :width: 800px
 
-#. Copy the following JSON, paste within the Request body. Click on **Execute**.
+#. Copy/paste the following JSON into the Request body. Click on **Execute**.
 
    .. code-block:: json
    

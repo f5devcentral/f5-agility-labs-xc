@@ -25,7 +25,7 @@ Task 1: Simulate Allowed Access to a Misconfigured API
    .. image:: _static/lab3-swagger-try.png
       :width: 800px
 
-#. Enter '1970/05/29' in the DOB field, click **Execute**.
+#. Enter `1970/05/29` in the DOB field, click **Execute**.
 
    .. image:: _static/lab3-swagger-execute.png
       :width: 800px
@@ -101,8 +101,7 @@ previously built Load Balancer object delivering the targeted API.
    .. image:: _static/lab3-api-protection-apply.png
       :width: 800px
 
-#. Select **Other Settings** on the left then click on **Save and Exit**
-   at the bottom right of window.
+#. Select **Save HTTP Load Balancer** at the bottom right of window.
 
    .. image:: _static/shared-lb-save.png
       :width: 800px
@@ -122,7 +121,7 @@ Task 3: Simulate Blocked Access to a Misconfigured API
    .. image:: _static/lab3-swagger-try.png
       :width: 800px
 
-#. Enter '1970/05/29' in the DOB field, click **Execute**.
+#. Enter `1970/05/29` in the DOB field, click **Execute**.
 
    .. note ::
 

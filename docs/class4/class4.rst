@@ -6,7 +6,7 @@ Welcome
 
 In this lab, participants will explore the depths of F5 Web Application
 and API Protection (WAAP) within F5 Distributed Cloud. Dive headfirst into
-the cutting-edge world of API Discovery, uncovering what’s within, Sensitive Data
+the cutting-edge world of API Discovery, uncovering what’s within: Sensitive Data
 and Authentication State detection. Get hands-on experience as you unleash
 the power of API Protection and API Rate Limiting.
 
@@ -21,12 +21,12 @@ Objective:
       assesses use of end-points, discovers new end-points based on flows, identifies use of sensitive information,
       and enables swagger file export.
 
-   -  **API Protection**: Encompasses a set of definitions and controls to protect and secure the functions, use and
+   -  **API Protection**: Encompasses a set of definitions and controls to protect and secure the functions, use, and
       endpoints of the delivered API's framework.
 
    -  **Web Applcation Firewall**: Behaves as an intermediate proxy to inspect app requests and responses to block and mitigate a broad spectrum of risks via signatures and robust behavioral-based threat detection to protect applications wherever they are deployed.
 
-   -  **Rate Limting**:  Defines parameters that can be used for fine-grained control over requests for a HTTP load-balancer that are subjected to rate-limiting using AI/ML learning engine to uniquely discover API endpoints used during service-to-service communication.
+   -  **Rate Limting**:  Defines parameters that can be used for fine-grained control over requests for an HTTP load-balancer that are subjected to rate-limiting using AI/ML learning engine to uniquely discover API endpoints used during service-to-service communication.
 
    -  **Malicious User Detection**: Provided via machine-based learning processes, enables malicious user behavior tracking by categorizing users into varying threat levels, allowing automatic or manual mitigation.
 
