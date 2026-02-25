@@ -91,7 +91,7 @@ Cloud Console.
 |    security event as you have done in prior exercises to observe the "Suspicious" Bot        |
 |    reporting. Remember the setting for Suspicious Bot was set to *Report* from Step 6 above. |
 |                                                                                              |
-||lab009b|                                                                                      |
+||lab009b|                                                                                     |
 |                                                                                              |
 |14. Signature based Bot detection can be easily bypassed. By simply presenting a less         |
 |    suspicious user-agent string, a threat actor can easily bypass the signature-based        |
