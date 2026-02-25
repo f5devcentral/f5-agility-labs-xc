@@ -85,13 +85,13 @@ Cloud Console.
 |                                                                                              |
 ||lab008|                                                                                      |
 |                                                                                              |
-|12. Select **Security Analytics** from the horizontal navigation.                             |
+|12. Select **Events** from the horizontal navigation.                                         |
 |                                                                                              |
 |13. Locate the most recent security event, which should be your curl request. Expand the      |
 |    security event as you have done in prior exercises to observe the "Suspicious" Bot        |
 |    reporting. Remember the setting for Suspicious Bot was set to *Report* from Step 6 above. |
 |                                                                                              |
-||lab009|                                                                                      |
+||lab009b|                                                                                      |
 |                                                                                              |
 |14. Signature based Bot detection can be easily bypassed. By simply presenting a less         |
 |    suspicious user-agent string, a threat actor can easily bypass the signature-based        |
@@ -316,6 +316,8 @@ configuration. A brief presentation will be shared prior to the beginning of Lab
 .. |lab009| image:: _static/lab2-009.png
    :width: 800px
 .. |lab009a| image:: _static/lab2-009a.png
+   :width: 800px
+.. |lab009b| image:: _static/lab2-009b.png
    :width: 800px
 .. |lab010| image:: _static/lab2-010.png
    :width: 800px
