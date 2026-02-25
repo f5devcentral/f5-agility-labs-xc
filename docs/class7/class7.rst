@@ -27,7 +27,7 @@ Let’s get started.
 
 .. note::  
 
-   * If you have alredy joined the UDF lab environment and your deployment is all green, you can proceed to the Lab Modules section below.  If you have not yet joined the UDF lab environment, please follow the steps in the Course/Lab Invitation and Accessing UDF sections below.*
+   If you’ve already joined the UDF lab environment and your deployment status shows all green, you may proceed directly to  **Module 0**. If you have not yet joined the UDF lab environment, please complete the steps outlined in the Course/Lab Invitation and Accessing UDF sections first.
 
 
 
