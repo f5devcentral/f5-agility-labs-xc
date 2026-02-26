@@ -139,8 +139,7 @@ previously built Load Balancer.
    .. image:: _static/lab2-lb-def-validation-apply.png
       :width: 800px
 
-#. Select **Other Settings** on the left then click on **Save and Exit**
-   at the bottom right of window.
+#. Select **Save HTTP Load Balancer** at the bottom right of window.
 
    .. image:: _static/shared-lb-save.png
       :width: 800px

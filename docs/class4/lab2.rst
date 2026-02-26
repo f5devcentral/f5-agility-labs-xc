@@ -3,8 +3,8 @@ Lab 2: API Inventory
 
 **Scenario**
 
-There was an update to Customer Lookup controller, a new endpoint "getbyheroname" was added, allowing the lookup 
-of a customer's secret identify. However, this endpoint was not intended for release and was not approved for production.
+There was an update to the Customer Lookup controller, a new endpoint "getbyheroname" was added, allowing the lookup 
+of a customer's secret identity. However, this endpoint was not intended for release and was not approved for production.
 
 We need to ensure that unapproved endpoints cannot be consumed, both now and in the future.
 
@@ -12,8 +12,8 @@ We need to ensure that unapproved endpoints cannot be consumed, both now and in 
 
 .. note ::
 
-   This lab uses a pre-build shared API Definition. Refer to `Lab 2 Advanced <adv_lab2.html>`_ for additional step on how to download and upload a swagger 
-   file and create a API Definition using the newly created OpenAPI file.
+   This lab uses a pre-built shared API Definition. Refer to `Lab 2 Advanced <adv_lab2.html>`_ for additional steps on how to download and upload a swagger 
+   file, as well as create a API Definition using the newly created OpenAPI file.
 
 Task 1: Simulate Allowed Access to a Shadow API
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -33,10 +33,10 @@ Task 1: Simulate Allowed Access to a Shadow API
    .. note ::
 
       The 'getbyheroname' is a shadow API endpoint that is not approved for use. 
-      A shadow API refers to an undocumented or unintended API endpoint that exists alongside officially supported APIs, often posing security or operational risks due to lack of visibility or management.
+      A shadow API refers to an undocumented or unintended API endpoint that exists alongside officially supported APIs, often posing security and/or operational risks due to lack of visibility or management.
 
 
-#. Enter 'Iron Man' in the "heroname" field.. Click **Execute**.
+#. Enter `Iron Man` in the `heroname` field.. Click **Execute**.
 
    .. image:: _static/lab2-swagger-execute.png
       :width: 800px
@@ -89,7 +89,7 @@ Task 3: Enabling API Inventory
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In this task's series of steps you will enable the API Inventory and Discovery feature on the
-previously built Load Balancer.
+previously built HTTP Load Balancer.
 
 #. In the left-hand navigation of the **Web App & API Protection** service, click on **Load Balancers > HTTP Load**
    **Balancers** under the **Manage** section.
@@ -164,8 +164,7 @@ previously built Load Balancer.
    .. image:: _static/lab2-lb-def-validation-apply.png
       :width: 800px
 
-#. Select **Other Settings** on the left then click on **Save and Exit**
-   at the bottom right of window.
+#. Select **Save HTTP Load Balancer** at the bottom right of window.
 
    .. image:: _static/shared-lb-save.png
       :width: 800px
@@ -185,7 +184,7 @@ Task 4: Simulate Blocked Access to a Shadow API
    .. image:: _static/lab2-swagger-try.png
       :width: 800px
 
-#. Enter 'Iron Man' in the "heroname" field.. Click **Execute**.
+#. Enter `Iron Man` in the `heroname` field.. Click **Execute**.
 
    .. note ::
 
@@ -194,7 +193,7 @@ Task 4: Simulate Blocked Access to a Shadow API
    .. image:: _static/lab2-swagger-execute.png
       :width: 800px
 
-#. Review the response body. 
+#. Review the response body.
 
    .. image:: _static/lab2-swagger-response-403.png
       :width: 800px
