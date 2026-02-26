@@ -137,7 +137,8 @@ and understand its implementation.
 |1. Open another tab in your browser (Chrome shown), navigate to your application/Load Balancer|
 |   configuration:                                                                             |
 |                                                                                              |
-|   **https://<your-namespace>.lab-sec.f5demos.com**.  This will follow the adjective-animal format.|
+|   **https://<your-namespace>.lab-sec.f5demos.com**.  This will follow the adjective-animal   |
+|   format.                                                                                    |
 |                                                                                              |
 |2. Enable developer tools (Chrome shown (use F12)) and click on the **Network** tab.          |
 |                                                                                              |
