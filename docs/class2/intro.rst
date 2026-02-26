@@ -186,6 +186,23 @@ Accessing F5 Distributed Cloud
 | |intro015|                                                                                   |
 +----------------------------------------------------------------------------------------------+
 
+Lab Guide Namespace Update
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Before starting the course, update your namespace to dynamically update the guide.
+
+.. raw:: html
+
+   <div style="margin: 1em 0; padding: 1em; border: 0px solid #ccc;">
+     <label for="namespaceInput">Enter your namespace:</label>
+     <input id="namespaceInput" type="text" placeholder="e.g. sassy-panda" />
+     <button onclick="setNamespace()">Save</button>
+   </div>
+
+   <p><strong>Current namespace:</strong> <span id="currentNamespace">&lt;namespace&gt;</span></p>
+
+.. note:: Guide pages might need to be refreshed to get updated namespace to render.
+
 +----------------------------------------------------------------------------------------------+
 | **Beginning of Lab:**  You are now ready to begin the lab, Enjoy! Ask questions as needed.   |
 +----------------------------------------------------------------------------------------------+
