@@ -21,7 +21,6 @@ This end-to-end workflow highlights how organizations can **discover vulnerabili
 
 ------------
 
-|intro000a|
 |intro000d|
 
 Task 1: Lab Environment
