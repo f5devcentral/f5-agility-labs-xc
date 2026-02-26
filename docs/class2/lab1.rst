@@ -538,7 +538,6 @@ Sample Blocking Response Page to be copied:
 |11. You can rerun an attack that was not excluded from Task 3: Step 2 to see the new custom   |
 |    block page.                                                                               |
 |                                                                                              |
-|                                                                                              |
 ||lab056|                                                                                      |
 |                                                                                              |
 |.. note::                                                                                     |
