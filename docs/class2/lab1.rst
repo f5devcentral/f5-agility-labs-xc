@@ -98,7 +98,7 @@ Task 2: Exploring the F5 Distributed Console
 ||lab004|                                                                                      |
 |                                                                                              |
 |3. Using your browser, visit this application directly utilizing its public FQDN. Select the  |
-|   **Menu** on the top right-hand side and select **Header**.                                 |   
+|   **Menu** on the top right-hand side and select **Header**.                                 |
 |                                                                                              |
 |4. Note the Remote Address field. This will match the IP address of your workstation. You can |
 |   verify that it matches by looking up your IP address at https://ipinfo.io/ or              |
@@ -130,7 +130,7 @@ Task 2: Exploring the F5 Distributed Console
 |7. Using the left-hand navigation and in the sections as shown, review the following data.    |
 |   Values where **<your-namespace>** *adjective-animal* is represented, the configuration will|
 |   be the name of your provisioned namespace.  Note the FQDN of the F5 XC load balancer.      |
-|                                                                                              |                                                
+|                                                                                              |
 |   * **Metadata**  *<your-namespace>-lb*                                                      |
 |   * **Domains and LB Type**  *<your-namespace>.lab-sec.f5demos.com*                          |
 |   * **Other Settings** VIP Advertisement                                                     |
@@ -143,9 +143,9 @@ Task 2: Exploring the F5 Distributed Console
 ||lab011|                                                                                      |
 |                                                                                              |
 |8. Using your web browser, access the application via the F5 XC FQDN. Click on                |
-|   **Menu > Header**                                                                          |  
+|   **Menu > Header**                                                                          |
 |                                                                                              |
-|9. Note that the Remote Address has changed as well as the presence of a new X-Forwarded-For |
+|9. Note that the Remote Address has changed as well as the presence of a new X-Forwarded-For  |
 |    header. The client information should have changed as you are now connecting first through|
 |    the F5 ADN Regional Edge before being proxied to the application running the ACME Corp.   |
 |    environment. X-Forwarded-For details should match your workstation's IP address.          |
