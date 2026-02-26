@@ -47,9 +47,13 @@ Task 1: Discover Your Animal (Namespace)
 |1. Following the **Introduction** section instructions, you should now be on the Home page    |
 |   of the F5 Distributed Cloud Console. Select **Web App & API Protection**.                  |
 |                                                                                              |
+||lab001|                                                                                      |
+|                                                                                              |
 |2. On the **Web App & API Protection** page, note the identifier of your namespace (top left  |
 |   area of the page). The namespace will follow a format of *adjective-animal*. In this       |
 |   guide, the namespace is pet-walrus. Your namespace will be different.                      |
+|                                                                                              |
+||lab001b|                                                                                     |
 |                                                                                              |
 |   Before continuing, update the namespace field below with you updated namespace.            |
 |                                                                                              |
@@ -560,6 +564,8 @@ A brief presentation will be shared prior to the beginning of Lab 2.
 
 
 .. |lab001| image:: _static/lab1-001.png
+   :width: 800px
+.. |lab001b| image:: _static/lab1-0014b.png
    :width: 800px
 .. |lab002| image:: _static/lab1-002.png
    :width: 800px
