@@ -102,11 +102,11 @@ Before continuing with the lab, please update your namespace to dynamically upda
 
 .. |intro001| image:: _static/intro-001.png
    :width: 800px
-.. |intro002| image:: ../images/temp/intro/intro1pic2.png
+.. |intro002| image:: ../class6/images/temp/intro/intro1pic2.png
    :width: 800px
-.. |intro003| image:: ../images/temp/intro/intro1pic3.png
+.. |intro003| image:: ../class6/images/temp/intro/intro1pic3.png
    :width: 800px
-.. |intro004| image:: ../images/temp/intro/intro1pic4.png
+.. |intro004| image:: ../class6/images/temp/intro/intro1pic4.png
    :width: 800px
-.. |intro005| image:: ../images/temp/intro/intro1pic5.png
+.. |intro005| image:: ../class6/images/temp/intro/intro1pic5.png
    :width: 800px
