@@ -15,15 +15,11 @@ segment connectors to selectively enable secure communication between these envi
    Network segments provide isolation by default. Segment connectors selectively allow communication 
    between segments while maintaining security boundaries.
 
-|lab001|
-
 **Prerequisite**
 ----------------
 
-.. note::
    You should already be logged into your lab's Distributed Cloud Tenant and have completed Lab 1.
 
-.. warning::
    If you are experiencing issues accessing the Distributed Cloud Tenant, please alert one of
    the Lab Assistants.
 
@@ -43,8 +39,8 @@ AWS on port 80, and all other ports must be blocked.
 * You will create network segments to isolate these environments
 
 .. note::
-   The Data Center backend has a pre-existing route to x.x.x.x/24 pointing to the Data Center 
-   CE Node. The AWS workload has a route to x.x.x.x/24 pointing to the AWS CE Node.
+   The Data Center backend has a pre-configured route to 10.0.5.0/24 pointing to the Data Center 
+   CE Node. The AWS workload has a route to 10.1.10.0/24 pointing to the AWS CE Node.
 
 |lab001|
 
@@ -82,29 +78,25 @@ You will now create network segments for your UDF site.
 
 1. From the F5 Distributed Cloud Console, make sure you are still in **Multi-Cloud Network Connect**.
 
-2. In the left-hand menu, navigate to **Manage >> Networking >> Segments**.
+2. In the left-hand menu, navigate to **Manage >> Networking >> Segments**, click **Add Segment**.
 
 |lab002|
 
-3. Click **Add Segment**.
+3. Configure your segment then click **Add Segment**.
 
-**Create UDF Segment:**
-
-4. Configure your segment:
-
+   **Create UDF Segment:**
    ================================  ========================================
    Variable                          Value
    ================================  ========================================
-   Name                              [adjective-animal]-udf-sg
+   Name                              <your-namespace>-udf-sg
    Description                       Data Center (UDF) network segment
    Connect to Internet               Allow traffic from this segment to the Internet
    ================================  ========================================
 
    |lab003|
 
-5. Click **Add Segment**.
-
-6. For the purpose of this lab, the segment for AWS site has already been created and attached to the interface of the CE node in AWS. Verify the segment that you just created and note that there is zero site that's connected to the segment that you just created.
+4. For the purpose of this lab, the segment for AWS site (appworld-aws-segment) has already been created and attached to the interface of the CE node in AWS. Verify the segment that you just created and note that there is zero site that's connected to the segment that you just created.
+   
    |lab004|
 
    .. note::
@@ -116,32 +108,35 @@ Task 4: Attach Segment to Your CE Site
 
 Now you need to attach your UDF segment to your CE site's interface.
 
-7. Navigate to **Manage >> Site Management >> Secure Mesh Sites v2**.
+5. Navigate to **Manage >> Site Management >> Secure Mesh Sites v2**.
 
-8. Locate your UDF site (**[adjective-animal]**) and click the three dots under **Actions**.
+6. Locate your UDF site (**<your-namespace>-site**) and click the three dots under **Actions**.
 
-9. Select **Manage Configuration**.
+7. Select **Manage Configuration**.
 
    |lab005|
 
-10. Click **Edit Configuration** in the top right, 
+8. Click **Edit Configuration** in the top right, 
+    
     |lab006|
 
-11. Click **Edit** (the pencil icon) to edit the CE node.
+9. Click **Edit** (the pencil icon) to edit the CE node.
+
     |lab007|
 
-12. Click **Edit** (the pencil icon) to attach the segment to your node interface.
+10. Click **Edit** (the pencil icon) to attach the segment to your node interface. In this case, we are attaching the segment to the SLI interface and leaving the SLO interface untouched.
+   
     |lab008|
 
-13.Configure your interface:
+11.Configure your interface:
 
     IP Configuration:
    ================================  ========================================
    Variable                          Value
    ================================  ========================================
    IPv4 Interface Address Method     Static IP
-   IPv4 address/Prefix Length        10.0.10.10/24
-   Default Gateway                   10.0.10.1
+   IPv4 address/Prefix Length        10.1.10.10/24
+   Default Gateway                   10.1.10.1
    ================================  ========================================
 
     Interface Settings:
@@ -149,19 +144,19 @@ Now you need to attach your UDF segment to your CE site's interface.
    Variable                          Value
    ================================  ========================================
    Select VRF                        Segment (Global VRF)
-   Segment (Global VRF)              [adjective-animal]-udf-sg
+   Segment (Global VRF)              <your-namespace>-udf-sg
    ================================  ========================================
 
    |lab009| 
 
-14. **Apply** interface changes then **Apply** node configuration changes.
+12. **Apply** interface changes then **Apply** node configuration changes.
 
-15. Click **Save and Secure Mesh Site**.
+13. Click **Save and Secure Mesh Site**.
 
-17. Navigate back to **Manage >> Networking >> Segments** and find your segment 
-    **[adjective-animal]-udf-sg**.
+14. Navigate back to **Manage >> Networking >> Segments** and find your segment 
+    **<your-namespace>-udf-sg**.
 
-18. Verify that your site is now attached to the segment (you should see 1 site connected).
+15. Verify that your site is now attached to the segment (you should see 1 site connected).
 
     |lab010|
 
@@ -174,10 +169,10 @@ Task 5: Review Routing Information
 
 Let's examine the routing established by attaching the segment to the interface.
 
-19. Navigate to **Multi-Cloud Network Connect >> Infrastructure/Sites** and click on your 
-    **"adjective-animal-site"** site.
+16. Navigate to **Multi-Cloud Network Connect >> Infrastructure/Sites** and click on your 
+    **"<your-namespace>-site"** site.
 
-20. Click on the **CE Routes** menu on the top, right in the middle.
+17. Click on the **CE Routes** menu on the top, right in the middle.
 
 21. **Select Data** by choosing your node and the segment you just created, click **Apply**.
 
@@ -191,9 +186,9 @@ Let's verify there is currently no connectivity between the UDF and AWS environm
 22. From your UDF environment browser tab, click on **Access >> Web Shell** on the Ubuntu Client. 
     This opens a new tab with a Web Shell.
 
-23. The workload in AWS has IP address **x.x.x.x**
+23. The workload in AWS has IP address **10.0.5.253**
 
-24. Type **ping -O x.x.x.x** and press **Enter**. You **WILL NOT** get a response.
+24. Type **ping -O 10.0.5.253** and press **Enter**. You **WILL NOT** get a response.
 
     .. note::
        -O is the uppercase letter "O"

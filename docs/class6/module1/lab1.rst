@@ -78,9 +78,10 @@ Now let's examine the configuration that was automatically deployed for your CE 
    **Dashboard:**
    
    * **Site Health:** Should be 100% (green)
-   * **Site Status:** Both Data Plane and Control Plane should be **Online**
+   * **Site Status:** Both Data Plane and Control Plane should be **Up**
    * **Nodes:** You should have 1 Control Node and it should be up
    
+
    .. note::
       If your node is not yet online, give it a few minutes to finish provisioning.
       You can check the progress from the lab deployment status (access from ubuntu server 
@@ -96,7 +97,7 @@ Now let's examine the configuration that was automatically deployed for your CE 
    
    .. important::
       Your CE node must be fully provisioned and **Online** before proceeding to Lab 2.
-      If the health score is not 100% or the state is not "Online", please alert a Lab Assistant.
+      If the health score is not 100% or the state is not online, please alert a Lab Assistant.
 
 Task 4: What Happens During CE Deployment
 ------------------------------------------
