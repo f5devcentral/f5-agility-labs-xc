@@ -55,6 +55,7 @@ Task 1: Discover Your Animal (Namespace)
 |                                                                                              |
 |.. note:: You may have had a namespace from a previous lab, pleased update with the new.      |
 +----------------------------------------------------------------------------------------------+
+
 .. raw:: html
 
    <div style="margin: 1em 0; padding: 1em; border: 0px solid #ccc;">
@@ -66,7 +67,6 @@ Task 1: Discover Your Animal (Namespace)
    <p><strong>Current namespace:</strong> <span id="currentNamespace">&lt;namespace&gt;</span></p>
 
 .. note:: Guide pages might need to be refreshed to get updated namespace to render.
-
 
 Task 2: Exploring the F5 Distributed Console
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -141,7 +141,7 @@ Task 2: Exploring the F5 Distributed Console
 |8. Using your web browser, access the application via the F5 XC FQDN. Click on                |
 |   **Menu > Header**                                                                          |  
 |                                                                                              |
-|9. Note that the Remote Address has changed as well as the presence of a new X-Forwarded-For |
+|9. Note that the Remote Address has changed as well as the presence of a new X-Forwarded-For  |
 |    header. The client information should have changed as you are now connecting first through|
 |    the F5 ADN Regional Edge before being proxied to the application running the ACME Corp.   |
 |    environment. X-Forwarded-For details should match your workstation's IP address.          |
