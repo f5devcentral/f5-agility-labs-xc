@@ -139,9 +139,8 @@ Task 2: Exploring the F5 Distributed Console
 |                                                                                              |
 ||lab011|                                                                                      |
 |                                                                                              |
-|8. Using your web browser, access the application via the F5 XC FQDN:                         |
-|   https://<your-namespace>.lab-sec.f5demos.com                                               |
-|   Click on **Menu > Header**                                                                 |
+|8. Using your web browser, access the application via the F5 XC FQDN. Click on                |
+|   **Menu > Header**                                                                          |
 |                                                                                              |
 |9. Note that the Remote Address has changed as well as the presence of a new X-Forwarded-For  |
 |    header. The client information should have changed as you are now connecting first through|
@@ -519,20 +518,20 @@ also further customize the WAF policy just built to add a custom block response 
 |   <html style="margin: 0;"><head><title>Rejected Request</title></head>                      |
 |   <body style="margin : 0;">                                                                 |
 |   <div style="background-color: #046b99; height: 40px; width: 100%;"></div>                |
-|   <div style="min-height: 100px; background-color: white; text-align: center;"></div>        |
+|   <div style="min-height: 100px; background-color: white; text-align: center;"></div>          |
 |   <div style="background-color: #fdb81e; height: 5px; width: 100%;"></div>                 |
-|   <div id="main-content" style="width: 100%; ">                                              |
+|   <div id="main-content" style="width: 100%; ">                                                |
 |   <table width="100%"><tr><td style="text-align: center;">                                   |
 |   <div style="margin-left: 50px;">                                                           |
 |   <div style="margin-bottom: 35px;"><br/>                                                    |
 |   <span style="font-size: 40pt; color: #046b99;">Rejected Request</span>                   |
-|   </div><div style="font-size: 14pt;">                                                       |
+|   </div><div style="font-size: 14pt;">                                                         |
 |   <p>The requested URL was rejected. Please consult with your administrator.</p>             |
 |   <p>Your Support ID is: <span style="color:red; font-weight:bold">{{request_id}}</span>     |
 |   </p>                                                                                       |
 |   <p><a href="javascript:history.back()">[Go Back]</a></p>                                   |
 |   </div></div></td></tr></table></div>                                                       |
-|   <div style="background-color: #222222; position: fixed; bottom: 0px; height: 40px;       |
+|   <div style="background-color: #222222; position: fixed; bottom: 0px; height: 40px;         |
 |   width: 100%; text-align: center;"></div>                                                   |
 |   </body></html>                                                                             |
 |                                                                                              |
