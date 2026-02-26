@@ -506,13 +506,12 @@ also further customize the WAF policy just built to add a custom block response 
 |10. In the **Blocking Response Page Body** replace the existing text with the text provided   |
 |    below. Click **Save App Firewall** when completed.                                        |
 |                                                                                              |
-+----------------------------------------------------------------------------------------------+
-+----------------------------------------------------------------------------------------------+
 ||lab055|                                                                                      |
 |                                                                                              |
-|Sample Blocking Response Page to be copied:                                                   |
-|                                                                                              |
 +----------------------------------------------------------------------------------------------+
+
+Sample Blocking Response Page to be copied:
+
 .. code:: HTML
                   
    <style>body { font-family: Source Sans Pro, sans-serif; }</style>
