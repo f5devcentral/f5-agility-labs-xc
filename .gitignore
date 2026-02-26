@@ -9,3 +9,5 @@ terraform.tfstate*
 *.swp
 .virtualenv
 docs/_build
+temp_class10_files/
+.venv/

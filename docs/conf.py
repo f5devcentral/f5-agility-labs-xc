@@ -158,7 +158,7 @@ release = ""
 #
 # This is also used if you do content translation via gettext catalogs.
 # Usually you set "language" from the command line for these cases.
-language = None
+language = "en"
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
@@ -201,6 +201,11 @@ extlinks = {"issues": (("%s/issues/%%s" % github_repo), "issue ")}
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ["_static"]
+
+# -- Custom Java Script --------------------------------------------------
+# Register a custom JavaScript file for all Sphinx HTML pages.
+def setup(app):
+    app.add_js_file('xc-ns-store.js')
 
 
 # -- Options for HTMLHelp output ------------------------------------------

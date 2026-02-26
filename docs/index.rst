@@ -1,5 +1,5 @@
-F5 Appworld Labs Getting Started Doc
-===================================
+F5 AppWorld Labs Getting Started Doc
+====================================
 
 Welcome to the |classbold| for F5 Appworld |year|
 

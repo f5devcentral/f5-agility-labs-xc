@@ -1,34 +1,60 @@
-Module 4: Monitoring Operating System Metrics with MQTT and Grafana
-===================================================================
+Module 4 – Web App Scanning & Conclusion
+=========================================
 
-**Overview**
+Narrative
+---------
 
-This lab will demonstate leveraging vk8s to deploy a workload distributed across the globe, and managed as a single application.
++----------------------------------------------------------------------------------------------+
+| **“Proof beats promises”**                                                                   |
+|                                                                                              |
+| At the end of the sprint, leadership asks the question everyone asks:                        |
+|                                                                                              |
+|   “Are we actually more secure?”                                                             |
+|                                                                                              |
+| Instead of opinions, you show **evidence**.                                                  |
+|                                                                                              |
+| You compare:                                                                                 |
+|                                                                                              |
+| * The app *before* protections                                                               |
+| * The app *after* protections                                                                |
+|                                                                                              |
+| Same code. Same team. Very different outcomes.                                               |
+|                                                                                              |
+| Riley smiles—not because everything is blocked, but because everything is **measured**.      |
+|                                                                                              |
+| |Module_4_story|                                                                             |
++----------------------------------------------------------------------------------------------+
 
-To demonstate this capability, we will be deploying is MQTT broker in US East, US West, and Europe.
+**What this module is really about**
+------------------------------------
 
-For this lab exercise we will leveage bash script running on a Jumphost to publish data to collect, and publish system metrics. Data from each region will then be visualized on a Grafana dashboard.
+* DAST as **feedback**, not fear
+* Validation of:
+    * WAF effectiveness
+    * API protections
+    * Bot mitigation
+* Closing the loop: **Code. Secure. Repeat.**
 
-**What is MQTT?**
-  Overview
-    The MQTT protocol defines two types of network entities: a message broker and a number of clients. An MQTT broker is a server that receives all messages from the clients and then routes the messages to the appropriate destination clients. An MQTT client is any device (from a micro controller up to a fully-fledged server) that runs an MQTT library and connects to an MQTT broker over a network.
+**Real-world takeaway**
+-----------------------
 
-    Information is organized in a hierarchy of topics. When a publisher has a new item of data to distribute, it sends a control message with the data to the connected broker. The broker then distributes the information to any clients that have subscribed to that topic. The publisher does not need to have any data on the number or locations of subscribers, and subscribers, in turn, do not have to be configured with any data about the publishers.
-    Source: Wikipedia (https://en.wikipedia.org/wiki/MQTT)
+This is what mature DevSecOps looks like:
 
-    MQTT is commonly used in IoT applications to collect and publish data from sensors and other devices. You may even be running it as part of your home automation system.
+* AI accelerates development
+* Pipelines enforce intent
+* Runtime security adapts
+* Scanning validates reality
 
-**Lab Topology**
+No silver bullets. Just a loop that gets better every time.
 
-.. image:: ../images/labdiagram.png
-  :width: 400pt
-
-**Expected Outcome**
-
-By the end of this lab exercise, participants will have used F5 Distrubuted Cloud and three globally distributed MQTT brokers and demonstation a working setup that continuously monitors and displays system metrics on a Grafana dashboard.
+Module 4 Tasks:
+---------------
 
 .. toctree::
    :maxdepth: 1
    :glob:
 
-   lab*
+   task*
+
+.. |Module_4_story| image:: ../images/module4/Module_4_story.png
+   :width: 800px
