@@ -66,7 +66,7 @@ Task 1: Discover Your Animal (Namespace)
    <p><strong>Current namespace:</strong> <span id="currentNamespace">&lt;namespace&gt;</span></p>
 
 .. note:: You may have had a namespace from a previous lab, pleased update with the new. 
-.. note:: Guide pages might need to be refreshed to get updated namespace to render.
+.. warning:: Guide pages might need to be refreshed to get updated namespace to render.
 
 
 Task 2: Exploring the F5 Distributed Console
