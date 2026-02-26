@@ -19,7 +19,12 @@ Your lab environment has been pre-configured and includes the following key comp
 * **F5 Distributed Cloud Console** - SaaS-based management interface
 * **F5 Distributed Cloud Global Network** - Globally distributed application delivery
 * **Customer Edge (CE) Node** - Pre-deployed in your lab environment (onsite UDF, Azure, AWS)
+   * The **Data Center** environment is emulated by the **F5 UDF** (Unified Demo Framework) and contains an Ubuntu Server and a Distributed Cloud CE (Customer Edge) Node that has been pre-configured and registered. 
+   * The **AWS cloud environment** contains a prebuilt XC Node and a workload hosting a web frontend.  **You will not have access to the AWS console.**
+   * The **Azure cloud environment** contains a prebuilt XC Node and a workload hosting a web frontend.  **You will not have access to the Azure console.**
 * **Cloud-hosted Applications** - Sample applications for testing connectivity
+
+.. Important:: While we are keeping the labs intentionally simple today with just a single Data Center and 2 Cloud Services Providers (CSP's), F5 Distributed Cloud supports much more advanced use-cases. 
 
 The diagram below shows how these components work together:
 
@@ -65,6 +70,10 @@ throughout the lab tasks that follow:
 
    |intro004|
 
+   .. note:: 
+   You can adjust your work domains and skill level (not required) by clicking on the 
+   **Account** icon in the top right of the screen and then clicking on **Account Settings**.
+
 Task 2: Locate Your Namespace
 ------------------------------
 
@@ -94,11 +103,7 @@ Before continuing with the lab, please update your namespace to dynamically upda
    <p><strong>Current namespace:</strong> <span id="currentNamespace">&lt;namespace&gt;</span></p>
 
 .. note:: 
-   Guide pages might need to be refreshed to get updated namespace to render.
-
-.. note:: 
-   You can adjust your work domains and skill level (not required) by clicking on the 
-   **Account** icon in the top right of the screen and then clicking on **Account Settings**.
+   Lab guides might need to be refreshed to get updated namespace to render.
 
 .. |intro001| image:: _static/intro-001.png
    :width: 800px
