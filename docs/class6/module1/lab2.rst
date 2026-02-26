@@ -223,7 +223,7 @@ Now let's create a segment connector to enable communication between your UDF se
     ================================  ========================================
     Variable                          Value
     ================================  ========================================
-    Source Segment                    [adjective-animal]-udf-sg
+    Source Segment                    <your-namespace>-udf-sg
     Destination Segment               appworld-aws-segment
     Type                              Direct
     ================================  ========================================
@@ -256,27 +256,27 @@ Task 9: Review Routing Information
 
 .. |lab001| image:: ../images/temp/lab2/placeholder_pics.jpg
    :width: 800px
-.. |lab002| image:: ../images/temp/lab2/lab002 Add Segment.png
+.. |lab002| image:: ../images/temp/lab2/lab2pic2.png
    :width: 800px
-.. |lab003| image:: ../images/temp/lab2/lab003 add segment.png
+.. |lab003| image:: ../images/temp/lab2/lab2pic3.png
    :width: 800px
-.. |lab004| image:: ../images/temp/lab2/lab004 no connected site.png
+.. |lab004| image:: ../images/temp/lab2/lab2pic4.png
    :width: 800px
-.. |lab005| image:: ../images/temp/lab2/lab005 manage configuration.png
+.. |lab005| image:: ../images/temp/lab2/lab2pic5.png
    :width: 800px
-.. |lab006| image:: ../images/temp/lab2/lab006 edit configuration.png
+.. |lab006| image:: ../images/temp/lab2/lab2pic6.png
    :width: 800px
-.. |lab007| image:: ../images/temp/lab2/lab007 edit node.png
+.. |lab007| image:: ../images/temp/lab2/lab2pic7.png
    :width: 800px
-.. |lab008| image:: ../images/temp/lab2/lab008 edit interface.png
+.. |lab008| image:: ../images/temp/lab2/lab2pic8.png
    :width: 800px
-.. |lab009| image:: ../images/temp/lab2/lab009 attaching segment.png
+.. |lab009| image:: ../images/temp/lab2/lab2pic9.png
    :width: 800px
-.. |lab010| image:: ../images/temp/lab2/lab010 verify that the site is attached.png
+.. |lab010| image:: ../images/temp/lab2/lab2pic10.png
    :width: 800px
-.. |lab011| image:: ../images/temp/lab2/placeholder_pics.jpg
+.. |lab011| image:: ../images/temp/lab2/lab2pic11.png
    :width: 800px
-.. |lab012| image:: ../images/temp/lab2/placeholder_pics.jpg
+.. |lab012| image:: ../images/temp/lab2/lab2pic12.png
    :width: 800px
-.. |lab013| image:: ../images/temp/lab2/placeholder_pics.jpg
+.. |lab013| image:: ../images/temp/lab2/lab2pic13.png
    :width: 800px

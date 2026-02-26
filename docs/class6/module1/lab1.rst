@@ -54,6 +54,24 @@ clicking on the account on the top right corner.
 
 |lab004|
 
+**Preparation**
+-----------
+
+Before continuing with the lab, please update your namespace to dynamically update the guide.
+
+.. raw:: html
+
+   <div style="margin: 1em 0; padding: 1em; border: 0px solid #ccc;">
+     <label for="namespaceInput">Enter your namespace:</label>
+     <input id="namespaceInput" type="text" placeholder="e.g. sassy-panda" />
+     <button onclick="setNamespace()">Save</button>
+   </div>
+
+   <p><strong>Current namespace:</strong> <span id="currentNamespace">&lt;namespace&gt;</span></p>
+
+.. note:: Guide pages might need to be refreshed to get updated namespace to render.
+
+
 3. Using the left-hand navigation, from the **Manage** section, click on **Site Management**, 
    then select **Secure Mesh Sites v2**.
 
@@ -153,21 +171,21 @@ these sites.
 
 .. |lab001| image:: ../images/temp/lab1/placeholder_pics.jpg
    :width: 800px
-.. |lab002| image:: ../images/temp/lab1/lab002MultiCloudNetworkConnect.png
+.. |lab002| image:: ../images/temp/lab1/lab1pic2.png
    :width: 800px
-.. |lab003| image:: ../images/temp/lab1/lab003 Multi Cloud Network Connect.png
+.. |lab003| image:: ../images/temp/lab1/lab1pic3.png
    :width: 800px
-.. |lab004| image:: ../images/temp/lab1/lab004 namespace.png
+.. |lab004| image:: ../images/temp/lab1/lab1pic4.png
    :width: 800px
-.. |lab005| image:: ../images/temp/lab1/lab005 Site Management.png
+.. |lab005| image:: ../images/temp/lab1/lab1pic5.png
    :width: 800px
-.. |lab006| image:: ../images/temp/lab1/lab006 search for site.png
+.. |lab006| image:: ../images/temp/lab1/lab1pic6.png
    :width: 800px
-.. |lab007| image:: ../images/temp/lab1/lab007 site dashboard.png
+.. |lab007| image:: ../images/temp/lab1/lab1pic7.png
    :width: 800px
-.. |lab008| image:: ../images/temp/lab1/lab008 udf lab status.png
+.. |lab008| image:: ../images/temp/lab1/lab1pic8.png
    :width: 800px
-.. |lab009| image:: ../images/temp/lab1/lab009 udf lab status.png
+.. |lab009| image:: ../images/temp/lab1/lab1pic9.png
    :width: 800px
 .. |lab010| image:: ../images/temp/lab1/placeholder_pics.jpg
    :width: 800px
