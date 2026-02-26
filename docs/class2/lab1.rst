@@ -77,7 +77,7 @@ Before starting the course, update your namespace to dynamically update the guid
 .. note:: Guide pages might need to be refreshed to get updated namespace to render.
 
 +----------------------------------------------------------------------------------------------+   
-|       |                                                                                       |
+|                                                                                              |
 |3. In the resulting screen expand the Actions Menu and click **Manage Configuration** for     |
 |   the origin pool configured in your namespace. Here you will see the origin server public   |
 |   FQDN of the application running in ACME's Azure environment.  Copy the domain name so you  |
