@@ -20,7 +20,8 @@ many of these bots designed to be point-and-click tools.  With tools like these,
 create an army of bots to do their work for them.  So your first goal is to identify these malicious
 bots and block them.  
 
-https://www.f5.com/glossary/credential-stuffing-attack
+.. note::  
+   Additional Details: https://www.f5.com/glossary/credential-stuffing-attack
 
 .. note::                                                                                  
    **Expected Lab Time: 25 minutes**
@@ -136,7 +137,7 @@ and understand its implementation.
 |1. Open another tab in your browser (Chrome shown), navigate to your application/Load Balancer|
 |   configuration:                                                                             |
 |                                                                                              |
-|   **https://<namespace>.lab-sec.f5demos.com**.  This will follow the adjective-animal format.|
+|   **https://<your-namespace>.lab-sec.f5demos.com**.  This will follow the adjective-animal format.|
 |                                                                                              |
 |2. Enable developer tools (Chrome shown (use F12)) and click on the **Network** tab.          |
 |                                                                                              |
