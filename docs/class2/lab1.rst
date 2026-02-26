@@ -54,10 +54,6 @@ Task 1: Discover Your Animal (Namespace)
 |   guide, the namespace is pet-walrus. Your namespace will be different.                      |
 |                                                                                              |
 ||lab001b|                                                                                     |
-|                                                                                              |
-|   Before continuing, update the namespace field below with you updated namespace.            |
-|                                                                                              |
-|.. note:: You may have had a namespace from a previous lab, pleased update with the new.      |
 +----------------------------------------------------------------------------------------------+
 .. raw:: html
 
@@ -69,6 +65,7 @@ Task 1: Discover Your Animal (Namespace)
 
    <p><strong>Current namespace:</strong> <span id="currentNamespace">&lt;namespace&gt;</span></p>
 
+.. note:: You may have had a namespace from a previous lab, pleased update with the new. 
 .. note:: Guide pages might need to be refreshed to get updated namespace to render.
 
 
