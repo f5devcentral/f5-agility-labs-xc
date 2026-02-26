@@ -72,7 +72,7 @@ Before starting the course, update your namespace to dynamically update the guid
      <button onclick="setNamespace()">Save</button>
    </div>
 
-   <p><strong>Current namespace:</strong> <span id="currentNamespace">&lt;namespace&gt;</span></p>
+   <p><strong>Current namespace:</strong><span id="currentNamespace">&lt;namespace&gt;</span></p>
 
 .. note:: Guide pages might need to be refreshed to get updated namespace to render.
 
@@ -123,6 +123,13 @@ Before starting the course, update your namespace to dynamically update the guid
 |   the name of your provisioned namespace.  Note the FQDN of the F5 XC load balancer.         |
 |                                                                                              |                                                
 |   * **Metadata**  *<namespace>-lb*                                                           |
+|                                                                                              |
++----------------------------------------------------------------------------------------------+
+
+.. raw:: html
+   <p><strong>URL:</strong><span id="currentNamespace">https://&lt;namespace&gt;/lab-sec-f5demos.com</span></p>
+
++----------------------------------------------------------------------------------------------+
 |   * **Domains and LB Type**  *<namespace>.lab-sec.f5demos.com*                               |
 |   * **Other Settings** VIP Advertisement                                                     |
 |                                                                                              |
