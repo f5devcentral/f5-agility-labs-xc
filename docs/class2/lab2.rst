@@ -73,7 +73,7 @@ Cloud Console.
 |                                                                                              |
 |.. code:: BASH                                                                                |
 |                                                                                              |
-|   curl -v https://<namespace>.lab-sec.f5demos.com                                            |
+|   curl -v https://<your-namespace>.lab-sec.f5demos.com                                       |
 |                                                                                              |
 |10. Observe the **User Agent** and response content.                                          |
 |                                                                                              |
@@ -171,8 +171,8 @@ Let’s explore how an attacker could perform credential stuffing attacks by usi
 
 .. code:: BASH                                                                            
 
-   curl -v https://<namespace>.lab-sec.f5demos.com/auth.php -H "Content-Type: application/x-www-form-urlencoded" --user-agent "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.2.1 Safari/605.1.15" --data-raw "identity=user%40f5.com&token=password&submit=Submit"
-   
+   curl -v https://<your-namespace>.lab-sec.f5demos.com/auth.php -H "Content-Type: application/x-www-form-urlencoded" --user-agent "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.2.1 Safari/605.1.15" --data-raw "identity=user%40f5.com&token=password&submit=Submit"
+
 +----------------------------------------------------------------------------------------------+
 |                                                                                              |
 |For this application, a successful logon will have a 302 response to the                      |
@@ -270,14 +270,11 @@ Let’s explore how an attacker could perform credential stuffing attacks by usi
 Will F5 Distributed Cloud Bot Defense will prevent curl initiated logon requests and its ability 
 to perform credential stuffing attacks? Let’s find out. Re-run our previously successful logon attempt:
 
+.. code:: BASH
+
+   curl -v http://<your-namespace>.lab-sec.f5demos.com/auth.php -H "Content-Type: application/x-www-form-urlencoded" --user-agent "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.2.1 Safari/605.1.15" --data-raw "identity=user%40f5.com&token=password&submit=Submit"
+   
 +----------------------------------------------------------------------------------------------+
-|                                                                                              |
-|.. code:: BASH                                                                                |
-|                                                                                              |
-|   curl -v http://<namespace>.lab-sec.f5demos.com/auth.php -H "Content-Type:                  |
-|   application/x-www-form-urlencoded" --user-agent "Mozilla/5.0 (Macintosh;                   |
-|   Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.2.1            |
-|   Safari/605.1.15" --data-raw "identity=user%40f5.com&token=password&submit=Submit"          |
 |                                                                                              |
 |As you can see, instead of signaling to a potential attacker that they have a good or bad     |
 |password, we have prevented the would-be attacker from programmatically testing accounts.     |
