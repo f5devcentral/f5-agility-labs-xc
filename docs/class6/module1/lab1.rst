@@ -18,8 +18,8 @@ architecture and configuration rather than spending time on initial deployment.
 
 |lab001|
 
-**Prerequisite**
-----------------
+Prerequisite
+------------
 
 .. note::
    You should already be logged into your lab's Distributed Cloud Tenant. If not, review the
@@ -49,17 +49,18 @@ Task 2: Locate Your Customer Edge Node
 ---------------------------------------
 
 Each lab attendee has been assigned a unique Customer Edge node following the **<adjective-animal>**
-naming convention identified in the lab introduction. If you haven't already done this in the Introduction: Accessing Lab Resources. You can find your assigned namespace by 
-clicking on the account on the top right corner.
+naming convention identified in the lab introduction. If you haven't already done this in the 
+Introduction: Accessing Lab Resources, you can find your assigned namespace by clicking on the 
+account icon on the top right corner.
 
 |lab004|
 
-3. Using the left-hand navigation, from the **Manage** section, click on **Site Management**, 
+3. Using the left-hand navigation, from the **Manage** section, click on **Site Management**,
    then select **Secure Mesh Sites v2**.
 
    |lab005|
 
-4. You will see all Secure Mesh Sites v2 (SMSv2) in the list that are in this tenant. Use the 
+4. You will see all Secure Mesh Sites v2 (SMSv2) in the list that are in this tenant. Use the
    **Search** box to filter by your namespace name (**<your-namespace>**).
 
    |lab006|
@@ -76,25 +77,24 @@ Now let's examine the configuration that was automatically deployed for your CE 
 6. Verify your CE node status:
 
    **Dashboard:**
-   
+
    * **Site Health:** Should be 100% (green)
    * **Site Status:** Both Data Plane and Control Plane should be **Up**
    * **Nodes:** You should have 1 Control Node and it should be up
-   
 
    .. note::
       If your node is not yet online, give it a few minutes to finish provisioning.
-      You can check the progress from the lab deployment status (access from ubuntu server 
+      You can check the progress from the lab deployment status (access from Ubuntu server
       in your UDF deployment).
-   
+
    |lab008|
-   
+
    |lab009|
-   
+
    .. note::
       In production environments, the best practice is to deploy a 3-node cluster for high
       availability. For this lab, a single-node deployment is sufficient.
-   
+
    .. important::
       Your CE node must be fully provisioned and **Online** before proceeding to Lab 2.
       If the health score is not 100% or the state is not online, please alert a Lab Assistant.
@@ -108,7 +108,7 @@ Let's review what was automatically configured in your lab environment:
 
 While you didn't perform these steps in this lab, here's what occurs during a typical CE deployment:
 
-1. **Download & Deploy:** Download the CE image then deployed on your chosen platform
+1. **Download & Deploy:** Download the CE image then deploy it on your chosen platform
 2. **Create Secure Mesh Site:** Create a secure mesh site in F5 Distributed Cloud Console
 3. **Registration:** Node registers with F5 Distributed Cloud
 4. **Provisioning:** Node downloads its configuration and establishes connectivity
@@ -139,9 +139,9 @@ Lab Summary
 
 You now have a fully operational multi-cloud network infrastructure with CE nodes deployed in:
 
-* **On-Premises:** UDF data center (your "corporate" location)
-* **AWS Cloud:** AWS (your "cloud" location)
-* **Azure Cloud:** Azure (your "cloud" location)
+* **On-Premises:** UDF Data Center
+* **AWS Cloud**
+* **Azure Cloud**
 
 In the next lab, you'll configure Network Connect to establish secure connectivity between
 these sites.
