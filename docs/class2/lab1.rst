@@ -47,13 +47,13 @@ Task 1: Discover Your Animal (Namespace)
 |1. Following the **Introduction** section instructions, you should now be on the Home page    |
 |   of the F5 Distributed Cloud Console. Select **Web App & API Protection**.                  |
 |                                                                                              |
+||lab001|                                                                                      |
+|                                                                                              |
 |2. On the **Web App & API Protection** page, note the identifier of your namespace (top left  |
 |   area of the page). The namespace will follow a format of *adjective-animal*. In this       |
 |   guide, the namespace is pet-walrus. Your namespace will be different.                      |
 |                                                                                              |
-|   Before continuing, update the namespace field below with you updated namespace.            |
-|                                                                                              |
-|.. note:: You may have had a namespace from a previous lab, pleased update with the new.      |
+||lab001b|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 .. raw:: html
@@ -66,7 +66,8 @@ Task 1: Discover Your Animal (Namespace)
 
    <p><strong>Current namespace:</strong> <span id="currentNamespace">&lt;namespace&gt;</span></p>
 
-.. note:: Guide pages might need to be refreshed to get updated namespace to render.
+.. note:: You may have had a namespace from a previous lab, pleased update with the new. 
+.. warning:: Guide pages might need to be refreshed to get updated namespace to render.
 
 Task 2: Exploring the F5 Distributed Console
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -94,7 +95,7 @@ Task 2: Exploring the F5 Distributed Console
 ||lab004|                                                                                      |
 |                                                                                              |
 |3. Using your browser, visit this application directly utilizing its public FQDN. Select the  |
-|   **Menu** on the top right-hand side and select **Header**.                                 |   
+|   **Menu** on the top right-hand side and select **Header**.                                 |
 |                                                                                              |
 |4. Note the Remote Address field. This will match the IP address of your workstation. You can |
 |   verify that it matches by looking up your IP address at https://ipinfo.io/ or              |
@@ -126,7 +127,7 @@ Task 2: Exploring the F5 Distributed Console
 |7. Using the left-hand navigation and in the sections as shown, review the following data.    |
 |   Values where **<your-namespace>** *adjective-animal* is represented, the configuration will|
 |   be the name of your provisioned namespace.  Note the FQDN of the F5 XC load balancer.      |
-|                                                                                              |                                                
+|                                                                                              |
 |   * **Metadata**  *<your-namespace>-lb*                                                      |
 |   * **Domains and LB Type**  *<your-namespace>.lab-sec.f5demos.com*                          |
 |   * **Other Settings** VIP Advertisement                                                     |
@@ -139,7 +140,7 @@ Task 2: Exploring the F5 Distributed Console
 ||lab011|                                                                                      |
 |                                                                                              |
 |8. Using your web browser, access the application via the F5 XC FQDN. Click on                |
-|   **Menu > Header**                                                                          |  
+|   **Menu > Header**                                                                          |
 |                                                                                              |
 |9. Note that the Remote Address has changed as well as the presence of a new X-Forwarded-For  |
 |    header. The client information should have changed as you are now connecting first through|
@@ -560,6 +561,8 @@ A brief presentation will be shared prior to the beginning of Lab 2.
 
 
 .. |lab001| image:: _static/lab1-001.png
+   :width: 800px
+.. |lab001b| image:: _static/lab1-0014b.png
    :width: 800px
 .. |lab002| image:: _static/lab1-002.png
    :width: 800px
