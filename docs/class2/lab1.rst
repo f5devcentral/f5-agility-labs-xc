@@ -549,7 +549,7 @@ Narrative Check
 -----------------
 You have now completed your first WAF policy deployment on F5 XC. This policy can be re-used for
 other applications in the ACME environment and the exclusions you configured are only applied to this specific 
- application.  New applications that utilize the WAF policy configured will not have these exclusions
+application. New applications that utilize the WAF policy configured will not have these exclusions
 allowing you to quickly scale and manage exlusions on a per application basis while the policy can stay the same.
 
 **End of Lab 1:**  This concludes Lab 1, feel free to review and test the
