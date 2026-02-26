@@ -38,12 +38,12 @@ and proceed to Task 1.
 
 ~~~~~~~~~~
 
-Task 1: Exploring the F5 Distributed Console
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Task 1: Discover Your Animal (Namespace)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 +----------------------------------------------------------------------------------------------+
-|The following steps will allow you to review the XC Load Balancer that was deployed and is    |
-|currently advertising a globally available application. These steps will allow you to review  |
-|the application, its DNS entry and the application target that is configured as the origin.   |
+|The following steps will help you identify your namespace and update your lab guide           |
+|to reflect your namespace dynamically.                                                        |
 |                                                                                              |
 |1. Following the **Introduction** section instructions, you should now be on the Home page.   |
 |   of the F5 Distributed Cloud Console.  Let's first review the F5 Distributed Load Balancer  |
@@ -51,18 +51,12 @@ Task 1: Exploring the F5 Distributed Console
 |                                                                                              |
 |2. On the **Web App & API Protection** page, note the identifier of your namespace (top left  |
 |   area of the page). The namespace will follow a format of *adjective-animal*. In this       |
-|   guide, the namespace is pet-walrus. Your namespace will be different.  In the left-hand    |
-|   navigation expand **Manage** and click **Load Balancers > Origin Pools**                   |
+|   guide, the namespace is pet-walrus. Your namespace will be different.                      |
 |                                                                                              |
-||lab001|                                                                                      |
+|   Before continuing, update the namespace field below with you updated namespace.            |
 |                                                                                              |
-||lab002|                                                                                      |
-|                                                                                              |
+|.. note:: You may have had a namespace from a previous lab, pleased update with the new.      |
 +----------------------------------------------------------------------------------------------+
-Lab Guide Namespace Update
-~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Before starting the course, update your namespace to dynamically update the guide.
 
 .. raw:: html
 
@@ -72,11 +66,24 @@ Before starting the course, update your namespace to dynamically update the guid
      <button onclick="setNamespace()">Save</button>
    </div>
 
-   <p><strong>Current namespace:</strong><span id="currentNamespace">&lt;namespace&gt;</span></p>
+   <p><strong>Current namespace:</strong> <span id="currentNamespace">&lt;namespace&gt;</span></p>
 
 .. note:: Guide pages might need to be refreshed to get updated namespace to render.
 
-+----------------------------------------------------------------------------------------------+   
+
+Task 2: Exploring the F5 Distributed Console
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
++----------------------------------------------------------------------------------------------+
+|The following steps will allow you to review the XC Load Balancer that was deployed and is    |
+|currently advertising a globally available application. These steps will allow you to review  |
+|the application, its DNS entry and the application target that is configured as the origin.   |
+|                                                                                              |
+|2. On the **Web App & API Protection** page, left-hand navigation expand                      |
+|  **Manage** and click **Load Balancers > Origin Pools**                                      |
+|                                                                                              |
+||lab001|                                                                                      |
+|                                                                                              |
+||lab002|                                                                                      |
 |                                                                                              |
 |3. In the resulting screen expand the Actions Menu and click **Manage Configuration** for     |
 |   the origin pool configured in your namespace. Here you will see the origin server public   |
@@ -119,12 +126,11 @@ Before starting the course, update your namespace to dynamically update the guid
 |                                                                                              |
 |                                                                                              |
 |8. Using the left-hand navigation and in the sections as shown, review the following data.    |
-|   Values where **<namespace>** *adjective-animal* is represented, the configuration will be  |
-|   the name of your provisioned namespace.  Note the FQDN of the F5 XC load balancer.         |
+|   Values where **<your-namespace>** *adjective-animal* is represented, the configuration will|
+|   be the name of your provisioned namespace.  Note the FQDN of the F5 XC load balancer.      |
 |                                                                                              |                                                
-|   * **Metadata**  *<namespace>-lb*                                                           |
-|                                                                                              |
-|   * **Domains and LB Type**  *<namespace>.lab-sec.f5demos.com*                               |
+|   * **Metadata**  *<your-namespace>-lb*                                                      |
+|   * **Domains and LB Type**  *<your-namespace>.lab-sec.f5demos.com*                          |
 |   * **Other Settings** VIP Advertisement                                                     |
 |                                                                                              |
 |   .. note::                                                                                  |
@@ -148,7 +154,7 @@ Before starting the course, update your namespace to dynamically update the guid
 |                                                                                              |
 +----------------------------------------------------------------------------------------------+
 
-Task 2: Configure WAF Policy on the Load Balancer
+Task 3: Configure WAF Policy on the Load Balancer
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +----------------------------------------------------------------------------------------------+
@@ -171,7 +177,7 @@ Task 2: Configure WAF Policy on the Load Balancer
 |   applied to* *multiple Load Balancer configurations across namespaces,                      |
 |   reducing policy sprawl.*                                                                   |
 |                                                                                              |
-|3. In the new window's **Metadata** section enter **<namespace>-appfw** for the               |
+|3. In the new window's **Metadata** section enter **<your-namespace>-appfw** for the          |
 |   **Name**.                                                                                  |
 |                                                                                              |
 |4. Under **Enforcement Mode**, change the mode to **Blocking**.                               |
@@ -224,7 +230,7 @@ on F5 Distributed Cloud, we can start getting our hands dirty with testing to en
 application is protected.  
 
 
-Task 3: Testing the WAF Policy & Reviewing Event Data
+Task 4: Testing the WAF Policy & Reviewing Event Data
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 You will now perform basic testing of the Web Application Firewall (WAF)
@@ -233,8 +239,8 @@ configuration changes.
 
 +----------------------------------------------------------------------------------------------+
 |1. Open another tab in your browser (Chrome shown), navigate to the newly                     |
-|   configured Load  Balancer configuration: **http://<namespace>.lab-sec.f5demos.com**, to    |
-|   confirm it is functional.                                                                  |
+|   configured Load  Balancer configuration: **http://<your-namespace>.lab-sec.f5demos.com**,  |
+|   to confirm it is functional.                                                               |
 |                                                                                              |
 |2. Using some of the sample attacks below, add the URI path & variables to your               |
 |   application to generate security event data.                                               |
@@ -338,7 +344,7 @@ The ACME application is now being successfully protected by F5 Distributed Cloud
 |                                                                                              |
 ||lab034|                                                                                      |
 |                                                                                              |
-|14. Scroll to **Load Balancers** section and click the **<namespace>-lb** object.             |
+|14. Scroll to **Load Balancers** section and click the **<your-namespace>-lb** object.        |
 |                                                                                              |
 ||lab035|                                                                                      |
 |                                                                                              |
@@ -450,7 +456,7 @@ can be quickly accomplished in the XC console.
 |                                                                                              |
 +----------------------------------------------------------------------------------------------+
 
-Task 4: Understanding Exclusions and Customizing WAF Policy
+Task 5: Understanding Exclusions and Customizing WAF Policy
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In this task you will come to understand how exclusions are applied. You will
@@ -478,8 +484,8 @@ also further customize the WAF policy just built to add a custom block response 
 |4. In the left-hand navigation menu, navigate to **Manage** section and click                 |
 |   the **App Firewall** link.                                                                 |
 |                                                                                              |
-|5. On your App Firewall policy **<namespace>-appfw**, click the three dots n the **Actions**  |
-|   column and then click **Manage Configuration**.                                            |
+|5. On your App Firewall policy **<your-namespace>-appfw**, click the three dots n the         |
+|   **Actions** column and then click **Manage Configuration**.                                |
 |                                                                                              |
 ||lab051|                                                                                      |
 |                                                                                              |
@@ -512,21 +518,21 @@ also further customize the WAF policy just built to add a custom block response 
 |   <style>body { font-family: Source Sans Pro, sans-serif; }</style>                          |
 |   <html style="margin: 0;"><head><title>Rejected Request</title></head>                      |
 |   <body style="margin : 0;">                                                                 |
-|   <div style="background-color: #046b99; height: 40px; width: 100%;"></div>                  |
+|   <div style="background-color: #046b99; height: 40px; width: 100%;"></div>                |
 |   <div style="min-height: 100px; background-color: white; text-align: center;"></div>        |
-|   <div style="background-color: #fdb81e; height: 5px; width: 100%;"></div>                   |
+|   <div style="background-color: #fdb81e; height: 5px; width: 100%;"></div>                 |
 |   <div id="main-content" style="width: 100%; ">                                              |
 |   <table width="100%"><tr><td style="text-align: center;">                                   |
 |   <div style="margin-left: 50px;">                                                           |
 |   <div style="margin-bottom: 35px;"><br/>                                                    |
-|   <span style="font-size: 40pt; color: #046b99;">Rejected Request</span>                     |
+|   <span style="font-size: 40pt; color: #046b99;">Rejected Request</span>                   |
 |   </div><div style="font-size: 14pt;">                                                       |
 |   <p>The requested URL was rejected. Please consult with your administrator.</p>             |
 |   <p>Your Support ID is: <span style="color:red; font-weight:bold">{{request_id}}</span>     |
 |   </p>                                                                                       |
 |   <p><a href="javascript:history.back()">[Go Back]</a></p>                                   |
 |   </div></div></td></tr></table></div>                                                       |
-|   <div style="background-color: #222222; position: fixed; bottom: 0px; height: 40px;         |
+|   <div style="background-color: #222222; position: fixed; bottom: 0px; height: 40px;       |
 |   width: 100%; text-align: center;"></div>                                                   |
 |   </body></html>                                                                             |
 |                                                                                              |
