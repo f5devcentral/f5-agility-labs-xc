@@ -139,8 +139,9 @@ Task 2: Exploring the F5 Distributed Console
 |                                                                                              |
 ||lab011|                                                                                      |
 |                                                                                              |
-|8. Using your web browser, access the application via the F5 XC FQDN. Click on                |
-|   **Menu > Header**                                                                          |
+|8. Using your web browser, access the application via the F5 XC FQDN:                         |
+|   https://<your-namespace>.lab-sec.f5demos.com                                               |
+|   Click on **Menu > Header**                                                                 |
 |                                                                                              |
 |9. Note that the Remote Address has changed as well as the presence of a new X-Forwarded-For  |
 |    header. The client information should have changed as you are now connecting first through|
