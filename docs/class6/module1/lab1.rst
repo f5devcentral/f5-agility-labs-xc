@@ -60,7 +60,7 @@ clicking on the account on the top right corner.
    |lab005|
 
 4. You will see all Secure Mesh Sites v2 (SMSv2) in the list that are in this tenant. Use the 
-   **Search** box to filter by your namespace name (**<adjective-animal>**).
+   **Search** box to filter by your namespace name (**<your-namespace>**).
 
    |lab006|
 
