@@ -1,7 +1,7 @@
 Module 1: Network Connect
 =======================================================
 
-.. image:: ../images/netconnect.png
+|mod001| 
 
 **Narrative**:
 
@@ -12,11 +12,15 @@ Your solution must be future-proof to allow for additional backends or frontends
 
 **In Lab 2** we will configure the XC Nodes to act as Software-Defined Routers to stitch together the Data Center and AWS networks using Network Connect. 
 
-
-.. image:: ../images/labs.png
+|mod002| 
 
 .. toctree::
    :maxdepth: 1
    :glob:
 
    lab*
+
+.. |mod001| image:: ../images/netconnect.png
+   :width: 800px
+.. |mod002| image:: ../images/labs.png
+   :width: 800px

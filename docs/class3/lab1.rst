@@ -1,506 +1,264 @@
-Lab 1: Building a Service Policy for Negative Enforcement 
-=========================================================
+Lab 1 Service Policy
+====================
 
-**Objective:**
+In this lab, you will implement a simple service policy for a web application. The service policy will define how the application 
+should handle incoming requests based on certain criteria, such as the user's role or the time of day.
 
-* Explore and become familiar with the Distributed Cloud Console
+F5 Distributed Cloud Service Policies are part of a unified, SaaS-based security framework that allows, denies, or rate-limits traffic to
+applications across multi-cloud, edge, and on-premises environments. These policies offer granular control (via headers, IP, TLSfingerprint,or path) and
+are enforced through a central console to protect against Layer 7 attacks, WAF, bot threats, and API misuse.
 
-* Review the F5 Distributed Cloud (XC) Load Balancer that has been provisioned
+These service policies, are the "iRules" of the Distributed Cloud world, and they are what allow you to create custom security policies that fit your specific use case.
 
-* Create a negative enforcement policy to provide initial protection for your application
+Common use cases:
 
-**Narrative:** 
+* Allow for public certs, DNS to be established for the app, but only allow traffic from certain IPs, or that include specific headers and values.
 
-After consulting with your trusty F5 Solutions Engineer, you decide to adopt security services from 
-F5 Distributed Cloud Web by leveraging service policies. The lab provisioned for you 
-has already deployed a F5 XC load balancer and been setup to route to your Azure application.  The 
-F5 Distributed Cloud Application Delivery Network (ADN) will provide network connectivity for clients 
-to first route to F5's nearest Regional Edge(RE) location on the ADN utilizing IP Anycast.  Once 
-the client is connected to the their nearest F5 RE, security controls can now be applied so that 
-unwanted traffic can be dropped at the F5 RE and valid traffic can than be passed to ACME Azure environment.  
-This lab will be deployed in a SaaS only configuration with no on-premises (public or private cloud) elements. 
+* Allow for traffic to bypass WAF
 
-.. NOTE:: You will not have direct access to the Azure environment where the application is hosted.
+* Geo blocking
 
-.. warning :: If you are using multiple labs in one course, understand that
-   some steps below may be redundant depending on labs deployed. To gain full
-   benefits from this lab, please delete any objects created in your prior lab
-   and continue with this lab as all necessary objects will be recreated.
+* Ja4+ fingerprinting
 
-Following the tasks in the prior **Introduction** Section, you should now be
-able to access the F5 Distributed Cloud Console, having set your Work Domain
-Roles and Skill levels. If you have not done so already, please login to your
-tenant for this lab using the **Accept Inivitation** link from your second email 
-and proceed to Task 1.
 
-**Expected Lab Time: 40 minutes**
+In this lab, we will following the first use case allowing the app team to deploy a new application with public certs and DNS, but only 
+allow traffic that includes a specific header and value. This is a common use case for app teams that want to have the flexibility to 
+manage their own applications, but still want to have some control over the security of their applications.
 
-Task 1: Exploring the F5 Distributed Console
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+For the scope of this lab, we will apply service policies to a specific server in the namespace. You *could* however, strategically apply 
+service policies to specific applications by host header or label selectors.
 
-The following steps will allow you to review the F5 Distributed Cloud Load Balancer that was 
-deployed and is currently advertising a globally available application. These steps 
-will allow you to review the application, its DNS entry and the Azure target that is 
-configured as the origin.
+Lab Environment:
 
-#. Following the **Introduction** section instructions, you should now be the Home page
-   of the F5 Distributed Cloud Console.  Let's first review the F5 Distributed Load Balancer
-   that was configured for you via automation.  Select **Web App & API Protection**. 
+Your lab environment should already be deployed. In the steps below you'll navigate user interface to discover the load balancer and assigned
+origin pool. 
 
-#. On the **Web App & API Protection** page, note the identifier of your namespace.  The namespace
-   will be follow a format of *adjective-animal*.  The example in this guide uses the namespace 'pet-walrus'.  
-   Your namespace will be different.  In the left-hand navigation expand **Manage** and 
-   click **Load Balancers >  Origin Pools**
 
-   |lab001| 
+.. image:: _static/lab1/multi-app-conn.png
+   :scale: 30%
+   :alt: multi app conn
+   :align: center
 
-   |lab002| 
+You'll now navigate to review the lb configuration as shown below.
 
-#. In the resulting screen expand the Actions Menu and click **Manage Configuration** for 
-   the origin pool configured in your namespace. Here you will see the origin server public
-   FQDN of the application running in ACME's Azure environment.  Copy the domain name so you 
-   can visit the site directly from your web browser.  Click  **Cancel and Exit** to return 
-   to the Origin Pools page since you will not need to make any updates to the configuration.
+.. image:: _static/lab1/lb-manage-conf.png
+   :scale: 30%
+   :alt: multi app conn
+   :align: center
 
-   |lab003| 
+Make note of the name of the load balancer for your deployment as it will be different than the one shown below. It should be in the format
+of *<adjective-animal>>*-routing-https-lb. 
 
-   |lab004|
+.. image:: _static/lab1/lb-name.png
+   :scale: 30%
+   :alt: lb name
+   :align: center
 
-#. Using your browser, visit this application directly utilizing its public FQDN. Select the 
-   **Menu** on the top right-hand side and select **Header**.  
-   
-#. Note the Remote Address field. This will match the IP address of your endpoint.  You can verify 
-   that it matches by looking up your IP address at https://ipinfo.io/.  
+And verify that the blue pool is is your active pool.
 
-   |lab005|
+.. image:: _static/lab1/lb-blue-pool.png 
+   :scale: 20%
+   :alt: blue pool
+   :align: center
 
-   |lab006|
+And scroll down to *Common Security Controls* section and notice the section below:
 
-   |lab007|
+.. image:: _static/lab1/lb-csc.png
+   :scale: 30%
+   :alt: csc
+   :align: center
 
-   |lab008|
+This means that any service policy we create **AND** make active in the namespace will be applied to this load balancer.
 
+Your review of the load balancer configuration is now complete. Please click *Close* in the bottom right to return to the main page.
 
-#. Next, let's return to the F5 Distributed Cloud console and take a look at the F5 Distributed Cloud Load Balancer 
-   configured for you. In the left-hand navigation expand **Manage** and click **Load Balancers > HTTP Load Balancers**
 
-#. In the resulting screen expand the Actions Menu and click **Manage Configuration** for 
-   the load balancer configured in your namespace. The graphic below is an example.  Your environment 
-   will have a different load balancer name but it should follow a similar naming convention 
-   *adjective-animal*.
+You should now be back to the main page for load balancers. Please make note of the domain name for your load balancer as you 
+will need this to access the app. It should be in the format of *<adjective-animal>>*-lab-app.f5demos.com. Like below:
 
-   |lab009|
+.. image:: _static/lab1/lb-domain.png 
+   :scale: 30%
+   :alt: domain
+   :align: center
 
-   |lab010|
+You should now see the blue app when navigating to the domain name from your browser. Please make note of the domain or leave a tab open
+as you'll need this for further configuration in the next steps.
 
+.. image:: _static/lab1/blue-app.png
+   :scale: 30%
+   :alt: blue app
+   :align: center
 
-#. Using the left-hand navigation and in the sections as shown, review the
-   following data. Values where **<namespace>** *adjective-animal* is represented, the configuration
-   will be the name of your provisioned namespace.  Note the FQDN of the F5 Distributed Cloud load balancer.  
+Now we will create our first service policy. On the left navigation menu, click on *Security* > *Service Policies* > *Service Policies*
 
+.. image:: _static/lab1/svc-pol-create.png 
+   :scale: 30%
+   :alt: pol create
+   :align: center
 
-   * **Metadata**  *<namespace>-lb*
-   * **Domains and LB Type**  *<namespace>.lab-sec.f5demos.com*
-   * **Other Settings** VIP Advertisement
+Click on *Add Service Policy*, notice the two existing policies that are already in place. These are applied by Distributed Cloud
+and in a namespace you do not control so you cannot remove them.  Let's build our first service policy:
 
-   .. note::
-      *The VIP Advertisement selection controls how/where the application is advertised. The "Internet"*
-      *setting means that this application will be advertised globally from the F5*
-      *Distributed Cloud Global Network utilizing Anycast.*
+.. image:: _static/lab1/add-svc-pol.png
+   :scale: 30%
+   :alt: add
+   :align: center
 
-   |lab011| 
-  
+Please name the service policy *custom-header*, take note of the Server Selections. You can make a policies based on all servers, host headers, or tags.
+Notice the options in the drop down, but for the lab you will use **Server Name**. Please add your unique load balancer name.We will select *Custom Rule List*
 
-#. Using your web browser, access the application via the F5 Distributed Cloud FQDN.  Click on **Menu > Header**
+.. image:: _static/lab1/svc-pol-custom.png
+   :scale: 30%
+   :alt: custom
+   :align: center 
 
-#. Note that the Remote Address has changed as well as the presence of a new X-Forwarded-For header.  
-   The client information should have changed as you are now connecting first through the F5 ADN Regional Edge 
-   before being proxied the the application running the ACME Corp Azure environment.  X-Forwarded-For details should 
-   match your client IP address.  
+After selecting *Custom Rule List* (default) you will next click on *Configure* which will take you to where we will build and add rules.
 
-   |lab012| 
+.. image:: _static/lab1/svc-pol-custom-conf.png
+   :scale: 30%
+   :alt: conf
+   :align: center
 
-   |lab013| 
+Click on *Add Item*, once you click this you will see the options for the different types of rules you can create. For this lab, 
+we will be creating a simple rule that only allows traffic to the app if it contains a specific header with a specific value. You can build 
+multiple rule sets to be applied.
 
+.. image:: _static/lab1/svc-pol-custom-add-rule.png
+   :scale: 30%
+   :alt: add rule
+   :align: center
 
-Narrative Check
----------------
+Time to start building the **real** rule. You can title the specific rule whatever you like, but for this lab we will call it *appworld-header*. 
+Please make sure to toggle *Show Advanced Fields* to the right so that you can see all of the options available to you. You'll set the 
+action to **Allow**.
 
-With your application now proxied through the F5 Distributed Cloud Regional Edge, ACME Corp's security edge for this application
-can now be extended globally across F5's ADN and be used to scrub unwanted traffic before reaching ACME Corp's environment.  
-The Application and Security teams have requested that some geo-fencing rules be put in place to decrease the application's attack surface.
-ACME Corp would like to block all traffic coming from Fiji since ACME Corp has a subsidary with exclusive rights locally.  ACME Corp
-would also like to block known bad IP address coming from TOR Networks and Spam Networks from accessing the application.  
+.. image:: _static/lab1/custom-rule-appworld.png
+   :scale: 30%
+   :alt: appworld
+   :align: center 
 
-Task 2: Negative Enforcement  
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-The following lab tasks will guide you through the configuration of various Service Policies which can be used to implement a variety 
-of security controls. The goals of this section of the lab will be to create specific policies to enforce negative enforcement rules 
-based on geo-location, IP addresses, and known bad IP ranges.
+Now scroll down or use the link on left to navigate to the *Request Match* section. This is where you will define the actual criteria 
+that will be used to match our custom header/value. Click **Add Item** under the HTTP Headers section. 
 
-#. Returning to the F5 Distributed Cloud Console, you will edit the F5 HTTP Load Balancer for your application.  From the
-   **Web App & API Protection** workspace, Click **Load Balancers > HTTP Load Balancers**.
+.. image:: _static/lab1/svc-req-match.png
+   :scale: 30%
+   :alt: match
+   :align: center
 
-#. In the resulting screen expand the Actions Menu and click **Manage Configuration** for 
-   the load balancer configured in your namespace. 
+In this step you'll configure the actual header and value that you want to require for traffic to be allowed to the app. 
+For this lab, we will be creating a rule that only allows traffic that contains the header of:
 
-   |lab014|
+ header = *x-f5-appworld*
 
-#. Select **Common Security Controls** in the left hand menu, and then click **Edit Configuration**.  This will enable you
-   to enable IP Reputation controls.  The IP reputation service analyzies IP threats and publishes a dynamic data set of
-   millions of high-risk IP address to protect inbound traffic from malicious IPs.
+ value  = *RjUtQXBwd29ybGQ=*
 
-   |lab015|
+How did we get this value? If you decode the value from base64, you will see that it decodes to *F5-Appworld*. This is just an extra 
+step to make sure that the value is not easily guessable.
 
-#. Click the dropdown for **IP Reputation** and select **Enable**.
+.. image:: _static/lab1/svc-header-matcher.png
+   :scale: 30%
+   :alt: header
+   :align: center
 
-#. From the List of IP Threat Categories to choose, select **Spam Sources** and **Tor Proxy**.  
+Now to save all your work. On the bottom right, click **Apply**, then **Apply**, and finally **Add Service Policy**.
 
-   |lab016|
+Congratulations, you have now built your first service policy. However, it is not active yet, so let's make it active so that it can 
+start enforcing the rules. To make the service policy active, navigate back to *Security* > *Service Policies* > *Active Service Policies*
 
-   |lab017|
+.. image:: _static/lab1/add-to-active.png
+   :scale: 30%
+   :alt: active
+   :align: center
 
-#. Next, click the dropdown for **Threat Mesh** and select **Enable**.  **Threat Mesh** provide F5 
-   Distributed Cloud applications and additional layer of protection against web application attacks.
-   Threat Mesh leverages cross-customer correlation to identify malicious intent of a client.   Whenever
-   a client is flagged due to malicious entent by F5 Distributed Cloud decision engines, that client will 
-   be added to the the ThreatDB.  Enabling **Threat Mesh** means that requests that come to an application 
-   from an IP in the ThreatDB will be automatically blocked.
+From this page, you can select service policies that have been created and make them active. You can have multiple active service policies at a time, 
+and they will be enforced in the order that they are in the list. 
 
-   |lab018|
+You can also have different active service policies for different server selections, such as specific host headers or tags.
 
-#. Note that **Service Policies** is set to *Apply Namespace Service Policies*.  This means that this 
-   application load balancer will follow the active service policies defined for the namespace.  By default,
-   all new HTTP load balancers built in the namespace will follow the same set of rules.  This shared set
-   of policies assist with the rapid deploment of security updates for incidence response since the ruleset
-   can be updated in one spot and all applications in the namespace will be updated.  Scroll down and click
-   **Save and Exit**.
+.. image:: _static/lab1/sel-active.png
+   :scale: 30%
+   :alt: select
+   :align: center 
 
-   |lab019|
- 
-   |lab020|
 
-#. Within Web App & API Protection, under the Manage section in the left-hand navigation menu, click Service Policies. 
-   In the flyout menu, click the Service Policies link.
+Click **Add Item** to add the previously created service policy, from drop down, to the active policies and make sure to click the bottom right **Add Select Active Service Policies**
 
-   |lab021|
+.. image:: _static/lab1/act-custom-header.png
+   :scale: 30%
+   :alt: active header
+   :align: center 
 
-#. Observe the existing Service Policies and note they are source from the shared namespace which means they could be used 
-   within any other namespace.
+Now try to navigate to your domain again, you should now see a 403 error. This is because the service policy is blocking all 
+traffic that does not have the header/value of *x-f5-appworld: RjUtQXBwd29ybGQ=*
 
-#. Click **Add Service Policy** in the top left area as shown.                               
-                                                                                              
-   .. note::                                                                                    
-      *Using shared namespace Service Policies provides the ability to use API-updated policy controls to implement common 
-      service security across multiple resources in multiple namespaces.*       
+.. image:: _static/lab1/403-error.png
+   :scale: 30%
+   :alt: 403 error
+   :align: center
 
-   |lab021a|
 
-#. In the **Metadata** section enter **geo-filter** for the **Name** and then click **Rules** in the left-hand navigation. 
+You should now also see this reflected in the analytics for the load balancer. You can navigate to the analytics by clicking:
 
-#. Select **Denied Sources** from the dropdown for **Select Policy Rules**.  
+Overview > Performance ; then scroll down to the name of your load balancer and click on it. 
 
-   |lab022|
+.. image:: _static/lab1/observe.png
+   :scale: 30%
+   :alt: observe
+   :align: center
 
-#. Locate the **Country List** input field and begin typing **Fiji** and then select it from the list that appears.
+You are now at the *Dashboard* view. Here you can see various statistics about the traffic to your load balancer. But to see our custom
+header in action, click on the *Requests* tab. You may also need to adjust the time frame to see your traffic and refresh.
 
-#. Click the dropdown for **Default Action**. Observe the available options and select **Next Policy** then click **Save and Exit**.       
+At the bottom of the page, you should now see your 403 error request. You can click on the down arrow to see more details about the request 
+and see that it is being blocked by the service policy we just created.
 
-   |lab022a|
+.. image:: _static/lab1/obs-req.png
+   :scale: 30%
+   :alt: observe req
+   :align: center
 
-#. Observe the resulting added **geo-filter** Service Policy added in your namespace and note the Rule Count of 1
-   for the block of Fiji.
+If you scroll down just a little, you can see the *Policy Hits* section. 
 
-   |lab022b|
+.. image:: _static/lab1/obs-hit.png
+   :scale: 30%
+   :alt: observe hit
+   :align: center 
 
-#. Under **Manage**, click **Service Policies > Active Service Policies**.
+Let's now run a couple of tests from the command line to see the service policy in action. First, let's run a curl command without the 
+header to see that it is being blocked. And then we will run a curl command with the header to see that it is being allowed. Make sure 
+to replace the domain name in the command with your own.
 
-   |lab022c|
+.. code-block:: bash
 
-#. Click **Select Active Service Policies** in the upper-left hand area to add the geo-filter service policy you just created.
+   curl -I https://simple-mule.lab-app.f5demos.com/
 
-   |lab022d|
 
-#. Select the geo-filter service policy just created.  It will be placed in your namespace (adjective-animal).  Click
-   **Save and Exit**
+.. code-block:: bash
 
-   |lab023|
+   curl -I https://simple-mule.lab-app.f5demos.com/ -H "x-f5-appworld: RjUtQXBwd29ybGQ="
 
-#. Let's test access to the website.  The access failed with a 403 Forbidden error.  Copy the support ID to a notepad for 
-   future reference.  The reason the access failed is because we only attached the **geo-filter** Service Policy and the 
-   **Default Action** was **Next Policy**.  In our namespace, there is no other or next policy to "Allow" traffic, therefore, 
-   all other traffic is denied producing the 403.  Let's review F5 Distributed Cloud to review the observability capabilities.
+Please alternate these commands serveral times to populate your dashboard.
 
-   |lab024|
+You should see similar results to below.     
 
-Narrative Check
----------------
+.. image:: _static/lab1/test-curl.png
+   :scale: 30%
+   :alt: curl test
+   :align: center
 
-ACME Corps' application is now protected against known bad IPs based on threat categories and also with F5 Distributed 
-Cloud Threat Mesh solution.  Your task will now be to proceed to block traffic coming from Fiji.
+You can now see the results of the curl commands in the analytics dashboard.
 
-Task 3: Observability  
-~~~~~~~~~~~~~~~~~~~~~
+.. image:: _static/lab1/post-curl.png
+   :scale: 30%
+   :alt: post curl
+   :align: center
 
-You will review the performance and security observability capabilities of the F5 Distributed Cloud platform.
+We will now remove the service polices that have been built. 
 
-#. Returning to the F5 Distributed Cloud Console, use the left-hand menu to
-   select **Overview > Performance** section.  This dashboard will provide a summary 
-   view for all of the configured Load Balancers.
+When deleting the active service policy, make sure after you delete it to click the bottom right **Add Select Active Service Policies** to 
+update the active policies for the load balancer.
 
-   |lab025|
-
-   .. note::
-      *As you have not run many requests, summary analytics may not be
-      available in the dashboard view yet.*
-
-#. Scroll to the bottom and select your load balancer.
-
-   |lab026|
-
-#. From the **Performance Dashboard** view, using the horizontal navigation,
-   click **Requests**.
-
-#. Change the viewable time period from 5 minutes (default) to **1 hour** by
-   selecting the dropdown shown, click **Last 1 hour** then click **Apply**.
-
-   |lab027|
-
-   .. note::
-      *Security Event data may take 15-20 seconds to populate in the Console. Please force a
-      refresh using the Refresh icon next to the Time Period selection in step 6.*
-
-#. Expand one of the requests and note the **Information** tab link. This
-   summarizes request details and provides request duration timing.
-
-   |lab028|
-
-#. Click on the **JSON** link to get more data about the request.
-
-#. Click **Add Filter** as shown to see how you can filter by key identifiers.
-
-   |lab029|
-
-#. The resulting **Search** input field and listed **Keys**, can be used to
-   filter requests in this view.
-
-   |lab030|
-
-   .. note::
-      *The available Key list to search is dynamically updated based on the requests in the*
-      *selected time view.*
-
-#. Closing the filters view, note the available **Quick Filters** for Response
-   Codes which allows quickly filtering the requests by toggling **on** or
-   **off** each response code category.
-
-#. Click the **Forensics** tab on the right side of the view as shown.
-
-   |lab031|
-
-#. The *Forensics* Filter  provides summarized top categories which provides
-   quicker analysis of the request log data.  Collapse the **Forensics** view
-   when done using the indicated arrow.
-
-   |lab032|
-
-   .. note::
-      *Individual forensic categories can be changed using the noted pencil
-      icon to surface additional top data details.*
-
-#. Using the left-hand navigation, under **Overview** select
-   **Security**.
-
-   |lab033|
-
-#. Review the **Security Dashboard** display (you may have limited data) and identify that Service Policy events have increased.
-   NOTE: You may need to update the variable time period.
-
-   |lab034|
-
-#. Scroll to **Application Delivery** section and click the **<namespace>-lb**  object.
-
-   |lab035|
-
-   .. note::
-      *This is a multi-application view. Here you could get the summary security status of*
-      *each application (iw Threat Level, WAF Mode, etc)* and then click into one for more*
-      *specific details.*
-
-#. From the **Security Dashboard** view, using the horizontal navigation, click
-   **Security Analytics**.
-
-   |lab036|
-
-#. Expand your latest security event as shown.  
-
-   .. note::
-      *If you lost your 1 Hour Filter, re-apply using following the method described in the earlier task*
-
-#. The summary detail provided **Information** link and identify the **Request ID** which is synonymous with 
-   **Support ID** (filterable) from the Security Event Block Page.  You will also notice that the result of the 
-   service policy event was a *default_deny*.
-
-   |lab037|
-
-#. For more information, select the Actions menu and click **Explain with AI**.  This enables the F5 Distributed
-   Cloud AI Assistant.  The AI assistant brings several intelligent capabilities to simplify management and security 
-   of apps and APIs using a natural language interface, including summaries to allow teams to better understand complex 
-   information and advanced security events to make more informed decisions without sifting through overwhelming 
-   amounts of data.
-
-   |lab038|
-
-#. Review the last statement from the AI Assistant.  *It is necessary to establish an explicit "allow all" 
-   rule that should be positioned as the last rule of the service policy sequence*.  Let's return back to the 
-   Active Service Policies in the namespace.  Note: you may need to hide the AI Assistant.
-
-   |lab039|
-
-   |lab040|
-
-#. Click **Select Active Service Policies**.
-
-#. Click **Add item** to add a new Service Policy as the last rule in the sequence.
-
-#. Click **Add item** to create a new Service Policy definition.  
-
-#. Name the rule **allow-all** and select **Allow All Requests**.  Click **Continue** when complete. 
-
-#. Click **Save and Exit**.  
-
-   |lab041|
-
-   |lab042|
-
-   |lab043|
-
-   |lab044|
-
-   |lab045|
-
-#. Reload your web browser accessing *<namespace>.lab-sec.f5demos.com*  It should now successfully load.
-
-   |lab046|
-
-Narrative Check
------------------
-You have now completed your first service policy deployment on F5 Distributed Cloud.  This policy can be re-used for
-other applications in the ACME environment as all new load balancers deployed in this namespace will by default be 
-blocking traffic to Fiji. IP address blocking performed based on categories or from the F5 ThreatMesh database 
-can be configured on a per application basis.  You also interacted with the F5 Distributed Cloud AI Assistant to help 
-simplify troubleshooting. 
-
-
-+----------------------------------------------------------------------------------------------+
-| **End of Lab 1:**  This concludes Lab 1, feel free to review and test the configuration.     |
-|                                                                                              |
-| A brief presentation will be shared prior to the beginning of Lab 2.                         |
-+----------------------------------------------------------------------------------------------+
-| |labend|                                                                                     |
-+----------------------------------------------------------------------------------------------+
-
-.. |lab001| image:: _static/lab1-001.png
-   :width: 800px
-.. |lab002| image:: _static/lab1-002.png
-   :width: 800px
-.. |lab003| image:: _static/lab1-003.png
-   :width: 800px
-.. |lab004| image:: _static/lab1-004.png
-   :width: 800px
-.. |lab005| image:: _static/lab1-005.png
-   :width: 800px
-.. |lab006| image:: _static/lab1-006.png
-   :width: 800px
-.. |lab007| image:: _static/lab1-007.png
-   :width: 800px
-.. |lab008| image:: _static/lab1-008.png
-   :width: 800px
-.. |lab009| image:: _static/lab1-009.png
-   :width: 800px
-.. |lab010| image:: _static/lab1-010.png
-   :width: 800px
-.. |lab011| image:: _static/lab1-011.png
-   :width: 800px
-.. |lab012| image:: _static/lab1-012.png
-   :width: 800px
-.. |lab013| image:: _static/lab1-013.png
-   :width: 800px
-.. |lab014| image:: _static/lab1-014.png
-   :width: 800px
-.. |lab015| image:: _static/lab1-015.png
-   :width: 800px
-.. |lab016| image:: _static/lab1-016.png
-   :width: 800px
-.. |lab017| image:: _static/lab1-017.png
-   :width: 800px
-.. |lab018| image:: _static/lab1-018.png
-   :width: 800px
-.. |lab019| image:: _static/lab1-019.png
-   :width: 800px
-.. |lab020| image:: _static/lab1-020.png
-   :width: 800px
-.. |lab021| image:: _static/lab1-021.png
-   :width: 800px
-.. |lab021a| image:: _static/lab1-021a.png
-   :width: 800px
-.. |lab022| image:: _static/lab1-022.png
-   :width: 800px
-.. |lab022a| image:: _static/lab1-022a.png
-   :width: 800px
-.. |lab022b| image:: _static/lab1-022b.png
-   :width: 800px
-.. |lab022c| image:: _static/lab1-022c.png
-   :width: 800px
-.. |lab022d| image:: _static/lab1-022d.png
-   :width: 800px
-.. |lab023| image:: _static/lab1-023.png
-   :width: 800px
-.. |lab024| image:: _static/lab1-024.png
-   :width: 800px
-.. |lab025| image:: _static/lab1-025.png
-   :width: 800px
-.. |lab026| image:: _static/lab1-026.png
-   :width: 800px
-.. |lab027| image:: _static/lab1-027.png
-   :width: 800px
-.. |lab028| image:: _static/lab1-028.png
-   :width: 800px
-.. |lab029| image:: _static/lab1-029.png
-   :width: 800px
-.. |lab030| image:: _static/lab1-030.png
-   :width: 800px
-.. |lab031| image:: _static/lab1-031.png
-   :width: 800px
-.. |lab032| image:: _static/lab1-032.png
-   :width: 800px
-.. |lab033| image:: _static/lab1-033.png
-   :width: 800px
-.. |lab034| image:: _static/lab1-034.png
-   :width: 800px
-.. |lab035| image:: _static/lab1-035.png
-   :width: 800px
-.. |lab036| image:: _static/lab1-036.png
-   :width: 800px
-.. |lab037| image:: _static/lab1-037.png
-   :width: 800px
-.. |lab038| image:: _static/lab1-038.png
-   :width: 800px
-.. |lab039| image:: _static/lab1-039.png
-   :width: 800px
-.. |lab040| image:: _static/lab1-040.png
-   :width: 800px
-.. |lab041| image:: _static/lab1-041.png
-   :width: 800px
-.. |lab042| image:: _static/lab1-042.png
-   :width: 800px
-.. |lab043| image:: _static/lab1-043.png
-   :width: 800px
-.. |lab044| image:: _static/lab1-044.png
-   :width: 800px
-.. |lab045| image:: _static/lab1-045.png
-   :width: 800px
-.. |lab046| image:: _static/lab1-046.png
-   :width: 800px
-.. |labend| image:: _static/labend.png
-   :width: 800px
+.. image:: _static/lab1/del-custom-header.png
+   :scale: 30%
+   :alt: delete custom header
+   :align: center

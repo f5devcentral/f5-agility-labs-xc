@@ -1,260 +1,558 @@
-Lab 2: Enabling Positive Application Security with Service Policies 
-===================================================================
+Lab 2: Load Balancer Routes
+===========================
 
-**Objective:**
+The following lab tasks will guide you through using the Distributed Cloud Console to configure routes within a HTTP Load Balancer. 
+Students will start by creating a route to steer traffic based on a specified HTTP header containded within the client request.  Header
+based routing is often used for blue-green testing.  Blue-green testing is a release strategy that uses two independent deployments (Blue
+and Green) for real world testing of software updates and application enhancements.  
 
-* Using console data, build a positive application security model
+Next, students will apply a Web Application Firewall (WAF) policy at the route level. Applying a WAF policy at the route level allows 
+security teams to apply more prescriptive WAF policies to the different components of the web application.  For example, you may 
+want to apply additional WAF rules for the logon portion of the application.
 
-**Narrative:** 
-
-After building a negative enforcement model, ACME Corp's security team would like to further
-increase the security posture of the environment.  Instead of having an "allow-all" rule, the Security team
-has tasked you to build a "deny-all" rule to further close down down the attack surface of the application
-and more narrowly define the segement of users allowed to access the application. Your goal is to build
-this new postive security model on a single application so it does not affect access to other applications 
-in the F5 Distributed Cloud Tenant.
+The last task within this lab is to deploy routes to modify application responses in transit. This task demonstrates Distributed Cloud's
+ability to modify Requests and/or Responses.  This can be used to add/remove headers used by the backend application, rewrite path
+prefixes and modify cookies.
 
 **Expected Lab Time: 20 minutes**
 
-Task 1: Reviewing Current Access Trends  
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-#. Return to the F5 Distributed Cloud Console - **Web Application & API Protection > Overview > Performance** 
-   Dashboard.
-
-#. Scroll down and select the load balancer.
-
-#. Update the variable time filter. 
-
-#. Using the horizontal navigation, click **Requests**.  
-
-   |lab001|
-
-#. Expand one of the requests. Record the Client IP address, Country and ASN. This information will help you build
-   a positive enforcement service policy.
-
-   |lab002|
-
-#. You can also leverage the AI Assistant to provide you a summary of the request.  
-
-   |lab003|
-
-Task 2: Create A Deny-All Enforcement Service Policy
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-In this task you will modify the HTTP load balancer to utilize a new set of service policies.
-
-#. Under Manage, click **Load Balancers > HTTP Load Balancers**.
-
-   |lab004|
-
-#. Select the Action dropdown and click **Manage Configuration**.
-
-   |lab005|
-
-#. Select **Common Security Controls** on the left-hand menu.  Click **Edit Configuration** in the upper right-hand corner. 
-
-   |lab006|
-
-#. Select the dropdown for **Service Policies** and change from the namespace option to select **Apply Specified Service Policies**.
-
-#. Click **Configure** to setup the new Service Policies.  
-
-   |lab007|
-
-   |lab008|
-
-#. For the **FIRST** ordered policy, select the drop down and click **Add Item**
-
-   |lab009|
-
-#. Name the policy **deny-all**.  Click the dropdown for *Select Policy Rules* and select **Deny All Requests**.  Click **Continue**
-   when completed.
-
-   |lab010|
-
-#. Click **Apply** to update the Service Policy to be applied specifically to this Application.
-
-   |lab011|
-
-#. Scroll down and click **Save and Exit**. 
-
-   |lab012|
-
-#. Browse to the ACME Corp application at *<namespace>.lab-sec.f5demos.com*.  You should see a 403 Forbidden Error.  Copy the Support ID.
-
-   |lab013|
-
-#. Let's use the F5 Distributed Cloud AI Assistant to determine if it matched the correct policy.  Return to the F5 Distributed 
-   Cloud console.  Click the AI Assistant icon in the upper-right hand corner. 
-
-   |lab014|
-
-#. By clicking into the prompt, AI Assistant will prompt with some suggested natural language queries.  Select *Explain security 
-   event [request-id]*
-
-#. Be sure to edit the prompt with the support ID from your block page.  The support ID is equivalent to the request id.
-
-#. The AI Assistant will confirm that we did match the **deny-all** rule and denied our request.  Minimize the AI Assistant
-   
-   |lab015|
-
-   |lab016|
-
-   |lab017|
-
-Task 3: Create specific rules define allowed traffic for positive enforcement
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-#. Return back to the HTTP Load Balancer page to Manage the Configuration of our application.
-
-   |lab018|
-
-#. Click to **Common Security Controls** and **Edit Configuration**.
-
-   |lab019|
-
-#. Under Service Policies, click **View Configuration**.
-
-   |lab020|
-
-#. Click **Edit Configuration** in the top right hand corner to add new policies.
-
-   |lab021|
-
-#. Click **Add Item** to add a new policy.  This will add a new row in our policies to evaluate.
-
-   |lab022|
-
-#. Click the dropdown in policy row 2 and click **Add Item**
-
-   |lab023|
-
-#. Name the policy **allow-geo** and change the *Select Policy Rules* to **Allowed Sources**
-
-   |lab024|
-
-#. Scroll down to the Country List and select the country that matches your client.  This information was gathered in Task 1.  Click 
-   **Continue**.
-
-   |lab025|
-
-#. Click **Apply**.
-
-   |lab026|
-
-#. Click **Save and Exit**.
-
-   |lab027|
-
-#. Browse to the ACME Corp application at *<namespace>.lab-sec.f5demos.com*.  Why are you seeing a 403 error?  Service Policies are enforced based on 
-   the order of their rules.  
-
-#. Lets return to the specific Service Policy applied to the HTTP load balancer.  Note the order of the Service Policies.  The deny-all policy is
-   listed first.   Service Policies must be ordered correctly in a order to process traffic as intended.
-
-   |lab028|
-
-#. Click the Actions menu under the deny-all rule.  Select **Move to another spot**.
-
-#. Use the arrows to update the *deny-all* rule to move to row 2.  Click **Move Row** when complete.
-
-#. Click **Apply**.
-
-   |lab029|
-
-   |lab030|
-
-   |lab031|
-
-#. Click **Save and Exit**.
-
-#. Browse to the ACME Corp application at *<namespace>.lab-sec.f5demos.com*.  Access should be restored.
-
-   |lab032|
-
-   |lab033|
-
-Narrative Check
------------------
-You have now created a positive security model for your application.  F5 Distributed Cloud allows users to 
-specifically bypass the Fiji blocking namespace security model from Lab 1 to apply service policies specifically
-to the HTTP load balancer.  In this positive enforcement model, you created a policy to allow based on geo-location but
-service policies can also be used to allow based on IP addresses, BGP ASNs, user-agents, and custom headers.  
-
-+----------------------------------------------------------------------------------------------+
-| **End of Lab 2:**  This concludes Lab 2, feel free to review and test the configuration.     |
-|                                                                                              |
-| A brief presentation will be shared prior to the beginning of Lab 3.                         |
-+----------------------------------------------------------------------------------------------+
-| |labend|                                                                                     |
-+----------------------------------------------------------------------------------------------+
-
-.. |lab001| image:: _static/lab2-001.png
+Task 1: Deploy a Header Route to Steer Traffic for Canary Testing
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In this task, you will create a header route that directs traffic to different origin pools based off a specified HTTP header. This configuration
+can be useful for Canary testing. Traffic matching a specified header will be directed to a specified origin pool, while all other traffic will be
+directed default origin pool for the load balancer.
+
++------------------------------------------------------------------------------------------------------------------------------------+
+| **Configure a Header Route**                                                                                                       |
++====================================================================================================================================+
+| 1. If you are not still logged into the Distributed Cloud Console, logon at:                                                       |
+|                                                                                                                                    |
+|    https://f5-xc-lab-app.console.ves.volterra.io/                                                                                  |
++------------------------------------------------------------------------------------------------------------------------------------+
+| 2. If you are at the home landing page, select the **Web App & API Protection** tile.                                              |
+|                                                                                                                                    |
+|    |Web-App-Tile|                                                                                                                  |
+|                                                                                                                                    |
+|    If you are already in a workspace you can get to the **Web APP & API Protection** workspace from the top navigation bar,  by    |
+|                                                                                                                                    |
+|    selecting the **Web App & API Protection** workspace from the dropdown menu.                                                    |
+|                                                                                                                                    |
+|    |Web-App-Dropdown|                                                                                                              |
++------------------------------------------------------------------------------------------------------------------------------------+
+| 3. In the navigation sidebar on the left, expand **Manage**, expand **Load Balancers**, and select **HTTP Load Balancers**.        |
+|                                                                                                                                    |
+|    |Manage-HTTP-LB|                                                                                                                |
++------------------------------------------------------------------------------------------------------------------------------------+
+| 4. Locate your HTTP Load Balancer in the list and click the ellipsis (three dots) under the **Actions** column. Select **Manage**  |
+|                                                                                                                                    |
+|    **Configuration**.  Your Load Balancer for this lab is named <name-space>-routing-https-lb.                                     |
+|                                                                                                                                    |
+|    |Manage-LB-Config|                                                                                                              |
+|                                                                                                                                    |
+| .. note::                                                                                                                          |
+|    *If you don't see a HTTP Load Balancer, make sure you are in the correct namespace.*                                            |
++------------------------------------------------------------------------------------------------------------------------------------+
+| 5. In the Load Balancer Configuration page, click **Edit Configuration** in the top right.                                         |
+|                                                                                                                                    |
+|    |Edit-LB-Config|                                                                                                                |
++------------------------------------------------------------------------------------------------------------------------------------+
+| 6. In the Load Balancer Edit Configuration page, scroll to the **Routes** section or click **Routes** in the left menu to jump to  |
+|                                                                                                                                    |
+|    the routes section.                                                                                                             |
+|                                                                                                                                    |
+|    |Routes-Section|                                                                                                                |
++------------------------------------------------------------------------------------------------------------------------------------+
+| 7. Click **Configure** in the Routes configuration section.                                                                        |
+|                                                                                                                                    |
+|    |Routes-Config|                                                                                                                 |
++------------------------------------------------------------------------------------------------------------------------------------+
+| 8. Click **Add Item** to add a route.                                                                                              |
+|                                                                                                                                    |
+|    |Route-Add|                                                                                                                     |
++------------------------------------------------------------------------------------------------------------------------------------+
+| 9. In the resulting form, configure the route policy:                                                                              |
+|                                                                                                                                    |
+|    - Route Type: **Simple Route**                                                                                                  |
+|       - HTTP Method: **ANY**                                                                                                       |
+|                                                                                                                                    |
+|       - Path Match: **Prefix**                                                                                                     |
+|                                                                                                                                    |
+|         - Prefix: **/**                                                                                                            |
+|                                                                                                                                    |
+|       - Headers                                                                                                                    |
+|                                                                                                                                    |
+|          - Click **Add Item**                                                                                                      |
+|                                                                                                                                    |
+|    |Header-Add|                                                                                                                    |
++------------------------------------------------------------------------------------------------------------------------------------+
+| 10. In the Header to Match Form, fill in the following values:                                                                     |
+|                                                                                                                                    |
+|     - Name: **X-App-Version**                                                                                                      |
+|                                                                                                                                    |
+|     - Value: **Exact**                                                                                                             |
+|                                                                                                                                    |
+|       - Exact: **green**                                                                                                           |
+|                                                                                                                                    |
+|     Click **Apply**                                                                                                                |
+|                                                                                                                                    |
+|     |Header-Match|                                                                                                                 |
++------------------------------------------------------------------------------------------------------------------------------------+
+| 11. You should now be back in the route add form that you started filling out in Step 9. In the Origin Pools section, click **Add**|
+|                                                                                                                                    |
+|     **Item**                                                                                                                       |
+|                                                                                                                                    |
+|     |Origin-Add|                                                                                                                   |
++------------------------------------------------------------------------------------------------------------------------------------+
+| 12. In the Origin Pool with Weight and Priority form, add the green origin pool for your name-space.  The origin pool should be    |
+|                                                                                                                                    |
+|     named <name-space>/<name-space>-green-pool.                                                                                    |
+|                                                                                                                                    |
+|     Click **Apply**                                                                                                                |
+|                                                                                                                                    |
+|     |Green-Pool|                                                                                                                   |
++------------------------------------------------------------------------------------------------------------------------------------+
+| 13. Click **Apply** to save the route                                                                                              |
+|                                                                                                                                    |
+|     |Route-Apply|                                                                                                                  |
++------------------------------------------------------------------------------------------------------------------------------------+
+| 14. Click **Apply** to apply the routes to the LB.                                                                                 |
+|                                                                                                                                    |
+|     |Routes-Apply|                                                                                                                 |
++------------------------------------------------------------------------------------------------------------------------------------+
+| 15. Click **Save HTTP Load Balancer** to save the LB config.                                                                       |
+|                                                                                                                                    |
+|     |LB-Save|                                                                                                                      |
++------------------------------------------------------------------------------------------------------------------------------------+
+|  **Test and Verify:**                                                                                                              |
++------------------------------------------------------------------------------------------------------------------------------------+
+| 16. Go back to your UDF Web Browser tab.  Find the **student jump host** component and expand ACCESS and select FIREFOX.           |
++------------------------------------------------------------------------------------------------------------------------------------+
+| 17. This will open Firefox running inside a browser window.  In the Firefox location bar, enter your LB domin name.  The name      |
+|                                                                                                                                    |
+|     format is https://<name-space>.lab-app.f5demos.com/                                                                            |
+|                                                                                                                                    |
+|     |Blue-App|                                                                                                                     |
+|                                                                                                                                    |
+| .. note::                                                                                                                          |
+|    *Notice that you are receiving the Blue version of the application*                                                             |
++------------------------------------------------------------------------------------------------------------------------------------+
+| 18. To test routing via HTTP headers, a browser extension has been installed to modify the request headers.  Click the Header      |
+|                                                                                                                                    |
+|     Editor icon.                                                                                                                   |
+|                                                                                                                                    |
+|     |Header-Editor|                                                                                                                |
++------------------------------------------------------------------------------------------------------------------------------------+
+| 19. Click the Manage icon.                                                                                                         |
+|                                                                                                                                    |
+|     |Header-Manage|                                                                                                                |
++------------------------------------------------------------------------------------------------------------------------------------+
+| 20. Expand the **Green** Rule list and move the slider to enable the Green rule.  This rule adds a request header named            |
+|                                                                                                                                    |
+|     X-App-Version with a value of green to any request going to a domain that ends in lab-app.f5demos.com.                         |
+|                                                                                                                                    |
+|     |Green-Rule|                                                                                                                   |
+|                                                                                                                                    |
+| .. note::                                                                                                                          |
+|    *To view the rule click the magnifying glass icon.*                                                                             |
++------------------------------------------------------------------------------------------------------------------------------------+
+| 21. Go back to the Firefox browser tab that has the Blue application in it.  Click the refresh button in Firefox to reload the web |
+|                                                                                                                                    |
+|     page.  You should now see the Green version of the application.                                                                |
+|                                                                                                                                    |
+|     |Refresh|                                                                                                                      |
+|                                                                                                                                    |
+|     |Green-App|                                                                                                                    |
+|                                                                                                                                    |
+| .. note::                                                                                                                          |
+|    *Make sure you are clicking the refresh button for the Firefox browser and not the parent browser that the Firefox browser is*  |
+|    *running in.*                                                                                                                   |
++------------------------------------------------------------------------------------------------------------------------------------+
+| **Cleanup - Disable the Header Rule**                                                                                              |
++------------------------------------------------------------------------------------------------------------------------------------+
+| 22. In the Firefox menu bar, click on the Header-Editor icon.                                                                      |
+|                                                                                                                                    |
+| |Header-Editor|                                                                                                                    |
++------------------------------------------------------------------------------------------------------------------------------------+
+| 23. Click the Manage icon.                                                                                                         |
+|                                                                                                                                    |
+|     |Header-Manage|                                                                                                                |
++------------------------------------------------------------------------------------------------------------------------------------+
+| 24. Expand the **Green** Rule list and move the slider to enable the Green rule.  This rule adds a request header named            |
+|                                                                                                                                    |
+|     X-App-Version with a value of green to any request going to a domain that ends in lab-app.f5demos.com.                         |
+|                                                                                                                                    |
+|     |Green-Rule-Disable|                                                                                                           |
++------------------------------------------------------------------------------------------------------------------------------------+
+
+
+Task 2: Deploy and apply WAF policy at the route level
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+This task will guide you through creating and applying a route policy for an F5 Distributed Cloud Load Balancer that makes routing decisions based
+on the URL path and also attaches a Web Application Firewall (WAF) policy to the route. This configuration can be useful if you have certain URL 
+paths that require additional protection. For example a path that could contain customer data.
+
++------------------------------------------------------------------------------------------------------------------------------------+
+| **Configure a Path Route and Attach a WAF Policy**                                                                                 |
++====================================================================================================================================+
+| 1. Open the Distibruted Cloud Console.                                                                                             |
++------------------------------------------------------------------------------------------------------------------------------------+
+| 2. If you are not already in the **Web App & API Protection** workspace, from the top navigation bar, select the **Web App & API** |
+|                                                                                                                                    |
+|    **Protection** workspace.                                                                                                       |
+|                                                                                                                                    |
+|    |Web-App-Dropdown|                                                                                                              |
++------------------------------------------------------------------------------------------------------------------------------------+
+| 3. In the navigation sidebar on the left, expand **Manage**, expand **Load Balancers**, and select **HTTP Load Balancers**.        |
+|                                                                                                                                    |
+|    |Manage-HTTP-LB|                                                                                                                |
++------------------------------------------------------------------------------------------------------------------------------------+
+| 4. Locate your HTTP Load Balancer in the list and click the ellipsis (three dots) under the **Actions** column. Select **Manage**  |
+|                                                                                                                                    |
+|    **Configuration**.  Your Load Balancer for this lab is named <name-space>-routing-https-lb.                                     |
+|                                                                                                                                    |
+|    |Manage-LB-Config|                                                                                                              |
+|                                                                                                                                    |
+| .. note::                                                                                                                          |
+|    *If you don't see a HTTP Load Balancer, make sure you are in the correct namespace.*                                            |
++------------------------------------------------------------------------------------------------------------------------------------+
+| 5. In the Load Balancer Configuration page, click **Edit Configuration** in the top right.                                         |
+|                                                                                                                                    |
+|    |Edit-LB-Config|                                                                                                                |
++------------------------------------------------------------------------------------------------------------------------------------+
+| 6. In the Load Balancer Edit Configuration page, scroll to the **Routes** section or click **Routes** in the left menu to jump to  |
+|                                                                                                                                    |
+|    the routes section.                                                                                                             |
+|                                                                                                                                    |
+|    |Routes-Section|                                                                                                                |
++------------------------------------------------------------------------------------------------------------------------------------+
+| 7. Click **Configure** in the Routes configuration section.                                                                        |
+|                                                                                                                                    |
+|    |Routes-Edit-Config|                                                                                                            |
++------------------------------------------------------------------------------------------------------------------------------------+
+| 8. Click **Add Item** to add a route.                                                                                              |
+|                                                                                                                                    |
+|    |Route-Add2|                                                                                                                    |
++------------------------------------------------------------------------------------------------------------------------------------+
+| 9. In the resulting form, configure the route policy:                                                                              |
+|                                                                                                                                    |
+|    - Route Type: **Simple Route**                                                                                                  |
+|       - HTTP Method: **ANY**                                                                                                       |
+|                                                                                                                                    |
+|       - Path Match: **Prefix**                                                                                                     |
+|                                                                                                                                    |
+|         - Prefix: **/login**                                                                                                       |
+|                                                                                                                                    |
+|       - Origin Pools                                                                                                               |
+|                                                                                                                                    |
+|          - Click **Add Item**                                                                                                      |
+|                                                                                                                                    |
+|    |Login-Prefix|                                                                                                                  |
++------------------------------------------------------------------------------------------------------------------------------------+
+| 10. In the Origin Pool with Weight and Priority form, add the green origin pool for your name-space.  The origin pool should be    |
+|                                                                                                                                    |
+|     named <name-space>/<name-space>-green-pool.                                                                                    |
+|                                                                                                                                    |
+|     Click **Apply**                                                                                                                |
+|                                                                                                                                    |
+|     |Green-Pool|                                                                                                                   |
++------------------------------------------------------------------------------------------------------------------------------------+
+| 11. Back at the route add form scroll down to the bottom of the form and click **Configure** in the Advanced Options secction.     |
+|                                                                                                                                    |
+|     |Advanced-Options|                                                                                                             |
++------------------------------------------------------------------------------------------------------------------------------------+
+| 12. On the resulting form find the Request/Response Manipulation section.  Select **Enable Prefix Rewrite** from the Enable Rewrite|
+|                                                                                                                                    |
+|     dropdown.  In the Enable Prefix Rewrite field enter **/**.                                                                     |
+|                                                                                                                                    |
+|     |Rewrite|                                                                                                                      |
++------------------------------------------------------------------------------------------------------------------------------------+
+| 13. Scroll down to the Security section and select **App Firewall** from the Web Application Firewall (WAF) dropdown.  Select      |
+|                                                                                                                                    |
+|     **shared/app-block** from the App Firewall dropdown. Then click **Apply**.                                                     |
+|                                                                                                                                    |
+|     |WAF|                                                                                                                          |
++------------------------------------------------------------------------------------------------------------------------------------+
+| 14. Click **Apply**.                                                                                                               |
+|                                                                                                                                    |
+|     |Apply-WAF-Route|                                                                                                              |
++------------------------------------------------------------------------------------------------------------------------------------+
+| 15. Click **Apply**.                                                                                                               |
+|                                                                                                                                    |
+|     |Routes-Apply2|                                                                                                                |
++------------------------------------------------------------------------------------------------------------------------------------+
+| 16. Click **Save HTTP Load Balancer** to save the LB config.                                                                       |
+|                                                                                                                                    |
+|     |LB-Save|                                                                                                                      |
++------------------------------------------------------------------------------------------------------------------------------------+
+| **Test and Verify:**                                                                                                               |
++------------------------------------------------------------------------------------------------------------------------------------+
+| 17. Go back to your FIREFOX instance that is running within a browser.                                                             |
++------------------------------------------------------------------------------------------------------------------------------------+
+| 18. In the Firefox location bar, enter your LB domin name.  The name format is https://<name-space>.lab-app.f5demos.com/.  You     |
+|                                                                                                                                    |
+|     should see the blue version of the application.                                                                                |
+|                                                                                                                                    |
+|     |Blue-App|                                                                                                                     |
++------------------------------------------------------------------------------------------------------------------------------------+
+| 19. To test routing via HTTP path, add **/login** to the URL.  If everything worked correctly you should now see the green version |
+|                                                                                                                                    |
+|     of the application. The full URL should be https://<name-space>.lab-app.f5demos.com/login.                                     |
+|                                                                                                                                    |
+|     |Green-App-Login|                                                                                                              |
++------------------------------------------------------------------------------------------------------------------------------------+
+| 20. Verify the WAF policy was applied by adding **?cmd=cat /etc/passwd** to end of the URL.  The full URL should look like:        |
+|                                                                                                                                    |
+|     https://<name-space>.lab-app.f5demos.com/login/?cmd=cat /etc/passwd. When you hit enter you should now see a page saying The   |
+|                                                                                                                                    |
+|     requested URL was rejected along with a support ID.                                                                            |
+|                                                                                                                                    |
+|     |WAF-Block|                                                                                                                    |
++------------------------------------------------------------------------------------------------------------------------------------+
+| 21. Copy the support ID from the Request Rejected page in FIREFOX.                                                                 |
+|                                                                                                                                    |
+|     |Support-ID|                                                                                                                   |
++------------------------------------------------------------------------------------------------------------------------------------+
+| 22. Open your Distributed Cloud Management Console.  Click on the AI Assistant icon in the top right corner.                       |
+|                                                                                                                                    |
+|     |AI-Assistant|                                                                                                                 |
++------------------------------------------------------------------------------------------------------------------------------------+
+| 23. At the prompt enter: Explain security event <Support-ID>.  Replacing <Support-ID> with the support ID you copied from the      |
+|                                                                                                                                    |
+|     Request Rejected page.                                                                                                         |
+|                                                                                                                                    |
+|     |Explain-Event|                                                                                                                |
++------------------------------------------------------------------------------------------------------------------------------------+
+| 24. The AI Assistant will provide a detailed analysis for the specified Support-ID.                                                |
+|                                                                                                                                    |
+|     |Event-Analysis|                                                                                                               |
++------------------------------------------------------------------------------------------------------------------------------------+
+
+
+Task 3: Deploy routes to modify application responses in transit
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+This task guides you through configuring a route for an F5 Distributed Cloud Load Balancer that makes routing decisions based on the URL path and
+adds a response header. This configuration can be used to set or remove headers that are utilized by the backend application.
+
++------------------------------------------------------------------------------------------------------------------------------------+
+| **Configure a Path Route and Adds a Response Header**                                                                              |
++====================================================================================================================================+
+| 1. Open the Distibruted Cloud Console.                                                                                             |
++------------------------------------------------------------------------------------------------------------------------------------+
+| 2. If you are not already in the **Web App & API Protection** workspace, from the top navigation bar, select the **Web App & API** |
+|                                                                                                                                    |
+|    **Protection** workspace.                                                                                                       |
+|                                                                                                                                    |
+|    |Web-App-Dropdown|                                                                                                              |
++------------------------------------------------------------------------------------------------------------------------------------+
+| 3. In the navigation sidebar on the left, expand **Manage**, expand **Load Balancers**, and select **HTTP Load Balancers**.        |
+|                                                                                                                                    |
+|    |Manage-HTTP-LB|                                                                                                                |
++------------------------------------------------------------------------------------------------------------------------------------+
+| 4. Locate your HTTP Load Balancer in the list and click the ellipsis (three dots) under the **Actions** column. Select **Manage**  |
+|                                                                                                                                    |
+|    **Configuration**.  Your Load Balancer for this lab is named <name-space>-routing-https-lb.                                     |
+|                                                                                                                                    |
+|    |Manage-LB-Config|                                                                                                              |
+|                                                                                                                                    |
+| .. note::                                                                                                                          |
+|    *If you don't see a HTTP Load Balancer, make sure you are in the correct namespace.*                                            |
++------------------------------------------------------------------------------------------------------------------------------------+
+| 5. In the Load Balancer Configuration page, click **Edit Configuration** in the top right.                                         |
+|                                                                                                                                    |
+|    |Edit-LB-Config|                                                                                                                |
++------------------------------------------------------------------------------------------------------------------------------------+
+| 6. In the Load Balancer Edit Configuration page, scroll to the **Routes** section or click **Routes** in the left menu to jump to  |
+|                                                                                                                                    |
+|    the routes section.                                                                                                             |
+|                                                                                                                                    |
+|    |Routes-Section|                                                                                                                |
++------------------------------------------------------------------------------------------------------------------------------------+
+| 7. Click **Edit Configuration** in the Routes configuration section.                                                               |
+|                                                                                                                                    |
+|    |Routes-Edit-Config|                                                                                                            |
++------------------------------------------------------------------------------------------------------------------------------------+
+| 8. Find the path route we just added in Task 2 and click the ellipsis (three dots) under the **Actions** column. Select **Edit**   |
+|                                                                                                                                    |
+|    |Edit-Path|                                                                                                                     |
++------------------------------------------------------------------------------------------------------------------------------------+
+| 9. Scroll to the Advanced Options section and click **Edit Configuration**.                                                        |
+|                                                                                                                                    |
+|    |Advanced-Edit|                                                                                                                 |
++------------------------------------------------------------------------------------------------------------------------------------+
+| 10. In the resulting form, scroll to the Add Response Headers section and click **Add Item**.                                      |
+|                                                                                                                                    |
+|     |Add-Response|                                                                                                                 |
++------------------------------------------------------------------------------------------------------------------------------------+
+| 11. In the Headeres to Add form, add the following:                                                                                |
+|                                                                                                                                    |
+|     - Name: XC-Namespace                                                                                                           |
+|                                                                                                                                    |
+|     - Value or Secret: Value                                                                                                       |
+|                                                                                                                                    |
+|        - Value: $[namespace]                                                                                                       |
+|                                                                                                                                    |
+|     Click **Apply**                                                                                                                |
+|                                                                                                                                    |
+|     |Response-Header|                                                                                                              |
+|                                                                                                                                    |
+| .. note::                                                                                                                          |
+|    *XC has predefined header variables that you can use to insert dynamic content.* `XC-Header-Variables`_.                        |
++------------------------------------------------------------------------------------------------------------------------------------+
+| 12. Click **Apply**.                                                                                                               |
+|                                                                                                                                    |
+|     |Advanced-Apply|                                                                                                               |
++------------------------------------------------------------------------------------------------------------------------------------+
+| 13. Click **Apply**.                                                                                                               |
+|                                                                                                                                    |
+|     |Apply-WAF-Route|                                                                                                              |
++------------------------------------------------------------------------------------------------------------------------------------+
+| 14. Click **Apply**.                                                                                                               |
+|                                                                                                                                    |
+|     |Routes-Apply2|                                                                                                                |
++------------------------------------------------------------------------------------------------------------------------------------+
+| 15. Click **Save HTTP Load Balancer** to save the LB config.                                                                       |
+|                                                                                                                                    |
+|     |LB-Save|                                                                                                                      |
++------------------------------------------------------------------------------------------------------------------------------------+
+| **Test and Verify:**                                                                                                               |
++------------------------------------------------------------------------------------------------------------------------------------+
+| 16. Go back to your FIREFOX instance that is running within a browser.                                                             |
++------------------------------------------------------------------------------------------------------------------------------------+
+| 17. In the Firefox location bar, enter your LB domin name.  The name format is https://<name-space>.lab-app.f5demos.com/login.  You|
+|                                                                                                                                    |
+|     should see the green version of the application.                                                                               |
+|                                                                                                                                    |
+|     |Green-App-Login|                                                                                                              |
++------------------------------------------------------------------------------------------------------------------------------------+
+| 17. Click the three horizontal lines in the Firefox bar to open the application menu and then click **More tools**.                |
+|                                                                                                                                    |
+|     |More-Tools|                                                                                                                   |
++------------------------------------------------------------------------------------------------------------------------------------+
+| 18. Click **Web Developer Tools**                                                                                                  |
+|                                                                                                                                    |
+|     |Web-Dev|                                                                                                                      |
++------------------------------------------------------------------------------------------------------------------------------------+
+| 19. Click the **Network** tab and then click the **Reload** icon.                                                                  |
+|                                                                                                                                    |
+|     |Network-Reload|                                                                                                               |
++------------------------------------------------------------------------------------------------------------------------------------+
+| 20. Click on the GET request for the login file and then select **Headers** from the right tabs.  Scroll through the Response      |
+|                                                                                                                                    |
+|     Headers until you see the xc-namespace header.  Notice that the value matches your namespace.                                  |
+|                                                                                                                                    |
+|     |Firefox-Header|                                                                                                               |
++------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------+
+| **End of Lab 2**                                                                                                                   |
++====================================================================================================================================+
+| This concludes Lab 2. In this lab, you learned how to:                                                                             |
+|                                                                                                                                    |
+| - Configure a HTTP Load Balancer to route traffic based on HTTP header values. This configuration can be useful for canary testing.|
+|                                                                                                                                    |
+| - Configure a HTTP Load Balancer to apply WAF policy based on URL path. This configuration can be used to apply different security |
+|                                                                                                                                    |
+|   measures based on URL path.                                                                                                      |
+|                                                                                                                                    |
+| - Configure a HTTP Load Balancer route to manipulare request or response parameters. This configuration can be used to apply or    |
+|                                                                                                                                    |
+|   remove values that are utilized by the backend application or infrastructure.                                                    |
++------------------------------------------------------------------------------------------------------------------------------------+
+| |labend|                                                                                                                           |
++------------------------------------------------------------------------------------------------------------------------------------+
+
+
+.. |Web-App-Tile| image:: _static/Web-App-Tile.png
    :width: 800px
-.. |lab002| image:: _static/lab2-002.png
+.. |Web-App-Dropdown| image:: _static/Web-App-Dropdown.png
    :width: 800px
-.. |lab003| image:: _static/lab2-003.png
+.. |Manage-HTTP-LB| image:: _static/Manage-HTTP-LB.png
    :width: 800px
-.. |lab004| image:: _static/lab2-004.png
+.. |Manage-LB-Config| image:: _static/Manage-LB-Config.png
+   :width: 800px   
+.. |Edit-LB-Config| image:: _static/Edit-LB-Config.png
    :width: 800px
-.. |lab005| image:: _static/lab2-005.png
+.. |Routes-Section| image:: _static/Routes-Section.png
    :width: 800px
-.. |lab006| image:: _static/lab2-006.png
+.. |Routes-Config| image:: _static/Routes-Config.png
    :width: 800px
-.. |lab007| image:: _static/lab2-007.png
+.. |Route-Add| image:: _static/Route-Add.png
    :width: 800px
-.. |lab008| image:: _static/lab2-008.png
+.. |Header-Add| image:: _static/Header-Add.png
    :width: 800px
-.. |lab009| image:: _static/lab2-009.png
+.. |Header-Match| image:: _static/Header-Match.png
    :width: 800px
-.. |lab010| image:: _static/lab2-010.png
+.. |Origin-Add| image:: _static/Origin-Add.png
    :width: 800px
-.. |lab011| image:: _static/lab2-011.png
+.. |Green-Pool| image:: _static/Green-Pool.png
    :width: 800px
-.. |lab012| image:: _static/lab2-012.png
+.. |Route-Apply| image:: _static/Route-Apply.png
    :width: 800px
-.. |lab013| image:: _static/lab2-013.png
+.. |Routes-Apply| image:: _static/Routes-Apply.png
    :width: 800px
-.. |lab014| image:: _static/lab2-014.png
+.. |LB-Save| image:: _static/LB-Save.png
    :width: 800px
-.. |lab015| image:: _static/lab2-015.png
+.. |Blue-App| image:: _static/Blue-App.png
    :width: 800px
-.. |lab016| image:: _static/lab2-016.png
+.. |Header-Editor| image:: _static/Header-Editor.png
    :width: 800px
-.. |lab017| image:: _static/lab2-017.png
+.. |Header-Manage| image:: _static/Header-Manage.png
    :width: 800px
-.. |lab018| image:: _static/lab2-018.png
+.. |Green-Rule| image:: _static/Green-Rule.png
    :width: 800px
-.. |lab019| image:: _static/lab2-019.png
+.. |Refresh| image:: _static/Refresh.png
    :width: 800px
-.. |lab020| image:: _static/lab2-020.png
+.. |Green-App| image:: _static/Green-App.png
    :width: 800px
-.. |lab021| image:: _static/lab2-021.png
+.. |Green-Rule-Disable| image:: _static/Green-Rule-Disable.png
    :width: 800px
-.. |lab022| image:: _static/lab2-022.png
+.. |Route-Add2| image:: _static/Route-Add2.png
    :width: 800px
-.. |lab023| image:: _static/lab2-023.png
+.. |Login-Prefix| image:: _static/Login-Prefix.png
    :width: 800px
-.. |lab024| image:: _static/lab2-024.png
+.. |Advanced-Options| image:: _static/Advanced-Options.png
    :width: 800px
-.. |lab025| image:: _static/lab2-025.png
+.. |Rewrite| image:: _static/Rewrite.png
    :width: 800px
-.. |lab026| image:: _static/lab2-026.png
+.. |WAF| image:: _static/WAF.png
    :width: 800px
-.. |lab027| image:: _static/lab2-027.png
+.. |Apply-WAF-Route| image:: _static/Apply-WAF-Route.png
    :width: 800px
-.. |lab028| image:: _static/lab2-028.png
+.. |Routes-Apply2| image:: _static/Routes-Apply2.png
    :width: 800px
-.. |lab029| image:: _static/lab2-029.png
+.. |Green-App-Login| image:: _static/Green-App-Login.png
    :width: 800px
-.. |lab030| image:: _static/lab2-030.png
+.. |WAF-Block| image:: _static/WAF-Block.png
    :width: 800px
-.. |lab031| image:: _static/lab2-031.png
+.. |Support-ID| image:: _static/Support-ID.png
    :width: 800px
-.. |lab032| image:: _static/lab2-032.png
+.. |AI-Assistant| image:: _static/AI-Assistant.png
    :width: 800px
-.. |lab033| image:: _static/lab2-033.png
+.. |Explain-Event| image:: _static/Explain-Event.png
+   :width: 800px
+.. |Event-Analysis| image:: _static/Event-Analysis.png
+   :width: 800px
+.. |Routes-Edit-Config| image:: _static/Routes-Edit-Config.png
+   :width: 800px
+.. |Edit-Path| image:: _static/Edit-Path.png
+   :width: 800px
+.. |Advanced-Edit| image:: _static/Advanced-Edit.png
+   :width: 800px
+.. |Add-Response| image:: _static/Add-Response.png
+   :width: 800px
+.. |Response-Header| image:: _static/Response-Header.png
+   :width: 800px
+.. |Advanced-Apply| image:: _static/Advanced-Apply.png
+   :width: 800px
+.. |More-Tools| image:: _static/More-Tools.png
+   :width: 800px
+.. |Web-Dev| image:: _static/Web-Dev.png
+   :width: 800px
+.. |Network-Reload| image:: _static/Network-Reload.png
+   :width: 800px
+.. |Firefox-Header| image:: _static/Firefox-Header.png
    :width: 800px
 .. |labend| image:: _static/labend.png
    :width: 800px
-      
+.. _XC-Header-Variables: https://docs.cloud.f5.com/docs-v2/multi-cloud-app-connect/how-to/adv-security/configure-http-header-processing#predefined-header-variables
