@@ -40,7 +40,6 @@ and proceed to Task 1.
 
 Task 1: Discover Your Animal (Namespace)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 +----------------------------------------------------------------------------------------------+
 |The following steps will help you identify your namespace and update your lab guide           |
 |to reflect your namespace dynamically.                                                        |
@@ -57,7 +56,6 @@ Task 1: Discover Your Animal (Namespace)
 |                                                                                              |
 |.. note:: You may have had a namespace from a previous lab, pleased update with the new.      |
 +----------------------------------------------------------------------------------------------+
-
 .. raw:: html
 
    <div style="margin: 1em 0; padding: 1em; border: 0px solid #ccc;">
@@ -78,14 +76,14 @@ Task 2: Exploring the F5 Distributed Console
 |currently advertising a globally available application. These steps will allow you to review  |
 |the application, its DNS entry and the application target that is configured as the origin.   |
 |                                                                                              |
-|2. On the **Web App & API Protection** page, left-hand navigation expand                      |
+|1. On the **Web App & API Protection** page, left-hand navigation expand                      |
 |  **Manage** and click **Load Balancers > Origin Pools**                                      |
 |                                                                                              |
 ||lab001|                                                                                      |
 |                                                                                              |
 ||lab002|                                                                                      |
 |                                                                                              |
-|3. In the resulting screen expand the Actions Menu and click **Manage Configuration** for     |
+|2. In the resulting screen expand the Actions Menu and click **Manage Configuration** for     |
 |   the origin pool configured in your namespace. Here you will see the origin server public   |
 |   FQDN of the application running in ACME's Azure environment.  Copy the domain name so you  |
 |   can visit the site directly from your web browser.  Click  **Cancel and Exit** to return   |
@@ -95,10 +93,10 @@ Task 2: Exploring the F5 Distributed Console
 |                                                                                              |
 ||lab004|                                                                                      |
 |                                                                                              |
-|4. Using your browser, visit this application directly utilizing its public FQDN. Select the  |
+|3. Using your browser, visit this application directly utilizing its public FQDN. Select the  |
 |   **Menu** on the top right-hand side and select **Header**.                                 |   
 |                                                                                              |
-|5. Note the Remote Address field. This will match the IP address of your workstation. You can |
+|4. Note the Remote Address field. This will match the IP address of your workstation. You can |
 |   verify that it matches by looking up your IP address at https://ipinfo.io/ or              |
 |   https://ifconfig.co/                                                                       |
 |                                                                                              |
@@ -111,11 +109,11 @@ Task 2: Exploring the F5 Distributed Console
 ||lab008|                                                                                      |
 |                                                                                              |
 |                                                                                              |
-|6. Next, let's return to the F5 Distributed Cloud console and take a look at the F5 XC load   |
+|5. Next, let's return to the F5 Distributed Cloud console and take a look at the F5 XC load   |
 |   balancer configured for you. In the left-hand navigation expand **Manage** and click       |
 |   **Load Balancers > HTTP Load Balancers**                                                   |
 |                                                                                              |
-|7. In the resulting screen expand the Actions Menu and click **Manage Configuration** for     |
+|6. In the resulting screen expand the Actions Menu and click **Manage Configuration** for     |
 |   the load balancer configured in your namespace. The graphic below is an example. Your      |
 |   environment will have a different load balancer name but it should follow a similar naming |
 |   convention *adjective-animal*.                                                             |
@@ -125,7 +123,7 @@ Task 2: Exploring the F5 Distributed Console
 ||lab010|                                                                                      |
 |                                                                                              |
 |                                                                                              |
-|8. Using the left-hand navigation and in the sections as shown, review the following data.    |
+|7. Using the left-hand navigation and in the sections as shown, review the following data.    |
 |   Values where **<your-namespace>** *adjective-animal* is represented, the configuration will|
 |   be the name of your provisioned namespace.  Note the FQDN of the F5 XC load balancer.      |
 |                                                                                              |                                                
@@ -140,10 +138,10 @@ Task 2: Exploring the F5 Distributed Console
 |                                                                                              |
 ||lab011|                                                                                      |
 |                                                                                              |
-|9. Using your web browser, access the application via the F5 XC FQDN. Click on                |
+|8. Using your web browser, access the application via the F5 XC FQDN. Click on                |
 |   **Menu > Header**                                                                          |  
 |                                                                                              |
-|10. Note that the Remote Address has changed as well as the presence of a new X-Forwarded-For |
+|9. Note that the Remote Address has changed as well as the presence of a new X-Forwarded-For |
 |    header. The client information should have changed as you are now connecting first through|
 |    the F5 ADN Regional Edge before being proxied to the application running the ACME Corp.   |
 |    environment. X-Forwarded-For details should match your workstation's IP address.          |
