@@ -22,7 +22,7 @@ This end-to-end workflow highlights how organizations can **discover vulnerabili
 ------------
 
 |intro000a|
-
+|intro000d|
 
 Task 1: Lab Environment
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -195,6 +195,8 @@ Accessing F5 Distributed Cloud
 .. |intro000a| image:: _static/intro-000a.png
    :width: 800px
 .. |intro000b| image:: _static/intro-000b.png
+   :width: 800px
+.. |intro000d| image:: _static/intro-000d.png
    :width: 800px
 .. |intro001| image:: _static/intro-01.png
    :width: 600px
