@@ -58,6 +58,26 @@ Task 1: Exploring the F5 Distributed Console
 |                                                                                              |
 ||lab002|                                                                                      |
 |                                                                                              |
++----------------------------------------------------------------------------------------------+
+Lab Guide Namespace Update
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Before starting the course, update your namespace to dynamically update the guide.
+
+.. raw:: html
+
+   <div style="margin: 1em 0; padding: 1em; border: 0px solid #ccc;">
+     <label for="namespaceInput">Enter your namespace:</label>
+     <input id="namespaceInput" type="text" placeholder="e.g. sassy-panda" />
+     <button onclick="setNamespace()">Save</button>
+   </div>
+
+   <p><strong>Current namespace:</strong> <span id="currentNamespace">&lt;namespace&gt;</span></p>
+
+.. note:: Guide pages might need to be refreshed to get updated namespace to render.
+
++----------------------------------------------------------------------------------------------+   
+|       |                                                                                       |
 |3. In the resulting screen expand the Actions Menu and click **Manage Configuration** for     |
 |   the origin pool configured in your namespace. Here you will see the origin server public   |
 |   FQDN of the application running in ACME's Azure environment.  Copy the domain name so you  |
