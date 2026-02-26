@@ -124,12 +124,6 @@ Before starting the course, update your namespace to dynamically update the guid
 |                                                                                              |                                                
 |   * **Metadata**  *<namespace>-lb*                                                           |
 |                                                                                              |
-+----------------------------------------------------------------------------------------------+
-
-.. raw:: html
-   <p><strong>URL:</strong><span id="currentNamespace">https://&lt;namespace&gt;/lab-sec-f5demos.com</span></p>
-
-+----------------------------------------------------------------------------------------------+
 |   * **Domains and LB Type**  *<namespace>.lab-sec.f5demos.com*                               |
 |   * **Other Settings** VIP Advertisement                                                     |
 |                                                                                              |
