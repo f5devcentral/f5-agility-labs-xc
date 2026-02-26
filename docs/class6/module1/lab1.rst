@@ -49,28 +49,10 @@ Task 2: Locate Your Customer Edge Node
 ---------------------------------------
 
 Each lab attendee has been assigned a unique Customer Edge node following the **<adjective-animal>**
-naming convention identified in the lab introduction. You can find your assigned namespace by 
+naming convention identified in the lab introduction. If you haven't already done this in the Introduction: Accessing Lab Resources. You can find your assigned namespace by 
 clicking on the account on the top right corner.
 
 |lab004|
-
-**Preparation**
------------
-
-Before continuing with the lab, please update your namespace to dynamically update the guide.
-
-.. raw:: html
-
-   <div style="margin: 1em 0; padding: 1em; border: 0px solid #ccc;">
-     <label for="namespaceInput">Enter your namespace:</label>
-     <input id="namespaceInput" type="text" placeholder="e.g. sassy-panda" />
-     <button onclick="setNamespace()">Save</button>
-   </div>
-
-   <p><strong>Current namespace:</strong> <span id="currentNamespace">&lt;namespace&gt;</span></p>
-
-.. note:: Guide pages might need to be refreshed to get updated namespace to render.
-
 
 3. Using the left-hand navigation, from the **Manage** section, click on **Site Management**, 
    then select **Secure Mesh Sites v2**.
