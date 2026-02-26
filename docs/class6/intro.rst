@@ -10,6 +10,24 @@ The F5 Distributed Cloud Console is a SaaS-based control plane that provides a G
 managing network, security, and compute services across on-premises data centers and public cloud 
 environments (AWS, Azure, and GCP).
 
+Preparation
+-----------
+
+Before starting the course, update your namespace to dynamically update the guide.
+
+.. raw:: html
+
+   <div style="margin: 1em 0; padding: 1em; border: 0px solid #ccc;">
+     <label for="namespaceInput">Enter your namespace:</label>
+     <input id="namespaceInput" type="text" placeholder="e.g. sassy-panda" />
+     <button onclick="setNamespace()">Save</button>
+   </div>
+
+   <p><strong>Current namespace:</strong> <span id="currentNamespace">&lt;namespace&gt;</span></p>
+
+.. note:: Guide pages might need to be refreshed to get updated namespace to render.
+
+
 Task 1: Lab Environment
 ~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -132,22 +150,6 @@ throughout the lab tasks that follow.
 | |intro009|                                                                                   |
 +----------------------------------------------------------------------------------------------+
 
-Preparation
------------
-
-Before starting the course, update your namespace to dynamically update the guide.
-
-.. raw:: html
-
-   <div style="margin: 1em 0; padding: 1em; border: 0px solid #ccc;">
-     <label for="namespaceInput">Enter your namespace:</label>
-     <input id="namespaceInput" type="text" placeholder="e.g. sassy-panda" />
-     <button onclick="setNamespace()">Save</button>
-   </div>
-
-   <p><strong>Current namespace:</strong> <span id="currentNamespace">&lt;namespace&gt;</span></p>
-
-.. note:: Guide pages might need to be refreshed to get updated namespace to render.
 
 .. |intro001| image:: _static/intro-001.png
    :width: 800px
