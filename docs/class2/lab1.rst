@@ -44,9 +44,8 @@ Task 1: Discover Your Animal (Namespace)
 |The following steps will help you identify your namespace and update your lab guide           |
 |to reflect your namespace dynamically.                                                        |
 |                                                                                              |
-|1. Following the **Introduction** section instructions, you should now be on the Home page.   |
-|   of the F5 Distributed Cloud Console.  Let's first review the F5 Distributed Load Balancer  |
-|   that was configured for you via automation.  Select **Web App & API Protection**.          |
+|1. Following the **Introduction** section instructions, you should now be on the Home page    |
+|   of the F5 Distributed Cloud Console. Select **Web App & API Protection**.                  |
 |                                                                                              |
 |2. On the **Web App & API Protection** page, note the identifier of your namespace (top left  |
 |   area of the page). The namespace will follow a format of *adjective-animal*. In this       |
@@ -76,8 +75,9 @@ Task 2: Exploring the F5 Distributed Console
 |currently advertising a globally available application. These steps will allow you to review  |
 |the application, its DNS entry and the application target that is configured as the origin.   |
 |                                                                                              |
-|1. On the **Web App & API Protection** page, left-hand navigation expand                      |
-|  **Manage** and click **Load Balancers > Origin Pools**                                      |
+|1. Let's first review the F5 Distributed Load Balancer that was configured for you via        |
+|   automation. On the **Web App & API Protection** page, left-hand navigation expand          |
+|   **Manage** and click **Load Balancers > Origin Pools**                                     |
 |                                                                                              |
 ||lab001|                                                                                      |
 |                                                                                              |
