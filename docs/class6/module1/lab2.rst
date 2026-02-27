@@ -159,7 +159,7 @@ Now you need to attach your UDF segment to your CE site's interface.
 
 12. Click **Apply** for interface changes then click **Apply** for node configuration changes.
 
-13. Click **Save and Exit** to save the Secure Mesh Site configuration.
+13. Click **Save Secure Mesh Site** to save the configuration.
 
 14. Navigate back to **Manage >> Networking >> Segments** and find your segment
     **<your-namespace>-udf-sg**.
@@ -177,12 +177,12 @@ Task 5: Review Routing Information
 
 Let's examine the routing established by attaching the segment to the interface.
 
-16. Navigate to **Multi-Cloud Network Connect >> Infrastructure/Sites** and click on your
-    **<your-namespace>-site** site.
+16. Navigate to **Manage >> Site Management >> Secure Mesh Sites v2** and search for **<your-namespace>-site** then click on your
+    site.
 
 17. Click on the **CE Routes** menu on the top, in the middle.
 
-18. **Select Data** by choosing your node and the segment you just created, then click **Apply**.
+18. Look to the right, **Select Data** by choosing your node and the segment you just created **<your-namespace>-udf-sg**, then click **Apply**.
 
     |lab011|
 
