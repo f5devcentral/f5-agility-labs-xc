@@ -69,6 +69,14 @@ account icon on the top right corner.
 
    |lab007|
 
+   .. note::
+   If your node is not yet online, give it a few minutes to finish provisioning.
+   You can check the progress from the lab deployment status (access from Ubuntu server
+   in your UDF deployment).
+
+   |lab009|
+
+
 Task 3: Review Your Customer Edge Configuration
 ------------------------------------------------
 
@@ -82,14 +90,8 @@ Now let's examine the configuration that was automatically deployed for your CE 
    * **Site Status:** Both Data Plane and Control Plane should be **Up**
    * **Nodes:** You should have 1 Control Node and it should be up
 
-   .. note::
-      If your node is not yet online, give it a few minutes to finish provisioning.
-      You can check the progress from the lab deployment status (access from Ubuntu server
-      in your UDF deployment).
 
    |lab008|
-
-   |lab009|
 
    .. note::
       In production environments, the best practice is to deploy a 3-node cluster for high

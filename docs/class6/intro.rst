@@ -105,7 +105,7 @@ Before continuing with the lab, please update your namespace to dynamically upda
 .. note:: 
    Lab guides might need to be refreshed to get updated namespace to render.
 
-.. |intro001| image:: _static/intro-001.png
+.. |intro001| image:: ../class6/images/temp/intro/intro1pic1.png
    :width: 800px
 .. |intro002| image:: ../class6/images/temp/intro/intro1pic2.png
    :width: 800px
