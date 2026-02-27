@@ -118,7 +118,7 @@ You will now create an origin pool for the AWS workload using a public DNS name.
 
     |lab011|
 
-14. Click **Save and Exit**.
+14. Click **Save Origin Pool**.
 
 Task 4: Create Azure Origin Pool
 ---------------------------------
@@ -168,7 +168,7 @@ You will now create an origin pool for the Azure workload using a private IP add
 
 21. Under **Health Checks**, click the **Select Item** dropdown.
 
-22. Choose the health check you created earlier: **<your-namespace>-http-health-check**, then click **Save and Exit**.
+22. Choose the health check you created earlier: **<your-namespace>-http-health-check**, then click **Save Origin Pool**.
 
     |lab015|
 
@@ -225,7 +225,7 @@ Now you'll create an HTTP load balancer that uses F5 Regional Edges as the globa
        Priority value of **1** is highest priority. Priority value of **0** is lowest priority.
        This configuration makes AWS the preferred destination and Azure the failover destination.
 
-32. Verify your HTTP load balancer configuration then click **Save and Exit**.
+32. Verify your HTTP load balancer configuration then click **Add HTTP Load Balancer**.
 
     |lab023|
 
@@ -290,7 +290,7 @@ Let's simulate an AWS failure to test failover to the Azure pool.
 
     |lab029|
 
-45. Click **Save and Exit**.
+45. Click **Save Origin Pool**.
 
     .. important::
        Enabling TLS will cause the health check to fail because the AWS server doesn't expect
@@ -325,7 +325,7 @@ Let's bring the AWS pool back online.
 
     |lab032|
 
-52. Scroll to **TLS** and select **Disable**, then click **Save and Exit**.
+52. Scroll to **TLS** and select **Disable**, then click **Save Origin Pool**.
 
     |lab033|
 
@@ -361,7 +361,7 @@ Now let's explore the analytics and monitoring capabilities.
 
     |lab036|
 
-59. Review the **Application Health** score. It may not be 100% due to the AWS pool being
+59. Review the **Application Health** score. It's not 100% due to the AWS pool being
     offline during testing.
 
     |lab037|
@@ -414,7 +414,7 @@ Task 11: Review Request Logs
 
 69. Choose any request in the log and click the **expand** arrow next to the timestamp.
 
-70. Review the detailed request information including end-to-end analytics.
+70. Review the detailed request information including **end-to-end analytics**.
 
     |lab046|
 
