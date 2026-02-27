@@ -267,9 +267,6 @@ Task 3: View Post Lab Scan
 |                                                                                              |
 +----------------------------------------------------------------------------------------------+
 
-Narrative Check
----------------
-
 By leveraging F5 Distributed Cloud Web App Scanning, organizations can have an ongoing view of the security posture of
 their web applications and track the issues over time. The Web App Scanning solution can also discover API endpoints and 
 LLM models that make up a Web Application and even provide reports against the OWASP Top 10 for LLMs.  So as ACME Corp 

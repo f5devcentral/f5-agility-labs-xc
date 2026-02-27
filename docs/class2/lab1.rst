@@ -217,9 +217,6 @@ Task 3: Configure WAF Policy on the Load Balancer
 |                                                                                              |
 +----------------------------------------------------------------------------------------------+
 
-Narrative Check
----------------
-
 You've built your first WAF policy on F5 Distributed Cloud. This WAF policy can be applied
 to any additional load balancers deployed in this namespace. The F5 XC WAAP suite can be 
 configured to protect applications across your on-prem data center, Azure, AWS, GCP and SAAS 
@@ -263,9 +260,6 @@ configuration changes.
 ||lab024|                                                                                      |
 |                                                                                              |
 +----------------------------------------------------------------------------------------------+
-
-Narrative Check
------------------
 
 The ACME application is now being successfully protected by F5 Distributed Cloud.
 
@@ -396,8 +390,6 @@ The ACME application is now being successfully protected by F5 Distributed Cloud
 ||lab041|                                                                                      |
 |                                                                                              |
 +----------------------------------------------------------------------------------------------+
-Narrative Check
------------------
 
 Upon foresnic review, your application team has told you that last request from 
 **Support IDs** from the testing performed in Task 3, Step 2 as shown is actually a valid request. 
@@ -545,8 +537,6 @@ Sample Blocking Response Page to be copied:
 |                                                                                              |
 +----------------------------------------------------------------------------------------------+
 
-Narrative Check
------------------
 You have now completed your first WAF policy deployment on F5 XC. This policy can be re-used for
 other applications in the ACME environment and the exclusions you configured are only applied to this specific 
 application. New applications that utilize the WAF policy configured will not have these exclusions

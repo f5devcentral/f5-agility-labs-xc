@@ -117,9 +117,6 @@ This HTTP request will not show up in the Security Analytics however you will fi
 |                                                                                              |
 +----------------------------------------------------------------------------------------------+
 
-Narrative Check
------------------
-
 Now that you are familiar with bot detection capabilities, you can work with the 
 application team to determine if suspicious bots should be blocked or kept in reporting
 mode. You are now ready to tackle preventing credential stuffing attacks from attacking the 
@@ -216,7 +213,7 @@ Let’s explore how an attacker could perform credential stuffing attacks by usi
 |11. In the new **Bot Defense Policy** section, click **Configure**.                           |
 |                                                                                              |
 |12. In the new **Protected App Endpoints** window, under **App Endpoint Type**,               |
-|   click **Configure**.                                                                       |
+|    click **Configure**.                                                                      |
 |                                                                                              |
 |13. In the new **App Endpoint Type** window, click  **Add Item**.                             |
 |                                                                                              |
@@ -288,8 +285,6 @@ to perform credential stuffing attacks? Let’s find out. Re-run our previously 
 |                                                                                              |
 +----------------------------------------------------------------------------------------------+
 
-Narrative Check
----------------
 You have now enabled F5 Distributed Cloud security policies to protect against potential attackers from probing
 ACME Corp's application and deter credenital stuffing attacks.  
 

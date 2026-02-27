@@ -93,8 +93,6 @@ malicious user mitigation and actions.
 
    |lab011|
 
-Narrative Check
----------------
 
 With User Identification Rules, F5 Distributed Cloud can pull in multiple data points
 as unique indicators to identify an individual user.  In addition to the IP address and
@@ -194,8 +192,6 @@ challenge.
 
    |lab024|
 
-Narrative Check
------------------
 
 With a combination of user identification and malicious user policies, ACME Corp
 can now detect malicious activities and apply mitigation steps. The mitigation steps include 
