@@ -300,7 +300,7 @@ You now have segment-based connectivity between:
 **Note:** This lab guide is incomplete. Additional tasks for Enhanced Firewall configuration 
 and other security policies will be added.
 
-.. |lab001| image:: ../images/temp/lab2/placeholder_pics.jpg
+.. |lab001| image:: ../images/temp/lab2/lab2pic1.png
    :width: 800px
 .. |lab002| image:: ../images/temp/lab2/lab2pic2.png
    :width: 800px

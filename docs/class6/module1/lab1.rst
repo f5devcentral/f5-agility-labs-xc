@@ -16,8 +16,6 @@ architecture and configuration rather than spending time on initial deployment.
    In a production environment, you would download the CE Node image (OVA, QCOW2, or ISO)
    and deploy it on your chosen platform (VMware, KVM, Azure, AWS, etc.).
 
-|lab001|
-
 Prerequisite
 ------------
 
@@ -152,8 +150,6 @@ these sites.
 
 **End of Lab 1**
 
-.. |lab001| image:: ../images/temp/lab1/placeholder_pics.jpg
-   :width: 800px
 .. |lab002| image:: ../images/temp/lab1/lab1pic2.png
    :width: 800px
 .. |lab003| image:: ../images/temp/lab1/lab1pic3.png
@@ -170,5 +166,5 @@ these sites.
    :width: 800px
 .. |lab009| image:: ../images/temp/lab1/lab1pic9.png
    :width: 800px
-.. |lab010| image:: ../images/temp/lab1/placeholder_pics.jpg
+.. |lab010| image:: ../images/temp/lab1/lab1pic10.png
    :width: 800px
