@@ -13,9 +13,7 @@ Rather than deploying and managing separate security solutions across on-premise
 
 In this lab, you will apply layered security controls using F5 Distributed Cloud, including **WAF Policies, Bot Mitigation, and Malicious User Detection** (Labs 1–3) to the Acme AppWorld application. 
 
-Given that web application scans can take an unpredictable amount of time--sometimes up to an hour--You will begin by examining a pre-existing **Baseline Vulnerability Scan** completed before any F5 Distributed Cloud protections were applied. Upon completing Lab 4, you will examine a second pre-generated report **XC Protected Vulnerability Scan** to validate how F5 Distributed Cloud security services significantly reduced the risk/exposure by mitigating previously identified vulnerabilities. 
-
-Finally, you will use **AI-Assisted Analytics** (Lab 5) to validate security events and gain operational insight into how the application is being protected.
+Given that web application scans can take an unpredictable amount of time--sometimes up to an hour--You will begin by examining a pre-existing **Baseline Vulnerability Scan** completed before any F5 Distributed Cloud protections were applied. Upon completing Lab 4, you will examine a second pre-generated report **XC Protected Vulnerability Scan** to validate how F5 Distributed Cloud security services significantly reduced the risk/exposure by mitigating previously identified vulnerabilities. Finally, you will use **AI-Assisted Analytics** (Lab 5) to validate security events and gain operational insight into how the application is being protected.
 
 This end-to-end workflow highlights how organizations can **discover vulnerabilities, deploy protection quickly, and continuously improve security posture** using F5 Distributed Cloud.
 
@@ -23,7 +21,7 @@ This end-to-end workflow highlights how organizations can **discover vulnerabili
 
 |intro000d|
 
-Task 1: Lab Environment
+Lab Environment
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 +----------------------------------------------------------------------------------------------+
@@ -38,7 +36,7 @@ Task 1: Lab Environment
 | |intro000b|                                                                                  |
 +----------------------------------------------------------------------------------------------+
 
-Task 2: Accessing F5 Distributed Cloud Console
+Accessing F5 Distributed Cloud Console
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +----------------------------------------------------------------------------------------------+

@@ -3,21 +3,21 @@ Lab 1: Deploying and Managing F5 Distributed Cloud Web Application Firewall Conf
 
 **Objective:**
 
-* Explore and become familiar with the Distributed Cloud Console
+* Explore and become familiar with the Distributed Cloud (**XC**) Console.
 
-* Review the F5 Distributed Cloud (XC) Load Balancer that has been provisioned
+* Review the F5 Distributed Cloud Load Balancer that has been provisioned.
 
-* Create a Web Application Firewall policy and attach to the F5 XC Load Balancer
+* Create a Web Application Firewall policy and attach to the F5 XC Load Balancer.
 
 **Narrative:** 
 
 After consulting with your trusty F5 Solutions Engineer, you decide to adopt security services from 
-F5 Distributed Cloud Web Application and API Protection (WAAP) suite. The lab provisioned for you 
-has already deployed a F5 XC load balancer and been setup to route to your public cloud application. The 
-F5 Distributed Cloud Application Delivery Network (ADN) will provide network connectivity for clients 
-to first route to F5's nearest Regional Edge (RE) location on the ADN utilizing IP Anycast.  Once 
-the client is connected to their nearest F5 RE, security controls can now be applied so that 
-malicous traffic can be dropped at the F5 RE and valid traffic can then be passed to the ACME environment.  
+F5 Distributed Cloud **Web Application and API Protection (WAAP)** suite. The lab provisioned for you 
+has already deployed a F5 XC load balancer and been setup to route to your public cloud application. 
+The F5 Distributed Cloud **Application Delivery Network (ADN)** will provide network connectivity for clients 
+to first route to F5's nearest **Regional Edge (RE)** location on the ADN utilizing IP Anycast. Once 
+the client is connected to their nearest F5 RE, security controls can now be applied so that malicous 
+traffic can be dropped at the F5 RE and valid traffic can then be passed to the ACME environment. 
 This lab will be deployed in a SaaS only configuration with no on-premises (public or private cloud) elements. 
 
 .. warning :: If you are using multiple labs in one course, understand that
@@ -86,8 +86,8 @@ Task 2: Exploring the F5 Distributed Console
 |                                                                                              |
 |2. In the resulting screen expand the Actions Menu and click **Manage Configuration** for     |
 |   the origin pool configured in your namespace. Here you will see the origin server public   |
-|   FQDN of the application running in ACME's Azure environment.  Copy the domain name so you  |
-|   can visit the site directly from your web browser.  Click  **Cancel and Exit** to return   |
+|   FQDN of the application running in ACME's environment. Copy the domain name so you         |
+|   can visit the site directly from your web browser. Click  **Cancel and Exit** to return    |
 |   to the Origin Pools page since you will not need to make any updates to the configuration. |
 |                                                                                              |
 ||lab003|                                                                                      |
@@ -125,8 +125,8 @@ Task 2: Exploring the F5 Distributed Console
 |                                                                                              |
 |                                                                                              |
 |7. Using the left-hand navigation and in the sections as shown, review the following data.    |
-|   Values where **<your-namespace>** *adjective-animal* is represented, the configuration will|
-|   be the name of your provisioned namespace.  Note the FQDN of the F5 XC load balancer.      |
+|   Values where *adjective-animal* (**<your-namespace>**) is represented, the configuration   |
+|   will be the name of your provisioned namespace. Note the FQDN of the F5 XC load balancer.  |
 |                                                                                              |
 |   * **Metadata**  *<your-namespace>-lb*                                                      |
 |   * **Domains and LB Type**  *<your-namespace>.lab-sec.f5demos.com*                          |
@@ -140,12 +140,12 @@ Task 2: Exploring the F5 Distributed Console
 ||lab011|                                                                                      |
 |                                                                                              |
 |8. Using your web browser, access the application via the F5 XC FQDN. Click on                |
-|   **Menu > Header**                                                                          |
+|   **Menu > Header**.                                                                         |
 |                                                                                              |
 |9. Note that the Remote Address has changed as well as the presence of a new X-Forwarded-For  |
-|    header. The client information should have changed as you are now connecting first through|
-|    the F5 ADN Regional Edge before being proxied to the application running the ACME Corp.   |
-|    environment. X-Forwarded-For details should match your workstation's IP address.          |
+|   header. The client information should have changed as you are now connecting first through |
+|   the F5 ADN Regional Edge before being proxied to the application running the ACME Corp.    |
+|   environment. **X-Forwarded-For** details should match your workstation's IP address.       |
 |                                                                                              |
 ||lab012|                                                                                      |
 |                                                                                              |
@@ -332,8 +332,8 @@ The ACME application is now being successfully protected by F5 Distributed Cloud
 |                                                                                              |
 ||lab033|                                                                                      |
 |                                                                                              |
-|13. Review the **Security Dashboard** display (you may have limited data). NOTE: you may need |
-|    to update the variable time period.                                                       |
+|13. Review the **Security Dashboard** display (you may have limited data).                    |    
+|    **NOTE: you may need to update the variable time period.**.                               |
 |                                                                                              |
 ||lab034|                                                                                      |
 |                                                                                              |
@@ -342,9 +342,9 @@ The ACME application is now being successfully protected by F5 Distributed Cloud
 ||lab035|                                                                                      |
 |                                                                                              |
 |.. note::                                                                                     |
-|   *This is a multi-application view. Here you could get the summary security status of*      |
-|   *each application (iw Threat Level, WAF Mode, etc)* and then click into one for more*      |
-|   *specific details.*                                                                        |
+|   *This is a multi-application view. Here you could get the security summary status of       |
+|    each application (ie: Threat Level, Security Events, WAF Mode, etc.). Selecting an        |
+|    individual application will provide more specific details.*                               |
 |                                                                                              |
 |15. From the **Security Dashboard** view, using the horizontal navigation, click              |
 |    **Security Analytics**.                                                                   |
@@ -357,7 +357,7 @@ The ACME application is now being successfully protected by F5 Distributed Cloud
 |                                                                                              |
 |.. note::                                                                                     |
 |   *If you lost your 1 Hour Filter, re-apply using following the method described in the      |
-|   earlier task*                                                                              |
+|   earlier task.*                                                                             |
 |                                                                                              |
 |17. Note the summary detail provided **Information** link and identify the                    |
 |    **Request ID** which is synonymous with **Support ID** (filterable) from the              |
@@ -391,7 +391,7 @@ The ACME application is now being successfully protected by F5 Distributed Cloud
 |                                                                                              |
 +----------------------------------------------------------------------------------------------+
 
-Upon foresnic review, your application team has told you that last request from 
+Upon forensic review, your application team has told you that last request from 
 **Support IDs** from the testing performed in Task 3, Step 2 as shown is actually a valid request. 
 You will need to create an exception for this so that traffic can successfully pass.  This task
 can be quickly accomplished in the XC console.  
@@ -416,7 +416,7 @@ can be quickly accomplished in the XC console.
 |   auto-populated based on the selected event to be excluded. Note the various sections and   |
 |   possible controls.                                                                         |
 |                                                                                              |
-|5. Take note, within the **Expiration Timestamp** field a time stamp can be entered forcing   |
+|5. Take note of the **Expiration Timestamp** field where a time stamp can be entered forcing  |
 |   the created exception to expire.                                                           |
 |                                                                                              |
 |6. Click **Apply** when complete.                                                             |
@@ -527,8 +527,8 @@ Sample Blocking Response Page to be copied:
    </body></html>
 
 +----------------------------------------------------------------------------------------------+
-|11. You can rerun an attack that was not excluded from Task 3: Step 2 to see the new custom   |
-|    block page.                                                                               |
+|11. You can rerun an attack that was not excluded from **Task 3: Step 2** to see the new      |
+|    custom block page.                                                                        |
 |                                                                                              |
 ||lab056|                                                                                      |
 |                                                                                              |
@@ -542,8 +542,7 @@ other applications in the ACME environment and the exclusions you configured are
 application. New applications that utilize the WAF policy configured will not have these exclusions
 allowing you to quickly scale and manage exlusions on a per application basis while the policy can stay the same.
 
-**End of Lab 1:**  This concludes Lab 1, feel free to review and test the
-configuration.
+**End of Lab 1:**  This concludes Lab 1. Feel free to review and test the configuration.
 
 A brief presentation will be shared prior to the beginning of Lab 2.
 
