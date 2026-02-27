@@ -226,9 +226,9 @@ Task 8: Create a Segment Connector
 
 Now let's create a segment connector to enable communication between your UDF segment and the AWS segment.
 
-22. Navigate to **Manage >> Networking >> Segment Connectors**.
+22. Navigate to **Manage >> Networking >> Segment Connector**.
 
-23. Click **Manage Segment Connector**.
+23. Click **Manage Segment Connections**.
 
 24. Click **Add Item** to create the segment connector:
 
