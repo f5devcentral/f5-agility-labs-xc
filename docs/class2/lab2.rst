@@ -272,7 +272,7 @@ to perform credential stuffing attacks? Let’s find out. Re-run our previously 
 
 .. code:: BASH
 
-   curl -v http://<your-namespace>.lab-sec.f5demos.com/auth.php -H "Content-Type: application/x-www-form-urlencoded" --user-agent "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.2.1 Safari/605.1.15" --data-raw "identity=user%40f5.com&token=password&submit=Submit"
+   curl -v https://<your-namespace>.lab-sec.f5demos.com --user-agent "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.2.1 Safari/605.1.15"
    
 +----------------------------------------------------------------------------------------------+
 |                                                                                              |
