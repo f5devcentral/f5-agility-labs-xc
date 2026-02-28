@@ -3,15 +3,15 @@ Lab 2: Reviewing Signature-based Bot Strategies and enabling F5 Distributed Clou
 
 **Objective:**
 
-* Review the F5 Distributed Cloud (XC) Load Balancer Standard Bot Protection capabilities
+* Review the F5 Distributed Cloud (XC) Load Balancer Standard Bot Protection capabilities.
   
-* Build policies to protect against credential stuffing attacks
+* Build policies to protect against credential stuffing attacks.
 
 **Narrative:** 
 
 Following your succssful Web Application Firewall deployment, you have been alerted
 by your application team that there are concerns about credential stuffing attacks
-and malicious bots.  The application owners are concerned that the credential credential stuffing 
+and malicious bots.  The application owners are concerned that the credential stuffing 
 could lead to issues with attackers taking over accounts and leading to fraud and loss
 revenue.  Credential stuffing attacks are usually executed by attackers with automation
 so that the bad actors can quickly identify a vulnerable application and pass many compromised
@@ -26,7 +26,7 @@ bots and block them.
 .. note::                                                                                  
    **Expected Lab Time: 25 minutes**
 
-**Lab 2 Summary–-Bot Defense**: Review the system’s built-in signature-based bot detection capabilities and then enable F5 Distributed Cloud Bot Defense for the application. By doing so, you’ll protect the site from automated threats such as web scrapers, credential stuffing bots, and other malicious automation. The lab demonstrates how the platform distinguishes human traffic from bots and stops unwanted bot activity without manual rule tuning.
+**Lab 2 Summary-Bot Defense**: Review the system’s built-in signature-based bot detection capabilities and then enable F5 Distributed Cloud Bot Defense for the application. By doing so, you’ll protect the site from automated threats such as web scrapers, credential stuffing bots, and other malicious automation. The lab demonstrates how the platform distinguishes human traffic from bots and stops unwanted bot activity without manual rule tuning.
 
 Task 1: Reviewing Signature-based Bot protection
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -40,8 +40,8 @@ Cloud Console.
 |1. Return to **Web App & API Protection**, in the left-hand navigation menu, click on **App   |
 |   Firewall**, under **Manage**.                                                              |
 |                                                                                              |
-|2. On your App Firewall policy **<namespace>-appfw**, click the three dots in the **Actions** |
-|   column and then click **Manage Configuration**.                                            |
+|2. On your App Firewall policy **<your-namespace>-appfw**, click the three dots in the        | 
+|   **Actions** column and then click **Manage Configuration**.                                |
 |                                                                                              |
 |3. Click **Edit Configuration** in the top right corner.                                      |
 |                                                                                              |
@@ -49,7 +49,7 @@ Cloud Console.
 |                                                                                              |
 ||lab002|                                                                                      |   
 |                                                                                              |
-|4. Using the left-hand navigation, click **Security Policy Settings**. In the**Security       |
+|4. Using the left-hand navigation, click **Security Policy Settings**. In the **Security      |
 |   Policy** section, click the **Signature-Based Bot Protection** dropdown menu.              |
 |                                                                                              |
 |5. From the **Signature-Based Bot Protection** dropdown menu, select **Custom**.              |
@@ -57,11 +57,11 @@ Cloud Console.
 ||lab003|                                                                                      |
 |                                                                                              |
 |6. In the expanded configuration window, observe the three Bot signature categories:          |
+|**Malicious, Suspicious,** and **Good**.                                                      |
 |                                                                                              |
-|**Malicious, Suspicious,** and **Good**. Also observe the actions.                            |
 |**Block, Ignore**, and **Report** which can be reviewed by selecting one of the dropdowns.    |
 |                                                                                              |
-|7. Set **Malicious Bot** to Block; **Suspicious Bot** to Report; and **Good Bot** to Report.  |
+|7. Set Malicious Bot to **Block**; Suspicious Bot to **Report**; and Good Bot to **Report**.  |
 |                                                                                              |
 |8. Click **Save App Firewall**.                                                               |
 |                                                                                              |
@@ -86,7 +86,7 @@ Cloud Console.
 ||lab007|                                                                                      |
 |                                                                                              |
 |12. Within the **Security** dashboard, scroll down to the **Load Balancer** section and click |
-|    the configured Load Balancer **<namespace>-lb**.                                          |
+|    the configured Load Balancer **<your-namespace>-lb**.                                     |
 |                                                                                              |
 ||lab008|                                                                                      |
 |                                                                                              |
@@ -94,7 +94,8 @@ Cloud Console.
 |                                                                                              |
 |14. Locate the most recent security event, which should be your curl request. Expand the      |
 |    security event as you have done in prior exercises to observe the "Suspicious" Bot        |
-|    reporting. Remember the setting for Suspicious Bot was set to *Report* from Step 6 above. |
+|    reporting. Remember the setting for **Suspicious Bot** was set to **Report** from Step 6  |
+|    above.                                                                                    |
 |                                                                                              |
 ||lab009|                                                                                      |
 |                                                                                              |
@@ -161,7 +162,7 @@ and understand its implementation.
 ||lab013|                                                                                      |
 |                                                                                              |
 |.. warning:: *Make sure to logoff using the menu on the right of the web application you just |
-|   accessed*                                                                                  |
+|   accessed*.                                                                                 |
 |                                                                                              |
 +----------------------------------------------------------------------------------------------+
 **Task 2: Optional Advanced Topics - Part 1**
@@ -187,7 +188,7 @@ Let’s explore how an attacker could perform credential stuffing attacks by usi
 |                                                                                              |
 ||lab013a|                                                                                     |
 |                                                                                              |
-|*Note the return location of a successful logon above*                                        |
+|*Note the return location of a successful logon above*.                                       |
 |                                                                                              |
 ||lab013b|                                                                                     |
 |                                                                                              |
@@ -195,7 +196,7 @@ Let’s explore how an attacker could perform credential stuffing attacks by usi
 |                                                                                              |
 |7. Return to the Load Balancer in the F5 Distributed Cloud Console, **Manage >                |
 |   Load Balancer > HTTP Load Balancers** and use the **Action Dots** and                      |
-|   click **Manage Configuration**                                                             |
+|   click **Manage Configuration**.                                                            |
 |                                                                                              |
 |8. Click **Edit Configuration** in the top right-hand corner.                                 |
 |                                                                                              |
@@ -288,8 +289,9 @@ to perform credential stuffing attacks? Let’s find out. Re-run our previously 
 You have now enabled F5 Distributed Cloud security policies to protect against potential attackers from probing
 ACME Corp's application and deter credenital stuffing attacks.  
 
-**End of Lab 2:**  This concludes Lab 2, feel free to review and test the
-configuration. A brief presentation will be shared prior to the beginning of Lab 3.
+**End of Lab 2:**  This concludes Lab 2. Feel free to review and test the configuration. 
+
+A brief presentation will be shared prior to the beginning of Lab 3.
 
 |labend|
 
