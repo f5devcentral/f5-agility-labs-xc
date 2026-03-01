@@ -46,7 +46,7 @@ This lab demonstrated a repeatable pattern:
 
    Code → Commit → Scan → Protect → Observe → Improve → Repeat
 
-Check out this visual of how it all flows together. It's basically a never-ending cycle of making things better and more secure:
+Check out this visual of how it all flows together. It’s basically a never-ending cycle of making things better and more secure:
 
 .. image:: ../images/module4/Gemini_Generated_Image_er1oever1oever1o.png
    :width: 800px

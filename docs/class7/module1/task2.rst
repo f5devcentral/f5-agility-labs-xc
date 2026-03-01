@@ -149,7 +149,7 @@ Run and Test the Application
 
 1. Run the Flask application.
 
-   On a new terminal window within VS Code server start the application using the command below.
+   On a new terminal window within VS Code server, start the application using the command below.
 
    .. code-block:: bash
 
@@ -188,7 +188,7 @@ Run and Test the Application
 
    |module1-cline-demo-app-terminal-ctrlc-close|
 
-   Close the files created by cline as you no longer need edit them.
+   Close the files created by Cline as you no longer need to edit them.
 
    |module1-cline-demo-app-cleanup|
 
