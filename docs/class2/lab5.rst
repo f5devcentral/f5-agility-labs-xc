@@ -48,6 +48,9 @@ capabilities to simplify management and security of apps and APIs using a natura
 |  NetOps teams to focus on strategic initiatives, reducing workload and optimizing resource   |
 |  allocation.                                                                                 |
 |                                                                                              |
++----------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------+
+|                                                                                              |
 |1. From the F5 Distributed Cloud Home Page, click the AI Assistant icon in the top right hand |
 |   corner.                                                                                    |
 |                                                                                              |
@@ -76,9 +79,9 @@ capabilities to simplify management and security of apps and APIs using a natura
 |.. code:: BASH                                                                                |
 |                                                                                              |
 |   Show requests with WAF security events for the last 24 hours for load balancer [lb-name] in|
-|   namespace [your-namespace]                                                                 |
+|   namespace <your-namespace>                                                                 |
 |                                                                                              |
-|.. NOTE:: Be sure to replace the [lb-name] with your adjective-animal-lb and [your-namespace] |
+|.. NOTE:: Be sure to replace [lb-name] with your adjective-animal-lb and <your-namespace>     |
 |   with adjective-animal of your lab.                                                         |
 |                                                                                              |
 |6. In this example the AI Assistant has notified us that there are 42 security events that    |
@@ -92,9 +95,9 @@ capabilities to simplify management and security of apps and APIs using a natura
 |.. code:: BASH                                                                                |
 |                                                                                              |
 |   Show SQL injection and directory traversal attacks in the last 24 days for load balancer   |
-|   [lb-name] in namespace [your-namespace]                                                    |
+|   [lb-name] in namespace <your-namespace>                                                    |
 |                                                                                              |
-|.. note:: Be sure to replace the [lb-name] with your adjective-animal-lb and [your-namespace] |
+|.. note:: Be sure to replace [lb-name] with your adjective-animal-lb and [your-namespace]     |
 |          with adjective-animal of your lab.                                                  |
 |                                                                                              |
 |8. In this example the AI Assistant has notified us that there was 1 security event that was a|
