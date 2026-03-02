@@ -54,7 +54,7 @@ capabilities to simplify management and security of apps and APIs using a natura
 ||lab001|                                                                                      |
 |                                                                                              |
 |2. The AI Assistant can help adminstrators start their security investigation be suggesting   |
-|   some queries. Click into the promt field and a list of suggested queries will pop up.      |
+|   some queries. Click into the prompt field and a list of suggested queries will pop up.     |
 |   Select **How to investigate security events**. Select **Enter** to proceed.                |
 |                                                                                              |
 ||lab002|                                                                                      |
@@ -76,10 +76,10 @@ capabilities to simplify management and security of apps and APIs using a natura
 |.. code:: BASH                                                                                |
 |                                                                                              |
 |   Show requests with WAF security events for the last 24 hours for load balancer [lb-name] in|
-|   namespace [ns-name].                                                                       |
+|   namespace [your-namespace]                                                                 |
 |                                                                                              |
-|.. NOTE:: Be sure to replace the [lb-name] with your adjective-animal-lb and [namespace] with |
-|  adjective-animal of your lab.                                                               |
+|.. NOTE:: Be sure to replace the [lb-name] with your adjective-animal-lb and [your-namespace] |
+|   with adjective-animal of your lab.                                                         |
 |                                                                                              |
 |6. In this example the AI Assistant has notified us that there are 42 security events that    |
 |   were detected for our application. The AI Assistant also provides us a link to go directly |
@@ -92,7 +92,7 @@ capabilities to simplify management and security of apps and APIs using a natura
 |.. code:: BASH                                                                                |
 |                                                                                              |
 |   Show SQL injection and directory traversal attacks in the last 24 days for load balancer   |
-|   [lb-name] in namespace [ns-name].                                                          |
+|   [lb-name] in namespace [your-namespace]                                                    |
 |                                                                                              |
 |.. note:: Be sure to replace the [lb-name] with your adjective-animal-lb and [your-namespace] |
 |          with adjective-animal of your lab.                                                  |
@@ -104,7 +104,7 @@ capabilities to simplify management and security of apps and APIs using a natura
 ||lab006|                                                                                      |
 |                                                                                              |
 |9. The AI Assistant will take you directly to the event and build the filters directly for    |
-|   you. This reduces the manual operations that were done in Lab 1. Note: You may need to     |
+|   you. This reduces the manual operations that were done in Lab 1. **Note:** You may need to |
 |   minimize the AI Assistant by clicking the Hide button in the upper-right hand corner.      |
 |                                                                                              |
 ||lab007|                                                                                      |
