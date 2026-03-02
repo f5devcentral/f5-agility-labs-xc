@@ -86,8 +86,8 @@ Task 2: Configure a Web Application Scan
 |Web Applications. Below are some of the tests conducted by the Scan:                          |
 |                                                                                              |
 |* **Broken Access Control**: Tests for issues related to the violation of the principle of    |
-|   least privilege, bypassing access control checks, accessing/editing other users' data, and |
-|   more.                                                                                      |
+|  least privilege, bypassing access control checks, accessing/editing other users' data, and  |
+|  more.                                                                                       |
 |                                                                                              |
 |* **Business Logic Attacks**: Leverages multiple test users and AI to learn the functionality |
 |  of the app and actively attempts to break it to find vulnerabilities associated with the    |
@@ -183,17 +183,17 @@ Task 2: Configure a Web Application Scan
 ||lab013|                                                                                      |
 |                                                                                              |
 |10. Lets set up a new Recurring Test. Select the **Acme Corp Scan** and **Recurring Test**.   |
-|   Define a schedule (Daily, Weekly, and Monthly) and set the start time for the scan. Click  |
-|   **Submit** when finished.                                                                  |
+|    Define a schedule (Daily, Weekly, and Monthly) and set the start time for the scan. Click |
+|    **Submit** when finished.                                                                 |
 |                                                                                              |
 ||lab014|                                                                                      |
 |                                                                                              |
 ||lab015|                                                                                      |
 |                                                                                              |
 |11. In additional to scheduled scans, Web App Scanning allows for on demand testing. Return   |
-|   back to the ACME Corp Web App. Click **Start** to begin an ad-hoc test.  Select **Acme     |
-|   Corp Scan** as the scanning profile. Click **Start Test**. You can click on the test while |
-|   it's running to see data being populated live during the test.                             |
+|    back to the ACME Corp Web App. Click **Start** to begin an ad-hoc test.  Select **Acme    |
+|    Corp Scan** as the scanning profile. Click **Start Test**. You can click on the test while|
+|    it's running to see data being populated live during the test.                            |
 |                                                                                              |
 ||lab016|                                                                                      |
 |                                                                                              |
@@ -204,14 +204,14 @@ Task 2: Configure a Web Application Scan
 ||lab019|                                                                                      |
 |                                                                                              |
 |12. After the Scan completes, results will be displayed on the homepage dashboard and also the|
-|   page of the individual application.  Click on **Applications - Acme Corp Web App**.  Review|
-|   the data from the latest scan at a high level. Click on Scan that just completed.  From the|
-|   Report page, review the which OWASP Top 10 vulnerabilities were uncovered. There is also a |
-|   video that replays the penetration testing scan interacting with the website.  Note the    |
-|   different colors as they relate to vulnerabilities uncovered and which portion of the      |
-|   application had the issue. While watching the video, note if you can identify the custom   |
-|   block page you configured earlier in the lab.  This video can be downloaded as well a PDF  |
-|   of the test results.                                                                       |
+|    page of the individual application.  Click on **Applications - Acme Corp Web App**.       |
+|    Review the data from the latest scan at a high level. Click on Scan that just completed.  |
+|    From theReport page, review the which OWASP Top 10 vulnerabilities were uncovered. There  |
+|    is also a video that replays the penetration testing scan interacting with the website.   |
+|    Note the different colors as they relate to vulnerabilities uncovered and which portion of|
+|    the application had the issue. While watching the video, note if you can identify the     |
+|    custom block page you configured earlier in the lab.  This video can be downloaded as well|
+|    a PDF of the test results.                                                                |
 |                                                                                              |
 ||lab020|                                                                                      |
 |                                                                                              |
