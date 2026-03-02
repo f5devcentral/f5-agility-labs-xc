@@ -164,6 +164,9 @@ Preparation
 
 Before starting the course, update your namespace to dynamically update the guide.
 
+.. note:: You may have had a namespace from a previous lab, pleased update with the new.
+.. warning:: Guide pages might need to be refreshed to get updated namespace to render.
+
 .. raw:: html
 
    <div style="margin: 1em 0; padding: 1em; border: 0px solid #ccc;">
