@@ -49,6 +49,7 @@ capabilities to simplify management and security of apps and APIs using a natura
 |  allocation.                                                                                 |
 |                                                                                              |
 +----------------------------------------------------------------------------------------------+
+
 +----------------------------------------------------------------------------------------------+
 |                                                                                              |
 |1. From the F5 Distributed Cloud Home Page, click the AI Assistant icon in the top right hand |
@@ -81,8 +82,8 @@ capabilities to simplify management and security of apps and APIs using a natura
 |   Show requests with WAF security events for the last 24 hours for load balancer             |
 |   [<your-namespace>-lb] in namespace [<your-namespace>]                                      |
 |                                                                                              |
-|.. NOTE:: Be sure to replace [lb-name] with your adjective-animal-lb and [namespace] with     |
-|   adjective-animal of your lab.                                                              |
+|.. NOTE:: Be sure to replace **[lb-name]** with your adjective-animal-lb and **[namespace]**  |
+|   with adjective-animal of your lab.                                                         |
 |                                                                                              |
 |6. In this example the AI Assistant has notified us that there are 42 security events that    |
 |   were detected for our application. The AI Assistant also provides us a link to go directly |
@@ -97,8 +98,8 @@ capabilities to simplify management and security of apps and APIs using a natura
 |   Show SQL injection and directory traversal attacks in the last 24 days for load balancer   |
 |   [<your-namespace>-lb] in namespace [<your-namespace>]                                      |
 |                                                                                              |
-|.. NOTE:: Be sure to replace [lb-name] with your adjective-animal-lb and [namespace] with     |
-|   adjective-animal of your lab.                                                              |
+|.. NOTE:: Be sure to replace **[lb-name]** with your adjective-animal-lb and **[namespace]**  |
+|   with adjective-animal of your lab.                                                         |
 |                                                                                              |
 |8. In this example the AI Assistant has notified us that there was 1 security event that was a|
 |   SQL injection or Path traversal type of attack. Click on the link to go directly to the    |
