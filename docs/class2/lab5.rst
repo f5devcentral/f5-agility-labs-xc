@@ -3,22 +3,22 @@ Lab 5: AI Assistant and Security Operations
 
 **Objective:**
 
-* Provide summarization of security events
-* Quickly provide details on how many attacks have happened and mitigation techniques applied
+* Provide summarization of security events.
+* Quickly provide details on how many attacks have happened and mitigation techniques applied.
   
 **Narrative:** 
 
 As ACME corp has continued to protect their web applications, leaders within the organization 
-has made requests for summaries of how ACME's security investments are proctecting the environment.
+has made requests for summaries of how ACME's security investments are protecting the environment.
 ACME corp has made investments in SIEM technologies and F5 Distributed Cloud can export logs to external
-SIEMs.  However not everyone in the ACME orgnaization has experience building dashboards and running complex queries.
-After speaking with ACME corp's F5 SE, F5 Distributed Console has an AI assistant in the SaaS console that can 
+SIEMs.  However not everyone in the ACME organization has experience building dashboards and running complex queries.
+After speaking with ACME Corp's F5 SE, F5 Distributed Console has an AI assistant in the SaaS console that can 
 provide answers quickly using natural language.   
 
 .. note::                                                                                  
    **Expected Lab Time: 10 minutes**
 
-**Lab 5 Summary-–AI Assistant & Security Operations**: Finally, explore the AI Assistant feature in the F5 Distributed Cloud console to streamline security operations. Instead of manually sifting through logs and events, you’ll use natural language queries to have the AI quickly summarize recent security events, answer questions like “how many attacks were blocked in the last 24 hours,” and even explain specific incidents. This lab showcases how AI-driven insights can help validate that your WAF and other protections are working (e.g., how many SQL injection attempts were stopped) and provide management-friendly summaries. It underlines the value of an integrated platform where observability and analytics are built in, making it easier to monitor and communicate the application’s security status.
+**Lab 5 Summary-AI Assistant & Security Operations**: Finally, explore the AI Assistant feature in the F5 Distributed Cloud console to streamline security operations. Instead of manually sifting through logs and events, you’ll use natural language queries to have the AI quickly summarize recent security events, answer questions like “how many attacks were blocked in the last 24 hours,” and even explain specific incidents. This lab showcases how AI-driven insights can help validate that your WAF and other protections are working (i.e., how many SQL injection attempts were stopped) and provide management-friendly summaries. It underlines the value of an integrated platform where observability and analytics are built in, making it easier to monitor and communicate the application’s security status.
 
 
 Task 1: Exploring AI Assistant
@@ -27,86 +27,104 @@ Task 1: Exploring AI Assistant
 In this task you will utilize the AI assistant to explore security events.  The AI assistant brings several intelligent 
 capabilities to simplify management and security of apps and APIs using a natural language interface, including:
 
-* Real-time insights: Promote application security and site health with up-to-the-minute visibility of hybrid, multicloud
-  sites, ensuring security and networking practitioners can quickly detect and respond to emerging threats, maintaining
-  a robust security posture.
++----------------------------------------------------------------------------------------------+
+|                                                                                              |
+|* **Real-time insights**: Promote application security and site health with up-to-the-minute  |
+|  visibility of hybrid, multicloud sites, ensuring security and networking practitioners can  |
+|  quickly detect and respond to emerging threats, maintaining a robust security posture.      |
+|                                                                                              |
+|* **Summarization**: Leverage advanced summarization capabilities to distill large volumes of |
+|  data into clear, concise reports. This allows teams to better understand complex information|
+|  and advanced security events to make more informed decisions without sifting through        |
+|  overwhelming amounts of data.                                                               |
+|                                                                                              |
+|* **Actionable recommendations**: Deliver actionable recommendations, enabling users to       |
+|  swiftly address identified threats, performance issues, network health status, and          |
+|  vulnerabilities. By guiding users through necessary steps, the AI assistant helps enhance   |
+|  overall security and streamline incident response operations.                               |
+|                                                                                              |
+|* **Improved operations and efficiency**: Automate and simplify complex security and          |
+|  networking tasks to significantly improve operational efficiency. This allows SecOps and    |
+|  NetOps teams to focus on strategic initiatives, reducing workload and optimizing resource   |
+|  allocation.                                                                                 |
+|                                                                                              |
+|1. From the F5 Distributed Cloud Home Page, click the AI Assistant icon in the top right hand |
+|   corner.                                                                                    |
+|                                                                                              |
+||lab001|                                                                                      |
+|                                                                                              |
+|2. The AI Assistant can help adminstrators start their security investigation be suggesting   |
+|   some queries. Click into the promt field and a list of suggested queries will pop up.      |
+|   Select **How to investigate security events**. Select **Enter** to proceed.                |
+|                                                                                              |
+||lab002|                                                                                      |
+|                                                                                              |
+|3. The AI Assistant will then detail its capabilities to assist with Security Investigations. |
+|   The AI Assistant can provide detailed explanation on a specific event by utilizing the     |
+|   query **"Explain security event [request-id]".**                                           |
+|                                                                                              |
+||lab003|                                                                                      |
+|                                                                                              |
+|4. The AI Assistant can also provide a summary and high-level overview of security events for |
+|   a specific application.                                                                    |
+|                                                                                              |
+||lab004|                                                                                      |
+|                                                                                              |
+|5. Lets start with getting a total number of the security events in your namespace for your   |
+|   application.                                                                               |
+|                                                                                              |
+|.. code:: BASH                                                                                |
+|                                                                                              |
+|   Show requests with WAF security events for the last 24 hours for load balancer [lb-name] in|
+|   namespace [ns-name].                                                                       |
+|                                                                                              |
+|.. NOTE:: Be sure to replace the [lb-name] with your adjective-animal-lb and [namespace] with |
+|  adjective-animal of your lab.                                                               |
+|                                                                                              |
+|6. In this example the AI Assistant has notified us that there are 42 security events that    |
+|   were detected for our application. The AI Assistant also provides us a link to go directly |
+|   to the Security Analytics Dashboard page.                                                  |
+|                                                                                              |
+||lab005|                                                                                      |
+|                                                                                              |
+|7. You can also query the AI Assistant for specific types of attacks like SQL injections.     |
+|                                                                                              |
+|.. code:: BASH                                                                                |
+|                                                                                              |
+|   Show SQL injection and directory traversal attacks in the last 24 days for load balancer   |
+|   [lb-name] in namespace [ns-name].                                                          |
+|                                                                                              |
+|.. note:: Be sure to replace the [lb-name] with your adjective-animal-lb and [your-namespace] |
+|          with adjective-animal of your lab.                                                  |
+|                                                                                              |
+|8. In this example the AI Assistant has notified us that there was 1 security event that was a|
+|   SQL injection or Path traversal type of attack. Click on the link to go directly to the    |
+|   Security Analytics.                                                                        |
+|                                                                                              |
+||lab006|                                                                                      |
+|                                                                                              |
+|9. The AI Assistant will take you directly to the event and build the filters directly for    |
+|   you. This reduces the manual operations that were done in Lab 1. Note: You may need to     |
+|   minimize the AI Assistant by clicking the Hide button in the upper-right hand corner.      |
+|                                                                                              |
+||lab007|                                                                                      |
+|                                                                                              |
+|10. In the actions button of the security event, select **Explain with AI**. This button will |
+|    generate a query for you and the AI Assistant will give you a detailed summary of the     |
+|    attack along with suggested Follow-up actions. You can gather more information by clicking|
+|    on **Detection Details**.                                                                 |
+|                                                                                              |
+||lab008|                                                                                      |
+|                                                                                              |
+||lab009|                                                                                      |
+|                                                                                              |
++----------------------------------------------------------------------------------------------+
 
-* Summarization: Leverage advanced summarization capabilities to distill large volumes of data into clear, concise
-  reports. This allows teams to better understand complex information and advanced security events to make more
-  informed decisions without sifting through overwhelming amounts of data.
-
-* Actionable recommendations: Deliver actionable recommendations, enabling users to swiftly address identified
-  threats, performance issues, network health status, and vulnerabilities. By guiding users through necessary steps, the
-  AI assistant helps enhance overall security and streamline incident response operations.
-
-* Improved operations and efficiency: Automate and simplify complex security and networking tasks to significantly
-  improve operational efficiency. This allows SecOps and NetOps teams to focus on strategic initiatives, reducing workload 
-  and optimizing resource allocation. 
-
-
-#. From the F5 Distributed Cloud Home Page, click the AI Assistant icon in the top right hand corner.
-   |lab001|
-
-#. The AI Assistant can help adminstrators start their security investigation be suggesting some queries.
-   Click into the promt field and a list of suggested queries will pop up.  Select **How to investigate security events**. 
-   Select **Enter** to proceed.
-
-   |lab002|
-
-#. The AI Assistant will then detail its capabilities to assist with Security Investigations.  The AI Assistant can provide
-   detailed explanation on a specific event by utilizing the query **"Explain security event [request-id]".**
-
-   |lab003|
-
-#. The AI Assistant can also provide a summary and high-level overview of security events for a specific application.
-
-   |lab004|
-
-#. Lets start with getting a total number of the security events in your namespace for your application.  
-
-   .. code:: BASH
-
-      Show requests with WAF security events for the last 24 hours for load balancer [lb-name] in namespace [ns-name]
-   
-   .. NOTE:: Be sure to replace the [lb-name] with your adjective-animal-lb and [namespace] with adjective-animal of your lab
-   
-#. In this example the AI Assistant has notified us that there are 42 security events that were detected for our application.
-   The AI Assistant also provides us a link to go directly to the Security Analytics Dashboard page. 
-
-   |lab005|
-
-#. You can also query the AI Assistant for specific types of attacks like SQL injections.
-
-   .. code:: BASH
-
-      Show SQL injection and directory traversal attacks in the last 24 days for load balancer [lb-name] in namespace [ns-name].
-   
-   .. NOTE:: Be sure to replace the [lb-name] with your adjective-animal-lb and [namespace] with adjective-animal of your lab
-
-#. In this example the AI Assistant has notified us that there was 1 security event that was a SQL injection or Path traversal
-   type of attack. Click on the link to go directly to the Security Analytics. 
-
-   |lab006|
-
-#. The AI Assistant will take you directly to the event and build the filters directly for you.  This reduces the manual operations 
-   that were done in Lab 1.  Note: You may need to minimize the AI Assistant by clicking the Hide button in the upper-right hand corner.
-
-   |lab007|
-
-#. In the actions button of the security event, select **Explain with AI**.  This button will generate a query for you and the
-   AI Assistant will give you a detailed summary of the attack along with suggested Follow-up actions.  You can gather
-   more information by clicking on **Detection Details**.
-
-   |lab008|
-
-   |lab009|
-
-
-By leveraging AI Assistant, network security operators can quickly investigate security events.  The AI Assistant can also 
+By leveraging AI Assistant, network security operators can quickly investigate security events. The AI Assistant can also 
 provide summary details natively in platform without requiring a third party visibility platform as observability is native
 to Distributed Cloud.  
 
-**End of Lab 5:**  This concludes Lab 5, feel free to review and the following video for more information about AI Assistant.
+**End of Lab 5:**  This concludes Lab 5. Feel free to review and the following video for more information about AI Assistant.
 https://www.youtube.com/watch?v=vaGygSkQOso 
 
 A Q&A session will begin shortly to conclude the overall lab.
