@@ -86,42 +86,42 @@ Task 2: Configure a Web Application Scan
 |Web Applications. Below are some of the tests conducted by the Scan:                          |
 |                                                                                              |
 |* **Broken Access Control**: Tests for issues related to the violation of the principle of    |
-|   least privilege, bypassing access control checks, accessing/editing other users' data,     |
-|   and more.                                                                                  |
+|least privilege, bypassing access control checks, accessing/editing other users' data, and    |
+|more.                                                                                         |
 |                                                                                              |
 |* **Business Logic Attacks**: Leverages multiple test users and AI to learn the functionality |
-|  of the app and actively attempts to break it to find vulnerabilities associated with the    |
-|  logic and rules defined in the app.                                                         |
+|of the app and actively attempts to break it to find vulnerabilities associated with the logic|
+|and rules defined in the app.                                                                 |
 |                                                                                              |
 |* **SQL Injection** (incl. Blind SQL Injection): Intelligent testing for a wide variety of SQL|
-|  injection issues.                                                                           |
+|injection issues.                                                                             |
 |                                                                                              | 
 |* **Cross-Site Request Forgery (CSRF)**: This is an attack that forces an end user to execute |
-|  unwanted actions on a web application in which they're currently authenticated.             |
+|unwanted actions on a web application in which they're currently authenticated.               |
 |                                                                                              |   
 |* **Cross-Site Scripting (XSS)** (Stored, Reflected, DOM-based): Comprehensive tests for HTML |
-|  rendering/execution of JavaScript.                                                          |
+|rendering/execution of JavaScript.                                                            |
 |                                                                                              |
 |* **Insecure Direct Object References (IDOR)**: This is when an application exposes a         |
-|  reference to an internal implementation object, such as a file, directory, or database key. |
+|reference to an internal implementation object, such as a file, directory, or database key.   |
 |                                                                                              |
 |* **Security Misconfiguration**: This is a general term for when applications and systems are |
-|  not properly configured for security.                                                       |
+|not properly configured for security.                                                         |
 |                                                                                              |
 |* **Vulnerable and Outdated Components**: This is when applications and systems use components|
-|  with known vulnerabilities.                                                                 |
+|with known vulnerabilities.                                                                   |
 |                                                                                              |
 |* **Identification and Authentication Failures**: This is when applications and systems fail  |
-|  to properly identify and authenticate users.                                                |
+|to properly identify and authenticate users.                                                  |
 |                                                                                              |
 |* **Software and Data Integrity Failures**: This is when applications and systems fail to     |
-|  protect the integrity of software and data.                                                 |
+|protect the integrity of software and data.                                                   |
 |                                                                                              |
 |* **Security Logging and Monitoring Failures**: This is when applications and systems fail to |
-|  properly log and monitor security events.                                                   |
+|properly log and monitor security events.                                                     |
 |                                                                                              |
 |* **Server-Side Request Forgery (SSRF)**: This is an attack that allows an attacker to send   |
-|  crafted requests from the vulnerable server to other internal systems.                      |
+|crafted requests from the vulnerable server to other internal systems.                        |
 |                                                                                              |
 |                                                                                              |
 |1. Within the Home page in the F5 Distributed Cloud Console, click                            |
