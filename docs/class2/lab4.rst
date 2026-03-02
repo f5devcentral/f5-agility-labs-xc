@@ -120,7 +120,7 @@ Task 2: Configure a Web Application Scan
 |* **Security Logging and Monitoring Failures**: This is when applications and systems fail to |
 |  properly log and monitor security events.                                                   |
 |                                                                                              |
-|* **Server-Side Request Forgery (SSRF)**: This is an attack that allows an attacker to send    |
+|* **Server-Side Request Forgery (SSRF)**: This is an attack that allows an attacker to send   |
 |  crafted requests from the vulnerable server to other internal systems.                      |
 |                                                                                              |
 |                                                                                              |
@@ -183,7 +183,7 @@ Task 2: Configure a Web Application Scan
 |                                                                                              |
 ||lab013|                                                                                      |
 |                                                                                              |
-|10. Lets set up a new Recurring Test. Select the **Acme Corp Scan** and **Recurring Test**.    |
+|10. Lets set up a new Recurring Test. Select the **Acme Corp Scan** and **Recurring Test**.   |
 |   Define a schedule (Daily, Weekly, and Monthly) and set the start time for the scan. Click  |
 |   **Submit** when finished.                                                                  |
 |                                                                                              |
@@ -191,7 +191,7 @@ Task 2: Configure a Web Application Scan
 |                                                                                              |
 ||lab015|                                                                                      |
 |                                                                                              |
-|11. In additional to scheduled scans, Web App Scanning allows for on demand testing. Return    |
+|11. In additional to scheduled scans, Web App Scanning allows for on demand testing. Return   |
 |   back to the ACME Corp Web App. Click **Start** to begin an ad-hoc test.  Select **Acme     |
 |   Corp Scan** as the scanning profile. Click **Start Test**. You can click on the test while |
 |   it's running to see data being populated live during the test.                             |
@@ -204,7 +204,7 @@ Task 2: Configure a Web Application Scan
 |                                                                                              |
 ||lab019|                                                                                      |
 |                                                                                              |
-|12. After the Scan completes, results will be displayed on the homepage dashboard and also the |
+|12. After the Scan completes, results will be displayed on the homepage dashboard and also the|
 |   page of the individual application.  Click on **Applications - Acme Corp Web App**.  Review|
 |   the data from the latest scan at a high level. Click on Scan that just completed.  From the|
 |   Report page, review the which OWASP Top 10 vulnerabilities were uncovered. There is also a |
