@@ -128,8 +128,8 @@ challenge.
 |                                                                                              |
 |.. note::                                                                                     |
 |                                                                                              |
-|   *Using shared namespace Malicious User Mitigation provides the ability to use API-updated  |
-|    mitigation controls to implement common service security across multiple resources.*.     |
+|    *Using shared namespace Malicious User Mitigation provides the ability to use API-updated |
+|    mitigation controls to implement common service security across multiple resources*.      |
 |                                                                                              |
 |6. Select **Add Item**.                                                                       |
 |                                                                                              |
