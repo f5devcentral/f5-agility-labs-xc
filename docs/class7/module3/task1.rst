@@ -328,9 +328,9 @@ Generate Traffic to Exercise the New API Endpoints
 
    ::
 
-      https://<NAMESPACE>.lab-app.f5demos.com/api/status
-      https://<NAMESPACE>.lab-app.f5demos.com/api/vibe-coding
-      https://<NAMESPACE>.lab-app.f5demos.com/api/ai-assisted-coding
+      https://<NAMESPACE>-lb.lab-app.f5demos.com/api/status
+      https://<NAMESPACE>-lb.lab-app.f5demos.com/api/vibe-coding
+      https://<NAMESPACE>-lb.lab-app.f5demos.com/api/ai-assisted-coding
 
    You should receive **JSON responses** from each endpoint.
 
