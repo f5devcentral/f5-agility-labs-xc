@@ -75,7 +75,7 @@ capabilities to simplify management and security of apps and APIs using a natura
 ||lab004|                                                                                      |
 |                                                                                              |
 |5. Lets start with getting a total number of the security events in your namespace for your   |
-|   application.                                                                               |
+|   application. Copy and Paste into AI Assistant:                                             |
 |                                                                                              |
 |.. code:: BASH                                                                                |
 |                                                                                              |
@@ -91,7 +91,8 @@ capabilities to simplify management and security of apps and APIs using a natura
 |                                                                                              |
 ||lab005|                                                                                      |
 |                                                                                              |
-|7. You can also query the AI Assistant for specific types of attacks like SQL injections.     |
+|7. You can also query the AI Assistant for specific types of attacks like SQL injections. Copy|
+|   and Paste into AI Assistant:                                                               |
 |                                                                                              |
 |.. code:: BASH                                                                                |
 |                                                                                              |
