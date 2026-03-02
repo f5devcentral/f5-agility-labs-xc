@@ -263,7 +263,7 @@ We will now review the pre-generated post-protection scan report, compare it to 
 |                                                                                              |
 |* OWASP Top 10 findings.                                                                      |
 |* Issues: Cross-Site-Scripting, Sensitive Data Exposure, and misconfiguration issues.         |
-|* Select 'Play Video' to view the end-to-end vulnerability assessment procedur performed.     |
+|* Select **Play Video** to view the end-to-end vulnerability assessment procedur performed.   |
 |* Select one of the issues that were uncovered to view the vulnerability details, including   |
 |  description, when it was originally discovered, reocurrances, type, etc.                    |
 |* Under the review menu, you can add notes and accept, reject, or mark as resolved, depending |
@@ -273,7 +273,7 @@ We will now review the pre-generated post-protection scan report, compare it to 
 
 By leveraging F5 Distributed Cloud Web App Scanning, organizations can have an ongoing view of the security posture of
 their web applications and track the issues over time. The Web App Scanning solution can also discover API endpoints and 
-LLM models that make up a Web Application and even provide reports against the OWASP Top 10 for LLMs.  So as ACME Corp 
+LLM models that make up a Web Application and even provide reports against the OWASP Top 10 for LLMs. So as ACME Corp 
 continues to add new applications, F5 Distributed Web App Scanning can continue to maintain consistent visibility for 
 those web assets. 
 
