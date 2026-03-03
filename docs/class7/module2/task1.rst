@@ -81,7 +81,7 @@ Create the Security Policy File
    |module2-vscode-create-security-control-2|
 
    .. note::
-      Please make sure the file is created on the root folder of the application repo. If it is created somewhere else, the CI/CD pipeline will fail. Aslo make sure you are using the exact same filename and extension
+      Please make sure the file is created on the root folder of the application repo. If it is created somewhere else, the CI/CD pipeline will fail. Also make sure you are using the exact same filename and extension.
 
 5. Add the initial security policy.
 
@@ -230,16 +230,16 @@ Fix the Policy and Re-run the Pipeline
 Access the Application
 ~~~~~~~~~~~~~~~~~~~~~~
 
-12. Open the deployed application.
+1. Open the deployed application.
 
-    In a new browser tab, navigate to:
+   In a new browser tab, navigate to:
 
-    ::
+   ::
 
-       https://<NAMESPACE>-lb.lab-app.f5demos.com
+      https://<NAMESPACE>-lb.lab-app.f5demos.com
 
    .. note::
-      Replace <NAMESPACE> with your F5 Distributed Cloud namespace assigned at the beggining of the lab
+      Replace <NAMESPACE> with your F5 Distributed Cloud namespace assigned at the beginning of the lab.
 
 
     |module2-app-home-page|

@@ -86,23 +86,23 @@ Upload F5XC P12 API Certificate
 The CI/CD pipeline uses an API certificate to authenticate to F5 Distributed Cloud.  
 This certificate must be uploaded to the GitLab server.
 
-10. Access the Filebrowser service.
+1. Access the Filebrowser service.
 
-    In your UDF deployment, locate the **GitLab Server** tile and click **Access**. Click on **FILEBROWSER**.
+   In your UDF deployment, locate the **GitLab Server** tile and click **Access**. Click on **FILEBROWSER**.
 
    |gitlab-tile-access-fliebrowser|
 
-    On the Filebrowser login page, enter the following credentials:
+   On the Filebrowser login page, enter the following credentials:
 
-    - **Username:** student
-    - **Password:** @ppW0rld2026!
+   - **Username:** student
+   - **Password:** @ppW0rld2026!
 
-    |filebrowser-login|
+   |filebrowser-login|
 
-11. Open the upload interface.
+2. Open the upload interface.
 
-    After logging in, you should see the Filebrowser landing page.  
-    Click the **Upload** button in the top-right corner.
+   After logging in, you should see the Filebrowser landing page.  
+   Click the **Upload** button in the top-right corner.
 
    .. note::
       The filename MUST be "f5-xc-lab-app.console.ves.volterra.io.api-creds.p12". 
@@ -110,9 +110,9 @@ This certificate must be uploaded to the GitLab server.
       The pipeline expects the filename to be "f5-xc-lab-app.console.ves.volterra.io.api-creds.p12" 
 
 
-    |filebrowser-landing|
+   |filebrowser-landing|
 
-13. Upload the F5XC API certificate.
+3. Upload the F5XC API certificate.
 
     - Click **Select Files**.
     - Navigate to your **Downloads** folder.
@@ -126,9 +126,9 @@ This certificate must be uploaded to the GitLab server.
 
     |filebrowser-upload|
 
-14. Confirm the upload and log out.
+4. Confirm the upload and log out.
 
-    After the upload completes, verify that the file appears in the Filebrowser list.  
+   After the upload completes, verify that the file appears in the Filebrowser list.  
     Click **Logout** in the top-right corner to exit Filebrowser.
 
     |filebrowser-file-logout|

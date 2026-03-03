@@ -86,7 +86,7 @@ Each lab attendee has been assigned a **unique namespace** that will be used thr
    - Namespaces were pre-created before the lab.
    - CI/CD pipelines reference your namespace dynamically.
 
-4. Save your assigned namespace on a notedpad.
+4. Save your assigned namespace on a notepad.
 
    You will need this value in multiple upcoming tasks, including CI/CD and Terraform-driven deployments.
 
@@ -95,19 +95,19 @@ Generate F5XC API Certificate
 
 To allow GitLab and Terraform to interact with F5 Distributed Cloud programmatically, you must generate an **API certificate**.
 
-10. In the same **Account Settings** page navigate to API credential settings.
+1. In the same **Account Settings** page navigate to API credential settings.
 
-    ::
+   ::
 
-       Account Settings → Credentials → Add Credentials
+      Account Settings → Credentials → Add Credentials
 
-    |f5xc-console-account-settings-credentials|
+   |f5xc-console-account-settings-credentials|
 
-11. Cick "Add Credentials" and create a new one with the following settings.
+2. Click "Add Credentials" and create a new one with the following settings.
 
-    Fill in the following fields:
+   Fill in the following fields:
 
-    - **Credential Name:** ``<namespace>-api-cert``
+   - **Credential Name:** ``<namespace>-api-cert``
       *(Example: ready-skink-api-cert)*
     - **Credential Type:** API Certificate
     - **Password:** ``@ppW0rld2026!``
@@ -120,7 +120,7 @@ To allow GitLab and Terraform to interact with F5 Distributed Cloud programmatic
 
     |f5xc-console-account-settings-credentials-cert-1|
 
-12. Download the API certificate.
+3. Download the API certificate.
 
     Click **Download**.  
     The file will be downloaded to your local system as:
@@ -139,19 +139,37 @@ To allow GitLab and Terraform to interact with F5 Distributed Cloud programmatic
    - This certificate will be reused by automation.
    - GitLab and Terraform will use it to deploy and manage F5XC objects.
 
-TEMP - Create a Virtual K8- cluster in your NAME SPACE
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-***This a Temporary step***
+Create a Virtual K8s cluster in your F5XC NAMESPACE
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-    Navigate to:
+F5 Distributed Cloud Virtual Kubernetes (vK8s) is a managed Kubernetes abstraction that allows you to deploy containerized 
+applications without operating or maintaining a traditional Kubernetes cluster. You do not manage nodes, control planes, 
+or scaling—instead, F5 handles the infrastructure while you deploy workloads into a logical namespace. 
+In the AppWorld 2026 lab, vK8s is where the AI-generated application runs after the GitLab CI/CD pipeline builds and pushes 
+the container image. In this step, you will create a vK8s cluster in your assigned namespace.
 
-    ::
+   Click on the F5 logo to go to the home page, then click on "Distributed Applications" tile on the right. 
+   
+   |f5xc-console-distro-app|
 
-       Dsitributed Apps → Virtual K8 → Clieck "Add Virtual K8"
+   Under Applications, click Virtual K8s Clusters, then click "Add Virtual K8s"
 
-   Name: vk8
-   Site: Select virtual site "shared/appworld-k8s-vsite"
+   |f5xc-console-distro-app-vk8-1|
 
+   |f5xc-console-distro-app-vk8-2|
+
+   Fill in the form with the following values, then click "Add Virtual K8s"
+
+    - **Name:** <YOUR NAMESPACE>-vk8
+    - **Site:** Click "Add Item" and select virtual site "shared/appworld-k8s-vsite"
+
+   |f5xc-console-distro-app-vk8-3|
+
+   The virtual K8s cluster will be created in a few moments. Click "Refresh" after a minute or two and the status should change to "Running".
+
+   |f5xc-console-distro-app-vk8-4|
+
+   |f5xc-console-distro-app-vk8-5|
 
 Wrap-Up
 ~~~~~~~
@@ -183,4 +201,16 @@ Next, you will configure GitLab and begin deploying applications and security co
 .. |f5xc-console-account-settings-credentials| image:: ../images/module0/f5xc-console-account-settings-credentials.png
    :width: 800px
 .. |f5xc-console-account-settings-credentials-cert-1| image:: ../images/module0/f5xc-console-account-settings-credentials-cert-1.png
+   :width: 400px
+.. |f5xc-console-distro-app| image:: ../images/module0/f5xc-console-distro-app.png
+   :width: 800px
+.. |f5xc-console-distro-app-vk8-1| image:: ../images/module0/f5xc-console-distro-app-vk8-1.png
+   :width: 200px
+.. |f5xc-console-distro-app-vk8-2| image:: ../images/module0/f5xc-console-distro-app-vk8-2.png
+   :width: 400px
+.. |f5xc-console-distro-app-vk8-3| image:: ../images/module0/f5xc-console-distro-app-vk8-3.png
+   :width: 800px
+.. |f5xc-console-distro-app-vk8-4| image:: ../images/module0/f5xc-console-distro-app-vk8-4.png
+   :width: 800px
+.. |f5xc-console-distro-app-vk8-5| image:: ../images/module0/f5xc-console-distro-app-vk8-5.png
    :width: 800px

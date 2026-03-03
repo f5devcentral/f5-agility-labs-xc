@@ -254,11 +254,11 @@ Extend the Application with User-Facing Pages
 Enable Bot Defense Using Policy-as-Code
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-6. Open the ``security-controls.yaml`` file.
+1. Open the ``security-controls.yaml`` file.
 
    This is the same policy file used to enable WAF and API Discovery.
 
-7. Enable Bot Defense in the security policy.
+2. Enable Bot Defense in the security policy.
 
    Update the file so it looks like this:
 
@@ -278,7 +278,7 @@ Enable Bot Defense Using Policy-as-Code
 Commit and Push the Changes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-8. Save your changes and commit them to GitLab.
+1. Save your changes and commit them to GitLab.
 
    Use the Source Control panel in VS Code Server and commit your changes with a message similar to:
 
@@ -288,12 +288,12 @@ Commit and Push the Changes
 
    |module3-vscode-source-control-commit|
 
-9. Push the commit the changes. GitLab CI/CD detects the changes and starts a new pipeline run.
+2. Push the commit to save the changes. GitLab CI/CD detects the changes and starts a new pipeline run.
 
 Observe the CI/CD Pipeline
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-10. Navigate to the pipeline in GitLab.
+1. Navigate to the pipeline in GitLab.
 
 
     If you are not already logged in:
@@ -324,7 +324,7 @@ Observe the CI/CD Pipeline
 
    |module3-gitlab-build-pipeline| 
 
-11. Open the most recent pipeline run.
+2. Open the most recent pipeline run.
 
    |module3-task2-gitlab-bot-pipeline.png|
 
@@ -335,7 +335,7 @@ Observe the CI/CD Pipeline
    - The ``build`` stage creates a new image version (v1.2) and pushes it to the container registry.
    - The ``deploy`` stage applies updated F5XC configuration for Bot Defense Standard on the ``/login`` and ``/contact`` paths.
 
-12.  Confirm that all stages complete successfully.
+3.  Confirm that all stages complete successfully.
 
    *What this means:*
    
@@ -347,23 +347,23 @@ Observe the CI/CD Pipeline
 Test Bot Defense in Browser vs curl (Why Results Differ)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-13. Open the login page in a browser and observe the bot protection behavior.
+1. Open the login page in a browser and observe the bot protection behavior.
 
    ::
 
       https://<NAMESPACE>-lb.lab-app.f5demos.com/login
 
    .. note::
-      Replace <NAMESPACE> with your F5 Distributed Cloud namespace assigned at the beggining of the lab
+      Replace <NAMESPACE> with your F5 Distributed Cloud namespace assigned at the beginning of the lab.
 
 
    When F5XC Bot Defense is enabled, the browser experience will include an injected JavaScript challenge (or additional client-side signals).
 
-   After The CI/CD pipeline updates the app and F5XC. Navigate to the login or contact page in you application. This will trigger the JavaScript injection.
+   After the CI/CD pipeline updates the app and F5XC, navigate to the login or contact page in your application. This will trigger the JavaScript injection.
    
    |module3-task2-browser-login-test.png|
 
-   Depending on your Browse, please open the developemnt tools to explorer the JavaScript injection. **This step is OPTIONAL**
+   Depending on your browser, please open the development tools to explore the JavaScript injection. **This step is OPTIONAL**.
 
    |module3-task2-browser-bot-telemetry-1.png|
 
@@ -412,7 +412,7 @@ Test Bot Defense in Browser vs curl (Why Results Differ)
 Review Bot Defense in F5 Distributed Cloud
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-15.  Open the F5 Distributed Cloud console and navigate to the WAAP security view.
+1. Open the F5 Distributed Cloud console and navigate to the WAAP security view.
 
    Return to the Security dashboards and review bot-related events after generating traffic. To go back to the main F5XC home page, click the F5 logo, then:
 
@@ -420,15 +420,15 @@ Review Bot Defense in F5 Distributed Cloud
 
    |module3-f5xc-waap-tile|
 
-   Under the "Overview" section, make sure you are the Security Dashboard
+   Under the "Overview" section, make sure you are in the Security Dashboard.
 
    |module3-f5xc-waap-security|
 
-   Then Scroll all the way down and click in your load balancer to go to the Security Dashboard for your application.
+   Then Scroll all the way down and click on your load balancer to go to the Security Dashboard for your application.
 
    |module3-f5xc-waap-security-dashboard.png|
 
-16.  Open the Bot Defense dashboard.
+2. Open the Bot Defense dashboard.
 
    In the Security view, select the **Bot Defense** dashboard to review bot-specific signals.
 

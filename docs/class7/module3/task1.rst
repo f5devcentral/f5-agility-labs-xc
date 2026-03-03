@@ -139,7 +139,7 @@ Extend the Application Using Cline
       - CHANGELOG.md
 
       After implementation, include:
-      - pytest following .clienerules mandatory instructions
+      - pytest following .clinerules mandatory instructions
       - curl examples for each API endpoint
 
       ====================================================================
@@ -224,11 +224,11 @@ Vibe Coding Experience in VS Code (What You’ll See)
 Enable API Discovery Using Policy-as-Code
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-10. Open the `security-controls.yaml` file in VS Code.
+1. Open the ``security-controls.yaml`` file in VS Code.
 
    This is the same policy file you used in Module 2 to enable WAF.
 
-11. Enable API Discovery in the security policy file and save it.
+2. Enable API Discovery in the security policy file and save it.
 
    Update the file so it looks like this:
 
@@ -272,9 +272,9 @@ Commit and Push the Changes
 Observe the CI/CD Pipeline
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-14. Navigate to the pipeline in GitLab.
+1. Navigate to the pipeline in GitLab.
 
-    If you are not already logged in:
+   If you are not already logged in:
 
    - From your deployment, locate the **Jump Host** tile and click **Access**
    - Click **FIREFOX**
@@ -302,13 +302,13 @@ Observe the CI/CD Pipeline
 
    |module3-gitlab-build-pipeline| 
 
-15. Open the most recent pipeline run.
+2. Open the most recent pipeline run.
 
    |module3-gitlab-api-pipeline|
 
    |module3-gitlab-api-run|
 
-16. Confirm that all stages complete successfully.
+3. Confirm that all stages complete successfully.
 
    *What this means:*
    
@@ -319,18 +319,18 @@ Observe the CI/CD Pipeline
 Generate Traffic to Exercise the New API Endpoints
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1.  Generate traffic to the newly added API endpoints.
+1. Generate traffic to the newly added API endpoints.
 
    Once the pipeline has completed successfully and the application is deployed, open a browser and access the following URLs:
 
    .. note::
-      Replace <NAMESPACE> with your F5 Distributed Cloud namespace assigned at the beggining of the lab
+      Replace <NAMESPACE> with your F5 Distributed Cloud namespace assigned at the beginning of the lab.
 
    ::
 
-      https://<NAMESAPCE>.lab-app.f5demos.com/api/status
-      https://<NAMESAPCE>.lab-app.f5demos.com/api/vibe-coding
-      https://<NAMESAPCE>.lab-app.f5demos.com/api/ai-assisted-coding
+      https://<NAMESPACE>-lb.lab-app.f5demos.com/api/status
+      https://<NAMESPACE>-lb.lab-app.f5demos.com/api/vibe-coding
+      https://<NAMESPACE>-lb.lab-app.f5demos.com/api/ai-assisted-coding
 
    You should receive **JSON responses** from each endpoint.
 

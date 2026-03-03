@@ -7,14 +7,14 @@ Explore the Deployed Application
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-1. Browse the application normally. Click around the application and load a few pages to generates **baseline traffic**.
+1. Browse the application normally. Click around the application and load a few pages to generate **baseline traffic**.
 
    ::
 
       https://<NAMESPACE>-lb.lab-app.f5demos.com
 
    .. note::
-      Replace <NAMESPACE> with your F5 Distributed Cloud namespace assigned at the beggining of the lab
+      Replace <NAMESPACE> with your F5 Distributed Cloud namespace assigned at the beginning of the lab.
 
 
 Explore F5 Distributed Cloud Configuration
@@ -47,15 +47,15 @@ Explore F5 Distributed Cloud Configuration
    |module2-f5xc-waap-lb-waf-config|
 
 
-3. Review the vK8s workload on the Distributed App Section .
+3. Review the vK8s workload on the Distributed App Section.
 
    To Return to the main F5XC home page, click the F5 logo. Then, Click on the "Distributed App" tile.
 
    |module2-f5xc-apps-tile|
 
-   Once on the Distributed Apps page, click **Virtual K8s** and then click on you Virtual K8s instance.
+   Once on the Distributed Apps page, click **Virtual K8s** and then click on your Virtual K8s instance.
 
-   This will take to the you Virtual K8s Dashboard
+   This will take you to the Virtual K8s Dashboard.
 
    |module2-f5xc-distapp-vk8-workload|
 
@@ -93,11 +93,11 @@ Review Security Events
 
 8. Open the security events view in F5 Distributed Cloud.
 
-   In the F5 Distributed Cloud console, go back the Web App & API Protection page (Click on F5 logo)
+   In the F5 Distributed Cloud console, go back to the Web App & API Protection page (Click on F5 logo).
 
    |module3-f5xc-waap-tile|
    
-   Once on Web App & API Protection page navigate to the **Security Events** section for your application.
+   Once on the Web App & API Protection page, navigate to the **Security Events** section for your application.
 
    Navigate to:
 
