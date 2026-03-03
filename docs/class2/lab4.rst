@@ -139,7 +139,7 @@ Task 2: Configure a Web Application Scan
 |                                                                                              |
 ||lab004|                                                                                      |
 |                                                                                              |
-|4. Add a name for the application: **ACME Corp Web App**                                      |
+|4. Add a name for the application: **<your-namespace> ACME Corp Web App**                     |
 |                                                                                              |
 |5. Add the Web Address of the application that was built as part of this lab. It will match   |
 |   your namespace following the pattern https://<your-namespace>.lab-sec.f5demos.com          |
@@ -161,7 +161,7 @@ Task 2: Configure a Web Application Scan
 |                                                                                              |
 |8. On the new profile page, additional settings can be configured such as changing the User   |
 |   Agent of the scan, adding basic authentication with username password as an encoded value  |
-|   in the Authorization header of the HTTP requests of the scans.  To meet the requirement    |
+|   in the Authorization header of the HTTP requests of the scans. To meet the requirement     |
 |   of ensuring that the penetration tests come from pre-approved ip addresses, select the scan|
 |   settings to restrict scans to originate from only a subset of IPs.                         |
 |                                                                                              |
@@ -171,8 +171,8 @@ Task 2: Configure a Web Application Scan
 |                                                                                              |
 ||lab009|                                                                                      |
 |                                                                                              |
-|9. Return to the ACME Corp Web App by clicking on **Applications** on selecting the **ACME    |
-|   Corp Web App**. Next click **Manage** then **Scheduling** then **New**.                    |  
+|9. Return to the ACME Corp Web App by clicking on **Applications** on selecting the           |
+|   **ACME Corp Web App**. Next click **Manage** then **Scheduling** then **New**.             | 
 |                                                                                              |
 ||lab010|                                                                                      |
 |                                                                                              |
@@ -204,7 +204,7 @@ Task 2: Configure a Web Application Scan
 ||lab019|                                                                                      |
 |                                                                                              |
 |12. After the Scan completes, results will be displayed on the homepage dashboard and also the|
-|    page of the individual application.  Click on **Applications - Acme Corp Web App**.       |
+|    page of the individual application. Click on **Applications - Acme Corp Web App**.        |
 |    Review the data from the latest scan at a high level. Click on Scan that just completed.  |
 |    From theReport page, review the which OWASP Top 10 vulnerabilities were uncovered. There  |
 |    is also a video that replays the penetration testing scan interacting with the website.   |

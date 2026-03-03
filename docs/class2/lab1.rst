@@ -98,7 +98,7 @@ Task 2: Exploring the F5 Distributed Console
 |   **Menu** on the top right-hand side and select **Header**.                                 |
 |                                                                                              |
 |4. Note the Remote Address field. This will match the IP address of your workstation. You can |
-|   verify that it matches by looking up your IP address at https://ipinfo.io/ or              |
+|   verify that it matches by looking up your IP address at https://ipinfo.io/what-is-my-ip or |
 |   https://ifconfig.co/                                                                       |
 |                                                                                              |
 ||lab005|                                                                                      |
