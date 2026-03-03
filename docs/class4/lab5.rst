@@ -14,18 +14,18 @@ client "source" within a specific time window to prevent excessive load.
 Task 1: Simulate Unmitigated Excessive Requests
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Currently, our Banking Application does not implement, or enforce, rate-limiting to a specific endpoint.
+Currently, our Banking Application does not implement or enforce rate-limiting to a specific endpoint.
 
-In this task, you will follow steps to send multiple requests witin 1 minute to the /getallcustomers endpoint.
+In this task, you will follow steps to send multiple requests within one minute to the **/getallcustomers** endpoint.
 
-#. Using another browser tab, navigate to the the following URL.
+#. Using another browser tab, navigate to the following URL.
 
    ``http://<namespace>.lab-sec.f5demos.com/swagger``
 
    .. image:: _static/shared-swagger-intro.png
       :width: 800px
 
-#. Within the Swagger page, navigate and expand the customerlookup/getallcustomers endpoint, and click
+#. Within the Swagger page, navigate and expand the **customerlookup/getallcustomers** endpoint, and click
    **Try it out**.
 
    .. image:: _static/lab4-image015.png
@@ -37,7 +37,7 @@ In this task, you will follow steps to send multiple requests witin 1 minute to 
    .. image:: _static/lab4-image016.png
       :width: 800px
 
-#. Click the **Execute** button 10 times within 1 minute, and observe the Response Body; each 
+#. Click the **Execute** button 10 times within one minute, and observe the Response Body; each 
    request should be allowed.
 
    .. image:: _static/lab4-image017.png
@@ -132,22 +132,22 @@ previously built HTTP Load Balancer object delivering the targeted API.
 Task 3: Simulate Mitigated Excessive Requests
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In this task, you will send more than 10 requests within a Minute
+In this task, you will send more than 10 requests within one minute
 
-#. Using another browser tab, navigate to the the following URL.
+#. Using another browser tab, navigate to the following URL.
 
    ``http://<namespace>.lab-sec.f5demos.com/swagger``
 
    .. image:: _static/shared-swagger-intro.png
       :width: 800px
 
-#. Within the Swagger page, navigate and expand the customerlookup/getallcustomers endpoint, and click
+#. Within the Swagger page, navigate and expand the **customerlookup/getallcustomers** endpoint, and click
    **Try it out**.
 
    .. image:: _static/lab4-image015.png
       :width: 800px
 
-#. Click the **Execute** button more than 10 times within 1 minutes, and observe the Response Body; each request, through the 10th, should be allowed/accepted.  
+#. Click the **Execute** button more than 10 times within one minute and observe the Response Body. Each request through the 10th should be allowed/accepted.  
    Observe the Response Body once you exceed this threshold.
 
    .. image:: _static/lab4-image031.png

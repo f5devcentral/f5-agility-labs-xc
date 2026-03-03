@@ -14,15 +14,15 @@ Implement measures to protect this endpoint, and ensure all APIs are safeguarded
 
 .. note ::
 
-   This lab will use a pre-build shared WAF object. Refer to `Lab 4 Advanced <adv_lab4.html>`_ for additional steps on how to create a WAF object.
+   This lab will use a pre-built shared WAF object. Refer to `Lab 4 Advanced <adv_lab4.html>`_ for additional steps on how to create a WAF object.
 
-Task 1: Simulate a Unmitigated Attack
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Task 1: Simulate an Unmitigated Attack
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In this task, you will follow steps simulating an attack against an unprotected endpoint.
 The Distributed Cloud (XC) WAF object is pre-built for the next Task, but please review how to create this object via the Advanced Lab 4.
 
-#. Using another browser tab, navigate to the the following URL.
+#. Using another browser tab, navigate to the following URL.
 
    ``http://<namespace>.lab-sec.f5demos.com/swagger``
 
@@ -51,7 +51,7 @@ The Distributed Cloud (XC) WAF object is pre-built for the next Task, but please
       :width: 800px
 
 #. Review the Response, notice how the included **<script>** was accepted and included in 
-   the Reponse Body.
+   the Response Body.
 
    .. image:: _static/lab4-image003.png
       :width: 800px
@@ -99,14 +99,14 @@ In this task, you will follow steps to attach a WAF policy to your Load Balancer
    .. image:: _static/lab4-af-review.png
       :width: 700px
 
-#. Review the WAF Policy configration, click **Back** at the bottom left of the page.
+#. Review the WAF Policy configration, click **Back** or **Close** at the bottom right of the page.
 
    .. image:: _static/lab4-af-back.png
       :width: 800px
 
-.. note ::
+   .. note ::
 
-   Suspicious and Good Bot is set to ignore to reduce false positives from request made in this lab via 'curl'.
+      Suspicious and Good Bot is set to ignore to reduce false positives from requests made in this lab via 'curl'.
 
 #. Click **Other Settings** on the left navigation, then click **Save and Exit**
 
@@ -116,22 +116,22 @@ In this task, you will follow steps to attach a WAF policy to your Load Balancer
 Task 3: Simulate a Mitigated Attack
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In this task you will follow steps simulating an attack againt a protected endpoint.
+In this task you will follow steps simulating an attack against an protected endpoint.
 
-#. Using another browser tab, navigate to the the following URL.
+#. Using another browser tab, navigate to the following URL:
 
    ``http://<namespace>.lab-sec.f5demos.com/swagger``
 
    .. image:: _static/shared-swagger-intro.png
       :width: 800px
 
-#. Within the Swagger page navigate and expand the messageservice/send endpoint, and click
+#. Within the Swagger page navigate and expand the **messageservice/send** endpoint, and click
    **Try it out**.
 
    .. image:: _static/lab4-image001.png
       :width: 800px
 
-#. Copy the following JSON, paste within the Request body. Click on **Execute**.
+#. Copy/paste the following JSON into the Request body. Click on **Execute**.
 
    .. note ::
 
@@ -150,7 +150,7 @@ In this task you will follow steps simulating an attack againt a protected endpo
    .. image:: _static/lab4-image002.png
       :width: 800px
 
-#. Review the Server Response; notice how a block message was presented within the Server Response body.
+#. Review the Server Response, taking notice of how a block message was presented within the Server Response body.
 
    .. image:: _static/lab4-image014.png
       :width: 800px

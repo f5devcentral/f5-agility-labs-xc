@@ -35,7 +35,7 @@ F5XC WAS answers the final question:
 Review: Pre-Scan vs Post-Scan WAF Reports
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Review the Pre-Scan and Post-Scan reports performed using **F5XC Web Application Scanning** to a live version of the 
+Review the Pre-Scan and Post-Scan reports performed using **F5XC Web Application Scanning** on a live version of the application.
 
 Open a new tab in your browser and navigate to:
 
@@ -44,13 +44,13 @@ Open a new tab in your browser and navigate to:
 The reports include:
 
 - Full PDF pre and post WAF reports
-- Videos of each scan that shows how F5XC Web Application Scanning performs the scan and test the application.
+- Videos of each scan that show how F5XC Web Application Scanning performs the scan and tests the application.
 - Summary of the issues found on each scan
 
 Walk through both reports:
 
 - **Pre-Scan: F5 AI-Generated App PRE-SCAN (WAF OFF)**
-- **Post-Scan: Same App POS-SCAN (WAF ON)**
+- **Post-Scan: Same App POST-SCAN (WAF ON)**
 
 How F5XC WAS Fits into CI/CD (Conceptually)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

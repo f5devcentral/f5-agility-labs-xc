@@ -3,8 +3,8 @@ Lab 2: Advanced API Inventory
 
 **Scenario**
 
-There was an update to Customer Lookup controller, a new endpoint "getbyheroname" was added, allowing the lookup 
-of a customer's secret identify. However, this endpoint was not intended for release and was not approved for production.
+There was an update to the Customer Lookup controller, a new endpoint "getbyheroname" was added, allowing the lookup 
+of a customer's secret identity. However, this endpoint was not intended for release and was not approved for production.
 
 We need to ensure that unapproved endpoints cannot be consumed, both now and in the future.
 
@@ -226,8 +226,7 @@ previously built Load Balancer.
    .. image:: _static/lab2-lb-def-validation-apply.png
       :width: 800px
 
-#. Select **Other Settings** on the left then click on **Save and Exit**
-   at the bottom right of window.
+#. Select **Save HTTP Load Balancer** at the bottom right of window.
 
    .. image:: _static/shared-lb-save.png
       :width: 800px

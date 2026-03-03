@@ -2,7 +2,7 @@ F5 Distributed Cloud: Code, Secure, Repeat
 ====================================================
 
 Introduction
-------------
+~~~~~~~~~~~~~
 
 Welcome to the **F5 Distributed Cloud – Code. Secure. Repeat.** lab.
 
@@ -15,17 +15,24 @@ As the lab progresses, you’ll see how those risks are addressed using **CI/CD-
 By the end of the lab, you’ll have walked through the full lifecycle:
 
 * Writing code fast with AI
-* Catching issues early with **SAST**
+* Catching issues early with Static Application Security Testing (**SAST**)
 * Enforcing guardrails using **DevSecOps and policy as code**
 * Protecting live applications with **WAAP**
-* Validating security posture using **DAST** through Web App Scanning
+* Validating security posture using Dynamic Application Security Testing (**DAST**) through Web App Scanning
 
 This lab isn’t about memorizing steps—it’s about understanding *why* modern teams build security the way they do, and how platforms like F5 Distributed Cloud help make speed and security work together.
 
 Let’s get started.
 
+
+.. note::  
+
+   If you’ve already joined the UDF lab environment and your deployment status shows all green, you may proceed directly to  **Module 0**. If you have not yet joined the UDF lab environment, please complete the steps outlined in the Course/Lab Invitation and Accessing UDF sections first.
+
+
+
 Course/Lab Invitation
----------------------
+~~~~~~~~~~~~~~~~~~~~~~
 
 Access to the lab environment is provided via an invitation email sent to the registration address you submitted. Please check your inbox and spam folder. If you did not receive an invitation, contact a member of the lab team for assistance.
 
@@ -48,7 +55,7 @@ Access to the lab environment is provided via an invitation email sent to the re
 +----------------------------------------------------------------------------------------------+
 
 Accessing UDF (F5 Unified Demo Framework)
------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +----------------------------------------------------------------------------------------------+
 | The following will guide attendees through the initial Lab environment access within F5 UDF. |
@@ -107,13 +114,13 @@ Accessing UDF (F5 Unified Demo Framework)
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| **Beginning of Lab:**  You are now ready to begin the lab, Enjoy! Ask questions as needed.   |
+| **Beginning of Lab:**  You are now ready to begin the lab. Enjoy! Ask questions as needed.   |
 +----------------------------------------------------------------------------------------------+
 | |labbgn|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 Lab Modules
------------
+~~~~~~~~~~~~
 
 .. toctree::
    :maxdepth: 1

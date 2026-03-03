@@ -49,7 +49,7 @@ VS Code Quick Orientation (For Beginners) - OPTIONAL
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If you are new to VS Code, here is a quick tour of the interface you’re looking at. If you are 
-familiar with the VScode applicaiton you can safely skip thi step
+familiar with the VS Code application you can safely skip this step.
 
 **Left Panel – Activity Bar & Explorer**
    - The vertical icon bar on the far left is the **Activity Bar**.
