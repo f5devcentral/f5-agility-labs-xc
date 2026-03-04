@@ -26,9 +26,9 @@ This lab uses the **[F5XC MCN] Base Lab w/SMSv2** UDF Blueprint. Your lab enviro
    intro
    narrative
    module1/module1.rst
-   module1/labs*
+   module1/lab*
    module2/module2.rst
-   module2/labs*
+   module2/lab*
 
 .. |intro001| image:: ./images/intro.png
    :width: 800px
