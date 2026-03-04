@@ -377,7 +377,7 @@ control over application traffic.
    :width: 800px
 .. |lab009| image:: ../images/temp/lab4/domains.png
    :width: 800px
-.. |lab010| image:: ../images/temp/lab4/domains..png
+.. |lab010| image:: ../images/temp/lab4/domains.png
    :width: 800px
 .. |lab011| image:: ../images/temp/lab4/curltest.png
    :width: 800px
