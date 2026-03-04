@@ -3,57 +3,54 @@ Introduction to the Lab
 
 **Narrative:**
 
-Congratulations! You are a Network Security Engineer at ACME Corp. 
+Congratulations! You are a **Network Security Engineer at ACME Corp**! 
 
-ACME has an Application Team that supports internally developed traditional and 
-modern apps, vendor provided and SaaS applications. As security threats are becoming 
-more prevalant, the ACME's Risk and Compliance organization has mandated that Web 
-Application Firewalls be deployed across all public facing applications within the next 30 days.  
+You are responsible for securing your company’s public-facing web applications and APIs. A recent **web application vulnerability scan** uncovered multiple **OWASP Top 10** vulnerabilities in a customer-facing application, raising concerns from both the application team and the risk and compliance organization. In response, ACME Corp has mandated that all internet-facing applications and APIs are protected by a Web Application Firewall (WAF) within a short timeframe.
 
-As the Network Security Engineer, you are tasked with evaluating how to securely 
-deploy a WAF across your entire public application environment. At first, you consider 
-the traditional methods of deploying and managing your native WAFs in the Data Center, AWS, Azure, 
-GCP, but quickly realize that learning and managing multiple WAF technologies would be time-consuming 
-and difficult to operate.
+Rather than deploying and managing separate security solutions across on-premises and multiple cloud environments, you decide to evaluate **F5 Distributed Cloud**. As a SaaS-based platform, F5 Distributed Cloud provides a wide ranges of security services, such as WAF, Bot Defense, and Malicious User Mitigation, through a unified control plane, enabling rapid deployment and consistent protection across environments.
 
-You recently saw a post on LinkedIn about a F5 SaaS product claiming to solve multi-cloud 
-appplication security complexities. Given your current timeline and industry knowledge of F5 being a 
-leader for decades, you decide to check it out and end up in the chair you are sitting in today: 
-Taking a first-hand look at how F5 makes WAAP (Web Application and API Protection) simple, quick to deploy,
-and secure. 
+------------
 
-|intro000a|
+In this lab, you will apply layered security controls using F5 Distributed Cloud, including **WAF Policies, Bot Mitigation, and Malicious User Detection** (Labs 1–3) to the Acme AppWorld application. 
 
+Given that web application scans can take an unpredictable amount of time--sometimes up to an hour--You will begin by examining a pre-existing **Baseline Vulnerability Scan** completed before any F5 Distributed Cloud protections were applied. Upon completing Lab 4, you will examine a second pre-generated report **XC Protected Vulnerability Scan** to validate how F5 Distributed Cloud security services significantly reduced the risk/exposure by mitigating previously identified vulnerabilities. Finally, you will use **AI-Assisted Analytics** (Lab 5) to validate security events and gain operational insight into how the application is being protected.
 
-Task 1: Lab Environment
+This end-to-end workflow highlights how organizations can **discover vulnerabilities, deploy protection quickly, and continuously improve security posture** using F5 Distributed Cloud.
+
+------------
+
+|intro000d|
+
+Lab Environment
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-The image below represents an overview of the lab environment. F5 Distributed
-Cloud Services will be configured as a SaaS Edge delivery and security service
-tier to a publicly hosted web application. The first application you will be protecting 
-is deployed in Azure. The key elements you will interact with are as follows:
++----------------------------------------------------------------------------------------------+
+| The image below represents an overview of the lab environment. F5 Distributed Cloud Services |
+| will be configured as a SaaS Edge delivery and security service tier to a publicly hosted web| 
+| application. The key elements lab attendees will interact with are as follows:               |
+|                                                                                              |
+| * **F5 Distributed Cloud Console**                                                           |
+| * **F5 Distributed Cloud Global Network & Application Delivery Network (ADN)**               |
+| * **Publicly hosted application (Public Cloud)**                                             |
++----------------------------------------------------------------------------------------------+
+| |intro000b|                                                                                  |
++----------------------------------------------------------------------------------------------+
 
-* F5 Distributed Cloud Console
-* F5 Distributed Cloud Global Network / Application Delivery Network (ADN)
-* Publicly hosted application (Azure Public Cloud)
-
-|intro000b|
-
-
-
-Task 2: Accessing F5 Distributed Cloud Console
+Accessing F5 Distributed Cloud Console
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The following tasks will guide you through the initial access requirements for the associated lab environment.  
-Lab attendees should have received an invitation email to the lab environment based on the submitted 
-registration email.  Please check email and spam folders if it has not been received.  If you have 
-not received an email, please contact a member of the lab team.
- 
-F5 Distributed Cloud Console, where this lab will be conducted, is a SaaS control-plane for 
-services that provides a UI and API for managing network, security, and compute services. The F5
-Distributed Cloud Console can manage "sites" in existing on-premises data centers and sites in
-AWS, Azure, and GCP cloud environments.
-
++----------------------------------------------------------------------------------------------+
+|The following tasks will guide you through the initial access requirements for the associated |
+|lab environment. Lab attendees should have received an invitation email to the lab            |
+|environment based on the submitted registration email.  Please check email and spam folders   |
+|if it has not been received.  If you have not received an email, please contact a member of   |
+|the lab team.                                                                                 |
++----------------------------------------------------------------------------------------------+
+|F5 Distributed Cloud Console, where this lab will be conducted, is a SaaS control-plane for   |
+|services that provides a UI and API for managing network, security, and compute services.     |
+|The F5 Distributed Cloud Console can manage "sites" in existing on-premises data centers and  |
+|sites in AWS, Azure, and GCP cloud environments.                                              |
++----------------------------------------------------------------------------------------------+
 
 Course/Lab Invitation
 ~~~~~~~~~~~~~~~~~~~~~
@@ -116,8 +113,8 @@ Accessing UDF (F5 Unified Demo Framework)
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| The Lab environment window will now be displayed.  Click on the **Documentation** tab in the |
-| horizontal navigation links.  Locate and observe the state of **Client** system.             |
+| The Lab environment window will now be displayed. Click on the **Documentation** tab in the  |
+| horizontal navigation links. Locate and observe the state of **Client** system.             |
 |                                                                                              |
 | In approximately 5-7 minutes the associated **yellow gear** starting icon will change to a   |
 | **green arrow** (running) icon and attendees will proceed to the next section of steps.      |
@@ -151,7 +148,7 @@ Accessing F5 Distributed Cloud
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| The initial logon prompt will be presented.  Click **Sign on with Okta** to proceed.  SSO    |
+| The initial logon prompt will be presented.  Click **Sign on with Okta** to proceed. SSO     |
 | will process and onboarding to the tenant will proceed.                                      |
 +----------------------------------------------------------------------------------------------+
 | |intro011|                                                                                   |
@@ -196,8 +193,10 @@ Accessing F5 Distributed Cloud
    :width: 800px
 .. |intro000b| image:: _static/intro-000b.png
    :width: 800px
-.. |intro001| image:: _static/intro-01.png
+.. |intro000d| image:: _static/intro-000d.png
    :width: 800px
+.. |intro001| image:: _static/intro-01.png
+   :width: 600px
 .. |intro002| image:: _static/intro-02.png
    :width: 800px
 .. |intro003| image:: _static/intro-03.png
@@ -215,9 +214,9 @@ Accessing F5 Distributed Cloud
 .. |intro009| image:: _static/intro-09.png
    :width: 800px
 .. |intro010| image:: _static/intro-10.png
-   :width: 800px
+   :width: 600px
 .. |intro011| image:: _static/intro-11.png
-   :width: 800px
+   :width: 600px
 .. |intro012| image:: _static/intro-12.png
    :width: 800px
 .. |intro013| image:: _static/intro-13.png
