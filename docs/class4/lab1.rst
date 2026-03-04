@@ -95,7 +95,7 @@ This Load Balancer will be used throughout the course.
    .. image:: _static/lab1-task1-105.png
       :width: 600px
 
-#. **Malicious User Detection** is also Enabled on the load balancer which will be reviewed in a later lab.
+#. **Malicious User Detection** is also Enabled -- review what is currently enabled/disabled in both the API Protection and Common Security Controls section. Notice we have not enabled any API Protection yet. Malicious User Detection will be discussed in one of the labs.
    
    .. image:: _static/lab1-task1-106.png
       :width: 500px

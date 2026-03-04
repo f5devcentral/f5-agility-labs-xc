@@ -1,547 +1,423 @@
-Lab 4: App Connect - Solving IP Overlap 
-===========================================
+Lab 4: App Connect - Solving IP Overlap
+========================================
 
 **Objective:**
 
-* Implement App Connect to overcome IP Address overlap in AWS/Azure.  
+* Implement App Connect to overcome IP address overlap in AWS/Azure
+* Provide private and secure connectivity between all sites
+* Configure Service Policy to only permit specific HTTP methods
+* Review network security events in the F5 Distributed Cloud Console
 
-* Provide private and secure connectivity between all sites. 
+ACME Corp needs to establish connectivity between AWS and Azure workloads that have overlapping IP 
+addresses. Using App Connect, you will create internal load balancers that act as Software-Defined 
+Proxies to enable secure communication between these environments.
 
-* Configure policy to only permit port 80 between these sites. 
+.. note::
+   App Connect uses CE Nodes as Software-Defined Proxies (Layer 7) to solve IP overlap challenges, 
+   unlike Network Connect which uses Software-Defined Routers (Layer 3/4).
 
-* Review network security events in the XC console.
+|lab001|
 
-|
+Prerequisite
+------------
 
-.. image:: ../images/lab4bizreq1.png
+.. note::
+   You really should have completed Lab 3 at this point, if not, then I don't know what you have been doing this whole time 🙃 
 
-|
+Task 1: Understanding the Lab Environment
+------------------------------------------
 
-**Narrative:** 
+**Narrative:**
 
-Now that the globally available frontend has been deployed, it's time to start working on **Deliverable #2** and configure backend connectivity. Since Network Connect does **NOT** support IP overlap, we will configure the XC Nodes with App Connect proxies. 
-Recall that Network Connect joins networks by using the XC Nodes as Software-Defined Routers and App Connect uses the XC Nodes as Software-Defined Proxies to connect applications. Think...NetworkAAS or ProxyAAS. 
+Now that the globally available frontend has been deployed, you need to configure backend 
+connectivity between AWS and Azure. Since these environments have overlapping IP addresses, 
+you will use App Connect proxies instead of Network Connect routing.
 
-|
+**Lab Environment Overview:**
 
-.. image:: ../images/lab4goal.png
+* AWS and Azure workloads both use **10.0.5.253** (IP overlap)
+* App Connect will use CE Nodes as proxies to overcome IP overlap
+* Internal load balancers will provide secure connectivity
+* Service Policies will enforce allowed traffic
 
-|
+|lab002|
 
-Multi-Cloud App Connect
-----------------------------
+**Your goal is to create internal load balancers that enable secure communication between 
+overlapping IP environments.**
 
-In the **Side menu** under **Manage** click on **Load Balancers** >> **HTTP Load Balancers** and click the **Add HTTP Load Balancer** button. 
+Task 2: Create Backend VIP to Azure
+------------------------------------
 
+You will now create an internal HTTP load balancer on your Data Center CE that connects to the 
+Azure workload.
 
-Enter the following values:
+1. Navigate to **Multi-Cloud App Connect >> Manage >> Load Balancers >> HTTP Load Balancers**.
 
-==================================      ==============
-Variable                                Value
-==================================      ==============
-Name                                    [animal-name]-backend-vip-to-azure
-Domains and LB Type                     [animal-name]-backend-vip-to-azure.lab-mcn.f5demos.com
-Load Balancer Type                      HTTP
-Automatically Manage DNS Records        **uncheck**
-HTTP Port                               80
-Origin Pools                            See Below 
-==================================      ==============
+2. Click **Add HTTP Load Balancer**.
 
-**Origin Pools**
+3. Configure the load balancer:
 
-Click **Add Item** and under "Origin Pool" select the **Azure pool** with your animal name and click **Apply**. 
+   ================================  ========================================
+   Variable                          Value
+   ================================  ========================================
+   Name                              <your-namespace>-backend-vip-to-azure
+   Domains                           <your-namespace>-backend-vip-to-azure.lab-mcn.f5demos.com
+   Load Balancer Type                HTTP
+   Automatically Manage DNS Records  **Unchecked**
+   HTTP Port                         80
+   ================================  ========================================
 
-Your config should look like this so far: 
+   |lab003|
 
-|
+**Configure Origin Pools:**
 
-.. image:: ../images/backendvip.png
+4. Under **Origin Pools**, click **Add Item**.
 
-|
+5. Select your Azure pool: **<your-namespace>-azure-pool**
 
-**Scroll** all the way down until you reach the **Other Settings** section. Here you will find the **VIP Advertisement** field. 
+6. Click **Apply**.
 
-.. Important:: In the previous lab, we took the default of **Internet** here. This means that the load balancer will be distributed across all Regional Edges in our anycast network. This time we will choose our Data Center CE to host the load balancer.
+   |lab004|
 
-Hit the dropdown and select **Custom**. 
+**Configure VIP Advertisement:**
 
-|
+7. Scroll all the way down to **Other Settings** section.
 
-.. image:: ../images/custom.png
+8. Under **VIP Advertisement**, click the dropdown and select **Custom**.
 
-|
+   |lab005|
 
-Now click the **Configure** link right below that field: 
+   .. important::
+      Unlike the previous lab where we used the default **Internet** (Regional Edges), this time 
+      we will advertise the VIP on your Data Center CE to create an internal load balancer.
 
-|
+9. Click **Configure**.
 
-.. image:: ../images/configure.png
+   |lab006|
 
-|
+10. Click **Add Item**.
 
-On the **"List of Sites to Advertise"** screen click **Add Item**. 
+11. Configure the advertisement:
 
-Enter the following values:
+    ================================  ========================================
+    Variable                          Value
+    ================================  ========================================
+    Select Where to Advertise         Site
+    Site Network                      Outside Network
+    Site Reference                    system/<your-namespace>-site
+    TCP Listen Port Choice            TCP Listen Port
+    TCP Listen Port                   80
+    ================================  ========================================
 
-==============================    =========================================================
-Variable                          Value
-==============================    =========================================================
-Select Where to Advertise         Site
-Site Network                      Outside Network (Since we only have 1 interface on our CE Node, it is "Outside" by default)
-Site Reference                    system/[animal-name]
-TCP Listen Port Choice            TCP Listen Port
-TCP Listen Port                   80
-==============================    =========================================================
+    |lab007|
 
-|
+12. Click **Apply**, **Apply**, and then **Save and Exit**.
 
-.. image:: ../images/azint.png
+Task 3: Test Internal Load Balancer
+------------------------------------
 
-|
+Now let's test the internal load balancer you just created.
 
-Click on **Apply**, **Apply**, and then **Save and Exit** on the main **HTTP Load Balancer** config screen. 
+13. From your UDF environment, click on **Access >> Web Shell** on the Ubuntu Client.
 
+14. Test without domain name:
 
-Testing Internal LB
-----------------------
-If that seemed easy, it's because it was. Now, you will test the load balancer that you just configured on the Data Center XC Node.  
+    **curl --head 10.1.1.5**
 
-|
+    |lab008|
 
-.. image:: ../images/node.png
+    You will receive a **404 Not Found** error.
 
-|
+    .. tip::
+       HTTP load balancers in F5 Distributed Cloud enforce domain name matching. Without the 
+       correct domain in the request, the load balancer will not respond.
 
-From the Ubuntu Client (backend) **Web Shell** browser tab, type the following command and hit Enter. 
+15. Test with domain name resolution:
 
-curl http://10.1.1.5 
+    **curl --head http://<your-namespace>-backend-vip-to-azure.lab-mcn.f5demos.com --resolve <your-namespace>-backend-vip-to-azure.lab-mcn.f5demos.com:80:10.1.1.5**
 
-|
+    |lab009|
 
-.. image:: ../images/curlerror.png
+16. You should now receive a **200 OK** response!
 
-|
+    |lab010|
 
-Uh oh....! **404 Not Found**? But why? 
+17. To see the full HTML response, run the command without the **--head** flag:
 
-Recall the mandatory **Domains** field that was required when you configured the HTTP load balancer. **XC App Connect HTTP Load Balancers natively perform Domain Name enforcement and DO NOT respond to requests without the expected Domain Name.**
+    **curl http://<your-namespace>-backend-vip-to-azure.lab-mcn.f5demos.com --resolve <your-namespace>-backend-vip-to-azure.lab-mcn.f5demos.com:80:10.1.1.5**
 
-|
+    |lab011|
 
-.. image:: ../images/domains.png
+Task 4: Create Origin Pool for AWS Diagnostic Tool
+---------------------------------------------------
 
-|
+**Narrative Update:**
 
-We will now use a tool to help test this with a built-in "resolve" function. 
+ACME Corp has an urgent requirement: the AWS frontend needs to connect to the Azure frontend 
+privately over port 80. To test this, you will use a diagnostic tool running on the AWS workload.
 
-From the Ubuntu Client **Web Shell** browser tab, type or paste the following command **(with your animal-name)** and hit **Enter**.::
+18. Navigate to **Multi-Cloud App Connect >> Manage >> Load Balancers >> Origin Pools**.
 
-    curl --head http://[animal-name]-backend-vip-to-azure.lab-mcn.f5demos.com --resolve [animal-name]-backend-vip-to-azure.lab-mcn.f5demos.com:80:10.1.1.5
+19. Click **Add Origin Pool**.
 
-.. note:: On a MAC you should be able to [CMD + v] and on a PC [Shift + Insert] to paste into the web shell. 
+20. Configure the origin pool:
 
-|
+    ================================  ========================================
+    Variable                          Value
+    ================================  ========================================
+    Name                              <your-namespace>-awstool-pool
+    Origin Server Port                8080
+    ================================  ========================================
 
-.. image:: ../images/curlhead.png
+**Configure Origin Servers:**
 
-|
+21. Under **Origin Servers**, click **Add Item**.
 
-In my example, my animal-name was **wanted-swan**. If you want to see the full HTML of the site you can **up arrow** and run the command again without the **\-\-head** flag.::
+22. Configure the origin server:
 
-    curl  http://[animal-name]-backend-vip-to-azure.lab-mcn.f5demos.com --resolve [animal-name]-backend-vip-to-azure.lab-mcn.f5demos.com:80:10.1.1.5
+    ================================  ========================================
+    Variable                          Value
+    ================================  ========================================
+    Select Type of Origin Server      IP address of Origin Server on given Sites
+    IP                                10.0.5.253
+    Site or Virtual Site              Site
+    Site                              system/appworld-aws
+    Select Network on the site        Outside Network
+    ================================  ========================================
 
-|
+23. Click **Apply** and then **Add Origin Pool**.
 
-.. image:: ../images/curltest.png
+    |lab012|
 
-|
+Task 5: Create HTTP Load Balancer for Diagnostic Tool
+------------------------------------------------------
 
-Success! Your stomach growls and it's time for lunch! You have now met every requirement thrown at you thus far with F5 Distrib.... **Ring Ring** 
+24. Navigate to **Manage >> Load Balancers >> HTTP Load Balancers**.
 
-.. Important:: Your phone rings! Just as you were finishing up your testing and about to head to lunch, the CIO calls your desk directly with an urgent request and it sounds like that new Pho restaurant is going to have to wait. There is an immediate requirement for the frontend in AWS to connect to an API on the frontend in Azure, privately over port 80. Additionally, this API should be "Read Only" for any API clients originating in AWS. This traffic CAN NOT be sent unencrypted over the Internet. Can we use F5 Distributed Cloud to quickly bridge these CSP's? 
+25. Click **Add HTTP Load Balancer**.
 
-Narrative Update
-----------------------
-You have met all the requirements thus far, but that phone call had a real sense of urgency to it so, you're going to have to act fast. 
+26. Configure the load balancer:
 
-Unfortunately, you don't have access to any of the workloads in the CSP environments but one of your friends over on the Application team recently let you know about a diagnostic tool they use on their AWS frontend. It's called the "In-Container-Diagnostic tool" and it runs on their AWS instance on port 8080. 
-They said you could use it if you need to test connectivity from the AWS frontend to the Azure frontend but they can't give you direct access to the container or workload itself. 
+    ================================  ========================================
+    Variable                          Value
+    ================================  ========================================
+    Name                              <your-namespace>-awstool
+    Domains                           <your-namespace>-awstool.lab-mcn.f5demos.com
+    Load Balancer Type                HTTP
+    Automatically Manage DNS Records  **Checked** (Important!)
+    HTTP Port                         80
+    ================================  ========================================
 
-"No problem" you reply, and quickly set out to configure a new frontend in XC for the Diag tool. After you expose the Diag tool, you will configure an internal load balancer for port 80 traffic between the AWS frontend and Azure frontend. You will use the Diag tool to then verify this connectivity. 
+27. Under **Origin Pools**, click **Add Item**.
 
-|
+28. Select **<your-namespace>-awstool-pool** and click **Apply**.
 
-.. image:: ../images/cioreq.png
+    |lab013|
 
-|
+29. Click **Add HTTP Load Balancer**.
 
-Expose AWS Diag Tool
-----------------------
+30. Open a new browser tab and navigate to:
 
-In the **Side menu** under **Manage** click on **Load Balancers** >> **Origin Pools** and click the **Add Origin Pool** button. 
+    **http://<your-namespace>-awstool.lab-mcn.f5demos.com**
 
-==================================      ==============
-Variable                                Value
-==================================      ==============
-Name                                    [animal-name]-awstool-pool
-Origin Servers                          **Add Item** > See Below
-Origin Server Port                      8080
-==================================      ==============
+    |lab014|
 
-**Origin Servers**
+    .. note::
+       If you cannot access the tool site, please see a lab assistant.
 
-==================================      ==============
-Variable                                Value
-==================================      ==============
-Select Type of Origin Server            IP address of Origin Server on given Sites
-IP                                      10.0.3.253
-Site or Virtual Site                    Site
-Site                                    system/student-awsnet
-Select Network on the site              Inside Network
-==================================      ==============
+Task 6: Create AWS to Azure Load Balancer
+------------------------------------------
 
-Click **Apply** and the **Save and Exit**. 
+Now you'll create an internal load balancer in AWS that connects to Azure.
 
-|
+31. Navigate to **Manage >> Load Balancers >> HTTP Load Balancers**.
 
-.. image:: ../images/toolpool.png
+32. Click **Add HTTP Load Balancer**.
 
-|
+33. Configure the load balancer:
 
+    ================================  ========================================
+    Variable                          Value
+    ================================  ========================================
+    Name                              <your-namespace>-aws-to-azure-lb
+    Domains                           <your-namespace>-aws-to-azure-lb.lab-mcn.f5demos.com
+    Load Balancer Type                HTTP
+    Automatically Manage DNS Records  **Unchecked**
+    HTTP Port                         80
+    ================================  ========================================
 
-In the **Side menu** under **Manage** click on **Load Balancers** >> **HTTP Load Balancers** and click the **Add HTTP Load Balancer** button. 
+34. Under **Origin Pools**, click **Add Item**.
 
+35. Select **<your-namespace>-azure-pool** and click **Apply**.
 
-Enter the following values:
+**Configure VIP Advertisement:**
 
-==================================      ==============
-Variable                                Value
-==================================      ==============
-Name                                    [animal-name]-awstool
-Domains and LB Type                     [animal-name]-awstool.lab-mcn.f5demos.com
-Load Balancer Type                      HTTP
-Automatically Manage DNS Records        **check** (Important!)
-HTTP Port                               80
-Origin Pools                            **Add Item** and select [animal-name-awstool-pool] and click **Apply**. 
-==================================      ==============
+36. Scroll all the way down to **VIP Advertisement** and select **Custom**.
 
-|
+37. Click **Configure**.
 
-.. image:: ../images/toollb.png
+38. Click **Add Item**.
 
-|
+39. Configure the advertisement:
 
+    ================================  ========================================
+    Variable                          Value
+    ================================  ========================================
+    Select Where to Advertise         Site
+    Site Network                      Inside
+    Site Reference                    system/appworld-aws
+    TCP Listen Port Choice            TCP Listen Port
+    TCP Listen Port                   80
+    ================================  ========================================
 
-Click **Save and Exit**. 
+    |lab015|
 
-You should now be able to access the new globally availalable tool by accessing the following URL with your animal-name: 
+    .. note::
+       The AWS CE node has two interfaces (Inside/Outside). We're advertising on the Inside 
+       interface to create an internal load balancer.
 
-http://[animal-name]-awstool.lab-mcn.f5demos.com
+40. Click **Apply**, **Apply**, and then **Save and Exit**.
 
-|
+41. Verify you now have 4 HTTP load balancers for your namespace.
 
-.. image:: ../images/contool.png
+    |lab016|
 
-|
+Task 7: Test AWS to Azure Connectivity
+---------------------------------------
 
-.. Note:: Please see a lab assistant if you can not access the tool site. 
+Let's test the connectivity between AWS and Azure through the internal load balancer.
 
-Create AWS to Azure LB
-------------------------
+42. First, verify the inside interface IP of the AWS CE node.
 
-Now that we have a way to test connectivity between AWS and Azure all we need to do is setup the HTTP Load Balancer (App Connect Proxy) to provide the secure connectivity. 
+43. Navigate to **Multi-Cloud Network Connect >> Manage >> Site Management >> AWS VPC Sites**.
 
-Back in XC Console, from the **Side menu** under **Manage** click on **Load Balancers** >> **HTTP Load Balancers** and click the **Add HTTP Load Balancer** button. 
+44. Click on **student-awsnet**.
 
+45. Navigate to the **Infrastructure** tab and note the inside interface IP address.
 
-Enter the following values:
+    |lab017|
 
-==================================      ==============
-Variable                                Value
-==================================      ==============
-Name                                    [animal-name]-aws-to-azure-lb
-Domains and LB Type                     [animal-name]-aws-to-azure-lb.lab-mcn.f5demos.com
-Load Balancer Type                      HTTP
-Automatically Manage DNS Records        **uncheck**
-HTTP Port                               80
-Origin Pools                            **Add Item** and select [animal-name-azure-pool] and click **Apply**. 
-VIP Advertisement (at bottom)           **Custom** Click **Configure** See Below. 
-==================================      ==============
+    .. note::
+       In this example, the inside interface IP is **10.0.5.16*. Your IP may differ.
 
-Under **List of Sites to Advertise**,  click **Add Item**. 
+46. Go to the diagnostic tool: **http://<your-namespace>-awstool.lab-mcn.f5demos.com**
 
-**VIP Advertisement**
+47. Click **Run Command** and paste the following:
 
-==================================      ==============
-Variable                                Value
-==================================      ==============
-Select Where to Advertise               Site
-Site Network                            Inside (The AWS node has 2 interface. Inside/Outside)
-Site Reference                          system/student-awsnet
-TCP Listen Port Choice                  TCP Listen Port
-TCP Listen Port                         80
-==================================      ==============
+    **curl http://<your-namespace>-aws-to-azure-lb.lab-mcn.f5demos.com --resolve <your-namespace>-aws-to-azure-lb.lab-mcn.f5demos.com:80:10.0.5.16**
 
-Click **Apply** and it should look ike this:  
+    |lab018|
 
-|
+    You should see a successful response!
 
-.. image:: ../images/advervip.png
+48. Test again with the **--head** flag:
 
-|
+    **curl --head http://<your-namespace>-aws-to-azure-lb.lab-mcn.f5demos.com --resolve <your-namespace>-aws-to-azure-lb.lab-mcn.f5demos.com:80:10.0.5.16**
 
-Click **Apply** and then **Save and Exit** from the HTTP Load Balancer creation screen.
+    |lab019|
 
-If you search your HTTP Load Balancers for your **animal-name**, you should now see 4 as per the example below:
+    .. tip::
+       You now have full proxy connectivity between IP-overlapped AWS and Azure resources over 
+       a private encrypted tunnel!
 
-|
+Lab Summary
+-----------
 
-.. image:: ../images/4lbs.png
+**What You've Learned:**
 
-|
+* How App Connect solves IP overlap challenges using Software-Defined Proxies
+* How to create internal load balancers with custom VIP advertisement
+* How to use domain name enforcement in HTTP load balancers
+* How to configure Service Policies to enforce HTTP methods
+* How to apply Service Policies to load balancers
+* How to review request logs and verify policy enforcement
 
-Testing AWS to Azure LB
-------------------------
+**Key Takeaways:**
 
-You now have a load balancer running in AWS on the inside interface of your AWS XC Node. In my example, the inside interface IP of the AWS XC Node is **10.0.5.15**. 
+* **App Connect uses proxies** (Layer 7) to solve IP overlap that Network Connect cannot handle
+* **Internal load balancers** are created by advertising VIPs on specific CE sites
+* **Domain name enforcement** is built into HTTP load balancers for security
+* **Service Policies** provide granular control over allowed traffic
+* **Default deny** architecture ensures only explicitly allowed traffic is permitted
+* **Request logs** provide detailed visibility into policy enforcement
 
-To verify the inside interface IP for your deployment, navigate to **Multi-Cloud Network Connect**, then in the **Side menu** under **Manage** click on **Stie Management** >> **AWS VPC Sites** and click the **student-awsnet.**. 
+**Your Environment:**
 
-Nagivate to the **Infrastructure** tab, and note the IP address of the inside interface.
+You now have App Connect proxies providing secure connectivity:
 
-|
+* **Data Center to Azure:** Internal load balancer on your UDF CE
+* **AWS to Azure:** Internal load balancer on AWS CE
+* **Diagnostic Tool:** Globally available tool for testing
+* **Service Policy:** Enforcing read-only access (GET only) from AWS to Azure
 
-.. image:: ../images/student-awsnet.png
+With this architecture, you've overcome IP overlap challenges while maintaining security and 
+control over application traffic.
 
-|
-
-We will now use the In-Container Diag tool to test connectivity.  
-
-If you don't already have a tab open to the Diag tool, in your browser go to: http://[animal-name]-awstool.lab-mcn.f5demos.com
-
-Click on **Run Command** and paste in the following:: 
-
-    curl  http://[animal-name]-aws-to-azure-lb.lab-mcn.f5demos.com --resolve [animal-name]-aws-to-azure-lb.lab-mcn.f5demos.com:80:10.0.5.15
-
-|
-
-.. image:: ../images/success.png
-
-|
-
-In just a few moments, you now have full proxy connectivity between IP Overlapped AWS and Azure resources over a private encrypted tunnel! Pretty sweet huh?
-
-
-Let's try that command again but with the shorthand version by using **\-\-head**::
-
-    curl --head  http://[animal-name]-aws-to-azure-lb.lab-mcn.f5demos.com --resolve [animal-name]-aws-to-azure-lb.lab-mcn.f5demos.com:80:10.0.5.15
-
-|
-
-.. image:: ../images/head.png
-
-|
-
-Adding Security
-------------------------
-
-You just configured an App Connect Proxy listening on port 80 of the Inside interface of the AWS XC Node. Since the App Connect Proxy is **default-deny** and only accepts traffic on the configured load balancer port with the appropriate Layer 7 Domain information, we can rest assured that no other ports will be permitted. 
-
-The second request to ensure that the **pretend API running on port 80 in Azure is Read Only or R/O**, can easily be solved with a Service Policy. For ease of demonstration we will make use of two HTTP methods and **pretend that HEAD is R/W** and of course **GET is natively R/O.**
-
-Head is one of many HTTP methods used to interact with API's amongst other things. Some other common ones are GET, POST and PUT. 
-
-Technically speaking, The HEAD method is identical to GET except that the server MUST NOT return a message-body in the response. 
-
-.. Note:: In our Lab we are just pretending that HEAD is R/W. 
-
-What if we we didn't want to allow **HEAD** or only allow certain HTTP methods between these two workloads? 
-
-In general, for any of our HTTP Load Balancers, what if we wanted to block a geolocation? 
-What if we wanted to allow some IP's and disallow others? How about file type enforcements?
-
-**Service Policies to the Rescue!**
-
-Service Policies
-------------------
-
-While Service Policies can do many things, we will go through a quick exercise to simply block the HTTP Method of **HEAD** for our AWS to Azure HTTP Load Balancer. This example could easily be expanded upon. 
-
-When you create a **Service Policy** it intrinsically contains a **default deny**. Therefore, our Service Policy will actually be a definition of what is allowed. 
-
-Back in XC Console, from the **Side menu** under **Security**, click on **Service Policies** >> **Service Policies** and click the **Add Service Policy** button. 
-
-==================================      ==============
-Variable                                Value
-==================================      ==============
-Name                                    [animal-name]-allow-get-sp
-Server Selection                        Server Name
-Server Name                             [animal-name]-aws-to-azure-lb.lab-mcn.f5demos.com
-Select Policy Rules                     Custom Rule List
-Rules                                   **Configure**, Click **Add Item** > See Below:
-==================================      ==============
-
-**Rules**
-
-==================================      ==============
-Variable                                Value
-==================================      ==============
-Name                                    allow-get
-Action                                  Allow
-Clients                                 Any Client
-Servers                                 Domain Matcher >> **Exact Value** >> [animal-name]-aws-to-azure-lb.lab-mcn.f5demos.com
-HTTP Method/Method List                 Get
-HTTP Path                               **Configure** >> **Add Item** add **/** under **Prefix Values**. 
-==================================      ==============
-
-Click **Apply**. 
-
-|
-
-.. image:: ../images/prefix.png
-
-|
-
-
-|
-
-.. image:: ../images/spget.png
-
-|
-
-Scroll down and click **Apply**. 
-
-|
-
-.. image:: ../images/sp1.png
-
-|
-
-Click **Apply**. 
-
-|
-
-.. image:: ../images/sp2.png
-
-|
-
-Click **Save and Exit**. 
-
-Apply Service Policy
----------------------
-
-In the **Side menu** under **Manage** click on **Load Balancers** >> **HTTP Load Balancers** and then click the **3 Button** Action Menu >> **Manage Configuration** under your **[animal-name]-aws-to-azure-lb**.
-
-Click **Edit Configuration** and scroll down to **Common Security Controls**. 
-
-Under **Service Policies**, hit the dropdown and choose, **Apply Specified Service Policies** and then click the blue **Configure**.
-
-Choose your **[animal-name]-allow-get-sp** and click **Apply** and then **Save and Exit**. 
-
-|
-
-.. image:: ../images/lbsp.png
-
-
-|
-
-
-Test Service Policy
--------------------
-
-If you don't already have a tab open to the Diag tool, in your browser go to: http://[animal-name]-awstool.lab-mcn.f5demos.com
-
-Try your curl command again **without** the **--head** flag.:: 
-
-    curl http://[animal-name]-aws-to-azure-lb.lab-mcn.f5demos.com --resolve [animal-name]-aws-to-azure-lb.lab-mcn.f5demos.com:80:10.0.5.236
-
-
-|
-
-.. image:: ../images/success.png
-
-
-|
-
-Now run the command again but insert the **\-\-head** command.::
-
-    curl --head  http://[animal-name]-aws-to-azure-lb.lab-mcn.f5demos.com --resolve [animal-name]-aws-to-azure-lb.lab-mcn.f5demos.com:80:10.0.5.236
-
-|
-
-.. image:: ../images/forbid.png
-
-|
-
-
-You have now successfully configured an application layer **Service Policy** that enforces HTTP methods. 
-
-.. Note:: This is a primitive example of a much more powerful construct that can be used to enforce, secure and manipulate HTTP traffic much like iRules did on F5's classic BIG-IP platform. 
-
-Review Service Policy Logs
----------------------------
-
-Back in XC Console, from the **Side menu** under **Overview**, click on **Applications** and scroll down and click on your **[animal-name]-aws-to-azure-lb** under **Load Balancers**.
-
-
-|
-
-.. image:: ../images/awstoazure.png
-
-|
-
-Take a moment to observe some of the analytics and then click on the **Requests** tab at the top of the page. 
-
-|
-
-.. image:: ../images/requesttab.png
-
-|
-
-Here you will find the full request log. You will see the request path and if you click the little settings gear on the far right, you can add the Response Code given back to the client and several other metrics. 
-You may have to click refresh in the upper right or change your time frame if you took a break or don't see any data. 
-
-|
-
-.. image:: ../images/perfmon.png
-
-|
-
-**Expand** one of the log entries that had a **403** response code. These were the forbidden **Head** requests. 
-Look through the request data and determine the policy that was applied to the request as well as the **result**. 
-
-.. note:: If you do not see a response code column in the data, click on the wheel on the right, next to the search edit box and check response code. Click Apply.
-
-|
-
-.. image:: ../images/403.png
-
-|
-
-**Expand** one of the log entries that had a **200** response code. These were the allowed **Get** requests. 
-Look through the request data and determine the policy that was applied to the request as well as the **result**. 
-
-|
-
-.. image:: ../images/200.png
-
-|
-
-**Great job! You have now quickly completed every requirement thrown at you with F5 Distributed Cloud App Connect and Network Connect concepts.**
-
-There is a final bonus lab that will showcase some App Layer Routing and Security Concepts as well. 
-
-Sanity Check
--------------
-**This is what you just deployed.**
-
-|
-
-.. image:: ../images/lab4review.png
-
-|
-
-
-**We hope you enjoyed this lab!**
+.. important::
+   You have successfully completed all ACME Corp requirements using F5 Distributed Cloud 
+   Network Connect and App Connect!
 
 **End of Lab 4**
+
+.. |lab001| image:: ../images/temp/lab4/lab4bizreq1.png
+   :width: 800px
+.. |lab002| image:: ../images/temp/lab4/lab4goal.png
+   :width: 800px
+.. |lab003| image:: ../images/temp/lab4/lab4pic3.png
+   :width: 800px
+.. |lab004| image:: ../images/temp/lab4/backendvip.png
+   :width: 800px
+.. |lab005| image:: ../images/temp/lab4/custom.png
+   :width: 800px
+.. |lab006| image:: ../images/temp/lab4/configure.png
+   :width: 800px
+.. |lab007| image:: ../images/temp/lab4/azint.png
+   :width: 800px
+.. |lab008| image:: ../images/temp/lab4/curlerror.png
+   :width: 800px
+.. |lab009| image:: ../images/temp/lab4/domains.png
+   :width: 800px
+.. |lab010| image:: ../images/temp/lab4/curlhead.png
+   :width: 800px
+.. |lab011| image:: ../images/temp/lab4/curltest.png
+   :width: 800px
+.. |lab012| image:: ../images/temp/lab4/toolpool.png
+   :width: 800px
+.. |lab013| image:: ../images/temp/lab4/toollb.png
+   :width: 800px
+.. |lab014| image:: ../images/temp/lab4/contool.png
+   :width: 800px
+.. |lab015| image:: ../images/temp/lab4/advervip.png
+   :width: 800px
+.. |lab016| image:: ../images/temp/lab4/4lbs.png
+   :width: 800px
+.. |lab017| image:: ../images/temp/lab4/student-awsnet.png
+   :width: 800px
+.. |lab018| image:: ../images/temp/lab4/success.png
+   :width: 800px
+.. |lab019| image:: ../images/temp/lab4/head.png
+   :width: 800px
+.. |lab020| image:: ../images/temp/lab4/prefix.png
+   :width: 800px
+.. |lab021| image:: ../images/temp/lab4/spget.png
+   :width: 800px
+.. |lab022| image:: ../images/temp/lab4/sp1.png
+   :width: 800px
+.. |lab023| image:: ../images/temp/lab4/sp2.png
+   :width: 800px
+.. |lab024| image:: ../images/temp/lab4/lbsp.png
+   :width: 800px
+.. |lab025| image:: ../images/temp/lab4/success.png
+   :width: 800px
+.. |lab026| image:: ../images/temp/lab4/forbid.png
+   :width: 800px
+.. |lab027| image:: ../images/temp/lab4/awstoazure.png
+   :width: 800px
+.. |lab028| image:: ../images/temp/lab4/requesttab.png
+   :width: 800px
+.. |lab029| image:: ../images/temp/lab4/perfmon.png
+   :width: 800px
+.. |lab030| image:: ../images/temp/lab4/403.png
+   :width: 800px
+.. |lab031| image:: ../images/temp/lab4/200.png
+   :width: 800px

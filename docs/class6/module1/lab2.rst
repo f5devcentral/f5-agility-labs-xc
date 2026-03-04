@@ -1,556 +1,403 @@
-Lab 2: Configuring Network Connect (L3/L4 Routing Firewall )
-=============================================================
+Lab 2: Configuring Network Connect with Segments (L3/L4 Routing Firewall)
+==========================================================================
 
 **Objective:**
 
-* Verify the XC Node's health. 
+* Understand Network Segments and their isolation characteristics
+* Attach a pre-configured segment to your CE site interface
+* Test connectivity to AWS workloads before and after segment attachment
+* Review routing information and understand route propagation
+* Review Enhanced Firewall policies and their enforcement
+* Verify firewall policy effectiveness through testing
 
-* Configure Network Connect to connect the Data Center network to the AWS Network.
+In this lab, you will attach a pre-configured network segment to your CE site interface to enable 
+connectivity to AWS workloads. You will then test connectivity and observe how Enhanced Firewall 
+policies control traffic between segments.
 
-* Test connectivity and configure Enhanced Firewall for network security
+.. note::
+   Network segments provide isolation by default ("ships in the night"). Attaching a segment to 
+   your CE interface enables connectivity while maintaining security boundaries between different 
+   environments.
 
-**Narrative:** 
-Now that your XC Node is provisioned, it's time to verify, explore the XC Console and set up Network Connect to establish secure connectivity between the Data Center and AWS networks. 
-After the setup is complete, you will test connectivity and configure network security. 
+|lab001|
 
-|
+Prerequisite
+------------
 
-.. image:: ../images/lab2biz.png
+.. note::
+   You should already be logged into your lab's Distributed Cloud Tenant and have completed Lab 1.
 
-|
+.. warning::
+   If you are experiencing issues accessing the Distributed Cloud Tenant, please alert one of
+   the Lab Assistants.
 
-Verify the XC Node's Health
----------------------------
+Task 1: Understanding the Lab Environment
+------------------------------------------
 
-If you are not already logged into the console, please do so now by opening the following URL in your browser: 
+**Narrative:**
 
-https://f5-xc-lab-mcn.console.ves.volterra.io/
+You need to configure connectivity to meet ACME Corp's requirement: connect your Data Center network
+to the AWS network. Only HTTP traffic to the node in AWS should be allowed from your Data Center, with
+all other traffic controlled by firewall policies.
 
-From the **Select service** menu, click on **Multi-Cloud Network Connect** and then click on **Infrastructure/Sites.**
+**Lab Environment Overview:**
 
-Your XC Node should have registered successfully and will appear green with a Health Score of 100. You may need to click **Refresh** in the top right corner
-if you do not see your animal name. In this example I was assigned and filtered for **pro-joey**.
+* An Ubuntu Server in your UDF (Data Center) environment
+* The AWS Ubuntu workload is shared across all lab attendees at **10.0.5.253**
+* A pre-configured AWS segment (**appworld-aws-segment**) will be attached to your site
+* Enhanced Firewall policies will control traffic between segments
 
-|
+.. note::
+   The Data Center has a pre-configured route to 10.0.5.0/24 pointing to the Data Center CE Node.
+   The AWS workload has a route to 10.1.10.0/24 pointing to the AWS CE Node.
 
-.. image:: ../images/registeredce.png
+|lab002|
 
-|
+Your goal is to attach the AWS segment to your CE site interface to enable connectivity between 
+your UDF environment and the AWS workload.
 
-.. Important:: If you do not see your Site as registered or in a healthy state please see a Lab Assistant.
+**All traffic between networks will be routed through auto-provisioned, self-healing and encrypted
+tunnels between the Customer Edges and F5 Regional Edges.**
 
-
-From this Dashboard you can note the current **Site Admin State, Provider, SW version, and OS version.** 
-
-
-**Please DO NOT click "Upgrade" on any of the Sites!**
-
-
-Instead, **Click** on the three dots under the **Actions** column at the far right of the screen of **"your animal"**  Site and click on **Manage Configuration**. In this screenshot I was **pro-joey**.
-
-.. NOTE:: You may need to scroll horizontally inside the table to see the three dots at the righthand side. Alternately, you can zoom out (Ctrl -) on the page to see them.
-
-|
-
-.. image:: ../images/action.png
-
-|   
-
-Review the **Metadata, Site Type** and **Coordinates** fields as well as the **Connected REs** (Regional Edge) section.  
-
-These are the closest Regional Edge sites based on the latitude and longitude information provided during the deployment process. **Each CE has an auto-provisioned self-healing secure tunnel to redundant RE's.** 
-
-|
-
-.. image:: ../images/remeta.png
-
-|
-
-Look at the top left-hand corner where you see Form, Documentation and JSON. **You will see these fields throughout the Distributed Cloud Console configuration menus.**
-
-
-.. Important:: Distributed Cloud is built with an API-first strategy. All the configurations can be done via GUI or API calls. 
-
-|
-
-You can view the JSON file of the configuration by clicking **JSON**. 
-
-
-.. image:: ../images/json.png
-
-
-This is the JSON code of the configuration which could be saved to create a backup of the Customer Edge configuration, but that is beyond the scope of this lab. 
-
-|
-
-.. image:: ../images/json1.png
-
-|
-
-Click on **Documentation**.
-
-|
-
-.. image:: ../images/docu.png
-
-|
-
-This will load the API specification for a Customer Edge Node. Review briefly and click **Cancel and Exit**
-
-|
-
-.. image:: ../images/sitev.png
-
-|
-
-
-In the **Site** screen, click on your Customer Edge Node **animal name**.  (It should have a green status symbol)
-
-The default landing is a Dashboard giving you a detailed summary of the Customer Edge Node.  **Briefly** explore the extensive menus and analytics at the top of the screen.
-
-|
-
-.. image:: ../images/dash1.png
-
-|
-
-Narrative Check
------------------
-
-Now that you are familiar with your new "Software Defined" Node, we can start getting our hands dirty with the real configuration necessary to meet ACME Corp's first requirement to
-get the network in the Data Center connected to the network in AWS. The backend security device will need to "scan" the frontend in AWS on port 80 and all other ports must be blocked. 
-
-
-Configuring Network Connect
+Task 2: Understanding Network Segments
 ---------------------------------------
 
-In our lab today, an Ubuntu Server in the UDF environment will simulate the backend. 
-The AWS frontend workload is already deployed along with an XC Node to extend the Customer Edge in the AWS cloud. 
+**What are Network Segments?**
 
-.. NOTE:: The Data Center backend has a pre-existing route to 10.0.3.0/24 and it points to the single outside interface of the Data Center XC Node.  The AWS workload has a route to 10.1.1.0/24 that points to the inside interface of the AWS XC Node. 
+Network segments are isolated Layer 3 network domains that provide:
 
+* **Isolation:** Segments are isolated by default - traffic cannot flow between segments without
+  explicit configuration ("ships in the night")
+* **Flexibility:** Segments can span multiple sites and cloud environments
+* **Security:** Each segment can have its own security policies and access controls
 
-.. image:: ../images/netconnlab.png
+**Key Concepts:**
 
+* **Segment:** An isolated network domain (e.g., "prod-segment", "dev-segment")
+* **Segment Attachment:** Assigning a segment to a CE interface enables connectivity to that segment
+* **Route Propagation:** Routes are automatically exchanged through Regional Edges when segments are attached
+* **Enhanced Firewall:** Provides stateful firewall capabilities to control traffic between segments
 
-What you have done so far in Lab 1 and the beginning of Lab 2, is setup the ACME Data Center XC Node to extend the Data Center Customer Edge. 
-Your next goal is to simply establish routing between these environments by using a hub and spoke model with our Regional Edges as shown in the diagram above.
+Task 3: Test Connectivity to AWS Before Segment Attachment
+-----------------------------------------------------------
 
-**All traffic between these networks will now be routed through auto-provisioned, self-healing and encrypted tunnels between the defined Customer Edges and the XC Regional Edges.**
+Before attaching the segment, let's verify that there is no connectivity to the AWS workload.
 
+1. From your UDF environment browser tab, click on **Access >> Web Shell** on the Ubuntu Client.
+   This opens a new tab with a Web Shell.
 
-.. Note:: In this lab some objects are already created due to permission requirements in the XC Lab environment. You will still observe and walkthrough the configuration for referrence. 
+   |lab003|
 
+2. The Ubuntu server in AWS has IP address **10.0.5.253**
 
-Global Virtual Network  
-------------------------
+3. Type **ping -O 10.0.5.253** and press **Enter**. You **WILL NOT** get a response.
 
-To connect two or more Distributed Cloud node environments together across the Distributed Cloud network we will need to connect the sites through a Global Virtual Network.  
+   .. note::
+      -O is the uppercase letter "O"
 
-Confirm you are still in the **Multi-Cloud Network Connect** Console under **Infrastructure/Sites**. If not, click on the **Select Service** in the left-hand navigation and click on **Multi-Cloud Network Connect**.
+   |lab004|
 
-On the left side menu, navigate to  **Manage >> Networking >> Virtual Networks**. 
+   Leave this ping running - we'll check back after attaching the segment to your CE (Customer Edge) site.
 
-**Observe** the pre-configured **student-global** Virtual Network. Click the the dots under the **Action** menu for **student-global** and then **Manage Config**. Note the very simple config. 
+Task 4: Review Routing Information Before Attaching Segment to Your CE Site
+----------------------------------------------------------------------------
 
-|
+Let's examine the routing information before we attach the segment to the interface.
 
-.. image:: ../images/studglob.png
+4. Navigate to **Multi-Cloud Network Connect >> Manage >> Site Management >> Secure Mesh Site v2** and click on your
+   **<your-namespace>-site**.
 
-|
+   |lab005|
 
-Click **Cancel and Exit**. 
+5. Click on the **CE Routes** menu on the top, in the middle.
 
-.. Note:: Due to tenant permissions you will not be able to create your own Global Virtual Network.  
- 
-If you wanted to configure this outside of the lab, you would simply click **Add Virtual Network** button, enter a name for the Virtual Network and make sure it is type **Global**. Simple indeed! 
+   |lab006|
 
-The configuration **would** look like the screen below.
- 
+6. On the right side of the screen, **Select Data** by choosing your node and review both **VIRTUAL_NETWORK_SITE_LOCAL** and **VIRTUAL_NETWORK_SITE_LOCAL_INSIDE** one at a time.
 
-.. image:: ../images/meta.png
+   |lab007|
 
+7. Observe there isn't any route to 10.0.5.0/24 via enp0s5 nor enp0s6.
 
-Fleets
-------------------
-A Fleet is used to configure infrastructure components (like nodes) in one or more F5® Distributed Cloud Services Customer Edge (CE) sites homogeneously. 
+Task 5: Attach Segment to Your CE Site
+---------------------------------------
 
-Fleet configuration includes the following information
+You will now attach the pre-configured AWS segment to your CE site's interface.
 
-* Software image release to be deployed on the Fleet
+8. Navigate back to the list of all Secure Mesh Sites v2 **Manage >> Site Management >> Secure Mesh Sites v2**.
 
-* Virtual networks
+9. Locate your UDF site (**<your-namespace>-site**) and click the three dots under **Actions**.
 
-* List of interface and devices to be configured on every node
+10. Select **Manage Configuration**.
 
-* Connections between the virtual networks
+    |lab008|
 
-* Security policies applied in the Site
+11. Click **Edit Configuration** on the top right.
 
+    |lab009|
 
-.. Note:: In this lab we have already created a fleet called "student-fleet" for you due to permission restrictions.  
+12. Click **Edit** (the pencil icon) to edit the CE node.
 
-Review Fleet Config
-------------------------
+    |lab010|
 
-In Multi-Cloud Network Connect context, go down to **Manage >> Site Management >> Fleets.**
+13. Find the **enp0s6** interface and click **Edit** (the pencil icon).
 
-Click on the 3 dots at the far right hand side of student-fleet and select **Manage Configuration**
+    |lab011|
 
-|
+14. Configure your interface then click **Apply**:
 
-.. image:: ../images/studfleet.png
+    **IP Configuration:**
 
-|
+    ================================  ========================================
+    Variable                          Value
+    ================================  ========================================
+    IPv4 Interface Address Method     Static IP
+    IP address/Prefix Length         10.1.10.10/24
+    Default Gateway                   10.1.10.1
+    ================================  ========================================
 
-In the next screen click on **Edit Configuration** in the top right of the screen and **Observe** the Fleet Configuration and Network Connectors. 
+    **Interface Settings:**
 
-A Network Connector is used to create a connection between two virtual networks on a given site. 
+    ================================  ========================================
+    Variable                          Value
+    ================================  ========================================
+    Select VRF                        Segment (Global VRF)
+    Segment (Global VRF)              appworld-aws-segment
+    ================================  ========================================
 
-For more information on Network Connectors and their functions you can review this link: https://docs.cloud.f5.com/docs/how-to/networking/network-connectors
+    |lab012|
 
-The **Network Connectors** are configured as:
+15. Click **Apply** to save node interface changes.
 
-**student-global-connector** 
+    |lab013|
 
-* Network Connector Type: Direct, Site Local Inside to a Global Network
+16. Click **Save Secure Mesh Site** to save your site configuration.
 
-* Global Virtual Network: system/student-global 
+    |lab014|
 
-|
+Task 6: Test Connectivity to AWS After Segment Attachment
+----------------------------------------------------------
 
-**student-snat-connector**
+Let's verify the connectivity to the AWS Ubuntu now.
 
-* Network Connector Type: SNAT, Site Local Inside to Site Local Outside
+17. Navigate back to the Ubuntu Web Shell tab.
 
-* Routing Mode: Default Gateway
+18. You should be getting responses now!!
 
-* SNAT Source IP Selection: Interface IP
+    |lab015|
 
-|
+19. Test the HTTP service. In the web shell type:
 
-**student-ce-global-connector**
+    **curl --head http://10.0.5.253**
 
-* Network Connector Type: Direct, Site Local Outside to a Global Network
+    |lab016|
 
-* Global Virtual Network: system/student-global 
+    You should receive a **200 OK** response from the nginx web server.
 
-|
+    .. important::
+       If you are not getting a **200 OK** response or ping fails, please see a lab assistant
+       before moving on.
 
-Also, notice Network Firewall is **NOT** currently defined. We will come back to that in a few moments. 
+Task 7: Review Routing Information
+-----------------------------------
 
-Click **Cancel and Exit.**
+Let's examine the routing established by attaching the segment to the interface.
 
+20. Navigate back to the list of all Secure Mesh Sites v2 **Manage >> Site Management >> Secure Mesh Sites v2** and click on your
+    **<your-namespace>-site**.
 
-Fleet Label 
--------------
-Labels are a map of string keys and values that can be used to organize and categorize objects within Distributed Cloud.
+21. Click on the **CE Routes** menu again.
 
-Fleet has a field called fleet_label. When a Fleet object is created, the system automatically creates a **"known_label"** named: **"ves.io/fleet"**. 
-The known_label is created in the Shared namespace for the tenant. A site is made a "member of Fleet" when this known_label is added to the site. 
-A site can have at most one known_label of type ves.io/fleet and hence belongs to exactly one Fleet at any given time.
+22. **Select Data** by choosing your node and then select **appworld-aws-segment** this time, then click **Apply**.
 
-**Note** the **Fleet Label Value** of the **student-fleet**. The label is also named **student-fleet**. 
+    |lab017|
 
-.. image:: ../images/flv.png
+23. Observe the routes including the route to 10.0.5.0/24 via two REs (Regional Edges) that's closest to your CE node with **appworld-aws** site as Originating Site.
 
+    |lab018|
 
+Task 8: Understanding Enhanced Firewall Policies
+-------------------------------------------------
 
-Bringing up the Connection
-----------------------------
-From your UDF environment browser tab,  click on **Access >> Web Shell** on the Ubuntu Client. This will open a new tab to a Web Shell. 
+Enhanced Firewall policies provide granular security controls that can be applied to sites to
+control traffic between segments.
 
-|
+**Key Concepts:**
 
-.. image:: ../images/ubuntu.png
+* **Enhanced Firewall:** Provides stateful firewall capabilities at the CE site
+* **Traffic Filters:** Define source and destination criteria for firewall rules
+* **Protocol Matching:** Allow or deny specific protocols (ICMP, TCP, UDP, etc.)
+* **Default Deny:** Implicit deny ensures only explicitly allowed traffic passes
 
-|
+Task 9:Review Pre-Configured Firewall Policy (No Action Required)
+------------------------------------------------------------------
+.. important::
+   Please do **NOT** edit the pre-configured firewall policy for this lab. This task is just to review the existing firewall policy that has been configured for the AWS site.
 
-**The workload in AWS has an IP address of 10.0.3.253**
+24. Navigate to **Multi-Cloud Network Connect >> Manage >> Firewall >> Enhanced Firewall Policies**. 
 
-Type **ping -O 10.0.3.253** and hit **Enter**. You **WILL NOT** get a response. Continue the ping in the steps below.
+    |lab019|
 
-.. NOTE:: -O is the uppercase letter "O"
+25. Click on **Manage Configuration** from **Action** for the **appworld-fw** to review the Firewall Policy.
 
-.. image:: ../images/pingO.png
+    |lab020|
 
-Back in the XC Console, navigate to **Multi-Cloud Network Connect >> Infrastructure/Sites** and find your **"animal-name"**
-Click the **3 buttons** under the **Action Menu** under **"your animal name"** and select **Manage Configuration**. 
+26. Click on the **View Configuration** to review the configured rules in the firewall policy.
 
-In the top right click **Edit Configuration**. 
+    |lab021|
 
-You should be here. We will be adding a **Fleet Label** to tag our CE Node into the fleet. 
+27. Review the rules' order that ICMP traffic is set to be **Deny** and HTTP traffic is set to be **Allow**.
 
-|
+    |lab022|
 
-.. image:: ../images/fleetlabel.png
 
-|
+Task 9: Apply Enhanced Firewall Policy (Instructor-Led)
+--------------------------------------------------------
 
-Click **Add Label** under the **Labels** section and select the label **ves.io/fleet.** 
-For the value click on **student-fleet**, scroll down, **Save and Exit**. 
+Your instructor will now apply an Enhanced Firewall policy to the AWS site to demonstrate
+security controls.
 
-|
+.. note::
+   This task will be performed by the instructor. The reason is that the AWS site of our lab environment is shared and we only want to have one person perform this action.
 
-.. image:: ../images/fleetlabel1.png
+28. The instructor will edit the configuration of the AWS site and attach the **appworld-fw** firewall policy to the **appworld-aws** site.
 
-|
+   before applying the Network Firewall policy:
+   |lab023|
 
-It should look like this: 
+   after applying the Network Firewall policy:
+   |lab024|
 
-|
+29. After the instructor applies the firewall policy, wait approximately 30-60 seconds for the
+    policy to propagate.
 
-.. image:: ../images/fleetlabel2.png
+Task 10: Verify Firewall Policy Enforcement
+--------------------------------------------
 
-|
+Let's verify that the firewall policy is working correctly.
 
+30. Go back to your web shell.
 
-Check back on your web shell tab with the ping going. Success!!
+31. Test ping again and you should not see any response because ICMP traffic is now being blocked:
 
-|
+    **ping -O 10.0.5.253**
 
-.. image:: ../images/ping.png
+    |lab025|
 
-|
+32. Test HTTP again (you should still receive a **200 OK** response because we allowed only HTTP in the firewall policy):
 
-.. important:: If you want to tear down this connectivity it is as easy as removing the label. 
+    **curl --head http://10.0.5.253**
 
+    |lab026|
 
-In XC Console, navigate to **Multi-Cloud Network Connect** >> **Infrastructure/Sites** and click directly on your **"animal-name"** and finally click on the **Tools** menu on the top, far right. 
+    .. tip::
+       The Enhanced Firewall policy is now enforcing that only HTTP traffic is allowed
+       to the AWS site. All ICMP traffic is denied.
 
-.. note:: If you do not see the Tools menu there should be a right chevron ">" that will allow you to access additional menu items.
+Task 11: Review Firewall Events
+--------------------------------
 
+Let's review the firewall logs to see blocked and allowed traffic.
 
-Click on **Show Routes** 
+33. Navigate back to **Multi-Cloud Network Connect >> Manage >> Firewall >> Enhanced Firewall Policies** and click on the numbers under **Hits**.
 
-|
+    |lab027|
 
-.. image:: ../images/shroutes.png
+34. This will show you all the traffic that has been allowed or denied by the enhancedfirewall policy (may take a few minutes to populate).
 
-|
+    |lab028|
 
-Set Virtual Network Type to: **VIRTUAL_NETWORK_SITE_LOCAL_INSIDE** and click the blue **Show routes** button
+Lab Summary
+-----------
 
-|
+**What You've Learned:**
 
-.. image:: ../images/shroutes2.png
+* How network segments provide default isolation between environments
+* How to attach pre-configured segments to CE site interfaces
+* How to verify connectivity before and after segment attachment
+* How to review routing information and understand route propagation through Regional Edges
+* How Enhanced Firewall policies control traffic at the protocol level
+* How to verify firewall policy enforcement through testing
+* How to review firewall events and logs
 
-|
+**Key Takeaways:**
 
-Scroll down to see the AWS subnet route **"10.0.3.0/24** being advertised through the tunnel. 
+* **Segments** provide isolated network domains by default ("ships in the night")
+* **Attaching segments** to CE interfaces enables connectivity while maintaining security boundaries
+* **Route propagation** occurs automatically through Regional Edges when segments are attached
+* **Enhanced Firewall policies** provide granular security control at the protocol and port level
+* **Firewall events** provide visibility into allowed and denied traffic flows
 
-|
+**Your Environment:**
 
-.. image:: ../images/shroutes3.png
+You now have connectivity between:
 
-|
+* **On-Premises:** UDF data center (10.1.10.0/24)
+* **AWS Cloud:** AWS Ubuntu workload (10.0.5.0/24)
 
-Routing is good, now let's test some other ports. 
-Go back to the web shell where you ran a ping. We will now test 2 ports that we know the server is listening on. 
+With Enhanced Firewall policies enforcing that only HTTP traffic is allowed to the AWS site, 
+while ICMP traffic is denied.
 
-**Port 80** - Simple Web page
+In the next lab, you'll explore App Connect for application-level connectivity using Regional Edges.
 
-**Port 8080** - Diagnostic tool
-
-Our first test will be to port 80. In the web shell type: **curl \-\-head http://10.0.3.253** 
-
-|
-
-.. image:: ../images/curl.png
-
-|
-
-Next, push the keyboard "up arrow " and run the same command but targeted at port 8080 like this: **curl \-\-head http://10.0.3.253:8080** 
-
-|
-
-.. image:: ../images/8080.png
-
-|
-
-.. Important:: If you are not getting a **"200 OK"** response, please see a lab assistant before moving on. 
-
-
-
-.. Note:: We now have to close port 8080 per the ACME Corp security department requirement. 
-
-Enhanced Firewall Policy
----------------------------------
-
-You will now configure the F5 Distributed Cloud Enhanced Firewall to provide network security between these sites. Custom Enhanced Firewall policies make it possible to define intent-based rules, such as allowing only traffic to/from sites with a specific label, like "ves.io/fleet in 'student-fleet'"" in your deployed site above. Additional criteria for rules can include tags belonging to resources that live in public clouds, such as the AWS VPC name or any other discoverable attribute.
-
-.. Note:: Due to lab architecture, we will only be able to configure the policies but not apply. We will show you the final step to apply your policy for reference, but you will not actually be able to apply or test.  
-
-
-Navigate to **Manage >> Firewall >> Enhanced Firewall Policies** and click **Add Enhanced Firewall Policy**.  
-
-|
-
-=========================================    =====
-Variable                                     Value
-=========================================    =====
-Name                                         [animal-name]-fwp
-Select Enhanced Firewall Policy Rule Type    Custom Enhanced Firewall Policy Rule Selection
-=========================================    =====
-
-
-Click the blue **Configure** hyperlink.
-
-|
-
-.. image:: ../images/efwp.png
-
-|
-
-Click on **Add Item** to bring up the Rules creation screen. Here you will notice several powerful **"Enhanced"** Source and Destination Traffic filters.  
-
-
-=================================               =====
-Variable                                        Value
-=================================               =====
-Name                                            [animal-name]-allow-80
-Source Traffic Filter                           IPv4 Prefix List >> Click Configure and add 10.1.1.0/24 then click **Apply**.
-Destination Traffic Filter                      IPv4 Prefix List >> Click Configure and add 10.0.3.0/24 then click **Apply**.
-Select Type of Traffic to Match                 Match Protocol and Port Ranges
-Match Protocol and Port Ranges                  TCP >> click **Add Item** and add **80**. 
-Action                                          Allow
-=================================               =====
-
-
-|
-
-.. image:: ../images/allow80.png
-
-|
-
-Click **Apply** and your screen should look like this: 
-
-|
-
-.. image:: ../images/fwver.png
-
-|
-
-Now we will create the **default deny** to prevent any other traffic between these two networks. 
-
-Click **Add Item** again to add another rule to the **Enhanced Firewall Policy**. 
-
-=================================               =====
-Variable                                        Value
-=================================               =====
-Name                                            [animal-name]-deny-all
-Source Traffic Filter                           IPv4 Prefix List >> Click Configure and add 10.1.1.0/24 then click **Apply**.
-Destination Traffic Filter                      IPv4 Prefix List >> Click Configure and add 10.0.3.0/24 then click **Apply**.
-Select Type of Traffic to Match                 Match All Traffic
-Action                                          Deny
-=================================               =====
-
-|
-
-.. image:: ../images/denyall.png
-
-|
-
-
-Click **Apply** and your screen should look like this: 
-
-
-|
-
-
-.. image:: ../images/fwver2.png
-
-|
-
-Click **Apply** and **Save and Exit**.
-
-|
-
-
-.. image:: ../images/save.png
-
-|
-
-Summary
----------------------------------
-You have now created the firewall policy necessary to secure these two networks. Outside of the lab environment you would now add this policy to the fleet by managing your fleet and adding an Enhanced Firewall policy.
-
-|
-
-
-.. image:: ../images/fleetpol.png
-
-|
-
-Logging
----------
-Customers often ask about the logging options with F5 Distributed Cloud. There are two main options for logging. 
-
-1. Global Logging - Logging related to activities that occur within Distributed Cloud and on the Regional Edges such as load balancers or WAAP/Bot policy.
-
-2. Site Local Logging - Logging related to activities that occur within the Customer Edge Boundary such as load balancers or WAAP/Bot policies runnning locally on an XC Node.
-
-.. Note:: This is the last "Read Only" lab section. Our apologies for the inconvenience.
-
-**Global Logging**:
-
-To observe **(NOT configure)** the Global Logging configuration options, in the side-menu, browse to **Manage >> Log Management >> Global Log Receiver** and click **Add Global Log Receiver**.
-
-Take particular notice of the different **Log Types** and **Receiver Configurations** which include AWS, Azure and Splunk options to namedrop a few. 
-
-|
-
-
-.. image:: ../images/globlog.png
-
-|
-
-Click **Cancel and Exit** and Discard any changes.
-
-
-**Site Local Logging**:
-
-To observe **(NOT configure)** the Site Local Logging configuration options, in the side-menu, browse to **Manage >> Log Management >> Log Receiver** and click **Add Log Receiver**.
-
-Click on the **Show Advanced Fields** button on the right and take note of the **Where** 
-
-Click **Cancel and Exit** and Discard any changes.
-
-
-|
-
-
-.. image:: ../images/locallog.png
-
-|
-
-**Applying Site Local Logging**:
-
-To observe **(NOT configure)** the application of the Site Local Logging profile, browse to **Manage >> Site Management >> Fleets**, click the **3 button** Action menu and click **Manage Configuration**. 
-
-Scroll down to observe the **Logs Streaming** field under **Advanced Configuration**. Outside of the lab environment, you would enable this and select your **Log Receiver** profile.
-
-|
-
-
-.. image:: ../images/logs.png
-
-|
-
-Click **Cancel and Exit**.
-
-You can now feel free to explore the **Multi-Cloud Network Connect** Site menus while everyone is getting caught up. 
-
-Navigate to **Overview > Infrastructure/Sites** and then to the tab view of **Site Map** to see an overview with the health of all deployed sites. For site security, navigate to **Overview > Security > Firewall Events** to review the firewall logs, and finally, go to the **Service Info** section at the bottom of the left-hand frame, and click on **About** to learn more about Network Connect.
-
-
-Sanity Check
--------------
-**This is what you just deployed.**
-
-.. image:: ../images/lab2rev.png
-
-
-**We hope you enjoyed this lab!**
+.. important::
+   Verify that HTTP connectivity works and ICMP is blocked before proceeding to Lab 3.
 
 **End of Lab 2**
+
+.. |lab001| image:: ../images/temp/lab2/lab2pic1.png
+   :width: 800px
+.. |lab002| image:: ../images/temp/lab2/lab2pic2.png
+   :width: 800px
+.. |lab003| image:: ../images/temp/lab2/lab2pic3.png
+   :width: 800px
+.. |lab004| image:: ../images/temp/lab2/lab2pic4.png
+   :width: 800px
+.. |lab005| image:: ../images/temp/lab2/lab2pic5.png
+   :width: 800px
+.. |lab006| image:: ../images/temp/lab2/lab2pic6.png
+   :width: 800px
+.. |lab007| image:: ../images/temp/lab2/lab2pic7.png
+   :width: 800px
+.. |lab008| image:: ../images/temp/lab2/lab2pic8.png
+   :width: 800px
+.. |lab009| image:: ../images/temp/lab2/lab2pic9.png
+   :width: 800px
+.. |lab010| image:: ../images/temp/lab2/lab2pic10.png
+   :width: 800px
+.. |lab011| image:: ../images/temp/lab2/lab2pic11.png
+   :width: 800px
+.. |lab012| image:: ../images/temp/lab2/lab2pic12.png
+   :width: 800px
+.. |lab013| image:: ../images/temp/lab2/lab2pic13.png
+   :width: 800px
+.. |lab014| image:: ../images/temp/lab2/lab2pic14.png
+   :width: 800px
+.. |lab015| image:: ../images/temp/lab2/lab2pic15.png
+   :width: 800px
+.. |lab016| image:: ../images/temp/lab2/lab2pic16.png
+   :width: 800px
+.. |lab017| image:: ../images/temp/lab2/lab2pic17.png
+   :width: 800px
+.. |lab018| image:: ../images/temp/lab2/lab2pic18.png
+   :width: 800px
+.. |lab019| image:: ../images/temp/lab2/lab2pic19.png
+   :width: 800px
+.. |lab020| image:: ../images/temp/lab2/lab2pic20.png
+   :width: 800px
+.. |lab021| image:: ../images/temp/lab2/lab2pic21.png
+   :width: 800px
+.. |lab022| image:: ../images/temp/lab2/lab2pic22.png
+   :width: 800px
+.. |lab023| image:: ../images/temp/lab2/lab2pic23.png
+   :width: 800px
+.. |lab024| image:: ../images/temp/lab2/lab2pic24.png
+   :width: 800px
+.. |lab025| image:: ../images/temp/lab2/lab2pic25.png
+   :width: 800px
+.. |lab026| image:: ../images/temp/lab2/lab2pic26.png
+   :width: 800px
+.. |lab027| image:: ../images/temp/lab2/lab2pic27.png
+   :width: 800px
+.. |lab028| image:: ../images/temp/lab2/lab2pic28.png
+   :width: 800px

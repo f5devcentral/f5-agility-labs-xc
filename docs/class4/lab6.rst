@@ -6,7 +6,7 @@ Lab 6: Security Analytics and Malicious User Detection
 A recent review highlighted the need for greater visibility into API performance and security events. 
 This includes identifying bad actors (clients) attempting to misuse or attack the API.
 
-Investigate request and security events, and establish a method for detecting malicious users.
+Investigate request and security events and establish a method for detecting malicious users.
 
 **Expected Lab Time: 8 minutes**
 
@@ -17,7 +17,7 @@ In this task, you will explore the Security Analytics Dashboard within Distribut
 
 #. From the **Web App & API Protection** menu, navigate to **Overview**, then click **Security**
 
-#. With the **Dashboard** view, scroll down to the bottom to the **Application Delivery** tile to find your HTTP Load Balancer object; click this LB object.
+#. With the **Dashboard** view, scroll down to the bottom to the **Delivery Resources** tile to find your HTTP Load Balancer object; click this LB object.
 
    .. image:: _static/lab6-101.png
       :width: 800px
@@ -43,7 +43,7 @@ In this task, you will explore the Security Analytics Dashboard within Distribut
 
 #. From the **Web App & API Protection** menu, navigate to **Overview**, then click **Security**
 
-#. With the **Dashboard** view, scroll down to the bottom to the **Application Delivery** tile to find your HTTP Load Balancer object; click this LB object.
+#. With the **Dashboard** view, scroll down to the bottom to the **Delivery Resources** tile to find your HTTP Load Balancer object; click this LB object.
 
    .. image:: _static/lab6-101.png
       :width: 800px
@@ -74,7 +74,7 @@ In this task, you will explore the Malicious Users section of the Security Analy
 
 #. From the **Web App & API Protection** menu, navigate to **Overview**, then click **Security**
 
-#. With the **Dashboard** view, scroll down to the bottom to the **Application Delivery** tile to find your HTTP Load Balancer object; click this LB object.
+#. With the **Dashboard** view, scroll down to the bottom to the **Delivery Resources** tile to find your HTTP Load Balancer object; click this LB object.
 
    .. image:: _static/lab6-101.png
       :width: 800px
@@ -94,7 +94,7 @@ In this task, you will explore the Malicious Users section of the Security Analy
 
    .. note ::
 
-      Malicious User Detection also includes migitation, which was not enabled for this lab. As the user score increases action can be taken, including a temporary block.
+      Malicious User Detection also includes migitation, which was not enabled for this lab. As the user score increases, action can be taken, including a temporary block.
 
 **End of Lab**
 

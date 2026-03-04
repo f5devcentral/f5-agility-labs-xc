@@ -1,473 +1,638 @@
-Lab 3: Globally Available Front End 
-=======================================
+Lab 3: Globally Available Frontend with App Connect
+====================================================
 
 **Objective:**
 
-* Use XC Regional Edges to provide future-proof, globally available frontend.
+* Understand F5 Distributed Cloud App Connect and Regional Edges
+* Create origin pools for AWS and Azure workloads
+* Configure an HTTP load balancer for global application delivery
+* Test failover between origin pools
+* Review performance monitoring and analytics
 
-* XC frontend (RE) must be able to load balance the 2 cloud frontends. 
+ACME Corp needs a globally available frontend that can load balance between AWS and Azure workloads,
+with AWS as the preferred destination. The Azure workload is private (no public IP) and both
+environments will be exposed through F5 Distributed Cloud Regional Edges.
 
-* Expose Azure private frontend without adding a public IP for the workload. 
+.. note::
+   App Connect uses CE Nodes and Regional Edges as Software-Defined Proxies (Layer 7), unlike
+   Network Connect which uses them as Software-Defined Routers (Layer 3/4).
 
-* Always prefer the AWS frontend for ingress traffic. 
+|lab001|
 
-**What they want:**
+Prerequisite
+------------
 
-.. image:: ../images/mod2bizreq.png
+.. note::
+   You should already be logged into your lab's Distributed Cloud Tenant and have completed Lab 1 and Lab 2.
 
-**Narrative:**
+.. warning::
+   If you are experiencing issues accessing the Distributed Cloud Tenant, please alert one of
+   the Lab Assistants.
 
-Unfortunately, after doing your due diligence, you find that the Azure VNET overlaps with the AWS subnets. To make matters worse, 
-the Azure server is not associated with any public IP and there is a security directive in place to not have any workload servers in Azure associated with a public IP without a security device. 
+**Detach AWS Segment from Your CE:**
 
-Lately, the site has been getting pounded with attack traffic and frontend security has become a hot topic at ACME. 
-You think to yourself, this is going to be tricky, and reach out to your trusted F5 Solutions Engineer to see how this will work with Distributed Cloud. 
+We are going to detach the AWS segment that we attached to our CE in Lab 2, because we now need 
+connectivity to both AWS and Azure sites.
 
-Your F5 Solutions Engineer explains that IP overlap between sites is a common problem and one that can be easily solved with Distributed Cloud App Connect. 
-App Connect alleviates this problem by leveraging the XC Nodes as Software-Defined Proxies rather than Software-Defined Routers as they were configured with Network Connect. Additionally App Connect enforces a default deny architecture, where only the port and domain name defined on the load balancer will accept traffic. 
+1. Navigate to **Multi-Cloud Network Connect >> Manage >> Site Management >> Secure Mesh Site v2**.
 
-Also, you are informed that by using F5 Distributed Cloud Regional Edges for the frontend workloads, you will be able to have full proxy security, visibility and analytics for the client traffic, so the Security team will be pleased. 
+2. Click on **Manage Configuration** for the **<your-namespace>-site**.
 
-After reviewing the architecture with you, your Solutions Engineer advises you to break up these requirements in to 2 specific deliverables. 
+   |lab001.1|
 
-**Deliverable 1:**
+3. Click **Edit Configuration** on the top right.
 
-Create a globally scaled and future-proof frontend with the XC Regional Edges **(Lab 3)**
+   |lab001.2|
 
-|
+4. Click **Edit** (the pencil icon) for your Control node.
 
-.. image:: ../images/lab3.png
+   |lab001.3|
 
-|
+5. Click **Edit** (the pencil icon) for the **enp0s6** interface.
 
-**Deliverable 2:**
+   |lab001.4|
 
-Leverage App Connect for secure site to site connectivity regardless of IP overlap. **(Lab 4)**
+6. Configure your interface then click **Apply**:
 
-|
+   **IP Configuration:**
 
-.. image:: ../images/lab4goal.png
+   ================================  ========================================
+   Variable                          Value
+   ================================  ========================================
+   IPv4 Interface Address Method     Static IP
+   IP Address/Prefix Length          10.1.10.10/24
+   Default Gateway                   10.1.10.1
+   ================================  ========================================
 
-|
+   **Interface Settings:**
 
-Multi-Cloud App Connect
-----------------------------
+   ================================  ========================================
+   Variable                          Value
+   ================================  ========================================
+   Select VRF                        Site Local Inside (Local VRF)
+   ================================  ========================================
 
-With **Network Connect** you connected routed networks with your CE Node which acted as a Software-Defined Router. 
+   |lab001.5|
 
-Now with **App Connect** you will be configuring our Regional Edges and your CE Nodes as Sofware-Defined-Proxies to provide connectivity between workloads. The CE's can do both functions simultaneously!!  
+7. Click **Apply** to save interface changes for your Control Node.
 
-In the **Side menu** select service **Multi-Cloud App Connect**, then navigate to **Manage** click on **Load Balancers** >> **Origin Pools** and click the **Add Origin Pool** button. 
+   |lab001.6|
 
+8. Click **Save Secure Mesh Site** at the bottom of the page to apply changes to the site and CE node.
 
-AWS Origin Pool
-----------------
+   |lab001.7|
 
-|
+9. **[Instructor's Action Item]** Set the AWS CE interface that's currently attached to appworld-aws 
+   segment to SLI (Site Local Inside).
 
-.. image:: ../images/orig.png
+   |lab001.8|
 
-|
+Task 1: Understanding App Connect
+----------------------------------
 
-Enter the following Values:
+**What is App Connect?**
 
-==============================  =====
-Variable                        Value
-==============================  =====
-Name                            animal-name-aws-pool
-Origin Server Port              80
-Origin Servers                  See Below 
-Health Checks                   See Below 
-==============================  =====
+App Connect provides application-level (Layer 7) connectivity using load balancers and proxies:
 
-**Origin Servers:** Click **Add Item**
+* **Software-Defined Proxies:** CE Nodes and Regional Edges act as application proxies
+* **Default Deny Architecture:** Only configured ports and domains accept traffic
+* **IP Overlap Solution:** Workloads can have overlapping IP addresses across sites
+* **Global Load Balancing:** Regional Edges provide globally distributed application delivery
+* **Enhanced Security:** Full proxy security, visibility, and analytics for client traffic
 
-In the dropdown keep:  **Public DNS Name of Origin Server** and type: **public.lab.f5demos.com** and click **Apply**. 
+**Key Concepts:**
 
-**Health Checks:** Under "Health Check object" click the **Select Item** dropdown and click **Add Item**. 
+* **Origin Pool:** A group of backend servers (origin servers) for an application
+* **Origin Server:** The actual backend application server (can be public DNS or private IP)
+* **HTTP Load Balancer:** Distributes traffic across origin pools using Regional Edges
+* **Health Checks:** Monitors to verify origin server availability
+* **Regional Edges (RE):** F5's globally distributed points of presence for application delivery
 
-For the Name use: **[animal-name]-http** and take the rest as defaults. 
+Task 2: Navigate to Multi-Cloud App Connect
+--------------------------------------------
 
-Click **Continue**
+10. From the F5 Distributed Cloud Console homepage, select **Multi-Cloud App Connect**.
 
-|
+    |lab002|
 
-.. image:: ../images/health.png
+11. On the left-hand side, switch to your namespace by selecting **<your-namespace>** from the dropdown.
 
-|
+    |lab003|
 
-Your Origin Pool should now look like this: 
+12. Navigate to **Manage >> Load Balancers >> Origin Pools**.
 
-|
+    |lab004|
 
-.. image:: ../images/origaws.png
+Task 3: Create AWS Origin Pool
+-------------------------------
 
-|
+You will now create an origin pool for the AWS workload using a public DNS name.
 
+13. Click **Add Origin Pool**.
 
-Leave everything else as **default** and click **Save and Exit**.
+14. Configure the AWS origin pool:
 
+    ================================  ========================================
+    Variable                          Value
+    ================================  ========================================
+    Name                              <your-namespace>-aws-pool
+    ================================  ========================================
 
-Azure Origin Pool
----------------------
+**Configure Origin Servers:**
 
-Click the **Add Origin Pool** button at the top the screen. 
+15. Under **Origin Servers**, click **Add Item**.
 
+    |lab005|
 
-==============================  =====
-Variable                        Value
-==============================  =====
-Name                            animal-name-azure-pool
-Origin Server Port              80
-Origin Servers                  See Below 
-Health Checks                   [animal-name]-http
-==============================  =====
+16. Keep the default **Public DNS Name of Origin Server**.
 
-**Origin Servers:** 
-Hit the dropdown for **Select Type of Origin Server** and choose **IP Address of Origin Server on given Sites**. 
+17. Enter DNS name: **public.lab.f5demos.com** then click **Apply**.
 
-==============================  =====
-Variable                        Value
-==============================  =====
-IP                              10.0.3.253 (Note: this is not a typo. The CSP workloads have IP overlap)
-Site or Virtual Site            Site
-Site:                           **system/student-azurenet2**
-Select Network on the site      Inside Network
-==============================  =====
+    |lab006|
 
-Click **Apply**. 
+18. Change the **Origin Server Port** to **80**.
 
-Health Checks: Under “Health Check object” click the **Select Item** dropdown and choose the object that you created previously for the AWS origin pool. The name of the health check should be [animal-name]/[animal-name]-http.
+    |lab007|
 
-Your config should look like this: 
+**Configure Health Checks:**
 
-|
+19. Under **Health Checks**, click **Add Item** in the Health Check object dropdown.
 
-.. image:: ../images/origazure.png
+    |lab008|
 
-|
+20. Click **Add Item** to add the health check.
 
-Leave everything else as **default** and click **Save and Exit**.
+    |lab009|
 
-Now that we have defined both of our Origin Server pools which are a public DNS Name in AWS and a private IP in Azure, we will set up the App Connect Proxy to provide a Global Frontend to load balance them.
+    Configure the health check:
 
-Global Frontend
-----------------------------
+    ================================  ========================================
+    Variable                          Value
+    ================================  ========================================
+    Name                              <your-namespace>-http-health-check
+    ================================  ========================================
 
-In the **Side menu** under **Manage** click on **Load Balancers** >> **HTTP Load Balancers** and click the **Add HTTP Load Balancer** button. 
+21. Leave all other settings as default and click **Add Health Check**.
 
-==================================    =====
-Variable                              Value
-==================================    =====
-Name                                  animal-name-acme-frontend
-Domains and LB Type                   animal-name-acme-frontend.lab-mcn.f5demos.com
-Load Balancer Type                    HTTP
-Automatically Manage DNS Records      **check**
-HTTP Port                             80
-Origin Pools                          See Below 
-==================================    =====
+    |lab010|
 
-**Origin Pools**
+22. Verify your AWS origin pool configuration matches the expected settings.
 
-Click **Add Item** and under "Origin Pool" select the **AWS pool** with your animal name. Leave everything else as **default** and click **Apply**.
+    |lab011|
 
-|
+23. Click **Add Origin Pool**.
 
-.. image:: ../images/awspri.png
+Task 4: Create Azure Origin Pool
+---------------------------------
 
-|
+You will now create an origin pool for the Azure workload using a private IP address.
 
-Click **Add Item** again and under "Origin Pool" select the **Azure pool** with your animal name. This time, change the priority to **0** and click **Apply**.
+24. Click **Add Origin Pool**.
 
-.. Note:: A zero value priority makes that pool the lowest priority. A value of **1** is the highest priority. AWS was set to **1** by default. 
+    |lab012|
 
-|
+25. Configure the Azure origin pool:
 
-.. image:: ../images/azurepri.png
+    ================================  ========================================
+    Variable                          Value
+    ================================  ========================================
+    Name                              <your-namespace>-azure-pool
+    ================================  ========================================
 
-|
+**Configure Origin Servers:**
 
-Click **Apply** and you should now be back to the **HTTP Load Balancer** configuration screen which should look like this. 
+26. Under **Origin Servers**, click **Add Item**.
 
-|
+    |lab013|
 
-.. image:: ../images/httplb.png
+27. In the **Select Type of Origin Server** dropdown, choose **IP address of Origin Server on given Sites**.
 
-|
+28. Configure the origin server, then click **Apply**:
 
-Leave everything else as **default** and scroll down to the bottom to click **Save and Exit**.
+    ================================  ========================================
+    Variable                          Value
+    ================================  ========================================
+    IP                                10.0.5.253
+    Site or Virtual Site              Site
+    Site                              system/appworld-azure
+    Select Network on the site        Inside Network
+    ================================  ========================================
 
-You should now see your Globally Available frontend in the **HTTP Load Balancers** screen.
+    |lab014|
 
-|
+    .. note::
+       The IP address 10.0.5.253 is the same as in earlier labs. This demonstrates how App Connect
+       handles IP overlap between sites.
 
-.. image:: ../images/newlb.png
+29. Change the **Origin Server Port** to **80**.
 
-|
+**Configure Health Checks:**
 
-Testing
----------------------
+30. Under **Health Checks**, click the **Select Item** dropdown.
 
+31. Choose the health check you created earlier: **<your-namespace>-http-health-check**, then click **Save Origin Pool**.
 
-Go ahead and open up a **Command Prompt** or **Terminal** on your personal machine and type the following command: 
+    |lab015|
 
-**nslookup [animal-name]-acme-frontend.lab-mcn.f5demos.com** and note the IP address that is returned. 
+Task 5: Create HTTP Load Balancer
+----------------------------------
 
-In my example, I am using a terminal on MAC and my animal-name was **rested-tiger**.
+Now you'll create an HTTP load balancer that uses F5 Regional Edges as the global frontend.
 
-.. Note:: This may take a few moments to become resolvable depending on your local DNS configuration. 
+32. Navigate to **Manage >> Load Balancers >> HTTP Load Balancers**.
 
-|
+    |lab016|
 
-.. image:: ../images/nslookup.png
+33. Click **Add HTTP Load Balancer**.
 
-|
+    |lab017|
 
-Now open up a new tab in your browser and try http://[animal-name]-acme-frontend.lab-mcn.f5demos.com
+34. Configure the load balancer:
 
-If you reached this page, you set it up right! Nice work. 
+    ================================  ========================================
+    Variable                          Value
+    ================================  ========================================
+    Name                              <your-namespace>-frontend
+    Domains                           <your-namespace>-frontend.lab-mcn.f5demos.com
+    Load Balancer Type                HTTP
+    Automatically Manage DNS Records  **Checked**
+    HTTP Port                         80
+    ================================  ========================================
 
-|
+    |lab018|
 
-.. image:: ../images/awspub.png
+**Configure Origin Pools:**
 
-|
+35. Under **Origin Pools**, click **Add Item**.
 
-Hit **[Shift + Refresh]** a few times in your browser and make sure you are staying on the same site. You should NOT be seeing a **blue page** at any point. 
+36. Select your AWS pool: **<your-namespace>-aws-pool**
 
+    |lab019|
 
-In **XC Console**, navigate to **Manage >> Load Balancers >> Origin Pools**, click on the **3 Button** Actions Menu and choose **Manage Configuration** for your **[animal-name]-aws-pool**. 
+37. Leave **Priority** at **1** (default - highest priority) then click **Apply**.
 
-Click **Edit Configuration** in the upper right and then scroll to the bottom of the **AWS origin Servers** configuration screen. 
+38. Click **Add Item** again.
 
-Under **TLS**, hit the dropdown and choose **Enable** and click **Save and Exit**.
+    |lab020|
 
-|
+39. Select your Azure pool: **<your-namespace>-azure-pool**
 
-.. image:: ../images/tlsenable.png
+    |lab021|
 
-|
+40. Change **Priority** to **0** (lowest priority - this makes Azure the backup), then click **Apply**.
 
+    |lab022|
 
-.. Important:: What you are doing here, is enabling TLS on the backend connection to the Origin Server of the AWS pool. This WILL FAIL, as the Server is not expecting TLS which will effectively cause the monitors to fail. This will take down the AWS pool and allow us to test the Azure failover as if the AWS workload itself was failing. 
+    .. note::
+       Priority value of **1** is highest priority. Priority value of **0** is lowest priority.
+       This configuration makes AWS the preferred destination and Azure the failover destination.
 
-**Check it out....**
+41. Verify your HTTP load balancer configuration then click **Add HTTP Load Balancer**.
 
-Go back to your browser tab that you had open to http://[animal-name]-acme-frontend.lab-mcn.f5demos.com and hit **[Shift + Refresh]**.
+    |lab023|
 
-|
+42. Verify your HTTP load balancer appears in the list.
 
-.. image:: ../images/azurepub.png
+    |lab024|
 
-|
+Task 6: Test the Load Balancer
+-------------------------------
 
-Go back to XC Console and edit the AWS pool again to disable TLS and bring the AWS site back online. 
+Now let's test your globally available frontend.
 
-|
+43. Open a **Command Prompt** or **Terminal** on your local machine.
 
-.. image:: ../images/disabletls.png
+44. Run the following command:
 
-|
+    **nslookup <your-namespace>-frontend.lab-mcn.f5demos.com**
 
-Click **Save and Exit**.
+    Note the IP address returned.
 
-Go back to your browser tab that you had open to http://[animal-name]-frontend.lab-mcn.f5demos.com and hit **[Shift + Refresh]**.
+    |lab025|
 
-.. note:: If you receive a 503 error, please wait a moment and [Shift + Refresh] your browser.
+    .. note::
+       This may take a few moments to become resolvable depending on your local DNS configuration.
 
-You should be back to the AWS page now. 
+45. Open a new browser tab and navigate to:
 
-|
+    **http://<your-namespace>-frontend.lab-mcn.f5demos.com**
 
-.. image:: ../images/awspub.png
+46. You should see the AWS frontend (green page).
 
-|
+    |lab026|
 
-.. 
-  **Testing Load Balancing**
+47. Hard refresh your browser several times by pressing:
 
-  Although this isn't an ACME requirement at the moment, you decide to test an Active/Active pool configuration. 
-  Currrently, you have a Global frontend [http://animal-name-acme-frontend.lab-mcn.f5demos.com] that points to a pool with a public EC2 workload in AWS and a pool with a private IP workload in Azure sitting behind the CE.
-  You are configured for Active/Standby load-balancing of the pools due to the priority setting in the pool. 
+    * **Windows/Linux (Chrome, Edge, Firefox):** Ctrl + Shift + R or Ctrl + F5 or Shift + Click Refresh
+    * **macOS (Chrome, Firefox):** Cmd + Shift + R
 
+48. Verify you consistently see the AWS page.
 
-  In **XC Console**, navigate to **Manage >> HTTP Load Balancers**,  click on the **3 Button** Actions Menu and choose **Manage Configuration** for your **[animal-name]-acme-frontend**. 
+    .. tip::
+       You should NOT see a blue page (Azure) since AWS is the higher priority pool.
 
-  Click **Edit Configuration** in the upper right and then click the **pencil/edit** icon next to the Azure Origin Pool. 
+Task 7: Test Failover to Azure
+-------------------------------
 
-  |
-  
-  .. image:: ../images/editazure.png
+Let's simulate an AWS failure to test failover to the Azure pool.
 
-  |
+49. Navigate to **Manage >> Load Balancers >> Origin Pools**.
 
-  Change the priority to **1**, click **Apply** and **Save and Exit**.
+50. Click the three dots under **Actions** for **<your-namespace>-aws-pool**.
 
-  Go back to your browser tab that you had open to http://[animal-name]-frontend.lab-mcn.f5demos.com and hit **[Shift + Refresh]**.
+51. Select **Manage Configuration**.
 
+    |lab027|
 
-  |
+52. Click **Edit Configuration** in the top right.
 
-  .. image:: ../images/weird-results.png
+    |lab028|
 
-  |
+53. Scroll to the bottom of the **TLS** section, click the dropdown and select **Enable**.
 
+    |lab029|
 
-Dashboard and Analytics
+54. Click **Save Origin Pool**.
+
+    .. important::
+       Enabling TLS will cause the health check to fail because the AWS server doesn't expect
+       TLS. This simulates an AWS workload failure.
+
+55. Wait approximately 10-15 seconds for the health check to fail.
+
+56. Go back to your browser tab and refresh:
+
+    * **Windows/Linux (Chrome, Edge, Firefox):** Ctrl + Shift + R or Ctrl + F5 or Shift + Click Refresh
+    * **macOS (Chrome, Firefox):** Cmd + Shift + R
+
+57. You should now see the Azure frontend (blue page).
+
+    |lab030|
+
+    .. tip::
+       The load balancer automatically failed over to the Azure pool when AWS became unhealthy.
+
+Task 8: Restore AWS Pool
 -------------------------
 
-Now that we've sent several requests to our shiny new **Globally Available Frontend**, we can take a look at the traffic dashboards. 
+Let's bring the AWS pool back online.
 
-In **XC Console** >> **Multi-Cloud App Connect** >> **Overview** click on **Performance**. 
+58. Navigate back to **Manage >> Load Balancers >> Origin Pools**.
 
-Scroll all the way to the bottom and under **Load Balancers**, click directly on your **[animal-name-acme-frontend]**.
+59. Click the three dots under **Actions** for **<your-namespace>-aws-pool**, select **Manage Configuration**.
 
-|
+    |lab031|
 
-.. image:: ../images/lbs.png
+60. Click **Edit Configuration**.
 
-|
+    |lab032|
 
-This will take you to the **Performance Monitoring** Dashboard. If you took a break or don't see any live traffic, try tuning your time-frame. 
+61. Scroll to **TLS** and select **Disable**, then click **Save Origin Pool**.
 
-|
+    |lab033|
 
-.. image:: ../images/time.png
+62. Wait approximately 30-60 seconds for the health check to pass.
 
-|
+63. Go back to your browser tab and refresh:
 
-You should see a number of metrics including a **Application Health** score which may NOT be at **100** due to the AWS site being offline earlier when we tested failover.
+    * **Windows/Linux (Chrome, Edge, Firefox):** Ctrl + Shift + R or Ctrl + F5 or Shift + Click Refresh
+    * **macOS (Chrome, Firefox):** Cmd + Shift + R
 
-|
+    .. note::
+       If you receive a 503 error, wait a moment and refresh again.
 
-.. image:: ../images/metrics.png
+64. You should see the AWS frontend (green page) again.
 
-|
+    |lab034|
 
-Notice the invaluable **End to end Latency** analytic. Click on the **Metrics** tab. 
+Task 9: Review Performance Monitoring
+--------------------------------------
 
-|
+Now let's explore the analytics and monitoring capabilities.
 
-.. image:: ../images/met1.png
+65. Navigate to **Multi-Cloud App Connect >> Overview >> Performance**.
 
-|
+66. Scroll to the bottom and under **Load Balancers**, click on **<your-namespace>-frontend**.
 
-Click on the **Health** Percent metric over on the right side. Use the time-sliders at the bottom to try and zoom in to the approximate time when the applications health was poor. 
+    |lab035|
 
+67. You will see the Performance Monitoring **Dashboard**.
 
-|
+    .. tip::
+       If you don't see recent traffic, adjust the time-frame selector in the top right.
 
-.. image:: ../images/timeslide.png
+    |lab036|
 
-|
+68. Review the **Application Health** score. It shouldn't be 100% due to the AWS pool being
+    offline during testing.
 
-In my example, I am zooming in to approx 12:33AM and can click the color block to get a filtered view of the requests as they were being served at that time. 
+    |lab037|
 
-|
+69. Notice the **End-to-End Latency** metrics showing request performance.
 
-.. image:: ../images/timeslide2.png
+70. Click the **Metrics** tab.
 
-|
+    |lab038|
 
-We can confirm that the Standby Azure workload was sure enough serving up requests during that time. 
+71. Click the **Health Percent** metric on the right side.
 
-|
+    |lab039|
 
-.. image:: ../images/requests.png
+72. Click on the block when the application health was degraded.
 
-|
+    |lab040|
 
-Click the **Traffic Tab** in the top menu and change your time-frame back to **1 hour**. 
+73. Verify that Azure was serving requests during the AWS failure.
 
-This graph shows you a visual representation on where your traffic is ingressing our Regional Edges. In my example below, I am local to the DC area, so you can see I consistently hit the DC12 RE in Ashburn Virginia. 
+    |lab041|
 
-You may see different Source Sites depending where you are geographically located. In production you would see several source sites here if your customer traffic is geographically diverse. 
+Task 10: Review Traffic Analytics
+----------------------------------
 
+74. Click the **Origin Servers** tab in the top menu and change the time-frame to **1 hour**.
 
-You can also see the load balancer name and the Origin Servers to the right. If you hover over them you will get a Request Rate metric.
+    |lab042|
 
-|
+75. At the bottom left, change the setting to **50 items per page**.
 
-.. image:: ../images/traffic.png
+    |lab043|
 
-|
+    **Question:** Why are there so many Origin Servers for the AWS workload?
 
-Click the **Origin Servers Tab** in the top menu and change your time-frame to **1 hour**. At the bottom left, change your setting to **50** items per page. 
+    **Answer:** The AWS pool uses a public DNS name (FQDN). Each Regional Edge is a proxy to
+    the public IP, so each Regional Edge must independently verify availability from its
+    perspective.
 
-Q: Why do you think there are so many Origin Servers showing for the AWS EC2 workload DNS name?
+Task 11: Review Request Logs
+-----------------------------
 
-|
+76. Click the **Requests** tab in the top menu and change the time-frame to **1 hour**.
 
-.. image:: ../images/originserve.png
+    |lab044|
 
-|
+77. Change the setting to **50 items per page**.
 
-A: The AWS site was defined in the pool using (FQDN) public DNS. Each Regional Edge is a proxy from the XC network to the public IP that the FQDN resolves to, thus each Regional Edge must know the availability of any given IP from its perspective. 
+    |lab045|
 
-Click the **Requests Tab** in the top menu and change your time-frame to **1 hour**. At the bottom left, change your setting to **50** items per page. 
+78. Choose any request in the log and click the **expand** arrow next to the timestamp.
 
-The request log has a wealth of information. Literally everything about the request is logged and analyzed.
+79. Review the detailed request information including **end-to-end analytics**.
 
-Choose any request in the log and click the **expand** arrow next to the time-stamp. 
+    |lab046|
 
-Every request has built in End-to-End analytics. You can also click on **JSON** to see the request log in JSON format. 
+80. Click **JSON** to view the request log in JSON format.
 
-|
+    |lab047|
 
-.. image:: ../images/rl.png
+    .. tip::
+       The request log captures comprehensive information about every request, providing deep
+       visibility into application traffic.
 
-|
+Lab Summary
+-----------
 
-Feel free to explore additional requests and/or fields while other students are getting caught up. 
+**What You've Learned:**
 
-Sanity Check
--------------
-**This is what you just deployed.**
+* How to navigate the Multi-Cloud App Connect workspace
+* The difference between Network Connect (L3/4 routing) and App Connect (L7 proxy)
+* How to create origin pools for public and private workloads
+* How to configure HTTP load balancers with priority-based failover
+* How to test application failover between origin pools
+* How to use performance monitoring and analytics dashboards
+* How Regional Edges provide global application delivery
 
-|
+**Key Takeaways:**
 
-.. image:: ../images/lab3review.png
+* **App Connect uses proxies** at Layer 7 instead of routers at Layer 3/4
+* **Origin pools** can use public DNS names or private IPs on specific sites
+* **Priority settings** control active/standby failover behavior (1 = highest, 0 = lowest)
+* **Regional Edges** provide globally distributed application delivery
+* **Health checks** automatically detect and react to backend failures
+* **Rich analytics** provide end-to-end visibility into application performance
 
-|
+**Your Environment:**
 
-**We hope you enjoyed this lab!**
+You now have a globally available frontend load balancer:
+
+* **Frontend:** F5 Regional Edges serving **<your-namespace>-frontend.lab-mcn.f5demos.com**
+* **Primary Backend:** AWS public workload (Priority 1)
+* **Backup Backend:** Azure private workload (Priority 0)
+
+In the next lab, you'll leverage App Connect for site-to-site connectivity to solve IP overlap
+challenges.
+
+.. important::
+   Your HTTP load balancer must be working correctly before proceeding to Lab 4.
 
 **End of Lab 3**
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
-
-
-
-
-
-
-
-
-
-
- 
-
-
-
-
-
-
-
-
-
+.. |lab001| image:: ../images/temp/lab3/lab3pic0.png
+   :width: 800px
+.. |lab001.1| image:: ../images/temp/lab3/lab3pic0.1.png
+   :width: 800px
+.. |lab001.2| image:: ../images/temp/lab3/lab3pic0.2.png
+   :width: 800px
+.. |lab001.3| image:: ../images/temp/lab3/lab3pic0.3.png
+   :width: 800px
+.. |lab001.4| image:: ../images/temp/lab3/lab3pic0.4.png
+   :width: 800px
+.. |lab001.5| image:: ../images/temp/lab3/lab3pic 0.5.png
+   :width: 800px
+.. |lab001.6| image:: ../images/temp/lab3/lab3pic0.6.png
+   :width: 800px
+.. |lab001.7| image:: ../images/temp/lab3/lab3pic0.7.png
+   :width: 800px
+.. |lab001.8| image:: ../images/temp/lab3/lab3pic0.8.png
+   :width: 800px
+.. |lab002| image:: ../images/temp/lab3/lab3pic1.png
+   :width: 800px
+.. |lab003| image:: ../images/temp/lab3/lab3pic2.png
+   :width: 800px
+.. |lab004| image:: ../images/temp/lab3/lab3pic3.png
+   :width: 800px
+.. |lab005| image:: ../images/temp/lab3/lab3pic4.png
+   :width: 800px
+.. |lab006| image:: ../images/temp/lab3/lab3pic5.png
+   :width: 800px
+.. |lab007| image:: ../images/temp/lab3/lab3pic6.png
+   :width: 800px
+.. |lab008| image:: ../images/temp/lab3/lab3pic7.png
+   :width: 800px
+.. |lab009| image:: ../images/temp/lab3/lab3pic8.png
+   :width: 800px
+.. |lab010| image:: ../images/temp/lab3/lab3pic9.png
+   :width: 800px
+.. |lab011| image:: ../images/temp/lab3/lab3pic10.png
+   :width: 800px
+.. |lab012| image:: ../images/temp/lab3/lab3pic11.png
+   :width: 800px
+.. |lab013| image:: ../images/temp/lab3/lab3pic12.png
+   :width: 800px
+.. |lab014| image:: ../images/temp/lab3/lab3pic13.png
+   :width: 800px
+.. |lab015| image:: ../images/temp/lab3/lab3pic14.png
+   :width: 800px
+.. |lab016| image:: ../images/temp/lab3/lab3pic15.png
+   :width: 800px
+.. |lab017| image:: ../images/temp/lab3/lab3pic16.png
+   :width: 800px
+.. |lab018| image:: ../images/temp/lab3/lab3pic17.png
+   :width: 800px
+.. |lab019| image:: ../images/temp/lab3/lab3pic18.png
+   :width: 800px
+.. |lab020| image:: ../images/temp/lab3/lab3pic19.png
+   :width: 800px
+.. |lab021| image:: ../images/temp/lab3/lab3pic20.png
+   :width: 800px
+.. |lab022| image:: ../images/temp/lab3/lab3pic21.png
+   :width: 800px
+.. |lab023| image:: ../images/temp/lab3/lab3pic22.png
+   :width: 800px
+.. |lab024| image:: ../images/temp/lab3/lab3pic23.png
+   :width: 800px
+.. |lab025| image:: ../images/temp/lab3/lab3pic24.png
+   :width: 800px
+.. |lab026| image:: ../images/temp/lab3/lab3pic25.png
+   :width: 800px
+.. |lab027| image:: ../images/temp/lab3/lab3pic26.png
+   :width: 800px
+.. |lab028| image:: ../images/temp/lab3/lab3pic27.png
+   :width: 800px
+.. |lab029| image:: ../images/temp/lab3/lab3pic28.png
+   :width: 800px
+.. |lab030| image:: ../images/temp/lab3/lab3pic29.png
+   :width: 800px
+.. |lab031| image:: ../images/temp/lab3/lab3pic30.png
+   :width: 800px
+.. |lab032| image:: ../images/temp/lab3/lab3pic31.png
+   :width: 800px
+.. |lab033| image:: ../images/temp/lab3/lab3pic32.png
+   :width: 800px
+.. |lab034| image:: ../images/temp/lab3/lab3pic33.png
+   :width: 800px
+.. |lab035| image:: ../images/temp/lab3/lab3pic34.png
+   :width: 800px
+.. |lab036| image:: ../images/temp/lab3/lab3pic35.png
+   :width: 800px
+.. |lab037| image:: ../images/temp/lab3/lab3pic36.png
+   :width: 800px
+.. |lab038| image:: ../images/temp/lab3/lab3pic37.png
+   :width: 800px
+.. |lab039| image:: ../images/temp/lab3/lab3pic38.png
+   :width: 800px
+.. |lab040| image:: ../images/temp/lab3/lab3pic39.png
+   :width: 800px
+.. |lab041| image:: ../images/temp/lab3/lab3pic40.png
+   :width: 800px
+.. |lab042| image:: ../images/temp/lab3/lab3pic41.png
+   :width: 800px
+.. |lab043| image:: ../images/temp/lab3/lab3pic42.png
+   :width: 800px
+.. |lab044| image:: ../images/temp/lab3/lab3pic43.png
+   :width: 800px
+.. |lab045| image:: ../images/temp/lab3/lab3pic44.png
+   :width: 800px
+.. |lab046| image:: ../images/temp/lab3/lab3pic45.png
+   :width: 800px
+.. |lab047| image:: ../images/temp/lab3/lab3pic46.png
+   :width: 800px
