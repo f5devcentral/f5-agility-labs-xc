@@ -303,7 +303,7 @@ Let's review the firewall logs to see blocked and allowed traffic.
 
     |lab027|
 
-34. This will show you all the traffic that has been allowed or denied by the enhancedfirewall policy.
+34. This will show you all the traffic that has been allowed or denied by the enhancedfirewall policy (may take a few minutes to populate).
 
     |lab028|
 
