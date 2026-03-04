@@ -186,7 +186,7 @@ Let's verify the connectivity to the AWS Ubuntu now.
 
     |lab015|
 
-19. Test the HTTP service. In the web shell type:
+19. Test the HTTP service. In the web shell type (should be double dashe in curl command before head as pictured in example output):
 
     **curl --head http://10.0.5.253**
 
@@ -284,7 +284,7 @@ Let's verify that the firewall policy is working correctly.
 
     |lab025|
 
-32. Test HTTP again (you should still receive a **200 OK** response because we allowed only HTTP in the firewall policy):
+32. Test HTTP again (should be double dashe in curl command before head as pictured in example output).  You should still receive a **200 OK** response because we allowed only HTTP in the firewall policy:
 
     **curl --head http://10.0.5.253**
 
