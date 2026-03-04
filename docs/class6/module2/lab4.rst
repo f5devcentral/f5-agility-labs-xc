@@ -136,7 +136,7 @@ Now let's test the internal load balancer you just created.
 
     **curl --head http://<your-namespace>-backend-vip-to-azure.lab-mcn.f5demos.com --resolve <your-namespace>-backend-vip-to-azure.lab-mcn.f5demos.com:80:10.1.1.5**
 
-    |lab009|
+
 
 16. You should now receive a **200 OK** response!
 
@@ -377,7 +377,7 @@ control over application traffic.
    :width: 800px
 .. |lab009| image:: ../images/temp/lab4/domains.png
    :width: 800px
-.. |lab010| image:: ../images/temp/lab4/curlhead.png
+.. |lab010| image:: ../images/temp/lab4/domains..png
    :width: 800px
 .. |lab011| image:: ../images/temp/lab4/curltest.png
    :width: 800px
