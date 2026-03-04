@@ -25,6 +25,68 @@ Prerequisite
 .. note::
    You should already be logged into your lab's Distributed Cloud Tenant and have completed Lab 1 and Lab 2.
 
+.. warning::
+   If you are experiencing issues accessing the Distributed Cloud Tenant, please alert one of
+   the Lab Assistants.
+
+**Detach AWS Segment from Your CE:**
+
+We are going to detach the AWS segment that we attached to our CE in Lab 2, because we now need 
+connectivity to both AWS and Azure sites.
+
+1. Navigate to **Multi-Cloud Network Connect >> Manage >> Site Management >> Secure Mesh Site v2**.
+
+2. Click on **Manage Configuration** for the **<your-namespace>-site**.
+
+   |lab001.1|
+
+3. Click **Edit Configuration** on the top right.
+
+   |lab001.2|
+
+4. Click **Edit** (the pencil icon) for your Control node.
+
+   |lab001.3|
+
+5. Click **Edit** (the pencil icon) for the **enp0s6** interface.
+
+   |lab001.4|
+
+6. Configure your interface then click **Apply**:
+
+   **IP Configuration:**
+
+   ================================  ========================================
+   Variable                          Value
+   ================================  ========================================
+   IPv4 Interface Address Method     Static IP
+   IP Address/Prefix Length          10.1.10.10/24
+   Default Gateway                   10.1.10.1
+   ================================  ========================================
+
+   **Interface Settings:**
+
+   ================================  ========================================
+   Variable                          Value
+   ================================  ========================================
+   Select VRF                        Site Local Inside (Local VRF)
+   ================================  ========================================
+
+   |lab001.5|
+
+7. Click **Apply** to save interface changes for your Control Node.
+
+   |lab001.6|
+
+8. Click **Save Secure Mesh Site** at the bottom of the page to apply changes to the site and CE node.
+
+   |lab001.7|
+
+9. **[Instructor's Action Item]** Set the AWS CE interface that's currently attached to appworld-aws 
+   segment to SLI (Site Local Inside).
+
+   |lab001.8|
+
 Task 1: Understanding App Connect
 ----------------------------------
 
@@ -49,56 +111,56 @@ App Connect provides application-level (Layer 7) connectivity using load balance
 Task 2: Navigate to Multi-Cloud App Connect
 --------------------------------------------
 
-1. From the F5 Distributed Cloud Console homepage, select **Multi-Cloud App Connect**.
+10. From the F5 Distributed Cloud Console homepage, select **Multi-Cloud App Connect**.
 
-   |lab002|
+    |lab002|
 
-2. On the left-hand side, switch to your namespace by selecting **<your-namespace>** from the dropdown.
+11. On the left-hand side, switch to your namespace by selecting **<your-namespace>** from the dropdown.
 
-   |lab003|
+    |lab003|
 
-3. Navigate to **Manage >> Load Balancers >> Origin Pools**.
+12. Navigate to **Manage >> Load Balancers >> Origin Pools**.
 
-   |lab004|
+    |lab004|
 
 Task 3: Create AWS Origin Pool
 -------------------------------
 
 You will now create an origin pool for the AWS workload using a public DNS name.
 
-4. Click **Add Origin Pool**.
+13. Click **Add Origin Pool**.
 
-5. Configure the AWS origin pool:
+14. Configure the AWS origin pool:
 
-   ================================  ========================================
-   Variable                          Value
-   ================================  ========================================
-   Name                              <your-namespace>-aws-pool
-   ================================  ========================================
+    ================================  ========================================
+    Variable                          Value
+    ================================  ========================================
+    Name                              <your-namespace>-aws-pool
+    ================================  ========================================
 
 **Configure Origin Servers:**
 
-6. Under **Origin Servers**, click **Add Item**.
+15. Under **Origin Servers**, click **Add Item**.
 
-   |lab005|
+    |lab005|
 
-7. Keep the default **Public DNS Name of Origin Server**.
+16. Keep the default **Public DNS Name of Origin Server**.
 
-8. Enter DNS name: **public.lab.f5demos.com** then click **Apply**.
+17. Enter DNS name: **public.lab.f5demos.com** then click **Apply**.
 
-   |lab006|
+    |lab006|
 
-9. Change the **Origin Server Port** to **80**.
+18. Change the **Origin Server Port** to **80**.
 
-   |lab007|
+    |lab007|
 
 **Configure Health Checks:**
 
-10. Under **Health Checks**, click **Add Item** in the Health Check object dropdown.
+19. Under **Health Checks**, click **Add Item** in the Health Check object dropdown.
 
     |lab008|
 
-11. Click **Add Item** to add the health check.
+20. Click **Add Item** to add the health check.
 
     |lab009|
 
@@ -110,26 +172,26 @@ You will now create an origin pool for the AWS workload using a public DNS name.
     Name                              <your-namespace>-http-health-check
     ================================  ========================================
 
-12. Leave all other settings as default and click **Add Health Check**.
+21. Leave all other settings as default and click **Add Health Check**.
 
     |lab010|
 
-13. Verify your AWS origin pool configuration matches the expected settings.
+22. Verify your AWS origin pool configuration matches the expected settings.
 
     |lab011|
 
-14. Click **Save Origin Pool**.
+23. Click **Add Origin Pool**.
 
 Task 4: Create Azure Origin Pool
 ---------------------------------
 
 You will now create an origin pool for the Azure workload using a private IP address.
 
-15. Click **Add Origin Pool**.
+24. Click **Add Origin Pool**.
 
     |lab012|
 
-16. Configure the Azure origin pool:
+25. Configure the Azure origin pool:
 
     ================================  ========================================
     Variable                          Value
@@ -139,18 +201,18 @@ You will now create an origin pool for the Azure workload using a private IP add
 
 **Configure Origin Servers:**
 
-17. Under **Origin Servers**, click **Add Item**.
+26. Under **Origin Servers**, click **Add Item**.
 
     |lab013|
 
-18. In the **Select Type of Origin Server** dropdown, choose **IP address of Origin Server on given Sites**.
+27. In the **Select Type of Origin Server** dropdown, choose **IP address of Origin Server on given Sites**.
 
-19. Configure the origin server, then click **Apply**:
+28. Configure the origin server, then click **Apply**:
 
     ================================  ========================================
     Variable                          Value
     ================================  ========================================
-    IP                                10.0.3.253
+    IP                                10.0.5.253
     Site or Virtual Site              Site
     Site                              system/appworld-azure
     Select Network on the site        Inside Network
@@ -159,16 +221,16 @@ You will now create an origin pool for the Azure workload using a private IP add
     |lab014|
 
     .. note::
-       The IP address 10.0.3.253 is the same as in earlier labs. This demonstrates how App Connect
+       The IP address 10.0.5.253 is the same as in earlier labs. This demonstrates how App Connect
        handles IP overlap between sites.
 
-20. Change the **Origin Server Port** to **80**.
+29. Change the **Origin Server Port** to **80**.
 
 **Configure Health Checks:**
 
-21. Under **Health Checks**, click the **Select Item** dropdown.
+30. Under **Health Checks**, click the **Select Item** dropdown.
 
-22. Choose the health check you created earlier: **<your-namespace>-http-health-check**, then click **Save Origin Pool**.
+31. Choose the health check you created earlier: **<your-namespace>-http-health-check**, then click **Save Origin Pool**.
 
     |lab015|
 
@@ -177,15 +239,15 @@ Task 5: Create HTTP Load Balancer
 
 Now you'll create an HTTP load balancer that uses F5 Regional Edges as the global frontend.
 
-23. Navigate to **Manage >> Load Balancers >> HTTP Load Balancers**.
+32. Navigate to **Manage >> Load Balancers >> HTTP Load Balancers**.
 
     |lab016|
 
-24. Click **Add HTTP Load Balancer**.
+33. Click **Add HTTP Load Balancer**.
 
     |lab017|
 
-25. Configure the load balancer:
+34. Configure the load balancer:
 
     ================================  ========================================
     Variable                          Value
@@ -201,23 +263,23 @@ Now you'll create an HTTP load balancer that uses F5 Regional Edges as the globa
 
 **Configure Origin Pools:**
 
-26. Under **Origin Pools**, click **Add Item**.
+35. Under **Origin Pools**, click **Add Item**.
 
-27. Select your AWS pool: **<your-namespace>-aws-pool**
+36. Select your AWS pool: **<your-namespace>-aws-pool**
 
     |lab019|
 
-28. Leave **Priority** at **1** (default - highest priority) then click **Apply**.
+37. Leave **Priority** at **1** (default - highest priority) then click **Apply**.
 
-29. Click **Add Item** again.
+38. Click **Add Item** again.
 
     |lab020|
 
-30. Select your Azure pool: **<your-namespace>-azure-pool**
+39. Select your Azure pool: **<your-namespace>-azure-pool**
 
     |lab021|
 
-31. Change **Priority** to **0** (lowest priority - this makes Azure the backup), then click **Apply**.
+40. Change **Priority** to **0** (lowest priority - this makes Azure the backup), then click **Apply**.
 
     |lab022|
 
@@ -225,11 +287,11 @@ Now you'll create an HTTP load balancer that uses F5 Regional Edges as the globa
        Priority value of **1** is highest priority. Priority value of **0** is lowest priority.
        This configuration makes AWS the preferred destination and Azure the failover destination.
 
-32. Verify your HTTP load balancer configuration then click **Add HTTP Load Balancer**.
+41. Verify your HTTP load balancer configuration then click **Add HTTP Load Balancer**.
 
     |lab023|
 
-33. Verify your HTTP load balancer appears in the list.
+42. Verify your HTTP load balancer appears in the list.
 
     |lab024|
 
@@ -238,9 +300,9 @@ Task 6: Test the Load Balancer
 
 Now let's test your globally available frontend.
 
-34. Open a **Command Prompt** or **Terminal** on your local machine.
+43. Open a **Command Prompt** or **Terminal** on your local machine.
 
-35. Run the following command:
+44. Run the following command:
 
     **nslookup <your-namespace>-frontend.lab-mcn.f5demos.com**
 
@@ -251,20 +313,20 @@ Now let's test your globally available frontend.
     .. note::
        This may take a few moments to become resolvable depending on your local DNS configuration.
 
-36. Open a new browser tab and navigate to:
+45. Open a new browser tab and navigate to:
 
     **http://<your-namespace>-frontend.lab-mcn.f5demos.com**
 
-37. You should see the AWS frontend (green page).
+46. You should see the AWS frontend (green page).
 
     |lab026|
 
-38. Hard refresh your browser several times by pressing:
+47. Hard refresh your browser several times by pressing:
 
     * **Windows/Linux (Chrome, Edge, Firefox):** Ctrl + Shift + R or Ctrl + F5 or Shift + Click Refresh
     * **macOS (Chrome, Firefox):** Cmd + Shift + R
 
-39. Verify you consistently see the AWS page.
+48. Verify you consistently see the AWS page.
 
     .. tip::
        You should NOT see a blue page (Azure) since AWS is the higher priority pool.
@@ -274,36 +336,36 @@ Task 7: Test Failover to Azure
 
 Let's simulate an AWS failure to test failover to the Azure pool.
 
-40. Navigate to **Manage >> Load Balancers >> Origin Pools**.
+49. Navigate to **Manage >> Load Balancers >> Origin Pools**.
 
-41. Click the three dots under **Actions** for **<your-namespace>-aws-pool**.
+50. Click the three dots under **Actions** for **<your-namespace>-aws-pool**.
 
-42. Select **Manage Configuration**.
+51. Select **Manage Configuration**.
 
     |lab027|
 
-43. Click **Edit Configuration** in the top right.
+52. Click **Edit Configuration** in the top right.
 
     |lab028|
 
-44. Scroll to the bottom of the **TLS** section, click the dropdown and select **Enable**.
+53. Scroll to the bottom of the **TLS** section, click the dropdown and select **Enable**.
 
     |lab029|
 
-45. Click **Save Origin Pool**.
+54. Click **Save Origin Pool**.
 
     .. important::
        Enabling TLS will cause the health check to fail because the AWS server doesn't expect
        TLS. This simulates an AWS workload failure.
 
-46. Wait approximately 30-60 seconds for the health check to fail.
+55. Wait approximately 10-15 seconds for the health check to fail.
 
-47. Go back to your browser tab and refresh:
+56. Go back to your browser tab and refresh:
 
     * **Windows/Linux (Chrome, Edge, Firefox):** Ctrl + Shift + R or Ctrl + F5 or Shift + Click Refresh
     * **macOS (Chrome, Firefox):** Cmd + Shift + R
 
-48. You should now see the Azure frontend (blue page).
+57. You should now see the Azure frontend (blue page).
 
     |lab030|
 
@@ -315,23 +377,23 @@ Task 8: Restore AWS Pool
 
 Let's bring the AWS pool back online.
 
-49. Navigate back to **Manage >> Load Balancers >> Origin Pools**.
+58. Navigate back to **Manage >> Load Balancers >> Origin Pools**.
 
-50. Click the three dots under **Actions** for **<your-namespace>-aws-pool**, select **Manage Configuration**.
+59. Click the three dots under **Actions** for **<your-namespace>-aws-pool**, select **Manage Configuration**.
 
     |lab031|
 
-51. Click **Edit Configuration**.
+60. Click **Edit Configuration**.
 
     |lab032|
 
-52. Scroll to **TLS** and select **Disable**, then click **Save Origin Pool**.
+61. Scroll to **TLS** and select **Disable**, then click **Save Origin Pool**.
 
     |lab033|
 
-53. Wait approximately 30-60 seconds for the health check to pass.
+62. Wait approximately 30-60 seconds for the health check to pass.
 
-54. Go back to your browser tab and refresh:
+63. Go back to your browser tab and refresh:
 
     * **Windows/Linux (Chrome, Edge, Firefox):** Ctrl + Shift + R or Ctrl + F5 or Shift + Click Refresh
     * **macOS (Chrome, Firefox):** Cmd + Shift + R
@@ -339,7 +401,7 @@ Let's bring the AWS pool back online.
     .. note::
        If you receive a 503 error, wait a moment and refresh again.
 
-55. You should see the AWS frontend (green page) again.
+64. You should see the AWS frontend (green page) again.
 
     |lab034|
 
@@ -348,50 +410,50 @@ Task 9: Review Performance Monitoring
 
 Now let's explore the analytics and monitoring capabilities.
 
-56. Navigate to **Multi-Cloud App Connect >> Overview >> Performance**.
+65. Navigate to **Multi-Cloud App Connect >> Overview >> Performance**.
 
-57. Scroll to the bottom and under **Load Balancers**, click on **<your-namespace>-frontend**.
+66. Scroll to the bottom and under **Load Balancers**, click on **<your-namespace>-frontend**.
 
     |lab035|
 
-58. You will see the Performance Monitoring **Dashboard**.
+67. You will see the Performance Monitoring **Dashboard**.
 
     .. tip::
        If you don't see recent traffic, adjust the time-frame selector in the top right.
 
     |lab036|
 
-59. Review the **Application Health** score. It's not 100% due to the AWS pool being
+68. Review the **Application Health** score. It shouldn't be 100% due to the AWS pool being
     offline during testing.
 
     |lab037|
 
-60. Notice the **End-to-End Latency** metrics showing request performance.
+69. Notice the **End-to-End Latency** metrics showing request performance.
 
-61. Click the **Metrics** tab.
+70. Click the **Metrics** tab.
 
     |lab038|
 
-62. Click the **Health Percent** metric on the right side.
+71. Click the **Health Percent** metric on the right side.
 
     |lab039|
 
-63. Click on the block when the application health was degraded.
+72. Click on the block when the application health was degraded.
 
     |lab040|
 
-64. Verify that Azure was serving requests during the AWS failure.
+73. Verify that Azure was serving requests during the AWS failure.
 
     |lab041|
 
 Task 10: Review Traffic Analytics
 ----------------------------------
 
-65. Click the **Origin Servers** tab in the top menu and change the time-frame to **1 hour**.
+74. Click the **Origin Servers** tab in the top menu and change the time-frame to **1 hour**.
 
     |lab042|
 
-66. At the bottom left, change the setting to **50 items per page**.
+75. At the bottom left, change the setting to **50 items per page**.
 
     |lab043|
 
@@ -404,21 +466,21 @@ Task 10: Review Traffic Analytics
 Task 11: Review Request Logs
 -----------------------------
 
-67. Click the **Requests** tab in the top menu and change the time-frame to **1 hour**.
+76. Click the **Requests** tab in the top menu and change the time-frame to **1 hour**.
 
     |lab044|
 
-68. Change the setting to **50 items per page**.
+77. Change the setting to **50 items per page**.
 
     |lab045|
 
-69. Choose any request in the log and click the **expand** arrow next to the timestamp.
+78. Choose any request in the log and click the **expand** arrow next to the timestamp.
 
-70. Review the detailed request information including **end-to-end analytics**.
+79. Review the detailed request information including **end-to-end analytics**.
 
     |lab046|
 
-71. Click **JSON** to view the request log in JSON format.
+80. Click **JSON** to view the request log in JSON format.
 
     |lab047|
 
@@ -465,6 +527,22 @@ challenges.
 **End of Lab 3**
 
 .. |lab001| image:: ../images/temp/lab3/lab3pic0.png
+   :width: 800px
+.. |lab001.1| image:: ../images/temp/lab3/lab3pic0.1.png
+   :width: 800px
+.. |lab001.2| image:: ../images/temp/lab3/lab3pic0.2.png
+   :width: 800px
+.. |lab001.3| image:: ../images/temp/lab3/lab3pic0.3.png
+   :width: 800px
+.. |lab001.4| image:: ../images/temp/lab3/lab3pic0.4.png
+   :width: 800px
+.. |lab001.5| image:: ../images/temp/lab3/lab3pic 0.5.png
+   :width: 800px
+.. |lab001.6| image:: ../images/temp/lab3/lab3pic0.6.png
+   :width: 800px
+.. |lab001.7| image:: ../images/temp/lab3/lab3pic0.7.png
+   :width: 800px
+.. |lab001.8| image:: ../images/temp/lab3/lab3pic0.8.png
    :width: 800px
 .. |lab002| image:: ../images/temp/lab3/lab3pic1.png
    :width: 800px
