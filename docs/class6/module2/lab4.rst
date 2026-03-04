@@ -111,7 +111,7 @@ Azure workload.
 
     |lab007|
 
-12. Click **Apply**, **Apply**, and then **Save and Exit**.
+12. Click **Apply**, **Apply**, and then **Add HTTP Load Balancer**.
 
 Task 3: Test Internal Load Balancer
 ------------------------------------
