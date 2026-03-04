@@ -86,7 +86,7 @@ Each lab attendee has been assigned a **unique namespace** that will be used thr
    - Namespaces were pre-created before the lab.
    - CI/CD pipelines reference your namespace dynamically.
 
-4. Save your assigned namespace on a notedpad.
+4. Save your assigned namespace on a notepad.
 
    You will need this value in multiple upcoming tasks, including CI/CD and Terraform-driven deployments.
 
@@ -95,19 +95,19 @@ Generate F5XC API Certificate
 
 To allow GitLab and Terraform to interact with F5 Distributed Cloud programmatically, you must generate an **API certificate**.
 
-10. In the same **Account Settings** page navigate to API credential settings.
+1. In the same **Account Settings** page navigate to API credential settings.
 
-    ::
+   ::
 
-       Account Settings → Credentials → Add Credentials
+      Account Settings → Credentials → Add Credentials
 
-    |f5xc-console-account-settings-credentials|
+   |f5xc-console-account-settings-credentials|
 
-11. Cick "Add Credentials" and create a new one with the following settings.
+2. Click "Add Credentials" and create a new one with the following settings.
 
-    Fill in the following fields:
+   Fill in the following fields:
 
-    - **Credential Name:** ``<namespace>-api-cert``
+   - **Credential Name:** ``<namespace>-api-cert``
       *(Example: ready-skink-api-cert)*
     - **Credential Type:** API Certificate
     - **Password:** ``@ppW0rld2026!``
@@ -120,7 +120,7 @@ To allow GitLab and Terraform to interact with F5 Distributed Cloud programmatic
 
     |f5xc-console-account-settings-credentials-cert-1|
 
-12. Download the API certificate.
+3. Download the API certificate.
 
     Click **Download**.  
     The file will be downloaded to your local system as:
@@ -139,8 +139,8 @@ To allow GitLab and Terraform to interact with F5 Distributed Cloud programmatic
    - This certificate will be reused by automation.
    - GitLab and Terraform will use it to deploy and manage F5XC objects.
 
-Create a Virtual K8 cluster in your F5XC NAMESPACE
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Create a Virtual K8s cluster in your F5XC NAMESPACE
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 F5 Distributed Cloud Virtual Kubernetes (vK8s) is a managed Kubernetes abstraction that allows you to deploy containerized 
 applications without operating or maintaining a traditional Kubernetes cluster. You do not manage nodes, control planes, 
@@ -148,7 +148,7 @@ or scaling—instead, F5 handles the infrastructure while you deploy workloads i
 In the AppWorld 2026 lab, vK8s is where the AI-generated application runs after the GitLab CI/CD pipeline builds and pushes 
 the container image. In this step, you will create a vK8s cluster in your assigned namespace.
 
-   Click on the F5 logo to go to the home page, then click on "Ditributed Applications" tile on the right. 
+   Click on the F5 logo to go to the home page, then click on "Distributed Applications" tile on the right. 
    
    |f5xc-console-distro-app|
 

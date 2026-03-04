@@ -3,14 +3,14 @@ Lab 3: Malicious Users
 
 **Objective:**
 
-* Leverage User Identification Policies to isolate individual users
+* Leverage User Identification Policies to isolate individual users.
   
-* Utilize F5 Distributed Cloud's native AI technologies to block malicious users
+* Utilize F5 Distributed Cloud's native AI technologies to block malicious users.
 
 **Narrative:** 
 
-A recent security request came into your queue where multiple WAF violations and 403 http reqsponse codes 
-were originating from the same public IP address.  ACME's security incedent response team has asked you 
+A recent security request came into your queue where multiple WAF violations and 403 http response codes 
+were originating from the same public IP address.  ACME's security incident response team has asked you 
 to block all requests coming from that public IP address as they are concerned about potential attackers 
 successfully accessing the application and then trying to move laterally to access sensitive portions of the 
 application without authorization.  Before blocking the public IP, a conversation with the application team 
@@ -19,8 +19,10 @@ all of the requests coming from that public IP address are attacks, your goal is
 Cloud to identify only the specific attackers and stop their probing activities but still maintain a 
 low-friction experience for the rest of the valid users.  
 
+.. note::                                                                                  
+   **Expected Lab Time: 15 minutes**
 
-**Expected Lab Time: 15 minutes**
+**Lab 3 Summary-Malicious User Mitigation**: Configure Malicious User identification and mitigation. In this scenario, multiple attacks were coming from the same source IP, which also carries legitimate users. Instead of blocking the entire IP (which could impact legitimate traffic), you will leverage F5’s user identification policies (using client-side signals like TLS fingerprint and IP) to pinpoint individual malicious users. You’ll then enable malicious user detection powered by ML/AI and set up mitigation actions (like blocking or challenging those users). This lab highlights how to surgically block determined attackers while maintaining a seamless experience for legitimate users.
 
 Task 1: Creating a User Identification Policy
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -29,76 +31,71 @@ In this task you will build a user identification policy which will be the
 basis of identifying clients/users for machine learning driven analysis for
 malicious user mitigation and actions.
 
-
-#. Within **Web App & API Protection** in the F5 Distributed Cloud Console,
-   **Manage > Load Balancer > HTTP Load Balancers** and use the **Action Dots**
-   and click **Manage Configuration**.
-
-#. Click **Edit Configuration** in the top right-hand corner.
-
-   |lab001|
-
-   |lab002|
-
-#. Click **Common Security Controls** in the left-hand navigation and locate
-   **User Identification**.
-
-#. Click the drop-down under **User Identifier** and select **User
-   Identification Policy** from the list.
-
-   |lab003|
-
-#. Click the dropdown for **User Identification Policy** and select
-   **Add Item**.
-
-   |lab004|
-
-#. In the **User Identification** window, in the **Metadata** section enter
-   **user-id** for the **Name** and then click **configure** under **User
-   Identification Rules**.
-
-   |lab005|
-
-#. In the resulting window for **User Identification Rules**, click **Add
-   Item**.
-
-   |lab006|
-
-#. In the **User Identification Rule** window click the drop-down for
-   **Identifier Type**.
-
-   Select **JA4 TLS Fingerprint** and click **Apply**.
-
-   |lab007|
-
-#. Returning to the window for **User Identification Rules**, observe the prior
-   selection and click **Add Item**.
-
-   |lab008|
-
-#. In the **User Identification Rule** window click the drop-down for
-   **Identifier Type**. Select **Client IP Address** and click **Apply**. (*It
-   should be already selected*)
-
-   |lab009|
-
-#. Review the two **User Identification Rules** and click **Apply**.
-
-#. Returning to the **User Identification** window, note that **User
-   Identification Rules** are now **Configured** and click **Continue**.
-
-   |lab010|
-
-   |lab011|
-
-Narrative Check
----------------
-
-With User Identification Rules, F5 Distributed Cloud can pull in multiple data points
-as unique indicators to identify an individual user.  In addition to the IP address and
-TLS fingerprint of the browser, Cookies and HTTP Headers can also be leveraged to specifically
-build policies around the individual users.  Now that the users are more specifically identified,
-let's move on to how to block malicious users.  
++----------------------------------------------------------------------------------------------+
+|                                                                                              |
+|1. Within **Web App & API Protection** in the F5 Distributed Cloud Console,                   |
+|   **Manage > Load Balancer > HTTP Load Balancers** and use the **Action Dots**               |
+|   and click **Manage Configuration**.                                                        |
+|                                                                                              |
+|2. Click **Edit Configuration** in the top right-hand corner.                                 |
+|                                                                                              |
+||lab001|                                                                                      |
+|                                                                                              |
+||lab002|                                                                                      |
+|                                                                                              |
+|3. Click **Common Security Controls** in the left-hand navigation and locate                  |
+|   **User Identification**.                                                                   |
+|                                                                                              |
+|4. Click the drop-down under **User Identifier** and select **User Identification Policy**    |
+|   from the list.                                                                             |
+|                                                                                              |
+||lab003|                                                                                      |
+|                                                                                              |
+|5. Click the dropdown for **User Identification Policy** and select **Add Item**.             |
+|                                                                                              |
+||lab004|                                                                                      |
+|                                                                                              |
+|6. In the **User Identification** window, in the **Metadata** section enter **user-id** for   |
+|   the **Name** and then click **configure** under **User Identification Rules**.             |
+|                                                                                              |
+||lab005|                                                                                      |
+|                                                                                              |
+|7. In the resulting window for **User Identification Rules**, click **Add Item**.             |
+|                                                                                              |
+||lab006|                                                                                      |
+|                                                                                              |
+|8. In the **User Identification Rule** window click the drop-down for **Identifier Type**.    |
+|                                                                                              |
+|Select **JA4 TLS Fingerprint** and click **Apply**.                                           |
+|                                                                                              |
+||lab007|                                                                                      |
+|                                                                                              |
+|9. Returning to the window for **User Identification Rules**, observe the prior selection     |
+|   and click **Add Item**.                                                                    |
+|                                                                                              |
+||lab008|                                                                                      |
+|                                                                                              |
+|10. In the **User Identification Rule** window click the drop-down for **Identifier Type**.   |
+|    Select **Client IP Address** and click **Apply**. (*It should be already selected*).      |
+|                                                                                              |
+||lab009|                                                                                      |
+|                                                                                              |
+|11. Review the two **User Identification Rules** and click **Apply**.                         |
+|                                                                                              |
+|12. Returning to the **User Identification** window, note that **User Identification Rules**  |
+|    are now **Configured** and click **Continue**.                                            |
+|                                                                                              |
+||lab010|                                                                                      |
+|                                                                                              |
+||lab011|                                                                                      |
+|                                                                                              |
+|With User Identification Rules, F5 Distributed Cloud can pull in multiple data points         |
+|as unique indicators to identify an individual user. In addition to the IP address and        |
+|TLS fingerprint of the browser, Cookies and HTTP Headers can also be leveraged to specifically|
+|build policies around the individual users. Now that the users are more specifically          |
+|identified, let's move on to how to block malicious users.                                    |
+|                                                                                              |
++----------------------------------------------------------------------------------------------+
 
 Task 2: Enable Malicious User Detection and Mitigation Actions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -107,106 +104,99 @@ In this task you will leverage the user identification policy just built and
 then enable malicious user detection and create a malicious user mitigation and
 challenge.
 
-#. Click **Common Security Controls** in the left-hand navigation.
++----------------------------------------------------------------------------------------------+
+|                                                                                              |
+|1. Click **Common Security Controls** in the left-hand navigation.                            |
+|                                                                                              |
+|2. Click the dropdown for **Malicious User Detection** and select **Enable**.                 |
+|                                                                                              |
+||lab012|                                                                                      |
+|                                                                                              |
+|3. Click the dropdown for **Malicious User Mitigation And Challenges** and select **Enable**. |
+|                                                                                              |
+||lab013|                                                                                      |
+|                                                                                              |
+|4. Click the dropdown for **Malicious User Mitigation Settings** and select **Custom**.       |
+|                                                                                              |
+||lab014|                                                                                      |
+|                                                                                              |
+|5. Click the dropdown for **Custom**. Observe the existing other shared policies.             |
+|                                                                                              |
+|**shared/lab-sec-user-mitigation**                                                            |
+|                                                                                              |
+|**ves-io-shared/ves-io-default-malicious-user-mitigation**                                    |
+|                                                                                              |
+|.. note::                                                                                     |
+|                                                                                              |
+|    *Using shared namespace Malicious User Mitigation provides the ability to use API-updated |
+|    mitigation controls to implement common service security across multiple resources*.      |
+|                                                                                              |
+|6. Select **Add Item**.                                                                       |
+|                                                                                              |
+||lab015|                                                                                      |
+|                                                                                              |
+|7. In the **Metadata** section enter **security-user-mitigation** for the **Name** and then   |
+|   click **Add Item** under **Rules**.                                                        |
+|                                                                                              |
+||lab016|                                                                                      |
+|                                                                                              |
+|8. In the resulting window, click the dropdown for **Threat Level** and select **Low**.       |
+|                                                                                              |
+|9. Click the dropdown for **Action** and select **Java Script Challenge**.                    |
+|                                                                                              |
+|10. Select **Apply**.                                                                         |
+|                                                                                              |
+||lab017|                                                                                      |
+|                                                                                              |
+|11. In the **Malicious User Mitigation** window review the rule just created and click        |
+|    **Add Item** again.                                                                       |
+|                                                                                              |
+||lab018|                                                                                      |
+|                                                                                              |
+|12. In the resulting window, click the dropdown for **Threat Level** and select **Medium**.   |
+|                                                                                              |
+|13. Click the dropdown for **Action** and select **Captcha Challenge**.                       |
+|                                                                                              |
+|14. Select **Apply**.                                                                         |
+|                                                                                              |
+||lab019|                                                                                      |
+|                                                                                              |
+|15. In the **Malicious User Mitigation** window review the rules just created and click       |
+|    **Add Item** again.                                                                       |
+|                                                                                              |
+||lab020|                                                                                      |
+|                                                                                              |
+|16. In the resulting window, click the dropdown for **Threat Level** and select **High**.     |
+|                                                                                              |
+|17. Click the dropdown for **Action** and select **Block Temporarily**.                       |
+|                                                                                              |
+|18. Select **Apply**.                                                                         |
+|                                                                                              |
+||lab021|                                                                                      |
+|                                                                                              |
+|19. Observe the three Rules created and select **Continue**.                                  |
+|                                                                                              |
+||lab022|                                                                                      |
+|                                                                                              |
+|20. Note the updated **Malicious User Mitigation and Challenges** section and at the bottom   |
+|    of the window click the **Save HTTP Load Balancer** button.                               |
+|                                                                                              |
+||lab023|                                                                                      |
+|                                                                                              |
+||lab024|                                                                                      |
+|                                                                                              |
+|With a combination of user identification and malicious user policies, ACME Corp can now      |
+|detect malicious activities and apply mitigation steps. The mitigation steps include          |
+|issuing JavaScript Challenge or Captcha Challenge or temporary blocking of the user. Malicious|
+|User capabilities from F5 Distributed Cloud leverages AI/ML techniques to correlate multiple  |
+|suspicious user actions together in order to build a risk score around the user.  As the risk |
+|score goes up, users who are violating the ACME's security policies can be stopped from       |
+|accessing the site while other users who are coming from the same public IP can still access  |
+|the site without issue.                                                                       |
+|                                                                                              |
++----------------------------------------------------------------------------------------------+
 
-#. Click the dropdown for **Malicious User Detection** and select **Enable**.
-
-   |lab012|
-
-#. Click the dropdown for **Malicious User Mitigation And Challenges** and
-   select **Enable**.
-
-   |lab013|
-
-#. Click the dropdown for **Malicious User Mitigation Settings** and select
-   **Custom**.
-
-   |lab014|
-
-#. Click the dropdown for **Custom**. Observe the existing other shared policies.
-
-   **shared/lab-sec-user-mitigation**
-
-   **ves-io-shared/ves-io-default-malicious-user-mitigation**
-
-   .. note::
-
-      *Using shared namespace Malicious User Mitigation provides the ability
-      to use API-updated mitigation controls to implement common service
-      security across multiple resources.*
-
-#. Select **Add Item**.
-
-   |lab015|
-
-#. In the **Metadata** section enter **security-user-mitigation** for the
-   **Name** and then click **Add Item** under **Rules**.
-
-   |lab016|
-
-#. In the resulting window, click the dropdown for **Threat Level** and select
-   **Low**.
-
-#. Click the dropdown for **Action** and select **Java Script Challenge**.
-
-#. Select **Apply**.
-
-   |lab017|
-
-#. In the **Malicious User Mitigation** window review the rule just created and
-   click **Add Item** again.
-
-   |lab018|
-
-#. In the resulting window, click the dropdown for **Threat Level** and select
-   **Medium**.
-
-#. Click the dropdown for **Action** and select **Captcha Challenge**.
-
-#. Select **Apply**.
-
-   |lab019|
-
-#. In the **Malicious User Mitigation** window review the rules just created
-   and click **Add Item** again.
-
-   |lab020|
-
-#. In the resulting window, click the dropdown for **Threat Level** and select
-   **High**.
-
-#. Click the dropdown for **Action** and select **Block Temporarily**.
-
-#. Select **Apply**.
-
-   |lab021|
-
-#. Observe the three Rules created and select **Continue**.
-
-   |lab022|
-
-#. Note the updated **Malicious User Mitigation and Challenges** section and
-   at the bottom of the window click the **Save HTTP Load Balancer** button.
-
-   |lab023|
-
-   |lab024|
-
-Narrative Check
------------------
-
-With a combination of user identification and malicious user policies, ACME Corp
-can now detect malicious activities and apply mitigation steps. The mitigation steps include 
-issuing JavaScript Challenge or Captcha Challenge or temporary blocking of the user. Malicious 
-User capabilities from F5 Distributed Cloud leverages AI/ML techniques to correlate multiple suspicious
-user actions together in order to build a risk score around the user.  As the risk score goes up,
-users who are violating the ACME's security policies can be stopped from accessing the site while other 
-users who are coming from the same public IP can still access the site without issue.  
-
-
-**End of Lab 3:**  This concludes Lab 3, feel free to review and test the
-configuration.  A brief presentation will be shared prior to the beginning of Lab 4.
-
+**End of Lab 3:**  This concludes Lab 3. Feel free to review and test the configuration. A brief presentation will be shared prior to the beginning of Lab 4.
 
 |labend|
 

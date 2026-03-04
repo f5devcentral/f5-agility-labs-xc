@@ -308,21 +308,23 @@ paths that require additional protection. For example a path that could contain 
 |                                                                                                                                    |
 |     |WAF-Block|                                                                                                                    |
 +------------------------------------------------------------------------------------------------------------------------------------+
-| 21. Copy the support ID from the Request Rejected page in FIREFOX.                                                                 |
+| 21. Refresh your browser a few times.  This will generate additional WAF logs that we will be using in lab 3.                      |
++------------------------------------------------------------------------------------------------------------------------------------+
+| 22. After you have refreshed the browser a few times, copy the support ID from the current Request Rejected page in FIREFOX.       |
 |                                                                                                                                    |
 |     |Support-ID|                                                                                                                   |
 +------------------------------------------------------------------------------------------------------------------------------------+
-| 22. Open your Distributed Cloud Management Console.  Click on the AI Assistant icon in the top right corner.                       |
+| 23. Open your Distributed Cloud Management Console.  Click on the AI Assistant icon in the top right corner.                       |
 |                                                                                                                                    |
 |     |AI-Assistant|                                                                                                                 |
 +------------------------------------------------------------------------------------------------------------------------------------+
-| 23. At the prompt enter: Explain security event <Support-ID>.  Replacing <Support-ID> with the support ID you copied from the      |
+| 24. At the prompt enter: Explain security event <Support-ID>.  Replacing <Support-ID> with the support ID you copied from the      |
 |                                                                                                                                    |
 |     Request Rejected page.                                                                                                         |
 |                                                                                                                                    |
 |     |Explain-Event|                                                                                                                |
 +------------------------------------------------------------------------------------------------------------------------------------+
-| 24. The AI Assistant will provide a detailed analysis for the specified Support-ID.                                                |
+| 25. The AI Assistant will provide a detailed analysis for the specified Support-ID.                                                |
 |                                                                                                                                    |
 |     |Event-Analysis|                                                                                                               |
 +------------------------------------------------------------------------------------------------------------------------------------+

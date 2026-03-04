@@ -185,25 +185,25 @@ Accessing F5 Distributed Cloud
 | |labbgn|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
-.. |intro000| image:: _static/intro-000.png
+.. |intro000| image:: _static/intro-0.png
    :width: 800px
-.. |intro001| image:: _static/intro-01.png
+.. |intro001| image:: _static/intro-1.png
    :width: 800px
-.. |intro002| image:: _static/intro-02.png
+.. |intro002| image:: _static/intro-2.png
    :width: 800px
-.. |intro003| image:: _static/intro-03.png
+.. |intro003| image:: _static/intro-3.png
    :width: 800px
-.. |intro004| image:: _static/intro-04.png
+.. |intro004| image:: _static/intro-4.png
    :width: 800px
-.. |intro005| image:: _static/intro-05.png
+.. |intro005| image:: _static/intro-5.png
    :width: 800px
-.. |intro006| image:: _static/intro-06.png
+.. |intro006| image:: _static/intro-6.png
    :width: 800px
-.. |intro007| image:: _static/intro-07.png
+.. |intro007| image:: _static/intro-7.png
    :width: 800px
-.. |intro008| image:: _static/intro-08.png
+.. |intro008| image:: _static/intro-8.png
    :width: 800px
-.. |intro009| image:: _static/intro-09.png
+.. |intro009| image:: _static/intro-9.png
    :width: 800px
 .. |intro010| image:: _static/intro-10.png
    :width: 800px

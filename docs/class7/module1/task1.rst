@@ -83,6 +83,35 @@ This is normal behavior and partly due to the non-deterministic nature of LLMs.
 
 |module1-task1-cline-path-error|
 
+Cline Stuck on “Thinking”
+-------------------
+
+Occasionally, Cline may appear to get stuck on **“thinking”** and not complete a task.
+
+This can happen due to:
+
+* Model latency
+* Transient API delays
+* Large or complex prompts
+* The non-deterministic nature of generative AI
+
+If this happens:
+
+1. Click **Pause** on the task.
+2. Wait a few seconds.
+3. Click **Resume**.
+
+In most cases, Cline will successfully complete the task after resuming.
+
+If it continues to hang:
+
+* Cancel the task.
+* Slightly simplify or rephrase your prompt.
+* Retry.
+
+This behavior is normal in AI-assisted workflows and does not mean the lab is broken.
+
+
 Wrap-Up
 ~~~~~~~
 
