@@ -377,6 +377,14 @@ Click **Apply**
 |
     |lab021|
 |
+Scroll down and click **Apply**. 
+|
+    |lab022|
+|
+Click **AppplySave Service Policy**
+|
+    |lab023|
+|
 Lab Summary
 -----------
 
