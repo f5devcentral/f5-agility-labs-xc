@@ -139,43 +139,72 @@ To allow GitLab and Terraform to interact with F5 Distributed Cloud programmatic
    - This certificate will be reused by automation.
    - GitLab and Terraform will use it to deploy and manage F5XC objects.
 
-Create a Virtual K8s cluster in your F5XC NAMESPACE
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Verify the Virtual K8s Cluster
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-F5 Distributed Cloud Virtual Kubernetes (vK8s) is a managed Kubernetes abstraction that allows you to deploy containerized 
-applications without operating or maintaining a traditional Kubernetes cluster. You do not manage nodes, control planes, 
-or scaling—instead, F5 handles the infrastructure while you deploy workloads into a logical namespace. 
-In the AppWorld 2026 lab, vK8s is where the AI-generated application runs after the GitLab CI/CD pipeline builds and pushes 
-the container image. In this step, you will create a vK8s cluster in your assigned namespace.
+In the AppWorld 2026 lab environment, the **F5 Distributed Cloud Virtual Kubernetes (vK8s)** cluster is **automatically created at lab boot time** in the student's assigned namespace.  
+You do **not normally need to create it manually**.
 
-   Click on the F5 logo to go to the home page, then click on "Distributed Applications" tile on the right. 
-   
+To verify that the automation worked, follow the steps below.
+
+1. Log in to the **F5 Distributed Cloud Console**.
+2. Navigate to:
+
+   **Distributed Apps → Applications → Virtual K8s**
+
+3. In the list of Virtual K8s clusters, you should see:
+
+   **<YOUR NAMESPACE>-vk8**
+
+4. Verify that the **Status** shows **Ready (green)**.
+
+If the cluster appears and the status is **Ready**, no further action is required and you are ready to proceed to the next task.
+
+|f5xc-console-distro-app|
+
+|f5xc-console-distro-app-vk8-1|
+
+
+Manual vk8Creation (Only if Automation Failed)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If the Virtual K8s cluster **does not appear** in your namespace, you can create it manually using the following procedure.
+
+F5 Distributed Cloud Virtual Kubernetes (vK8s) is a managed Kubernetes abstraction that allows you to deploy containerized applications without operating or maintaining a traditional Kubernetes cluster.  
+You do not manage nodes, control planes, or scaling—instead, F5 handles the infrastructure while you deploy workloads into a logical namespace.
+
+In the AppWorld 2026 lab, **vK8s is where the AI-generated application will run after the GitLab CI/CD pipeline builds and pushes the container image.**
+
+1. From the F5XC home page, click the **Distributed Applications** tile.
+
    |f5xc-console-distro-app|
 
-   Under Applications, click Virtual K8s Clusters, then click "Add Virtual K8s"
-
-   |f5xc-console-distro-app-vk8-1|
+2. Under **Applications**, click **Virtual K8s**, then click **Add Virtual K8s**.
 
    |f5xc-console-distro-app-vk8-2|
 
-    .. note::
-       *If you don't see an "Applications" section, then you are not in the correct namespace.*
-       *Please change to your namespace under **Application Namespaces** Under Distributed Apps*   
+   .. note::
+      If you do not see the **Applications** section, you are likely not in the correct namespace.  
+      Change to your namespace under **Application Namespaces** in **Distributed Apps**.
 
    |f5xc-console-distro-app-vk8-6|
 
-   Fill in the form with the following values, then click "Add Virtual K8s"
+3. Fill in the form with the following values and click **Add Virtual K8s**.
 
-    - **Name:** <YOUR NAMESPACE>-vk8
-    - **Site:** Click "Add Item" and select virtual site "shared/appworld-k8s-vsite"
+   - **Name:** <YOUR NAMESPACE>-vk8
+   - **Site:** Click **Add Item** and select the virtual site **shared/appworld-k8s-vsite**
 
    |f5xc-console-distro-app-vk8-3|
 
-   The virtual K8s cluster will be created in a few moments. Click "Refresh" after a minute or two and the status should change to "Running".
+4. The Virtual K8s cluster will be created in a few moments.
+
+   Click **Refresh** after a minute or two.  
+   The **Status** should change to **Running**.
 
    |f5xc-console-distro-app-vk8-4|
 
    |f5xc-console-distro-app-vk8-5|
+
 
 Wrap-Up
 ~~~~~~~
