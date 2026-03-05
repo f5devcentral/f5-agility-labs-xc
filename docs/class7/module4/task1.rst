@@ -37,9 +37,14 @@ Review: Pre-Scan vs Post-Scan WAF Reports
 
 Review the Pre-Scan and Post-Scan reports performed using **F5XC Web Application Scanning** on a live version of the application.
 
-Open a new tab in your browser and navigate to:
+Click on the links below to view the reports in live instance of the F5 AI Generated Application:
 
-`F5 AI Generated Application <https://f5-ai-generated-app.xc.hvf5lab.com/reports>`_ - https://f5-ai-generated-app.xc.hvf5lab.com/reports
+.. raw:: html
+
+   <a href="https://f5-ai-generated-app.xc.hvf5lab.com/reports" target="_blank">
+   F5 AI Generated Application
+   </a>
+
 
 The reports include:
 
