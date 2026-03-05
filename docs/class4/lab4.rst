@@ -99,7 +99,7 @@ In this task, you will follow steps to attach a WAF policy to your Load Balancer
    .. image:: _static/lab4-af-review.png
       :width: 700px
 
-#. Review the WAF Policy configration, click **Back** or **Close** at the bottom right of the page.
+#. Review the WAF Policy configration, click **Back** at the bottom right of the page.
 
    .. image:: _static/lab4-af-back.png
       :width: 800px
