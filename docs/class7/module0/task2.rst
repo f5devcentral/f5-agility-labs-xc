@@ -152,6 +152,8 @@ To verify that the automation worked, follow the steps below.
 
    **Distributed Apps → Applications → Virtual K8s**
 
+   |f5xc-console-distro-app|
+
 3. In the list of Virtual K8s clusters, you should see:
 
    **<YOUR NAMESPACE>-vk8**
@@ -160,12 +162,8 @@ To verify that the automation worked, follow the steps below.
 
 If the cluster appears and the status is **Ready**, no further action is required and you are ready to proceed to the next task.
 
-|f5xc-console-distro-app|
 
-|f5xc-console-distro-app-vk8-1|
-
-
-Manual vk8Creation (Only if Automation Failed)
+Manual vk8 Creation (Only if Automation Failed)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If the Virtual K8s cluster **does not appear** in your namespace, you can create it manually using the following procedure.
@@ -180,6 +178,8 @@ In the AppWorld 2026 lab, **vK8s is where the AI-generated application will run 
    |f5xc-console-distro-app|
 
 2. Under **Applications**, click **Virtual K8s**, then click **Add Virtual K8s**.
+
+   |f5xc-console-distro-app-vk8-1|
 
    |f5xc-console-distro-app-vk8-2|
 
