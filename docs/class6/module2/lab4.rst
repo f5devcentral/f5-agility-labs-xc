@@ -452,7 +452,6 @@ Look through the request data and determine the policy that was applied to the r
 
 **Great job! You have now quickly completed every requirement thrown at you with F5 Distributed Cloud App Connect and Network Connect concepts.**
 
-There is a final bonus lab that will showcase some App Layer Routing and Security Concepts as well. 
 
 Lab Summary
 -----------
