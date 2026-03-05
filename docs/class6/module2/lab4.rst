@@ -381,10 +381,12 @@ Scroll down and click **Apply**.
 |
     |lab022|
 |
-Click **AppplySave Service Policy**
+Click **Apply**
 |
     |lab023|
 |
+Click **Save Service policy**
+
 Lab Summary
 -----------
 
