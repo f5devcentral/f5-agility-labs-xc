@@ -387,6 +387,26 @@ Click **Apply**
 |
 Click **Save Service policy**
 
+Test Service Policy
+-------------------
+
+If you don't already have a tab open to the Diag tool, in your browser go to: http://[animal-name]-awstool.lab-mcn.f5demos.com
+
+Try your curl command again **without** the **--head** flag.:: 
+
+    curl http://[animal-name]-aws-to-azure-lb.lab-mcn.f5demos.com --resolve [animal-name]-aws-to-azure-lb.lab-mcn.f5demos.com:80:10.0.5.236
+
+|
+    |lab025|
+|
+
+Now run the command again but insert the **\-\-head** command.::
+
+    curl --head  http://[animal-name]-aws-to-azure-lb.lab-mcn.f5demos.com --resolve [animal-name]-aws-to-azure-lb.lab-mcn.f5demos.com:80:10.0.5.236
+
+|
+    |lab026|
+|
 Lab Summary
 -----------
 
@@ -474,7 +494,7 @@ control over application traffic.
    :width: 800px
 .. |lab024| image:: ../images/temp/lab4/lbsp.png
    :width: 800px
-.. |lab025| image:: ../images/temp/lab4/success.png
+.. |lab025| image:: ../images/temp/lab4/spsuccess.png
    :width: 800px
 .. |lab026| image:: ../images/temp/lab4/forbid.png
    :width: 800px
