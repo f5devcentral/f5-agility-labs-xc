@@ -369,6 +369,11 @@ HTTP Method/Method List                 Get
 HTTP Path                               **Configure** >> **Add Item** add **/** under **Prefix Values**. 
 ==================================      ==============
 
+Click **Apply**.
+|
+    |lab020|
+|
+
 Lab Summary
 -----------
 
