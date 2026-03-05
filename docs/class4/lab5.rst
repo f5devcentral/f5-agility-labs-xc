@@ -123,8 +123,7 @@ previously built HTTP Load Balancer object delivering the targeted API.
    .. image:: _static/lab4-image029.png
       :width: 800px      
 
-#. Note the updated configuration for API Rate limiting, Click **Other Settings** on the
-   the left, navigation on the bottom right then click on **Save and Exit**
+#. Note the updated configuration for API Rate limiting then select **Save HTTP Load Balancer** at the bottom right of the window.
 
    .. image:: _static/lab4-image030.png
       :width: 800px
