@@ -99,7 +99,7 @@ In this task, you will follow steps to attach a WAF policy to your Load Balancer
    .. image:: _static/lab4-af-review.png
       :width: 700px
 
-#. Review the WAF Policy configration, click **Back** or **Close** at the bottom right of the page.
+#. Review the WAF Policy configration, click **Back** at the bottom right of the page.
 
    .. image:: _static/lab4-af-back.png
       :width: 800px
@@ -108,9 +108,9 @@ In this task, you will follow steps to attach a WAF policy to your Load Balancer
 
       Suspicious and Good Bot is set to ignore to reduce false positives from requests made in this lab via 'curl'.
 
-#. Click **Other Settings** on the left navigation, then click **Save and Exit**
+#. Select **Save HTTP Load Balancer** at the bottom right of the window.
 
-   .. image:: _static/lab4-image053.png
+   .. image:: _static/shared-lb-save.png
       :width: 800px
 
 Task 3: Simulate a Mitigated Attack
