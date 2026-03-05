@@ -111,7 +111,7 @@ Azure workload.
 
     |lab007|
 
-12. Click **Apply**, **Apply**, and then **Save and Exit**.
+12. Click **Apply**, **Apply**, and then **Add HTTP Load Balancer**.
 
 Task 3: Test Internal Load Balancer
 ------------------------------------
@@ -136,7 +136,7 @@ Now let's test the internal load balancer you just created.
 
     **curl --head http://<your-namespace>-backend-vip-to-azure.lab-mcn.f5demos.com --resolve <your-namespace>-backend-vip-to-azure.lab-mcn.f5demos.com:80:10.1.1.5**
 
-    |lab009|
+
 
 16. You should now receive a **200 OK** response!
 
@@ -291,14 +291,14 @@ Let's test the connectivity between AWS and Azure through the internal load bala
 
 43. Navigate to **Multi-Cloud Network Connect >> Manage >> Site Management >> AWS VPC Sites**.
 
-44. Click on **student-awsnet**.
+44. Click on **appworld-aws**.
 
 45. Navigate to the **Infrastructure** tab and note the inside interface IP address.
 
     |lab017|
 
     .. note::
-       In this example, the inside interface IP is **10.0.5.16*. Your IP may differ.
+       In this example, the inside interface IP is *10.0.5.5*. Your IP may differ.
 
 46. Go to the diagnostic tool: **http://<your-namespace>-awstool.lab-mcn.f5demos.com**
 
@@ -319,6 +319,55 @@ Let's test the connectivity between AWS and Azure through the internal load bala
     .. tip::
        You now have full proxy connectivity between IP-overlapped AWS and Azure resources over 
        a private encrypted tunnel!
+
+Task 8: Adding Security
+---------------------------------------
+
+You just configured an App Connect Proxy listening on port 80 of the Inside interface of the AWS XC Node. Since the App Connect Proxy is **default-deny** and only accepts traffic on the configured load balancer port with the appropriate Layer 7 Domain information, we can rest assured that no other ports will be permitted. 
+
+The second request to ensure that the **pretend API running on port 80 in Azure is Read Only or R/O**, can easily be solved with a Service Policy. For ease of demonstration we will make use of two HTTP methods and **pretend that HEAD is R/W** and of course **GET is natively R/O.**
+
+Head is one of many HTTP methods used to interact with API's amongst other things. Some other common ones are GET, POST and PUT. 
+
+Technically speaking, The HEAD method is identical to GET except that the server MUST NOT return a message-body in the response. 
+
+.. Note:: In our Lab we are just pretending that HEAD is R/W. 
+
+What if we we didn't want to allow **HEAD** or only allow certain HTTP methods between these two workloads? 
+
+In general, for any of our HTTP Load Balancers, what if we wanted to block a geolocation? 
+What if we wanted to allow some IP's and disallow others? How about file type enforcements?
+
+**Service Policies to the Rescue!**
+
+While Service Policies can do many things, we will go through a quick exercise to simply block the HTTP Method of **HEAD** for our AWS to Azure HTTP Load Balancer. This example could easily be expanded upon. 
+
+When you create a **Service Policy** it intrinsically contains a **default deny**. Therefore, our Service Policy will actually be a definition of what is allowed. 
+
+Back in XC Console, from the **Side menu** under **Security**, click on **Service Policies** >> **Service Policies** and click the **Add Service Policy** button. 
+
+==================================      ==============
+Variable                                Value
+==================================      ==============
+Name                                    [animal-name]-allow-get-sp
+Server Selection                        Server Name
+Server Name                             [animal-name]-aws-to-azure-lb.lab-mcn.f5demos.com
+Select Policy Rules                     Custom Rule List
+Rules                                   **Configure**, Click **Add Item** > See Below:
+==================================      ==============
+
+**Rules**
+
+==================================      ==============
+Variable                                Value
+==================================      ==============
+Name                                    allow-get
+Action                                  Allow
+Clients                                 Any Client
+Servers                                 Domain Matcher >> **Exact Value** >> [animal-name]-aws-to-azure-lb.lab-mcn.f5demos.com
+HTTP Method/Method List                 Get
+HTTP Path                               **Configure** >> **Add Item** add **/** under **Prefix Values**. 
+==================================      ==============
 
 Lab Summary
 -----------
@@ -377,7 +426,7 @@ control over application traffic.
    :width: 800px
 .. |lab009| image:: ../images/temp/lab4/domains.png
    :width: 800px
-.. |lab010| image:: ../images/temp/lab4/curlhead.png
+.. |lab010| image:: ../images/temp/lab4/domains.png
    :width: 800px
 .. |lab011| image:: ../images/temp/lab4/curltest.png
    :width: 800px
