@@ -320,6 +320,13 @@ Let's test the connectivity between AWS and Azure through the internal load bala
        You now have full proxy connectivity between IP-overlapped AWS and Azure resources over 
        a private encrypted tunnel!
 
+Task 8: Adding Security
+---------------------------------------
+
+You just configured an App Connect Proxy listening on port 80 of the Inside interface of the AWS XC Node. Since the App Connect Proxy is **default-deny** and only accepts traffic on the configured load balancer port with the appropriate Layer 7 Domain information, we can rest assured that no other ports will be permitted. 
+
+The second request to ensure that the **pretend API running on port 80 in Azure is Read Only or R/O**, can easily be solved with a Service Policy. For ease of demonstration we will make use of two HTTP methods and **pretend that HEAD is R/W** and of course **GET is natively R/O.**
+
 Lab Summary
 -----------
 
