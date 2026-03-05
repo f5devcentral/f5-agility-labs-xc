@@ -298,7 +298,7 @@ Let's test the connectivity between AWS and Azure through the internal load bala
     |lab017|
 
     .. note::
-       In this example, the inside interface IP is **10.0.5.5*. Your IP may differ.
+       In this example, the inside interface IP is *10.0.5.5*. Your IP may differ.
 
 46. Go to the diagnostic tool: **http://<your-namespace>-awstool.lab-mcn.f5demos.com**
 
