@@ -291,14 +291,14 @@ Let's test the connectivity between AWS and Azure through the internal load bala
 
 43. Navigate to **Multi-Cloud Network Connect >> Manage >> Site Management >> AWS VPC Sites**.
 
-44. Click on **student-awsnet**.
+44. Click on **appworld-aws**.
 
 45. Navigate to the **Infrastructure** tab and note the inside interface IP address.
 
     |lab017|
 
     .. note::
-       In this example, the inside interface IP is **10.0.5.16*. Your IP may differ.
+       In this example, the inside interface IP is **10.0.5.5*. Your IP may differ.
 
 46. Go to the diagnostic tool: **http://<your-namespace>-awstool.lab-mcn.f5demos.com**
 
