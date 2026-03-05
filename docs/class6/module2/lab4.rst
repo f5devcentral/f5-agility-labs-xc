@@ -407,6 +407,53 @@ Now run the command again but insert the **\-\-head** command.::
 |
     |lab026|
 |
+
+You have now successfully configured an application layer **Service Policy** that enforces HTTP methods. 
+
+.. Note:: This is a primitive example of a much more powerful construct that can be used to enforce, secure and manipulate HTTP traffic much like iRules did on F5's classic BIG-IP platform. 
+
+Review Service Policy Logs
+---------------------------
+
+Back in XC Console, from the **Side menu** under **Overview**, click on **Applications** and scroll down and click on your **[animal-name]-aws-to-azure-lb** under **Load Balancers**.
+
+|
+    |lab027|
+|
+
+Take a moment to observe some of the analytics and then click on the **Requests** tab at the top of the page. 
+
+|
+    |lab028|
+|
+
+Here you will find the full request log. You will see the request path and if you click the little settings gear on the far right, you can add the Response Code given back to the client and several other metrics. 
+You may have to click refresh in the upper right or change your time frame if you took a break or don't see any data. 
+
+|
+    |lab029|
+|
+
+**Expand** one of the log entries that had a **403** response code. These were the forbidden **Head** requests. 
+Look through the request data and determine the policy that was applied to the request as well as the **result**. 
+
+.. note:: If you do not see a response code column in the data, click on the wheel on the right, next to the search edit box and check response code. Click Apply.
+
+|
+    |lab030|
+|
+
+**Expand** one of the log entries that had a **200** response code. These were the allowed **Get** requests. 
+Look through the request data and determine the policy that was applied to the request as well as the **result**. 
+
+|
+    |lab031|
+|
+
+**Great job! You have now quickly completed every requirement thrown at you with F5 Distributed Cloud App Connect and Network Connect concepts.**
+
+There is a final bonus lab that will showcase some App Layer Routing and Security Concepts as well. 
+
 Lab Summary
 -----------
 
