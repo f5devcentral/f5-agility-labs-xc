@@ -378,12 +378,12 @@ Test Bot Defense in Browser vs curl (Why Results Differ)
    - Bot Defense uses these signals to distinguish browsers from automation.
    - This is why browser access can be allowed while scripted clients are blocked.
 
-14. Generate simulated bot traffic using curl (expected to be blocked).
+14. Generate simulated bot traffic using curl from the VScode Terminal (expected to be blocked).
 
-   Now send non-browser, automated POST requests to protected pages.
+   Open a new terminal in VS Code and run the following commands to send non-browser, automated POST requests to protected pages.
 
    .. note::
-      *Update the URLs below with your namespace.*
+      *Update the URLs below with your namespace.**TIP:** create a new text file in VScode to edit the curl commands*
 
    **Login Page Test**
 
