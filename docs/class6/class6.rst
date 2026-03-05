@@ -20,15 +20,12 @@ This lab uses the **[F5XC MCN] Base Lab w/SMSv2** UDF Blueprint. Your lab enviro
 .. note:: The lab environment is automatically provisioned when you start the lab. All required Customer Edge (CE) nodes and infrastructure are built for you.
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 0
    :glob:
 
    intro
    narrative
-   module1/module1.rst
-   module1/lab*
-   module2/module2.rst
-   module2/lab*
-
+   module*/module*
+ 
 .. |intro001| image:: ./images/intro.png
    :width: 800px
