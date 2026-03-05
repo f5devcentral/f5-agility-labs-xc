@@ -95,7 +95,7 @@ This can happen due to:
 * Large or complex prompts
 * The non-deterministic nature of generative AI
 
-If this happens:
+If this happens (Cline is not responding for more than 1 minute or 2 minutes):
 
 1. Click **Pause** on the task.
 2. Wait a few seconds.

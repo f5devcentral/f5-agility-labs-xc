@@ -221,7 +221,7 @@ Extend the Application with User-Facing Pages
 
 4. Save files as Cline generates them.
 
-   As Cline completes each file update, VS Code will prompt you to save before it continues.
+   As Cline completes each file update, VS Code will prompt you to save before it continues (If you enabled **Auto-Approve** settings on previous tasks this will not require manual approval).
 
    |module3-vscode-cline-save-file|
 

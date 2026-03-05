@@ -1,7 +1,7 @@
 Task 1 – Enable F5XC API Discovery
 ===================================
 
-In this task, you will extend the existing application by adding new API endpoints using AI-assisted coding and then enable **API Discovery** through policy-as-code.  
+In this task, you will extend the existing application by adding new API endpoints using AI-assisted coding and then enable **API Discovery** through **policy-as-code**.  
 This demonstrates how application changes and security controls evolve *together* through CI/CD—without manual configuration in the security platform.
 
 You’ll see how an API specification becomes a required artifact and how F5 Distributed Cloud uses it to discover and protect APIs at runtime.
@@ -13,7 +13,17 @@ Extend the Application Using Cline
 
    Make sure you are working in the ``module2-app`` folder and that your previous pipeline completed successfully.
 
-2. Use the provided pre-canned prompt to add new API endpoints.
+2. Enable the Cline extension to run "autonomously" to edit and run commands without propmpts (**OPTIONAL BUT RECOMMENDED**).
+
+   In the VS Code sidebar, click on the Cline icon to open the extension. Then click the **Auto-approved** Seciton above the chat box.
+
+   |module3-vscode-cline-auto-approved-1|
+
+   Then check the boxes **Edit Project Files**, **Edit All Files** and **Execute All Commands** to allow Cline to make changes and run commands without asking for approval each time.
+
+   |module3-vscode-cline-auto-approved-2|
+
+3. Use the provided pre-canned prompt to add new API endpoints.
 
    Using the **Cline extension**, run the pre-canned prompt provided by the instructor to extend the application with additional API endpoints.
 
@@ -176,7 +186,7 @@ Vibe Coding Experience in VS Code (What You’ll See)
 
    |module3-vscode-cline-switch-to-act|
 
-3. Save files as Cline generates them.
+3. Save files as Cline generates them (If using **Auto-Approve** settings this will not require manual approval).
 
    As Cline completes each file update, VS Code will prompt you to save before it continues.
 
@@ -184,7 +194,7 @@ Vibe Coding Experience in VS Code (What You’ll See)
 
 4. Cline command execution requests and Pytest tests.
 
-   During implementation, Cline may run commands and execute pytest to validate the work.
+   During implementation, Cline may run commands and execute pytest to validate the work (If using **Auto-Approve** settings this will not require manual approval)..
 
    |module3-vscode-cline-run-command|
 
@@ -357,7 +367,7 @@ Review API Endpoints in F5 Distributed Cloud
 
 2.  Review API Endpoints configuration and schema.
 
-   Click on the **API Endpoints** tab to see discovered API endpoints and their correlation with the OpenAPI specification.
+   Click on the **API Endpoints** tab to see discovered API endpoints and their correlation with the OpenAPI specification. You can also switch from **Table** to **Graph** view for a visual representation.
 
    |module3-f5xc-waap-security-api-endpoints-traffic|
 
@@ -442,3 +452,7 @@ In the next task, you will build on this foundation by enabling **Bot Defense** 
    :width: 400px
 .. |module3-vscode-source-control-sync-changes| image:: ../images/module3/module3-vscode-source-control-sync-changes.png
    :width: 800px
+.. |module3-vscode-cline-auto-approved-1| image:: ../images/module3/module3-vscode-cline-auto-approved-1.png
+   :width: 400px
+.. |module3-vscode-cline-auto-approved-2| image:: ../images/module3/module3-vscode-cline-auto-approved-2.png
+   :width: 400px

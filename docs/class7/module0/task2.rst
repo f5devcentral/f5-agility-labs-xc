@@ -158,6 +158,12 @@ the container image. In this step, you will create a vK8s cluster in your assign
 
    |f5xc-console-distro-app-vk8-2|
 
+    .. note::
+       *If you don't see an "Applications" section, then you are not in the correct namespace.*
+       *Please change to your namespace under **Application Namespaces** Under Distributed Apps*   
+
+   |f5xc-console-distro-app-vk8-6|
+
    Fill in the form with the following values, then click "Add Virtual K8s"
 
     - **Name:** <YOUR NAMESPACE>-vk8
@@ -214,3 +220,5 @@ Next, you will configure GitLab and begin deploying applications and security co
    :width: 800px
 .. |f5xc-console-distro-app-vk8-5| image:: ../images/module0/f5xc-console-distro-app-vk8-5.png
    :width: 800px
+.. |f5xc-console-distro-app-vk8-6| image:: ../images/module0/f5xc-console-distro-app-vk8-6.png
+   :width: 200px
