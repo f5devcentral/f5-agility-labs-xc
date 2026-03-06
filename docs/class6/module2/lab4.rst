@@ -289,8 +289,10 @@ Let's test the connectivity between AWS and Azure through the internal load bala
 
 42. First, verify the inside interface IP of the AWS CE node.
 
-43. Navigate to **Multi-Cloud Network Connect >> Manage >> Site Management >> AWS VPC Sites**.
+43. Navigate to **Multi-Cloud Network Connect >> Manage >> Site Management >> Secure Mesh Sites v2.
 
+    |lab032|
+    
 44. Click on **appworld-aws**.
 
 45. Navigate to the **Infrastructure** tab and note the inside interface IP address.
@@ -553,4 +555,6 @@ control over application traffic.
 .. |lab030| image:: ../images/temp/lab4/403.png
    :width: 800px
 .. |lab031| image:: ../images/temp/lab4/200.png
+   :width: 800px
+.. |lab032| image:: ../images/temp/lab4/smsv2-aws.png
    :width: 800px
