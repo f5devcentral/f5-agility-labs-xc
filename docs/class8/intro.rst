@@ -3,17 +3,25 @@ Introduction: Accessing F5 Distributed Cloud Console
 
 **Narrative:**
 
-Congratulations! You are an Application Security Engineer at ACME Corp.
+Congratulations! You are a Network Security Engineer at ACME Corp. 
 
-ACME’s Application Team supports a mix of modern web applications, APIs, and SaaS-based services that are continuously evolving. New features are deployed frequently, traffic patterns shift across regions, and security threats are constantly adapting. With multiple application versions, public exposure, and global users, controlling how traffic flows through the environment has become a top priority.
+ACME has an Application Team that supports internally developed traditional and 
+modern apps, vendor provided and SaaS applications. As security threats are becoming 
+more prevalant, the ACME's Risk and Compliance organization has mandated that Web 
+Application Firewalls be deployed across all public facing applications within the next 30 days.  
 
-ACME leadership has made it clear: security cannot slow innovation but it must be built into the traffic flow itself. The team needs the ability to intelligently steer traffic for blue/green testing, apply granular security controls at specific application paths, and maintain real-time visibility into both security events and performance metrics.
+As the Network Security Engineer, you are tasked with evaluating how to securely 
+deploy a WAF across your entire public application environment. At first you consider 
+the traditional methods of deploying and managing your native WAFs in the Data Center, AWS, Azure, 
+GCP but quickly realize that learning and managing multiple WAF technologies would be time-consuming 
+and difficult to operate.
 
-As the Application Security Engineer, you are tasked with designing and validating this data plane. You need to enforce access through Service Policies, steer traffic through intelligent routing, apply WAF protections where they matter most, and ensure everything can be monitored and investigated through centralized dashboards.
+You recently saw a post on LinkedIn about a F5 SaaS product claiming to solve multi-cloud 
+appplication security complexities. Given your current timeline and industry knowledge of F5 being a 
+leader for decades, you decide to check it out and end up in the chair you are sitting in today: 
+Taking a first-hand look at how F5 makes WAAP (Web Application and API Protection) simple, quick to deploy,
+and secure. 
 
-Rather than stitching together tools across environments, you turn to F5 Distributed Cloud to secure, steer, and observe application traffic from a unified platform.
-
-Because SaaS happens. Your job is to control the flow.
 
 
 
