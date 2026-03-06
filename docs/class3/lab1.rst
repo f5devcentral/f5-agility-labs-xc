@@ -47,7 +47,7 @@ You'll now navigate to review the load balancer configuration as shown below.
    :align: center
 
 Make note of the name of the load balancer for your deployment as it will be different than the one shown below. It should be in the format
-of *<adjective-animal>*-routing-https-lb. 
+of *<your-namespace>*-routing-https-lb. 
 
 .. image:: _images/lab1/lb-name.png
    :scale: 30%
@@ -230,12 +230,12 @@ to replace the domain name in the command with your own.
 
 .. code-block:: bash
 
-   curl -I https://simple-mule.lab-app.f5demos.com/
+   curl -I https://<your-namespace>.lab-app.f5demos.com/
 
 
 .. code-block:: bash
 
-   curl -I https://simple-mule.lab-app.f5demos.com/ -H "x-f5-appworld: RjUtQXBwd29ybGQ="
+   curl -I https://<your-namespace>.lab-app.f5demos.com/ -H "x-f5-appworld: RjUtQXBwd29ybGQ="
 
 Please alternate these commands several times to populate your dashboard.
 
