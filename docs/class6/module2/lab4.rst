@@ -306,7 +306,7 @@ Let's test the connectivity between AWS and Azure through the internal load bala
 
 47. Click **Run Command** and paste the following (remember you IP may differ):
 
-    **curl http://<your-namespace>-aws-to-azure-lb.lab-mcn.f5demos.com --resolve <your-namespace>-aws-to-azure-lb.lab-mcn.f5demos.com:80:10.0.5.16**
+    **curl http://<your-namespace>-aws-to-azure-lb.lab-mcn.f5demos.com --resolve <your-namespace>-aws-to-azure-lb.lab-mcn.f5demos.com:80:10.0.5.5**
 
     |lab018|
 
@@ -314,7 +314,7 @@ Let's test the connectivity between AWS and Azure through the internal load bala
 
 48. Test again with the **--head** flag:
 
-    **curl --head http://<your-namespace>-aws-to-azure-lb.lab-mcn.f5demos.com --resolve <your-namespace>-aws-to-azure-lb.lab-mcn.f5demos.com:80:10.0.5.16**
+    **curl --head http://<your-namespace>-aws-to-azure-lb.lab-mcn.f5demos.com --resolve <your-namespace>-aws-to-azure-lb.lab-mcn.f5demos.com:80:10.0.5.5**
 
     |lab019|
 
