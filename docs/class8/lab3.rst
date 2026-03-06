@@ -11,7 +11,7 @@ Lab 3: Zero Day Exploit Response with Rate Limiting and Custom Service Policies
 
 You've been called into an all-hands incident response conference call.  There is a zero-day exploit specifically
 targeting one of ACME Corp's application.  The attacks are coming from multiple IP addresses that are dynamically 
-changin so a simple IP shun will not be effective.  The attacks are compomising the application as valid users 
+changing so a simple IP shun will not be effective.  The attacks are compromising the application as valid users 
 are getting poor performance as your application infrastructure is being overloaded.  
 
 After reviewing the data, the application team has asked if you can deploy Rate Limiting to help ACME Corp limit 
@@ -453,7 +453,7 @@ a specific page of the application that is vulnerable to close the Zero Day expl
 
    |lab065|
 
-#. Time to test to see if the web vulenrability is patched. Now test the following from your client:
+#. Time to test to see if the web vulnerability is patched. Now test the following from your client:
 
    * **Browser**: *https://<namespace>.lab-sec.f5demos.com/index.php?page=header*
    * **cURL**: *https://<namespace>.lab-sec.f5demos.com/*
@@ -481,7 +481,7 @@ and you matching criteria from client requests (headers, parameters, paths, requ
 effectively control the access to protected applications and APIs.
 
 Service Policies can be a foundational part of an organizations security program by extending zero-trust segmentation
-capabilities beyond a company's traditional network  utilizng F5's Regional Edges and Application Delivery Network.
+capabilities beyond a company's traditional network  utilizing F5's Regional Edges and Application Delivery Network.
 Service Policies can also be a key part of security incident response to quickly stop zero-day attacks.
 
 +----------------------------------------------------------------------------------------------+
