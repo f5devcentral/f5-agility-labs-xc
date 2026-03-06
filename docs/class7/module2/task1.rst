@@ -164,7 +164,7 @@ Observe the Pipeline Failure
    - ``build`` – Builds and pushes the container image
    - ``deploy`` – Deploys infrastructure and security controls using Terraform
 
-2. Observe the pipeline failure.
+2. Observe the pipeline "Commit Module 2 Task1 Run 1" status shows **Failed**.
 
    The pipeline will fail at the ``policy_gate`` stage.
 

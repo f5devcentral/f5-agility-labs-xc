@@ -10,14 +10,14 @@ Lab 2: Enabling Positive Application Security with Service Policies
 After building a negative enforcement model, ACME Corp's security team would like to further
 increase the security posture of the environment.  Instead of having an "allow-all" rule, the Security team
 has tasked you to build a "deny-all" rule to further close down down the attack surface of the application
-and more narrowly define the segement of users allowed to access the application. Your goal is to build
-this new postive security model on a single application so it does not affect access to other applications 
+and more narrowly define the segment of users allowed to access the application. Your goal is to build
+this new positive security model on a single application so it does not affect access to other applications 
 in the F5 Distributed Cloud Tenant.
 
 **Expected Lab Time: 20 minutes**
 
 Task 1: Reviewing Current Access Trends  
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 #. Return to the F5 Distributed Cloud Console - **Web Application & API Protection > Overview > Performance** 
    Dashboard.

@@ -221,7 +221,7 @@ Extend the Application with User-Facing Pages
 
 4. Save files as Cline generates them.
 
-   As Cline completes each file update, VS Code will prompt you to save before it continues.
+   As Cline completes each file update, VS Code will prompt you to save before it continues (If you enabled **Auto-Approve** settings on previous tasks this will not require manual approval).
 
    |module3-vscode-cline-save-file|
 
@@ -378,12 +378,12 @@ Test Bot Defense in Browser vs curl (Why Results Differ)
    - Bot Defense uses these signals to distinguish browsers from automation.
    - This is why browser access can be allowed while scripted clients are blocked.
 
-14. Generate simulated bot traffic using curl (expected to be blocked).
+14. Generate simulated bot traffic using curl from the VScode Terminal (expected to be blocked).
 
-   Now send non-browser, automated POST requests to protected pages.
+   Open a new terminal in VS Code and run the following commands to send non-browser, automated POST requests to protected pages.
 
    .. note::
-      *Update the URLs below with your namespace.*
+      *Update the URLs below with your namespace.**TIP:** create a new text file in VScode to edit the curl commands. There is no need to save the file*
 
    **Login Page Test**
 
@@ -434,6 +434,9 @@ Review Bot Defense in F5 Distributed Cloud
 
    |module3-task2-waap-security-bot-dashboard|
 
+   You can also review specific security events related to bot defense in the **Security Analytics** section.
+
+|  module3-task2-waap-security-bot-security-event| 
    *What to notice:*
    
    - Bot Defense is enabled for the application.
@@ -514,4 +517,6 @@ That final comparison brings the lab to its conclusion—and reinforces the full
 .. |module3-vscode-cline-start-new-task| image:: ../images/module3/module3-vscode-cline-start-new-task.png
    :width: 400px
 .. |module3-vscode-source-control-commit| image:: ../images/module3/module3-vscode-source-control-commit.png
+   :width: 400px
+.. |module3-task2-waap-security-bot-security-event| image:: ../images/module3/module3-task2-waap-security-bot-security-event.png
    :width: 400px
