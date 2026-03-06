@@ -147,7 +147,14 @@ You will now attach the pre-configured AWS segment to your CE site's interface.
 14. Configure your interface then click **Apply**:
 
     **IP Configuration:**
-    
+
+    ================================  ========================================
+    Variable                          Value
+    ================================  ========================================
+    Select VRF                        Segment (Global VRF)
+    Segment (Global VRF)              appworld-aws-segment
+    ================================  ========================================
+
     ================================  ========================================
     Variable                          Value
     ================================  ========================================
