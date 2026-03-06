@@ -182,7 +182,7 @@ privately over port 80. To test this, you will use a diagnostic tool running on 
     IP                                10.0.5.253
     Site or Virtual Site              Site
     Site                              system/appworld-aws
-    Select Network on the site        Outside Network
+    Select Network on the site        Inside Network
     ================================  ========================================
 
 23. Click **Apply** and then **Add Origin Pool**.
