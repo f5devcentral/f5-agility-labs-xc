@@ -147,7 +147,7 @@ You will now attach the pre-configured AWS segment to your CE site's interface.
 14. Configure your interface then click **Apply**:
 
     **IP Configuration:**
-
+    
     ================================  ========================================
     Variable                          Value
     ================================  ========================================
