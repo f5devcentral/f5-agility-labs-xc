@@ -276,7 +276,7 @@ Now you'll create an internal load balancer in AWS that connects to Azure.
        The AWS CE node has two interfaces (Inside/Outside). We're advertising on the Inside 
        interface to create an internal load balancer.
 
-40. Click **Apply**, **Apply**, and then **Save and Exit**.
+40. Click **Apply**, **Apply**, and then **Add HTTP Load Balancer**.
 
 41. Verify you now have 4 HTTP load balancers for your namespace.
 
