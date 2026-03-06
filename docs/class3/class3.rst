@@ -47,7 +47,9 @@ Before starting the course, update your nampspace to dynamically update the guid
     
     <p><strong>Current namespace: </strong> <span id="currentNamespace">&lt;namespace&gt;</span></p>
 
-.. note:: Guide page might need to be refreshed to get updated namespace to render.
+.. note:: You may have had a namespace from a previous lab, please update with the new.
+
+.. warning:: Guide pages might need to be refreshed to get updated namespace to render.
 
 .. toctree::
    :maxdepth: 1
