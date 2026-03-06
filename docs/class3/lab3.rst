@@ -1,20 +1,18 @@
 Lab 3: Exploring Security and Performance Dashboard, and Leveraging AI Assistant
 ====================================================================
 
-In this final lab, students will review the Distributed Cloud Security and Performance dashboards to observe how Service Policies and Routes configured in previous labs are enforced in real time. This lab highlights how performance metrics such as request volume, response codes, latency, and upstream health can be correlated with security events to help teams better understand overall application behavior.
+In this final lab, you will review the Distributed Cloud Security and Performance dashboards to observe how Service Policies and Routes configured in previous labs are enforced in real time. This lab highlights how performance metrics such as request volume, response codes, latency, and upstream health can be correlated with security events to help teams better understand overall application behavior.
 
-Finally, students will explore Distributed Cloud AI Assistant, which provides contextual explanations for security events, including what violation occurred, why it was triggered, and recommended mitigation or tuning guidance.
+Finally, you will explore Distributed Cloud AI Assistant, which provides contextual explanations for security events, including what violation occurred, why it was triggered, and recommended mitigation or tuning guidance.
 
-By the end of the lab, students will understand how to validate enforcement, investigate anomalies, correlate performance impact, and leverage AI-driven insights to accelerate security analysis.
-
-You will learn and find tips along the way to help you navigate and use this dashboard to help you manage 
+By the end of the lab, you will understand how to validate enforcement, investigate anomalies, correlate performance impact, and leverage AI-driven insights to accelerate security analysis.
 
 **Expected Lab Time: 30 minutes**
 
 Task 1: Review Security Dashboard
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In this task, students will explore the Distributed Cloud Security Dashboard to monitor and investigate security events impacting their HTTP Load Balancer. They will review high-level metrics, drill into specific attack signatures and violations, apply filters to isolate relevant traffic, and examine detailed request data. Students will also learn where to take operational action and leverage built-in tools to support investigation and mitigation.
+In this task, you will explore the Distributed Cloud Security Dashboard to monitor and investigate security events impacting their HTTP Load Balancer. They will review high-level metrics, drill into specific attack signatures and violations, apply filters to isolate relevant traffic, and examine detailed request data. Students will also learn where to take operational action and leverage built-in tools to support investigation and mitigation.
 
 1. If you are not still logged into the Distributed Cloud Console, logon at: 
 
@@ -32,7 +30,7 @@ In this task, students will explore the Distributed Cloud Security Dashboard to 
 
     |security|
     
-4. This will display the security dashboard in the right pane. The initial view provides a high-level snapshot of security activity within the namespace, including Threat Intelligence detections, bot traffic, DDoS events, WAF violations, and other security-related events. This overview enables teams to quickly assess the overall security posture and identify areas that may require further investigation.
+4. This will display the security dashboard in the right pane. The initial view provides a high-level snapshot of security activity within the namespace, including Threat Intelligence detections, BOT traffic, DDoS events, WAF violations, and other security-related events. This overview enables teams to quickly assess the overall security posture and identify areas that may require further investigation.
 
     |securitydb|
     
@@ -149,7 +147,7 @@ This is the end of this task. You have explored the Distributed Cloud Security D
 Task 2: Review Performance Dashboard
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In this task, students will explore the Distributed Cloud Performance Dashboard to analyze application traffic and health metrics. They will review key indicators such as request volume, response codes, latency, and upstream health to better understand application behavior. By correlating performance data with security events, students will gain insight into whether traffic patterns are related to malicious activity or backend application performance issues.
+In this task, you will explore the Distributed Cloud Performance Dashboard to analyze application traffic and health metrics. They will review key indicators such as request volume, response codes, latency, and upstream health to better understand application behavior. By correlating performance data with security events, you will gain insight into whether traffic patterns are related to malicious activity or backend application performance issues.
 
 1. Click on **Performance**, under the **Overview** menu on the to left hand corner.
 
@@ -271,6 +269,7 @@ Second, click inside the **Type or Select a prompt** text box to view a list of 
 Lastly, you can enter your own custom prompt. As shown in the screenshot, the assistant provides guidance and may include related Distributed Cloud documentation links to support further research.
 
     |suggestion3|
+    
     |suggestion4|
 
 Take a moment to try a suggested prompt or create a custom prompt to explore the AI Assistant’s capabilities.
@@ -303,7 +302,7 @@ This concludes Lab 3. In this lab, you learned how to:
 .. |lbsecsummary| image:: _images/lbsecsummary.png
    :width: 800px
 .. |topattack| image:: _images/topattack.png
-   :width: 800px
+   :width: 600px
 .. |topattacks| image:: _images/topattacks.png
    :width: 800px
 .. |securityanalytics| image:: _images/securityanalytics.png
@@ -367,7 +366,7 @@ This concludes Lab 3. In this lab, you learned how to:
    :width: 800px
 
 .. |suggestion2| image:: _images/suggestion2.png
-   :width: 800px
+   :width: 600px
 
 .. |suggestion3| image:: _images/suggestion3.png
    :width: 800px

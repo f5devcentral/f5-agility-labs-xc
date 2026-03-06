@@ -33,6 +33,22 @@ Learn how to secure, steer, and observe application traffic within F5 Distribute
 
 This Lab uses the **[AppWorld] F5XC Application Lab** UDF Blueprint.
 
+**Preparation:**
+
+Before starting the course, update your nampspace to dynamically update the guide.
+
+.. raw:: html
+    
+    <div style="margin: 1em 0; padding: 1em; border: 0px solid #ccc;">
+        <label for="namespaceInput"> Enter your namespace: </label>
+        <input id="namespaceInput" type="text" placeholder="e.g. sassy-panda" />
+        <button onclick="setNamespace()">Save</button>
+    </div>
+    
+    <p><strong>Current namespace: </strong> <span id="currentNamespace">&lt;namespace&gt;</span></p>
+
+.. note:: Guide page might need to be refreshed to get updated namespace to render.
+
 .. toctree::
    :maxdepth: 1
    :glob:
