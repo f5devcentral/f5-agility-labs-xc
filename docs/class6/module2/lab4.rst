@@ -407,7 +407,7 @@ Now lets add the Service Policy to our LB and run the command again but insert t
 Goto **Multi-Cloud App Connect >> Manage >> Load Balancers >> HTTP Load Balancers** and click on the 3 dots to the right of the aws-to-azure Load Balancer.
 Click **Edit Config** in top right hand corner and scroll down to **Common Security Controls** and add the service policy by clicking **Apply Specified Service Policies >> Configure >> Choose the allow get service policy >> Apply >> Save HTTP Load Balancer**
 |
-    |lab032|
+    |lab033|
 |
     curl --head  http://[animal-name]-aws-to-azure-lb.lab-mcn.f5demos.com --resolve [animal-name]-aws-to-azure-lb.lab-mcn.f5demos.com:80:10.0.5.236
 
@@ -562,4 +562,6 @@ control over application traffic.
 .. |lab031| image:: ../images/temp/lab4/200.png
    :width: 800px
 .. |lab032| image:: ../images/temp/lab4/smsv2-aws.png
+   :width: 800px
+.. |lab033| image:: ../images/temp/lab4/servicepolicy.png
    :width: 800px
