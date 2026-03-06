@@ -304,7 +304,7 @@ Let's test the connectivity between AWS and Azure through the internal load bala
 
 46. Go to the diagnostic tool: **http://<your-namespace>-awstool.lab-mcn.f5demos.com**
 
-47. Click **Run Command** and paste the following:
+47. Click **Run Command** and paste the following (remember you IP may differ):
 
     **curl http://<your-namespace>-aws-to-azure-lb.lab-mcn.f5demos.com --resolve <your-namespace>-aws-to-azure-lb.lab-mcn.f5demos.com:80:10.0.5.16**
 
