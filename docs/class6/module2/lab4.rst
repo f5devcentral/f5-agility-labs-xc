@@ -402,8 +402,13 @@ Try your curl command again **without** the **--head** flag.::
     |lab025|
 |
 
-Now run the command again but insert the **\-\-head** command.::
+Now lets add the Service Policy to our LB and run the command again but insert the **\-\-head** command.::
 
+Goto **Multi-Cloud App Connect >> Manage >> Load Balancers >> HTTP Load Balancers** and click on the 3 dots to the right of pick the aws-to-azure Load Balancer.
+Click **Edit Config** in top right hand corner and scroll down to **Common Security Controls** and add the service policy by clicking **Apply Specified Service Policies >> Configure >> Choose the allowget service policy >> Apply >> Save HTTP Load Balancer**
+|
+    |lab032|
+|
     curl --head  http://[animal-name]-aws-to-azure-lb.lab-mcn.f5demos.com --resolve [animal-name]-aws-to-azure-lb.lab-mcn.f5demos.com:80:10.0.5.236
 
 |
