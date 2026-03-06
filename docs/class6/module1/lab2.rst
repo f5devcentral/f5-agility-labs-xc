@@ -113,7 +113,7 @@ Let's examine the routing information before we attach the segment to the interf
 
    |lab006|
 
-6. On the right side of the screen, **Select Data** by choosing your node and review both **VIRTUAL_NETWORK_SITE_LOCAL** and **VIRTUAL_NETWORK_SITE_LOCAL_INSIDE** one at a time.
+6. On the right side of the screen, **Select Data** by choosing your node and review both **VIRTUAL_NETWORK_SITE_LOCAL** and **VIRTUAL_NETWORK_SITE_LOCAL_INSIDE** one at a time.  After choosing the Segment click Apply bottom right of page
 
    |lab007|
 
@@ -147,7 +147,7 @@ You will now attach the pre-configured AWS segment to your CE site's interface.
 14. Configure your interface then click **Apply**:
 
     **IP Configuration:**
-    
+
     ================================  ========================================
     Variable                          Value
     ================================  ========================================
