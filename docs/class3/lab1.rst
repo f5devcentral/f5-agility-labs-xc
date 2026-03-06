@@ -39,7 +39,7 @@ origin pool.
    :alt: multi app conn
    :align: center
 
-You'll now navigate to review the lb configuration as shown below.
+You'll now navigate to review the load balancer configuration as shown below.
 
 .. image:: _static/lab1/lb-manage-conf.png
    :scale: 30%
@@ -47,7 +47,7 @@ You'll now navigate to review the lb configuration as shown below.
    :align: center
 
 Make note of the name of the load balancer for your deployment as it will be different than the one shown below. It should be in the format
-of *<adjective-animal>>*-routing-https-lb. 
+of *<adjective-animal>*-routing-https-lb. 
 
 .. image:: _static/lab1/lb-name.png
    :scale: 30%
@@ -262,3 +262,19 @@ update the active policies for the load balancer.
    :scale: 30%
    :alt: delete custom header
    :align: center
+   
+   +----------------------------------------------------------------------------------------------+ 
+ **End of Lab 1**  
+
+This concludes Lab 1. In this lab, you learned how to:  
+
+- Create a Distributed Cloud Service Policy with a custom rule to control application access based on a specific HTTP header and value.
+
+- Activate the service policy and observe how it enforces access control by blocking requests that do not meet the defined criteria.
+
+- Validate policy behavior using curl and analyze the resulting allowed and blocked requests using the Distributed Cloud Performance Dashboard.
+                            
++----------------------------------------------------------------------------------------------+
+    |labend|                                                                                     
++----------------------------------------------------------------------------------------------+
+

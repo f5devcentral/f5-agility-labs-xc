@@ -44,7 +44,9 @@ In this task, students will explore the Distributed Cloud Security Dashboard to 
 
     |lblink|
     
-7. This dashboard provides a comprehensive view of the security events impacting the load balancer. As you scroll down, you will notice a series of prebuilt graphs and metrics designed to present a holistic view of security activities and trends. Let’s begin at the top and review several of these graphs in more detail to better understand the insights they provide.
+7. This dashboard provides a comprehensive view of the security events impacting the load balancer. As you scroll down, you will notice a series of prebuilt graphs and metrics designed to present a holistic view of security activities and trends. 
+
+Let’s begin at the top and review several of these graphs in more detail to better understand the insights they provide.
 
 You can easily confirm you are viewing the load balancer specific security dashboard by referencing the **HTTP Load Balancer** name displayed at the top of the page (see Box 1). If data is not immediately visible, adjust the time range and/or click refresh to populate the dashboard with recent events (see Box 2).
 
@@ -283,94 +285,94 @@ This concludes Lab 3. In this lab, you learned how to:
 - Leverage Distributed Cloud AI Assistant to understand violations, assess impact, and evaluate mitigation or policy tuning options.
                             
 +----------------------------------------------------------------------------------------------+
- labend                                                                                     
+    |labend|                                                                 
 +----------------------------------------------------------------------------------------------+
 
-.. |Web-App-Tile| image:: _static/Web-App-Tile.png
+.. |Web-App-Tile| image:: _images/Web-App-Tile.png
    :width: 800px
-.. |Web-App-Dropdown| image:: _static/Web-App-Dropdown.png
+.. |Web-App-Dropdown| image:: _images/Web-App-Dropdown.png
    :width: 800px
-.. |security| image:: _static/security.png
+.. |security| image:: _images/security.png
+   :width: 600px
+.. |securitydb| image:: _images/securitydb.png
    :width: 800px
-.. |securitydb| image:: _static/securitydb.png
+.. |lbsecuritysum| image:: _images/lbsecuritysum.png
    :width: 800px
-.. |lbsecuritysum| image:: _static/lbsecuritysum.png
+.. |lblink| image:: _images/lblink.png
    :width: 800px
-.. |lblink| image:: _static/lblink.png
+.. |lbsecsummary| image:: _images/lbsecsummary.png
    :width: 800px
-.. |lbsecsummary| image:: _static/lbsecsummary.png
+.. |topattack| image:: _images/topattack.png
    :width: 800px
-.. |topattack| image:: _static/topattack.png
+.. |topattacks| image:: _images/topattacks.png
    :width: 800px
-.. |topattacks| image:: _static/topattacks.png
+.. |securityanalytics| image:: _images/securityanalytics.png
    :width: 800px
-.. |securityanalytics| image:: _static/securityanalytics.png
+.. |filter| image:: _images/filter.png
    :width: 800px
-.. |filter| image:: _static/filter.png
+.. |addfilter| image:: _images/addfilter.png
    :width: 800px
-.. |addfilter| image:: _static/addfilter.png
+.. |reqpath| image:: _images/reqpath.png
+   :width: 600px
+.. |In| image:: _images/In.png
+   :width: 600px
+.. |login| image:: _images/login.png
    :width: 800px
-.. |reqpath| image:: _static/reqpath.png
+.. |filtered| image:: _images/filtered.png
    :width: 800px
-.. |In| image:: _static/In.png
+.. |evalrequest| image:: _images/evalrequest.png
    :width: 800px
-.. |login| image:: _static/login.png
+.. |secinfo1| image:: _images/secinfo1.png
    :width: 800px
-.. |filtered| image:: _static/filtered.png
+.. |secinfo2| image:: _images/secinfo2.png
    :width: 800px
-.. |evalrequest| image:: _static/evalrequest.png
+.. |secinfo3| image:: _images/secinfo3.png
    :width: 800px
-.. |secinfo1| image:: _static/secinfo1.png
+.. |performance| image:: _images/performance.png
    :width: 800px
-.. |secinfo2| image:: _static/secinfo2.png
+.. |pdashboard| image:: _images/pdashboard.png
    :width: 800px
-.. |secinfo3| image:: _static/secinfo3.png
+.. |lbperformance| image:: _images/lbperformance.png
    :width: 800px
-.. |performance| image:: _static/performance.png
+.. |lbpmetrics| image:: _images/lbpmetrics.png
    :width: 800px
-.. |pdashboard| image:: _static/pdashboard.png
-   :width: 800px
-.. |lbperformance| image:: _static/lbperformance.png
-   :width: 800px
-.. |lbpmetrics| image:: _static/lbpmetrics.png
-   :width: 800px
-.. |originservers| image:: _static/originservers.png
-   :width: 800px
-
-.. |alerts| image:: _static/alerts.png
+.. |originservers| image:: _images/originservers.png
    :width: 800px
 
-.. |requests| image:: _static/requests.png
+.. |alerts| image:: _images/alerts.png
    :width: 800px
 
-.. |perfdetail1| image:: _static/perfdetail1.png
+.. |requests| image:: _images/requests.png
    :width: 800px
 
-.. |perfdetail2| image:: _static/perfdetail2.png
+.. |perfdetail1| image:: _images/perfdetail1.png
    :width: 800px
 
-.. |secanalytics| image:: _static/secanalytics.png
+.. |perfdetail2| image:: _images/perfdetail2.png
    :width: 800px
 
-.. |explainAI| image:: _static/explainAI.png
+.. |secanalytics| image:: _images/secanalytics.png
    :width: 800px
 
-.. |explanation| image:: _static/explanation.png
+.. |explainAI| image:: _images/explainAI.png
    :width: 800px
 
-.. |detectiondetials| image:: _static/detectiondetials.png
+.. |explanation| image:: _images/explanation.png
    :width: 800px
 
-.. |suggestion1| image:: _static/suggestion1.png
+.. |detectiondetials| image:: _images/detectiondetials.png
    :width: 800px
 
-.. |suggestion2| image:: _static/suggestion2.png
+.. |suggestion1| image:: _images/suggestion1.png
    :width: 800px
 
-.. |suggestion3| image:: _static/suggestion3.png
+.. |suggestion2| image:: _images/suggestion2.png
    :width: 800px
 
-.. |suggestion4| image:: _static/suggestion4.png
+.. |suggestion3| image:: _images/suggestion3.png
+   :width: 800px
+
+.. |suggestion4| image:: _images/suggestion4.png
    :width: 800px
 
 .. labend image:: _static/labend.png
