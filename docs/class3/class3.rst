@@ -8,7 +8,7 @@ In this lab, attendees will explore how to control application traffic and secur
 
 Participants will configure Service Policies to enforce access controls, build route logic to enable blue/green testing and intelligent traffic steering, and apply WAF policies at the path level to deliver granular security where it matters most.
 
-They will then validate their configurations using the Security and Performance dashboards, gaining visibility into real-time enforcement, traffic behavior, and application health—while leveraging AI Assistant to accelerate investigation and tuning.
+They will then validate their configurations using the Security and Performance dashboards, gaining visibility into real-time enforcement, traffic behavior, and application health while leveraging AI Assistant to accelerate investigation and tuning.
 
 This lab demonstrates how to secure, steer, and observe application traffic with precision and confidence.
 

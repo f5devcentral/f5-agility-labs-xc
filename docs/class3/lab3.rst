@@ -5,14 +5,14 @@ In this final lab, you will review the Distributed Cloud Security and Performanc
 
 Finally, you will explore Distributed Cloud AI Assistant, which provides contextual explanations for security events, including what violation occurred, why it was triggered, and recommended mitigation or tuning guidance.
 
-By the end of the lab, you will understand how to validate enforcement, investigate anomalies, correlate performance impact, and leverage AI-driven insights to accelerate security analysis.
+By the end of the lab, you will understand how to validate enforcement, investigate anomalies, correlate performance impact, and leverage AI driven insights to accelerate security analysis.
 
 **Expected Lab Time: 30 minutes**
 
 Task 1: Review Security Dashboard
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In this task, you will explore the Distributed Cloud Security Dashboard to monitor and investigate security events impacting their HTTP Load Balancer. They will review high-level metrics, drill into specific attack signatures and violations, apply filters to isolate relevant traffic, and examine detailed request data. Students will also learn where to take operational action and leverage built-in tools to support investigation and mitigation.
+In this task, you will explore the Distributed Cloud Security Dashboard to monitor and investigate security events impacting their HTTP Load Balancer. They will review high level metrics, drill into specific attack signatures and violations, apply filters to isolate relevant traffic, and examine detailed request data. Students will also learn where to take operational action and leverage built-in tools to support investigation and mitigation.
 
 1. If you are not still logged into the Distributed Cloud Console, logon at: 
 
@@ -30,7 +30,7 @@ In this task, you will explore the Distributed Cloud Security Dashboard to monit
 
     |security|
     
-4. This will display the security dashboard in the right pane. The initial view provides a high-level snapshot of security activity within the namespace, including Threat Intelligence detections, BOT traffic, DDoS events, WAF violations, and other security-related events. This overview enables teams to quickly assess the overall security posture and identify areas that may require further investigation.
+4. This will display the security dashboard in the right pane. The initial view provides a high level snapshot of security activity within the namespace, including Threat Intelligence detections, BOT traffic, DDoS events, WAF violations, and other security related events. This overview enables teams to quickly assess the overall security posture and identify areas that may require further investigation.
 
     |securitydb|
     
@@ -84,7 +84,7 @@ The bar graph displays the number of requests that matched this signature within
 
 Below, in section number 4, you will see the individual request entries associated with the signature. We will examine these in more detail in the following steps.
 
-For now, click **Forensics** in the upper-right corner (see number 5). This expands the Forensics panel, providing additional context such as source IP address, ASN, and country of origin.
+For now, click **Forensics** in the upper right corner (see number 5). This expands the Forensics panel, providing additional context such as source IP address, ASN, and country of origin.
 
 **Tip:** You can return to the previous view by clicking Dashboard, and then select Security Analytics to navigate back to this tab. Please note if you do this you will lose the filter, flow step 7 above to return to the filtered security event.
 
@@ -142,7 +142,7 @@ Keep in mind that some requests may display limited information. This does not i
     |secinfo2|
     |secinfo3|
     
-This is the end of this task. You have explored the Distributed Cloud Security Dashboard and learned how to analyze, investigate, and take action on security events impacting your HTTP Load Balancer. You reviewed high-level security trends, drilled into attack signatures and violations, applied filters to isolate specific activity, and examined detailed request-level data. You also learned how to use interactive dashboard elements and operational tools to support efficient investigation and mitigation.
+This is the end of this task. You have explored the Distributed Cloud Security Dashboard and learned how to analyze, investigate, and take action on security events impacting your HTTP Load Balancer. You reviewed high level security trends, drilled into attack signatures and violations, applied filters to isolate specific activity, and examined detailed request-level data. You also learned how to use interactive dashboard elements and operational tools to support efficient investigation and mitigation.
 
 Task 2: Review Performance Dashboard
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -153,7 +153,7 @@ In this task, you will explore the Distributed Cloud Performance Dashboard to an
 
     |performance|
 
-2. The Performance Dashboard provides several high-level metrics to help you quickly assess the health and activity of the load balancer.
+2. The Performance Dashboard provides several high level metrics to help you quickly assess the health and activity of the load balancer.
 
 At the top, the Health tile shows the overall status of load balancers in the namespace, categorized as Good, Moderate, Critical, or Unknown. This metric displays the health between Distributed Cloud Regional Edge the origin servers. This gives you an immediate understanding of system health.
 
@@ -177,7 +177,7 @@ Together, these metrics provide a comprehensive view of load balancers performan
 
 A brief overview of the key sections: 
 
-The **Application Health** tile displays an overall health score based on regional edge health checks to the configured origin pools, providing an immediate indication of system stability. Adjacent to it, **Active Alerts** highlights any current operational or high-level security issues that may require attention.
+The **Application Health** tile displays an overall health score based on regional edge health checks to the configured origin pools, providing an immediate indication of system stability. Adjacent to it, **Active Alerts** highlights any current operational or high level security issues that may require attention.
 
 The **End-to-End Latency** section breaks down request timing across the client, load balancer, and origin server, helping you identify where delays may be occurring within the request flow. This is very powerful because it helps identify where there is a potential bottleneck. 
 
@@ -203,9 +203,9 @@ This view allows you to investigate potential communication or connectivity issu
 
 6. Click on **Alerts** from the top menu. The alerts displayed here are the same alerts summarized in the Active Alerts tile on the main dashboard.
 
-This view provides more information about each alert, allowing you to investigate the underlying condition, severity level, and impacted resources. In this lab, the alert is WAF-related, so you will see high-level information associated with security event. To investigate the specific violation or event in more detail, navigate back to the Security dashboard.
+This view provides more information about each alert, allowing you to investigate the underlying condition, severity level, and impacted resources. In this lab, the alert is WAF related, so you will see high level information associated with security event. To investigate the specific violation or event in more detail, navigate back to the Security dashboard.
 
-In this Alerts view, you can identify health check failures, operational issues, and other performance or connectivity-related alerts. While the information presented here is high level, it helps you quickly narrow down the potential area of concern before drilling into the Security or Performance dashboards for deeper analysis.
+In this Alerts view, you can identify health check failures, operational issues, and other performance or connectivity related alerts. While the information presented here is high level, it helps you quickly narrow down the potential area of concern before drilling into the Security or Performance dashboards for deeper analysis.
 
     |alerts|
 
@@ -215,7 +215,7 @@ This view provides an overall summary of the requests and responses processed by
 
 You can also use the **Filter** option at the top to refine the requests, similar to how you filtered events in the security dashboard in previous task. For example, you can filter by specific request attributes such as path, method, or client IP. Additionally, you can click on a response code to quickly include or isolate requests matching that code.
 
-Take a moment to apply a filter or deselect/select a response code to see how the view dynamically updates. If you choose to use a **Filter**, in the **Filter** box select **req_path IN** and choose one of the available paths from the drop-down list. 
+Take a moment to apply a filter or deselect/select a response code to see how the view dynamically updates. If you choose to use a **Filter**, in the **Filter** box select **req_path IN** and choose one of the available paths from the drop down list. 
 
     |requests|
     
@@ -255,9 +255,9 @@ In this task, you will explore Distributed Cloud AI Assistant and learn how it c
 
     |detectiondetials|
 
-7. If you would like additional information about the signature or want to ask a follow-up question there a couple of ways to go about this.
+7. If you would like additional information about the signature or want to ask a follow up question there a couple of ways to go about this.
 
-First, you can select one of the prompt suggestions displayed above the **Type or Select a prompt** field. These suggestions are context-aware and based on your previous query.
+First, you can select one of the prompt suggestions displayed above the **Type or Select a prompt** field. These suggestions are context aware and based on your previous query.
 
     |suggestion1|
     
