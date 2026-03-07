@@ -7,7 +7,7 @@ Congratulations! You are an Application Security Engineer at ACME Corp.
 
 ACME’s Application Team supports a mix of modern web applications, APIs, and SaaS-based services that are continuously evolving. New features are deployed frequently, traffic patterns shift across regions, and security threats are constantly adapting. With multiple application versions, public exposure, and global users, controlling how traffic flows through the environment has become a top priority.
 
-ACME leadership has made it clear: security cannot slow innovation—but it must be built into the traffic flow itself. The team needs the ability to intelligently steer traffic for blue/green testing, apply granular security controls at specific application paths, and maintain real-time visibility into both security events and performance metrics.
+ACME leadership has made it clear: security cannot slow innovation but it must be built into the traffic flow itself. The team needs the ability to intelligently steer traffic for blue/green testing, apply granular security controls at specific application paths, and maintain real-time visibility into both security events and performance metrics.
 
 As the Application Security Engineer, you are tasked with designing and validating this data plane. You need to enforce access through Service Policies, steer traffic through intelligent routing, apply WAF protections where they matter most, and ensure everything can be monitored and investigated through centralized dashboards.
 
