@@ -131,7 +131,7 @@ For now, click the chevron (>) number 2, next to one of the requests to expand a
 
     |evalrequest|
     
-11. With the request expanded, you can view additional security details associated with the request. This includes where the request originated (such as source IP address, ASN, region, and country), as well as the contents of the request itself.
+11. With the request expanded, you can view additional security details associated with the request. This includes where the request originated such as source IP address, ASN, region, ja4 tls fingerprint, and more.
 
     |secinfo1|
     
@@ -140,6 +140,8 @@ Scroll down further to review any additional details associated with the request
 Keep in mind that some requests may display limited information. This does not indicate that the security inspection is not functioning it simply means that fewer inspection details were relevant or triggered for that specific request.
 
     |secinfo2|
+    
+    
     |secinfo3|
     
 This is the end of this task. You have explored the Distributed Cloud Security Dashboard and learned how to analyze, investigate, and take action on security events impacting your HTTP Load Balancer. You reviewed high level security trends, drilled into attack signatures and violations, applied filters to isolate specific activity, and examined detailed request-level data. You also learned how to use interactive dashboard elements and operational tools to support efficient investigation and mitigation.
