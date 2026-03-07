@@ -182,7 +182,7 @@ privately over port 80. To test this, you will use a diagnostic tool running on 
     IP                                10.0.5.253
     Site or Virtual Site              Site
     Site                              system/appworld-aws
-    Select Network on the site        Outside Network
+    Select Network on the site        Inside Network
     ================================  ========================================
 
 23. Click **Apply** and then **Add Origin Pool**.
@@ -276,7 +276,7 @@ Now you'll create an internal load balancer in AWS that connects to Azure.
        The AWS CE node has two interfaces (Inside/Outside). We're advertising on the Inside 
        interface to create an internal load balancer.
 
-40. Click **Apply**, **Apply**, and then **Save and Exit**.
+40. Click **Apply**, **Apply**, and then **Add HTTP Load Balancer**.
 
 41. Verify you now have 4 HTTP load balancers for your namespace.
 
@@ -289,7 +289,9 @@ Let's test the connectivity between AWS and Azure through the internal load bala
 
 42. First, verify the inside interface IP of the AWS CE node.
 
-43. Navigate to **Multi-Cloud Network Connect >> Manage >> Site Management >> AWS VPC Sites**.
+43. Navigate to Multi-Cloud Network Connect >> Manage >> Site Management >> Secure Mesh Sites v2.
+
+    |lab032|
 
 44. Click on **appworld-aws**.
 
@@ -302,9 +304,9 @@ Let's test the connectivity between AWS and Azure through the internal load bala
 
 46. Go to the diagnostic tool: **http://<your-namespace>-awstool.lab-mcn.f5demos.com**
 
-47. Click **Run Command** and paste the following:
+47. Click **Run Command** and paste the following (remember you IP may differ):
 
-    **curl http://<your-namespace>-aws-to-azure-lb.lab-mcn.f5demos.com --resolve <your-namespace>-aws-to-azure-lb.lab-mcn.f5demos.com:80:10.0.5.16**
+    **curl http://<your-namespace>-aws-to-azure-lb.lab-mcn.f5demos.com --resolve <your-namespace>-aws-to-azure-lb.lab-mcn.f5demos.com:80:10.0.5.5**
 
     |lab018|
 
@@ -312,7 +314,7 @@ Let's test the connectivity between AWS and Azure through the internal load bala
 
 48. Test again with the **--head** flag:
 
-    **curl --head http://<your-namespace>-aws-to-azure-lb.lab-mcn.f5demos.com --resolve <your-namespace>-aws-to-azure-lb.lab-mcn.f5demos.com:80:10.0.5.16**
+    **curl --head http://<your-namespace>-aws-to-azure-lb.lab-mcn.f5demos.com --resolve <your-namespace>-aws-to-azure-lb.lab-mcn.f5demos.com:80:10.0.5.5**
 
     |lab019|
 
@@ -400,8 +402,13 @@ Try your curl command again **without** the **--head** flag.::
     |lab025|
 |
 
-Now run the command again but insert the **\-\-head** command.::
+Now lets add the Service Policy to our LB and run the command again but insert the **\-\-head** command.::
 
+Goto **Multi-Cloud App Connect >> Manage >> Load Balancers >> HTTP Load Balancers** and click on the 3 dots to the right of the aws-to-azure Load Balancer.
+Click **Edit Config** in top right hand corner and scroll down to **Common Security Controls** and add the service policy by clicking **Apply Specified Service Policies >> Configure >> Choose the allow get service policy >> Apply >> Save HTTP Load Balancer**
+|
+    |lab033|
+|
     curl --head  http://[animal-name]-aws-to-azure-lb.lab-mcn.f5demos.com --resolve [animal-name]-aws-to-azure-lb.lab-mcn.f5demos.com:80:10.0.5.236
 
 |
@@ -553,4 +560,8 @@ control over application traffic.
 .. |lab030| image:: ../images/temp/lab4/403.png
    :width: 800px
 .. |lab031| image:: ../images/temp/lab4/200.png
+   :width: 800px
+.. |lab032| image:: ../images/temp/lab4/smsv2-aws.png
+   :width: 800px
+.. |lab033| image:: ../images/temp/lab4/servicepolicy.png
    :width: 800px
