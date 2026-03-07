@@ -319,7 +319,7 @@ In this lab, you learned how to:
 .. |In| image:: _images/In.png
    :width: 400px
 .. |login| image:: _images/login.png
-   :width: 800px
+   :width: 400px
 .. |filtered| image:: _images/filtered.png
    :width: 800px
 .. |evalrequest| image:: _images/evalrequest.png
