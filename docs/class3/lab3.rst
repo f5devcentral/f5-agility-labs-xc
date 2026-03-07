@@ -38,7 +38,7 @@ In this task, you will explore the Distributed Cloud Security Dashboard to monit
 
     |lbsecuritysum|
     
-6. Let’s take a deeper look at the security events associated with the load balancer. Click on your pet-name load balancer to drill into the security events. 
+6. Let’s take a deeper look at the security events associated with the load balancer. Click on your <your-namespace> load balancer to drill into the security events. 
 
     |lblink|
     
@@ -169,7 +169,7 @@ Together, these metrics provide a comprehensive view of load balancers performan
 
     |pdashboard|
 
-3. Let’s take a closer look at the load balancer–specific performance metrics. Scroll to the bottom of the page and click on the load balancer name.
+3. Let’s take a closer look at the load balancer specific performance metrics. Scroll to the bottom of the page and click on <your-namespace> load balancer name.
 
     |lbperformance|
 
@@ -215,7 +215,7 @@ This view provides an overall summary of the requests and responses processed by
 
 You can also use the **Filter** option at the top to refine the requests, similar to how you filtered events in the security dashboard in previous task. For example, you can filter by specific request attributes such as path, method, or client IP. Additionally, you can click on a response code to quickly include or isolate requests matching that code.
 
-Take a moment to apply a filter or deselect/select a response code to see how the view dynamically updates. If you choose to use a **Filter**, in the **Filter** box select req_path IN and choose one of the available paths from the drop-down list. 
+Take a moment to apply a filter or deselect/select a response code to see how the view dynamically updates. If you choose to use a **Filter**, in the **Filter** box select **req_path IN** and choose one of the available paths from the drop-down list. 
 
     |requests|
     
@@ -224,8 +224,7 @@ Take a moment to apply a filter or deselect/select a response code to see how th
 Click the chevron ( > ) next to one of the requests to expand it and review the detailed information.
 
     |perfdetail1|
-    |perfdetail2|
-
+    
 This concludes this task. You have explored the Distributed Cloud Performance Dashboard and learned where to find key metrics and how to interpret metrics such as request rate, latency, error rates, throughput, and origin health to help you gain a more complete understanding of your application’s overall health and behavior.
 
 Task 3: Leveraging AI Assistant
@@ -236,7 +235,7 @@ In this task, you will explore Distributed Cloud AI Assistant and learn how it c
 
     |security|
     
-2. In the Security dashboard, scroll down and click on your pet-name load balancer.
+2. In the Security dashboard, scroll down and click on your <your-namespace> load balancer.
 
     |lblink|
 
@@ -277,7 +276,9 @@ Take a moment to try a suggested prompt or create a custom prompt to explore the
 +----------------------------------------------------------------------------------------------+ 
  **End of Lab 3**  
 
-This concludes Lab 3. In this lab, you learned how to:  
+This concludes Lab 3. 
+
+In this lab, you learned how to:  
 
 - Analyze and investigate security events using the Distributed Cloud Security Dashboard, including filtering, drilling into request details, and taking operational action.
 - Interpret Performance Dashboard metrics to evaluate application health, identify latency or connectivity issues, and correlate performance data with security activity.
@@ -292,7 +293,7 @@ This concludes Lab 3. In this lab, you learned how to:
 .. |Web-App-Dropdown| image:: _images/Web-App-Dropdown.png
    :width: 800px
 .. |security| image:: _images/security.png
-   :width: 600px
+   :width: 400px
 .. |securitydb| image:: _images/securitydb.png
    :width: 800px
 .. |lbsecuritysum| image:: _images/lbsecuritysum.png
@@ -310,11 +311,11 @@ This concludes Lab 3. In this lab, you learned how to:
 .. |filter| image:: _images/filter.png
    :width: 800px
 .. |addfilter| image:: _images/addfilter.png
-   :width: 800px
+   :width: 400px
 .. |reqpath| image:: _images/reqpath.png
-   :width: 600px
+   :width: 400px
 .. |In| image:: _images/In.png
-   :width: 600px
+   :width: 400px
 .. |login| image:: _images/login.png
    :width: 800px
 .. |filtered| image:: _images/filtered.png
@@ -337,43 +338,28 @@ This concludes Lab 3. In this lab, you learned how to:
    :width: 800px
 .. |originservers| image:: _images/originservers.png
    :width: 800px
-
 .. |alerts| image:: _images/alerts.png
    :width: 800px
-
 .. |requests| image:: _images/requests.png
    :width: 800px
-
 .. |perfdetail1| image:: _images/perfdetail1.png
    :width: 800px
-
-.. |perfdetail2| image:: _images/perfdetail2.png
-   :width: 800px
-
 .. |secanalytics| image:: _images/secanalytics.png
    :width: 800px
-
 .. |explainAI| image:: _images/explainAI.png
    :width: 800px
-
 .. |explanation| image:: _images/explanation.png
    :width: 800px
-
 .. |detectiondetials| image:: _images/detectiondetials.png
    :width: 800px
-
 .. |suggestion1| image:: _images/suggestion1.png
    :width: 800px
-
 .. |suggestion2| image:: _images/suggestion2.png
    :width: 600px
-
 .. |suggestion3| image:: _images/suggestion3.png
    :width: 800px
-
 .. |suggestion4| image:: _images/suggestion4.png
    :width: 800px
-
-.. labend image:: _static/labend.png
+.. |labend| image:: _static/labend.png
    :width: 800px
       

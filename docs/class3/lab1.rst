@@ -28,6 +28,8 @@ manage their own applications, but still want to have some control over the secu
 For the scope of this lab, we will apply service policies to a specific server in the namespace. You *could* however, strategically apply 
 service policies to specific applications by host header or label selectors.
 
+**Expected Lab Time: 25 minutes**
+
 Lab Environment:
 
 Your lab environment should already be deployed. In the steps below you'll navigate user interface to discover the load balancer and assigned
@@ -266,7 +268,9 @@ update the active policies for the load balancer.
    +----------------------------------------------------------------------------------------------+ 
  **End of Lab 1**  
 
-This concludes Lab 1. In this lab, you learned how to:  
+This concludes Lab 1. 
+
+In this lab, you learned how to:  
 
 - Create a Distributed Cloud Service Policy with a custom rule to control application access based on a specific HTTP header and value.
 
