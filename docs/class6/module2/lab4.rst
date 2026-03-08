@@ -396,7 +396,7 @@ If you don't already have a tab open to the Diag tool, in your browser go to: ht
 
 Try your curl command again **without** the **--head** flag.:: 
 
-    curl http://[animal-name]-aws-to-azure-lb.lab-mcn.f5demos.com --resolve [animal-name]-aws-to-azure-lb.lab-mcn.f5demos.com:80:10.0.5.236
+    curl http://[animal-name]-aws-to-azure-lb.lab-mcn.f5demos.com --resolve [animal-name]-aws-to-azure-lb.lab-mcn.f5demos.com:80:10.0.5.5
 
 |
     |lab025|
