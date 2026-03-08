@@ -2,7 +2,7 @@ Lab 2: Load Balancer Routes
 ===========================
 
 The following lab tasks will guide you through using the Distributed Cloud Console to configure routes within a HTTP Load Balancer. 
-Students will start by creating a route to steer traffic based on a specified HTTP header containded within the client request.  Header
+Students will start by creating a route to steer traffic based on a specified HTTP header contained within the client request.  Header
 based routing is often used for blue-green testing.  Blue-green testing is a release strategy that uses two independent deployments (Blue
 and Green) for real world testing of software updates and application enhancements.  
 
