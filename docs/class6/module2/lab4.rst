@@ -409,7 +409,7 @@ Click **Edit Config** in top right hand corner and scroll down to **Common Secur
 |
     |lab033|
 |
-    curl --head  http://[animal-name]-aws-to-azure-lb.lab-mcn.f5demos.com --resolve [animal-name]-aws-to-azure-lb.lab-mcn.f5demos.com:80:10.0.5.5
+     curl --head http://[animal-name]-aws-to-azure-lb.lab-mcn.f5demos.com --resolve [animal-name]-aws-to-azure-lb.lab-mcn.f5demos.com:80:10.0.5.5
 
 |
     |lab026|
