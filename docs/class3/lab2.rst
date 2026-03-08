@@ -2,7 +2,7 @@ Lab 2: Load Balancer Routes
 ===========================
 
 The following lab tasks will guide you through using the Distributed Cloud Console to configure routes within a HTTP Load Balancer. 
-Students will start by creating a route to steer traffic based on a specified HTTP header contain within the client request.  Header
+Students will start by creating a route to steer traffic based on a specified HTTP header contained within the client request.  Header
 based routing is often used for blue-green testing.  Blue-green testing is a release strategy that uses two independent deployments (Blue
 and Green) for real world testing of software updates and application enhancements.  
 
@@ -45,7 +45,7 @@ directed default origin pool for the load balancer.
 +------------------------------------------------------------------------------------------------------------------------------------+
 | 4. Locate your HTTP Load Balancer in the list and click the ellipsis (three dots) under the **Actions** column. Select **Manage**  |
 |                                                                                                                                    |
-|    **Configuration**.  Your Load Balancer for this lab is named <your-namspace>-routing-https-lb.                                     |
+|    **Configuration**.  Your Load Balancer for this lab is named <name-space>-routing-https-lb.                                     |
 |                                                                                                                                    |
 |    |Manage-LB-Config|                                                                                                              |
 |                                                                                                                                    |
@@ -103,9 +103,9 @@ directed default origin pool for the load balancer.
 |                                                                                                                                    |
 |     |Origin-Add|                                                                                                                   |
 +------------------------------------------------------------------------------------------------------------------------------------+
-| 12. In the Origin Pool with Weight and Priority form, add the green origin pool for your your-namespace.  The origin pool should be    |
+| 12. In the Origin Pool with Weight and Priority form, add the green origin pool for your name-space.  The origin pool should be    |
 |                                                                                                                                    |
-|     named <your-namespace>/<your-namespace>-green-pool.                                                                                    |
+|     named <name-space>/<name-space>-green-pool.                                                                                    |
 |                                                                                                                                    |
 |     Click **Apply**                                                                                                                |
 |                                                                                                                                    |
@@ -129,7 +129,7 @@ directed default origin pool for the load balancer.
 +------------------------------------------------------------------------------------------------------------------------------------+
 | 17. This will open Firefox running inside a browser window.  In the Firefox location bar, enter your LB domin name.  The name      |
 |                                                                                                                                    |
-|     format is https://<your-namespace>.lab-app.f5demos.com/                                                                            |
+|     format is https://<your-namespace>.lab-app.f5demos.com/                                                                        |
 |                                                                                                                                    |
 |     |Blue-App|                                                                                                                     |
 |                                                                                                                                    |
@@ -208,7 +208,7 @@ paths that require additional protection. For example a path that could contain 
 +------------------------------------------------------------------------------------------------------------------------------------+
 | 4. Locate your HTTP Load Balancer in the list and click the ellipsis (three dots) under the **Actions** column. Select **Manage**  |
 |                                                                                                                                    |
-|    **Configuration**.  Your Load Balancer for this lab is named <your-namespace>-routing-https-lb.                                     |
+|    **Configuration**.  Your Load Balancer for this lab is named <your-namespace>-routing-https-lb.                                 |
 |                                                                                                                                    |
 |    |Manage-LB-Config|                                                                                                              |
 |                                                                                                                                    |
@@ -248,15 +248,15 @@ paths that require additional protection. For example a path that could contain 
 |                                                                                                                                    |
 |    |Login-Prefix|                                                                                                                  |
 +------------------------------------------------------------------------------------------------------------------------------------+
-| 10. In the Origin Pool with Weight and Priority form, add the green origin pool for your your-namespace.  The origin pool should be    |
+| 10. In the Origin Pool with Weight and Priority form, add the green origin pool for your-namespace.  The origin pool should be     |
 |                                                                                                                                    |
-|     named <your-namespace>/<your-namespace>-green-pool.                                                                                    |
+|     named <your-namespace>/<your-namespace>-green-pool.                                                                            |
 |                                                                                                                                    |
 |     Click **Apply**                                                                                                                |
 |                                                                                                                                    |
 |     |Green-Pool|                                                                                                                   |
 +------------------------------------------------------------------------------------------------------------------------------------+
-| 11. Back at the route add form scroll down to the bottom of the form and click **Configure** in the Advanced Options section.     |
+| 11. Back at the route add form scroll down to the bottom of the form and click **Configure** in the Advanced Options section.      |
 |                                                                                                                                    |
 |     |Advanced-Options|                                                                                                             |
 +------------------------------------------------------------------------------------------------------------------------------------+
@@ -288,7 +288,7 @@ paths that require additional protection. For example a path that could contain 
 +------------------------------------------------------------------------------------------------------------------------------------+
 | 17. Go back to your FIREFOX instance that is running within a browser.                                                             |
 +------------------------------------------------------------------------------------------------------------------------------------+
-| 18. In the Firefox location bar, enter your LB domain name.  Your domain name is: https://<your-namespace>.lab-app.f5demos.com/.  You     |
+| 18. In the Firefox location bar, enter your LB domin name.  The name format is https://<your-namespace>.lab-app.f5demos.com/.  You |
 |                                                                                                                                    |
 |     should see the blue version of the application.                                                                                |
 |                                                                                                                                    |
@@ -296,15 +296,15 @@ paths that require additional protection. For example a path that could contain 
 +------------------------------------------------------------------------------------------------------------------------------------+
 | 19. To test routing via HTTP path, add **/login** to the URL.  If everything worked correctly you should now see the green version |
 |                                                                                                                                    |
-|     of the application. The full URL should be https://<your-namespace>.lab-app.f5demos.com/login.                                     |
+|     of the application. The full URL should be https://<your-namespace>.lab-app.f5demos.com/login.                                 |
 |                                                                                                                                    |
 |     |Green-App-Login|                                                                                                              |
 +------------------------------------------------------------------------------------------------------------------------------------+
 | 20. Verify the WAF policy was applied by adding **?cmd=cat /etc/passwd** to end of the URL.  The full URL should look like:        |
 |                                                                                                                                    |
-|     https://<your-namespace>.lab-app.f5demos.com/login/?cmd=cat /etc/passwd. When you hit enter you should now see a page saying The   |
+|     https://<your-namespace>.lab-app.f5demos.com/login/?cmd=cat /etc/passwd. When you hit enter you should now see a page saying   |
 |                                                                                                                                    |
-|     requested URL was rejected along with a support ID.                                                                            |
+|     The requested URL was rejected along with a support ID.                                                                        |
 |                                                                                                                                    |
 |     |WAF-Block|                                                                                                                    |
 +------------------------------------------------------------------------------------------------------------------------------------+
@@ -338,7 +338,7 @@ adds a response header. This configuration can be used to set or remove headers 
 +------------------------------------------------------------------------------------------------------------------------------------+
 | **Configure a Path Route and Adds a Response Header**                                                                              |
 +====================================================================================================================================+
-| 1. Open the Distributed Cloud Console.                                                                                             |
+| 1. Open the Disributed Cloud Console.                                                                                              |
 +------------------------------------------------------------------------------------------------------------------------------------+
 | 2. If you are not already in the **Web App & API Protection** workspace, from the top navigation bar, select the **Web App & API** |
 |                                                                                                                                    |
@@ -352,7 +352,7 @@ adds a response header. This configuration can be used to set or remove headers 
 +------------------------------------------------------------------------------------------------------------------------------------+
 | 4. Locate your HTTP Load Balancer in the list and click the ellipsis (three dots) under the **Actions** column. Select **Manage**  |
 |                                                                                                                                    |
-|    **Configuration**.  Your Load Balancer for this lab is named <your-namespace>-routing-https-lb.                                     |
+|    **Configuration**.  Your Load Balancer for this lab is named <your-namespace>-routing-https-lb.                                 |
 |                                                                                                                                    |
 |    |Manage-LB-Config|                                                                                                              |
 |                                                                                                                                    |
@@ -385,7 +385,7 @@ adds a response header. This configuration can be used to set or remove headers 
 |                                                                                                                                    |
 |     |Add-Response|                                                                                                                 |
 +------------------------------------------------------------------------------------------------------------------------------------+
-| 11. In the Headers to Add form, add the following:                                                                                |
+| 11. In the Headers to Add form, add the following:                                                                                 |
 |                                                                                                                                    |
 |     - Name: XC-Namespace                                                                                                           |
 |                                                                                                                                    |
@@ -420,9 +420,9 @@ adds a response header. This configuration can be used to set or remove headers 
 +------------------------------------------------------------------------------------------------------------------------------------+
 | 16. Go back to your FIREFOX instance that is running within a browser.                                                             |
 +------------------------------------------------------------------------------------------------------------------------------------+
-| 17. In the Firefox location bar, enter your LB domain name.  Your LB domain name is: https://<your-namespace>.lab-app.f5demos.com/login.  You|
+| 17. In the Firefox location bar, enter your LB domin name.  The name format is https://<your-namespace>.lab-app.f5demos.com/login. |
 |                                                                                                                                    |
-|     should see the green version of the application.                                                                               |
+|     You should see the green version of the application.                                                                           |
 |                                                                                                                                    |
 |     |Green-App-Login|                                                                                                              |
 +------------------------------------------------------------------------------------------------------------------------------------+
