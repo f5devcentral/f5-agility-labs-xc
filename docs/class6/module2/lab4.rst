@@ -387,7 +387,7 @@ Click **Apply**
 |
     |lab023|
 |
-Click **Save Service policy**
+Click **Add Service policy**
 
 Test Service Policy
 -------------------
