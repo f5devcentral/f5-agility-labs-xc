@@ -14,7 +14,7 @@ The last task within this lab is to deploy routes to modify application response
 ability to modify Requests and/or Responses.  This can be used to add/remove headers used by the backend application, rewrite path
 prefixes and modify cookies.
 
-**Expected Lab Time: 20 minutes**
+**Expected Lab Time: 25 minutes**
 
 Task 1: Deploy a Header Route to Steer Traffic for Canary Testing
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
