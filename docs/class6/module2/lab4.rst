@@ -346,7 +346,7 @@ While Service Policies can do many things, we will go through a quick exercise t
 
 When you create a **Service Policy** it intrinsically contains a **default deny**. Therefore, our Service Policy will actually be a definition of what is allowed. 
 
-Back in XC Console, from the **Side menu** under **Security**, click on **Service Policies** >> **Service Policies** and click the **Add Service Policy** button. 
+Back in XC Console, go to Multi-Cloud App Connect and from the **Side menu** under **Security**, click on **Service Policies** >> **Service Policies** and click the **Add Service Policy** button. 
 
 ==================================      ==============
 Variable                                Value
@@ -387,7 +387,7 @@ Click **Apply**
 |
     |lab023|
 |
-Click **Save Service policy**
+Click **Add Service policy**
 
 Test Service Policy
 -------------------
@@ -396,7 +396,7 @@ If you don't already have a tab open to the Diag tool, in your browser go to: ht
 
 Try your curl command again **without** the **--head** flag.:: 
 
-    curl http://[animal-name]-aws-to-azure-lb.lab-mcn.f5demos.com --resolve [animal-name]-aws-to-azure-lb.lab-mcn.f5demos.com:80:10.0.5.236
+    curl http://[animal-name]-aws-to-azure-lb.lab-mcn.f5demos.com --resolve [animal-name]-aws-to-azure-lb.lab-mcn.f5demos.com:80:10.0.5.5
 
 |
     |lab025|
@@ -409,7 +409,7 @@ Click **Edit Config** in top right hand corner and scroll down to **Common Secur
 |
     |lab033|
 |
-    curl --head  http://[animal-name]-aws-to-azure-lb.lab-mcn.f5demos.com --resolve [animal-name]-aws-to-azure-lb.lab-mcn.f5demos.com:80:10.0.5.236
+     curl --head http://[animal-name]-aws-to-azure-lb.lab-mcn.f5demos.com --resolve [animal-name]-aws-to-azure-lb.lab-mcn.f5demos.com:80:10.0.5.5
 
 |
     |lab026|
@@ -422,7 +422,7 @@ You have now successfully configured an application layer **Service Policy** tha
 Review Service Policy Logs
 ---------------------------
 
-Back in XC Console, from the **Side menu** under **Overview**, click on **Applications** and scroll down and click on your **[animal-name]-aws-to-azure-lb** under **Load Balancers**.
+Back in XC Console, and from the **Side menu** under **Overview**, click on **Applications** and scroll down and click on your **[animal-name]-aws-to-azure-lb** under **Load Balancers**.
 
 |
     |lab027|
