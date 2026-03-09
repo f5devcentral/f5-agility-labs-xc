@@ -422,7 +422,7 @@ You have now successfully configured an application layer **Service Policy** tha
 Review Service Policy Logs
 ---------------------------
 
-Back in XC Console, and from the **Side menu** under **Overview**, click on **Applications** and scroll down and click on your **[animal-name]-aws-to-azure-lb** under **Load Balancers**.
+Back in XC Console, and from the **Side menu** under **Overview**, click on **Applications** and scroll down and click on your **<your-namespace>-aws-to-azure-lb** under **Load Balancers**.
 
 |
     |lab027|
