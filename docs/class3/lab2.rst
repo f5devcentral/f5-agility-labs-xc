@@ -465,96 +465,96 @@ adds a response header. This configuration can be used to set or remove headers 
 +------------------------------------------------------------------------------------------------------------------------------------+
 
 
-.. |Web-App-Tile| image:: _static/Web-App-Tile.png
+.. |Web-App-Tile| image:: _images/Web-App-Tile.png
    :width: 800px
-.. |Web-App-Dropdown| image:: _static/Web-App-Dropdown.png
+.. |Web-App-Dropdown| image:: _images/Web-App-Dropdown.png
    :width: 800px
-.. |Manage-HTTP-LB| image:: _static/Manage-HTTP-LB.png
+.. |Manage-HTTP-LB| image:: _images/Manage-HTTP-LB.png
    :width: 800px
-.. |Manage-LB-Config| image:: _static/Manage-LB-Config.png
+.. |Manage-LB-Config| image:: _images/Manage-LB-Config.png
    :width: 800px   
-.. |Edit-LB-Config| image:: _static/Edit-LB-Config.png
+.. |Edit-LB-Config| image:: _images/Edit-LB-Config.png
    :width: 800px
-.. |Routes-Section| image:: _static/Routes-Section.png
+.. |Routes-Section| image:: _images/Routes-Section.png
    :width: 800px
-.. |Routes-Config| image:: _static/Routes-Config.png
+.. |Routes-Config| image:: _images/Routes-Config.png
    :width: 800px
-.. |Route-Add| image:: _static/Route-Add.png
+.. |Route-Add| image:: _images/Route-Add.png
    :width: 800px
-.. |Header-Add| image:: _static/Header-Add.png
+.. |Header-Add| image:: _images/Header-Add.png
    :width: 800px
-.. |Header-Match| image:: _static/Header-Match.png
+.. |Header-Match| image:: _images/Header-Match.png
    :width: 800px
-.. |Origin-Add| image:: _static/Origin-Add.png
+.. |Origin-Add| image:: _images/Origin-Add.png
    :width: 800px
-.. |Green-Pool| image:: _static/Green-Pool.png
+.. |Green-Pool| image:: _images/Green-Pool.png
    :width: 800px
-.. |Route-Apply| image:: _static/Route-Apply.png
+.. |Route-Apply| image:: _images/Route-Apply.png
    :width: 800px
-.. |Routes-Apply| image:: _static/Routes-Apply.png
+.. |Routes-Apply| image:: _images/Routes-Apply.png
    :width: 800px
-.. |LB-Save| image:: _static/LB-Save.png
+.. |LB-Save| image:: _images/LB-Save.png
    :width: 800px
-.. |Blue-App| image:: _static/Blue-App.png
+.. |Blue-App| image:: _images/Blue-App.png
    :width: 800px
-.. |Header-Editor| image:: _static/Header-Editor.png
+.. |Header-Editor| image:: _images/Header-Editor.png
    :width: 800px
-.. |Header-Manage| image:: _static/Header-Manage.png
+.. |Header-Manage| image:: _images/Header-Manage.png
    :width: 800px
-.. |Green-Rule| image:: _static/Green-Rule.png
+.. |Green-Rule| image:: _images/Green-Rule.png
    :width: 800px
-.. |Refresh| image:: _static/Refresh.png
+.. |Refresh| image:: _images/Refresh.png
    :width: 800px
-.. |Green-App| image:: _static/Green-App.png
+.. |Green-App| image:: _images/Green-App.png
    :width: 800px
-.. |Green-Rule-Disable| image:: _static/Green-Rule-Disable.png
+.. |Green-Rule-Disable| image:: _images/Green-Rule-Disable.png
    :width: 800px
-.. |Route-Add2| image:: _static/Route-Add2.png
+.. |Route-Add2| image:: _images/Route-Add2.png
    :width: 800px
-.. |Login-Prefix| image:: _static/Login-Prefix.png
+.. |Login-Prefix| image:: _images/Login-Prefix.png
    :width: 800px
-.. |Advanced-Options| image:: _static/Advanced-Options.png
+.. |Advanced-Options| image:: _images/Advanced-Options.png
    :width: 800px
-.. |Rewrite| image:: _static/Rewrite.png
+.. |Rewrite| image:: _images/Rewrite.png
    :width: 800px
-.. |WAF| image:: _static/WAF.png
+.. |WAF| image:: _images/WAF.png
    :width: 800px
-.. |Apply-WAF-Route| image:: _static/Apply-WAF-Route.png
+.. |Apply-WAF-Route| image:: _images/Apply-WAF-Route.png
    :width: 800px
-.. |Routes-Apply2| image:: _static/Routes-Apply2.png
+.. |Routes-Apply2| image:: _images/Routes-Apply2.png
    :width: 800px
-.. |Green-App-Login| image:: _static/Green-App-Login.png
+.. |Green-App-Login| image:: _images/Green-App-Login.png
    :width: 800px
-.. |WAF-Block| image:: _static/WAF-Block.png
+.. |WAF-Block| image:: _images/WAF-Block.png
    :width: 800px
-.. |Support-ID| image:: _static/Support-ID.png
+.. |Support-ID| image:: _images/Support-ID.png
    :width: 800px
-.. |AI-Assistant| image:: _static/AI-Assistant.png
+.. |AI-Assistant| image:: _images/AI-Assistant.png
    :width: 800px
-.. |Explain-Event| image:: _static/Explain-Event.png
+.. |Explain-Event| image:: _images/Explain-Event.png
    :width: 800px
-.. |Event-Analysis| image:: _static/Event-Analysis.png
+.. |Event-Analysis| image:: _images/Event-Analysis.png
    :width: 800px
-.. |Routes-Edit-Config| image:: _static/Routes-Edit-Config.png
+.. |Routes-Edit-Config| image:: _images/Routes-Edit-Config.png
    :width: 800px
-.. |Edit-Path| image:: _static/Edit-Path.png
+.. |Edit-Path| image:: _images/Edit-Path.png
    :width: 800px
-.. |Advanced-Edit| image:: _static/Advanced-Edit.png
+.. |Advanced-Edit| image:: _images/Advanced-Edit.png
    :width: 800px
-.. |Add-Response| image:: _static/Add-Response.png
+.. |Add-Response| image:: _images/Add-Response.png
    :width: 800px
-.. |Response-Header| image:: _static/Response-Header.png
+.. |Response-Header| image:: _images/Response-Header.png
    :width: 800px
-.. |Advanced-Apply| image:: _static/Advanced-Apply.png
+.. |Advanced-Apply| image:: _images/Advanced-Apply.png
    :width: 800px
-.. |More-Tools| image:: _static/More-Tools.png
+.. |More-Tools| image:: _images/More-Tools.png
    :width: 800px
-.. |Web-Dev| image:: _static/Web-Dev.png
+.. |Web-Dev| image:: _images/Web-Dev.png
    :width: 800px
-.. |Network-Reload| image:: _static/Network-Reload.png
+.. |Network-Reload| image:: _images/Network-Reload.png
    :width: 800px
-.. |Firefox-Header| image:: _static/Firefox-Header.png
+.. |Firefox-Header| image:: _images/Firefox-Header.png
    :width: 800px
-.. |labend| image:: _static/labend.png
+.. |labend| image:: _images/labend.png
    :width: 800px
 .. _XC-Header-Variables: https://docs.cloud.f5.com/docs-v2/multi-cloud-app-connect/how-to/adv-security/configure-http-header-processing#predefined-header-variables
