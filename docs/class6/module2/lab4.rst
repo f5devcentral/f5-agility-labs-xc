@@ -351,9 +351,9 @@ Back in XC Console, go to Multi-Cloud App Connect and from the **Side menu** und
 ==================================      ==============
 Variable                                Value
 ==================================      ==============
-Name                                    [animal-name]-allow-get-sp
+Name                                    <your-namespace>-allow-get-sp
 Server Selection                        Server Name
-Server Name                             [animal-name]-aws-to-azure-lb.lab-mcn.f5demos.com
+Server Name                             <animal-name>-aws-to-azure-lb.lab-mcn.f5demos.com
 Select Policy Rules                     Custom Rule List
 Rules                                   **Configure**, Click **Add Item** > See Below:
 ==================================      ==============
@@ -366,7 +366,7 @@ Variable                                Value
 Name                                    allow-get
 Action                                  Allow
 Clients                                 Any Client
-Servers                                 Domain Matcher >> **Exact Value** >> [animal-name]-aws-to-azure-lb.lab-mcn.f5demos.com
+Servers                                 Domain Matcher >> **Exact Value** >> <your-namespace>-aws-to-azure-lb.lab-mcn.f5demos.com
 HTTP Method/Method List                 Get
 HTTP Path                               **Configure** >> **Add Item** add **/** under **Prefix Values**. 
 ==================================      ==============
@@ -392,11 +392,11 @@ Click **Add Service policy**
 Test Service Policy
 -------------------
 
-If you don't already have a tab open to the Diag tool, in your browser go to: http://[animal-name]-awstool.lab-mcn.f5demos.com
+If you don't already have a tab open to the Diag tool, in your browser go to: http://<your-namespace>-awstool.lab-mcn.f5demos.com
 
 Try your curl command again **without** the **--head** flag.:: 
 
-    curl http://[animal-name]-aws-to-azure-lb.lab-mcn.f5demos.com --resolve [animal-name]-aws-to-azure-lb.lab-mcn.f5demos.com:80:10.0.5.5
+    curl http://<your-namespace>-aws-to-azure-lb.lab-mcn.f5demos.com --resolve <your-namespace>-aws-to-azure-lb.lab-mcn.f5demos.com:80:10.0.5.5
 
 |
     |lab025|
@@ -409,7 +409,7 @@ Click **Edit Config** in top right hand corner and scroll down to **Common Secur
 |
     |lab033|
 |
-     curl --head http://[animal-name]-aws-to-azure-lb.lab-mcn.f5demos.com --resolve [animal-name]-aws-to-azure-lb.lab-mcn.f5demos.com:80:10.0.5.5
+     curl --head http://<your-namespace>-aws-to-azure-lb.lab-mcn.f5demos.com --resolve <your-namespace>-aws-to-azure-lb.lab-mcn.f5demos.com:80:10.0.5.5
 
 |
     |lab026|
@@ -422,7 +422,7 @@ You have now successfully configured an application layer **Service Policy** tha
 Review Service Policy Logs
 ---------------------------
 
-Back in XC Console, and from the **Side menu** under **Overview**, click on **Applications** and scroll down and click on your **[animal-name]-aws-to-azure-lb** under **Load Balancers**.
+Back in XC Console, and from the **Side menu** under **Overview**, click on **Applications** and scroll down and click on your **<your-namespace>-aws-to-azure-lb** under **Load Balancers**.
 
 |
     |lab027|
