@@ -351,9 +351,9 @@ Back in XC Console, go to Multi-Cloud App Connect and from the **Side menu** und
 ==================================      ==============
 Variable                                Value
 ==================================      ==============
-Name                                    [animal-name]-allow-get-sp
+Name                                    <your-namespace>-allow-get-sp
 Server Selection                        Server Name
-Server Name                             [animal-name]-aws-to-azure-lb.lab-mcn.f5demos.com
+Server Name                             <animal-name>-aws-to-azure-lb.lab-mcn.f5demos.com
 Select Policy Rules                     Custom Rule List
 Rules                                   **Configure**, Click **Add Item** > See Below:
 ==================================      ==============
