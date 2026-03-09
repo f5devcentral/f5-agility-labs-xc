@@ -28,6 +28,8 @@ Appendix
 **Automation/Orchestration**:
   * **API:** https://docs.cloud.f5.com/docs-v2/api
   * **Terraform:** https://registry.terraform.io/providers/volterraedge/volterra/latest
+  * **Security Audit Tool:**: https://github.com/mhermsdorferf5/f5xc-audit/
+  * **Lab Postman collection:** :download:`postman.json <_static/class8-postman.json>`
 
 
 +----------------------------------------------------------------------------------------------+
