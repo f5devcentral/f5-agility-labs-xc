@@ -15,7 +15,9 @@ Task 1: Simulate Allowed Access to a Misconfigured API
 
 #. Using another browser tab, navigate to the the following URL.
 
-   ``http://<namespace>.lab-sec.f5demos.com/swagger``
+   .. code-block:: text
+
+      http://<your-namespace>.lab-sec.f5demos.com/swagger
 
    .. image:: _static/shared-swagger-intro.png
       :width: 800px
@@ -111,7 +113,9 @@ Task 3: Simulate Blocked Access to a Misconfigured API
 
 #. Using another browser tab, navigate to the the following URL.
 
-   ``http://<namespace>.lab-sec.f5demos.com/swagger``
+   .. code-block:: text
+      
+      http://<your-namespace>.lab-sec.f5demos.com/swagger
 
    .. image:: _static/shared-swagger-intro.png
       :width: 800px

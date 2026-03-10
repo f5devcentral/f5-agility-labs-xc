@@ -20,7 +20,9 @@ In this task, you will follow steps to send multiple requests within one minute 
 
 #. Using another browser tab, navigate to the following URL.
 
-   ``http://<namespace>.lab-sec.f5demos.com/swagger``
+   .. code-block:: text
+   
+      http://<your-namespace>.lab-sec.f5demos.com/swagger
 
    .. image:: _static/shared-swagger-intro.png
       :width: 800px
@@ -135,7 +137,9 @@ In this task, you will send more than 10 requests within one minute
 
 #. Using another browser tab, navigate to the following URL.
 
-   ``http://<namespace>.lab-sec.f5demos.com/swagger``
+   .. code-block:: text
+   
+      http://<your-namespace>.lab-sec.f5demos.com/swagger
 
    .. image:: _static/shared-swagger-intro.png
       :width: 800px
