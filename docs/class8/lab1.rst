@@ -30,7 +30,7 @@ This lab will be deployed in a SaaS only configuration with no on-premises (publ
 Following the tasks in the prior **Introduction** Section, you should now be
 able to access the F5 Distributed Cloud Console, having set your Work Domain
 Roles and Skill levels. If you have not done so already, please login to your
-tenant for this lab using the **Accept Inivitation** link from your second email 
+tenant for this lab using the **Accept Invitation** link from your second email 
 and proceed to Task 1.
 
 **Expected Lab Time: 40 minutes**
@@ -70,7 +70,7 @@ configured as the origin.
    **Menu** on the top right-hand side and select **Header**.  
    
 #. Note the Remote Address field. This will match the IP address of your endpoint.  You can verify 
-   that it matches by looking up your IP address at https://ipinfo.io/.  
+   that it matches by looking up your IP address at https://ipinfo.io/what-is-my-ip.  
 
    |lab005|
 
@@ -129,7 +129,7 @@ Narrative Check
 With your application now proxied through the F5 Distributed Cloud Regional Edge, ACME Corp's security edge for this application
 can now be extended globally across F5's ADN and be used to scrub unwanted traffic before reaching ACME Corp's environment.  
 The Application and Security teams have requested that some geo-fencing rules be put in place to decrease the application's attack surface.
-ACME Corp would like to block all traffic coming from Fiji since ACME Corp has a subsidary with exclusive rights locally.  ACME Corp
+ACME Corp would like to block all traffic coming from Fiji since ACME Corp has a subsidiary with exclusive rights locally.  ACME Corp
 would also like to block known bad IP address coming from TOR Networks and Spam Networks from accessing the application.  
 
 Task 2: Negative Enforcement  
@@ -147,7 +147,7 @@ based on geo-location, IP addresses, and known bad IP ranges.
    |lab014|
 
 #. Select **Common Security Controls** in the left hand menu, and then click **Edit Configuration**.  This will enable you
-   to enable IP Reputation controls.  The IP reputation service analyzies IP threats and publishes a dynamic data set of
+   to enable IP Reputation controls.  The IP reputation service analyzes IP threats and publishes a dynamic data set of
    millions of high-risk IP address to protect inbound traffic from malicious IPs.
 
    |lab015|
@@ -163,7 +163,7 @@ based on geo-location, IP addresses, and known bad IP ranges.
 #. Next, click the dropdown for **Threat Mesh** and select **Enable**.  **Threat Mesh** provide F5 
    Distributed Cloud applications and additional layer of protection against web application attacks.
    Threat Mesh leverages cross-customer correlation to identify malicious intent of a client.   Whenever
-   a client is flagged due to malicious entent by F5 Distributed Cloud decision engines, that client will 
+   a client is flagged due to malicious intent by F5 Distributed Cloud decision engines, that client will 
    be added to the the ThreatDB.  Enabling **Threat Mesh** means that requests that come to an application 
    from an IP in the ThreatDB will be automatically blocked.
 
@@ -172,7 +172,7 @@ based on geo-location, IP addresses, and known bad IP ranges.
 #. Note that **Service Policies** is set to *Apply Namespace Service Policies*.  This means that this 
    application load balancer will follow the active service policies defined for the namespace.  By default,
    all new HTTP load balancers built in the namespace will follow the same set of rules.  This shared set
-   of policies assist with the rapid deploment of security updates for incidence response since the ruleset
+   of policies assist with the rapid deployment of security updates for incidence response since the ruleset
    can be updated in one spot and all applications in the namespace will be updated.  Scroll down and click
    **Save and Exit**.
 

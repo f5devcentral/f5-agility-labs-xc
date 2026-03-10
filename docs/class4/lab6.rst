@@ -27,7 +27,7 @@ In this task, you will explore the Security Analytics Dashboard within Distribut
    .. image:: _static/lab6-request-102.png
       :width: 800px
 
-#. On the right-hand side, expand the time window to **Last 24 hour** and click the **Refresh** button; this should provide details of your requests you made during this lab.
+#. On the right-hand side, expand the time window to **Last 24 hours**, click **Apply**, then click the **Refresh** button; this should provide details of your requests you made during this lab
 
 #. Review and explore the related request events. Expand various requests to understand if they were successful or denied.
 
@@ -53,7 +53,7 @@ In this task, you will explore the Security Analytics Dashboard within Distribut
    .. image:: _static/lab6-security-102.png
       :width: 800px
 
-#. On the right-hand side, expand the time window to **Last 24 hour** and click the **Refresh** button; this should provide details of your requests you made during this lab.
+#. On the right-hand side, expand the time window to **Last 24 hours**, click **Apply**, then click the **Refresh** button; this should provide details of your requests you made during this lab
 
 #. Review and explore the related security events. Expand various requests to understand why they were allowed/blocked.
 

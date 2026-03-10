@@ -3,17 +3,21 @@ Lab 2: Configuring Network Connect with Segments (L3/L4 Routing Firewall)
 
 **Objective:**
 
-* Understand Network Segments and Segment Connectors
-* Create network segments for isolated network domains
-* Configure segment connectors to enable communication between segments
-* Test connectivity and configure Enhanced Firewall for network security
+* Understand Network Segments and their isolation characteristics
+* Attach a pre-configured segment to your CE site interface
+* Test connectivity to AWS workloads before and after segment attachment
+* Review routing information and understand route propagation
+* Review Enhanced Firewall policies and their enforcement
+* Verify firewall policy effectiveness through testing
 
-In this lab, you will create network segments to provide isolated Layer 3 network domains, then use
-segment connectors to selectively enable secure communication between these environments.
+In this lab, you will attach a pre-configured network segment to your CE site interface to enable 
+connectivity to AWS workloads. You will then test connectivity and observe how Enhanced Firewall 
+policies control traffic between segments.
 
 .. note::
-   Network segments provide isolation by default. Segment connectors selectively allow communication
-   between segments while maintaining security boundaries.
+   Network segments provide isolation by default ("ships in the night"). Attaching a segment to 
+   your CE interface enables connectivity while maintaining security boundaries between different 
+   environments.
 
 |lab001|
 
@@ -32,22 +36,25 @@ Task 1: Understanding the Lab Environment
 
 **Narrative:**
 
-You need to configure connectivity to meet ACME Corp's requirement: connect the Data Center network
-to the AWS network using network segments. The backend security device needs to scan the frontend in
-AWS on port 80, and all other ports must be blocked.
+You need to configure connectivity to meet ACME Corp's requirement: connect your Data Center network
+to the AWS network. Only HTTP traffic to the node in AWS should be allowed from your Data Center, with
+all other traffic controlled by firewall policies.
 
 **Lab Environment Overview:**
 
-* An Ubuntu Server in the UDF environment simulates the Data Center backend
-* The AWS frontend workload is already deployed with a CE Node in AWS
-* You will create network segments to isolate these environments
+* An Ubuntu Server in your UDF (Data Center) environment
+* The AWS Ubuntu workload is shared across all lab attendees at **10.0.5.253**
+* A pre-configured AWS segment (**appworld-aws-segment**) will be attached to your site
+* Enhanced Firewall policies will control traffic between segments
 
 .. note::
-   The Data Center backend has a pre-configured route to 10.0.5.0/24 pointing to the Data Center
-   CE Node. The AWS workload has a route to 10.1.10.0/24 pointing to the AWS CE Node.
+   The Data Center has a pre-configured route to 10.0.5.0/24 pointing to the Data Center CE Node.
+   The AWS workload has a route to 10.1.10.0/24 pointing to the AWS CE Node.
 
-Your goal is to create network segments and establish routing between these environments. Segments
-provide isolated network domains, and segment connectors allow controlled communication between them.
+|lab002|
+
+Your goal is to attach the AWS segment to your CE site interface to enable connectivity between 
+your UDF environment and the AWS workload.
 
 **All traffic between networks will be routed through auto-provisioned, self-healing and encrypted
 tunnels between the Customer Edges and F5 Regional Edges.**
@@ -67,74 +74,77 @@ Network segments are isolated Layer 3 network domains that provide:
 **Key Concepts:**
 
 * **Segment:** An isolated network domain (e.g., "prod-segment", "dev-segment")
-* **Segment Connector:** Allows communication between two segments
-* **Connector Types:**
+* **Segment Attachment:** Assigning a segment to a CE interface enables connectivity to that segment
+* **Route Propagation:** Routes are automatically exchanged through Regional Edges when segments are attached
+* **Enhanced Firewall:** Provides stateful firewall capabilities to control traffic between segments
 
-  * **Direct:** Bidirectional communication between segments
-  * **SNAT:** Unidirectional communication with source NAT from source to destination
+Task 3: Test Connectivity to AWS Before Segment Attachment
+-----------------------------------------------------------
 
-Task 3: Create Network Segments
---------------------------------
+Before attaching the segment, let's verify that there is no connectivity to the AWS workload.
 
-You will now create network segments for your UDF site.
-
-1. From the F5 Distributed Cloud Console, make sure you are still in **Multi-Cloud Network Connect**.
-
-2. In the left-hand menu, navigate to **Manage >> Networking >> Segments**, then click **Add Segment**.
-
-   |lab002|
-
-3. Configure your segment then click **Add Segment**.
-
-   **Create UDF Segment:**
-
-   ================================  ========================================
-   Variable                          Value
-   ================================  ========================================
-   Name                              <your-namespace>-udf-sg
-   Description                       Data Center (UDF) network segment
-   Connect to Internet               Allow traffic from this segment to the Internet
-   ================================  ========================================
+1. From your UDF environment browser tab, click on **Access >> Web Shell** on the Ubuntu Client.
+   This opens a new tab with a Web Shell.
 
    |lab003|
 
-4. For the purpose of this lab, the segment for AWS site (**appworld-aws-segment**) has already 
-   been created and attached to the interface of the CE node in AWS. Verify the segment that you 
-   just created and note that there are zero sites connected to the segment you just created.
+2. The Ubuntu server in AWS has IP address **10.0.5.253**
+
+3. Type **ping -O 10.0.5.253** and press **Enter**. You **WILL NOT** get a response.
+
+   .. note::
+      -O is the uppercase letter "O"
 
    |lab004|
 
-   .. note::
-      These segments are now isolated from each other. No traffic can flow between them until
-      you create a segment connector.
+   Leave this ping running - we'll check back after attaching the segment to your CE (Customer Edge) site.
 
-Task 4: Attach Segment to Your CE Site
----------------------------------------
+Task 4: Review Routing Information Before Attaching Segment to Your CE Site
+----------------------------------------------------------------------------
 
-Now you need to attach your UDF segment to your CE site's interface.
+Let's examine the routing information before we attach the segment to the interface.
 
-5. Navigate to **Manage >> Site Management >> Secure Mesh Sites v2**.
-
-6. Locate your UDF site (**<your-namespace>-site**) and click the three dots under **Actions**.
-
-7. Select **Manage Configuration**.
+4. Navigate to **Multi-Cloud Network Connect >> Manage >> Site Management >> Secure Mesh Site v2** and click on your
+   **<your-namespace>-site**.
 
    |lab005|
 
-8. Click **Edit Configuration** in the top right.
+5. Click on the **CE Routes** menu on the top, in the middle.
 
    |lab006|
 
-9. Click **Edit** (the pencil icon) to edit the CE node.
+6. On the right side of the screen, **Select Data** by choosing your node and review both **VIRTUAL_NETWORK_SITE_LOCAL** and **VIRTUAL_NETWORK_SITE_LOCAL_INSIDE** one at a time.  After choosing the Segment click Apply bottom right of page
 
    |lab007|
 
-10. Click **Edit** (the pencil icon) to attach the segment to your node interface. In this case, 
-    we are attaching the segment to the SLI interface and leaving the SLO interface untouched.
+7. Observe there isn't any route to 10.0.5.0/24 via enp0s5 nor enp0s6.
+
+Task 5: Attach Segment to Your CE Site
+---------------------------------------
+
+You will now attach the pre-configured AWS segment to your CE site's interface.
+
+8. Navigate back to the list of all Secure Mesh Sites v2 **Manage >> Site Management >> Secure Mesh Sites v2**.
+
+9. Locate your UDF site (**<your-namespace>-site**) and click the three dots under **Actions**.
+
+10. Select **Manage Configuration**.
 
     |lab008|
 
-11. Configure your interface:
+11. Click **Edit Configuration** on the top right.
+
+    |lab009|
+
+12. Click **Edit** (the pencil icon) to edit the CE node.
+
+    |lab010|
+
+13. Find the **enp0s6** interface and click **Edit** (the pencil icon).
+
+    |lab011|
+
+14. Configure your interface then click **Apply**:
 
     **IP Configuration:**
 
@@ -142,7 +152,7 @@ Now you need to attach your UDF segment to your CE site's interface.
     Variable                          Value
     ================================  ========================================
     IPv4 Interface Address Method     Static IP
-    IPv4 address/Prefix Length        10.1.10.10/24
+    IP address/Prefix Length          10.1.10.10/24
     Default Gateway                   10.1.10.1
     ================================  ========================================
 
@@ -152,153 +162,188 @@ Now you need to attach your UDF segment to your CE site's interface.
     Variable                          Value
     ================================  ========================================
     Select VRF                        Segment (Global VRF)
-    Segment (Global VRF)              <your-namespace>-udf-sg
+    Segment (Global VRF)              appworld-aws-segment
     ================================  ========================================
 
-    |lab009|
+    |lab012|
 
-12. Click **Apply** for interface changes then click **Apply** for node configuration changes.
+15. Click **Apply** to save node interface changes.
 
-13. Click **Save Secure Mesh Site** to save the configuration.
+    |lab013|
 
-14. Navigate back to **Manage >> Networking >> Segments** and find your segment
-    **<your-namespace>-udf-sg**.
+16. Click **Save Secure Mesh Site** to save your site configuration.
 
-15. Verify that your site is now attached to the segment (you should see 1 site connected).
+    |lab014|
 
-    |lab010|
+Task 6: Test Connectivity to AWS After Segment Attachment
+----------------------------------------------------------
 
-    .. note::
-       Your UDF segment is now attached to your CE site. However, it is still isolated from the
-       AWS segment until you create a segment connector.
+Let's verify the connectivity to the AWS Ubuntu now.
 
-Task 5: Review Routing Information
+17. Navigate back to the Ubuntu Web Shell tab.
+
+18. You should be getting responses now!!
+
+    |lab015|
+
+19. Test the HTTP service. In the web shell type:
+
+    **curl --head http://10.0.5.253**
+
+    |lab016|
+
+    You should receive a **200 OK** response from the nginx web server.
+
+    .. important::
+       If you are not getting a **200 OK** response or ping fails, please see a lab assistant
+       before moving on.
+
+Task 7: Review Routing Information
 -----------------------------------
 
 Let's examine the routing established by attaching the segment to the interface.
 
-16. Navigate to **Manage >> Site Management >> Secure Mesh Sites v2** and search for **<your-namespace>-site** then click on your
-    site.
-
-17. Click on the **CE Routes** menu on the top, in the middle.
-
-18. Look to the right, **Select Data** by choosing your node and the segment you just created **<your-namespace>-udf-sg**, then click **Apply**.
-
-    |lab011|
-
-Task 6: Test Connectivity Before Segment Connector
----------------------------------------------------
-
-Let's verify there is currently no connectivity between the UDF and AWS environments.
-
-19. From your UDF environment browser tab, click on **Access >> Web Shell** on the Ubuntu Client.
-    This opens a new tab with a Web Shell.
-
-    |lab012|
-
-20. The workload in AWS has IP address **10.0.5.253**
-
-21. Type **ping -O 10.0.5.253** and press **Enter**. You **WILL NOT** get a response.
-
-    .. note::
-       -O is the uppercase letter "O"
-
-    |lab013|
-
-    Leave this ping running - we'll check back after creating the segment connector.
-
-Task 7: Understanding Segment Connectors
------------------------------------------
-
-**What are Segment Connectors?**
-
-Segment connectors create connections between isolated network segments. Without a segment connector,
-segments cannot communicate - they remain "ships in the night."
-
-**Segment Connector Types:**
-
-* **Direct Connector:** Enables bidirectional communication. Routes are exchanged in both directions.
-* **SNAT Connector:** Enables unidirectional communication from source to destination with source NAT
-  applied.
-
-Task 8: Create a Segment Connector
------------------------------------
-
-Now let's create a segment connector to enable communication between your UDF segment and the AWS segment.
-
-22. Navigate to **Manage >> Networking >> Segment Connector**.
-
-23. Click **Manage Segment Connections**.
-
-24. Click **Add Item** to create the segment connector:
-
-    ================================  ========================================
-    Variable                          Value
-    ================================  ========================================
-    Source Segment                    <your-namespace>-udf-sg
-    Destination Segment               appworld-aws-segment
-    Type                              Direct
-    ================================  ========================================
-
-    |lab014|
-
-    .. note::
-       The **Direct** connector type allows bidirectional communication between the two segments.
-       Routes will be exchanged in both directions. If you needed unidirectional communication
-       with source NAT, you would select **SNAT** instead.
-
-25. Click **Apply** to create the segment connector then click **Save Segment Connection**.
-
-Task 9: Verify Connectivity After Segment Connector
-----------------------------------------------------
-
-26. Wait approximately 30-60 seconds for the segment connector to propagate and routes to be exchanged.
-
-27. Check back on your web shell tab with the ping running. **Success!!**
-
-    |lab015|
-
-    .. tip::
-       To remove this connectivity, simply delete the segment connector. Segments revert to their
-       default isolated state when no connector exists.
-
-Task 10: Review Updated Routing Information
---------------------------------------------
-
-Let's examine how the routing has changed after creating the segment connector.
-
-28. Navigate back to **Manage >> Site Management >> Secure Mesh Sites v2** and click on your
+20. Navigate back to the list of all Secure Mesh Sites v2 **Manage >> Site Management >> Secure Mesh Sites v2** and click on your
     **<your-namespace>-site**.
 
-29. Click on the **CE Routes** menu again.
+21. Click on the **CE Routes** menu again.
 
-30. **Select Data** by choosing your node and the segment **<your-namespace>-udf-sg**, then click **Apply**.
+22. **Select Data** by choosing your node and then select **appworld-aws-segment** this time, then click **Apply**.
 
-31. Observe that you now see routes to the AWS segment (10.0.5.0/24) being advertised through the
-    segment connector via RE (Regional Edge) and Distributed Cloud backbone.
+    |lab017|
 
-    .. note::
-       The segment connector has enabled route exchange between the two previously isolated segments.
+23. Observe the routes including the route to 10.0.5.0/24 via two REs (Regional Edges) that's closest to your CE node with **appworld-aws** site as Originating Site.
 
-Lab Summary (Incomplete)
--------------------------
+    |lab018|
 
-**What You've Learned So Far:**
+Task 8: Understanding Enhanced Firewall Policies
+-------------------------------------------------
 
-* How to create network segments for isolated network domains
-* How to attach segments to CE site interfaces
-* How to create segment connectors to enable communication between isolated segments
-* How to verify routing and connectivity between segments
+Enhanced Firewall policies provide granular security controls that can be applied to sites to
+control traffic between segments.
 
-**Your Current Environment:**
+**Key Concepts:**
 
-You now have segment-based connectivity between:
+* **Enhanced Firewall:** Provides stateful firewall capabilities at the CE site
+* **Traffic Filters:** Define source and destination criteria for firewall rules
+* **Protocol Matching:** Allow or deny specific protocols (ICMP, TCP, UDP, etc.)
+* **Default Deny:** Implicit deny ensures only explicitly allowed traffic passes
 
-* **On-Premises:** UDF data center (<your-namespace>-udf-sg)
-* **AWS Cloud:** AWS environment (appworld-aws-segment)
+Task 9:Review Pre-Configured Firewall Policy (No Action Required)
+------------------------------------------------------------------
+.. important::
+   Please do **NOT** edit the pre-configured firewall policy for this lab. This task is just to review the existing firewall policy that has been configured for the AWS site.
 
-**Note:** This lab guide is incomplete. Additional tasks for Enhanced Firewall configuration 
-and other security policies will be added.
+24. Navigate to **Multi-Cloud Network Connect >> Manage >> Firewall >> Enhanced Firewall Policies**. 
+
+    |lab019|
+
+25. Click on **Manage Configuration** from **Action** for the **appworld-fw** to review the Firewall Policy.
+
+    |lab020|
+
+26. Click on the **View Configuration** to review the configured rules in the firewall policy.
+
+    |lab021|
+
+27. Review the rules' order that ICMP traffic is set to be **Deny** and HTTP traffic is set to be **Allow**.
+
+    |lab022|
+
+
+Task 9: Apply Enhanced Firewall Policy (Instructor-Led)
+--------------------------------------------------------
+
+Your instructor will now apply an Enhanced Firewall policy to the AWS site to demonstrate
+security controls.
+
+.. note::
+   This task will be performed by the instructor. The reason is that the AWS site of our lab environment is shared and we only want to have one person perform this action.
+
+28. The instructor will edit the configuration of the AWS site and attach the **appworld-fw** firewall policy to the **appworld-aws** site.
+
+   before applying the Network Firewall policy:
+   |lab023|
+
+   after applying the Network Firewall policy:
+   |lab024|
+
+29. After the instructor applies the firewall policy, wait approximately 30-60 seconds for the
+    policy to propagate.
+
+Task 10: Verify Firewall Policy Enforcement
+--------------------------------------------
+
+Let's verify that the firewall policy is working correctly.
+
+30. Go back to your web shell.
+
+31. Test ping again and you should not see any response because ICMP traffic is now being blocked:
+
+    **ping -O 10.0.5.253**
+
+    |lab025|
+
+32. Test HTTP again (you should still receive a **200 OK** response because we allowed only HTTP in the firewall policy):
+
+    **curl --head http://10.0.5.253**
+
+    |lab026|
+
+    .. tip::
+       The Enhanced Firewall policy is now enforcing that only HTTP traffic is allowed
+       to the AWS site. All ICMP traffic is denied.
+
+Task 11: Review Firewall Events
+--------------------------------
+
+Let's review the firewall logs to see blocked and allowed traffic.
+
+33. Navigate back to **Multi-Cloud Network Connect >> Manage >> Firewall >> Enhanced Firewall Policies** and click on the numbers under **Hits**.
+
+    |lab027|
+
+34. This will show you all the traffic that has been allowed or denied by the enhancedfirewall policy (may take a few minutes to populate).
+
+    |lab028|
+
+Lab Summary
+-----------
+
+**What You've Learned:**
+
+* How network segments provide default isolation between environments
+* How to attach pre-configured segments to CE site interfaces
+* How to verify connectivity before and after segment attachment
+* How to review routing information and understand route propagation through Regional Edges
+* How Enhanced Firewall policies control traffic at the protocol level
+* How to verify firewall policy enforcement through testing
+* How to review firewall events and logs
+
+**Key Takeaways:**
+
+* **Segments** provide isolated network domains by default ("ships in the night")
+* **Attaching segments** to CE interfaces enables connectivity while maintaining security boundaries
+* **Route propagation** occurs automatically through Regional Edges when segments are attached
+* **Enhanced Firewall policies** provide granular security control at the protocol and port level
+* **Firewall events** provide visibility into allowed and denied traffic flows
+
+**Your Environment:**
+
+You now have connectivity between:
+
+* **On-Premises:** UDF data center (10.1.10.0/24)
+* **AWS Cloud:** AWS Ubuntu workload (10.0.5.0/24)
+
+With Enhanced Firewall policies enforcing that only HTTP traffic is allowed to the AWS site, 
+while ICMP traffic is denied.
+
+In the next lab, you'll explore App Connect for application-level connectivity using Regional Edges.
+
+.. important::
+   Verify that HTTP connectivity works and ICMP is blocked before proceeding to Lab 3.
+
+**End of Lab 2**
 
 .. |lab001| image:: ../images/temp/lab2/lab2pic1.png
    :width: 800px
@@ -329,4 +374,30 @@ and other security policies will be added.
 .. |lab014| image:: ../images/temp/lab2/lab2pic14.png
    :width: 800px
 .. |lab015| image:: ../images/temp/lab2/lab2pic15.png
+   :width: 800px
+.. |lab016| image:: ../images/temp/lab2/lab2pic16.png
+   :width: 800px
+.. |lab017| image:: ../images/temp/lab2/lab2pic17.png
+   :width: 800px
+.. |lab018| image:: ../images/temp/lab2/lab2pic18.png
+   :width: 800px
+.. |lab019| image:: ../images/temp/lab2/lab2pic19.png
+   :width: 800px
+.. |lab020| image:: ../images/temp/lab2/lab2pic20.png
+   :width: 800px
+.. |lab021| image:: ../images/temp/lab2/lab2pic21.png
+   :width: 800px
+.. |lab022| image:: ../images/temp/lab2/lab2pic22.png
+   :width: 800px
+.. |lab023| image:: ../images/temp/lab2/lab2pic23.png
+   :width: 800px
+.. |lab024| image:: ../images/temp/lab2/lab2pic24.png
+   :width: 800px
+.. |lab025| image:: ../images/temp/lab2/lab2pic25.png
+   :width: 800px
+.. |lab026| image:: ../images/temp/lab2/lab2pic26.png
+   :width: 800px
+.. |lab027| image:: ../images/temp/lab2/lab2pic27.png
+   :width: 800px
+.. |lab028| image:: ../images/temp/lab2/lab2pic28.png
    :width: 800px
