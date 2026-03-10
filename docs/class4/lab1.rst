@@ -106,6 +106,7 @@ Task 2: Validate Load Balancer
 #. Using another browser tab, navigate to the the following URL to confirm the Load Balancer
    has been configured properly.
 
+   .. code-block:: text
    ``http://<your-namespace>.lab-sec.f5demos.com/swagger``
 
    .. image:: _static/shared-swagger-intro.png
