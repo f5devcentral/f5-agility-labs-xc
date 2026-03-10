@@ -30,13 +30,6 @@ Objective:
 
    -  **Malicious User Detection**: Provided via machine-based learning processes, enables malicious user behavior tracking by categorizing users into varying threat levels, allowing automatic or manual mitigation.
 
-Lab & Tasks:
-------------
-
--  All Lab requirements will be noted in the tasks that follow
-
--  Estimated completion time: 6 Labs approximately 8-10 minutes each
-
 Preparation:
 ------------
 
@@ -52,6 +45,13 @@ Preparation:
 
 .. note:: You may have had a namespace from a previous lab, pleased update with the new. 
 .. warning:: Guide pages might need to be refreshed to get updated namespace to render.
+
+Lab & Tasks:
+------------
+
+-  All Lab requirements will be noted in the tasks that follow
+
+-  Estimated completion time: 6 Labs approximately 8-10 minutes each
 
 .. toctree::
    :maxdepth: 2
