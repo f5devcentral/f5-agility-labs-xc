@@ -107,7 +107,8 @@ Task 2: Validate Load Balancer
    has been configured properly.
 
    .. code-block:: text
-   ``http://<your-namespace>.lab-sec.f5demos.com/swagger``
+      
+      http://<your-namespace>.lab-sec.f5demos.com/swagger
 
    .. image:: _static/shared-swagger-intro.png
       :width: 800px
