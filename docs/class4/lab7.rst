@@ -10,9 +10,13 @@ You will be working within a **dedicated, read-only namespace** in the Distribut
 
 By completing this lab, you will learn how to:
 - Navigate the Distributed Cloud Console and locate API discovery features
+
 - Identify API services discovered from traffic flowing through BIG-IP LTM
+
 - Review automatically generated API endpoints, methods, and schemas
+
 - Examine metrics and logs associated with discovered API traffic
+
 - Understand how BIG-IP telemetry enables API visibility without application changes
 
 

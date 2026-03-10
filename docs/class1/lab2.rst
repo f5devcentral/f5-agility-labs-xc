@@ -126,13 +126,12 @@ under this tenant.
  *Variable*                      *Value*
  =============================== =================================
  Web Application Firewall (WAF)  **Enable**
- Select App Firewall             **shared/base-appfw**
+ Under **Enable**, select:       **shared/base-appfw**
  =============================== =================================
 
 -------------------------------------------------------------------------------------------------------------------------------
 
 3. Scroll to the botton of the screen and click **Add HTTP Load Balancer** to create the HTTP Load Balancer.
-
 
 Task 4: Verify Configuration
 -----------------------------

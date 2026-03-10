@@ -1,0 +1,1184 @@
+{
+  "info": {
+    "name": "F5 XC Class 8 Lab",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "https://f5-xc-lab-sec.console.ves.volterra.io"
+    },
+    {
+      "key": "api_token",
+      "value": "<YOUR_API_TOKEN>"
+    },
+    {
+      "key": "namespace",
+      "value": "<YOUR_NAMESPACE>"
+    },
+    {
+      "key": "tenant",
+      "value": "f5-xc-lab-sec-lpuwkdtb"
+    },
+    {
+      "key": "lb_name",
+      "value": "{{namespace}}-lb"
+    },
+    {
+      "key": "origin_pool_name",
+      "value": "{{namespace}}-origin"
+    },
+    {
+      "key": "resource_version",
+      "value": ""
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "APIToken {{api_token}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "item": [
+    {
+      "name": "Lab 1: Building a Service Policy for Negative Enforcement",
+      "item": [
+        {
+          "name": "Task 1: Exploring the F5 Distributed Console",
+          "item": [
+            {
+              "name": "List Origin Pools",
+              "request": {
+                "method": "GET",
+                "url": {
+                  "raw": "{{base_url}}/api/config/namespaces/{{namespace}}/origin_pools",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "api",
+                    "config",
+                    "namespaces",
+                    "{{namespace}}",
+                    "origin_pools"
+                  ]
+                }
+              }
+            },
+            {
+              "name": "Get Origin Pool Config",
+              "request": {
+                "method": "GET",
+                "url": {
+                  "raw": "{{base_url}}/api/config/namespaces/{{namespace}}/origin_pools/{{origin_pool_name}}",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "api",
+                    "config",
+                    "namespaces",
+                    "{{namespace}}",
+                    "origin_pools",
+                    "{{origin_pool_name}}"
+                  ]
+                }
+              }
+            },
+            {
+              "name": "List HTTP Load Balancers",
+              "request": {
+                "method": "GET",
+                "url": {
+                  "raw": "{{base_url}}/api/config/namespaces/{{namespace}}/http_loadbalancers",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "api",
+                    "config",
+                    "namespaces",
+                    "{{namespace}}",
+                    "http_loadbalancers"
+                  ]
+                }
+              }
+            },
+            {
+              "name": "Get HTTP Load Balancer",
+              "request": {
+                "method": "GET",
+                "url": {
+                  "raw": "{{base_url}}/api/config/namespaces/{{namespace}}/http_loadbalancers/{{lb_name}}?response_format=6",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "api",
+                    "config",
+                    "namespaces",
+                    "{{namespace}}",
+                    "http_loadbalancers",
+                    "{{lb_name}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "response_format",
+                      "value": "6"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "name": "Test Application Access (Baseline)",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "pm.test(\"Status code is 200\", function () {",
+                      "    pm.response.to.have.status(200);",
+                      "});"
+                    ],
+                    "type": "text/javascript"
+                  }
+                }
+              ],
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://{{namespace}}.lab-sec.f5demos.com/",
+                  "host": [
+                    "{{namespace}}",
+                    "lab-sec",
+                    "f5demos",
+                    "com"
+                  ],
+                  "path": [
+                    ""
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "name": "Task 2: Negative Enforcement",
+          "item": [
+            {
+              "name": "Enable IP Reputation & Threat Mesh (PUT)",
+              "event": [
+                {
+                  "listen": "prerequest",
+                  "script": {
+                    "exec": [
+                      "const url = pm.variables.get('base_url') + '/api/config/namespaces/' + pm.variables.get('namespace') + '/http_loadbalancers/' + pm.variables.get('namespace') + '-lb';",
+                      "pm.sendRequest({url: url, method: 'GET', header: {'Authorization': 'APIToken ' + pm.variables.get('api_token')}}, function (err, res) {",
+                      "  if (!err && res.code === 200) { pm.variables.set('resource_version', res.json().resource_version); }",
+                      "});"
+                    ],
+                    "type": "text/javascript"
+                  }
+                }
+              ],
+              "request": {
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"metadata\": {\"name\": \"{{lb_name}}\", \"namespace\": \"{{namespace}}\", \"disable\": false},\n  \"spec\": {\n    \"domains\": [\"{{namespace}}.lab-sec.f5demos.com\"],\n    \"https\": {\"http_redirect\": true, \"add_hsts\": true, \"port\": 443, \"tls_cert_params\": {\"tls_config\": {\"default_security\": {}}, \"certificates\": [{\"tenant\": \"{{tenant}}\", \"namespace\": \"shared\", \"name\": \"lab-sec-wildcard\", \"kind\": \"certificate\"}], \"no_mtls\": {}}},\n    \"default_route_pools\": [{\"pool\": {\"tenant\": \"{{tenant}}\", \"namespace\": \"{{namespace}}\", \"name\": \"{{origin_pool_name}}\", \"kind\": \"origin_pool\"}, \"weight\": 1, \"priority\": 1}],\n    \"service_policies_from_namespace\": {},\n    \"enable_ip_reputation\": {\"ip_threat_categories\": [\"SPAM_SOURCES\", \"TOR_PROXY\"]},\n    \"enable_threat_mesh\": {}\n  },\n  \"resource_version\": \"{{resource_version}}\"\n}"
+                },
+                "url": {
+                  "raw": "{{base_url}}/api/config/namespaces/{{namespace}}/http_loadbalancers/{{lb_name}}",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "api",
+                    "config",
+                    "namespaces",
+                    "{{namespace}}",
+                    "http_loadbalancers",
+                    "{{lb_name}}"
+                  ]
+                }
+              }
+            },
+            {
+              "name": "Create geo-filter Policy",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"metadata\": {\"name\": \"geo-filter\", \"namespace\": \"{{namespace}}\"},\n  \"spec\": {\"deny_list\": {\"country_list\": [\"COUNTRY_FJ\"], \"default_action_next_policy\": {}}}\n}"
+                },
+                "url": {
+                  "raw": "{{base_url}}/api/config/namespaces/{{namespace}}/service_policys",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "api",
+                    "config",
+                    "namespaces",
+                    "{{namespace}}",
+                    "service_policys"
+                  ]
+                }
+              }
+            },
+            {
+              "name": "Set Active Policies (geo-filter)",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"namespace\": \"{{namespace}}\",\n  \"service_policies\": [\n    {\"name\": \"geo-filter\", \"namespace\": \"{{namespace}}\", \"tenant\": \"{{tenant}}\"}\n  ]\n}"
+                },
+                "url": {
+                  "raw": "{{base_url}}/api/config/namespaces/{{namespace}}/active_service_policies",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "api",
+                    "config",
+                    "namespaces",
+                    "{{namespace}}",
+                    "active_service_policies"
+                  ]
+                }
+              }
+            },
+            {
+              "name": "Test Application Access (Expect 403)",
+              "request": {
+                "method": "GET",
+                "url": {
+                  "raw": "http://{{namespace}}.lab-sec.f5demos.com/",
+                  "host": [
+                    "{{namespace}}",
+                    "lab-sec",
+                    "f5demos",
+                    "com"
+                  ],
+                  "path": [
+                    ""
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "name": "Task 3: Observability",
+          "item": [
+            {
+              "name": "Performance Dashboard Data",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"namespace\": \"{{namespace}}\",\n  \"query\": \"{ \\\"namespace\\\": \\\"{{namespace}}\\\" }\"\n}"
+                },
+                "url": {
+                  "raw": "{{base_url}}/api/data/namespaces/{{namespace}}/access_logs",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "api",
+                    "data",
+                    "namespaces",
+                    "{{namespace}}",
+                    "access_logs"
+                  ]
+                }
+              }
+            },
+            {
+              "name": "Security Dashboard Data",
+              "event": [
+                {
+                  "listen": "prerequest",
+                  "script": {
+                    "exec": [
+                      "const now = new Date();",
+                      "const past = new Date(now.getTime() - (24 * 60 * 60 * 1000));",
+                      "pm.variables.set('end_time', now.toISOString().split('.')[0] + 'Z');",
+                      "pm.variables.set('start_time', past.toISOString().split('.')[0] + 'Z');"
+                    ],
+                    "type": "text/javascript"
+                  }
+                },
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "var jsonData = pm.response.json();",
+                      "if (jsonData && jsonData.data && jsonData.data.length > 0) {",
+                      "    pm.environment.set(\"req_id\", jsonData.data[0].req_id);",
+                      "}"
+                    ],
+                    "type": "text/javascript"
+                  }
+                }
+              ],
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"namespace\": \"{{namespace}}\",\n  \"start_time\": \"{{start_time}}\",\n  \"end_time\": \"{{end_time}}\",\n  \"step\": \"1h\",\n  \"group_by\": [\"VIRTUAL_HOST\"]\n}"
+                },
+                "url": {
+                  "raw": "{{base_url}}/api/data/namespaces/{{namespace}}/app_security/events",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "api",
+                    "data",
+                    "namespaces",
+                    "{{namespace}}",
+                    "app_security",
+                    "events"
+                  ]
+                }
+              }
+            },
+            {
+              "name": "AI Assistant Security Event (Diagnose 403)",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"namespace\": \"{{namespace}}\",\n  \"current_query\": \"Explain security event {{req_id}}\"\n}"
+                },
+                "url": {
+                  "raw": "{{base_url}}/api/gen-ai/namespaces/{{namespace}}/query",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "api",
+                    "gen-ai",
+                    "namespaces",
+                    "{{namespace}}",
+                    "query"
+                  ]
+                }
+              }
+            },
+            {
+              "name": "Create allow-all Policy",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"metadata\": {\"name\": \"allow-all\", \"namespace\": \"{{namespace}}\"},\n  \"spec\": {\"allow_all_requests\": {}}\n}"
+                },
+                "url": {
+                  "raw": "{{base_url}}/api/config/namespaces/{{namespace}}/service_policys",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "api",
+                    "config",
+                    "namespaces",
+                    "{{namespace}}",
+                    "service_policys"
+                  ]
+                }
+              }
+            },
+            {
+              "name": "Set Active Policies (geo-filter + allow-all)",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"namespace\": \"{{namespace}}\",\n  \"service_policies\": [\n    {\"name\": \"geo-filter\", \"namespace\": \"{{namespace}}\", \"tenant\": \"{{tenant}}\"},\n    {\"name\": \"allow-all\", \"namespace\": \"{{namespace}}\", \"tenant\": \"{{tenant}}\"}\n  ]\n}"
+                },
+                "url": {
+                  "raw": "{{base_url}}/api/config/namespaces/{{namespace}}/active_service_policies",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "api",
+                    "config",
+                    "namespaces",
+                    "{{namespace}}",
+                    "active_service_policies"
+                  ]
+                }
+              }
+            },
+            {
+              "name": "Test Application Access (Expect 200)",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "pm.test(\"Status code is 200\", function () {",
+                      "    pm.response.to.have.status(200);",
+                      "});"
+                    ],
+                    "type": "text/javascript"
+                  }
+                }
+              ],
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://{{namespace}}.lab-sec.f5demos.com/",
+                  "host": [
+                    "{{namespace}}",
+                    "lab-sec",
+                    "f5demos",
+                    "com"
+                  ],
+                  "path": [
+                    ""
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Lab 2: Enabling Positive Application Security with Service Policies",
+      "item": [
+        {
+          "name": "Task 1: Reviewing Current Access Trends",
+          "item": [
+            {
+              "name": "Performance Dashboard Data",
+              "event": [
+                {
+                  "listen": "prerequest",
+                  "script": {
+                    "exec": [
+                      "const now = new Date();",
+                      "const past = new Date(now.getTime() - (24 * 60 * 60 * 1000));",
+                      "pm.variables.set('end_time', now.toISOString().split('.')[0] + 'Z');",
+                      "pm.variables.set('start_time', past.toISOString().split('.')[0] + 'Z');"
+                    ],
+                    "type": "text/javascript"
+                  }
+                },
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "var jsonData = pm.response.json();",
+                      "if (jsonData.logs && jsonData.logs.length > 0) {",
+                      "    var logEntry = JSON.parse(jsonData.logs[0]);",
+                      "    pm.variables.set('req_id', logEntry.req_id);",
+                      "}"
+                    ],
+                    "type": "text/javascript"
+                  }
+                }
+              ],
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"namespace\": \"{{namespace}}\",\n  \"start_time\": \"{{start_time}}\",\n  \"end_time\": \"{{end_time}}\",\n  \"limit\": 10\n}"
+                },
+                "url": {
+                  "raw": "{{base_url}}/api/data/namespaces/{{namespace}}/access_logs",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "api",
+                    "data",
+                    "namespaces",
+                    "{{namespace}}",
+                    "access_logs"
+                  ]
+                }
+              }
+            },
+            {
+              "name": "AI Assistant Request Summary",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"namespace\": \"{{namespace}}\",\n  \"current_query\": \"Summarize request {{req_id}}\"\n}"
+                },
+                "url": {
+                  "raw": "{{base_url}}/api/gen-ai/namespaces/{{namespace}}/query",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "api",
+                    "gen-ai",
+                    "namespaces",
+                    "{{namespace}}",
+                    "query"
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "name": "Task 2: Create A Deny-All Enforcement Service Policy",
+          "item": [
+            {
+              "name": "Create deny-all Policy",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"metadata\": {\"name\": \"deny-all\", \"namespace\": \"{{namespace}}\"},\n  \"spec\": {\"deny_all_requests\": {}}\n}"
+                },
+                "url": {
+                  "raw": "{{base_url}}/api/config/namespaces/{{namespace}}/service_policys",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "api",
+                    "config",
+                    "namespaces",
+                    "{{namespace}}",
+                    "service_policys"
+                  ]
+                }
+              }
+            },
+            {
+              "name": "Update LB with Specified Policies (deny-all)",
+              "event": [
+                {
+                  "listen": "prerequest",
+                  "script": {
+                    "exec": [
+                      "const url = pm.variables.get('base_url') + '/api/config/namespaces/' + pm.variables.get('namespace') + '/http_loadbalancers/' + pm.variables.get('namespace') + '-lb';",
+                      "pm.sendRequest({url: url, method: 'GET', header: {'Authorization': 'APIToken ' + pm.variables.get('api_token')}}, function (err, res) {",
+                      "  if (!err && res.code === 200) { pm.variables.set('resource_version', res.json().resource_version); }",
+                      "});"
+                    ],
+                    "type": "text/javascript"
+                  }
+                }
+              ],
+              "request": {
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"metadata\": {\"name\": \"{{lb_name}}\", \"namespace\": \"{{namespace}}\", \"disable\": false},\n  \"spec\": {\n    \"domains\": [\"{{namespace}}.lab-sec.f5demos.com\"],\n    \"https\": {\"http_redirect\": true, \"add_hsts\": true, \"port\": 443, \"tls_cert_params\": {\"tls_config\": {\"default_security\": {}}, \"certificates\": [{\"tenant\": \"{{tenant}}\", \"namespace\": \"shared\", \"name\": \"lab-sec-wildcard\", \"kind\": \"certificate\"}], \"no_mtls\": {}}},\n    \"default_route_pools\": [{\"pool\": {\"tenant\": \"{{tenant}}\", \"namespace\": \"{{namespace}}\", \"name\": \"{{origin_pool_name}}\", \"kind\": \"origin_pool\"}, \"weight\": 1, \"priority\": 1}],\n    \"active_service_policies\": {\"policies\": [{\"namespace\": \"{{namespace}}\", \"name\": \"deny-all\", \"tenant\": \"{{tenant}}\"}]},\n    \"enable_ip_reputation\": {\"ip_threat_categories\": [\"SPAM_SOURCES\", \"TOR_PROXY\"]},\n    \"enable_threat_mesh\": {}\n  },\n  \"resource_version\": \"{{resource_version}}\"\n}"
+                },
+                "url": {
+                  "raw": "{{base_url}}/api/config/namespaces/{{namespace}}/http_loadbalancers/{{lb_name}}",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "api",
+                    "config",
+                    "namespaces",
+                    "{{namespace}}",
+                    "http_loadbalancers",
+                    "{{lb_name}}"
+                  ]
+                }
+              }
+            },
+            {
+              "name": "Test Application Access (Expect 403)",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "pm.test(\"Status code is 403\", function () {",
+                      "    pm.response.to.have.status(403);",
+                      "});",
+                      "var match = pm.response.text().match(/Your support ID is:\\s*([a-z0-9\\-]+)/i);",
+                      "if (match) {",
+                      "    pm.variables.set('req_id', match[1]);",
+                      "}"
+                    ],
+                    "type": "text/javascript"
+                  }
+                }
+              ],
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://{{namespace}}.lab-sec.f5demos.com/",
+                  "host": [
+                    "{{namespace}}",
+                    "lab-sec",
+                    "f5demos",
+                    "com"
+                  ],
+                  "path": [
+                    ""
+                  ]
+                }
+              }
+            },
+            {
+              "name": "AI Assistant Security Event Explanation",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"namespace\": \"{{namespace}}\",\n  \"current_query\": \"Explain security event {{req_id}}\"\n}"
+                },
+                "url": {
+                  "raw": "{{base_url}}/api/gen-ai/namespaces/{{namespace}}/query",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "api",
+                    "gen-ai",
+                    "namespaces",
+                    "{{namespace}}",
+                    "query"
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "name": "Task 3: Create specific rules define allowed traffic",
+          "item": [
+            {
+              "name": "Create allow-geo Policy",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"metadata\": {\"name\": \"allow-geo\", \"namespace\": \"{{namespace}}\"},\n  \"spec\": {\"allow_list\": {\"country_list\": [\"COUNTRY_US\"], \"default_action_next_policy\": {}}}\n}"
+                },
+                "url": {
+                  "raw": "{{base_url}}/api/config/namespaces/{{namespace}}/service_policys",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "api",
+                    "config",
+                    "namespaces",
+                    "{{namespace}}",
+                    "service_policys"
+                  ]
+                }
+              }
+            },
+            {
+              "name": "Test Application Access (Expect 403)",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "pm.test(\"Status code is 403\", function () {",
+                      "    pm.response.to.have.status(403);",
+                      "});"
+                    ],
+                    "type": "text/javascript"
+                  }
+                }
+              ],
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://{{namespace}}.lab-sec.f5demos.com/",
+                  "host": [
+                    "{{namespace}}",
+                    "lab-sec",
+                    "f5demos",
+                    "com"
+                  ],
+                  "path": [
+                    ""
+                  ]
+                }
+              }
+            },
+            {
+              "name": "Update LB with Reordered Policies",
+              "event": [
+                {
+                  "listen": "prerequest",
+                  "script": {
+                    "exec": [
+                      "const url = pm.variables.get('base_url') + '/api/config/namespaces/' + pm.variables.get('namespace') + '/http_loadbalancers/' + pm.variables.get('namespace') + '-lb';",
+                      "pm.sendRequest({url: url, method: 'GET', header: {'Authorization': 'APIToken ' + pm.variables.get('api_token')}}, function (err, res) {",
+                      "  if (!err && res.code === 200) { pm.variables.set('resource_version', res.json().resource_version); }",
+                      "});"
+                    ],
+                    "type": "text/javascript"
+                  }
+                }
+              ],
+              "request": {
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"metadata\": {\"name\": \"{{lb_name}}\", \"namespace\": \"{{namespace}}\", \"disable\": false},\n  \"spec\": {\n    \"domains\": [\"{{namespace}}.lab-sec.f5demos.com\"],\n    \"https\": {\"http_redirect\": true, \"add_hsts\": true, \"port\": 443, \"tls_cert_params\": {\"tls_config\": {\"default_security\": {}}, \"certificates\": [{\"tenant\": \"{{tenant}}\", \"namespace\": \"shared\", \"name\": \"lab-sec-wildcard\", \"kind\": \"certificate\"}], \"no_mtls\": {}}},\n    \"default_route_pools\": [{\"pool\": {\"tenant\": \"{{tenant}}\", \"namespace\": \"{{namespace}}\", \"name\": \"{{origin_pool_name}}\", \"kind\": \"origin_pool\"}, \"weight\": 1, \"priority\": 1}],\n    \"active_service_policies\": {\"policies\": [{\"namespace\": \"{{namespace}}\", \"name\": \"allow-geo\", \"tenant\": \"{{tenant}}\"}, {\"namespace\": \"{{namespace}}\", \"name\": \"deny-all\", \"tenant\": \"{{tenant}}\"}]},\n    \"enable_ip_reputation\": {\"ip_threat_categories\": [\"SPAM_SOURCES\", \"TOR_PROXY\"]},\n    \"enable_threat_mesh\": {}\n  },\n  \"resource_version\": \"{{resource_version}}\"\n}"
+                },
+                "url": {
+                  "raw": "{{base_url}}/api/config/namespaces/{{namespace}}/http_loadbalancers/{{lb_name}}",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "api",
+                    "config",
+                    "namespaces",
+                    "{{namespace}}",
+                    "http_loadbalancers",
+                    "{{lb_name}}"
+                  ]
+                }
+              }
+            },
+            {
+              "name": "Test Application Access (Expect 200)",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "pm.test(\"Status code is 200\", function () {",
+                      "    pm.response.to.have.status(200);",
+                      "});"
+                    ],
+                    "type": "text/javascript"
+                  }
+                }
+              ],
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://{{namespace}}.lab-sec.f5demos.com/",
+                  "host": [
+                    "{{namespace}}",
+                    "lab-sec",
+                    "f5demos",
+                    "com"
+                  ],
+                  "path": [
+                    ""
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Lab 3: Exploring Security and Performance Dashboard, and Leveraging AI Assistant",
+      "item": [
+        {
+          "name": "Task 1: Review Security Dashboard",
+          "item": [
+            {
+              "name": "View Security Analytics",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"namespace\": \"{{namespace}}\",\n  \"query\": \"{ \\\"namespace\\\": \\\"{{namespace}}\\\" }\"\n}"
+                },
+                "url": {
+                  "raw": "{{base_url}}/api/data/namespaces/{{namespace}}/app_security/events",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "api",
+                    "data",
+                    "namespaces",
+                    "{{namespace}}",
+                    "app_security",
+                    "events"
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "name": "Task 2: Review Performance Dashboard",
+          "item": [
+            {
+              "name": "View Performance Analytics (Access Logs)",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"namespace\": \"{{namespace}}\",\n  \"query\": \"{ \\\"namespace\\\": \\\"{{namespace}}\\\" }\"\n}"
+                },
+                "url": {
+                  "raw": "{{base_url}}/api/data/namespaces/{{namespace}}/access_logs",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "api",
+                    "data",
+                    "namespaces",
+                    "{{namespace}}",
+                    "access_logs"
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "name": "Task 3: Leveraging AI Assistant",
+          "item": [
+            {
+              "name": "AI Assistant Security Event Explanation",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"namespace\": \"{{namespace}}\",\n  \"current_query\": \"Explain security event <request-id-from-task-1>\"\n}"
+                },
+                "url": {
+                  "raw": "{{base_url}}/api/gen-ai/namespaces/{{namespace}}/query",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "api",
+                    "gen-ai",
+                    "namespaces",
+                    "{{namespace}}",
+                    "query"
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Conclusion - Cleanup",
+      "item": [
+        {
+          "name": "Reset HTTP Load Balancer",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "exec": [
+                  "const url = pm.variables.get('base_url') + '/api/config/namespaces/' + pm.variables.get('namespace') + '/http_loadbalancers/' + pm.variables.get('lb_name');",
+                  "pm.sendRequest({url: url, method: 'GET', header: {'Authorization': 'APIToken ' + pm.variables.get('api_token')}}, function (err, res) {",
+                  "  if (!err && res.code === 200) { pm.variables.set('resource_version', res.json().resource_version); }",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"metadata\": {\"name\": \"{{lb_name}}\", \"namespace\": \"{{namespace}}\", \"disable\": false},\n  \"spec\": {\n    \"domains\": [\"{{namespace}}.lab-sec.f5demos.com\"],\n    \"https\": {\"http_redirect\": true, \"add_hsts\": true, \"port\": 443, \"tls_cert_params\": {\"tls_config\": {\"default_security\": {}}, \"certificates\": [{\"tenant\": \"{{tenant}}\", \"namespace\": \"shared\", \"name\": \"lab-sec-wildcard\", \"kind\": \"certificate\"}], \"no_mtls\": {}}},\n    \"default_route_pools\": [{\"pool\": {\"tenant\": \"{{tenant}}\", \"namespace\": \"{{namespace}}\", \"name\": \"{{origin_pool_name}}\", \"kind\": \"origin_pool\"}, \"weight\": 1, \"priority\": 1}],\n    \"service_policies_from_namespace\": {},\n    \"enable_ip_reputation\": {\"ip_threat_categories\": [\"SPAM_SOURCES\", \"TOR_PROXY\"]},\n    \"enable_threat_mesh\": {}\n  },\n  \"resource_version\": \"{{resource_version}}\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/config/namespaces/{{namespace}}/http_loadbalancers/{{lb_name}}",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "config",
+                "namespaces",
+                "{{namespace}}",
+                "http_loadbalancers",
+                "{{lb_name}}"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Clear Active Service Policies",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"namespace\": \"{{namespace}}\",\n  \"service_policies\": []\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/config/namespaces/{{namespace}}/active_service_policies",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "config",
+                "namespaces",
+                "{{namespace}}",
+                "active_service_policies"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Delete zeroday-mitigation Policy",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "{{base_url}}/api/config/namespaces/{{namespace}}/service_policys/zeroday-mitigation",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "config",
+                "namespaces",
+                "{{namespace}}",
+                "service_policys",
+                "zeroday-mitigation"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Delete allow-geo Policy",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "{{base_url}}/api/config/namespaces/{{namespace}}/service_policys/allow-geo",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "config",
+                "namespaces",
+                "{{namespace}}",
+                "service_policys",
+                "allow-geo"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Delete deny-all Policy",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "{{base_url}}/api/config/namespaces/{{namespace}}/service_policys/deny-all",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "config",
+                "namespaces",
+                "{{namespace}}",
+                "service_policys",
+                "deny-all"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Delete geo-filter Policy",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "{{base_url}}/api/config/namespaces/{{namespace}}/service_policys/geo-filter",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "config",
+                "namespaces",
+                "{{namespace}}",
+                "service_policys",
+                "geo-filter"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Delete allow-all Policy",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "{{base_url}}/api/config/namespaces/{{namespace}}/service_policys/allow-all",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "config",
+                "namespaces",
+                "{{namespace}}",
+                "service_policys",
+                "allow-all"
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

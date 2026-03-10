@@ -8,7 +8,7 @@ In this lab, attendees will explore how to control application traffic and secur
 
 Participants will configure Service Policies to enforce access controls, build route logic to enable blue/green testing and intelligent traffic steering, and apply WAF policies at the path level to deliver granular security where it matters most.
 
-They will then validate their configurations using the Security and Performance dashboards, gaining visibility into real-time enforcement, traffic behavior, and application health—while leveraging AI Assistant to accelerate investigation and tuning.
+They will then validate their configurations using the Security and Performance dashboards, gaining visibility into real-time enforcement, traffic behavior, and application health while leveraging AI Assistant to accelerate investigation and tuning.
 
 This lab demonstrates how to secure, steer, and observe application traffic with precision and confidence.
 
@@ -32,6 +32,24 @@ Learn how to secure, steer, and observe application traffic within F5 Distribute
 
 
 This Lab uses the **[AppWorld] F5XC Application Lab** UDF Blueprint.
+
+**Preparation:**
+
+Before starting the course, update your nampspace to dynamically update the guide.
+
+.. raw:: html
+    
+    <div style="margin: 1em 0; padding: 1em; border: 0px solid #ccc;">
+        <label for="namespaceInput"> Enter your namespace: </label>
+        <input id="namespaceInput" type="text" placeholder="e.g. sassy-panda" />
+        <button onclick="setNamespace()">Save</button>
+    </div>
+    
+    <p><strong>Current namespace: </strong> <span id="currentNamespace">&lt;namespace&gt;</span></p>
+
+.. note:: You may have had a namespace from a previous lab, please update with the new.
+
+.. warning:: Guide pages might need to be refreshed to get updated namespace to render.
 
 .. toctree::
    :maxdepth: 1

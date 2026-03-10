@@ -7,7 +7,7 @@ In this lab, we will dive a bit deeper into the Security Analytics and the Foren
 
 We previously generated some WAF events for us to review. If you'd like to generate some fresh WAF events, feel free to do so now:
 
-1. Open another tab in your browser, navigate to the newly configured Load Balancer configuration: **http://<namespace>-lb.lab-sec.f5demos.com**, to confirm it is still functional.
+1. Open another tab in your browser, navigate to the newly configured Load Balancer configuration: **http://<namespace>.lab-sec.f5demos.com**, to confirm it is still functional.
 
 2. Using some of the sample attacks below, add the URI path & variables to your application to generate security event data.
 

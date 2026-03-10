@@ -1,5 +1,5 @@
-F5 Distributed Cloud: Security Automation & Zero Day Mitigation
-===============================================================
+F5 Distributed Cloud - Security Automation & Zero Day Mitigation
+================================================================
 
 Welcome
 -------
@@ -27,7 +27,7 @@ Implement and operate an application security environment utilizing F5 SaaS-Powe
   and automating those mitigations (speed to deploy Zero day) 
 
 
-This Lab uses the **[AppWorld] F5XC Security Base Lab** UDF Blueprint.
+This Lab uses the **Appworld 2026 - F5XC Security WAAP Lab** UDF Blueprint.
 
 .. toctree::
    :maxdepth: 2
