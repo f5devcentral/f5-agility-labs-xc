@@ -24,7 +24,7 @@ The Distributed Cloud (XC) WAF object is pre-built for the next Task, but please
 
 #. Using another browser tab, navigate to the following URL.
 
-   ``http://<namespace>.lab-sec.f5demos.com/swagger``
+   ``http://<your-namespace>.lab-sec.f5demos.com/swagger``
 
    .. image:: _static/shared-swagger-intro.png
       :width: 800px
@@ -120,7 +120,7 @@ In this task you will follow steps simulating an attack against an protected end
 
 #. Using another browser tab, navigate to the following URL:
 
-   ``http://<namespace>.lab-sec.f5demos.com/swagger``
+   ``http://<your-namespace>.lab-sec.f5demos.com/swagger``
 
    .. image:: _static/shared-swagger-intro.png
       :width: 800px

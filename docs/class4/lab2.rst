@@ -20,7 +20,7 @@ Task 1: Simulate Allowed Access to a Shadow API
 
 #. Using another browser tab, navigate to the the following URL.
 
-   ``http://<namespace>.lab-sec.f5demos.com/swagger``
+   ``http://<your-namespace>.lab-sec.f5demos.com/swagger``
 
    .. image:: _static/shared-swagger-intro.png
       :width: 800px
@@ -114,7 +114,7 @@ previously built HTTP Load Balancer.
       :width: 800px
 
 #. In the second **API Definition** section, click the drop-down arrow and select the
-   pre-created API Definition **<namespace>/demobank-api-def**.
+   pre-created API Definition **<your-namespace>/demobank-api-def**.
 
    .. image:: _static/lab2-lb-def-select.png
       :width: 800px
@@ -174,7 +174,7 @@ Task 4: Simulate Blocked Access to a Shadow API
 
 #. Using another browser tab, navigate to the the following URL.
 
-   ``http://<namespace>.lab-sec.f5demos.com/swagger``
+   ``http://<your-namespace>.lab-sec.f5demos.com/swagger``
 
    .. image:: _static/shared-swagger-intro.png
       :width: 800px
