@@ -52,8 +52,8 @@ This Load Balancer will be used throughout the course.
    ========================== ==========================
    **Load Balancer**          **Configuration**
    -------------------------- --------------------------
-   Name                       <namespace>-lb
-   Domains                    <namespace>.lab-sec.f5demos.com
+   Name                       <your-namespace>-lb
+   Domains                    <your-namespace>.lab-sec.f5demos.com
    Type                       HTTPS
    Port                       443
    Advertisement              Internet
@@ -62,7 +62,7 @@ This Load Balancer will be used throughout the course.
    ========================== ==========================
    **Origin Pool**            **Configuration**
    -------------------------- --------------------------
-   Name                       <namespace>-origin
+   Name                       <your-namespace>-origin
    Type                       Public DNS
    Name/IP                    bankapi.lab-sec.f5demos.com
    Port                       80
@@ -106,7 +106,9 @@ Task 2: Validate Load Balancer
 #. Using another browser tab, navigate to the the following URL to confirm the Load Balancer
    has been configured properly.
 
-   ``http://<namespace>.lab-sec.f5demos.com/swagger``
+   .. code-block:: text
+      
+      http://<your-namespace>.lab-sec.f5demos.com/swagger
 
    .. image:: _static/shared-swagger-intro.png
       :width: 800px

@@ -30,6 +30,22 @@ Objective:
 
    -  **Malicious User Detection**: Provided via machine-based learning processes, enables malicious user behavior tracking by categorizing users into varying threat levels, allowing automatic or manual mitigation.
 
+Preparation:
+------------
+
+.. raw:: html
+
+   <div style="margin: 1em 0; padding: 1em; border: 0px solid #ccc;">
+     <label for="namespaceInput">Enter your namespace:</label>
+     <input id="namespaceInput" type="text" placeholder="e.g. sassy-panda" />
+     <button onclick="setNamespace()">Save</button>
+   </div>
+
+   <p><strong>Current namespace:</strong> <span id="currentNamespace">&lt;namespace&gt;</span></p>
+
+.. note:: You may have had a namespace from a previous lab, pleased update with the new. 
+.. warning:: Guide pages might need to be refreshed to get updated namespace to render.
+
 Lab & Tasks:
 ------------
 
