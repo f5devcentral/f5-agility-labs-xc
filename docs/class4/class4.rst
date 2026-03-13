@@ -26,7 +26,7 @@ Objective:
 
    -  **Web Applcation Firewall**: Behaves as an intermediate proxy to inspect app requests and responses to block and mitigate a broad spectrum of risks via signatures and robust behavioral-based threat detection to protect applications wherever they are deployed.
 
-   -  **Rate Limting**:  Defines parameters that can be used for fine-grained control over requests for an HTTP load-balancer that are subjected to rate-limiting using AI/ML learning engine to uniquely discover API endpoints used during service-to-service communication.
+   -  **Rate Limiting**:  Defines parameters that can be used for fine-grained control over requests for an HTTP load-balancer that are subjected to rate-limiting using AI/ML learning engine to uniquely discover API endpoints used during service-to-service communication.
 
    -  **Malicious User Detection**: Provided via machine-based learning processes, enables malicious user behavior tracking by categorizing users into varying threat levels, allowing automatic or manual mitigation.
 
