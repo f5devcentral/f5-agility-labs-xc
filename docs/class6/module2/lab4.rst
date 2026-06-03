@@ -300,13 +300,13 @@ Let's test the connectivity between AWS and Azure through the internal load bala
     |lab017|
 
     .. note::
-       In this example, the inside interface IP is *10.0.5.5*. Your IP may differ.
+       In this example, the inside interface IP is *10.0.5.16*. Your IP may differ.
 
 46. Go to the diagnostic tool: **http://<your-namespace>-awstool.lab-mcn.f5demos.com**
 
 47. Click **Run Command** and paste the following (remember you IP may differ):
 
-    **curl http://<your-namespace>-aws-to-azure-lb.lab-mcn.f5demos.com --resolve <your-namespace>-aws-to-azure-lb.lab-mcn.f5demos.com:80:10.0.5.5**
+    **curl http://<your-namespace>-aws-to-azure-lb.lab-mcn.f5demos.com --resolve <your-namespace>-aws-to-azure-lb.lab-mcn.f5demos.com:80:10.0.5.16**
 
     |lab018|
 
@@ -314,7 +314,7 @@ Let's test the connectivity between AWS and Azure through the internal load bala
 
 48. Test again with the **--head** flag:
 
-    **curl --head http://<your-namespace>-aws-to-azure-lb.lab-mcn.f5demos.com --resolve <your-namespace>-aws-to-azure-lb.lab-mcn.f5demos.com:80:10.0.5.5**
+    **curl --head http://<your-namespace>-aws-to-azure-lb.lab-mcn.f5demos.com --resolve <your-namespace>-aws-to-azure-lb.lab-mcn.f5demos.com:80:10.0.5.16**
 
     |lab019|
 
@@ -396,7 +396,7 @@ If you don't already have a tab open to the Diag tool, in your browser go to: ht
 
 Try your curl command again **without** the **--head** flag.:: 
 
-    curl http://<your-namespace>-aws-to-azure-lb.lab-mcn.f5demos.com --resolve <your-namespace>-aws-to-azure-lb.lab-mcn.f5demos.com:80:10.0.5.5
+    curl http://<your-namespace>-aws-to-azure-lb.lab-mcn.f5demos.com --resolve <your-namespace>-aws-to-azure-lb.lab-mcn.f5demos.com:80:10.0.5.16
 
 |
     |lab025|
@@ -409,7 +409,7 @@ Click **Edit Config** in top right hand corner and scroll down to **Common Secur
 |
     |lab033|
 |
-     curl --head http://<your-namespace>-aws-to-azure-lb.lab-mcn.f5demos.com --resolve <your-namespace>-aws-to-azure-lb.lab-mcn.f5demos.com:80:10.0.5.5
+     curl --head http://<your-namespace>-aws-to-azure-lb.lab-mcn.f5demos.com --resolve <your-namespace>-aws-to-azure-lb.lab-mcn.f5demos.com:80:10.0.5.16
 
 |
     |lab026|
