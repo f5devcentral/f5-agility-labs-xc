@@ -83,7 +83,7 @@ connectivity to both AWS and Azure sites.
    |lab001.7|
 
 9. **[Instructor's Action Item]** Set the AWS CE interface that's currently attached to appworld-aws 
-   segment to SLI (Site Local Inside).
+   segment to SLI (Site Local Inside). Addtionally remove the Advanced Firewall assigned to the appworld-aws site.
 
    |lab001.8|
 
