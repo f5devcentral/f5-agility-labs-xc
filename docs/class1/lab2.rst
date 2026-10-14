@@ -26,7 +26,7 @@ First, you will create an Origin Pool that refers to the "Private Endpoint" site
 
 1. Start in F5 Distributed Cloud Console and switch back to the **Web App & API Protection** workspace.
 
-2. Navigate the menu to go to **Manage->Load Balancers->Origin Pools**. Click on **Add Origin Pool**.
+2. In the left-hand navigation expand **Manage**, hover over **Load Balancers** and click **Origin Pools**. Click on **Add Origin Pool**.
 
 3. Enter the following variables:
 
@@ -37,15 +37,16 @@ First, you will create an Origin Pool that refers to the "Private Endpoint" site
  ================================= =======
 
 
-4. Click on **Add Item** under the **Origin Servers**.
+4. Click on **Add** under the **Origin Servers**.
 
  ================================= =======
  *Variable*                        *Value*
  ================================= =======
  Select Type of Origin Server      **DNS Name of Origin Server on given Sites**
  DNS Name                          **private.lab.f5demos.internal**
+ Site or Virtual Site              **Site** *(default)*
  Site                              **system/appworld-awsnet**
- Select Network on the Site        **Inside Network**
+ Select Network on the site        **Inside Network** *(default)*
  ================================= =======
 
 |lab301|
@@ -70,7 +71,7 @@ Now we will deploy a Load Balancer on the CE node that was deployed in the AWS V
 
 1. Start in F5 Distributed Cloud Console and switch back to the **Web App & API Protection** context.
 
-2. Navigate the menu to go to **Manage->Load Balancers-> HTTP Load Balancers**. Click on **Add HTTP Load Balancer**.
+2. In the left-hand navigation expand **Manage**, hover over **Load Balancers** and click **HTTP Load Balancers**. Click on **Add HTTP Load Balancer**.
 
 3. Enter the following variables:
 
@@ -81,7 +82,7 @@ Now we will deploy a Load Balancer on the CE node that was deployed in the AWS V
  ================================= =======
  Name                              **<your-namespace>-private-ce-lb**
  Domains                           **<your-namespace>-2.lab-sec.f5demos.com**
- Select type of Load Balancer      **HTTP**
+ Load Balancer Type                **HTTP** *(SSL/TLS Type section, change from the default)*
  Automatically Manage DNS Records  **No/Unchecked**
  ================================= =======
 
@@ -89,7 +90,7 @@ Now we will deploy a Load Balancer on the CE node that was deployed in the AWS V
 
 |lab311|
 
-4. Under **Origin Pools** Click **Add Item**.
+4. In the **Origins** section, under **Origin Pools** click **Add**.
 
 |lab302|
 
@@ -101,11 +102,9 @@ Now we will deploy a Load Balancer on the CE node that was deployed in the AWS V
 
 |lab304|
 
-7. Now we want to confirm how this Load Balancer is advertised, we will select the **Other Settings** on the left hand side.
-   This will auto-scroll the configuation towards the bottom of the Load Balancer configuration section labeled
-   **Other Settings**.
+7. Now we want to confirm how this Load Balancer is advertised, click **VIP Advertisement** in the left-hand navigation.
 
-8. Under **VIP Advertisement** Confirm it is set to **Internet**. This will allow *XC* to advertise the Virtual IP address.
+8. Confirm **VIP Advertisement** is set to **Internet**. This will allow *XC* to advertise the Virtual IP address.
 
 |lab305|
 
@@ -116,7 +115,7 @@ Now that we have our load balancer and orign server configured we want to make s
 can easily applying a pre-existing shared WAF policy to our load balancer. The shared WAF policy is available for all namespaces
 under this tenant.
 
-1. Under the **Web Application Firewall** section.
+1. Click **Web Application Firewall** in the left-hand navigation, then click the **Web Application Firewall** section header to expand it.
 
 2. Choose the following options:
 
@@ -131,13 +130,15 @@ under this tenant.
 
 -------------------------------------------------------------------------------------------------------------------------------
 
-3. Scroll to the botton of the screen and click **Add HTTP Load Balancer** to create the HTTP Load Balancer.
+|lab315|
+
+3. Scroll to the bottom of the screen and click **Add HTTP Load Balancer** to create the HTTP Load Balancer.
 
 Task 4: Verify Configuration
 -----------------------------
 
 You should now be able to go to the DNS name that you created in this Load Balancer configuration.
-The FQDN we used in our example is `http://<your-namespace>-2.lab-sec.f5demos.com/ <http://<your-namespace>-2.lab-sec.f5demos.com/>`.
+The FQDN we used in our example is `http://\<your-namespace\>-2.lab-sec.f5demos.com/ <http://\<your-namespace\>-2.lab-sec.f5demos.com/>`_.
 
 .. note::
    *It can take a minute or so before the configuration is pushed to the CE node, appworld-awsnet. If the verify does not*
@@ -166,7 +167,7 @@ security event data.
 
  .. note::
     *Try using the AI Assistant to get a detailed explanation on the attacks that are blocked. You can view that by selecting*
-    *the event in the Security Dashboard, then selecting "Explain with AI" for the event, which is located under "Actions".*
+    *the event in Security Analytics, then clicking the "Explain with AI" tab in the Event Details panel.*
 
    |lab313|
 
@@ -178,15 +179,15 @@ private end point. That private end point was only accessible via the global loa
 
 .. |lab300| image:: _static/lab3-appworld2025-topology-diagram.png
    :width: 800px
-.. |lab301| image:: _static/lab3-appworld2025-task1-originserverr.png
+.. |lab301| image:: _static/2026-lab2-origin-server.png
    :width: 800px
-.. |lab302| image:: _static/lab3-appworld2025-task2-lb-add-origin-pool.png
+.. |lab302| image:: _static/2026-lab2-add-origin-pool.png
    :width: 800px
 .. |lab303| image:: _static/lab3-appworld2025-task2-lb-add-origin-pool2.png
    :width: 800px
-.. |lab304| image:: _static/lab3-appworld2025-task2-lb-origin-pool-added.png
+.. |lab304| image:: _static/2026-lab2-pool-added.png
    :width: 800px
-.. |lab305| image:: _static/lab3-appworld2025-task2-lb-other-settings.png
+.. |lab305| image:: _static/2026-lab2-vip-advertisement.png
    :width: 800px
 .. |lab306| image:: _static/lab3-appworld2025-task2-lb-change-vip-advertisement.png
    :width: 800px
@@ -198,13 +199,15 @@ private end point. That private end point was only accessible via the global loa
    :width: 800px
 .. |lab310| image:: _static/lab3-appworld2025-waf-block-message.png
    :width: 800px
-.. |lab311| image:: _static/lab2-appworld2025-task2-lb.png
+.. |lab311| image:: _static/2026-lab2-task2-lb.png
    :width: 800px
-.. |lab312| image:: _static/screenshot-global-vip-private.png
+.. |lab312| image:: _static/2026-lab2-private-app.png
    :width: 800px
-.. |lab313| image:: _static/lab3-appworld2025-waf-block-message.png
+.. |lab313| image:: _static/2026-lab2-waf-block.png
    :width: 800px
-.. |lab314| image:: _static/lab2-private-ce-pool.png
+.. |lab314| image:: _static/2026-lab2-private-ce-pool.png
+   :width: 800px
+.. |lab315| image:: _static/2026-lab2-waf.png
    :width: 800px
 .. |labend| image:: _static/labend.png
    :width: 800px
