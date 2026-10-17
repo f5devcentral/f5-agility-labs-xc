@@ -225,8 +225,8 @@ For this initiative you will assign a Web Application Firewall to the Load Balan
 simulate more test traffic with OpenBullet.  
 
 +----------------------------------------------------------------------------------------------+
-| 1. In the Distributed Cloud (XC) Console, go back to ***Manage** > Load Balancers >***       |
-|     ***HTTP Loadbalancers***, then click the three dots under the **Action** column for your |
+| 1. In the Distributed Cloud (XC) Console, go back to **Manage** > **Load Balancers** >       |
+|     **HTTP Loadbalancers**, then click the three dots under the **Action** column for your   |
 |     load balancer object and select **Manage Configuration**.                                |
 +----------------------------------------------------------------------------------------------+
 | |lab1-task5-01a|                                                                             |
@@ -369,11 +369,15 @@ credential stuffing traffic.
    :width: 800px
 .. |lab1-task4-03| image:: _static/lab1-task4-03.png
    :width: 800px
+.. |lab1-task5-01a| image:: _static/lab1-task5-01a.png
+   :width: 800px
+.. |lab1-task5-01b| image:: _static/lab1-task5-01b.png
+   :width: 800px
 .. |lab1-task5-01| image:: _static/lab1-task5-01.png
    :width: 800px
 .. |lab1-task5-02| image:: _static/lab1-task5-02.png
    :width: 800px
-.. |lab1-task5-02b| image:: _static/lab2-task1-13.png
+.. |lab1-task5-02a| image:: _static/lab1-task5-02a.png
    :width: 800px
 .. |lab1-task5-03| image:: _static/lab1-task5-03.png
    :width: 800px
@@ -382,6 +386,12 @@ credential stuffing traffic.
 .. |lab1-task5-05| image:: _static/lab1-task5-05.png
    :width: 800px
 .. |lab1-task5-06| image:: _static/lab1-task5-06.png
+   :width: 800px
+.. |lab1-task6-01| image:: _static/lab1-task6-01.png
+   :width: 800px
+.. |lab1-task6-02| image:: _static/lab1-task6-02.png
+   :width: 800px
+.. |lab1-task6-03| image:: _static/lab1-task6-03.png
    :width: 800px
 .. |labend| image:: _static/labend.png
    :width: 800px
