@@ -154,7 +154,9 @@ adding any friction to the users.
 .. |lab4-image11|  image:: _static/lab4-image11.png
    :width: 800px
 .. |lab4-image12|  image:: _static/lab4-image12.png
-   :width: 800px    
+   :width: 800px
+.. |lab4-image13|  image:: _static/lab4-image13.png
+   :width: 800px     
 .. |labend| image:: _static/labend.png
    :width: 800px
       
