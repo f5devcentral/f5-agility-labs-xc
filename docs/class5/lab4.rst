@@ -73,7 +73,7 @@ are not being blocked. From the Jump Host, go to the provided FQDN.
 |     below to sign in.                                                                        |
 |                                                                                              |
 |     * Username: john.smith                                                                   |
-|     * Password" M@ster/Bettle                                                                |
+|     * Password" M@ster/Beetle                                                                |
 +----------------------------------------------------------------------------------------------+
 | |lab4-image08|                                                                               |
 +----------------------------------------------------------------------------------------------+
@@ -84,7 +84,7 @@ are not being blocked. From the Jump Host, go to the provided FQDN.
 |     Bot defense uses the signals collected on each individual request to block or allow      |
 |     traffic.                                                                                 |
 +----------------------------------------------------------------------------------------------+
-|  |lab4-image08|                                                                              |
+|  |lab4-image09|                                                                              |
 |                                                                                              |
 +----------------------------------------------------------------------------------------------+
 
@@ -98,22 +98,22 @@ the new blocked traffic and the human generated traffic.
 +----------------------------------------------------------------------------------------------+
 | 1. Return to the Bot Defense Workspace.                                                      |
 +----------------------------------------------------------------------------------------------+
-|  |lab4-image08|                                                                              |
+|  |lab4-image10|                                                                              |
 +----------------------------------------------------------------------------------------------+
 | 2. Now we have a new traffic type, “Human”                                                   |                                                                                             
 +----------------------------------------------------------------------------------------------+
-|  |lab4-image09|                                                                              |
+|  |lab4-image11|                                                                              |
 +----------------------------------------------------------------------------------------------+
 | 3. Go to the traffic analyzer to investigate further, add a filter to the dashboard to       |
 |    remove the telemetry client from the traffic type. Create a filter with Method POST.      |
 |                                                                                              |
 +----------------------------------------------------------------------------------------------+
-|  |lab4-image10|                                                                              |
+|  |lab4-image12|                                                                              |
 +----------------------------------------------------------------------------------------------+
 | 4. Notice Post requests coming from the same IP but some are Humans & some others are Bots.  |
 |                                                                                              |
 +----------------------------------------------------------------------------------------------+
-|  |lab4-image11|                                                                              |
+|  |lab4-image13|                                                                              |
 +----------------------------------------------------------------------------------------------+
 
 Now we see traffic from Humans and traffic from bots, F5 bot defense is checking on each 
