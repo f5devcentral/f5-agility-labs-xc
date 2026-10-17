@@ -131,23 +131,23 @@ adding any friction to the users.
 +----------------------------------------------------------------------------------------------+
 
 
-.. |lab4-image01|  image:: _static/lab4-image01.png
+.. |lab4-image01|  image:: _static/lab4-image1.png
    :width: 800px
-.. |lab4-image02|  image:: _static/lab4-image02.png
+.. |lab4-image02|  image:: _static/lab4-image2.png
    :width: 800px
-.. |lab4-image03|  image:: _static/lab4-image03.png
+.. |lab4-image03|  image:: _static/lab4-image3.png
    :width: 800px
-.. |lab4-image04|  image:: _static/lab4-image04.png
+.. |lab4-image04|  image:: _static/lab4-image4.png
    :width: 800px
-.. |lab4-image05|  image:: _static/lab4-image05.png
+.. |lab4-image05|  image:: _static/lab4-image5.png
    :width: 800px
-.. |lab4-image06|  image:: _static/lab4-image06.png
+.. |lab4-image06|  image:: _static/lab4-image6.png
    :width: 800px
-.. |lab4-image07|  image:: _static/lab4-image07.png
+.. |lab4-image07|  image:: _static/lab4-image7.png
    :width: 800px
-.. |lab4-image08|  image:: _static/lab4-image08.png
+.. |lab4-image08|  image:: _static/lab4-image8.png
    :width: 800px 
-.. |lab4-image09|  image:: _static/lab4-image09.png
+.. |lab4-image09|  image:: _static/lab4-image9.png
    :width: 800px
 .. |lab4-image10|  image:: _static/lab4-image10.png
    :width: 800px
