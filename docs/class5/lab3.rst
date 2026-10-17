@@ -185,6 +185,10 @@ Task 2 : Review the Request Logs
    :width: 800px
 .. |lab3-task1-10| image:: _static/lab3-task1-10.png
    :width: 800px
+.. |lab3-task1-10a| image:: _static/lab3-task1-10a.png
+   :width: 800px
+.. |lab3-task1-10b| image:: _static/lab3-task1-10b.png
+   :width: 800px
 .. |lab3-task1-11| image:: _static/lab3-task1-11.png
    :width: 800px
 .. |lab3-task1-12| image:: _static/lab3-task1-12.png
@@ -198,6 +202,8 @@ Task 2 : Review the Request Logs
 .. |lab3-task2-02| image:: _static/lab3-task2-02.png
    :width: 800px
 .. |lab3-task2-03| image:: _static/lab3-task2-03.png
+   :width: 800px
+.. |lab3-task2-04| image:: _static/lab3-task2-04.png
    :width: 800px
 .. |labend| image:: _static/labend.png
    :width: 800px
