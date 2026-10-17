@@ -30,7 +30,7 @@ Task 1: Review your assigned Namespace and Verify the Application is Up
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 For this objective you will explore the Distributed Cloud Console and identify your namespace.
-Additionally you will ensure the F5 Air application is functioning.  Application availability 
+Additionally, you will ensure the F5 Air application is functioning.  Application availability 
 is a pre-requisite for all other tasks.
 
 +----------------------------------------------------------------------------------------------+
@@ -50,7 +50,7 @@ is a pre-requisite for all other tasks.
 | |lab1-task1-02|                                                                              |
 +----------------------------------------------------------------------------------------------+
 | 5. Open a browser window and navigate to **http://namespace.lab-sec.f5demos.com** to         |
-|    verify the application is up.  You should see the F5 Airlines logo!                       |
+|    verify the application is up.  You should see the F5 - Login!                             |
 +----------------------------------------------------------------------------------------------+
 |                                                                                              |
 | |lab1-task1-03|                                                                              |
@@ -65,7 +65,7 @@ for the backend application. You will verify other security features that are ti
 Load Balancer and their current state.  
 
 +----------------------------------------------------------------------------------------------+
-|  1. In the Distributed Cloud (XC) Console, under HTTP Loadbalancers click the three dots     |
+|  1. In the Distributed Cloud (XC) Console, under HTTP Load Balancers click the three dots    |
 |     under the **Action** column and select **Manage Configuration**.                         |
 +----------------------------------------------------------------------------------------------+
 | |lab1-task2-01|                                                                              |
@@ -76,7 +76,7 @@ Load Balancer and their current state.
 |                                                                                              |
 |     *Note*: we are simply using a public DNS host for the backend.                           |
 |                                                                                              |
-|     The application is directly accessibile to us, which we will explore later.              |
+|     The application is directly accessible to us, which we will explore later.               |
 +----------------------------------------------------------------------------------------------+
 | |lab1-task2-02|                                                                              |
 |                                                                                              |
@@ -225,12 +225,13 @@ For this initiative you will assign a Web Application Firewall to the Load Balan
 simulate more test traffic with OpenBullet.  
 
 +----------------------------------------------------------------------------------------------+
-| 1. In the Distributed Cloud (XC) Console, go back to ***Manage** > Load Balancers >***       |
-|     ***HTTP Loadbalancers***, then click the three dots under the **Action** column for your |
+| 1. In the Distributed Cloud (XC) Console, go back to **Manage** > **Load Balancers** >       |
+|     **HTTP Loadbalancers**, then click the three dots under the **Action** column for your   |
 |     load balancer object and select **Manage Configuration**.                                |
 +----------------------------------------------------------------------------------------------+
-| |lab1-task2-01|                                                                              |
+| |lab1-task5-01a|                                                                             |
 |                                                                                              |
+| |lab1-task5-01b|                                                                             |
 +----------------------------------------------------------------------------------------------+
 | 2. At the top right click **Edit Configuration** then look to the left side settings         |
 |    and click **Web Application Firewall**.                                                   |
@@ -250,27 +251,17 @@ simulate more test traffic with OpenBullet.
 |    Finally click **Save HTTP Load Balancer** at the bottom of the screen.                    |
 |                                                                                              |
 +----------------------------------------------------------------------------------------------+
-| |lab1-task5-02b|                                                                             |
+| |lab1-task5-02a|                                                                             |
 |                                                                                              |
 +----------------------------------------------------------------------------------------------+
 | 4. We will Re-run our credential stack from the Windows Jump Host. Go back to **OpenBullet** |
-|    and click on **Jobs** to find the job previously created and them click the pencil/edit   |
-|    (or *Options*) icon to the right.                                                         |
-|                                                                                              |
+|    and click on **Jobs** to find the job previously created and them click **Start**.        |
 +----------------------------------------------------------------------------------------------+
 | |lab1-task5-03|                                                                              |
-+----------------------------------------------------------------------------------------------+
-| 5. In the **Skip** counter, highlight the current number and type 0 (zero).  You can also    |
-|    press and hold the minus button next to the **Skip** field.  Click **Accept** when done.  |
++----------------------------------------------------------------------------------------------+                                                                                              
+| 5. note the automation went through again, marked as Type **SUCCESS**                        |
 +----------------------------------------------------------------------------------------------+
 | |lab1-task5-04|                                                                              |
-+----------------------------------------------------------------------------------------------+                                                                                              
-| 6. Once again click on the **Job** and hit **Start**, the tool will iterate through the      |
-|    Credentials-Basic list and when done will be in a ready state for another test.           |
-+----------------------------------------------------------------------------------------------+
-| |lab1-task5-05|                                                                              |
-|                                                                                              |
-| |lab1-task5-06|                                                                              |
 +----------------------------------------------------------------------------------------------+
 
 
@@ -284,18 +275,18 @@ credential stuffing traffic.
 | 1. In the Distributed Cloud (XC) Console go to **Web App and API Protection** then click on  |
 |    **Overview** and finally **Security**.                                                    |
 +----------------------------------------------------------------------------------------------+
-| |lab1-task4-01|                                                                              |
+| |lab1-task6-01|                                                                              |
 +----------------------------------------------------------------------------------------------+
 | 2. Scroll to the bottom and click on your HTTP Load Balancer.                                |
 +----------------------------------------------------------------------------------------------+
-| |lab1-task4-02|                                                                              |
+| |lab1-task6-02|                                                                              |
 +----------------------------------------------------------------------------------------------+
 | 3. Let's review the requests,  Is anything being flagged as a violation?  Why or Why Not?    |
 |                                                                                              |
 |    **Hint:** Click **Requests** and if needed change the time interval to a longer time slot |
 |    and click **Apply**.  You can also expand Request details by click the down button below. |
 +----------------------------------------------------------------------------------------------+
-| |lab1-task4-03|                                                                              |
+| |lab1-task6-03|                                                                              |
 +----------------------------------------------------------------------------------------------+
 
 
@@ -378,11 +369,15 @@ credential stuffing traffic.
    :width: 800px
 .. |lab1-task4-03| image:: _static/lab1-task4-03.png
    :width: 800px
+.. |lab1-task5-01a| image:: _static/lab1-task5-01a.png
+   :width: 800px
+.. |lab1-task5-01b| image:: _static/lab1-task5-01b.png
+   :width: 800px
 .. |lab1-task5-01| image:: _static/lab1-task5-01.png
    :width: 800px
 .. |lab1-task5-02| image:: _static/lab1-task5-02.png
    :width: 800px
-.. |lab1-task5-02b| image:: _static/lab2-task1-13.png
+.. |lab1-task5-02a| image:: _static/lab1-task5-02a.png
    :width: 800px
 .. |lab1-task5-03| image:: _static/lab1-task5-03.png
    :width: 800px
@@ -391,6 +386,12 @@ credential stuffing traffic.
 .. |lab1-task5-05| image:: _static/lab1-task5-05.png
    :width: 800px
 .. |lab1-task5-06| image:: _static/lab1-task5-06.png
+   :width: 800px
+.. |lab1-task6-01| image:: _static/lab1-task6-01.png
+   :width: 800px
+.. |lab1-task6-02| image:: _static/lab1-task6-02.png
+   :width: 800px
+.. |lab1-task6-03| image:: _static/lab1-task6-03.png
    :width: 800px
 .. |labend| image:: _static/labend.png
    :width: 800px

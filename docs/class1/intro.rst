@@ -18,7 +18,7 @@ Course/Lab Invitation
 Course/Lab Attendees will receive an email similar to the graphic displayed in this section.
 The email will come from courses@notify.udf.f5.com.
 
-As attendees may be registered for several labs/courses, ensure the correctly identified course
+As attendees maybe registered for several lab/courses, ensure the corrcetly identified course
 is selected. Use either the first or second link position (indicated by arrows) based on
 the attendee's F5 UDF (Unified Demo Framework) Account Status.
 
@@ -32,115 +32,104 @@ Accessing UDF (F5 Unified Demo Framework)
 
 The following will guide attendees through the initial Lab environment access within F5 UDF.
 Following the instructions from the Course/Lab invitation above, attendees will be prompted
-to login at https://udf.f5.com. Click **Invited Users**.
-
-|intro002a|
+to login at  https://udf.f5.com
 
 .. note::
    *The steps for new UDF Users or the steps for resetting UDF User account passwords are*
    *not shown. Please contact a member of the lab team if further assistance is needed.*
 
-Attendees are redirected to **F5 Customer Identity**. Enter your registration email address
-and click **Continue**, then enter your password and continue to sign in. If you are already signed
-in to F5 Customer Identity, this step is skipped.
-
 |intro002|
+
+Attendees will be prompted to enter their UDF account, password and complete MFA as shown.
+MFA must be completed by either selecting **Send Push** or **Enter Code**.
+
+.. note::
+   *MFA process will very based on the MFA integration selected for the UDF Account. OKTA*
+   *Verify is shown.*
 
 |intro003|
 
-.. note::
-   *Depending on your account, you may be prompted to set up or complete multi-factor*
-   *authentication (MFA). Follow the on-screen instructions.*
-
-If you used the course link from the invitation email, you are taken directly to the course
-**Lobby**. Otherwise, attendees will be presented their scheduled course sessions on the UDF
-dashboard. Locate the course/lab with the appropriate **Date**, **Time** and **Name** and then
-click **LAUNCH**.
-
 |intro004|
-
-From the course **Lobby**, click the **Join** button.
 
 |intro005|
 
-The Lab environment window will now be displayed on the **Documentation** tab. Click on the
-**Deployment** tab in the horizontal navigation links. Locate and observe the state of the
-**Client** system.
+Attendees will then be presented their scheduled course sessions. Locate the course/lab with
+the appropriate **Date**, **Time** and **Name** and then click **Launch**.
 
 |intro006|
+
+Once redirected to the selected Course/Lab, click the **Join** button.
+
+|intro007|
+
+The Lab environment window will now be displayed. Click on the **Deployment** tab in the.
+horizontal navigation links. Locate and observe the state of **Client** system.
 
 In approximately 5-7 minutes the associated **yellow gear** starting icon will change to a
 **green arrow** (running) icon and attendees will proceed to the next section of steps.
 
 .. note::
-   *Your specific lab environment may vary from the graphics shown below. The* **Client**
+   *Your specific lab environment may vary from the graphics shown below. The **Client***
    *will, however, be consistent.*
 
-|intro007|
-
 |intro008|
+
+|intro009|
 
 Accessing F5 Distributed Cloud
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Following the state change of the **Client System** to a **green arrow** (running) icon,
 attendees will receive a second email. This email will come from no-reply@cloud.f5.com.
-Click **Accept invitation** within the email.
+Click the **Accept invitation** with in the email.
 
 .. note::
-   *This link should be accessed in the same browser session as UDF was accessed for a*
+   *This link should be accessed in the same browser session as UDF was accessed for*
    *seamless experience.*
 
 .. warning::
-   *Attendees should not attempt access to the F5 Distributed Cloud tenant prior to receiving*
-   *the email. Lab permissions may need to be re-applied.*
+   *Attendess should not attempt access to F5 Distributed Cloud tenant prior to receiving*
+   *email. Lab permissions may need to be re-applied.*
 
 |intro010|
 
-The tenant login page will be presented. Under **If you are a user in this tenant:**, click
-**Sign In with oidc** (do not use **Log In as Tenant Owner**).
-
+The initial logon prompt will be presented. Click **Sign on with Okta** to proceed. SSO
+will process and onboarding to the tenant will proceed.
 |intro011|
+Next the **Terms of Service and Privacy Policy** will display, check the box and then click
+**Accept and Agree**.
 
-Since you are already signed in to UDF with **F5 Customer Identity**, single sign-on (SSO)
-should log you in to the tenant automatically. If you are prompted to sign in, enter the same
-email address and password used for UDF.
+In the following screen, Select all persona roles and click **Next**. This allows attendees
+to see all the various configurations. Personas can be changed anytime later within the
+console if desired.
 
-The first time you log in, the **Terms of Service and Privacy Policy** will display; check the
-box and then click **Accept and Agree**.
+In the next screen, click **Advanced** to expose more menu options and then **Get Started**
+to begin. You can change this setting after logging in as well.
 
 .. note::
-   *This screen is only shown on your first login. Guidance tooltips or notices may also*
-   *appear; attendees can safely close them in order to begin the lab.*
+   *Several Guidance ToolTips or Notices may appear. Attendees can safely close these out*
+   *in order to begin the lab.*
+
+|intro012|
+
+|intro013|
 
 |intro014|
 
-On first login, a **What's New in F5 Distributed Cloud** window and an announcement banner
-at the top of the page may be displayed. Click **Close** on the What's New window and
-**Remind Me Later** (or the **X**) on the banner.
-
-|intro016|
-
-Attendees will now be presented the **Home** page of the F5 Distributed Cloud Console
-(**Welcome to Distributed Cloud**) with the workspaces, features and services available.
+Attendees will now be presented the Home page of the F5 Distributed Cloud Console with all
+the workspaces, features and services available.
 
 |intro015|
 
-Optionally, you can review your account preferences by clicking the **Account** icon in the
-top right of the screen and then clicking **Account Settings**. This opens
-**Administration > Personal Management > My Account**, where you can:
+You can adjust your work domains and skill level (not required) by clicking on the
+**Account** icon in the top right of the screen and then clicking on **Account Settings**.
 
-* Click **Manage Notification Preferences** to choose which events you are notified about.
-* Under **Advanced Configuration Fields Visibility**, click **Enable Auto-Expand Advanced**
-  to automatically expand all advanced configuration fields when creating a new object
-  (for example, an HTTP Load Balancer).
-
-Neither setting is required for this lab; the lab steps indicate when a section needs to
-be expanded.
+In the resulting window you can observe the **Work domains and skill level** section and
+other administrative functions.
 
 .. note::
-   *For the purposes of this lab, permissions have been restricted to lab operations, so*
-   *some menus will be locked or not visible.*
+   *For the purposes of this lab, permissions have been restricted to lab operations. As*
+   *some menus will be locked and not visible.*
 
 |intro050|
 
@@ -148,30 +137,19 @@ be expanded.
 
 Namespaces, which provide an environment for isolating configured applications or
 enforcing role-based access controls, are leveraged within the F5 Distributed Cloud
-Console. For the purposes of this lab, each lab attendee is assigned a unique
-**namespace** when the lab is launched. This namespace will be used for all tasks
+Console. For the purposes of this lab, each lab attendee has been provided a unique
+**namespace** which you should be defaulted to (in terms of GUI navigation) for all tasks
 performed through the course of this lab.
 
-From the **Home** page, click the **Web App & API Protection** workspace tile. If you are
-already in another workspace, click **Select Workspace** at the top of the left-hand
-navigation and choose **Web App & API Protection**.
+Click on the **Select Workspace** in the left-hand navigation. In the resulting fly out
+navigation, click **Web App & API Protection**.
 
-The workspace opens in a shared namespace (for example *api-service-discovery*), which is
-**not** your lab namespace. The selected namespace is shown at the top of the left-hand
-navigation, under the workspace name (labelled **Namespace**). Click it to open the namespace
-selector; under **Application Namespaces**, select your assigned **<adjective-animal>**
-namespace.
-
-.. note::
-   *Use the namespace with the* **<adjective-animal>** *name format, not* **system** *or*
-   **api-service-discovery**.
-
-|intro053|
-
-Your namespace is now displayed at the top of the left-hand navigation. It also appears in
-the browser URL, between */namespaces/* and the next path segment, for example
-**…/namespaces/<your-namespace>/overview/…**. Note this namespace as it will be used
-throughout the lab tasks that follow.
+In the **Web App & API Protection** workspace screen observe the URL. In the lefthand
+menu, confirm that your unique namespace is selected, if not, choose it, and then look
+at the URL path, locate the **<adjective-animal>** namespace that you have been
+assigned. It will be located in the portion of the URL path between */namespaces/* and
+*/overview/* as shown in this example **…/namespaces/<your-namespace>/overview/…**. Note
+this namespace as it will be used throughout the lab tasks that follow.
 
 .. note::
    *Administratively, there are other ways to find namespaces. Due to access and permission*
@@ -179,12 +157,14 @@ throughout the lab tasks that follow.
 
 |intro052|
 
+|intro053|
+
 Preparation
 -----------
 
 Before starting the course, update your namespace to dynamically update the guide.
 
-.. note:: You may have had a namespace from a previous lab, please update it with the new one.
+.. note:: You may have had a namespace from a previous lab, pleased update with the new.
 .. warning:: Guide pages might need to be refreshed to get updated namespace to render.
 
 .. raw:: html
@@ -205,39 +185,41 @@ Before starting the course, update your namespace to dynamically update the guid
 
 .. |intro001| image:: _static/intro-01.png
    :width: 800px
-.. |intro002a| image:: _static/2026-intro-udf-landing.png
+.. |intro002| image:: _static/intro-02.png
    :width: 800px
-.. |intro002| image:: _static/2026-intro-udf-login.png
+.. |intro003| image:: _static/intro-03.png
    :width: 800px
-.. |intro003| image:: _static/2026-intro-udf-password.png
+.. |intro004| image:: _static/intro-04.png
    :width: 800px
-.. |intro004| image:: _static/2026-intro-udf-dashboard.png
+.. |intro005| image:: _static/intro-05.png
    :width: 800px
-.. |intro005| image:: _static/2026-intro-udf-lobby.png
+.. |intro006| image:: _static/intro-06.png
    :width: 800px
-.. |intro006| image:: _static/2026-intro-udf-documentation.png
+.. |intro007| image:: _static/intro-07.png
    :width: 800px
-.. |intro007| image:: _static/2026-intro-udf-deployment-starting.png
+.. |intro008| image:: _static/intro-08.png
    :width: 800px
-.. |intro008| image:: _static/2026-intro-udf-deployment-running.png
+.. |intro009| image:: _static/intro-09.png
    :width: 800px
 .. |intro010| image:: _static/intro-10.png
    :width: 800px
-.. |intro011| image:: _static/2026-intro-xc-login.png
+.. |intro011| image:: _static/intro-11.png
    :width: 800px
-.. |intro014| image:: _static/2026-intro-xc-terms.png
+.. |intro012| image:: _static/intro-12.png
    :width: 800px
-.. |intro015| image:: _static/2026-intro-xc-home.png
+.. |intro013| image:: _static/intro-13.png
    :width: 800px
-.. |intro050| image:: _static/2026-intro-xc-account-menu.png
+.. |intro014| image:: _static/intro-14.png
    :width: 800px
-.. |intro051| image:: _static/2026-intro-xc-my-account.png
+.. |intro015| image:: _static/intro-15.png
    :width: 800px
-.. |intro052| image:: _static/2026-intro-xc-namespace.png
+.. |intro050| image:: _static/intro-50.png
    :width: 800px
-.. |intro016| image:: _static/2026-intro-xc-whats-new.png
+.. |intro051| image:: _static/intro-51.png
    :width: 800px
-.. |intro053| image:: _static/2026-intro-xc-namespace-select.png
+.. |intro052| image:: _static/intro-52.png
+   :width: 800px
+.. |intro053| image:: _static/intro-53.png
    :width: 800px
 .. |labbgn| image:: _static/labbgn.png
    :width: 800px
