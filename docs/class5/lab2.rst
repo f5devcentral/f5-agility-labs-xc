@@ -36,7 +36,6 @@ Credential Stuffing attack and observe related events using security analytics a
 |    See the example below on how your filter will appear as you create it.                    |
 +----------------------------------------------------------------------------------------------+
 | |lab2-task4-02b|                                                                             |
-| |lab2-task1-01a|                                                                             |
 |                                                                                              |
 +----------------------------------------------------------------------------------------------+
 |                                                                                              |
@@ -52,7 +51,7 @@ Credential Stuffing attack and observe related events using security analytics a
 +----------------------------------------------------------------------------------------------+
 | |lab2-task1-03|                                                                              |
 +----------------------------------------------------------------------------------------------+
-| 3. In the Distributed Cloud (XC) Console, go back to ***Manage** > **Load Balancers** >      |
+| 3. In the Distributed Cloud (XC) Console, go back to **Manage** > **Load Balancers** >       |
 |    **HTTP Loadbalancers**, click the three dots.                                             |
 |    under the **Action** column and select **Manage Configuration**.                          |
 +----------------------------------------------------------------------------------------------+
@@ -61,17 +60,15 @@ Credential Stuffing attack and observe related events using security analytics a
 +----------------------------------------------------------------------------------------------+
 | 4. At the top right click **Edit Configuration** then Click **Bot Protection**. Now click    |
 |    on *Disable* and select **Enable Bot Defense Standard**                                   |
-+----------------------------------------------------------------------------------------------+
-| |lab2-task1-04|                                                                              |
-+----------------------------------------------------------------------------------------------+
+|                                                                                              |
 | 5. In the resulting Bot Defense Policy section, click the **Configure** link.                |
 +----------------------------------------------------------------------------------------------+
-| |lab2-task1-05|                                                                              |
+| |lab2-task1-04|                                                                              |
 +----------------------------------------------------------------------------------------------+
 | 6. In the **Protected App Endpoints** window, click the **Configure** link under             |  
 |    **App Endpoint Type**                                                                     |
 +----------------------------------------------------------------------------------------------+
-| |lab2-task1-06|                                                                              |
+| |lab2-task1-05|                                                                              |
 +----------------------------------------------------------------------------------------------+
 | 7. In the resulting window, click the **Add Item** in the App Endpoint Type section.         | 
 +----------------------------------------------------------------------------------------------+
@@ -92,8 +89,6 @@ Credential Stuffing attack and observe related events using security analytics a
 |    Once all of these settings are configured scroll to the bottom and click **Apply**        |
 +----------------------------------------------------------------------------------------------+
 | |lab2-task1-08|                                                                              |
-|                                                                                              |
-| |lab2-task1-09|                                                                              |
 |                                                                                              |
 +----------------------------------------------------------------------------------------------+
 | 9. Next, click **Apply** on the **App Endpoint Type** screen                                 |
@@ -120,12 +115,12 @@ Credential Stuffing attack and observe related events using security analytics a
 |                                                                                              |
 +----------------------------------------------------------------------------------------------+
 | 13. Now that we have a Bot Policy applied lets re-run the Basic Credential stuffing attack.  |
-|     From Windows Jump Host.  Click on **OpenBullet** goto **Jobs**,**open the previous job** |
+|     From Windows Jump Host.  Click on **OpenBullet** goto **Jobs**, open the previous job    |
 |     Click **Start**.                                                                         |
 +----------------------------------------------------------------------------------------------+
-| |lab1-task5-13a|                                                                             |
+| |lab2-task1-13a|                                                                             |
 |                                                                                              |
-| |lab1-task5-13b|                                                                             |
+| |lab2-task1-13b|                                                                             |
 +----------------------------------------------------------------------------------------------+
 | 14. Check review the request logs.  Was anything flagged as a violation? Why or Why not ?    |
 |                                                                                              |
@@ -140,7 +135,6 @@ Credential Stuffing attack and observe related events using security analytics a
 | source IP address of the bad actor to the Blocked Client List of our WAF policy.             |
 |                                                                                              |
 | **Note**: *The following images are for example only. Notice how XC can create a blocking*   |
-|                                                                                              |
 | *rule using the context in the individual request.*                                          |
 +----------------------------------------------------------------------------------------------+
 | |lab2-task1-15|                                                                              | 
@@ -153,19 +147,17 @@ Credential Stuffing attack and observe related events using security analytics a
 | |lab2-task1-17|                                                                              |
 |                                                                                              |
 | |lab2-task1-18|                                                                              |
-|                                                                                              |
-| |lab2-task1-19|                                                                              |
 +----------------------------------------------------------------------------------------------+
 | **Note:** Only Bad Bot traffic is here. All automation is targeting the authentication       |
 | endpoint, the Traffic action is showing Continue, as the bots are only being **flagged**.    |
-|                                                                                              |
 +----------------------------------------------------------------------------------------------+
-| |lab2-task1-20|                                                                              |
+| |lab2-task1-19|                                                                              |
+|                                                                                              |
 +----------------------------------------------------------------------------------------------+
 | 18. Click on **Traffic Analyzer** (Left Navigation) and open a bad bot request.              |
 |                                                                                              |
 +----------------------------------------------------------------------------------------------+
-| |lab2-task1-21|                                                                              |
+| |lab2-task1-20|                                                                              |
 +----------------------------------------------------------------------------------------------+
 | 19. Look at the transaction details, note the Inference Fields and the “Bot Reason” showing  |
 |     Token missing, F5 uses this method to detect simple bots. It means the UUID token is not |
@@ -173,7 +165,7 @@ Credential Stuffing attack and observe related events using security analytics a
 |     the client side.                                                                         |
 |                                                                                              |
 +----------------------------------------------------------------------------------------------+
-| |lab2-task1-22|                                                                              |
+| |lab2-task1-21|                                                                              |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
@@ -243,8 +235,6 @@ Credential Stuffing attack and observe related events using security analytics a
 .. |lab2-task1-20| image:: _static/lab2-task1-20.png
    :width: 800px
 .. |lab2-task1-21| image:: _static/lab2-task1-21.png
-   :width: 800px
-.. |lab2-task1-22| image:: _static/lab2-task1-22.png
    :width: 800px
 .. |labend| image:: _static/labend.png
    :width: 800px
