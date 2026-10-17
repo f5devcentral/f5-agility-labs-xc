@@ -131,7 +131,7 @@ Task 2 : Review the Request Logs
 +----------------------------------------------------------------------------------------------+
 | |lab3-task2-03|                                                                              |
 +----------------------------------------------------------------------------------------------+
-| 5. Take a deeper look clicking on a POST request: Threat Intelligence: An attacker used an   |
+| 6. Take a deeper look clicking on a POST request: Threat Intelligence: An attacker used an   |
 |    automated tool such as Selenium, iMacros, or PhantomJS, or there were other indications   |
 |    of automation detected based on F5 signals.                                               |
 +----------------------------------------------------------------------------------------------+
