@@ -77,27 +77,18 @@ We will end by reviewing the security requests logs as well as the Bot Defense d
 | 8. Now that we have added the **Human** Configuration along with the **Credentials-Human**   |
 |    we can finally click **Accept** at the bottom, this will save the Multi-Run Job setup.    |
 |                                                                                              |
+|    Change the Skip value to 0 (zero) either by typing it or using the minus button finally   |
+|    clicking Accept at the bottom.                                                            |
+|                                                                                              |
 |    **Note:** *Scroll down to find the* **Accept** *button if the screen is too small...*     |
 +----------------------------------------------------------------------------------------------+
 | |lab3-task1-10|                                                                              |
 +----------------------------------------------------------------------------------------------+
-| 9. You should now see a second job titled **#[X]** **[Idle]**.  Click the **Options** icon   |
-|    to edit the job.  A new window will open.                                                 |
+| 9. Now you can click on the newly created Job and click **Start** to run the job.            |
 +----------------------------------------------------------------------------------------------+
-| |lab3-task1-11|                                                                              |
+| |lab3-task1-10a|                                                                             |
 |                                                                                              |
-| |lab3-task1-12|                                                                              |
-|                                                                                              |
-+----------------------------------------------------------------------------------------------+
-| 10. Change the **Skip** value to 0 (zero) either by typing it or using the **minus** button  |
-|     finally clicking **Accept** at the bottom.                                               |
-+----------------------------------------------------------------------------------------------+
-|     |lab3-task1-13|                                                                          |
-|                                                                                              |
-| 11. Now with the **Skip** value changed to "0"                                               |
-|     you can click **Start** to run the job.                                                  |
-|                                                                                              |
-|    |lab3-task1-14|                                                                           |
+| |lab3-task1-10b|                                                                             |
 |                                                                                              |
 +----------------------------------------------------------------------------------------------+
 
@@ -113,31 +104,39 @@ Task 2 : Review the Request Logs
 +----------------------------------------------------------------------------------------------+
 | |lab1-task4-01|                                                                              |     
 +----------------------------------------------------------------------------------------------+
-|   Scroll to the bottom and click on your HTTP Load Balancer then at the top **Requests**     |    
+| 2. Scroll to the bottom and click on your HTTP Load Balancer then into the **Security**      |    
+|    **overview.**                                                                             |    
 +----------------------------------------------------------------------------------------------+
 | |lab1-task4-02|                                                                              |
 +----------------------------------------------------------------------------------------------+
-|   Add a filter for **Human** Bot requests. Click **Add Filter** and enter the following      |
-|   syntax **bot_defense.insight** **In** **HUMAN**. As you type each word click on the        |
-|   syntax match that will appear in the dialogue box.                                         |
+| 3. Click on **View in Bot Defense** button, top right.                                       |
 +----------------------------------------------------------------------------------------------+
 | |lab3-task2-01|                                                                              |
 |                                                                                              |
 +----------------------------------------------------------------------------------------------+
-| 2. What were the results? How many POST requests were flagged as Human?                      |
-|    If you are one of the first students to run the attack, you may see it take up to 10      |
-|    requests before positive bot identification.                                              |
+| 4. Look at the Traffic by type, notice the bad bots are still there, but now we have also    |
+|    “Telemetry Client” traffic.                                                               |
 |                                                                                              |
-+----------------------------------------------------------------------------------------------+
-| 3. Let's go review the Bot Defense Dashboard. We access this by clicking **Bot Defense**     |
-|    at the top of the screen (Next to Requests).                                              |
-|                                                                                              |
-|    Notice now we see **Telemetry Client** show up in the *Traffic Types*. This indicates     |
-|    JavaScript telemetry within the client browser identified the bot.                        |
+|    **Note:** Telemetry Clients show up in the “Traffic By Type”. This indicates F5 JS is     |
+|    being requested and served to the client to recollect signals from the browser.           |
 +----------------------------------------------------------------------------------------------+
 | |lab3-task2-02|                                                                              |
 |                                                                                              |
-| |lab3-task2-03|                                                                              |                                     
++----------------------------------------------------------------------------------------------+
+| 5. Navigate to “Traffic Analyzer” to take a look. You should see two main request types:     |
+|    * GETs going to /common.js with an “Action taken” of Not Applicable                       |
+|    * POST going to /login/ with an “Action taken” of Continue and Bot reason Threat          |
+|      Intelligence, this is Bot defense analyzing the collected signals by the JS and         |
+|       identifying Human like behavior by Selenium, you will see this on more advance         |
+|       automation.                                                                            |         
++----------------------------------------------------------------------------------------------+
+| |lab3-task2-03|                                                                              |
++----------------------------------------------------------------------------------------------+
+| 5. Take a deeper look clicking on a POST request: •	Threat Intelligence: An attacker used an |
+|    automated tool such as Selenium, iMacros, or PhantomJS, or there were other indications   |
+|    of automation detected based on F5 signals.                                               |
++----------------------------------------------------------------------------------------------+
+| |lab3-task2-04|                                                                              |                                     
 +----------------------------------------------------------------------------------------------+
 
 
