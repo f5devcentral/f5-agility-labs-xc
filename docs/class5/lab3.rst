@@ -96,16 +96,15 @@ We will end by reviewing the security requests logs as well as the Bot Defense d
 Task 2 : Review the Request Logs
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-
 +----------------------------------------------------------------------------------------------+
 | 1. Let's review our load balancer request logs - Go to **Web App and API Protection**        |
 |    then **Overview** and finally **Security**  (Adjust the time filter as needed)            |
-|                                                                                              |    
+|                                                                                              |
 +----------------------------------------------------------------------------------------------+
-| |lab1-task4-01|                                                                              |     
+| |lab1-task4-01|                                                                              |
 +----------------------------------------------------------------------------------------------+
-| 2. Scroll to the bottom and click on your HTTP Load Balancer then into the **Security**      |    
-|    **overview.**                                                                             |    
+| 2. Scroll to the bottom and click on your HTTP Load Balancer then into the **Security**      |
+|    **overview.**                                                                             |
 +----------------------------------------------------------------------------------------------+
 | |lab1-task4-02|                                                                              |
 +----------------------------------------------------------------------------------------------+
@@ -128,7 +127,7 @@ Task 2 : Review the Request Logs
 |    * POST going to /login/ with an “Action taken” of Continue and Bot reason Threat          |
 |      Intelligence, this is Bot defense analyzing the collected signals by the JS and         |
 |       identifying Human like behavior by Selenium, you will see this on more advance         |
-|       automation.                                                                            |         
+|       automation.                                                                            |
 +----------------------------------------------------------------------------------------------+
 | |lab3-task2-03|                                                                              |
 +----------------------------------------------------------------------------------------------+
@@ -136,7 +135,7 @@ Task 2 : Review the Request Logs
 |    automated tool such as Selenium, iMacros, or PhantomJS, or there were other indications   |
 |    of automation detected based on F5 signals.                                               |
 +----------------------------------------------------------------------------------------------+
-| |lab3-task2-04|                                                                              |                                     
+| |lab3-task2-04|                                                                              |
 +----------------------------------------------------------------------------------------------+
 
 
