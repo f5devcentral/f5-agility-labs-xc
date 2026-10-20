@@ -53,7 +53,7 @@ We will first create an Origin Pool that refers to the "Private Endpoint" site i
 
 1. Start in F5 Distributed Cloud Console and switch back to the **Web App & API Protection** workspace.
 
-2. Navigate the menu to go to **Manage->Load Balancers->Origin Pools**. Click on **Add Origin Pool**.
+2. In the left-hand navigation expand **Manage**, hover over **Load Balancers** and click **Origin Pools**. Click on **Add Origin Pool**.
 
 3. Enter the following variables:
 
@@ -65,7 +65,7 @@ We will first create an Origin Pool that refers to the "Private Endpoint" site i
  ================================= ======
 
 
-4. Click on **Add Item** under the section **Origin Servers**
+4. Click on **Add** under the section **Origin Servers**
 
 
  ================================= ============================================
@@ -73,6 +73,7 @@ We will first create an Origin Pool that refers to the "Private Endpoint" site i
  ================================= ============================================
  Select Type of Origin Server      **DNS Name of Origin Server on given Sites**
  DNS Name                          **private.lab.f5demos.internal**
+ Site or Virtual Site              **Site** *(default)*
  Site                              **system/appworld-awsnet**
  ================================= ============================================
 
@@ -98,7 +99,7 @@ Now we will deploy a Load Balancer on the CE node that was deployed in the AWS V
 
 1. Start in F5 Distributed Cloud Console and switch back to the **Web App & API Protection** context.
 
-2. Navigate the menu to go to **Manage->Load Balancers-> HTTP Load Balancers**. Click on **Add HTTP Load Balancer**.
+2. In the left-hand navigation expand **Manage**, hover over **Load Balancers** and click **HTTP Load Balancers**. Click on **Add HTTP Load Balancer**.
 
 3. Enter the following variables:
 
@@ -109,7 +110,7 @@ Now we will deploy a Load Balancer on the CE node that was deployed in the AWS V
  ================================= =======
  Name                              **<your-namespace>-private-lb**
  Domains                           **<your-namespace>.aws.lab.f5demos.com**
- Select type of Load Balancer      **HTTP**
+ Load Balancer Type                **HTTP** *(SSL/TLS Type section, change from the default)*
  Automatically Manage DNS Records  **No/Unchecked**
  ================================= =======
 
@@ -117,7 +118,7 @@ Now we will deploy a Load Balancer on the CE node that was deployed in the AWS V
 
 |lab311|
 
-4. Under **Origin Pools** Click **Add Item**
+4. In the **Origins** section, under **Origin Pools** click **Add**
 
 |lab302|
 
@@ -129,27 +130,23 @@ Now we will deploy a Load Balancer on the CE node that was deployed in the AWS V
 
 |lab304|
 
-7. Now we want to control how this Load Balancer is advertised, we will select the **Other Settings** on the left hand side.
-   This will auto-scroll the configuations towards the bottom of the Load Balancer configuration section labeled
-   **Other Settings**
+7. Now we want to control how this Load Balancer is advertised, click **VIP Advertisement** in the left-hand navigation.
 
-|lab305|
-
-8. Under **VIP Advertisement**, change it to **Custom**  then select **Configure**
+8. Change **VIP Advertisement** to **Custom**, then click **Configure**
 
 |lab306|
 
-9. In the **List of Sites to Advertise**, Click on **Add Item**
+9. In the **Custom Advertise VIP Configuration** window, click on **Add**
 
 |lab307|
 
-10. For **Site Network** select **Outside Network**
+10. For **Network** select **Outside Network** *(the default is Inside and Outside Network)*
 
 11. For **Site Reference** select **system/appworld-awsnet**
 
 |lab308|
 
-12. Click on **Apply** and once again **Apply** on the next screen.
+12. Click on **Apply** and once again **Apply** on the next screen. **VIP Advertisement** now shows **Custom - Configured**.
 
 Task 3: Configure WAF Policy
 -----------------------------
@@ -157,7 +154,7 @@ Now that we have our load balancer and orign server configured we want to make s
 are easily applying a pre-existing shared WAF policy to our loadbalancer. The shared WAF policy is available for all namespaces
 under this tenant.
 
-1. Under the **Web Application Firewall** section
+1. Click **Web Application Firewall** in the left-hand navigation, then click the **Web Application Firewall** section header to expand it.
 
 2. Choose the following options:
 
@@ -167,12 +164,12 @@ under this tenant.
  *Variable*                      *Value*
  =============================== =================================
  Web Application Firewall (WAF)  **Enable**
- Select App Firewall             **shared/base-appfw**
+ Under **Enable**, select:       **shared/base-appfw**
  =============================== =================================
 
 -------------------------------------------------------------------------------------------------------------------------------
 
-3. Scroll to the botton of the screen and click **Add HTTP Load Balancer** to create the HTTP Load Balancer.
+3. Scroll to the bottom of the screen and click **Add HTTP Load Balancer** to create the HTTP Load Balancer.
 
 Task 4: Verify Configuration
 -----------------------------
@@ -228,9 +225,9 @@ security event data.
 
    .. admonition:: Sample WAF Attack URLs
 
-     * `http://\<your-namespace\>.aws.lab-sec.f5demos.com/?cmd=cat%20/etc/passwd <http://\<your-namespace\>.lab-sec.f5demos.com/?cmd=cat%20/etc/passwd>`_
-     * `http://\<your-namespace\>.aws.lab-sec.f5demos.com/?4d4ad2dbdb=MzsvKiBhICovIERFQ0xBUkUgQGMgdmFyY2hhcigyNTUpOy8qIGIgKi9TRUxFQ1QgQGM9J3BpbmcgJyttYXN0ZXIuc3lzLmZuX3ZhcmJpbnRvaGV4c3RyKGNvbnZlcnQodmFyYmluYXJ5LFNZU1RFTV9VU0VSKSkrJy4wMDAuYnVycGNvbCcrJ2xhYm9yYXRvci5uZXQnOy8qeHgqLyBFWEVDIE1hc3Rlci5kYm8ueHBfY21kc2hlbGwgQGM7Lyp4eHgqLyBFWEVDIHNwX1NZU19Qcm90b09wIEBpZD0z <http://\<your-namespace\>.aws.lab-sec.f5demos.com//?4d4ad2dbdb=MzsvKiBhICovIERFQ0xBUkUgQGMgdmFyY2hhcigyNTUpOy8qIGIgKi9TRUxFQ1QgQGM9J3BpbmcgJyttYXN0ZXIuc3lzLmZuX3ZhcmJpbnRvaGV4c3RyKGNvbnZlcnQodmFyYmluYXJ5LFNZU1RFTV9VU0VSKSkrJy4wMDAuYnVycGNvbCcrJ2xhYm9yYXRvci5uZXQnOy8qeHgqLyBFWEVDIE1hc3Rlci5kYm8ueHBfY21kc2hlbGwgQGM7Lyp4eHgqLyBFWEVDIHNwX1NZU19Qcm90b09wIEBpZD0z>`_
-     * `http://\<your-namespace\>.aws.lab-sec.f5demos.com/cart?search=aaa%E2%80%99%3E%3Cscript%3Eprompt%28%E2%80%98Please%2Benter%2Byour%2Bpassword%E2%80%99%29%3B%3C%2Fscript%3E <http://\<your-namespace\>.lab-sec.f5demos.com/cart?search=aaa%E2%80%99%3E%3Cscript%3Eprompt%28%E2%80%98Please%2Benter%2Byour%2Bpassword%E2%80%99%29%3B%3C%2Fscript%3E>`_
+     * `http://\<your-namespace\>.aws.lab.f5demos.com/?cmd=cat%20/etc/passwd <http://\<your-namespace\>.aws.lab.f5demos.com/?cmd=cat%20/etc/passwd>`_
+     * `http://\<your-namespace\>.aws.lab.f5demos.com/?4d4ad2dbdb=MzsvKiBhICovIERFQ0xBUkUgQGMgdmFyY2hhcigyNTUpOy8qIGIgKi9TRUxFQ1QgQGM9J3BpbmcgJyttYXN0ZXIuc3lzLmZuX3ZhcmJpbnRvaGV4c3RyKGNvbnZlcnQodmFyYmluYXJ5LFNZU1RFTV9VU0VSKSkrJy4wMDAuYnVycGNvbCcrJ2xhYm9yYXRvci5uZXQnOy8qeHgqLyBFWEVDIE1hc3Rlci5kYm8ueHBfY21kc2hlbGwgQGM7Lyp4eHgqLyBFWEVDIHNwX1NZU19Qcm90b09wIEBpZD0z <http://\<your-namespace\>.aws.lab.f5demos.com/?4d4ad2dbdb=MzsvKiBhICovIERFQ0xBUkUgQGMgdmFyY2hhcigyNTUpOy8qIGIgKi9TRUxFQ1QgQGM9J3BpbmcgJyttYXN0ZXIuc3lzLmZuX3ZhcmJpbnRvaGV4c3RyKGNvbnZlcnQodmFyYmluYXJ5LFNZU1RFTV9VU0VSKSkrJy4wMDAuYnVycGNvbCcrJ2xhYm9yYXRvci5uZXQnOy8qeHgqLyBFWEVDIE1hc3Rlci5kYm8ueHBfY21kc2hlbGwgQGM7Lyp4eHgqLyBFWEVDIHNwX1NZU19Qcm90b09wIEBpZD0z>`_
+     * `http://\<your-namespace\>.aws.lab.f5demos.com/cart?search=aaa%E2%80%99%3E%3Cscript%3Eprompt%28%E2%80%98Please%2Benter%2Byour%2Bpassword%E2%80%99%29%3B%3C%2Fscript%3E <http://\<your-namespace\>.aws.lab.f5demos.com/cart?search=aaa%E2%80%99%3E%3Cscript%3Eprompt%28%E2%80%98Please%2Benter%2Byour%2Bpassword%E2%80%99%29%3B%3C%2Fscript%3E>`_
 
 Just like in Lab 1, you should see a block page when adding the attacks to the URL. The difference in this case is that the
 enforcement of the WAF policy is occurring on the load balancer on the CE node that is deployed in the AWS lab environment
@@ -245,31 +242,31 @@ the end of the lab.
 
 .. |lab300| image:: _static/lab3-appworld2025-topology-diagram.png
    :width: 800px
-.. |lab301| image:: _static/lab3-appworld2025-task1-originserverr.png
+.. |lab301| image:: _static/2026-lab3-origin-server.png
    :width: 800px
-.. |lab302| image:: _static/lab3-appworld2025-task2-lb-add-origin-pool.png
+.. |lab302| image:: _static/2026-lab3-add-origin-pool.png
    :width: 800px
-.. |lab303| image:: _static/lab3-appworld2025-task2-lb-add-origin-pool2.png
+.. |lab303| image:: _static/2026-lab3-add-origin-pool2.png
    :width: 800px
-.. |lab304| image:: _static/lab3-appworld2025-task2-lb-origin-pool-added.png
+.. |lab304| image:: _static/2026-lab3-pool-added.png
    :width: 800px
 .. |lab305| image:: _static/lab3-appworld2025-task2-lb-other-settings.png
    :width: 800px
-.. |lab306| image:: _static/lab3-appworld2025-task2-lb-change-vip-advertisement.png
+.. |lab306| image:: _static/2026-lab3-change-vip-advertisement.png
    :width: 800px
-.. |lab307| image:: _static/lab3-appworld2025-list-sites-advertise.png
+.. |lab307| image:: _static/2026-lab3-list-sites-advertise.png
    :width: 800px
-.. |lab308| image:: _static/lab3-appworld2025-task2-lb-site-changee.png
+.. |lab308| image:: _static/2026-lab3-site-change.png
    :width: 800px
 .. |lab309| image:: _static/screenshot-global-vip-private.png
    :width: 800px
 .. |lab310| image:: _static/lab3-appworld2025-waf-block-message.png
    :width: 800px
-.. |lab311| image:: _static/lab3-appworld2025-task2-lb-updated.png
+.. |lab311| image:: _static/2026-lab3-task2-lb.png
    :width: 800px
-.. |lab312| image:: _static/screenshot-global-vip-private.png
+.. |lab312| image:: _static/2026-lab3-private-app.png
    :width: 800px
-.. |lab313| image:: _static/lab3-appworld2025-waf-block-message.png
+.. |lab313| image:: _static/2026-lab3-waf-block.png
    :width: 800px
 .. |labend| image:: _static/labend.png
    :width: 800px
