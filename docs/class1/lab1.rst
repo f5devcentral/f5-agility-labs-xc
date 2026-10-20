@@ -37,7 +37,7 @@ workspace. If for some reason you are not in **Web App & API Protection**, use *
 in the left-hand navigation, and choose **Web App & API Protection** as shown in the
 *Introduction section, Task 2, Step 9*.
 
-2. In the left-hand navigation expand **Manage** and click **Load Balancers > Origin Pools**
+2. In the left-hand navigation expand **Manage**, hover over **Load Balancers** and click **Origin Pools**
 
 3. In the resulting screen click the **Add Origin Pool** in the graphic as shown.
 
@@ -49,7 +49,7 @@ in the left-hand navigation, and choose **Web App & API Protection** as shown in
 
    |lab002|
 
-4. In the resulting window, enter **<your-namespace>-pool** in the **Name** field and click **Add Item** under
+4. In the resulting window, enter **<your-namespace>-pool** in the **Name** field and click **Add** under
    **Origin Servers**
 
    |lab003|
@@ -69,7 +69,7 @@ in the left-hand navigation, and choose **Web App & API Protection** as shown in
 
    |lab006|
 
-9. In the left-hand navigation expand **Manage** and click **Load Balancers > HTTP Load** **Balancers**.
+9. In the left-hand navigation expand **Manage**, hover over **Load Balancers** and click **HTTP Load Balancers**.
 
    |lab007|
 
@@ -84,11 +84,13 @@ in the left-hand navigation, and choose **Web App & API Protection** as shown in
 
         **Name**: *<your-namespace>-lb*
 
-    * **Domains and LB Type**
+    * **Domains**
 
         **Domains**: *<your-namespace>.lab-sec.f5demos.com*
 
-        **Load Balancer Type**: *HTTP*
+    * **SSL/TLS Type**
+
+        **Load Balancer Type**: *HTTP* *(change it from the default HTTPS with Automatic Certificate)*
 
         **Automatically Manage DNS Records:** [X] *(Check the checkbox)*
 
@@ -98,8 +100,8 @@ in the left-hand navigation, and choose **Web App & API Protection** as shown in
 
    |lab009|
 
-12. In the current window's left-hand navigation, click **Origins**. Next, click **Add Item** section of
-    **Origins**.
+12. In the current window's left-hand navigation, click **Origins**. Next, click **Add** under
+    **Origin Pools**.
 
    |lab010|
 
@@ -111,8 +113,8 @@ in the left-hand navigation, and choose **Web App & API Protection** as shown in
 
    |lab011|
 
-16. In the resulting **HTTP Load Balancer** window, scroll to the **Other Settings** section and note the
-    **VIP Advertisement** setting.
+16. In the resulting **HTTP Load Balancer** window, click **VIP Advertisement** in the left-hand navigation and note the
+    **VIP Advertisement** setting is **Internet**.
 
    .. note::
       *The VIP Advertisement selection controls how/where the application is advertised. The "Internet" setting*
@@ -143,7 +145,7 @@ Performance Monitoring dashboard, and gather request details.
 
 3. Returning to the F5 Distributed Cloud Console, use the left-hand navigation to navigate to Web App & API Protection section and click on **Performance**
 
-4. Scroll to the **Load Balancers** section of the page and click the link for your respective load balancer.
+4. Scroll to the load balancer table at the bottom of the page and click the link for your respective load balancer.
 
    |lab016|
 
@@ -195,7 +197,7 @@ These steps will apply a preconfigured WAF policy to the load balancer created i
    **Select Workspace** dropdown at the top left, and click **Web App & API Protection** as shown in the
    *Introduction section, Task 2, Step 9*.
 
-2. In the left-hand navigation expand **Manage** and click **Load Balancers > HTTP Load Balancers**
+2. In the left-hand navigation expand **Manage**, hover over **Load Balancers** and click **HTTP Load Balancers**
 
 3. On the resulting page find the HTTP Load Balancer created in **Task 1** *(<your-namespace>-lb)*. Click the
    ellipsis under Actions and select **Manage Configuration**.
@@ -206,7 +208,8 @@ These steps will apply a preconfigured WAF policy to the load balancer created i
 
 4. On the resulting page click **Edit Configuration**.
 
-5. Click **Web Application Firewall** in the left-hand navigation.
+5. Click **Web Application Firewall** in the left-hand navigation, then click the **Web Application Firewall**
+   section header to expand it.
 
    |lab030|
 
@@ -215,7 +218,7 @@ These steps will apply a preconfigured WAF policy to the load balancer created i
 6. Under the **Web Application Firewall** section select **Enable** from the **Web Application Firewall**
     **(WAF)** dropdown.
 
-7. Select preconfigured the Web Application Firewall
+7. Select the preconfigured Web Application Firewall
     *(shared/base-appfw)* from the **Enable** dropdown.
 
 8. Scroll to the bottom of the page and click **Save HTTP Load Balancer**
@@ -236,7 +239,7 @@ Monitoring dashboard, and gather security event details.
    security event data.
 
    * `http://\<your-namespace\>.lab-sec.f5demos.com/?cmd=cat%20/etc/passwd <http://\<your-namespace\>.lab-sec.f5demos.com/?cmd=cat%20/etc/passwd>`_
-   * `http://\<your-namespace\>.lab-sec.f5demos.com/product?id=4%20OR%201=1 <http://\<your-namespace\>.lab-sec.f5demos.com/product?id=4%20OR%201=1>`_
+   * `http://\<your-namespace\>.lab-sec.f5demos.com/product?id=4%27%20OR%20%271%27=%271 <http://\<your-namespace\>.lab-sec.f5demos.com/product?id=4%27%20OR%20%271%27=%271>`_
    * `http://\<your-namespace\>.lab-sec.f5demos.com/cart?search=aaa%E2%80%99%3E%3Cscript%3Eprompt%28%E2%80%98Please%2Benter%2Byour%2Bpassword%E2%80%99%29%3B%3C%2Fscript%3E <http://\<your-namespace\>.lab-sec.f5demos.com/cart?search=aaa%E2%80%99%3E%3Cscript%3Eprompt%28%E2%80%98Please%2Benter%2Byour%2Bpassword%E2%80%99%29%3B%3C%2Fscript%3E>`_
 
   The last attack pattern is URL encoded, and when decoded it looks like this:
@@ -253,7 +256,7 @@ Monitoring dashboard, and gather security event details.
 
 3. Returning to the F5 Distributed Cloud Console, use the left-hand navigation to navigate to Web App & API Protection section and click on **Security**
 
-4. Scroll to the **Load Balancers** section of the page and click the link for your respective load balancer.
+4. Scroll to the **Delivery Resources** section of the page and click the link for your respective load balancer.
 
    |lab017|
 
@@ -273,7 +276,7 @@ Monitoring dashboard, and gather security event details.
 
 7. Click the **Hide Chart** link to free up space in the browser window.
 
-8. Expand your latest security event as shown.
+8. Click your latest security event as shown to open the **Event Details** panel.
 
 9. Note the summary detail provided in the **Information** link. The **req_id** which is synonymous with **Support ID** (filterable) from the block page.
 
@@ -289,7 +292,7 @@ Monitoring dashboard, and gather security event details.
 
    |lab041|
 
-11. Scroll back to the top and on the right-hand size under Actions click "...". Now click "Explain with AI".
+11. Scroll back to the top of the **Event Details** panel and click **Explain with AI**.
     F5 Distributed Cloud AI Assistant will provide additional information about the security event including
     an analysis of the event, recommended follow-up actions, and more detection details should you need to
     investigate further.
@@ -309,51 +312,51 @@ the security event data was reviewed within the Distributed Cloud Console.
 
 .. |lab000| image:: _static/lab1-000.png
    :width: 800px
-.. |lab001| image:: _static/lab1-001.png
+.. |lab001| image:: _static/2026-lab1-001.png
    :width: 800px
-.. |lab002| image:: _static/lab1-002.png
+.. |lab002| image:: _static/2026-lab1-002.png
    :width: 800px
-.. |lab003| image:: _static/lab1-003.png
+.. |lab003| image:: _static/2026-lab1-003.png
    :width: 800px
-.. |lab004| image:: _static/lab1-004.png
+.. |lab004| image:: _static/2026-lab1-004.png
    :width: 800px
-.. |lab005| image:: _static/lab1-005.png
+.. |lab005| image:: _static/2026-lab1-005.png
    :width: 800px
-.. |lab006| image:: _static/lab1-006.png
+.. |lab006| image:: _static/2026-lab1-006.png
    :width: 800px
-.. |lab007| image:: _static/lab1-007.png
+.. |lab007| image:: _static/2026-lab1-007.png
    :width: 800px
-.. |lab008| image:: _static/lab1-008.png
+.. |lab008| image:: _static/2026-lab1-008.png
    :width: 800px
-.. |lab009| image:: _static/lab1-009.png
+.. |lab009| image:: _static/2026-lab1-009.png
    :width: 800px
-.. |lab010| image:: _static/lab1-010.png
+.. |lab010| image:: _static/2026-lab1-010.png
    :width: 800px
-.. |lab011| image:: _static/lab1-011.png
+.. |lab011| image:: _static/2026-lab1-011.png
    :width: 800px
-.. |lab012| image:: _static/lab1-012.png
+.. |lab012| image:: _static/2026-lab1-012.png
    :width: 800px
-.. |lab013| image:: _static/lab1-013.png
+.. |lab013| image:: _static/2026-lab1-013.png
    :width: 800px
-.. |lab014| image:: _static/lab1-014.png
+.. |lab014| image:: _static/2026-lab1-014.png
    :width: 800px
-.. |lab015| image:: _static/lab1-015.png
+.. |lab015| image:: _static/2026-lab1-015.png
    :width: 800px
-.. |lab016| image:: _static/lab1-016.png
+.. |lab016| image:: _static/2026-lab1-016.png
    :width: 800px
-.. |lab017| image:: _static/lab1-017.png
+.. |lab017| image:: _static/2026-lab1-017.png
    :width: 800px
-.. |lab018| image:: _static/lab1-018.png
+.. |lab018| image:: _static/2026-lab1-018.png
    :width: 800px
-.. |lab019| image:: _static/lab1-019.png
+.. |lab019| image:: _static/2026-lab1-019.png
    :width: 800px
-.. |lab020| image:: _static/lab1-020.png
+.. |lab020| image:: _static/2026-lab1-020.png
    :width: 800px
-.. |lab021| image:: _static/lab1-021.png
+.. |lab021| image:: _static/2026-lab1-021.png
    :width: 800px
-.. |lab022| image:: _static/lab1-022.png
+.. |lab022| image:: _static/2026-lab1-022.png
    :width: 800px
-.. |lab023| image:: _static/lab1-023.png
+.. |lab023| image:: _static/2026-lab1-023.png
    :width: 800px
 .. |lab024| image:: _static/lab1-024.png
    :width: 800px
@@ -363,37 +366,37 @@ the security event data was reviewed within the Distributed Cloud Console.
    :width: 800px
 .. |lab027| image:: _static/lab1-027.png
    :width: 800px
-.. |lab028| image:: _static/lab1-028.png
+.. |lab028| image:: _static/2026-lab1-028.png
    :width: 800px
-.. |lab029| image:: _static/lab1-029.png
+.. |lab029| image:: _static/2026-lab1-029.png
    :width: 800px
-.. |lab030| image:: _static/lab1-030.png
+.. |lab030| image:: _static/2026-lab1-030.png
    :width: 800px
-.. |lab031| image:: _static/lab1-031.png
+.. |lab031| image:: _static/2026-lab1-031.png
    :width: 800px
-.. |lab032| image:: _static/lab1-032.png
+.. |lab032| image:: _static/2026-lab1-032.png
    :width: 800px
 .. |lab033| image:: _static/lab1-033.png
    :width: 800px
-.. |lab034| image:: _static/lab1-034.png
+.. |lab034| image:: _static/2026-lab1-034.png
    :width: 800px
-.. |lab035| image:: _static/lab1-035.png
+.. |lab035| image:: _static/2026-lab1-035.png
    :width: 800px
 .. |lab036| image:: _static/lab1-036.png
    :width: 800px
-.. |lab037| image:: _static/lab1-037.png
+.. |lab037| image:: _static/2026-lab1-037.png
    :width: 800px
-.. |lab038| image:: _static/lab1-038.png
+.. |lab038| image:: _static/2026-lab1-038.png
    :width: 800px
-.. |lab039| image:: _static/lab1-039.png
+.. |lab039| image:: _static/2026-lab1-039.png
    :width: 800px
-.. |lab040| image:: _static/lab1-040.png
+.. |lab040| image:: _static/2026-lab1-040.png
    :width: 800px
-.. |lab041| image:: _static/lab1-041.png
+.. |lab041| image:: _static/2026-lab1-041.png
+   :width: 434px
+.. |lab042| image:: _static/2026-lab1-042.png
    :width: 800px
-.. |lab042| image:: _static/lab1-042.png
-   :width: 800px
-.. |lab043| image:: _static/lab1-043.png
+.. |lab043| image:: _static/2026-lab1-043.png
    :width: 800px
 .. |labend| image:: _static/labend.png
    :width: 800px
